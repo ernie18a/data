@@ -1,0 +1,4 @@
+Long: close crosses above EMA(close, lookback)
+Short: close crosses below EMA(close, lookback)
+Long: Amihud-ratio z-score over rolling lookback is at least the surge threshold AND close crosses above EMA(close, lookback) AND position is not long AND cooldown bars have elapsed since the previous signal AND the bar is confirmed; the Amihud ratio is abs(close - close[1]) / max(volume, 1), and its z-score is zero when its rolling standard deviation is zero
+Short: Amihud-ratio z-score over rolling lookback is at least the surge threshold AND close crosses below EMA(close, lookback) AND position is not short AND cooldown bars have elapsed since the previous signal AND the bar is confirmed; the Amihud ratio is abs(close - close[1]) / max(volume, 1), and its z-score is zero when its rolling standard deviation is zero

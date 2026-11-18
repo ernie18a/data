@@ -1,0 +1,4 @@
+Long: close > SMA(close, SMA lookback) AND Parabolic SAR(PSAR step, PSAR step, PSAR maximum) crosses above close AND RSI(close, RSI lookback) <= RSI threshold AND volume > SMA(volume, volume lookback) * volume multiplier
+Short: close < SMA(close, SMA lookback) AND Parabolic SAR(PSAR step, PSAR step, PSAR maximum) crosses below close AND RSI(close, RSI lookback) >= RSI threshold AND volume > SMA(volume, volume lookback) * volume multiplier
+Exit: long, upward price movement from entry reaches ATR(ATR lookback) * profit distance in ticks OR downward price movement from entry reaches ATR(ATR lookback) * stop distance in ticks
+Exit: short, downward price movement from entry reaches ATR(ATR lookback) * profit distance in ticks OR upward price movement from entry reaches ATR(ATR lookback) * stop distance in ticks

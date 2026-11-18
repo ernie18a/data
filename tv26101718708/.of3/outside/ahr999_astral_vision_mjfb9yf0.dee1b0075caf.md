@@ -1,0 +1,1 @@
+Long: Bitcoin AHR999 with geometric mean lookback P1 at T1 < P2

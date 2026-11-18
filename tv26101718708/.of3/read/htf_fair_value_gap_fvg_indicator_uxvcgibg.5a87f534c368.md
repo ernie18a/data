@@ -1,0 +1,2 @@
+Long: on chart bars using completed T1 bars, high[3] < low[1] OR on chart bars using completed T2 bars, high[3] < low[1] OR on chart bars using completed T3 bars, high[3] < low[1]
+Short: on chart bars using completed T1 bars, low[3] > high[1] OR on chart bars using completed T2 bars, low[3] > high[1] OR on chart bars using completed T3 bars, low[3] > high[1]

@@ -1,0 +1,2 @@
+Long: during the configured session after the accumulation period AND no earlier long signal this session AND close > Highest(high, bars since session start)[1]
+Short: during the configured session AND no earlier short signal this session AND close < Lowest(low, bars since session start)[1]

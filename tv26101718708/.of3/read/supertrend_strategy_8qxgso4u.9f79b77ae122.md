@@ -1,0 +1,4 @@
+Long: chart close crosses above Supertrend(factor parameter, ATR period parameter, T1 bar still forming, sampled on chart bars with lookahead off) AND chart bar is confirmed
+Short: chart close crosses below Supertrend(factor parameter, ATR period parameter, T1 bar still forming, sampled on chart bars with lookahead off) AND chart bar is confirmed
+Exit: long, high >= entry price * (1 + take-profit parameter) OR RSI(close, RSI lookback parameter, T2 bar still forming, sampled on chart bars with lookahead off) >= RSI upper parameter
+Exit: short, low <= entry price * (1 - take-profit parameter) OR RSI(close, RSI lookback parameter, T2 bar still forming, sampled on chart bars with lookahead off) <= RSI lower parameter

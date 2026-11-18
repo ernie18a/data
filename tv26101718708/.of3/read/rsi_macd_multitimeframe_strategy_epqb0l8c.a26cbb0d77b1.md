@@ -1,0 +1,2 @@
+Long: RSI(close, RSI lookback) on T1 bars using the still-forming bar, sampled on chart bars, is below the oversold parameter AND MACD(close, fast lookback, slow lookback, signal lookback) on T2 bars using the still-forming bar has its line cross above its signal line on chart bars
+Exit: long, RSI(close, RSI lookback) on T1 bars using the still-forming bar, sampled on chart bars, is above the overbought parameter AND MACD(close, fast lookback, slow lookback, signal lookback) on T2 bars using the still-forming bar has its line cross below its signal line on chart bars

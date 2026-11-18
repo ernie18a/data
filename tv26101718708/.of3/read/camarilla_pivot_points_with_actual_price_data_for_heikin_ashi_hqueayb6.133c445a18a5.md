@@ -1,0 +1,10 @@
+Calculation: H4 = previous completed T1 high, low, and close range level using parameter P1, calculated on chart bars
+Calculation: L4 = previous completed T1 close minus parameter P1 times (high minus low), calculated on chart bars
+Calculation: H3 = previous completed T1 close plus parameter P2 times (high minus low), calculated on chart bars
+Calculation: L3 = previous completed T1 close minus parameter P2 times (high minus low), calculated on chart bars
+Calculation: H5 = H4 + (H4 - H3)
+Calculation: L5 = L4 - (L3 - L4)
+Long: low <= L3 OR close > H4
+Short: high >= H3 OR close < L4
+Exit: long, low < L4 OR high >= H5
+Exit: short, high > H4 OR low <= L5

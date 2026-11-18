@@ -1,0 +1,4 @@
+Calculation: open series = open or the selected SMA, EMA, DEMA, TEMA, WMA, VWMA, SMMA, Hull MA, LSMA, or ALMA of open using a lookback, LSMA offset, ALMA sigma, and ALMA offset parameters; calculate on chart bars or on T1 bars using the current T1 bar (still forming), then map T1 values to chart bars
+Calculation: display direction = up when open series[1] > open series, down when open series[1] < open series, otherwise its value one chart bar ago
+Long: display direction is up OR open series crosses above open series[1]
+Short: open series[1] <= open series OR open series crosses below open series[1]

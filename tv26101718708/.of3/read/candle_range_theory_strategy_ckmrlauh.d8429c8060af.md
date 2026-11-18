@@ -1,0 +1,6 @@
+Calculation: Long stop = low of latest completed T1 bar at the long setup - (high of preceding completed T1 bar at the long setup - low of latest completed T1 bar at the long setup) * stop-loss multiplier
+Calculation: Short stop = high of latest completed T1 bar at the short setup + (high of latest completed T1 bar at the short setup - low of preceding completed T1 bar at the short setup) * stop-loss multiplier
+Long: low of latest completed T1 bar < low of preceding completed T1 bar AND close of latest completed T1 bar > low of preceding completed T1 bar AND chart-bar high > high of latest completed T1 bar AND current still-forming T1 volume sampled on chart bars > SMA(current still-forming T1 volume sampled on chart bars, lookback) * volume-threshold multiplier
+Short: high of latest completed T1 bar > high of preceding completed T1 bar AND close of latest completed T1 bar < high of preceding completed T1 bar AND chart-bar low < low of latest completed T1 bar AND current still-forming T1 volume sampled on chart bars > SMA(current still-forming T1 volume sampled on chart bars, lookback) * volume-threshold multiplier
+Exit: long, chart-bar low <= long stop OR chart-bar high >= high of preceding completed T1 bar at the long setup
+Exit: short, chart-bar high >= short stop OR chart-bar low <= low of preceding completed T1 bar at the short setup

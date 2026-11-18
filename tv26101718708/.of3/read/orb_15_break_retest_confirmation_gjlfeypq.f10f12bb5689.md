@@ -1,0 +1,4 @@
+Calculation: ORB high = maximum high during the first T2 opening-range interval of each session, accumulated on T1 chart bars
+Calculation: ORB low = minimum low during the first T2 opening-range interval of each session, accumulated on T1 chart bars
+Long: ORB ready AND a completed T1 bar closes above ORB high after the previous close was at or below it, then within the maximum retest bars a later completed T1 bar has low <= ORB high + retest tolerance AND close > ORB high
+Short: ORB ready AND a completed T1 bar closes below ORB low after the previous close was at or above it, then within the maximum retest bars a later completed T1 bar has high >= ORB low - retest tolerance AND close < ORB low

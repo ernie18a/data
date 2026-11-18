@@ -1,0 +1,4 @@
+Long: crossover(chart close, T1 high from the last completed T1 bar), evaluated on chart bars using T1 values, AND datetime >= start-date parameter AND datetime <= end-date parameter
+Short: crossunder(chart close, T1 low from the last completed T1 bar), evaluated on chart bars using T1 values, AND datetime >= start-date parameter AND datetime <= end-date parameter
+Exit: long, risk management enabled AND (crossunder(chart low, entry price - stop-loss parameter) OR crossover(chart high, entry price + take-profit parameter))
+Exit: short, risk management enabled AND (crossover(chart high, entry price + stop-loss parameter) OR crossunder(chart low, entry price - take-profit parameter))

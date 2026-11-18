@@ -1,0 +1,3 @@
+Calculation: Flow = EMA(if SMA(volume, flow lookback) > 0 then volume * (((close - low) - (high - close)) / max(high - low, minimum tick)) / SMA(volume, flow lookback) else 0, smoothing lookback), calculated on T1 bars using the bar still forming and sampled on chart bars
+Long: Flow(T1) >= strong threshold OR (Flow(T1) > -strong threshold AND Flow(T1) < strong threshold AND Flow(T1) > Flow[1](T1))
+Short: Flow(T1) <= -strong threshold OR (Flow(T1) > -strong threshold AND Flow(T1) < strong threshold AND Flow(T1) <= Flow[1](T1))

@@ -1,0 +1,7 @@
+Calculation: Smoothed range = EMA(EMA(abs(close - close[1]), range lookback), 2 * range lookback - 1) * range multiplier
+Calculation: Volume range filter = if volume > volume[1] then max(close - smoothed range, volume range filter[1]) else min(close + smoothed range, volume range filter[1])
+Calculation: Upper range band = volume range filter + smoothed range
+Calculation: Lower range band = volume range filter - smoothed range
+Calculation: Range supertrend direction = bars since crossover(close, highest(upper range band, range supertrend lookback)[1]) < bars since crossunder(close, lowest(lower range band, range supertrend lookback)[1])
+Long: volume range filter > volume range filter[1] AND close crosses above upper range band AND (ADX filter disabled OR ADX(ADX length, ADX length) > VWMA(ADX(ADX length, ADX length), ADX length)) AND (Range Supertrend filter disabled OR Range supertrend direction) AND (VWMA filter disabled OR volume range filter > VWMA(volume range filter, VWMA filter length))
+Exit: long, volume range filter < volume range filter[1] AND close crosses below lower range band AND (ADX filter disabled OR ADX(ADX length, ADX length) > VWMA(ADX(ADX length, ADX length), ADX length)) AND (Range Supertrend filter disabled OR NOT Range supertrend direction)

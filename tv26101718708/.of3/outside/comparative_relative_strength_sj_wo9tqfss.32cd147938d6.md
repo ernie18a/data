@@ -1,0 +1,2 @@
+Long: the ratio of traded instrument close to benchmark close, or the ROC of that ratio over a period, crosses above an EMA or SMA of the selected series over a period
+Short: the ratio of traded instrument close to benchmark close, or the ROC of that ratio over a period, crosses below an EMA or SMA of the selected series over a period

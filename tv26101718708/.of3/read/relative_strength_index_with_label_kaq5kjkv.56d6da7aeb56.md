@@ -1,0 +1,8 @@
+Calculation: long-cross pending = initially false; set when RSI(source, lookback) <= lower threshold while false; reset when RSI >= upper threshold or RSI crosses above its configured moving average
+Calculation: short-cross pending = initially false; set when RSI(source, lookback) >= upper threshold while false; reset when RSI <= lower threshold or RSI crosses below its configured moving average
+Long: RSI(source, lookback) <= lower threshold AND long-cross pending is false
+Long: long-cross pending AND RSI crosses above its configured moving average
+Short: RSI(source, lookback) >= upper threshold AND short-cross pending is false
+Short: short-cross pending AND RSI crosses below its configured moving average
+Long: divergence calculation enabled AND RSI pivot low (left lookback, right lookback) is confirmed AND barsSince(RSI pivot low[1]) is between minimum and maximum spacing AND RSI[right lookback] > RSI[right lookback] at the preceding confirmed RSI pivot low AND low[right lookback] < low[right lookback] at the preceding confirmed RSI pivot low
+Short: divergence calculation enabled AND RSI pivot high (left lookback, right lookback) is confirmed AND barsSince(RSI pivot high[1]) is between minimum and maximum spacing AND RSI[right lookback] < RSI[right lookback] at the preceding confirmed RSI pivot high AND high[right lookback] > high[right lookback] at the preceding confirmed RSI pivot high

@@ -1,0 +1,8 @@
+Calculation: Reversal state = on chart bars, 1 when close[2] < close[1] AND close > close[1] AND SMA(Stochastic %K(close, high, low, stochastic lookback), fast smoothing lookback) < SMA(SMA(Stochastic %K(close, high, low, stochastic lookback), fast smoothing lookback), slow smoothing lookback) AND SMA(Stochastic %K(close, high, low, stochastic lookback), fast smoothing lookback) > threshold; -1 when close[2] > close[1] AND close < close[1] AND SMA(Stochastic %K(close, high, low, stochastic lookback), fast smoothing lookback) > SMA(SMA(Stochastic %K(close, high, low, stochastic lookback), fast smoothing lookback), slow smoothing lookback) AND SMA(Stochastic %K(close, high, low, stochastic lookback), fast smoothing lookback) < threshold; otherwise the prior value, initially 0
+Calculation: Floor pivot state = on chart bars, 1 when close > Floor Pivot Resistance 1(high(T1, last completed bar), low(T1, last completed bar), close(T1, last completed bar)); -1 when close < Floor Pivot Support 1(high(T1, last completed bar), low(T1, last completed bar), close(T1, last completed bar)); otherwise the prior value, initially 0
+Calculation: Combined signal = 1 when Reversal state = 1 AND Floor pivot state = 1; -1 when Reversal state = -1 AND Floor pivot state = -1; otherwise 0
+Calculation: Trade signal = Combined signal when direction-reversal parameter is disabled; -Combined signal when direction-reversal parameter is enabled
+Long: Trade signal = 1
+Short: Trade signal = -1
+Exit: long, Trade signal = 0
+Exit: short, Trade signal = 0

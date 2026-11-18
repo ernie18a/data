@@ -1,0 +1,6 @@
+Calculation: Short-term stochastic = SMA(Stochastic(close, high, low, shorter lookback), stochastic smoothing lookback)
+Calculation: Long-term stochastic = SMA(Stochastic(close, high, low, longer lookback), stochastic smoothing lookback)
+Long: Short-term stochastic > upper threshold AND Short-term stochastic[1] < upper threshold AND Long-term stochastic > bias threshold AND (Steckler filter disabled OR ADX(lookback) < ADX threshold) AND (volume confirmation disabled OR volume > SMA(volume, volume lookback))
+Short: Short-term stochastic < lower threshold AND Short-term stochastic[1] > lower threshold AND Long-term stochastic < bias threshold AND (Steckler filter disabled OR ADX(lookback) < ADX threshold) AND (volume confirmation disabled OR volume > SMA(volume, volume lookback))
+Long: Stop-loss display enabled AND Parabolic SAR(start parameter, increment parameter, maximum parameter) < close
+Short: Stop-loss display enabled AND Parabolic SAR(start parameter, increment parameter, maximum parameter) >= close

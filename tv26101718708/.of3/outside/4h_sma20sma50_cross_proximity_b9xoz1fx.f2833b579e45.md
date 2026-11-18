@@ -1,0 +1,2 @@
+Calculation: SMA gap (%) = if SMA(scanned stock close on T1, P2) != 0 then abs(SMA(scanned stock close on T1, P1) - SMA(scanned stock close on T1, P2)) / abs(SMA(scanned stock close on T1, P2)) * 100 else undefined
+Long: SMA(scanned stock close on T1, P1) < SMA(scanned stock close on T1, P2) AND SMA gap (%) >= P3 AND SMA gap (%) <= P4 AND SMA gap (%) < SMA gap (%)[1]

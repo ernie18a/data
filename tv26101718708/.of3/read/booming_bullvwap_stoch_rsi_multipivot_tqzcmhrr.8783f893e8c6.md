@@ -1,0 +1,9 @@
+Calculation: StochRSI K = SMA(StochRSI(RSI(close, RSI lookback), stochastic lookback), K smoothing)
+Calculation: StochRSI D = SMA(StochRSI K, D smoothing)
+Calculation: Pivot levels = P=(H+L+C)/3, R1=2P-L, S1=2P-H, R2=P+(H-L), S2=P-(H-L), R3=H+2(P-L), S3=L-2(H-P), using H/L/C from the last completed T1 bar and evaluated on chart bars
+Long: StochRSI K > StochRSI D
+Short: StochRSI K <= StochRSI D
+Long: position is flat AND chart-bar time is within the configured entry session in the configured timezone AND close > VWAP(hlc3) AND ((efficiency filter is enabled AND StochRSI K > StochRSI D) OR (efficiency filter is disabled AND StochRSI K crosses above StochRSI D)) AND (close crosses above P when only the central pivot is selected, or crosses above any of P, R1, R2, R3, S1, S2, S3 otherwise)
+Short: position is flat AND chart-bar time is within the configured entry session in the configured timezone AND close < VWAP(hlc3) AND ((efficiency filter is enabled AND StochRSI K < StochRSI D) OR (efficiency filter is disabled AND StochRSI K crosses below StochRSI D)) AND (close crosses below P when only the central pivot is selected, or crosses below any of P, R1, R2, R3, S1, S2, S3 otherwise)
+Exit: long, low <= signal-bar low OR (target mode is fixed percentage AND high >= signal-bar close * (1 + target percentage)) OR (target mode is risk/reward AND high >= signal-bar close + (signal-bar close - signal-bar low) * reward/risk parameter) OR chart-bar time is at or after the configured exit time in the configured timezone
+Exit: short, high >= signal-bar high OR (target mode is fixed percentage AND low <= signal-bar close * (1 - target percentage)) OR (target mode is risk/reward AND low <= signal-bar close - (signal-bar high - signal-bar close) * reward/risk parameter) OR chart-bar time is at or after the configured exit time in the configured timezone

@@ -1,0 +1,1 @@
+Long: 100 * (highest(close, lookback, T1) - close) / max(highest(close, lookback, T1) - lowest(close, lookback, T1), 1e-9) crosses above oversold level, evaluated on chart bars using the still-forming T1 bar

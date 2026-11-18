@@ -1,0 +1,4 @@
+Long: position is flat AND close > trendline MA (its own source and selected type; longest lookback) AND fast MA (its own source and selected type; shortest lookback) crosses above slow MA (its own source and selected type; intermediate lookback) AND close > Parabolic SAR(start, increment, maximum)
+Short: position is flat AND close < trendline MA (its own source and selected type; longest lookback) AND slow MA (its own source and selected type; intermediate lookback) crosses above fast MA (its own source and selected type; shortest lookback) AND close < Parabolic SAR(start, increment, maximum)
+Exit: long, low <= trendline MA at entry signal OR high >= close at entry signal + (close at entry signal - trendline MA at entry signal) * risk-reward parameter
+Exit: short, high >= trendline MA at entry signal OR low <= close at entry signal - (trendline MA at entry signal - close at entry signal) * risk-reward parameter

@@ -1,0 +1,4 @@
+Long: The scan-direction setting permits long signals AND the count of enabled timeframes whose still-forming bar close is above EMA(close, shared lookback) on that timeframe, sampled on chart bars, is at least the enabled timeframe count in all-enabled matching mode or the configured alignment-count parameter in count matching mode
+Short: The scan-direction setting permits short signals AND the count of enabled timeframes whose still-forming bar close is below EMA(close, shared lookback) on that timeframe, sampled on chart bars, is at least the enabled timeframe count in all-enabled matching mode or the configured alignment-count parameter in count matching mode
+Long: The long condition is true AND it was false on the previous chart bar
+Short: The short condition is true AND it was false on the previous chart bar

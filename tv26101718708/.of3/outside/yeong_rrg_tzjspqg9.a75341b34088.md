@@ -1,0 +1,5 @@
+Calculation: Relative-strength score = 100 + ((SMA(Relative Strength, P1) - SMA(SMA(Relative Strength, P1), P1)) / Standard Deviation(SMA(Relative Strength, P1), P1) + 1)
+Calculation: Relative-momentum score = 100 + ((ROC(SMA(Relative Strength, P1), P1) - SMA(ROC(SMA(Relative Strength, P1), P1), P1)) / Standard Deviation(ROC(SMA(Relative Strength, P1), P1), P1) + 1)
+Calculation: State = bullish if Relative-strength score > 100 AND Relative-momentum score > 100; cautious if Relative-strength score > 100 AND Relative-momentum score < 100; bearish if Relative-strength score < 100 AND Relative-momentum score < 100; watchful if Relative-strength score < 100 AND Relative-momentum score > 100; otherwise previous state, initially neutral
+Long: State is bullish AND calendar year >= P2
+Exit: long, State is bearish

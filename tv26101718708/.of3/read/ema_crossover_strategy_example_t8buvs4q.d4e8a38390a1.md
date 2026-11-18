@@ -1,0 +1,2 @@
+Long: MA(HLC3, shorter lookback, short smoothing type) crosses above MA(HLC3, longer lookback, long smoothing type) AND datetime is within the configurable inclusive date range
+Exit: long, (close crosses below MA(HLC3, exit lookback, exit smoothing type) AND datetime is within the configurable inclusive date range) OR datetime is before the start or after the end of that range

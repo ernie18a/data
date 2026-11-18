@@ -1,0 +1,7 @@
+Long: position is flat AND EMA(close, EMA lookback) crosses above EMA(VWMA((high + low + close) / 3, volume lookback), EMA lookback)
+Long: position is long AND EMA(close, shorter EMA lookback) > EMA(VWMA((high + low + close) / 3, volume lookback), shorter EMA lookback) AND EMA(VWMA((high + low + close) / 3, volume lookback), shorter EMA lookback) > EMA(VWMA((high + low + close) / 3, volume lookback), longer EMA lookback) AND close crosses above EMA(VWMA((high + low + close) / 3, volume lookback), longer EMA lookback) AND close > open
+Long: EMA(close, shorter EMA lookback) > EMA(VWMA((high + low + close) / 3, volume lookback), shorter EMA lookback) AND low <= EMA(VWMA((high + low + close) / 3, volume lookback)[shorter EMA lookback], shorter EMA lookback) AND close > EMA(VWMA((high + low + close) / 3, volume lookback)[shorter EMA lookback], shorter EMA lookback)
+Short: EMA(close, EMA lookback) crosses below EMA(VWMA((high + low + close) / 3, volume lookback), EMA lookback)
+Exit: Long, partial profit taking is enabled AND close >= entry price * (1 + take-profit percentage) AND RSI(close, RSI lookback) crosses below upper RSI threshold
+Exit: Long, close < entry price * (1 - stop-loss percentage)
+Exit: Short, RSI(close, RSI lookback) crosses above lower RSI threshold

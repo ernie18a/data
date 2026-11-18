@@ -1,0 +1,7 @@
+Calculation: Smoothed correlation = 100 × EMA(Correlation(close, bar_index, correlation lookback), smoothing lookback)
+Calculation: Signal line = EMA(Smoothed correlation, signal lookback)
+Calculation: Liquidity proxy = volume × TrueRange or volume × close, according to proxy mode
+Long: On the first bar a buy setup is armed, when no strong signal has occurred or the latest strong signal was short, Signal line <= buy strength threshold AND Smoothed correlation <= buy touch threshold
+Long: A buy setup is armed since the latest strong signal, no strong signal has occurred or the latest strong signal was short, Smoothed correlation crosses above Signal line, AND (turn filter disabled OR Smoothed correlation > Smoothed correlation[turn lookback]) AND (volume filter disabled OR volume > volume[volume lookback]) AND (liquidity filter disabled OR Liquidity proxy > Liquidity proxy[liquidity lookback])
+Short: On the first bar a sell setup is armed, when no strong signal has occurred or the latest strong signal was long, Signal line >= sell strength threshold AND Smoothed correlation >= sell touch threshold
+Short: A sell setup is armed since the latest strong signal, no strong signal has occurred or the latest strong signal was long, Smoothed correlation crosses below Signal line, AND (turn filter disabled OR Smoothed correlation < Smoothed correlation[turn lookback]) AND (volume filter disabled OR volume < volume[volume lookback]) AND (liquidity filter disabled OR Liquidity proxy < Liquidity proxy[liquidity lookback])

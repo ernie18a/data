@@ -1,0 +1,5 @@
+Calculation: delta = volume * (close - open) / (high - low)
+Long: (volume > SMA(volume, volume lookback) * volume multiplier AND high - low > ATR(ATR lookback) * spread multiplier AND close > open AND delta > 0 AND delta[1] < 0) OR (volume > SMA(volume, volume lookback) * volume multiplier AND close > open AND delta > SMA(delta, delta lookback) AND delta[1] < SMA(delta, delta lookback)[1])
+Short: (volume > SMA(volume, volume lookback) * volume multiplier AND high - low > ATR(ATR lookback) * spread multiplier AND close < open AND delta < 0 AND delta[1] > 0) OR (volume > SMA(volume, volume lookback) * volume multiplier AND close < open AND delta < SMA(delta, delta lookback) AND delta[1] > SMA(delta, delta lookback)[1])
+Exit: long, low <= low[1] * (1 - risk percentage / 100) OR high >= close[1] * (1 + risk percentage * reward-to-risk target / 100)
+Exit: short, high >= high[1] * (1 + risk percentage / 100) OR low <= close[1] * (1 - risk percentage * reward-to-risk target / 100)

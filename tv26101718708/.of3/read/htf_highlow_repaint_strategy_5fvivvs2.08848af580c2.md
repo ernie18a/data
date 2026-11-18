@@ -1,0 +1,2 @@
+Long: On chart bars, T1 high[P] > T1 high[P+1] AND T1 low[P] > T1 low[P+1] AND datetime is within the configurable inclusive start and end times; T1 values use configurable lookahead, with the offset bar still forming when P is zero and completed otherwise.
+Short: On chart bars, T1 high[P] < T1 high[P+1] AND T1 low[P] < T1 low[P+1] AND datetime is within the configurable inclusive start and end times; T1 values use configurable lookahead, with the offset bar still forming when P is zero and completed otherwise.

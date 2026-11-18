@@ -1,0 +1,2 @@
+Long: On chart bars, high > high(T1, last completed bar) OR on completed T2 bars, close > Highest(high, longer lookback, T2, preceding completed bars) OR close > Highest(high, shorter lookback, T2, preceding completed bars)
+Short: On chart bars, low < low(T1, last completed bar) OR on completed T2 bars, close < Lowest(low, longer lookback, T2, preceding completed bars) OR close < Lowest(low, shorter lookback, T2, preceding completed bars)

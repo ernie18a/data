@@ -1,0 +1,10 @@
+Calculation: Reference high = previous completed T1 high during the regular session; otherwise current T1 high from the regular-session ticker, calculated on T1 bars with lookahead-on and read on chart bars
+Calculation: Reference low = previous completed T1 low during the regular session; otherwise current T1 low from the regular-session ticker, calculated on T1 bars with lookahead-on and read on chart bars
+Calculation: Reference midpoint = (Reference high + Reference low) / 2
+Calculation: High swept = any chart-bar high >= Reference high since the current T1 period began; reset at each T1 period start
+Calculation: Low swept = any chart-bar low <= Reference low since the current T1 period began; reset at each T1 period start
+Calculation: Both swept = High swept AND Low swept
+Calculation: Bull sweep = Low swept AND chart-bar close > Reference low
+Calculation: Bear sweep = High swept AND chart-bar close < Reference high
+Long: (Both swept AND (chart-bar close > Reference high OR (chart-bar close >= Reference low AND chart-bar close <= Reference high AND chart-bar close > Reference midpoint))) OR (NOT Both swept AND NOT Bear sweep AND (Bull sweep OR chart-bar close > Reference midpoint)); AND (filter disabled OR T1 close >= selected MA method(T1 close, MA-filter lookback, T1, current bar) when the MA filter is selected OR T1 close >= selected MA method(T1 close, cloud slow lookback, T1, current bar) when the Cloud filter is selected); AND (regular session OR extended-hours evaluation enabled)
+Short: (Both swept AND (chart-bar close < Reference low OR (chart-bar close >= Reference low AND chart-bar close <= Reference high AND chart-bar close <= Reference midpoint))) OR (NOT Both swept AND (Bear sweep OR (NOT Bull sweep AND chart-bar close < Reference midpoint))); AND (filter disabled OR T1 close <= selected MA method(T1 close, MA-filter lookback, T1, current bar) when the MA filter is selected OR T1 close <= selected MA method(T1 close, cloud slow lookback, T1, current bar) when the Cloud filter is selected); AND (regular session OR extended-hours evaluation enabled)

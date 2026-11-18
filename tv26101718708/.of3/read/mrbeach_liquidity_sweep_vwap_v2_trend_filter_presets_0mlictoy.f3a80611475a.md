@@ -1,0 +1,4 @@
+Long: low < low(T1, last completed bar) AND close > low(T1, last completed bar) AND close > VWAP(hlc3) AND close > EMA(close, lookback) AND (session filter is disabled OR datetime is within the configured session) AND (one-trade-per-day filter is disabled OR no entry has occurred today)
+Short: high > high(T1, last completed bar) AND close < high(T1, last completed bar) AND close < VWAP(hlc3) AND close < EMA(close, lookback) AND (session filter is disabled OR datetime is within the configured session) AND (one-trade-per-day filter is disabled OR no entry has occurred today)
+Exit: long, low <= entry price - stop-loss multiplier * ATR(lookback) OR high >= entry price + take-profit multiplier * ATR(lookback)
+Exit: short, high >= entry price + stop-loss multiplier * ATR(lookback) OR low <= entry price - take-profit multiplier * ATR(lookback)

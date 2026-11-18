@@ -1,0 +1,4 @@
+Calculation: Opening-range high = maximum high of chart bars in the initial T1 session window, held after the window ends
+Calculation: Opening-range low = minimum low of chart bars in the initial T1 session window, held after the window ends
+Long: After the initial T1 session window ends, close[1] < opening-range low AND low < low[1] AND close > opening-range low AND (volume filter disabled OR (volume > SMA(volume, lookback) * volume multiplier AND volume > volume[1])) AND (CISD filter disabled OR close > high[1])
+Short: After the initial T1 session window ends, close[1] > opening-range high AND high > high[1] AND close < opening-range high AND (volume filter disabled OR (volume > SMA(volume, lookback) * volume multiplier AND volume > volume[1])) AND (CISD filter disabled OR close < low[1])

@@ -1,0 +1,9 @@
+Calculation: Fast stochastic = SMA(Stochastic %K(close, high, low, stochastic lookback), fast smoothing lookback)
+Calculation: Slow stochastic = SMA(Fast stochastic, longer slow smoothing lookback)
+Calculation: Price-stochastic reversal state = 1 when close[N] < close[N-1] AND close > close[N-1] AND Fast stochastic < Slow stochastic AND Fast stochastic > oscillator level; otherwise -1 when close[N] > close[N-1] AND close < close[N-1] AND Fast stochastic > Slow stochastic AND Fast stochastic < oscillator level; otherwise retain the previous value, initially 0
+Calculation: Facilitation state = 1 when Market Facilitation Index(high, low, volume) × scale factor > buy threshold; otherwise -1 when it is < sell threshold; otherwise retain the previous value, initially 0
+Calculation: Combined signal = 1 when both states are 1, -1 when both are -1, and 0 otherwise; swap 1 and -1 when the reverse-direction toggle is enabled
+Long: Combined signal = 1
+Short: Combined signal = -1
+Exit: long, Combined signal = 0
+Exit: short, Combined signal = 0

@@ -1,0 +1,4 @@
+Calculation: bullish CISD level = valuewhen(pivothigh(high, pivot lookback, pivot lookback) is not na, pivothigh(high, pivot lookback, pivot lookback)[pivot lookback], most recent occurrence)
+Calculation: bearish CISD level = valuewhen(pivotlow(low, pivot lookback, pivot lookback) is not na, pivotlow(low, pivot lookback, pivot lookback)[pivot lookback], most recent occurrence)
+Long: EMA(close, shorter lookback) crosses above VWMA(close, volume, longer lookback) OR close > bullish CISD level
+Short: EMA(close, shorter lookback) crosses below VWMA(close, volume, longer lookback) OR close < bearish CISD level

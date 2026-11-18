@@ -1,0 +1,13 @@
+Calculation: candle body = abs(close - open)
+Calculation: average candle body = SMA(candle body, body lookback)
+Calculation: close-normalized Bollinger width = 2 * StDev(close, Bollinger lookback) * Bollinger deviation multiplier / close
+Long: position is flat AND close crosses above SMA(close, SMA lookback) on chart bars AND, on chart bars, the still-forming T1 close > SMA(close, SMA lookback) from the still-forming T1 bar AND, on chart bars, the still-forming T2 close > SMA(close, SMA lookback) from the still-forming T2 bar (T1 is shorter than T2) AND New York hour >= start-hour parameter AND New York hour < end-hour parameter AND New York weekday is enabled AND (RSI filter disabled OR RSI(close, RSI lookback) > lower RSI threshold AND RSI(close, RSI lookback) < upper RSI threshold) AND (ADX filter disabled OR ADX(ADX lookback) > minimum ADX threshold) AND (strong-candle filter disabled OR close > open AND candle body >= average candle body * body multiplier) AND (squeeze filter disabled OR close-normalized Bollinger width > squeeze threshold
+Short: position is flat AND close crosses below SMA(close, SMA lookback) on chart bars AND, on chart bars, the still-forming T1 close < SMA(close, SMA lookback) from the still-forming T1 bar AND, on chart bars, the still-forming T2 close < SMA(close, SMA lookback) from the still-forming T2 bar (T1 is shorter than T2) AND New York hour >= start-hour parameter AND New York hour < end-hour parameter AND New York weekday is enabled AND (RSI filter disabled OR RSI(close, RSI lookback) > lower RSI threshold AND RSI(close, RSI lookback) < upper RSI threshold) AND (ADX filter disabled OR ADX(ADX lookback) > minimum ADX threshold) AND (strong-candle filter disabled OR close < open AND candle body >= average candle body * body multiplier) AND (squeeze filter disabled OR close-normalized Bollinger width > squeeze threshold
+Exit: Long, before the first target fills, low <= entry price - stop-loss distance
+Exit: Long, high >= entry price + first-target distance
+Exit: Long, after the first target fills, high >= entry price + second-target distance
+Exit: Long, after the first target fills, low <= entry price + breakeven cushion
+Exit: Short, before the first target fills, high >= entry price + stop-loss distance
+Exit: Short, low <= entry price - first-target distance
+Exit: Short, after the first target fills, low <= entry price - second-target distance
+Exit: Short, after the first target fills, high >= entry price - breakeven cushion

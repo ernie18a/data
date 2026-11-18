@@ -1,0 +1,1 @@
+Long: traded instrument close >= minimum price AND traded instrument close <= maximum price AND traded instrument close > traded instrument open AND traded instrument low > prior traded instrument low AND traded instrument volume > SMA(traded instrument volume, volume averaging period) * volume multiplier AND Nasdaq index close >= prior Nasdaq index close

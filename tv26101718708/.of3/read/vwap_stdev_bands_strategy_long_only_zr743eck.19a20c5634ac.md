@@ -1,0 +1,5 @@
+Calculation: session weighted standard deviation = sqrt(max(sum over chart bars since the current T1 session start of (volume * hl2^2) / sum over chart bars since the current T1 session start of volume - VWAP(hl2, volume, current T1 session, chart bars)^2, 0)); detect T1 session starts using the T1 still-forming bar time sampled on chart bars
+Long: close < current session VWAP - lower-band multiplier * session weighted standard deviation AND close[1] >= that same current lower band AND (last-entry time is unset at evaluation start OR elapsed minutes since last entry >= order-gap parameter), where current session VWAP is VWAP(hl2, volume, current T1 session, chart bars) using the T1 still-forming bar time sampled on chart bars
+Long: close > VWAP(hl2, volume, previous completed T1 session, chart bars)
+Short: close <= VWAP(hl2, volume, previous completed T1 session, chart bars)
+Exit: long, close - entry price >= profit-target parameter

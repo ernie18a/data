@@ -1,0 +1,3 @@
+Calculation: candle body size = abs(close - open)
+Long: volume > SMA(volume, energy lookback) × volume spike multiplier AND candle body size > SMA(candle body size, energy lookback) AND close > SMA(close, energy lookback) + band width × STDEV(close, energy lookback) AND NOT (abs(change(SMA(close, energy lookback))) < ATR(ATR lookback) × slope threshold multiplier)
+Short: volume > SMA(volume, energy lookback) × volume spike multiplier AND candle body size > SMA(candle body size, energy lookback) AND close < SMA(close, energy lookback) - band width × STDEV(close, energy lookback) AND NOT (abs(change(SMA(close, energy lookback))) < ATR(ATR lookback) × slope threshold multiplier)

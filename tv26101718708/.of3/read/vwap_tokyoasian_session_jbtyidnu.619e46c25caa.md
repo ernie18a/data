@@ -1,0 +1,2 @@
+Long: active session AND session VWAP(source, volume) is defined AND close >= session VWAP(source, volume)
+Short: active session AND session VWAP(source, volume) is defined AND close < session VWAP(source, volume)

@@ -1,0 +1,4 @@
+Calculation: range score(T) = ((close[1] - lowest(low, lookback, T, last completed T bar)) / (highest(high, lookback, T, last completed T bar) - lowest(low, lookback, T, last completed T bar)) * 100) - 50, or 0 when the highest and lowest values are equal; evaluate on chart bars using the previous chart bar's close and the range from the last completed T bar
+Calculation: weighted score = (range score(T1) * weight1 + range score(T2) * weight2 + range score(T3) * weight3 + range score(T4) * weight4 + range score(T5) * weight5 + range score(T6) * weight6) / (weight1 + weight2 + weight3 + weight4 + weight5 + weight6)
+Long: weighted score > threshold
+Short: weighted score < 0

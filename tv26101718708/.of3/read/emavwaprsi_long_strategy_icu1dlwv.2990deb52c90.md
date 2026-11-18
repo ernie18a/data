@@ -1,0 +1,2 @@
+Long: EMA(close, shorter lookback) crosses above EMA(close, longer lookback) AND close >= VWAP(close) AND close >= EMA(close, trend lookback longer than the crossover EMA lookbacks) AND RSI(close, RSI lookback) > RSI threshold AND RSI(close, RSI lookback) > RSI(close, RSI lookback)[1]
+Exit: long, (close < EMA(close, trend lookback) AND close < VWAP(close)) OR close < low of the bar immediately preceding the long-entry bar

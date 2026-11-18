@@ -1,0 +1,5 @@
+Calculation: prior breakout high = Highest(close, breakout lookback)[1]
+Calculation: long trailing stop = max(previous long trailing stop, highest high since entry - ATR multiple * ATR(ATR lookback)); initialize to current high - ATR multiple * ATR on the first bar in a long position; reset while flat
+Long: position is flat AND the longer-lookback SMA(close) is defined AND the volume average and prior breakout high are defined AND close > prior breakout high AND volume >= volume multiplier * SMA(volume, volume-average lookback) AND close > SMA(close, shorter MA lookback) AND close > SMA(close, longer MA lookback) AND SMA(close, shorter MA lookback) > SMA(close, longer MA lookback)
+Long: the longer-lookback SMA, volume average, and prior breakout high are defined AND close > SMA(close, shorter MA lookback) AND close > SMA(close, longer MA lookback) AND SMA(close, shorter MA lookback) > SMA(close, longer MA lookback) AND close < prior breakout high AND 100 * (prior breakout high / close - 1) <= developing-distance threshold
+Exit: long, low <= long trailing stop; fill at open if open < long trailing stop, otherwise at long trailing stop

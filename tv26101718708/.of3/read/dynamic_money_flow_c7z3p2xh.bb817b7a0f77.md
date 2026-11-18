@@ -1,0 +1,6 @@
+Calculation: Flow volume = the selected volume source raised to volume power; the selected source is volume or abs(close - close[1]) + 2 * abs(high - max(open, close)) + 2 * abs(min(open, close) - low)
+Calculation: Flow weight = for dynamic weighting, 0 when True Range is 0, otherwise abs((close - close[1]) / True Range); for static weighting, static bias / 100
+Calculation: Flow contribution = (0 when True Range is 0, otherwise ((close - min(low, close[1]) + close - max(high, close[1])) / True Range) * (1 - Flow weight) * Flow volume) + (0 when close = close[1], otherwise Flow weight * Flow volume when close > close[1], otherwise -Flow weight * Flow volume)
+Calculation: Dynamic Money Flow = in index mode, RMA(Flow contribution, period) / RMA(Flow volume, period); in cumulative mode, cumulative sum(Flow contribution)
+Long: With moving averages disabled, Dynamic Money Flow >= 0; with moving averages enabled, Dynamic Money Flow >= the selected EMA, WMA, T3, or FRAMA of Dynamic Money Flow at the fast lookback
+Short: With moving averages disabled, Dynamic Money Flow < 0; with moving averages enabled, Dynamic Money Flow < the selected EMA, WMA, T3, or FRAMA of Dynamic Money Flow at the fast lookback

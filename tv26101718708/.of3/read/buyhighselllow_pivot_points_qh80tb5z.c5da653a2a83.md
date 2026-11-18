@@ -1,0 +1,2 @@
+Long: close[1] crosses above R1 of Classic Pivot Points calculated from high, low, and close of the last completed T1 bar, with values used on chart bars, AND datetime >= the backtest start datetime set by the lookback-count and lookback-unit parameters
+Short: close[1] crosses below S2 of Classic Pivot Points calculated from high, low, and close of the last completed T1 bar, with values used on chart bars, AND datetime >= the backtest start datetime set by the lookback-count and lookback-unit parameters

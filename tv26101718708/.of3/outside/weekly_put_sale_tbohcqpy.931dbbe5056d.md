@@ -1,0 +1,1 @@
+Option: sell put, close < open AND (T1 high - close) > ATR(T1, length, smoothing) * percentage / 100

@@ -1,0 +1,1 @@
+Long: on chart bars, high > high[1] from T1 (last completed bar)

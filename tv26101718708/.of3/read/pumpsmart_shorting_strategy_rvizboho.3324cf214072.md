@@ -1,0 +1,5 @@
+Calculation: one-bar percentage change = (close - close[1]) / close[1]
+Calculation: pump condition = RSI(close, RSI lookback) ≥ pump RSI threshold OR (volume > SMA(volume, volume-average lookback) × volume spike multiplier AND one-bar percentage change > one-bar rise threshold)
+Short: position is flat AND (((no pump-end bar has occurred yet OR bars since the latest pump-end bar ≥ wait period) AND RSI(close, RSI lookback) ≤ cooldown RSI threshold AND (one-bar percentage change ≤ one-bar rise threshold × cooldown momentum fraction OR volume ≤ SMA(volume, volume-average lookback) × volume spike multiplier × cooldown volume fraction) AND NOT pump condition) OR (high > highest(high, new-high lookback)[1] AND NOT pump condition))
+Exit: short, pump condition
+Exit: short, close ≤ entry price × (1 − take-profit fraction) OR close ≥ entry price × (1 + stop-loss fraction)

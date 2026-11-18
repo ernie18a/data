@@ -1,0 +1,8 @@
+Calculation: VWAP = volume-weighted mean of source over the session-reset, anchor-time, or rolling-lookback accumulation selected by the VWAP mode
+Calculation: VWAP deviation = sqrt(max(0, volume-weighted mean(source^2) over the same accumulation - VWAP^2))
+Calculation: Upper VWAP band = VWAP + VWAP deviation * signal-band multiplier
+Calculation: Lower VWAP band = VWAP - VWAP deviation * signal-band multiplier
+Calculation: Upper-band sweep and reclaim = high > Upper VWAP band AND close < Upper VWAP band
+Calculation: Lower-band sweep and reclaim = low < Lower VWAP band AND close > Lower VWAP band
+Long: more than the signal-cooldown lookback bars since initialization or the latest long or short signal AND ((entry model selects sweep-bar entry AND lower-band sweep and reclaim) OR (entry model selects next-bar confirmation AND lower-band sweep and reclaim[shorter confirmation lag] AND close > high[shorter confirmation lag]) OR (entry model selects delayed confirmation AND lower-band sweep and reclaim[longer confirmation lag] AND close > highest(high, lookback equal to longer confirmation lag) AND (RSI filter disabled OR RSI(close, RSI lookback) > oversold threshold)))
+Short: more than the signal-cooldown lookback bars since initialization or the latest long or short signal AND ((entry model selects sweep-bar entry AND upper-band sweep and reclaim) OR (entry model selects next-bar confirmation AND upper-band sweep and reclaim[shorter confirmation lag] AND close < low[shorter confirmation lag]) OR (entry model selects delayed confirmation AND upper-band sweep and reclaim[longer confirmation lag] AND close < lowest(low, lookback equal to longer confirmation lag) AND (RSI filter disabled OR RSI(close, RSI lookback) < overbought threshold)))

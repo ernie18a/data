@@ -1,0 +1,2 @@
+Long: flat AND close > open AND close > SMA(close, longer lookback) AND close <= SMA(close, longer lookback) * (1 + maximum percentage above longer-lookback SMA / 100) AND close > SMA(close, shorter lookback) AND volume > SMA(volume, volume lookback) AND (confirmation parameter is disabled OR current bar is confirmed)
+Exit: long, close crosses below SMA(close, shorter lookback) AND (confirmation parameter is disabled OR current bar is confirmed)

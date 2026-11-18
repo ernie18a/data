@@ -1,0 +1,4 @@
+Long: fast HMA(close, shorter lookback) crosses above slow HMA(close, longer lookback) AND ATR(lookback) > chart ATR threshold AND ATR(lookback, T1, bar still forming) > higher-timeframe ATR threshold AND position side is flat
+Short: fast HMA(close, shorter lookback) crosses below slow HMA(close, longer lookback) AND ATR(lookback) > chart ATR threshold AND ATR(lookback, T1, bar still forming) > higher-timeframe ATR threshold AND position side is flat
+Exit: Long, low <= round(signal-bar HL2 - signal-bar ATR(lookback) * risk multiple, precision) OR high >= round(signal-bar HL2 + signal-bar ATR(lookback) * reward multiple, precision)
+Exit: Short, high >= round(signal-bar HL2 + signal-bar ATR(lookback) * risk multiple, precision) OR low <= round(signal-bar HL2 - signal-bar ATR(lookback) * reward multiple, precision)

@@ -1,0 +1,2 @@
+Long: MACD(close, shorter lookback, longer lookback, signal lookback) crosses above its signal line AND RSI(close, lookback) is between a lower threshold and an upper threshold, inclusive
+Exit: Long, close >= entry price * (1 + profit percentage threshold / 100) OR close <= entry price * (1 - loss percentage threshold / 100)

@@ -1,0 +1,6 @@
+Calculation: Raw delta = footprint delta when available; otherwise ((close - open) / (high - low if high = low then 1)) * volume
+Calculation: Absorption wall = volume > SMA(volume, volume lookback) * absorption volume multiplier AND high - low > 0 AND abs(close - open) / (high - low) * 100 <= maximum body percentage
+Long: raw delta > 0 AND volume > SMA(volume, volume lookback) * aggression volume multiplier AND close > open
+Short: raw delta < 0 AND volume > SMA(volume, volume lookback) * aggression volume multiplier AND close < open
+Long: absorption wall AND low <= most recent confirmed pivot low(low, pivot lookback bars left, pivot lookback bars right) AND high >= most recent confirmed pivot low(low, pivot lookback bars left, pivot lookback bars right)
+Short: absorption wall AND low <= most recent confirmed pivot high(high, pivot lookback bars left, pivot lookback bars right) AND high >= most recent confirmed pivot high(high, pivot lookback bars left, pivot lookback bars right) AND NOT (low <= most recent confirmed pivot low(low, pivot lookback bars left, pivot lookback bars right) AND high >= most recent confirmed pivot low(low, pivot lookback bars left, pivot lookback bars right))

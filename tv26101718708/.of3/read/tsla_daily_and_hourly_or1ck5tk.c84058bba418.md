@@ -1,0 +1,5 @@
+Calculation: Momentum blend = arithmetic mean of RSI(close, RSI lookback) and Stochastic(close, high, low, stochastic lookback)
+Calculation: Dual oscillator = EMA(Momentum blend, shorter oscillator lookback) - EMA(Momentum blend, longer oscillator lookback) + WaveTrend(HLC3, channel lookback, average lookback) / WaveTrend divisor
+Calculation: Centered flow oscillator = EMA(MFI(HLC3, MFI lookback) - MFI center, smoothing lookback) * MFI multiplier
+Long: Dual oscillator > 0 AND Centered flow oscillator > 0 AND Dual oscillator > Dual oscillator[1] AND Centered flow oscillator > Centered flow oscillator[1] AND close > EMA(close, longer trend lookback) AND close > EMA(close, shorter trend lookback) AND position is flat AND NOT (Dual oscillator[1] > 0 AND Centered flow oscillator[1] > 0 AND Dual oscillator[1] > Dual oscillator[2] AND Centered flow oscillator[1] > Centered flow oscillator[2] AND close[1] > EMA(close, longer trend lookback) AND close[1] > EMA(close, shorter trend lookback))
+Exit: Long, close < EMA(close, shorter trend lookback) OR low <= lowest(low, stop lookback)[1]

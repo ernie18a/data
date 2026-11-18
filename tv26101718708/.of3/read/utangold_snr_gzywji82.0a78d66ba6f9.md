@@ -1,0 +1,2 @@
+Long: close crosses above fixnan(PivotHigh(left lookback, right lookback)[1]) AND (Volume Oscillator(volume, shorter EMA lookback, longer EMA lookback) > threshold OR open - low > close - open)
+Short: close crosses below fixnan(PivotLow(left lookback, right lookback)[1]) AND (Volume Oscillator(volume, shorter EMA lookback, longer EMA lookback) > threshold OR open - close < high - open)

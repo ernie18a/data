@@ -1,0 +1,8 @@
+Calculation: three-bar breakout(M) = close > M AND close[1] > M[1] AND close[2] > M[2] AND close[3] < M[3]
+Calculation: exit stage = reset to 0 while flat; on each long bar, if the previous stage < 1 and close >= entry price × (1 + first trigger percentage / 100), set to 1; then if the updated stage < 2 and close >= entry price × (1 + second trigger percentage / 100), set to 2; otherwise retain the stage
+Calculation: stage-one reference price = close when the exit stage first changes to 1
+Calculation: active stop = reset while flat; on the first long bar use the current stage stop, and on later long bars use max(previous active stop, current stage stop); the stage stop is entry price × (1 − initial stop distance / 100) at stage 0, stage-one reference price × (1 − stage-one stop distance / 100) at stage 1, and Highest(high, bars since entry) × (1 − trailing distance / 100) at stage 2
+Long: (SMA(close, shortest lookback) crosses above SMA(close, second-shortest lookback) OR three-bar breakout(SMA(close, second-shortest lookback)) OR three-bar breakout(SMA(close, second-longest lookback)) OR three-bar breakout(SMA(close, longest lookback))) AND (VIX filter disabled OR VIX close from the still-forming T1 bar, taken on chart bars, < VIX threshold)
+Exit: Long, low <= active stop
+Exit: Long, VIX filter enabled AND VIX close from the still-forming T1 bar, taken on chart bars, > VIX threshold
+Exit: Long, SMA(close, shortest lookback) crosses below SMA(close, second-shortest lookback)

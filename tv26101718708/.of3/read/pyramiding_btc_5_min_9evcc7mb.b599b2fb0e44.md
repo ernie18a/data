@@ -1,0 +1,3 @@
+Calculation: WMA blend = WMA(3 × WMA(close, lookback/6) − WMA(close, lookback/4) − WMA(close, lookback/2), lookback/2) on T1 bars, sampled on chart bars from the configured offset in T1 bars (zero offset uses the forming T1 bar; positive offsets use completed T1 bars)
+Long: filter is disabled OR EMA(close, shorter lookback) > EMA(close, longer lookback); AND LinReg(close, regression lookback, 0) crosses above WMA blend; AND datetime is within the configured start and end timestamps, inclusive
+Exit: Long, high ≥ entry price + close × (target percentage / 100) OR low ≤ entry price − close × (stop percentage / 100)

@@ -1,0 +1,3 @@
+Calculation: offset midpoint = ((Highest(high, midpoint lookback) + Lowest(low, midpoint lookback)) / 2) * (1 + percentage parameter)
+Long: MA(SMA(source parameter, first lookback), second lookback, selected average type) crosses above offset midpoint[shift parameter]
+Short: offset midpoint[shift parameter] crosses above MA(SMA(source parameter, first lookback), second lookback, selected average type)

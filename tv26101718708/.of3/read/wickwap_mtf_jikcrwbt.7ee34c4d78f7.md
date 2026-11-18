@@ -1,0 +1,4 @@
+Calculation: Upper wick = high - max(open, close)
+Calculation: Lower wick = min(open, close) - low
+Long: On chart bars using current T1-timeframe values (last completed on historical bars; still forming in real time), Lower wick >= SMA(Lower wick, wick-average lookback, T1) * minimum-wick-strength multiplier AND pivot low(low, swing length, swing length, T1) exists
+Short: On chart bars using current T1-timeframe values (last completed on historical bars; still forming in real time), Upper wick >= SMA(Upper wick, wick-average lookback, T1) * minimum-wick-strength multiplier AND pivot high(high, swing length, swing length, T1) exists

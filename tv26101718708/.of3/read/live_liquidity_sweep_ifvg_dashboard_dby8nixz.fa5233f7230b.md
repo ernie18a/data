@@ -1,0 +1,11 @@
+Calculation: Bullish sweep = low < the most recently confirmed PivotLow(low, swing length, swing length) AND close > that pivot low
+Calculation: Bearish sweep = high > the most recently confirmed PivotHigh(high, swing length, swing length) AND close < that pivot high
+Calculation: Active bullish sweep = a bullish sweep occurred within the signal window and is the latest sweep; a bearish sweep clears it, and a bearish sweep takes precedence if both occur on the same bar
+Calculation: Active bearish sweep = a bearish sweep occurred within the signal window and is the latest sweep; a bullish sweep clears it, and a bearish sweep takes precedence if both occur on the same bar
+Calculation: Signal allowed = no prior long or short signal occurred, or the most recent such signal was more than the cooldown bars ago
+Calculation: Long score = sweep weight if Active bullish sweep, otherwise zero, plus FVG weight if low > high[FVG gap lookback], otherwise zero, plus displacement weight if close > open AND close > close[displacement lookback], otherwise zero, plus trend weight if close > EMA(close, trend lookback), otherwise zero, plus RSI weight if RSI(close, RSI lookback) > long RSI lower bound AND RSI(close, RSI lookback) < long RSI upper bound, otherwise zero, plus volume weight if volume > SMA(volume, volume lookback), otherwise zero
+Calculation: Short score = sweep weight if Active bearish sweep, otherwise zero, plus FVG weight if high < low[FVG gap lookback], otherwise zero, plus displacement weight if close < open AND close < close[displacement lookback], otherwise zero, plus trend weight if close < EMA(close, trend lookback), otherwise zero, plus RSI weight if RSI(close, RSI lookback) < short RSI upper bound AND RSI(close, RSI lookback) > short RSI lower bound, otherwise zero, plus volume weight if volume > SMA(volume, volume lookback), otherwise zero
+Long: Active bullish sweep
+Long: Signal allowed AND Long score >= minimum signal score
+Short: Active bearish sweep
+Short: Signal allowed AND Short score >= minimum signal score

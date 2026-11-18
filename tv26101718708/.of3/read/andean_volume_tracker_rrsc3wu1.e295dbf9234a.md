@@ -1,0 +1,2 @@
+Long: Andean Oscillator bullish component crosses above its bearish component AND volume > SMA(volume, volume lookback) * volume multiplier AND close >= open
+Short: Andean Oscillator bearish component crosses above its bullish component AND volume > SMA(volume, volume lookback) * volume multiplier AND close < open

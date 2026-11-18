@@ -1,0 +1,2 @@
+Long: RSI(source, RSI lookback) crosses below oversold threshold OR RSI(source, RSI lookback) crosses above its moving average(type, MA lookback)
+Short: RSI(source, RSI lookback) crosses above overbought threshold OR RSI(source, RSI lookback) crosses below its moving average(type, MA lookback)

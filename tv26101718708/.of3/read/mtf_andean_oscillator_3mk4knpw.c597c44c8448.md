@@ -1,0 +1,2 @@
+Long: Andean Oscillator bull line (lookback, T1 bars, current bar) > Andean Oscillator bear line (same lookback, T1 bars, current bar)
+Short: Andean Oscillator bear line (lookback, T1 bars, current bar) > Andean Oscillator bull line (same lookback, T1 bars, current bar)

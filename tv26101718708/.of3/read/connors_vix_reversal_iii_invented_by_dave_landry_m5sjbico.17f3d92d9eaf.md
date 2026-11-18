@@ -1,0 +1,4 @@
+Long: T1 low (current bar) > SMA(T1 close, lookback, on chart bars taking T1 values) AND T1 close (current bar) > SMA(T1 close, lookback, on chart bars taking T1 values) * (1 + percentage threshold / 100)
+Short: T1 high (current bar) < SMA(T1 close, lookback, on chart bars taking T1 values) AND T1 close (current bar) < SMA(T1 close, lookback, on chart bars taking T1 values) * (1 - percentage threshold / 100)
+Exit: long, T1 low (current bar) < SMA(T1 close shifted back one chart bar, lookback, on chart bars taking T1 values)
+Exit: short, T1 high (current bar) > SMA(T1 close shifted back one chart bar, lookback, on chart bars taking T1 values)

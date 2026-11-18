@@ -1,0 +1,8 @@
+Calculation: Stochastic K = Stochastic %K(close, high, low, K lookback)
+Calculation: Stochastic D = SMA(Stochastic K, D smoothing lookback)
+Calculation: Short EMA = EMA(close, shorter lookback)
+Calculation: Long EMA = EMA(close, longer lookback)
+Calculation: Average volume = SMA(volume, volume lookback)
+Calculation: Middle-zone-seen = true if, since entry, a bar had both Stochastic K and Stochastic D greater than middle-zone multiplier × oversold threshold and less than overbought threshold
+Long: flat AND within the configured date range AND (((Stochastic K <= oversold threshold AND Stochastic D <= oversold threshold AND Stochastic K crosses above Stochastic D AND Stochastic K > Stochastic K[1] AND Stochastic D > Stochastic D[1]) OR (Stochastic K > Stochastic K[1] AND Stochastic D > Stochastic D[1] AND Stochastic K[1] crosses above Stochastic D[1])) AND close > open AND volume / Average volume >= volume multiplier OR (Short EMA crosses above Long EMA AND Short EMA > Short EMA[1] AND Long EMA > Long EMA[1] AND close > open))
+Exit: long, within the configured date range AND (close < entry price × (1 − stop-loss fraction) OR (Middle-zone-seen AND ((Stochastic K <= oversold threshold AND Stochastic D <= oversold threshold) OR Short EMA crosses below Long EMA OR (Stochastic K crosses below Stochastic D AND Stochastic K[1] >= overbought threshold AND Stochastic D[1] >= overbought threshold AND Stochastic K <= overbought threshold AND Stochastic K <= Stochastic K[1] AND Stochastic D <= Stochastic D[1]))))

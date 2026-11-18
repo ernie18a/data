@@ -1,0 +1,3 @@
+Calculation: confirmation score = on chart bars, count of the four sectors whose smoothed price is above its baseline and, when the breakout filter is enabled, at or above its preceding highest smoothed price over the breakout lookback; for each sector, smoothed price = EMA(close, shorter smoothing lookback) on T1 bars and baseline = SMA(smoothed price, longer baseline lookback) on T1 bars, using each sector’s last completed T1 bar
+Long: confirmation score = 4 and all four sector calculations and required lookbacks are available
+Short: confirmation score <= 1 and all four sector calculations and required lookbacks are available

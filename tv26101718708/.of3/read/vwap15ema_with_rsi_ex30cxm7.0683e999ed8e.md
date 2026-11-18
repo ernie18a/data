@@ -1,0 +1,2 @@
+Long: close > VWAP(VWAP source, anchor-period parameter) AND close > EMA(EMA source, EMA lookback) AND RSI(RSI source, RSI lookback) > RSI threshold parameter
+Exit: long, low <= entry price * (1 - stop-loss percentage parameter / 100) OR high >= entry price * (1 + take-profit percentage parameter / 100) OR low <= highest(high since entry) * (1 - trailing-stop percentage parameter / 100)

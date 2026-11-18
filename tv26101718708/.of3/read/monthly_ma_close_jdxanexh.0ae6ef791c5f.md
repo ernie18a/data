@@ -1,0 +1,2 @@
+Long: On chart bars, close of the selected source on the last completed T1 bar > EMA(close, lookback, T2, last completed bar) if the MA-type parameter selects EMA, otherwise SMA(close, lookback, T2, last completed bar)
+Short: On chart bars, close of the selected source on the last completed T1 bar < EMA(close, lookback, T2, last completed bar) if the MA-type parameter selects EMA, otherwise SMA(close, lookback, T2, last completed bar)

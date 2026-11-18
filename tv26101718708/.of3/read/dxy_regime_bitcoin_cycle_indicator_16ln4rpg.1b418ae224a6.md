@@ -1,0 +1,2 @@
+Long: ROC(SMA(close, P1), P2) < 0, calculated on T1 bars using the bar still forming and sampled on chart bars
+Short: ROC(SMA(close, P1), P2) > 0, calculated on T1 bars using the bar still forming and sampled on chart bars

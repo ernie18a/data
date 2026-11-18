@@ -1,0 +1,3 @@
+Calculation: combined momentum = (RSI(close, momentum lookback) + MFI(hlc3, momentum lookback)) / 2
+Long: combined momentum[1] < positive threshold AND combined momentum > positive threshold AND combined momentum > negative threshold AND change(EMA(close, EMA lookback)) > 0 AND combined momentum[1] < negative threshold AND change(EMA(close, EMA lookback))[1] < 0
+Short: combined momentum < negative threshold AND change(EMA(close, EMA lookback)) < 0 AND combined momentum[2] < positive threshold AND combined momentum[1] > positive threshold AND combined momentum[1] > negative threshold AND change(EMA(close, EMA lookback))[1] > 0

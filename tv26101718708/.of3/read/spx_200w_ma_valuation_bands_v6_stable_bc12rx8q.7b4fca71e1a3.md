@@ -1,0 +1,2 @@
+Long: close > SMA(close, lookback, T1, bar still forming), calculated on T1 bars and mapped to chart bars
+Short: close < SMA(close, lookback, T1, bar still forming), calculated on T1 bars and mapped to chart bars

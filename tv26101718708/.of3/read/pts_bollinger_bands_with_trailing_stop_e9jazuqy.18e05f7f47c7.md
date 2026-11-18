@@ -1,0 +1,2 @@
+Long: close > upper Bollinger Band(close, lookback, basis moving average type, standard deviation multiplier)
+Exit: long, close < lower Bollinger Band(close, lookback, basis moving average type, standard deviation multiplier) OR low <= highest high since trailing stop activation - ATR(ATR lookback) at activation * trailing stop multiplier

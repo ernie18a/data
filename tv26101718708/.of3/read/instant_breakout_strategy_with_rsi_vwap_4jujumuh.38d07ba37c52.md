@@ -1,0 +1,5 @@
+Calculation: Bar momentum = (close - open) / open
+Long: close crosses above the latest confirmed PivotHigh(high, left pivot lookback, right pivot lookback) AND (filters are disabled OR (volume > SMA(volume, volume lookback) * volume multiplier AND Bar momentum > momentum threshold AND RSI(close, RSI lookback) > RSI threshold AND close > VWAP(close)))
+Short: close crosses below the latest confirmed PivotLow(low, left pivot lookback, right pivot lookback) AND (filters are disabled OR (volume > SMA(volume, volume lookback) * volume multiplier AND Bar momentum < -momentum threshold AND RSI(close, RSI lookback) < RSI threshold AND close < VWAP(close)))
+Exit: Long, on bars after the long breakout, high >= breakout-bar close + ATR(ATR lookback) on the breakout bar * take-profit multiplier OR low <= breakout-bar close - ATR(ATR lookback) on the breakout bar * stop-loss multiplier
+Exit: Short, on bars after the short breakout, low <= breakout-bar close - ATR(ATR lookback) on the breakout bar * take-profit multiplier OR high >= breakout-bar close + ATR(ATR lookback) on the breakout bar * stop-loss multiplier

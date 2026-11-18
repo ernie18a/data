@@ -1,0 +1,10 @@
+Calculation: Candle overlap ratio = SMA(positive part of min(high, previous bar high) - max(low, previous bar low), overlap smoothing) / max(high - low, denominator floor)
+Calculation: Trend quality = clamp(efficiency score weight × abs(close - close[trend lookback]) / max(sum(high - low, trend lookback), denominator floor) × efficiency scale + (overlap cap - min(candle overlap ratio, overlap cap)) × overlap score weight + positive part(wick penalty ceiling - SMA(((high - max(open, close)) + (min(open, close) - low)) / max(abs(open - close), denominator floor), trend lookback) × wick penalty weight), score floor, score ceiling)
+Calculation: Choppy = candle overlap ratio > overlap chop threshold OR trend quality < trend-quality chop threshold
+Calculation: Directional close strength = (close > open ? close - low : high - close) / max(high - low, denominator floor)
+Calculation: High-efficiency candle = directional close strength > high-efficiency threshold
+Calculation: Absorption = high - low > SMA(high - low, momentum lookback) AND directional close strength < absorption threshold
+Long: close > open AND (high-efficiency candle OR (NOT absorption AND NOT choppy))
+Short: close <= open AND (high-efficiency candle OR (NOT absorption AND NOT choppy))
+Long: low < latest confirmed pivot low(low, liquidity pivot lookback, liquidity pivot lookback) AND close > latest confirmed pivot low(low, liquidity pivot lookback, liquidity pivot lookback) AND close - low > ATR(ATR lookback) × sweep-distance factor AND high - low > SMA(high - low, momentum lookback)
+Short: high > latest confirmed pivot high(high, liquidity pivot lookback, liquidity pivot lookback) AND close < latest confirmed pivot high(high, liquidity pivot lookback, liquidity pivot lookback) AND high - close > ATR(ATR lookback) × sweep-distance factor AND high - low > SMA(high - low, momentum lookback)

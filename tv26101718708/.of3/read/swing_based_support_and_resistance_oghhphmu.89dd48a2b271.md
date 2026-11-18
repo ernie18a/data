@@ -1,0 +1,3 @@
+Calculation: swing level(initial value, calculation bars) = swing low if swing high exists, otherwise swing high if swing low exists, otherwise prior swing level; initialize to initial value, where swing high = high when high > high[1] AND high > high[swing lookback], else na, and swing low = low when low < low[1] AND low < low[swing lookback], else na
+Long: close > swing level(close, chart bars) OR close > swing level(na, T1 bars using the still-forming bar, with the result carried onto chart bars)
+Short: close < swing level(close, chart bars) OR close < swing level(na, T1 bars using the still-forming bar, with the result carried onto chart bars)

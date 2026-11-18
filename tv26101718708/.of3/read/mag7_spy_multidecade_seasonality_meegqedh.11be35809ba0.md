@@ -1,0 +1,3 @@
+Calculation: Pos%(lookback years, T1) = 100 × count of completed T1 bars in the lookback-year range ending in the current calendar year whose calendar month equals the current calendar month and whose close is at least the preceding T1 close, divided by the count of those bars whose preceding T1 close is nonzero; calculate on T1 bars, excluding the forming bar
+Long: Pos%(shorter lookback years, T1) ≥ long threshold for shorter lookback AND Pos%(longer lookback years, T1) ≥ long threshold for longer lookback
+Short: Pos%(shorter lookback years, T1) ≤ short threshold OR Pos%(longer lookback years, T1) ≤ short threshold

@@ -1,0 +1,9 @@
+Calculation: Z-score(source, signal/trend lookback) = (source - SMA(source, signal/trend lookback)) / STDEV(source, signal/trend lookback), or 0 when STDEV is 0
+Calculation: Composite signal = arithmetic mean of Z-score(RSI(close, oscillator lookback), signal/trend lookback), Z-score(MFI(HLC3, oscillator lookback), signal/trend lookback), and Z-score(ROC(close, momentum lookback), signal/trend lookback)
+Calculation: Regime probability = EMA(1 when ADX(ADX lookback) > ADX threshold, otherwise 0, regime EMA lookback)
+Calculation: Chebyshev return = (close - close[return lookback]) / close[return lookback]
+Calculation: Chebyshev filter = STDEV(Chebyshev return, center lookback) > 0 AND Chebyshev return < SMA(Chebyshev return, center lookback) + bound multiplier × STDEV(Chebyshev return, center lookback) AND Chebyshev return > SMA(Chebyshev return, center lookback) - bound multiplier × STDEV(Chebyshev return, center lookback)
+Long: Composite signal crosses above entry threshold AND EMA(close, signal/trend lookback) > EMA(close, signal/trend lookback)[1] AND Regime probability > regime probability threshold AND Chebyshev filter AND close >= VWAP
+Short: Composite signal crosses below negative entry threshold AND EMA(close, signal/trend lookback) < EMA(close, signal/trend lookback)[1] AND Regime probability > regime probability threshold AND Chebyshev filter AND close <= VWAP
+Exit: Long, low <= entry price - stop ATR multiplier × ATR(ATR lookback) OR high >= entry price + target ATR multiplier × ATR(ATR lookback) OR close crosses below VWAP OR Composite signal crosses below signal exit level
+Exit: Short, high >= entry price + stop ATR multiplier × ATR(ATR lookback) OR low <= entry price - target ATR multiplier × ATR(ATR lookback) OR close crosses above VWAP OR Composite signal crosses above signal exit level

@@ -1,0 +1,15 @@
+Calculation: Range midpoint = (highest(high, range lookback) + lowest(low, range lookback)) / 2
+Calculation: Bullish fair value gap = low > high[2] AND close[1] > high[2]
+Calculation: Bearish fair value gap = high < low[2] AND close[1] < low[2]
+Calculation: Initial long stop = entry-signal bar low - ATR(ATR lookback) * ATR stop multiple
+Calculation: Initial short stop = entry-signal bar high + ATR(ATR lookback) * ATR stop multiple
+Calculation: Long target = entry-signal bar close + (entry-signal bar close - initial long stop) * reward-to-risk multiple
+Calculation: Short target = entry-signal bar close - (initial short stop - entry-signal bar close) * reward-to-risk multiple
+Calculation: Long stop = before the long target is touched, the greater of the initial long stop and the running maximum since entry of low - ATR(ATR lookback) * ATR stop multiple; after the target is touched, the greater of average entry price and the running maximum since the target touch of low - ATR(ATR lookback) * ATR stop multiple
+Calculation: Short stop = before the short target is touched, the lesser of the initial short stop and the running minimum since entry of high + ATR(ATR lookback) * ATR stop multiple; after the target is touched, the lesser of average entry price and the running minimum since the target touch of high + ATR(ATR lookback) * ATR stop multiple
+Long: position side is flat AND the direction setting permits long AND (the structure setting selects internal and close crosses above the most recent confirmed PivotHigh(high, internal lookback, internal lookback), OR the structure setting selects swing and close crosses above the most recent confirmed PivotHigh(high, swing lookback, swing lookback)) AND (premium/discount filter is off OR close < range midpoint) AND (FVG filter is off OR bullish fair value gap OR bullish fair value gap[1]) AND (divergence filter is off OR RSI(close, RSI lookback) > RSI(close, RSI lookback)[1] AND low < low[1]) AND (Bollinger filter is off OR close > Bollinger basis(close, Bollinger lookback))
+Short: position side is flat AND the direction setting permits short AND (the structure setting selects internal and close crosses below the most recent confirmed PivotLow(low, internal lookback, internal lookback), OR the structure setting selects swing and close crosses below the most recent confirmed PivotLow(low, swing lookback, swing lookback)) AND (premium/discount filter is off OR close > range midpoint) AND (FVG filter is off OR bearish fair value gap OR bearish fair value gap[1]) AND (divergence filter is off OR RSI(close, RSI lookback) < RSI(close, RSI lookback)[1] AND high > high[1]) AND (Bollinger filter is off OR close < Bollinger basis(close, Bollinger lookback))
+Exit: Long, high >= long target
+Exit: Long, low <= long stop
+Exit: Short, low <= short target
+Exit: Short, high >= short stop

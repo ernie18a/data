@@ -1,0 +1,2 @@
+Long: on chart bars taking values from T1, change(time(T1)) != 0 AND close(T1, bar still forming) > high(T1, last completed bar) AND high(T1, bar still forming) > low(T1, bar still forming)
+Short: on chart bars taking values from T1, change(time(T1)) != 0 AND close(T1, bar still forming) < low(T1, last completed bar) AND high(T1, bar still forming) > low(T1, bar still forming)

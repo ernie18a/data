@@ -1,0 +1,5 @@
+Calculation: Spread = abs(EMA(close, shorter lookback) - EMA(close, longer lookback))
+Long: close > VWAP(close) AND EMA(close, shorter lookback) > EMA(close, longer lookback) AND Spread > spread threshold AND Spread > SMA(Spread, strong-trend lookback) * strong-trend threshold AND volume > SMA(volume, volume lookback) * volume multiplier AND close > high[1] AND close > open
+Short: close < VWAP(close) AND EMA(close, shorter lookback) < EMA(close, longer lookback) AND Spread > spread threshold AND Spread > SMA(Spread, strong-trend lookback) * strong-trend threshold AND volume > SMA(volume, volume lookback) * volume multiplier AND close < low[1] AND close < open
+Exit: long, close < EMA(close, shorter lookback) OR close < VWAP(close)
+Exit: short, close > EMA(close, shorter lookback) OR close > VWAP(close)

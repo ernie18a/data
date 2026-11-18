@@ -1,0 +1,4 @@
+Calculation: AlphaTrend indicator = if (no-volume mode ? RSI(close, common lookback) : MFI(hlc3, common lookback)) >= momentum threshold then max(AlphaTrend indicator[1], low - SMA(TrueRange, common lookback) * multiplier) else min(AlphaTrend indicator[1], high + SMA(TrueRange, common lookback) * multiplier), initialized to 0
+Long: position side is flat or short AND AlphaTrend indicator crosses above AlphaTrend indicator[2]
+Short: shorting is enabled AND position side is flat or long AND AlphaTrend indicator crosses below AlphaTrend indicator[2]
+Exit: long, shorting is disabled AND AlphaTrend indicator crosses below AlphaTrend indicator[2]

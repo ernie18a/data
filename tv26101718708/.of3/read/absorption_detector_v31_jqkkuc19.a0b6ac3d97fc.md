@@ -1,0 +1,3 @@
+Calculation: Smoothed absorption z-score = SMA((volume / max(high - low, minimum tick size) - SMA(volume / max(high - low, minimum tick size), normalization lookback)) / max(STDEV(volume / max(high - low, minimum tick size), normalization lookback), standard-deviation floor), smoothing length)
+Long: Smoothed absorption z-score > absorption threshold AND close < SMA(close, trend lookback) AND close < close[trend lookback] AND at least cooldown bars have elapsed since chart bar 0 or the previous long signal
+Short: Smoothed absorption z-score > absorption threshold AND close > SMA(close, trend lookback) AND close > close[trend lookback] AND at least cooldown bars have elapsed since chart bar 0 or the previous short signal

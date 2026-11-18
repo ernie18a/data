@@ -1,0 +1,2 @@
+Calculation: drawdown from all-time high = (close - highest high since first available chart bar) / highest high since first available chart bar * 100
+Long: RSI(close, P1) < P2 AND RSI(close, P3) < P4 AND SMA(Stochastic(close, high, low, P5), P6) < P7 AND VIX close at T1 > P8 AND drawdown from all-time high <= -abs(P9) AND volume > Median(volume, P10) AND volume / SMA(volume, P11) > P12

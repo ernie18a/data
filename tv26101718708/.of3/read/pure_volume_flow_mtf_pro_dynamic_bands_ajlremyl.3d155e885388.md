@@ -1,0 +1,5 @@
+Calculation: Volume flow(multiplier) = EMA((EMA((volume if close > close[1] else 0) - (volume if close < close[1] else 0), volume lookback × multiplier) / (EMA(volume, volume lookback × multiplier) + epsilon)), flow smoothing lookback × multiplier)
+Calculation: Intermediate flow = EMA(Volume flow(intermediate multiplier greater than base multiplier), intermediate flow EMA lookback) × intermediate scale
+Calculation: Long flow = EMA(Volume flow(long multiplier greater than intermediate multiplier), long flow EMA lookback longer than intermediate flow EMA lookback) × long scale
+Long: Volume flow(base multiplier) crosses above EMA(Volume flow(base multiplier), signal lookback) OR Volume flow(base multiplier) > Volume flow(base multiplier)[1] OR Intermediate flow > Intermediate flow[1] OR Long flow > Long flow[1]
+Short: Volume flow(base multiplier) crosses below EMA(Volume flow(base multiplier), signal lookback) OR Volume flow(base multiplier) <= Volume flow(base multiplier)[1] OR Intermediate flow <= Intermediate flow[1] OR Long flow <= Long flow[1]

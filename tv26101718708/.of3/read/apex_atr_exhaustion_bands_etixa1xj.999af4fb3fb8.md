@@ -1,0 +1,2 @@
+Long: On each chart bar, low <= close of the last completed T1 bar - ATR(lookback, T1, last completed bar) * threshold / 100.
+Short: On each chart bar, high >= close of the last completed T1 bar + ATR(lookback, T1, last completed bar) * threshold / 100.

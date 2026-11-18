@@ -1,0 +1,5 @@
+Calculation: Entry filters = volume > SMA(volume, volume lookback) AND ADX(DI length, ADX smoothing) > ADX threshold
+Long: position is flat AND Entry filters AND ((low > high[2] AND close[1] > open[1]) OR (MACD line crosses above MACD signal line AND RSI(close, lookback) < RSI threshold))
+Short: position is flat AND Entry filters AND ((high < low[2] AND close[1] < open[1]) OR (MACD line crosses below MACD signal line AND RSI(close, lookback) > RSI threshold))
+Exit: Long, low reaches the stop-loss level below entry price OR (highest high since entry reaches the trailing activation level above entry price AND low <= highest high since entry minus trailing offset)
+Exit: Short, high reaches the stop-loss level above entry price OR (lowest low since entry reaches the trailing activation level below entry price AND high >= lowest low since entry plus trailing offset)

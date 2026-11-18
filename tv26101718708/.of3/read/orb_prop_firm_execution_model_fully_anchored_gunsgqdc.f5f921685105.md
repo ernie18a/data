@@ -1,0 +1,4 @@
+Calculation: opening-range high = maximum high from chart bars during the opening-range duration after the New York session open
+Calculation: opening-range low = minimum low from chart bars during the opening-range duration after the New York session open
+Long: opening-range duration has ended AND close crosses above opening-range high AND close > AVWAP(HLC3, session anchor) AND close > SMA(close, lookback) AND SMA(close, lookback) > SMA(close, lookback)[1] AND volume > SMA(volume, same lookback) × volume multiplier
+Short: opening-range duration has ended AND close crosses below opening-range low AND close < AVWAP(HLC3, session anchor) AND close < SMA(close, lookback) AND SMA(close, lookback) < SMA(close, lookback)[1] AND volume > SMA(volume, same lookback) × volume multiplier

@@ -1,0 +1,2 @@
+Long: Momentum(short-term Treasury yield, P1) < 0 AND Momentum(long-term Treasury yield, P1) <= 0 AND (Momentum(long-term Treasury yield - short-term Treasury yield, P1) > 0 OR Momentum(long-term Treasury yield - short-term Treasury yield, P1) < 0)
+Short: Momentum(short-term Treasury yield, P1) >= 0 AND Momentum(long-term Treasury yield, P1) > 0 AND (Momentum(long-term Treasury yield - short-term Treasury yield, P1) > 0 OR Momentum(long-term Treasury yield - short-term Treasury yield, P1) < 0)

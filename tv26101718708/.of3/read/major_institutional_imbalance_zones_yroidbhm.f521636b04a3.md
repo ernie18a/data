@@ -1,0 +1,2 @@
+Long: low > high[2] AND low - high[2] > ATR(ATR lookback) * gap threshold AND close > open AND close - open > ATR(ATR lookback) * displacement threshold AND (volume filter disabled OR volume > SMA(volume, volume lookback))
+Short: high < low[2] AND low[2] - high > ATR(ATR lookback) * gap threshold AND close < open AND open - close > ATR(ATR lookback) * displacement threshold AND (volume filter disabled OR volume > SMA(volume, volume lookback))

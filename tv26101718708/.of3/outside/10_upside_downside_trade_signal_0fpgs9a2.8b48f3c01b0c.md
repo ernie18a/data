@@ -1,0 +1,8 @@
+Calculation: Bullish confirmation = close > EMA(close, fast EMA length) AND close > EMA(close, slow EMA length) AND EMA(close, fast EMA length) > EMA(close, slow EMA length) AND RSI(close, RSI length) >= bullish RSI minimum AND RSI(close, RSI length) < bullish RSI upper bound AND close > highest(high, breakout lookback)[1] AND (MACD confirmation disabled OR (MACD(close, MACD fast length, MACD slow length, MACD signal length) line > signal line AND histogram > 0)) AND (volume confirmation disabled OR volume > SMA(volume, volume average length))
+Calculation: Bearish confirmation = close < EMA(close, fast EMA length) AND close < EMA(close, slow EMA length) AND EMA(close, fast EMA length) < EMA(close, slow EMA length) AND RSI(close, RSI length) <= bearish RSI maximum AND RSI(close, RSI length) > bearish RSI lower bound AND close < lowest(low, breakout lookback)[1] AND (MACD confirmation disabled OR (MACD(close, MACD fast length, MACD slow length, MACD signal length) line < signal line AND histogram < 0)) AND (volume confirmation disabled OR volume > SMA(volume, volume average length))
+Calculation: Bullish signal = bullish confirmation AND NOT bullish confirmation on the prior chart bar
+Calculation: Bearish signal = bearish confirmation AND NOT bearish confirmation on the prior chart bar
+Long: bullish signal
+Short: bearish signal
+Option: buy call, bullish signal AND volume > SMA(volume, volume average length) AND SPY/QQQ market direction agrees with the trade AND option spread <= maximum spread
+Option: buy put, bearish signal AND volume > SMA(volume, volume average length)

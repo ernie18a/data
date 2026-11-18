@@ -1,0 +1,3 @@
+Calculation: Z = (log(R) - SMA(log(R), Z-lookback)) / population StDev(log(R), Z-lookback), or 0 if that StDev is zero, where R is the T1 close of the altcoin market-cap series divided by the T1 close of the USDT-dominance series; SMA and StDev run on chart bars using T1 values, which come from the still-forming T1 bar in real time and the last completed T1 bar historically.
+Long: (mode = Extremes AND (Z < lower threshold 1 OR Z < lower threshold 2)) OR (mode = Trend AND Z > EMA(Z, separate EMA lookback))
+Short: (mode = Extremes AND (Z > upper threshold 1 OR Z > upper threshold 2)) OR (mode = Trend AND Z <= EMA(Z, separate EMA lookback))

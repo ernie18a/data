@@ -1,0 +1,3 @@
+Calculation: Intrabar volume delta = on each chart bar, sum T1 intrabar volume when close > open minus T1 intrabar volume when close < open; equal close and open contributes zero; if no T1 intrabars are available, use chart-bar volume with the same close-versus-open sign. Use available intrabars, including a still-forming T1 bar.
+Long: Intrabar volume delta >= 0 OR CVD(intrabar volume delta, optional daily-session reset) >= 0 OR volume / SMA(volume, relative-volume lookback) >= minimum relative volume AND high > low AND abs(close - open) / (high - low) <= maximum body-to-range ratio
+Short: Intrabar volume delta < 0 OR CVD(intrabar volume delta, optional daily-session reset) < 0

@@ -1,0 +1,4 @@
+Calculation: normalized momentum = (close - close[n bars ago]) / ATR(lookback)
+Calculation: relative volume = volume / SMA(volume, lookback)
+Long: normalized momentum > momentum threshold AND EMA(close, shorter lookback) > EMA(close, longer lookback) AND relative volume > volume threshold AND (RSI(close, lookback) <= overbought threshold OR close <= upper Bollinger Band(close, lookback, standard-deviation multiplier)
+Short: normalized momentum < -momentum threshold AND EMA(close, shorter lookback) < EMA(close, longer lookback) AND relative volume > volume threshold AND (RSI(close, lookback) >= oversold threshold OR close >= lower Bollinger Band(close, lookback, standard-deviation multiplier)

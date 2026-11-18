@@ -1,0 +1,7 @@
+Long: close >= MA(master source, master lookback, master type) AND close >= MA(filter source, filter lookback, filter type)
+Long: close crosses above MA(master source, master lookback, master type)
+Long: close crosses above MA(smoothing source, smoothing lookback, smoothing type)
+Short: close < MA(master source, master lookback, master type) AND close <= MA(filter source, filter lookback, filter type)
+Short: close crosses below MA(master source, master lookback, master type)
+Short: close crosses below MA(smoothing source, smoothing lookback, smoothing type)
+Exit: long, (close >= MA(master source, master lookback, master type) AND close < MA(filter source, filter lookback, filter type)) OR (close < MA(master source, master lookback, master type) AND close > MA(filter source, filter lookback, filter type))

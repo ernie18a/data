@@ -1,0 +1,2 @@
+Long: on a confirmed last chart bar, chart close crosses above the high of the last completed T1 bar
+Short: on a confirmed last chart bar, chart close crosses below the low of the last completed T1 bar

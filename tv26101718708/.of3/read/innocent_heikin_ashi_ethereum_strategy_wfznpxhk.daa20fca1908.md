@@ -1,0 +1,10 @@
+Calculation: Red confirmation count = count of bars with red PVSRA and close below EMA(close, shorter EMA lookback) since the last long entry, or since available history began; reset on each long entry
+Calculation: Green confirmation count = count of bars with green PVSRA and close above EMA(close, longer EMA lookback) since the last sell-confirmation exit, or since available history began; reset on each sell-confirmation exit
+Calculation: Long stop = lowest(low, stop lookback) on the long-entry signal bar, retained for that entry
+Calculation: Long target = long-entry signal bar close + (long-entry signal bar close − long stop) × risk/reward multiplier, retained for that entry
+Long: On a confirmed bar, PVSRA is green AND open > EMA(close, shorter EMA lookback) AND (close < EMA(close, longer EMA lookback) OR close > EMA(close, longer EMA lookback)) AND a red PVSRA bar with open and close below EMA(close, shorter EMA lookback) has occurred since the last long entry or since available history began AND Red confirmation count ≥ confirmation count parameter
+Short: PVSRA is green or blue AND open > EMA(close, shorter EMA lookback) AND open > EMA(close, longer EMA lookback)
+Exit: Long, low ≤ long stop OR high ≥ long target
+Exit: Long, on a confirmed bar, the most recent bar up to and including the current bar with green or blue PVSRA and open above both EMA values is at the configured signal delay before the current bar AND current PVSRA is red AND open > EMA(close, longer EMA lookback) AND close > EMA(close, longer EMA lookback) AND Green confirmation count ≥ confirmation count parameter
+Exit: Long, on a confirmed bar, the most recent long-entry signal is at the configured signal delay before the current bar AND current PVSRA is red or violet
+Exit: Long, on a confirmed bar, the most recent bar up to and including the current bar with green or blue PVSRA and open above both EMA values is at the configured signal delay before the current bar AND current PVSRA is green

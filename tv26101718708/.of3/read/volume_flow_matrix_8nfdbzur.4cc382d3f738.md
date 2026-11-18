@@ -1,0 +1,4 @@
+Calculation: Close location = (close - low) / max(high - low, minimum tick)
+Calculation: Relative volume = projected volume / volume baseline, or 0 when the baseline is not positive; projected volume is volume divided by the clamped elapsed fraction of the bar on the current real-time last bar when realtime projection is enabled, and volume otherwise; the baseline is SMA(volume, lookback) except on that real-time last bar, when it is SMA(volume[1], lookback), falling back to SMA(volume, lookback) if unavailable
+Long: Relative volume >= confirmation-volume threshold AND Relative volume >= dry-volume threshold AND Close location >= upper close-location threshold AND close > open
+Short: Relative volume >= confirmation-volume threshold AND Relative volume >= dry-volume threshold AND Close location <= lower close-location threshold AND close < open

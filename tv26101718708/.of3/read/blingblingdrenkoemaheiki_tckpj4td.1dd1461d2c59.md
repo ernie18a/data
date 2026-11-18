@@ -1,0 +1,4 @@
+Long: Renko open(T1, ATR-sized bricks, ATR lookback; current T1 bar sampled on chart bars) < Renko close(T1, ATR-sized bricks, ATR lookback; current T1 bar sampled on chart bars) AND EMA(Renko close(T1, ATR-sized bricks, ATR lookback; values sampled on chart bars), lookback, calculated on chart bars) < chart close
+Short: Renko open(T1, ATR-sized bricks, ATR lookback; current T1 bar sampled on chart bars) >= Renko close(T1, ATR-sized bricks, ATR lookback; current T1 bar sampled on chart bars)
+Short: BarsSince(the bullish Renko-and-EMA condition on the previous chart bar) > BarsSince(the bearish Renko condition on the previous chart bar)
+Long: BarsSince(the bearish Renko condition on the previous chart bar) > BarsSince(the bullish Renko-and-EMA condition on the previous chart bar)

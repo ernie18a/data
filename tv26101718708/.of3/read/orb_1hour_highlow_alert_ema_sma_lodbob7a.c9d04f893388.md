@@ -1,0 +1,1 @@
+Long: close crosses above the highest high of chart bars in the opening-range period AND volume >= volume multiplier × average volume of chart bars in the opening-range period AND close > VWAP(hlc3) AND the bar is after the opening-range period

@@ -1,0 +1,4 @@
+Long: Supertrend direction(ATR lookback, multiplier) < 0 AND Supertrend direction(ATR lookback, multiplier)[1] >= 0 AND (volume filter disabled OR volume > SMA(volume, volume lookback) * volume multiplier) AND (trend filter disabled OR close > SMA(close, trend lookback))
+Short: Supertrend direction(ATR lookback, multiplier) > 0 AND Supertrend direction(ATR lookback, multiplier)[1] <= 0 AND (volume filter disabled OR volume > SMA(volume, volume lookback) * volume multiplier) AND (trend filter disabled OR close < SMA(close, trend lookback))
+Exit: Long, high >= entry price * (1 + take-profit percentage / 100) OR low <= entry price * (1 - stop-loss percentage / 100) OR (trend-flip exit enabled AND Supertrend direction(ATR lookback, multiplier) > 0)
+Exit: Short, low <= entry price * (1 - take-profit percentage / 100) OR high >= entry price * (1 + stop-loss percentage / 100) OR (trend-flip exit enabled AND Supertrend direction(ATR lookback, multiplier) < 0)

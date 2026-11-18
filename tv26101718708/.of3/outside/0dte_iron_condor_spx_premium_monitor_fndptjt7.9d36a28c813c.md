@@ -1,0 +1,1 @@
+Exit: short, specified put credit spread premium + specified call credit spread premium <= P1

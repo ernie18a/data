@@ -1,0 +1,5 @@
+Calculation: price point = chart instrument minimum price increment × scale parameter
+Option: sell call, underlying price < SMA(first trend period) AND underlying price < SMA(second trend period) AND EMA(fast period) crosses below EMA(slow period) AND RSI(RSI period) < RSI threshold
+Option: sell put, underlying price > SMA(first trend period) AND underlying price > SMA(second trend period) AND EMA(fast period) crosses above EMA(slow period) AND RSI(RSI period) > RSI threshold
+Option: buy call, call premium ≥ call entry premium + stop-loss parameter × price point OR call premium ≤ call entry premium − take-profit parameter × price point OR IST time = exit-time parameter
+Option: buy put, put premium ≥ put entry premium + stop-loss parameter × price point OR put premium ≤ put entry premium − take-profit parameter × price point OR IST time = exit-time parameter

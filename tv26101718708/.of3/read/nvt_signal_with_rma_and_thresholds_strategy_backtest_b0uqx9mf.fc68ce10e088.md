@@ -1,0 +1,2 @@
+Exit: long, low <= entry price - stop-loss distance OR (high reaches entry price + trailing activation distance AND low <= highest high since activation - trailing offset)
+Exit: short, high >= entry price + stop-loss distance OR (low reaches entry price - trailing activation distance AND high >= lowest low since activation + trailing offset)

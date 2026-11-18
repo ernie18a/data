@@ -1,0 +1,4 @@
+Calculation: MACD line = VWMA(close, shorter lookback) - VWMA(close, longer lookback) when volume weighting is enabled, otherwise EMA(close, shorter lookback) - EMA(close, longer lookback)
+Calculation: MACD signal = EMA(MACD line, signal lookback)
+Long: MACD line crosses above MACD signal AND Impulse MACD histogram(close, high, low, impulse lookback, signal lookback) > 0 AND Impulse MACD(close, high, low, impulse lookback, signal lookback) > 0 AND (trend filter disabled OR close > EMA(close, trend lookback))
+Short: MACD line crosses below MACD signal AND Impulse MACD histogram(close, high, low, impulse lookback, signal lookback) < 0 AND Impulse MACD(close, high, low, impulse lookback, signal lookback) < 0 AND (trend filter disabled OR close < EMA(close, trend lookback))

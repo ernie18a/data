@@ -1,0 +1,2 @@
+Long: volume > SMA(volume, lookback) * climax volume multiplier AND close < open AND high - low > SMA(high - low, lookback) * wide spread multiplier AND close > low + (high - low) * exhaustion fraction
+Short: volume > SMA(volume, lookback) * climax volume multiplier AND close > open AND high - low > SMA(high - low, lookback) * wide spread multiplier AND close < high - (high - low) * exhaustion fraction

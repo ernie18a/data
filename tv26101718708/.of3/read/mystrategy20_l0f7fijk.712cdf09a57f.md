@@ -1,0 +1,14 @@
+Long: SuperTrend(hl2, ATR lookback, ATR multiplier) flips from down to up AND MACD(close, fast lookback, slow lookback, signal lookback) line crosses above its signal line AND RSI(close, RSI lookback) > RSI threshold AND close crosses above the upper Bollinger Band(close lookback, deviation) AND volume > SMA(volume, volume lookback) × volume multiplier AND ATR(ATR lookback) / close > minimum ATR-to-price ratio
+Short: SuperTrend(hl2, ATR lookback, ATR multiplier) flips from up to down AND MACD(close, fast lookback, slow lookback, signal lookback) line crosses below its signal line AND RSI(close, RSI lookback) < RSI threshold AND close crosses below the lower Bollinger Band(close lookback, deviation) AND volume > SMA(volume, volume lookback) × volume multiplier AND ATR(ATR lookback) / close > minimum ATR-to-price ratio
+Exit: Long, when stop-loss is enabled, low <= entry price − stop-loss ATR multiple × ATR(ATR lookback) at entry
+Exit: Short, when stop-loss is enabled, high >= entry price + stop-loss ATR multiple × ATR(ATR lookback) at entry
+Exit: Long, when take-profits are enabled, high >= entry price + first-target ATR multiple × ATR(ATR lookback) at entry
+Exit: Long, when take-profits are enabled, high >= entry price + second-target ATR multiple × ATR(ATR lookback) at entry
+Exit: Long, when take-profits are enabled, high >= entry price + third-target ATR multiple × ATR(ATR lookback) at entry
+Exit: Short, when take-profits are enabled, low <= entry price − first-target ATR multiple × ATR(ATR lookback) at entry
+Exit: Short, when take-profits are enabled, low <= entry price − second-target ATR multiple × ATR(ATR lookback) at entry
+Exit: Short, when take-profits are enabled, low <= entry price − third-target ATR multiple × ATR(ATR lookback) at entry
+Exit: Long, when breakeven and take-profits are enabled and the first target has filled with close >= entry price + first-target ATR multiple × ATR(ATR lookback) at entry, low <= entry price
+Exit: Short, when breakeven and take-profits are enabled and the first target has filled with close <= entry price − first-target ATR multiple × ATR(ATR lookback) at entry, high >= entry price
+Exit: Long, when stop-loss and trailing are enabled, after price reaches the Bollinger middle band at entry, low <= highest high since activation − round((entry price − Bollinger middle band at entry) / minimum tick) × minimum tick
+Exit: Short, when stop-loss and trailing are enabled, after price reaches the Bollinger middle band at entry, high >= lowest low since activation + round((Bollinger middle band at entry − entry price) / minimum tick) × minimum tick

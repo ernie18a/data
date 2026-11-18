@@ -1,0 +1,2 @@
+Long: close > EMA(close, trend lookback) AND close > highest(high, breakout lookback) one bar ago AND volume > SMA(volume, volume lookback) * volume multiplier AND RSI(close, RSI lookback) > overbought threshold
+Short: close < EMA(close, trend lookback) AND close < lowest(low, breakout lookback) one bar ago AND volume > SMA(volume, volume lookback) * volume multiplier AND RSI(close, RSI lookback) < oversold threshold

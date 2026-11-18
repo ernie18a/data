@@ -1,0 +1,3 @@
+Calculation: Session-opening NQ price = NQ open at the configured session start
+Long: chart timeframe is T1 AND session-opening NQ price is available AND NQ close > NQ open AND (ES close < ES open OR ES close = ES open) AND NQ open < session-opening NQ price
+Short: chart timeframe is T1 AND session-opening NQ price is available AND NQ close < NQ open AND (ES close > ES open OR ES close = ES open) AND NQ open > session-opening NQ price

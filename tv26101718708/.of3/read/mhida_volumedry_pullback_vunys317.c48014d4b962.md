@@ -1,0 +1,1 @@
+Long: close > EMA(close, longer lookback) AND close < EMA(close, shorter lookback) AND RSI(close, lookback) < threshold AND volume < SMA(volume, lookback) * fraction AND (turn-up confirmation disabled OR close > close[1])

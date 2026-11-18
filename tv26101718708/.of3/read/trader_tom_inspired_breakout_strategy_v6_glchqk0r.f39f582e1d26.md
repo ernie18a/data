@@ -1,0 +1,5 @@
+Calculation: breakout level = highest(high[1], all-time-high lookback) in all-time-high mode, otherwise highest(high[1], breakout lookback)
+Calculation: long trade risk = ATR(ATR lookback) at entry × initial stop multiple
+Calculation: long stop = if trailing stop is enabled, max(entry price − long trade risk, close − ATR(ATR lookback) × trailing stop multiple), otherwise entry price − long trade risk; if EMA-break exit is enabled and close < EMA(close, short EMA lookback), replace the stop with max(long stop, close)
+Long: position is flat AND (if close confirmation is enabled, close > breakout level, otherwise high > breakout level) AND (trend filter is disabled OR (close > EMA(close, short EMA lookback) AND EMA(close, short EMA lookback) > EMA(close, long EMA lookback))) AND (volume filter is disabled OR volume > SMA(volume, volume lookback) × volume multiple)
+Exit: Long, low <= long stop OR high >= entry price + long trade risk × full target multiple OR (partial take profit is enabled AND high >= entry price + long trade risk × partial target multiple)

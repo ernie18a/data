@@ -1,0 +1,4 @@
+Calculation: implied probability = SMA(selected odds, smoothing lookback), where selected odds is the source odds divided by the percentage scale when above the source-unit threshold, otherwise unchanged, if source mode is enabled; otherwise midpoint probability + half probability range * tanh(clamp((close - SMA(close, price-average lookback)) / (ATR(volatility lookback) + epsilon), -tanh input limit, tanh input limit))
+Calculation: implied price = open(T1, current bar still forming, sampled on chart bars) + price-displacement scale * ATR(volatility lookback) * inverse normal CDF(clamp(implied probability, lower probability bound, upper probability bound)) / probit displacement divisor
+Long: implied price >= open(T1, current bar still forming, sampled on chart bars)
+Short: implied price < open(T1, current bar still forming, sampled on chart bars)

@@ -1,0 +1,9 @@
+Calculation: Short smoothed EMA = EMA(EMA(close, short EMA lookback), short EMA lookback)
+Calculation: Long smoothed EMA = EMA(EMA(close, long EMA lookback), long EMA lookback)
+Calculation: Candle body ratio = abs(close - open) / (high - low)
+Calculation: Long stop and entry reference = on long entry, max(min(low, low[1]), long smoothed EMA) and OHLC4; on each long bar where volume > SMA(volume, volume lookback), close > open, and close > prior long entry reference × long advance factor, multiply both prior values by the long ratchet factor
+Calculation: Short stop and entry reference = on short entry, min(max(low, low[1]), long smoothed EMA) and OHLC4; on each short bar where volume > SMA(volume, volume lookback), close < open, and close < prior short entry reference × short advance factor, multiply both prior values by the short ratchet factor
+Long: chart timeframe is T1 AND bar is confirmed AND position is flat AND close > short smoothed EMA AND close > long smoothed EMA AND close > open AND candle body ratio > body ratio threshold AND volume > SMA(volume, volume lookback) AND RSI(close, RSI lookback) > RSI threshold AND short smoothed EMA > long smoothed EMA AND volume > volume[1]
+Short: chart timeframe is T1 AND bar is confirmed AND position is flat AND close < short smoothed EMA AND close < long smoothed EMA AND close < open AND candle body ratio > body ratio threshold AND volume > SMA(volume, volume lookback) AND RSI(close, RSI lookback) < RSI threshold AND short smoothed EMA > long smoothed EMA AND volume > volume[1]
+Exit: Long, close < long stop
+Exit: Short, close > short stop

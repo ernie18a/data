@@ -1,0 +1,2 @@
+Long: On chart bars using T1's still-forming values, T1 low > T1 high[2] AND (no FVG level has previously been marked OR T1 low differs from the most recently marked FVG level).
+Long: On chart bars using T1's still-forming values, T1 close > T1 high[1] AND T1 close[1] < T1 open[1] AND (no OB level has previously been marked OR T1 low[1] differs from the most recently marked OB level).

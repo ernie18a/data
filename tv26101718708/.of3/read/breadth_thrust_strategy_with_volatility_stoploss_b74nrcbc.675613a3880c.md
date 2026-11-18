@@ -1,0 +1,4 @@
+Calculation: combined ratio = (advancing count / (advancing count + declining count) + advancing volume / (advancing volume + declining volume)) / 2 when volume inclusion is enabled; otherwise advancing count / (advancing count + declining count), using T1 values on chart bars (the forming T1 bar in real time and the last completed T1 bar on historical bars)
+Long: SMA(combined ratio, smoothing lookback) on chart bars crosses above low threshold
+Calculation: long trailing stop = entry price − stop multiplier × ATR(high, low, close, ATR lookback) on entry; thereafter, maximum(previous long trailing stop, close − stop multiplier × ATR(high, low, close, ATR lookback)) on each chart bar
+Exit: Long, low <= long trailing stop OR chart bars since entry >= holding period

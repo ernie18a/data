@@ -1,0 +1,3 @@
+Calculation: regime = UPTREND if RSI(close, RSI length) - SMA(RSI(close, RSI length), RSI MA length) > minimum separation; DOWNTREND if RSI(close, RSI length) - SMA(RSI(close, RSI length), RSI MA length) < -minimum separation; otherwise SIDEWAYS. Calculate RSI and its SMA on T1 bars using the bar still forming; evaluate regime on chart bars using those T1 values.
+Long: regime = UPTREND AND regime[1] exists AND regime[1] != UPTREND
+Short: regime = DOWNTREND AND regime[1] exists AND regime[1] != DOWNTRE

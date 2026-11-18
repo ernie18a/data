@@ -1,0 +1,2 @@
+Long: no position AND close > VWAP(close) AND close > SMA(close, trend lookback) AND EMA(close, shorter lookback) > EMA(close, longer lookback) AND RSI(close, lookback) > long threshold AND volume > SMA(volume, volume lookback) * volume multiplier AND close > highest(high[1], breakout lookback) AND close > open
+Exit: long, bars since long entry >= minimum holding bars AND close < VWAP(close) AND close < SMA(close, trend lookback) AND EMA(close, shorter lookback) < EMA(close, longer lookback) AND close < low[1] AND close[1] < low[2] AND RSI(close, lookback) < exit threshold

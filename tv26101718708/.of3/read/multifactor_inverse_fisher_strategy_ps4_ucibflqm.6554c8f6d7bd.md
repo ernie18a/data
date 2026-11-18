@@ -1,0 +1,7 @@
+Calculation: Signed-flow ratio = 100 × positive flow / (positive flow + negative flow), where positive flow = SUM(volume × typical price when typical price > prior typical price, factor lookback), negative flow = SUM(volume × typical price when typical price < prior typical price, factor lookback), typical price = (high + low + close) / 3, and other bars contribute zero.
+Calculation: Min-max-scaled close = 100 × (close − lowest(close, factor lookback)) / (highest(close, factor lookback) − lowest(close, factor lookback)).
+Calculation: Transformed factor = tanh(smoothed factor), computed on T1 bars; chart bars use its last completed T1-bar value. The selected factor is RSI(close, factor lookback), RSX(close, factor lookback), Karobein(close, factor lookback), signed-flow ratio, or min-max-scaled close. Smoothed factor is JMA(0.1 × (selected factor − 50), smoothing lookback, JMA power) × 100 when JMA smoothing is enabled, otherwise WMA(selected factor, smoothing lookback) × 100.
+Long: Transformed factor crosses above the threshold on chart bars.
+Short: Transformed factor crosses below −threshold on chart bars.
+Exit: Long, trailing stop is enabled AND price has reached entry price + activation distance AND low ≤ highest high since activation − trailing offset.
+Exit: Short, trailing stop is enabled AND price has reached entry price − activation distance AND high ≥ lowest low since activation + trailing offset.

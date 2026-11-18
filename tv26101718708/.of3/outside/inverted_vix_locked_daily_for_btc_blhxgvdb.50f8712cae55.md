@@ -1,0 +1,2 @@
+Calculation: Inverted VIX = 100 × (highest(T1 VIX closing price, P1) − T1 VIX closing price) / max(highest(T1 VIX closing price, P1) − lowest(T1 VIX closing price, P1), P2)
+Long: Inverted VIX crosses above P3

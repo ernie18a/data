@@ -1,0 +1,1 @@
+Short: close < moving average of close over P1 periods on T1

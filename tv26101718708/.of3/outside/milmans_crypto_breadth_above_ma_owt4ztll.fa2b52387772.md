@@ -1,0 +1,3 @@
+Calculation: crypto breadth = 100 × count of BTC, ETH, BNB, SOL, XRP, ADA, AVAX, DOGE, TON, TRX, HYPE, LINK, DOT, MATIC, SHIB, LTC, BCH, UNI, ATOM, XLM, ETC, APT, SUI, NEAR, ICP, FIL, ARB, OP, HBAR, VET, ALGO, EGLD, AAVE, FTM, EOS, MKR, THETA, SAND, MANA, and AXS market capitalization index closes above their P2 moving average over P1 bars (unavailable closes count as below) / 40
+Long: crypto breadth >= P3
+Short: crypto breadth <= P4

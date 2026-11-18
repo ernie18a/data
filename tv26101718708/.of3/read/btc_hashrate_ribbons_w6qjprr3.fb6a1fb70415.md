@@ -1,0 +1,6 @@
+Calculation: Short average = selected short MA type (SMA, RMA, EMA, or WMA) of the hash-rate T1 close sampled onto chart bars, using the short lookback parameter; historical chart bars use the latest available T1 close, and realtime chart bars use the still-forming T1 close
+Calculation: Long average = selected long MA type (SMA, RMA, EMA, or WMA) of the hash-rate T1 close sampled onto chart bars, using the long lookback parameter, which is longer than the short lookback parameter; historical chart bars use the latest available T1 close, and realtime chart bars use the still-forming T1 close
+Long: Short average crosses above Long average AND direction permits long entries
+Exit: short, Short average crosses above Long average AND direction is short-only
+Short: Short average crosses below Long average AND direction permits short entries
+Exit: long, Short average crosses below Long average AND direction is long-only

@@ -1,0 +1,2 @@
+Long: volume / SMA(volume, lookback) < high-volume threshold AND volume / SMA(volume, lookback) < extreme-volume threshold AND close >= close[1]
+Short: volume / SMA(volume, lookback) < high-volume threshold AND volume / SMA(volume, lookback) < extreme-volume threshold AND close < close[1]

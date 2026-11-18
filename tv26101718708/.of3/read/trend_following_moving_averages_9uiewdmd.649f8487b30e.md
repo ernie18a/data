@@ -1,0 +1,3 @@
+Calculation: Trend state(L) = 0 if D ≤ C; otherwise 1 if M > LL + C; otherwise −1 if M < HH − C; otherwise 0; M = selected EMA, SMA, RMA, WMA, or VWMA of close over L, optionally transformed by Linear Regression(M, regression lookback, regression offset) when enabled; D = Highest(M, trend lookback) − Lowest(M, trend lookback); LL = Lowest(M, trend lookback); HH = Highest(M, trend lookback); C = (Highest(high, channel lookback) − Lowest(low, channel lookback)) × channel rate
+Long: Trend state(L) = 1 for any of 20 distinct, equally spaced MA lookbacks ordered from shortest to longest
+Short: Trend state(L) = −1 for any of 20 distinct, equally spaced MA lookbacks ordered from shortest to longest

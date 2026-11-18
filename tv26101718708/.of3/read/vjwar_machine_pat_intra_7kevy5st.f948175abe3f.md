@@ -1,0 +1,4 @@
+Long: close < open AND MFI(hlc3, lookback) < oversold parameter AND Choppiness Index(lookback) < trend-factor parameter AND volume > volume[1] AND within configured market session
+Short: close > open AND MFI(hlc3, lookback) > overbought parameter AND Choppiness Index(lookback) < trend-factor parameter AND volume > volume[1] AND within configured market session
+Exit: long, low <= entry price * (1 - long stop-loss parameter) OR high >= entry price * (1 + long take-profit parameter) OR outside configured market session
+Exit: short, high >= entry price * (1 + short stop-loss parameter) OR low <= entry price * (1 - short take-profit parameter) OR outside configured market session

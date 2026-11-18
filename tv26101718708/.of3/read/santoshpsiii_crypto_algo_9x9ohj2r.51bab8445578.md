@@ -1,0 +1,4 @@
+Long: Bollinger Band Width(close, band lookback, deviation multiplier) > SMA(Bollinger Band Width(close, band lookback, deviation multiplier), width MA lookback) AND SuperTrend(ATR lookback, multiplier) flips to bullish
+Short: Bollinger Band Width(close, band lookback, deviation multiplier) > SMA(Bollinger Band Width(close, band lookback, deviation multiplier), width MA lookback) AND SuperTrend(ATR lookback, multiplier) flips to bearish
+Exit: long, SuperTrend(ATR lookback, multiplier) flips to bearish AND Bollinger Band Width(close, band lookback, deviation multiplier) <= SMA(Bollinger Band Width(close, band lookback, deviation multiplier), width MA lookback)
+Exit: short, SuperTrend(ATR lookback, multiplier) flips to bullish AND Bollinger Band Width(close, band lookback, deviation multiplier) <= SMA(Bollinger Band Width(close, band lookback, deviation multiplier), width MA lookback)

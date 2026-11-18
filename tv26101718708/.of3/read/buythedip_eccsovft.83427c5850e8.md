@@ -1,0 +1,4 @@
+Calculation: ATR trailing stop = close − multiplier × ATR(lookback), ratcheted upward while long as the maximum of that value and its prior value
+Long: Within the alignment lookback, at least one bar has close above the selected moving average at the shortest lookback, followed by the moving averages at each successively longer lookback in descending order; AND (close crosses above the lower Bollinger Band(close, lookback, deviation) OR close crosses above the middle Bollinger Band(close, lookback, deviation)); AND datetime is on or after January 1 of the current year minus the year lookback
+Exit: Long, signal exits are enabled AND close crosses below the upper Bollinger Band(close, lookback, deviation)
+Exit: Long, trailing-stop exits are enabled AND low is at or below the prior bar's ATR trailing stop

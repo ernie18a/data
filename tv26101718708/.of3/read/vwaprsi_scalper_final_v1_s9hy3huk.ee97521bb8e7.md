@@ -1,0 +1,4 @@
+Long: RSI(close, RSI lookback) < oversold threshold AND close > session VWAP(hlc3) AND close > EMA(close, EMA lookback) AND (bar is non-intraday OR session-start hour <= hour(datetime) < session-end hour) AND entries today < daily entry limit AND position is flat
+Short: RSI(close, RSI lookback) > overbought threshold AND close < session VWAP(hlc3) AND close < EMA(close, EMA lookback) AND (bar is non-intraday OR session-start hour <= hour(datetime) < session-end hour) AND entries today < daily entry limit AND position is flat
+Exit: long, low <= entry price - ATR(ATR lookback) * stop multiple OR high >= entry price + ATR(ATR lookback) * target multiple
+Exit: short, high >= entry price + ATR(ATR lookback) * stop multiple OR low <= entry price - ATR(ATR lookback) * target multiple

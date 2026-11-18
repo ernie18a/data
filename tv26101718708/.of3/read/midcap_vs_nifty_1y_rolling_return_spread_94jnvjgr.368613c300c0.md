@@ -1,0 +1,3 @@
+Calculation: relative return spread = 100 × [(comparison-series close(T1, current bar) / comparison-series close(T1, current bar)[return lookback] − 1) − (benchmark-series close(T1, current bar) / benchmark-series close(T1, current bar)[return lookback] − 1)], evaluated on chart bars using T1 values, including the still-forming T1 bar
+Long: relative return spread > SMA(relative return spread, deviation lookback on chart bars) + deviation multiplier × population standard deviation(relative return spread, same deviation lookback on chart bars)
+Short: relative return spread < SMA(relative return spread, deviation lookback on chart bars) − deviation multiplier × population standard deviation(relative return spread, same deviation lookback on chart bars)

@@ -1,0 +1,2 @@
+Calculation: support = VWAP(hlc3, T1, bar still forming, calculated on T1 bars and mapped to chart bars)
+Long: close > support × (1 + reclaim buffer / 100) AND a low below support × (1 − break buffer / 100) first occurred while no sweep was armed, within the max number of chart bars including the current bar AND (volume > SMA(volume, volume lookback) × volume multiple OR volume filter disabled) AND (no earlier long today OR one-signal-per-day disabled)

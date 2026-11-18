@@ -1,0 +1,11 @@
+Calculation: Centered RSX(source, lookback) = RSX(source, lookback) minus the midpoint of the RSX range
+Calculation: Trend spread = ((Centered RSX(open, L1) - Centered RSX(open, L2)) + (Centered RSX(open, L3) - Centered RSX(open, L4)) + (Centered RSX(open, L5) - Centered RSX(open, L6)) + (Centered RSX(open, L7) - Centered RSX(open, L8)) + (Centered RSX(open, L9) - Centered RSX(open, L10))) / Q; L1 through L10 are distinct, increasing lookback parameters
+Calculation: Negative cubic coefficient = -(S × S × S)
+Calculation: Mixed coefficient = K × S² + K × S³
+Calculation: Offset coefficient = U + K × S + S³ + K × S²
+Calculation: Fast level = if Trend spread > Z, mean(Centered RSX(open, L1), S, Offset coefficient, Mixed coefficient); if Trend spread = Z, high; otherwise, mean(Centered RSX(open, Pfast), JMA(open, Pfast), Centered RSX(JMA(open, Pfast), Pfast))
+Calculation: Mid level = if Trend spread > Z, mean(Centered RSX(open, L4), Centered RSX(open, L5), Mixed coefficient, Negative cubic coefficient); if Trend spread = Z, high; otherwise, mean(Centered RSX(open, Pmid), JMA(open, Pmid), Centered RSX(JMA(open, Pmid), Pmid))
+Calculation: Slow level = if Trend spread > Z, mean(Centered RSX(open, L4), Centered RSX(open, L5), Mixed coefficient, Negative cubic coefficient); if Trend spread = Z, low; otherwise, mean(Centered RSX(open, Pslow), JMA(open, Pslow), Centered RSX(JMA(open, Pslow), Pslow)); Pfast, Pmid, and Pslow are distinct lookback parameters in increasing order
+Calculation: Timeframe spread sum = (Fast level(T1) - Mid level(T1)) + (Fast level(T2) - Mid level(T2)) + (Fast level(T3) - Mid level(T3)) + (Fast level(T4) - Mid level(T4)) + (Fast level(T5) - Mid level(T5)) + Mid level(T6); T1 through T6 are progressively longer timeframe parameters, and each level is calculated on its timeframe bars and sampled on chart bars from its current, still-forming bar
+Long: Slow level on chart bars = Slow level(T6), calculated on T6 bars and sampled on chart bars from its current, still-forming bar
+Short: Mid level on chart bars = Timeframe spread sum

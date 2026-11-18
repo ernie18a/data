@@ -1,0 +1,5 @@
+Calculation: Higher-timeframe EMA = EMA(close, EMA lookback, T1, last completed bar), sampled on chart bars
+Calculation: Caution = close > Higher-timeframe EMA AND (highest(high, caution swing lookback) - low > ATR(ATR lookback) * caution threshold OR close < EMA(close, EMA lookback))
+Calculation: Trailing stop = maximum of the prior trailing stop and highest(trail source, trailing lookback) - (previous chart bar Caution ? ATR(ATR lookback) * ratchet multiplier : ATR(ATR lookback)); initialize to this candidate when there is no prior trailing stop
+Long: position is flat AND close > Higher-timeframe EMA AND highest(high, caution swing lookback) - low <= ATR(ATR lookback) * caution threshold AND close >= EMA(close, EMA lookback) AND datetime is between the start-time and end-time parameters
+Exit: long, close < Trailing stop OR close < Higher-timeframe EMA

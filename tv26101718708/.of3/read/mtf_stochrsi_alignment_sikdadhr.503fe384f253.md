@@ -1,0 +1,3 @@
+Calculation: StochRSI K = SMA(Stochastic(RSI(close, RSI lookback), stochastic lookback), K smoothing)
+Long: On chart bars, StochRSI K calculated on each current T1, T2, and T3 bar (developing live; confirmed at its close historically) <= oversold threshold, using the same RSI lookback, stochastic lookback, and K smoothing on all three timeframes
+Short: On chart bars, StochRSI K calculated on each current T1, T2, and T3 bar (developing live; confirmed at its close historically) >= overbought threshold, using the same RSI lookback, stochastic lookback, and K smoothing on all three timeframes

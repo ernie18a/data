@@ -1,0 +1,4 @@
+Calculation: Structural trend on each timeframe’s bars = bullish if close crosses above the latest confirmed PivotHigh(high, swing lookback, swing lookback) and the previous trend is bearish; otherwise bearish if close crosses below the latest confirmed PivotLow(low, swing lookback, swing lookback); otherwise bullish if close crosses above the latest confirmed PivotHigh(high, swing lookback, swing lookback); otherwise retain the previous trend; initialize as neutral.
+Calculation: MTF vote = the sum of Structural trend on T1, T2, and T3, treating missing values as zero; each trend is calculated on its timeframe’s bars and sampled on chart bars with lookahead off (last completed timeframe bar historically, forming timeframe bar in realtime).
+Long: close crosses above the latest confirmed PivotHigh(high, swing lookback, swing lookback) OR MTF vote >= 2
+Short: close crosses below the latest confirmed PivotLow(low, swing lookback, swing lookback) OR MTF vote <= -2

@@ -1,0 +1,6 @@
+Calculation: Selected-symbol HMA = HMA(selected source, shared lookback) on chart bars using the selected symbol’s T1 source, with the T1 bar still forming
+Calculation: Entry date window = chart datetime on or after the selected start datetime AND on or before the selected end datetime
+Long: previous completed T2 bar open for the chart symbol > selected chart source AND no open trade AND Symbol 3 HMA > its value one chart bar ago AND Symbol 1 HMA < its value one chart bar ago AND Symbol 2 HMA > its value one chart bar ago AND entry date window
+Short: previous completed T2 bar open for the chart symbol < selected chart source AND no open trade AND Symbol 3 HMA < its value one chart bar ago AND Symbol 1 HMA > its value one chart bar ago AND Symbol 2 HMA < its value one chart bar ago AND entry date window
+Exit: long, (Symbol 3 HMA < its value one chart bar ago AND previous completed T2 bar open for the chart symbol < selected chart source) OR open profit < stop-loss parameter OR (open profit > target parameter AND Symbol 1 HMA > its value one chart bar ago)
+Exit: short, (Symbol 3 HMA > its value one chart bar ago AND previous completed T2 bar open for the chart symbol > selected chart source) OR open profit < stop-loss parameter OR (open profit > target parameter AND Symbol 1 HMA < its value one chart bar ago)

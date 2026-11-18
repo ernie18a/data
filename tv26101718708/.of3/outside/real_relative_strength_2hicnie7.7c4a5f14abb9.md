@@ -1,0 +1,3 @@
+Calculation: relative strength = ((traded instrument close − traded instrument close lookback period bars ago) − ((comparison instrument close − comparison instrument close lookback period bars ago) / previous ATR of comparison instrument × previous ATR of traded instrument)) / previous ATR of traded instrument
+Long: relative strength > 0 AND relative strength > previous bar's relative strength
+Short: relative strength < 0 AND relative strength < previous bar's relative strength

@@ -1,0 +1,5 @@
+Calculation: PivotInRange(event) = minimum pivot range <= bars since event <= maximum pivot range
+Long: EMA(RSI(close, RSI length), short-term lookback) crosses above WMA(RSI(close, RSI length), long-term lookback)
+Short: EMA(RSI(close, RSI length), short-term lookback) crosses below WMA(RSI(close, RSI length), long-term lookback)
+Long: A confirmed pivot low of RSI(close, RSI length), using pivot-left and pivot-right lookbacks, has a higher RSI value and a lower price low than the preceding confirmed RSI pivot low AND PivotInRange(confirmed RSI pivot-low detection[1])
+Short: A confirmed pivot high of RSI(close, RSI length), using pivot-left and pivot-right lookbacks, has a lower RSI value and a higher price high than the preceding confirmed RSI pivot high AND PivotInRange(confirmed RSI pivot-high detection[1])

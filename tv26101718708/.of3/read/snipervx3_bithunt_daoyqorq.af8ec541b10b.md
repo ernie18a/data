@@ -1,0 +1,2 @@
+Long: close(T1, bar still forming) crosses above open(T1, bar still forming), evaluated on chart bars
+Short: close(T1, bar still forming) crosses below open(T1, bar still forming), evaluated on chart bars

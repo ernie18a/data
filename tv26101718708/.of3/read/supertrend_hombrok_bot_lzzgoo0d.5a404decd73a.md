@@ -1,0 +1,4 @@
+Long: Supertrend(ATR lookback, multiplier) direction is up AND volume > SMA(volume, volume-average lookback) * volume multiplier AND abs(close - open) > ATR(ATR lookback) * candle-body parameter AND RSI(close, RSI lookback) < overbought threshold
+Short: Supertrend(ATR lookback, multiplier) direction is down AND volume > SMA(volume, volume-average lookback) * volume multiplier AND abs(close - open) > ATR(ATR lookback) * candle-body parameter AND RSI(close, RSI lookback) > oversold threshold
+Exit: long, low <= (close of most recent long-signal bar - ATR on that bar) OR high >= (close of most recent long-signal bar + ATR on that bar * risk/reward parameter)
+Exit: short, high >= (close of most recent short-signal bar + ATR on that bar) OR low <= (close of most recent short-signal bar - ATR on that bar * risk/reward parameter)

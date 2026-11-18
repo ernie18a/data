@@ -1,0 +1,4 @@
+Long: WMA(correlated instrument HLC3, WMA length) is rising over trend lookback AND bar time >= start time AND bar time < end time AND position size <= 0
+Short: WMA(correlated instrument HLC3, WMA length) is falling over trend lookback AND bar time >= start time AND bar time < end time AND position size > 0
+Exit: long, bar time >= start time AND bar time < end time AND (long take-profit > 0 AND correlated instrument HLC3 > correlated instrument HLC3 at long entry * (1 + long take-profit) OR long stop-loss > 0 AND correlated instrument HLC3 < correlated instrument HLC3 at long entry * (1 - long stop-loss))
+Exit: short, bar time >= start time AND bar time < end time AND (short take-profit > 0 AND correlated instrument HLC3 > correlated instrument HLC3 at short entry * (1 + short take-profit) OR short stop-loss > 0 AND correlated instrument HLC3 < correlated instrument HLC3 at short entry * (1 - short stop-loss))

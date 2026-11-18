@@ -1,0 +1,2 @@
+Long: MACD(close, fast lookback, slow lookback, signal lookback).line >= MACD(close, fast lookback, slow lookback, signal lookback).signal, calculated on T1 bars using the still-forming T1 bar and mapped to chart bars
+Short: MACD(close, fast lookback, slow lookback, signal lookback).line < MACD(close, fast lookback, slow lookback, signal lookback).signal, calculated on T1 bars using the still-forming T1 bar and mapped to chart bars

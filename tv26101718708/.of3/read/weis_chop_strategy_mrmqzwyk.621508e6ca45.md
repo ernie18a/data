@@ -1,0 +1,4 @@
+Calculation: range direction = 1 when selected high > prior range close + range threshold, -1 when selected low < prior range close - range threshold, otherwise prior direction; range close = selected high when the first comparison holds, selected low when only the second holds, otherwise prior range close; seed prior range close and direction at 0; selected high/low are close/close, max(open, close)/min(open, close), or high/low according to the source parameter; range threshold is the threshold parameter, ATR(round(threshold parameter)), or close divided by the threshold parameter according to the threshold mode
+Long: close > EMA(close, EMA lookback) AND range direction > 0 AND ChoppinessIndex(lookback) crosses below threshold
+Short: close < EMA(close, EMA lookback) AND range direction < 0 AND ChoppinessIndex(lookback) crosses below threshold
+Exit: long, high >= entry price + profit-offset parameter in ticks OR low <= entry price - loss-offset parameter in ticks

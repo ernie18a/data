@@ -1,0 +1,4 @@
+Long: Z-score(underlying index close, baseline SMA length) <= lower Z-score threshold AND RSI(underlying index close, RSI length) <= lower RSI threshold
+Long: Z-score(underlying index close, baseline SMA length) <= lower Z-score threshold AND RSI(underlying index close, RSI length) <= lower RSI threshold AND flat
+Exit: Long, Z-score(underlying index close, baseline SMA length) >= upper Z-score threshold AND RSI(underlying index close, RSI length) >= upper RSI threshold
+Exit: Long, crossunder(underlying index close, EMA(underlying index close, exit EMA length)) AND bars since (Z-score(underlying index close, baseline SMA length) >= upper Z-score threshold AND RSI(underlying index close, RSI length) >= upper RSI threshold) < exit window

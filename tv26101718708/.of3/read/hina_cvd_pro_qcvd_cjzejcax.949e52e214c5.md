@@ -1,0 +1,6 @@
+Calculation: bar flow imbalance = volume × ((close >= open ? (close - low) - (high - close) : (high - open) - (close - low)) / (TR(high, low, close) == 0 ? 1 : TR(high, low, close))
+Calculation: close position fraction = high == low ? 0.5 : (close - low) / (high - low)
+Long: on a completed chart bar, Z-score(bar flow imbalance, longer anomaly lookback) < -anomaly threshold AND close position fraction > upper close-position threshold
+Short: on a completed chart bar, Z-score(bar flow imbalance, longer anomaly lookback) > anomaly threshold AND close position fraction < lower close-position threshold
+Exit: long, close < low of the current long-entry signal bar OR (bars since entry > holding-bar threshold AND EMA(bar flow imbalance, shorter exhaustion lookback) < 0 AND close >= low of the current long-entry signal bar)
+Exit: short, close > high of the current short-entry signal bar OR (bars since entry > holding-bar threshold AND EMA(bar flow imbalance, shorter exhaustion lookback) > 0 AND close <= high of the current short-entry signal bar)

@@ -1,0 +1,4 @@
+Calculation: percentage distance = (price source - SMA(price source, average lookback)) / SMA(price source, average lookback) * 100
+Calculation: percentage gain = (price source - price source[gain lookback]) / price source[gain lookback] * 100
+Calculation: lower extension threshold = fixed lower-band parameter in fixed mode or SMA(percentage distance, adaptive lookback) + lower-band standard-deviation parameter * standard deviation(percentage distance, adaptive lookback) in adaptive mode
+Exit: long, percentage distance >= lower extension threshold AND percentage gain >= minimum gain parameter AND (record-volume requirement disabled OR volume = highest(volume, volume record lookback))

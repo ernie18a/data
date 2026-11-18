@@ -1,0 +1,4 @@
+Long: SuperTrend(lower factor, ATR lookback for lower-factor SuperTrend) > close AND SuperTrend(higher factor, ATR lookback for higher-factor SuperTrend) < close AND MA(CCI(hlc3, CCI lookback), smoothing lookback, selected MA type) < negative CCI threshold
+Short: SuperTrend(lower factor, ATR lookback for lower-factor SuperTrend) < close AND SuperTrend(higher factor, ATR lookback for higher-factor SuperTrend) > close AND MA(CCI(hlc3, CCI lookback), smoothing lookback, selected MA type) > CCI threshold
+Exit: long, SuperTrend(lower factor, ATR lookback for lower-factor SuperTrend) < close OR SuperTrend(higher factor, ATR lookback for higher-factor SuperTrend) > close OR CCI(hlc3, CCI lookback) > CCI threshold
+Exit: short, SuperTrend(lower factor, ATR lookback for lower-factor SuperTrend) > close OR SuperTrend(higher factor, ATR lookback for higher-factor SuperTrend) < close OR CCI(hlc3, CCI lookback) < negative CCI threshold

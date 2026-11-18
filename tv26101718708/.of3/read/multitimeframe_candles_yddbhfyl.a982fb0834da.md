@@ -1,0 +1,2 @@
+Long: For each i ∈ {1, 2, 3, 4, 5} where Ti is greater than the chart timeframe, close(Ti, still-forming bar, chart bars) >= open(Ti, still-forming bar, chart bars)
+Short: For each i ∈ {1, 2, 3, 4, 5} where Ti is greater than the chart timeframe, close(Ti, still-forming bar, chart bars) < open(Ti, still-forming bar, chart bars)

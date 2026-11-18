@@ -1,0 +1,2 @@
+Long: low < low(T1, last completed bar) AND close > low(T1, last completed bar) AND chart timeframe <= T1
+Short: high > high(T1, last completed bar) AND close < high(T1, last completed bar) AND chart timeframe <= T1

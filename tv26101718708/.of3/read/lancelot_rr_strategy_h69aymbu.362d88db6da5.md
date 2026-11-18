@@ -1,0 +1,5 @@
+Calculation: ATR Renko bands = on chart bars, initialize upper and lower at the midpoint of the current T1 high and low plus/minus an initial ATR offset multiplier times ATR(ATR lookback, T1, current still-forming bar); thereafter, let band width be prior upper minus prior lower, and use the ordered shortest, middle, and longest step multipliers; when close reaches a step threshold above prior upper or below prior lower (threshold = that step multiplier times band width), select the longest threshold reached and move the bands in that direction by that step multiplier times current T1 ATR, keeping their separation at a band-spacing multiplier times current T1 ATR; otherwise retain prior bands
+Long: close >= prior ATR Renko upper + shortest step multiplier × prior band width
+Short: close <= prior ATR Renko lower − shortest step multiplier × prior band width
+Exit: long, RVI(RVI lookback) crosses below its signal
+Exit: short, RVI(RVI lookback) crosses above its signal

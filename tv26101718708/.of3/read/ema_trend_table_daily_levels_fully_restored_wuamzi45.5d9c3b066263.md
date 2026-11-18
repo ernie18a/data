@@ -1,0 +1,8 @@
+Long: close > EMA(source 1 chosen from open, high, low, or close, shortest lookback)
+Short: close <= EMA(source 1 chosen from open, high, low, or close, shortest lookback)
+Long: close > EMA(source 2 chosen from open, high, low, or close, second-shortest lookback)
+Short: close <= EMA(source 2 chosen from open, high, low, or close, second-shortest lookback)
+Long: close > EMA(source 3 chosen from open, high, low, or close, second-longest lookback)
+Short: close <= EMA(source 3 chosen from open, high, low, or close, second-longest lookback)
+Long: close > EMA(source 4 chosen from open, high, low, or close, longest lookback)
+Short: close <= EMA(source 4 chosen from open, high, low, or close, longest lookback)

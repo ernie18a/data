@@ -1,0 +1,3 @@
+Calculation: RORO(x, lookbacks L1<L2<L3<L4, weights W1-W4, smoothing lookback S) = 100*q - EMA(100*q, S), where q = ROC(x,L1)*W1 + ROC(x,L2)*W2 + ROC(x,L3)*W3 + ROC(x,L4)*W4
+Long: RORO(T1 close from its bar still forming, shared lookbacks and weights, daily smoothing lookback; calculated on chart bars using T1 values) crosses above 0
+Exit: long, RORO(T1 close from its bar still forming, shared lookbacks and weights, daily smoothing lookback; calculated on chart bars using T1 values) crosses below 0

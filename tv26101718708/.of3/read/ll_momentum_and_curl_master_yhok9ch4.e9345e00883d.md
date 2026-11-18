@@ -1,0 +1,4 @@
+Long: position is flat AND Momentum(close, momentum lookback) > 0 AND SMA(close, curl lookback) > its value on the previous bar AND volume > SMA(volume, volume-average lookback) * volume threshold AND (trend filter is disabled OR close > EMA(close, macro lookback))
+Short: position is flat AND Momentum(close, momentum lookback) < 0 AND SMA(close, curl lookback) < its value on the previous bar AND volume > SMA(volume, volume-average lookback) * volume threshold AND (trend filter is disabled OR close < EMA(close, macro lookback))
+Exit: long, low <= low on the entry bar - ATR(entry bar, ATR lookback) * long stop multiplier OR high >= entry price + ATR(current bar, ATR lookback) * twice the long stop multiplier
+Exit: short, high >= high on the entry bar + ATR(entry bar, ATR lookback) * short stop multiplier OR low <= entry price - ATR(current bar, ATR lookback) * twice the short stop multiplier

@@ -1,0 +1,6 @@
+Calculation: Bar return[n] = close[n] / close[n + 1]
+Calculation: Close location = (close - low) / (high - low)
+Long: close > open AND close > close[1] AND close - open >= close[1] - open[1] AND volume >= minimum volume AND Close location >= high-proximity threshold AND Bar return[1] <= 1 + prior-move limit AND ((Bar return[0] >= 1 + percentage-move threshold AND volume > volume[1]) OR close - open >= dollar-move threshold)
+Long: low = lowest(low, reversal-low lookback) AND open - low > close - open AND Close location >= bullish-reversal location threshold
+Short: close < open AND close < close[1] AND volume >= minimum volume AND Bar return[1] >= 1 - prior-move limit AND lowest(volume, short-volume lookback) >= minimum volume AND abs(open - close) >= abs(open[1] - close[1]) AND Close location <= low-proximity threshold AND ((Bar return[0] <= 1 - percentage-move threshold AND volume > volume[1]) OR open - close >= dollar-move threshold)
+Short: Bar return[0] > 1 - bearish-reversal decline limit AND Close location <= bearish-reversal location threshold AND RSI(close, bearish-reversal lookback) >= bearish-reversal RSI threshold

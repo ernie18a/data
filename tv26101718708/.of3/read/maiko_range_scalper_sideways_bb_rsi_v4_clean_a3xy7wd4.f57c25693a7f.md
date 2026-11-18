@@ -1,0 +1,6 @@
+Calculation: T1 range high = highest(high, range lookback) on T1 bars including the still-forming bar; chart bars use the requested T1 value
+Calculation: T1 range low = lowest(low, range lookback) on T1 bars including the still-forming bar; chart bars use the requested T1 value
+Long: close >= T1 range low AND close <= T1 range high AND close <= lower Bollinger Band(close, Bollinger lookback, deviation multiplier) AND RSI(close, RSI lookback) <= long RSI threshold AND (VWAP filter disabled OR abs(close - VWAP) / VWAP * 100 <= VWAP tolerance)
+Short: close >= T1 range low AND close <= T1 range high AND close >= upper Bollinger Band(close, Bollinger lookback, deviation multiplier) AND RSI(close, RSI lookback) >= short RSI threshold AND (VWAP filter disabled OR abs(close - VWAP) / VWAP * 100 <= VWAP tolerance)
+Exit: Long, low <= T1 range low * (1 - stop buffer / 100) OR high >= (if take-profit mode is mid band, SMA(close, Bollinger lookback), otherwise max(SMA(close, Bollinger lookback), T1 range high))
+Exit: Short, high >= T1 range high * (1 + stop buffer / 100) OR low <= (if take-profit mode is mid band, SMA(close, Bollinger lookback), otherwise min(SMA(close, Bollinger lookback), T1 range low))

@@ -1,0 +1,1 @@
+Long: (NIFTY filter disabled OR NIFTY close > EMA(NIFTY close, NIFTY EMA period)) AND close crosses above EMA(close, EMA period) AND RSI(close, RSI period) > RSI threshold AND volume > SMA(volume, volume average period)

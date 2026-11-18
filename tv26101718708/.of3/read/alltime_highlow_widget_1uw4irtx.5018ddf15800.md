@@ -1,0 +1,2 @@
+Long: chart-bar high crosses above all-time high(high, T1 bars, including the current forming T1 bar)
+Short: chart-bar low crosses below all-time low(low, T1 bars, including the current forming T1 bar)

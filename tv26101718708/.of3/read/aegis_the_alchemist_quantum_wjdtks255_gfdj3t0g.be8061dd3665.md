@@ -1,0 +1,2 @@
+Long: EMA(RSI(close, RSI lookback), momentum smoothing lookback) crosses above momentum threshold AND HMA(close, trend lookback) > HMA(close, trend lookback)[1]
+Short: EMA(RSI(close, RSI lookback), momentum smoothing lookback) crosses below momentum threshold AND HMA(close, trend lookback) <= HMA(close, trend lookback)[1]

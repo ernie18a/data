@@ -1,0 +1,3 @@
+Calculation: SMA mean = arithmetic mean on chart bars of SMA(close, shorter lookback), SMA(close, longer lookback), SMA(close, shorter lookback, T1, still-forming bar sampled on chart bars), SMA(close, longer lookback, T1, still-forming bar sampled on chart bars), SMA(close, shorter lookback, T2, still-forming bar sampled on chart bars), SMA(close, longer lookback, T2, still-forming bar sampled on chart bars), and SMA(close, shorter lookback, T3, still-forming bar sampled on chart bars)
+Long: close < SMA mean − stretch parameter in ticks × minimum tick AND close[1] >= SMA mean[1] − stretch parameter in ticks × minimum tick
+Short: close > SMA mean + stretch parameter in ticks × minimum tick AND close[1] <= SMA mean[1] + stretch parameter in ticks × minimum tick

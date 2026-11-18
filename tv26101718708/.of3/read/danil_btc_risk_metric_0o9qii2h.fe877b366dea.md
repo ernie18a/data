@@ -1,0 +1,5 @@
+Calculation: normalized risk = clamp((risk - lowest(risk, normalization lookback) / (highest(risk, normalization lookback) - lowest(risk, normalization lookback)), 0, 1), where risk = log(T1 close) - log(SMA(close, baseline lookback, T1)); the T1 close and SMA run on T1 bars and are sampled on chart bars from the current, forming T1 bar in real time and the last completed T1 bar historically; the extrema run on chart bars over a lookback scaled from T1 bars to chart bars, floored at the minimum chart-bar lookback; valid only when chart-bar index reaches the baseline lookback scaled to chart bars and floored at the same minimum.
+Short: normalized risk crosses above the strong-sell threshold.
+Short: normalized risk crosses above the sell threshold AND normalized risk < the strong-sell threshold.
+Long: normalized risk crosses below the buy threshold AND normalized risk > the strong-buy threshold.
+Long: normalized risk crosses below the strong-buy threshold.

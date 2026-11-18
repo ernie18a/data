@@ -1,0 +1,6 @@
+Long: On chart bars using T1 values, EMA(close, shorter lookback, T1 bars, still-forming bar) > EMA(close, longer lookback, T1 bars, still-forming bar)
+Short: On chart bars using T1 values, EMA(close, shorter lookback, T1 bars, still-forming bar) <= EMA(close, longer lookback, T1 bars, still-forming bar)
+Long: On chart bars using T2 values, EMA(close, shorter lookback, T2 bars, still-forming bar) > EMA(close, longer lookback, T2 bars, still-forming bar)
+Short: On chart bars using T2 values, EMA(close, shorter lookback, T2 bars, still-forming bar) <= EMA(close, longer lookback, T2 bars, still-forming bar)
+Long: On chart bars using T1 and T2 values, EMA(close, shorter lookback, T1 bars, still-forming bar) > EMA(close, longer lookback, T1 bars, still-forming bar) AND EMA(close, shorter lookback, T2 bars, still-forming bar) > EMA(close, longer lookback, T2 bars, still-forming bar)
+Short: On chart bars using T1 and T2 values, EMA(close, shorter lookback, T1 bars, still-forming bar) <= EMA(close, longer lookback, T1 bars, still-forming bar) AND EMA(close, shorter lookback, T2 bars, still-forming bar) <= EMA(close, longer lookback, T2 bars, still-forming bar)

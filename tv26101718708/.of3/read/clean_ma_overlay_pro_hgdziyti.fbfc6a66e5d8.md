@@ -1,0 +1,3 @@
+Calculation: normalized moving-average angle = atan((selected moving average(input source, MA lookback) - selected moving average(input source, MA lookback)[angle lookback]) / ATR(ATR lookback)) * 180 / pi; selected moving average is SMA, EMA, WMA, VWMA, RMA, or HMA
+Long: (normalized moving-average angle > 0 AND abs(normalized moving-average angle) >= ideal-angle threshold) OR (selected moving average(input source, MA lookback) > selected moving average(input source, MA lookback)[1])
+Short: (normalized moving-average angle < 0 AND abs(normalized moving-average angle) >= ideal-angle threshold) OR (selected moving average(input source, MA lookback) <= selected moving average(input source, MA lookback)[1])

@@ -1,0 +1,4 @@
+Calculation: latest confirmed pivot low = most recent confirmed Pivot Low(low, pivot lookback, pivot lookback)
+Calculation: latest confirmed pivot high = most recent confirmed Pivot High(high, pivot lookback, pivot lookback)
+Long: low < latest confirmed pivot low AND close > latest confirmed pivot low AND 100 * (latest confirmed pivot low - low) / latest confirmed pivot low > minimum sweep percentage AND (trend filter disabled OR close > EMA(close, EMA lookback)) AND (volume filter disabled OR volume > SMA(volume, volume-average lookback) * volume multiplier)
+Short: high > latest confirmed pivot high AND close < latest confirmed pivot high AND 100 * (high - latest confirmed pivot high) / latest confirmed pivot high > minimum sweep percentage AND (trend filter disabled OR close < EMA(close, EMA lookback)) AND (volume filter disabled OR volume > SMA(volume, volume-average lookback) * volume multiplier)

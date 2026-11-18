@@ -1,0 +1,12 @@
+Long: close > EMA(close, shorter lookback) AND EMA(close, shorter lookback) > EMA(close, longer lookback) AND EMA(close, longer lookback) > EMA(EMA(close, longer lookback)[1], direction smoothing lookback) AND EMA(close, shorter lookback) > EMA(EMA(close, shorter lookback)[1], direction smoothing lookback) AND RSI(close, RSI lookback) > RSI threshold AND close > VWAP(hlc3) AND ATR(ATR lookback) > SMA(ATR(ATR lookback), volatility lookback) AND datetime is within the extended-session interval AND datetime is within the entry-session interval
+Short: close < EMA(close, shorter lookback) AND EMA(close, shorter lookback) < EMA(close, longer lookback) AND EMA(close, longer lookback) <= EMA(EMA(close, longer lookback)[1], direction smoothing lookback) AND EMA(close, shorter lookback) <= EMA(EMA(close, shorter lookback)[1], direction smoothing lookback) AND RSI(close, RSI lookback) < RSI threshold AND close < VWAP(hlc3) AND ATR(ATR lookback) > SMA(ATR(ATR lookback), volatility lookback) AND datetime is within the extended-session interval AND datetime is within the entry-session interval
+Exit: long, low <= close - ATR(ATR lookback) × initial stop multiplier
+Exit: short, high >= close + ATR(ATR lookback) × initial stop multiplier
+Exit: long, after price reaches entry price + ATR(ATR lookback) × trailing multiplier, low <= highest high since activation - ATR(ATR lookback) × trailing multiplier / trailing offset divisor
+Exit: short, after price reaches entry price - ATR(ATR lookback) × trailing multiplier, high >= lowest low since activation + ATR(ATR lookback) × trailing multiplier / trailing offset divisor
+Exit: long, after close > entry price + ATR(ATR lookback) × break-even trigger multiplier, low <= entry price
+Exit: short, after close < entry price - ATR(ATR lookback) × break-even trigger multiplier, high >= entry price
+Exit: long, chart bars since entry >= time-exit bar limit
+Exit: short, chart bars since entry >= time-exit bar limit
+Exit: long, EMA(close, shorter lookback) < EMA(close, longer lookback) AND EMA(close, longer lookback) <= EMA(EMA(close, longer lookback)[1], direction smoothing lookback)
+Exit: short, EMA(close, shorter lookback) > EMA(close, longer lookback) AND EMA(close, shorter lookback) <= EMA(EMA(close, shorter lookback)[1], direction smoothing lookback)

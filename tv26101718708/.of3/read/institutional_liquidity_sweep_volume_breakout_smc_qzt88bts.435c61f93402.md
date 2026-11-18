@@ -1,0 +1,2 @@
+Long: low < Lowest(low[1], swing lookback) AND close > Lowest(low[1], swing lookback) AND volume > SMA(volume, volume average lookback) * volume multiplier
+Short: high > Highest(high[1], swing lookback) AND close < Highest(high[1], swing lookback) AND volume > SMA(volume, volume average lookback) * volume multiplier

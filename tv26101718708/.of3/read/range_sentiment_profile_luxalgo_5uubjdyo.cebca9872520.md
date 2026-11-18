@@ -1,0 +1,4 @@
+Calculation: ProfileBinSum(area) = sum of close - open over the lookback L chart bars for each of R equal-width areas between highest(high, L) and lowest(low, L); in chart-bar mode include a bar when high > area lower bound AND low < area upper bound; in intrabar mode include each T1 intrabar close - open when max(open, close) <= area upper bound AND min(open, close) >= area lower bound. Intrabar mode runs on chart bars using available T1 intrabars within each chart bar, including the still-forming T1 bar when available in the still-forming chart bar.
+Calculation: TotalProfileSum = sum of ProfileBinSum(area) over all R areas
+Long: ProfileBinSum(area) > 0 OR TotalProfileSum > 0 OR ProfileBinSum(area) = maximum ProfileBinSum across all R areas
+Short: ProfileBinSum(area) <= 0 OR TotalProfileSum <= 0 OR ProfileBinSum(area) = minimum ProfileBinSum across all R areas

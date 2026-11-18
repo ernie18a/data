@@ -1,0 +1,4 @@
+Long: MACD(close, T1 fast lookback, T1 slow lookback, T1 signal lookback) line calculated on T1 bars crosses above its signal line on chart bars taking values from the last completed T1 bar
+Short: MACD(close, T1 fast lookback, T1 slow lookback, T1 signal lookback) line calculated on T1 bars crosses below its signal line on chart bars taking values from the last completed T1 bar
+Long: MACD(close, T2 fast lookback, T2 slow lookback, T2 signal lookback) line calculated on T2 bars crosses above its signal line on chart bars taking values from the T2 bar still forming
+Short: MACD(close, T2 fast lookback, T2 slow lookback, T2 signal lookback) line calculated on T2 bars crosses below its signal line on chart bars taking values from the T2 bar still forming

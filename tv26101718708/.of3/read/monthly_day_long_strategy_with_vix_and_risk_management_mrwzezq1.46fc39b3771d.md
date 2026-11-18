@@ -1,0 +1,2 @@
+Long: flat AND current date matches the configured day of the month, moved to Monday if it falls on a weekend, AND VIX close(T1, bar still forming), sampled on chart bars, < threshold parameter
+Exit: long, elapsed time since entry >= hold-duration parameter days OR low <= entry price * (1 - stop-loss parameter / 100) OR high >= entry price * (1 + take-profit parameter / 100)

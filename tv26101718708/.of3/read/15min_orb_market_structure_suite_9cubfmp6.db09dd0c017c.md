@@ -1,0 +1,2 @@
+Long: Smoothed Heikin-Ashi(open, high, low, close, smoothing lookback).close > Smoothed Heikin-Ashi(open, high, low, close, smoothing lookback).open OR close crosses above the most recent confirmed Pivot High(high, pivot left lookback, pivot right lookback)
+Short: Smoothed Heikin-Ashi(open, high, low, close, smoothing lookback).close <= Smoothed Heikin-Ashi(open, high, low, close, smoothing lookback).open OR close crosses below the most recent confirmed Pivot Low(low, pivot left lookback, pivot right lookback)

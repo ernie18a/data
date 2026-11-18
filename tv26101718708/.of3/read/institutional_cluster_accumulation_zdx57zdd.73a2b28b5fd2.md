@@ -1,0 +1,1 @@
+Long: LOWEST(RSI(close, RSI lookback), recent-bar lookback) < oversold threshold AND volume / SMA(volume, volume-average lookback) > relative-volume threshold AND close > high[1] AND close > open AND current bar index − prior long-signal bar index ≥ signal cooldown (initial prior index = first chart bar)

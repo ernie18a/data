@@ -1,0 +1,6 @@
+Long: UT Bot buy signal using close or Heikin Ashi close selected by P3, ATR period P2, and ATR multiplier P1
+Short: UT Bot sell signal using close or Heikin Ashi close selected by P3, ATR period P2, and ATR multiplier P1
+Long: confirmed Williams down fractal with period P4
+Short: confirmed Williams up fractal with period P4
+Option: buy call, ((signal mode P5 includes UT Bot AND UT Bot buy signal using source P3, ATR period P2, and ATR multiplier P1) OR (signal mode P5 includes Williams AND confirmed Williams down fractal with period P4)) AND NOT ((signal mode P5 includes UT Bot AND UT Bot sell signal using source P3, ATR period P2, and ATR multiplier P1) OR (signal mode P5 includes Williams AND confirmed Williams up fractal with period P4))
+Option: buy put, ((signal mode P5 includes UT Bot AND UT Bot sell signal using source P3, ATR period P2, and ATR multiplier P1) OR (signal mode P5 includes Williams AND confirmed Williams up fractal with period P4)) AND NOT ((signal mode P5 includes UT Bot AND UT Bot buy signal using source P3, ATR period P2, and ATR multiplier P1) OR (signal mode P5 includes Williams AND confirmed Williams down fractal with period P4))

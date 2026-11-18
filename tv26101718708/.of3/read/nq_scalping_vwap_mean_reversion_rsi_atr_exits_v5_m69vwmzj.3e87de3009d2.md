@@ -1,0 +1,4 @@
+Long: session filter disabled OR datetime is within the session parameter; one-position-at-a-time filter disabled OR position is flat; close <= VWAP(hlc3) - distance parameter; RSI(close, lookback parameter) <= oversold parameter; close > open; close[1] < open[1]
+Short: session filter disabled OR datetime is within the session parameter; one-position-at-a-time filter disabled OR position is flat; close >= VWAP(hlc3) + distance parameter; RSI(close, lookback parameter) >= overbought parameter; close < open; close[1] > open[1]
+Exit: long, low <= entry price - ATR(lookback parameter) * stop parameter OR high >= entry price + ATR(lookback parameter) * target parameter OR time exit enabled AND chart bars in position >= duration parameter
+Exit: short, high >= entry price + ATR(lookback parameter) * stop parameter OR low <= entry price - ATR(lookback parameter) * target parameter OR time exit enabled AND chart bars in position >= duration parameter

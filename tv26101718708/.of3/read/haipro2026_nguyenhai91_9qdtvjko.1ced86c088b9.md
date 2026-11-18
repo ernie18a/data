@@ -1,0 +1,4 @@
+Calculation: ChartTrend(length) = false if the lowest low over length chart bars equals the current low; otherwise true if the highest high over length chart bars equals the current high; otherwise the previous chart-bar value; initially false
+Calculation: HTFTrend(length, T1) = false if the lowest low over length T1 bars equals the current T1 low; otherwise true if the highest high over length T1 bars equals the current T1 high; otherwise the previous chart-bar value; initially false; evaluated on chart bars using values from the current forming T1 bar
+Long: ChartTrend(length) changes to true AND HTFTrend(length, T1) = true
+Short: ChartTrend(length) changes to false AND HTFTrend(length, T1) = false

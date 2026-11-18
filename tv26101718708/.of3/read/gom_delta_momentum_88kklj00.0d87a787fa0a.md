@@ -1,0 +1,3 @@
+Calculation: Accumulated Delta = on chart bars, D on the first chart bar; otherwise, prior Accumulated Delta + D when (prior Accumulated Delta >= 0 AND D >= 0) OR (prior Accumulated Delta <= 0 AND D <= 0), else D; D = SUM(IF close > close[1] THEN volume ELSE IF close < close[1] THEN -volume ELSE 0, over T1 bars within the chart bar, including the T1 bar still forming)
+Long: Accumulated Delta >= 0
+Short: Accumulated Delta < 0

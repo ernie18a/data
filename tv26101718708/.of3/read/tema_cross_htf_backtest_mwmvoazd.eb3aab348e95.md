@@ -1,0 +1,4 @@
+Long: TEMA(close, shorter chart lookback) > TEMA(close, longer chart lookback) AND TEMA(close, shorter T1 lookback) > TEMA(close, longer T1 lookback) on T1 bars, using the last completed T1 bar on each chart bar AND datetime >= configured start datetime AND datetime <= configured end datetime AND long trades enabled
+Short: TEMA(close, shorter chart lookback) < TEMA(close, longer chart lookback) AND TEMA(close, shorter T1 lookback) < TEMA(close, longer T1 lookback) on T1 bars, using the last completed T1 bar on each chart bar AND datetime >= configured start datetime AND datetime <= configured end datetime AND short trades enabled
+Exit: Long, TEMA(close, shorter chart lookback) < TEMA(close, longer chart lookback) AND datetime >= configured start datetime AND datetime <= configured end datetime AND long trades enabled
+Exit: Short, TEMA(close, shorter chart lookback) > TEMA(close, longer chart lookback) AND short trades enabled

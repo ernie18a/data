@@ -1,0 +1,6 @@
+Calculation: Entry trend = Supertrend(high, low, close, entry ATR length, entry factor) direction evaluated on T1 bars; chart bars use the lookahead-off returned value, which can reflect a still-forming T1 bar in realtime; [1] means the previous chart bar's value.
+Calculation: Confirmation trend = Supertrend(high, low, close, confirmation ATR length, confirmation factor) direction evaluated on T2 bars, where T2 is higher than T1; chart bars use the lookahead-off returned value, which can reflect a still-forming T2 bar in realtime.
+Long: confirmed chart bar AND flat position AND chart-bar time-of-day >= entry-start time AND chart-bar time-of-day < entry-end time AND confirmation trend is down AND ((entry trend is up AND entry trend[1] is down) OR (entry window just opened AND entry trend is up))
+Short: confirmed chart bar AND flat position AND chart-bar time-of-day >= entry-start time AND chart-bar time-of-day < entry-end time AND confirmation trend is up AND ((entry trend is down AND entry trend[1] is up) OR (entry window just opened AND entry trend is down))
+Exit: long, confirmed chart bar AND ((entry trend is down AND entry trend[1] is up) OR chart-bar time-of-day >= force-exit time)
+Exit: short, confirmed chart bar AND ((entry trend is up AND entry trend[1] is down) OR chart-bar time-of-day >= force-exit time)

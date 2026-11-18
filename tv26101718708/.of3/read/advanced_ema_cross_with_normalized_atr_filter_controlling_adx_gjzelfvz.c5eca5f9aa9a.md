@@ -1,0 +1,8 @@
+Calculation: Normalized ATR = (ATR(high, low, close, ATR lookback) - lowest(ATR(high, low, close, ATR lookback), normalization lookback)) / (highest(ATR(high, low, close, ATR lookback), normalization lookback) - lowest(ATR(high, low, close, ATR lookback), normalization lookback))
+Calculation: Price strength = close / EMA(close, trend lookback) - 1
+Calculation: Long stop price = entry price * (1 - (if Price strength > 0 then positive-strength stop-loss parameter, otherwise nonpositive-strength stop-loss parameter) / 100)
+Calculation: Long target price = entry price * (1 + (if Price strength > 0 then positive-strength take-profit parameter, otherwise nonpositive-strength take-profit parameter) / 100)
+Long: (Supertrend(high, low, close, factor, lookback).direction < 0 AND crosses above(EMA(close, short lookback), EMA(close, long lookback)) AND Normalized ATR > bullish-regime threshold) OR (Supertrend(high, low, close, factor, lookback).direction > 0 AND crosses above(EMA(close, short lookback), EMA(close, long lookback)) AND Normalized ATR > bearish-regime threshold)
+Exit: Long, low <= Long stop price
+Exit: Long, high >= Long target price
+Exit: Long, ((Supertrend(high, low, close, factor, lookback).direction < 0 AND (crosses below(EMA(close, short lookback), EMA(close, long lookback)) OR RMA(close, smoothing lookback) > threshold) OR Supertrend(high, low, close, factor, lookback).direction > 0 AND (crosses below(EMA(close, short lookback), EMA(close, long lookback)) OR RMA(close, smoothing lookback) > threshold)) AND bars since entry >= minimum holding bars AND volume > SMA(volume, volume lookback) * volume multiplier

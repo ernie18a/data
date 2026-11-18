@@ -1,0 +1,4 @@
+Calculation: opening-range high = maximum(high, intraday chart bars in the opening-window session for the current session day)
+Calculation: opening-range low = minimum(low, intraday chart bars in the opening-window session for the current session day)
+Long: on an intraday chart bar, the opening-window session has ended AND opening-range high is defined AND the bar is confirmed AND close > opening-range high AND no earlier long signal occurred that session day
+Short: on an intraday chart bar, the opening-window session has ended AND opening-range low is defined AND the bar is confirmed AND close < opening-range low AND no earlier short signal occurred that session day

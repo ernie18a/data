@@ -1,0 +1,2 @@
+Long: close > open AND 100 * (close - close[1]) / close[1] >= minimum gain parameter AND volume > minimum volume parameter AND 100 * abs(close - open) / (high - low) >= minimum body percentage parameter AND (session filter is disabled OR bar is within the configured session) AND no earlier entry has occurred on the current day
+Exit: long, close <= open OR (close > open AND volume <= volume[1])

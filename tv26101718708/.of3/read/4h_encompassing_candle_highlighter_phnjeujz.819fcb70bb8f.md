@@ -1,0 +1,5 @@
+Calculation: Encompasses prior T1 bar = current T1 high > previous completed T1 high AND current T1 low < previous completed T1 low
+Calculation: T1 upper wick = T1 high - max(T1 open, T1 close)
+Calculation: T1 lower wick = min(T1 open, T1 close) - T1 low
+Long: On chart bars using the still-forming T1 bar, the selected session filter permits the chart bar in the selected timezone AND (trend filter disabled OR T1 close > EMA(close, trend lookback, T1, still-forming bar)) AND Encompasses prior T1 bar AND T1 close > previous completed T1 high AND (standard signal mode selected OR T1 lower wick > T1 upper wick)
+Short: On chart bars using the still-forming T1 bar, the selected session filter permits the chart bar in the selected timezone AND (trend filter disabled OR T1 close < EMA(close, trend lookback, T1, still-forming bar)) AND Encompasses prior T1 bar AND T1 close < previous completed T1 low AND (standard signal mode selected OR T1 upper wick > T1 lower wick)

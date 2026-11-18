@@ -1,0 +1,3 @@
+Calculation: TrendMA = apply the selected moving average variant with its lookback and variant-specific parameters repeatedly to the selected source (close or Heikin-Ashi close), using the same variant and lookback for each smoothing pass
+Long: datetime >= timestamp(start year, start month, start day, 00:00) AND datetime <= timestamp(end year, end month, end day, 00:00) AND TrendMA > TrendMA[1] AND TrendMA[1] < TrendMA[2]
+Short: datetime >= timestamp(start year, start month, start day, 00:00) AND datetime <= timestamp(end year, end month, end day, 00:00) AND TrendMA < TrendMA[1] AND TrendMA[1] > TrendMA[2]

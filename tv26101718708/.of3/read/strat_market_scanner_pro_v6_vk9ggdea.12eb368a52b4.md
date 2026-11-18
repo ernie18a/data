@@ -1,0 +1,7 @@
+Calculation: Inside(n) = high[n] <= high[n+1] AND low[n] >= low[n+1] on T1 scanner bars, with bar 0 as the current bar, which may still be forming
+Calculation: Outside(n) = high[n] > high[n+1] AND low[n] < low[n+1] on T1 scanner bars, with bar 0 as the current bar, which may still be forming
+Calculation: Up(n) = high[n] > high[n+1] AND low[n] >= low[n+1] on T1 scanner bars, with bar 0 as the current bar, which may still be forming
+Calculation: Down(n) = low[n] < low[n+1] AND high[n] <= high[n+1] on T1 scanner bars, with bar 0 as the current bar, which may still be forming
+Calculation: HTFScore(side) = the count of T2, T3, T4, and T5 whose current bar has close >= open for the long side or close < open for the short side; evaluate on each source timeframe's bars using the current bar, which may still be forming in realtime, with lookahead off
+Long: (Up(0) AND (Inside(1) OR Down(1) OR Outside(1)) OR (Inside(1) AND Outside(0) AND close > open) OR (Down(2) AND Inside(1) AND Inside(0)) OR (Outside(2) AND Down(1) AND Inside(0))) AND HTFScore(long) >= minimum HTF score AND (volume confirmation disabled OR volume > SMA(volume, volume lookback))
+Short: (Down(0) AND (Inside(1) OR Up(1) OR Outside(1)) OR (Inside(1) AND Outside(0) AND close < open) OR (Up(2) AND Inside(1) AND Inside(0)) OR (Outside(2) AND Up(1) AND Inside(0))) AND HTFScore(short) >= minimum HTF score AND (volume confirmation disabled OR volume > SMA(volume, volume lookback))

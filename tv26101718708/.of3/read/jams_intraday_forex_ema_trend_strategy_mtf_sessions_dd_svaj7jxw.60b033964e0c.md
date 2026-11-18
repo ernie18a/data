@@ -1,0 +1,8 @@
+Calculation: T1 EMA trend = 0 initially; set to 1 when EMA(close, shorter lookback) crosses above EMA(close, longer lookback), or -1 when it crosses below; the EMAs are calculated on T1 bars and sampled on chart bars from the still-forming T1 bar, and the crossings are evaluated on chart bars
+Calculation: T2-period equity drawdown = (equity at T2-period start - current strategy equity) / equity at T2-period start × 100
+Calculation: stop distance = ATR(T1, ATR lookback), calculated on T1 bars and sampled on chart bars from the still-forming T1 bar, × stop multiplier
+Calculation: target distance = stop distance × target multiple
+Long: EMA(close, shorter lookback) crosses above EMA(close, longer lookback) on chart bars AND T1 EMA trend = 1 AND T1 close > VWAP(close) (both calculated on T1 bars and sampled on chart bars from the still-forming T1 bar) AND within Session 1 or Session 2 AND T2-period equity drawdown < maximum drawdown
+Short: EMA(close, shorter lookback) crosses below EMA(close, longer lookback) on chart bars AND T1 EMA trend = -1 AND T1 close < VWAP(close) (both calculated on T1 bars and sampled on chart bars from the still-forming T1 bar) AND within Session 1 or Session 2 AND T2-period equity drawdown < maximum drawdown
+Exit: long, low <= entry-signal close - entry-signal stop distance OR high >= entry-signal close + entry-signal target distance
+Exit: short, high >= entry-signal close + entry-signal stop distance OR low <= entry-signal close - entry-signal target distance

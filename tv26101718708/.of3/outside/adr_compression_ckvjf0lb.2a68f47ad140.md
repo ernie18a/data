@@ -1,0 +1,1 @@
+Long: ADR(fast period) crosses below ADR(trend period) AND (RS gate disabled OR stock close / benchmark close > EMA(stock close / benchmark close, RS EMA period))

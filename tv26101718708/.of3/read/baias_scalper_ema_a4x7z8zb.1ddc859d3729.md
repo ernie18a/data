@@ -1,0 +1,13 @@
+Calculation: AboveCount(T) = count of the last lookback bars of T whose close is greater than EMA(close, EMA length) on that bar; calculated on T bars through the current bar, which may still be forming, and returned to chart bars
+Long: On chart bars, AboveCount(T1) >= dominance threshold
+Long: On chart bars, AboveCount(T2) >= dominance threshold
+Long: On chart bars, AboveCount(T3) >= dominance threshold
+Long: On chart bars, AboveCount(T4) >= dominance threshold
+Long: On chart bars, AboveCount(T5) >= dominance threshold
+Long: On chart bars, AboveCount(T6) >= dominance threshold
+Short: On chart bars, AboveCount(T1) <= lookback - dominance threshold
+Short: On chart bars, AboveCount(T2) <= lookback - dominance threshold
+Short: On chart bars, AboveCount(T3) <= lookback - dominance threshold
+Short: On chart bars, AboveCount(T4) <= lookback - dominance threshold
+Short: On chart bars, AboveCount(T5) <= lookback - dominance threshold
+Short: On chart bars, AboveCount(T6) <= lookback - dominance threshold

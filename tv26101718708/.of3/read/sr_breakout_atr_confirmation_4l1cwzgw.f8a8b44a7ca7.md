@@ -1,0 +1,2 @@
+Long: close > highest(high, lookback)[1] AND close - open > ATR(ATR lookback) * ATR strength multiplier AND (volume filter disabled OR volume > SMA(volume, volume MA lookback))
+Short: close < lowest(low, lookback)[1] AND open - close > ATR(ATR lookback) * ATR strength multiplier AND (volume filter disabled OR volume > SMA(volume, volume MA lookback))

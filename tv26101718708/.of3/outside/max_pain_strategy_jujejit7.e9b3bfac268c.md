@@ -1,0 +1,1 @@
+Long: volume > SMA(volume, lookback period) × volume multiplier AND |instrument close − instrument close lookback period bars ago| > instrument close lookback period bars ago × price-change multiplier AND T1 VIX close < VIX threshold

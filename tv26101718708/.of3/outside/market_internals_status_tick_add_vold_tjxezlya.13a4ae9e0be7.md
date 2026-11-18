@@ -1,0 +1,9 @@
+Calculation: Each internal's status = 1 if its reading is present, within its own absolute sanity ceiling, and above its bullish threshold; -1 if present, within its own absolute sanity ceiling, and below its bearish threshold; otherwise 0
+Long: TICK status = 1
+Short: TICK status = -1
+Long: advance/decline issues status = 1
+Short: advance/decline issues status = -1
+Long: up/down volume difference status = 1
+Short: up/down volume difference status = -1
+Long: TICK status + advance/decline issues status + up/down volume difference status >= 2
+Short: TICK status + advance/decline issues status + up/down volume difference status <= -2

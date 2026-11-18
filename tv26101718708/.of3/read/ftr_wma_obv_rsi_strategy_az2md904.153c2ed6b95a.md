@@ -1,0 +1,6 @@
+Calculation: RSI score = (RSI(close, RSI lookback) − RSI center) / RSI scale
+Calculation: Scaled OBV oscillator = OBV scale × (OBV(close, volume) − EMA(OBV(close, volume), OBV lookback))
+Long: each of the four Fisher Transform(hl2, shared lookback × its separate multiplier) values is greater than its prior value AND RSI score > long RSI threshold AND WMA(close, WMA lookback) > its prior value AND Scaled OBV oscillator > bullish OBV threshold
+Short: each of the four Fisher Transform(hl2, shared lookback × its separate multiplier) values is less than its prior value AND RSI score < short RSI threshold AND WMA(close, WMA lookback) < its prior value AND Scaled OBV oscillator < bearish OBV threshold
+Exit: long, each of the four Fisher Transform(hl2, shared lookback × its separate multiplier) values is less than its prior value AND RSI score < downward reversal threshold
+Exit: short, each of the four Fisher Transform(hl2, shared lookback × its separate multiplier) values is greater than its prior value AND RSI score > upward reversal threshold

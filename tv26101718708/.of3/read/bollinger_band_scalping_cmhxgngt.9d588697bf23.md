@@ -1,0 +1,4 @@
+Calculation: body size = abs(close-open)
+Calculation: wick ratio = (high-max(open,close)+min(open,close)-low)/body size
+Long: open and close are below the lower Bollinger Band(close, lookback, deviation multiplier) AND body size > 0 AND wick ratio <= maximum wick parameter + wick offset parameter AND (volume filter disabled OR volume > SMA(volume, volume lookback) * volume multiplier) AND (trend filter disabled OR close > EMA(close, long lookback))
+Short: open and close are above the upper Bollinger Band(close, lookback, deviation multiplier) AND body size > 0 AND wick ratio <= maximum wick parameter + wick offset parameter AND (volume filter disabled OR volume > SMA(volume, volume lookback) * volume multiplier) AND (trend filter disabled OR close < EMA(close, long lookback))

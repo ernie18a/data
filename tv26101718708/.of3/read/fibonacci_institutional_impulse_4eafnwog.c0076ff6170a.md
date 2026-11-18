@@ -1,0 +1,2 @@
+Long: HLC3 crosses above VWMA(HLC3, lookback) - band fraction * deviation multiplier * STDEV(HLC3, lookback)
+Short: HLC3 crosses above VWMA(HLC3, lookback) + band fraction * deviation multiplier * STDEV(HLC3, lookback)

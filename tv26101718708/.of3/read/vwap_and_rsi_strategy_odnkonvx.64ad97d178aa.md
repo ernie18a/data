@@ -1,0 +1,4 @@
+Calculation: Long-position bar count = 0 while flat; previous count + 1 while long
+Long: EMA(close, shorter lookback) > EMA(close, longer lookback) AND close > open AND close > session VWAP(hlc3) AND open > session VWAP(hlc3) AND RSI(close, RSI lookback) < RSI dip threshold on any of the prior RSI dip lookback bars
+Long: Add-on parameter enabled AND position is long AND previous long-position bar count > minimum add-on hold parameter AND close <= close[previous long-position bar count bars ago] AND RSI(close, RSI lookback) > RSI(close, RSI lookback)[long-position bar count + 1 bars ago] AND close > open AND close > session VWAP(hlc3)
+Exit: long, RSI(close, RSI lookback) crosses below RSI exit threshold OR close < average entry price × (1 − stop-loss percentage)

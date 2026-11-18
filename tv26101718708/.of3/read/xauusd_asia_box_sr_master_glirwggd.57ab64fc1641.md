@@ -1,0 +1,2 @@
+Long: breakout signals enabled AND crosses above the last confirmed PivotHigh(high, left lookback, right lookback) AND close - open >= open - low AND Volume Oscillator(volume, shorter lookback, longer lookback) > volume threshold
+Short: breakout signals enabled AND crosses below the last confirmed PivotLow(low, left lookback, right lookback) AND open - close >= high - open AND Volume Oscillator(volume, shorter lookback, longer lookback) > volume threshold

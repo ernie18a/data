@@ -1,0 +1,4 @@
+Calculation: eligible session = all-hours override OR (Asia session enabled AND bar is within the Asia session) OR (London session enabled AND bar is within the London session) OR (New York session enabled AND bar is within the New York session)
+Calculation: close position = (close - low) / (high - low), with value 0 when high = low
+Long: eligible session AND high - low > SMA(high - low, average lookback) * range multiplier AND volume > SMA(volume, average lookback) * volume multiplier AND close position >= upper close-position threshold AND close > open
+Short: eligible session AND high - low > SMA(high - low, average lookback) * range multiplier AND volume > SMA(volume, average lookback) * volume multiplier AND close position <= lower close-position threshold AND close < open

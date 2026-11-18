@@ -1,0 +1,2 @@
+Long: SMA(close, shorter lookback, T1 bars) crosses above SMA(close, longer lookback, T1 bars), evaluated on chart bars using values from T1's still-forming bar
+Short: SMA(close, shorter lookback, T1 bars) crosses below SMA(close, longer lookback, T1 bars), evaluated on chart bars using values from T1's still-forming bar

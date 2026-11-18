@@ -1,0 +1,1 @@
+Long: Close of a tracked healthcare stock crosses above its latest Pivot High(max(Open, Close), P1, P1)

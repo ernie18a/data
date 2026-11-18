@@ -1,0 +1,11 @@
+Calculation: buying volume = if T1 high = T1 low then 0 else T1 volume * (T1 close - T1 low) / (T1 high - T1 low), on chart bars using the current T1 bar (still forming in realtime; last completed historically)
+Calculation: selling volume = if T1 high = T1 low then 0 else T1 volume * (T1 high - T1 close) / (T1 high - T1 low), on chart bars using the current T1 bar (still forming in realtime; last completed historically)
+Calculation: buying pressure = buying volume / (buying volume + selling volume) * (T1 volume > 0 ? T1 volume : 1)
+Calculation: selling pressure = selling volume / (buying volume + selling volume) * (T1 volume > 0 ? T1 volume : 1)
+Calculation: bullish volume contribution = buying pressure > selling pressure ? buying pressure : -ABS(buying pressure)
+Calculation: bearish volume contribution = selling pressure > buying pressure ? selling pressure : -ABS(selling pressure)
+Calculation: volume imbalance = bullish volume contribution + bearish volume contribution
+Calculation: percent true-range average = SMA(MAX(T3 high - T3 low, ABS(T3 high - T3 close[1]), ABS(T3 low - T3 close[1])) * 100 / T3 close, risk lookback) on chart bars using the current T3 bar (still forming in realtime; last completed historically), where T3 close[1] is the previous chart bar's sampled T3 close
+Long: volume imbalance > upper Bollinger Band(volume imbalance, volume-band lookback, volume-band deviation multiplier, T1, still-forming bar) AND bullish volume contribution > bearish volume contribution AND chart close > VWAP(hlc3, T2, still-forming bar)
+Short: volume imbalance > upper Bollinger Band(volume imbalance, volume-band lookback, volume-band deviation multiplier, T1, still-forming bar) AND bullish volume contribution < bearish volume contribution AND chart close < VWAP(hlc3, T2, still-forming bar)
+Exit: long, on a chart bar after the long signal bar, chart high > (long signal bar close * (1 + percent true-range average at the long signal bar * long target multiplier / 100)) OR chart low < (long signal bar close * (1 - percent true-range average at the long signal bar * long stop multiplier / 100))

@@ -1,0 +1,2 @@
+Long: Position is flat AND, for every configured pair, MA(close, fast lookback) > MA(close, corresponding slow lookback), with the fast lookback shorter than the slow lookback.
+Exit: Long, at least one configured pair has MA(close, fast lookback) < MA(close, corresponding slow lookback) AND (high > the profit target stored from the long-entry-signal bar, calculated as that bar's close + profit ATR multiple * ATR(ATR lookback) OR low < the loss target stored from the long-entry-signal bar, calculated as that bar's close - loss ATR multiple * ATR(ATR lookback)).

@@ -1,0 +1,9 @@
+Calculation: Smoothed supertrend = On chart bars, let O/C/H/L be MA(open/close/high/low, candle MA type, shared candle lookback); ATR = MA(max(H,C[1])-min(L,C[1]), separate ATR MA type, separate ATR lookback) * ATR multiplier; initialize direction up; long stop starts at C-ATR and ratchets to max(C-ATR, prior long stop) when (wicks enabled ? L[1] : C[1]) > prior long stop; short stop starts at C+ATR and ratchets to min(C+ATR, prior short stop) when (wicks enabled ? H[1] : C[1]) < prior short stop; direction flips up when prior direction is down and (wicks enabled ? H : C) > prior short stop, flips down when prior direction is up and (wicks enabled ? L : C) < prior long stop, and otherwise carries forward; on the first bar, prior stops equal their initial values.
+Long: MA(open, candle MA type, candle lookback) < MA(close, candle MA type, candle lookback)
+Short: MA(open, candle MA type, candle lookback) > MA(close, candle MA type, candle lookback)
+Long: Smoothed supertrend direction is up
+Short: Smoothed supertrend direction is down
+Long: Smoothed supertrend direction is up AND ((prior chart-bar direction is up AND close > close[1]) OR close > short stop) AND (close > high(T1, last completed bar) * (1 - D) OR close > low(T1, last completed bar) * (1 + R)) AND datetime >= start datetime AND datetime <= end datetime
+Short: Smoothed supertrend direction is down AND ((prior chart-bar direction is down AND close < close[1]) OR close < long stop) AND (close < low(T1, last completed bar) * (1 + D) OR close < high(T1, last completed bar) * (1 - R)) AND datetime >= start datetime AND datetime <= end datetime
+Exit: Long, Smoothed supertrend direction is down AND ((prior chart-bar direction is down AND close < close[1]) OR close < long stop)
+Exit: Short, Smoothed supertrend direction is up AND ((prior chart-bar direction is up AND close > close[1]) OR close > short stop)

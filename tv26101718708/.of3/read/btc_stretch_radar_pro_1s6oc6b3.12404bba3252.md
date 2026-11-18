@@ -1,0 +1,3 @@
+Calculation: EMA percentage stretch = (close - EMA(close, EMA lookback)) / EMA(close, EMA lookback) * 100
+Long: EMA percentage stretch < SMA(EMA percentage stretch, statistics lookback) - STDEV(EMA percentage stretch, statistics lookback) * extreme multiplier AND ATR(ATR lookback) > SMA(ATR(ATR lookback), ATR baseline lookback)
+Short: EMA percentage stretch > SMA(EMA percentage stretch, statistics lookback) + STDEV(EMA percentage stretch, statistics lookback) * extreme multiplier AND ATR(ATR lookback) > SMA(ATR(ATR lookback), ATR baseline lookback)

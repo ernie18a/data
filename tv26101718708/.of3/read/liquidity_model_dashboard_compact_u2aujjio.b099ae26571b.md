@@ -1,0 +1,2 @@
+Long: close on the shorter timeframe T1's bar still forming > EMA(close, lookback) on T1's bar still forming AND close on the longer timeframe T2's bar still forming > EMA(close, lookback) on T2's bar still forming
+Short: close on T1's bar still forming <= EMA(close, lookback) on T1's bar still forming OR close on T2's bar still forming <= EMA(close, lookback) on T2's bar still forming

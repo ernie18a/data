@@ -1,0 +1,2 @@
+Long: position is flat AND (high > highest(high, ATH lookback)[1] OR high > highest(high, T1 lookback, calculated on T1 bars and sampled on the prior chart bar, including the T1 bar still forming at that time))
+Exit: Long, low <= highest(high from entry through current bar) - ATR(lookback) * multiplier OR close < EMA(close, lookback)

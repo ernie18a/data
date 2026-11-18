@@ -1,0 +1,5 @@
+Calculation: issuance per day = the issuance rate for the active era × blocks per day; select among five successive eras using four ordered era-boundary datetime parameters
+Calculation: difficulty-adjusted issuance base = scaling parameter × exp(damping parameter × ln(SMA(difficulty close from T1 current bar, separate difficulty lookback))) / SUM(issuance per day, separate issuance lookback); both calculations run on chart bars, and T1 values use the current bar, which may still be forming
+Calculation: upper band = difficulty-adjusted issuance base × (upper-band floor multiplier + (upper-band start multiplier − upper-band floor multiplier) × exp(−decay-rate parameter × max(elapsed days since Jan 1 of decay-start-year parameter, 0)))
+Long: reference close from T1 current bar, which may still be forming, sampled on chart bars <= difficulty-adjusted issuance base
+Short: reference close from T1 current bar, which may still be forming, sampled on chart bars >= upper band

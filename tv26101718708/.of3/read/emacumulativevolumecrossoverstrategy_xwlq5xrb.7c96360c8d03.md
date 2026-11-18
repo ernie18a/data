@@ -1,0 +1,8 @@
+Long: EMA(close, EMA lookback) crosses above VWAP((high + low + close) / 3, VWAP lookback)
+Short: close < VWAP((high + low + close) / 3, VWAP lookback) AND close < open AND close[1] < VWAP((high + low + close) / 3, VWAP lookback) AND close[1] < open[1] AND close < close[1] AND EMA(close, EMA lookback) >= VWAP((high + low + close) / 3, VWAP lookback)
+Exit: Long, EMA(close, EMA lookback) crosses below VWAP((high + low + close) / 3, VWAP lookback)
+Exit: Long, close < entry price × (1 − stop percentage / 100)
+Exit: Long, close one-third when partial-profit exits are enabled AND close > entry price × (1 + stop percentage / 100) AND close crosses below EMA(close, EMA lookback)
+Exit: Short, close > entry price × (1 + stop percentage / 100)
+Exit: Short, EMA(close, EMA lookback) < VWAP((high + low + close) / 3, VWAP lookback) AND close > VWAP((high + low + close) / 3, VWAP lookback) AND open > VWAP((high + low + close) / 3, VWAP lookback) AND close > open OR EMA(close, EMA lookback) crosses above VWAP((high + low + close) / 3, VWAP lookback)
+Exit: Short, close one-third when partial-profit exits are enabled AND close < entry price × (1 − stop percentage / 100)

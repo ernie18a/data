@@ -1,0 +1,2 @@
+Long: MA(fast type, fast source, fast lookback) crosses above MA(slow type, slow source, slow lookback) AND (trend filter disabled OR MA(fast type, fast source, fast lookback) > MA(filter type, filter source, filter lookback))
+Short: MA(fast type, fast source, fast lookback) crosses below MA(slow type, slow source, slow lookback) AND (trend filter disabled OR MA(fast type, fast source, fast lookback) < MA(filter type, filter source, filter lookback))

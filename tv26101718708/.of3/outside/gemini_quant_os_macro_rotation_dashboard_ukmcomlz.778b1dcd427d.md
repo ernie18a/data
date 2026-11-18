@@ -1,0 +1,10 @@
+Calculation: Treasury spread (bps) = (10-year Treasury yield - 2-year Treasury yield) × 100
+Calculation: Treasury spread change (bps) = current Treasury spread - Treasury spread at the trend lookback bars ago
+Calculation: 2-year yield change (bps) = (current 2-year Treasury yield - 2-year Treasury yield at the trend lookback bars ago) × 100
+Calculation: 10-year yield change (bps) = (current 10-year Treasury yield - 10-year Treasury yield at the trend lookback bars ago) × 100
+Calculation: SPX drawdown (%) = (current SPX close - highest SPX close over the drawdown lookback) / highest SPX close over the drawdown lookback × 100
+Long: Treasury spread ≤ flat-band threshold AND Treasury spread change > spread-rise threshold
+Long: Treasury spread > rotation threshold AND Treasury spread change > spread-rise threshold AND 2-year yield change < 0 AND (10-year yield change ≤ 0 OR abs(10-year yield change) < abs(2-year yield change))
+Exit: long bonds, (Treasury spread > rotation threshold AND Treasury spread change > spread-rise threshold AND 2-year yield change < 0 AND (10-year yield change ≤ 0 OR abs(10-year yield change) < abs(2-year yield change))) OR (Treasury spread change > spread-rise threshold AND 10-year yield change > 0 AND abs(10-year yield change) ≥ 0.6 × abs(2-year yield change)) OR 10-year yield change > rebound threshold
+Exit: long SPX, SPX drawdown ≤ -warning threshold OR SPX drawdown ≤ -hard threshold
+Long: gold hedge enabled AND (Treasury spread < -flat-band threshold OR (Treasury spread change > spread-rise threshold AND 10-year yield change > 0 AND abs(10-year yield change) ≥ 0.6 × abs(2-year yield change)) OR 10-year yield change > rebound threshold OR SPX drawdown ≤ -warning threshold) AND (current gold price - gold price at the gold-momentum lookback bars ago) / gold price at the gold-momentum lookback bars ago × 100 > 0

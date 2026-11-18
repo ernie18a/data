@@ -1,0 +1,2 @@
+Long: close > EMA(close, shorter lookback) AND close > EMA(close, longer lookback) AND close > session VWAP(hlc3) AND close > daily VWAP(hlc3) AND volume > SMA(volume, lookback)
+Short: close < EMA(close, shorter lookback) AND close < EMA(close, longer lookback) AND close < session VWAP(hlc3) AND close < daily VWAP(hlc3) AND volume > SMA(volume, lookback)

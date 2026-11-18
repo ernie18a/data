@@ -1,0 +1,4 @@
+Calculation: Pivot delta = sum for each bar i from 0 through twice the swing lookback bars ago: if high[i] > low[i], volume[i] × (2 × (close[i] − low[i]) / (high[i] − low[i]) − 1); otherwise volume[i] if close[i] >= open[i], else −volume[i]
+Calculation: Strength percentage = 100 × abs(Pivot delta) / max(0.0001, abs(Pivot delta), absolute deltas of previously accepted active levels), removing support levels when close <= their price and resistance levels when close >= their price
+Long: On confirmed bars, pivotlow(low, swing lookback, swing lookback) exists AND Strength percentage >= minimum delta percentage
+Short: On confirmed bars, pivothigh(high, swing lookback, swing lookback) exists AND Strength percentage >= minimum delta percentage

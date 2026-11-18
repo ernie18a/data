@@ -1,0 +1,5 @@
+Calculation: Maximum-loss distance = maximum-loss parameter × previous completed T1 close, in ticks, carried onto chart bars
+Long: long trading enabled AND position is flat or short AND open < selected classic pivot level from the previous completed T1 bar, carried onto chart bars AND close > selected classic pivot level from the previous completed T1 bar, carried onto chart bars AND hour < close-hour parameter − entry-cutoff-offset parameter
+Short: short trading enabled AND position is flat or short AND open > selected classic pivot level from the previous completed T1 bar, carried onto chart bars AND close < selected classic pivot level from the previous completed T1 bar, carried onto chart bars AND hour < close-hour parameter − entry-cutoff-offset parameter
+Exit: Long, low <= entry price − maximum-loss distance OR hour = close-hour parameter
+Exit: Short, high >= entry price + maximum-loss distance OR hour = close-hour parameter

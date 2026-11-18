@@ -1,0 +1,2 @@
+Long: Z-Score of (Bitcoin market capitalization on T1 minus Bitcoin realized capitalization on T1), normalized by realized capitalization when the spread method is normalized and otherwise absolute, over the lookback parameter <= oversold threshold
+Short: Z-Score of (Bitcoin market capitalization on T1 minus Bitcoin realized capitalization on T1), normalized by realized capitalization when the spread method is normalized and otherwise absolute, over the lookback parameter >= overbought threshold

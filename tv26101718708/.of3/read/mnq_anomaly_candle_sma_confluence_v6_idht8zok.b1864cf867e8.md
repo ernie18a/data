@@ -1,0 +1,2 @@
+Long: True Range > SMA(True Range, lookback) * size multiplier AND (volume filter disabled OR volume > SMA(volume, same lookback)) AND close > open AND (SMA filter disabled OR SMA(close, short lookback) > SMA(close, medium lookback) > SMA(close, long lookback))
+Short: True Range > SMA(True Range, lookback) * size multiplier AND (volume filter disabled OR volume > SMA(volume, same lookback)) AND close < open AND (SMA filter disabled OR SMA(close, short lookback) < SMA(close, medium lookback) < SMA(close, long lookback))

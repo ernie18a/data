@@ -1,0 +1,6 @@
+Calculation: bullish absorption = high > low AND abs(close - open) / (high - low) < maximum body fraction AND volume > SMA(volume, volume lookback) * minimum volume multiple AND volume > 0 AND (volume * (close - low) / (high - low)) / volume > minimum bullish delta fraction AND close > EMA(close, trend lookback)
+Calculation: bearish absorption = high > low AND abs(close - open) / (high - low) < maximum body fraction AND volume > SMA(volume, volume lookback) * minimum volume multiple AND volume > 0 AND (volume * (high - close) / (high - low)) / volume > minimum bearish delta fraction AND close < EMA(close, trend lookback)
+Long: bullish absorption
+Short: bearish absorption
+Long: bullish absorption[1] AND close > open AND open < close[1] AND close > open[1] AND abs(close - open) > abs(close[1] - open[1]) AND close > EMA(close, trend lookback)
+Short: bearish absorption[1] AND close < open AND open > close[1] AND close < open[1] AND abs(close - open) > abs(close[1] - open[1]) AND close < EMA(close, trend lookback)

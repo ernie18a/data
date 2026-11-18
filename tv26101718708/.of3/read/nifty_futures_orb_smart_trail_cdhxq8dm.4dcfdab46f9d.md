@@ -1,0 +1,12 @@
+Calculation: opening-range high = highest high of chart bars in the current trading day’s configured opening-range session (Asia/Kolkata), available after that session ends
+Calculation: opening-range low = lowest low of chart bars in the current trading day’s configured opening-range session (Asia/Kolkata), available after that session ends
+Calculation: opening-range width percentage = 100 × (opening-range high − opening-range low) / current close
+Calculation: initial risk = max(distance from entry price to the opposite opening-range boundary for the position side, ATR(ATR lookback) on the entry bar × initial-stop multiplier)
+Calculation: profit in R = (current bar high − entry price) / initial risk for a long position, or (entry price − current bar low) / initial risk for a short position
+Calculation: selected ATR trail multiplier = widest multiplier below the first profit threshold, middle multiplier at or above the first threshold and below the second, and tightest multiplier at or above the second; the thresholds are separate parameters, and the three multipliers are separate parameters ordered widest to tightest
+Calculation: long protective stop = max(previous long protective stop, current bar high − ATR(ATR lookback) × selected ATR trail multiplier, lowest(low, swing lookback)); initialize to entry price − initial risk
+Calculation: short protective stop = min(previous short protective stop, current bar low + ATR(ATR lookback) × selected ATR trail multiplier, highest(high, swing lookback)); initialize to entry price + initial risk
+Long: longs enabled AND no earlier long entry during the current trading day AND position is flat AND opening range is complete AND not during the configured no-entry session (Asia/Kolkata) AND opening-range width percentage <= the width-cap parameter AND close > opening-range high
+Short: shorts enabled AND no earlier short entry during the current trading day AND position is flat AND opening range is complete AND not during the configured no-entry session (Asia/Kolkata) AND opening-range width percentage <= the width-cap parameter AND close < opening-range low
+Exit: Long, low <= long protective stop OR open − close > ATR(ATR lookback) × reversal-exit multiplier OR datetime is within the configured square-off session (Asia/Kolkata)
+Exit: Short, high >= short protective stop OR close − open > ATR(ATR lookback) × reversal-exit multiplier OR datetime is within the configured square-off session (Asia/Kolkata)

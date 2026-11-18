@@ -1,0 +1,2 @@
+Long: close > Lowest(low, lookback) + (Highest(high, lookback) - Lowest(low, lookback)) * upper fraction
+Short: close < Lowest(low, lookback) + (Highest(high, lookback) - Lowest(low, lookback)) * lower fraction

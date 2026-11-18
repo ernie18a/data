@@ -1,0 +1,4 @@
+Long: On chart bars, close > high[1] (T1, last completed bar) AND no open position AND no long entry yet in the current T1 period (reset at its New York boundary)
+Short: On chart bars, close < low[1] (T1, last completed bar) AND no open position AND no short entry yet in the current T1 period (reset at its New York boundary)
+Exit: Long, high >= the close of the long-entry signal bar + take-profit parameter × pip parameter OR low <= the close of the long-entry signal bar - stop-loss parameter × pip parameter
+Exit: Short, low <= the close of the short-entry signal bar - take-profit parameter × pip parameter OR high >= the close of the short-entry signal bar + stop-loss parameter × pip parameter

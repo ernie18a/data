@@ -1,0 +1,7 @@
+Calculation: VAMS(asset) = log(prior-bar close / close P1 bars before the prior bar) / stdev(log(prior-bar close / close two bars before the current bar), P2), or zero if the stdev is zero
+Calculation: raw macro regime = the first maximum in Goldilocks, Reflation, Inflation, Deflation of these vote counts, with one vote per listed condition: Goldilocks counts S&P 500 and Bitcoin VAMS > P3 and WTI crude oil, US Dollar Index, VIX, and 10-year Treasury yield VAMS < -P3; Reflation counts S&P 500 and Bitcoin VAMS > P3, WTI crude oil and 10-year Treasury yield VAMS > P3, and US Dollar Index and VIX VAMS < -P3; Inflation counts S&P 500 and Bitcoin VAMS < -P3 and WTI crude oil, US Dollar Index, VIX, and 10-year Treasury yield VAMS > P3; Deflation counts S&P 500 and Bitcoin VAMS < -P3, WTI crude oil and 10-year Treasury yield VAMS < -P3, and US Dollar Index and VIX VAMS > P3
+Calculation: confirmed macro regime = raw macro regime after it remains unchanged for P4 consecutive chart bars, otherwise the previous confirmed macro regime
+Long: confirmed macro regime is Goldilocks or Reflation
+Short: confirmed macro regime is Deflation
+Exit: long, confirmed macro regime is Inflation
+Exit: short, confirmed macro regime is Inflation

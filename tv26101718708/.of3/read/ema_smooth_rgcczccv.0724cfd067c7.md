@@ -1,0 +1,5 @@
+Calculation: T1 bars elapsed since reversal signal = current T1 bar index sampled on chart bars − T1 bar index sampled on chart bars at the signal, using the current T1 bar (including a still-forming bar when applicable)
+Long: with smoothing enabled, EMA(source, fast lookback) crosses above selected MA(EMA(source, fast lookback), smoothing lookback) while flat; or, following that cross while short, enter immediately if reversal delay is disabled or when T1 bars elapsed since the cross >= reversal-delay parameter
+Short: with smoothing enabled, EMA(source, fast lookback) crosses below selected MA(EMA(source, fast lookback), smoothing lookback) while flat; or, following that cross while long, enter immediately if reversal delay is disabled or when T1 bars elapsed since the cross >= reversal-delay parameter
+Exit: long, EMA(source, fast lookback) crosses below selected MA(EMA(source, fast lookback), smoothing lookback)
+Exit: short, EMA(source, fast lookback) crosses above selected MA(EMA(source, fast lookback), smoothing lookback)

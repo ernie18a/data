@@ -1,0 +1,4 @@
+Long: selected MA(close, shorter long-entry lookback) crosses above selected MA(close, longer long-entry lookback)
+Short: selected MA(close, shorter short-entry lookback) crosses below selected MA(close, longer short-entry lookback)
+Exit: long, selected MA(close, shorter long-entry lookback) crosses below selected MA(close, longer long-entry lookback) OR high >= entry price * (1 + take-profit percentage) OR low <= entry price * (1 - stop-loss percentage) OR alternate exit enabled AND close < selected alternate-exit MA (chosen from the four configured MAs)
+Exit: short, selected MA(close, shorter short-entry lookback) crosses above selected MA(close, longer short-entry lookback) OR low <= entry price * (1 - take-profit percentage) OR high >= entry price * (1 + stop-loss percentage) OR alternate exit enabled AND close < selected alternate-exit MA (chosen from the four configured MAs)

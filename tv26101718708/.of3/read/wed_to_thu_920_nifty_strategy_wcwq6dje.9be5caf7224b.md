@@ -1,0 +1,4 @@
+Long: On the Wednesday bar opening at 09:15 Asia/Kolkata and closing at 09:20, close > the previous week's Wednesday 09:20 close if available, otherwise the previous week's Tuesday 09:20 close
+Short: On the Wednesday bar opening at 09:15 Asia/Kolkata and closing at 09:20, close < the previous week's Wednesday 09:20 close if available, otherwise the previous week's Tuesday 09:20 close
+Exit: Long, low <= entry price - stop distance OR the Asia/Kolkata weekday is not Wednesday AND hour is 15 AND minute >= 15
+Exit: Short, high >= entry price + stop distance OR the Asia/Kolkata weekday is not Wednesday AND hour is 15 AND minute >= 15

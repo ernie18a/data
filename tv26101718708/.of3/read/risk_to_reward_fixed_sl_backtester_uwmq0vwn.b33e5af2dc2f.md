@@ -1,0 +1,5 @@
+Calculation: Initial long stop = if fixed-risk mode, signal-bar close × (1 − fixed stop percentage); otherwise, low − RMA(TR, ATR lookback) × ATR multiplier for the ATR method, Lowest(low, pivot lookback) for the pivot-low method, or undefined for an unmatched stop method
+Calculation: Initial risk = abs(signal-bar close − initial long stop)
+Calculation: Active long stop = if breakeven is enabled and the breakeven threshold (signal-bar close + breakeven ratio × initial risk) has been reached since entry, entry price × (1 + breakeven buffer percentage); otherwise initial long stop
+Long: position is flat AND selected source equals configured signal threshold AND (date-range limit is disabled OR datetime is within the configured date range)
+Exit: Long, high ≥ (if fixed-risk mode, signal-bar close × (1 + fixed take-profit percentage); otherwise signal-bar close + risk-to-reward ratio × initial risk) OR low ≤ active long stop

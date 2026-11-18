@@ -1,0 +1,4 @@
+Calculation: Bearish trendline = line extended right through the two most recent confirmed pivot highs (pivot high(high, left lookback, right lookback))
+Calculation: Bullish trendline = line extended right through the two most recent confirmed pivot lows (pivot low(low, left lookback, right lookback))
+Long: close crosses above bearish trendline AND EMA(close, shorter lookback) > EMA(close, longer lookback) AND (volume filter disabled OR volume > SMA(volume, lookback))
+Short: close crosses below bullish trendline AND EMA(close, shorter lookback) < EMA(close, longer lookback) AND (volume filter disabled OR volume > SMA(volume, lookback))

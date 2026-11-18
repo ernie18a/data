@@ -1,0 +1,10 @@
+Calculation: VWAP distance (%) = (close - VWAP(hlc3)) / VWAP(hlc3) * 100
+Calculation: VWAP deviation = stdev(VWAP distance, band lookback)
+Calculation: Upper VWAP band(multiplier) = VWAP(hlc3) * (1 + VWAP deviation * multiplier / 100)
+Calculation: Lower VWAP band(multiplier) = VWAP(hlc3) * (1 - VWAP deviation * multiplier / 100)
+Calculation: Long stop = lowest(low, stop lookback) on the first position bar; on each later chart bar when high >= position average entry price + breakeven trigger / point value, max(previous long stop, position average entry price); otherwise previous long stop
+Calculation: Short stop = highest(high, stop lookback) on the first position bar; on each later chart bar when low <= position average entry price - breakeven trigger / point value, min(previous short stop, position average entry price); otherwise previous short stop
+Long: long entries enabled AND (flat position OR (second-contract entries enabled AND long position AND close < position average entry price)) AND within the selected session window in America/New_York AND (expansion filter disabled OR VWAP deviation > highest(VWAP deviation[1], expansion lookback)) AND close > EMA(close, trend lookback) on T1 bars, last completed T1 bar, sampled on chart bars AND VWAP distance[1] < -VWAP deviation[1] * band 3 multiplier AND VWAP distance >= -VWAP deviation * band 3 multiplier
+Short: short entries enabled AND flat position AND within the selected session window in America/New_York AND (expansion filter disabled OR VWAP deviation > highest(VWAP deviation[1], expansion lookback)) AND close < EMA(close, trend lookback) on T1 bars, last completed T1 bar, sampled on chart bars AND VWAP distance[1] > VWAP deviation[1] * band 3 multiplier AND VWAP distance <= VWAP deviation * band 3 multiplier
+Exit: long, low <= long stop OR high >= selected target (VWAP or lower VWAP band using band 1, band 2, or band 3 multiplier)
+Exit: short, high >= short stop OR low <= selected target (VWAP or upper VWAP band using band 1, band 2, or band 3 multiplier)

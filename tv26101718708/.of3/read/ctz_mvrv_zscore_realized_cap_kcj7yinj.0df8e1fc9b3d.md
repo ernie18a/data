@@ -1,0 +1,3 @@
+Calculation: MVRV Z-Score = (market capitalization - realized capitalization) / sample standard deviation of market capitalization over all valid chart bars, using T1 closes (last completed bar historically; still-forming bar in real time, on chart bars)
+Long: market capitalization < realized capitalization OR (MVRV Z-Score <= bottom threshold AND NOT (MVRV Z-Score[1] <= bottom threshold OR market capitalization[1] < realized capitalization[1]))
+Short: MVRV Z-Score >= top threshold AND NOT (MVRV Z-Score[1] >= top threshold)

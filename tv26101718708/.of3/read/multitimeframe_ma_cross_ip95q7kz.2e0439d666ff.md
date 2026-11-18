@@ -1,0 +1,6 @@
+Long: For each configured timeframe T1 and each of the four separate lookbacks, on chart bars using T1’s still-forming bar, close(T1) > MA(close, lookback, selected MA type, T1).
+Short: For each configured timeframe T1 and each of the four separate lookbacks, on chart bars using T1’s still-forming bar, close(T1) <= MA(close, lookback, selected MA type, T1).
+Long: On chart bars using T1’s still-forming bar, MA(close, shortest lookback, selected MA type, T1) > MA(close, next-longer lookback, selected MA type, T1) > MA(close, next-longer lookback, selected MA type, T1) > MA(close, longest lookback, selected MA type, T1) AND close(T1) > each of the four MAs.
+Short: On chart bars using T1’s still-forming bar, MA(close, shortest lookback, selected MA type, T1) < MA(close, next-longer lookback, selected MA type, T1) < MA(close, next-longer lookback, selected MA type, T1) < MA(close, longest lookback, selected MA type, T1) AND close(T1) < each of the four MAs.
+Long: On chart bars using T1’s still-forming bar, MA(close, shortest lookback, selected MA type, T1) crosses above MA(close, next-longer lookback, selected MA type, T1).
+Short: On chart bars using T1’s still-forming bar, MA(close, shortest lookback, selected MA type, T1) crosses below MA(close, next-longer lookback, selected MA type, T1).

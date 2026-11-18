@@ -1,0 +1,16 @@
+Calculation: volume surge = volume > SMA(volume, volume lookback) * volume surge multiplier
+Calculation: large volume surge = volume > SMA(volume, volume lookback) * spike multiplier
+Calculation: upward breakout condition = close > high of the last completed T1 bar, sampled onto chart bars
+Calculation: momentum burst = ROC(close, shorter momentum lookback) > ROC(close, longer momentum lookback) * momentum ratio AND ROC(close, shorter momentum lookback) > momentum floor
+Calculation: pre-spike condition = upper Bollinger Band(close, Bollinger lookback, Bollinger deviation multiplier) < EMA(close, Keltner lookback) + Keltner range multiplier * EMA(high - low, Keltner lookback) AND lower Bollinger Band(close, Bollinger lookback, Bollinger deviation multiplier) > EMA(close, Keltner lookback) - Keltner range multiplier * EMA(high - low, Keltner lookback) AND volume > SMA(volume, volume lookback) * volume build multiplier AND volume < SMA(volume, volume lookback) * spike multiplier AND abs(ROC(close, shorter momentum lookback) - ROC(close, longer momentum lookback)) < momentum spread threshold AND ROC(close, shorter momentum lookback) > 0
+Calculation: smart-spike condition = large volume surge AND upward breakout condition AND momentum burst AND ADX(ADX lookback) > ADX threshold AND +DI(ADX lookback) > -DI(ADX lookback)
+Calculation: strong-breakout condition = upward breakout condition AND volume surge AND momentum burst
+Calculation: slow-rise condition = ROC(close, longer momentum lookback) > 0 AND ROC(close, shorter momentum lookback) > 0 AND ROC(close, shorter momentum lookback) < ROC(close, longer momentum lookback) AND NOT volume surge
+Calculation: conviction score = (momentum-positive weight if ROC(close, shorter momentum lookback) > 0 + fast-over-slow weight if ROC(close, shorter momentum lookback) > ROC(close, longer momentum lookback) + RSI weight if RSI(close, RSI lookback) > RSI score threshold + ADX weight if ADX(ADX lookback) > ADX threshold + volume-surge weight if volume surge + breakout weight if upward breakout condition + smart-spike weight if smart-spike condition + pre-spike weight if pre-spike condition - trap penalty if large volume surge AND NOT upward breakout condition AND RSI(close, RSI lookback) > trap RSI threshold AND ROC(close, shorter momentum lookback) < ROC(close, longer momentum lookback) AND -DI(ADX lookback) > +DI(ADX lookback) - exhaustion penalty if large volume surge AND RSI(close, RSI lookback) > exhaustion RSI threshold AND NOT (high - low > SMA(high - low, range lookback) * range expansion multiplier)) / score normalization
+Long: upward breakout condition
+Long: pre-spike condition
+Long: smart-spike condition
+Long: slow-rise condition
+Long: strong-breakout condition
+Long: conviction score > confirmation score threshold AND strong-breakout condition
+Long: conviction score > early-entry score threshold AND ((ROC(close, shorter momentum lookback) > 0 AND ROC(close, longer momentum lookback) > 0 AND volume surge AND NOT upward breakout condition) OR pre-spike condition)

@@ -1,0 +1,1 @@
+Long: (SMA(close, P1) crosses above SMA(close, P2) OR SMA(close, P2) crosses above SMA(close, P3) OR SMA(close, P3) crosses above SMA(close, P4) OR (flat after a prior position AND close > SMA(close, P4) AND close > maximum instrument high during the prior position)) AND (((QQQ all-time-high close - QQQ close) / QQQ all-time-high close <= P5) OR QQQ close > SMA(QQQ close, P6))

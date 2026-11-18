@@ -1,0 +1,4 @@
+Calculation: Kinetic fuel = volume * abs(close - close[1])
+Calculation: Normalized fuel = if highest(kinetic fuel, normalization lookback) > lowest(kinetic fuel, normalization lookback), (kinetic fuel - lowest(kinetic fuel, normalization lookback)) / (highest(kinetic fuel, normalization lookback) - lowest(kinetic fuel, normalization lookback)), else 0
+Long: normalized fuel >= spike threshold AND bar is confirmed AND ((close > EMA(close, trend baseline length) AND close[1] > EMA(close, trend baseline length)[1]) OR RSI(close, RSI lookback) <= RSI midpoint)
+Short: normalized fuel >= spike threshold AND bar is confirmed AND ((close <= EMA(close, trend baseline length) AND close[1] <= EMA(close, trend baseline length)[1]) OR RSI(close, RSI lookback) > RSI midpoint)

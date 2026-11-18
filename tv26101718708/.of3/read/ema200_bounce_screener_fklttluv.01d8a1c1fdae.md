@@ -1,0 +1,5 @@
+Calculation: Chart EMA = EMA(close, EMA lookback)
+Calculation: Prior strength ratio = Highest(close / Chart EMA, prior-strength lookback)[1]
+Long: Chart EMA > Chart EMA[trend lookback] AND Prior strength ratio >= 1 + prior-strength threshold / 100 AND low <= Chart EMA AND low >= Chart EMA - ATR(ATR lookback) AND close > Chart EMA AND (market-filter toggle is off OR filter-instrument close > EMA(close, filter EMA lookback, T1, bar still forming), evaluated on T1 bars and carried onto chart bars)
+Long: Chart EMA > Chart EMA[trend lookback] AND Prior strength ratio >= 1 + prior-strength threshold / 100 AND close > Chart EMA AND close <= Chart EMA * (1 + watch-distance threshold / 100) AND (market-filter toggle is off OR filter-instrument close > EMA(close, filter EMA lookback, T1, bar still forming), evaluated on T1 bars and carried onto chart bars) AND NOT (low <= Chart EMA AND low >= Chart EMA - ATR(ATR lookback))
+Exit: Long, close < Chart EMA

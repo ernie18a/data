@@ -1,0 +1,2 @@
+Long: on chart bars using T1 values for its current bar (forming in real time), close(T1) >= MA(source parameter, lookback parameter, T1; type parameter selects SMA or EMA)
+Short: on chart bars using T1 values for its current bar (forming in real time), close(T1) < MA(source parameter, lookback parameter, T1; type parameter selects SMA or EMA)

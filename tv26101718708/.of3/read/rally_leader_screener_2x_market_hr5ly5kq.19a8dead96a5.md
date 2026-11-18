@@ -1,0 +1,4 @@
+Calculation: stock return = (close - close[return lookback]) / close[return lookback] × 100, calculated on chart bars using the current bar
+Calculation: benchmark return = (benchmark close - benchmark close[return lookback]) / benchmark close[return lookback] × 100, using benchmark closes on chart bars and the current bar
+Long: benchmark return > 0 AND stock return >= leadership multiple × benchmark return AND close >= minimum price AND SMA(volume, volume-average lookback) >= minimum average volume AND (trend filter disabled OR close > SMA(close, trend lookback)) AND (up-day filter disabled OR close > close[1])
+Long: benchmark return <= 0 AND stock return >= minimum resisting return AND close >= minimum price AND SMA(volume, volume-average lookback) >= minimum average volume AND (trend filter disabled OR close > SMA(close, trend lookback)) AND (up-day filter disabled OR close > close[1])

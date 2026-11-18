@@ -1,0 +1,2 @@
+Long: RSI(close, RSI lookback) > overbought threshold AND volume < SMA(volume, volume-average lookback) * low-volume fraction AND high >= highest(high, breakout lookback) AND more than signal cooldown bars have elapsed since the previous long signal
+Short: RSI(close, RSI lookback) < oversold threshold AND volume < SMA(volume, volume-average lookback) * low-volume fraction AND low <= lowest(low, breakout lookback) AND more than signal cooldown bars have elapsed since the previous short signal

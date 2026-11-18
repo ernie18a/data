@@ -1,0 +1,4 @@
+Calculation: opening-range high = maximum high of chart bars opening from session start up to, but excluding, session start + opening-range duration
+Calculation: opening-range low = minimum low of chart bars opening from session start up to, but excluding, session start + opening-range duration
+Long: opening range complete AND close crosses above opening-range high AND close > VWAP(hlc3, volume, session start) AND close > SMA(close, trend lookback) AND SMA(close, trend lookback) > SMA(close, trend lookback)[1] AND volume > SMA(volume, volume lookback) * volume multiplier
+Short: opening range complete AND close crosses below opening-range low AND close < VWAP(hlc3, volume, session start) AND close < SMA(close, trend lookback) AND SMA(close, trend lookback) < SMA(close, trend lookback)[1] AND volume > SMA(volume, volume lookback) * volume multiplier

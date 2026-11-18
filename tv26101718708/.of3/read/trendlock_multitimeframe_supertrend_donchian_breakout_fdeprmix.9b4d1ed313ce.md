@@ -1,0 +1,8 @@
+Long: long direction enabled AND Supertrend(factor, ATR lookback) indicates uptrend on the chart bar AND (HTF filter disabled OR Supertrend with the same factor and ATR lookback indicates uptrend on T1, sampled onto chart bars with lookahead off using the current, still-forming T1 bar in realtime) AND close > Lowest(low, Donchian lookback)[1] AND (volume filter disabled OR volume > SMA(volume, volume lookback) * volume multiplier)
+Short: short direction enabled AND Supertrend(factor, ATR lookback) indicates downtrend on the chart bar AND (HTF filter disabled OR Supertrend with the same factor and ATR lookback indicates downtrend on T1, sampled onto chart bars with lookahead off using the current, still-forming T1 bar in realtime) AND close < Lowest(low, Donchian lookback)[1] AND (volume filter disabled OR volume > SMA(volume, volume lookback) * volume multiplier)
+Calculation: Long stop = signal-bar close - ATR(risk lookback) on the signal bar * stop multiplier
+Calculation: Long target = signal-bar close + ATR(risk lookback) on the signal bar * target multiplier
+Calculation: Short stop = signal-bar close + ATR(risk lookback) on the signal bar * stop multiplier
+Calculation: Short target = signal-bar close - ATR(risk lookback) on the signal bar * target multiplier
+Exit: long, low <= Long stop OR high >= Long target OR (trend-flip exit enabled AND Supertrend(factor, ATR lookback) indicates downtrend on the chart bar)
+Exit: short, high >= Short stop OR low <= Short target OR (trend-flip exit enabled AND Supertrend(factor, ATR lookback) indicates uptrend on the chart bar)

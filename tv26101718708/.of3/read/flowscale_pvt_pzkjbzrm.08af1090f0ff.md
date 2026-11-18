@@ -1,0 +1,3 @@
+Calculation: normalized PVT = if highest(PVT(close, volume), normalization lookback) != lowest(PVT(close, volume), normalization lookback), 200 * (PVT(close, volume) - lowest(PVT(close, volume), normalization lookback)) / (highest(PVT(close, volume), normalization lookback) - lowest(PVT(close, volume), normalization lookback)) - 100, else 0
+Long: HMA(normalized PVT, smoothing lookback) > buffer
+Short: HMA(normalized PVT, smoothing lookback) < -buffer

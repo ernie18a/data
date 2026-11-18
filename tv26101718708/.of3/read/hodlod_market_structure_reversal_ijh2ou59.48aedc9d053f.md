@@ -1,0 +1,5 @@
+Calculation: close position = (close - low) / (high - low) when high > low, otherwise 0.5
+Long: A new session low occurs on a chart bar (low < the prior session low, and this is not the session’s first bar), followed by the first confirmed pivot high of high with equal left and right swing lookbacks whose pivot bar is after that low; on a chart bar no later than the swing-duration parameter bars after the pivot bar, close > pivot high + break-buffer parameter AND volume > prior-bar volume AND close position ≥ close-threshold parameter / 100
+Short: A new session high occurs on a chart bar (high > the prior session high, and this is not the session’s first bar), followed by the first confirmed pivot low of low with equal left and right swing lookbacks whose pivot bar is after that high; on a chart bar no later than the swing-duration parameter bars after the pivot bar, close < pivot low - break-buffer parameter AND volume > prior-bar volume AND close position ≤ 1 - close-threshold parameter / 100
+Exit: Long, the chart bar immediately after the long signal closes below its open
+Exit: Short, the chart bar immediately after the short signal closes above its open

@@ -1,0 +1,2 @@
+Long: VWMA(close, lookback 1) crosses above SMA(close, lookback 2, T1, bar still forming, sampled on chart bars)
+Short: VWMA(close, lookback 1) crosses below SMA(close, lookback 2, T1, bar still forming, sampled on chart bars)

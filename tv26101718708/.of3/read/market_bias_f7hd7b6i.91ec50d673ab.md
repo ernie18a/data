@@ -1,0 +1,5 @@
+Calculation: Resistance = most recent confirmed pivot high(high, swing lookback, swing lookback), held until the next confirmed pivot high
+Long: EMA(close, short lookback) > EMA(close, medium lookback) AND EMA(close, medium lookback) > EMA(close, long lookback) AND close > EMA(close, long lookback)
+Short: EMA(close, short lookback) < EMA(close, medium lookback) AND EMA(close, medium lookback) < EMA(close, long lookback) AND close < EMA(close, long lookback)
+Long: Resistance is defined AND close[1] <= Resistance AND close > Resistance AND close > open AND EMA(close, short lookback) > EMA(close, medium lookback) AND EMA(close, medium lookback) > EMA(close, long lookback) AND close > EMA(close, long lookback) AND (volume filter disabled OR volume > SMA(volume, volume lookback) * volume multiplier)
+Long: close crosses above EMA(close, medium lookback) AND close > EMA(close, long lookback) AND (volume filter disabled OR volume > SMA(volume, volume lookback) * volume multiplier)

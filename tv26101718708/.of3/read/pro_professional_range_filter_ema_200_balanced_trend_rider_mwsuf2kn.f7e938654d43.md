@@ -1,0 +1,5 @@
+Calculation: Adaptive range filter = if close > adaptive range filter[1], max(adaptive range filter[1], close - EMA(ATR(ATR lookback), shorter lookback) * range multiplier), otherwise min(adaptive range filter[1], close + EMA(ATR(ATR lookback), shorter lookback) * range multiplier); initial prior value is 0
+Long: close > adaptive range filter AND NOT (close[1] > adaptive range filter[1]) AND close > EMA(close, longer lookback) AND (volume filter disabled OR volume >= SMA(volume, volume lookback)) AND position side is not long
+Short: close < adaptive range filter AND NOT (close[1] < adaptive range filter[1]) AND close < EMA(close, longer lookback) AND (volume filter disabled OR volume >= SMA(volume, volume lookback)) AND position side is not short
+Exit: long, close <= adaptive range filter AND close[1] > adaptive range filter[1]
+Exit: short, close > adaptive range filter AND close[1] <= adaptive range filter[1]

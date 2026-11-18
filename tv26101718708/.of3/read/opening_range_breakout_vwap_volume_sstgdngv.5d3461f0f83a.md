@@ -1,0 +1,1 @@
+Long: on chart bars after the regular session's opening-range interval and before its initial-window cutoff, close > highest high of chart bars in that session's opening-range interval AND volume >= average per-bar volume of chart bars in that interval * volume multiplier AND close > VWAP(hlc3) AND close >= (high + low) / 2

@@ -1,0 +1,2 @@
+Long: traded instrument low < prior traded instrument low AND (comparison instrument 1 low > prior comparison instrument 1 low OR comparison instrument 2 low > prior comparison instrument 2 low)
+Short: traded instrument high > prior traded instrument high AND (comparison instrument 1 high < prior comparison instrument 1 high OR comparison instrument 2 high < prior comparison instrument 2 high)

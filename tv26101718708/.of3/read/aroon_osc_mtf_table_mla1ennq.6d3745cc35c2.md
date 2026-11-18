@@ -1,0 +1,2 @@
+Long: On chart bars, for each T1–T7, round(Aroon Oscillator(lookback, Tn, current forming Tn bar in live sampling or last completed Tn bar in confirmed sampling), precision parameter) > 0.
+Short: On chart bars, for each T1–T7, round(Aroon Oscillator(lookback, Tn, current forming Tn bar in live sampling or last completed Tn bar in confirmed sampling), precision parameter) < 0.

@@ -1,0 +1,1 @@
+Long: S&P 500 percentage decline >= P1

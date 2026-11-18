@@ -1,0 +1,2 @@
+Long: LSMA((close + 2*close[1] + 2*close[2] + close[3])/6, lookback, T1, bar still forming), sampled on chart bars > LSMA((open + 2*open[1] + 2*open[2] + open[3])/6, same lookback, T1, bar still forming), sampled on chart bars
+Short: LSMA((close + 2*close[1] + 2*close[2] + close[3])/6, lookback, T1, bar still forming), sampled on chart bars < LSMA((open + 2*open[1] + 2*open[2] + open[3])/6, same lookback, T1, bar still forming), sampled on chart bars

@@ -1,0 +1,2 @@
+Long: on chart bars, after N T1 bars have been counted from the configured daily start time and timezone, chart close crosses above the maximum high of those T1 bars, using the still-forming T1 bar's value
+Short: on chart bars, after N T1 bars have been counted from the configured daily start time and timezone, chart close crosses below the minimum low of those T1 bars, using the still-forming T1 bar's value

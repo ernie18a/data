@@ -1,0 +1,6 @@
+Calculation: Long protective stop = close on the latest long-entry signal bar - ATR(ATR lookback) on that bar × stop multiplier
+Calculation: Short protective stop = close on the latest short-entry signal bar + ATR(ATR lookback) on that bar × stop multiplier
+Long: long entries enabled AND close > Highest(high, entry lookback)[1] AND close > EMA(close, trend lookback) AND RSI(close, momentum lookback) > RSI threshold AND (volatility filter off OR ATR(ATR lookback) > SMA(ATR(ATR lookback), ATR average lookback)) AND (volume filter off OR volume > SMA(volume, volume average lookback))
+Short: short entries enabled AND close < Lowest(low, entry lookback)[1] AND close < EMA(close, trend lookback) AND RSI(close, momentum lookback) < RSI threshold AND (volatility filter off OR ATR(ATR lookback) > SMA(ATR(ATR lookback), ATR average lookback)) AND (volume filter off OR volume > SMA(volume, volume average lookback))
+Exit: long, close < Lowest(low, exit lookback)[1] OR low <= Long protective stop
+Exit: short, close > Highest(high, exit lookback)[1] OR high >= Short protective stop

@@ -1,0 +1,1 @@
+Long: close > highest(high, breakout lookback, prior bars) AND volume > highest(volume, breakout lookback, prior bars) AND close > moving average(close, trend lookback)

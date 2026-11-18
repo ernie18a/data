@@ -1,0 +1,2 @@
+Long: PercentRank(volume / RMA(volume[1], volume average length), percentile rank lookback) >= strong signal percentile AND close >= open AND NOT (ATR(high, low, close, ATR length) > 0 AND (high - low) / ATR(high, low, close, ATR length) <= compression ratio)
+Short: PercentRank(volume / RMA(volume[1], volume average length), percentile rank lookback) >= strong signal percentile AND close < open AND NOT (ATR(high, low, close, ATR length) > 0 AND (high - low) / ATR(high, low, close, ATR length) <= compression ratio)

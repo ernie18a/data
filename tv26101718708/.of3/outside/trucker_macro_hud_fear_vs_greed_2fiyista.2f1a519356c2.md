@@ -1,0 +1,2 @@
+Long: DXY is at or below EMA(DXY, P1) AND VIX is at or below EMA(VIX, P1) AND SPY is above EMA(SPY, P1)
+Short: DXY is above EMA(DXY, P1) AND VIX is above EMA(VIX, P1) AND SPY is at or below EMA(SPY, P1)

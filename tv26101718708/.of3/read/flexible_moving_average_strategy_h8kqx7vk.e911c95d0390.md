@@ -1,0 +1,2 @@
+Long: On chart bars at T1 boundaries, the previous sampled close was <= its selected SMA, EMA, WMA, HMA, or SMMA(close, lookback, T1, last completed bar), and the latest sampled close is > its selected SMA, EMA, WMA, HMA, or SMMA(close, lookback, T1, last completed bar)
+Exit: long, on chart bars at T1 boundaries, the previous sampled close was >= its selected SMA, EMA, WMA, HMA, or SMMA(close, lookback, T1, last completed bar), and the latest sampled close is < its selected SMA, EMA, WMA, HMA, or SMMA(close, lookback, T1, last completed bar)

@@ -1,0 +1,4 @@
+Long: close > opening-range high of the selected correlation symbol, using its configured regular or Heikin Ashi bars, AND within the trading-session parameter AND RelativeVolume(volume, lookback, T1, cumulative; current T1 period still forming and previous T1 periods completed, evaluated on chart bars) > threshold AND position is not short
+Short: close < opening-range low of the selected correlation symbol, using its configured regular or Heikin Ashi bars, AND within the trading-session parameter AND RelativeVolume(volume, lookback, T1, cumulative; current T1 period still forming and previous T1 periods completed, evaluated on chart bars) > threshold AND position is not long
+Exit: long, within the exit-session parameter
+Exit: short, within the exit-session parameter

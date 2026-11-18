@@ -1,0 +1,7 @@
+Calculation: Friday close = close of the last completed Friday bar on T1, calculated on T1 bars and mapped to chart bars
+Long: On Saturday or Sunday, close < Friday close × (1 − entry deviation)
+Long: On Saturday or Sunday, position side is not short
+Short: On Saturday or Sunday, close > Friday close × (1 + entry deviation)
+Short: On Saturday or Sunday, position side is short AND close > average entry price × (1 + entry deviation)
+Exit: Long or short, open profit / initial capital > profit threshold
+Exit: Long or short, day is Monday

@@ -1,0 +1,5 @@
+Calculation: Lower-band area ratio(T1, BB length, deviation multiplier, ratio lookback) = S_R / (S_R + S_G) if S_R + S_G > 0, otherwise ratio midpoint, on T1 bars and returned to chart bars using the T1 value available under lookahead_off (still-forming in realtime, last completed historically), where S_R = SUM(MAX(0, close - lower Bollinger Band(close, BB length, deviation multiplier)), ratio lookback) and S_G = SUM(MAX(0, upper Bollinger Band(close, BB length, deviation multiplier) - close), ratio lookback)
+Calculation: Support-box bottom(T, pivot length) = low of the latest confirmed pivot low(low, pivot length, pivot length) below the chart-bar close, with T values returned to chart bars using lookahead_off (still-forming in realtime, last completed historically)
+Long: Lower-band area ratio(T1, BB length, deviation multiplier, ratio lookback) > ratio midpoint
+Short: Lower-band area ratio(T1, BB length, deviation multiplier, ratio lookback) <= ratio midpoint
+Exit: Long, chart close < prior chart bar's Support-box bottom(T1, T1 pivot length) OR chart close < prior chart bar's Support-box bottom(T2, T2 pivot length)

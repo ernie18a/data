@@ -1,0 +1,13 @@
+Calculation: T1 close = close of the latest completed T1 bar historically or the still-forming T1 bar in real time, sampled on chart bars
+Calculation: T1 shorter EMA = EMA(close, shorter T1 lookback) on T1 bars, using the latest completed bar historically or the still-forming bar in real time, sampled on chart bars
+Calculation: T1 longer EMA = EMA(close, longer T1 lookback) on T1 bars, using the latest completed bar historically or the still-forming bar in real time, sampled on chart bars
+Calculation: shorter chart EMA = EMA(close, shorter chart lookback)
+Calculation: longer chart EMA = EMA(close, longer chart lookback)
+Calculation: momentum RSI = RSI(close, RSI lookback)
+Calculation: average true range = ATR(ATR lookback)
+Calculation: rolling highest high = Highest(high, liquidity lookback)
+Calculation: rolling lowest low = Lowest(low, liquidity lookback)
+Long: ((hour(datetime) >= first session start hour AND hour(datetime) <= first session end hour) OR (hour(datetime) >= second session start hour AND hour(datetime) <= second session end hour)) AND T1 close > T1 shorter EMA AND T1 shorter EMA > T1 longer EMA AND close > shorter chart EMA AND shorter chart EMA > longer chart EMA AND (low < rolling lowest low[1] AND close > rolling lowest low OR low > high[FVG offset] OR (close > high[1] AND open[1] > close[1])) AND momentum RSI > upper momentum threshold
+Short: ((hour(datetime) >= first session start hour AND hour(datetime) <= first session end hour) OR (hour(datetime) >= second session start hour AND hour(datetime) <= second session end hour)) AND T1 close < T1 shorter EMA AND T1 shorter EMA < T1 longer EMA AND close < shorter chart EMA AND shorter chart EMA < longer chart EMA AND (high > rolling highest high[1] AND close < rolling highest high OR high < low[FVG offset] OR (close < low[1] AND open[1] < close[1])) AND momentum RSI < lower momentum threshold
+Exit: long, low <= close[1] - average true range[1] * risk multiplier OR high >= close[1] + average true range[1] * risk multiplier * reward multiple OR (close[1] > entry price + average true range[1] * breakeven activation multiplier AND low <= entry price) OR low <= close[1] - average true range[1] * trailing multiplier
+Exit: short, high >= close[1] + average true range[1] * risk multiplier OR low <= close[1] - average true range[1] * risk multiplier * reward multiple OR (close[1] < entry price - average true range[1] * breakeven activation multiplier AND high >= entry price) OR high >= close[1] + average true range[1] * trailing multiplier

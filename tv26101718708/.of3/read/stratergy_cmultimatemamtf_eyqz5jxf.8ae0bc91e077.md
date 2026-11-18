@@ -1,0 +1,7 @@
+Calculation: M = selected SMA(close, lookback), EMA(close, lookback), WMA(close, lookback), Hull MA(close, lookback), VWMA(close, lookback), RMA(close, lookback), or TEMA(close, lookback), evaluated on T1 bars using the bar still forming and sampled onto chart bars; M[n] is the sampled value n chart bars ago
+Long: (primary direction-color option enabled OR (optional second MA displayed AND its direction-color option enabled)) AND M >= M[smoothing lookback]
+Short: (primary direction-color option enabled OR (optional second MA displayed AND its direction-color option enabled)) AND M < M[smoothing lookback]
+Long: primary direction-color option enabled AND M[1] < M[smoothing lookback + 1] AND M >= M[smoothing lookback]
+Short: primary direction-color option enabled AND M[1] >= M[smoothing lookback + 1] AND M < M[smoothing lookback]
+Exit: long, primary direction-color option disabled OR (M < M[smoothing lookback] AND M[1] < M[smoothing lookback + 1]) OR (M >= M[smoothing lookback] AND M[1] >= M[smoothing lookback + 1])
+Exit: short, primary direction-color option disabled OR (M < M[smoothing lookback] AND M[1] < M[smoothing lookback + 1]) OR (M >= M[smoothing lookback] AND M[1] >= M[smoothing lookback + 1])

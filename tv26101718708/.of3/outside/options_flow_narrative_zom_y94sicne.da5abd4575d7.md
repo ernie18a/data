@@ -1,0 +1,7 @@
+Calculation: delta volume sentiment ratio = EMA(volume * (close > open ? P5 : P6), P2) / EMA(volume * (close < open ? P5 : P6), P2)
+Calculation: call-wall lower boundary = VWAP + (standard deviation of close over P3 * P4)
+Calculation: put-wall upper boundary = VWAP - (standard deviation of close over P3 * P4)
+Long: delta volume sentiment ratio > P7 AND VIX close < EMA(VIX close, P1)
+Short: delta volume sentiment ratio < P7 AND VIX close > EMA(VIX close, P1)
+Long: delta volume sentiment ratio > P7 AND VIX close < EMA(VIX close, P1) AND crossover(close, put-wall upper boundary)
+Short: delta volume sentiment ratio < P7 AND VIX close > EMA(VIX close, P1) AND crossunder(close, call-wall lower boundary)

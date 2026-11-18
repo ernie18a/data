@@ -1,0 +1,2 @@
+Long: bullish signal enabled AND close >= (1 + gain threshold / 100) * close[1] AND volume > volume[1] AND low > Lowest(low, low lookback) AND low[1] > Lowest(low, low lookback)[1] AND low[2] > Lowest(low, low lookback)[2] AND (close[3] > open[3] OR low[3] > Lowest(low, low lookback)[3])
+Exit: long, bearish signal enabled AND close < open AND abs(close - open) >= ATR(ATR lookback)[1] * ATR multiple

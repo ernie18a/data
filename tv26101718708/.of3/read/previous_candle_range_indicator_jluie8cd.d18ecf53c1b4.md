@@ -1,0 +1,2 @@
+Long: On chart bars, chart timeframe <= T1 AND close(T1, last completed bar) > open(T1, last completed bar)
+Short: On chart bars, chart timeframe <= T1 AND close(T1, last completed bar) <= open(T1, last completed bar)

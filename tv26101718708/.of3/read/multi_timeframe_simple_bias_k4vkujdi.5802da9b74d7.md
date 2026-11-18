@@ -1,0 +1,2 @@
+Long: On chart bars, for each timeframe T1–T7, close from the current T bar (forming in realtime, latest completed on historical bars) > EMA(close, lookback) calculated on T bars with the same timing
+Short: On chart bars, for each timeframe T1–T7, close from the current T bar (forming in realtime, latest completed on historical bars) <= EMA(close, lookback) calculated on T bars with the same timing

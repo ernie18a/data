@@ -1,0 +1,12 @@
+Calculation: CPR pivot = Pivot Point(high[1], low[1], close[1])
+Calculation: CPR bottom = (high[1] + low[1]) / 2
+Calculation: CPR top = 2 * CPR pivot - CPR bottom
+Calculation: CPR width = ABS(CPR top - CPR bottom)
+Long: SMA(close, shorter lookback) > SMA(close, longer lookback) AND SMA(close, shorter lookback) > SMA(close, shorter lookback)[1]
+Short: SMA(close, shorter lookback) < SMA(close, longer lookback) AND SMA(close, shorter lookback) < SMA(close, shorter lookback)[1]
+Long: CPR pivot > CPR pivot[1] AND CPR top > CPR bottom AND CPR width < SMA(CPR width, width lookback) * width factor AND SMA(close, shorter lookback) > SMA(close, longer lookback) AND SMA(close, shorter lookback) > SMA(close, shorter lookback)[1]
+Short: CPR pivot < CPR pivot[1] AND CPR top < CPR bottom AND CPR width < SMA(CPR width, width lookback) * width factor AND SMA(close, shorter lookback) < SMA(close, longer lookback) AND SMA(close, shorter lookback) < SMA(close, shorter lookback)[1]
+Long: On chart bars, for each of T1, T2, T3, T4, and T5, using calculations run on that timeframe's current bar (still forming in real time; completed at its close): SMA(close, shorter lookback) > SMA(close, longer lookback) AND SMA(close, shorter lookback) > SMA(close, shorter lookback)[1]
+Short: On chart bars, for each of T1, T2, T3, T4, and T5, using calculations run on that timeframe's current bar (still forming in real time; completed at its close): SMA(close, shorter lookback) < SMA(close, longer lookback) AND SMA(close, shorter lookback) < SMA(close, shorter lookback)[1]
+Long: On chart bars, for each of T1, T2, T3, T4, and T5, using calculations run on that timeframe's current bar (still forming in real time; completed at its close): CPR pivot > CPR pivot[1] AND CPR top > CPR bottom AND CPR width < SMA(CPR width, width lookback) * width factor AND SMA(close, shorter lookback) > SMA(close, longer lookback) AND SMA(close, shorter lookback) > SMA(close, shorter lookback)[1]
+Short: On chart bars, for each of T1, T2, T3, T4, and T5, using calculations run on that timeframe's current bar (still forming in real time; completed at its close): CPR pivot < CPR pivot[1] AND CPR top < CPR bottom AND CPR width < SMA(CPR width, width lookback) * width factor AND SMA(close, shorter lookback) < SMA(close, longer lookback) AND SMA(close, shorter lookback) < SMA(close, shorter lookback)[1]

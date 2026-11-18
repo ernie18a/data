@@ -1,0 +1,2 @@
+Long: On a confirmed chart bar, close > the pivot high (high, lookback bars left, same lookback bars right) of any unbroken resistance zone.
+Short: On a confirmed chart bar, close < the pivot low (low, lookback bars left, same lookback bars right) of any unbroken support zone.

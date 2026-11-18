@@ -1,0 +1,4 @@
+Long: close < lower Bollinger Band(close, lookback, deviation multiplier) AND close < VWAP(close) AND ATR(lookback) < SMA(ATR(lookback), smoothing lookback) AND datetime is within session AND daily strategy P&L > -daily loss limit AND daily strategy P&L < daily profit limit AND entries today < daily trade limit AND no long entry has occurred today
+Short: close > upper Bollinger Band(close, lookback, deviation multiplier) AND close > VWAP(close) AND ATR(lookback) < SMA(ATR(lookback), smoothing lookback) AND datetime is within session AND daily strategy P&L > -daily loss limit AND daily strategy P&L < daily profit limit AND entries today < daily trade limit AND no short entry has occurred today
+Exit: long, low <= entry price - stop distance OR high >= entry price + target distance
+Exit: short, high >= entry price + stop distance OR low <= entry price - target distance

@@ -1,0 +1,2 @@
+Long: SMA(volume, lookback) > 0 AND volume / SMA(volume, lookback) >= volume-multiple threshold AND close >= open
+Short: SMA(volume, lookback) > 0 AND volume / SMA(volume, lookback) >= volume-multiple threshold AND close < open

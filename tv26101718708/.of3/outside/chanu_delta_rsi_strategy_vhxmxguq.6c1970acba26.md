@@ -1,0 +1,3 @@
+Calculation: Chanu Delta = (selected price of higher-amplitude Bitcoin market at T1 − selected price of reference Bitcoin market at T1) / selected price of reference Bitcoin market at T1 when normalization is enabled; otherwise, selected price of higher-amplitude Bitcoin market at T1 − selected price of reference Bitcoin market at T1
+Long: RSI(Chanu Delta, RSI period) crosses above bull threshold
+Short: RSI(Chanu Delta, RSI period) crosses below bear threshold

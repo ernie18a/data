@@ -1,0 +1,5 @@
+Calculation: Estimated Volume Imbalance = 0 if high = low; otherwise volume × ((close - low) - (high - close)) / (high - low)
+Calculation: Seller-Absorption Pattern = Estimated Volume Imbalance < 0 AND (close > open OR (close - low) > P × (high - close))
+Calculation: Buyer-Absorption Pattern = Estimated Volume Imbalance > 0 AND (close < open OR (high - close) > P × (close - low))
+Long: Seller-Absorption Pattern OR (Estimated Volume Imbalance > 0 AND NOT Buyer-Absorption Pattern)
+Short: Buyer-Absorption Pattern OR (Estimated Volume Imbalance <= 0 AND NOT Seller-Absorption Pattern)

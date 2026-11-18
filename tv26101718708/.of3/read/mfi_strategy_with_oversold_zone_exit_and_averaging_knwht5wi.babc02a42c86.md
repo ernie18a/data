@@ -1,0 +1,2 @@
+Long: After MFI(close, lookback) has been below the oversold threshold, when it is above the threshold, place a long limit order at close * (1 - entry offset percentage).
+Exit: Long, low <= entry price * (1 - stop-loss percentage) OR high >= entry price * (1 + take-profit percentage).

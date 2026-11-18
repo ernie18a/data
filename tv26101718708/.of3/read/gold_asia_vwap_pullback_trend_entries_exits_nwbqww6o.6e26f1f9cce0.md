@@ -1,0 +1,6 @@
+Long: inside the configured session AND (daily entry limit disabled OR no entry has occurred during the current configured-timezone day) AND close > VWAP(HLC3) AND (EMA filter disabled OR close > EMA(close, lookback)) AND low >= VWAP(HLC3) - pullback-band AND low <= VWAP(HLC3) + pullback-band
+Short: inside the configured session AND (daily entry limit disabled OR no entry has occurred during the current configured-timezone day) AND close < VWAP(HLC3) AND (EMA filter disabled OR close < EMA(close, lookback)) AND high >= VWAP(HLC3) - pullback-band AND high <= VWAP(HLC3) + pullback-band
+Calculation: Stop distance = fixed stop distance when fixed-distance mode is enabled, otherwise ATR(lookback) × stop multiplier
+Calculation: Target distance = fixed target distance when fixed-distance mode is enabled, otherwise ATR(lookback) × target multiplier
+Exit: Long, low <= entry price - stop distance OR high >= entry price + target distance OR (session exit enabled AND current bar is outside the configured session AND previous bar was inside the configured session)
+Exit: Short, high >= entry price + stop distance OR low <= entry price - target distance OR (session exit enabled AND current bar is outside the configured session AND previous bar was inside the configured session)

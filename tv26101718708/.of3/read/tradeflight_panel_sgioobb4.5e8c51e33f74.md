@@ -1,0 +1,6 @@
+Long: For each of T1, T2, T3, T4, and T5 separately, on its still-forming bar, close > EMA(close, short lookback) AND EMA(close, short lookback) > EMA(close, short lookback)[3]
+Short: For each of T1, T2, T3, T4, and T5 separately, on its still-forming bar, close < EMA(close, short lookback) AND EMA(close, short lookback) < EMA(close, short lookback)[3]
+Long: For each of T1, T2, T3, T4, and T5 separately, on its still-forming bar, EMA(close, short lookback) > EMA(close, middle lookback) AND EMA(close, middle lookback) > EMA(close, long lookback)
+Short: For each of T1, T2, T3, T4, and T5 separately, on its still-forming bar, EMA(close, long lookback) > EMA(close, middle lookback) AND EMA(close, middle lookback) > EMA(close, short lookback)
+Long: For each of T1, T2, T3, T4, and T5 separately, close[n] > EMA(close, short lookback)[n] on its completed bars, for n = 1, 2, or 3 bars ago
+Short: For each of T1, T2, T3, T4, and T5 separately, close[n] <= EMA(close, short lookback)[n] on its completed bars, for n = 1, 2, or 3 bars ago

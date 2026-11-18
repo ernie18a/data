@@ -1,0 +1,16 @@
+Calculation: Chart-bar shorter-lookback SMA = SMA(close, shorter lookback) on chart bars
+Calculation: Chart-bar longer-lookback WMA = WMA(close, longer lookback) on chart bars
+Calculation: T1 shorter-lookback SMA = SMA(close, shorter lookback) on T1 bars using the bar still forming, sampled on chart bars
+Calculation: T1 longer-lookback WMA = WMA(close, longer lookback) on T1 bars using the bar still forming, sampled on chart bars
+Calculation: Smoothed Stochastic RSI main line = SMA(StochRSI(RSI source field, RSI lookback, stochastic lookback), main-line smoothing)
+Calculation: Smoothed Stochastic RSI signal line = SMA(Smoothed Stochastic RSI main line, signal-line smoothing)
+Calculation: Long swing stop = lowest(low, swing lookback) on the long entry bar - (ATR(ATR lookback) on the long entry bar / ATR divisor) * stop expansion
+Calculation: Short swing stop = highest(high, swing lookback) on the short entry bar + (ATR(ATR lookback) on the short entry bar / ATR divisor) * stop expansion
+Calculation: Long target = entry price + (entry price - lowest(low, swing lookback) on the long entry bar) + (ATR(ATR lookback) on the long entry bar / ATR divisor) * target expansion
+Calculation: Short target = entry price - (highest(high, swing lookback) on the short entry bar - entry price) - (ATR(ATR lookback) on the short entry bar / ATR divisor) * target expansion
+Calculation: Long trailing stop = long swing stop + highest(high on chart bars since long entry) - high on the long entry bar
+Calculation: Short trailing stop = short swing stop + lowest(low on chart bars since short entry) - low on the short entry bar
+Long: (reverse trades off AND Smoothed Stochastic RSI main line crosses above Smoothed Stochastic RSI signal line AND Smoothed Stochastic RSI main line < oversold level AND chart-bar shorter-lookback SMA > chart-bar longer-lookback WMA AND T1 shorter-lookback SMA > T1 longer-lookback WMA) OR (reverse trades on AND Smoothed Stochastic RSI main line crosses below Smoothed Stochastic RSI signal line AND Smoothed Stochastic RSI main line > overbought level AND chart-bar shorter-lookback SMA <= chart-bar longer-lookback WMA AND T1 shorter-lookback SMA <= T1 longer-lookback WMA)
+Short: (reverse trades off AND Smoothed Stochastic RSI main line crosses below Smoothed Stochastic RSI signal line AND Smoothed Stochastic RSI main line > overbought level AND chart-bar shorter-lookback SMA <= chart-bar longer-lookback WMA AND T1 shorter-lookback SMA <= T1 longer-lookback WMA) OR (reverse trades on AND Smoothed Stochastic RSI main line crosses above Smoothed Stochastic RSI signal line AND Smoothed Stochastic RSI main line < oversold level AND chart-bar shorter-lookback SMA > chart-bar longer-lookback WMA AND T1 shorter-lookback SMA > T1 longer-lookback WMA)
+Exit: long, swing stop/target enabled AND ((trailing stop enabled AND low <= long trailing stop) OR (trailing stop disabled AND low <= long swing stop) OR high >= long target)
+Exit: short, swing stop/target enabled AND ((trailing stop enabled AND high >= short trailing stop) OR (trailing stop disabled AND high >= short swing stop) OR low <= short target)

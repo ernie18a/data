@@ -1,0 +1,4 @@
+Calculation: Adjusted correlation score = 1 − (1 − R²) × (lookback − 1) / (lookback − 3), where R² = [r(close, volume)² + r(close, selected same-timeframe index close)² − 2 × r(close, volume) × r(close, selected same-timeframe index close) × r(volume, selected same-timeframe index close)] / [1 − r(volume, selected same-timeframe index close)²], and r(x, y) = PearsonCorr(x, y, lookback); the selected index close may be sign-inverted according to the chart symbol.
+Calculation: Direction score = 100 × M × (2 + adjusted correlation score) / [M × (2 + adjusted correlation score) + (100 − M) × (2 − adjusted correlation score)], where M is RSI(upper sum, lower sum) or RSI(close, lookback), according to the selected method; upper sum = SUM(volume × close when close > close[1], lookback), and lower sum = SUM(volume × close when close < close[1], lookback).
+Long: Direction score > 50
+Short: Direction score <= 50

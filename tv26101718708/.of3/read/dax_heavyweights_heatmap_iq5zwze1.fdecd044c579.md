@@ -1,0 +1,2 @@
+Long: at least the breadth threshold number of the seven fixed component securities have a valid previous T1 close and ((close(T1, current bar) / close(T1, previous bar) - 1) * 100) > 0, using T1 values on each chart bar; the current T1 bar may still be forming
+Short: at least the breadth threshold number of the seven fixed component securities have a valid previous T1 close and ((close(T1, current bar) / close(T1, previous bar) - 1) * 100) < 0, using T1 values on each chart bar; the current T1 bar may still be forming

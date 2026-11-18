@@ -1,0 +1,3 @@
+Calculation: Down-volume share = down-volume close / (up-volume close + down-volume close), using the current T1 values on chart bars (the T1 bar may still be forming); available only when down-volume time is on the current calendar day and the volume sum is positive
+Long: down-volume share <= buying threshold AND chart bar is confirmed AND (RTH filter is disabled OR bar time is during regular trading hours)
+Short: down-volume share >= selling threshold AND chart bar is confirmed AND (RTH filter is disabled OR bar time is during regular trading hours)

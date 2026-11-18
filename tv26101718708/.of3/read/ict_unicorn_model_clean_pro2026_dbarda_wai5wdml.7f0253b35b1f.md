@@ -1,0 +1,4 @@
+Calculation: candle body = abs(close - open)
+Calculation: candle body ratio = if high > low then candle body / (high - low) else 0
+Long: On chart bars taking lookahead-off values calculated on T1 bars (last completed T1 bar historically; still-forming T1 bar in real time), a low sweep (low <= LOWEST(low, liquidity lookback)[1]) occurred no more than sweep-age bars ago, AND low > high[FVG offset] AND close > open AND candle body > SMA(candle body, body-average lookback) * displacement multiplier AND candle body ratio >= minimum body ratio
+Short: On chart bars taking lookahead-off values calculated on T1 bars (last completed T1 bar historically; still-forming T1 bar in real time), a high sweep (high >= HIGHEST(high, liquidity lookback)[1]) occurred no more than sweep-age bars ago, AND high < low[FVG offset] AND close < open AND candle body > SMA(candle body, body-average lookback) * displacement multiplier AND candle body ratio >= minimum body ratio

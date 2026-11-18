@@ -1,0 +1,2 @@
+Long: MA(selected source, first selected lookback, selected MA type) crosses above MA(selected source, second selected lookback, selected MA type)
+Short: MA(selected source, first selected lookback, selected MA type) crosses below MA(selected source, second selected lookback, selected MA type)

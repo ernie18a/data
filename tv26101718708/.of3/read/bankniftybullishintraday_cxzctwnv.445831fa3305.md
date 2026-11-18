@@ -1,0 +1,5 @@
+Calculation: M1 = MACD(close, fast lookback, slow lookback, signal lookback) on the current T1 bar, sampled on chart bars; the T1 bar may still be forming. Use the same MACD lookbacks for M1, M2, and M3; T1 < T2 < T3.
+Calculation: M2 = MACD(close, fast lookback, slow lookback, signal lookback) on the current T2 bar, sampled on chart bars; the T2 bar may still be forming.
+Calculation: M3 = MACD(close, fast lookback, slow lookback, signal lookback) on the current T3 bar, sampled on chart bars; the T3 bar may still be forming.
+Long: M1 > 0 AND M1 > M1[1] AND M2 > M2[1] AND M3 >= M3[1] AND RSI(close, RSI lookback) > RSI threshold AND ADX(DI lookback, ADX smoothing lookback) >= ADX threshold AND SMA(Stochastic(close, high, low, stochastic lookback), K smoothing lookback) > SMA(SMA(Stochastic(close, high, low, stochastic lookback), K smoothing lookback), D smoothing lookback) AND Bollinger Bands(close, lookback, standard deviation multiplier).upper > Bollinger Bands(close, lookback, standard deviation multiplier).upper[1]
+Exit: long, close < EMA(close, lookback)

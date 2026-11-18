@@ -1,0 +1,1 @@
+Long: SMA(NYSE advance-decline difference on T1, P1) ≤ P2

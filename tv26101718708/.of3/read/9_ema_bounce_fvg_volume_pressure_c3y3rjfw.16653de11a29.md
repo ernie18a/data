@@ -1,0 +1,5 @@
+Calculation: EMA bounce = low is between EMA(close, EMA lookback) minus EMA(close, EMA lookback) times EMA touch tolerance and EMA(close, EMA lookback) plus EMA(close, EMA lookback) times EMA touch tolerance AND close > EMA(close, EMA lookback) AND close > open
+Calculation: Active bullish FVG = for any lag i in the FVG lookback, low[i-1] > high[i+1] AND ((close >= high[i+1] AND close <= low[i-1]) OR (close >= high[i+1] * lower proximity multiplier AND close < high[i+1] * upper proximity multiplier))
+Calculation: Volume confirmation = (volume method selects spike AND volume > SMA(volume, volume lookback) * spike multiplier) OR (volume method selects candle-over-candle AND volume > volume[1]) OR (volume method selects OBV rising AND OBV > EMA(OBV, OBV EMA lookback)) OR (volume method selects any AND (volume > SMA(volume, volume lookback) * spike multiplier OR volume > volume[1] OR OBV > EMA(OBV, OBV EMA lookback)))
+Long: EMA bounce AND Active bullish FVG AND Volume confirmation
+Long: EMA bounce AND (NOT Active bullish FVG OR NOT Volume confirmation)

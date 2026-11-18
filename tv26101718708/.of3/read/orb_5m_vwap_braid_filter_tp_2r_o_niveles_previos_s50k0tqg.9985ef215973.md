@@ -1,0 +1,7 @@
+Calculation: Opening range high = highest(high) over the opening-range bars
+Calculation: Opening range low = lowest(low) over the opening-range bars
+Calculation: Braid spread = max(EMA(close, short lookback), EMA(open, middle lookback), EMA(close, long lookback)) - min(EMA(close, short lookback), EMA(open, middle lookback), EMA(close, long lookback))
+Long: No trade has been taken that day AND New York bar time is within the signal window AND close > opening range high AND close > VWAP AND close > open AND EMA(close, short lookback) > EMA(open, middle lookback) AND Braid spread > ATR(ATR lookback) * spread threshold
+Short: No trade has been taken that day AND New York bar time is within the signal window AND close < opening range low AND close < VWAP AND close < open AND EMA(open, middle lookback) > EMA(close, short lookback) AND Braid spread > ATR(ATR lookback) * spread threshold
+Exit: long, low <= opening range low OR high >= min(signal bar close + (signal bar close - opening range low) * risk-reward parameter, high(T1, last completed bar) sampled on chart bars, high(T2, still-forming bar) sampled on chart bars)
+Exit: short, high >= opening range high OR low <= max(signal bar close - (opening range high - signal bar close) * risk-reward parameter, low(T1, last completed bar) sampled on chart bars, low(T2, still-forming bar) sampled on chart bars)

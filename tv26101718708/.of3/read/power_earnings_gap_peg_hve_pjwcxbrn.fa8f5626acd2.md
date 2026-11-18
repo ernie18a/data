@@ -1,0 +1,4 @@
+Calculation: gap percentage = 100 * (open - close[1]) / close[1]
+Calculation: close strength = 100 * (close - low) / (high - low) when high > low, otherwise 0
+Long: an earnings report is on the current or previous bar AND gap percentage >= minimum gap percentage AND volume >= SMA(volume, volume-average lookback) * volume multiplier AND close > SMA(close, price-average lookback) AND close strength >= minimum close-strength percentage AND the previous bar was not a PEG trigger
+Long: the most recent earnings report encountered qualified under the PEG conditions AND the number of bars since the most recent PEG trigger <= PEG active lookback

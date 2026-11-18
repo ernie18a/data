@@ -1,0 +1,2 @@
+Long: EMA(close, shorter EMA lookback) crosses above EMA(close, longer EMA lookback) AND close > EMA(close, trend lookback) AND RSI(close, RSI lookback) > long RSI threshold AND ATR(ATR lookback) > SMA(ATR(ATR lookback), volatility lookback) AND volume > SMA(volume, volume lookback)
+Short: EMA(close, shorter EMA lookback) crosses below EMA(close, longer EMA lookback) AND close < EMA(close, trend lookback) AND RSI(close, RSI lookback) < short RSI threshold AND ATR(ATR lookback) > SMA(ATR(ATR lookback), volatility lookback) AND volume > SMA(volume, volume lookback)

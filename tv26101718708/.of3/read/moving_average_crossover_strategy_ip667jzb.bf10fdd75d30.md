@@ -1,0 +1,11 @@
+Calculation: Trend SMA = SMA(close, longest lookback)
+Calculation: Fast EMA = EMA(close when its dynamic-source switch is off, otherwise close > Trend SMA ? low : high, shortest lookback)
+Calculation: Slow SMA = SMA(close when its dynamic-source switch is off, otherwise close > Trend SMA ? low : high, intermediate lookback)
+Calculation: Combined filter = (volume filter disabled OR volume > volume multiplier * SMA(volume, volume lookback)) AND (volatility filter disabled OR ATR(shorter lookback) > ATR(longer lookback)) AND (RSI filter disabled OR (RSI(close, RSI lookback) > lower threshold AND RSI(close, RSI lookback) < upper threshold))
+Calculation: Signal basis = close of the most recent long or short entry signal
+Calculation: Long stop level = if trailing is enabled, max(close * (1 - stop-loss percentage), prior-bar stop level); otherwise, Signal basis * (1 - stop-loss percentage)
+Calculation: Short stop level = if trailing is enabled, min(close * (1 + stop-loss percentage), prior-bar stop level); otherwise, Signal basis * (1 + stop-loss percentage)
+Long: long entries enabled AND the pair selected by the long-entry crossover parameter crosses above AND (long trend filter disabled OR (Fast EMA >= Slow SMA AND Slow SMA >= Trend SMA)) AND (long-entry filter disabled OR Combined filter)
+Short: short entries enabled AND (if the short trend filter is enabled, the pair selected by the short-entry crossover parameter crosses below AND Fast EMA <= Slow SMA AND Slow SMA <= Trend SMA; otherwise, Fast EMA crosses below Slow SMA if the short-entry selector chooses that pair, else Fast EMA crosses below Trend SMA if the long-entry selector chooses that pair, else Slow SMA crosses below Trend SMA) AND (short-entry filter disabled OR Combined filter)
+Exit: Long, (the pair selected by the long-close crossover parameter crosses below AND (exit filter disabled OR Combined filter)) OR (stop loss enabled AND low <= Long stop level) OR (take profit enabled AND high >= Signal basis * (1 + take-profit percentage))
+Exit: Short, (the pair selected by the short-close crossover parameter crosses above AND (exit filter disabled OR Combined filter)) OR (stop loss enabled AND high >= Short stop level) OR (take profit enabled AND low <= Signal basis * (1 - take-profit percentage))

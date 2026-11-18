@@ -1,0 +1,4 @@
+Long: On a confirmed chart bar, high[2] < low AND high[2] − applicable confluence tolerance <= EMA(close, lookback) <= low + applicable confluence tolerance
+Short: On a confirmed chart bar, high < low[2] AND high − applicable confluence tolerance <= EMA(close, lookback) <= low[2] + applicable confluence tolerance
+Long: On the close of the first chart bar in a new T1 bar, high(T1, two bars before the last completed bar) < low(T1, last completed bar) AND high(T1, two bars before the last completed bar) − applicable confluence tolerance <= EMA(close, lookback) <= low(T1, last completed bar) + applicable confluence tolerance
+Short: On the close of the first chart bar in a new T1 bar, high(T1, last completed bar) < low(T1, two bars before the last completed bar) AND high(T1, last completed bar) − applicable confluence tolerance <= EMA(close, lookback) <= low(T1, two bars before the last completed bar) + applicable confluence tolerance

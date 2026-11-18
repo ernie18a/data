@@ -1,0 +1,5 @@
+Long: SMA(close, shorter lookback) crosses above SMA(close, longer lookback) OR RSI(close, lookback) < oversold threshold AND MACD line(close, fast lookback, slow lookback) crosses above MACD signal line(close, fast lookback, slow lookback, signal lookback) OR close < highest(close, lookback) * (1 - pullback threshold) AND close[1] >= highest(close, lookback)[1] * (1 - pullback threshold)
+Short: SMA(close, shorter lookback) crosses below SMA(close, longer lookback)
+Exit: long, elapsed time since entry > minimum holding duration AND (RSI(close, lookback) > overbought threshold AND MACD line(close, fast lookback, slow lookback) crosses below MACD signal line(close, fast lookback, slow lookback, signal lookback) OR SMA(close, shorter lookback) crosses below SMA(close, longer lookback))
+Exit: long, elapsed time since entry > minimum holding duration AND high >= entry price * (1 + take-profit percentage / 100)
+Exit: long, elapsed time since entry > minimum holding duration AND low <= entry price * (1 - stop-loss percentage / 100)

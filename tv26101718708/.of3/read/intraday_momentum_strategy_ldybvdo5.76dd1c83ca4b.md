@@ -1,0 +1,4 @@
+Long: EMA(close, shorter lookback) crosses above EMA(close, longer lookback) AND RSI(close, lookback) < overbought parameter AND close > VWAP((high + low + close) / 3) AND datetime is within the session defined by start-time and end-time parameters
+Short: EMA(close, shorter lookback) crosses below EMA(close, longer lookback) AND RSI(close, lookback) > oversold parameter AND close < VWAP((high + low + close) / 3) AND datetime is within the session defined by start-time and end-time parameters
+Exit: long, low <= entry price * (1 - stop-loss parameter / 100) OR high >= entry price * (1 + take-profit parameter / 100) OR datetime is outside the session defined by start-time and end-time parameters
+Exit: short, high >= entry price * (1 + stop-loss parameter / 100) OR low <= entry price * (1 - take-profit parameter / 100) OR datetime is outside the session defined by start-time and end-time parameters

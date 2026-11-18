@@ -1,0 +1,2 @@
+Long: close >= open AND (volume >= SMA(volume, lookback) * ultra threshold OR (volume >= SMA(volume, lookback) * whale threshold AND volume < SMA(volume, lookback) * ultra threshold))
+Short: close < open AND (volume >= SMA(volume, lookback) * ultra threshold OR (volume >= SMA(volume, lookback) * whale threshold AND volume < SMA(volume, lookback) * ultra threshold))

@@ -1,0 +1,3 @@
+Calculation: period_change = the T1 bar opening time mapped onto chart bars changes, evaluated offset chart bars ago
+Long: period_change AND datetime is at or after the configured start date (start year, start month, start day) and at or before the configured end date (end year, end month, end day) AND close > SMA(close, lookback)
+Exit: long, (period_change AND datetime is at or after the configured start date (start year, start month, start day) and at or before the configured end date (end year, end month, end day) AND close < SMA(close, lookback)) OR datetime is outside the configured date range

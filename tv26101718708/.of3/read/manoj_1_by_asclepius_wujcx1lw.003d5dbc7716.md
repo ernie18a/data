@@ -1,0 +1,5 @@
+Calculation: absolute candle body = abs(close - open)
+Long: open < EMA(high, lookback) AND close > EMA(high, same lookback) AND (VWAP(close) <= close OR (VWAP(close) >= open AND VWAP(close) <= open + absolute candle body * touch fraction))
+Short: open > EMA(low, lookback) AND close < EMA(low, same lookback) AND (VWAP(close) >= close OR (VWAP(close) <= open AND VWAP(close) >= open - absolute candle body * touch fraction))
+Exit: long, low <= low of the entry signal candle OR (the trailing stop has activated after high reaches entry price + activation distance AND low <= highest high since activation - trailing offset) OR current bar index - entry signal bar index >= holding-bar count
+Exit: short, high >= high of the entry signal candle OR (the trailing stop has activated after low reaches entry price - activation distance AND high >= lowest low since activation + trailing offset) OR current bar index - entry signal bar index >= holding-bar count

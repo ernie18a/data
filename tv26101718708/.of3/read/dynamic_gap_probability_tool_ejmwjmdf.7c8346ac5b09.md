@@ -1,0 +1,6 @@
+Calculation: Rounded gap = round(abs(100 * (close - selected moving average(close, lookback)) / selected moving average(close, lookback)))
+Calculation: Sample bins = rounded-gap buckets from the current rounded gap through the first bucket where the cumulative count of chart bars through the current bar on the current moving-average side reaches the minimum-occurrences parameter, including that bucket; if none reaches it, include all higher available buckets. The current side is above when close > selected moving average(close, lookback), and below otherwise.
+Calculation: Above count = count of historical bars with a following chart bar, close above the selected moving average at that bar, and rounded gap in Sample bins.
+Calculation: Below count = count of historical bars with a following chart bar, close below the selected moving average at that bar, and rounded gap in Sample bins.
+Long: close > selected moving average(close, lookback) OR Above count > Below count
+Short: close <= selected moving average(close, lookback) OR Above count < Below count

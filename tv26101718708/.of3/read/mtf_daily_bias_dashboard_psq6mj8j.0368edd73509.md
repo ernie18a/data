@@ -1,0 +1,6 @@
+Long: On chart bars using T1 values, close(T1, last completed bar) > EMA(close, P, T1, last completed bar) AND close(T1, last completed bar) > close(T1, two bars ago)
+Short: On chart bars using T1 values, close(T1, last completed bar) < EMA(close, P, T1, last completed bar) AND close(T1, last completed bar) < close(T1, two bars ago)
+Long: On chart bars using T2 values, close(T2, last completed bar) > EMA(close, P, T2, last completed bar) AND close(T2, last completed bar) > close(T2, two bars ago)
+Short: On chart bars using T2 values, close(T2, last completed bar) < EMA(close, P, T2, last completed bar) AND close(T2, last completed bar) < close(T2, two bars ago)
+Long: On chart bars using T3 values, close(T3, last completed bar) > EMA(close, P, T3, last completed bar) AND close(T3, last completed bar) > close(T3, two bars ago)
+Short: On chart bars using T3 values, close(T3, last completed bar) < EMA(close, P, T3, last completed bar) AND close(T3, last completed bar) < close(T3, two bars ago)

@@ -1,0 +1,3 @@
+Long: On the first chart bar whose time in the configured timezone has the entry-hour value, the previous chart bar’s last confirmed T1 close is greater than its open; signal long and enter if flat.
+Short: On the first chart bar whose time in the configured timezone has the entry-hour value, the previous chart bar’s last confirmed T1 close is less than its open; signal short and enter if flat.
+Exit: long or short, EOD close is enabled AND the chart bar’s hour in the configured timezone is greater than or equal to the EOD-hour parameter.

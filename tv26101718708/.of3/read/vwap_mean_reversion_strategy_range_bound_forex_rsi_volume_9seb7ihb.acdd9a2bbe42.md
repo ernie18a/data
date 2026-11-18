@@ -1,0 +1,5 @@
+Calculation: Volume-weighted mean absolute deviation = SUM(volume[n] * ABS(close[n] - VWMA(close, lookback)), n=0..lookback-1) / SUM(volume[n], n=0..lookback-1)
+Long: close crosses below (VWMA(close, lookback) - deviation multiplier * volume-weighted mean absolute deviation) AND RSI(close, RSI lookback) < oversold parameter AND (volume filter disabled OR volume <= SMA(volume, volume lookback) * volume multiplier)
+Short: close crosses above (VWMA(close, lookback) + deviation multiplier * volume-weighted mean absolute deviation) AND RSI(close, RSI lookback) > overbought parameter AND (volume filter disabled OR volume <= SMA(volume, volume lookback) * volume multiplier)
+Exit: Long, low <= close[1] * (1 - stop-loss parameter) OR high >= VWMA(close, lookback)[1]
+Exit: Short, high >= close[1] * (1 + stop-loss parameter) OR low <= VWMA(close, lookback)[1]

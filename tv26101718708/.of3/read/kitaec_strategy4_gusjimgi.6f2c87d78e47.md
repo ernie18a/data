@@ -1,0 +1,4 @@
+Calculation: EMA-based adjusted average = 2 × EMA(close, first smoothing lookback) − EMA(EMA(close, first smoothing lookback), second smoothing lookback)
+Calculation: RMA-based adjusted average = 2 × RMA(close, first smoothing lookback) − RMA(RMA(close, first smoothing lookback), second smoothing lookback)
+Long: Long enabled AND datetime > configured start timestamp AND datetime < configured end timestamp AND RMA-based adjusted average[1] < EMA-based adjusted average[1]
+Short: Short enabled AND datetime > configured start timestamp AND datetime < configured end timestamp AND RMA-based adjusted average[1] > EMA-based adjusted average[1]

@@ -1,0 +1,3 @@
+Calculation: volume lookback = max(minimum-lookback parameter, nz(int(ATR(high, low, close, ATR-period parameter, T1 bar still forming, sampled on chart bars) / close(T1 bar still forming, sampled on chart bars) * scale parameter), fallback-lookback parameter))
+Long: close >= open AND volume >= mid-multiple parameter * SMA(volume, volume lookback)
+Short: close < open AND volume >= mid-multiple parameter * SMA(volume, volume lookback)

@@ -1,0 +1,2 @@
+Long: RSI(close, RSI lookback) crosses below oversold level OR RSI(close, RSI lookback) crosses above MA(RSI(close, RSI lookback), MA lookback, MA type)
+Short: RSI(close, RSI lookback) crosses above overbought level OR RSI(close, RSI lookback) crosses below MA(RSI(close, RSI lookback), MA lookback, MA type)

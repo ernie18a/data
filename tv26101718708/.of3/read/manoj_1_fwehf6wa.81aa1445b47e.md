@@ -1,0 +1,4 @@
+Long: open < EMA(high, lookback) AND close > EMA(high, same lookback) AND VWAP(close) <= close; enter on the next chart bar if flat.
+Short: open > EMA(low, lookback) AND close < EMA(low, same lookback) AND VWAP(close) >= close; enter on the next chart bar if flat.
+Exit: long, low <= signal bar low OR (high reaches entry price + trailing activation distance AND low <= highest high since activation - trailing offset) OR chart bars since entry bar >= holding-period parameter.
+Exit: short, high >= signal bar high OR (low reaches entry price - trailing activation distance AND high >= lowest low since activation + trailing offset) OR chart bars since entry bar >= holding-period parameter.

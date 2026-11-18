@@ -1,0 +1,4 @@
+Long: close > Bollinger upper band(source, lookback, basis MA type, standard-deviation multiplier) AND close > SMA(close, trend lookback) AND (no prior long signal OR, since the most recent prior long signal, close < the upper band or a short signal occurred)
+Short: close < Bollinger lower band(source, lookback, basis MA type, standard-deviation multiplier) AND close < SMA(close, trend lookback) AND (no prior short signal OR, since the most recent prior short signal, close > the lower band or a long signal occurred)
+Exit: long, at least the minimum bars since entry AND (high >= entry price × (1 + take-profit percentage) OR low <= entry price × (1 - stop-loss percentage))
+Exit: short, at least the minimum bars since entry AND (low <= entry price × (1 - take-profit percentage) OR high >= entry price × (1 + stop-loss percentage))

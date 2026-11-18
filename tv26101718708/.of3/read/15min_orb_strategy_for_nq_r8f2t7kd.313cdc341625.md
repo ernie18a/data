@@ -1,0 +1,9 @@
+Calculation: Opening-range high/low = high/low of the first completed T1 bar of the New York regular session; T1 is longer than T2
+Calculation: Long risk = entry price - (opening-range low - stop buffer)
+Calculation: Short risk = (opening-range high + stop buffer) - entry price
+Calculation: Long stop = opening-range low - stop buffer; after a partial exit, replace it with entry price + breakeven offset if breakeven is enabled; if trailing is enabled after a partial exit, use the maximum of the current stop, the prior trailing stop if defined, and current T2 bar high - trailing distance
+Calculation: Short stop = opening-range high + stop buffer; after a partial exit, replace it with entry price - breakeven offset if breakeven is enabled; if trailing is enabled after a partial exit, use the minimum of the current stop, the prior trailing stop if defined, and current T2 bar low + trailing distance
+Long: On T2 chart bars after the first T1 bar completes, close > opening-range high AND no entry has been taken that day
+Short: On T2 chart bars after the first T1 bar completes, close < opening-range low AND no entry has been taken that day
+Exit: Long, current T2 bar high >= entry price + long risk × first reward-to-risk parameter OR current T2 bar high >= entry price + long risk × second reward-to-risk parameter OR current T2 bar high >= entry price + long risk × third reward-to-risk parameter OR current T2 bar low <= long stop OR current bar is the last regular-session bar OR New York datetime is at or after the end-of-day cutoff
+Exit: Short, current T2 bar low <= entry price - short risk × first reward-to-risk parameter OR current T2 bar low <= entry price - short risk × second reward-to-risk parameter OR current T2 bar low <= entry price - short risk × third reward-to-risk parameter OR current T2 bar high >= short stop OR current bar is the last regular-session bar OR New York datetime is at or after the end-of-day cutoff

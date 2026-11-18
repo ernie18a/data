@@ -1,0 +1,3 @@
+Calculation: Keltner Channel = middle band EMA(close, channel lookback); upper and lower bands = middle band ± EMA(true range or high-low, channel lookback) * channel multiplier
+Long: open > lower Keltner Channel AND open < upper Keltner Channel AND close > upper Keltner Channel AND +DI(high, low, close, DI lookback) > -DI(high, low, close, DI lookback) AND +DI(high, low, close, DI lookback) > DI trigger threshold AND volume > volume[1] AND (ribbon filter disabled OR EMA(close, ribbon lookback) > SMA(close, same lookback))
+Exit: long, close < middle Keltner Channel OR high >= entry price * (1 + first profit target) OR high >= entry price * (1 + second profit target)

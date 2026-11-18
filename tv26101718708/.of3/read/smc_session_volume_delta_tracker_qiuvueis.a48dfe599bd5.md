@@ -1,0 +1,3 @@
+Calculation: Session buyer percentage = if total session volume > 0 then 100 × sum of volume × max(0, min(1, ((close − low) + (close − open)) / (2 × (high − low)))) across session bars with high > low, divided by total session volume; otherwise 50
+Long: Tokyo session buyer percentage > 52 OR London session buyer percentage > 52 OR New York session buyer percentage > 52
+Short: Tokyo session buyer percentage < 48 OR London session buyer percentage < 48 OR New York session buyer percentage < 48

@@ -1,0 +1,3 @@
+Calculation: Intrabar efficiency = abs(chart close - chart open) / sum(abs(T1 close - T1 open)) over T1 bars within each chart bar, including any T1 bar still forming; undefined if there are no T1 bars or their total movement is zero
+Long: chart close >= chart open AND intrabar efficiency is defined AND the last non-na SMA(intrabar efficiency, calibration lookback) is defined AND intrabar efficiency >= the last non-na SMA(intrabar efficiency, calibration lookback) * strength multiplier
+Short: chart close < chart open AND intrabar efficiency is defined AND the last non-na SMA(intrabar efficiency, calibration lookback) is defined AND intrabar efficiency >= the last non-na SMA(intrabar efficiency, calibration lookback) * strength multiplier

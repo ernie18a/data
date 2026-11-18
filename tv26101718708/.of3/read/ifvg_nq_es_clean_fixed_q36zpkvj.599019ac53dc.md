@@ -1,0 +1,5 @@
+Calculation: Directional bias = on each chart bar, using requested T1 high, low, and close (the T1 bar still forming in realtime and the latest completed T1 value on historical bars), set bearish if current T1 high > Highest(requested T1 high sampled one chart bar ago over swing lookback) AND current T1 close < that highest; otherwise set bullish if current T1 low < Lowest(requested T1 low sampled one chart bar ago over swing lookback) AND current T1 close > that lowest; otherwise retain prior bias; initially neutral
+Long: bullish bias AND low > high[gap offset] AND gap size in ticks >= minimum gap
+Short: bearish bias AND high < low[gap offset] AND gap size in ticks >= minimum gap
+Long: bullish bias AND close > open AND low <= high[gap offset] AND (volume confirmation disabled OR volume > SMA(volume, volume lookback)) AND (session filter disabled OR chart bar is within configured session)
+Short: bearish bias AND close < open AND high >= low[gap offset] AND (volume confirmation disabled OR volume > SMA(volume, volume lookback)) AND (session filter disabled OR chart bar is within configured session)

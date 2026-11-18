@@ -1,0 +1,5 @@
+Calculation: Mapped EMA = EMA(T1 close, EMA period), calculated on chart bars using the still-forming T1 bar
+Long: Mapped EMA - Mapped EMA[trend lookback] < 0 AND Mapped EMA[previous chart bar] < Mapped EMA[two chart bars ago] AND close crosses above Mapped EMA
+Short: Mapped EMA - Mapped EMA[trend lookback] > 0 AND Mapped EMA[previous chart bar] > Mapped EMA[two chart bars ago] AND close crosses below Mapped EMA
+Exit: long, high >= entry price + target distance OR low <= entry price - stop distance OR (highest high since entry >= entry price + trailing activation distance AND low <= highest high since entry - trailing offset)
+Exit: short, low <= entry price - target distance OR high >= entry price + stop distance OR (lowest low since entry <= entry price - trailing activation distance AND high >= lowest low since entry + trailing offset)

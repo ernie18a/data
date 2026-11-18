@@ -1,0 +1,3 @@
+Calculation: Z-Score = (source close from T1, with its bar still forming, sampled on chart bars - SMA(source close from T1, sampled on chart bars, lookback)) / StDev(source close from T1, sampled on chart bars, lookback)
+Long: raw-series display branch AND source close from T1, with its bar still forming, sampled on chart bars > raw overbought threshold OR standardized-series display branch AND Z-Score > upper threshold
+Short: standardized-series display branch AND Z-Score < lower threshold

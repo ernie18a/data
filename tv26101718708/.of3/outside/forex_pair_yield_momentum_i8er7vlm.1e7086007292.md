@@ -1,0 +1,4 @@
+Calculation: Two-year yield spread = selected first country's two-year government bond yield - selected second country's two-year government bond yield
+Calculation: Yield momentum = two-year yield spread - SMA(two-year yield spread, momentum length parameter)
+Long: (reversal setting disabled AND yield momentum < lower Bollinger Band of yield momentum (band length parameter, standard deviation multiplier parameter)) OR (reversal setting enabled AND yield momentum > upper Bollinger Band of yield momentum (band length parameter, standard deviation multiplier parameter))
+Short: (reversal setting disabled AND yield momentum > upper Bollinger Band of yield momentum (band length parameter, standard deviation multiplier parameter)) OR (reversal setting enabled AND yield momentum < lower Bollinger Band of yield momentum (band length parameter, standard deviation multiplier parameter))

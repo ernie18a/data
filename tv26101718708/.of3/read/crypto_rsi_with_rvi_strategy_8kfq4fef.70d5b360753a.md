@@ -1,0 +1,5 @@
+Calculation: Volume-weighted RSI = 100 × W(up, lookback) / [W(up, lookback) + W(down, lookback)], where up = max(close − close[1], 0) × volume, down = max(close[1] − close, 0) × volume, and W_t(x, L) = [x_t + (L − 1) × W_{t−1}(x, L)] / L, initialized at 0
+Calculation: RVI direction = −1 when Relative Volatility Index(close, lookback, smoothing lookback) is below the lower threshold, +1 when it is above the upper threshold, otherwise its prior value; invert when the reverse parameter is enabled; initialize at 0
+Long: Volume-weighted RSI crosses above the upper threshold AND RVI direction = 1
+Exit: long, (Volume-weighted RSI crosses below the lower threshold AND RVI direction = −1) OR low ≤ entry price − close × stop parameter OR high ≥ entry price + close × target parameter
+Exit: short, high ≥ entry price + close × stop parameter OR low ≤ entry price − close × target parameter

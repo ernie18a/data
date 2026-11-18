@@ -1,0 +1,6 @@
+Long: EVWMA(close, shorter volume-sum lookback) > EVWMA(close, longer volume-sum lookback)
+Short: EVWMA(close, shorter volume-sum lookback) < EVWMA(close, longer volume-sum lookback)
+Long: EVWMA(close, shorter volume-sum lookback) crosses above EVWMA(close, longer volume-sum lookback)
+Short: EVWMA(close, shorter volume-sum lookback) crosses below EVWMA(close, longer volume-sum lookback)
+Exit: long, (fixed-percentage stop mode AND low <= entry price * (1 - stop percentage)) OR (ATR stop mode AND low <= close on most recent long-signal bar - ATR(lookback) * multiplier)
+Exit: short, (fixed-percentage stop mode AND high >= entry price * (1 + stop percentage)) OR (ATR stop mode AND high >= close on most recent short-signal bar + ATR(lookback) * multiplier)

@@ -1,0 +1,2 @@
+Long: ADX(DMI lookback) > ADX threshold AND DI+(DMI lookback) > DI-(DMI lookback) AND volume > SMA(volume, volume lookback) * volume multiplier
+Short: ADX(DMI lookback) > ADX threshold AND DI-(DMI lookback) > DI+(DMI lookback) AND volume > SMA(volume, volume lookback) * volume multiplier

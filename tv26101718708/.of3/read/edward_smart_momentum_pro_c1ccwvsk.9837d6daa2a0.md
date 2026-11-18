@@ -1,0 +1,3 @@
+Calculation: Trend = 1 if close > the prior bar's ((high + low) / 2 + ATR(ATR lookback) * ATR multiplier), -1 if close < the prior bar's ((high + low) / 2 - ATR(ATR lookback) * ATR multiplier), otherwise the prior Trend; initially 1
+Long: Trend = 1 AND EMA(close, shorter EMA lookback) > EMA(close, longer EMA lookback) AND close > highest(high, breakout lookback)[1] AND RSI(close, RSI lookback) > long RSI threshold AND volume > SMA(volume, volume lookback)
+Short: Trend = -1 AND EMA(close, shorter EMA lookback) < EMA(close, longer EMA lookback) AND close < lowest(low, breakout lookback)[1] AND RSI(close, RSI lookback) < short RSI threshold AND volume > SMA(volume, volume lookback)

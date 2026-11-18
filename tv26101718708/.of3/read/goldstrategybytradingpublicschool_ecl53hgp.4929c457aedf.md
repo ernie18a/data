@@ -1,0 +1,6 @@
+Long: RSI(close, RSI lookback) crosses above RSI oversold threshold AND close crosses above lower Bollinger Band(close, BB lookback, deviation multiplier)
+Short: RSI(close, RSI lookback) crosses below RSI overbought threshold AND close crosses below upper Bollinger Band(close, BB lookback, deviation multiplier)
+Long: close[1] < lower Bollinger Band(close, BB lookback, deviation multiplier) AND close > lower Bollinger Band(close, BB lookback, deviation multiplier) AND SMA(close, BB lookback) > SMA(close, BB lookback)[1]
+Short: close[1] > upper Bollinger Band(close, BB lookback, deviation multiplier) AND close < upper Bollinger Band(close, BB lookback, deviation multiplier) AND SMA(close, BB lookback) < SMA(close, BB lookback)[1]
+Long: selected moving average(close, MA lookback, MA type) computed on the still-forming T1 bar and sampled on chart bars >= its sampled value smoothing lookback chart bars ago
+Short: selected moving average(close, MA lookback, MA type) computed on the still-forming T1 bar and sampled on chart bars < its sampled value smoothing lookback chart bars ago

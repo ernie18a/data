@@ -1,0 +1,4 @@
+Long: EMA(close, shorter lookback) crosses above EMA(close, longer lookback) AND RSI(close, RSI lookback) > RSI threshold AND volume > SMA(volume, volume lookback)
+Short: EMA(close, shorter lookback) crosses below EMA(close, longer lookback) AND RSI(close, RSI lookback) < RSI threshold AND volume > SMA(volume, volume lookback)
+Exit: long, low <= close - ATR(ATR lookback) * stop-loss multiplier OR high >= close + ATR(ATR lookback) * stop-loss multiplier * risk-to-reward ratio OR bars since flat > bar-count threshold
+Exit: short, high >= close + ATR(ATR lookback) * stop-loss multiplier OR low <= close - ATR(ATR lookback) * stop-loss multiplier * risk-to-reward ratio OR bars since flat > bar-count threshold

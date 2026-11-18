@@ -1,0 +1,3 @@
+Calculation: market-cap z-score = (market capitalization on T1 from the selected source, or free-float market capitalization on T1 when the selected method is free float, minus realized market capitalization on T1) / standard deviation of cumulative market capitalization on T1 from the selected source
+Long: strategy mode enabled AND crossunder(market-cap z-score, lower threshold)
+Exit: long, strategy mode enabled AND crossover(market-cap z-score, upper threshold)

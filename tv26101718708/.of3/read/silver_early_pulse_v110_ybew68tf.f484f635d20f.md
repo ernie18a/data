@@ -1,0 +1,6 @@
+Long: flat AND within the configured UTC session AND MACD histogram(shorter EMA lookback, longer EMA lookback, signal EMA lookback) crosses above zero AND close > EMA(close, lookback) on T1 bars using the last completed T1 bar, mapped to chart bars AND volume > SMA(volume, lookback)
+Short: flat AND within the configured UTC session AND MACD histogram(shorter EMA lookback, longer EMA lookback, signal EMA lookback) crosses below zero AND close < EMA(close, lookback) on T1 bars using the last completed T1 bar, mapped to chart bars AND volume > SMA(volume, lookback)
+Calculation: Long stop = previous long stop, initialized to entry price * (1 - stop distance), and updated to max(previous long stop, entry price + ATR(lookback) * trailing offset) when close > entry price + ATR(lookback) * trailing activation distance
+Calculation: Short stop = previous short stop, initialized to entry price * (1 + stop distance), and updated to min(previous short stop, entry price - ATR(lookback) * trailing offset) when close < entry price - ATR(lookback) * trailing activation distance
+Exit: long, low <= long stop OR high >= entry price * (1 + stop distance * reward multiple)
+Exit: short, high >= short stop OR low <= entry price * (1 - stop distance * reward multiple)

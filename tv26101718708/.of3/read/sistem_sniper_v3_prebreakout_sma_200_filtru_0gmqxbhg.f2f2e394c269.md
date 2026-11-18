@@ -1,0 +1,5 @@
+Calculation: accumulation range = Highest(high, accumulation lookback, ending on prior bar) - Lowest(low, accumulation lookback, ending on prior bar)
+Calculation: entry stop = at signal close, if Chandelier Exit(high, chandelier lookback, chandelier multiplier) >= close then close - risk multiple * ATR(chandelier lookback), otherwise Chandelier Exit(high, chandelier lookback, chandelier multiplier); freeze at entry
+Calculation: entry target = entry price + risk multiple * (entry price - entry stop); freeze at entry
+Long: position side is flat AND accumulation range is positive AND close > Lowest(low, accumulation lookback, ending on prior bar) + upper-zone fraction * accumulation range AND close <= Highest(high, accumulation lookback, ending on prior bar) AND volume > prior-bar volume AND prior-bar volume > volume two bars ago AND volume > SMA(volume, volume lookback) * relative-volume threshold AND (EMA filter disabled OR EMA(close, shorter EMA lookback) > EMA(close, longer EMA lookback)) AND (SMA filter disabled OR close > SMA(close, major-trend lookback)) AND close > entry stop
+Exit: long, low <= entry stop OR high >= entry target

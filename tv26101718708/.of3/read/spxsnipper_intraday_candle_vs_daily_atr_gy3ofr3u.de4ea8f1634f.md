@@ -1,0 +1,3 @@
+Calculation: Candle ATR percentage = (high - low or abs(close - open), selected by a parameter) / ATR(lookback, T1, last completed bar or bar still forming, selected by a separate parameter and mapped onto chart bars) * 100
+Long: Candle ATR percentage >= threshold parameter AND close > open AND, when enabled by a parameter, chart bar is confirmed
+Short: Candle ATR percentage >= threshold parameter AND close < open AND, when enabled by a parameter, chart bar is confirmed

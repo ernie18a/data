@@ -1,0 +1,2 @@
+Calculation: opening-range high = maximum high of in-session chart bars from the first in-session bar through bars whose datetime is less than the opening-range duration after it; the range completes on the first in-session bar at or after that duration, and its high stays fixed until the next session.
+Long: At chart-bar close, the opening range is complete AND close > opening-range high AND volume > volume multiplier × SMA(volume, volume lookback) AND close > session VWAP(HLC3) AND this same conjunction was false on the previous chart bar.

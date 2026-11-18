@@ -1,0 +1,2 @@
+Long: On chart bars, EMA or SMA(close, shorter lookback, T1, still-forming bar) >= EMA or SMA(close, longer lookback, T1, still-forming bar)
+Short: On chart bars, EMA or SMA(close, shorter lookback, T1, still-forming bar) < EMA or SMA(close, longer lookback, T1, still-forming bar)

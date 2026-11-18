@@ -1,0 +1,5 @@
+Calculation: Multi-timeframe RSI mean = mean of VWMA(RSI(close, RSI lookback), VWMA lookback) calculated on T1, T2, T3, T4, T5, T6, T7, and T8 bars and mapped to chart bars, using the last completed timeframe bar historically and the still-forming timeframe bar in realtime
+Long: EMA(Multi-timeframe RSI mean, shorter EMA lookback) crosses above EMA(Multi-timeframe RSI mean, longer EMA lookback) AND long-entry switch is enabled AND chart-bar datetime is within the configured entry window
+Short: EMA(Multi-timeframe RSI mean, shorter EMA lookback) crosses below EMA(Multi-timeframe RSI mean, longer EMA lookback) AND short-entry switch is enabled AND chart-bar datetime is within the configured entry window
+Exit: Long, EMA(Multi-timeframe RSI mean, shorter EMA lookback) crosses below EMA(Multi-timeframe RSI mean, longer EMA lookback) OR low <= entry price * (1 - long stop-loss percent / 100)
+Exit: Short, high >= entry price * (1 + short stop-loss percent / 100)

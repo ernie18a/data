@@ -1,0 +1,10 @@
+Calculation: volume-weighted pressure oscillator = EMA((((close - low) - (high - close)) / (high - low)) × volume, pressure smoothing) / EMA(volume, pressure smoothing); use 0 for bar pressure when high = low and for the oscillator when the denominator ≤ 0
+Calculation: Fibonacci retracement level(ratio) = Highest(high, swing lookback) - (Highest(high, swing lookback) - Lowest(low, swing lookback)) × ratio
+Long: close > EMA(close, trend lookback)
+Short: close ≤ EMA(close, trend lookback)
+Long: volume-weighted pressure oscillator > 0
+Short: volume-weighted pressure oscillator ≤ 0
+Long: signal source > UT Bot trailing stop(signal source, ATR lookback, sensitivity multiplier)
+Short: signal source ≤ UT Bot trailing stop(signal source, ATR lookback, sensitivity multiplier)
+Long: signal source crosses above UT Bot trailing stop(signal source, ATR lookback, sensitivity multiplier) AND (trend filter disabled OR close > EMA(close, trend lookback)) AND (volume filter disabled OR volume > SMA(volume, volume lookback) × volume multiplier) AND (pressure filter disabled OR volume-weighted pressure oscillator > 0) AND (Fib zone filter disabled OR low ≤ Fibonacci retracement level(long-zone upper ratio) + close × zone tolerance percentage / 100 AND high ≥ Fibonacci retracement level(long-zone lower ratio) - close × zone tolerance percentage / 100) AND bars since previous long or short signal ≥ signal cooldown
+Short: signal source crosses below UT Bot trailing stop(signal source, ATR lookback, sensitivity multiplier) AND (trend filter disabled OR close < EMA(close, trend lookback)) AND (volume filter disabled OR volume > SMA(volume, volume lookback) × volume multiplier) AND (pressure filter disabled OR volume-weighted pressure oscillator < 0) AND (Fib zone filter disabled OR high ≥ Fibonacci retracement level(short-zone lower ratio) - close × zone tolerance percentage / 100 AND low ≤ Fibonacci retracement level(short-zone upper ratio) + close × zone tolerance percentage / 100) AND bars since previous long or short signal ≥ signal cooldown

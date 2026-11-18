@@ -1,0 +1,1 @@
+Long: On a confirmed chart bar at or after the opening-range end and before the cutoff, close > highest(high during the opening-range window), volume >= volume multiplier × average(volume during the opening-range window), and close > session VWAP

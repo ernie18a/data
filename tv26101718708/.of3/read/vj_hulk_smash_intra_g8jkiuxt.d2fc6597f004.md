@@ -1,0 +1,6 @@
+Calculation: supertrend line = Supertrend(multiplier, ATR period)
+Calculation: custom ADX = SMA(DX, lookback), where DX = 100 * abs(positive DI - negative DI) / (positive DI + negative DI), positive DI = 100 * S(positive DM, lookback) / S(TR, lookback), negative DI = 100 * S(negative DM, lookback) / S(TR, lookback), TR = max(high - low, abs(high - close[1]), abs(low - close[1])), positive DM = high - high[1] > low[1] - low ? max(high - high[1], 0) : 0, negative DM = low[1] - low > high - high[1] ? max(low[1] - low, 0) : 0, S(x, lookback) = S(x, lookback)[1] - S(x, lookback)[1] / lookback + x, initialized at zero; unavailable previous-bar values are zero
+Long: close > supertrend line AND close < open AND volume > volume[1] AND custom ADX(lookback) > ADX threshold AND bar is within the configured market session
+Short: close < supertrend line AND close > open AND volume > volume[1] AND custom ADX(lookback) > ADX threshold AND bar is within the configured market session
+Exit: long, low <= entry price * (1 - long stop-loss percentage) OR high >= entry price * (1 + long take-profit percentage) OR bar is outside the configured market session
+Exit: short, high >= entry price * (1 + short stop-loss percentage) OR low <= entry price * (1 - short take-profit percentage) OR bar is outside the configured market session

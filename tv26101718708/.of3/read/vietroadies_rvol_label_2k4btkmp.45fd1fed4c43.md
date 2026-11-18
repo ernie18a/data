@@ -1,0 +1,1 @@
+Long: volume of the bar still forming on T1 / SMA(volume, lookback, T1, last completed bar) > threshold, evaluated on chart bars using T1 values

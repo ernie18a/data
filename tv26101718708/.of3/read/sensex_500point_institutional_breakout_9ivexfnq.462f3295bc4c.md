@@ -1,0 +1,6 @@
+Calculation: upper breakout level = ceil(session-start bar open / round-number increment) * round-number increment
+Calculation: lower breakout level = floor(session-start bar open / round-number increment) * round-number increment
+Long: close >= upper breakout level AND bar time is within the entry session AND bar is not the session-start bar AND position is flat AND entries since the session-start bar < daily trade limit
+Short: close <= lower breakout level AND bar time is within the entry session AND bar is not the session-start bar AND position is flat AND entries since the session-start bar < daily trade limit
+Exit: long, low <= (entry price if highest high since entry >= entry price + break-even trigger, otherwise entry price - initial stop distance) OR high >= upper breakout level + round-number increment OR bar time is within the square-off window
+Exit: short, high >= (entry price if lowest low since entry <= entry price - break-even trigger, otherwise entry price + initial stop distance) OR low <= lower breakout level - round-number increment OR bar time is within the square-off window

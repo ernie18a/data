@@ -1,0 +1,5 @@
+Calculation: T1 volume on each chart bar = sum(volume of T1 bars within that chart bar, including any T1 bar still forming)
+Calculation: Bullish volume percentage on each chart bar = if T1 volume > 0, 100 × sum(volume of each T1 bar in the chart bar whose close is greater than or equal to its preceding T1 close; for the first T1 bar, use its own close) / T1 volume; otherwise 0
+Calculation: Bearish volume percentage on each chart bar = if T1 volume > 0, 100 × sum(volume of each T1 bar in the chart bar whose close is less than its preceding T1 close) / T1 volume; otherwise 0
+Long: confirmed pivot low(low, same swing lookback on each side) exists AND no confirmed pivot high(high, same swing lookback on each side) exists AND T1 volume ≥ minimum volume threshold AND bullish volume percentage ≥ dominance threshold
+Short: confirmed pivot high(high, same swing lookback on each side) exists AND T1 volume ≥ minimum volume threshold AND bearish volume percentage ≥ dominance threshold

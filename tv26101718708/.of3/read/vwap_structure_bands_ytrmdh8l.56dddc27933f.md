@@ -1,0 +1,2 @@
+Long: close crosses above VWAP(source, anchored to T1, computed on chart bars through the current bar)
+Short: close crosses below VWAP(source, anchored to T1, computed on chart bars through the current bar)

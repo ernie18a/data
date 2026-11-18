@@ -1,0 +1,4 @@
+Long: close > Supertrend(multiplier, ATR period) AND close < open AND volume > volume[1] AND VWAP > VWAP[1] AND datetime is within the session parameter
+Short: close < Supertrend(multiplier, ATR period) AND close > open AND volume > volume[1] AND VWAP < VWAP[1] AND datetime is within the session parameter
+Exit: long, low <= entry price × (1 − long stop-loss parameter) OR high >= entry price × (1 + long take-profit parameter) OR datetime is outside the session parameter
+Exit: short, high >= entry price × (1 + short stop-loss parameter) OR low <= entry price × (1 − short take-profit parameter) OR datetime is outside the session parameter

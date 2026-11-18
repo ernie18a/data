@@ -1,0 +1,5 @@
+Calculation: ride duration = count of consecutive chart bars ending at the current bar where close > EMA(close, medium lookback)
+Long: volume / SMA(volume, volume-average lookback) >= EP-surge volume threshold AND close > open
+Long: volume / SMA(volume, volume-average lookback) <= healthy-dip volume threshold AND percent((close - EMA(close, shorter lookback)) / EMA(close, shorter lookback)) is between the pullback lower and upper thresholds
+Short: volume / SMA(volume, volume-average lookback) >= distribution volume threshold AND close < open
+Long: Grinder mode AND ATR(ATR lookback) / close <= maximum ATR percentage AND ride duration >= minimum grinder ride duration AND (stock percent return over the outperformance lookback − benchmark percent return over the same lookback) >= minimum outperformance AND (close is between EMA(close, medium lookback) and EMA(close, shorter lookback), inclusive, OR close is within the EMA proximity threshold of EMA(close, shorter lookback)) AND EMA(close, shorter lookback) > EMA(close, medium lookback) > EMA(close, longer lookback)

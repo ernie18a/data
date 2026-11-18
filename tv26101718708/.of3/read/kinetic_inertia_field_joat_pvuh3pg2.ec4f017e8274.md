@@ -1,0 +1,17 @@
+Calculation: log return = ln(close / close[1])
+Calculation: realized volatility = StDev(log return, volatility lookback)
+Calculation: normalized rate = EMA(log return / max(realized volatility, positive denominator floor), velocity smoothing)
+Calculation: rate acceleration = EMA(normalized rate - normalized rate[1], max(minimum acceleration lookback, integer part of velocity smoothing / acceleration lookback divisor))
+Calculation: rate jerk = EMA(rate acceleration - rate acceleration[1], jerk smoothing)
+Calculation: average true range = ATR(ATR lookback)
+Calculation: equilibrium price = EMA(LinReg(close, equilibrium lookback, 0) * regression weight + VWAP(typical price) * VWAP weight, equilibrium smoothing)
+Calculation: normalized displacement = (close - equilibrium price) / max(average true range, minimum price increment)
+Calculation: kinetic energy = 0.5 * normalized rate² / max(realized volatility * sqrt(annualization factor), positive denominator floor)
+Calculation: energy score = bound Z-score(kinetic energy, volatility lookback; zero if standard deviation is zero) * energy score scale + score midpoint between zero and score ceiling
+Calculation: inertial score = bound score midpoint + normalized rate * rate weight + rate acceleration * acceleration weight + rate jerk * jerk weight + sign(normalized displacement) * min(abs(normalized displacement) * displacement weight, displacement cap) between zero and score ceiling
+Calculation: directional state = up if inertial score > inertia threshold and normalized rate > 0 and rate acceleration > 0; down if inertial score < score ceiling - inertia threshold and normalized rate < 0 and rate acceleration < 0; otherwise neutral
+Calculation: boundary offset = average true range * (base boundary multiplier + min(max(energy score / score ceiling, 0), energy ratio cap) * energy boundary multiplier + min(abs(normalized displacement), displacement boundary cap) * displacement boundary multiplier)
+Calculation: upper boundary = equilibrium price + boundary offset
+Calculation: lower boundary = equilibrium price - boundary offset
+Long: on a confirmed chart bar, and either no earlier signal exists or at least cooldown length bars have elapsed since the most recent signal of either side, and ((directional state is up and energy score >= energy threshold and close > upper boundary[1]) or (normalized displacement < -snapback displacement threshold and rate acceleration > 0 and close > lower boundary))
+Short: on a confirmed chart bar, and either no earlier signal exists or at least cooldown length bars have elapsed since the most recent signal of either side, and ((directional state is down and energy score >= energy threshold and close < lower boundary[1]) or (normalized displacement > snapback displacement threshold and rate acceleration < 0 and close < upper boundary))

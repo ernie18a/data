@@ -1,0 +1,2 @@
+Long: high(T1, 3 bars ago, completed) < low(T1, 1 bar ago, completed), evaluated on chart bars using T1 values
+Short: low(T1, 3 bars ago, completed) > high(T1, 1 bar ago, completed), evaluated on chart bars using T1 values

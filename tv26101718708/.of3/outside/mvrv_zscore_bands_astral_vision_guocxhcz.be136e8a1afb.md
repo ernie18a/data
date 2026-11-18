@@ -1,0 +1,2 @@
+Long: MVRV Z-Score(Market Capitalization(T1), Realized Capitalization(T1), all-history population standard deviation of Market Capitalization(T1)) < oversold Z-Score threshold
+Short: MVRV Z-Score(Market Capitalization(T1), Realized Capitalization(T1), all-history population standard deviation of Market Capitalization(T1)) > overbought Z-Score threshold

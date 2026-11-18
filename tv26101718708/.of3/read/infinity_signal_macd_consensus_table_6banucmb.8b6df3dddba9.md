@@ -1,0 +1,4 @@
+Calculation: Bullish consensus = sum over T1–T5 of each T’s separate weight parameter multiplied by 1 when MACD(close, fast lookback, slow lookback, signal lookback) line > signal line, 0.5 when equal, and 0 otherwise; calculate MACD on each T’s still-forming bar and take its value on chart bars, using shared fast (shorter), slow (longer), and signal lookback parameters
+Calculation: Bearish consensus = sum over T1–T5 of each T’s separate weight parameter multiplied by 1 when MACD(close, fast lookback, slow lookback, signal lookback) line < signal line, 0.5 when equal, and 0 otherwise; calculate MACD on each T’s still-forming bar and take its value on chart bars, using the same shared fast, slow, and signal lookback parameters
+Long: bullish consensus >= bullish threshold parameter AND bullish consensus > bearish consensus
+Short: bearish consensus >= bearish threshold parameter AND bearish consensus > bullish consensus

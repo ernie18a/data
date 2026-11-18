@@ -1,0 +1,3 @@
+Long: RSI(source, lookback, T1, current T1 bar sampled on chart bars with lookahead off)[1] < lower RSI threshold AND RSI(source, lookback, T1, current T1 bar sampled on chart bars with lookahead off) >= lower RSI threshold AND close > open AND VZO(close, volume, lookback) <= -VZO threshold
+Short: RSI(source, lookback, T1, current T1 bar sampled on chart bars with lookahead off)[1] > upper RSI threshold AND RSI(source, lookback, T1, current T1 bar sampled on chart bars with lookahead off) <= upper RSI threshold AND open > close AND VZO(close, volume, lookback) >= VZO threshold
+Exit: long, low <= entry price * (1 - stop-loss parameter) OR high >= entry price * (1 + take-profit parameter)

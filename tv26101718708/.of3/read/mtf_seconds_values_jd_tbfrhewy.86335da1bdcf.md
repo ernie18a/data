@@ -1,0 +1,2 @@
+Long: open(T1, bar still forming, value on chart bars) < close(T1, bar still forming, value on chart bars)
+Short: open(T1, bar still forming, value on chart bars) >= close(T1, bar still forming, value on chart bars)

@@ -1,0 +1,2 @@
+Long: Supertrend direction(factor, ATR lookback, T1 bar—forming in real time and last completed historically, mapped to chart bars)[1] > Supertrend direction(factor, ATR lookback, T1 bar—forming in real time and last completed historically, mapped to chart bars)
+Short: Supertrend direction(factor, ATR lookback, T1 bar—forming in real time and last completed historically, mapped to chart bars)[1] < Supertrend direction(factor, ATR lookback, T1 bar—forming in real time and last completed historically, mapped to chart bars)

@@ -1,0 +1,16 @@
+Long: close(T1, current possibly forming bar) > EMA(close, lookback, T1, current possibly forming bar), evaluated on chart bars using T1 values
+Short: close(T1, current possibly forming bar) <= EMA(close, lookback, T1, current possibly forming bar), evaluated on chart bars using T1 values
+Long: close(T2, current possibly forming bar) > EMA(close, lookback, T2, current possibly forming bar), evaluated on chart bars using T2 values
+Short: close(T2, current possibly forming bar) <= EMA(close, lookback, T2, current possibly forming bar), evaluated on chart bars using T2 values
+Long: close(T3, current possibly forming bar) > EMA(close, lookback, T3, current possibly forming bar), evaluated on chart bars using T3 values
+Short: close(T3, current possibly forming bar) <= EMA(close, lookback, T3, current possibly forming bar), evaluated on chart bars using T3 values
+Long: close(T4, current possibly forming bar) > EMA(close, lookback, T4, current possibly forming bar), evaluated on chart bars using T4 values
+Short: close(T4, current possibly forming bar) <= EMA(close, lookback, T4, current possibly forming bar), evaluated on chart bars using T4 values
+Long: close(T5, current possibly forming bar) > EMA(close, lookback, T5, current possibly forming bar), evaluated on chart bars using T5 values
+Short: close(T5, current possibly forming bar) <= EMA(close, lookback, T5, current possibly forming bar), evaluated on chart bars using T5 values
+Long: close(T6, current possibly forming bar) > EMA(close, lookback, T6, current possibly forming bar), evaluated on chart bars using T6 values
+Short: close(T6, current possibly forming bar) <= EMA(close, lookback, T6, current possibly forming bar), evaluated on chart bars using T6 values
+Long: close(T7, current possibly forming bar) > EMA(close, lookback, T7, current possibly forming bar), evaluated on chart bars using T7 values
+Short: close(T7, current possibly forming bar) <= EMA(close, lookback, T7, current possibly forming bar), evaluated on chart bars using T7 values
+Long: close(T8, current possibly forming bar) > EMA(close, lookback, T8, current possibly forming bar), evaluated on chart bars using T8 values
+Short: close(T8, current possibly forming bar) <= EMA(close, lookback, T8, current possibly forming bar), evaluated on chart bars using T8 values

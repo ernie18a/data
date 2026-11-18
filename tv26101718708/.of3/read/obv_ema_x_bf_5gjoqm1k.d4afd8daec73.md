@@ -1,0 +1,5 @@
+Calculation: volume-adjusted OBV = cumulative sum of (change(close) > 0 ? volume² / ATR(ATR lookback) : change(close) < 0 ? -volume² / ATR(ATR lookback) : 0)
+Long: EMA(volume-adjusted OBV, shorter lookback) crosses above EMA(volume-adjusted OBV, longer lookback)
+Short: EMA(volume-adjusted OBV, shorter lookback) crosses below EMA(volume-adjusted OBV, longer lookback)
+Exit: long, after the entry bar, low <= entry price * (1 - stop-loss percentage)
+Exit: short, after the entry bar, high >= entry price * (1 + stop-loss percentage)

@@ -1,0 +1,9 @@
+Calculation: Renko close = close of Renko bars built from open on T1 using an ATR lookback parameter or a traditional brick-size parameter; on chart bars, use the current/forming T1 bar with lookahead enabled; T1 is the current chart resolution or a selected alternate timeframe
+Calculation: Renko open = open of Renko bars built from open on T1 using an ATR lookback parameter or a traditional brick-size parameter; on chart bars, use the current/forming T1 bar with lookahead enabled; T1 is the current chart resolution or a selected alternate timeframe
+Calculation: Renko brick size = abs(Renko close - Renko open)
+Long: Renko close crosses above Renko open
+Short: Renko close crosses below Renko open
+Long: Renko close > Renko open AND SMA(Stochastic(close, high, low, lookback parameter), K smoothing parameter) > SMA(SMA(Stochastic(close, high, low, lookback parameter), K smoothing parameter), D smoothing parameter) AND SMA(Stochastic(close, high, low, lookback parameter), K smoothing parameter)[1] < SMA(SMA(Stochastic(close, high, low, lookback parameter), K smoothing parameter), D smoothing parameter)[1] AND SMA(Stochastic(close, high, low, lookback parameter), K smoothing parameter)[1] < lower-level parameter
+Short: Renko close < Renko open AND SMA(Stochastic(close, high, low, lookback parameter), K smoothing parameter) < SMA(SMA(Stochastic(close, high, low, lookback parameter), K smoothing parameter), D smoothing parameter) AND SMA(Stochastic(close, high, low, lookback parameter), K smoothing parameter)[1] > SMA(SMA(Stochastic(close, high, low, lookback parameter), K smoothing parameter), D smoothing parameter)[1] AND SMA(Stochastic(close, high, low, lookback parameter), K smoothing parameter)[1] > upper-level parameter
+Exit: long, Renko close > Renko open AND close < Renko open - (Renko brick size / 2)
+Exit: short, Renko close < Renko open AND close > Renko open + (Renko brick size / 2)

@@ -1,0 +1,5 @@
+Calculation: EMA gap percentage = ABS(EMA(close, shorter lookback, T1) - EMA(close, longer lookback, T1)) / EMA(close, longer lookback, T1) * 100; calculate on T1 bars and map to chart bars using the last completed T1 bar historically and the still-forming T1 bar in real time; [1] denotes the previous chart bar's mapped value
+Long: EMA(close, shorter lookback, T1) > EMA(close, longer lookback, T1) AND EMA gap percentage >= threshold
+Short: EMA(close, shorter lookback, T1) < EMA(close, longer lookback, T1) AND EMA gap percentage >= threshold
+Long: EMA(close, shorter lookback, T1) > EMA(close, longer lookback, T1) AND EMA gap percentage >= threshold AND (EMA(close, shorter lookback, T1)[1] < EMA(close, longer lookback, T1)[1] AND EMA gap percentage[1] >= threshold OR EMA gap percentage[1] < threshold)
+Short: EMA(close, shorter lookback, T1) < EMA(close, longer lookback, T1) AND EMA gap percentage >= threshold AND (EMA(close, shorter lookback, T1)[1] > EMA(close, longer lookback, T1)[1] AND EMA gap percentage[1] >= threshold OR EMA gap percentage[1] < threshold)

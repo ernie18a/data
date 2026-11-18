@@ -1,0 +1,4 @@
+Calculation: Core = VWMA(2 * (VWMA(((high + low) / 2) * volume, ceil(Length / 4)) / VWMA(volume, ceil(Length / 4))) - (VWMA(((high + low) / 2) * volume, ceil(Length / 2)) / VWMA(volume, ceil(Length / 2))), Length)
+Calculation: Signal state = 1 when Core <= close - ATR(Length) * Alpha and close > RMA(close, Length); -1 when Core >= close + ATR(Length) * Alpha and close < RMA(close, Length); otherwise the prior bar's Signal state
+Long: Core <= close - ATR(Length) * Alpha AND close > RMA(close, Length) AND Signal state != Signal state[1]
+Short: Core >= close + ATR(Length) * Alpha AND close < RMA(close, Length) AND Signal state != Signal state[1]

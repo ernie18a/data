@@ -1,0 +1,4 @@
+Calculation: displacement = abs(close - open) + abs(open - close[1])
+Calculation: ATR direction = 1 if close[1] < ATR trailing stop(ATR lookback, ATR multiplier)[1] and close > ATR trailing stop(ATR lookback, ATR multiplier)[1], -1 if close[1] > ATR trailing stop(ATR lookback, ATR multiplier)[1] and close < ATR trailing stop(ATR lookback, ATR multiplier)[1], otherwise previous ATR direction (initially 0)
+Long: no prior Long signal since the most recent Short signal AND ATR direction = 1 AND close > open AND (volume is unavailable OR volume <= 0 OR volume > expansion factor * SMA(volume, baseline lookback)) AND displacement > expansion factor * SMA(displacement, baseline lookback)
+Short: no prior Short signal since the most recent Long signal AND ATR direction = -1 AND close < open AND (volume is unavailable OR volume <= 0 OR volume > expansion factor * SMA(volume, baseline lookback)) AND displacement > expansion factor * SMA(displacement, baseline lookback)

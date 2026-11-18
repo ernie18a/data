@@ -1,0 +1,3 @@
+Calculation: Equilibrium = (Highest(high, discount range lookback) + Lowest(low, discount range lookback)) / 2
+Long: close > EMA(close, EMA lookback) AND close > VWAP(close) AND close < Equilibrium AND abs(close - EMA(close, EMA lookback)) <= near-EMA threshold
+Short: close < EMA(close, EMA lookback) AND close < VWAP(close) AND close > Equilibrium AND abs(close - EMA(close, EMA lookback)) <= near-EMA threshold

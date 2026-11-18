@@ -1,0 +1,7 @@
+Calculation: Pair high = maximum high of the two bars in the selected pair
+Calculation: Pair low = minimum low of the two bars in the selected pair
+Calculation: Pair width = Pair high - Pair low
+Long: The selected pair is the first eligible adjacent pair detected after the date’s first bar, with one close above its open and the other below its open, excluding the configured opening candle and any pair containing it when the chart timeframe is T1, and (the optional range filter is disabled OR Pair width <= the maximum-range parameter) AND close crosses above Pair high AND position is flat AND entries for the date < the daily entry-limit parameter
+Short: The selected pair is the first eligible adjacent pair detected after the date’s first bar, with one close above its open and the other below its open, excluding the configured opening candle and any pair containing it when the chart timeframe is T1, and (the optional range filter is disabled OR Pair width <= the maximum-range parameter) AND close crosses below Pair low AND position is flat AND entries for the date < the daily entry-limit parameter
+Exit: Long, low <= entry pair low OR high >= entry pair high + entry pair width * risk/reward parameter OR bar hour = exit-hour parameter AND bar minute >= exit-minute parameter
+Exit: Short, high >= entry pair high OR low <= entry pair low - entry pair width * risk/reward parameter OR bar hour = exit-hour parameter AND bar minute >= exit-minute parameter

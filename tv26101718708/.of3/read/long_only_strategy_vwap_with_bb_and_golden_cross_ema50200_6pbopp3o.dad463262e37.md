@@ -1,0 +1,4 @@
+Long: flat AND EMA(close, shorter EMA lookback) > EMA(close, longer EMA lookback) AND close > open AND close > session VWAP(close) AND close < upper Bollinger Band(source, lookback, standard-deviation multiplier) AND ((lower-band mode AND any of the prior dip-lookback closes < current lower Bollinger Band(source, lookback, standard-deviation multiplier)) OR (%B mode AND any of the prior dip-lookback Bollinger %B(source, lookback, standard-deviation multiplier) values <= 0))
+Long: long position AND close < average entry price AND close > session VWAP(close)
+Exit: long, crosses above upper Bollinger Band(source, lookback, standard-deviation multiplier)
+Exit: long, close < average entry price × (1 − stop-loss percentage / 100)

@@ -1,0 +1,6 @@
+Calculation: Ratio = requested close(T1) / requested close(T2) - 1, sampled on chart bars; T1 and T2 are the shorter and longer of two separate minute-timeframe parameters (if equal, T2 is the next minute); requested closes use the last completed bar historically and the still-forming bar in realtime
+Calculation: Oscillator midpoint = (highest-to-date(Karobein Oscillator(selected source field, lookback parameter)) + lowest-to-date(Karobein Oscillator(selected source field, lookback parameter))) / 2, calculated on chart bars
+Long: Ratio crosses above the sensitivity parameter AND Karobein Oscillator(selected source field, lookback parameter) > Oscillator midpoint AND the most recent prior setup state is not long
+Short: Ratio crosses below negative sensitivity parameter AND Karobein Oscillator(selected source field, lookback parameter) < Oscillator midpoint AND the most recent prior setup state is not short
+Exit: long, the signal state is long and the holding-period parameter number of chart bars have elapsed since the signal state changed to long
+Exit: short, the signal state is short and the holding-period parameter number of chart bars have elapsed since the signal state changed to short

@@ -1,0 +1,2 @@
+Long: on a new calendar day matching the configured buy cadence (every calendar day, the selected weekday of each week, or the selected day of each month), time is within the configured start and end dates inclusive, and amount to buy > 0 unless zero-amount skipping is disabled.
+Exit: long, end-date flattening is enabled and time[1] < end date and time >= end date, or last-bar flattening is enabled and this is the last chart bar.

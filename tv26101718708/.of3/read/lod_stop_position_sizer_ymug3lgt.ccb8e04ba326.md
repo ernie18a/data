@@ -1,0 +1,1 @@
+Long: On chart bars, ((close(T1, current forming bar) - low(T1, current forming bar)) / ATR(lookback, T1, current forming bar)) * 100 <= threshold

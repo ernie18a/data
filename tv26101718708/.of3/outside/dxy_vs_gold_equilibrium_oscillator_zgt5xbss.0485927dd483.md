@@ -1,0 +1,3 @@
+Calculation: normalized close = if highest(close, lookback parameter) != lowest(close, lookback parameter), (close - lowest(close, lookback parameter)) / (highest(close, lookback parameter) - lowest(close, lookback parameter)) * 100, otherwise 50
+Long: EMA(normalized close(Gold close) - normalized close(DXY close), smoothing parameter) < -threshold parameter
+Short: EMA(normalized close(Gold close) - normalized close(DXY close), smoothing parameter) > threshold parameter

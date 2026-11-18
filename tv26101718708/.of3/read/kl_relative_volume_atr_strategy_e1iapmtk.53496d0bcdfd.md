@@ -1,0 +1,4 @@
+Calculation: Drift = SMA(log(close / close[1]), drift lookback) - 0.5 * STDEV(log(close / close[1]), drift lookback)^2
+Calculation: Long trailing stop = 0 when flat; otherwise max(previous long trailing stop, low - ATR(trailing-stop lookback) * trailing-stop multiplier)
+Long: (flat OR (long and close > Long trailing stop)) AND volume > SMA(volume, volume lookback) * relative-volume multiplier AND ATR(volatility lookback) < SMA(ATR(volatility lookback), volatility lookback) + STDEV(ATR(volatility lookback), volatility lookback) AND ATR(volatility lookback) > SMA(ATR(volatility lookback), volatility lookback) - STDEV(ATR(volatility lookback), volatility lookback) AND (Drift > Drift[1] OR drift filter is disabled)
+Exit: long, low <= Long trailing stop

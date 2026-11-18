@@ -1,0 +1,1 @@
+Long: datetime >= start date AND (the T1 period opening timestamp on chart bars changes from the previous chart bar OR the chart timeframe is T1), where T1 is the selected purchase-period timeframe

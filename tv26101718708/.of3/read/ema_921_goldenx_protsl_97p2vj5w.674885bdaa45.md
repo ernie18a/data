@@ -1,0 +1,4 @@
+Long: Long trading enabled AND EMA(close, fast lookback) crosses above EMA(close, longer lookback) AND (volume > SMA(volume, confirmation lookback) OR close > SMA(close, confirmation lookback)) AND (ADX(ADX lookback) > ADX threshold OR abs(DI+(ADX lookback) - DI−(ADX lookback)) > DI spread threshold)
+Short: Short trading enabled AND EMA(close, fast lookback) crosses below EMA(close, longer lookback) AND (volume > SMA(volume, confirmation lookback) OR close < SMA(close, confirmation lookback)) AND (ADX(ADX lookback) > ADX threshold OR abs(DI+(ADX lookback) - DI−(ADX lookback)) > DI spread threshold)
+Exit: Long, low <= min(close - ATR(ATR lookback) * ATR multiplier, entry price * (1 - maximum stop loss percentage / 100))
+Exit: Short, high >= max(close + ATR(ATR lookback) * ATR multiplier, entry price * (1 + maximum stop loss percentage / 100))

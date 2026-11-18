@@ -1,0 +1,2 @@
+Long: OBV > OBV[1] + multiplier × StandardDeviation(OBV, standard-deviation lookback)[1] AND OBV > SMA(OBV, SMA lookback)
+Short: OBV < OBV[1] − multiplier × StandardDeviation(OBV, standard-deviation lookback)[1] AND OBV < SMA(OBV, SMA lookback)

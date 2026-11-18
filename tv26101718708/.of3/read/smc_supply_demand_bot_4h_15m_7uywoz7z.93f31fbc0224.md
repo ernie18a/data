@@ -1,0 +1,2 @@
+Long: close >= low(T1, last completed bar) AND close <= low(T1, preceding completed bar) AND close > open AND close[1] < open[1] AND close > high[1] AND (BOS filter disabled OR high > Highest(high, BOS lookback)[1]) AND (volume filter disabled OR volume > SMA(volume, volume lookback))
+Short: close <= high(T1, preceding completed bar) AND close >= high(T1, last completed bar) AND close < open AND close[1] > open[1] AND close < low[1] AND (BOS filter disabled OR low < Lowest(low, BOS lookback)[1]) AND (volume filter disabled OR volume > SMA(volume, volume lookback))

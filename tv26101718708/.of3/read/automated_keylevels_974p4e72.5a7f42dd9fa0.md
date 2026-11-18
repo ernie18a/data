@@ -1,0 +1,5 @@
+Calculation: rangeHigh(R), rangeLow(R) = highest high and lowest low of chart bars in R, where R is the premarket session, midnight session, or one of three separately parameterized opening intervals from regular-session open; opening-interval durations are ordered shorter, intermediate, and longer
+Calculation: upCount(R) = cumulative number of days whose first post-R chart bar with high > rangeHigh(R) or low < rangeLow(R) has high > rangeHigh(R)
+Calculation: downCount(R) = cumulative number of days whose first post-R chart bar with high > rangeHigh(R) or low < rangeLow(R) has high <= rangeHigh(R) and low < rangeLow(R)
+Long: for each R, upCount(R) + downCount(R) > 0 AND round(upCount(R) / (upCount(R) + downCount(R)) * 100) > round(downCount(R) / (upCount(R) + downCount(R)) * 100)
+Short: for each R, upCount(R) + downCount(R) > 0 AND round(downCount(R) / (upCount(R) + downCount(R)) * 100) > round(upCount(R) / (upCount(R) + downCount(R)) * 100)

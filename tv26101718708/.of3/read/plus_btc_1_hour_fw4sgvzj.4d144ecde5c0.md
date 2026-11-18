@@ -1,0 +1,5 @@
+Calculation: StochRSI K = SMA(StochRSI(RSI(close, RSI lookback), StochRSI lookback), K smoothing)
+Calculation: Short stop = max(highest(high, swing lookback), close + ATR(ATR lookback) * ATR stop multiple)
+Calculation: Short target = close - reward/risk parameter * (Short stop - close)
+Short: StochRSI K crosses below overbought level AND bars since (StochRSI K[1] >= overbought level AND StochRSI K[2] < overbought level) <= recent overbought window AND StochRSI K < SMA(StochRSI K, D smoothing) AND Williams Vix Fix(VIX lookback) < VIX threshold AND close < EMA(close, EMA lookback, T1, lookahead_off), sampled on chart bars using the last completed T1 bar historically and the still-forming T1 bar in realtime AND (session filter disabled OR datetime is within the configured session window on any day) AND (no prior short signal OR current chart bar index - last short-signal bar index > cooldown bars)
+Exit: Short, high >= Short stop OR low <= Short target OR (breakeven was first activated on the prior chart bar during this position AND high >= (ATR trailing enabled ? min(entry price, close[1] + trail multiple * ATR(ATR lookback)[1]) : entry price))

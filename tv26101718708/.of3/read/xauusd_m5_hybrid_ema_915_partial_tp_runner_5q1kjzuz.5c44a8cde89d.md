@@ -1,0 +1,7 @@
+Calculation: candle body = abs(close - open)
+Calculation: lower wick = min(open, close) - low
+Calculation: upper wick = high - max(open, close)
+Long: EMA(close, shorter lookback) > EMA(close, longer lookback) AND EMA(close, shorter lookback, T1, current bar still forming, sampled on chart bars) > EMA(close, longer lookback, T1, current bar still forming, sampled on chart bars) AND lower wick > candle body * wick-to-body multiplier parameter AND close > open
+Short: EMA(close, shorter lookback) < EMA(close, longer lookback) AND EMA(close, shorter lookback, T1, current bar still forming, sampled on chart bars) < EMA(close, longer lookback, T1, current bar still forming, sampled on chart bars) AND upper wick > candle body * wick-to-body multiplier parameter AND close < open
+Exit: long, high >= close of the long-entry signal bar + partial target parameter OR high >= close of the long-entry signal bar + runner target parameter OR low <= EMA(close, longer lookback) - stop buffer parameter OR (highest high since entry >= entry price + trailing activation parameter AND low <= highest high since entry - trailing offset parameter)
+Exit: short, low <= close of the short-entry signal bar - partial target parameter OR low <= close of the short-entry signal bar - runner target parameter OR high >= EMA(close, shorter lookback) + stop buffer parameter OR (lowest low since entry <= entry price - trailing activation parameter AND high >= lowest low since entry + trailing offset parameter)

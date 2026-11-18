@@ -1,0 +1,4 @@
+Calculation: levelProximity = abs(close - round((close / grams-per-troy-ounce) / level-increment) * level-increment * grams-per-troy-ounce) <= close * proximity-percentage / 100
+Calculation: flowScore = clamp(S / max(score-floor, abs(S)) * 100%, -100%, 100%), where S is the sum over the flow lookback of volume when close > open, −volume when close < open, and zero otherwise
+Long: levelProximity AND flowScore > flow threshold AND flowScore[1] <= flow threshold AND volume > SMA(volume, volume-average lookback) * volume multiplier
+Short: levelProximity AND flowScore < −flow threshold AND flowScore[1] >= −flow threshold AND volume > SMA(volume, volume-average lookback) * volume multiplier

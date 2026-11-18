@@ -1,0 +1,1 @@
+Long: (crossunder(Correlation(VIX price, traded instrument price, P1), P2) OR crossunder(Correlation(high-yield bond price, traded instrument price, P1), P2) OR crossunder(Correlation(corporate bond price, traded instrument price, P1), P3)) AND time >= P4 AND time <= P5

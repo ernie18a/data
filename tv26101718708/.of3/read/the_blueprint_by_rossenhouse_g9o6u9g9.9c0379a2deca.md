@@ -1,0 +1,6 @@
+Calculation: BodyHigh = max(open, close)
+Calculation: BodyLow = min(open, close)
+Long: On chart bars using T1 values while the current T1 bar is forming, current T1 low < previous completed T1 low AND current T1 close > BodyHigh(previous completed T1 bar) AND NOT (previous completed T1 low < the T1 bar before it low AND previous completed T1 close > BodyHigh(the T1 bar before it))
+Long: On chart bars using T1 values when T1 datetime changes, previous completed T1 low < the T1 bar before it low AND previous completed T1 close > BodyHigh(the T1 bar before it)
+Short: On chart bars using T1 values while the current T1 bar is forming, current T1 high > previous completed T1 high AND current T1 close < BodyLow(previous completed T1 bar) AND NOT (previous completed T1 high > the T1 bar before it high AND previous completed T1 close < BodyLow(the T1 bar before it))
+Short: On chart bars using T1 values when T1 datetime changes, previous completed T1 high > the T1 bar before it high AND previous completed T1 close < BodyLow(the T1 bar before it)

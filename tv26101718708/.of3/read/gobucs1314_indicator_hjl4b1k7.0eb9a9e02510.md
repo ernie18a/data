@@ -1,0 +1,5 @@
+Calculation: EMA cross regime = bullish after EMA(close, shorter lookback) crosses above EMA(close, longer lookback), bearish after it crosses below, and unchanged otherwise; initially neither
+Long: EMA cross regime is bullish AND close > VWAP(hlc3) AND close > EMA(close, shorter lookback) AND position was flat on the previous bar AND (exit-signal toggle is enabled OR the last completed trade was not long)
+Short: EMA cross regime is bearish AND close < VWAP(hlc3) AND close < EMA(close, shorter lookback) AND position was flat on the previous bar AND (exit-signal toggle is enabled OR the last completed trade was not short)
+Exit: long, close < VWAP(hlc3) OR (close < EMA(close, shorter lookback) AND EMA(close, shorter lookback) crosses below EMA(close, longer lookback))
+Exit: short, close > VWAP(hlc3) OR (close > EMA(close, shorter lookback) AND EMA(close, shorter lookback) crosses above EMA(close, longer lookback))

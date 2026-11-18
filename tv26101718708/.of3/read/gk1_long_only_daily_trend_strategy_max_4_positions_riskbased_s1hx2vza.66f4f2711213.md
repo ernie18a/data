@@ -1,0 +1,3 @@
+Calculation: highest close since entry = highest close from the entry bar through the current bar
+Long: SMA(close, shortest lookback) > SMA(close, middle lookback) AND close > SMA(close, longest lookback) AND SMA(close, longest lookback) > SMA(close, longest lookback)[1] AND volume > SMA(volume, volume lookback) * lower volume multiplier AND volume < SMA(volume, volume lookback) * upper volume multiplier, with shortest < middle < longest lookback and lower volume multiplier < upper volume multiplier
+Exit: Long, low <= highest close since entry - ATR(ATR lookback) * ATR multiple OR SMA(close, shortest lookback) < SMA(close, middle lookback)

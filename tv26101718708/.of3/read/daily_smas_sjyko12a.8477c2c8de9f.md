@@ -1,0 +1,2 @@
+Long: On chart bars, chart close crosses above SMA(close, shortest lookback, T1, bar still forming) OR chart close crosses above SMA(close, intermediate lookback, T1, bar still forming) OR chart close crosses above SMA(close, longest lookback, T1, bar still forming)
+Short: On chart bars, chart close crosses below SMA(close, shortest lookback, T1, bar still forming) OR chart close crosses below SMA(close, intermediate lookback, T1, bar still forming) OR chart close crosses below SMA(close, longest lookback, T1, bar still forming)

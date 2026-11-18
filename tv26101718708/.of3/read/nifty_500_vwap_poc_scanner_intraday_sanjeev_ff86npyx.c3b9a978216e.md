@@ -1,0 +1,2 @@
+Long: on each chart bar, close from the still-forming T1 bar > VWAP(hlc3) from the still-forming T1 bar AND close from the still-forming T1 bar > SMA(hlc3, lookback) from the still-forming T1 bar
+Short: on each chart bar, close from the still-forming T1 bar <= VWAP(hlc3) from the still-forming T1 bar AND close from the still-forming T1 bar <= SMA(hlc3, lookback) from the still-forming T1 bar

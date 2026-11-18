@@ -1,0 +1,2 @@
+Long: market filter disabled OR benchmark close > EMA(benchmark close, benchmark lookback) AND crosses above(close, EMA(close, price lookback)) AND RSI(close, RSI lookback) > RSI threshold AND volume > SMA(volume, volume lookback)
+Exit: long, crosses below(close, EMA(close, price lookback))

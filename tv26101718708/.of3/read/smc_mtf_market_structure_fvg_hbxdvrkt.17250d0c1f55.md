@@ -1,0 +1,4 @@
+Calculation: Active pivot high = latest non-na PivotHigh(high, pivot lookback, pivot lookback) computed on T1 bars from the T1 bar exposed by lookahead_off (forming in realtime, completed historically) and carried to chart bars; replace when a new pivot high is returned and clear after crossing above it
+Calculation: Active pivot low = latest non-na PivotLow(low, pivot lookback, pivot lookback) computed on T1 bars from the T1 bar exposed by lookahead_off (forming in realtime, completed historically) and carried to chart bars; replace when a new pivot low is returned and clear after crossing below it
+Long: Chart-bar close crosses above active pivot high
+Short: Chart-bar close crosses below active pivot low

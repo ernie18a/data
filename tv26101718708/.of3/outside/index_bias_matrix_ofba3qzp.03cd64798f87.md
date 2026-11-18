@@ -1,0 +1,4 @@
+Calculation: Trend score = mean over offsets 0 through lookback length of +1 when traded instrument close at T1 > EMA(traded instrument close at T1, trend EMA length), otherwise −1
+Calculation: Risk sentiment score = mean over offsets 0 through lookback length of +1 when VIX close at T1 is available and < SMA(VIX close at T1, VIX average length), or when VIX close is unavailable and ATR(traded instrument at T1, volatility ATR length) < SMA(ATR(traded instrument at T1, volatility ATR length), volatility average length), otherwise −1
+Long: Trend score ≥ quadrant boundary AND (Risk sentiment score ≥ quadrant boundary OR Risk sentiment score < −quadrant boundary)
+Short: Trend score < −quadrant boundary AND (Risk sentiment score ≥ quadrant boundary OR Risk sentiment score < −quadrant boundary)

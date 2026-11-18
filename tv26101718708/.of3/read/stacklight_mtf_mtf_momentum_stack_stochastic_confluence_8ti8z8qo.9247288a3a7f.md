@@ -1,0 +1,16 @@
+Calculation: Timeframe momentum state = using the selected method on bars of T1 (fast), T2 (medium), and T3 (slow): with RSI, bullish when RSI(close, RSI lookback) > RSI-center parameter + neutral-band parameter, bearish when RSI(close, RSI lookback) < RSI-center parameter - neutral-band parameter, otherwise neutral; with EMA slope, bullish when EMA(close, EMA lookback) > its immediately preceding timeframe-bar value, bearish when it is lower, otherwise neutral. Use the same selected method and corresponding parameters on all three timeframes; request states on chart bars with lookahead off (last completed timeframe bar historically, current forming bar in real time).
+Calculation: Stack balance = count of bullish T1, T2, and T3 states minus count of bearish T1, T2, and T3 states.
+Calculation: Smoothed stochastic %K = SMA(Stochastic(close, high, low, stochastic lookback), K-smoothing parameter).
+Calculation: Smoothed stochastic %D = SMA(Smoothed stochastic %K, D-smoothing parameter).
+Calculation: Slow-timeframe regression %K = LinReg(slow-timeframe smoothed stochastic %K mapped to chart bars with lookahead off, regression lookback, regression offset); calculate %K on T3 bars, using the last completed T3 bar historically and the current forming T3 bar in real time; calculate LinReg on chart bars.
+Calculation: Slow-timeframe regression %D = LinReg(slow-timeframe smoothed stochastic %D mapped to chart bars with lookahead off, regression lookback, regression offset); calculate %D on T3 bars, using the last completed T3 bar historically and the current forming T3 bar in real time; calculate LinReg on chart bars.
+Long: T1 momentum state is bullish OR T2 momentum state is bullish OR T3 momentum state is bullish.
+Short: T1 momentum state is bearish OR T2 momentum state is bearish OR T3 momentum state is bearish.
+Long: stack balance >= shared stack-bias threshold parameter.
+Short: stack balance <= -shared stack-bias threshold parameter.
+Long: slow-timeframe regression %K > slow-timeframe regression %D.
+Short: slow-timeframe regression %K <= slow-timeframe regression %D.
+Long: all three timeframe momentum states are bullish AND chart-bar smoothed stochastic %K crosses above chart-bar smoothed stochastic %D AND chart-bar smoothed stochastic %K < overbought parameter AND slow-timeframe regression %K > slow-timeframe regression %D AND the direction setting permits long entries.
+Short: all three timeframe momentum states are bearish AND chart-bar smoothed stochastic %K crosses below chart-bar smoothed stochastic %D AND chart-bar smoothed stochastic %K > oversold parameter AND slow-timeframe regression %K < slow-timeframe regression %D AND the direction setting permits short entries.
+Exit: Long, low <= entry-signal-bar close - ATR(chart bars, ATR lookback) at entry signal * stop multiplier OR high >= entry-signal-bar close + ATR(chart bars, ATR lookback) at entry signal * target multiplier OR stack-flip exit is enabled AND all three timeframe momentum states are bearish.
+Exit: Short, high >= entry-signal-bar close + ATR(chart bars, ATR lookback) at entry signal * stop multiplier OR low <= entry-signal-bar close - ATR(chart bars, ATR lookback) at entry signal * target multiplier OR stack-flip exit is enabled AND all three timeframe momentum states are bullish.

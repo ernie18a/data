@@ -1,0 +1,3 @@
+Calculation: Global Liquidity Index = sum of T1 USD-converted balance sheets of the Federal Reserve, European Central Bank, People’s Bank of China, Bank of Japan, Bank of England, Bank of Canada, Reserve Bank of Australia, Reserve Bank of India, Swiss National Bank, Central Bank of Russia, Central Bank of Brazil, Bank of Korea, Reserve Bank of New Zealand, Sveriges Riksbank, and Bank Negara Malaysia - T1 Federal Reserve reverse repo balance - T1 US Treasury General Account balance + T1 US, EU, Chinese, and Japanese M2
+Long: Global Liquidity Index >= EMA(Global Liquidity Index, P1)
+Short: Global Liquidity Index < EMA(Global Liquidity Index, P1)

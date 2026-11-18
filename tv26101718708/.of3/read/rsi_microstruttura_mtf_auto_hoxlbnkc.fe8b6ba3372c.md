@@ -1,0 +1,6 @@
+Calculation: Mean lower RSI = arithmetic mean of RSI(source, RSI lookback) across available T1–T5 bars still forming on their respective timeframes, with values read on chart bars; use the same source and lookback for each timeframe
+Calculation: Mean lower RSI moving average = arithmetic mean of the selected moving average (RSI(source, RSI lookback), MA lookback, MA type) across available T1–T5 bars still forming on their respective timeframes, with values read on chart bars; use the same RSI and MA parameters for each timeframe
+Long: Mean lower RSI crosses above Mean lower RSI moving average AND (agreement requirement is disabled OR more available T1–T5 RSIs are at or above their own moving averages than below them)
+Long: Mean lower RSI crosses above Mean lower RSI moving average AND NOT (more available T1–T5 RSIs are at or above their own moving averages than below them)
+Short: Mean lower RSI crosses below Mean lower RSI moving average AND (agreement requirement is disabled OR more available T1–T5 RSIs are below their own moving averages than at or above them)
+Short: Mean lower RSI crosses below Mean lower RSI moving average AND NOT (more available T1–T5 RSIs are below their own moving averages than at or above them)

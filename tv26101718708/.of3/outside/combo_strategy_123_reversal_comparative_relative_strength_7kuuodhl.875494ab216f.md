@@ -1,0 +1,8 @@
+Calculation: comparative relative-strength ratio = SMA(traded instrument close / comparison instrument close, P5)
+Calculation: stochastic reversal state = 1 if close two bars ago < close one bar ago AND current close > close one bar ago AND SMA(Stochastic %K(traded instrument close, traded instrument high, traded instrument low, P1), P2) < SMA(SMA(Stochastic %K(traded instrument close, traded instrument high, traded instrument low, P1), P2), P3) AND SMA(Stochastic %K(traded instrument close, traded instrument high, traded instrument low, P1), P2) > P4; -1 if close two bars ago > close one bar ago AND current close < close one bar ago AND SMA(Stochastic %K(traded instrument close, traded instrument high, traded instrument low, P1), P2) > SMA(SMA(Stochastic %K(traded instrument close, traded instrument high, traded instrument low, P1), P2), P3) AND SMA(Stochastic %K(traded instrument close, traded instrument high, traded instrument low, P1), P2) < P4; otherwise prior stochastic reversal state
+Calculation: comparative relative-strength state = 1 if comparative relative-strength ratio > P6; -1 if comparative relative-strength ratio < P7; 0 if prior comparative relative-strength state = 1 AND comparative relative-strength ratio < P8; 0 if prior comparative relative-strength state = -1 AND comparative relative-strength ratio > P8; otherwise prior comparative relative-strength state
+Calculation: combined signal = 1 if stochastic reversal state = 1 AND comparative relative-strength state = 1; -1 if stochastic reversal state = -1 AND comparative relative-strength state = -1; otherwise 0
+Long: combined signal = 1
+Short: combined signal = -1
+Exit: long, combined signal = 0
+Exit: short, combined signal = 0

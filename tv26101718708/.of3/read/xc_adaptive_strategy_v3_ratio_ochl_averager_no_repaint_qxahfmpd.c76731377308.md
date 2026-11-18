@@ -1,0 +1,7 @@
+Calculation: Range-weighted close(T, recursive mode) = weight*close + (1-weight)*prior chart-bar Range-weighted close (or close if unavailable), where weight = min(1, abs(close-anchor)/(last-completed-T high - last-completed-T low)) and anchor is prior chart-bar Range-weighted close (or open if unavailable) in recursive mode, otherwise open; evaluate on chart bars with last-completed-T high and low mapped to each chart bar
+Long: strategy enabled AND Range-weighted close(T2, recursive mode) crosses below Range-weighted close(T1, recursive mode)
+Long: strategy enabled AND datetime is within the configured start and finish timestamps, inclusive AND Range-weighted close(T2, recursive mode) crosses below Range-weighted close(T1, recursive mode)
+Short: strategy enabled AND Range-weighted close(T2, recursive mode) crosses above Range-weighted close(T1, recursive mode)
+Short: strategy enabled AND datetime is within the configured start and finish timestamps, inclusive AND Range-weighted close(T2, recursive mode) crosses above Range-weighted close(T1, recursive mode)
+Exit: Long, (stop-loss parameter > 0 AND low <= entry price minus stop-loss distance in ticks) OR (take-profit parameter > 0 AND high >= entry price plus take-profit distance in ticks)
+Exit: Short, (stop-loss parameter > 0 AND high >= entry price plus stop-loss distance in ticks) OR (take-profit parameter > 0 AND low <= entry price minus take-profit distance in ticks)

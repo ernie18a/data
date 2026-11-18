@@ -1,0 +1,4 @@
+Calculation: normalized value(source, normalization lookback) = if highest(source, normalization lookback) = lowest(source, normalization lookback) then 50 else 100 * (source - lowest(source, normalization lookback)) / (highest(source, normalization lookback) - lowest(source, normalization lookback))
+Calculation: combined index = if OBV weight + volume weight = 0 then 50 else (normalized value(OBV(close, volume), normalization lookback) * OBV weight + normalized value(volume, normalization lookback) * volume weight) / (OBV weight + volume weight)
+Long: EMA(combined index, smoothing lookback) > EMA(combined index, smoothing lookback)[1]
+Short: EMA(combined index, smoothing lookback) <= EMA(combined index, smoothing lookback)[1]

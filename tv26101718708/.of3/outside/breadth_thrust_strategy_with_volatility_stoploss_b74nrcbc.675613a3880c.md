@@ -1,0 +1,1 @@
+Long: SMA((NYSE advancing stocks / (NYSE advancing stocks + NYSE declining stocks) + (NYSE advancing volume / (NYSE advancing volume + NYSE declining volume) if volume is included, otherwise NYSE advancing stocks / (NYSE advancing stocks + NYSE declining stocks))) over smoothing length crosses above low threshold, using NYSE data from T1

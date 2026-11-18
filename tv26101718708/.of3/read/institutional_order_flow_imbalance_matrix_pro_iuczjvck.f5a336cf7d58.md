@@ -1,0 +1,5 @@
+Calculation: ATR trailing ribbon direction = initialize bullish with bound close − ATR(ATR lookback) × ATR multiplier; while bullish, turn bearish if close < prior bound and set bound to close + ATR(ATR lookback) × ATR multiplier, otherwise remain bullish and set bound to max(prior bound, close − ATR(ATR lookback) × ATR multiplier); while bearish, turn bullish if close > prior bound and set bound to close − ATR(ATR lookback) × ATR multiplier, otherwise remain bearish and set bound to min(prior bound, close + ATR(ATR lookback) × ATR multiplier)
+Long: ATR trailing ribbon direction = bullish
+Short: ATR trailing ribbon direction = bearish
+Long: low > high[2] AND volume > SMA(volume, volume lookback) × volume spike multiplier
+Short: high < low[2] AND volume > SMA(volume, volume lookback) × volume spike multiplier

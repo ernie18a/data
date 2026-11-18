@@ -1,0 +1,2 @@
+Long: close > highest(high[1], breakout lookback) AND close > open AND (IF high > low THEN (close - low) / (high - low) ELSE 0.5) >= close-strength threshold AND SMA(volume, volume-average lookback) > 0 AND volume / SMA(volume, volume-average lookback) >= strong-volume threshold
+Short: close < lowest(low[1], breakout lookback) AND close < open AND (IF high > low THEN (high - close) / (high - low) ELSE 0.5) >= close-strength threshold AND SMA(volume, volume-average lookback) > 0 AND volume / SMA(volume, volume-average lookback) >= strong-volume threshold

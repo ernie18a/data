@@ -1,0 +1,4 @@
+Long: Chart-bar weekday equals the weekday parameter AND chart-bar time is within the entry-session interval AND chart-bar timestamp is within the configured start-date and end-date bounds, inclusive.
+Exit: Long, chart-bar time is within the exit-session interval.
+Exit: Long, the stop mode selects the entry-signal-bar low AND the entry signal was generated while not already long AND low <= the entry-signal-bar low.
+Exit: Long, the stop mode selects ATR AND the entry signal was generated while not already long AND low <= entry-signal-bar close - ATR(lookback parameter, T1 last completed bar, sampled on chart bars).

@@ -1,0 +1,2 @@
+Long: chart-bar close > Camarilla H4(high, low, close, multiplier, divisor, T1, last completed T1 bar carried to chart bars)
+Short: chart-bar close < Camarilla L4(high, low, close, multiplier, divisor, T1, last completed T1 bar carried to chart bars)

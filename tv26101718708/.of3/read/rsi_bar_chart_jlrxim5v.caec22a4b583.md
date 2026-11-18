@@ -1,0 +1,10 @@
+Long: last chart bar AND RSI(source 1, lookback 1, calculated on T1 bars using the still-forming bar and returned on chart bars) < buy limit
+Long: last chart bar AND RSI(source 2, lookback 2, calculated on T2 bars using the still-forming bar and returned on chart bars) < buy limit
+Long: last chart bar AND RSI(source 3, lookback 3, calculated on T3 bars using the still-forming bar and returned on chart bars) < buy limit
+Long: last chart bar AND RSI(source 4, lookback 4, calculated on T4 bars using the still-forming bar and returned on chart bars) < buy limit
+Long: last chart bar AND RSI(source 5, lookback 5, calculated on T5 bars using the still-forming bar and returned on chart bars) < buy limit
+Short: last chart bar AND RSI(source 1, lookback 1, calculated on T1 bars using the still-forming bar and returned on chart bars) >= sell limit
+Short: last chart bar AND RSI(source 2, lookback 2, calculated on T2 bars using the still-forming bar and returned on chart bars) >= sell limit
+Short: last chart bar AND RSI(source 3, lookback 3, calculated on T3 bars using the still-forming bar and returned on chart bars) >= sell limit
+Short: last chart bar AND RSI(source 4, lookback 4, calculated on T4 bars using the still-forming bar and returned on chart bars) >= sell limit
+Short: last chart bar AND RSI(source 5, lookback 5, calculated on T5 bars using the still-forming bar and returned on chart bars) >= sell limit

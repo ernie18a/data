@@ -1,0 +1,3 @@
+Calculation: RSI candle OHLC = (open = RSI(close[1], RSI lookback), high = max(RSI(close, RSI lookback), RSI(close[1], RSI lookback)), low = min(RSI(close, RSI lookback), RSI(close[1], RSI lookback)), close = RSI(close, RSI lookback))
+Long: Supertrend direction(RSI candle OHLC, ATR lookback, factor) changes from bearish to bullish
+Short: Supertrend direction(RSI candle OHLC, ATR lookback, factor) changes from bullish to bearish

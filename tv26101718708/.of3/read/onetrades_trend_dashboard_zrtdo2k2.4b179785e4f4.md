@@ -1,0 +1,2 @@
+Long: For each of T1–T6, on chart bars taking values from that timeframe’s still-forming bar in real time and last completed bar historically, close(T) > EMA(close, longest lookback, T) AND EMA(close, shortest lookback, T) > EMA(close, intermediate lookback, T)
+Short: For each of T1–T6, on chart bars taking values from that timeframe’s still-forming bar in real time and last completed bar historically, close(T) <= EMA(close, longest lookback, T) OR EMA(close, shortest lookback, T) <= EMA(close, intermediate lookback, T)

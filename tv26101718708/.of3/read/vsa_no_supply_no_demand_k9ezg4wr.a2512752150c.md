@@ -1,0 +1,4 @@
+Calculation: Low volume = volume < volume[1] AND volume < volume[2], when volume[2] exists
+Calculation: Wick structure(direction) = for a bearish bar, high > open + minimum tick AND low < close - minimum tick; for a bullish bar, high > close + minimum tick AND low < open - minimum tick
+Long: bearish candle AND Low volume AND Wick structure(bearish) AND no close below the current low AND at least one close above the current high among the current and preceding lookback - 1 bars AND at least lookback prior bars exist
+Short: bullish candle AND Low volume AND Wick structure(bullish) AND no close above the current high AND at least one close below the current low among the current and preceding lookback - 1 bars AND at least lookback prior bars exist

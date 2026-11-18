@@ -1,0 +1,5 @@
+Calculation: Smoothed source = EMA(selected source field, smoothing lookback) on chart bars
+Calculation: Fast EMA = EMA(smoothed source, shorter lookback) on chart bars in chart-timeframe mode; EMA(the last completed T1-bar EMA(selected source field, shorter lookback), smoothing lookback) on chart bars in fixed-timeframe mode
+Calculation: Slow EMA = EMA(smoothed source, longer lookback) on chart bars in chart-timeframe mode; EMA(the last completed T1-bar EMA(selected source field, longer lookback), smoothing lookback) on chart bars in fixed-timeframe mode
+Long: Fast EMA > Slow EMA AND smoothed source > Fast EMA AND NOT (Fast EMA[1] > Slow EMA[1] AND smoothed source[1] > Fast EMA[1])
+Exit: Long, Fast EMA < Slow EMA AND smoothed source < Fast EMA AND NOT (Fast EMA[1] < Slow EMA[1] AND smoothed source[1] < Fast EMA[1])

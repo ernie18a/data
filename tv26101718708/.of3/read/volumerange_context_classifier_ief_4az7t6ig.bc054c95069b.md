@@ -1,0 +1,4 @@
+Calculation: Z-score(value, lookback) = if population standard deviation(value, lookback) > 0 then (value - SMA(value, lookback)) / population standard deviation(value, lookback) else 0
+Calculation: Close location = (close - low) / max(high - low, minimum tick)
+Long: Z-score(volume, baseline lookback) >= volume z-score threshold AND Z-score(TrueRange(high, low, close), baseline lookback) >= range z-score threshold AND Close location >= minimum close location AND close > Highest(high, prior structure lookback)[1] AND close >= EMA(close, trend lookback)
+Short: Z-score(volume, baseline lookback) >= volume z-score threshold AND Z-score(TrueRange(high, low, close), baseline lookback) >= range z-score threshold AND Close location <= 1 - minimum close location AND close < Lowest(low, prior structure lookback)[1] AND close <= EMA(close, trend lookback)

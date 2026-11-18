@@ -1,0 +1,8 @@
+Calculation: Candle range = high - low
+Calculation: Candle body percentage = if high > low then abs(close - open) / (high - low) * 100 else 0
+Calculation: Candle range percentage = (high - low) / close * 100
+Calculation: Entry candle range = high - low on the entry bar
+Long: datetime is within the configured session hours and weekdays in the configured timezone AND one-shot mode is disabled or no trade has been entered since the daily counter reset AND Candle body percentage >= body-size parameter AND Candle range >= SMA(Candle range, range lookback) AND Candle range <= SMA(Candle range, range lookback) * maximum-range multiplier AND minimum-size filter is disabled or Candle range percentage >= minimum-size parameter AND close >= open AND DEMA filter is disabled or close > DEMA(close, DEMA lookback)
+Short: datetime is within the configured session hours and weekdays in the configured timezone AND one-shot mode is disabled or no trade has been entered since the daily counter reset AND Candle body percentage >= body-size parameter AND Candle range >= SMA(Candle range, range lookback) AND Candle range <= SMA(Candle range, range lookback) * maximum-range multiplier AND minimum-size filter is disabled or Candle range percentage >= minimum-size parameter AND close < open AND DEMA filter is disabled or close < DEMA(close, DEMA lookback)
+Exit: long, high >= entry price + Entry candle range * take-profit fraction OR chart bars since entry >= maximum duration
+Exit: short, low <= entry price - Entry candle range * take-profit fraction OR chart bars since entry >= maximum duration

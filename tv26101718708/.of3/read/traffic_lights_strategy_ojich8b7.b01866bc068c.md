@@ -1,0 +1,12 @@
+Calculation: long trailing stop = maximum, since long entry, of low - ATR(long ATR lookback) * long ATR multiplier
+Calculation: short trailing stop = minimum, since short entry, of high + ATR(short ATR lookback) * short ATR multiplier
+Long: position is flat AND long entries are enabled AND datetime > start datetime AND EMA(close, fast lookback) > EMA(close, medium lookback) > EMA(close, slow lookback) AND EMA(close, fast lookback) > EMA(close, filter lookback, T1 bars, current T1 bar while forming, mapped to chart bars) AND (EMA(close, fast lookback) crosses above EMA(close, medium lookback) OR EMA(close, medium lookback) crosses above EMA(close, slow lookback) OR EMA(close, slow lookback) crosses above EMA(close, filter lookback, T1 bars, current T1 bar while forming, mapped to chart bars))
+Short: position is flat AND short entries are enabled AND datetime > start datetime AND EMA(close, fast lookback) < EMA(close, medium lookback) < EMA(close, slow lookback) AND EMA(close, fast lookback) < EMA(close, filter lookback, T1 bars, current T1 bar while forming, mapped to chart bars) AND (EMA(close, fast lookback) crosses below EMA(close, medium lookback) OR EMA(close, medium lookback) crosses below EMA(close, slow lookback) OR EMA(close, slow lookback) crosses below EMA(close, filter lookback, T1 bars, current T1 bar while forming, mapped to chart bars))
+Exit: long, EMA(close, fast lookback) crosses below EMA(close, medium lookback)
+Exit: short, EMA(close, fast lookback) crosses above EMA(close, medium lookback)
+Exit: long, long take-profit is enabled AND high >= entry price * (1 + long take-profit percentage)
+Exit: long, long fixed stop is enabled AND long trailing stop is disabled AND low <= entry price * (1 - long stop-loss percentage)
+Exit: long, long trailing stop is enabled AND long fixed stop is disabled AND low <= long trailing stop
+Exit: short, short take-profit is enabled AND low <= entry price * (1 - short take-profit percentage)
+Exit: short, short fixed stop is enabled AND short trailing stop is disabled AND high >= entry price * (1 + short stop-loss percentage)
+Exit: short, short trailing stop is enabled AND short fixed stop is disabled AND high >= short trailing stop

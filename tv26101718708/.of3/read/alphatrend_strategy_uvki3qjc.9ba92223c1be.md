@@ -1,0 +1,3 @@
+Calculation: AlphaTrend = if (volume-data mode uses RSI(source, lookback) or volume-data mode uses MFI(hlc3, lookback)) is at least the threshold, then max(low - SMA(true range, lookback) * multiplier, AlphaTrend[1]), else min(high + SMA(true range, lookback) * multiplier, AlphaTrend[1])
+Long: crossover(AlphaTrend, AlphaTrend[2]) AND signal-display setting is enabled AND barssince(crossover(AlphaTrend, AlphaTrend[2])[1]) > barssince(crossunder(AlphaTrend, AlphaTrend[2]))
+Short: crossunder(AlphaTrend, AlphaTrend[2]) AND signal-display setting is enabled AND barssince(crossunder(AlphaTrend, AlphaTrend[2])[1]) > barssince(crossover(AlphaTrend, AlphaTrend[2]))

@@ -1,0 +1,3 @@
+Calculation: SMA distance(Tn, L) = 100 * (close(Tn, lookahead off) - SMA(close(Tn, lookahead off), L)) / SMA(close(Tn, lookahead off), L), where Tn is each of T1 through T10 and the SMA runs on chart bars using Tn values (last completed historical value, still-forming realtime value), and L is one of five shared, separately parameterized lookbacks ordered shortest to longest
+Long: SMA distance(Tn, L) >= 0
+Short: SMA distance(Tn, L) < 0

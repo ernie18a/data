@@ -1,0 +1,4 @@
+Calculation: Mayer multiple = source(T1, still-forming bar) / SMA(source, MA lookback, T1 bars through the still-forming bar), sampled on chart bars
+Calculation: Selected Z-score = (Mayer multiple - SMA(Mayer multiple, rolling lookback, chart bars)) / population standard deviation(Mayer multiple, rolling lookback, chart bars) when the Z-score mode is rolling and the standard deviation is nonzero; otherwise (Mayer multiple - cumulative mean of Mayer multiple values so far on chart bars) / cumulative population standard deviation of those values when the Z-score mode is total dataset and the standard deviation is positive
+Long: Selected Z-score <= -Z-score band threshold
+Short: Selected Z-score >= Z-score band threshold

@@ -1,0 +1,7 @@
+Calculation: Reference mean = configured moving average of the selected source over the Bollinger lookback on T1 bars, using the last completed or still-forming T1 bar according to the setting
+Calculation: ZStretch(x) = (x - Reference mean) / standard deviation of the selected source over the Bollinger lookback on the same T1 bar; evaluated on chart bars using x from the chart bar
+Calculation: ATRStretch(x) = (x - Reference mean) / ATR over the ATR lookback on the same T1 bar; evaluated on chart bars using x from the chart bar
+Calculation: Lower trigger = chart-bar close when close triggering is selected, otherwise chart-bar low
+Calculation: Upper trigger = chart-bar close when close triggering is selected, otherwise chart-bar high
+Long: no earlier long signal on the same calendar day AND ((both agreement is selected AND ZStretch(Lower trigger) <= -Z threshold AND ATRStretch(Lower trigger) <= -ATR threshold) OR (either agreement is selected AND (ZStretch(Lower trigger) <= -Z threshold OR ATRStretch(Lower trigger) <= -ATR threshold)))
+Short: no earlier short signal on the same calendar day AND ((both agreement is selected AND ZStretch(Upper trigger) >= Z threshold AND ATRStretch(Upper trigger) >= ATR threshold) OR (either agreement is selected AND (ZStretch(Upper trigger) >= Z threshold OR ATRStretch(Upper trigger) >= ATR threshold)))

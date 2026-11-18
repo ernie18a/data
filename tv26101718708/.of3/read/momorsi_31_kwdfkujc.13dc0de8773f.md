@@ -1,0 +1,2 @@
+Long: At least one of T1–T8 is enabled AND every enabled T has RSI(source, lookback, T, current bar) >= bullish threshold; calculate RSI on T bars and return it to chart bars, using the forming T bar in realtime and updating only at T close historically.
+Short: At least one of T1–T8 is enabled AND every enabled T has RSI(source, lookback, T, current bar) <= bearish threshold; calculate RSI on T bars and return it to chart bars, using the forming T bar in realtime and updating only at T close historically.

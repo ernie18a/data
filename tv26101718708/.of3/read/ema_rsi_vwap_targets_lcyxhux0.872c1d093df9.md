@@ -1,0 +1,4 @@
+Long: close > EMA(close, EMA lookback) AND close > VWAP(hlc3) AND RSI(close, RSI lookback) > long RSI threshold AND NOT (close[1] > EMA(close, EMA lookback)[1] AND close[1] > VWAP(hlc3)[1] AND RSI(close, RSI lookback)[1] > long RSI threshold)
+Short: close < EMA(close, EMA lookback) AND close < VWAP(hlc3) AND RSI(close, RSI lookback) < short RSI threshold AND NOT (close[1] < EMA(close, EMA lookback)[1] AND close[1] < VWAP(hlc3)[1] AND RSI(close, RSI lookback)[1] < short RSI threshold)
+Exit: long, high >= entry price × (1 + target 1 percentage / 100) OR high >= entry price × (1 + target 2 percentage / 100) OR high >= entry price × (1 + target 3 percentage / 100)
+Exit: short, low <= entry price × (1 - target 1 percentage / 100) OR low <= entry price × (1 - target 2 percentage / 100) OR low <= entry price × (1 - target 3 percentage / 100)

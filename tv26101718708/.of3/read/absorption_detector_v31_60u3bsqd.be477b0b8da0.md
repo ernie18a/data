@@ -1,0 +1,3 @@
+Calculation: Absorption score = SMA((volume / MAX(high - low, minimum-range parameter) - SMA(volume / MAX(high - low, minimum-range parameter), normalization lookback)) / MAX(STDEV(volume / MAX(high - low, minimum-range parameter), normalization lookback), standard-deviation-floor parameter), smoothing lookback)
+Long: Absorption score > absorption threshold AND close < SMA(close, trend-context lookback) AND close < close[trend-context lookback] AND current bar index - last long-signal bar index (initially 0) ≥ cooldown lookback
+Short: Absorption score > absorption threshold AND close > SMA(close, trend-context lookback) AND close > close[trend-context lookback] AND current bar index - last short-signal bar index (initially 0) ≥ cooldown lookback

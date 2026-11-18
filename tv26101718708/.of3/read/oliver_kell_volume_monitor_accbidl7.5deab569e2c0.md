@@ -1,0 +1,3 @@
+Long: close > close[1] AND volume >= SMA(volume, lookback) * accumulation/distribution volume multiplier AND NOT (on T1 charts AND volume >= SMA(volume, lookback) * weekly surge multiplier)
+Short: close < close[1] AND volume >= SMA(volume, lookback) * accumulation/distribution volume multiplier AND NOT (on T1 charts AND volume >= SMA(volume, lookback) * weekly surge multiplier)
+Long: volume >= SMA(volume, lookback) * high-volume-close multiplier AND (high > low ? (close - low) / (high - low) : 0.5) >= close-position threshold

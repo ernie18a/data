@@ -1,0 +1,3 @@
+Calculation: relative performance = traded-instrument close / benchmark close
+Long: EMA(traded-instrument close, fast EMA length) > EMA(traded-instrument close, slow EMA length) AND relative performance > EMA(relative performance, relative-performance EMA length)
+Short: EMA(traded-instrument close, fast EMA length) < EMA(traded-instrument close, slow EMA length) AND relative performance < EMA(relative performance, relative-performance EMA length)

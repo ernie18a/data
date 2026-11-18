@@ -1,0 +1,3 @@
+Calculation: OpeningRangeHigh = maximum high of chart bars from opening-range start time up to opening-range end time in the configured time zone, reset each day
+Calculation: OpeningRangeAverageVolume = mean volume of chart bars in the opening range, available after the opening-range end time each day
+Long: close crosses above OpeningRangeHigh AND volume >= volume multiplier * OpeningRangeAverageVolume AND close > VWAP(hlc3) AND bar time is from opening-range start time through signal-window end time in the configured time zone AND breakout is armed (initially armed each day, rearmed by a close below OpeningRangeHigh, and disarmed by the signal)

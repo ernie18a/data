@@ -1,0 +1,2 @@
+Long: crosses above(close on T1 chart bars, SMA(close, monthly SMA lookback, T2, still-forming T2 bar calculated on T2 bars and carried to T1 chart bars)) AND close on T1 chart bars > EMA(close, chart EMA lookback, T1)
+Exit: long, crosses below(low from the still-forming T2 bar calculated on T2 bars and carried to T1 chart bars, SMA(close, monthly SMA lookback, T2, still-forming T2 bar calculated on T2 bars and carried to T1 chart bars) × (1 − band-width parameter))

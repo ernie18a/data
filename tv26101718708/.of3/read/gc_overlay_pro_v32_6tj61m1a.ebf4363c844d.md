@@ -1,0 +1,3 @@
+Calculation: volume z-score = if STDEV(volume, volume-standard-deviation lookback) > 0 then (volume - SMA(volume, volume-average lookback)) / STDEV(volume, volume-standard-deviation lookback) else 0
+Long: volume z-score > MIN(high-volume threshold, extra-high-volume threshold) AND (close > open OR (close = open AND open - low > high - open))
+Short: volume z-score > MIN(high-volume threshold, extra-high-volume threshold) AND (close < open OR (close = open AND high - open >= open - low))

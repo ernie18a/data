@@ -1,0 +1,2 @@
+Calculation: composite investment score = trend points + volume points + RSI momentum points + stock-versus-Nifty relative-strength points + proximity-to-high points
+Long: (close crosses above EMA(close, P1) AND volume > P2 × SMA(volume, P3) AND RSI(close, P4) > P5 OR close > prior highest high over P6 bars AND volume > P7 × SMA(volume, P3)) AND composite investment score >= P8

@@ -1,0 +1,4 @@
+Calculation: gap = abs(SMA(close, shorter lookback) - SMA(close, longer lookback)) / abs(SMA(close, longer lookback)) * 100
+Long: SMA(close, shorter lookback) < SMA(close, longer lookback) AND gap >= minimum gap AND gap <= maximum gap AND gap < gap[1]
+Long: On chart bars using T1's last completed bar values, SMA(close, shorter lookback, T1, last completed bar) >= SMA(close, longer lookback, T1, last completed bar)
+Long: On chart bars using T1's last completed bar values, SMA(close, shorter lookback, T1, last completed bar) < SMA(close, longer lookback, T1, last completed bar) AND gap(T1, last completed bar) >= minimum gap AND gap(T1, last completed bar) <= maximum gap AND gap(T1, last completed bar) < gap(T1, previous completed bar)

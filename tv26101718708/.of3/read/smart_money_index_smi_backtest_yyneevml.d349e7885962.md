@@ -1,0 +1,4 @@
+Calculation: SMI = on chart bars, initialize to an initial-value parameter; otherwise SMI[1] - (open - close) + (open(T1, last completed bar) - close(T1, last completed bar))
+Calculation: Smoothed SMI = SMA(SMI, lookback) on chart bars
+Long: (Smoothed SMI > SMI AND direction-reversal parameter preserves direction) OR (Smoothed SMI < SMI AND direction-reversal parameter reverses direction) OR (Smoothed SMI = SMI AND position side is long)
+Short: (Smoothed SMI < SMI AND direction-reversal parameter preserves direction) OR (Smoothed SMI > SMI AND direction-reversal parameter reverses direction) OR (Smoothed SMI = SMI AND position side is short)

@@ -1,0 +1,1 @@
+Long: each tracked stock's close crosses above its latest Pivot High of max(open, close), using P bars on each side

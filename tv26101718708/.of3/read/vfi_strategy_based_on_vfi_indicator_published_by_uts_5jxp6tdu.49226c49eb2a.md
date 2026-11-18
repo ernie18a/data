@@ -1,0 +1,2 @@
+Long: VFI(length, coefficient, volume cutoff, volatility lookback, smoothing type, smoothing period, ALMA offset, ALMA sigma) crosses above buy threshold AND EMA(close, short-term lookback) >= EMA(close, long-term lookback)
+Exit: long, VFI(length, coefficient, volume cutoff, volatility lookback, smoothing type, smoothing period, ALMA offset, ALMA sigma) crosses below sell threshold AND (close > entry price OR close < entry price * (1 - stop-loss percentage / 100))

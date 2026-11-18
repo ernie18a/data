@@ -1,0 +1,5 @@
+Calculation: candle body size = abs(close - open) on chart bars
+Calculation: upper wick = high - max(open, close) on chart bars
+Calculation: T1 range = high of the last completed T1 bar - low of the last completed T1 bar, evaluated on chart bars
+Long: close > open AND close[1] < open[1] AND open <= close[1] AND close >= open[1] AND close <= low of the last completed T1 bar + T1 range * (zone percentage parameter / 100) AND volume > SMA(volume, volume-average lookback) * volume multiplier AND current chart bar index - last long or short signal bar index >= cooldown parameter (last signal bar index starts at zero)
+Short: (close < open AND close[1] > open[1] AND open >= close[1] AND close <= open[1]) OR (upper wick > candle body size * wick-to-body multiplier), AND close >= high of the last completed T1 bar - T1 range * (zone percentage parameter / 100) AND volume > SMA(volume, volume-average lookback) * volume multiplier AND current chart bar index - last long or short signal bar index >= cooldown parameter (last signal bar index starts at zero)

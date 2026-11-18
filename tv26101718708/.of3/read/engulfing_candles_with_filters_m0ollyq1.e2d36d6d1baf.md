@@ -1,0 +1,4 @@
+Calculation: Current body = abs(close - open)
+Calculation: Previous body = abs(close[1] - open[1])
+Long: open <= close[1] AND open < open[1] AND close > open[1] AND (ATR body filter disabled OR Current body >= ATR(ATR lookback) * body threshold) AND (prior body filter disabled OR Previous body >= ATR(ATR lookback) * prior-body threshold) AND (volume filter disabled OR volume > volume[1]) AND (trend filter disabled OR (close[1] < EMA(close, trend lookback)[1] AND EMA(close, trend lookback) < EMA(close, trend lookback)[5]))
+Short: open >= close[1] AND open > open[1] AND close < open[1] AND (ATR body filter disabled OR Current body >= ATR(ATR lookback) * body threshold) AND (prior body filter disabled OR Previous body >= ATR(ATR lookback) * prior-body threshold) AND (volume filter disabled OR volume > volume[1]) AND (trend filter disabled OR (close[1] > EMA(close, trend lookback)[1] AND EMA(close, trend lookback) > EMA(close, trend lookback)[5]))

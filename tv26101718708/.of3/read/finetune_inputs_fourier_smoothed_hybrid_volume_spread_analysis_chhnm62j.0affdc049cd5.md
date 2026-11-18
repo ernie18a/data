@@ -1,0 +1,7 @@
+Calculation: Relative volume = volume / Smooth(Fourier transform of volume, source=volume[1], volume-smoothing lookback) when volume smoothing is enabled; otherwise volume / volume[1]
+Calculation: Volume-weighted price spread = Relative volume × [EMA(close source, shorter price-smoothing lookback) − EMA(open source, shorter price-smoothing lookback)], where each price source is its double Fourier transform when Fourier approximation is enabled and otherwise the original price
+Calculation: Smoothed volume-weighted price spread = EMA(volume-weighted price spread, longer spread-smoothing lookback)
+Long: Smoothed volume-weighted price spread > 0 AND volume-weighted price spread > 0
+Short: Smoothed volume-weighted price spread < 0 AND volume-weighted price spread < 0
+Exit: long, close-all parameter enabled AND NOT (Smoothed volume-weighted price spread > 0 AND volume-weighted price spread > 0) AND NOT (Smoothed volume-weighted price spread < 0 AND volume-weighted price spread < 0)
+Exit: short, close-all parameter enabled AND NOT (Smoothed volume-weighted price spread > 0 AND volume-weighted price spread > 0) AND NOT (Smoothed volume-weighted price spread < 0 AND volume-weighted price spread < 0)

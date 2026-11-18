@@ -1,0 +1,1 @@
+Long: close > SMA(close, longest lookback, T1, bar still forming) AND close > SMA(close, second-longest lookback, T1, bar still forming) AND close > SMA(close, second-shortest lookback, T1, bar still forming) AND close > SMA(close, shortest lookback, T1, bar still forming)

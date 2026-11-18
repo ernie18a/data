@@ -1,0 +1,4 @@
+Long: position is flat AND source > selected moving average(source, trend lookback) + ATR(ATR lookback) * ATR multiplier
+Short: short entries are enabled AND position is flat AND source < selected moving average(source, trend lookback) - ATR(ATR lookback) * ATR multiplier
+Exit: long, (moving-average exit mode AND source < selected moving average(source, trend lookback)) OR (band exit mode AND source < selected moving average(source, trend lookback) - ATR(ATR lookback) * ATR multiplier)
+Exit: short, (moving-average exit mode AND source > selected moving average(source, trend lookback)) OR (band exit mode AND source > selected moving average(source, trend lookback) + ATR(ATR lookback) * ATR multiplier)

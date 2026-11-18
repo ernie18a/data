@@ -1,0 +1,8 @@
+Calculation: BullishGap(B) = low(B) > high(B)[2] AND low(B) - high(B)[2] >= minimum gap size
+Calculation: BearishGap(B) = high(B) < low(B)[2] AND low(B)[2] - high(B) >= minimum gap size
+Calculation: RecentBullishGap(T) = BullishGap(T)[n] for some n from 0 through the recency lookback, evaluated on T bars and sampled on chart bars with lookahead off; the current T bar may still be forming
+Calculation: RecentBearishGap(T) = BearishGap(T)[n] for some n from 0 through the recency lookback, evaluated on T bars and sampled on chart bars with lookahead off; the current T bar may still be forming
+Calculation: BullishGapCount = count of RecentBullishGap(T) across T1 through T10, ten distinct configured timeframes ordered shortest to longest
+Calculation: BearishGapCount = count of RecentBearishGap(T) across T1 through T10, ten distinct configured timeframes ordered shortest to longest
+Long: FVG box display enabled AND BullishGap(chart bars) OR RecentBullishGap(T1) AND RecentBullishGap(T2) AND RecentBullishGap(T3) AND BullishGapCount >= score threshold AND BullishGapCount > BearishGapCount AND (session filter disabled OR chart-bar open time is within the configured New York session interval)
+Short: FVG box display enabled AND BearishGap(chart bars) OR RecentBearishGap(T1) AND RecentBearishGap(T2) AND RecentBearishGap(T3) AND BearishGapCount >= score threshold AND BearishGapCount > BullishGapCount AND (session filter disabled OR chart-bar open time is within the configured New York session interval)

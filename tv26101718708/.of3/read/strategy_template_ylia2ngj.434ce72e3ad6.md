@@ -1,0 +1,6 @@
+Long: long entries are enabled AND datetime is within the configured trading date range AND crossover(0, Supertrend(ATR multiplier, ATR lookback).direction) AND close > selected moving average(high, MA type, lookback, T1, last completed bar) when high-low range mode is enabled, otherwise selected moving average(close, MA type, lookback, T1, last completed bar)
+Short: short entries are enabled AND datetime is within the configured trading date range AND crossunder(0, Supertrend(ATR multiplier, ATR lookback).direction) AND close < selected moving average(low, MA type, lookback, T1, last completed bar) when high-low range mode is enabled, otherwise selected moving average(close, MA type, lookback, T1, last completed bar)
+Exit: long, close-before-exit setting is enabled AND crossunder(0, Supertrend(ATR multiplier, ATR lookback).direction)
+Exit: short, close-before-exit setting is enabled AND crossover(0, Supertrend(ATR multiplier, ATR lookback).direction)
+Exit: long, close-before-exit setting is disabled AND low <= Supertrend(ATR multiplier, ATR lookback)
+Exit: short, close-before-exit setting is disabled AND high >= Supertrend(ATR multiplier, ATR lookback)

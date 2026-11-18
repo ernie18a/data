@@ -1,0 +1,6 @@
+Long: (close - low(T1, bar still forming)) / ATR(lookback) < (high(T1, bar still forming) - close) / ATR(lookback)
+Short: (high(T1, bar still forming) - close) / ATR(lookback) < (close - low(T1, bar still forming)) / ATR(lookback)
+Long: close > high(T1, bar still forming)
+Short: close < low(T1, bar still forming)
+Long: close crosses above close(T1, last completed bar)
+Short: close crosses below close(T1, last completed bar)

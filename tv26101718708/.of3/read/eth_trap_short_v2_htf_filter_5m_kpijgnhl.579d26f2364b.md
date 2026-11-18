@@ -1,0 +1,4 @@
+Calculation: reference high = highest(high[1], lookback)
+Calculation: T1 EMA = EMA(close, lookback, T1) sampled on chart bars using the current T1 value (forming in real time, confirmed value historically); [1] is the previous chart bar's sample
+Short: (session filter disabled OR datetime is within the configured session) AND (HTF filter disabled OR T1 EMA < T1 EMA[1]) AND (ATR filter disabled OR ATR(lookback) / close >= minimum ATR percent / 100) AND high > reference high AND close < reference high
+Exit: short, (stops enabled AND (high >= entry price * (1 + stop-loss percent / 100) OR low <= entry price * (1 - take-profit percent / 100))) OR (time stop enabled AND bars since entry >= time-stop bar count)

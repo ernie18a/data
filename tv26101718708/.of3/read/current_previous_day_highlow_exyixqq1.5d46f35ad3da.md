@@ -1,0 +1,2 @@
+Long: On chart bars, low <= low[1](T1, last completed bar) AND no earlier chart bar in the current T1 has had low <= low[1](T1, last completed bar)
+Short: On chart bars, high >= high[1](T1, last completed bar) AND no earlier chart bar in the current T1 has had high >= high[1](T1, last completed bar)

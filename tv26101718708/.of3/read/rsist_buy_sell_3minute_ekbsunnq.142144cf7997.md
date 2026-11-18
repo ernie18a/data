@@ -1,0 +1,2 @@
+Long: crossover(RSI(close, RSI lookback, T1, still-forming bar), SMA(RSI(close, RSI lookback, T1, still-forming bar), RSI-SMA lookback, T1, still-forming bar)) AND crossover(chart close, Supertrend(ATR factor, ATR lookback, T1, still-forming bar)), evaluated on chart bars using T1 values
+Short: crossunder(RSI(close, RSI lookback, T1, still-forming bar), SMA(RSI(close, RSI lookback, T1, still-forming bar), RSI-SMA lookback, T1, still-forming bar)) AND crossunder(chart close, Supertrend(ATR factor, ATR lookback, T1, still-forming bar)), evaluated on chart bars using T1 values

@@ -1,0 +1,3 @@
+Calculation: Renko direction = on each chart bar, choose (H,L) as (close,close) for the Close source, (max(open,close),min(open,close)) for the Open/Close source, or (high,low) for the High/Low source; set B to ATR(round(brick-size parameter)) in ATR mode, the brick-size parameter in Traditional mode, or close / the brick-size parameter in Part-of-Price mode; initialize prior R to 0; set R to H if H > prior R + B, else L if L < prior R - B, else prior R; direction is up if R > prior R, down if R < prior R, otherwise carry the prior direction.
+Long: close > SMA(source, lookback) + deviation multiplier * StDev(source, lookback) AND Renko direction is up
+Short: close < SMA(source, lookback) - deviation multiplier * StDev(source, lookback) AND Renko direction is down

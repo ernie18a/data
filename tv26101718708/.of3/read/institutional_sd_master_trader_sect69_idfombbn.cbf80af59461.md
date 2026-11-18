@@ -1,0 +1,2 @@
+Long: EMA(close, shorter lookback) > EMA(close, longer lookback) AND low <= open(T1, still-forming bar, sampled on chart bars)
+Short: EMA(close, shorter lookback) <= EMA(close, longer lookback) AND high >= open(T1, still-forming bar, sampled on chart bars)

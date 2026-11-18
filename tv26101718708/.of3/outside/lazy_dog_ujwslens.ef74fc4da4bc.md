@@ -1,0 +1,13 @@
+Calculation: Call strike = nearest multiple of strike interval to (cycle-start spot + strike offset)
+Calculation: Put strike = nearest multiple of strike interval to (cycle-start spot − strike offset)
+Calculation: Call repair premium = max(premium floor, starting premium + current spot closing price − cycle-start spot)
+Calculation: Put repair premium = max(premium floor, starting premium + cycle-start spot − current spot closing price)
+Calculation: Call repair premium peak = highest call repair premium since the repair call opened
+Calculation: Put repair premium peak = highest put repair premium since the repair put opened
+Calculation: Peak strategy open profit = maximum of zero and strategy open profit since cycle start; reset to zero when flat or after a universal exit
+Option: sell call, cycle-start spot is unset OR strategy is flat AND no universal exit has occurred yet OR at least cooldown bars have elapsed since the latest universal exit AND chart time is before blackout start OR after blackout end
+Option: sell put, cycle-start spot is unset OR strategy is flat AND no universal exit has occurred yet OR at least cooldown bars have elapsed since the latest universal exit AND chart time is before blackout start OR after blackout end
+Option: buy call, cycle active AND short call base leg open AND current spot closing price ≥ call strike AND current strategy open profit > loss limit AND (peak strategy open profit < profit cap OR peak strategy open profit − current strategy open profit < trailing deviation) AND chart time ≠ scheduled close time
+Option: buy put, cycle active AND short put base leg open AND current spot closing price ≤ put strike AND current strategy open profit > loss limit AND (peak strategy open profit < profit cap OR peak strategy open profit − current strategy open profit < trailing deviation) AND chart time ≠ scheduled close time
+Exit: long, open repair call AND call repair premium ≤ retained fraction × call repair premium peak OR open repair put AND put repair premium ≤ retained fraction × put repair premium peak OR current strategy open profit ≤ loss limit OR peak strategy open profit ≥ profit cap AND peak strategy open profit − current strategy open profit ≥ trailing deviation OR chart time = scheduled close time
+Exit: short, current strategy open profit ≤ loss limit OR peak strategy open profit ≥ profit cap AND peak strategy open profit − current strategy open profit ≥ trailing deviation OR chart time = scheduled close time

@@ -1,0 +1,1 @@
+Exit: long, low <= entry price - (entry price / leverage) * (stop loss percent / 100)

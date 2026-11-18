@@ -1,0 +1,4 @@
+Calculation: Lower wick ratio = (min(open, close) - low) / (high - low)
+Calculation: Long trailing stop = low - ATR(stop lookback) * stop multiplier while flat or outside the configured backtest interval; otherwise max(previous Long trailing stop, low - ATR(stop lookback) * stop multiplier)
+Long: datetime is within the configured backtest interval AND volume > SMA(volume, relative-volume lookback) * relative-volume multiplier AND ATR(volatility lookback) > standard deviation(close, Bollinger lookback) AND Lower wick ratio > lower-wick ratio threshold
+Exit: Long, datetime is within the configured backtest interval AND low <= Long trailing stop

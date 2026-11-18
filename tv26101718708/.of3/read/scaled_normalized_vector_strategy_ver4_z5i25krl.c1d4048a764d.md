@@ -1,0 +1,6 @@
+Calculation: transformed ratio = the selected transformation of close(T1, current requested-timeframe bar, returned on chart bars) / close(T2, current requested-timeframe bar, returned on chart bars) - 1; T1 is the shorter of the two timeframe parameters and T2 the longer, advanced by one timeframe unit if they are equal; transformations are leaky ReLU with a slope parameter, 1 when the input is at least 0 and -1 otherwise, Swish (x / (1 + exp(-x))), (x - cumulative sum(x) / chart-bar index) / sqrt((x - (cumulative sum(x) / chart-bar index) / (chart-bar index - 1))^2), or identity
+Calculation: normalized Karobein = 2 * (Karobein Oscillator(selected source, lookback) - all-time low of that oscillator on chart bars) / (all-time high - all-time low) - 1
+Long: transformed ratio crosses above the positive sensitivity threshold AND normalized Karobein > 0 AND latest signal direction is not long
+Short: transformed ratio crosses below the negative sensitivity threshold AND normalized Karobein < 0 AND latest signal direction is not short
+Exit: long, chart bars elapsed since latest signal = holding-period parameter
+Exit: short, chart bars elapsed since latest signal = holding-period parameter

@@ -1,0 +1,5 @@
+Calculation: Signed volume = IF(HLC3 > HLC3[1], 100 × volume, −100 × volume)
+Calculation: Oscillator = EMA(Signed volume, shorter lookback) − EMA(Signed volume, longer lookback)
+Calculation: Signal = EMA(Oscillator, separate signal lookback)
+Long: (reverse mode disabled AND Oscillator > Signal) OR (reverse mode enabled AND Oscillator < Signal)
+Short: (reverse mode disabled AND Oscillator < Signal) OR (reverse mode enabled AND Oscillator > Signal)

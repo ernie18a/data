@@ -1,0 +1,21 @@
+Calculation: high oscillator = the indicator selected by the indicator method parameter from RSI(high, oscillator smoothing lookback), MACD histogram(macd source, SMA fast lookback, SMA slow lookback, EMA signal lookback), Stochastic(close, high, low, oscillator smoothing lookback), SMA(volume, oscillator smoothing lookback), SMA(Accumulation/Distribution Line, oscillator smoothing lookback), Fisher Transform(high, oscillator smoothing lookback), or CCI(high, oscillator smoothing lookback); the fast lookback is shorter than the slow lookback
+Calculation: low oscillator = the indicator selected by the same indicator method parameter from RSI(low, oscillator smoothing lookback), the same MACD histogram, the same Stochastic, the same SMA(volume), the same SMA(Accumulation/Distribution Line), Fisher Transform(low, oscillator smoothing lookback), or CCI(low, oscillator smoothing lookback)
+Calculation: regular bullish divergence = current confirmed Fractal low of the low oscillator AND the current pivot low is below the preceding confirmed Fractal low AND the low oscillator at the current pivot is above its value at the preceding confirmed Fractal low
+Calculation: hidden bullish divergence = current confirmed Fractal low of the low oscillator AND the current pivot low is above the preceding confirmed Fractal low AND the low oscillator at the current pivot is below its value at the preceding confirmed Fractal low
+Calculation: regular bearish divergence = current confirmed Fractal high of the high oscillator AND the current pivot high is above the preceding confirmed Fractal high AND the high oscillator at the current pivot is below its value at the preceding confirmed Fractal high
+Calculation: hidden bearish divergence = current confirmed Fractal high of the high oscillator AND the current pivot high is below the preceding confirmed Fractal high AND the high oscillator at the current pivot is above its value at the preceding confirmed Fractal high
+Calculation: MMLO oscillator = (close - (lowest(low, MMLO lookback) + (highest(high, MMLO lookback) - lowest(low, MMLO lookback)) * MMLO step fraction * MMLO midline step multiplier)) / ((highest(high, MMLO lookback) - lowest(low, MMLO lookback)) / MMLO normalization divisor)
+Calculation: positive MMLO quadrant condition = the MMLO quadrant parameter selects MMLO oscillator > 0, MMLO oscillator > MMLO step fraction * second threshold multiplier, MMLO oscillator > MMLO step fraction * third threshold multiplier, or MMLO oscillator > MMLO step fraction * fourth threshold multiplier
+Calculation: negative MMLO quadrant condition = the MMLO quadrant parameter selects MMLO oscillator < 0, MMLO oscillator < -MMLO step fraction * second threshold multiplier, MMLO oscillator < -MMLO step fraction * third threshold multiplier, or MMLO oscillator < -MMLO step fraction * fourth threshold multiplier
+Long: regular bullish divergence OR hidden bullish divergence
+Short: regular bearish divergence OR hidden bearish divergence
+Long: (regular divergence enabled AND regular bullish divergence OR hidden divergence enabled AND hidden bullish divergence) AND positive MMLO quadrant condition on the previous bar
+Short: (regular divergence enabled AND regular bearish divergence OR hidden divergence enabled AND hidden bearish divergence) AND negative MMLO quadrant condition on the previous bar
+Exit: long, MMLO oscillator <= 0
+Exit: short, MMLO oscillator >= 0
+Exit: long, when take-profit is enabled AND high >= entry price + take-profit distance
+Exit: long, when stop-loss is enabled AND low <= entry price - stop-loss distance
+Exit: short, when take-profit is enabled AND low <= entry price - take-profit distance
+Exit: short, when stop-loss is enabled AND high >= entry price + stop-loss distance
+Exit: long, when trailing activation distance and trailing offset are enabled AND high reaches entry price + trailing activation distance AND low <= highest high since activation - trailing offset
+Exit: short, when trailing activation distance and trailing offset are enabled AND low reaches entry price - trailing activation distance AND high >= lowest low since activation + trailing offset

@@ -1,0 +1,7 @@
+Calculation: Gap threshold = deviation percentage / 100 * SMA(source high - source low, gap-range lookback)
+Calculation: Long target = signal-bar source close * (1 + (signal-bar source close / Lowest(source low, target lookback ending on signal bar) - 1))
+Calculation: Short target = signal-bar source close * (1 - (Highest(source high, target lookback ending on signal bar) / signal-bar source close - 1))
+Long: Position side is not long AND source low > previous source high AND source low - previous source high >= Gap threshold AND source close > SMA(correlated close, daily-SMA lookback, T1 bar still forming; evaluated on chart bars using T1 values); source OHLC is correlated when correlation is enabled, otherwise chart OHLC
+Short: Position side is not short AND source high < previous source low AND previous source low - source high >= Gap threshold AND source close < SMA(correlated close, daily-SMA lookback, T1 bar still forming; evaluated on chart bars using T1 values); source OHLC is correlated when correlation is enabled, otherwise chart OHLC
+Exit: Long, after the signal bar, source high > Long target; source OHLC is correlated when correlation is enabled, otherwise chart OHLC
+Exit: Short, after the signal bar, source low < Short target; source OHLC is correlated when correlation is enabled, otherwise chart OHLC

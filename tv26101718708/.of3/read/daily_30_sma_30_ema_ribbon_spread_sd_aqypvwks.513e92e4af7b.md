@@ -1,0 +1,2 @@
+Long: On chart bars using values from the T1 bar still forming, SMA(close, lookback, T1) crosses above EMA(close, lookback, T1)
+Short: On chart bars using values from the T1 bar still forming, SMA(close, lookback, T1) crosses below EMA(close, lookback, T1)

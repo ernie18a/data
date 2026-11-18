@@ -1,0 +1,4 @@
+Long: Supertrend direction(factor, ATR lookback) > 0 AND MACD(macd source, fast lookback, slow lookback, oscillator MA type) > MACD signal line(signal lookback, signal MA type) AND close > VWAP(VWAP source) AND (VWAP hiding is disabled OR chart timeframe is intraday)
+Short: Supertrend direction(factor, ATR lookback) < 0 AND MACD(macd source, fast lookback, slow lookback, oscillator MA type) < MACD signal line(signal lookback, signal MA type) AND close < VWAP(VWAP source) AND (VWAP hiding is disabled OR chart timeframe is intraday)
+Exit: long, MACD crosses below its signal line
+Exit: short, MACD crosses above its signal line

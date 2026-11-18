@@ -1,0 +1,2 @@
+Long: close crosses above the lower Bollinger Band of close, using a lookback and deviation multiplier
+Short: close crosses below the upper Bollinger Band of close, using a lookback and deviation multiplier

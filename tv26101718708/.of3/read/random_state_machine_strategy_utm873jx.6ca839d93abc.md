@@ -1,0 +1,5 @@
+Calculation: Selected MA = selected SMA, EMA, WMA, HMA, RMA, DEMA, TEMA, VWMA, LSMA, Kijun, McGinley, or ALMA using one lookback; Kijun uses high and low, ALMA uses separate offset and sigma parameters, and an unrecognized type returns close
+Long: random value exceeds its trigger threshold AND the state machine accepts a transition AND close > Selected MA AND (long trades are enabled OR datetime is within the configured range)
+Short: random value exceeds its trigger threshold AND the state machine accepts a transition AND close < Selected MA AND (short trades are enabled OR datetime is within the configured range)
+Exit: long, high >= entry price + long risk distance × long reward multiple OR low <= entry price − long risk distance OR (timed long exit is enabled AND chart bars since entry >= long hold parameter) OR (long MA-cross exit is enabled AND close crosses below Selected MA)
+Exit: short, low <= entry price − short risk distance × short reward multiple OR high >= entry price + short risk distance OR (timed short exit is enabled AND chart bars since entry >= short hold parameter) OR (short MA-cross exit is enabled AND close crosses above Selected MA)

@@ -1,0 +1,1 @@
+Long: close >= lower price AND close <= upper price AND close > open AND low > low[1] AND volume > SMA(volume, lookback) * volume factor AND index close on the current chart bar >= index close[1]

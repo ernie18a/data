@@ -1,0 +1,2 @@
+Long: Supertrend(factor, ATR lookback) direction is positive AND abs(close - open) > ATR(ATR lookback) * minimum body multiplier AND volume > SMA(volume, lookback) * volume multiplier AND RSI(close, lookback) < upper RSI threshold
+Short: Supertrend(factor, ATR lookback) direction is negative AND abs(close - open) > ATR(ATR lookback) * minimum body multiplier AND volume > SMA(volume, lookback) * volume multiplier AND RSI(close, lookback) > lower RSI threshold

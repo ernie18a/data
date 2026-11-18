@@ -1,0 +1,7 @@
+Calculation: Fast stochastic = SMA(Stochastic(close, high, low, stochastic lookback), fast smoothing)
+Calculation: Reversal direction = 1 when close[2] < close[1] AND close > close[1] AND Fast stochastic < SMA(Fast stochastic, slow smoothing) AND Fast stochastic > threshold; -1 when close[2] > close[1] AND close < close[1] AND Fast stochastic > SMA(Fast stochastic, slow smoothing) AND Fast stochastic < threshold; otherwise its previous value, initially 0
+Calculation: NVI direction = 1 when cumulative decreasing-volume ROC > EMA(cumulative decreasing-volume ROC, ROC/EMA lookback), -1 when it is lower, otherwise its previous value, initially 0; cumulative decreasing-volume ROC adds ROC(close, ROC/EMA lookback) when volume < volume[1] and otherwise retains its previous value, initially 0
+Long: direction-reversal setting is off AND Reversal direction = 1 AND NVI direction = 1 OR direction-reversal setting is on AND Reversal direction = -1 AND NVI direction = -1
+Short: direction-reversal setting is off AND Reversal direction = -1 AND NVI direction = -1 OR direction-reversal setting is on AND Reversal direction = 1 AND NVI direction = 1
+Exit: long, Reversal direction and NVI direction are not both 1 AND are not both -1
+Exit: short, Reversal direction and NVI direction are not both 1 AND are not both -1

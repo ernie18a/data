@@ -1,0 +1,2 @@
+Long: On chart bars with timeframe <= T2, close > open(T1, bar still forming, on chart bars taking values from T1)
+Short: On chart bars with timeframe <= T2, close < open(T1, bar still forming, on chart bars taking values from T1)

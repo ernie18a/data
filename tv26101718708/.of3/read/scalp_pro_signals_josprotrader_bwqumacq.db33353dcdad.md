@@ -1,0 +1,2 @@
+Long: EMA(close, shorter lookback) > EMA(close, longer lookback) AND RSI(close, lookback) > upper threshold AND close > VWAP(close) AND close > open AND bar is confirmed
+Short: EMA(close, shorter lookback) < EMA(close, longer lookback) AND RSI(close, lookback) < lower threshold AND close < VWAP(close) AND close < open AND bar is confirmed

@@ -1,0 +1,6 @@
+Long: SMA(close, shorter lookback) crosses above max(EMA(close, longer EMA lookback), VWMA(close, longer VWMA lookback), session VWAP(hlc3))
+Short: SMA(close, shorter lookback) crosses below min(EMA(close, longer EMA lookback), VWMA(close, longer VWMA lookback), session VWAP(hlc3))
+Long: SMA(close, shorter lookback) > max(EMA(close, longer EMA lookback), VWMA(close, longer VWMA lookback), session VWAP(hlc3))
+Short: SMA(close, shorter lookback) < min(EMA(close, longer EMA lookback), VWMA(close, longer VWMA lookback), session VWAP(hlc3))
+Exit: long, SMA(close, shorter lookback) crosses below max(EMA(close, longer EMA lookback), VWMA(close, longer VWMA lookback), session VWAP(hlc3))
+Exit: short, SMA(close, shorter lookback) crosses above min(EMA(close, longer EMA lookback), VWMA(close, longer VWMA lookback), session VWAP(hlc3))

@@ -1,0 +1,10 @@
+Calculation: demand pivot = for some lag i from pivot strength through swing lookback, low[i] is below low[i−1], low[i+1], low[i−pivot strength], and low[i+pivot strength]
+Calculation: supply pivot = for some lag i from pivot strength through swing lookback, high[i] is above high[i−1], high[i+1], high[i−pivot strength], and high[i+pivot strength]
+Calculation: latest demand level = low[i] for the greatest lag i with a demand pivot on the current chart bar; retain the previous level if none qualifies
+Calculation: latest supply level = high[i] for the greatest lag i with a supply pivot on the current chart bar; retain the previous level if none qualifies
+Calculation: order-block move percentage = abs(close[order-block period plus one bar] − close[1]) / close[order-block period plus one bar], expressed as a percentage
+Calculation: smoothed spread = Super Smoother(close, shorter lookback) − Super Smoother(close, longer lookback)
+Long: demand pivot OR (latest demand level exists AND low <= latest demand level AND close > latest demand level AND close > EMA(close, trend lookback) AND volume > SMA(volume, volume-average lookback) × volume multiplier) OR (close[order-block period plus one bar] < open[order-block period plus one bar] AND every bar in the preceding order-block period closes above its open AND order-block move percentage >= minimum move percentage) OR smoothed spread crosses above Super Smoother(smoothed spread, signal lookback)
+Short: supply pivot OR (latest supply level exists AND high >= latest supply level AND close < latest supply level AND close < EMA(close, trend lookback) AND volume > SMA(volume, volume-average lookback) × volume multiplier) OR (close[order-block period plus one bar] > open[order-block period plus one bar] AND every bar in the preceding order-block period closes below its open AND order-block move percentage >= minimum move percentage) OR smoothed spread crosses below Super Smoother(smoothed spread, signal lookback)
+Exit: long, low <= close at the most recent long breakout signal − stop distance
+Exit: short, high >= close at the most recent short breakout signal + stop distance

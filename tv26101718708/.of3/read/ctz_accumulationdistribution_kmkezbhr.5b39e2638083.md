@@ -1,0 +1,6 @@
+Long: Accumulation/Distribution Line(high, low, close, volume) > EMA(Accumulation/Distribution Line(high, low, close, volume), signal length)
+Short: Accumulation/Distribution Line(high, low, close, volume) ≤ EMA(Accumulation/Distribution Line(high, low, close, volume), signal length)
+Long: Accumulation/Distribution Line(high, low, close, volume) crosses above EMA(Accumulation/Distribution Line(high, low, close, volume), signal length)
+Short: Accumulation/Distribution Line(high, low, close, volume) crosses below EMA(Accumulation/Distribution Line(high, low, close, volume), signal length)
+Long: a confirmed pivot low of low using the pivot lookback parameter for both left and right bars is lower than the preceding confirmed pivot low, the Accumulation/Distribution Line at the current pivot is higher than at the preceding pivot, and the pivots are no more than the maximum bars between pivots parameter apart
+Short: a confirmed pivot high of high using the pivot lookback parameter for both left and right bars is higher than the preceding confirmed pivot high, the Accumulation/Distribution Line at the current pivot is lower than at the preceding pivot, and the pivots are no more than the maximum bars between pivots parameter apart

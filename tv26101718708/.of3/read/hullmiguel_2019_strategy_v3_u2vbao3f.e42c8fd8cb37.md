@@ -1,0 +1,2 @@
+Long: rising(EMA(close, shorter lookback), slope lookback) AND rising(EMA(close, longer lookback), slope lookback)
+Short: falling(EMA(close, shorter lookback), slope lookback) AND falling(EMA(close, longer lookback), slope lookback)

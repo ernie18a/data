@@ -1,0 +1,2 @@
+Long: EMA(close, fast lookback, T1, still-forming bar), evaluated on chart bars using T1 values > EMA(close, slow lookback, T1, still-forming bar), evaluated on chart bars using T1 values
+Short: EMA(close, fast lookback, T1, still-forming bar), evaluated on chart bars using T1 values <= EMA(close, slow lookback, T1, still-forming bar), evaluated on chart bars using T1 values

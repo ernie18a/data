@@ -1,0 +1,3 @@
+Calculation: range-scaled stochastic = SMA(LLV(low, stochastic lookback) + ((HHV(high, limit lookback) - LLV(low, limit lookback)) * (close - LLV(low, stochastic lookback)) / (HHV(high, stochastic lookback) - LLV(low, stochastic lookback))), K smoothing)
+Long: stochastic oscillator selected AND crossover(range-scaled stochastic, SMA(range-scaled stochastic, signal lookback))
+Short: stochastic oscillator selected AND crossunder(range-scaled stochastic, SMA(range-scaled stochastic, signal lookback))

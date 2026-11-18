@@ -1,0 +1,17 @@
+Calculation: EMA bias (%) = 100 × (EMA(close, shorter EMA lookback) − EMA(close, longer EMA lookback)) / EMA(close, longer EMA lookback)
+Calculation: Upper shadow (%) = 100 × (high − close) / close
+Long: EMA(close, shorter EMA lookback) > EMA(close, longer EMA lookback) AND open > EMA(close, shorter EMA lookback) AND low ≤ EMA(close, longer EMA lookback) AND close > EMA(close, shorter EMA lookback) AND ROC(close, momentum lookback) > 0 AND EMA bias ≥ lower bias parameter AND EMA bias ≤ upper bias parameter AND Upper shadow < upper shadow limit AND volume ≥ SMA(volume, volume lookback) × lower volume multiple AND volume ≤ SMA(volume, volume lookback) × upper volume multiple
+Long: EMA(close, shorter EMA lookback) > EMA(close, longer EMA lookback) AND open > EMA(close, longer EMA lookback) AND open < EMA(close, shorter EMA lookback) AND low ≤ EMA(close, longer EMA lookback) AND close > EMA(close, shorter EMA lookback) AND ROC(close, momentum lookback) > 0 AND EMA bias ≥ lower bias parameter AND EMA bias ≤ upper bias parameter AND Upper shadow < upper shadow limit AND volume ≥ SMA(volume, volume lookback) × lower volume multiple AND volume ≤ SMA(volume, volume lookback) × upper volume multiple
+Long: EMA(close, shorter EMA lookback) > EMA(close, longer EMA lookback) AND open > EMA(close, shorter EMA lookback) AND low ≤ EMA(close, shorter EMA lookback) AND close > EMA(close, shorter EMA lookback) AND ROC(close, momentum lookback) > 0 AND EMA bias ≥ lower bias parameter AND EMA bias ≤ upper bias parameter AND Upper shadow < upper shadow limit AND volume ≥ SMA(volume, volume lookback) × lower volume multiple AND volume ≤ SMA(volume, volume lookback) × upper volume multiple
+Long: position is flat AND the previous bar satisfied the first Long condition
+Long: position is flat AND the previous bar satisfied the second Long condition
+Long: position is flat AND the previous bar satisfied the third Long condition AND satisfied neither the first nor the second Long condition
+Calculation: Long stop price = MAX(entry price × (1 − stop-loss parameter for the entry setup / 100), IF(close / entry price ≥ 1 + break-even gain trigger / 100, entry price, entry price × (1 − stop-loss parameter for the entry setup / 100)), IF(close / entry price ≥ 1 + higher trailing gain trigger / 100, entry price + trailing fraction × (close − entry price), entry price × (1 − stop-loss parameter for the entry setup / 100)))
+Exit: Long, close ≤ Long stop price OR close ≤ EMA(close, longer EMA lookback)
+Exit: Long, bars held ≥ holding-period parameter AND highest(high, high lookback) / entry price < 1 + time-exit gain threshold / 100
+Exit: Long from entry setup 1, close / entry price ≥ 1 + first profit target parameter for setup 1 / 100
+Exit: Long from entry setup 1, close / entry price ≥ 1 + second profit target parameter for setup 1 / 100
+Exit: Long from entry setup 2, close / entry price ≥ 1 + first profit target parameter for setup 2 / 100
+Exit: Long from entry setup 2, close / entry price ≥ 1 + second profit target parameter for setup 2 / 100
+Exit: Long from entry setup 3, close / entry price ≥ 1 + first profit target parameter for setup 3 / 100
+Exit: Long from entry setup 3, close / entry price ≥ 1 + second profit target parameter for setup 3 / 100

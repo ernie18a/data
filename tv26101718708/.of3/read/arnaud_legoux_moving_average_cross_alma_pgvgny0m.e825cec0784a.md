@@ -1,0 +1,4 @@
+Long: position is flat AND EMA(volume, shorter lookback) > EMA(volume, longer lookback) AND ALMA(close, shorter lookback, offset1, sigma1) crosses above ALMA(close, longer lookback, offset2, sigma2)
+Short: position is flat AND EMA(volume, shorter lookback) > EMA(volume, longer lookback) AND ALMA(close, shorter lookback, offset1, sigma1) crosses below ALMA(close, longer lookback, offset2, sigma2)
+Exit: Long, high >= average entry price * (1 + long take-profit parameter) OR low <= average entry price * (1 - long stop-loss parameter)
+Exit: Short, low <= average entry price * (1 - short take-profit parameter) OR high >= average entry price * (1 + short stop-loss parameter)

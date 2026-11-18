@@ -1,0 +1,7 @@
+Calculation: Box high = high(T1, last completed bar used to set the session box)
+Calculation: Box low = low(T1, last completed bar used to set the session box)
+Calculation: Body = abs(close - open)
+Calculation: Upper wick = high - max(open, close)
+Calculation: Lower wick = min(open, close) - low
+Long: The latest completed T1 close outside the box was above Box high, with no later completed T1 close below Box low, and the previous signal in the session was not long, AND on a confirmed chart bar, (pin-bar confirmation is enabled AND Body > 0 AND Lower wick > Body × wick-to-body parameter AND Upper wick < Body AND low <= Box high AND close > Box high) OR (engulfing confirmation is enabled AND close[1] < open[1] AND close > open AND close >= open[1] AND open <= close[1] AND (low[1] <= Box high OR low <= Box high) AND close > Box high)
+Short: The latest completed T1 close outside the box was below Box low, with no later completed T1 close above Box high, and the previous signal in the session was not short, AND on a confirmed chart bar, (pin-bar confirmation is enabled AND Body > 0 AND Upper wick > Body × wick-to-body parameter AND Lower wick < Body AND high >= Box low AND close < Box low) OR (engulfing confirmation is enabled AND close[1] > open[1] AND close < open AND close <= open[1] AND open >= close[1] AND (high[1] >= Box low OR high >= Box low) AND close < Box low)

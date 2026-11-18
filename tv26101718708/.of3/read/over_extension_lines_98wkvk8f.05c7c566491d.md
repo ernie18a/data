@@ -1,0 +1,4 @@
+Calculation: Opening-range high = highest(high, opening-range period) on chart bars each day
+Calculation: Opening-range low = lowest(low, opening-range period) on chart bars each day
+Calculation: Upper extension line = if the opening range is complete, max(low(T1, last completed bar) + (high(T1, last completed bar) - low(T1, last completed bar)) * extension multiplier, opening-range low + (opening-range high - opening-range low) * extension multiplier); otherwise, low(T1, last completed bar) + (high(T1, last completed bar) - low(T1, last completed bar)) * extension multiplier; T1 values are sampled on chart bars
+Short: On chart bars, close crosses above the upper extension line

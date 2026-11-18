@@ -1,0 +1,2 @@
+Long: Coppock Curve of selected symbol's close (long ROC length P1, short ROC length P2, weighted moving average length P3) > 0 AND chart date ≥ (start year P4, start month P5, start day P6)
+Exit: long, Coppock Curve of selected symbol's close (long ROC length P1, short ROC length P2, weighted moving average length P3) < 0 AND chart date ≥ (start year P4, start month P5, start day P6)

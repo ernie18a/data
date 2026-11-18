@@ -1,0 +1,3 @@
+Calculation: fund-flow score = count of (instrument close > SMA(instrument close, P1) AND SMA(instrument close, P2) > SMA(instrument close, P1)), (instrument volume > P4 * SMA(instrument volume, P3)), (RSI(instrument close, P5) > P6 AND current RSI is greater than each of the previous P7 RSI values), ((instrument close / instrument close P8 bars ago) / (benchmark close / benchmark close P8 bars ago) > P9), (SMA(benchmark close, P2) > SMA(benchmark close, P1))
+Long: fund-flow score >= P10 AND instrument close > SMA(instrument close, P1) AND instrument close < P11 * SMA(instrument close, P1)
+Long: fund-flow score >= P10 AND instrument close > highest(instrument high, P12) AND instrument volume > P13 * SMA(instrument volume, P3)

@@ -1,0 +1,2 @@
+Short: On chart bars using values from the still-forming T1 bar, crossunder(ATH scale parameter × SMA(close, ATH longer lookback) computed on T1 bars, SMA(close, ATH shorter lookback) computed on T1 bars)
+Long: On chart bars using values from the still-forming T1 bar, crossover(ATL scale parameter × SMA(close, ATL longer lookback) computed on T1 bars, EMA(close, ATL shorter lookback) computed on T1 bars)

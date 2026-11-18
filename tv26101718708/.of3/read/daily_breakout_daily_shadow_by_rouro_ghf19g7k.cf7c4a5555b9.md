@@ -1,0 +1,18 @@
+Calculation: T1 bar body high = max(T1 bar open, T1 bar close)
+Calculation: T1 bar body low = min(T1 bar open, T1 bar close)
+Calculation: Long stop level = max(selected long stop, entry price - safety-stop-distance parameter) when the safety stop is enabled, otherwise selected long stop; selected long stop is the previous completed T1 bar's body low in body mode, entry price - fixed-stop-distance parameter in fixed-distance mode, or entry price - (previous completed T1 bar's high - entry price) / stop-risk-ratio parameter in ratio mode
+Calculation: Short stop level = min(selected short stop, entry price + safety-stop-distance parameter) when the safety stop is enabled, otherwise selected short stop; selected short stop is the previous completed T1 bar's body high in body mode, entry price + fixed-stop-distance parameter in fixed-distance mode, or entry price + (entry price - previous completed T1 bar's low) / stop-risk-ratio parameter in ratio mode
+Long: On the first chart bar of a new T1 bar, when flat, enter at chart-bar open if the close of the previous completed T1 bar > the body high of the T1 bar two bars before the new bar AND the open of the previous completed T1 bar < that body high
+Short: On the first chart bar of a new T1 bar, when flat, enter at chart-bar open if the close of the previous completed T1 bar < the body low of the T1 bar two bars before the new bar AND the open of the previous completed T1 bar > that body low
+Exit: long, the first chart bar of a new T1 bar
+Exit: short, the first chart bar of a new T1 bar
+Exit: long, selected target mode is fixed-distance AND (chart-bar low <= Long stop level OR chart-bar high >= entry price + fixed-target-distance parameter)
+Exit: long, selected target mode is wick AND (chart-bar low <= Long stop level OR chart-bar high >= high of the previous completed T1 bar)
+Exit: long, selected target mode is partial AND chart-bar high >= high of the previous completed T1 bar; close the partial-exit-percentage parameter
+Exit: long, selected target mode is partial AND TP2 mode is ratio AND (chart-bar low <= entry price when breakeven stop is enabled, otherwise Long stop level OR chart-bar high >= high of the previous completed T1 bar + (high of the previous completed T1 bar - entry price) * TP2-risk-ratio parameter); close the remainder
+Exit: long, selected target mode is partial AND TP2 mode is close-of-day AND (chart-bar low <= entry price when breakeven stop is enabled, otherwise Long stop level OR chart-bar high >= close of the previous completed T1 bar); close the remainder
+Exit: short, selected target mode is fixed-distance AND (chart-bar high >= Short stop level OR chart-bar low <= entry price - fixed-target-distance parameter)
+Exit: short, selected target mode is wick AND (chart-bar high >= Short stop level OR chart-bar low <= low of the previous completed T1 bar)
+Exit: short, selected target mode is partial AND chart-bar low <= low of the previous completed T1 bar; close the partial-exit-percentage parameter
+Exit: short, selected target mode is partial AND TP2 mode is ratio AND (chart-bar high >= entry price when breakeven stop is enabled, otherwise Short stop level OR chart-bar low <= low of the previous completed T1 bar - (entry price - low of the previous completed T1 bar) * TP2-risk-ratio parameter); close the remainder
+Exit: short, selected target mode is partial AND TP2 mode is close-of-day AND (chart-bar high >= entry price when breakeven stop is enabled, otherwise Short stop level OR chart-bar low <= close of the previous completed T1 bar); close the remainder

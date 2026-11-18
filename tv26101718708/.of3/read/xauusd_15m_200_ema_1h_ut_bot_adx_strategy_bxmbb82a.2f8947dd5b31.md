@@ -1,0 +1,2 @@
+Long: UT Bot buy signal (ATR multiplier, ATR lookback) AND ADX(DI lookback, ADX smoothing lookback) > ADX threshold AND chart close > EMA(close, EMA lookback, T1 bars, last completed T1 bar sampled on chart bars)
+Exit: long, high >= signal-bar close * (1 + take-profit percentage) OR low <= signal-bar close * (1 - stop-loss percentage)

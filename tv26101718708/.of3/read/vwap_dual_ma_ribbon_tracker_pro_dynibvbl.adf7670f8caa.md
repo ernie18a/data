@@ -1,0 +1,3 @@
+Calculation: ATR cushion = ATR(lookback) × multiplier when enabled, otherwise 0
+Long: MA(close, selected type, shorter lookback) > VWAP + ATR cushion AND MA(close, selected type, shorter lookback) > MA(close, selected type, longer lookback) + ATR cushion AND Elder Force Index(close, volume, smoothing lookback) > 0 when enabled
+Short: MA(close, selected type, shorter lookback) < VWAP − ATR cushion AND MA(close, selected type, shorter lookback) < MA(close, selected type, longer lookback) − ATR cushion AND Elder Force Index(close, volume, smoothing lookback) < 0 when enabled

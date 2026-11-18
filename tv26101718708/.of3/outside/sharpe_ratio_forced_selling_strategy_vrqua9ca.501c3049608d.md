@@ -1,0 +1,2 @@
+Long: Sharpe Ratio of asset returns adjusted by the periodicized 3-month Treasury bill yield, using the Sharpe lookback and return-type parameters, < entry Sharpe threshold AND (no prior long entry OR Sharpe Ratio has exceeded the exit Sharpe threshold since the prior long entry)
+Exit: Long, Sharpe Ratio of asset returns adjusted by the periodicized 3-month Treasury bill yield, using the Sharpe lookback and return-type parameters, > exit Sharpe threshold OR bars since long entry >= maximum holding period parameter

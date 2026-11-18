@@ -1,0 +1,6 @@
+Long: position side is flat AND ADX(DI lookback, ADX smoothing) > entry ADX threshold AND close crosses above highest(high, breakout lookback)[1] AND EWO(shorter SMA lookback, longer SMA lookback) > 0 AND chart close > EMA(close, higher-timeframe EMA lookback, T1, bar still forming) carried to chart bars
+Short: position side is flat AND ADX(DI lookback, ADX smoothing) > entry ADX threshold AND close crosses below lowest(low, breakout lookback)[1] AND EWO(shorter SMA lookback, longer SMA lookback) < 0 AND chart close < EMA(close, higher-timeframe EMA lookback, T1, bar still forming) carried to chart bars
+Long: position side is long AND close < close stored on the most recent long-entry signal bar - recovery distance AND ADX(DI lookback, ADX smoothing) > recovery ADX threshold
+Short: position side is short AND close > close stored on the most recent short-entry signal bar + recovery distance AND ADX(DI lookback, ADX smoothing) > recovery ADX threshold
+Exit: Long, open profit <= -(initial capital × maximum open loss percentage / 100) OR open profit >= cycle profit target
+Exit: Short, open profit <= -(initial capital × maximum open loss percentage / 100) OR open profit >= cycle profit target

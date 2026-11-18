@@ -1,0 +1,4 @@
+Calculation: In session = chart-bar opening time in Asia/Kolkata is within the configured session start and end, inclusive, wrapping midnight if the end precedes the start
+Calculation: Session bias = on the first chart bar of each session, bullish if close > EMA(close, lookback, T1, current T1 bar sampled on chart bars; developing in real time and last completed historically), bearish if close < it, and neutral otherwise; reset outside the session
+Long: In session AND (configured bias mode permits bullish gaps OR automatic bias mode AND session bias is bearish) AND low > high[2] × gap factor
+Short: In session AND (configured bias mode permits bearish gaps OR automatic bias mode AND session bias is bullish) AND high × gap factor < low[2]

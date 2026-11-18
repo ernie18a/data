@@ -1,0 +1,16 @@
+Long: On chart bars, use the T1 value computed on T1 bars from the current T1 bar (still forming in real time; last completed bar historically): close > selected MA(close, lookback).
+Short: On chart bars, use the T1 value computed on T1 bars from the current T1 bar (still forming in real time; last completed bar historically): close <= selected MA(close, lookback).
+Long: On chart bars, use the T2 value computed on T2 bars from the current T2 bar (still forming in real time; last completed bar historically): close > selected MA(close, lookback).
+Short: On chart bars, use the T2 value computed on T2 bars from the current T2 bar (still forming in real time; last completed bar historically): close <= selected MA(close, lookback).
+Long: On chart bars, use the T3 value computed on T3 bars from the current T3 bar (still forming in real time; last completed bar historically): close > selected MA(close, lookback).
+Short: On chart bars, use the T3 value computed on T3 bars from the current T3 bar (still forming in real time; last completed bar historically): close <= selected MA(close, lookback).
+Long: On chart bars, use the T4 value computed on T4 bars from the current T4 bar (still forming in real time; last completed bar historically): close > selected MA(close, lookback).
+Short: On chart bars, use the T4 value computed on T4 bars from the current T4 bar (still forming in real time; last completed bar historically): close <= selected MA(close, lookback).
+Long: On chart bars, use the T5 value computed on T5 bars from the current T5 bar (still forming in real time; last completed bar historically): close > selected MA(close, lookback).
+Short: On chart bars, use the T5 value computed on T5 bars from the current T5 bar (still forming in real time; last completed bar historically): close <= selected MA(close, lookback).
+Long: On chart bars, use the T6 value computed on T6 bars from the current T6 bar (still forming in real time; last completed bar historically): close > selected MA(close, lookback).
+Short: On chart bars, use the T6 value computed on T6 bars from the current T6 bar (still forming in real time; last completed bar historically): close <= selected MA(close, lookback).
+Long: On chart bars, use the T7 value computed on T7 bars from the current T7 bar (still forming in real time; last completed bar historically): close > selected MA(close, lookback).
+Short: On chart bars, use the T7 value computed on T7 bars from the current T7 bar (still forming in real time; last completed bar historically): close <= selected MA(close, lookback).
+Long: On chart bars, use the T8 value computed on T8 bars from the current T8 bar (still forming in real time; last completed bar historically): close > selected MA(close, lookback).
+Short: On chart bars, use the T8 value computed on T8 bars from the current T8 bar (still forming in real time; last completed bar historically): close <= selected MA(close, lookback).

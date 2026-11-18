@@ -1,0 +1,3 @@
+Calculation: RSI Z-score = (RSI(source, RSI lookback) − selected moving average of RSI(source, RSI lookback) over MA lookback) / standard deviation of RSI(source, RSI lookback) over MA lookback
+Long: RSI Z-score crosses above (standard deviation of RSI Z-score over MA lookback × long SD multiplier when dynamic thresholds are enabled; otherwise long threshold)
+Short: RSI Z-score crosses below (−standard deviation of RSI Z-score over MA lookback × short SD multiplier when dynamic thresholds are enabled; otherwise short threshold)

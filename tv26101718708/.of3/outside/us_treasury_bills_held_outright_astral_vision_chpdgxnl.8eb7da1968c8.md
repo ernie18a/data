@@ -1,0 +1,2 @@
+Long: Rate of change of Treasury bills held outright over T1 using lookback parameter > growth threshold parameter
+Short: Rate of change of Treasury bills held outright over T1 using lookback parameter <= growth threshold parameter

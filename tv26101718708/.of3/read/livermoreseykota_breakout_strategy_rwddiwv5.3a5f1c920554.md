@@ -1,0 +1,4 @@
+Long: close > most recent confirmed PivotHigh(high, equal left and right lookbacks) AND close > EMA(close, main lookback) AND EMA(close, shorter trend lookback) > EMA(close, longer trend lookback) AND volume > SMA(volume, lookback)
+Short: close < most recent confirmed PivotLow(low, equal left and right lookbacks) AND close < EMA(close, main lookback) AND EMA(close, shorter trend lookback) < EMA(close, longer trend lookback) AND volume > SMA(volume, lookback)
+Exit: long, low <= entry price - ATR(lookback) × stop multiple OR low <= highest high since entry - ATR(lookback) × trailing multiple
+Exit: short, high >= entry price + ATR(lookback) × stop multiple OR high >= lowest low since entry + ATR(lookback) × trailing multiple

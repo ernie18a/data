@@ -1,0 +1,1 @@
+Long: WaveTrend(hlc3, channel length, average length) crosses above crossing level AND close > SMA(high, cloud length) AND MFI(close, MFI length) > MFI threshold

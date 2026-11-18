@@ -1,0 +1,5 @@
+Calculation: body size = abs(close - open)
+Calculation: upper shadow = high - max(close, open)
+Calculation: lower shadow = min(close, open) - low
+Long: close < SMA(close, trend lookback) AND ((open < close[1] AND close > open[1] AND body size > body size[1]) OR (lower shadow > shadow-to-body ratio threshold * body size AND upper shadow < body size) OR (upper shadow > shadow-to-body ratio threshold * body size AND lower shadow < body size)) AND (volume filter disabled OR volume > SMA(volume, volume average lookback))
+Short: close > SMA(close, trend lookback) AND ((open > close[1] AND close < open[1] AND body size > body size[1]) OR (upper shadow > shadow-to-body ratio threshold * body size AND lower shadow < body size) OR (lower shadow > shadow-to-body ratio threshold * body size AND upper shadow < body size)) AND (volume filter disabled OR volume > SMA(volume, volume average lookback))

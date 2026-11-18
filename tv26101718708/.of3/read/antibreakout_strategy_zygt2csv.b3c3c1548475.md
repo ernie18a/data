@@ -1,0 +1,8 @@
+Calculation: source price = selected price type: open, high, low, close, HL2, (open + close) / 2, (open + high + low) / 3, HLC3, or OHLC4
+Calculation: signal filter passes = filter mode is None OR (filter mode is Volatility AND ATR(minimum ATR lookback) > ATR(maximum ATR lookback)) OR (filter mode is Volume AND HMA(RSI(volume, RSI lookback), HMA lookback) > volume threshold) OR (filter mode is Both AND ATR(minimum ATR lookback) > ATR(maximum ATR lookback) AND HMA(RSI(volume, RSI lookback), HMA lookback) > volume threshold)
+Calculation: breakout signal = if crossover(source price, highest(high[1], breakout lookback)) AND signal filter passes then long, else if crossunder(source price, lowest(low[1], breakout lookback)) AND signal filter passes then short, else prior breakout signal; initially neutral
+Calculation: bar progress = (current evaluation time - previous bar close time) / (current bar open time - previous bar open time)
+Long: breakout signal = long AND breakout signal[1] != long AND bar progress > time threshold
+Short: breakout signal = short AND breakout signal[1] != short AND bar progress > time threshold
+Exit: long, (breakout signal = short AND breakout signal[1] != short AND bar progress <= time threshold) OR (breakout signal = long AND bars since breakout signal changed = holding period)
+Exit: short, (breakout signal = long AND breakout signal[1] != long AND bar progress <= time threshold) OR (breakout signal = short AND breakout signal[1] != short AND bars since breakout signal changed = holding period)

@@ -1,0 +1,3 @@
+Calculation: Momentum-flow score = ((selected price field - selected price field[momentum lookback]) / EMA(high - low, momentum lookback)) × momentum scale + ((EMA(close, flow fast lookback) - EMA(close, flow slow lookback)) / close) × flow scale × flow boost
+Long: On chart bars, EMA(EMA(Momentum-flow score + Momentum-flow score[1], bias smoothing lookback), HTF trend lookback) evaluated on T1 bars using the still-forming T1 bar > 0
+Short: On chart bars, EMA(EMA(Momentum-flow score + Momentum-flow score[1], bias smoothing lookback), HTF trend lookback) evaluated on T1 bars using the still-forming T1 bar <= 0

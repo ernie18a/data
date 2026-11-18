@@ -1,0 +1,4 @@
+Calculation: OpeningRangeHigh = highest(high) on chart bars from 09:30 until the opening-range duration ends, America/New_York time, reset each session
+Calculation: OpeningRangeLow = lowest(low) on chart bars from 09:30 until the opening-range duration ends, America/New_York time, reset each session
+Long: bar time is at or after the opening-range end AND close crosses above OpeningRangeHigh AND close > VWAP(hlc3, session start) AND close > SMA(close, trend lookback) AND SMA(close, trend lookback) > SMA(close, trend lookback)[1] AND volume > SMA(volume, volume lookback) * volume-spike multiplier
+Short: bar time is at or after the opening-range end AND close crosses below OpeningRangeLow AND close < VWAP(hlc3, session start) AND close < SMA(close, trend lookback) AND SMA(close, trend lookback) < SMA(close, trend lookback)[1] AND volume > SMA(volume, volume lookback) * volume-spike multiplier

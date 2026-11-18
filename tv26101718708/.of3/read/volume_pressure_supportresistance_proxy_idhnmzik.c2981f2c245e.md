@@ -1,0 +1,5 @@
+Calculation: Support level = most recent confirmed PivotLow(low, pivot lookback, pivot lookback), or 0 if none is confirmed
+Calculation: Resistance level = most recent confirmed PivotHigh(high, pivot lookback, pivot lookback)
+Calculation: Volume delta proxy = 0 if high = low, otherwise volume * (2 * (close - low) / (high - low) - 1)
+Long: (close crosses above resistance level OR low <= support level * 1.01 OR low crosses below support level) AND volume > SMA(volume, volume lookback) * volume multiplier AND close > low + (high - low) * strong close threshold AND (volume delta filter disabled OR volume delta proxy > 0)
+Short: (close crosses below support level OR high >= resistance level * 0.99 OR high crosses above resistance level) AND volume > SMA(volume, volume lookback) * volume multiplier AND close < low + (high - low) * weak close threshold AND (volume delta filter disabled OR volume delta proxy < 0)

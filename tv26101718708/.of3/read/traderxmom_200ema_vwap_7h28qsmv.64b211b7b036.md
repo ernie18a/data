@@ -1,0 +1,5 @@
+Calculation: Session VWAP = VWAP(hlc3) on chart bars
+Calculation: Shorter-timeframe EMA = EMA(close, shared lookback, shorter anchor timeframe T1, last completed bar, sampled on chart bars)
+Calculation: Longer-timeframe EMA = EMA(close, shared lookback, longer anchor timeframe T2, last completed bar, sampled on chart bars)
+Long: close > Session VWAP AND close > Longer-timeframe EMA AND (low <= Shorter-timeframe EMA AND close > Shorter-timeframe EMA OR low <= Longer-timeframe EMA OR low <= Session VWAP) AND (session filter disabled OR datetime is within the configured New York session)
+Short: close < Session VWAP AND close < Longer-timeframe EMA AND (high >= Shorter-timeframe EMA AND close < Shorter-timeframe EMA OR high >= Longer-timeframe EMA OR high >= Session VWAP) AND (session filter disabled OR datetime is within the configured New York session)

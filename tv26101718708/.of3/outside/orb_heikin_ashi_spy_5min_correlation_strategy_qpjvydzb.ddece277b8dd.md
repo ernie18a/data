@@ -1,0 +1,4 @@
+Long: traded-instrument close > correlation instrument P1's first opening-session-bar high (Heikin Ashi when enabled by P2) during opening session P3 AND during trading session P4 AND Relative Volume(traded instrument, length P5, anchor timeframe T1) > P6 AND no short signal is active
+Short: traded-instrument close < correlation instrument P1's first opening-session-bar low (Heikin Ashi when enabled by P2) during opening session P3 AND during trading session P4 AND Relative Volume(traded instrument, length P5, anchor timeframe T1) > P6 AND no long signal is active
+Exit: long, during ending session P7
+Exit: short, during ending session P7

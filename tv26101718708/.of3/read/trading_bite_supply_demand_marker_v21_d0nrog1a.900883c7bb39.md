@@ -1,0 +1,2 @@
+Long: On chart bars using the currently forming T1 bar, close(T1) < open(T1) AND volume(T1) < volume(T1, last completed bar) AND volume(T1) < volume(T1, two bars ago)
+Short: On chart bars using the currently forming T1 bar, close(T1) > open(T1) AND volume(T1) < volume(T1, last completed bar) AND volume(T1) < volume(T1, two bars ago)

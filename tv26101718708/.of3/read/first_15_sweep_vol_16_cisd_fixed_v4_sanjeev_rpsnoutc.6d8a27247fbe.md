@@ -1,0 +1,5 @@
+Calculation: Opening-range boundaries = maximum high and minimum low of chart bars during the session-opening interval.
+Long: The opening range is formed and the current chart bar is after the session-opening interval AND previous chart-bar close < opening-range low AND current chart-bar close > opening-range low AND (volume filter is disabled OR current volume > SMA(volume, lookback) × volume multiplier).
+Short: The opening range is formed and the current chart bar is after the session-opening interval AND previous chart-bar close > opening-range high AND current chart-bar close < opening-range high AND (volume filter is disabled OR current volume > SMA(volume, lookback) × volume multiplier).
+Exit: long, current low <= entry-bar low OR current high >= entry price + reward-risk multiple × (entry price - entry-bar low).
+Exit: short, current high >= entry-bar high OR current low <= entry price - reward-risk multiple × (entry-bar high - entry price).

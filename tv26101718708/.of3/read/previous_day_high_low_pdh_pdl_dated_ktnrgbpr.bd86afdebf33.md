@@ -1,0 +1,2 @@
+Long: On chart bars, close crosses above high(T1, last completed bar).
+Short: On chart bars, close crosses below low(T1, last completed bar).

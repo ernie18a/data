@@ -1,0 +1,8 @@
+Calculation: trend filter = EMA(close, trend-filter lookback)
+Calculation: smoothed RSI = EMA(RSI(close, RSI lookback), RSI smoothing lookback)
+Calculation: volume average = SMA(volume, volume-average lookback)
+Calculation: MACD line and signal line = MACD(close, fast EMA lookback, slow EMA lookback, RSI smoothing lookback)
+Long: EMA(close, fast EMA lookback) crosses above EMA(close, slow EMA lookback) AND close > trend filter AND smoothed RSI > RSI threshold AND MACD line > signal line AND volume > volume average × volume multiplier AND (RTH-only filter is disabled OR chart bar timestamp is in the Chicago regular-trading-hours entry window)
+Short: EMA(close, fast EMA lookback) crosses below EMA(close, slow EMA lookback) AND close < trend filter AND smoothed RSI < RSI threshold AND MACD line < signal line AND volume > volume average × volume multiplier AND (RTH-only filter is disabled OR chart bar timestamp is in the Chicago regular-trading-hours entry window)
+Exit: long, (take-profit is enabled AND high >= entry price + profit-target distance) OR (RTH-only filter is enabled AND chart bar timestamp is in the Chicago end-of-day flatten window)
+Exit: short, (take-profit is enabled AND low <= entry price - profit-target distance) OR (RTH-only filter is enabled AND chart bar timestamp is in the Chicago end-of-day flatten window)

@@ -1,0 +1,4 @@
+Long: (lowest(close, signal-bar parameter) > high of last completed T1 bar sampled onto chart bars AND close[signal-bar parameter] <= high of last completed T1 bar sampled onto chart bars) OR (lowest(close, signal-bar parameter) > low of last completed T1 bar sampled onto chart bars AND close[signal-bar parameter] <= low of last completed T1 bar sampled onto chart bars)
+Short: (highest(close, signal-bar parameter) < high of last completed T1 bar sampled onto chart bars AND close[signal-bar parameter] >= high of last completed T1 bar sampled onto chart bars) OR (highest(close, signal-bar parameter) < low of last completed T1 bar sampled onto chart bars AND close[signal-bar parameter] >= low of last completed T1 bar sampled onto chart bars)
+Exit: long, high >= entry price + profit-distance parameter OR low <= entry price - loss-distance parameter
+Exit: short, low <= entry price - profit-distance parameter OR high >= entry price + loss-distance parameter

@@ -1,0 +1,3 @@
+Calculation: RVD = if SUM(volume, rolling lookback) = 0 then 0 else 100 * EMA(SUM(delta * (1 + ABS(price change percentage)), rolling lookback), smoothing lookback) / SUM(volume, rolling lookback), where delta = 0 if high = low else volume * ((close - low) - (high - close)) / (high - low), and price change percentage = 0 if close[momentum lookback] = 0 else 100 * (close - close[momentum lookback]) / close[momentum lookback]
+Long: RVD crosses above 0
+Short: RVD crosses below 0

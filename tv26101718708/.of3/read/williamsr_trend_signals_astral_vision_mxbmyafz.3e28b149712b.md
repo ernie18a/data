@@ -1,0 +1,2 @@
+Long: SMA(Williams %R(close, lookback), smoothing lookback) crosses above bull threshold on chart bars using values calculated on T1 bars, including the bar still forming
+Short: SMA(Williams %R(close, lookback), smoothing lookback) crosses below bear threshold on chart bars using values calculated on T1 bars, including the bar still forming

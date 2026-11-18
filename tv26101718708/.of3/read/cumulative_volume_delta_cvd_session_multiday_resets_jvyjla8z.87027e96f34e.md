@@ -1,0 +1,2 @@
+Long: CVD(T1 volume signed by T1 close versus T1 open, reset at the selected interval, aggregated from T1 bars on chart bars including the bar still forming) >= 0
+Short: CVD(T1 volume signed by T1 close versus T1 open, reset at the selected interval, aggregated from T1 bars on chart bars including the bar still forming) < 0

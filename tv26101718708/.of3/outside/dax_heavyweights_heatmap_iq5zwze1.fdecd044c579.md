@@ -1,0 +1,2 @@
+Long: at least P1 of SAP, Siemens, Allianz, Deutsche Telekom, Airbus, Munich Re, and Mercedes-Benz have a positive close change on T1
+Short: at least P1 of SAP, Siemens, Allianz, Deutsche Telekom, Airbus, Munich Re, and Mercedes-Benz have a negative close change on T1

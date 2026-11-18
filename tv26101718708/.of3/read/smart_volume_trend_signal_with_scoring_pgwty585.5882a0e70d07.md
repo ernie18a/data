@@ -1,0 +1,2 @@
+Long: volume > SMA(volume, volume lookback) * volume-spike multiplier AND close > Highest(high, breakout lookback)[1] AND close > EMA(close, trend lookback) AND RSI(close, momentum lookback) > RSI threshold AND (no prior long signal OR bars since prior long signal > signal cooldown)
+Exit: long, (entry price - low) / entry price * 100 >= stop-loss percentage OR bars since entry >= maximum holding period

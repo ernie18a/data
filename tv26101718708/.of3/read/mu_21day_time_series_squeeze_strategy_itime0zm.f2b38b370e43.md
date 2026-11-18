@@ -1,0 +1,8 @@
+Calculation: bullish-cross age = 0 when EMA(close, fast lookback) crosses above EMA(close, slow lookback); otherwise prior age + 1 while EMA(close, fast lookback) > EMA(close, slow lookback), and 0 otherwise; fast lookback is shorter than slow lookback.
+Calculation: consecutive gravity-bar count = prior count + 1 when volume > SMA(volume, volume lookback) AND high - low < ATR(ATR lookback)[1] * range-to-ATR multiplier; otherwise 0.
+Calculation: Bollinger/Keltner squeeze = SMA(close, squeeze lookback) + BB multiplier * stdev(close, squeeze lookback) < SMA(close, squeeze lookback) + KC multiplier * SMA(true range, squeeze lookback) AND SMA(close, squeeze lookback) - BB multiplier * stdev(close, squeeze lookback) > SMA(close, squeeze lookback) - KC multiplier * SMA(true range, squeeze lookback).
+Calculation: consecutive squeeze-bar count = prior count + 1 when Bollinger/Keltner squeeze is true; otherwise 0.
+Long: flat AND ((bullish-cross age >= fresh-entry minimum age AND bullish-cross age <= fresh-entry maximum age AND volume > SMA(volume, volume lookback) AND close > high[1]) OR (bullish-cross age >= sustained-entry minimum age AND low <= EMA(close, slow lookback) AND close > EMA(close, slow lookback)) OR (consecutive gravity-bar count >= gravity minimum duration AND close > highest(high, gravity breakout lookback)[1]) OR (Bollinger/Keltner squeeze is false AND Bollinger/Keltner squeeze[1] is true AND consecutive squeeze-bar count[1] >= minimum squeeze duration AND close > upper Bollinger Band(close, squeeze lookback, BB multiplier))).
+Short: EMA(close, fast lookback) crosses below EMA(close, slow lookback) AND close < low[1].
+Exit: long, close < EMA(close, slow lookback).
+Exit: short, close > highest(high, short-exit lookback).

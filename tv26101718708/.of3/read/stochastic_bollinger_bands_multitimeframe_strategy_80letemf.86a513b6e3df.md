@@ -1,0 +1,4 @@
+Calculation: %K = SMA(Stochastic(close, high, low, stochastic lookback), %K smoothing) on T1 bars
+Calculation: %D = SMA(%K, %D smoothing) on T1 bars
+Long: On chart bars, using %K and %D from the still-forming T1 bar, %K crosses above %D AND %K < oversold threshold AND %D < oversold threshold AND chart close crosses above lower Bollinger Band(close, lookback, deviation multiplier) from the still-forming T2 bar
+Exit: long, On chart bars, using %K and %D from the still-forming T1 bar, (%K crosses below %D AND %K > overbought threshold AND %D > overbought threshold) OR chart close >= upper Bollinger Band(close, lookback, deviation multiplier) from the still-forming T2 bar

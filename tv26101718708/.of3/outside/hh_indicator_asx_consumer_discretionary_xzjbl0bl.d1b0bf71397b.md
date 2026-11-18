@@ -1,0 +1,1 @@
+Long: a selected stock’s close crosses above its latest Pivot High, where Pivot High is a candle whose maximum of open and close is greater than or equal to the maximum of open and close for each of the P1 preceding and P1 following candles.

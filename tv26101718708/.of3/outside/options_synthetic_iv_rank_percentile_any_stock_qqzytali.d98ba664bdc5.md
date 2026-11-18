@@ -1,0 +1,4 @@
+Calculation: Annualized historical volatility = standard deviation of log close-to-previous-close returns over volatility lookback × square root of annualization factor × percentage scale
+Calculation: Synthetic volatility rank = (annualized historical volatility − rolling lowest annualized historical volatility over rank lookback) ÷ max(rolling highest annualized historical volatility over rank lookback − rolling lowest annualized historical volatility over rank lookback, denominator floor) × percentage scale
+Option: buy call or put, synthetic volatility rank < low-rank threshold
+Option: sell call or put, synthetic volatility rank > high-rank threshold

@@ -1,0 +1,5 @@
+Calculation: FVG size score = 100 × diff / nearest-rank percentile(diff, percentile lookback, percentile rank), or 0 when the percentile is 0; diff = (close[1] > open[1] ? (low - high[2]) / low : (low[2] - high) / high) × 100
+Long: ((strict-gap mode AND high[2] < low AND high[2] < high[1] AND low[2] < low) OR (minimum-gap mode AND low > high[2])) AND (size filter disabled OR FVG size score > size threshold)
+Short: ((strict-gap mode AND low[2] > high AND low[2] > low[1] AND high[2] > high) OR (minimum-gap mode AND high < low[2])) AND (size filter disabled OR FVG size score > size threshold)
+Short: For an active bullish gap, after full mitigation, close < gap bottom on the inversion-confirmation-th qualifying bar, or immediately if the inversion-confirmation parameter is zero
+Long: For an active bearish gap, after full mitigation, close > gap top on the inversion-confirmation-th qualifying bar, or immediately if the inversion-confirmation parameter is zero

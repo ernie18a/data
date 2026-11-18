@@ -1,0 +1,3 @@
+Calculation: Long-lookback MA = selected SMA, EMA, WMA, HMA, VWMA, SMMA, or DEMA of close, or of the configured source on the current Heikin-Ashi bar at the chart timeframe when Heikin-Ashi mode is enabled, using the long lookback
+Long: time >= configured start date at 00:00 AND time <= configured end date at 00:00 AND close > Long-lookback MA AND selected MA of the same source using the short lookback > selected MA of the same source using the middle lookback
+Short: time >= configured start date at 00:00 AND time <= configured end date at 00:00 AND close < Long-lookback MA AND selected MA of the same source using the short lookback < selected MA of the same source using the middle lookback

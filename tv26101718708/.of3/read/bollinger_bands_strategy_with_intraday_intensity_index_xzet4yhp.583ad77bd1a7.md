@@ -1,0 +1,6 @@
+Calculation: Bollinger middle band = MA(source, Bollinger lookback, average type)
+Calculation: Intraday Intensity Index = SUM(((2*close - high - low)*volume) / (high != low ? high - low : 1), III lookback)
+Long: close[1] < lower Bollinger Band(source, Bollinger lookback, deviation multiplier, average type)[1] AND close > lower Bollinger Band(source, Bollinger lookback, deviation multiplier, average type) AND (III filter disabled OR Intraday Intensity Index > 0)
+Short: close[1] > upper Bollinger Band(source, Bollinger lookback, deviation multiplier, average type)[1] AND close < upper Bollinger Band(source, Bollinger lookback, deviation multiplier, average type) AND (III filter disabled OR Intraday Intensity Index < 0)
+Exit: long, close > Bollinger middle band OR (early exit enabled AND close > entry price) OR barssince(Long condition) > time-stop lookback
+Exit: short, close < Bollinger middle band OR (early exit enabled AND close < entry price) OR barssince(Short condition) > time-stop lookback

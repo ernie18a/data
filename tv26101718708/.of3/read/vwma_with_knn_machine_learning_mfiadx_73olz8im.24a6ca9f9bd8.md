@@ -1,0 +1,3 @@
+Calculation: kNN score(adx, mfi, neighbor count) = sum of labels for stored (ADX, MFI) points within the min(neighbor count, stored point count)th-smallest Euclidean distance from (adx, mfi), including ties
+Long: VWMA(open, shorter lookback) crosses above VWMA(open, longer lookback) AND (kNN filter disabled OR kNN score(ADX(filter lookback, ADX smoothing), MFI(ohlc4, filter lookback), neighbor count) >= minimum difference)
+Short: VWMA(open, shorter lookback) crosses below VWMA(open, longer lookback) AND (kNN filter disabled OR kNN score(ADX(filter lookback, ADX smoothing), MFI(ohlc4, filter lookback), neighbor count) <= -minimum difference)

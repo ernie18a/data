@@ -1,0 +1,4 @@
+Long: close of the still-forming T2 bar, sampled on chart bars > high of the last completed T1 bar, sampled on chart bars AND close of the still-forming T2 bar - stop buffer > 0 AND close of the still-forming T2 bar + stop buffer * risk-reward ratio > 0
+Short: close of the still-forming T2 bar, sampled on chart bars < low of the last completed T1 bar, sampled on chart bars AND close of the still-forming T2 bar + stop buffer > 0 AND close of the still-forming T2 bar - stop buffer * risk-reward ratio > 0
+Exit: long, chart-bar low <= entry price - stop buffer OR chart-bar high >= entry price + stop buffer * risk-reward ratio
+Exit: short, chart-bar high >= entry price + stop buffer OR chart-bar low <= entry price - stop buffer * risk-reward ratio

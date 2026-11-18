@@ -1,0 +1,2 @@
+Long: A price bin has nonzero total volume AND its accumulated long-side volume is greater than or equal to its accumulated short-side volume.
+Short: A price bin has nonzero total volume AND (its accumulated long-side volume is less than its accumulated short-side volume OR its accumulated long-side volume equals its accumulated short-side volume AND it is not the point-of-control bin).

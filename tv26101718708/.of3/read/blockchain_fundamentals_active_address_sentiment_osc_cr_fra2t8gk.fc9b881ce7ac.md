@@ -1,0 +1,5 @@
+Calculation: Price change = optionally WMA((price close of current T1 bar − price close N T1 bars ago) / price close N T1 bars ago, smoothing lookback) when smoothing is enabled; otherwise use the unsmoothed percentage change. Calculate on chart bars using the still-forming T1 close in real time.
+Calculation: Address change = (address close of current T1 bar − address close N T1 bars ago) / address close N T1 bars ago, calculated on chart bars using the still-forming T1 close in real time. Use the same N as for price change.
+Calculation: Upper/lower bands = selected MA(address change ± band multiplier × standard deviation(address change, volatility lookback), band lookback), calculated on chart bars.
+Long: Price change < lower band OR Price change < lower price-change threshold
+Short: Price change > upper band OR Price change > upper price-change threshold

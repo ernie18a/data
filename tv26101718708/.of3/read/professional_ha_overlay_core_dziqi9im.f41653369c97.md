@@ -1,0 +1,10 @@
+Calculation: Smoothed stochastic %K = SMA(Stochastic(close, high, low, stochastic lookback), stochastic smoothing lookback)
+Calculation: Smoothed stochastic %D = SMA(Smoothed stochastic %K, same stochastic smoothing lookback)
+Calculation: HA bullish alignment = EMA(Heikin-Ashi close from the still-forming shorter timeframe T1, shorter HA smoothing lookback, evaluated on chart bars) > EMA(Heikin-Ashi open from the still-forming shorter timeframe T1, same lookback, evaluated on chart bars) AND EMA(Heikin-Ashi close from the still-forming longer timeframe T2, longer HA smoothing lookback, evaluated on chart bars) > EMA(Heikin-Ashi open from the still-forming longer timeframe T2, same lookback, evaluated on chart bars)
+Calculation: HA bearish alignment = EMA(Heikin-Ashi close from the still-forming shorter timeframe T1, shorter HA smoothing lookback, evaluated on chart bars) <= EMA(Heikin-Ashi open from the still-forming shorter timeframe T1, same lookback, evaluated on chart bars) AND EMA(Heikin-Ashi close from the still-forming longer timeframe T2, longer HA smoothing lookback, evaluated on chart bars) <= EMA(Heikin-Ashi open from the still-forming longer timeframe T2, same lookback, evaluated on chart bars)
+Long: Smoothed stochastic %K crosses above Smoothed stochastic %D AND Smoothed stochastic %K < oversold threshold AND HA bullish alignment
+Long: Smoothed stochastic %K crosses above Smoothed stochastic %D AND Smoothed stochastic %K < oversold threshold AND HA bullish alignment AND close > EMA(close, shorter EMA crossover lookback)
+Long: EMA(close, shorter EMA crossover lookback) crosses above EMA(close, longer EMA crossover lookback)
+Short: Smoothed stochastic %K crosses below Smoothed stochastic %D AND Smoothed stochastic %K > overbought threshold AND HA bearish alignment
+Short: Smoothed stochastic %K crosses below Smoothed stochastic %D AND Smoothed stochastic %K > overbought threshold AND HA bearish alignment AND close < EMA(close, shorter EMA crossover lookback)
+Short: EMA(close, shorter EMA crossover lookback) crosses below EMA(close, longer EMA crossover lookback)

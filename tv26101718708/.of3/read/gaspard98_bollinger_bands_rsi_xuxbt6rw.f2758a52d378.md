@@ -1,0 +1,2 @@
+Long: close > selected MA(source, Bollinger lookback) OR RSI(source, RSI lookback) <= oversold threshold
+Short: close <= selected MA(source, Bollinger lookback) OR RSI(source, RSI lookback) >= overbought threshold

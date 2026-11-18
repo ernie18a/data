@@ -1,0 +1,3 @@
+Long: EMA(close, shortest lookback) - EMA(close, middle lookback) >= gap threshold AND EMA(close, middle lookback) > EMA(close, longest lookback) AND ((low <= EMA(close, shortest lookback) AND low[1] > EMA(close, shortest lookback)[1]) OR (low <= EMA(close, middle lookback) AND low[1] > EMA(close, middle lookback)[1]))
+Short: EMA(close, middle lookback) - EMA(close, shortest lookback) >= gap threshold AND EMA(close, middle lookback) < EMA(close, longest lookback) AND ((high >= EMA(close, shortest lookback) AND high[1] < EMA(close, shortest lookback)[1]) OR (high >= EMA(close, middle lookback) AND high[1] < EMA(close, middle lookback)[1]))
+Exit: long or short, high >= entry price + exit offset OR low <= entry price - exit offset

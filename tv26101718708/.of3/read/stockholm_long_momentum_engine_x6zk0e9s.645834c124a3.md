@@ -1,0 +1,3 @@
+Calculation: bars since entry = current bar index − entry bar index
+Long: position side = flat AND close > SMA(close, trend lookback) AND close > VWAP AND EMA(close, shorter EMA lookback) > EMA(close, longer EMA lookback) AND RSI(close, RSI lookback) > bullish RSI threshold AND volume > SMA(volume, relative volume lookback) × relative volume multiplier AND close > highest(high[1], breakout lookback) AND close > open AND close > high[1]
+Exit: long, bars since entry ≥ minimum holding bars AND close < VWAP AND close < SMA(close, trend lookback) AND EMA(close, shorter EMA lookback) < EMA(close, longer EMA lookback) AND close < low[1] AND close[1] < low[2] AND RSI(close, RSI lookback) < bearish RSI threshold

@@ -1,0 +1,1 @@
+Long: close > VWAP AND VWAP > VWAP[1]

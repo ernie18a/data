@@ -1,0 +1,2 @@
+Long: On chart bars taking values from T1, cRSI(close, dominant cycle length) crosses above its moving average with a separate lookback; use T1's last completed bar when wait-for-close is on, otherwise its forming bar.
+Short: On chart bars taking values from T1, cRSI(close, dominant cycle length) crosses below its moving average with a separate lookback; use T1's last completed bar when wait-for-close is on, otherwise its forming bar.

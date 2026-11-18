@@ -1,0 +1,2 @@
+Long: New York date = P1 day of the current month, shifted to Monday if it falls on a weekend AND VIX close on T1 < P2
+Exit: long, elapsed time since entry >= P3 days OR low <= entry price × (1 − P4/100) OR high >= entry price × (1 + P5/100)

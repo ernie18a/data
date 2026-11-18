@@ -1,0 +1,6 @@
+Calculation: Latest pivot = the value and type of the most recently confirmed PivotHigh(high, P, P) or PivotLow(low, P, P) on chart bars; if both confirm together, use PivotLow
+Calculation: HTF close = T1 close sampled on chart bars (last completed T1 bar historically, still-forming T1 bar in real time); [1] is the prior chart bar's sample
+Long: long side enabled AND Latest pivot exists AND crosses above(close, Latest pivot.value) AND Latest pivot.type = low AND HTF close > HTF close[1]
+Short: short side enabled AND Latest pivot exists AND crosses below(close, Latest pivot.value) AND Latest pivot.type = high AND HTF close < HTF close[1]
+Exit: long, low <= entry-signal-bar close * (1 - stop-loss percentage) OR high >= entry-signal-bar close * (1 + take-profit percentage) OR crosses below(close, Latest pivot.value)
+Exit: short, high >= entry-signal-bar close * (1 + stop-loss percentage) OR low <= entry-signal-bar close * (1 - take-profit percentage) OR crosses above(close, Latest pivot.value)

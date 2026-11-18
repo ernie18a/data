@@ -1,0 +1,4 @@
+Calculation: NYSE breadth line = cumulative sum of sign((NYSE advances − NYSE declines) / (NYSE unchanged issues + denominator offset parameter)) × square root of the absolute value of that ratio
+Calculation: Zahorchak Measure = EMA of the weighted mean of persistent comparison scores for NYSE Composite close versus its short, medium, and long SMAs; short versus medium SMA; medium versus long SMA; short versus long SMA; and NYSE breadth line versus its SMA. Each comparison has its own weight. A score becomes positive when the first measure is greater, negative when it is lower, and otherwise retains its previous value, initially neutral. Use separate short, medium, and long SMA lengths, a shared medium and breadth SMA length, and an EMA smoothing length. Calculate at the selected timeframe, which is the chart timeframe or T1.
+Long: Zahorchak Measure > 0
+Short: Zahorchak Measure < 0

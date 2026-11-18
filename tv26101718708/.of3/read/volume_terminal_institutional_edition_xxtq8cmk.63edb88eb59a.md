@@ -1,0 +1,2 @@
+Long: close > EMA(close, trend lookback) OR ((volume > 0 OR SMA(volume, volume lookback) = 0) AND high > low AND close > (high + low) / 2
+Short: close < EMA(close, trend lookback) OR ((volume > 0 OR SMA(volume, volume lookback) = 0) AND (high = low OR (high > low AND close < (high + low) / 2)))

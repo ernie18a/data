@@ -1,0 +1,11 @@
+Calculation: Reversal signal state = long when close > close[1] > ... > close[consecutive-close lookback] AND SMA(Stochastic(close, high, low, reversal stochastic lookback), K-smoothing lookback) < SMA(SMA(Stochastic(close, high, low, reversal stochastic lookback), K-smoothing lookback), D-smoothing lookback) AND SMA(Stochastic(close, high, low, reversal stochastic lookback), K-smoothing lookback) > stochastic level; short when close < close[1] < ... < close[consecutive-close lookback] AND SMA(Stochastic(close, high, low, reversal stochastic lookback), K-smoothing lookback) > SMA(SMA(Stochastic(close, high, low, reversal stochastic lookback), K-smoothing lookback), D-smoothing lookback) AND SMA(Stochastic(close, high, low, reversal stochastic lookback), K-smoothing lookback) < stochastic level; otherwise the previous state, initially neutral
+Calculation: Finite Volume Element = 100 * SUM(volume * IF(MF > cutoff * close, 1, IF(MF < -cutoff * close, -1, 0)), samples lookback) / SUM(volume, samples lookback), where MF = close - HL2 + HLC3 - HLC3[1] and cutoff = intrabar coefficient * STDEV(SMA(log(high) - log(low), samples lookback), samples lookback) + interbar coefficient * STDEV(SMA(log(HLC3) - log(HLC3[1]), samples lookback), samples lookback)
+Calculation: Finite volume signal state = long when Finite Volume Element > EMA(Finite Volume Element, finite-volume EMA lookback); short when Finite Volume Element < EMA(Finite Volume Element, finite-volume EMA lookback); otherwise the previous state, initially neutral
+Long: close(T1, last completed bar) > close(T1, prior bar) > ... > close(T1, consecutive-close lookback bars ago) AND Slow Stochastic(close, high, low, description stochastic lookback) on T1 bars, using the last completed bar < stochastic level
+Short: close(T1, last completed bar) < close(T1, prior bar) < ... < close(T1, consecutive-close lookback bars ago) AND Fast Stochastic(close, high, low, description stochastic lookback) on T1 bars, using the last completed bar > stochastic level
+Long: Reversal signal state = long
+Short: Reversal signal state = short
+Long: Finite volume signal state = long
+Short: Finite volume signal state = short
+Long: Reversal signal state = long AND Finite volume signal state = long
+Short: Reversal signal state = short AND Finite volume signal state = short

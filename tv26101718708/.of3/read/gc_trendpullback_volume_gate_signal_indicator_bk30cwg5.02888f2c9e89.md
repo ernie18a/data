@@ -1,0 +1,4 @@
+Long: position is flat or short AND EMA(close, shorter lookback) on T1's last completed bar, taken onto chart bars, > EMA(close, longer lookback) on T1's last completed bar, taken onto chart bars, AND RSI(close, lookback) crosses above threshold AND (volume gate disabled OR volume >= SMA(volume, lookback))
+Short: position is flat or long AND EMA(close, shorter lookback) on T1's last completed bar, taken onto chart bars, < EMA(close, longer lookback) on T1's last completed bar, taken onto chart bars, AND RSI(close, lookback) crosses below threshold AND (volume gate disabled OR volume >= SMA(volume, lookback))
+Exit: long, close <= entry price - stop multiplier * ATR(lookback) at entry OR close >= entry price + stop multiplier * ATR(lookback) at entry * reward-to-risk parameter
+Exit: short, close >= entry price + stop multiplier * ATR(lookback) at entry OR close <= entry price - stop multiplier * ATR(lookback) at entry * reward-to-risk parameter

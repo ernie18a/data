@@ -1,0 +1,2 @@
+Long: Supertrend direction(factor, ATR lookback) changed from downtrend to uptrend on any of the previous confirmation-window bars AND it did not change from downtrend to uptrend on the current bar AND close >= open AND volume >= SMA(volume, volume lookback) * volume multiplier
+Short: Supertrend direction(factor, ATR lookback) changed from uptrend to downtrend on any of the previous confirmation-window bars AND it did not change from uptrend to downtrend on the current bar AND close < open AND volume >= SMA(volume, volume lookback) * volume multiplier

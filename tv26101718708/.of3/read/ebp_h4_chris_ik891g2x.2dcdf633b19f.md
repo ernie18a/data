@@ -1,0 +1,2 @@
+Long: chart-bar datetime is within Session1 or Session2 or Session3 or Session4 in UTC+2 AND low < low[1] AND close > max(open[1], close[1])
+Short: chart-bar datetime is within Session1 or Session2 or Session3 or Session4 in UTC+2 AND high > high[1] AND close < min(open[1], close[1])

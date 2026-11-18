@@ -1,0 +1,1 @@
+Long: a scanned ASX stock’s close crosses above its latest confirmed Pivot High of max(open, close), using P1 bars on each side and allowing equal highs, and that pivot has not triggered before

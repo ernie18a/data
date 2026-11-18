@@ -1,0 +1,10 @@
+Calculation: latest pivot high = most recent non-na Pivot High(high, swing-lookback parameter, swing-lookback parameter)
+Calculation: latest pivot low = most recent non-na Pivot Low(low, swing-lookback parameter, swing-lookback parameter)
+Long: On a chart bar, the low of the T1 bar still forming is below the low of the last completed T1 bar
+Short: On a chart bar, the high of the T1 bar still forming is above the high of the last completed T1 bar
+Long: On a chart bar in the same T1 bar as a low sweep, no entry has occurred on the current date, the position is flat, close > latest pivot high, and close[1] <= latest pivot high
+Short: On a chart bar in the same T1 bar as a high sweep, the low of the forming T1 bar is not below the last completed T1 low, no entry has occurred on the current date, the position is flat, close < latest pivot low, and close[1] >= latest pivot low
+Long: On a chart bar in the same T1 bar as a low sweep, no entry has occurred on the current date, the position is flat, close > latest pivot high, close[1] <= latest pivot high, and close > the low of the forming T1 bar
+Short: On a chart bar in the same T1 bar as a high sweep, the low of the forming T1 bar is not below the last completed T1 low, no entry has occurred on the current date, the position is flat, close < latest pivot low, close[1] >= latest pivot low, and close < the high of the forming T1 bar
+Exit: long, chart-bar low <= the low of the T1 bar still forming at entry signal OR chart-bar high >= signal-bar close + (signal-bar close - the low of the T1 bar still forming at entry signal) * reward/risk parameter
+Exit: short, chart-bar high >= the high of the T1 bar still forming at entry signal OR chart-bar low <= signal-bar close - (the high of the T1 bar still forming at entry signal - signal-bar close) * reward/risk parameter

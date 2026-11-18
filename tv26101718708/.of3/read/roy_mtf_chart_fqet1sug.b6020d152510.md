@@ -1,0 +1,8 @@
+Calculation: Bullish(T) = close(T, still-forming bar sampled on chart bars) > EMA(close, shorter EMA lookback, T, still-forming bar) > EMA(close, longer EMA lookback, T, still-forming bar) AND clamp(strength midpoint + strength multiplier * (RSI(close, RSI lookback, T, still-forming bar) - strength midpoint), strength floor, strength ceiling) >= minimum strength
+Calculation: Bearish(T) = close(T, still-forming bar sampled on chart bars) < EMA(close, shorter EMA lookback, T, still-forming bar) < EMA(close, longer EMA lookback, T, still-forming bar) AND clamp(strength midpoint + strength multiplier * (strength midpoint - RSI(close, RSI lookback, T, still-forming bar)), strength floor, strength ceiling) >= minimum strength
+Calculation: Bullish timeframe count = number of T1–T6 for which Bullish(T) is true
+Calculation: Bearish timeframe count = number of T1–T6 for which Bearish(T) is true
+Calculation: Sideways timeframe count = 6 - Bullish timeframe count - Bearish timeframe count
+Calculation: Alignment percentage = 100 * max(Bullish timeframe count, Bearish timeframe count, Sideways timeframe count) / 6
+Long: Bullish(T1) OR Bullish(T2) OR Bullish(T3) OR Bullish(T4) OR Bullish(T5) OR Bullish(T6) OR (Bullish timeframe count > Bearish timeframe count AND Bullish timeframe count > Sideways timeframe count AND Alignment percentage >= minimum alignment percentage)
+Short: Bearish(T1) OR Bearish(T2) OR Bearish(T3) OR Bearish(T4) OR Bearish(T5) OR Bearish(T6) OR (Bearish timeframe count > Bullish timeframe count AND Bearish timeframe count > Sideways timeframe count AND Alignment percentage >= minimum alignment percentage)

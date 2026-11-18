@@ -1,0 +1,4 @@
+Calculation: Oversold episode volume = sum(volume) from the first bar of the current consecutive episode where RSI(source, lookback) <= oversold level through the current bar; reset at each new episode.
+Calculation: Overbought episode volume = sum(volume) from the first bar of the current consecutive episode where RSI(source, lookback) >= overbought level through the current bar; reset at each new episode.
+Long: RSI(source, lookback) <= oversold level AND oversold episode volume >= SMA(volume, lookback) * factor, on the first bar in the episode where the volume comparison is true.
+Short: RSI(source, lookback) >= overbought level AND overbought episode volume >= SMA(volume, lookback) * factor, on the first bar in the episode where the volume comparison is true.

@@ -1,0 +1,6 @@
+Calculation: opening-range high = maximum high of the first N chart bars of each calendar date, held after the Nth bar
+Calculation: opening-range low = minimum low of the first N chart bars of each calendar date, held after the Nth bar
+Long: close crosses above opening-range high AND at least N chart bars of the date have elapsed AND position is flat AND no long entry has occurred today or the most recent entry today was short AND chart-bar time is before both the entry cutoff hour and the forced exit time
+Short: close crosses below opening-range low AND at least N chart bars of the date have elapsed AND position is flat AND no short entry has occurred today or the most recent entry today was long AND chart-bar time is before both the entry cutoff hour and the forced exit time
+Exit: long, high >= entry price * (1 + take-profit percentage) OR low <= entry price * (1 - stop-loss percentage) OR chart-bar time >= forced exit time
+Exit: short, low <= entry price * (1 - take-profit percentage) OR high >= entry price * (1 + stop-loss percentage) OR chart-bar time >= forced exit time

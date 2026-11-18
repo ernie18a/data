@@ -1,0 +1,2 @@
+Long: close < close[reference lookback] AND close < open AND volume > SMA(volume, volume lookback) * volume multiplier
+Short: close > close[reference lookback] AND close > open AND volume > SMA(volume, volume lookback) * volume multiplier

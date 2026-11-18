@@ -1,0 +1,1 @@
+Long: (close[n] < open[n] for each n = 1 through red-streak lookback AND close > open AND close > high[1] AND volume > volume[1]) OR (close[n] < open[n] for each n = 2 through red-streak lookback + 1 AND close[1] > open[1] AND close > open AND volume[1] + volume > volume[2] + volume[3] AND (close[1] <= high[2] OR volume[1] <= volume[2]))

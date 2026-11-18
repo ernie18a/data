@@ -1,0 +1,5 @@
+Calculation: longer average = SMA(close, longer lookback)
+Calculation: middle average = SMA(close, middle lookback)
+Calculation: normalized close = close / EMA(close, shorter lookback)
+Long: position side is flat AND ((high / close < pattern ratio threshold AND open / low < pattern ratio threshold AND high / close[1] > prior-close ratio threshold AND close > longer average) OR ((close / open > momentum ratio threshold OR close / close[1] > momentum ratio threshold) AND volume crosses above highest(volume, longest lookback)[1] AND normalized close crosses above SMA(normalized close, shortest lookback) AND close > longer average AND middle average > middle average[slope lookback]) )
+Exit: long, close < EMA(close, longer lookback) OR low <= entry price * stop multiplier OR high >= entry price * take-profit multiplier

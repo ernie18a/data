@@ -1,0 +1,7 @@
+Calculation: Structure boundaries = initialize the upper boundary to highest(high, structure lookback parameter) and the lower boundary to lowest(low, structure lookback parameter); reset both to those rolling values whenever close > the stored upper boundary or close < the stored lower boundary.
+Calculation: Long limit price in Fibonacci mode = signal-bar high - (signal-bar high - tracked low) × Fibonacci retracement parameter.
+Calculation: Long limit price in volume-profile mode = low of the first bar found scanning backward from the signal bar through the sweep bar, up to the profile lookback cap parameter, where cumulative volume reaches the profile-volume-fraction parameter × total volume of the scanned bars; use signal-bar high if no bar reaches the threshold.
+Calculation: Take-profit price = entry price + abs(entry price - tracked low) × reward-to-risk parameter.
+Calculation: Active long stop = tracked low until break-even is enabled and, while in a long position, high reaches entry price + (take-profit price - entry price) × break-even trigger parameter; thereafter it is entry price.
+Long: On the first bar with low < the stored lower boundary while no setup is pending, save both boundaries; after close > the saved lower boundary, track the lowest low from recovery onward; when close > the saved upper boundary while the setup is active and no order has been issued, submit one long limit order if a tracked low exists and abs(long limit price - tracked low) > 0.
+Exit: Long, low <= active long stop OR high >= take-profit price.

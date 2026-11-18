@@ -1,0 +1,4 @@
+Calculation: Price-bin size = max(tick-size parameter, round to the nearest tick of ATR(chart timeframe, ATR lookback parameter) / rows-per-candle parameter)
+Calculation: Buy and sell volume per bin = on each chart bar, group available T1 bars within it by bin center floor(close / price-bin size) * price-bin size + price-bin size / 2; add each bar’s volume to buy when close > open, to sell when close < open, and split it equally when close = open, including a still-forming T1 bar when available
+Long: for any price bin, buy volume > sell volume AND buy volume + sell volume >= minimum-volume parameter
+Short: for any price bin, sell volume > buy volume AND buy volume + sell volume >= minimum-volume parameter

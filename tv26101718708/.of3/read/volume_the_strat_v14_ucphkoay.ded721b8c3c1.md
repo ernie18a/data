@@ -1,0 +1,3 @@
+Calculation: The Strat bar type(T) = 2U when high(T, still-forming bar) > high(T, last completed bar) AND low(T, still-forming bar) >= low(T, last completed bar); 2D when high(T, still-forming bar) <= high(T, last completed bar) AND low(T, still-forming bar) < low(T, last completed bar); 3 when high(T, still-forming bar) > high(T, last completed bar) AND low(T, still-forming bar) < low(T, last completed bar); 1 otherwise
+Long: The Strat bar type(T1) = 2U OR The Strat bar type(T2) = 2U
+Short: The Strat bar type(T1) = 2D OR The Strat bar type(T2) = 2D

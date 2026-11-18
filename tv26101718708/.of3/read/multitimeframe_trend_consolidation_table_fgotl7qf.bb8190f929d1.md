@@ -1,0 +1,3 @@
+Calculation: EMA percentage distance(Tn) = 100 * abs(close(Tn, still-forming bar) - EMA(close, Pn, Tn, still-forming bar)) / EMA(close, Pn, Tn, still-forming bar), calculated on chart bars from Tn values, for each Tn from T1 through T10, with a separate lookback Pn for each timeframe
+Long: for each Tn from T1 through T10, on chart bars using the still-forming Tn bar, close(Tn) > EMA(close, Pn, Tn) AND (consolidation detection is disabled OR EMA percentage distance(Tn) >= consolidation threshold)
+Short: for each Tn from T1 through T10, on chart bars using the still-forming Tn bar, close(Tn) <= EMA(close, Pn, Tn) AND (consolidation detection is disabled OR EMA percentage distance(Tn) >= consolidation threshold)

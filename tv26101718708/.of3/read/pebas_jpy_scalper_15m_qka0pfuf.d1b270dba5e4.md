@@ -1,0 +1,6 @@
+Calculation: bullish regime = EMA(close, shorter lookback, T1 bars, current bar mapped to chart bars) > EMA(close, longer lookback, T1 bars, current bar mapped to chart bars) AND EMA(close, shorter lookback, T2 bars, current bar mapped to chart bars) > EMA(close, longer lookback, T2 bars, current bar mapped to chart bars) AND EMA(close, shorter lookback, T3 bars, current bar mapped to chart bars) > EMA(close, longer lookback, T3 bars, current bar mapped to chart bars) AND year(datetime) > year threshold
+Calculation: bearish regime = EMA(close, shorter lookback, T1 bars, current bar mapped to chart bars) < EMA(close, longer lookback, T1 bars, current bar mapped to chart bars) AND EMA(close, shorter lookback, T2 bars, current bar mapped to chart bars) < EMA(close, longer lookback, T2 bars, current bar mapped to chart bars) AND EMA(close, shorter lookback, T3 bars, current bar mapped to chart bars) < EMA(close, longer lookback, T3 bars, current bar mapped to chart bars) AND year(datetime) > year threshold
+Long: bullish regime AND bullish regime on the previous chart bar was false
+Short: bearish regime AND bearish regime on the previous chart bar was false
+Exit: long, chart-bar high >= entry price + profit target in ticks
+Exit: short, chart-bar low <= entry price - profit target in ticks

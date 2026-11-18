@@ -1,0 +1,3 @@
+Calculation: VW-MACD = EMA(volume * close, shorter lookback) / EMA(volume, shorter lookback) - EMA(volume * close, longer lookback) / EMA(volume, longer lookback)
+Long: datetime is within the start date parameters at 00:00 and end date parameters at 23:59, inclusive AND VW-MACD crosses above EMA(VW-MACD, signal lookback)
+Short: datetime is within the start date parameters at 00:00 and end date parameters at 23:59, inclusive AND VW-MACD crosses below EMA(VW-MACD, signal lookback)

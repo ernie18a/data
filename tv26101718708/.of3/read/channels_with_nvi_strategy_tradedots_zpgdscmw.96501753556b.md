@@ -1,0 +1,2 @@
+Long: position is flat AND close < lower band of selected Bollinger Bands or Keltner Channel(channel source, channel lookback, channel multiplier) AND NVI > EMA(NVI, NVI lookback)
+Exit: long, NVI < EMA(NVI, NVI lookback) OR stop loss enabled AND close < entry price × (1 − stop-loss percentage / 100) OR take profit enabled AND close > entry price × (1 + take-profit percentage / 100)

@@ -1,0 +1,5 @@
+Long: Stochastic %D(close, high, low, stochastic lookback, K smoothing, D smoothing) < entry threshold AND Stochastic %D(close, high, low, stochastic lookback, K smoothing, D smoothing) > its value one chart bar ago AND the T1 Stochastic %D, mapped onto chart bars using the same stochastic parameters, at the shorter chart-bar lag ago >= its value at the longer chart-bar lag ago (last completed T1 bar historically; still-forming T1 bar in real time) AND chart bar is confirmed
+Calculation: stop price = (if trailing-stop mode is enabled, highest close since entry; otherwise entry price) * (1 - stop-loss percentage)
+Exit: Long, low <= stop price
+Exit: Long, close > entry price * (1 + take-profit percentage) AND chart bar is confirmed
+Exit: Long, Stochastic %D(close, high, low, stochastic lookback, K smoothing, D smoothing) crosses below exit threshold AND chart bar is confirmed

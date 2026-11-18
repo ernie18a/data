@@ -1,0 +1,2 @@
+Long: high - low >= range multiplier × SMA(high - low, lookback, T1, bar still forming) AND close > open
+Short: high - low >= range multiplier × SMA(high - low, lookback, T1, bar still forming) AND close < open

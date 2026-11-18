@@ -1,0 +1,2 @@
+Long: On bars of each of T1, T2, T3, T4, and T5, the still-forming bar's close crosses above the previous bar's high AND the still-forming bar's close is above its open AND the previous bar's close is below its open
+Short: On bars of each of T1, T2, T3, T4, and T5, the still-forming bar's close crosses below the previous bar's low AND the still-forming bar's close is below its open AND the previous bar's close is above its open

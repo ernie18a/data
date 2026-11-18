@@ -1,0 +1,3 @@
+Calculation: analyzed-volume spike ratio = selected volume / SMA(volume, lookback), or 0 when the SMA is unavailable or nonpositive; selected volume is volume on bars where close >= open and 0 otherwise, or total volume, according to a parameter
+Long: close >= open AND SMA(volume, lookback) is available AND analyzed-volume spike ratio >= medium spike threshold AND analyzed-volume spike ratio < extreme spike threshold
+Long: close >= open AND SMA(volume, lookback) is available AND analyzed-volume spike ratio >= extreme spike threshold

@@ -1,0 +1,4 @@
+Long: On bar close, the most recent signal is not long AND close > ZLEMA(close, lookback) AND close > VWAP(hlc3) AND (low <= VWAP(hlc3) OR low <= VWAP(hlc3) - STDEV(hlc3, lookback) * band multiplier OR low <= ZLEMA(close, lookback)) AND close > open AND close >= open[1]
+Short: On bar close, the most recent signal is not short AND close < ZLEMA(close, lookback) AND close < VWAP(hlc3) AND (high >= VWAP(hlc3) OR high >= VWAP(hlc3) + STDEV(hlc3, lookback) * band multiplier OR high >= ZLEMA(close, lookback)) AND close < open AND close <= open[1]
+Exit: long, low <= entry price - ATR(lookback) at entry * stop multiplier OR high >= entry price + ATR(lookback) at entry * stop multiplier * target multiple
+Exit: short, high >= entry price + ATR(lookback) at entry * stop multiplier OR low <= entry price - ATR(lookback) at entry * stop multiplier * target multiple

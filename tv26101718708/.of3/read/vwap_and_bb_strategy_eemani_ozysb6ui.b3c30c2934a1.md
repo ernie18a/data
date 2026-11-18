@@ -1,0 +1,4 @@
+Long: shorter-lookback EMA(close) > longer-lookback EMA(close) AND close > open AND close > session VWAP(close) AND close < upper Bollinger Band(BB source, BB lookback, deviation multiplier) AND the configured dip test holds on at least one prior bar within the dip lookback: close[n] < lower Bollinger Band(BB source, BB lookback, deviation multiplier)[n] or %B(BB source, BB lookback, deviation multiplier)[n] <= 0
+Long: long position AND close < entry price AND close > session VWAP(close)
+Exit: long, crossover(close, upper Bollinger Band(BB source, BB lookback, deviation multiplier))
+Exit: long, close < entry price * (1 - stop-loss percentage)

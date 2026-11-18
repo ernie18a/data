@@ -1,0 +1,3 @@
+Calculation: modified Z-score of the difference between the traded instrument’s close Z-score and the paired instrument’s selected price-source Z-score = scale parameter × (spread − Median(spread, window parameter)) / Median(Abs(spread − Median(spread, window parameter)), window parameter), where each series Z-score = (series − SMA(series, window parameter)) / StandardDeviation(series, window parameter)
+Long: modified Z-score of the difference between the traded instrument’s close Z-score and the paired instrument’s selected price-source Z-score < entry threshold parameter
+Exit: long, modified Z-score of the difference between the traded instrument’s close Z-score and the paired instrument’s selected price-source Z-score ≥ exit threshold parameter

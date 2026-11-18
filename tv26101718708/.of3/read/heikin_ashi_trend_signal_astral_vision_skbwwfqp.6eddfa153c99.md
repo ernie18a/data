@@ -1,0 +1,2 @@
+Long: Heikin Ashi close(T1, selected bar) >= Heikin Ashi open(T1, selected bar), projected onto chart bars; use the last completed T1 bar in confirmation-only mode and the still-forming T1 bar otherwise.
+Short: Heikin Ashi close(T1, selected bar) < Heikin Ashi open(T1, selected bar), projected onto chart bars; use the last completed T1 bar in confirmation-only mode and the still-forming T1 bar otherwise.

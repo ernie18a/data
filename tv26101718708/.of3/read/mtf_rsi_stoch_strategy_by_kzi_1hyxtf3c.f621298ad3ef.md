@@ -1,0 +1,6 @@
+Calculation: Mean RSI = round((RSI(source, RSI lookback, T1) + RSI(source, RSI lookback, T2) + RSI(source, RSI lookback, T3) + RSI(source, RSI lookback, T4)) / 4, rounding precision); evaluated on chart bars using each timeframe’s current requested bar value, including the still-forming bar in realtime
+Calculation: Mean Stochastic = round((SMA(Stochastic(source, high, low, %K lookback), smoothing lookback, T1) + SMA(Stochastic(source, high, low, %K lookback), smoothing lookback, T2) + SMA(Stochastic(source, high, low, %K lookback), smoothing lookback, T3) + SMA(Stochastic(source, high, low, %K lookback), smoothing lookback, T4)) / 4, rounding precision); evaluated on chart bars using each timeframe’s current requested bar value, including the still-forming bar in realtime
+Long: Mean RSI <= RSI oversold level AND Mean Stochastic <= stochastic oversold level
+Short: Mean RSI >= RSI overbought level AND Mean Stochastic >= stochastic overbought level
+Exit: Long, Mean Stochastic >= long exit stochastic threshold AND Mean RSI >= long exit RSI threshold AND close >= position average entry price
+Exit: Short, Mean Stochastic <= short exit stochastic threshold AND Mean RSI <= short exit RSI threshold AND close <= position average entry price

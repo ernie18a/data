@@ -1,0 +1,2 @@
+Calculation: relative performance = (traded instrument close / traded instrument close P1 bars ago) / (comparative symbol close / comparative symbol close P1 bars ago) - 1
+Long: traded instrument close > EMA(traded instrument close, P2) AND relative performance > 0 AND traded instrument volume > P3 * SMA(traded instrument volume, P4) AND traded instrument close > Highest(traded instrument high, P5 bars ending one bar before current)

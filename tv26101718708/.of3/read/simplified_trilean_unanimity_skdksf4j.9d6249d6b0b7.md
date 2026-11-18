@@ -1,0 +1,2 @@
+Long: RSI(close, lookback) < oversold threshold AND MFI(close, lookback) < oversold threshold AND Supertrend direction(factor, ATR lookback) > 0
+Short: RSI(close, lookback) > overbought threshold AND MFI(close, lookback) > overbought threshold AND Supertrend direction(factor, ATR lookback) <= 0

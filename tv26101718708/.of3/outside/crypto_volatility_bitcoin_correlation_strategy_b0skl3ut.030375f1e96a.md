@@ -1,0 +1,1 @@
+Long: VIXFix(P1) > prior VIXFix(P1) AND BVOL7D close > prior BVOL7D close AND Bitcoin close > EMA(Bitcoin close, P2)

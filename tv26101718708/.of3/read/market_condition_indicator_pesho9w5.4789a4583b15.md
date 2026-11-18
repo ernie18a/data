@@ -1,0 +1,4 @@
+Calculation: Relative volume = volume / max(SMA(volume, volume lookback), minimum floor)
+Calculation: Spread efficiency = ((high - low) / max(SMA(high - low, spread lookback), minimum floor)) / max(relative volume, relative-volume floor)
+Calculation: State = low-volume/high-efficiency if relative volume < low-volume threshold AND spread efficiency > high-efficiency threshold; high-volume/high-efficiency if relative volume > high-volume threshold AND spread efficiency > high-efficiency threshold; low-volume/low-efficiency if relative volume < low-volume threshold AND spread efficiency < low-efficiency threshold; high-volume/low-efficiency if relative volume > high-volume threshold AND spread efficiency < low-efficiency threshold; normal otherwise
+Long: (State = high-volume/low-efficiency AND State[1] != high-volume/low-efficiency) OR (State = normal AND State[1] != normal)

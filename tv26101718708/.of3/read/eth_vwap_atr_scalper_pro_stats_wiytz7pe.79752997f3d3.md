@@ -1,0 +1,4 @@
+Long: bar is confirmed AND close > VWAP(hlc3) + ATR(ATR lookback) * buffer multiplier AND close > open AND close > high[1] AND (RSI filter disabled OR RSI(close, RSI lookback) > RSI threshold)
+Short: bar is confirmed AND close < VWAP(hlc3) - ATR(ATR lookback) * buffer multiplier AND close < open AND close < low[1] AND (RSI filter disabled OR RSI(close, RSI lookback) < RSI threshold)
+Exit: long, low <= Lowest(low, swing lookback) at entry - ATR(ATR lookback) at entry * buffer multiplier OR high >= entry price + ATR(ATR lookback) at entry * TP1 multiplier OR high >= entry price + ATR(ATR lookback) at entry * TP2 multiplier
+Exit: short, high >= Highest(high, swing lookback) at entry + ATR(ATR lookback) at entry * buffer multiplier OR low <= entry price - ATR(ATR lookback) at entry * TP1 multiplier OR low <= entry price - ATR(ATR lookback) at entry * TP2 multiplier

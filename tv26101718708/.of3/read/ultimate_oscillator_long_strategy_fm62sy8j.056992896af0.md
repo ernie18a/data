@@ -1,0 +1,5 @@
+Long: (Ultimate Oscillator(short lookback, medium lookback, long lookback) crosses above the buy-threshold parameter OR crosses above a separate entry-threshold parameter) within the recent-bar window AND close > open AND SMMA(hl2, longer lookback) > SMMA(hl2, shorter lookback) AND no long position
+Long: long position AND close < entry price AND Ultimate Oscillator(short lookback, medium lookback, long lookback) crosses above a separate add threshold parameter
+Exit: long, Ultimate Oscillator(short lookback, medium lookback, long lookback) crosses below the exit-threshold parameter
+Exit: long, take-profit option enabled AND close > entry price AND Ultimate Oscillator(short lookback, medium lookback, long lookback) crosses below the separate profit-exit threshold parameter
+Exit: long, close < entry price reduced by the stop-loss percentage AND Ultimate Oscillator(short lookback, medium lookback, long lookback) < exit-threshold parameter

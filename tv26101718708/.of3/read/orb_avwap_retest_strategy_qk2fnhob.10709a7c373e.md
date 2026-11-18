@@ -1,0 +1,15 @@
+Calculation: opening-range high = highest high of chart bars in the opening-range interval
+Calculation: opening-range low = lowest low of chart bars in the opening-range interval
+Calculation: session-anchored VWAP = sum(hlc3 × volume from session start through current bar) / sum(volume from session start through current bar)
+Calculation: long stop = if ATR stop mode then entry price − ATR(ATR lookback) × stop multiplier else opening-range low
+Calculation: short stop = if ATR stop mode then entry price + ATR(ATR lookback) × stop multiplier else opening-range high
+Calculation: long target = entry price + (entry price − long stop) × target multiple
+Calculation: short target = entry price − (short stop − entry price) × target multiple
+Long: opening range has ended AND opening-range high > opening-range low AND current time is at or before the last-entry time AND position is flat AND longs are enabled AND (one-trade-per-session limit is disabled OR no trade has occurred this session) AND no breakout direction is pending AND close > opening-range high
+Short: opening range has ended AND opening-range high > opening-range low AND current time is at or before the last-entry time AND position is flat AND shorts are enabled AND (one-trade-per-session limit is disabled OR no trade has occurred this session) AND no breakout direction is pending AND close < opening-range low
+Long: a long breakout is pending AND the current bar follows the most recent bar that set it AND low <= session-anchored VWAP AND close > session-anchored VWAP AND close > open AND low > opening-range low
+Short: a short breakout is pending AND the current bar follows the most recent bar that set it AND high >= session-anchored VWAP AND close < session-anchored VWAP AND close < open AND high < opening-range high
+Long: opening range has ended AND opening-range high > opening-range low AND current time is at or before the last-entry time AND position is flat AND (one-trade-per-session limit is disabled OR no trade has occurred this session) AND a long breakout is pending AND the current bar follows the most recent bar that set it AND low <= session-anchored VWAP AND close > session-anchored VWAP AND close > open AND low > opening-range low AND close > long stop
+Short: opening range has ended AND opening-range high > opening-range low AND current time is at or before the last-entry time AND position is flat AND (one-trade-per-session limit is disabled OR no trade has occurred this session) AND a short breakout is pending AND the current bar follows the most recent bar that set it AND high >= session-anchored VWAP AND close < session-anchored VWAP AND close < open AND high < opening-range high AND short stop > close
+Exit: long, low <= long stop OR high >= long target
+Exit: short, high >= short stop OR low <= short target

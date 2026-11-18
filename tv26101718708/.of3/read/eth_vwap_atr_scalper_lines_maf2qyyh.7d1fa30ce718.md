@@ -1,0 +1,3 @@
+Calculation: volatility buffer = ATR(ATR lookback) * buffer multiplier
+Long: on a confirmed bar, close > VWAP(hlc3) + volatility buffer AND close > open AND close > high[1] AND (RSI filter disabled OR RSI(close, RSI lookback) > RSI threshold)
+Short: on a confirmed bar, close < VWAP(hlc3) - volatility buffer AND close < open AND close < low[1] AND (RSI filter disabled OR RSI(close, RSI lookback) < RSI threshold)

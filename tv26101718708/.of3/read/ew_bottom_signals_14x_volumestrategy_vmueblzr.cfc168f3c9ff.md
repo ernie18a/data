@@ -1,0 +1,6 @@
+Calculation: Wave-C state = active after a pivot high, then a pivot low, then a pivot high, and until the next pivot low; pivot high means high[pivot depth] = highest(high, 2 * pivot depth + 1), and pivot low means low[pivot depth] = lowest(low, 2 * pivot depth + 1)
+Calculation: Buy mode = off and unlocked initially; it turns on when close < SMA(close, longer lookback) while unlocked, turns off on exit, and after exit unlocks when close >= SMA(close, longer lookback); all stage flags reset on exit
+Long: Buy mode is active AND the first-stage signal has not occurred in the current cycle AND Wave-C state is active AND close < SMA(close, longer lookback) AND open > close AND (high - low) - abs(close - open) > abs(close - open) AND volume > SMA(volume, volume lookback) * volume multiplier
+Long: The first-stage signal has occurred in the current cycle AND the second-stage signal has not occurred AND close crosses above SMA(close, shorter lookback)
+Long: The second-stage signal has occurred in the current cycle AND the third-stage signal has not occurred AND SMA(close, shorter lookback) crosses above SMA(close, longer lookback)
+Exit: Long, the third-stage signal has occurred in the current cycle AND SMA(close, shorter lookback) crosses below SMA(close, longer lookback)

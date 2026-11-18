@@ -1,0 +1,6 @@
+Calculation: EPVT deviation = Price Volume Trend(close, volume) - (highest(Price Volume Trend(close, volume), trend lookback) + lowest(Price Volume Trend(close, volume), trend lookback)) / 2
+Calculation: zero-cross close = close at the most recent bar where EPVT deviation crossed zero
+Long: close crosses above zero-cross close
+Short: close crosses below zero-cross close
+Exit: long, EMA(close, EMA lookback) crosses below zero-cross close * (1 + first take-profit percentage parameter / 100) OR EMA(close, EMA lookback) crosses below zero-cross close * (1 + second take-profit percentage parameter / 100) OR EMA(close, EMA lookback) crosses below zero-cross close * (1 + third take-profit percentage parameter / 100)
+Exit: short, EMA(close, EMA lookback) crosses above zero-cross close * (1 - first take-profit percentage parameter / 100) OR EMA(close, EMA lookback) crosses above zero-cross close * (1 - second take-profit percentage parameter / 100) OR EMA(close, EMA lookback) crosses above zero-cross close * (1 - third take-profit percentage parameter / 100)

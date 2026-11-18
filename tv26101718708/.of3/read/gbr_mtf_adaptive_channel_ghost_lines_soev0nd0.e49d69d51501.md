@@ -1,0 +1,2 @@
+Exit: long, low <= lower Macro outer band OR low <= lower Medium outer band OR high >= upper Macro outer band OR high >= upper Medium outer band
+Exit: short, high >= upper Macro outer band OR high >= upper Medium outer band OR low <= lower Macro outer band OR low <= lower Medium outer band

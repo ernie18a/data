@@ -1,0 +1,2 @@
+Long: SMA(close, short-term lookback) > SMA(close, medium-term lookback) AND close > SMA(close, long-term lookback) AND ta.rising(high, rising lookback) AND ta.rising(SMA(close, long-term lookback), rising lookback) AND MACD line(PVT, fast lookback, slow lookback) > MACD signal line(PVT, fast lookback, slow lookback, signal lookback)
+Short: MACD line(PVT, fast lookback, slow lookback) < MACD signal line(PVT, fast lookback, slow lookback, signal lookback) AND ta.falling(low, falling lookback) AND close < close[1] AND close < open

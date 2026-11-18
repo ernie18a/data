@@ -1,0 +1,1 @@
+Long: low <= VWAP(close) AND close > VWAP(close) AND close > open AND RSI(close, lookback) crosses above RSI level

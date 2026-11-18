@@ -1,0 +1,4 @@
+Calculation: Macro line = close value lookback bars ago × (external close 1 / its lookbackth prior non-missing value + external close 2 / its lookbackth prior non-missing value + external close 3's lookbackth prior non-missing value / external close 3) / 3
+Calculation: Buying volume = if high = low then 0 else volume × ((close − low) + (high − open)) / (2 × (high − low))
+Long: (Buying volume > SMA(volume, volume-average lookback) × sensitivity AND close > (high + low) / 2) OR (close crosses above Macro line AND close > EMA(close, trend lookback) AND MFI(close, MFI lookback) > buy threshold)
+Short: (volume − Buying volume > SMA(volume, volume-average lookback) × sensitivity AND close < (high + low) / 2) OR (close crosses below Macro line AND close < EMA(close, trend lookback) AND MFI(close, MFI lookback) < sell threshold)

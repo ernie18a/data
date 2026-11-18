@@ -1,0 +1,9 @@
+Calculation: center level = (high + low + close) / 3 of the last completed T2 bar, sampled on chart bars
+Calculation: upper band = center level + ATR(band lookback) on the last completed T1 bar / band divisor, sampled on chart bars
+Calculation: lower band = center level - ATR(band lookback) on the last completed T1 bar / band divisor, sampled on chart bars
+Calculation: normalized directional momentum = 100 * EMA(EMA(EMA(plusDI(momentum lookback) - minusDI(momentum lookback), slow lookback), fast lookback), smoothing lookback) / EMA(EMA(EMA(abs(plusDI(momentum lookback) - minusDI(momentum lookback)), slow lookback), fast lookback), smoothing lookback)
+Calculation: smoothed directional momentum = EMA(normalized directional momentum, signal lookback)
+Long: position is flat AND low <= lower band AND close > lower band AND ATR(short lookback) > ATR(longer lookback) on chart bars AND smoothed directional momentum > smoothed directional momentum[lag]
+Short: position is flat AND high >= upper band AND close < upper band AND ATR(short lookback) > ATR(longer lookback) on chart bars AND smoothed directional momentum < smoothed directional momentum[lag]
+Exit: Long, high > center level OR (take-profit offset is enabled AND high reaches the entry price plus the take-profit offset in minimum ticks) OR (stop-loss offset is enabled AND low reaches the entry price minus the stop-loss offset in minimum ticks)
+Exit: Short, low < center level OR (take-profit offset is enabled AND low reaches the entry price minus the take-profit offset in minimum ticks) OR (stop-loss offset is enabled AND high reaches the entry price plus the stop-loss offset in minimum ticks)

@@ -1,0 +1,1 @@
+Long: TRIN index close > SMA(TRIN index close, T1, P1) + P2 × standard deviation(TRIN index close, T1, P1)

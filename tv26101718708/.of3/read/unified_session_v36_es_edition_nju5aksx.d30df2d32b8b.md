@@ -1,0 +1,2 @@
+Long: the first intraday bar of the Asian session occurs Monday through Friday and the month is February, March, April, May, June, July, October, November, or December
+Short: the first intraday bar of the Asian session occurs Monday through Friday and the month is September

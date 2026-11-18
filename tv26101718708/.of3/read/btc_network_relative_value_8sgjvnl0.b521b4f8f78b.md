@@ -1,0 +1,5 @@
+Calculation: network-work metric = sqrt(abs(nz(miner-revenue close of the current T1 bar, mapped onto chart bars, missing-value default) * nz(hashrate close of the current T1 bar, mapped onto chart bars, missing-value default) / max(nz(network-difficulty close of the current T1 bar, mapped onto chart bars, missing-value default), difficulty floor)))
+Calculation: smoothed log relative price = SMA(log(if network-work metric > 0 then chart-bar close / network-work metric else chart-bar close), smoothing period, chart bars)
+Calculation: relative-value Z-Score = if population StDev(smoothed log relative price, Z-score lookback, chart bars) != 0 then (smoothed log relative price - SMA(smoothed log relative price, Z-score lookback, chart bars)) / population StDev(smoothed log relative price, Z-score lookback, chart bars) else 0
+Long: relative-value Z-Score <= undervaluation cutoff
+Exit: long, relative-value Z-Score >= overvaluation cutoff

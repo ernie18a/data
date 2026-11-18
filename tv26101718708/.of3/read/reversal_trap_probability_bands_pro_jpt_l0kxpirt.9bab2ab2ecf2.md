@@ -1,0 +1,6 @@
+Calculation: upper probability band = EMA(close, band lookback) + ATR(ATR lookback) × ATR multiplier
+Calculation: lower probability band = EMA(close, band lookback) - ATR(ATR lookback) × ATR multiplier
+Calculation: bullish reversal score = (RSI(close, RSI lookback) < oversold threshold ? RSI weight : 0) + (close < lower probability band ? band weight : 0) + (volume > SMA(volume, volume lookback) ? volume weight : 0) + (close > open ? candle weight : 0)
+Calculation: bearish reversal score = (RSI(close, RSI lookback) > overbought threshold ? RSI weight : 0) + (close > upper probability band ? band weight : 0) + (volume > SMA(volume, volume lookback) ? volume weight : 0) + (close < open ? candle weight : 0)
+Long: bullish reversal score >= signal threshold OR bullish reversal score >= highlight threshold OR bullish reversal score > bearish reversal score
+Short: bearish reversal score >= signal threshold OR bearish reversal score >= highlight threshold OR bearish reversal score >= bullish reversal score

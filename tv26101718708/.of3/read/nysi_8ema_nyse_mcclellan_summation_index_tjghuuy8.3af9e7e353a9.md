@@ -1,0 +1,3 @@
+Calculation: NYSI = cumulative sum on chart bars of EMA(ratio-adjusted net advances, shorter lookback) minus EMA(ratio-adjusted net advances, longer lookback), plus calibration offset, where ratio-adjusted net advances = scale parameter times (advancing issues close from T1 bar still forming minus declining issues close from T1 bar still forming) divided by their sum, when both closes exist and their sum is nonzero; otherwise unavailable. T1 values are mapped onto chart bars with gaps filled; EMA and cumulative calculations run on chart bars.
+Long: NYSI >= NYSI[1]
+Short: NYSI < NYSI[1]

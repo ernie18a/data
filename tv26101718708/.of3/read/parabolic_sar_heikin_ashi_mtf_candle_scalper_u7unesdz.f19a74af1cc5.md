@@ -1,0 +1,4 @@
+Long: current chart bar is in the entry-session parameter AND the prior chart bar's mapped T1 Heikin-Ashi close > Parabolic SAR(start, increment, maximum) calculated on chart bars using mapped T1 Heikin-Ashi OHLC values, including the still-forming T1 bar in real time
+Short: current chart bar is in the entry-session parameter AND the prior chart bar's mapped T1 Heikin-Ashi close < Parabolic SAR(start, increment, maximum) calculated on chart bars using mapped T1 Heikin-Ashi OHLC values, including the still-forming T1 bar in real time
+Exit: long, current chart bar is in the exit-session parameter
+Exit: short, current chart bar is in the exit-session parameter

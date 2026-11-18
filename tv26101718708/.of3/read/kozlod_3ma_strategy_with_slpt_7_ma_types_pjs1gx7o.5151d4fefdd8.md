@@ -1,0 +1,4 @@
+Long: the same selected moving average of the short source with the shorter lookback crosses above the moving average of the medium source with the intermediate lookback AND the medium moving average is above the moving average of the long source with the longer lookback
+Short: the same selected moving average of the short source with the shorter lookback crosses below the moving average of the medium source with the intermediate lookback AND the medium moving average is below the moving average of the long source with the longer lookback
+Exit: long, (take-profit percentage > 0 AND close >= entry price * (1 + take-profit percentage / 100)) OR (stop-loss percentage > 0 AND close <= entry price * (1 - stop-loss percentage / 100))
+Exit: short, (take-profit percentage > 0 AND close <= entry price * (1 - take-profit percentage / 100)) OR (stop-loss percentage > 0 AND close >= entry price * (1 + stop-loss percentage / 100))

@@ -1,0 +1,4 @@
+Calculation: Opening-range high = maximum T1 high sampled on chart bars during the configured opening-range interval after US RTH open, using the T1 bar still forming
+Calculation: Opening-range low = minimum T1 low sampled on chart bars during the configured opening-range interval after US RTH open, using the T1 bar still forming
+Long: US RTH is enabled AND chart bar datetime is at or after opening-range end and before RTH close AND chart bar is confirmed AND close crosses above opening-range high
+Short: US RTH is enabled AND chart bar datetime is at or after opening-range end and before RTH close AND chart bar is confirmed AND close crosses below opening-range low

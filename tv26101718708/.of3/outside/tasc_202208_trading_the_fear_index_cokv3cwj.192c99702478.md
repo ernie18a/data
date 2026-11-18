@@ -1,0 +1,12 @@
+Calculation: VIX rise from prior period low = (High(VIX) / Lowest(Low(VIX), P1)[1] - 1) * 100
+Calculation: VIX price-time correlation = Correlation(Close(VIX), BarIndex, P1 - 1)
+Calculation: Fast VIX stochastic = SMA(Stochastic(High(VIX), Low(VIX), Close(VIX), P3), P5)
+Calculation: Fast SPY stochastic = SMA(Stochastic(High(SPY), Low(SPY), Close(SPY), P3), P5)
+Long: instrument is not SVXY AND VIX rise from prior period low > P2 AND SMA(Stochastic(High(VIX), Low(VIX), Close(VIX), P4), P5) > SMA(Stochastic(High(SPY), Low(SPY), Close(SPY), P4), P5) AND Fast VIX stochastic > Fast SPY stochastic AND Fast VIX stochastic > Fast VIX stochastic[1] AND VIX price-time correlation > VIX price-time correlation[1] AND VIX price-time correlation > P6
+Long: instrument is not SVXY AND Fast VIX stochastic > Fast VIX stochastic[1] AND VIX rise from prior period low > P2 AND VIX price-time correlation > P6
+Short: instrument is not SVXY AND Fast SPY stochastic > Fast SPY stochastic[1] AND VIX rise from prior period low < P2 AND Fast SPY stochastic > Fast VIX stochastic AND Close(VIX) > P8 AND (Close(VIX) / Highest(Close(VIX), P1)[1] - 1) * 100 < P7 AND Close(VIX) <= Lowest(Close(VIX), P9)
+Exit: long, instrument is not SVXY AND (Fast VIX stochastic < Fast VIX stochastic[1] OR Fast SPY stochastic > Fast VIX stochastic)
+Long: instrument is SVXY AND Fast SPY stochastic > Fast SPY stochastic[1] AND VIX rise from prior period low < P2 AND Fast SPY stochastic > Fast VIX stochastic AND Close(VIX) > P8 AND (Close(VIX) / Highest(Close(VIX), P1)[1] - 1) * 100 < P7 AND Close(VIX) <= Lowest(Close(VIX), P9)
+Long: instrument is SVXY AND (Fast VIX stochastic < Fast VIX stochastic[1] OR Fast SPY stochastic > Fast VIX stochastic)
+Short: instrument is SVXY AND VIX rise from prior period low > P2 AND SMA(Stochastic(High(VIX), Low(VIX), Close(VIX), P4), P5) > SMA(Stochastic(High(SPY), Low(SPY), Close(SPY), P4), P5) AND Fast VIX stochastic > Fast SPY stochastic AND Fast VIX stochastic > Fast VIX stochastic[1] AND VIX price-time correlation > VIX price-time correlation[1] AND VIX price-time correlation > P6
+Exit: long, instrument is SVXY AND Fast VIX stochastic > Fast VIX stochastic[1] AND VIX rise from prior period low > P2 AND VIX price-time correlation > P6

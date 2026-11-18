@@ -1,0 +1,3 @@
+Calculation: CVD = delta on reset bars and CVD[1] + delta otherwise, with reset-bar boundaries controlled by a reset parameter; delta is selected by a method parameter from volume × (2 × close − high − low) / (high − low) when high > low, otherwise 0, or volume when close > open, −volume when close < open, otherwise 0
+Long: CVD >= CVD[1] OR CVD >= 0 OR (close forms a confirmed pivot low lower than its previous confirmed pivot low, using the pivot lookback on both sides, AND CVD at the current pivot is higher than CVD at the previous pivot)
+Short: CVD < CVD[1] OR CVD < 0 OR (close forms a confirmed pivot high higher than its previous confirmed pivot high, using the pivot lookback on both sides, AND CVD at the current pivot is lower than CVD at the previous pivot)

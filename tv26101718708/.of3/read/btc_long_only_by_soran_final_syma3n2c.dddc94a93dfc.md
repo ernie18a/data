@@ -1,0 +1,3 @@
+Long: position side is flat AND low[1] < Bollinger lower band(close, Bollinger lookback, deviation multiplier)[1] AND RSI(close, RSI lookback)[1] < oversold threshold
+Long: position side is flat AND low[1] < Bollinger lower band(close, Bollinger lookback, deviation multiplier)[1] AND RSI(close, RSI lookback)[1] < oversold threshold AND close[1] > open[1] AND volume[1] > SMA(volume, volume lookback)[1] * volume multiplier
+Exit: long, low <= entry-signal-bar close * (1 - stop-loss percentage / 100) OR high >= Bollinger upper band(close, Bollinger lookback, deviation multiplier) on the bar before the entry-signal bar

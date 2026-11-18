@@ -1,0 +1,2 @@
+Long: flat AND time >= start time AND time <= end time AND Bollinger Band width percentile rank over width-rank lookback is below squeeze threshold on at least one of the last squeeze-age bars AND close > highest(high, breakout lookback)[1] AND volume > SMA(volume, volume-average lookback) AND close > SMA(close, trend lookback)
+Exit: long, time > end time OR close < max(entry-signal-bar close - ATR(ATR lookback) at entry signal * initial-stop multiple, highest close since entry signal - current ATR(ATR lookback) * trail multiple)

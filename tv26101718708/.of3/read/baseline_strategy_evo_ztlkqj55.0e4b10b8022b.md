@@ -1,0 +1,3 @@
+Calculation: Direction = long when selected source > selected average(high, shared lookback), short when selected source < selected average(low, shared lookback), otherwise previous Direction; selected source is close, HL2, HLC3, or OHLC4; selected average type is SMA, EMA, HMA, RMA, WMA, VWMA, ALMA, or the midpoint of highest and lowest over the shared lookback, with separate ALMA offset and sigma parameters; calculate on T1 bars using the still-forming T1 bar and use the values on chart bars
+Long: Direction changes to long
+Short: Direction changes to short

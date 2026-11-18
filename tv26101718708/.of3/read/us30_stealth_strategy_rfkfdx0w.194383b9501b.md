@@ -1,0 +1,9 @@
+Calculation: Trend-SMA slope = SMA(close, trend MA lookback) - SMA(close, trend MA lookback)[slope lookback]
+Calculation: Lower-high count = 0 initially; on each bar, increment the prior count by 1 if high < highest(high[1], swing lookback), otherwise retain it; reset to 0 after a short entry
+Calculation: Higher-low count = 0 initially; on each bar, increment the prior count by 1 if low > lowest(low[1], swing lookback), otherwise retain it; reset to 0 after a long entry
+Calculation: Signal-candle range = high - low on the entry signal bar
+Calculation: Stop distance = signal-candle range / 2 if signal-candle range > large-candle threshold, otherwise signal-candle range
+Long: (Oman-time hour(datetime) >= late-hour cutoff OR Oman-time hour(datetime) < early-hour cutoff) AND close > SMA(close, trend MA lookback) AND Trend-SMA slope > minimum slope AND higher-low count is divisible by count interval AND close > open AND close > open[1] AND open < close[1] AND volume > SMA(volume, volume lookback) AND high - low <= maximum candle range
+Short: (Oman-time hour(datetime) >= late-hour cutoff OR Oman-time hour(datetime) < early-hour cutoff) AND close < SMA(close, trend MA lookback) AND Trend-SMA slope < -minimum slope AND lower-high count is divisible by count interval AND close < open AND close < open[1] AND open > close[1] AND volume > SMA(volume, volume lookback) AND high - low <= maximum candle range
+Exit: long, low <= entry signal bar close - stop distance OR high >= entry signal bar close + reward-to-risk parameter × stop distance
+Exit: short, high >= entry signal bar close + stop distance OR low <= entry signal bar close - reward-to-risk parameter × stop distance

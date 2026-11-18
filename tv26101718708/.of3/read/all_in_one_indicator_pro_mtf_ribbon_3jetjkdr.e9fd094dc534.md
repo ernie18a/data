@@ -1,0 +1,4 @@
+Long: On chart bars, SMA(source, shared lookback, T1 bars, still-forming bar) > SMA(source, shared lookback, T2 bars, still-forming bar), where T1 is shorter than T2
+Short: On chart bars, SMA(source, shared lookback, T1 bars, still-forming bar) <= SMA(source, shared lookback, T2 bars, still-forming bar), where T1 is shorter than T2
+Long: On chart bars, SMA(source, shared lookback, T2 bars, still-forming bar) > SMA(source, shared lookback, T3 bars, still-forming bar), where T2 is shorter than T3
+Short: On chart bars, SMA(source, shared lookback, T2 bars, still-forming bar) <= SMA(source, shared lookback, T3 bars, still-forming bar), where T2 is shorter than T3

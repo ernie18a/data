@@ -1,0 +1,6 @@
+Short: Bitcoin price < SMA(Bitcoin price, P5) on T1
+Short: ROC(total stablecoin market capitalization, P1) < P3 AND ROC(total stablecoin market capitalization, P1) >= P4 AND NOT (total stablecoin market capitalization < Lowest(total stablecoin market capitalization, P2)[1] AND ROC(total stablecoin market capitalization, P1) < 0)
+Short: ROC(total stablecoin market capitalization, P1) < P4 AND NOT (total stablecoin market capitalization < Lowest(total stablecoin market capitalization, P2)[1] AND ROC(total stablecoin market capitalization, P1) < 0)
+Short: total stablecoin market capitalization < Lowest(total stablecoin market capitalization, P2)[1] AND ROC(total stablecoin market capitalization, P1) < 0
+Short: USDC market capitalization < Lowest(USDC market capitalization, P2)[1] AND ROC(USDC market capitalization, P1) < 0 AND NOT (USDT market capitalization < Lowest(USDT market capitalization, P2)[1] AND ROC(USDT market capitalization, P1) < 0) AND NOT ((USDC market capitalization < Lowest(USDC market capitalization, P2)[1] AND ROC(USDC market capitalization, P1) < 0 AND NOT (USDT market capitalization < Lowest(USDT market capitalization, P2)[1] AND ROC(USDT market capitalization, P1) < 0))[1])
+Short: ROC(USDC market capitalization, P1) < P4 AND ROC(USDC market capitalization, P1)[1] >= P4

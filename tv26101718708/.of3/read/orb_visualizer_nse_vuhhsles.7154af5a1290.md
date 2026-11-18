@@ -1,0 +1,4 @@
+Calculation: opening range high = maximum high of chart bars whose IST time is at or after the configured start time and before start time plus configured duration, reset each trading day
+Calculation: opening range low = minimum low of chart bars whose IST time is at or after the configured start time and before start time plus configured duration, reset each trading day
+Long: on a confirmed bar close, the opening range is complete AND the bar time is within the configured session start and end times, inclusive, AND the bar time is not the opening range end minute AND close > opening range high AND no earlier long breakout occurred that trading day
+Short: on a confirmed bar close, the opening range is complete AND the bar time is within the configured session start and end times, inclusive, AND the bar time is not the opening range end minute AND close < opening range low AND no earlier short breakout occurred that trading day

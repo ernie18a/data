@@ -1,0 +1,1 @@
+Long: On chart bars within the session parameter, close crosses above highest(high[1], breakout lookback) AND volume > SMA(volume, volume lookback)

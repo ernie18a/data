@@ -1,0 +1,2 @@
+Long: low <= low[1] AND close > open AND open - low >= high - close AND close > open[1] AND open - low < 2 * (close - open) AND EMA(close, shorter lookback) >= EMA(close, middle lookback) >= EMA(close, longer lookback)
+Short: high >= high[1] AND close < open AND high - open >= close - low AND close < open[1] AND high - open < 2 * (open - close) AND EMA(close, shorter lookback) <= EMA(close, middle lookback) <= EMA(close, longer lookback)

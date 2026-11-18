@@ -1,0 +1,6 @@
+Calculation: Strong ADX = ADX(DMI lookback, DMI lookback) > ADX threshold AND ADX(DMI lookback, DMI lookback) > SMA(ADX(DMI lookback, DMI lookback), ADX comparison lookback)
+Calculation: Bars since last entry = current chart bar index - last entry bar index (initialized to zero)
+Long: time >= start timestamp AND position is flat AND Bars since last entry >= cooldown AND low > EMA(close, EMA lookback) AND close > VWAP(hlc3) AND Strong ADX AND RSI(close, short RSI lookback) crosses above RSI(close, long RSI lookback)
+Short: time >= start timestamp AND position is flat AND Bars since last entry >= cooldown AND high < EMA(close, EMA lookback) AND close < VWAP(hlc3) AND Strong ADX AND RSI(close, short RSI lookback) crosses below RSI(close, long RSI lookback)
+Exit: Long, low <= (entry signal bar low - stop buffer) OR high >= (entry signal bar close + ABS(entry signal bar close - (entry signal bar low - stop buffer)) * reward-risk ratio)
+Exit: Short, high >= (entry signal bar high + stop buffer) OR low <= (entry signal bar close - ABS((entry signal bar high + stop buffer) - entry signal bar close) * reward-risk ratio)

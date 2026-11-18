@@ -1,0 +1,2 @@
+Long: At the highest-volume chart bar in a chunk of N Renko bricks, Renko close is above its previous value.
+Short: At the highest-volume chart bar in a chunk of N Renko bricks, Renko close is below its previous value.

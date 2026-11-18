@@ -1,0 +1,4 @@
+Calculation: trailing line = on each chart bar, use the current (possibly forming) T1 bar's close, low, high, selected moving average(source, lookback, T1 bar), and ATR(ATR lookback, T1 bar), mapping the T1 values to chart bars; let deviation = standard deviation of the mapped T1 close over lookback chart bars × deviation multiplier; if mapped T1 close > selected moving average + deviation, max(mapped T1 low − ATR, trailing line[1]); else if mapped T1 close < selected moving average − deviation, min(mapped T1 high + ATR, trailing line[1]); otherwise trailing line[1]
+Calculation: line direction = 1 if trailing line > trailing line[1], −1 if trailing line < trailing line[1], otherwise line direction[1]
+Long: line direction[1] = −1 AND line direction = 1
+Short: line direction[1] = 1 AND line direction = −1

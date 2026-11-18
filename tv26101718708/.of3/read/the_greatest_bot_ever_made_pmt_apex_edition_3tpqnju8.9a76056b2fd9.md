@@ -1,0 +1,8 @@
+Calculation: Bullish FVG = low > high[gap lookback] AND close[confirmation offset] > open[confirmation offset], where gap lookback is longer than confirmation offset
+Calculation: Bearish FVG = high < low[gap lookback] AND close[confirmation offset] < open[confirmation offset], where gap lookback is longer than confirmation offset
+Long: Bullish FVG
+Short: Bearish FVG
+Long: position is flat AND (Bullish FVG OR MACD(close, fast lookback, slow lookback, signal lookback) line crosses above its signal line AND RSI(close, RSI lookback) < long RSI threshold) AND volume > SMA(volume, volume lookback) AND ADX(DI lookback, ADX smoothing) > ADX threshold, where fast lookback is shorter than slow lookback
+Short: position is flat AND (Bearish FVG OR MACD(close, fast lookback, slow lookback, signal lookback) line crosses below its signal line AND RSI(close, RSI lookback) > short RSI threshold) AND volume > SMA(volume, volume lookback) AND ADX(DI lookback, ADX smoothing) > ADX threshold, where fast lookback is shorter than slow lookback
+Exit: long, low <= entry price minus stop-loss distance in ticks OR (highest high since entry >= entry price plus trail activation distance in ticks AND low <= highest high since entry minus trail offset in ticks)
+Exit: short, high >= entry price plus stop-loss distance in ticks OR (lowest low since entry <= entry price minus trail activation distance in ticks AND high >= lowest low since entry plus trail offset in ticks)

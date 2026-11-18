@@ -1,0 +1,5 @@
+Calculation: T1 trend = chart close > the close of the prior completed T1 bar, evaluated on chart bars
+Long: KST weekday AND KST hour < entry-cutoff hour AND chart-bar timestamp aligns with the selected T2 entry interval, with hour >= session-start hour for the shorter interval and > session-start hour for the longer interval AND no entry earlier in the KST day AND T1 trend is bullish AND close > open
+Short: KST weekday AND KST hour < entry-cutoff hour AND chart-bar timestamp aligns with the selected T2 entry interval, with hour >= session-start hour for the shorter interval and > session-start hour for the longer interval AND no entry earlier in the KST day AND T1 trend is bearish AND close < open
+Exit: long, low <= entry price * (1 - stop-loss percent / 100) OR (take-profit enabled AND high >= entry price * (1 + take-profit percent / 100)) OR (EOD close enabled AND KST hour = EOD-close hour AND KST minute >= EOD-close minute)
+Exit: short, high >= entry price * (1 + stop-loss percent / 100) OR (take-profit enabled AND low <= entry price * (1 - take-profit percent / 100)) OR (EOD close enabled AND KST hour = EOD-close hour AND KST minute >= EOD-close minute)

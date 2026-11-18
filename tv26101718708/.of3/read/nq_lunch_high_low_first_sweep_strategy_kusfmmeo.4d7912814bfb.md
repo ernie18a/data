@@ -1,0 +1,4 @@
+Calculation: Range high = maximum high of range-session bars each day, using chart bars
+Calculation: Range low = minimum low of range-session bars each day, using chart bars
+Long: On chart timeframe T1, during the entry session after the range session completes, with no earlier valid sweep signal or strong-close cancellation that day, low < Range low AND close > Range low AND (strong-close cancellation is disabled OR close > low + minimum price increment)
+Short: On chart timeframe T1, during the entry session after the range session completes, with no earlier valid sweep signal or strong-close cancellation that day, high > Range high AND close < Range high AND (strong-close cancellation is disabled OR close < high - minimum price increment)

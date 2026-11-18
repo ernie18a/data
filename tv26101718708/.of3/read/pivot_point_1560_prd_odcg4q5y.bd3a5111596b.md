@@ -1,0 +1,2 @@
+Long: EMA(OHLC4, shorter lookback) > EMA(OHLC4, longer lookback) OR EMA(OHLC4, shorter lookback) > EMA(OHLC4, shorter lookback)[1] OR EMA(OHLC4, longer lookback) > EMA(OHLC4, longer lookback)[2]
+Short: EMA(OHLC4, shorter lookback) <= EMA(OHLC4, longer lookback) OR EMA(OHLC4, shorter lookback) < EMA(OHLC4, shorter lookback)[1] OR EMA(OHLC4, longer lookback) < EMA(OHLC4, longer lookback)[2]

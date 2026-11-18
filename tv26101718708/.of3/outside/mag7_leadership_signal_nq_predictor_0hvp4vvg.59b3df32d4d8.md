@@ -1,0 +1,7 @@
+Calculation: Constituent percentage change = 100 × (constituent current chart-timeframe close ÷ constituent prior chart-bar close − 1)
+Calculation: Weighted leadership change = P3 × AAPL percentage change + P4 × AMZN percentage change + P5 × GOOGL percentage change + P6 × META percentage change + P7 × MSFT percentage change + P8 × NVDA percentage change + P9 × TSLA percentage change
+Calculation: Average constituent RSI = (RSI(AAPL chart-timeframe close, P1) + RSI(AMZN chart-timeframe close, P1) + RSI(GOOGL chart-timeframe close, P1) + RSI(META chart-timeframe close, P1) + RSI(MSFT chart-timeframe close, P1) + RSI(NVDA chart-timeframe close, P1) + RSI(TSLA chart-timeframe close, P1)) ÷ 7
+Calculation: Leadership breadth score = P15 × (count of AAPL, AMZN, GOOGL, META, MSFT, NVDA, and TSLA chart-timeframe closes above their respective SMA(P2) − P16)
+Calculation: Leadership score = P10 × weighted leadership change + P11 × (average constituent RSI − P14) + P12 × leadership breadth score + P13 × prior chart-bar weighted leadership change
+Long: leadership score ≥ P17 AND leadership score ≤ P18 OR leadership score ≥ P23 AND leadership score < P19
+Short: leadership score ≥ P19 AND leadership score ≤ P20 OR leadership score ≥ P21 AND leadership score ≤ P22

@@ -1,0 +1,4 @@
+Calculation: order-block reference = low if low = lowest(low, order-block lookback) AND close > open; high if high = highest(high, order-block lookback) AND close < open; otherwise the previous order-block reference, or close if undefined
+Calculation: projection offset = EMA(sin(abs(close - close[1]) * volume * (high - low) / max(abs(close - order-block reference), minimum tick)^2) + (1 / tan(atan(close - close[1])) if abs(tan(atan(close - close[1]))) > cotangent cutoff, otherwise 0), smoothing) * ATR(ATR lookback) * strength
+Long: close > max(close[forward length] + projection offset[forward length], close[forward length] - projection offset[forward length])
+Short: close < min(close[forward length] + projection offset[forward length], close[forward length] - projection offset[forward length])

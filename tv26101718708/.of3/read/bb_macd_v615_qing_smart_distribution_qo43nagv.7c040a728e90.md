@@ -1,0 +1,5 @@
+Calculation: Bollinger basis = SMA(close, Bollinger lookback)
+Calculation: Upper Bollinger Band = Bollinger upper band(close, Bollinger lookback, Bollinger multiplier)
+Calculation: MACD = MACD(close, MACD shorter lookback, MACD longer lookback, MACD signal lookback)
+Long: flat position AND ((close crosses above Bollinger basis AND MACD.line > MACD.signal AND MACD.histogram > 0 AND MACD.histogram > MACD.histogram[1]) OR (MACD.line crosses above MACD.signal AND close > Bollinger basis AND MACD.histogram > 0)) AND (volume confirmation disabled OR volume >= SMA(volume, volume-average lookback)) AND close > open
+Exit: Long, (Highest(high, upper-band touch lookback) >= Upper Bollinger Band[1] AND MACD.histogram < MACD.histogram[1] AND MACD.histogram[1] < MACD.histogram[2] AND close < open AND close <= close[1]) OR (close < Bollinger basis - ATR(ATR lookback) × ATR buffer AND close < open) OR (close > Upper Bollinger Band AND MACD.line > 0 AND MACD.line > MACD.signal × blow-off ratio)

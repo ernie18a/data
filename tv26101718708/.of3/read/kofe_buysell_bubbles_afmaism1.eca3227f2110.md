@@ -1,0 +1,4 @@
+Calculation: Buyer volume = sum of T1 volume within the current chart bar where close > open, plus half the volume where close = open; if no T1 bars are available, use chart-bar volume when close > open, half when close = open, and zero when close < open. Use available T1 bars, including a bar still forming.
+Calculation: Seller volume = sum of T1 volume within the current chart bar where close < open, plus half the volume where close = open; if no T1 bars are available, use chart-bar volume when close < open, half when close = open, and zero when close > open. Use available T1 bars, including a bar still forming.
+Long: Buyer volume >= seller volume
+Short: Seller volume > buyer volume

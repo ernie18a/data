@@ -1,0 +1,2 @@
+Long: On T1 chart bars, close > high of the first bar of the session AND this is the first such close since the session start
+Short: On T1 chart bars, close < low of the first bar of the session AND this is the first such close since the session start

@@ -1,0 +1,2 @@
+Long: PivotLow(low, confirmation lookback, confirmation lookback) exists AND (VWMA filter is disabled OR close > VWMA(source, volume, lookback))
+Short: PivotHigh(high, confirmation lookback, confirmation lookback) exists AND (VWMA filter is disabled OR close < VWMA(source, volume, lookback))

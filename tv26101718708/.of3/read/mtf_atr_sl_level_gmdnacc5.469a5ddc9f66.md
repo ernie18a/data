@@ -1,0 +1,2 @@
+Long: chart close <= close(T1, last completed bar) - lower multiplier * ATR(lookback, smoothing method, T1, last completed bar)
+Short: chart close >= close(T1, last completed bar) + upper multiplier * ATR(lookback, smoothing method, T1, last completed bar)

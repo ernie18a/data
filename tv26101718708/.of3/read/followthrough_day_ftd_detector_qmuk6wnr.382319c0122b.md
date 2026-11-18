@@ -1,0 +1,3 @@
+Calculation: Day 1 = low < lowest(low[1], new-low lookback), or, with no active rally and a reference low set, the first bar whose low >= that reference low; a new-low bar resets the rally and sets the reference low to its low before this check, and an active Day-1 low undercut resets the rally and sets the reference low to its low after this check
+Long: Day 1
+Long: an active rally attempt has lasted at least the minimum bars since Day 1, no FTD has occurred in that attempt, ((close / close[1]) - 1) * 100 >= minimum gain, volume > volume[1] when the volume filter is enabled, and low >= Day-1 low

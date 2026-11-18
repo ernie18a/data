@@ -1,0 +1,2 @@
+Calculation: NYSE TICK cluster count = count of NYSE TICK closes on T1 <= P1 in a sequence where consecutive qualifying closes are no more than P2 chart bars apart
+Long: NYSE TICK close on T1 <= P1 AND NYSE TICK cluster count >= P3

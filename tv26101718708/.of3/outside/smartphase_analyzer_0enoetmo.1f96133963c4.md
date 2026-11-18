@@ -1,0 +1,3 @@
+Calculation: Composite score = mean of separately enabled normalized Sharpe ratio, Sortino ratio, Omega ratio, coefficient of variation, alpha and beta versus benchmark close, R² of traded and benchmark returns, entropy, z-score, PLF, SRI, maximum drawdown, and momentum rank; calculate and normalize each over P1; calculate PLF with P2, P3, and P4 and SRI with P5
+Long: Composite score > simple moving average(Composite score, P6)
+Short: Composite score <= simple moving average(Composite score, P6) - standard deviation(Composite score, P6)

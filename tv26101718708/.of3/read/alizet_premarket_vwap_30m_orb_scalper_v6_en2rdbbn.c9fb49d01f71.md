@@ -1,0 +1,5 @@
+Calculation: opening-range high = maximum high of chart bars from the first regular-session bar through the first later chart bar whose datetime is at least the opening-range duration after the first bar; retain until the next regular session
+Calculation: opening-range low = minimum low of chart bars from the first regular-session bar through the first later chart bar whose datetime is at least the opening-range duration after the first bar; retain until the next regular session
+Long: during regular session AND opening range complete AND close crosses above opening-range high AND (VWAP filter disabled OR close > VWAP(HLC3)) AND (volume filter disabled OR volume > SMA(volume, volume lookback) * volume multiplier)
+Short: during regular session AND opening range complete AND close crosses below opening-range low AND (VWAP filter disabled OR close < VWAP(HLC3)) AND (volume filter disabled OR volume > SMA(volume, volume lookback) * volume multiplier)
+Short: overbought sell signal enabled AND RSI(close, RSI lookback) crosses above overbought threshold

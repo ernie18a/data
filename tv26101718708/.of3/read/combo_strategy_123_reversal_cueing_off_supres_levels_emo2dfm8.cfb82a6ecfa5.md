@@ -1,0 +1,8 @@
+Long: close > close[1] AND close[1] > close[2] AND Stochastic Slow(close, high, low, entry stochastic lookback parameter) < stochastic level parameter
+Short: close < close[1] AND close[1] < close[2] AND Stochastic Fast(close, high, low, entry stochastic lookback parameter) > stochastic level parameter
+Calculation: smoothed fast stochastic = SMA(Stochastic(close, high, low, reversal stochastic lookback parameter), first smoothing lookback parameter)
+Calculation: smoothed slow stochastic = SMA(smoothed fast stochastic, second smoothing lookback parameter)
+Calculation: reversal state = 1 when close[2] < close[1] AND close > close[1] AND smoothed fast stochastic < smoothed slow stochastic AND smoothed fast stochastic > stochastic level parameter; otherwise -1 when close[2] > close[1] AND close < close[1] AND smoothed fast stochastic > smoothed slow stochastic AND smoothed fast stochastic < stochastic level parameter; otherwise prior value, initially 0
+Calculation: boundary state, on chart bars = -1 when the boundary mode selects the first mode and chart high <= low(T1, last completed bar), or when it selects the second mode and chart high <= high(T1, last completed bar); otherwise 1 when the first mode is selected and chart low >= high(T1, last completed bar), or the second mode is selected and chart low >= low(T1, last completed bar); otherwise prior value, initially 0
+Long: reversal state = 1 AND boundary state = 1
+Short: reversal state = -1 AND boundary state = -1

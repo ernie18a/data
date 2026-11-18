@@ -1,0 +1,1 @@
+Long: ((volatility index chart-timeframe close - prior volatility index chart-timeframe close) - SMA(volatility index chart-timeframe close - prior volatility index chart-timeframe close, P1)) / standard deviation(volatility index chart-timeframe close - prior volatility index chart-timeframe close, P1) > P2

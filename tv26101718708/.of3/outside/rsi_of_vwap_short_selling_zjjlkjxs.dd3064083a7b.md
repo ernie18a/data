@@ -1,0 +1,1 @@
+Short: VIX RSI(P1) crosses above P2 AND (VWAP RSI(P3) crosses below P4 OR T1 VWAP RSI(P3) crosses below P5)

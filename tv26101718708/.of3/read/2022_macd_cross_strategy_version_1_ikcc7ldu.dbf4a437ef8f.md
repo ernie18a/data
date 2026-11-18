@@ -1,0 +1,8 @@
+Calculation: Long initial stop = lowest(low, swing lookback) ending at entry - ATR(ATR lookback) at entry * stop multiplier
+Calculation: Short initial stop = highest(high, swing lookback) ending at entry + ATR(ATR lookback) at entry * stop multiplier
+Calculation: Long initial risk = entry price - Long initial stop
+Calculation: Short initial risk = Short initial stop - entry price
+Long: close > EMA(close, EMA lookback) AND MACD line[1] < 0 AND MACD signal line[1] < 0 AND MACD signal line crosses above MACD line AND at most maximum qualifying bars among the preceding bar-count lookback bars had close below its EMA(close, EMA lookback) AND no open position
+Short: close < EMA(close, EMA lookback) AND MACD line[1] > 0 AND MACD signal line[1] > 0 AND MACD signal line crosses below MACD line AND at most maximum qualifying bars among the preceding bar-count lookback bars had close above its EMA(close, EMA lookback) AND no open position
+Exit: long, (before first target, low <= Long initial stop) OR (after first target, low <= entry price) OR high >= entry price + Long initial risk * first target reward multiple OR high >= entry price + Long initial risk * second target reward multiple
+Exit: short, (before first target, high >= Short initial stop) OR (after first target, high >= entry price) OR low <= entry price - Short initial risk * first target reward multiple OR low <= entry price - Short initial risk * second target reward multiple

@@ -1,0 +1,2 @@
+Long: the selected moving average of source over the shorter lookback crosses above the selected moving average of source sampled from the still-forming T1 bar onto chart bars and averaged over the longer lookback, and year is at least the signal start-year parameter
+Short: the selected moving average of source sampled from the still-forming T1 bar onto chart bars and averaged over the longer lookback crosses above the selected moving average of source over the shorter lookback, and year is at least the signal start-year parameter

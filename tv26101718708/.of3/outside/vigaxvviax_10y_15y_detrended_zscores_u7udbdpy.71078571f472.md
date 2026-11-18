@@ -1,0 +1,3 @@
+Calculation: Detrended z-score = (ln(growth-fund close / value-fund close) − current rolling linear-regression fit of that log ratio over L bars) / residual standard deviation of that regression over L bars; valid when available observations ≥ minimum-fraction parameter × L, where L = the selected one of two lookback-year parameters × bars-per-year parameter
+Long: re-entry mode enabled AND (detrended z-score crosses above −P4 OR crosses above −P5 OR crosses above −P6) OR re-entry mode disabled AND (detrended z-score ≤ −P4 OR ≤ −P5 OR ≤ −P6)
+Short: re-entry mode enabled AND (detrended z-score crosses below P1 OR crosses below P2 OR crosses below P3) OR re-entry mode disabled AND (detrended z-score ≥ P1 OR ≥ P2 OR ≥ P3)

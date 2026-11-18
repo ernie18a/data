@@ -1,0 +1,6 @@
+Calculation: Resistance = latest non-NA PivotHigh(high, pivot-left lookback, pivot-right lookback) calculated on T1 bars and sampled on chart bars; uses the T1 bar still forming in realtime and completed T1 bars historically
+Calculation: Support = latest non-NA PivotLow(low, pivot-left lookback, pivot-right lookback) calculated on T1 bars and sampled on chart bars; uses the T1 bar still forming in realtime and completed T1 bars historically
+Long: CrossesAbove(close, Resistance)[consolidation lookback] AND Lowest(close, consolidation lookback) > Resistance AND (compression lookback is disabled OR, for every i from 1 through the compression lookback, low[consolidation lookback+i] > low[consolidation lookback+i+1]) AND, for every i from 0 through consolidation lookback minus one, close[i] >= Resistance[i] × long reset factor
+Long: low < Support AND close > Support AND open > Support
+Short: CrossesBelow(close, Support)[consolidation lookback] AND Highest(close, consolidation lookback) < Support AND (compression lookback is disabled OR, for every i from 1 through the compression lookback, high[consolidation lookback+i] < high[consolidation lookback+i+1]) AND, for every i from 0 through consolidation lookback minus one, close[i] <= Support[i] × short reset factor
+Short: high > Resistance AND close < Resistance AND open < Resistance

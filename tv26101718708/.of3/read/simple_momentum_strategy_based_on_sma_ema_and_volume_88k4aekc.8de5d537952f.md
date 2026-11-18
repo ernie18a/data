@@ -1,0 +1,2 @@
+Long: SMA(close, shorter lookback) > EMA(close, longer lookback) AND ((close[1] >= close[2] AND close[2] >= close[3] AND close[3] >= close[4] AND (volume[1] >= volume threshold OR volume[2] >= volume threshold OR volume[3] >= volume threshold)) OR (close[1] > close[3] AND low[2] >= open[3]) OR (close[1] > close[4] AND low[2] >= open[4])
+Exit: long, SMA(close, shorter lookback) crosses below EMA(close, longer lookback)

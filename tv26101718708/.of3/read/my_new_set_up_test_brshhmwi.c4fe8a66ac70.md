@@ -1,0 +1,10 @@
+Calculation: Premarket high = highest high of chart bars in the current day's premarket session
+Calculation: Premarket low = lowest low of chart bars in the current day's premarket session
+Long: During the regular session, close > premarket high AND (anti-chop filter disabled OR (ADX(lookback, same lookback for DI length and ADX smoothing) >= minimum ADX AND Bollinger Band Width(close, lookback, standard-deviation multiplier) > minimum width)) AND NOT (fakeout filter enabled AND within the opening cooldown window) AND (outside the opening cooldown window OR no earlier bar in that window had high > premarket high AND close < premarket high)
+Short: During the regular session, close < premarket low AND (anti-chop filter disabled OR (ADX(lookback, same lookback for DI length and ADX smoothing) >= minimum ADX AND Bollinger Band Width(close, lookback, standard-deviation multiplier) > minimum width)) AND NOT (fakeout filter enabled AND within the opening cooldown window) AND (outside the opening cooldown window OR no earlier bar in that window had low < premarket low AND close > premarket low)
+Calculation: Long stop level = on each long-signal bar, signal-bar close - ATR(signal-bar close, lookback) * stop multiple when ATR stops are selected; otherwise signal-bar close * (1 - stop-loss percentage / 100)
+Calculation: Long target level = on each long-signal bar, signal-bar close + (signal-bar close - long stop level) * reward/risk ratio
+Calculation: Short stop level = on each short-signal bar, signal-bar close + ATR(signal-bar close, lookback) * stop multiple when ATR stops are selected; otherwise signal-bar close * (1 + stop-loss percentage / 100)
+Calculation: Short target level = on each short-signal bar, signal-bar close - (short stop level - signal-bar close) * reward/risk ratio
+Exit: long, low <= long stop level OR high >= long target level
+Exit: short, high >= short stop level OR low <= short target level

@@ -1,0 +1,4 @@
+Long: (3 * RSI(close, lookback) - 2 * EMA(RSI(close, lookback), lookback)) crosses above 0
+Short: On chart bars, close[1] crosses above high(T1, last completed bar) + factor * ((high(T1, last completed bar) + low(T1, last completed bar) + close(T1, last completed bar)) / 3 - low(T1, last completed bar))
+Exit: long, low <= entry price * (1 - stop-loss parameter / 100) OR high >= entry price * (1 + take-profit parameter 1 / 100) OR high >= entry price * (1 + take-profit parameter 2 / 100) OR high >= entry price * (1 + take-profit parameter 3 / 100) OR high >= entry price * (1 + take-profit parameter 4 / 100)
+Exit: short, high >= entry price * (1 + stop-loss parameter / 100) OR low <= entry price * (1 - take-profit parameter 1 / 100) OR low <= entry price * (1 - take-profit parameter 2 / 100) OR low <= entry price * (1 - take-profit parameter 3 / 100) OR low <= entry price * (1 - take-profit parameter 4 / 100)

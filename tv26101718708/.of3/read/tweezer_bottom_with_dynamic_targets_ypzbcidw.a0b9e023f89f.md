@@ -1,0 +1,1 @@
+Long: highest(high, lookback) > high AND abs(low[1] - low) / low * 100 <= maximum low difference percentage AND close > open AND volume > SMA(volume, volume lookback)

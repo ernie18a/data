@@ -1,0 +1,2 @@
+Short: SMA(traded instrument close, P1) crosses below SMA(traded instrument close, P2) OR RSI(traded instrument close, P3) > P4 OR (Bitcoin dominance on T1 is available AND Bitcoin dominance on T1 > P5)
+Exit: long, SMA(traded instrument close, P1) crosses below SMA(traded instrument close, P2) OR RSI(traded instrument close, P3) > P4 OR (Bitcoin dominance on T1 is available AND Bitcoin dominance on T1 > P5)

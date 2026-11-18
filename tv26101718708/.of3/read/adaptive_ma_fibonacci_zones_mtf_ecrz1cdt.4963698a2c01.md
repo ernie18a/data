@@ -1,0 +1,4 @@
+Long: On chart bars using T1 values (last completed T1 bar historically; T1 bar still forming in real time), close(T1) >= selected MA(close(T1), lookback, MA type)
+Short: On chart bars using T1 values (last completed T1 bar historically; T1 bar still forming in real time), close(T1) < selected MA(close(T1), lookback, MA type)
+Long: On chart bars using T2 values (last completed T2 bar historically; T2 bar still forming in real time), close(T2) >= selected MA(close(T2), lookback, MA type)
+Short: On chart bars using T2 values (last completed T2 bar historically; T2 bar still forming in real time), close(T2) < selected MA(close(T2), lookback, MA type)

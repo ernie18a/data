@@ -1,0 +1,3 @@
+Calculation: currency strength = mean of signed 100 × (close − EMA(close, lookback, T1)) / EMA(close, lookback, T1) across all pairs containing that currency, positive for base and negative for quote; sampled on chart bars from the latest available T1 bar (last completed historically, still forming in real time), ranked using the last completed chart bar
+Long: base currency strength ranks highest and quote currency strength ranks lowest among currencies
+Short: base currency strength ranks lowest and quote currency strength ranks highest among currencies

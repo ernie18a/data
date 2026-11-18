@@ -1,0 +1,9 @@
+Calculation: regression-based %B = (T1 close - (linreg(close, lookback, 0) - deviation multiplier * stdev(close, lookback))) / (2 * deviation multiplier * stdev(close, lookback)); linreg and stdev run on T1 bars, and their values plus T1 close are mapped to chart bars with lookahead off (the forming T1 bar in realtime and the last completed T1 bar historically)
+Calculation: green marker level = if regression-based %B[1 chart bar] < oversold threshold AND regression-based %B > oversold threshold then the previous chart bar's mapped T1 low else the previous green marker level; initially 0
+Calculation: red marker level = if regression-based %B[1 chart bar] > overbought threshold AND regression-based %B < overbought threshold then the previous chart bar's mapped T1 high else the previous red marker level; initially 0
+Long: crossover(green marker level, green marker level[1 chart bar]) OR crossunder(green marker level, green marker level[1 chart bar])
+Long: crossover(green marker level, green marker level[1 chart bar]) OR crossunder(green marker level, green marker level[1 chart bar]), AND datetime is within the configured start and finish datetimes, inclusive
+Short: crossover(red marker level, red marker level[1 chart bar]) OR crossunder(red marker level, red marker level[1 chart bar])
+Short: crossover(red marker level, red marker level[1 chart bar]) OR crossunder(red marker level, red marker level[1 chart bar]), AND datetime is within the configured start and finish datetimes, inclusive
+Exit: long, low <= entry price - fixed loss distance OR (highest high since entry >= entry price + trailing activation distance AND low <= highest high since entry - long trailing offset)
+Exit: short, high >= entry price + fixed loss distance OR (lowest low since entry <= entry price - trailing activation distance AND high >= lowest low since entry + short trailing offset)

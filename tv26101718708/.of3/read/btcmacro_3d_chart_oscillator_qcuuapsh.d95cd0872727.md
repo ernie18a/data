@@ -1,0 +1,5 @@
+Calculation: Pi-cycle measure = (Pi-cycle scale × SMA(close, shorter Pi-cycle lookback) / SMA(close, longer Pi-cycle lookback)) − Pi-cycle baseline
+Calculation: Log-price regression residual = LN(close) − LinReg(LN(close), log-regression lookback, log-regression offset)
+Calculation: Composite oscillator = Pi-cycle weight × Z-score(Pi-cycle measure, normalization lookback) + combined close-source weight × Z-score(close, normalization lookback) + log-residual weight × Z-score(Log-price regression residual, normalization lookback) + volume weight × Z-score(ROC(volume, volume-momentum lookback), normalization lookback)
+Long: EMA(Composite oscillator, oscillator-smoothing lookback) < midline
+Short: EMA(Composite oscillator, oscillator-smoothing lookback) > SMA(EMA(Composite oscillator, oscillator-smoothing lookback), cycle-adaptation lookback) + deviation multiplier × StDev(EMA(Composite oscillator, oscillator-smoothing lookback), cycle-adaptation lookback)

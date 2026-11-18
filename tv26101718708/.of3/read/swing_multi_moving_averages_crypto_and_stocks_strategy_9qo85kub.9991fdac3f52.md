@@ -1,0 +1,5 @@
+Calculation: Selected MA(source, lookback) = one of SMA(source, lookback), EMA(source, lookback), WMA(source, lookback), ALMA(source, lookback, offset, sigma), RMA(source, lookback), LSMA(source, lookback, offset), VWMA(source, lookback), DEMA(source, lookback), HMA(source, lookback), KAMA(source, lookback, fast length, longer slow length), FRAMA(source, lookback), VIDYA(source, lookback), JMA(source, lookback, power, phase), TEMA(source, lookback), ZLEMA(source, lookback), T3(source, lookback, factor), or TRIMA(source, lookback)
+Long: close > Selected MA(source, lookback) AND close[1] < Selected MA(source, lookback) AND Monday AND entries this week < weekly entry limit
+Short: close < Selected MA(source, lookback) AND close[1] > Selected MA(source, lookback) AND Monday AND entries this week < weekly entry limit
+Exit: long, Sunday OR low <= entry price * (1 - long stop-loss percentage) OR high >= entry price * (1 + long take-profit percentage)
+Exit: short, Sunday OR high >= entry price * (1 + short stop-loss percentage) OR low <= entry price * (1 - short take-profit percentage)

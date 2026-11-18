@@ -1,0 +1,2 @@
+Long: BTCUSDT input price series on T1 crosses above SMA(BTCUSDT input price series on T1, length parameter)
+Exit: long, BTCUSDT input price series on T1 crosses below SMA(BTCUSDT input price series on T1, length parameter)

@@ -1,0 +1,5 @@
+Calculation: ATR buffer = ATR(ATR length) × buffer multiplier
+Long: confirmed chart bar AND close > VWAP(hlc3) + ATR buffer AND close > open AND close > high[1] AND (RSI filter disabled OR RSI(close, RSI length) > RSI threshold)
+Short: confirmed chart bar AND close < VWAP(hlc3) − ATR buffer AND close < open AND close < low[1] AND (RSI filter disabled OR RSI(close, RSI length) < RSI threshold)
+Exit: long, low <= lowest(low, swing lookback) on entry bar − ATR buffer on entry bar OR high >= entry price + ATR(ATR length) on entry bar × TP1 ATR multiplier OR high >= entry price + ATR(ATR length) on entry bar × TP2 ATR multiplier
+Exit: short, high >= highest(high, swing lookback) on entry bar + ATR buffer on entry bar OR low <= entry price − ATR(ATR length) on entry bar × TP1 ATR multiplier OR low <= entry price − ATR(ATR length) on entry bar × TP2 ATR multiplier

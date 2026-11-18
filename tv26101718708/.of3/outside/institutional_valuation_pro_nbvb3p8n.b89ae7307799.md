@@ -1,0 +1,5 @@
+Calculation: Relative valuation score(asset closing price, benchmark closing price) = EMA(score scale parameter × ((asset closing price / benchmark closing price − SMA(asset closing price / benchmark closing price, lookback parameter)) / standard deviation(asset closing price / benchmark closing price, lookback parameter)), smoothing parameter)
+Short: Relative valuation score(chart instrument closing price, US Dollar Index closing price) > upper valuation threshold
+Long: Relative valuation score(chart instrument closing price, US Dollar Index closing price) < lower valuation threshold
+Short: Relative valuation score(chart instrument closing price, gold futures closing price) > upper valuation threshold
+Long: Relative valuation score(chart instrument closing price, gold futures closing price) < lower valuation threshold

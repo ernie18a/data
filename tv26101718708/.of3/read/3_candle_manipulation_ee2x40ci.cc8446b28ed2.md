@@ -1,0 +1,2 @@
+Long: close[2] > open[2] AND close[1] < open[1] AND close > open AND (higher-than-Candle-2 volume filter disabled OR volume > volume[1]) AND (percentage-over-Candle-1 volume filter disabled OR volume >= volume[2] × (1 + configured volume percentage / 100))
+Short: close[2] < open[2] AND close[1] > open[1] AND close < open AND (higher-than-Candle-2 volume filter disabled OR volume > volume[1]) AND (percentage-over-Candle-1 volume filter disabled OR volume >= volume[2] × (1 + configured volume percentage / 100))

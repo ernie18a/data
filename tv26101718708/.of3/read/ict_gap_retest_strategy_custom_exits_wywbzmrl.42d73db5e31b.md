@@ -1,0 +1,7 @@
+Calculation: gap upper boundary = max(previous chart-bar close, current chart-bar open) when a new T1 or T2 gap opens.
+Calculation: gap lower boundary = min(previous chart-bar close, current chart-bar open) when a new T1 or T2 gap opens.
+Calculation: swing point = low when first initialized and close > gap upper boundary, otherwise high; thereafter min(previous swing point, low) when close > gap upper boundary, otherwise max(previous swing point, high).
+Long: no trade has been taken since the latest gap reset AND no position is open AND a gap exists AND swing point is defined AND the chart bar is inside either enabled configured New York trade window AND close > gap upper boundary AND previous chart-bar low <= gap upper boundary.
+Short: no trade has been taken since the latest gap reset AND no position is open AND a gap exists AND swing point is defined AND the chart bar is inside either enabled configured New York trade window AND close < gap lower boundary AND previous chart-bar high >= gap lower boundary.
+Exit: long, low <= swing point - stop offset OR (trailing-stop mode AND low <= active trailing-stop price) OR (fixed-target mode AND high >= entry price + target distance) OR (time-exit mode AND chart-bar time is in the configured New York exit window).
+Exit: short, high >= swing point + stop offset OR (trailing-stop mode AND high >= active trailing-stop price) OR (fixed-target mode AND low <= entry price - target distance) OR (time-exit mode AND chart-bar time is in the configured New York exit window).

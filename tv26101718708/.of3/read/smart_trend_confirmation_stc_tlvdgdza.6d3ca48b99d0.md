@@ -1,0 +1,2 @@
+Long: close > EMA(close, longer lookback) AND abs(close - EMA(close, shorter lookback)) / EMA(close, shorter lookback) * 100 <= pullback distance parameter AND RSI(close, RSI lookback) > bullish RSI threshold AND volume > SMA(volume, volume lookback) AND close > open
+Short: close < EMA(close, longer lookback) AND abs(close - EMA(close, shorter lookback)) / EMA(close, shorter lookback) * 100 <= pullback distance parameter AND RSI(close, RSI lookback) < bearish RSI threshold AND volume > SMA(volume, volume lookback) AND close < open

@@ -1,0 +1,1 @@
+Long: SMA(IF(funding-rate close(T1) is nonzero, funding-rate close(T1), IF(perpetual close(T1) − open(T1) is missing, 0, (perpetual close(T1) − open(T1)) × parameter)), lookback) on chart bars using T1 values (the still-forming T1 bar in real time, the last completed T1 bar historically) crosses below zero

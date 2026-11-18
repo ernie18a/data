@@ -1,0 +1,5 @@
+Calculation: LWTI = WMA(close - close[1], LWTI lookback)
+Long: close > highest(high[1], Donchian lookback) AND volume > SMA(volume, volume lookback) AND LWTI > SMA(LWTI, LWTI smoothing lookback) AND the bar timestamp is within the configured session (GMT-5) AND no entry has occurred today
+Short: close < lowest(low[1], Donchian lookback) AND volume > SMA(volume, volume lookback) AND LWTI < SMA(LWTI, LWTI smoothing lookback) AND the bar timestamp is within the configured session (GMT-5) AND no entry has occurred today
+Exit: long, low <= the entry-signal bar low OR high >= the entry-signal bar close + reward-risk multiple × (entry-signal bar close - entry-signal bar low)
+Exit: short, high >= the entry-signal bar high OR low <= the entry-signal bar close - reward-risk multiple × (entry-signal bar high - entry-signal bar close)

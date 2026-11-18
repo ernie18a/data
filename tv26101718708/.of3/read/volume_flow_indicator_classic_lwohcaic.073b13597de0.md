@@ -1,0 +1,2 @@
+Long: VFI(volume-flow lookback, price-cutoff coefficient, maximum-volume multiplier, EMA smoothing lookback, volatility lookback) crosses above zero
+Short: VFI(volume-flow lookback, price-cutoff coefficient, maximum-volume multiplier, EMA smoothing lookback, volatility lookback) crosses below zero

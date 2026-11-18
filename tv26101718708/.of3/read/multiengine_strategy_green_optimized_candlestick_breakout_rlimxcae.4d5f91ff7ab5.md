@@ -1,0 +1,4 @@
+Calculation: longer EMA = EMA(close, longer EMA lookback)
+Calculation: entry stop = lowest(low, stop lookback) captured on the entry-signal bar
+Long: position is flat AND datetime >= current time - date lookback duration AND close > VWAP AND close > longer EMA AND close - entry stop > close * minimum risk fraction AND ((dip engine enabled AND low <= EMA(close, shorter EMA lookback) * (1 + EMA buffer percentage / 100) AND close > open AND close > close[1]) OR (breakout engine enabled AND crosses above highest(high, breakout lookback)[1] AND volume > SMA(volume, volume average lookback) * volume multiplier))
+Exit: long, close < longer EMA OR low <= entry stop OR high >= entry-signal-bar close + (entry-signal-bar close - entry stop) * reward multiple

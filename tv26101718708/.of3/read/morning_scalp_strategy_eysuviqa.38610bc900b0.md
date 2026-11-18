@@ -1,0 +1,3 @@
+Long: SMI(longer range lookback, shorter smoothing lookback) crosses above EMA(SMI(longer range lookback, shorter smoothing lookback), shorter smoothing lookback) AND SMI(longer range lookback, shorter smoothing lookback) < 0 AND close > EMA(close, longest guard lookback) AND within configured test period AND within configured morning session
+Exit: Long, high >= entry price * (1 + profit target parameter)
+Exit: Long, close < EMA(close, longest guard lookback)

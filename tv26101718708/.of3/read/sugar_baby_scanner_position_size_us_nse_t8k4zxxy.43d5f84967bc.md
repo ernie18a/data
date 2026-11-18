@@ -1,0 +1,2 @@
+Calculation: percentage change = (close - close[1]) / close[1] * 100
+Long: close > minimum-price parameter AND percentage change >= minimum upward-move parameter AND volume >= minimum-volume parameter converted from millions to shares AND (volume-increase requirement is disabled OR volume > volume[1])

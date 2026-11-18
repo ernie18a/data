@@ -1,0 +1,2 @@
+Long: Supertrend(ATR lookback, multiplier) is bullish AND EMA(OBV(close, volume), OBV EMA lookback) crosses above EMA(EMA(OBV(close, volume), OBV EMA lookback), signal EMA lookback) AND flat, on confirmed bar close
+Exit: long, Supertrend(ATR lookback, multiplier) is bearish

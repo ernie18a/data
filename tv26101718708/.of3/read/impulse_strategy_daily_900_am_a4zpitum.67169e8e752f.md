@@ -1,0 +1,2 @@
+Long: On a chart bar whose time-of-day equals the trigger-time parameter, previous completed T1 bar close < open AND current still-forming T1 bar close > open AND current still-forming T1 bar close > previous completed T1 bar close
+Short: On a chart bar whose time-of-day equals the trigger-time parameter, previous completed T1 bar close > open AND current still-forming T1 bar close < open AND current still-forming T1 bar close < previous completed T1 bar close

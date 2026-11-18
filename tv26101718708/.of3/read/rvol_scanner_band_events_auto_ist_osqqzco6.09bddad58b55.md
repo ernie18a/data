@@ -1,0 +1,4 @@
+Calculation: Completed ADV percentage = cumulative chart-bar volume since chart-day start / SMA(volume, lookback, T1, last completed bar) * 100
+Calculation: Daily price change percentage = (close - chart-day open) / chart-day open * 100
+Calculation: Selected volume threshold = manual threshold in manual mode; otherwise threshold1 if the chart-bar start time in Asia/Kolkata is before cutoff1, threshold2 if it is at or after cutoff1 and before cutoff2, threshold3 if it is at or after cutoff2 and before cutoff3, threshold4 if it is at or after cutoff3 and before cutoff4, threshold5 if it is at or after cutoff4 and before cutoff5, and threshold6 otherwise
+Long: Completed ADV percentage >= selected volume threshold AND abs(daily price change percentage) >= minimum price move AND SMA(close * volume, lookback, T1, last completed bar) converted to crore units >= minimum average daily turnover

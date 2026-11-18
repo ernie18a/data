@@ -1,0 +1,2 @@
+Long: close > close[1] when the comparison basis is previous close, or close > open when the comparison basis is open
+Short: close <= close[1] when the comparison basis is previous close, or close <= open when the comparison basis is open

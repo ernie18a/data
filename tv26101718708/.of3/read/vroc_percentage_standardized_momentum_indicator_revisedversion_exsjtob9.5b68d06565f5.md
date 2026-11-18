@@ -1,0 +1,3 @@
+Calculation: volume-weighted velocity = SMA((((open - open[n_velocity]) / open[n_velocity]) * 100 / n_velocity) * (volume / SMA(volume, avg_vol_n)), vroc_smooth)
+Long: volume-weighted velocity >= 0
+Short: volume-weighted velocity < 0 OR (high >= highest(high, lookback_div)[1] AND volume-weighted velocity < valuewhen(high == highest(high, lookback_div), volume-weighted velocity, 1) AND volume-weighted velocity > 0)

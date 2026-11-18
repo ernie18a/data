@@ -1,0 +1,5 @@
+Calculation: simulated profit = current signed position quantity × close − open-trade count × quote size per entry
+Long: selected DCA side is long AND time > start date-time parameter AND time < end date-time parameter AND weekday differs from the previous bar AND ((selected cadence is daily) OR (selected cadence is weekly AND weekday = selected weekday parameter) OR (selected cadence is monthly AND day of month = selected month-day parameter))
+Short: selected DCA side is short AND time > start date-time parameter AND time < end date-time parameter AND weekday differs from the previous bar AND ((selected cadence is daily) OR (selected cadence is weekly AND weekday = selected weekday parameter) OR (selected cadence is monthly AND day of month = selected month-day parameter))
+Exit: long, (gain-threshold exit mode is selected AND simulated profit crosses above the gain-threshold parameter) OR time > end date-time parameter OR bar date = current date
+Exit: short, (gain-threshold exit mode is selected AND simulated profit crosses above the gain-threshold parameter) OR time > end date-time parameter OR bar date = current date

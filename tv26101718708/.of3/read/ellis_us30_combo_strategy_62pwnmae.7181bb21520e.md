@@ -1,0 +1,14 @@
+Calculation: stochastic long signal = EMA(close, short EMA lookback) > EMA(close, medium EMA lookback) AND StochRSI %K crosses above StochRSI %D AND min(StochRSI %K, StochRSI %D) <= oversold threshold
+Calculation: stochastic short signal = EMA(close, short EMA lookback) < EMA(close, medium EMA lookback) AND StochRSI %K crosses below StochRSI %D AND max(StochRSI %K, StochRSI %D) >= overbought threshold
+Calculation: MACD long signal = EMA(close, short EMA lookback) > EMA(close, medium EMA lookback) AND EMA(close, short EMA lookback) > EMA(close, long EMA lookback) AND EMA(close, medium EMA lookback) > EMA(close, long EMA lookback) AND MACD(close, fast lookback, slow lookback, signal smoothing) line crosses above its signal line AND both lines are below zero AND RSI(close, divergence RSI lookback) > divergence threshold AND the latest two paired pivot-low confirmations of low and RSI have a lower latest low and a higher latest RSI, with the latest pivot within the scan lookback
+Calculation: MACD short signal = EMA(close, short EMA lookback) < EMA(close, medium EMA lookback) AND EMA(close, short EMA lookback) < EMA(close, long EMA lookback) AND EMA(close, medium EMA lookback) < EMA(close, long EMA lookback) AND MACD(close, fast lookback, slow lookback, signal smoothing) line crosses below its signal line AND both lines are above zero AND RSI(close, divergence RSI lookback) < divergence threshold AND the latest two paired pivot-high confirmations of high and RSI have a higher latest high and a lower latest RSI, with the latest pivot within the scan lookback
+Calculation: daily realized P&L = cumulative closed-trade P&L minus its value at the most recent chart-bar day-of-month change; initialize at zero
+Calculation: entry gates = confirmed chart bar AND (session filter disabled OR datetime is within the configured session) AND (daily profit filter disabled OR daily realized P&L < profit target) AND (daily loss filter disabled OR daily realized P&L > -loss limit)
+Long: stochastic long signal
+Long: MACD long signal
+Short: stochastic short signal
+Short: MACD short signal
+Long: (stochastic long signal OR MACD long signal) AND position is flat or short AND entry gates
+Short: (stochastic short signal OR MACD short signal) AND position is flat or long AND entry gates
+Exit: long, low <= close of the long-entry signal bar - stop-distance parameter × minimum tick size OR high >= close of the long-entry signal bar + target-distance parameter × minimum tick size
+Exit: short, high >= close of the short-entry signal bar + stop-distance parameter × minimum tick size OR low <= close of the short-entry signal bar - target-distance parameter × minimum tick size

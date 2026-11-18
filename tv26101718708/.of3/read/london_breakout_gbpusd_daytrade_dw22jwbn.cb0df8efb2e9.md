@@ -1,0 +1,4 @@
+Long: on chart bars during the entry-session window and within the configured date range, (close crosses above SMA(close, shorter lookback) OR high crosses above SMA(close, shorter lookback)) AND close[1] > EMA(close, longer lookback)
+Short: on chart bars during the entry-session window and within the configured date range, (close crosses below SMA(close, shorter lookback) OR low crosses below SMA(close, shorter lookback)) AND close[1] < EMA(close, longer lookback)
+Exit: long, on a chart bar outside the exit-session window OR low <= entry price - stop-loss distance
+Exit: short, on a chart bar outside the exit-session window OR high >= entry price + stop-loss distance

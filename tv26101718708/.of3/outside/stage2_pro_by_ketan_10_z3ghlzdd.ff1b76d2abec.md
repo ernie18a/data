@@ -1,0 +1,2 @@
+Calculation: Scaled NIFTY MidSmall 400 close on T1 = NIFTY MidSmall 400 close on T1 × SMA(traded instrument close on T1, P1) / SMA(NIFTY MidSmall 400 close on T1, P1)
+Long: traded instrument close on T1 > Scaled NIFTY MidSmall 400 close on T1

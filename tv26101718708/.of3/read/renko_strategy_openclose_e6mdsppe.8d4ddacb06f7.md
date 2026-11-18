@@ -1,0 +1,10 @@
+Calculation: Chart bar body = abs(open[1] - close[1])
+Calculation: Renko open = open of Traditional Renko bars with box-size parameter, requested at T1 and mapped onto chart bars; the current T1 bar is still forming in real time, and offsets count chart bars
+Calculation: Renko close = close of Traditional Renko bars with box-size parameter, requested at T1 and mapped onto chart bars; the current T1 bar is still forming in real time, and offsets count chart bars
+Calculation: Renko bar body = abs(Renko open[1] - Renko close[1])
+Long: (chart-source mode selected AND open[1] > close[1] AND close > open AND open[1] < open[2]) OR (Renko-source mode selected AND Renko open[1] > Renko close[1] AND Renko close > Renko open AND Renko open[1] < Renko open[2])
+Short: (chart-source mode selected AND open[1] < close[1] AND close < open AND open[1] > open[2]) OR (Renko-source mode selected AND Renko open[1] < Renko close[1] AND Renko close < Renko open AND Renko open[1] > Renko open[2])
+Exit: long, chart-source mode selected AND (low <= signal-bar close - stop-loss multiplier * chart bar body at signal OR high >= signal-bar close + take-profit multiplier * chart bar body at signal)
+Exit: short, chart-source mode selected AND (high >= signal-bar close + stop-loss multiplier * chart bar body at signal OR low <= signal-bar close - take-profit multiplier * chart bar body at signal)
+Exit: long, Renko-source mode selected AND (low <= signal-bar Renko close - stop-loss multiplier * Renko bar body at signal OR high >= signal-bar Renko close + take-profit multiplier * Renko bar body at signal)
+Exit: short, Renko-source mode selected AND (high >= signal-bar Renko close + stop-loss multiplier * Renko bar body at signal OR low <= signal-bar Renko close - take-profit multiplier * Renko bar body at signal)

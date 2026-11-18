@@ -1,0 +1,3 @@
+Calculation: Direction(T) = 1 when EMA(close, EMA lookback) - EMA(close, EMA lookback)[slope lookback] > flat threshold and Supertrend(factor, ATR lookback) is up; -1 when the EMA difference < -flat threshold and Supertrend is down; otherwise 0. Use the same parameters for T1, T2, and T3. Calculate on T bars; chart bars take T's last completed bar historically and its still-forming bar in realtime.
+Long: Direction(T1) = 1 AND Direction(T2) = 1 AND Direction(T3) = 1
+Short: Direction(T1) = -1 AND Direction(T2) = -1 AND Direction(T3) = -1

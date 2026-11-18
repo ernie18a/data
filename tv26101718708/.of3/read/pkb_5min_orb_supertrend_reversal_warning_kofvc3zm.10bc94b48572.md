@@ -1,0 +1,1 @@
+Exit: Long, SuperTrend direction changes from bullish to bearish, using ATR(lookback) and a separate factor parameter

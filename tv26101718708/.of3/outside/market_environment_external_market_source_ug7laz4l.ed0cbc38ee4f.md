@@ -1,0 +1,6 @@
+Calculation: Fast average = EMA(external market index closing price for instrument P1 on T1, length P2) or SMA of that price over P2 bars, selected by type P3
+Calculation: Middle average = EMA(external market index closing price for instrument P1 on T1, length P4) or SMA of that price over P4 bars, selected by type P5
+Calculation: Slow average = EMA(external market index closing price for instrument P1 on T1, length P6) or SMA of that price over P6 bars, selected by type P7
+Calculation: Market state = on the first chart bar, bullish if the fast average is above the middle average and the middle average is above the slow average for P8 consecutive chart bars, otherwise pullback; on later chart bars, in priority order, bullish if that ordering has held for P8 consecutive chart bars; bearish if the fast average is below the middle average and the slow average crosses above the fast or middle average; bearish if the prior state is bearish and the fast average is below the middle average and the slow average is above the fast or middle average; pullback if the fast average crosses below the middle average; pullback if the prior state is pullback; otherwise retain the prior state
+Long: Market state is bullish
+Short: Market state is bearish

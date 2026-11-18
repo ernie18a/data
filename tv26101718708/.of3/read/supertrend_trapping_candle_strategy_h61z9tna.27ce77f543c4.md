@@ -1,0 +1,4 @@
+Calculation: Strong volume = volume > volume[1] OR (volume < volume[1] AND volume[1] < volume[2] AND close > close[1] AND close[1] > close[2] AND open > open[1] AND open[1] > open[2]) OR (volume < volume[1] AND volume[1] < volume[2] AND close < close[1] AND close[1] < close[2] AND open < open[1] AND open[1] < open[2])
+Calculation: Small candle = high - low < close * candle-height parameter
+Long: SuperTrend(factor parameter, ATR-length parameter) indicates uptrend AND close < open AND Strong volume AND Small candle
+Short: SuperTrend(factor parameter, ATR-length parameter) indicates downtrend AND close > open AND Strong volume AND Small candle

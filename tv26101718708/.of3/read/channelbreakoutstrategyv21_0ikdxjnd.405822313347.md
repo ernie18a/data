@@ -1,0 +1,10 @@
+Calculation: Best long close = reset sentinel parameter when flat or on the first long-position bar; otherwise the greater of current close and its previous value
+Calculation: Long return ratio = Best long close / long entry price
+Calculation: Long stop = close - ATR(lookback) × ATR stop multiple while flat or short; long entry price - ATR(lookback) × ATR stop multiple on the first long-position bar; trailing factor × Best long close when Long return ratio ≥ profit ratio threshold; close - ATR(lookback) × ATR stop multiple when long on this and the previous bar, that candidate exceeds the previous Long stop, and close > previous close; otherwise the previous Long stop. The trailing factor is the highest-ratio factor when Long return ratio > upper ratio cutoff, the middle-ratio factor when Long return ratio ≥ middle ratio cutoff, the profit-ratio factor when Long return ratio ≥ profit ratio threshold, and the base factor otherwise.
+Calculation: Short stop = close + ATR(lookback) × ATR stop multiple while flat or long; short entry price + ATR(lookback) × ATR stop multiple on the first short-position bar; close + ATR(lookback) × ATR stop multiple when short on this and the previous bar, that candidate is below the previous Short stop, and close < previous close; otherwise the previous Short stop
+Long: long entries enabled AND flat AND calendar year(datetime) > base year AND ATR(lookback) is defined AND volume as a percentage of SMA(volume, lookback) ≥ volume threshold AND high ≥ the previous chart bar's highest(high, lookback) + breakout buffer
+Short: short entries enabled AND flat AND calendar year(datetime) > base year AND ATR(lookback) is defined AND volume as a percentage of SMA(volume, lookback) ≥ volume threshold AND low ≤ the previous chart bar's lowest(low, lookback) - breakout buffer
+Exit: long, ATR(lookback) is defined AND low ≤ Long stop
+Exit: long, max(open - close, 0) ≥ ATR(lookback) × reversal-body ATR multiple AND Long return ratio < profit ratio threshold
+Exit: short, ATR(lookback) is defined AND high ≥ Short stop
+Exit: short, max(close - open, 0) ≥ ATR(lookback) × reversal-body ATR multiple

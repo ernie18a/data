@@ -1,0 +1,4 @@
+Short: Short trades enabled AND MACD line ≥ its signal line AND Stochastic RSI %K ≥ its signal line on T1 and T2
+Long: Long trades enabled AND (MACD line < its signal line OR Stochastic RSI %K < its signal line on T1) AND (MACD line < its signal line OR Stochastic RSI %K < its signal line on T2)
+Exit: Short, Long trades disabled AND (MACD line < its signal line OR Stochastic RSI %K < its signal line on T1) AND (MACD line < its signal line OR Stochastic RSI %K < its signal line on T2)
+Exit: Long, Short trades disabled AND MACD line ≥ its signal line AND Stochastic RSI %K ≥ its signal line on T1 and T2

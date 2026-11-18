@@ -1,0 +1,1 @@
+Long: volume > SMA(volume, volume-average lookback) * abnormal-volume multiplier AND high - low > SMA(high - low, candle-range lookback) * range-expansion multiplier AND close > open AND close > (high + low) / 2

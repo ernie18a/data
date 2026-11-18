@@ -1,0 +1,6 @@
+Calculation: Squeeze Momentum = linreg(close - avg(avg(highest(high, lookback), lowest(low, lookback)), sma(close, lookback)), lookback, offset)
+Calculation: Money Flow Index = MFI(hlc3, volume, lookback)
+Long: Squeeze Momentum crosses above blue-wave threshold AND Money Flow Index > money-flow threshold AND datetime >= start timestamp AND datetime < end timestamp AND long strategy enabled
+Short: Squeeze Momentum crosses below blue-wave threshold AND Money Flow Index < money-flow threshold AND datetime >= start timestamp AND datetime < end timestamp AND short strategy enabled
+Exit: long, low <= entry price - (close on the most recent long signal bar that submitted an exit order * long stop-loss percentage) OR high >= entry price + (close on the most recent long signal bar that submitted an exit order * long take-profit percentage)
+Exit: short, high >= entry price + (close on the most recent short signal bar that submitted an exit order * short stop-loss percentage) OR low <= entry price - (close on the most recent short signal bar that submitted an exit order * short take-profit percentage)

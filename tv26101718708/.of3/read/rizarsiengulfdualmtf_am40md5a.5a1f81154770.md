@@ -1,0 +1,9 @@
+Calculation: Bullish engulfing pattern = open[3] > close[3] AND open[2] > close[2] AND open[1] > close[1] AND close > open AND close >= open[1] AND close[1] >= open AND (close - open) > (open[1] - close[1]), calculated on selected-timeframe bars (chart timeframe, T1, or T2), using the last completed bar when the close-wait parameter is enabled and the still-forming bar otherwise; values mapped to chart bars
+Calculation: Bearish engulfing pattern = open[3] < close[3] AND open[2] < close[2] AND close[1] > open[1] AND open > close AND open >= close[1] AND open[1] >= close AND (open - close) > (close[1] - open[1]), calculated on selected-timeframe bars (chart timeframe, T1, or T2), using the last completed bar when the close-wait parameter is enabled and the still-forming bar otherwise; values mapped to chart bars
+Calculation: WaveTrend lines = [WaveTrend((high + low + close) / 3, channel lookback, average lookback), SMA(WaveTrend((high + low + close) / 3, channel lookback, average lookback), signal-smoothing lookback)], calculated on selected-timeframe bars (chart timeframe, T1, or T2), using the last completed bar when the close-wait parameter is enabled and the still-forming bar otherwise; values mapped to chart bars
+Long: Bullish engulfing pattern
+Long: Bullish engulfing pattern AND (first WaveTrend line < oversold threshold parameter OR first WaveTrend line crosses above second WaveTrend line on chart bars)
+Long: First WaveTrend line crosses above second WaveTrend line on chart bars
+Short: Bearish engulfing pattern
+Short: Bearish engulfing pattern AND (first WaveTrend line > overbought threshold parameter OR first WaveTrend line crosses below second WaveTrend line on chart bars)
+Short: First WaveTrend line crosses below second WaveTrend line on chart bars

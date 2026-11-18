@@ -1,0 +1,6 @@
+Long: flat AND long entries enabled AND on the first chart bar of each T1 period, the still-forming T1 open sampled on chart bars < the previous completed T1 low AND the previous completed T1 close < its open; place a buy stop at the previous completed T1 low + P1 × minimum tick, filled when price reaches that level
+Short: flat AND short entries enabled AND on the first chart bar of each T1 period, the still-forming T1 open sampled on chart bars > the previous completed T1 high AND the previous completed T1 close > its open; place a sell stop at the previous completed T1 high − P1 × minimum tick, filled when price reaches that level
+Exit: long, current bar low <= the lowest chart-bar low from the first chart bar of the current T1 period through the current bar
+Exit: short, current bar high >= the highest chart-bar high from the first chart bar of the current T1 period through the current bar
+Exit: long, the current chart bar is the last bar of the configured session
+Exit: short, the current chart bar is the last bar of the configured session

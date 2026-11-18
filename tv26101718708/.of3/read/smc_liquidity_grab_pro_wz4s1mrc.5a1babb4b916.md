@@ -1,0 +1,4 @@
+Long: position is flat AND low < low(T1, last completed bar, sampled on chart bars) AND close > low(T1, last completed bar, sampled on chart bars)
+Short: position is flat AND high > high(T1, last completed bar, sampled on chart bars) AND close < high(T1, last completed bar, sampled on chart bars)
+Exit: long, a latest confirmed Pivot Low(low, swing lookback parameter, swing lookback parameter) on chart bars existed at entry AND (low <= that pivot low OR high >= signal-bar close at entry + (signal-bar close at entry - that pivot low) * risk-reward parameter)
+Exit: short, a latest confirmed Pivot High(high, swing lookback parameter, swing lookback parameter) on chart bars existed at entry AND (high >= that pivot high OR low <= signal-bar close at entry - (that pivot high - signal-bar close at entry) * risk-reward parameter)

@@ -1,0 +1,6 @@
+Calculation: Fast average = one of KAMA(close, shorter lookback), EMA(close, shorter lookback), SMA(close, shorter lookback), WMA(close, shorter lookback), RMA(close, shorter lookback), or VWMA(close, shorter lookback), selected by its own type parameter
+Calculation: Slow average = one of KAMA(close, longer lookback), EMA(close, longer lookback), SMA(close, longer lookback), WMA(close, longer lookback), RMA(close, longer lookback), or VWMA(close, longer lookback), selected by its own type parameter
+Calculation: Trend average = one of EMA(close, longest lookback), SMA(close, longest lookback), WMA(close, longest lookback), RMA(close, longest lookback), or VWMA(close, longest lookback), selected by its own type parameter
+Calculation: ADX strength = ADX(high, low, close, lookback)
+Long: Fast average crosses above Slow average AND (trend filter disabled OR (Fast average > Trend average AND Slow average > Trend average)) AND (slope filter disabled OR Slow average > Slow average[1]) AND (ADX filter disabled OR ADX strength > minimum threshold)
+Short: Fast average crosses below Slow average AND (trend filter disabled OR (Fast average < Trend average AND Slow average < Trend average)) AND (slope filter disabled OR Slow average < Slow average[1]) AND (ADX filter disabled OR ADX strength > minimum threshold)

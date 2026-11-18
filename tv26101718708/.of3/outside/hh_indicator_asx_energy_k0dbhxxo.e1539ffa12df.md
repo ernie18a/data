@@ -1,0 +1,2 @@
+Calculation: Pivot High = a candle's higher of open or close when it is at least the higher of open or close of each of the P1 candles immediately before it and the P1 candles immediately after it
+Long: A configured ASX stock's close is above its last Pivot High AND its previous close is at or below its previous last Pivot High

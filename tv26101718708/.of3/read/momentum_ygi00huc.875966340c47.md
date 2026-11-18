@@ -1,0 +1,3 @@
+Calculation: momentum score(asset) = Weight A × ln(close(asset, T1, still-forming bar) / close(asset, T1, Lookback A T1 bars ago)) + Weight B × ln(close(asset, T1, still-forming bar) / close(asset, T1, Lookback B T1 bars ago)) + Weight C × ln(close(asset, T1, still-forming bar) / close(asset, T1, Lookback C T1 bars ago)) + Weight D × ln(close(asset, T1, still-forming bar) / close(asset, T1, Lookback D T1 bars ago)), evaluated on chart bars using T1 values
+Long: momentum score(asset 1) > 0
+Exit: long, momentum score(asset 2) < 0

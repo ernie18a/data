@@ -1,0 +1,4 @@
+Long: high-volume highlighting enabled AND volume > SMA(volume, volume lookback) * volume multiplier AND close > open
+Short: high-volume highlighting enabled AND volume > SMA(volume, volume lookback) * volume multiplier AND close < open
+Long: sweep signals enabled AND low < latest confirmed pivot low(low, swing lookback, swing lookback) AND close > latest confirmed pivot low(low, swing lookback, swing lookback) AND close > open AND that pivot low has not been swept since confirmation
+Short: sweep signals enabled AND high > latest confirmed pivot high(high, swing lookback, swing lookback) AND close < latest confirmed pivot high(high, swing lookback, swing lookback) AND close < open AND that pivot high has not been swept since confirmation

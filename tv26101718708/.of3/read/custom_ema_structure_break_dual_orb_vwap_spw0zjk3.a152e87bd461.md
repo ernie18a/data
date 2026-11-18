@@ -1,0 +1,4 @@
+Long: Long is initially armed; it rearms when close > EMA(fast lookback) and disarms when this signal occurs; while armed, close > EMA(trend lookback) AND (close crosses above EMA(mid lookback) OR close crosses above EMA(trend lookback) OR close crosses above EMA(slow lookback)) AND abs(close - open) > ATR(lookback) * body threshold
+Short: Short is initially armed; it rearms when close < EMA(fast lookback) and disarms when this signal occurs; while armed, close < EMA(trend lookback) AND (close crosses below EMA(mid lookback) OR close crosses below EMA(trend lookback) OR close crosses below EMA(slow lookback)) AND abs(close - open) > ATR(lookback) * body threshold
+Exit: long, close crosses below EMA(fast lookback)
+Exit: short, close crosses above EMA(fast lookback)

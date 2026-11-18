@@ -1,0 +1,2 @@
+Long: Standard Deviation(VIX closing price, period) > VIX dispersion threshold AND Standard Deviation(VVIX closing price, period) > VVIX dispersion threshold
+Exit: Long, Standard Deviation(VIX closing price, period) <= VIX dispersion threshold OR Standard Deviation(VVIX closing price, period) <= VVIX dispersion threshold

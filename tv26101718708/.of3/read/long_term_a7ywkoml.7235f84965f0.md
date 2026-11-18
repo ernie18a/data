@@ -1,0 +1,5 @@
+Calculation: relative performance = (close / close[relative-return lookback]) / (comparison close / comparison close[relative-return lookback]) - 1
+Long: close > EMA(close, fast EMA lookback) AND volume > standard volume multiplier * SMA(volume, volume-average lookback)
+Long: close > EMA(close, slow EMA lookback) AND relative performance > 0 AND volume > standard volume multiplier * SMA(volume, volume-average lookback) AND close > Highest(high[1], breakout-high lookback)
+Long: close > EMA(close, fastest EMA lookback) AND volume > higher volume multiplier * SMA(volume, volume-average lookback)
+Exit: long, close < fast-exit fraction * EMA(close, fast EMA lookback) OR close < prior-close fraction * close[1] OR close > average-price multiplier * SMA(close, prior-close average lookback)[1] OR (close < EMA(close, shorter fastest EMA lookback) AND close < EMA(close, longer fast EMA lookback))

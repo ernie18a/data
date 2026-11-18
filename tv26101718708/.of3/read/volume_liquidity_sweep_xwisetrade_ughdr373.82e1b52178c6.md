@@ -1,0 +1,2 @@
+Long: low < latest confirmed PivotLow(low, pivot lookback, pivot lookback) AND close > latest confirmed PivotLow(low, pivot lookback, pivot lookback) AND volume > SMA(volume, volume lookback) * volume multiplier AND bars since previous long signal > cooldown
+Short: high > latest confirmed PivotHigh(high, pivot lookback, pivot lookback) AND close < latest confirmed PivotHigh(high, pivot lookback, pivot lookback) AND volume > SMA(volume, volume lookback) * volume multiplier AND bars since previous short signal > cooldown

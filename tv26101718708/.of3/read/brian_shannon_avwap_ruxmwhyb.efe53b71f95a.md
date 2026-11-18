@@ -1,0 +1,2 @@
+Long: AVWAP(hlc3, volume, earnings anchor) is available AND close > AVWAP(hlc3, volume, earnings anchor) AND close > AVWAP(hlc3, volume, swing low anchor)
+Short: AVWAP(hlc3, volume, earnings anchor) is available AND close < AVWAP(hlc3, volume, earnings anchor) AND close < AVWAP(hlc3, volume, swing low anchor)

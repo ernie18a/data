@@ -1,0 +1,11 @@
+Calculation: Bullish condition = on each chart bar, the selected regular or Heikin-Ashi open of the last completed T1 bar is below its close AND the selected open of the last completed T2 bar is below its close AND the selected open of the last completed T3 bar is below its close AND the selected open of the last completed T4 bar is below its close
+Calculation: Bearish condition = on each chart bar, the selected regular or Heikin-Ashi open of the last completed T1 bar is above its close AND the selected open of the last completed T2 bar is above its close AND the selected open of the last completed T3 bar is above its close AND the selected open of the last completed T4 bar is above its close
+Calculation: Most recent bullish-condition time = current chart-bar time when the bullish condition holds, otherwise its prior value
+Calculation: Most recent bearish-condition time = current chart-bar time when the bearish condition holds, otherwise its prior value
+Long: Most recent bullish-condition time crosses above most recent bearish-condition time
+Short: Most recent bearish-condition time crosses above most recent bullish-condition time
+Calculation: Long-regime high = highest chart-bar high while most recent bullish-condition time is later than most recent bearish-condition time, undefined otherwise
+Calculation: Short-regime low = lowest chart-bar low while most recent bearish-condition time is later than most recent bullish-condition time, undefined otherwise
+Calculation: Exit-distance factor = previous chart-bar close × leverage-multiplier parameter / price-scale parameter
+Exit: Long, close <= long-regime high - price trailing-distance parameter / trailing-distance scale parameter OR (profit-distance parameter > 0 AND high >= entry price + profit-distance parameter × exit-distance factor in ticks) OR (loss-distance parameter > 0 AND low <= entry price - loss-distance parameter × exit-distance factor in ticks)
+Exit: Short, close >= short-regime low + price trailing-distance parameter / trailing-distance scale parameter OR (profit-distance parameter > 0 AND low <= entry price - profit-distance parameter × exit-distance factor in ticks) OR (loss-distance parameter > 0 AND high >= entry price + loss-distance parameter × exit-distance factor in ticks)

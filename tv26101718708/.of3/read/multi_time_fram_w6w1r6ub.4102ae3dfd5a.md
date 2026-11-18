@@ -1,0 +1,3 @@
+Calculation: Keynes = coefficient * EMA(100 * (source - SMA(source, long-term lookback)) / SMA(source, long-term lookback), smoothing lookback) + offset
+Long: Keynes crosses above threshold AND HMA(source, HMA lookback) > HMA(source, HMA lookback)[1] AND close(T1, bar still forming, sampled on chart bars) > SMA(close, mid-term lookback, T1, bar still forming, sampled on chart bars)
+Exit: long, Keynes crosses below threshold

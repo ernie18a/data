@@ -1,0 +1,4 @@
+Long: close > EMA(close, shorter lookback) > EMA(close, intermediate lookback) > EMA(close, longer lookback) AND EMA(close, shorter lookback) > EMA(close, shorter lookback)[1] AND EMA(close, intermediate lookback) > EMA(close, intermediate lookback)[1] AND EMA(close, longer lookback) > EMA(close, longer lookback)[1]
+Short: close < EMA(close, shorter lookback) < EMA(close, intermediate lookback) < EMA(close, longer lookback) AND EMA(close, shorter lookback) < EMA(close, shorter lookback)[1] AND EMA(close, intermediate lookback) < EMA(close, intermediate lookback)[1] AND EMA(close, longer lookback) < EMA(close, longer lookback)[1]
+Long: SMA(close, shorter lookback) > SMA(close, longer lookback)
+Short: SMA(close, shorter lookback) < SMA(close, longer lookback)

@@ -1,0 +1,2 @@
+Long: CVD(T1, T2) close >= CVD(T1, T2) open, evaluated on chart bars using T1 data and the T2 period while they are still forming
+Short: CVD(T1, T2) close < CVD(T1, T2) open, evaluated on chart bars using T1 data and the T2 period while they are still forming

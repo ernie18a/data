@@ -1,0 +1,3 @@
+Calculation: price spread percentage = ((high - low) / low) * 100 on T1 bars using the still-forming bar, sampled on chart bars
+Long: volume > SMA(volume, volume lookback, T1, still-forming bar) * volume spike multiplier AND price spread percentage <= maximum spread percentage
+Short: volume > SMA(volume, volume lookback, T1, still-forming bar) * volume spike multiplier AND price spread percentage <= maximum spread percentage

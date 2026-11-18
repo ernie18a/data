@@ -1,0 +1,4 @@
+Long: VWAP(hlc3) crosses above the middle line of Bollinger Bands(VWAP(hlc3), lookback, deviation multiplier) AND close >= Pivot Point(T1, last completed bar)
+Exit: long, VWAP(hlc3) crosses below the lower line of Bollinger Bands(VWAP(hlc3), lookback, deviation multiplier)
+Exit: long, close crosses below close × (1 − stop-loss percentage)
+Exit: long, close > entry price AND ((the selected partial-exit trigger is VWAP(hlc3) crossing below the upper line of Bollinger Bands(VWAP(hlc3), lookback, deviation multiplier)) OR (the selected partial-exit trigger is VWAP(hlc3) crossing above Fibonacci Pivot R3(T1, last completed bar)) OR (the selected partial-exit trigger is VWAP(hlc3) crossing below Fibonacci Pivot R3(T1, last completed bar)))

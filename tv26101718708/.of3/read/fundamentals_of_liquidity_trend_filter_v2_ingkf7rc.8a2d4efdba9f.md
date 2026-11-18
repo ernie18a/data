@@ -1,0 +1,2 @@
+Long: EMA(close, fast lookback) crosses above SMA(close, slow lookback) AND SMA(volume, liquidity lookback) != 0 AND volume / SMA(volume, liquidity lookback) * 100 >= liquidity threshold
+Short: EMA(close, fast lookback) crosses below SMA(close, slow lookback) AND SMA(volume, liquidity lookback) != 0 AND volume / SMA(volume, liquidity lookback) * 100 >= liquidity threshold

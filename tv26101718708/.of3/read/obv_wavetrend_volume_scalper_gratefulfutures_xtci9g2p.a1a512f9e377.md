@@ -1,0 +1,3 @@
+Calculation: Smoothed OBV oscillator = selected smoothing method(OBV(source) - EMA(OBV(source), OBV EMA lookback), OBV smoothing lookback)
+Long: Smoothed OBV oscillator[1] < 0 AND Smoothed OBV oscillator > 0 AND Squeeze Momentum(close, lookback) > Squeeze Momentum(close, lookback)[1] AND WaveTrend WT1(hlc3, channel lookback, average lookback) > WaveTrend WT2(hlc3, channel lookback, average lookback, signal lookback)
+Short: Smoothed OBV oscillator[1] > 0 AND Smoothed OBV oscillator < 0 AND Squeeze Momentum(close, lookback) < Squeeze Momentum(close, lookback)[1] AND WaveTrend WT1(hlc3, channel lookback, average lookback) < WaveTrend WT2(hlc3, channel lookback, average lookback, signal lookback)

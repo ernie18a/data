@@ -1,0 +1,8 @@
+Calculation: Smoothed stochastic = SMA(Stochastic(close, high, low, stochastic lookback), first smoothing period)
+Calculation: Slower stochastic = SMA(Smoothed stochastic, second smoothing period)
+Calculation: Reversal direction state = 1 when close[2] < close[1] AND close > close[1] AND Smoothed stochastic < Slower stochastic AND Smoothed stochastic > reversal threshold; -1 when close[2] > close[1] AND close < close[1] AND Smoothed stochastic > Slower stochastic AND Smoothed stochastic < reversal threshold; otherwise previous value or 0
+Calculation: Volume trend state = 1 when FVE(volume lookback, intrabar volatility coefficient, interbar volatility coefficient) > EMA(FVE(volume lookback, intrabar volatility coefficient, interbar volatility coefficient), EMA period); -1 when it is lower; otherwise previous value or 0
+Long: (direction reversal setting disabled AND Reversal direction state = 1 AND Volume trend state = 1) OR (direction reversal setting enabled AND Reversal direction state = -1 AND Volume trend state = -1)
+Short: (direction reversal setting disabled AND Reversal direction state = -1 AND Volume trend state = -1) OR (direction reversal setting enabled AND Reversal direction state = 1 AND Volume trend state = 1)
+Exit: long, NOT (Reversal direction state = 1 AND Volume trend state = 1) AND NOT (Reversal direction state = -1 AND Volume trend state = -1)
+Exit: short, NOT (Reversal direction state = 1 AND Volume trend state = 1) AND NOT (Reversal direction state = -1 AND Volume trend state = -1)

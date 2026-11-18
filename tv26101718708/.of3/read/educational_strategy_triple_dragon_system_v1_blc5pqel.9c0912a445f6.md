@@ -1,0 +1,8 @@
+Calculation: Volume trend deviation = CUM(((close - close[1]) / close[1]) × volume) − (highest(CUM(((close - close[1]) / close[1]) × volume), lookback) + lowest(CUM(((close - close[1]) / close[1]) × volume), lookback)) / 2
+Calculation: ATR-scaled SAR = initialize direction up when close[1] > open[1], otherwise down; initialize SAR to low[1] when up or high[1] when down, the extreme point to current high when up or current low when down, and acceleration to start; thereafter reverse up to down when close ≤ prior SAR, or down to up when close ≥ prior SAR; reset acceleration to start on reversal, otherwise increase it by increment up to maximum when a new trend extreme occurs; update the extreme point to current high or low on reversal, otherwise to the greater of prior extreme and high in an uptrend or the lesser of prior extreme and low in a downtrend; update SAR to prior extreme on reversal, otherwise add acceleration × ATR(lookback) in an uptrend or subtract it in a downtrend, using true range when ATR is unavailable
+Calculation: Price at most recent volume trend zero-cross = valuewhen(cross(Volume trend deviation, 0), close, 0)
+Calculation: Price at most recent ATR-scaled SAR/close cross = valuewhen(cross(ATR-scaled SAR, close), close, 0)
+Calculation: Upper level = max(Price at most recent volume trend zero-cross, Price at most recent ATR-scaled SAR/close cross)
+Calculation: Lower level = min(Price at most recent volume trend zero-cross, Price at most recent ATR-scaled SAR/close cross)
+Long: crossover(close, Upper level) OR crossover(close, Lower level)
+Short: crossunder(close, Upper level) OR crossunder(close, Lower level)

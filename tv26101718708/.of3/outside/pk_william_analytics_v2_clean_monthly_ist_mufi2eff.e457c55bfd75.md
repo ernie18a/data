@@ -1,0 +1,2 @@
+Option: buy call, Williams Fractal low and no active bullish signal and within the configured date range
+Option: buy put, Williams Fractal high and no active bearish signal and within the configured date range

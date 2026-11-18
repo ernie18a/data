@@ -1,0 +1,2 @@
+Long: Coral Trend(source 1, smoothing period 1, constant D 1) > Coral Trend(source 1, smoothing period 1, constant D 1)[1] OR Coral Trend(source 2, smoothing period 2, constant D 2) > Coral Trend(source 2, smoothing period 2, constant D 2)[1]
+Short: Coral Trend(source 1, smoothing period 1, constant D 1) < Coral Trend(source 1, smoothing period 1, constant D 1)[1] OR Coral Trend(source 2, smoothing period 2, constant D 2) < Coral Trend(source 2, smoothing period 2, constant D 2)[1]

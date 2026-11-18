@@ -1,0 +1,1 @@
+Long: For each reference index, close > EMA(close, shorter lookback, T1, latest available bar: last completed historically and still forming live) AND EMA(close, shorter lookback, T1, latest available bar: last completed historically and still forming live) > EMA(close, longer lookback, T1, latest available bar: last completed historically and still forming live).

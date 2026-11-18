@@ -1,0 +1,1 @@
+Long: close of each tracked symbol crosses above its latest Pivot High of max(open, close), using P1 bars on each side

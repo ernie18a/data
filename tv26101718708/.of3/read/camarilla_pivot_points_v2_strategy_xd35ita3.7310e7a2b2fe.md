@@ -1,0 +1,2 @@
+Long: chart close > Camarilla lower level selected by its parameter from L1–L4, using high, low, and close of the still-forming T1 bar mapped to chart bars
+Short: chart close < Camarilla upper level selected by its separate parameter from H1–H4, using high, low, and close of the still-forming T1 bar mapped to chart bars

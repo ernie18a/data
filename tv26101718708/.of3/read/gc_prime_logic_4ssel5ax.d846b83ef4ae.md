@@ -1,0 +1,15 @@
+Calculation: CVD = cumulative sum of (high != low ? (close - open) / (high - low) × volume : 0)
+Calculation: Order-flow score = clamp((HMA((close - close[order-flow lookback]) / STDEV(close - close[order-flow lookback], order-flow lookback × normalization-window multiplier), score-smoothing lookback) + HMA((CVD - CVD[order-flow lookback]) / STDEV(CVD - CVD[order-flow lookback], order-flow lookback × normalization-window multiplier), score-smoothing lookback)) × score scale, −score cap, +score cap); each ratio is 0 when its STDEV denominator is 0
+Calculation: Entry threshold = base entry threshold × Tokyo-session multiplier when the chart bar's opening hour in Tokyo time is at least the Tokyo-session start-hour parameter and earlier than the Tokyo-session end-hour parameter; otherwise it equals the base entry threshold
+Calculation: Keltner upper band = EMA(close, macro-EMA lookback) + ATR(high, low, close, ATR lookback) × band multiplier
+Calculation: Keltner lower band = EMA(close, macro-EMA lookback) − ATR(high, low, close, ATR lookback) × band multiplier
+Calculation: T1 price change = current T1 close sampled on chart bars − previous completed T1 close
+Calculation: T1 open-interest change = current T1 open-interest close sampled on chart bars − previous completed T1 open-interest close
+Calculation: Open-interest Z-score = 0 when STDEV(current T1 open-interest close sampled on chart bars, open-interest lookback on chart bars) is 0; otherwise (current T1 open-interest close − SMA(the same sampled series, open-interest lookback on chart bars)) / STDEV(the same sampled series, open-interest lookback on chart bars)
+Calculation: Open-interest climax = open-interest Z-score > open-interest-climax threshold
+Calculation: Long stop price = entry signal bar close − ATR(high, low, close, ATR lookback) on the entry signal bar × stop multiplier; fixed while the position is open
+Calculation: Short stop price = entry signal bar close + ATR(high, low, close, ATR lookback) on the entry signal bar × stop multiplier; fixed while the position is open
+Long: flat AND order-flow score crosses above entry threshold AND (macro filter disabled OR close > Keltner upper band) AND (open-interest filter disabled OR (T1 price change > 0 AND T1 open-interest change > 0) OR (T1 price change < 0 AND T1 open-interest change < 0))
+Short: flat AND order-flow score crosses below −entry threshold AND (macro filter disabled OR close < Keltner lower band) AND (open-interest filter disabled OR (T1 price change < 0 AND T1 open-interest change > 0))
+Exit: long, order-flow score crosses below −base entry threshold OR close crosses below Keltner lower band OR (open-interest climax AND order-flow score < 0) OR low <= long stop price
+Exit: short, order-flow score crosses above base entry threshold OR close crosses above Keltner upper band OR (open-interest climax AND order-flow score > 0) OR high >= short stop price

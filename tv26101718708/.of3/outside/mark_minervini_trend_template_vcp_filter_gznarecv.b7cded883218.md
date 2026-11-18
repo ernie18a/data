@@ -1,0 +1,3 @@
+Calculation: Trend qualification = close > SMA(close, P1) AND close > SMA(close, P3) AND SMA(close, P2) > SMA(close, P3) AND SMA(close, P3) > SMA(close, P3)[P4] AND SMA(close, P1) > SMA(close, P2) AND SMA(close, P1) > SMA(close, P3) AND close > SMA(close, P1) AND 100 * (close - LOWEST(low, P5)) / LOWEST(low, P5) >= P6 AND 100 * (HIGHEST(high, P5) - close) / HIGHEST(high, P5) <= P7 AND Mansfield Relative Strength(close, SPY close, SMA length P8) > P12
+Long: Trend qualification
+Long: Trend qualification AND ((HIGHEST(high, P9) - LOWEST(low, P9)) < (HIGHEST(high, P4)[P9] - LOWEST(low, P4)[P9]) * P10 AND volume < SMA(volume, P4) * P11 OR crossover(close, HIGHEST(high, P9)[P13]) AND volume > SMA(volume, P4))

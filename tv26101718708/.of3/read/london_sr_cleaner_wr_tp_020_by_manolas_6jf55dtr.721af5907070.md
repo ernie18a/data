@@ -1,0 +1,9 @@
+Calculation: previous London-session high = highest(high) during the previous London session
+Calculation: previous London-session low = lowest(low) during the previous London session
+Calculation: upper wick = high - max(open, close)
+Calculation: lower wick = min(open, close) - low
+Calculation: candle body = abs(close - open)
+Long: no open position AND daily trade count < maximum trades per day AND previous London-session high unused today AND a bar no more than retest-bars ago, including the current bar, closed above the previous London-session high + ATR(lookback) * breakout-buffer parameter with its prior close <= the previous London-session high AND low <= the previous London-session high AND close > open AND lower wick > candle body * wick-to-body parameter AND close > previous London-session high + ATR(lookback) * close-away parameter AND close > EMA(close, lookback)
+Short: no open position AND daily trade count < maximum trades per day AND previous London-session low unused today AND a bar no more than retest-bars ago, including the current bar, closed below the previous London-session low - ATR(lookback) * breakout-buffer parameter with its prior close >= the previous London-session low AND high >= the previous London-session low AND close < open AND upper wick > candle body * wick-to-body parameter AND close < previous London-session low - ATR(lookback) * close-away parameter AND close < EMA(close, lookback)
+Exit: long, low <= entry-signal-bar low - stop-buffer parameter OR high >= entry-signal-bar close * (1 + target-percent parameter / 100)
+Exit: short, high >= entry-signal-bar high + stop-buffer parameter OR low <= entry-signal-bar close * (1 - target-percent parameter / 100)

@@ -1,0 +1,5 @@
+Calculation: FirstOpen = open of the T1 bar beginning at the first-time parameter in the timezone parameter, read from T1 intrabars on the chart bar containing it and held until the next first-time event; this T1 bar is completed by the decision time
+Calculation: SecondOpen = open of the T1 bar beginning at the second-time parameter in the timezone parameter, read from T1 intrabars on the chart bar containing it and held until the next first-time event; this T1 bar is completed by the decision time
+Calculation: DecisionOpen = open of the T1 bar beginning at the decision-time parameter in the timezone parameter, read from T1 intrabars on the chart bar containing it; this T1 bar may still be forming
+Long: On the chart bar containing the decision-time T1 bar, at the decision-time event, FirstOpen < SecondOpen AND SecondOpen < DecisionOpen
+Short: On the chart bar containing the decision-time T1 bar, at the decision-time event, FirstOpen > SecondOpen AND SecondOpen > DecisionOpen

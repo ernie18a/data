@@ -1,0 +1,9 @@
+Calculation: Short MA = SMA(T1 close returned with lookahead off, shorter lookback), evaluated on chart bars; the current T1 bar can be forming in real time, and the last available T1 value is used historically.
+Calculation: Long MA = SMA(T1 close returned with lookahead off, longer lookback), evaluated on chart bars; the current T1 bar can be forming in real time, and the last available T1 value is used historically.
+Calculation: ATR-filter average = selected RMA, SMA, EMA, or WMA(close[1], ATR lookback), evaluated on chart bars.
+Long: crossover(Short MA, Long MA) AND Short MA < T1 close sampled on the previous chart bar
+Short: crossunder(Short MA, Long MA)
+Long: datetime >= timestamp(start year, start month, start day) AND datetime <= timestamp(stop year, stop month, stop day) AND ATR-filter average > ATR-filter average[1] AND ATR-filter average[1] < ATR-filter average[2] AND ATR-filter average[2] < ATR-filter average[3] AND crossover(Short MA, Long MA) AND Short MA < T1 close sampled on the previous chart bar
+Short: datetime >= timestamp(start year, start month, start day) AND datetime <= timestamp(stop year, stop month, stop day) AND ATR-filter average > ATR-filter average[1] AND ATR-filter average[1] < ATR-filter average[2] AND ATR-filter average[2] < ATR-filter average[3] AND crossunder(Short MA, Long MA)
+Exit: Long, low <= entry price - close on the exit-order submission bar × stop-loss percentage / 100 OR (high >= entry price + close on the exit-order submission bar × trailing percentage / 100 AND low <= highest high since activation - close on the exit-order submission bar × trailing percentage / 100)
+Exit: Short, high >= entry price + close on the exit-order submission bar × stop-loss percentage / 100 OR (low <= entry price - close on the exit-order submission bar × trailing percentage / 100 AND high >= lowest low since activation + close on the exit-order submission bar × trailing percentage / 100)

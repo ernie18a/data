@@ -1,0 +1,4 @@
+Calculation: Composite score = credit weight × Z-score(credit-sensitive bond close / Treasury bond close, shared lookback) + curve weight × Z-score(long-term yield close − short-term yield close, shared lookback) + growth weight × Z-score(industrial metal close / precious metal close, shared lookback) − real-yield weight × Z-score(long-term yield close − inflation breakeven close, shared lookback); source closes are T1 values mapped to chart bars (last completed T1 bar historically, forming T1 bar in realtime), and Z-scores run on chart bars
+Calculation: Smoothed score = EMA(Composite score, smoothing lookback) on chart bars
+Long: Smoothed score > 0
+Short: Smoothed score <= 0

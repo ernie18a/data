@@ -1,0 +1,2 @@
+Long: RSI(Bitfinex short-position open count, RSI-length parameter) crosses below low-shorts threshold AND time is on or after start-date parameter AND before end-date parameter
+Short: RSI(Bitfinex short-position open count, RSI-length parameter) crosses above high-shorts threshold AND time is on or after start-date parameter AND before end-date parameter

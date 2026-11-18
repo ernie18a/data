@@ -1,0 +1,4 @@
+Long: Heikin-Ashi close(T1, last completed bar) > Heikin-Ashi open(T1, last completed bar) AND close[1] crosses above EMA(high, P1)[1] AND close > EMA(high, P1) AND position side is not long
+Short: Heikin-Ashi close(T1, last completed bar) < Heikin-Ashi open(T1, last completed bar) AND close[1] crosses below EMA(low, P2)[1] AND close < EMA(low, P2) AND position side is not short
+Exit: long, close[1] crosses below EMA(low, P2)[1] AND close < EMA(low, P2) AND Heikin-Ashi close(T1, last completed bar) >= Heikin-Ashi open(T1, last completed bar)
+Exit: short, close[1] crosses above EMA(high, P1)[1] AND close > EMA(high, P1) AND Heikin-Ashi close(T1, last completed bar) <= Heikin-Ashi open(T1, last completed bar)

@@ -1,0 +1,8 @@
+Long: VIX close on T1 > Twin Range Filter(VIX close on T1, fast period parameter, fast multiplier parameter, slow period parameter, slow multiplier parameter)
+Short: VIX close on T1 <= Twin Range Filter(VIX close on T1, fast period parameter, fast multiplier parameter, slow period parameter, slow multiplier parameter)
+Long: VIX close on T2 > Twin Range Filter(VIX close on T2, fast period parameter, fast multiplier parameter, slow period parameter, slow multiplier parameter)
+Short: VIX close on T2 <= Twin Range Filter(VIX close on T2, fast period parameter, fast multiplier parameter, slow period parameter, slow multiplier parameter)
+Long: VIX close on T3 > Twin Range Filter(VIX close on T3, fast period parameter, fast multiplier parameter, slow period parameter, slow multiplier parameter)
+Short: VIX close on T3 <= Twin Range Filter(VIX close on T3, fast period parameter, fast multiplier parameter, slow period parameter, slow multiplier parameter)
+Long: VIX close on T4 > Twin Range Filter(VIX close on T4, fast period parameter, fast multiplier parameter, slow period parameter, slow multiplier parameter)
+Short: VIX close on T4 <= Twin Range Filter(VIX close on T4, fast period parameter, fast multiplier parameter, slow period parameter, slow multiplier parameter)

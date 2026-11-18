@@ -1,0 +1,8 @@
+Long: close > close[1] AND close[1] > close[2] AND StochasticSlow(close, high, low, prose stochastic lookback) < prose threshold
+Short: close < close[1] AND close[1] < close[2] AND StochasticFast(close, high, low, prose stochastic lookback) > prose threshold
+Calculation: 123 reversal state = 1 when close[2] < close[1] AND close > close[1] AND SlowStochasticK(close, high, low, reversal lookback, K smoothing) < SlowStochasticD(close, high, low, reversal lookback, K smoothing, D length) AND SlowStochasticK(close, high, low, reversal lookback, K smoothing) > reversal level; -1 when close[2] > close[1] AND close < close[1] AND SlowStochasticK(close, high, low, reversal lookback, K smoothing) > SlowStochasticD(close, high, low, reversal lookback, K smoothing, D length) AND SlowStochasticK(close, high, low, reversal lookback, K smoothing) < reversal level; otherwise its prior value, initially 0
+Calculation: Pivot state, evaluated on chart bars = 1 when chart close > ClassicPivotResistance(resistance level, high, low, close of the T1 bar still forming); -1 when chart close < ClassicPivotSupport(support level, high, low, close of the T1 bar still forming); otherwise its prior value, initially 0
+Long: (reverse disabled AND 123 reversal state = 1 AND Pivot state = 1) OR (reverse enabled AND 123 reversal state = -1 AND Pivot state = -1)
+Short: (reverse disabled AND 123 reversal state = -1 AND Pivot state = -1) OR (reverse enabled AND 123 reversal state = 1 AND Pivot state = 1)
+Exit: long, NOT (123 reversal state = Pivot state AND 123 reversal state ≠ 0)
+Exit: short, NOT (123 reversal state = Pivot state AND 123 reversal state ≠ 0)

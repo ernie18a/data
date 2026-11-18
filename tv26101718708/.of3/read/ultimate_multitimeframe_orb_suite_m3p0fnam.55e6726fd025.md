@@ -1,0 +1,4 @@
+Calculation: Opening-range high = maximum high during the opening-range period
+Calculation: Opening-range low = minimum low during the opening-range period
+Long: opening range is formed AND close > opening-range high AND close[1] <= opening-range high AND (EMA filter is disabled OR close > EMA(close, EMA lookback)) AND (volume filter is disabled OR volume > SMA(volume, volume lookback) * volume multiplier)
+Short: opening range is formed AND close < opening-range low AND close[1] >= opening-range low AND (EMA filter is disabled OR close < EMA(close, EMA lookback)) AND (volume filter is disabled OR volume > SMA(volume, volume lookback) * volume multiplier)

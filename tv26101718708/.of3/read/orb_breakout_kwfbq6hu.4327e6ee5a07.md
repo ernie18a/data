@@ -1,0 +1,3 @@
+Calculation: OR average volume = mean(volume of chart bars in opening-range interval)
+Long: close > maximum(high of chart bars in opening-range interval) AND volume >= volume-multiplier × OR average volume AND close > VWAP(hlc3, volume) AND chart-bar time is within signal-window parameter AND no earlier long signal on the same date
+Short: close < minimum(low of chart bars in opening-range interval) AND volume >= volume-multiplier × OR average volume AND close < VWAP(hlc3, volume) AND chart-bar time is within signal-window parameter AND no earlier short signal on the same date

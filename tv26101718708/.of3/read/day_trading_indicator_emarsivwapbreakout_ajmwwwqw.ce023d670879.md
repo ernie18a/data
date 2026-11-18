@@ -1,0 +1,1 @@
+Long: close > EMA(close, shorter lookback) AND EMA(close, shorter lookback) > EMA(close, longer lookback) AND RSI(close, lookback) > threshold AND ((close > highest(high, breakout lookback)[1] AND volume > SMA(volume, volume lookback) * volume multiplier) OR (low <= VWAP(hlc3) AND close > VWAP(hlc3)))

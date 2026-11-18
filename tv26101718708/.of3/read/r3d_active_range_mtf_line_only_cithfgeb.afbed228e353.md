@@ -1,0 +1,2 @@
+Long: On chart bars using T1 values, low(T1, forming bar) < low(T1, last completed bar) AND close(T1, forming bar) > low(T1, last completed bar) AND high(T1, forming bar) < high(T1, last completed bar)
+Short: On chart bars using T1 values, high(T1, forming bar) > high(T1, last completed bar) AND close(T1, forming bar) < high(T1, last completed bar) AND low(T1, forming bar) > low(T1, last completed bar)

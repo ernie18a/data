@@ -1,0 +1,3 @@
+Calculation: RangePosition = (close - low(T1, still-forming bar, sampled on chart bars)) / (high(T1, still-forming bar, sampled on chart bars) - low(T1, still-forming bar, sampled on chart bars)) * 100 if high - low > 0, else 50
+Long: close > VWAP((high + low + close) / 3) AND RangePosition >= upper position threshold
+Short: close < VWAP((high + low + close) / 3) AND RangePosition <= lower position threshold

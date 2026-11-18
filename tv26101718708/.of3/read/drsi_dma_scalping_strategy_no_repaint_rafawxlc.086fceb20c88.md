@@ -1,0 +1,8 @@
+Calculation: Selected moving average = SMA, EMA, WMA, Hull MA, VWMA, RMA, TEMA, or Tillson T3 of the MA source with the MA lookback; Tillson T3 uses a separate factor parameter.
+Calculation: Selected momentum indicator = RSI or CCI of the momentum source with the momentum lookback, or RSI of ROC(momentum source, momentum lookback) with the same momentum lookback.
+Calculation: MA slope = MA slope multiplier × the last completed T1-bar value of SMA((selected moving average / selected moving average[MA slope lookback]) - 1, MA slope smoothing lookback), computed on T1 bars and sampled on chart bars.
+Calculation: Momentum slope = the last completed T1-bar value of SMA((selected momentum indicator / selected momentum indicator[momentum slope lookback]) - 1, momentum slope smoothing lookback), computed on T1 bars and sampled on chart bars.
+Calculation: Low-volatility trend = SMA(close, low-volatility price lookback).
+Calculation: Average range percentage = SMA((1 - low / high) × 100, volatility smoothing lookback).
+Long: (average range percentage < minimum volatility AND low-volatility trend[3] - low-volatility trend[1] < -low-volatility trend threshold) OR (average range percentage >= minimum volatility AND MA slope > buy threshold AND momentum slope > buy threshold)
+Short: (average range percentage < minimum volatility AND low-volatility trend[3] - low-volatility trend[1] > low-volatility trend threshold) OR (average range percentage >= minimum volatility AND MA slope < sell threshold AND momentum slope < sell threshold)

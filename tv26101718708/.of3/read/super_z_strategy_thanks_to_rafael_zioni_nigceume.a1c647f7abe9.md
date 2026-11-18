@@ -1,0 +1,3 @@
+Calculation: custom trend line = on chart bars, let C, H, and L be close, high, and low from the current T1 bar via security with lookahead on (historical bars use the containing T1 bar’s final values); let U₀ = D₀ = 0, U = L − m × ATR(n) when C[1] ≤ U[1], otherwise max(L − m × ATR(n), U[1]); D = H + m × ATR(n) when C[1] ≥ D[1], otherwise min(H + m × ATR(n), D[1]); R = 1 when C > D[1], −1 when C < U[1], otherwise the previous R or 1 when unavailable; the line is U when R = 1, otherwise D. ATR(n) runs on chart bars; m and n are separate parameters.
+Long: close of the current T1 bar with lookahead on, sampled on chart bars, crosses above the custom trend line.
+Short: close of the current T1 bar with lookahead on, sampled on chart bars, crosses below the custom trend line.

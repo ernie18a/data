@@ -1,0 +1,4 @@
+Long: long trades enabled AND position flat AND RSI(close, RSI length, T1, bar still forming), sampled on chart bars with lookahead off, < long RSI level
+Short: short trades enabled AND position flat AND RSI(close, RSI length, T1, bar still forming), sampled on chart bars with lookahead off, > short RSI level
+Exit: long, high >= entry price + take-profit USD / (lot size × ounces per lot) OR low <= entry price − stop-loss USD / (lot size × ounces per lot)
+Exit: short, low <= entry price − take-profit USD / (lot size × ounces per lot) OR high >= entry price + stop-loss USD / (lot size × ounces per lot)

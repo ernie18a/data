@@ -1,0 +1,4 @@
+Calculation: normalized volume = volume / StDev(volume, volume lookback)
+Calculation: midpoint price = (high + low) / 2
+Long: (bubble toggle enabled AND normalized volume >= absorption threshold AND midpoint price >= low AND midpoint price <= min(open, close)) OR (normalized volume > absorption threshold + bar-color threshold offset AND midpoint price > min(open, close) AND midpoint price < max(open, close) AND close > open)
+Short: (bubble toggle enabled AND normalized volume >= absorption threshold AND midpoint price >= max(open, close) AND midpoint price <= high) OR (normalized volume > absorption threshold + bar-color threshold offset AND midpoint price > min(open, close) AND midpoint price < max(open, close) AND close < open)

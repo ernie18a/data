@@ -1,0 +1,3 @@
+Calculation: volume-adjusted VWMA spread = VWMA(close, shorter lookback) * (VWMA(close, shorter lookback) / VWMA(close, longer lookback))^2 - VWMA(close, longer lookback) / (VWMA(close, shorter lookback) / VWMA(close, longer lookback))^2
+Long: ADX(lookback, smoothing) > threshold AND volume-adjusted VWMA spread > SMA(volume-adjusted VWMA spread, lookback) AND VPCI(longer lookback, shorter lookback) > 0
+Exit: long, VPCI(longer lookback, shorter lookback) < 0

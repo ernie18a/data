@@ -1,0 +1,2 @@
+Long: RVI(lookback) crosses above SWMA(RVI(lookback)) AND EMA(close, EMA lookback) < VWMA(close, VWMA lookback)
+Short: RVI(lookback) crosses below SWMA(RVI(lookback)) AND EMA(close, EMA lookback) > VWMA(close, VWMA lookback)

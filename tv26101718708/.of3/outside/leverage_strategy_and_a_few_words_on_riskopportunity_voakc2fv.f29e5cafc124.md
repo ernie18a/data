@@ -1,0 +1,2 @@
+Long: close crosses above prior high on T1 AND time >= start date AND time <= end date AND (margin call disabled OR equity > margin threshold)
+Short: close crosses below prior low on T1 AND time >= start date AND time <= end date AND (margin call disabled OR equity > margin threshold)

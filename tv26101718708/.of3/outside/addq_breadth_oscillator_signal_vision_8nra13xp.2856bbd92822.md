@@ -1,0 +1,2 @@
+Long: EMA(NASDAQ advance-decline line, P1) crosses above EMA(EMA(NASDAQ advance-decline line, P1), P2)
+Short: EMA(NASDAQ advance-decline line, P1) crosses below EMA(EMA(NASDAQ advance-decline line, P1), P2)

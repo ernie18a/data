@@ -1,0 +1,6 @@
+Calculation: Upper RSI threshold = RSI midpoint + shared base sensitivity × max(percent((upper ATR source ? ATR(upper ATR lookback) : abs(close − VWAP))) / shared volatility normalizer, shared volatility floor) × upper threshold multiplier
+Calculation: Lower RSI threshold = RSI midpoint − shared base sensitivity × max(percent((lower ATR source ? ATR(lower ATR lookback) : abs(close − VWAP))) / shared volatility normalizer, shared volatility floor) × lower threshold multiplier
+Long: position side = flat AND RSI(close, RSI lookback) crosses above lower RSI threshold AND close > VWAP
+Short: position side = flat AND RSI(close, RSI lookback) crosses below upper RSI threshold AND close < VWAP
+Exit: long, RSI(close, RSI lookback) crosses below RSI midpoint OR RSI(close, RSI lookback) crosses above upper RSI threshold OR low ≤ entry price × (1 − stop-loss percentage / 100) OR high ≥ entry price × (1 + stop-loss percentage × risk-reward multiple / 100)
+Exit: short, RSI(close, RSI lookback) crosses above RSI midpoint OR RSI(close, RSI lookback) crosses below lower RSI threshold OR high ≥ entry price × (1 + stop-loss percentage / 100) OR low ≤ entry price × (1 − stop-loss percentage × risk-reward multiple / 100)

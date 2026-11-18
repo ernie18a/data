@@ -1,0 +1,6 @@
+Calculation: Trend direction = bullish condition ? long : bearish condition ? short : previous trend direction (initially neutral), where bullish condition is Aroon Up(high, lookback) > upper threshold AND Aroon Down(low, lookback) < lower threshold, and bearish condition is Aroon Up(high, lookback) < lower threshold AND Aroon Down(low, lookback) > upper threshold
+Calculation: Filtered signal direction = trend direction when trend direction changes and the selected filter passes; otherwise previous filtered signal direction (initially neutral), where the selected filter passes when selection is none, or selection is volatility and ATR(shorter lookback) > ATR(longer lookback), or selection is volume and HMA(RSI(volume, RSI lookback), HMA lookback) > volume threshold, or selection is both and both conditions pass
+Long: Filtered signal direction changes to long
+Short: Filtered signal direction changes to short
+Exit: long, filtered signal direction is long AND bars since filtered signal direction changed = holding period
+Exit: short, filtered signal direction is short AND bars since filtered signal direction changed = holding period

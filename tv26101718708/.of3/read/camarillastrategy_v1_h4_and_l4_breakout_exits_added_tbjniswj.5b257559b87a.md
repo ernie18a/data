@@ -1,0 +1,4 @@
+Long: chart close > Camarilla R4(high, low, close, T1 bars, last completed bar) AND chart open < Camarilla R4(high, low, close, T1 bars, last completed bar) AND EMA(chart close, lookback) < chart close
+Short: chart close < Camarilla S4(high, low, close, T1 bars, last completed bar) AND chart open > Camarilla S4(high, low, close, T1 bars, last completed bar) AND EMA(chart close, lookback) > chart close
+Exit: Long, chart low <= entry price - long stop-loss distance (in ticks) OR (maximum chart high since entry >= entry price + long trail activation distance (in ticks) AND chart low <= maximum chart high since entry - long trail offset (in ticks))
+Exit: Short, chart high >= entry price + short stop-loss distance (in ticks) OR (minimum chart low since entry <= entry price - short trail activation distance (in ticks) AND chart high >= minimum chart low since entry + short trail offset (in ticks))

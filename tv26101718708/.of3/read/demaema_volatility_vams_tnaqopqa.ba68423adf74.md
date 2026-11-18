@@ -1,0 +1,3 @@
+Long: DEMA(close, shorter lookback) crosses above EMA(close, longer lookback) AND ATR(ATR lookback, T1 bar returned on chart bars) / chart-bar close * 100 < MA(ATR(ATR lookback, T1 bars) / T1 close * 100, MA lookback, selected EMA or SMA, T1 bars, sampled on chart bars); T1 values are from the last completed bar historically and the forming bar in realtime
+Calculation: Long trailing stop = max(chart-bar close * (1 - trailing-stop percentage), previous chart-bar long trailing stop) while long; otherwise 0
+Exit: Long, DEMA(close, shorter lookback) crosses below EMA(close, longer lookback) OR low <= previous chart-bar long trailing stop OR high >= entry price * (1 + take-profit percentage)

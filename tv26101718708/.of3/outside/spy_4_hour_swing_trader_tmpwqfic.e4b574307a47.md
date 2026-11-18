@@ -1,0 +1,1 @@
+Exit: Long, VIX close from P1 bars ago > P2 AND instrument close < long entry price AND instrument close < previous instrument close AND bar is confirmed

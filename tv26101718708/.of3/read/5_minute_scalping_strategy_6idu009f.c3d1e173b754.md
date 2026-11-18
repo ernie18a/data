@@ -1,0 +1,5 @@
+Calculation: MACD histogram series = MACD histogram(source parameter, fast lookback, slow lookback, shared oscillator MA type, signal lookback, signal MA type) on the last completed T1 bar, sampled onto chart bars
+Long: EMA(close, short lookback) > EMA(close, medium lookback) AND EMA(close, medium lookback) > EMA(close, long lookback) AND RSI(close, long-entry lookback) >= long RSI threshold AND MACD histogram series <= lower Bollinger band of that chart-bar series (long-entry band lookback, deviation multiplier) AND MACD histogram series <= long-entry histogram threshold
+Short: EMA(close, short lookback) < EMA(close, medium lookback) AND EMA(close, medium lookback) < EMA(close, long lookback) AND RSI(close, short-entry lookback) <= short RSI threshold AND MACD histogram series >= upper Bollinger band of that chart-bar series (short-entry band lookback, deviation multiplier) AND MACD histogram series >= short-entry histogram threshold
+Exit: long, low <= entry price × (1 − stop-loss percentage) OR high >= entry price × (1 + take-profit percentage)
+Exit: short, high >= entry price × (1 + stop-loss percentage) OR low <= entry price × (1 − take-profit percentage)

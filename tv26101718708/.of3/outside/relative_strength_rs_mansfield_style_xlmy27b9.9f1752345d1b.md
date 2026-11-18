@@ -1,0 +1,2 @@
+Long: Mansfield Relative Strength(instrument close at T1 / benchmark close at T1, P1) crosses above zero
+Exit: long, Mansfield Relative Strength(instrument close at T1 / benchmark close at T1, P1) crosses below zero

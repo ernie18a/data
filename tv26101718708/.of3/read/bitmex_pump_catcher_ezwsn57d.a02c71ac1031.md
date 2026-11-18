@@ -1,0 +1,5 @@
+Calculation: relative volume = SUM(volume, volume lookback) / (sum of SUM(volume, volume lookback) at offsets from volume lookback through history limit in steps of volume lookback / sample count)
+Long: relative volume crosses above threshold AND close > close[direction lookback] AND EMA(relative volume, slow EMA lookback) > EMA(relative volume, slow EMA lookback)[1]
+Short: relative volume crosses above threshold AND close <= close[direction lookback] AND EMA(relative volume, slow EMA lookback) > EMA(relative volume, slow EMA lookback)[1]
+Exit: long, EMA(relative volume, slow EMA lookback) > EMA(relative volume, fast EMA lookback), where slow EMA lookback is longer than fast EMA lookback
+Exit: short, EMA(relative volume, slow EMA lookback) > EMA(relative volume, fast EMA lookback), where slow EMA lookback is longer than fast EMA lookback

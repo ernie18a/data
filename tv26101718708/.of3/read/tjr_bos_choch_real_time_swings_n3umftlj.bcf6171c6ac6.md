@@ -1,0 +1,12 @@
+Calculation: T1 leg = 0 when high[strength T1] > highest(high, strength T1), otherwise 1 when low[strength T1] < lowest(low, strength T1), otherwise its prior value; initially 0
+Calculation: T1 swing high/low = high[strength T1] when T1 leg changes from 1 to 0; low[strength T1] when T1 leg changes from 0 to 1
+Calculation: T1 active levels = latest respective T1 swing high and low; each crossed flag resets when its level is replaced and becomes true on its first break
+Calculation: T1 breaks = up when (close if require-close is enabled, otherwise high) > T1 active swing high and it is uncrossed; down when (close if require-close is enabled, otherwise low) < T1 active swing low and it is uncrossed (computed on T1 bars, mapped to chart bars with lookahead off; live values use the still-forming T1 bar, historical values use completed T1 bars)
+Calculation: T1 trend = initially unknown; when unknown, set up on an up break, otherwise down on a down break; on each bar process the up break first, setting trend up, then the down break, setting trend down; otherwise retain trend
+Calculation: T2 leg = 0 when high[strength T2] > highest(high, strength T2), otherwise 1 when low[strength T2] < lowest(low, strength T2), otherwise its prior value; initially 0
+Calculation: T2 swing high/low = high[strength T2] when T2 leg changes from 1 to 0; low[strength T2] when T2 leg changes from 0 to 1
+Calculation: T2 active levels = latest respective T2 swing high and low; each crossed flag resets when its level is replaced and becomes true on its first break
+Calculation: T2 breaks = up when (close if require-close is enabled, otherwise high) > T2 active swing high and it is uncrossed; down when (close if require-close is enabled, otherwise low) < T2 active swing low and it is uncrossed (computed on T2 bars, mapped to chart bars with lookahead off; live values use the still-forming T2 bar, historical values use completed T2 bars)
+Calculation: T2 trend = initially unknown; when unknown, set up on an up break, otherwise down on a down break; on each bar process the up break first, setting trend up, then the down break, setting trend down; otherwise retain trend
+Long: T1 up break AND prior T1 trend is down OR T2 up break AND prior T2 trend is down
+Short: T1 down break AND (prior T1 trend is up OR T1 up break) OR T2 down break AND (prior T2 trend is up OR T2 up break)

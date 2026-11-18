@@ -1,0 +1,8 @@
+Calculation: fast average = EMA(close, fast lookback) or SMA(close, fast lookback), selected by the fast MA type parameter, calculated on T1 bars and mapped to chart bars; use the last completed T1 bar historically and the still-forming T1 bar in realtime
+Calculation: mid average = EMA(close, mid lookback) or SMA(close, mid lookback), selected by the mid MA type parameter, calculated on T1 bars and mapped to chart bars; use the last completed T1 bar historically and the still-forming T1 bar in realtime
+Calculation: slow average = EMA(close, slow lookback) or SMA(close, slow lookback), selected by the slow MA type parameter, calculated on T1 bars and mapped to chart bars; use the last completed T1 bar historically and the still-forming T1 bar in realtime
+Calculation: bullish condition = fast average > mid average AND mid average > slow average on at least the bull confirmation parameter number of consecutive chart bars
+Calculation: bear trigger = fast average < mid average AND (slow average crosses above fast average OR slow average crosses above mid average), evaluated on chart bars using the mapped T1 values
+Calculation: market state = on the first chart bar, Bull if bullish condition else Pullback; on each later chart bar, Bull if bullish condition, else Bear if bear trigger, else Pullback if fast average crosses below mid average, else the prior market state, defaulting an undefined prior state to Pullback
+Long: market state = Bull AND prior market state is defined AND prior market state != Bull
+Short: market state = Bear AND prior market state is defined AND prior market state != Bear

@@ -1,0 +1,10 @@
+Calculation: Current cloud top = max(Senkou Span A, Senkou Span B), each calculated cloud displacement minus one bars ago
+Calculation: Current cloud bottom = min(Senkou Span A, Senkou Span B), each calculated cloud displacement minus one bars ago
+Calculation: Long trailing stop = max(previous long trailing stop, highest(close, ATR lookback) - ATR(ATR lookback) × trailing multiplier), initialized to the candidate
+Calculation: Short trailing stop = min(previous short trailing stop, lowest(low, ATR lookback) + ATR(ATR lookback) × trailing multiplier), initialized to the candidate
+Long: low crossed below Kijun-sen on the previous bar AND previous close > previous Kijun-sen AND close > current cloud top AND Tenkan-sen >= Kijun-sen AND close > open
+Long: Tenkan-sen > Kijun-sen AND low > Tenkan-sen AND low - previous Tenkan-sen < ATR(ATR lookback) × distance multiplier AND previous Tenkan-sen >= Tenkan-sen two bars ago AND previous Kijun-sen > Kijun-sen two bars ago AND Tenkan-sen - Kijun-sen < ATR(ATR lookback) × separation multiplier AND close > open AND Senkou Span A > Senkou Span B AND volume > EMA(volume, volume lookback) × volume multiplier
+Long: flat AND datetime is within the configured start and end times, inclusive AND low > Kijun-sen AND Kijun-sen > Tenkan-sen AND close < Senkou Span A calculated cloud displacement minus one bars ago AND close > open AND (high < current cloud bottom - lower ATR padding × ATR(ATR lookback) OR low > current cloud top + upper ATR padding × ATR(ATR lookback)) AND SMA(SMA(Stochastic %K(close, high, low, stochastic lookback), smoothing lookback), %D lookback) < oversold threshold
+Short: flat AND datetime is within the configured start and end times, inclusive AND close < current cloud bottom AND high crosses above Kijun-sen AND SMA(SMA(Stochastic %K(close, high, low, stochastic lookback), smoothing lookback), %D lookback) >= overbought threshold AND previous stochastic %D > current stochastic %D AND Senkou Span B > Senkou Span A
+Exit: long, close < long trailing stop on a completed bar
+Exit: short, close > short trailing stop on a completed bar

@@ -1,0 +1,3 @@
+Calculation: normalized basis change = (selected basis - selected basis[slope lookback]) / ATR(ATR lookback), where selected basis is the selected SMA, EMA, WMA, RMA, VWMA, HMA, DEMA, TEMA, ALMA, or linear regression of source over basis lookback (source shifted one bar in non-repainting mode, otherwise current source)
+Long: color mode = Trend Color AND normalized basis change > neutral threshold
+Short: color mode = Trend Color AND normalized basis change < -neutral threshold

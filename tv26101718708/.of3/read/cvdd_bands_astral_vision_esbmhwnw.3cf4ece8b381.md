@@ -1,0 +1,4 @@
+Calculation: CVDD = (realized market-cap close(T1, current bar while forming) − SMA(total-volume close, lookback parameter, T1, current bar while forming)) / scale parameter
+Calculation: Upper band = CVDD × 10^(−(top-slope coefficient parameter × slope input parameter / normalization parameter) × chart-bar Unix time + (top-intercept coefficient parameter × intercept input parameter / normalization parameter))
+Long: chart-bar time > start-time parameter AND CVDD is defined AND low(T1, current bar while forming), sampled on chart bars, <= CVDD
+Short: chart-bar time > start-time parameter AND CVDD is defined AND high(T1, current bar while forming), sampled on chart bars, >= Upper band

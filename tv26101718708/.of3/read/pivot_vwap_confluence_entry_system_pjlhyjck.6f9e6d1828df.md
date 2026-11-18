@@ -1,0 +1,5 @@
+Calculation: pivot levels = using H, L, and C as high, low, and close of the last completed T1 bar: P=(H+L+C)/3, R1=2P-L, R2=P+(H-L), R3=H+2(P-L), S1=2P-H, S2=P-(H-L), S3=L-2(H-P), Δ=R1-S1, R4=R3+Δ, R5=R4+Δ, S4=S3-Δ, S5=S4-Δ
+Long: the current T2 bar's session time is defined on the chart bar AND actual entries today < daily-entry-limit parameter AND VWAP(hlc3, volume, chart bars since T1-day reset) is defined AND for some level in {P, R1–R5, S1–S5}, low is below both that level and VWAP AND close is above both
+Short: the current T2 bar's session time is defined on the chart bar AND actual entries today < daily-entry-limit parameter AND VWAP(hlc3, volume, chart bars since T1-day reset) is defined AND for some level in {P, R1–R5, S1–S5}, high is above both that level and VWAP AND close is below both
+Exit: long, VWAP(hlc3, volume, chart bars since T1-day reset) is defined AND close < VWAP for the exit-count parameter consecutive chart bars
+Exit: short, VWAP(hlc3, volume, chart bars since T1-day reset) is defined AND close > VWAP for the exit-count parameter consecutive chart bars

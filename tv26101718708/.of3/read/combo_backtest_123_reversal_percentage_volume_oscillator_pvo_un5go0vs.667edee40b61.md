@@ -1,0 +1,7 @@
+Calculation: reversal state = 1 when close[2] < close[1] AND close > close[1] AND Fast Stochastic(close, high, low, stochastic lookback, fast smoothing lookback) < Slow Stochastic(close, high, low, stochastic lookback, fast smoothing lookback, slow smoothing lookback) AND Fast Stochastic(close, high, low, stochastic lookback, fast smoothing lookback) > threshold; -1 when close[2] > close[1] AND close < close[1] AND Fast Stochastic(close, high, low, stochastic lookback, fast smoothing lookback) > Slow Stochastic(close, high, low, stochastic lookback, fast smoothing lookback, slow smoothing lookback) AND Fast Stochastic(close, high, low, stochastic lookback, fast smoothing lookback) < threshold; otherwise prior value, initially 0
+Calculation: volume direction state = 1 when EMA(PVO(volume, short EMA lookback, long EMA lookback), signal EMA lookback) > PVO(volume, short EMA lookback, long EMA lookback); -1 when EMA(PVO(volume, short EMA lookback, long EMA lookback), signal EMA lookback) < PVO(volume, short EMA lookback, long EMA lookback); otherwise prior value, initially 0
+Calculation: signal = 1 when reversal state = 1 AND volume direction state = 1; -1 when reversal state = -1 AND volume direction state = -1; 0 otherwise; swap 1 and -1 when direction reversal is enabled
+Long: signal = 1
+Short: signal = -1
+Exit: long, signal = 0
+Exit: short, signal = 0

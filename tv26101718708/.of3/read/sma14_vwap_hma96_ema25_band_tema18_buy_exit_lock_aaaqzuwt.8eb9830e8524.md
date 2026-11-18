@@ -1,0 +1,4 @@
+Calculation: green zone = initially inactive; activates when SMA(close, P_SMA) crosses above VWAP(close) and close > HMA(close, P_HMA); deactivates when active and (SMA(close, P_SMA) < VWAP(close) OR close < HMA(close, P_HMA)); otherwise retains its state
+Calculation: lock level = unset at entry; set to entry price + P_LOCK_PROFIT when close - entry price >= P_LOCK_TRIGGER; remains set until the trade ends
+Long: green zone is active and was active on the previous bar AND no earlier long entry occurred in the current green zone AND no position is open AND low <= EMA(high, P_EMA) AND close >= EMA(high, P_EMA)
+Exit: long, green zone turns off OR TEMA(close, P_TEMA) crosses below SMA(close, P_SMA) OR (lock level is set AND close <= lock level)

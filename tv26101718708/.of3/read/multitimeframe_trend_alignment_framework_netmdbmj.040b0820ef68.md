@@ -1,0 +1,4 @@
+Long: close > EMA(close, higher-timeframe lookback, T1 bars, still-forming bar; value taken on chart bars) AND EMA(close, shorter lookback) crosses above EMA(close, longer lookback) AND position is flat or short
+Short: close < EMA(close, higher-timeframe lookback, T1 bars, still-forming bar; value taken on chart bars) AND EMA(close, shorter lookback) crosses below EMA(close, longer lookback) AND position is flat or long
+Exit: long, low <= entry price - ATR(lookback) * stop multiplier OR high >= entry price + ATR(lookback) * stop multiplier * risk/reward
+Exit: short, high >= entry price + ATR(lookback) * stop multiplier OR low <= entry price - ATR(lookback) * stop multiplier * risk/reward

@@ -1,0 +1,5 @@
+Calculation: Renko step line = on each chart bar, prior step line + ATR(lookback, T1, bar still forming) if close > prior step line + ATR(lookback, T1, bar still forming), prior step line - ATR(lookback, T1, bar still forming) if close < prior step line - ATR(lookback, T1, bar still forming), otherwise prior step line; initial value is zero
+Calculation: Renko reference line = prior Renko step line when the Renko step line changes from the prior chart bar, otherwise prior Renko reference line; initial value is zero
+Long: Renko step line crosses above Renko reference line AND datetime is on or after the backtest start timestamp AND datetime is on or before the backtest stop timestamp AND position is flat or short
+Short: Renko step line crosses below Renko reference line AND datetime is on or after the backtest start timestamp AND datetime is on or before the backtest stop timestamp AND position is flat or long AND margin mode is enabled
+Exit: Long, Renko step line crosses below Renko reference line AND datetime is on or after the backtest start timestamp AND datetime is on or before the backtest stop timestamp AND margin mode is disabled

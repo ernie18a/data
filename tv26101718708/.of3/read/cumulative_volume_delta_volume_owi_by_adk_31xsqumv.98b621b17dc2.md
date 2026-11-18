@@ -1,0 +1,2 @@
+Long: CVD close on chart bars using lower timeframe T1 and anchor period T2, including the bar still forming, >= CVD open on the same bars and periods
+Short: CVD close on chart bars using lower timeframe T1 and anchor period T2, including the bar still forming, < CVD open on the same bars and periods

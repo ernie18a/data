@@ -1,0 +1,7 @@
+Calculation: Opening-range high = highest(high) during the opening-range period
+Calculation: Opening-range low = lowest(low) during the opening-range period
+Calculation: Retest buffer = ATR(lookback) × buffer multiplier
+Long: Opening range is ready AND in session AND close > opening-range high AND close[1] <= opening-range high AND close > EMA(close, shorter lookback) AND close > EMA(close, longer lookback)
+Short: Opening range is ready AND in session AND close < opening-range low AND close[1] >= opening-range low AND close < EMA(close, shorter lookback) AND close < EMA(close, longer lookback)
+Long: In session AND a long breakout is pending within the maximum retest bars and has not been cancelled by a short breakout AND low >= opening-range high - retest buffer AND low <= opening-range high + retest buffer AND close > open AND close > opening-range high AND close > EMA(close, shorter lookback) AND close > EMA(close, longer lookback)
+Short: In session AND a short breakout is pending within the maximum retest bars and has not been cancelled by a long breakout AND high >= opening-range low - retest buffer AND high <= opening-range low + retest buffer AND close < open AND close < opening-range low AND close < EMA(close, shorter lookback) AND close < EMA(close, longer lookback)

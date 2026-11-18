@@ -1,0 +1,5 @@
+Calculation: breakout level = latest confirmed PivotHigh(high, swing lookback, swing lookback)
+Calculation: initial stop = lowest(low, stop lookback)[1] on the breakout bar, held fixed while long
+Calculation: trailing average = SMA or EMA(close, selected first or second MA lookback, T1 still-forming bar), sampled on chart bars using T1 values
+Long: high crosses above breakout level AND (MA filter disabled OR breakout level > SMA or EMA(close, third MA lookback, T1 still-forming bar), sampled on chart bars using T1 values) AND (ATR filter disabled OR breakout level - initial stop < ATR(ATR lookback, T2 still-forming bar) × ATR fraction, sampled on chart bars using T2 values) AND datetime > start date AND datetime < end date
+Exit: long, low <= initial stop OR (low[1] > trailing average AND close crosses below trailing average)

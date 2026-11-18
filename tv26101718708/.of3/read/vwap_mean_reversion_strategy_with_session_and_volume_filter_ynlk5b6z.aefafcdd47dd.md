@@ -1,0 +1,4 @@
+Long: on a confirmed chart bar, position is flat AND New York datetime >= session start AND New York datetime < session end AND close < session VWAP(HLC3) - ATR(lookback) * distance parameter AND volume < SMA(volume, lookback)
+Short: on a confirmed chart bar, position is flat AND New York datetime >= session start AND New York datetime < session end AND close > session VWAP(HLC3) + ATR(lookback) * distance parameter AND volume < SMA(volume, lookback)
+Exit: long, low <= close at entry signal bar - ATR(lookback) at entry signal bar * stop parameter OR high >= session VWAP(HLC3) at entry signal bar
+Exit: short, high >= close at entry signal bar + ATR(lookback) at entry signal bar * stop parameter OR low <= session VWAP(HLC3) at entry signal bar

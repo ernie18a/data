@@ -1,0 +1,3 @@
+Calculation: net pressure = volume * ((close - low) - (high - close)) / max(high - low, minimum tick)
+Long: close > close[1] AND volume > maximum volume among the previous lookback bars whose close is below the close one bar earlier (or zero if none) AND net pressure > EMA(net pressure, smoothing period)
+Short: close < close[1] AND volume > maximum volume among the previous lookback bars whose close is above the close one bar earlier (or zero if none) AND net pressure < EMA(net pressure, smoothing period)

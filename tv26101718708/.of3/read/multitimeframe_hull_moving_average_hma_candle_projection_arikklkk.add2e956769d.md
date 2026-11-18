@@ -1,0 +1,2 @@
+Long: HMA(close, lookback, T1 still-forming bar, evaluated on chart bars using T1 values) >= HMA(open, lookback, T1 still-forming bar, evaluated on chart bars using T1 values)
+Short: HMA(close, lookback, T1 still-forming bar, evaluated on chart bars using T1 values) < HMA(open, lookback, T1 still-forming bar, evaluated on chart bars using T1 values)

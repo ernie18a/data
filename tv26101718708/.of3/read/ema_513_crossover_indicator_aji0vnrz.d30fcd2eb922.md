@@ -1,0 +1,6 @@
+Long: EMA(close, shorter lookback) crosses above EMA(close, longer lookback)
+Short: EMA(close, shorter lookback) crosses below EMA(close, longer lookback)
+Long: low <= EMA(close, longer lookback) on the first chart bar at or after the latest shorter-lookback EMA crossing above the longer-lookback EMA, before any subsequent crossing below
+Short: high >= EMA(close, longer lookback) on the first chart bar at or after the latest shorter-lookback EMA crossing below the longer-lookback EMA, before any subsequent crossing above
+Long: For each dashboard timeframe T1 through T12 independently, on chart bars using EMA values calculated on Tn bars and sampled onto chart bars (current Tn bar while forming in real time; last completed Tn bar historically), EMA(close, shorter lookback, Tn) > EMA(close, longer lookback, Tn)
+Short: For each dashboard timeframe T1 through T12 independently, on chart bars using EMA values calculated on Tn bars and sampled onto chart bars (current Tn bar while forming in real time; last completed Tn bar historically), EMA(close, shorter lookback, Tn) <= EMA(close, longer lookback, Tn)

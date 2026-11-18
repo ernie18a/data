@@ -1,0 +1,4 @@
+Calculation: T1 running high = maximum high of chart bars from the start of the current T1 interval through the current bar
+Calculation: T1 running low = minimum low of chart bars from the start of the current T1 interval through the current bar
+Long: (close crosses above T1 running high OR close crosses above EMA(close, shorter lookback)) AND EMA(close, shorter lookback) > EMA(close, longer lookback) AND volume > SMA(volume, volume lookback)
+Short: (close crosses below T1 running low OR close crosses below EMA(close, shorter lookback)) AND EMA(close, shorter lookback) < EMA(close, longer lookback) AND volume > SMA(volume, volume lookback)

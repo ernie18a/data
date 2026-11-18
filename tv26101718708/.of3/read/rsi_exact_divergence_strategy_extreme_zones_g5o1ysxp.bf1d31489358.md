@@ -1,0 +1,8 @@
+Calculation: Bullish divergence = a confirmed pivot low of RSI(source, RSI lookback), with left and right pivot lookbacks both P, where low at the current pivot is below low at the preceding RSI pivot low, RSI at the current pivot is above RSI at the preceding pivot, either pivot RSI is at or below the oversold threshold, and the preceding pivot is within the maximum lookback of the confirmation bar
+Calculation: Bearish divergence = a confirmed pivot high of RSI(source, RSI lookback), with left and right pivot lookbacks both P, where high at the current pivot is above high at the preceding RSI pivot high, RSI at the current pivot is below RSI at the preceding pivot, either pivot RSI is at or above the overbought threshold, and the preceding pivot is within the maximum lookback of the confirmation bar
+Long: Bullish divergence
+Long: Bullish divergence AND (HTF filter disabled OR close of the last completed T1 bar > EMA(close, long-term lookback, T1 bars, last completed bar))
+Short: Bearish divergence
+Short: Bearish divergence AND (HTF filter disabled OR close of the last completed T1 bar < EMA(close, long-term lookback, T1 bars, last completed bar))
+Exit: long, Bearish divergence AND HTF filter enabled AND close of the last completed T1 bar >= EMA(close, long-term lookback, T1 bars, last completed bar)
+Exit: short, Bullish divergence AND HTF filter enabled AND close of the last completed T1 bar <= EMA(close, long-term lookback, T1 bars, last completed bar)

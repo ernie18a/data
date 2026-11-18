@@ -1,0 +1,2 @@
+Long: On chart bars using T1 values, volume > SMA(volume, volume lookback) * volume multiplier AND close > highest(high, breakout lookback)[1]
+Short: On chart bars using T1 values, volume > SMA(volume, volume lookback) * volume multiplier AND close < lowest(low, breakout lookback)[1]

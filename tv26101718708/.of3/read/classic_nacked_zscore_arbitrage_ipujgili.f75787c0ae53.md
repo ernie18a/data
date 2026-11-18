@@ -1,0 +1,2 @@
+Long: ZScore(close(A, T1, forming) - close(B, T1, forming), lookback) > threshold, calculated on chart bars using values from the forming T1 bar
+Short: ZScore(close(A, T1, forming) - close(B, T1, forming), lookback) < -threshold, calculated on chart bars using values from the forming T1 bar

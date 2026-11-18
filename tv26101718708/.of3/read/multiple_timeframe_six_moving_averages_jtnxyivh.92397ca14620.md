@@ -1,0 +1,2 @@
+Long: close > MA(close, shortest lookback) > MA(close, second-shortest lookback) > MA(close, third-shortest lookback) > MA(close, third-longest lookback) > MA(close, second-longest lookback) > MA(close, longest lookback) AND each of these moving averages > its value one chart bar ago
+Short: close < MA(close, shortest lookback) < MA(close, second-shortest lookback) < MA(close, third-shortest lookback) < MA(close, third-longest lookback) < MA(close, second-longest lookback) < MA(close, longest lookback) AND each of these moving averages < its value one chart bar ago

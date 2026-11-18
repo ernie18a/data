@@ -1,0 +1,3 @@
+Calculation: Favorable count = (SPX close on T1 last completed bar > SMA(SPX close, trend lookback, T1, last completed bar)) + (VIX close on T1 last completed bar / VIX3M close on T1 last completed bar < volatility-ratio threshold) + (Z-score(HYG close on T1 last completed bar / IEF close on T1 last completed bar, credit lookback, T1, last completed bar) > credit-score threshold)
+Long: Favorable count >= minimum favorable-count threshold
+Exit: long, Favorable count < minimum favorable-count threshold

@@ -1,0 +1,9 @@
+Long: WaveTrend(hlc3, channel lookback, average lookback) crosses above SMA(WaveTrend(hlc3, channel lookback, average lookback), signal lookback) AND WaveTrend(hlc3, channel lookback, average lookback) is below the long-entry threshold
+Exit: long, WaveTrend(hlc3, channel lookback, average lookback) crosses below SMA(WaveTrend(hlc3, channel lookback, average lookback), signal lookback) AND WaveTrend(hlc3, channel lookback, average lookback) is above the long-exit threshold
+Exit: long, low <= position entry price minus the stop-loss percentage of entry price, rounded to tick size
+Exit: long, high >= position entry price plus the first percentage target of entry price, rounded to tick size OR high >= position entry price plus the second percentage target of entry price, rounded to tick size OR high >= position entry price plus the third percentage target of entry price, rounded to tick size OR high >= position entry price plus the fourth percentage target of entry price, rounded to tick size
+Calculation: MTF EMA set = EMA(close, shorter lookback) and EMA(close, longer lookback) on T1 (shorter timeframe) and T2 (longer timeframe), sampled on chart bars using completed T1/T2 bars historically and the forming T1/T2 bar in real time
+Calculation: first MTF target = smallest value in MTF EMA set
+Calculation: second MTF target = third-smallest value in MTF EMA set
+Calculation: third MTF target = largest value in MTF EMA set
+Exit: long, MTF take-profit is enabled AND the second-highest value in MTF EMA set > position entry price AND (high >= first MTF target OR high >= second MTF target OR high >= third MTF target)

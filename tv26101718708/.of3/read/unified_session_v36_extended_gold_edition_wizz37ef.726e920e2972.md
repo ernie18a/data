@@ -1,0 +1,2 @@
+Long: intraday chart AND first bar of the Asian session AND weekday is Monday through Friday AND month(datetime, UTC+2) is January, June, July, August, or December
+Short: intraday chart AND first bar of the Asian session AND weekday is Monday through Friday AND month(datetime, UTC+2) is September or November

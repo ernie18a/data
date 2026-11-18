@@ -1,0 +1,5 @@
+Calculation: ATR = ATR(high, low, close, ATR lookback) on chart bars
+Calculation: Long trailing stop = max(high - ATR * stop multiplier, prior long trailing stop), initialized to high - ATR * stop multiplier on the first bar of a long position
+Calculation: Long profit target = entry price + ATR * target multiplier, fixed using ATR on the first bar of a long position
+Long: position is flat AND high >= current day's open * (1 + entry percentage parameter) AND current day's cumulative volume >= SMA(volume, volume lookback, T1 bars, last completed bar) AND (hour < cutoff hour OR (hour = cutoff hour AND minute <= cutoff minute)) AND market index close from T1 (bar still forming) > SMA(market index close from T1 (bar still forming), index lookback, calculated on chart bars) AND MFI(HLC3, MFI lookback) > MFI threshold parameter
+Exit: Long, close < long trailing stop OR close >= long profit target

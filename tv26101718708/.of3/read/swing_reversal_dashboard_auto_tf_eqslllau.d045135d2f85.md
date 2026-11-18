@@ -1,0 +1,5 @@
+Calculation: bullish candle score = close's position within the high-low range as a percentage, or zero when high equals low
+Calculation: bearish candle score = high's distance above close as a percentage of the high-low range, or zero when high equals low
+Calculation: trend state = RANGE when abs(EMA(close, shorter lookback) - EMA(close, longer lookback)) < ATR(ATR lookback) * distance multiplier; otherwise UPTREND when EMA(close, shorter lookback) > EMA(close, longer lookback), DOWNTREND when EMA(close, longer lookback) > EMA(close, shorter lookback), otherwise RANGE
+Long: bullish candle score > score threshold AND volume > SMA(volume, volume lookback) * volume spike multiplier AND trend state != DOWNTREND
+Short: bearish candle score > score threshold AND volume > SMA(volume, volume lookback) * volume spike multiplier AND trend state != UPTREND

@@ -1,0 +1,2 @@
+Long: close > the most recently confirmed PivotHigh(high, lookback, lookback) for the first time after that pivot is confirmed
+Short: close < the most recently confirmed PivotLow(low, lookback, lookback) for the first time after that pivot is confirmed

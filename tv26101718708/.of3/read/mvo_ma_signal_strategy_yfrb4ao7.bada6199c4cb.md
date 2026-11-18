@@ -1,0 +1,8 @@
+Calculation: Long stop = entry price - stop-distance parameter * ATR(ATR lookback); when break-even is enabled and high >= entry price + break-even-distance parameter * ATR(ATR lookback), set to entry price; after that, when trailing is enabled, update each bar to max(previous long stop, close - trailing-distance parameter * ATR(ATR lookback)).
+Calculation: Short stop = entry price + stop-distance parameter * ATR(ATR lookback); when break-even is enabled and low <= entry price - break-even-distance parameter * ATR(ATR lookback), set to entry price; after that, when trailing is enabled, update each bar to min(previous short stop, close + trailing-distance parameter * ATR(ATR lookback)).
+Calculation: Long target = entry price + target-distance parameter * ATR(ATR lookback).
+Calculation: Short target = entry price - target-distance parameter * ATR(ATR lookback).
+Long: Long entries enabled AND datetime >= start-date parameter AND (Heikin-Ashi close crosses SMA(close, lookback) in either direction OR (MFI(Heikin-Ashi low, MFI lookback) < lower MFI threshold AND Heikin-Ashi close > SMA(close, same lookback))).
+Short: Short entries enabled AND datetime >= start-date parameter AND (Heikin-Ashi close crosses below SMA(close, lookback) OR (MFI(Heikin-Ashi close, MFI lookback) > upper MFI threshold AND Heikin-Ashi close < SMA(close, same lookback))).
+Exit: Long, low <= long stop OR high >= long target.
+Exit: Short, high >= short stop OR low <= short target.

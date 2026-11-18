@@ -1,0 +1,3 @@
+Calculation: Selected sector direction = if RSI and EMA filters are enabled, becomes bullish when RSI(selected sector close, P1) > P2 AND EMA(selected sector close, P3) > EMA(selected sector close, P4), becomes bearish when RSI(selected sector close, P1) < P5 AND EMA(selected sector close, P3) < EMA(selected sector close, P4), and otherwise retains its prior value; if only the RSI filter is enabled, becomes bullish above P2, bearish below P5, and otherwise retains its prior value; if only the EMA filter is enabled, equals EMA(selected sector close, P3) > EMA(selected sector close, P4); if neither filter is enabled, is false
+Long: Selected sector direction is true
+Exit: long, selected sector direction is false

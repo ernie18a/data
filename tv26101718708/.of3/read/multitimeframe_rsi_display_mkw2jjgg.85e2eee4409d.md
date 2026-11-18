@@ -1,0 +1,16 @@
+Long: RSI(close, lookback, T1 bar still forming) <= oversold threshold on chart bars using T1 values
+Long: RSI(close, lookback, T2 bar still forming) <= oversold threshold on chart bars using T2 values
+Long: RSI(close, lookback, T3 bar still forming) <= oversold threshold on chart bars using T3 values
+Long: RSI(close, lookback, T4 bar still forming) <= oversold threshold on chart bars using T4 values
+Long: RSI(close, lookback, T5 bar still forming) <= oversold threshold on chart bars using T5 values
+Long: RSI(close, lookback, T6 bar still forming) <= oversold threshold on chart bars using T6 values
+Long: RSI(close, lookback, T7 bar still forming) <= oversold threshold on chart bars using T7 values
+Long: RSI(close, lookback, T8 bar still forming) <= oversold threshold on chart bars using T8 values
+Short: RSI(close, lookback, T1 bar still forming) >= overbought threshold on chart bars using T1 values
+Short: RSI(close, lookback, T2 bar still forming) >= overbought threshold on chart bars using T2 values
+Short: RSI(close, lookback, T3 bar still forming) >= overbought threshold on chart bars using T3 values
+Short: RSI(close, lookback, T4 bar still forming) >= overbought threshold on chart bars using T4 values
+Short: RSI(close, lookback, T5 bar still forming) >= overbought threshold on chart bars using T5 values
+Short: RSI(close, lookback, T6 bar still forming) >= overbought threshold on chart bars using T6 values
+Short: RSI(close, lookback, T7 bar still forming) >= overbought threshold on chart bars using T7 values
+Short: RSI(close, lookback, T8 bar still forming) >= overbought threshold on chart bars using T8 values

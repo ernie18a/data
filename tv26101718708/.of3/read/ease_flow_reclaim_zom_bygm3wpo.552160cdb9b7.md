@@ -1,0 +1,8 @@
+Calculation: Smoothed Ease of Movement = EMA(Ease of Movement(high, low, volume), smoothing lookback)
+Calculation: Upside Ulcer Index = sqrt(SMA((if lowest(close, stress lookback) != 0 then 100 * (close - lowest(close, stress lookback)) / lowest(close, stress lookback) else 0)^2, stress lookback))
+Calculation: Bull score = (1 if Smoothed Ease of Movement > 0 AND Smoothed Ease of Movement > Smoothed Ease of Movement[impulse lookback] else 0) + (1 if Ulcer Index(close, stress lookback) < Ulcer Index(close, stress lookback)[1] AND Ulcer Index(close, stress lookback)[1] > stress threshold else 0) + (1 if VWMA(close, shorter lookback derived from the longer trend lookback) > VWMA(close, longer trend lookback) AND HMA(close, HMA lookback) > HMA(close, HMA lookback)[1] else 0) + (1 if close crosses above HMA(close, HMA lookback) else 0)
+Calculation: Bear score = (1 if Smoothed Ease of Movement < 0 AND Smoothed Ease of Movement < Smoothed Ease of Movement[impulse lookback] else 0) + (1 if Upside Ulcer Index < Upside Ulcer Index[1] AND Upside Ulcer Index[1] > stress threshold else 0) + (1 if VWMA(close, shorter lookback derived from the longer trend lookback) < VWMA(close, longer trend lookback) AND HMA(close, HMA lookback) < HMA(close, HMA lookback)[1] else 0) + (1 if close crosses below HMA(close, HMA lookback) else 0)
+Long: Bull score >= required score threshold AND (no prior confirmed signal OR current bar index - last confirmed signal bar > cooldown lookback)
+Short: Bear score >= required score threshold AND (no prior confirmed signal OR current bar index - last confirmed signal bar > cooldown lookback)
+Long: watch outputs enabled AND Bull score = required score threshold - 1
+Short: watch outputs enabled AND Bear score = required score threshold - 1

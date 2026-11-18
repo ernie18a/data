@@ -1,0 +1,2 @@
+Long: volume > SMA(volume, lookback) * volume-multiplier AND ABS(close - close[lookback]) > close[lookback] * price-change-multiplier
+Exit: long, low <= entry price - stop-loss-multiplier * standard deviation(close, lookback) OR bars since entry >= hold-period parameter

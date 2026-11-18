@@ -1,0 +1,3 @@
+Calculation: MACD zone level = price-band lookup of T1 close from the still-forming T1 bar, evaluated on chart bars
+Long: MACD(close, fast lookback, slow lookback) crosses above EMA(MACD(close, fast lookback, slow lookback), signal lookback) AND MACD(close, fast lookback, slow lookback) > -MACD zone level
+Short: MACD(close, fast lookback, slow lookback) crosses below EMA(MACD(close, fast lookback, slow lookback), signal lookback) AND MACD(close, fast lookback, slow lookback) < MACD zone level

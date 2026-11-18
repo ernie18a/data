@@ -1,0 +1,2 @@
+Long: session open < previous session close AND chart-bar close > high of the first completed T1 bar of the session AND chart-bar close crosses above VWAP
+Short: session open > previous session close AND chart-bar close < low of the first completed T1 bar of the session AND chart-bar close crosses below VWAP

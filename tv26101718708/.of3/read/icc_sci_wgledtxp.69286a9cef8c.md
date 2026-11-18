@@ -1,0 +1,6 @@
+Calculation: Bearish reversal candle = high > low AND (high - max(close, open) >= (high - low) * reversal-wick fraction OR (close < open AND close[1] > open[1] AND abs(close - open) > abs(close[1] - open[1])))
+Calculation: Bullish reversal candle = high > low AND (min(close, open) - low >= (high - low) * reversal-wick fraction OR (close > open AND close[1] < open[1] AND abs(close - open) > abs(close[1] - open[1])))
+Long: With no indication active, a confirmed pivot high(high, swing lookback, swing lookback) exceeds the preceding confirmed pivot high; after a close below that pivot high, close crosses above it
+Short: With no indication active, a confirmed pivot low(low, swing lookback, swing lookback) is below the preceding confirmed pivot low; after a close above that pivot low, close crosses below it
+Exit: long, a confirmed pivot low exists and close is below the most recent confirmed pivot low(low, swing lookback, swing lookback) OR Bearish reversal candle
+Exit: short, a confirmed pivot high exists and close is above the most recent confirmed pivot high(high, swing lookback, swing lookback) OR Bullish reversal candle

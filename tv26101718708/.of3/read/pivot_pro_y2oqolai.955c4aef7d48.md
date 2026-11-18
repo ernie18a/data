@@ -1,0 +1,2 @@
+Long: alerts enabled AND (close crosses above VWAP(hlc3) OR close crosses above Pivot Point((high + low + close) / 3, previous completed T1 bar, sampled on chart bars))
+Short: alerts enabled AND (close crosses below VWAP(hlc3) OR close crosses below Pivot Point((high + low + close) / 3, previous completed T1 bar, sampled on chart bars))

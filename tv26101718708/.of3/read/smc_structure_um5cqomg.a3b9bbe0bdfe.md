@@ -1,0 +1,2 @@
+Long: Close crosses above the latest confirmed Pivot High(high, swing lookback, swing lookback) that has not already been broken since confirmation.
+Short: Close crosses below the latest confirmed Pivot Low(low, swing lookback, swing lookback) that has not already been broken since confirmation.

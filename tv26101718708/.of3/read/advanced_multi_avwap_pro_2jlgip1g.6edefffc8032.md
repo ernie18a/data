@@ -1,0 +1,2 @@
+Long: line color mode is Price Above/Below AND close >= AVWAP OR line color mode is Slope AND AVWAP >= AVWAP[1]
+Short: line color mode is Price Above/Below AND close < AVWAP OR line color mode is Slope AND AVWAP < AVWAP[1]

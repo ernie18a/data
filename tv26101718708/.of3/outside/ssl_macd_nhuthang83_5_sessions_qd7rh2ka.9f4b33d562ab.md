@@ -1,0 +1,2 @@
+Long: close >= open AND Supertrend is bullish AND SSL Channel lines cross upward AND MACD line > 0 AND (session filtering is disabled OR current time is within an enabled session window) AND the chart bar is confirmed
+Short: close < open AND Supertrend is bearish AND SSL Channel lines cross downward AND MACD line < 0 AND (session filtering is disabled OR current time is within an enabled session window) AND the chart bar is confirmed

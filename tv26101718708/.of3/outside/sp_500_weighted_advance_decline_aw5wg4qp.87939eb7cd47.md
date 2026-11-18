@@ -1,0 +1,1 @@
+Long: histogram is teal AND white line is above zero AND they are close together

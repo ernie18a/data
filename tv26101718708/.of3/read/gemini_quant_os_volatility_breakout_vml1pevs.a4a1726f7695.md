@@ -1,0 +1,2 @@
+Long: close > EMA(close, trend lookback) AND close > highest(high, breakout lookback)[1] AND volume > SMA(volume, volume-average lookback) * volume multiplier AND the long conditions were false on the previous bar
+Short: close < EMA(close, trend lookback) AND close < lowest(low, breakout lookback)[1] AND volume > SMA(volume, volume-average lookback) * volume multiplier AND the short conditions were false on the previous bar

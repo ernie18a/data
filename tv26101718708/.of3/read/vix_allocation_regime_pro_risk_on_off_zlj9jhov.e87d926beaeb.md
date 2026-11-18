@@ -1,0 +1,3 @@
+Calculation: Regime = panic if close(T1, still-forming bar) > panic threshold; otherwise risk-off if close(T1, still-forming bar) > risk-off threshold AND close(T1, still-forming bar) > EMA(close, EMA lookback, T1, still-forming bar); otherwise risk-on if close(T1, still-forming bar) < risk-on threshold AND close(T1, still-forming bar) < EMA(close, EMA lookback, T1, still-forming bar); otherwise neutral, evaluated on chart bars using values from T1
+Long: Regime = risk-on AND Regime on the preceding chart bar != risk-on
+Short: (Regime = risk-off AND Regime on the preceding chart bar != risk-off) OR (Regime = panic AND Regime on the preceding chart bar != panic)

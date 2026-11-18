@@ -1,0 +1,7 @@
+Calculation: front/second-month WTI futures spread = second-month WTI futures close - front-month WTI futures close
+Calculation: composite pressure = EMA(P1 × Z-score(front/second-month WTI futures spread, P3) + P2 × Z-score(change in front/second-month WTI futures spread, P3), P4)
+Calculation: volatility-scaled pressure = composite pressure when volatility scaling is disabled; when enabled, composite pressure × (StDev(log(front-month WTI futures close / prior close), P5) / SMA(StDev(log(front-month WTI futures close / prior close), P5), P6)) when the denominator is nonzero, otherwise composite pressure × 1
+Calculation: dominance-filtered pressure = volatility-scaled pressure when the dominance filter is disabled or the absolute change in front-month WTI futures close exceeds the absolute change in second-month WTI futures close; otherwise 0
+Calculation: persistent pressure = dominance-filtered pressure when the persistence filter is disabled or at least P12 of the P13 most recent values exceed P10 or at least P12 are below P11; otherwise 0
+Long: persistent pressure > (P20 enabled ? P22 × StDev(persistent pressure, P21) : P10) AND (P16 disabled OR EMA(chart close - chart close P14 bars ago, P15) > 0) AND (P17 disabled OR (exchange hour >= P18 AND exchange hour <= P19))
+Short: persistent pressure < (P20 enabled ? -P22 × StDev(persistent pressure, P21) : P11) AND (P16 disabled OR EMA(chart close - chart close P14 bars ago, P15) < 0) AND (P17 disabled OR (exchange hour >= P18 AND exchange hour <= P19))

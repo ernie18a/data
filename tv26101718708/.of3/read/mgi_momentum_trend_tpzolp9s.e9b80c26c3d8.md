@@ -1,0 +1,2 @@
+Long: On chart bars taking values from the still-forming T1 bar, T1 close >= VStop(close, high, low, ATR length, ATR multiplier) calculated on T1 bars
+Short: On chart bars taking values from the still-forming T1 bar, T1 close < VStop(close, high, low, ATR length, ATR multiplier) calculated on T1 bars

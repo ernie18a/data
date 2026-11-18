@@ -1,0 +1,2 @@
+Long: opening range is set AND no earlier long signal occurred in the current session AND close > max(highest(high, opening-range period), previous completed T1 high taken onto chart bars) + buffer AND volume >= volume-multiple × SMA(volume, lookback)[1]
+Short: opening range is set AND no earlier short signal occurred in the current session AND close < min(lowest(low, opening-range period), previous completed T1 low taken onto chart bars) - buffer

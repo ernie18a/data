@@ -1,0 +1,8 @@
+Calculation: Asia session high = highest high of bars in the current day's Asia session
+Calculation: Asia session low = lowest low of bars in the current day's Asia session
+Long: Asia session high and low are defined AND Asia session high > Asia session low AND during the configured trade window AND (one-trade-per-day limit is disabled OR no trade has been entered that day) AND (EMA trend filter is disabled OR close > EMA(close, lookback)) AND close crosses above Asia session high
+Short: Asia session high and low are defined AND Asia session high > Asia session low AND during the configured trade window AND (one-trade-per-day limit is disabled OR no trade has been entered that day) AND (EMA trend filter is disabled OR close < EMA(close, lookback)) AND close crosses below Asia session low
+Exit: long, stop/target exits are enabled AND (low <= entry price - (fixed mode enabled ? fixed stop amount : ATR(lookback) * stop multiplier) OR high >= entry price + (fixed mode enabled ? fixed target amount : ATR(lookback) * target multiplier))
+Exit: short, stop/target exits are enabled AND (high >= entry price + (fixed mode enabled ? fixed stop amount : ATR(lookback) * stop multiplier) OR low <= entry price - (fixed mode enabled ? fixed target amount : ATR(lookback) * target multiplier))
+Exit: long, time-based exit is enabled AND the current bar is outside the configured trade window AND the prior bar was inside it
+Exit: short, time-based exit is enabled AND the current bar is outside the configured trade window AND the prior bar was inside it

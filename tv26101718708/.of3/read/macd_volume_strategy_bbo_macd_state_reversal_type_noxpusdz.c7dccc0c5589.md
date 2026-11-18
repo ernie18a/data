@@ -1,0 +1,4 @@
+Long: MACD(close, fast lookback, slow lookback, signal lookback, oscillator MA type, signal MA type) crosses above 0 AND Volume Oscillator(volume, short EMA lookback, long EMA lookback) > 0 AND MACD line > signal line
+Short: MACD(close, fast lookback, slow lookback, signal lookback, oscillator MA type, signal MA type) crosses below 0 AND Volume Oscillator(volume, short EMA lookback, long EMA lookback) > 0 AND MACD line < signal line
+Exit: long, low <= lowest(low, swing lookback) on the entry bar OR high >= entry price + (entry price - lowest(low, swing lookback) on the entry bar) * risk/reward multiple
+Exit: short, high >= highest(high, swing lookback) on the entry bar OR low <= entry price - (highest(high, swing lookback) on the entry bar - entry price) * risk/reward multiple

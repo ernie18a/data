@@ -1,0 +1,7 @@
+Calculation: Candle body size = absolute(close - open)
+Long: close > open AND volume > SMA(volume, volume lookback) * volume multiplier AND candle body size > SMA(candle body size, body-size lookback) * body-size multiplier
+Long: close > open AND volume > SMA(volume, volume lookback) * volume multiplier AND candle body size > SMA(candle body size, body-size lookback) * body-size multiplier AND configured MA(RSI(RSI source, RSI lookback), MA lookback, MA type) > long RSI threshold AND (session filter disabled OR current bar opens within configured UTC session)
+Short: close < open AND volume > SMA(volume, volume lookback) * volume multiplier AND candle body size > SMA(candle body size, body-size lookback) * body-size multiplier
+Short: close < open AND volume > SMA(volume, volume lookback) * volume multiplier AND candle body size > SMA(candle body size, body-size lookback) * body-size multiplier AND configured MA(RSI(RSI source, RSI lookback), MA lookback, MA type) < short RSI threshold AND (session filter disabled OR current bar opens within configured UTC session)
+Exit: long, high >= entry price + take-profit distance OR low <= entry price - stop-loss distance
+Exit: short, low <= entry price - take-profit distance OR high >= entry price + stop-loss distance

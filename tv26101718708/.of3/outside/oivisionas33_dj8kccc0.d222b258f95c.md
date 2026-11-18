@@ -1,0 +1,4 @@
+Short: Pivot High of traded instrument high using P1 left and right bars > previous Pivot High of traded instrument high using P1 left and right bars AND open interest on T1 at current pivot < open interest on T1 at previous pivot
+Short: Pivot Low of traded instrument low using P1 left and right bars < previous Pivot Low of traded instrument low using P1 left and right bars AND open interest on T1 at current pivot > open interest on T1 at previous pivot
+Long: Pivot High of traded instrument high using P1 left and right bars < previous Pivot High of traded instrument high using P1 left and right bars AND open interest on T1 at current pivot > open interest on T1 at previous pivot
+Short: Pivot Low of traded instrument low using P1 left and right bars > previous Pivot Low of traded instrument low using P1 left and right bars AND open interest on T1 at current pivot < open interest on T1 at previous pivot

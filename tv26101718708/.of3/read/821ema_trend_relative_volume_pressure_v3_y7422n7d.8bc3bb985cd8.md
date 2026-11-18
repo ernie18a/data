@@ -1,0 +1,4 @@
+Calculation: Relative volume = volume / SMA(volume, volume lookback)
+Calculation: Fading volume = Relative volume <= fading-volume threshold OR (Relative volume is lower on each of the last fade lookback bars than on the immediately preceding bar AND SMA(Relative volume, fade lookback) < SMA(Relative volume, fade lookback)[fade lookback])
+Long: EMA(close, fast lookback) crosses above EMA(close, slow lookback) OR (EMA(close, fast lookback) > EMA(close, slow lookback) AND Fading volume AND EMA(close, fast lookback)[1] > EMA(close, slow lookback)[1])
+Short: EMA(close, fast lookback) crosses below EMA(close, slow lookback) OR (EMA(close, fast lookback) < EMA(close, slow lookback) AND Fading volume AND EMA(close, fast lookback)[1] < EMA(close, slow lookback)[1])

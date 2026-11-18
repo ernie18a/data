@@ -1,0 +1,5 @@
+Calculation: RecursiveMedian(src, length) = start with r = src; for each i from the current bar through length bars ago inclusive, set r = src if r equals zero, otherwise (r + src[i]) / 2
+Calculation: MCI = (1 / interval) * ((price source - EMA(price source, standard length)) / ((ABS(STDEV(RecursiveMedian(EMA(price source, standard length), standard length), lookback length)) + ABS(STDEV(SMA(EMA(price source, standard length), standard length), lookback length))) / 2)
+Calculation: VCI = (1 / interval) * ((OBV(selected OBV source) - EMA(OBV(selected OBV source), standard length)) / ((ABS(STDEV(RecursiveMedian(SMA(OBV(selected OBV source), standard length), standard length), lookback length)) + ABS(STDEV(SMA(SMA(OBV(selected OBV source), standard length), standard length), lookback length))) / 2)
+Long: MCI crosses above the signal threshold AND VCI > MCI[signal lag] AND datetime is within the configured start and end dates AND configured direction allows long
+Short: MCI crosses below the signal threshold AND VCI < MCI[signal lag] AND datetime is within the configured start and end dates AND configured direction allows short

@@ -1,0 +1,5 @@
+Calculation: entry exit level = entry-signal close + (entry-signal close − Volatility Stop(source, lookback, ATR factor) on the entry-signal bar)
+Long: source is greater than or equal to Volatility Stop(source, lookback, ATR factor) AND close is above Volatility Stop(source, lookback, ATR factor) AND close is above VWAP(T1, still-forming bar), sampled on chart bars AND the long setup was false on the prior chart bar AND the position is not long
+Short: source is below Volatility Stop(source, lookback, ATR factor) AND close is below Volatility Stop(source, lookback, ATR factor) AND close is below VWAP(T1, still-forming bar), sampled on chart bars AND the short setup was false on the prior chart bar AND the position is not short
+Exit: Long, after the entry-signal bar, close crosses above the entry exit level OR high crosses above the entry exit level OR close crosses below the entry exit level OR low crosses above the entry exit level
+Exit: Short, after the entry-signal bar, close crosses below the entry exit level OR low crosses below the entry exit level OR close crosses above the entry exit level OR high crosses above the entry exit level

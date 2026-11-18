@@ -1,0 +1,2 @@
+Long: SMA(T1 close, lookback parameter) on chart bars crosses above threshold parameter, using T1 close from the still-forming bar in real time and the completed bar historically
+Exit: Long, chart bars since entry >= holding-period parameter

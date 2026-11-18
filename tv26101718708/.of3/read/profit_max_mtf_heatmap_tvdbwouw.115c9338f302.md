@@ -1,0 +1,4 @@
+Long: On chart bars, the Supertrend direction evaluated on the last completed T1 bar is up, AND the Supertrend direction evaluated on the last completed T2 bar is up, AND the Supertrend direction evaluated on the last completed T3 bar is up; use the same multiplier and ATR lookback on all three timeframes.
+Short: On chart bars, the Supertrend direction evaluated on the last completed T1 bar is down, AND the Supertrend direction evaluated on the last completed T2 bar is down, AND the Supertrend direction evaluated on the last completed T3 bar is down; use the same multiplier and ATR lookback on all three timeframes.
+Exit: long, at least one but not all of the last completed T1, T2, and T3 Supertrend directions is down.
+Exit: short, at least one but not all of the last completed T1, T2, and T3 Supertrend directions is up.

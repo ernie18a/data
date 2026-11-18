@@ -1,0 +1,2 @@
+Long: long entries enabled AND the selected moving average of RSI(close, RSI lookback), using a separate MA lookback, crosses above the RSI threshold
+Short: short entries enabled AND the selected moving average of RSI(close, RSI lookback), using a separate MA lookback, crosses below the RSI threshold

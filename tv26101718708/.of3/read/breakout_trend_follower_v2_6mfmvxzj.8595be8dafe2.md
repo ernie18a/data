@@ -1,0 +1,3 @@
+Calculation: pivot high level(T) = most recent confirmed Pivot High(high, lookback, lookback), calculated on T bars using the still-forming T bar and carried to chart bars
+Long: high > pivot high level(chart) AND ((filter mode selects T1 only AND pivot high level(chart) >= pivot high level(T1)) OR (filter mode selects both T1 and T2 AND pivot high level(chart) > pivot high level(T1) AND pivot high level(chart) > pivot high level(T2)) OR filter mode is disabled) AND datetime > start-date parameter AND datetime < end-date parameter
+Exit: long, low < most recent confirmed Pivot Low(low, lookback, lookback) on chart bars

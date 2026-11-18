@@ -1,0 +1,2 @@
+Long: close >= highest(close, lookback)[1] AND ADX(DI lookback, smoothing) < threshold AND position is flat AND current bar is within session AND trades this session < trade limit
+Exit: long, low <= round_to_tick(entry price - dollar stop / point value) OR current bar is outside session

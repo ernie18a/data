@@ -1,0 +1,3 @@
+Long: Tenkan-Sen(shorter lookback) > Kijun-Sen(longer lookback)
+Short: Tenkan-Sen(shorter lookback) <= Kijun-Sen(longer lookback)
+Long: close > SMA(close, lookback) AND close > anchored VWAP(T1 anchor, chart bars) AND close > open AND close > max(Tenkan-Sen(shorter lookback), Kijun-Sen(longer lookback)) AND low <= max(Tenkan-Sen(shorter lookback), Kijun-Sen(longer lookback)) AND Tenkan-Sen(shorter lookback) > Kijun-Sen(longer lookback)

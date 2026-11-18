@@ -1,0 +1,2 @@
+Long: close crosses above highest(high, lookback) - ((highest(high, lookback) - lowest(low, lookback)) / number of rows)
+Short: close crosses below lowest(low, lookback) + ((highest(high, lookback) - lowest(low, lookback)) / number of rows)

@@ -1,0 +1,2 @@
+Long: volume > SMA(volume, liquidity lookback) × liquidity threshold AND RSI(close, RSI lookback) < long RSI threshold AND SMA(close, shorter lookback) > SMA(close, longer lookback) AND ATR(volatility lookback) > SMA(ATR(volatility lookback), ATR average lookback)
+Exit: long, SMA(close, shorter lookback) crosses below SMA(close, longer lookback) OR RSI(close, RSI lookback) > exit RSI threshold OR (BTC dominance close(T1, last completed bar, sampled on chart bars) is available AND BTC dominance close(T1, last completed bar, sampled on chart bars) > BTC dominance threshold)

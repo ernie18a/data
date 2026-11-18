@@ -1,0 +1,5 @@
+Calculation: Weekly factor = ABS(open(T1, weekly lookback bars before the current bar) - close(T1, prior completed bar)) < factor threshold * (highest(high, weekly lookback, T1, ending at the prior completed bar) - lowest(low, weekly lookback, T1, ending at the prior completed bar)); calculate on T1 bars and use the latest completed value on chart bars
+Long: on chart bars, chart-bar count since T1 session start > entry-window lower threshold AND chart-bar count since T1 session start < entry-window upper threshold AND weekly factor AND chart-bar close > prior completed T1 high
+Short: on chart bars, chart-bar count since T1 session start > entry-window lower threshold AND chart-bar count since T1 session start < entry-window upper threshold AND weekly factor AND chart-bar close < prior completed T1 low
+Exit: long, T1 session ends OR chart-bar count since T1 session start > profit-exit threshold AND chart-bar close > entry price
+Exit: short, T1 session ends OR chart-bar count since T1 session start > profit-exit threshold AND chart-bar close < entry price

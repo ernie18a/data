@@ -1,0 +1,2 @@
+Long: EMA(close, shorter lookback of EMA pair 1) crosses above EMA(close, longer lookback of EMA pair 1) OR EMA(close, shorter lookback of EMA pair 2) crosses above EMA(close, longer lookback of EMA pair 2)
+Short: EMA(close, shorter lookback of EMA pair 1) crosses below EMA(close, longer lookback of EMA pair 1) OR EMA(close, shorter lookback of EMA pair 2) crosses below EMA(close, longer lookback of EMA pair 2)

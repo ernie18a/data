@@ -1,0 +1,3 @@
+Calculation: sell line = SMA(close, shortest SMA lookback) + slope multiplier * (close - close[shortest SMA lookback]) / shortest SMA lookback
+Long: position side is flat AND EMA(close, shorter EMA lookback) crosses above sell line AND close > SMA(close, middle SMA lookback) AND volume > EMA(volume, longer EMA lookback) AND SMA(close, longest SMA lookback) > SMA(close, longest SMA lookback)[trend slope lookback]
+Exit: Long, sell line crosses below EMA(close, shorter EMA lookback) OR low <= entry price * stop-loss multiplier OR high >= entry price * take-profit multiplier

@@ -1,0 +1,9 @@
+Calculation: adjusted source = if shadow > 0 then high + shadow else low + shadow, where spread = (close - open) * 100 * (volume / ((high - low) * 100)), cumulative spread = spread + cumulative_sum(spread), and shadow = (cumulative spread - SMA(cumulative spread, source smoothing lookback)) / STDEV(cumulative spread - SMA(cumulative spread, source smoothing lookback), source volatility lookback) * STDEV(high - low, source volatility lookback)
+Calculation: VWAP regression center = least-squares regression of VWAP[n-j] on x=j+1 for j=1 through VWAP regression lookback n, evaluated at x=n minus VWAP regression offset
+Calculation: VWAP deviation = VWAP band multiplier * STDEV(VWAP, VWAP regression lookback)
+Long: crossover(close, SuperTrend(EMA(adjusted source, EMA lookback), ATR(ATR lookback), SuperTrend multiplier)) AND close > EMA(open, same EMA lookback)
+Long: crossover(close, SuperTrend(EMA(adjusted source, EMA lookback), ATR(ATR lookback), SuperTrend multiplier)) AND close > EMA(open, same EMA lookback) AND datetime >= timestamp(start year, start month, start day, midnight) AND datetime <= timestamp(stop year, stop month, stop day, midnight)
+Short: crossunder(close, SuperTrend(EMA(adjusted source, EMA lookback), ATR(ATR lookback), SuperTrend multiplier)) AND close < EMA(open, same EMA lookback)
+Short: crossunder(close, SuperTrend(EMA(adjusted source, EMA lookback), ATR(ATR lookback), SuperTrend multiplier)) AND close < EMA(open, same EMA lookback) AND datetime >= timestamp(start year, start month, start day, midnight) AND datetime <= timestamp(stop year, stop month, stop day, midnight)
+Long: crossover(close, VWAP regression center - VWAP deviation)
+Short: crossunder(close, VWAP regression center + VWAP deviation)

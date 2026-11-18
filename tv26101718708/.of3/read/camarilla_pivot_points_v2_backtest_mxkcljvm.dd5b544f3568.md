@@ -1,0 +1,4 @@
+Calculation: support threshold = Camarilla L level selected by a parameter, using high, low, and close from T1's still-forming bar, sampled on chart bars
+Calculation: resistance threshold = Camarilla H level selected by a separate parameter, using high, low, and close from T1's still-forming bar, sampled on chart bars
+Long: NOT reverse AND close > support threshold OR reverse AND close <= support threshold AND close < resistance threshold OR close <= support threshold AND close >= resistance threshold AND position side = long
+Short: reverse AND close > support threshold OR NOT reverse AND close <= support threshold AND close < resistance threshold OR close <= support threshold AND close >= resistance threshold AND position side = short

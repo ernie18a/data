@@ -1,0 +1,2 @@
+Long: high > low AND volume > 0 AND abs(close - open)/(high - low) < body threshold AND volume > SMA(volume, volume lookback) * volume multiplier AND (close - low)/(high - low) > dominance threshold
+Short: high > low AND volume > 0 AND abs(close - open)/(high - low) < body threshold AND volume > SMA(volume, volume lookback) * volume multiplier AND (high - close)/(high - low) > dominance threshold

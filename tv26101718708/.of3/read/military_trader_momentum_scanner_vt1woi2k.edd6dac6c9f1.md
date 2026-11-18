@@ -1,0 +1,1 @@
+Long: close > VWAP(hlc3) AND EMA(close, fast lookback) > EMA(close, slow lookback) AND volume > SMA(volume, volume lookback) * volume multiplier AND high >= highest(high, bars since T1 period start + 1)[1] AND close > open

@@ -1,0 +1,5 @@
+Calculation: CMF velocity = SMA(change(CMF(close, high, low, volume, CMF lookback)), velocity lookback)
+Long: CMF velocity crosses above 0 AND close > EMA(close, EMA lookback) AND datetime is within the configured backtest interval, inclusive AND configured direction allows long entries
+Short: CMF velocity crosses below 0 AND close < EMA(close, EMA lookback) AND datetime is within the configured backtest interval, inclusive AND configured direction allows short entries
+Exit: long, low <= close on the long entry signal bar - ATR(ATR lookback) on that bar * ATR multiplier OR high >= close on the long entry signal bar + ATR(ATR lookback) on that bar * ATR multiplier * profit/loss multiplier
+Exit: short, high >= close on the short entry signal bar + ATR(ATR lookback) on that bar * ATR multiplier OR low <= close on the short entry signal bar - ATR(ATR lookback) on that bar * ATR multiplier * profit/loss multiplier

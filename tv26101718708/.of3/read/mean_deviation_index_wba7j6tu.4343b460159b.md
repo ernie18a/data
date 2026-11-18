@@ -1,0 +1,7 @@
+Calculation: Volume-adjusted ATR = ATR multiplier × (RMA(True Range × volume, ATR lookback) / RMA(volume, ATR lookback) if volume weighting is enabled, otherwise ATR(ATR lookback))
+Calculation: Adaptive EMA(src) initializes to SMA(src, EMA lookback), then equals alpha × src + (1 − alpha) × prior Adaptive EMA, where s = sqrt(SMA(Volume-adjusted ATR², ATR standard deviation lookback) − SUM(Volume-adjusted ATR, ATR standard deviation lookback)² / ATR standard deviation lookback²), alpha = 2 × min(lowest(s, ATR standard deviation low lookback) / s, 5) / (EMA lookback + 1) for the away-from-price filter, or 2 × min(s / lowest(s, ATR standard deviation low lookback), 5) / (EMA lookback + 1) for the closer-to-price filter
+Calculation: Index = d > 0 ? max(d − Volume-adjusted ATR, 0) : min(d + Volume-adjusted ATR, 0), or 100 × ((Index + Mean − Volume-adjusted ATR) / (Mean − Volume-adjusted ATR) − 1) in percentage mode, where d = close − Mean and Mean = Adaptive EMA(close × volume) / Adaptive EMA(volume) with volume weighting enabled, otherwise Adaptive EMA(close)
+Long: Index crosses above Levels when level display is enabled, otherwise zero
+Long: Index crosses above Levels
+Short: Index crosses below negative Levels when level display is enabled, otherwise zero
+Short: Index crosses below negative Levels

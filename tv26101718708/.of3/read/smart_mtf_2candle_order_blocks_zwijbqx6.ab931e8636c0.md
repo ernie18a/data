@@ -1,0 +1,2 @@
+Long: On chart bars, close[1] < open[1] AND close > open AND close > high[1], OR on each T1 bar, including the bar still forming, the same condition evaluated on T1 bars and returned through the lower-timeframe intrabar array
+Short: On chart bars, close[1] > open[1] AND close < open AND close < low[1], OR on each T1 bar, including the bar still forming, the same condition evaluated on T1 bars and returned through the lower-timeframe intrabar array

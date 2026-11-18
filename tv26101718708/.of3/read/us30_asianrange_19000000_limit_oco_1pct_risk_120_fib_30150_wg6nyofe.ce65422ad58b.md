@@ -1,0 +1,5 @@
+Calculation: Asian range = highest(high over Asian-session bars) - lowest(low over Asian-session bars)
+Long: Long-limit switch enabled AND during the trade window AND Asian range locked AND Asian range > 0 AND position flat AND low <= lowest(low over Asian-session bars) - (Fib-level parameter - 1) × Asian range
+Short: Short-limit switch enabled AND during the trade window AND Asian range locked AND Asian range > 0 AND position flat AND high >= highest(high over Asian-session bars) + (Fib-level parameter - 1) × Asian range
+Exit: long, low <= entry price - (stop-loss-pips parameter × pip-size parameter) OR high >= entry price + (take-profit-pips parameter × pip-size parameter)
+Exit: short, high >= entry price + (stop-loss-pips parameter × pip-size parameter) OR low <= entry price - (take-profit-pips parameter × pip-size parameter)

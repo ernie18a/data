@@ -1,0 +1,6 @@
+Calculation: opening-range high = highest high of chart bars from session open through the opening-range duration
+Calculation: opening-range low = lowest low of chart bars from session open through the opening-range duration
+Long: opening-range duration has ended AND close crosses above opening-range high
+Short: opening-range duration has ended AND close crosses below opening-range low
+Long: (close crosses above VWAP(hlc3, T1, still-forming T1 bar; calculated on T1 bars and sampled on chart bars) AND RSI(close, RSI lookback, T1, still-forming T1 bar; calculated on T1 bars and sampled on chart bars) > RSI threshold) OR (RSI(close, RSI lookback, T1, still-forming T1 bar; calculated on T1 bars and sampled on chart bars) crosses above RSI threshold AND close > VWAP(hlc3, T1, still-forming T1 bar; calculated on T1 bars and sampled on chart bars))
+Short: close crosses below VWAP(hlc3, T1, still-forming T1 bar; calculated on T1 bars and sampled on chart bars) AND RSI(close, RSI lookback, T1, still-forming T1 bar; calculated on T1 bars and sampled on chart bars) < RSI threshold

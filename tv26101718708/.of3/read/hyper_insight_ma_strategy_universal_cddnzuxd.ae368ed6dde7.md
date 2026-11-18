@@ -1,0 +1,2 @@
+Long: MA(close, fast MA type, fast MA lookback) crosses above MA(close, slow MA type, slow MA lookback)
+Exit: long, MA(close, fast MA type, fast MA lookback) crosses below MA(close, slow MA type, slow MA lookback)

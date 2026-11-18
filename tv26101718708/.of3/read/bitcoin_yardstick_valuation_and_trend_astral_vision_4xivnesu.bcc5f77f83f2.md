@@ -1,0 +1,3 @@
+Calculation: Mining valuation Z-score = Z-score(log(market-cap close from T1 / hashrate close from T1), z-score lookback), calculated on chart bars using T1 values from the last completed T1 bar historically and the forming T1 bar in real time
+Long: Threshold coloring is active AND Mining valuation Z-score < lower threshold OR slope coloring is active AND EMA(Mining valuation Z-score, smoothing lookback) >= EMA(Mining valuation Z-score, smoothing lookback)[slope lookback]
+Short: Threshold coloring is active AND Mining valuation Z-score > upper threshold OR slope coloring is active AND EMA(Mining valuation Z-score, smoothing lookback) < EMA(Mining valuation Z-score, smoothing lookback)[slope lookback]
