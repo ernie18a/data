@@ -1,0 +1,4 @@
+Long: current chart bar open < MovingAverage(close, lookback, chart timeframe, bar still forming) AND current chart bar close > MovingAverage(close, lookback, chart timeframe, bar still forming)
+Short: current chart bar open > MovingAverage(close, lookback, chart timeframe, bar still forming) AND current chart bar close < MovingAverage(close, lookback, chart timeframe, bar still forming)
+Exit: long, current chart bar low <= entry price - stop distance OR current chart bar high >= entry price + profit distance
+Exit: short, current chart bar high >= entry price + stop distance OR current chart bar low <= entry price - profit distance

@@ -1,0 +1,2 @@
+Go long on the traded instrument when the current bar's total crypto market capitalization close is greater than the highest total crypto market capitalization close of the previous N bars, and the current bar time is between a start time and an end time.
+Go short on the traded instrument when the current bar's total crypto market capitalization close is less than the lowest total crypto market capitalization close of the previous N bars, and the current bar time is between a start time and an end time.

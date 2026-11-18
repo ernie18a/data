@@ -1,0 +1,6 @@
+Long: RSI(close, rsi length) crosses above rsi oversold AND close > EMA(close, fast EMA length) AND ATR(atr length) >= SMA(ATR(atr length), atr length) * atr multiplier AND (volume filter disabled OR volume > SMA(volume, volume MA length) * volume factor)
+Long: RSI(close, rsi length) < rsi lower bound AND close crosses above EMA(close, fast EMA length) AND ATR(atr length) >= SMA(ATR(atr length), atr length) * atr multiplier
+Long: EMA(close, fast EMA length) crosses above EMA(close, slow EMA length) AND RSI(close, rsi length) < rsi upper bound AND ATR(atr length) >= SMA(ATR(atr length), atr length) * atr multiplier
+Short: RSI(close, rsi length) crosses below rsi overbought AND close < EMA(close, fast EMA length) AND ATR(atr length) >= SMA(ATR(atr length), atr length) * atr multiplier AND (volume filter disabled OR volume > SMA(volume, volume MA length) * volume factor)
+Short: RSI(close, rsi length) > rsi upper bound AND close crosses below EMA(close, fast EMA length) AND ATR(atr length) >= SMA(ATR(atr length), atr length) * atr multiplier
+Short: EMA(close, fast EMA length) crosses below EMA(close, slow EMA length) AND RSI(close, rsi length) > rsi lower bound AND ATR(atr length) >= SMA(ATR(atr length), atr length) * atr multiplier

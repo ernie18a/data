@@ -1,0 +1,2 @@
+Exit: long, bid <= open price - target loss amount / (loss per tick per unit volume * position volume) * tick size
+Exit: short, ask >= open price + target loss amount / (loss per tick per unit volume * position volume) * tick size

@@ -1,0 +1,3 @@
+Calculation: Slope(X, N) = (X - X[N]) / N
+Short: MA(fast MA type, fast source, fast length) < MA(slow MA type, slow source, slow length) AND MA(fast MA type, fast source, fast length)[1] >= MA(slow MA type, slow source, slow length)[1] AND (NOT slope filter enabled OR (Slope(MA(fast MA type, fast source, fast length), slope lookback) < -fast slope threshold AND Slope(MA(slow MA type, slow source, slow length), slope lookback) < -slow slope threshold)) AND (NOT intraday filter enabled OR bar within trading session)
+Exit: short, intraday filter enabled AND force close enabled AND bar not within trading session AND previous bar within trading session

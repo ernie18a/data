@@ -1,0 +1,2 @@
+Long: EMA(close, shorter lookback) > EMA(close, longer lookback) AND previous bar EMA(close, shorter lookback) <= previous bar EMA(close, longer lookback) AND close > VWAP(close)
+Short: EMA(close, shorter lookback) < EMA(close, longer lookback) AND previous bar EMA(close, shorter lookback) >= previous bar EMA(close, longer lookback) AND close < VWAP(close)

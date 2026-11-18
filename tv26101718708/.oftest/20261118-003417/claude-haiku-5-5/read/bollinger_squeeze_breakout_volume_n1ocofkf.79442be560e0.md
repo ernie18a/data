@@ -1,0 +1,4 @@
+Long: position side == flat AND BollingerBandwidth(close, BB length, BB multiplier)[1] < SMA(BollingerBandwidth(close, BB length, BB multiplier), squeeze lookback)[1] * squeeze threshold AND close crosses above BollingerUpper(close, BB length, BB multiplier) AND volume > SMA(volume, volume lookback)
+Short: position side == flat AND BollingerBandwidth(close, BB length, BB multiplier)[1] < SMA(BollingerBandwidth(close, BB length, BB multiplier), squeeze lookback)[1] * squeeze threshold AND close crosses below BollingerLower(close, BB length, BB multiplier) AND volume > SMA(volume, volume lookback)
+Exit: long, low <= entry price - ATR(ATR length) at entry bar * stop ATR multiple OR high >= entry price + ATR(ATR length) at entry bar * target ATR multiple
+Exit: short, high >= entry price + ATR(ATR length) at entry bar * stop ATR multiple OR low <= entry price - ATR(ATR length) at entry bar * target ATR multiple

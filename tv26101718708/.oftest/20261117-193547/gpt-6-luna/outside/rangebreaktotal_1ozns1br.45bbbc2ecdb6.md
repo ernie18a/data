@@ -1,0 +1,2 @@
+Go long when the total cryptocurrency market capitalization exceeds its highest value over the configured lookback period, during the configured date range.
+Go short when the total cryptocurrency market capitalization falls below its lowest value over the configured lookback period, during the configured date range.

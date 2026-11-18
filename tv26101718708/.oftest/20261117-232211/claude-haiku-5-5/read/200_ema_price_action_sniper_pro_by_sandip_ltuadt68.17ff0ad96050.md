@@ -1,0 +1,14 @@
+Calculation: FastMA = EMA(close, fastLen)
+Calculation: SlowMA = EMA(close, slowLen)
+Calculation: TrendMA = EMA(close, trendLen)
+Calculation: AtrNow = ATR(atrPeriod)
+Calculation: AtrMean = SMA(AtrNow, atrPeriod)
+Calculation: TrueRange = max(high - low, abs(high - close[1]), abs(low - close[1]))
+Calculation: PosMove = high - high[1] if high - high[1] > low[1] - low and high - high[1] > 0 else 0
+Calculation: NegMove = low[1] - low if low[1] - low > high - high[1] and low[1] - low > 0 else 0
+Calculation: PosDI = 100 * RMA(PosMove, adxPeriod) / RMA(TrueRange, adxPeriod)
+Calculation: NegDI = 100 * RMA(NegMove, adxPeriod) / RMA(TrueRange, adxPeriod)
+Calculation: DirIndex = 100 * abs(PosDI - NegDI) / (PosDI + NegDI)
+Calculation: TrendStrength = RMA(DirIndex, adxPeriod)
+Long: FastMA crosses above SlowMA AND close > TrendMA AND TrendMA > TrendMA[1] AND close > open AND close[1] < open[1] AND close > open[1] AND open < close[1] AND (not vwapOn or close > VWAP(close)) AND (not atrOn or AtrNow > AtrMean) AND (not adxOn or TrendStrength > adxThreshold) AND (not chopOn or abs(FastMA - SlowMA) >= AtrNow * chopMult)
+Short: FastMA crosses below SlowMA AND close < TrendMA AND TrendMA < TrendMA[1] AND close < open AND close[1] > open[1] AND close < open[1] AND open > close[1] AND (not vwapOn or close < VWAP(close)) AND (not atrOn or AtrNow > AtrMean) AND (not adxOn or TrendStrength > adxThreshold) AND (not chopOn or abs(FastMA - SlowMA) >= AtrNow * chopMult)

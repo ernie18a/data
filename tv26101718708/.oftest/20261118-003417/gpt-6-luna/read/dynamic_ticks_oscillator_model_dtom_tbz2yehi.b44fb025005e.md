@@ -1,0 +1,2 @@
+Long: ROC(close from T1, lookback) on chart bars < -1 × STDEV(ROC(close from T1, lookback) on chart bars, lookback, on chart bars) × parameter
+Exit: long, ROC(close from T1, lookback) on chart bars > STDEV(ROC(close from T1, lookback) on chart bars, lookback, on chart bars) × parameter

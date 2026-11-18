@@ -1,0 +1,8 @@
+Long: close > EMA(close, long lookback, T1, bar still forming) AND RSI(close, RSI lookback, T2, bar still forming) < pullback threshold AND Stoch(RSI(close, RSI lookback, T3, bar still forming), Stoch lookback) crosses above SMA(Stoch(RSI(close, RSI lookback, T3, bar still forming), Stoch lookback), smoothing lookback) while Stoch(RSI(close, RSI lookback, T3, bar still forming), Stoch lookback) < oversold threshold
+Short: close < EMA(close, long lookback, T1, bar still forming) AND RSI(close, RSI lookback, T2, bar still forming) > rally threshold AND Stoch(RSI(close, RSI lookback, T3, bar still forming), Stoch lookback) crosses below SMA(Stoch(RSI(close, RSI lookback, T3, bar still forming), Stoch lookback), smoothing lookback) while Stoch(RSI(close, RSI lookback, T3, bar still forming), Stoch lookback) > overbought threshold
+Long: position side is long AND low <= entry price - ATR(ATR lookback) * first DCA distance
+Long: position side is long AND low <= entry price - ATR(ATR lookback) * second DCA distance
+Short: position side is short AND high >= entry price + ATR(ATR lookback) * first DCA distance
+Short: position side is short AND high >= entry price + ATR(ATR lookback) * second DCA distance
+Exit: long, low <= entry price - ATR(ATR lookback) * stop distance OR high >= entry price + ATR(ATR lookback) * profit distance OR low <= highest high since entry - ATR(ATR lookback) * trailing distance
+Exit: short, high >= entry price + ATR(ATR lookback) * stop distance OR low <= entry price - ATR(ATR lookback) * profit distance OR high >= lowest low since entry + ATR(ATR lookback) * trailing distance

@@ -1,0 +1,1 @@
+Long: volume > SMA(volume, volume lookback) AND close > open AND high - max(close, open) < abs(close - open) * wick ratio AND high < SMA(close, close lookback) AND low < SMA(close, close lookback) AND the previous base signal was long AND low > the low of the previous base long signal, with no intervening base short signal

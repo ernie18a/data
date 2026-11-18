@@ -1,0 +1,2 @@
+Long: RVI(lookback, chart bars taking values from T1, last completed bar) > signal line of RVI(lookback, chart bars taking values from T1, last completed bar) AND RVI(lookback, chart bars taking values from T1, last completed bar) != 0
+Short: RVI(lookback, chart bars taking values from T1, last completed bar) < signal line of RVI(lookback, chart bars taking values from T1, last completed bar) AND RVI(lookback, chart bars taking values from T1, last completed bar) != 0

@@ -1,0 +1,3 @@
+Calculation: predicted price = SMA(close, regression lookback) + sum((volume - SMA(volume, regression lookback)) * (close - SMA(close, regression lookback))) / sum((volume - SMA(volume, regression lookback))^2) * (volume - SMA(volume, regression lookback))
+Long: predicted price crosses above close OR predicted price crosses above WMA(predicted price, WMA lookback) AND MACD signal line < MACD line AND MACD line > MACD line[1] AND MACD line > MACD line[2], where MACD = MACD(predicted price, fast lookback, slow lookback, signal lookback)
+Short: predicted price crosses below close OR MACD line < MACD signal line AND MACD line < MACD line[1] AND low < low[1] AND low < low[2], where MACD = MACD(predicted price, fast lookback, slow lookback, signal lookback)

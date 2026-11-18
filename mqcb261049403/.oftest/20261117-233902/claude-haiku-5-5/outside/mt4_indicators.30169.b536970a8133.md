@@ -1,0 +1,5 @@
+Calculation: USD strength = -close(EURUSD) - close(AUDUSD) - close(NZDUSD) - close(GBPUSD) + close(USDJPY)/S + close(USDCAD) + close(USDCHF)
+Long: mode is trend AND USD strength < EMA(USD strength, N) AND EUR strength > EMA(EUR strength, N)
+Long: mode is counter-trend AND USD strength > EMA(USD strength, N) AND EUR strength < EMA(EUR strength, N)
+Short: mode is trend AND USD strength > EMA(USD strength, N) AND EUR strength < EMA(EUR strength, N)
+Short: mode is counter-trend AND USD strength < EMA(USD strength, N) AND EUR strength > EMA(EUR strength, N)

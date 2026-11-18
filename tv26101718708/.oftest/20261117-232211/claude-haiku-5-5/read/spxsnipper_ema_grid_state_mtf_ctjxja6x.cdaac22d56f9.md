@@ -1,0 +1,6 @@
+Calculation: EMAshort = EMA(close, shorter lookback, T1, last completed bar)
+Calculation: EMAlong = EMA(close, longer lookback, T1, last completed bar)
+Long: EMAshort > EMAlong AND (close > EMAshort OR (close >= EMAlong AND close >= open))
+Short: EMAshort < EMAlong AND (close < EMAshort OR (close <= EMAlong AND close < open))
+Exit: long, EMAshort > EMAlong AND (close < EMAlong OR (close <= EMAshort AND close < open))
+Exit: short, EMAshort < EMAlong AND (close > EMAlong OR (close >= EMAshort AND close >= open))

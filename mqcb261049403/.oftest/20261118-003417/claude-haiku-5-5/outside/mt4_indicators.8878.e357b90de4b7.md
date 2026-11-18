@@ -1,0 +1,3 @@
+Calculation: candle body direction = bullish if close is above open, bearish if close is below open, neutral if equal
+Long: candle body direction of the traded instrument on the current bar is bullish AND candle body direction of the comparison instrument on the current bar is bullish
+Short: candle body direction of the traded instrument on the current bar is bearish AND candle body direction of the comparison instrument on the current bar is bearish

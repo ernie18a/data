@@ -1,0 +1,6 @@
+Calculation: fast EMA = EMA(close, shorter lookback) on T1 bars, with chart bars taking values from the current T1 bar (still forming in real time; last completed on historical bars)
+Calculation: slow EMA = EMA(close, longer lookback) on T1 bars, with chart bars taking values from the current T1 bar (still forming in real time; last completed on historical bars)
+Calculation: upper grid = max(fast EMA, slow EMA)
+Calculation: lower grid = min(fast EMA, slow EMA)
+Long: fast EMA > slow EMA AND (close > upper grid OR (close >= lower grid AND close <= upper grid AND close >= open))
+Short: fast EMA < slow EMA AND (close < lower grid OR (close >= lower grid AND close <= upper grid AND close < open))

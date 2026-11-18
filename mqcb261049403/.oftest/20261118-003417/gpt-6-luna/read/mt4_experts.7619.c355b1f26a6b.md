@@ -1,0 +1,4 @@
+Long: current time is after start time plus one T1 bar and before end time AND close[1] > close of the T1 bar beginning at start time + long entry threshold
+Short: current time is after start time plus one T1 bar and before end time AND close[1] < close of the T1 bar beginning at start time - short entry threshold
+Exit: long, price <= stop; initialize stop at entry price - initial stop distance, raise it to entry price + trail distance when price - entry price >= trail trigger, then raise it by trail distance whenever price - stop >= trail trigger
+Exit: short, price >= stop; initialize stop at entry price + initial stop distance, lower it to entry price - trail distance when entry price - price >= trail trigger, then lower it by trail distance whenever stop - price >= trail trigger

@@ -1,0 +1,2 @@
+Long: The still-forming bar of a higher timeframe closes above the previous completed bar of that timeframe.
+Short: The still-forming bar of a higher timeframe closes at or below the previous completed bar of that timeframe.

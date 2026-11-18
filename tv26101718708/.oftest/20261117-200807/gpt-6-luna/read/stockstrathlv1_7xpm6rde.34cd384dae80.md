@@ -1,0 +1,4 @@
+Long: close > Highest(previous completed higher-timeframe open, lookback) AND Highest(previous completed higher-timeframe open, lookback)[2] > Highest(previous completed higher-timeframe open, lookback)[1]
+Short: close < Lowest(previous completed higher-timeframe open, lookback) AND Lowest(previous completed higher-timeframe open, lookback)[2] > Lowest(previous completed higher-timeframe open, lookback)[1]
+Exit: long, high >= entry price + profit distance OR low <= entry price - loss distance OR trailing exit is reached
+Exit: short, low <= entry price - profit distance OR high >= entry price + loss distance OR trailing exit is reached

@@ -1,0 +1,5 @@
+Calculation: Directional score = number of bullish comparisons minus number of bearish comparisons among MACD(fast lookback, slow lookback, signal lookback) line above its signal line, Stochastic %K(stochastic lookback) above %D(signal smoothing), Momentum(close, lookback) above zero, RSI(lookback) above its midpoint parameter, Vortex+(lookback) above Vortex−(lookback), +DI(lookback) above −DI(lookback), MFI(lookback) above its midpoint parameter, and Fisher Transform(lookback) above its signal line(SMA lookback)
+Long: Directional score ≥ long-entry threshold AND Parabolic SAR(start, increment, maximum) below close AND RSI(lookback) below long RSI limit
+Short: Directional score ≤ short-entry threshold AND Parabolic SAR(start, increment, maximum) above close AND RSI(lookback) above short RSI limit
+Exit: long, Directional score ≤ long-exit threshold OR Parabolic SAR(start, increment, maximum) above close
+Exit: short, Directional score ≥ short-exit threshold OR Parabolic SAR(start, increment, maximum) below close

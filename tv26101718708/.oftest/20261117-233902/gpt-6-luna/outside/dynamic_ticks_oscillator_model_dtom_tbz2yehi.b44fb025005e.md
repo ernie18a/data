@@ -1,0 +1,2 @@
+Long: Rate of Change(NYSE Down Ticks at T1, P1) < -Standard Deviation(Rate of Change(NYSE Down Ticks at T1, P1), P2) * P3
+Exit: long, Rate of Change(NYSE Down Ticks at T1, P1) > Standard Deviation(Rate of Change(NYSE Down Ticks at T1, P1), P2) * P4

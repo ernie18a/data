@@ -1,0 +1,2 @@
+Long: trend mode AND Power of EUR > Average(Power of EUR, P) AND Power of USD < Average(Power of USD, P)
+Short: trend mode AND Power of EUR < Average(Power of EUR, P) AND Power of USD > Average(Power of USD, P)

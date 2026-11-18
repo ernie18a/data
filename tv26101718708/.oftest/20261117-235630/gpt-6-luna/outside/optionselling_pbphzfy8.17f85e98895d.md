@@ -1,0 +1,3 @@
+Calculation: Moving average slope = (moving average now - moving average N bars ago) / N
+Short: Fast moving average crosses below slow moving average AND (slope filter disabled OR (fast moving average slope < -fast slope threshold AND slow moving average slope < -slow slope threshold)) AND (intraday filter disabled OR within trading session)
+Exit: Short, intraday filter enabled AND force-close enabled AND outside trading session AND previous bar within trading session

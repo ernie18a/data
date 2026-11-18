@@ -1,0 +1,3 @@
+Calculation: Volume-regression predicted price = intercept + slope × current volume, where intercept and slope are the rolling OLS intercept and slope of close regressed on volume over a lookback
+Long: Volume-regression predicted price crosses above its WMA (lookback) AND MACD line of Volume-regression predicted price (fast lookback, slow lookback, signal lookback) is above its signal line AND that MACD line is rising over a lookback
+Short: MACD line of Volume-regression predicted price (fast lookback, slow lookback, signal lookback) is falling over a shorter lookback AND is below its signal line AND low is falling over a longer lookback

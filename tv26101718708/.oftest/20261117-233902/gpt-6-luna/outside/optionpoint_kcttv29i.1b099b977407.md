@@ -1,0 +1,4 @@
+Calculation: moving-average slope(moving average, lookback) = (moving average now - moving average lookback chart bars ago) / lookback
+Short: crossunder(fast moving average(fast type, fast source, fast length), slow moving average(slow type, slow source, slow length)) AND (slope filter disabled OR (moving-average slope(fast moving average, slope lookback) < -fast slope threshold AND moving-average slope(slow moving average, slope lookback) < -slow slope threshold)) AND (intraday filter disabled OR within configured trading session)
+Exit: short, crossover(fast moving average(fast type, fast source, fast length), slow moving average(slow type, slow source, slow length))
+Exit: short, intraday filter enabled AND force close enabled AND outside configured trading session AND previous chart bar within configured trading session

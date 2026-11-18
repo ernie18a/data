@@ -1,0 +1,7 @@
+Calculation: TrendScore = sum of eight terms, each +1 if its comparison holds and -1 otherwise, where the comparisons are: MACD line(close, shorter lookback, longer lookback) > EMA(MACD line(close, shorter lookback, longer lookback), signal lookback); Stochastic %K(stoch lookback) > SMA(Stochastic %K(stoch lookback), smoothing lookback); Momentum(close, momentum lookback) > momentum threshold; RSI(close, RSI lookback) > RSI midpoint; VI+(vortex lookback) > VI-(vortex lookback); +DI(DMI lookback) > -DI(DMI lookback); MFI(MFI lookback) > MFI midpoint; Fisher transform(close, fisher lookback, clamp margin) > SMA(Fisher transform(close, fisher lookback, clamp margin), fisher signal lookback)
+Calculation: ChopZone = ADX(DMI lookback) < ADX threshold AND ATR(ATR lookback) > SMA(ATR(ATR lookback), ATR average lookback)
+Calculation: CooldownActive = ChopZone is true on the current bar or on any of the previous cooldown bars
+Long: TrendScore >= long score threshold AND Parabolic SAR(PSAR start, PSAR increment, PSAR maximum) < close AND RSI(close, RSI lookback) < RSI long limit AND CooldownActive is false
+Short: TrendScore <= short score threshold AND Parabolic SAR(PSAR start, PSAR increment, PSAR maximum) > close AND RSI(close, RSI lookback) > RSI short limit AND CooldownActive is false
+Exit: long, TrendScore <= long exit threshold OR Parabolic SAR(PSAR start, PSAR increment, PSAR maximum) > close
+Exit: short, TrendScore >= short exit threshold OR Parabolic SAR(PSAR start, PSAR increment, PSAR maximum) < close

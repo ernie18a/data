@@ -1,0 +1,1 @@
+Long: McClellan Oscillator(advancing issues − declining issues, short EMA length, long EMA length) > long threshold AND previous bar's McClellan Oscillator(advancing issues − declining issues, short EMA length, long EMA length) < long threshold

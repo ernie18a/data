@@ -1,0 +1,2 @@
+Go long SPY when the short-period moving average of PC's close crosses above its long-period moving average.
+Go short SPY when the short-period moving average of PC's close crosses below its long-period moving average.

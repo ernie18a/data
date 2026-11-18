@@ -1,0 +1,2 @@
+Long: the close of the last completed bar on the selected timeframe is less than the close of its still-forming bar.
+Short: the close of the last completed bar on the selected timeframe is greater than or equal to the close of its still-forming bar.

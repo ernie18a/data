@@ -1,0 +1,2 @@
+Enter long when total cryptocurrency market capitalization exceeds its highest value over the preceding lookback period, during the configured trading window.
+Enter short when total cryptocurrency market capitalization falls below its lowest value over the preceding lookback period, during the configured trading window.

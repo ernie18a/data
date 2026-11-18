@@ -1,0 +1,8 @@
+Calculation: nAMA = previous nAMA + SM*(close - previous nAMA), with previous nAMA = 0 before the first bar, where SM = (ER*(2/(F1+1) - 2/(S1+1)) + 2/(S1+1))^2, and ER = |close - close L1 bars ago| / (sum of |close - previous close| over the last L1 bars), with ER = 0 when that sum is 0
+Calculation: nAMA2 = nAMA computed with lookback L2, fast period F2 and slow period S2 in place of L1, F1 and S1, where L2 = L1, F2 > F1 and S2 < S1
+Calculation: out = (1-A)*previous out + A*price, with previous out = 0 before the first bar, where price = (high+low)/2, A = min(1, max(2/(SC+1), 2/(N+1))), N = (SC-FC)*(oldN-1)/(SC-1) + FC, oldN = (2-oldA)/oldA, oldA = min(1, max(0.01, exp(ln(2/(SC+1))*(D-1)))), D = R if N1>0 and N2>0 and N3>0, else the R of the previous bar (0 if none), R = log2(N1+N2) - log2(N3), N1 = range(h)/h, N2 = range(len,h)/h, N3 = range(len)/len, h = integer part of len/2, range(n) = highest high over the last n bars minus lowest low over the last n bars, range(n,k) = same as range(n) but over the n bars ending k bars ago
+Calculation: out2 = out computed with len2, FC2, SC2 in place of len, FC, SC, and h2 = integer part of len2/2 in place of h, except N1 is replaced by N12 = range(h)/h2 where h is the h of out (not h2), where len2 > len, FC2 > FC and SC2 = SC
+Long: nAMA > nAMA2 AND out > out2
+Short: nAMA < nAMA2 AND out < out2
+Exit: long, nAMA < nAMA2 AND out < out2
+Exit: short, nAMA > nAMA2 AND out > out2

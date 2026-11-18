@@ -1,0 +1,8 @@
+Short: Close > Support1(T1, last completed bar) AND Close < PivotPoint(T1, last completed bar)
+Long: Close < Resistance1(T1, last completed bar) AND Close > PivotPoint(T1, last completed bar)
+Long: Close >= Resistance1(T1, last completed bar) AND Close < Resistance2(T1, last completed bar)
+Long: Close >= Resistance2(T1, last completed bar) AND Close < Resistance3(T1, last completed bar)
+Long: Close >= Resistance3(T1, last completed bar)
+Short: Close <= Resistance1(T1, last completed bar) AND Close > Resistance2(T1, last completed bar)
+Short: Close <= Resistance2(T1, last completed bar) AND Close > Resistance3(T1, last completed bar)
+Short: Close <= Support3(T1, last completed bar)

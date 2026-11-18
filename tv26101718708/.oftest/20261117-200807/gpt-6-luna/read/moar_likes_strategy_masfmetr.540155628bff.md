@@ -1,0 +1,2 @@
+Long: close of the last completed bar of another timeframe < close of the bar still forming on that timeframe
+Short: close of the last completed bar of another timeframe >= close of the bar still forming on that timeframe

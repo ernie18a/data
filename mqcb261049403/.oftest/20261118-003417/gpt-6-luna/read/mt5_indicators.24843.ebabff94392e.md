@@ -1,0 +1,2 @@
+Long: average value > average value[1], or average value = average value[1] AND previous direction state > 0
+Short: average value < average value[1], or average value = average value[1] AND previous direction state < 0

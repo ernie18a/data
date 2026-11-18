@@ -1,0 +1,2 @@
+Long: close crosses above VWAP AND relative strength index is below its threshold AND close is above exponential moving average
+Short: close crosses below VWAP AND relative strength index is above its threshold AND close is below exponential moving average

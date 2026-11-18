@@ -1,0 +1,7 @@
+Calculation: Score = ((MACD(close, macdFast, macdSlow) > 0) + (MACD(close, macdFast, macdSlow) > EMA(MACD(close, macdFast, macdSlow), macdSig)) - 1) + ((MACDhistogram(close, macdFast, macdSlow, macdSig) > MACDhistogram(close, macdFast, macdSlow, macdSig)[1]) + (MACDhistogram(close, macdFast, macdSlow, macdSig) >= 0) - 1) + ((EMA(RSI(close, baseLen), rsiEma) > upperLevel) - (EMA(RSI(close, baseLen), rsiEma) < lowerLevel)) + (EMA(close, shorterEma) > EMA(close, longerEma) ? 1 : -1) + (ADX(baseLen, baseLen) > EMA(ADX(baseLen, baseLen), adxEma) ? (close > EMA(close, closeEma) ? 1 : -1) : 0) + ((EMA(WilliamsR(wprLen), wprEma) > -lowerLevel) - (EMA(WilliamsR(wprLen), wprEma) < -upperLevel)) + ((CMF(cmfLen) > cmfLevel) - (CMF(cmfLen) < -cmfLevel)) + SuperTrendDirection(atrLen, atrMult)
+Calculation: ZeroedScore = ((Score >= 0 AND Score[1] <= 0) OR (Score <= 0 AND Score[1] >= 0)) ? 0 : Score
+Calculation: Cross = (ZeroedScore[1] < 0 AND ZeroedScore >= 0) ? up : ((ZeroedScore[1] > 0 AND ZeroedScore <= 0) ? down : none)
+Calculation: LastCross = (Cross != none) ? Cross : LastCross[1]
+Calculation: Level = (Cross = up) ? high * highFactor : ((Cross = down) ? low * lowFactor : Level[1])
+Long: (high > Level AND LastCross = up) OR (ZeroedScore[1] > 0 AND ZeroedScore > 0)
+Exit: long, (low < Level AND LastCross = down) OR (ZeroedScore[1] < 0 AND ZeroedScore < 0)

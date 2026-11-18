@@ -1,0 +1,1 @@
+Long: McClellan Oscillator(advancing issues count - declining issues count, P1, P2)[1] < P3 AND McClellan Oscillator(advancing issues count - declining issues count, P1, P2) > P3 AND no position is open

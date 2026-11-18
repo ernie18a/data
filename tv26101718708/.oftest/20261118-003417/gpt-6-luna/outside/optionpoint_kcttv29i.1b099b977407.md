@@ -1,0 +1,2 @@
+Short: fast moving average crosses below slow moving average AND (slope filter disabled OR fast moving average change over the slope lookback divided by the slope lookback is less than negative fast slope threshold AND slow moving average change over the slope lookback divided by the slope lookback is less than negative slow slope threshold) AND (intraday filter disabled OR within trading session)
+Exit: short, intraday filter enabled AND forced session close enabled AND current bar outside trading session AND previous bar inside trading session

@@ -1,0 +1,12 @@
+Calculation: OpenA = open of the timeframe-A bar that contains the current chart bar
+Calculation: PrevOpenA = OpenA on the previous chart bar
+Calculation: EmaA = exponential moving average of OpenA over chart bars with length A
+Calculation: PrevOpenB = open of the timeframe-B bar that contains the previous chart bar
+Calculation: MomB = PrevOpenB minus the value of PrevOpenB M chart bars earlier, where M is the momentum length
+Calculation: ChartFastEma = exponential moving average of chart-bar open over chart bars with fast length, where fast length is shorter than slow length
+Calculation: ChartSlowEma = exponential moving average of chart-bar open over chart bars with slow length
+Calculation: OpenC = open of the timeframe-C bar that contains the current chart bar
+Calculation: EmaC_fast = exponential moving average of OpenC over chart bars with fast length C, where fast length C is shorter than slow length C
+Calculation: EmaC_slow = exponential moving average of OpenC over chart bars with slow length C
+Long: PrevOpenA < EmaA AND MomB < 0 AND ChartFastEma < ChartSlowEma AND ChartFastEma on the previous chart bar >= ChartSlowEma on the previous chart bar AND EmaC_fast > EmaC_slow
+Short: PrevOpenA > EmaA AND MomB > 0 AND ChartFastEma > ChartSlowEma AND ChartFastEma on the previous chart bar <= ChartSlowEma on the previous chart bar AND EmaC_fast > EmaC_slow

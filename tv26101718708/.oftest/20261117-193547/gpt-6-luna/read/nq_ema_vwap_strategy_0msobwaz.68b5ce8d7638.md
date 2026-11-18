@@ -1,0 +1,2 @@
+Long: Short-term EMA crosses above long-term EMA AND close > VWAP, where the long-term EMA parameter is greater than the short-term EMA parameter.
+Short: Short-term EMA crosses below long-term EMA AND close < VWAP, where the long-term EMA parameter is greater than the short-term EMA parameter.

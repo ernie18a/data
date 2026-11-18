@@ -1,0 +1,2 @@
+Buy SPY when the short moving average of the put/call ratio crosses above the long moving average of the put/call ratio.
+Sell SPY when the short moving average of the put/call ratio crosses below the long moving average of the put/call ratio.

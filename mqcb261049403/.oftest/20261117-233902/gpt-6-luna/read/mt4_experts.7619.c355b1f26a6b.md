@@ -1,0 +1,5 @@
+Long: close[1] > close[shift] + long-target parameter AND no open long position with the matching instrument and magic number
+Short: close[1] < close[shift] - short-target parameter AND no open short position with the matching instrument and magic number
+Calculation: active stop = for a long, initially entry price minus initial-stop parameter, then entry price plus trailing-stop distance once favorable price reaches trailing-stop trigger, then advance by trailing-stop distance whenever favorable price exceeds the active stop by the trigger; for a short, initially entry price plus initial-stop parameter, then entry price minus trailing-stop distance once favorable price reaches the trigger, then lower by trailing-stop distance whenever favorable price is below the active stop by the trigger
+Exit: long, low <= active stop
+Exit: short, high >= active stop

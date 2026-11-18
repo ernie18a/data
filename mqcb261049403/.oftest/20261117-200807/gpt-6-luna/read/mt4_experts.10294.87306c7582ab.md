@@ -1,0 +1,4 @@
+Short: EMA(shorter lookback, median price, forming bar) < EMA(longer lookback, median price, forming bar) AND Parabolic SAR(forming bar) > forming-bar high AND Bears Power(lookback, close price, forming bar) < 0 AND Bears Power(lookback, close price, forming bar) > Bears Power(lookback, close price, last completed bar)
+Long: EMA(shorter lookback, median price, forming bar) > EMA(longer lookback, median price, forming bar) AND Parabolic SAR(forming bar) < forming-bar low AND Bulls Power(lookback, close price, forming bar) > 0 AND Bulls Power(lookback, close price, forming bar) < Bulls Power(lookback, close price, last completed bar)
+Exit: long, low <= entry price - long stop distance OR high >= entry price + long target distance
+Exit: short, high >= entry price + short stop distance OR low <= entry price - short target distance

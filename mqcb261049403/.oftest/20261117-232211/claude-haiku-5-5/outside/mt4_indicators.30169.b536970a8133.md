@@ -1,0 +1,4 @@
+Calculation: Power of C = (sum of close prices of pairs with C as base, with JPY-pair closes divided by 100, minus sum of close prices of pairs with C as quote) / 7
+Calculation: Average power of C = EMA of Power of C over P1 bars
+Long: (trend mode AND Power of base currency > Average power of base currency AND Power of quote currency < Average power of quote currency) OR (counter-trend mode AND Power of base currency < Average power of base currency AND Power of quote currency > Average power of quote currency)
+Short: (trend mode AND Power of base currency < Average power of base currency AND Power of quote currency > Average power of quote currency) OR (counter-trend mode AND Power of base currency > Average power of base currency AND Power of quote currency < Average power of quote currency)

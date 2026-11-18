@@ -1,0 +1,3 @@
+Short: Crossunder(fast moving average, slow moving average) AND (slope filter disabled OR (change in fast moving average over slope lookback divided by slope lookback < negative fast slope threshold AND change in slow moving average over slope lookback divided by slope lookback < negative slow slope threshold)) AND (intraday filter disabled OR within trading session)
+Exit: Short, Crossover(fast moving average, slow moving average)
+Exit: Short, intraday filter enabled AND force close enabled AND trading session ended

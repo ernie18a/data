@@ -1,0 +1,4 @@
+Calculation: Slope(x, n) = (x - x[n]) / n
+Short: MA(fast source, fast length, fast type) crosses below MA(slow source, slow length, slow type) AND (NOT slope filter enabled OR (Slope(MA(fast source, fast length, fast type), slope lookback) < -fast slope threshold AND Slope(MA(slow source, slow length, slow type), slope lookback) < -slow slope threshold)) AND (NOT session filter enabled OR bar is in trading session)
+Exit: short, MA(fast source, fast length, fast type) crosses above MA(slow source, slow length, slow type)
+Exit: short, session filter enabled AND force close enabled AND bar is not in trading session AND previous bar is in trading session

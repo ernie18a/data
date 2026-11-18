@@ -1,0 +1,1 @@
+Exit open positions when Bollinger Bands and RSI identify overbought or oversold conditions.

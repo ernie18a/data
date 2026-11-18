@@ -1,0 +1,2 @@
+Long: VWMA(close, VWMA length) crosses above MA(LinReg(close, LR length, 0), signal length, signal MA type)
+Short: VWMA(close, VWMA length) crosses below MA(LinReg(close, LR length, 0), signal length, signal MA type)

@@ -1,0 +1,4 @@
+Long: open < MA(close, lookback, chart bars, bar still forming) AND close > MA(close, lookback, chart bars, bar still forming)
+Short: open > MA(close, lookback, chart bars, bar still forming) AND close < MA(close, lookback, chart bars, bar still forming)
+Exit: long, open > MA(close, lookback, chart bars, bar still forming) AND close < MA(close, lookback, chart bars, bar still forming) OR low <= entry price - StopLoss distance
+Exit: short, open < MA(close, lookback, chart bars, bar still forming) AND close > MA(close, lookback, chart bars, bar still forming) OR high >= entry price + StopLoss distance

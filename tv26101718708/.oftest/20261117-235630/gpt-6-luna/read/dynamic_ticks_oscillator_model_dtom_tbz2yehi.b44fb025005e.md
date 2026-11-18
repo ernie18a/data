@@ -1,0 +1,2 @@
+Long: ROC(chart-bar series of close(T1, still forming bar), lookback) < -Standard deviation(ROC(chart-bar series of close(T1, still forming bar), lookback), lookback) * entry multiplier
+Exit: long, ROC(chart-bar series of close(T1, still forming bar), lookback) > Standard deviation(ROC(chart-bar series of close(T1, still forming bar), lookback), lookback) * exit multiplier

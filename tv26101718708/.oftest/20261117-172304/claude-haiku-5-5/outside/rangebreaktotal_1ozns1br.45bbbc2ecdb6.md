@@ -1,0 +1,2 @@
+Go long when the current bar's time is within the configured start-to-end date window, and the close of CRYPTOCAP:TOTAL on the current bar is greater than the highest close of CRYPTOCAP:TOTAL over the previous N bars, excluding the current bar, where N is a configured lookback length.
+Go short when the current bar's time is within the configured start-to-end date window, and the close of CRYPTOCAP:TOTAL on the current bar is less than the lowest close of CRYPTOCAP:TOTAL over the previous N bars, excluding the current bar, where N is a configured lookback length.

@@ -1,0 +1,2 @@
+Long: chart close > Pivot Point(T1, last completed bar)
+Short: (chart close > Support 1(T1, last completed bar) AND chart close < Pivot Point(T1, last completed bar)) OR chart close <= Support 3(T1, last completed bar)

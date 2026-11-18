@@ -1,0 +1,8 @@
+Long: close < PivotR1(T1, last completed bar) AND close > Pivot(T1, last completed bar)
+Long: close >= PivotR1(T1, last completed bar) AND close < PivotR2(T1, last completed bar)
+Long: close >= PivotR2(T1, last completed bar) AND close < PivotR3(T1, last completed bar)
+Long: close >= PivotR3(T1, last completed bar)
+Short: close > PivotS1(T1, last completed bar) AND close < Pivot(T1, last completed bar)
+Short: close <= PivotR1(T1, last completed bar) AND close > PivotR2(T1, last completed bar)
+Short: close <= PivotR2(T1, last completed bar) AND close > PivotR3(T1, last completed bar)
+Short: close <= PivotS3(T1, last completed bar)

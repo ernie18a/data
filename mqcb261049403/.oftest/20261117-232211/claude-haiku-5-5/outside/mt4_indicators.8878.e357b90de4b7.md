@@ -1,0 +1,2 @@
+Long: traded instrument bullish (close > open) AND reference instrument bullish (close > open) on the same bar
+Short: traded instrument bearish (close < open) AND reference instrument bearish (close < open) on the same bar
