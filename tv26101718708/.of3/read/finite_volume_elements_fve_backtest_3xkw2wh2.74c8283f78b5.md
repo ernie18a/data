@@ -1,0 +1,4 @@
+Calculation: FVE = previous FVE (0 when undefined) + 100 * signed volume / (SMA(volume, lookback) * lookback), where signed volume is volume if close - HL2 + HLC3 - HLC3[1] > threshold * close / 100, -volume if close - HL2 + HLC3 - HLC3[1] < -threshold * close / 100, otherwise 0
+Calculation: FVE trend = 1 if FVE > FVE[1] AND FVE > FVE[2], -1 if FVE < FVE[1] AND FVE < FVE[2], otherwise the previous FVE trend (initially 0)
+Long: reverse direction is off AND FVE trend = 1 OR reverse direction is on AND FVE trend = -1
+Short: reverse direction is off AND FVE trend = -1 OR reverse direction is on AND FVE trend = 1

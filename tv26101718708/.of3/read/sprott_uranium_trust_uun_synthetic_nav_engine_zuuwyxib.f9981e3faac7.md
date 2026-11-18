@@ -1,0 +1,1 @@
+Long: close <= close(T1, still-forming bar) × conversion factor × (1 − discount threshold)

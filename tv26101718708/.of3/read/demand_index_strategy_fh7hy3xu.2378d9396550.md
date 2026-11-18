@@ -1,0 +1,2 @@
+Long: Demand Index(open, high, low, close, volume, smoothing lookback, range smoothing method, range smoothing lookback) > 0
+Short: Demand Index(open, high, low, close, volume, smoothing lookback, range smoothing method, range smoothing lookback) < 1

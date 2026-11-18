@@ -1,0 +1,4 @@
+Calculation: bars since entry = 0 when flat; otherwise prior bar's bars since entry + 1
+Calculation: profit-close count = 0 when flat; otherwise prior bar's profit-close count + 1 when bars since entry > 1 and close > entry price, otherwise prior bar's profit-close count
+Long: position is flat AND ((close < SMA(close, longest lookback) AND close <= SMA(close, shortest lookback) AND close[1] > SMA(close, shortest lookback)[1] AND open > EMA(close, longer lookback) AND SMA(close, intermediate lookback) < SMA(close, intermediate lookback)[1]) OR (close < EMA(close, shorter lookback) AND open > OHLC4(open, high, low, close) AND volume <= volume[1] AND (close < min(open[1], close[1]) OR close > max(open[1], close[1])))
+Exit: long, bars since entry - 1 >= bar-limit parameter OR profit-close count >= profit-close-count parameter

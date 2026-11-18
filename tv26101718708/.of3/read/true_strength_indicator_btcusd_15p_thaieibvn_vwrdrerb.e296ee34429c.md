@@ -1,0 +1,2 @@
+Long: TSI(close(T1, bar still forming), longer lookback, shorter lookback) crosses above EMA(TSI(close(T1, bar still forming), longer lookback, shorter lookback), signal lookback), with both calculations on chart bars using T1 close
+Short: TSI(close(T1, bar still forming), longer lookback, shorter lookback) crosses below EMA(TSI(close(T1, bar still forming), longer lookback, shorter lookback), signal lookback), with both calculations on chart bars using T1 close

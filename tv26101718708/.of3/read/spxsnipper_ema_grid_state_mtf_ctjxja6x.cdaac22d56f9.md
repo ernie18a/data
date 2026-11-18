@@ -1,0 +1,6 @@
+Calculation: fast EMA = EMA(close, fast lookback, T1 bars; sampled on chart bars using the developing T1 bar in real time and the latest completed T1 bar historically)
+Calculation: slow EMA = EMA(close, slow lookback, T1 bars; sampled on chart bars using the developing T1 bar in real time and the latest completed T1 bar historically)
+Calculation: upper grid boundary = max(fast EMA, slow EMA)
+Calculation: lower grid boundary = min(fast EMA, slow EMA)
+Long: fast EMA > slow EMA AND (close > upper grid boundary OR (close >= lower grid boundary AND close <= upper grid boundary AND close >= open))
+Short: fast EMA < slow EMA AND (close < lower grid boundary OR (close >= lower grid boundary AND close <= upper grid boundary AND close < open))

@@ -1,0 +1,2 @@
+Calculation: volatility rank = 100 × count(normalized volatility[i] ≤ normalized volatility for i = 1..min(rank lookback, available prior bars)) / min(rank lookback, available prior bars), where normalized volatility = 2 × STDEV(close, basis lookback) / EMA(close, basis lookback)
+Long: volatility rank crosses above SMA(volatility rank, MA lookback)

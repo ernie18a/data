@@ -1,0 +1,3 @@
+Calculation: linear score = intercept + weight1 * ((SMA(volume, longer lookback) - center1) / scale1) + weight2 * ((SMA(open - close, shorter lookback) - center2) / scale2) + weight3 * ((SMA((high - close) * (low - close), shorter lookback) - center3) / scale3) + weight4 * ((SMA(open - close, longer lookback) * SMA(volume, longer lookback) - center4) / scale4) + weight5 * ((SMA(low - close, shorter lookback) * SMA(volume, longer lookback) - center5) / scale5)
+Long: linear score >= threshold
+Exit: long, linear score < threshold

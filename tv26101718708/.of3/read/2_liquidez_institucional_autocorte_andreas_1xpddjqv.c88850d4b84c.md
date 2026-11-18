@@ -1,0 +1,2 @@
+Long: close > high[n] AND volume > SMA(volume, volume lookback) * volume multiplier AND RSI(close, RSI lookback) < lower RSI threshold
+Short: close < low[n] AND volume > SMA(volume, volume lookback) * volume multiplier AND RSI(close, RSI lookback) > upper RSI threshold

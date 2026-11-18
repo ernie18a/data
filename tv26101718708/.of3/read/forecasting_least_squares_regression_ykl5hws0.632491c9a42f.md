@@ -1,0 +1,5 @@
+Calculation: Oscillator = Karobein Oscillator(least-squares regression prediction(x = selected price field from T1 using its last completed bar when the repaint parameter is disabled and its still-forming bar when enabled, y = multiplier parameter × sqrt(selected price field on chart bars) + second(datetime) × close[1], lookback parameter), the same lookback parameter), calculated on chart bars using mapped T1 values
+Long: Oscillator[1] < Oscillator[2] AND Oscillator[1] < Oscillator
+Short: Oscillator[1] > Oscillator[2] AND Oscillator[1] > Oscillator
+Exit: long, after high reaches the activation-distance parameter in ticks above the entry price, low reaches the trailing-offset parameter in ticks below the highest high since activation
+Exit: short, after low reaches the activation-distance parameter in ticks below the entry price, high reaches the trailing-offset parameter in ticks above the lowest low since activation

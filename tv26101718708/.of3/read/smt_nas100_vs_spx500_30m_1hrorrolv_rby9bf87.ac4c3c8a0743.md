@@ -1,0 +1,2 @@
+Long: low-SMT detection enabled AND low(comparison symbol, T1, still-forming bar) < low(comparison symbol, T1, last completed bar) AND low(chart symbol, T1, still-forming bar) >= low(chart symbol, T1, last completed bar), evaluated on chart bars
+Short: high-SMT detection enabled AND high(comparison symbol, T1, still-forming bar) > high(comparison symbol, T1, last completed bar) AND high(chart symbol, T1, still-forming bar) <= high(chart symbol, T1, last completed bar), evaluated on chart bars

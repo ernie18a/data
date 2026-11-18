@@ -1,0 +1,3 @@
+Calculation: exchange change spread(reference exchange close, comparison exchange close) = ROC(reference exchange close) - ROC(comparison exchange close)
+Long: exchange change spread(reference exchange close, comparison exchange 1 close) > long threshold OR exchange change spread(reference exchange close, comparison exchange 2 close) > long threshold
+Short: exchange change spread(reference exchange close, comparison exchange 1 close) < short threshold OR exchange change spread(reference exchange close, comparison exchange 2 close) < short threshold

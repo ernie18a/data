@@ -1,0 +1,1 @@
+Long: inflation rate on T1 > P1 AND 10-year interest rate on T1 >= P2 AND GDP growth rate on T1 <= P3

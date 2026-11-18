@@ -1,0 +1,3 @@
+Calculation: cumulative force = cumulative sum(volume * (close - close[1]))
+Long: EMA(cumulative force, fast lookback) > EMA(cumulative force, slow lookback) AND ATR(fast lookback) > ATR(slow lookback) AND (EMA(cumulative force, fast lookback)[1] < EMA(cumulative force, slow lookback)[1] OR ATR(fast lookback)[1] < ATR(slow lookback)[1]) AND close > open
+Short: EMA(cumulative force, fast lookback) < EMA(cumulative force, slow lookback) AND ATR(fast lookback) > ATR(slow lookback) AND (EMA(cumulative force, fast lookback)[1] > EMA(cumulative force, slow lookback)[1] OR ATR(fast lookback)[1] < ATR(slow lookback)[1]) AND close < open

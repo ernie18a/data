@@ -1,0 +1,1 @@
+Long: close > highest(high, shortest lookback) AND volume > SMA(volume, longest lookback) AND ATR(intermediate lookback) > SMA(ATR(intermediate lookback), intermediate lookback), where shortest < intermediate < longest lookbacks

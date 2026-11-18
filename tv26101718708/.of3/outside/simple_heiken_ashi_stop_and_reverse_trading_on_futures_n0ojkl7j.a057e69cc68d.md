@@ -1,0 +1,2 @@
+Long: Heikin Ashi open = Heikin Ashi low AND time > start year January 1 AND time < end year December 31
+Short: Heikin Ashi open = Heikin Ashi high AND time > start year January 1 AND time < end year December 31

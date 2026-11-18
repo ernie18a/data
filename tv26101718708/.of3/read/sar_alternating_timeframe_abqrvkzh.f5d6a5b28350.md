@@ -1,0 +1,2 @@
+Long: On chart bars, SAR(start parameter, increment parameter, maximum parameter, T1, bar still forming) >= high
+Short: On chart bars, SAR(start parameter, increment parameter, maximum parameter, T1, bar still forming) <= low

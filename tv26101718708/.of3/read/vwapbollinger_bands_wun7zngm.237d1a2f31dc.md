@@ -1,0 +1,2 @@
+Long: high > SMA(VWAP, basis lookback) + standard deviation multiplier * StdDev(VWAP, deviation lookback)
+Exit: long, low < SMA(VWAP, basis lookback) - standard deviation multiplier * StdDev(VWAP, deviation lookback)

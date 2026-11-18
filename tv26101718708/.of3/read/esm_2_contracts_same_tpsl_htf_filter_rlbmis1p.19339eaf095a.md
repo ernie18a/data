@@ -1,0 +1,6 @@
+Calculation: opening-range high = maximum high of the bars in the opening range
+Calculation: opening-range low = minimum low of the bars in the opening range
+Long: on a chart bar after the opening range, close crosses above opening-range high AND close > VWAP(close) AND T1 close of the still-forming bar, sampled on chart bars, > EMA(close, HTF EMA lookback) of the still-forming T1 bar, sampled on chart bars AND position is flat AND trades entered today < daily trade-limit parameter AND no long entry has been taken today
+Short: on a chart bar after the opening range, close crosses below opening-range low AND close < VWAP(close) AND T1 close of the still-forming bar, sampled on chart bars, < EMA(close, HTF EMA lookback) of the still-forming T1 bar, sampled on chart bars AND position is flat AND trades entered today < daily trade-limit parameter AND no short entry has been taken today
+Exit: long, low <= entry price - stop-distance parameter OR high >= entry price + target-distance parameter
+Exit: short, high >= entry price + stop-distance parameter OR low <= entry price - target-distance parameter

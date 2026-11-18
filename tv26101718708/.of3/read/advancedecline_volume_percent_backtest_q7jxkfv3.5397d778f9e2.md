@@ -1,0 +1,4 @@
+Calculation: Volume-change percentage = ((A - D) - nz((A - D)[1], 0)) * 100 / (A + D), where A and D are advancing-volume and declining-volume closes on T1's still-forming bar, sampled on each chart bar, and [1] is the previous chart bar's sampled value
+Calculation: Threshold state = if volume-change percentage > upper threshold then long, else if volume-change percentage < lower threshold then short, else previous threshold state (neutral initially)
+Long: (trade-reverse parameter is off AND threshold state is long) OR (trade-reverse parameter is on AND threshold state is short)
+Short: (trade-reverse parameter is off AND threshold state is short) OR (trade-reverse parameter is on AND threshold state is long)

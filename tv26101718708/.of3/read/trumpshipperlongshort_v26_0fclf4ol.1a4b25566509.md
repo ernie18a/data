@@ -1,0 +1,2 @@
+Long: ROC(close, lookback, T1, still-forming bar, evaluated on chart bars) > threshold OR (ROC(close, lookback, T1, still-forming bar, evaluated on chart bars) >= -threshold AND ROC(close, lookback, T1, still-forming bar, evaluated on chart bars) <= threshold AND position side is long
+Short: ROC(close, lookback, T1, still-forming bar, evaluated on chart bars) < -threshold OR (ROC(close, lookback, T1, still-forming bar, evaluated on chart bars) >= -threshold AND ROC(close, lookback, T1, still-forming bar, evaluated on chart bars) <= threshold AND position side is short

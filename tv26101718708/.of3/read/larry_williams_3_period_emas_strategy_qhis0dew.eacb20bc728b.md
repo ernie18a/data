@@ -1,0 +1,2 @@
+Long: On a confirmed chart bar within the configured date range, the current (still-forming) T1 close, sampled on chart bars, < EMA(low, lows lookback) on chart bars.
+Exit: Long, on a confirmed chart bar the current (still-forming) T1 close, sampled on chart bars, > EMA(high, highs lookback) on chart bars.

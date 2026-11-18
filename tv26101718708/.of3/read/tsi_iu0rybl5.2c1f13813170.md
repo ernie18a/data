@@ -1,0 +1,2 @@
+Long: TSI(close from T1's bar still forming, longer lookback, shorter lookback), calculated on chart bars using mapped T1 closes, crosses above EMA of that TSI with the signal lookback on chart bars AND chart bar time is within the configured start and end dates
+Short: TSI(close from T1's bar still forming, longer lookback, shorter lookback), calculated on chart bars using mapped T1 closes, crosses below EMA of that TSI with the signal lookback on chart bars AND chart bar time is within the configured start and end dates

@@ -1,0 +1,2 @@
+Long: OBV(close) crosses above EMA(OBV(close), EMA lookback) AND CCI(close, CCI lookback)[1] >= threshold
+Short: OBV(close) crosses below EMA(OBV(close), EMA lookback) AND CCI(close, CCI lookback)[1] < threshold

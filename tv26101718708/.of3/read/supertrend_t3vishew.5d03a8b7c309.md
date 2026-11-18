@@ -1,0 +1,2 @@
+Long: On chart bars, DEMA(close, shorter lookback, T1, bar still forming) crosses above DEMA(close, longer lookback, T1, bar still forming)
+Short: On chart bars, DEMA(close, shorter lookback, T1, bar still forming) crosses below DEMA(close, longer lookback, T1, bar still forming)

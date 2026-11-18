@@ -1,0 +1,4 @@
+Long: Traditional Renko close with brick-size parameter on the chart-bar series taking values from the still-forming T1 bar crosses above its open AND chart-bar year > year-threshold parameter AND chart-bar month > month-threshold parameter
+Short: Traditional Renko close with brick-size parameter on the chart-bar series taking values from the still-forming T1 bar crosses below its open AND chart-bar year > year-threshold parameter AND chart-bar month > month-threshold parameter
+Exit: long, low <= highest high since entry minus trailing-points parameter
+Exit: short, high >= lowest low since entry plus trailing-points parameter

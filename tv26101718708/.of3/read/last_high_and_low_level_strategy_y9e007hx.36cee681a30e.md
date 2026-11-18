@@ -1,0 +1,2 @@
+Long: chart close > high[lookback] on T1 bars, sampled onto chart bars; the selected T1 bar may be completed or still forming according to the lookback parameter
+Short: chart close < low[lookback] on T1 bars, sampled onto chart bars; the selected T1 bar may be completed or still forming according to the lookback parameter

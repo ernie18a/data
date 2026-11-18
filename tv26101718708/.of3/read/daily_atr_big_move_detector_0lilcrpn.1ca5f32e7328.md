@@ -1,0 +1,2 @@
+Long: On confirmed chart bars, abs(open - close) >= move-threshold * ATR(lookback, T1, requested on chart bars with lookahead_off; last completed T1 bar historically and current forming T1 bar in realtime) AND close > open
+Short: On confirmed chart bars, abs(open - close) >= move-threshold * ATR(lookback, T1, requested on chart bars with lookahead_off; last completed T1 bar historically and current forming T1 bar in realtime) AND close <= open

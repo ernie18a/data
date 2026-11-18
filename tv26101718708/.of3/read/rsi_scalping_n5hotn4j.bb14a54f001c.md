@@ -1,0 +1,4 @@
+Calculation: ADX = ADX(DI lookback, smoothing) calculated on chart bars from the still-forming T1 high, low, and true range
+Calculation: SMMA = SMMA(close, lookback) calculated on chart bars from the still-forming T1 close
+Long: RSI(close, lookback) crosses above the overbought threshold AND ADX > ADX[1] AND ADX[1] > ADX[2] AND ADX[2] > ADX[3] AND ADX > minimum threshold AND SMMA > SMMA[1] AND SMMA[1] > SMMA[2] AND SMMA[2] > SMMA[3]
+Short: RSI(close, lookback) crosses below the oversold threshold AND ADX > ADX[1] AND ADX[1] > ADX[2] AND ADX[2] > ADX[3] AND ADX > minimum threshold AND SMMA < SMMA[1] AND SMMA[1] < SMMA[2] AND SMMA[2] < SMMA[3]

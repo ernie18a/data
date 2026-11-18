@@ -1,0 +1,5 @@
+Calculation: normalized relative-price deviation = ((traded-instrument close / SPY close - SMA(traded-instrument close / SPY close, ratio smoothing length)) - SMA(traded-instrument close / SPY close - SMA(traded-instrument close / SPY close, ratio smoothing length), ratio smoothing length)) / STDEV(traded-instrument close / SPY close - SMA(traded-instrument close / SPY close, ratio smoothing length), ratio smoothing length)
+Long: normalized relative-price deviation < long-entry threshold AND 100 × (traded-instrument close - prior traded-instrument close) / prior traded-instrument close <= long price-change threshold
+Short: normalized relative-price deviation > short-entry threshold AND 100 × (traded-instrument close - prior traded-instrument close) / prior traded-instrument close >= short price-change threshold
+Exit: long, normalized relative-price deviation > long-exit threshold
+Exit: short, normalized relative-price deviation < short-exit threshold

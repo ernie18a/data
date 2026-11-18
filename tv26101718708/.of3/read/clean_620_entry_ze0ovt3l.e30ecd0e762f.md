@@ -1,0 +1,2 @@
+Long: EMA(close, shorter lookback) crosses above EMA(close, longer lookback) AND MACD line(close, shorter lookback, longer lookback) > MACD signal line(close, shorter lookback, longer lookback, signal lookback)
+Short: EMA(close, shorter lookback) crosses below EMA(close, longer lookback) AND MACD line(close, shorter lookback, longer lookback) < MACD signal line(close, shorter lookback, longer lookback, signal lookback)

@@ -1,0 +1,3 @@
+Calculation: ATR trailing stop = max(previous stop, close − multiplier × ATR(ATR lookback)) when close and previous close are both above the previous stop; min(previous stop, close + multiplier × ATR(ATR lookback)) when both are below; otherwise close − multiplier × ATR(ATR lookback) if close is above the previous stop, else close + multiplier × ATR(ATR lookback); initialize the stop at 0 and treat a missing previous stop as 0
+Long: close crosses above the ATR trailing stop AND volume > SMA(volume, volume lookback)
+Short: close crosses below the ATR trailing stop AND volume > SMA(volume, volume lookback)

@@ -1,0 +1,2 @@
+Long: 100 × (first T1 bar's high − low) / close is less than a parameter AND the second T1 bar crosses above the first T1 bar's high
+Short: 100 × (first T1 bar's high − low) / close is less than a parameter AND the second T1 bar crosses below the first T1 bar's low

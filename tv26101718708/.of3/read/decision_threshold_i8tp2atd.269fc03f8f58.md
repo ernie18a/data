@@ -1,0 +1,7 @@
+Calculation: T1 close-to-close return = (close of the current, possibly forming T1 bar − close of the last completed T1 bar) / close of the last completed T1 bar, evaluated on chart bars
+Long: HMA(close, lookback parameter) crosses above its value one chart bar ago
+Short: HMA(close, lookback parameter) crosses below its value one chart bar ago
+Long: HMA(close, lookback parameter) > HMA(close, same lookback parameter)[1] AND close > HMA(close, same lookback parameter)[1] AND T1 close-to-close return > decision-threshold parameter AND open-trade count < maximum-open-trades parameter
+Short: HMA(close, lookback parameter) < HMA(close, same lookback parameter)[1] AND close < HMA(close, same lookback parameter)[1] AND T1 close-to-close return < decision-threshold parameter AND open-trade count < maximum-open-trades parameter
+Exit: Long, (HMA(close, lookback parameter) < HMA(close, same lookback parameter)[1] AND close < HMA(close, same lookback parameter)[1] AND T1 close-to-close return < decision-threshold parameter AND open-trade count >= maximum-open-trades parameter) OR open profit < stop-loss parameter OR open profit > target parameter
+Exit: Short, (HMA(close, lookback parameter) > HMA(close, same lookback parameter)[1] AND close > HMA(close, same lookback parameter)[1] AND T1 close-to-close return > decision-threshold parameter AND open-trade count >= maximum-open-trades parameter) OR open profit < stop-loss parameter OR open profit > target parameter

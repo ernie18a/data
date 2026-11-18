@@ -1,0 +1,4 @@
+Long: close crosses above SuperTrend line(hl2, factor, ATR lookback) on chart bars OR SuperTrend direction(hl2, factor, ATR lookback) on chart bars changes from short to long AND SuperTrend direction(hl2, factor, ATR lookback, T1 still-forming values projected onto chart bars and updated on chart bars) is long
+Short: close crosses below SuperTrend line(hl2, factor, ATR lookback) on chart bars OR SuperTrend direction(hl2, factor, ATR lookback) on chart bars changes from long to short AND SuperTrend direction(hl2, factor, ATR lookback, T1 still-forming values projected onto chart bars and updated on chart bars) is short
+Exit: long, high >= entry price + profit-target parameter OR low <= entry price - stop-loss parameter
+Exit: short, low <= entry price - profit-target parameter OR high >= entry price + stop-loss parameter

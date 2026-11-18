@@ -1,0 +1,2 @@
+Short: P1 AND SPX500 high at T1 > previous SPX500 high at T1 AND NAS100 high at T1 <= previous NAS100 high at T1
+Long: P2 AND SPX500 low at T1 < previous SPX500 low at T1 AND NAS100 low at T1 >= previous NAS100 low at T1

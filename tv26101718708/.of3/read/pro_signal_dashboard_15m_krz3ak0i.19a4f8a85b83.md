@@ -1,0 +1,5 @@
+Calculation: session condition = chart-bar opening time is within session(session parameter)
+Calculation: long score = if session condition, sum the trend weight when EMA(close, shorter EMA lookback) > EMA(close, longer EMA lookback), the momentum weight when RSI(close, RSI lookback) > upper RSI threshold, the volume weight when volume > SMA(volume, volume lookback), and the volatility weight when ATR(high, low, close, ATR lookback) > SMA(ATR(high, low, close, ATR lookback), ATR smoothing lookback); otherwise no contribution
+Calculation: short score = if session condition, sum the trend weight when EMA(close, shorter EMA lookback) < EMA(close, longer EMA lookback), the momentum weight when RSI(close, RSI lookback) < lower RSI threshold, the volume weight when volume > SMA(volume, volume lookback), and the volatility weight when ATR(high, low, close, ATR lookback) > SMA(ATR(high, low, close, ATR lookback), ATR smoothing lookback); otherwise no contribution
+Long: long score >= score threshold
+Short: short score >= score threshold

@@ -1,0 +1,4 @@
+Calculation: Volume-change ROC accumulation = previous accumulation + ROC(close, ROC lookback) when volume > volume[1], otherwise previous accumulation; initialized to zero
+Calculation: Volume trend state = 1 when Volume-change ROC accumulation > EMA(Volume-change ROC accumulation, EMA lookback), -1 when Volume-change ROC accumulation < EMA(Volume-change ROC accumulation, EMA lookback), otherwise its previous value; initialized to zero
+Long: Volume trend state = 1 when reverse mode is disabled OR Volume trend state = -1 when reverse mode is enabled
+Short: Volume trend state = -1 when reverse mode is disabled OR Volume trend state = 1 when reverse mode is enabled

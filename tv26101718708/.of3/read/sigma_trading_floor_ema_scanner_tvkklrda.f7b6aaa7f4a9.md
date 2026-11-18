@@ -1,0 +1,3 @@
+Calculation: EMA distance = abs(EMA(close, shorter lookback) - EMA(close, longer lookback)) / close * 100
+Long: EMA distance <= compression threshold AND close > EMA(close, shorter lookback) AND close > EMA(close, longer lookback) AND RSI(close, lookback) > upper RSI threshold AND volume > SMA(volume, lookback) * volume multiplier AND high - low > ATR(lookback) * range multiplier
+Short: EMA distance <= compression threshold AND close < EMA(close, shorter lookback) AND close < EMA(close, longer lookback) AND RSI(close, lookback) < lower RSI threshold AND volume > SMA(volume, lookback) * volume multiplier AND high - low > ATR(lookback) * range multiplier

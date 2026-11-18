@@ -1,0 +1,2 @@
+Long: volume > SMA(volume, volume lookback) + deviation multiplier * standard deviation(volume, volume lookback) AND RSI(close, RSI lookback) < oversold threshold
+Exit: Long, bars since entry >= holding period

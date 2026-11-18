@@ -1,0 +1,1 @@
+Long: RSI(close, lookback, T1, still-forming bar) < oversold threshold AND RSI(close, lookback, T2, still-forming bar) < oversold threshold AND RSI(close, lookback, T3, still-forming bar) < oversold threshold AND RSI(close, lookback, T4, still-forming bar) < oversold threshold

@@ -1,0 +1,4 @@
+Calculation: Trail = CCI(close, CCI lookback) >= the zero line ? Lower band : Upper band; Lower band = when CCI crosses from below the zero line to at or above it, the previous Upper band, otherwise low - Trail multiplier * WMA(true range, ATR lookback), raised to at least its previous value when CCI is at or above the zero line; Upper band = when CCI crosses from above the zero line to at or below it, the previous Lower band, otherwise high + Trail multiplier * WMA(true range, ATR lookback), lowered to at most its previous value when CCI is at or below the zero line
+Calculation: Trail direction = 1 when Trail > Trail[1], -1 when Trail < Trail[1], otherwise Trail direction[1]
+Long: Trail direction = 1 AND Trail direction[1] = -1
+Short: Trail direction = -1 AND Trail direction[1] = 1

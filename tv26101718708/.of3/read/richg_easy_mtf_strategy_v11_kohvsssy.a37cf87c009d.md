@@ -1,0 +1,13 @@
+Calculation: Keltner Channel bands = SMA(close, lookback) ± SMA(true range, lookback) × multiplier
+Long: open(T1, current bar) < close(T1, current bar), sampled by security on chart bars; current bar is developing in real time, and its final values are mapped historically by default security behavior
+Long: open(T2, current bar) < close(T2, current bar), sampled by security on chart bars; current bar is developing in real time, and its final values are mapped historically by default security behavior
+Long: open(T3, current bar) < close(T3, current bar), sampled by security on chart bars; current bar is developing in real time, and its final values are mapped historically by default security behavior
+Long: open(T4, current bar) < close(T4, current bar), sampled by security on chart bars; current bar is developing in real time, and its final values are mapped historically by default security behavior
+Long: open(T1, current bar) < close(T1, current bar) AND open(T2, current bar) < close(T2, current bar) AND open(T3, current bar) < close(T3, current bar) AND open(T4, current bar) < close(T4, current bar), sampled by security on chart bars; current bars are developing in real time, and their final values are mapped historically by default security behavior
+Short: open(T1, current bar) >= close(T1, current bar), sampled by security on chart bars; current bar is developing in real time, and its final values are mapped historically by default security behavior
+Short: open(T2, current bar) >= close(T2, current bar), sampled by security on chart bars; current bar is developing in real time, and its final values are mapped historically by default security behavior
+Short: open(T3, current bar) >= close(T3, current bar), sampled by security on chart bars; current bar is developing in real time, and its final values are mapped historically by default security behavior
+Short: open(T4, current bar) >= close(T4, current bar), sampled by security on chart bars; current bar is developing in real time, and its final values are mapped historically by default security behavior
+Short: open(T1, current bar) >= close(T1, current bar) AND open(T2, current bar) >= close(T2, current bar) AND open(T3, current bar) >= close(T3, current bar) AND open(T4, current bar) >= close(T4, current bar), sampled by security on chart bars; current bars are developing in real time, and their final values are mapped historically by default security behavior
+Exit: Long, close < upper Keltner Channel band
+Exit: Short, close > lower Keltner Channel band

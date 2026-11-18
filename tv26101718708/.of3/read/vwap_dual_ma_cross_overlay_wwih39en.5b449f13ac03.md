@@ -1,0 +1,2 @@
+Long: crossover(selected EMA or SMA(close, MA 1 lookback), VWAP) OR crossover(the same selected EMA or SMA(close, MA 2 lookback), VWAP)
+Short: crossunder(selected EMA or SMA(close, MA 1 lookback), VWAP) OR crossunder(the same selected EMA or SMA(close, MA 2 lookback), VWAP)

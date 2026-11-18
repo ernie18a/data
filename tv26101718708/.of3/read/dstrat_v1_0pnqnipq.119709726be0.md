@@ -1,0 +1,3 @@
+Long: close crosses below SMMA(close, entry lookback) * (1 - lower-band percentage / 100) AND SMMA(chart-bar series of SMA(close, trend lookback, T1, last completed bar), same trend lookback) is greater than its value one chart bar ago AND flat
+Exit: Long, low <= entry price * (1 - stop-loss percentage / 100)
+Exit: Long, close crosses above SMMA(close, entry lookback) + StdDev(close, standard-deviation lookback) * upper-band multiplier

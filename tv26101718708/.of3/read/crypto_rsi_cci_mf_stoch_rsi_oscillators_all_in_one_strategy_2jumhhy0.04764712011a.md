@@ -1,0 +1,7 @@
+Calculation: RSI = RSI(hlc3, shared lookback)
+Calculation: MFI = MFI(hlc3, shared lookback)
+Calculation: CCI = CCI(hlc3, shared lookback)
+Calculation: StochRSI K = SMA(Stochastic(RSI, RSI, RSI, shared lookback), K smoothing)
+Calculation: StochRSI D = SMA(StochRSI K, D smoothing)
+Long: RSI > oscillator threshold AND MFI > oscillator threshold AND CCI > oscillator threshold AND (StochRSI K > oscillator threshold OR StochRSI D > oscillator threshold)
+Exit: Long, RSI < RSI/MFI exit threshold AND MFI < RSI/MFI exit threshold AND CCI < CCI exit threshold AND (StochRSI K < oscillator threshold OR StochRSI D < oscillator threshold)

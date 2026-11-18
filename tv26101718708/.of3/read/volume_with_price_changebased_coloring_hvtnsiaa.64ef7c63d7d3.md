@@ -1,0 +1,2 @@
+Long: close - close[1] > price-change standard-deviation threshold * standard deviation(close - close[1], lookback)
+Short: close - close[1] < -price-change standard-deviation threshold * standard deviation(close - close[1], lookback)

@@ -1,0 +1,3 @@
+Calculation: price difference = close(T1, bar still forming) - close(T1, last completed bar), evaluated on chart bars taking values from T1
+Long: price difference > parameter OR (previous bar's long decision was true AND price difference >= -parameter AND price difference <= parameter)
+Short: price difference < -parameter OR (previous bar's short decision was true AND price difference >= -parameter AND price difference <= parameter)

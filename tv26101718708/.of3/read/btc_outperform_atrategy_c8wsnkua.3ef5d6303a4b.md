@@ -1,0 +1,2 @@
+Long: close(T1, bar still forming) mapped to chart bars > close(T2, bar still forming) mapped to chart bars
+Short: close(T2, bar still forming) mapped to chart bars > close(T1, bar still forming) mapped to chart bars

@@ -1,0 +1,5 @@
+Calculation: Upper volume threshold = SMA(volume, longer lookback) + standard-deviation multiplier × factor × STDEV(volume, longer lookback)
+Long: SMA(close, half the longer lookback) > its value one bar ago AND position is not long AND (entry-volume filter is disabled OR volume < Upper volume threshold)
+Short: SMA(close, half the longer lookback) < its value one bar ago AND position is not short AND (entry-volume filter is disabled OR volume < Upper volume threshold)
+Exit: long, (entry-volume filter is enabled AND SMA(close, half the longer lookback) < its value one bar ago AND volume >= Upper volume threshold) OR (high-volume exit is enabled AND close > close[1] AND volume > Upper volume threshold)
+Exit: short, (entry-volume filter is enabled AND SMA(close, half the longer lookback) > its value one bar ago AND volume >= Upper volume threshold) OR (high-volume exit is enabled AND close < close[1] AND volume > Upper volume threshold)

@@ -1,0 +1,2 @@
+Long: close > high of T1's last completed bar, sampled on chart bars AND close < EMA(close, shorter lookback)
+Long: low < low of T1's last completed bar, sampled on chart bars AND close > low of T1's last completed bar, sampled on chart bars AND close > EMA(close, longer lookback) AND close < EMA(close, shorter lookback)

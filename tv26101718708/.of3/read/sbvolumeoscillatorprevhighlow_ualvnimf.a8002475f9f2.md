@@ -1,0 +1,4 @@
+Calculation: Prior positive peak = highest VolumeOscillator(volume, shorter lookback, longer lookback) in the most recently completed interval above the zero threshold
+Calculation: Prior negative trough = lowest VolumeOscillator(volume, shorter lookback, longer lookback) in the most recently completed interval below the zero threshold
+Long: VolumeOscillator(volume, shorter lookback, longer lookback) crosses above or below the zero threshold AND Prior positive peak <= abs(Prior negative trough)
+Short: VolumeOscillator(volume, shorter lookback, longer lookback) crosses above or below the zero threshold AND Prior positive peak > abs(Prior negative trough)

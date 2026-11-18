@@ -1,0 +1,6 @@
+Calculation: volume-regression estimate = mean(close, regression lookback) + (sum((volume − mean(volume, regression lookback)) × (close − mean(close, regression lookback)), regression lookback) / sum((volume − mean(volume, regression lookback))², regression lookback)) × (volume − mean(volume, regression lookback))
+Long: volume-regression estimate crosses above close
+Long: volume-regression estimate crosses above WMA(volume-regression estimate, WMA lookback) AND MACD(volume-regression estimate, fast lookback, slow lookback, signal lookback).signal < MACD(volume-regression estimate, fast lookback, slow lookback, signal lookback).line AND rising(MACD(volume-regression estimate, fast lookback, slow lookback, signal lookback).line, MACD line rising lookback), where fast lookback < slow lookback
+Short: volume-regression estimate crosses below close
+Short: falling(MACD(volume-regression estimate, fast lookback, slow lookback, signal lookback).line, MACD line falling lookback) AND MACD(volume-regression estimate, fast lookback, slow lookback, signal lookback).line < MACD(volume-regression estimate, fast lookback, slow lookback, signal lookback).signal AND falling(low, low falling lookback), where fast lookback < slow lookback
+Exit: long, volume-regression estimate crosses below close

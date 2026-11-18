@@ -1,0 +1,2 @@
+Short: VWMA of QQQ close on T1 over P1 crosses above HMA of QQQ close on T1 over P2
+Exit: short, EMA of QQQ close on T1 over P3 crosses above EMA of QQQ close on T1 over P4 OR EMA of QQQ close on T1 over P3 crosses above VWMA of QQQ close on T1 over P1

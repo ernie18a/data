@@ -1,0 +1,5 @@
+Calculation: range size = highest(high, range lookback) - lowest(low, range lookback)
+Long: close > highest(high, range lookback)[1] AND close > open AND high - low > range size * movement threshold AND T1 close > EMA(close, T1 EMA lookback, T1, same T1 bar), with T1 values computed on T1 bars and mapped to chart bars using request.security default alignment (historically the last completed T1 bar until the period's final chart bar; in realtime the still-forming T1 bar)
+Short: close < lowest(low, range lookback)[1] AND close < open AND high - low > range size * movement threshold AND T1 close < EMA(close, T1 EMA lookback, T1, same T1 bar), with T1 values computed on T1 bars and mapped to chart bars using request.security default alignment (historically the last completed T1 bar until the period's final chart bar; in realtime the still-forming T1 bar)
+Exit: long, low <= lowest(low, range lookback) OR high >= entry price + (entry price - lowest(low, range lookback)) * reward-risk multiple
+Exit: short, high >= highest(high, range lookback) OR low <= entry price - (highest(high, range lookback) - entry price) * reward-risk multiple

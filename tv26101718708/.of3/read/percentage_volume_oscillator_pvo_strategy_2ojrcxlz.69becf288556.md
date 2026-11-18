@@ -1,0 +1,2 @@
+Long: EMA(PVO(volume, shorter lookback, longer lookback), signal lookback) > PVO(volume, shorter lookback, longer lookback)
+Short: EMA(PVO(volume, shorter lookback, longer lookback), signal lookback) < PVO(volume, shorter lookback, longer lookback)

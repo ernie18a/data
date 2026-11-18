@@ -1,0 +1,4 @@
+Long: no position AND close < VWAP(close) AND RSI(close, RSI lookback) < long RSI threshold AND ADX(ADX/DI lookback, ADX smoothing) < ADX threshold
+Short: no position AND close > VWAP(close) AND RSI(close, RSI lookback) > short RSI threshold AND ADX(ADX/DI lookback, ADX smoothing) < ADX threshold
+Exit: long, low <= entry price - ATR(ATR lookback) * stop multiple OR high >= entry price + ATR(ATR lookback) * target multiple OR high reaches entry price + ATR(ATR lookback) * trail activation multiple AND low <= highest high since trail activation - ATR(ATR lookback) * trail offset multiple
+Exit: short, high >= entry price + ATR(ATR lookback) * stop multiple OR low <= entry price - ATR(ATR lookback) * target multiple OR low reaches entry price - ATR(ATR lookback) * trail activation multiple AND high >= lowest low since trail activation + ATR(ATR lookback) * trail offset multiple

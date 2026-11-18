@@ -1,0 +1,2 @@
+Long: VWMA(close, shorter lookback) > VWMA(close, longer lookback) AND RSI(close, RSI lookback) <= long RSI threshold
+Short: VWMA(close, shorter lookback) < VWMA(close, longer lookback) AND RSI(close, RSI lookback) >= short RSI threshold

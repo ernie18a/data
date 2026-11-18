@@ -1,0 +1,2 @@
+Long: A newly confirmed pivot low of the source, using the same pivot-lookback parameter on each side, is lower than the preceding confirmed pivot low of the source AND OBV(source, volume) at the new pivot is higher than at the preceding confirmed pivot low.
+Short: A newly confirmed pivot high of the source, using the same pivot-lookback parameter on each side, is higher than the preceding confirmed pivot high of the source AND OBV(source, volume) at the new pivot is lower than at the preceding confirmed pivot high.

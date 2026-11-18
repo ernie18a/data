@@ -1,0 +1,2 @@
+Long: Market Facilitation Index(high, low, volume) × scale parameter > buy threshold
+Short: Market Facilitation Index(high, low, volume) × scale parameter <= buy threshold AND Market Facilitation Index(high, low, volume) × scale parameter < sell threshold

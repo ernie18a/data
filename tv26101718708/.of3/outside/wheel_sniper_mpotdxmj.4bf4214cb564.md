@@ -1,0 +1,2 @@
+Option: sell put, bars since low fell below the lower Bollinger Band(close, P4, P5) <= P6 AND RSI(close, P1) crosses above P2 AND (P8 is false OR close > SMA(close, P9))
+Option: sell call, bars since high rose above the upper Bollinger Band(close, P4, P5) <= P7 AND RSI(close, P1) crosses below P3 AND (P8 is false OR close > SMA(close, P9))

@@ -1,0 +1,2 @@
+Long: close of the T1 bar still forming >= open of the T1 bar still forming, evaluated on chart bars using T1 values for bars beginning at midnight America/New_York
+Short: close of the T1 bar still forming < open of the T1 bar still forming, evaluated on chart bars using T1 values for bars beginning at midnight America/New_York

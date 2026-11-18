@@ -1,0 +1,2 @@
+Long: On chart bars at the start of a new T1 bar, high(T1, last completed bar) < high(T1, preceding completed bar) AND low(T1, last completed bar) > low(T1, preceding completed bar) AND close(T1, last completed bar) > open(T1, last completed bar)
+Short: On chart bars at the start of a new T1 bar, high(T1, last completed bar) < high(T1, preceding completed bar) AND low(T1, last completed bar) > low(T1, preceding completed bar) AND close(T1, last completed bar) < open(T1, last completed bar)

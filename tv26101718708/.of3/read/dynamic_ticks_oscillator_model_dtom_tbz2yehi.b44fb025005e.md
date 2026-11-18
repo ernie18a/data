@@ -1,0 +1,2 @@
+Long: On chart bars taking close from T1 (last completed T1 bar historically, still-forming T1 bar in real time), chart-bar ROC(close from T1, ROC lookback) < -StDev(chart-bar ROC(close from T1, ROC lookback), volatility lookback) * entry multiplier
+Exit: Long, on chart bars taking close from T1 (last completed T1 bar historically, still-forming T1 bar in real time), chart-bar ROC(close from T1, ROC lookback) > StDev(chart-bar ROC(close from T1, ROC lookback), volatility lookback) * exit multiplier

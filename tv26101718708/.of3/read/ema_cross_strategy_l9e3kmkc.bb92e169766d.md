@@ -1,0 +1,2 @@
+Long: datetime > start date AND crosses above(close(T1, current bar sampled on chart bars; still forming in real time), open(T2, current bar sampled on chart bars; still forming in real time)), where T1 is shorter than T2
+Exit: long, datetime > start date AND crosses below(close(T1, current bar sampled on chart bars; still forming in real time), open(T2, current bar sampled on chart bars; still forming in real time)), where T1 is shorter than T2

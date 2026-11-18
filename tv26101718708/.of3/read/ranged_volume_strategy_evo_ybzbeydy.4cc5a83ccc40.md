@@ -1,0 +1,2 @@
+Long: highest(volume, lookback) > highest(volume, lookback)[1] AND selected candle close > selected candle open
+Short: highest(volume, lookback) > highest(volume, lookback)[1] AND selected candle close < selected candle open

@@ -1,0 +1,5 @@
+Calculation: close minus OHLC4 average = close - SMA(OHLC4, lookback)
+Long: (MACD histogram(fast lookback, slow lookback, signal lookback) crosses above its threshold OR RSI(close, lookback) crosses above its threshold) AND SMA(Stochastic RSI(RSI(close, RSI lookback), stochastic lookback), smoothing lookback) < Stochastic RSI threshold AND datetime is within the configured date window
+Short: MACD histogram(fast lookback, slow lookback, signal lookback) crosses below zero OR (close minus OHLC4 average crosses below its threshold AND SMA(Stochastic RSI(RSI(close, RSI lookback), stochastic lookback), smoothing lookback) > Stochastic RSI threshold), AND datetime is within the configured date window
+Exit: Long, low <= entry price * (1 - long stop-loss percentage)
+Exit: Short, high >= entry price * (1 + short stop-loss percentage)

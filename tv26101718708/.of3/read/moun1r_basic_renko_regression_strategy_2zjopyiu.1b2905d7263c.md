@@ -1,0 +1,4 @@
+Long: LinReg(close, lookback, offset) crosses below PivotLow(close, left-bars parameter, right-bars parameter)
+Long: LinReg(close, lookback, offset) crosses below PivotLow(close, left-bars parameter, right-bars parameter) AND close > VWMA(close, separate lookback parameter) AND ROC(close of Renko bars formed from open with ATR box-size parameter, separate lookback parameter) < 0
+Short: VWAP crosses below LinReg(close, lookback, offset)
+Exit: long, VWAP crosses below LinReg(close, lookback, offset) OR LinReg(close, lookback, offset) crosses PivotLow(close, left-bars parameter, right-bars parameter) OR close < VWMA(close, separate lookback parameter)

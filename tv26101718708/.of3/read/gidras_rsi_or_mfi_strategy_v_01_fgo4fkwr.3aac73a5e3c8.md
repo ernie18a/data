@@ -1,0 +1,4 @@
+Long: long entries enabled AND datetime is after the start-date parameter and before the end-date parameter AND Bollinger %B(RSI(src, RSI/MFI lookback) or MFI(src, RSI/MFI lookback), Bollinger lookback, deviation multiplier) crosses above the lower threshold parameter
+Short: short entries enabled AND datetime is after the start-date parameter and before the end-date parameter AND Bollinger %B(RSI(src, RSI/MFI lookback) or MFI(src, RSI/MFI lookback), Bollinger lookback, deviation multiplier) crosses below the upper threshold parameter
+Exit: long, datetime is after the end-date parameter
+Exit: short, datetime is after the end-date parameter

@@ -1,0 +1,6 @@
+Long: volume > SMA(volume, average-volume lookback) * volume multiplier AND high > highest(high, breakout lookback)[1]
+Long: flat position AND volume > SMA(volume, average-volume lookback) * volume multiplier AND high > highest(high, breakout lookback)[1]
+Long: long position AND unrealized profit since entry > scale-in trigger * minimum tick size
+Short: flat position AND volume > SMA(volume, average-volume lookback) * volume multiplier AND low < lowest(low, breakout lookback)[1]
+Exit: long, close > entry price + scale-in trigger * minimum tick size AND (low <= entry price OR high >= entry price + take-profit * minimum tick size) OR close <= entry price + scale-in trigger * minimum tick size AND low <= entry price - initial-stop * minimum tick size
+Exit: short, close < entry price - scale-in trigger * minimum tick size AND (high >= entry price OR low <= entry price - take-profit * minimum tick size) OR close >= entry price - scale-in trigger * minimum tick size AND high >= entry price + initial-stop * minimum tick size

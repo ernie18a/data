@@ -1,0 +1,1 @@
+Long: volume >= SMA(volume, lookback) * multiplier AND (price filter disabled OR close > open)

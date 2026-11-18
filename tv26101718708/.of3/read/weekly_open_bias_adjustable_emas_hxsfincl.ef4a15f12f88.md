@@ -1,0 +1,2 @@
+Long: chart close > open(T1, bar still forming) AND EMA(chart close, shorter lookback) > EMA(chart close, longer lookback)
+Short: chart close < open(T1, bar still forming) AND EMA(chart close, shorter lookback) < EMA(chart close, longer lookback)

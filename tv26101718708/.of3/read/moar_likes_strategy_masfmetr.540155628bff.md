@@ -1,0 +1,2 @@
+Long: On chart bars, the close of the still-forming T1 bar > the close of the last completed T1 bar
+Short: On chart bars, the close of the still-forming T1 bar <= the close of the last completed T1 bar

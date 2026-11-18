@@ -1,0 +1,2 @@
+Long: T1 close crosses above T1 open on chart bars using the still-forming T1 bar AND chart close < upper Bollinger Band(source, lookback, multiplier)
+Short: T1 close crosses below T1 open on chart bars using the still-forming T1 bar AND chart close > lower Bollinger Band(source, lookback, multiplier)

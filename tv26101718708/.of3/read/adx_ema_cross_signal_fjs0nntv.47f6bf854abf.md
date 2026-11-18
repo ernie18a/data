@@ -1,0 +1,2 @@
+Long: ADX(ADX lookback, ADX lookback) > ADX level AND EMA(close, EMA lookback) on T1 bars (current bar still forming, sampled on chart bars) crosses above EMA(close, EMA lookback) on T2 bars (current bar still forming, sampled on chart bars), where T1 is shorter than T2
+Short: ADX(ADX lookback, ADX lookback) > ADX level AND EMA(close, EMA lookback) on T2 bars (current bar still forming, sampled on chart bars) crosses below EMA(close, EMA lookback) on T1 bars (current bar still forming, sampled on chart bars), where T1 is shorter than T2

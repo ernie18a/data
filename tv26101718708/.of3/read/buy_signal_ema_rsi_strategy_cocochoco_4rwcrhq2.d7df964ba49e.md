@@ -1,0 +1,3 @@
+Long: EMA(close, shorter EMA lookback) > EMA(close, longer EMA lookback) AND close > EMA(close, shorter EMA lookback) AND RSI(close, RSI lookback) > RSI minimum AND RSI(close, RSI lookback) < RSI ceiling AND RSI(close, RSI lookback) > RSI(close, RSI lookback)[1] AND ADX(ADX lookback, ADX smoothing) > ADX minimum AND volume > highest(volume, volume lookback)[1]
+Calculation: Long trailing stop = close - ATR(ATR lookback) * ATR trailing multiplier when the Long condition is true; otherwise, while position side is Long and the prior Long trailing stop is defined, max(prior Long trailing stop, close - ATR(ATR lookback) * ATR trailing multiplier); otherwise undefined
+Exit: Long, close < Long trailing stop

@@ -1,0 +1,2 @@
+Long: on chart bars, using the still-forming T1 bar of Renko(close, ATR, parameter), low = open AND the last completed T1 Renko bar's close > open AND chart datetime > start-datetime parameter
+Short: on chart bars, using the still-forming T1 bar of Renko(close, ATR, parameter), high = open AND the last completed T1 Renko bar's close < open AND chart datetime > start-datetime parameter

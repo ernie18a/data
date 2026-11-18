@@ -1,0 +1,4 @@
+Long: close > highest(high, key-level lookback)[1] AND volume > SMA(volume, volume lookback) AND (trend filter disabled OR EMA(close, shorter lookback) > EMA(close, longer lookback))
+Short: close < lowest(low, key-level lookback)[1] AND volume > SMA(volume, volume lookback) AND (trend filter disabled OR EMA(close, shorter lookback) < EMA(close, longer lookback))
+Short: high > highest(high, key-level lookback)[1] AND close < highest(high, key-level lookback)[1] AND volume > SMA(volume, volume lookback) * high-volume multiplier AND (trend filter disabled OR EMA(close, shorter lookback) <= EMA(close, longer lookback))
+Long: low < lowest(low, key-level lookback)[1] AND close > lowest(low, key-level lookback)[1] AND volume > SMA(volume, volume lookback) * high-volume multiplier AND (trend filter disabled OR EMA(close, shorter lookback) >= EMA(close, longer lookback))

@@ -1,0 +1,4 @@
+Calculation: First MA = first selected type of SMA, EMA, WMA, Hull MA, VWMA, RMA, or TEMA applied to close over the first lookback, computed on bars of the selected timeframe (chart timeframe or T1) and sampled on chart bars; it uses the timeframe bar still forming in real time, with historical values available at that bar's completion
+Calculation: Second MA = second selected type of SMA, EMA, WMA, Hull MA, VWMA, RMA, or TEMA applied to close over the second lookback, computed on bars of the selected timeframe (chart timeframe or T1) and sampled on chart bars; it uses the timeframe bar still forming in real time, with historical values available at that bar's completion
+Long: second-MA signal toggle is enabled AND crossover(First MA, Second MA)
+Short: second-MA signal toggle is enabled AND crossunder(First MA, Second MA)

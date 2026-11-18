@@ -1,0 +1,2 @@
+Long: AlphaTrend(source, common period, multiplier, volume-data mode) crosses above its value two chart bars ago
+Short: AlphaTrend(source, common period, multiplier, volume-data mode) crosses below its value two chart bars ago

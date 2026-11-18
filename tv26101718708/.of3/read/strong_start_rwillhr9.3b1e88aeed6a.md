@@ -1,0 +1,1 @@
+Long: on the first chart bar of each T1 period, (open - close[1]) / close[1] * 100 >= gap-up threshold OR (open - low) / open * 100 <= open-low tolerance

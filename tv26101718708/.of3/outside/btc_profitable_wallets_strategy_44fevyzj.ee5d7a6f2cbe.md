@@ -1,0 +1,1 @@
+Long: selected blockchain's profitable-wallet percentage on T1 crosses above threshold

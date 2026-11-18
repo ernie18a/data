@@ -1,0 +1,2 @@
+Long: risky asset's T1 close ROC over P1 bars > 0 AND risky asset's T1 close ROC over P1 bars > safe asset's T1 close ROC over P1 bars
+Long: risky asset's T1 close ROC over P1 bars <= 0 OR risky asset's T1 close ROC over P1 bars <= safe asset's T1 close ROC over P1 bars

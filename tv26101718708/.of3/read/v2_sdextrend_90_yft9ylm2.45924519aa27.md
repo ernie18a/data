@@ -1,0 +1,2 @@
+Long: close(T1, still-forming bar) > SMA(close(T1, still-forming bar), lookback, chart bars taking values from T1) + StDev(close(T1, still-forming bar), lookback, chart bars taking values from T1)
+Short: close(T1, still-forming bar) < SMA(close(T1, still-forming bar), lookback, chart bars taking values from T1) - StDev(close(T1, still-forming bar), lookback, chart bars taking values from T1)

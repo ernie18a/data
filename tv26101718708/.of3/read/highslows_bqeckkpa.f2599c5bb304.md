@@ -1,0 +1,3 @@
+Calculation: percentage position(x, low, high) = (x - low) * 100 / (high - low)
+Long: avg(high, low) < avg(highest(high, lookback), lowest(low, lookback)) AND percentage position(avg(high, low, T1, still-forming bar), lowest(low, lookback, T1, still-forming bar), highest(high, lookback, T1, still-forming bar)) < lower threshold; evaluated on chart bars, with T1 calculations on T1 bars
+Exit: long, avg(high, low) >= avg(highest(high, lookback), lowest(low, lookback)) AND percentage position(avg(high, low, T1, still-forming bar), lowest(low, lookback, T1, still-forming bar), highest(high, lookback, T1, still-forming bar)) >= upper threshold; evaluated on chart bars, with T1 calculations on T1 bars

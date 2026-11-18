@@ -1,0 +1,2 @@
+Long: close(T1, bar still forming, sampled on chart bars) >= open(T1, bar still forming, sampled on chart bars)
+Short: close(T1, bar still forming, sampled on chart bars) < open(T1, bar still forming, sampled on chart bars)

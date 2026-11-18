@@ -1,0 +1,4 @@
+Long: T1 close from the T1 bar still forming, sampled on chart bars, > EMA(close, EMA lookback, T1 bar still forming, sampled on chart bars) AND ATR(ATR lookback) > ATR(ATR lookback)[1] AND close > highest(high, breakout lookback)[1]
+Short: T1 close from the T1 bar still forming, sampled on chart bars, < EMA(close, EMA lookback, T1 bar still forming, sampled on chart bars) AND ATR(ATR lookback) > ATR(ATR lookback)[1] AND close < lowest(low, breakout lookback)[1]
+Exit: Long, after price reaches close - ATR(ATR lookback) * trail multiplier, low <= the active trailing stop, which trails the post-activation high by ATR(ATR lookback) * trail multiplier ticks
+Exit: Short, after price reaches close + ATR(ATR lookback) * trail multiplier, high >= the active trailing stop, which trails the post-activation low by ATR(ATR lookback) * trail multiplier ticks

@@ -1,0 +1,2 @@
+Long: MA(source, active lookback; type selected from EMA, SMA, WMA, DEMA, or VWMA) crosses above MA(source, base lookback; type selected independently from EMA, SMA, WMA, DEMA, or VWMA)
+Short: MA(source, active lookback; type selected from EMA, SMA, WMA, DEMA, or VWMA) crosses below MA(source, base lookback; type selected independently from EMA, SMA, WMA, DEMA, or VWMA)

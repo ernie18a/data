@@ -1,0 +1,10 @@
+Calculation: K = StochRSI(RSI(close, shared RSI lookback, T3 sampled on chart bars; last completed T3 bar historically, forming T3 bar in realtime), Stoch lookback), evaluated on chart bars
+Calculation: D = SMA(K, D lookback), evaluated on chart bars
+Long: chart close > EMA(close, EMA lookback, T1 sampled on chart bars; last completed T1 bar historically, forming T1 bar in realtime) AND RSI(close, shared RSI lookback, T2 sampled on chart bars; last completed T2 bar historically, forming T2 bar in realtime) < long pullback threshold AND K crosses above D AND K < oversold threshold
+Long: position side is long AND chart low <= average entry price - ATR(ATR lookback) * first DCA distance
+Long: position side is long AND chart low <= average entry price - ATR(ATR lookback) * second DCA distance
+Short: chart close < EMA(close, EMA lookback, T1 sampled on chart bars; last completed T1 bar historically, forming T1 bar in realtime) AND RSI(close, shared RSI lookback, T2 sampled on chart bars; last completed T2 bar historically, forming T2 bar in realtime) > short rally threshold AND K crosses below D AND K > overbought threshold
+Short: position side is short AND chart high >= average entry price + ATR(ATR lookback) * first DCA distance
+Short: position side is short AND chart high >= average entry price + ATR(ATR lookback) * second DCA distance
+Exit: long, chart low <= average entry price - ATR(ATR lookback) * stop distance OR chart high >= average entry price + ATR(ATR lookback) * take-profit distance OR chart low <= highest high since entry - ATR(ATR lookback) * trailing distance
+Exit: short, chart high >= average entry price + ATR(ATR lookback) * stop distance OR chart low <= average entry price - ATR(ATR lookback) * take-profit distance OR chart high >= lowest low since entry + ATR(ATR lookback) * trailing distance

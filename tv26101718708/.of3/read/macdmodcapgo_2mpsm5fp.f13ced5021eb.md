@@ -1,0 +1,2 @@
+Long: MACD histogram(source, shorter lookback, longer lookback, signal lookback, oscillator MA type, signal MA type) crosses above zero
+Short: MACD histogram(source, shorter lookback, longer lookback, signal lookback, oscillator MA type, signal MA type) crosses below zero

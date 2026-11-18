@@ -1,0 +1,4 @@
+Calculation: latest pivot resistance = most recent PivotHigh(high, swing lookback, swing lookback)
+Long: EMA(close, fast lookback) > EMA(close, medium lookback) AND EMA(close, medium lookback) > EMA(close, trend lookback) AND close > EMA(close, trend lookback)
+Long: close[1] <= latest pivot resistance AND close > latest pivot resistance AND close > open AND EMA(close, fast lookback) > EMA(close, medium lookback) AND EMA(close, medium lookback) > EMA(close, trend lookback) AND close > EMA(close, trend lookback) AND volume > SMA(volume, volume lookback) * volume multiplier
+Short: EMA(close, fast lookback) < EMA(close, medium lookback) AND EMA(close, medium lookback) < EMA(close, trend lookback) AND close < EMA(close, trend lookback)

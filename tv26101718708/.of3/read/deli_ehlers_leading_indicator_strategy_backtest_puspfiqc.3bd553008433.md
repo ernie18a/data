@@ -1,0 +1,3 @@
+Calculation: Ehlers Leading Indicator = EMA(HL2(T1, still-forming bar, sampled on chart bars), shorter lookback) - EMA(HL2(T1, still-forming bar, sampled on chart bars), longer lookback) - EMA(EMA(HL2(T1, still-forming bar, sampled on chart bars), shorter lookback) - EMA(HL2(T1, still-forming bar, sampled on chart bars), longer lookback), shorter lookback), with all EMA calculations evaluated on chart bars
+Long: (Ehlers Leading Indicator > 0 AND reversal setting is off) OR (Ehlers Leading Indicator < 0 AND reversal setting is on) OR (Ehlers Leading Indicator = 0 AND position is long)
+Short: (Ehlers Leading Indicator < 0 AND reversal setting is off) OR (Ehlers Leading Indicator > 0 AND reversal setting is on) OR (Ehlers Leading Indicator = 0 AND position is short)

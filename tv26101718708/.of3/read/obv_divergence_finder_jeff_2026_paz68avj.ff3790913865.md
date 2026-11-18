@@ -1,0 +1,3 @@
+Calculation: OBV = cumulative sum of volume when close > prior close, negative volume when close < prior close, and zero otherwise
+Long: A new confirmed pivot low of close using the pivot lookback is lower than the preceding confirmed pivot low of close AND OBV at the new pivot is higher than OBV at the preceding pivot low
+Short: A new confirmed pivot high of close using the pivot lookback is higher than the preceding confirmed pivot high of close AND OBV at the new pivot is lower than OBV at the preceding pivot high

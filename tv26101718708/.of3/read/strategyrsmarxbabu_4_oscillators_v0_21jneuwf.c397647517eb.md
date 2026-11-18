@@ -1,0 +1,4 @@
+Long: RSI(hlc3, lookback) < oversold level AND MFI(hlc3, volume, lookback) < oversold level AND StochRSI(hlc3, lookback, lookback, smoothing lookback) < oversold level AND Stochastic %K(hlc3, high, low, lookback) < oversold level
+Short: RSI(hlc3, lookback) > overbought level AND MFI(hlc3, volume, lookback) > overbought level AND StochRSI(hlc3, lookback, lookback, smoothing lookback) > overbought level AND Stochastic %K(hlc3, high, low, lookback) > overbought level
+Exit: long, high >= entry price + take-profit distance in ticks OR low <= entry price - stop-loss distance in ticks
+Exit: short, low <= entry price - take-profit distance in ticks OR high >= entry price + stop-loss distance in ticks

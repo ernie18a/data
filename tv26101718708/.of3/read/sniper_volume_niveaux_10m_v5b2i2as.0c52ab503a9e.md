@@ -1,0 +1,3 @@
+Calculation: impulse range = (highest(high, extreme lookback) - lowest(low, extreme lookback)) / lowest(low, extreme lookback)
+Long: low = lowest(low, extreme lookback) AND impulse range >= minimum impulse parameter AND close > high[1] AND volume > SMA(volume, volume-average lookback) * volume multiplier AND close <= support parameter * (1 + support proximity parameter)
+Short: high = highest(high, extreme lookback) AND impulse range >= minimum impulse parameter AND close < low[1] AND volume > SMA(volume, volume-average lookback) * volume multiplier AND close >= resistance parameter * (1 - resistance proximity parameter)

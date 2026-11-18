@@ -1,0 +1,3 @@
+Calculation: PWMA(source, lookback) = sum(source[n] × (lookback − n)^2) / sum((lookback − n)^2) for n from 0 to lookback − 1, calculated on T1 bars using the still-forming bar and sampled on chart bars
+Long: close crosses above PWMA(source, lookback, T1 bar still forming) on chart bars OR PWMA(source, lookback, T1 value on the current chart bar) > PWMA(source, lookback, T1 value on the previous chart bar)
+Short: close crosses below PWMA(source, lookback, T1 bar still forming) on chart bars OR PWMA(source, lookback, T1 value on the current chart bar) <= PWMA(source, lookback, T1 value on the previous chart bar)

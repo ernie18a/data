@@ -1,0 +1,2 @@
+Long: selected moving average(source 1, lookback 1, type 1) crosses above selected moving average(source 2, lookback 2, type 2) AND date is on or after the start year and start month
+Short: selected moving average(source 1, lookback 1, type 1) crosses below selected moving average(source 2, lookback 2, type 2) AND date is on or after the start year and start month

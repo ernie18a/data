@@ -1,0 +1,7 @@
+Calculation: Medium K = SMA(Stochastic(close, high, low, stochastic lookback), K smoothing lookback) on T2 bars; chart bars use the current value from the still-forming T2 bar
+Calculation: Medium D = SMA(Medium K, D smoothing lookback) on T2 bars; chart bars use the current value from the still-forming T2 bar
+Calculation: Long-term SMA = SMA(close, trend MA lookback) on T3 bars; chart bars use the current value from the still-forming T3 bar
+Long: close > entry price AND Long-term SMA <= close of the still-forming T3 bar AND Medium K < overbought AND Medium D < overbought AND Medium K > oversold AND Medium D > oversold AND Medium K > Medium D AND crossover(SMA(close, shorter MA lookback), SMA(close, longer MA lookback)) on T1 entry-timeframe bars, using the still-forming T1 bar, with the result taken on chart bars
+Short: close <= entry price AND Long-term SMA > close of the still-forming T3 bar AND Medium K < overbought AND Medium D < overbought AND Medium K > oversold AND Medium D > oversold AND Medium K < Medium D AND crossunder(SMA(close, shorter MA lookback), SMA(close, longer MA lookback)) on T1 entry-timeframe bars, using the still-forming T1 bar, with the result taken on chart bars
+Exit: Long, Medium K crosses below Medium D on chart bars using values from the still-forming T2 bar
+Exit: Short, Medium K crosses above Medium D on chart bars using values from the still-forming T2 bar

@@ -1,0 +1,5 @@
+Calculation: Heikin-Ashi body = ABS(Heikin-Ashi close - Heikin-Ashi open)
+Calculation: Long eligibility = true initially; set true before each bar's decision when bars since (Heikin-Ashi close < Heikin-Ashi open OR Heikin-Ashi body < SMA(Heikin-Ashi body, body-average lookback)) < pullback lookback; set false after a long signal
+Calculation: Short eligibility = true initially; set true before each bar's decision when bars since (Heikin-Ashi close > Heikin-Ashi open OR Heikin-Ashi body < SMA(Heikin-Ashi body, body-average lookback)) < pullback lookback; set false after a short signal
+Long: low > VWAP((high + low + close) / 3) AND Heikin-Ashi close > Heikin-Ashi open AND Heikin-Ashi body > SMA(Heikin-Ashi body, body-average lookback) * strength multiplier AND long eligibility
+Short: high < VWAP((high + low + close) / 3) AND Heikin-Ashi close < Heikin-Ashi open AND Heikin-Ashi body > SMA(Heikin-Ashi body, body-average lookback) * strength multiplier AND short eligibility

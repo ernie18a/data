@@ -1,0 +1,3 @@
+Calculation: weighted average = (EMA(source, shortest lookback) + EMA(source, second-shortest lookback) + EMA(source, second-longest lookback) + EMA(source, longest lookback) + VWAP) / 5
+Long: close > upper Bollinger Band(weighted average, band lookback, deviation multiplier) AND close[1] > upper Bollinger Band(weighted average, band lookback, deviation multiplier)
+Short: close < lower Bollinger Band(weighted average, band lookback, deviation multiplier) AND close[1] < lower Bollinger Band(weighted average, band lookback, deviation multiplier)

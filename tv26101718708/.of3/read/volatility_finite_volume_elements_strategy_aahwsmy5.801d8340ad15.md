@@ -1,0 +1,4 @@
+Calculation: Finite Volume Element = 100 × SUM(volume × factor, sample lookback) / SUM(volume, sample lookback), where factor is 1 when (close - hl2 + hlc3 - hlc3[1]) > cutoff × close, -1 when (close - hl2 + hlc3 - hlc3[1]) < -cutoff × close, and 0 otherwise; cutoff = intra coefficient × STDEV(SMA(log(high) - log(low), sample lookback), sample lookback) + inter coefficient × STDEV(SMA(log(hlc3) - log(hlc3[1]), sample lookback), sample lookback)
+Calculation: FVE direction = 1 when Finite Volume Element > EMA(Finite Volume Element, EMA lookback), -1 when it is less, and otherwise the prior FVE direction, defaulting to 0 when there is no prior direction
+Long: FVE direction = 1
+Short: FVE direction = -1

@@ -1,0 +1,3 @@
+Calculation: cross-timeframe EMA difference = EMA(selected price source at T3, P1) - EMA(selected price source at T2, P2)
+Long: MACD(selected price source at T1, P1, P2) > 0 AND cross-timeframe EMA difference > 0 AND MACD(selected price source at T3, P1, P2) > 0 AND month >= P3 AND month <= P4 AND day of month >= P5 AND day of month <= P6 AND year >= P7 AND year <= P8
+Short: MACD(selected price source at T1, P1, P2) < 0 AND cross-timeframe EMA difference < 0 AND MACD(selected price source at T3, P1, P2) < 0 AND month >= P3 AND month <= P4 AND day of month >= P5 AND day of month <= P6 AND year >= P7 AND year <= P8

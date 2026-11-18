@@ -1,0 +1,4 @@
+Calculation: Movement score = if high = low OR volume = 0 then 0 else scale parameter × (MOM((high − low) / 2, lookback parameter) − MOM((high − low) / 2, lookback parameter)[1]) / (volume / (high − low))
+Calculation: Signal state = if movement score > buy-threshold parameter then long else if movement score < sell-threshold parameter then short else previous signal state; initially neutral
+Long: (reversal parameter disabled AND signal state = long) OR (reversal parameter enabled AND signal state = short)
+Short: (reversal parameter disabled AND signal state = short) OR (reversal parameter enabled AND signal state = long)

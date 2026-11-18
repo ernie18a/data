@@ -1,0 +1,2 @@
+Long: RSI(close, lookback) on T1 bars, using the still-forming T1 bar and mapped to chart bars > SMA(RSI(close, lookback), same lookback) on T1 bars, using the still-forming T1 bar and mapped to chart bars AND flat
+Exit: long, RSI(close, lookback) on T1 bars, using the still-forming T1 bar and mapped to chart bars < SMA(RSI(close, lookback), same lookback) on T1 bars, using the still-forming T1 bar and mapped to chart bars

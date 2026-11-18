@@ -1,0 +1,2 @@
+Long: ADX(lookback, lookback)[1] >= chop threshold AND close[1] > EMA(close, shorter lookback)[1] AND close[2] > EMA(close, shorter lookback)[2] AND EMA(close, shorter lookback)[1] != EMA(close, longer lookback)[1]
+Short: ADX(lookback, lookback)[1] >= chop threshold AND close[1] < EMA(close, shorter lookback)[1] AND close[2] < EMA(close, shorter lookback)[2] AND EMA(close, shorter lookback)[1] != EMA(close, longer lookback)[1]

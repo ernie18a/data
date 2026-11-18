@@ -1,0 +1,1 @@
+Long: Correlation between CBOE VIX and traded instrument closing price over P1 bars crosses below P2 AND chart time is between timestamp(P3, P4, P5) and timestamp(P6, P7, P8).

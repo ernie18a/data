@@ -1,0 +1,8 @@
+Long: On chart bars, low < low(T1, last completed bar) AND close > low(T1, last completed bar)
+Long: On chart bars, low < low(T2, last completed bar) AND close > low(T2, last completed bar)
+Long: On chart bars, close > high(T1, last completed bar)
+Long: On chart bars, close > high(T2, last completed bar)
+Short: On chart bars, high > high(T1, last completed bar) AND close < high(T1, last completed bar)
+Short: On chart bars, high > high(T2, last completed bar) AND close < high(T2, last completed bar)
+Short: On chart bars, close < low(T1, last completed bar)
+Short: On chart bars, close < low(T2, last completed bar)

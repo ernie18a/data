@@ -1,0 +1,2 @@
+Long: Mansfield Relative Strength of the traded instrument relative to the benchmark crosses above zero
+Short: Mansfield Relative Strength of the traded instrument relative to the benchmark crosses below zero

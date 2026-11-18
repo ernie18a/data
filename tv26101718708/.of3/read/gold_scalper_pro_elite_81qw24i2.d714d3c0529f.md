@@ -1,0 +1,2 @@
+Long: close > EMA(close, EMA lookback) AND close > open AND volume > SMA(volume, volume lookback) × volume multiplier AND low <= Lowest(low, liquidity lookback)
+Short: close < EMA(close, EMA lookback) AND close < open AND volume > SMA(volume, volume lookback) × volume multiplier AND high >= Highest(high, liquidity lookback)

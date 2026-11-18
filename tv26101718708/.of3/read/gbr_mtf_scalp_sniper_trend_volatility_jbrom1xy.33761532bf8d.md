@@ -1,0 +1,2 @@
+Long: close > EMA(close, macro lookback, T1 bars, current bar) sampled on chart bars AND close crosses above EMA(close, micro lookback) AND (volatility filter disabled OR ATR(ATR lookback) > SMA(ATR(ATR lookback), ATR average lookback))
+Short: close < EMA(close, macro lookback, T1 bars, current bar) sampled on chart bars AND close crosses below EMA(close, micro lookback) AND (volatility filter disabled OR ATR(ATR lookback) > SMA(ATR(ATR lookback), ATR average lookback))

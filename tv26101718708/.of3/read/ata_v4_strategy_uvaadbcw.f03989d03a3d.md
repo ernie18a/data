@@ -1,0 +1,7 @@
+Calculation: T1 EMA difference = EMA(source mapped from the long-term timeframe T1 onto chart bars, shorter lookback) - EMA(source mapped from T1 onto chart bars, longer lookback); use the last completed T1 bar historically and the forming T1 bar in real time
+Calculation: Mixed T3/T2 EMA difference = EMA(source mapped from the short-term timeframe T3 onto chart bars, shorter lookback) - EMA(source mapped from the middle-term timeframe T2 onto chart bars, longer lookback); use the last completed source-timeframe bar historically and the forming source-timeframe bar in real time
+Calculation: T3 EMA difference = EMA(source mapped from the short-term timeframe T3 onto chart bars, shorter lookback) - EMA(source mapped from T3 onto chart bars, longer lookback); use the last completed T3 bar historically and the forming T3 bar in real time
+Long: RSI(close, lookback) > overbought threshold AND T1 EMA difference > 0 AND Mixed T3/T2 EMA difference > 0 AND T3 EMA difference > 0
+Short: RSI(close, lookback) < oversold threshold AND T1 EMA difference < 0 AND Mixed T3/T2 EMA difference < 0 AND T3 EMA difference < 0
+Exit: long, after high reaches entry price + (close × trailing percentage parameter), low reaches the trailing stop at the highest high since activation minus (close × the same parameter)
+Exit: short, after low reaches entry price − (close × trailing percentage parameter), high reaches the trailing stop at the lowest low since activation plus (close × the same parameter)

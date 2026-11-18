@@ -1,0 +1,3 @@
+Calculation: Adjusted PVT = offset + multiplier * PVT(ohlc4, volume / volume divisor)
+Long: (normal direction AND Adjusted PVT > SMA(Adjusted PVT, smoothing lookback)) OR (reversed direction AND Adjusted PVT < SMA(Adjusted PVT, smoothing lookback)) OR (Adjusted PVT = SMA(Adjusted PVT, smoothing lookback) AND position side is long)
+Short: (normal direction AND Adjusted PVT < SMA(Adjusted PVT, smoothing lookback)) OR (reversed direction AND Adjusted PVT > SMA(Adjusted PVT, smoothing lookback)) OR (Adjusted PVT = SMA(Adjusted PVT, smoothing lookback) AND position side is short)

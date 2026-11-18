@@ -1,0 +1,2 @@
+Long: chart close > Camarilla resistance level selected by the resistance-level parameter, calculated on chart bars from high, low, and close of the still-forming T1 bar
+Short: chart close < Camarilla support level selected by the support-level parameter, calculated on chart bars from high, low, and close of the still-forming T1 bar

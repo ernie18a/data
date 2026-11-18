@@ -1,0 +1,2 @@
+Long: VIX MACD (fast EMA period P1, slow EMA period P2, signal EMA period P3) crosses below its signal line
+Exit: long, VIX MACD (fast EMA period P1, slow EMA period P2, signal EMA period P3) crosses above its signal line

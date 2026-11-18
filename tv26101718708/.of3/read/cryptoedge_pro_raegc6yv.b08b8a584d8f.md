@@ -1,0 +1,2 @@
+Long: EMA(close, short-term lookback) crosses above VWAP(hlc3) AND EMA(close, short-term lookback) > EMA(close, long-term lookback) AND datetime is within the configured UTC session AND ADX(DI lookback, ADX smoothing) >= minimum ADX
+Short: EMA(close, short-term lookback) crosses below VWAP(hlc3) AND EMA(close, short-term lookback) < EMA(close, long-term lookback) AND datetime is within the configured UTC session AND ADX(DI lookback, ADX smoothing) >= minimum ADX

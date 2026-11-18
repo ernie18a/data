@@ -1,0 +1,2 @@
+Long: close crosses above UT Bot trailing stop(close, ATR multiplier, ATR lookback) AND T1 close (current still-forming bar, sampled on chart bars) > SMA(close, T1 MA lookback) calculated on T1 bars and sampled from the current still-forming T1 bar
+Short: close crosses below UT Bot trailing stop(close, ATR multiplier, ATR lookback) AND T1 close (current still-forming bar, sampled on chart bars) < SMA(close, T1 MA lookback) calculated on T1 bars and sampled from the current still-forming T1 bar

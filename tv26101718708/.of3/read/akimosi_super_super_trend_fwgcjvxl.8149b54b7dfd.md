@@ -1,0 +1,2 @@
+Long: close crosses above SuperTrend(hl2, ATR lookback, factor) OR (chart-bar SuperTrend direction changes from bearish to bullish AND SuperTrend direction calculated on chart bars from still-forming T1 values is bullish, using the same ATR lookback and factor)
+Short: close crosses below SuperTrend(hl2, ATR lookback, factor) OR (chart-bar SuperTrend direction changes from bullish to bearish AND SuperTrend direction calculated on chart bars from still-forming T1 values is bearish, using the same ATR lookback and factor)

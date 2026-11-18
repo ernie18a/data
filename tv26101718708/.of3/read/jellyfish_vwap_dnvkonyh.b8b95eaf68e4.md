@@ -1,0 +1,1 @@
+Long: round(low / tick size) * tick size < round(VWAP(close) / tick size) * tick size AND round(open / tick size) * tick size > VWAP(close) AND round(close / tick size) * tick size > VWAP(close)

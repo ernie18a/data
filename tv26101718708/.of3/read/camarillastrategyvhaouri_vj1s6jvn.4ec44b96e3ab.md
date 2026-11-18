@@ -1,0 +1,3 @@
+Calculation: weekly offset = (Camarilla L1(close, high, low, range multiplier parameter, L1 divisor parameter, T1, last completed bar) - Camarilla L2(close, high, low, range multiplier parameter, L2 divisor parameter, T1, last completed bar)) / offset divisor parameter
+Long: chart close <= Camarilla L3(close, high, low, range multiplier parameter, L3 divisor parameter, T1, last completed bar) - weekly offset
+Short: chart high >= Camarilla H1(close, high, low, range multiplier parameter, H1 divisor parameter, T1, last completed bar) - weekly offset

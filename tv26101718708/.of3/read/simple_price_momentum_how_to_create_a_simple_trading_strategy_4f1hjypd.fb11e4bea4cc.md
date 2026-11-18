@@ -1,0 +1,3 @@
+Calculation: saved long setup = true when close > VWAP(close) AND close[1] <= VWAP(close)[1] AND close <= SWMA(close) AND close[1] <= SWMA(close)[1]; false when close <= VWAP(close); otherwise its prior value
+Long: saved long setup AND close > SWMA(close) AND (consecutive-orders parameter enabled OR no long entry signal on the previous bar)
+Exit: Long, high >= entry price + Stop Loss input in ticks OR low <= entry price - (Reward/Risk input × Stop Loss input) in ticks

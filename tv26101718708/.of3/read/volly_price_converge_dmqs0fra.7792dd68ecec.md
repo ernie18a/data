@@ -1,0 +1,2 @@
+Long: HMA(volume, lookback) > HMA(volume, lookback)[1] AND HMA(close, same lookback) > HMA(close, same lookback)[1] AND close > SMA(close, separate lookback)
+Exit: Long, HMA(volume, lookback) <= HMA(volume, lookback)[1] OR HMA(close, same lookback) <= HMA(close, same lookback)[1] OR close < SMA(close, separate lookback)

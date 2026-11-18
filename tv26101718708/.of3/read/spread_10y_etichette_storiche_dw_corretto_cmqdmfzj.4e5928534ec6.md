@@ -1,0 +1,2 @@
+Calculation: Yield spread = (instrument A close(T1, still-forming bar) - instrument B close(T1, still-forming bar)) * conversion parameter, using T1 values on chart bars
+Long: abs(close - EMA(close, lookback)) <= close * tolerance parameter AND Yield spread >= spread threshold

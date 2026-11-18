@@ -1,0 +1,2 @@
+Long: Arms Index on T1 < lower threshold when trade reversal is disabled OR Arms Index on T1 > upper threshold when trade reversal is enabled
+Short: Arms Index on T1 > upper threshold when trade reversal is disabled OR Arms Index on T1 < lower threshold when trade reversal is enabled

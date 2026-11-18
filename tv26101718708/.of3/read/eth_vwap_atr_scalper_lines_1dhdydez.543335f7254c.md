@@ -1,0 +1,2 @@
+Long: close > VWAP((high + low + close) / 3) + ATR(ATR lookback) * buffer multiplier AND close > open AND close > high[1] AND (RSI(close, RSI lookback) > RSI threshold OR RSI filter disabled)
+Short: close < VWAP((high + low + close) / 3) - ATR(ATR lookback) * buffer multiplier AND close < open AND close < low[1] AND (RSI(close, RSI lookback) < RSI threshold OR RSI filter disabled)

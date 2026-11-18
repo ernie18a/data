@@ -1,0 +1,2 @@
+Long: On chart bars, the Inverse Fisher RSI(close, RSI lookback, WMA smoothing lookback) value from T1 crosses above the upper threshold; use the still-forming T1 bar in realtime and the last completed T1 bar historically.
+Short: On chart bars, the Inverse Fisher RSI(close, RSI lookback, WMA smoothing lookback) value from T1 crosses below (that value < the lower threshold); use the still-forming T1 bar in realtime and the last completed T1 bar historically.

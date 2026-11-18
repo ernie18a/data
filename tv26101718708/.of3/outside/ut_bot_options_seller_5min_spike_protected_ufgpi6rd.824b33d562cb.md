@@ -1,0 +1,4 @@
+Option: sell put, close crosses above UT Bot trailing stop (key, ATR period) AND RSI(close, RSI period) >= put RSI minimum AND RSI(close, RSI period) <= put RSI maximum AND ADX(DMI period, DMI period) > ADX minimum AND high - low <= ATR(spike ATR period) × spike multiplier AND during Asia/Kolkata session
+Option: sell call, close crosses below UT Bot trailing stop (key, ATR period) AND RSI(close, RSI period) >= call RSI minimum AND RSI(close, RSI period) <= call RSI maximum AND ADX(DMI period, DMI period) > ADX minimum AND high - low <= ATR(spike ATR period) × spike multiplier AND during Asia/Kolkata session
+Option: buy put, outside Asia/Kolkata session
+Option: buy call, outside Asia/Kolkata session

@@ -1,0 +1,3 @@
+Calculation: breakout range = max(highest(high, lookback) - lowest(close, lookback), highest(close, lookback) - lowest(low, lookback)), calculated on T1 bars and mapped to chart bars using the last completed T1 bar historically and the still-forming T1 bar in real time
+Long: crossover(close, open(T2) + upper multiplier * breakout range), with T2 values mapped to chart bars from the last completed T2 bar historically and the still-forming T2 bar in real time
+Short: crossunder(close, open(T2) - lower multiplier * breakout range), with T2 values mapped to chart bars from the last completed T2 bar historically and the still-forming T2 bar in real time

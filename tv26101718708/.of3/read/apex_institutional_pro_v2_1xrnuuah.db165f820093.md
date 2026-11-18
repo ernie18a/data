@@ -1,0 +1,2 @@
+Long: session filter is disabled or the bar datetime is within the configured session AND close > VWAP(hlc3) AND close > EMA(close, lookback) AND Williams %R(high, low, close, lookback) crosses above the lower threshold
+Short: session filter is disabled or the bar datetime is within the configured session AND close < VWAP(hlc3) AND close < EMA(close, lookback) AND Williams %R(high, low, close, lookback) crosses below the upper threshold

@@ -1,0 +1,3 @@
+Calculation: Volume balance = SMA(volume if close > open else 0, lookback) - SMA(volume if close < open else 0, same lookback)
+Long: SMA(volume if close > open else 0, lookback) > SMA(volume if close < open else 0, same lookback) AND Volume balance crosses above zero
+Short: SMA(volume if close < open else 0, lookback) > SMA(volume if close > open else 0, same lookback) AND Volume balance crosses below zero

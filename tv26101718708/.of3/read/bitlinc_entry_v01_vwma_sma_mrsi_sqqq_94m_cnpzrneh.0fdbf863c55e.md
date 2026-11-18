@@ -1,0 +1,2 @@
+Long: datetime >= start datetime parameter AND datetime <= end datetime parameter AND (SMA(close, fast lookback) crosses above VWMA(high, slow lookback) OR EMA(RSI(close, RSI lookback), smoothing lookback) crosses above oversold threshold)
+Short: datetime >= start datetime parameter AND datetime <= end datetime parameter AND (VWMA(high, slow lookback) crosses above SMA(close, fast lookback) OR EMA(RSI(close, RSI lookback), smoothing lookback) crosses above overbought threshold)

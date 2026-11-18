@@ -1,0 +1,1 @@
+Long: MACD(close, fast lookback, slow lookback, signal lookback, T1, still-forming bar) > 0 AND MACD(close, fast lookback, slow lookback, signal lookback, T2, still-forming bar) > 0 AND MACD(close, fast lookback, slow lookback, signal lookback, T3, still-forming bar) > 0 AND RSI(close, lookback, T1, still-forming bar) > RSI threshold

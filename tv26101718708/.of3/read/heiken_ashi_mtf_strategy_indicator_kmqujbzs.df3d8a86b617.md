@@ -1,0 +1,4 @@
+Long: On chart bars, Heikin-Ashi close of the still-forming T1 bar > its open AND Heikin-Ashi close of the still-forming T2 bar > its open AND Heikin-Ashi close of the still-forming T3 bar > its open
+Short: On chart bars, Heikin-Ashi close of the still-forming T1 bar < its open AND Heikin-Ashi close of the still-forming T2 bar < its open AND Heikin-Ashi close of the still-forming T3 bar < its open
+Exit: long, On chart bars, Heikin-Ashi close of the still-forming T1 bar < its open OR Heikin-Ashi close of the still-forming T2 bar < its open OR Heikin-Ashi close of the still-forming T3 bar < its open
+Exit: short, On chart bars, Heikin-Ashi close of the still-forming T1 bar > its open OR Heikin-Ashi close of the still-forming T2 bar > its open OR Heikin-Ashi close of the still-forming T3 bar > its open

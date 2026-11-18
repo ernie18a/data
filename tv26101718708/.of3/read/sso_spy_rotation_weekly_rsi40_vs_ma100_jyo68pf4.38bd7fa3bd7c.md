@@ -1,0 +1,2 @@
+Long: RSI(close(T1, still-forming bar), RSI lookback) computed on chart bars > SMA(RSI(close(T1, still-forming bar), RSI lookback) computed on chart bars, RSI-average lookback) computed on chart bars
+Short: RSI(close(T1, still-forming bar), RSI lookback) computed on chart bars <= SMA(RSI(close(T1, still-forming bar), RSI lookback) computed on chart bars, RSI-average lookback) computed on chart bars

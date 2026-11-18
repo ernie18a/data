@@ -1,0 +1,2 @@
+Long: low < lower Bollinger Band(close, lookback, standard-deviation multiplier) AND volume > SMA(volume, lookback) * volume multiplier AND RSI(close, RSI lookback) < oversold threshold AND low = lowest(low, lookback)
+Short: high > upper Bollinger Band(close, lookback, standard-deviation multiplier) AND volume > SMA(volume, lookback) * volume multiplier AND RSI(close, RSI lookback) > overbought threshold AND high = highest(high, lookback)

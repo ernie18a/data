@@ -1,0 +1,4 @@
+Long: SPY opening price > previous SPY closing price AND current SPY low − previous SPY high ≥ gap-deviation parameter × SMA(SPY high − SPY low, range-lookback parameter) AND time is within entry-session parameter AND US advance/decline index ≥ advance/decline threshold parameter
+Short: SPY opening price < previous SPY closing price AND previous SPY low − current SPY high ≥ gap-deviation parameter × SMA(SPY high − SPY low, range-lookback parameter) AND time is within entry-session parameter AND percentage of US stocks above VWAP ≤ above-VWAP threshold parameter AND US advance/decline index < advance/decline threshold parameter
+Exit: long, time is within exit-session parameter
+Exit: short, time is within exit-session parameter

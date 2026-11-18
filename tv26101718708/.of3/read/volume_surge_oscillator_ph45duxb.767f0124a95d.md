@@ -1,0 +1,3 @@
+Calculation: volume surge = 100 * (price source - EMA(price source, price lookback)) / EMA(price source, price lookback) / (STDEV(price source, volatility lookback) == 0 ? 1 : STDEV(price source, volatility lookback)) * (1 + volume influence * POWER(volume / MAX(SMA(volume, volume lookback), 1), 1.5) * SIGN(volume / MAX(SMA(volume, volume lookback), 1) - 1))
+Long: volume surge >= 0
+Short: volume surge < 0

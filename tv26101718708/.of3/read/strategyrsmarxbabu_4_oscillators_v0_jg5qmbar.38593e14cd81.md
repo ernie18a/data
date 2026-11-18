@@ -1,0 +1,5 @@
+Calculation: range oscillator(source, lookback) = 100 + 100 * (source - highest(high, lookback)) / (highest(high, lookback) - lowest(low, lookback))
+Long: RSI(source, lookback) > overbought threshold AND StochRSI(RSI(source, lookback), lookback, smoothing) > overbought threshold AND MFI(source, lookback) > overbought threshold AND range oscillator(source, lookback) > overbought threshold
+Short: RSI(source, lookback) < oversold threshold AND StochRSI(RSI(source, lookback), lookback, smoothing) < oversold threshold AND MFI(source, lookback) < oversold threshold AND range oscillator(source, lookback) < oversold threshold
+Exit: long, high >= entry price + take-profit tick offset OR low <= entry price - stop-loss tick offset
+Exit: short, low <= entry price - take-profit tick offset OR high >= entry price + stop-loss tick offset

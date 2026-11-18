@@ -1,0 +1,8 @@
+Long: On chart bars, close(T1, current bar, possibly still forming) > EMA(close, lookback, T1, current bar, possibly still forming)
+Short: On chart bars, close(T1, current bar, possibly still forming) <= EMA(close, lookback, T1, current bar, possibly still forming)
+Long: On chart bars, close(T2, current bar, possibly still forming) > EMA(close, lookback, T2, current bar, possibly still forming)
+Short: On chart bars, close(T2, current bar, possibly still forming) <= EMA(close, lookback, T2, current bar, possibly still forming)
+Long: On chart bars, close(T3, current bar, possibly still forming) > EMA(close, lookback, T3, current bar, possibly still forming)
+Short: On chart bars, close(T3, current bar, possibly still forming) <= EMA(close, lookback, T3, current bar, possibly still forming)
+Long: On chart bars, close(T4, current bar, possibly still forming) > EMA(close, lookback, T4, current bar, possibly still forming)
+Short: On chart bars, close(T4, current bar, possibly still forming) <= EMA(close, lookback, T4, current bar, possibly still forming)

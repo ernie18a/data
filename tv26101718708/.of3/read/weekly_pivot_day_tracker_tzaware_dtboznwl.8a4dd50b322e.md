@@ -1,0 +1,2 @@
+Long: The chart bar opens on Monday in the selected timezone AND its low equals the low so far in the current T1 period, calculated across chart bars.
+Short: The chart bar opens on Monday in the selected timezone AND its high equals the high so far in the current T1 period, calculated across chart bars.

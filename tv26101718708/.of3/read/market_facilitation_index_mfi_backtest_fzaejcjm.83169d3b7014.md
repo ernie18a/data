@@ -1,0 +1,3 @@
+Calculation: Market Facilitation Index = (high - low) / volume × scale parameter
+Long: (reverse parameter is false AND Market Facilitation Index > long-side threshold parameter) OR (reverse parameter is true AND Market Facilitation Index <= long-side threshold parameter AND Market Facilitation Index < short-side threshold parameter)
+Short: (reverse parameter is false AND Market Facilitation Index <= long-side threshold parameter AND Market Facilitation Index < short-side threshold parameter) OR (reverse parameter is true AND Market Facilitation Index > long-side threshold parameter)

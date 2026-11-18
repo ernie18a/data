@@ -1,0 +1,3 @@
+Calculation: Body ratio = if high - low > 0 then abs(close - open) / (high - low) else 0
+Long: close > open AND Body ratio >= body-ratio threshold AND high - low > ATR(ATR lookback) * ATR multiplier AND (if high - low > 0 then (close - low) / (high - low) else 0) >= close-position threshold AND volume > SMA(volume, volume lookback) * volume multiplier
+Short: close < open AND Body ratio >= body-ratio threshold AND high - low > ATR(ATR lookback) * ATR multiplier AND (if high - low > 0 then (high - close) / (high - low) else 0) >= close-position threshold AND volume > SMA(volume, volume lookback) * volume multiplier

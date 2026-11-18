@@ -1,0 +1,2 @@
+Long: bar is confirmed AND bar is within the session window AND no earlier FVG has been found that day AND high[2] < low
+Short: bar is confirmed AND bar is within the session window AND no earlier FVG has been found that day AND low[2] > high

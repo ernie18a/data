@@ -1,0 +1,3 @@
+Calculation: floor pivot point = (high[1, T1, last completed bar] + low[1, T1, last completed bar] + close[1, T1, last completed bar]) / 3, taken on chart bars
+Long: reverse-trading parameter is off AND close > 2 * floor pivot point - low[1, T1, last completed bar] OR reverse-trading parameter is on AND close < 2 * floor pivot point - high[1, T1, last completed bar]
+Short: reverse-trading parameter is off AND close < 2 * floor pivot point - high[1, T1, last completed bar] OR reverse-trading parameter is on AND close > 2 * floor pivot point - low[1, T1, last completed bar]

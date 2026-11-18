@@ -1,0 +1,2 @@
+Long: Total cryptocurrency market capitalization > highest Total cryptocurrency market capitalization over prior P1 bars AND time > P2 AND time < P3
+Short: Total cryptocurrency market capitalization < lowest Total cryptocurrency market capitalization over prior P1 bars AND time > P2 AND time < P3

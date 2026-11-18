@@ -1,0 +1,6 @@
+Calculation: Session midpoint = (highest high and lowest low of chart bars since each T1 boundary)/2
+Calculation: Trend direction = positive when close is above the session midpoint, negative when below it, and otherwise the previous value, initialized to zero
+Long: Position is flat, trend direction is positive, chart bars since the T1 boundary > wait parameter, and close > most recent non-missing PivotHigh(high, left pivot lookback, right pivot lookback)[1]
+Short: Position is flat, trend direction is negative, chart bars since the T1 boundary > wait parameter, and close < most recent non-missing PivotLow(low, left pivot lookback, right pivot lookback)[1]
+Exit: Long, entry price != 0, trend direction is negative, close < entry price, and close < most recent non-missing PivotLow(low, left pivot lookback, right pivot lookback)[1]
+Exit: Short, entry price != 0, trend direction is positive, close > entry price, and close > most recent non-missing PivotHigh(high, left pivot lookback, right pivot lookback)[1]

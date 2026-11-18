@@ -1,0 +1,2 @@
+Long: dayofweek(datetime) = Monday AND close < close(T1, last completed bar on historical chart bars or still-forming bar in realtime, sampled on chart bars) AND IBS < P1 AND position size < P2
+Exit: long, close > high[P3] OR bars_since(long-entry condition, chart bars) = P4

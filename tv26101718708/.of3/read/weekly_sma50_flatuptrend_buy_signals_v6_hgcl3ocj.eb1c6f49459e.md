@@ -1,0 +1,1 @@
+Long: On chart bars where T1 changes, the last completed T1 close > the last completed T1 open AND the last completed T1 close > SMA(close, lookback, T1, last completed bar) AND SMA(close, lookback, T1, last completed bar) >= SMA(close, lookback, T1, preceding T1 bar) AND the last completed T1 close > the preceding T1 close AND the last completed T1 close > the preceding T1 open

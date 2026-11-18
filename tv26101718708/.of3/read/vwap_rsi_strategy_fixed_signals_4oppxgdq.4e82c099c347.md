@@ -1,0 +1,2 @@
+Long: close crosses above VWAP(close) AND RSI(close, RSI lookback) > long RSI threshold AND close - VWAP(close) <= maximum risk
+Short: close crosses below VWAP(close) AND RSI(close, RSI lookback) < short RSI threshold AND VWAP(close) - close <= maximum risk

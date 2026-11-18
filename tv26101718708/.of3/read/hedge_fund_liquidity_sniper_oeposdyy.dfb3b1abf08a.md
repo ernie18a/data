@@ -1,0 +1,8 @@
+Calculation: Long stop = entry-bar low - ATR(ATR length) * stop multiplier at entry; thereafter max(previous long stop, close - ATR(ATR length) * trailing-stop multiplier)
+Calculation: Short stop = entry-bar high + ATR(ATR length) * stop multiplier at entry; thereafter max(previous short stop, close - ATR(ATR length) * trailing-stop multiplier)
+Calculation: Long target = entry price + (entry price - (entry-bar low - ATR(ATR length) * stop multiplier)) * target multiplier
+Calculation: Short target = entry price - ((entry-bar high + ATR(ATR length) * stop multiplier) - entry price) * target multiplier
+Long: flat AND low < lowest(low, liquidity lookback)[previous bar] AND close > low AND crosses above highest(high, liquidity lookback)[previous bar] AND abs(close - open) > ATR(ATR length) * displacement multiplier AND low > high[two bars ago] AND close[previous bar] < open[previous bar] AND close > high[previous bar] AND close > SMA(T1 low from the current, still-forming T1 bar, sampled on chart bars, HTF lookback)
+Short: flat AND high > highest(high, liquidity lookback)[previous bar] AND close < high AND crosses below lowest(low, liquidity lookback)[previous bar] AND abs(close - open) > ATR(ATR length) * displacement multiplier AND high < low[two bars ago] AND close[previous bar] > open[previous bar] AND close < low[previous bar] AND close < SMA(T1 high from the current, still-forming T1 bar, sampled on chart bars, HTF lookback)
+Exit: long, high >= long target OR low <= long target OR low <= long stop OR high >= long stop
+Exit: short, high >= short target OR low <= short target OR low <= short stop OR high >= short stop

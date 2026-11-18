@@ -1,0 +1,4 @@
+Calculation: channel basis = SMA(close, Bollinger lookback)
+Calculation: trend baseline = EMA(close, trend lookback)
+Calculation: wake-up setup = channel basis + Bollinger deviation multiplier * STDEV(close, Bollinger lookback) < channel basis + ATR(ATR lookback) * Keltner multiplier AND channel basis - Bollinger deviation multiplier * STDEV(close, Bollinger lookback) > channel basis - ATR(ATR lookback) * Keltner multiplier AND PercentRank(volume, volume lookback) <= volume percentile threshold AND (close >= trend baseline OR change(trend baseline) >= 0)
+Long: wake-up setup AND NOT wake-up setup[1]

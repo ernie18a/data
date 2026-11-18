@@ -1,0 +1,1 @@
+Option: sell call, Volume Rate of Change of NQ futures volume on T1 over P1 bars[1] >= P2 AND Volume Rate of Change of NQ futures volume on T1 over P1 bars[2] >= P2

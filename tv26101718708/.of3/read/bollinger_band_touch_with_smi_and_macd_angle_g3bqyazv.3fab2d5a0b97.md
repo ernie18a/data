@@ -1,0 +1,3 @@
+Calculation: angle(x) = atan(x - x[1]) in degrees, where x[1] is the prior chart bar
+Long: source <= Lower Bollinger Band(source, lookback, multiplier) AND angle(SMA(Stochastic(close, high, low, lookback), smoothing lookback)) > 0 AND angle(SMA(Stochastic(close, high, low, lookback), smoothing lookback)) <= SMI angle threshold AND angle(MACD of the current T1 close, sampled on chart bars while the T1 bar is forming, fast lookback, slower lookback, signal lookback)) > 0 AND angle(MACD of the current T1 close, sampled on chart bars while the T1 bar is forming, fast lookback, slower lookback, signal lookback)) <= MACD angle threshold
+Exit: Long, source >= Upper Bollinger Band(source, lookback, multiplier)

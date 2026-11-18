@@ -1,0 +1,1 @@
+Long: close(T1, bar still forming, evaluated on T1 bars and sampled on chart bars) < (1 - deviation threshold) * SMA(close, lookback, T1, bar still forming, evaluated on T1 bars and sampled on chart bars)

@@ -1,0 +1,2 @@
+Long: close > R1(Floor Pivot Points(high(T1, last completed bar), low(T1, last completed bar), close(T1, last completed bar)), evaluated on chart bars)
+Short: close < S1(Floor Pivot Points(high(T1, last completed bar), low(T1, last completed bar), close(T1, last completed bar)), evaluated on chart bars)

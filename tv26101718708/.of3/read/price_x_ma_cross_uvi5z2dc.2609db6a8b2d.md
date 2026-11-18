@@ -1,0 +1,2 @@
+Long: close crosses above the selected moving average (SMA, EMA, WMA, HMA, VWMA, RMA, or TEMA) of the selected source over the lookback, multiplied by (1 + tolerance / 100), AND year > start year OR (year = start year AND month >= start month)
+Short: close crosses below the selected moving average (SMA, EMA, WMA, HMA, VWMA, RMA, or TEMA) of the selected source over the lookback, multiplied by (1 - tolerance / 100), AND year > start year OR (year = start year AND month >= start month)

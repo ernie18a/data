@@ -1,0 +1,3 @@
+Calculation: positive-volume cumulative ROC = positive-volume cumulative ROC[1] + ROC(close, 1) when volume > volume[1], otherwise positive-volume cumulative ROC[1], initialized at zero
+Long: positive-volume cumulative ROC > EMA(positive-volume cumulative ROC, lookback) OR (positive-volume cumulative ROC = EMA(positive-volume cumulative ROC, lookback) AND previous direction was long)
+Short: positive-volume cumulative ROC < EMA(positive-volume cumulative ROC, lookback) OR (positive-volume cumulative ROC = EMA(positive-volume cumulative ROC, lookback) AND previous direction was short)

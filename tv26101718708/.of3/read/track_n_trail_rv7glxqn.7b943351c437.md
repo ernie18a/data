@@ -1,0 +1,2 @@
+Long: Supertrend(ATR(lookback), fast factor) is up AND Supertrend(ATR(the same lookback), slow factor) is up AND close > SMA(high, lookback) AND close > VWAP(close) AND close > EMA(close, lookback)
+Short: Supertrend(ATR(lookback), fast factor) is down AND Supertrend(ATR(the same lookback), slow factor) is down AND close < SMA(low, the same SMA lookback) AND close < VWAP(close) AND close < EMA(close, the same EMA lookback)

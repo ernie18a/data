@@ -1,0 +1,5 @@
+Long: chart close > EMA(close, EMA lookback, T1, last completed T1 bar) AND chart close > EMA(close, EMA lookback, T2, last completed T2 bar) AND chart close > EMA(close, EMA lookback, T3, last completed T3 bar) AND StochRSI K(RSI lookback, stochastic lookback, K smoothing) crosses above StochRSI D(RSI lookback, stochastic lookback, K smoothing, D smoothing) AND flat
+Short: chart close < EMA(close, EMA lookback, T1, last completed T1 bar) AND chart close < EMA(close, EMA lookback, T2, last completed T2 bar) AND chart close < EMA(close, EMA lookback, T3, last completed T3 bar) AND StochRSI K(RSI lookback, stochastic lookback, K smoothing) crosses below StochRSI D(RSI lookback, stochastic lookback, K smoothing, D smoothing) AND flat
+Calculation: signal ATR = ATR(ATR lookback) on the chart bar generating the entry signal
+Exit: long, bar low <= entry price - signal ATR × stop multiplier OR bar high >= entry price + signal ATR × target multiplier
+Exit: short, bar high >= entry price + signal ATR × stop multiplier OR bar low <= entry price - signal ATR × target multiplier

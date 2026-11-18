@@ -1,0 +1,2 @@
+Long: PSAR trend is bearish AND RSI(close, RSI lookback) > RSI threshold AND ADX(DI lookback, ADX smoothing lookback) > EMA(ADX(DI lookback, ADX smoothing lookback), EMA lookback) AND CMF(CMF lookback) > 0
+Exit: long, PSAR trend is bullish AND RSI(close, RSI lookback) < RSI threshold AND ADX(DI lookback, ADX smoothing lookback) < EMA(ADX(DI lookback, ADX smoothing lookback), EMA lookback) AND CMF(CMF lookback) < 0

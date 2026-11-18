@@ -1,0 +1,3 @@
+Calculation: Yield range position = (close(T1) - Lowest(chart-bar series of close(T1), lookback)) / (Highest(chart-bar series of close(T1), lookback) - Lowest(chart-bar series of close(T1), lookback)); use the flat-range fallback parameter when Highest equals Lowest. Calculate on chart bars using the gaps-off T1 close series; historical values use completed T1 bars, and real-time values may use the still-forming T1 bar.
+Long: close(T1) is available AND Yield range position <= threshold
+Exit: Long, close(T1) is available AND Yield range position > threshold

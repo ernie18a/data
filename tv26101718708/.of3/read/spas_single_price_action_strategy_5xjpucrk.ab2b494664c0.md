@@ -1,0 +1,2 @@
+Long: close[1] >= open[1] AND close[2] >= open[2] AND close[3] >= open[3] AND the volume filter condition is met
+Short: close[1] <= open[1] AND close[2] <= open[2] AND close[3] <= open[3] AND the volume filter condition is met

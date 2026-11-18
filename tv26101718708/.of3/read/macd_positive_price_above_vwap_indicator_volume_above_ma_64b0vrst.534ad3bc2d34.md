@@ -1,0 +1,1 @@
+Long: MACD line(close, fast lookback, slow lookback) > MACD signal line(close, fast lookback, slow lookback, signal lookback) AND close > VWAP(close) AND close > high[1] AND volume > SMA(volume, lookback)

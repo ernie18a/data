@@ -1,0 +1,2 @@
+Long: close(T1, bar still forming, sampled on chart bars) crosses below SMA(close, P1, T1, bar still forming, sampled on chart bars)
+Exit: long, close(T1, bar still forming, sampled on chart bars) crosses above SMA(close, P1, T1, bar still forming, sampled on chart bars)

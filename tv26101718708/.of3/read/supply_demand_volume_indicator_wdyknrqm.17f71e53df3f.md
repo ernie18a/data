@@ -1,0 +1,2 @@
+Long: SMA(if close > open then volume else 0, lookback) > SMA(if close < open then volume else 0, lookback)
+Short: SMA(if close > open then volume else 0, lookback) <= SMA(if close < open then volume else 0, lookback)

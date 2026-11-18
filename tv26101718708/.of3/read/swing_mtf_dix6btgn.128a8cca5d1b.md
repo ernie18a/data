@@ -1,0 +1,3 @@
+Calculation: T1 RSI(x) = RSI(x, P) calculated on T1 bars and mapped to chart bars; historically use completed T1 values, and in real time hold the prior value until the final chart bar of each T1 interval, then use the still-forming T1 value
+Long: T1 RSI(open) > T1 RSI(close) AND T1 RSI(close)[N] is no greater than each of T1 RSI(close)[0] through T1 RSI(close)[N-1] AND is less than each of T1 RSI(close)[N+1] through T1 RSI(close)[2N-1]
+Short: T1 RSI(open) < T1 RSI(close) AND T1 RSI(open)[N] is no less than each of T1 RSI(open)[0] through T1 RSI(open)[N-1] AND is greater than each of T1 RSI(open)[N+1] through T1 RSI(open)[2N-1]

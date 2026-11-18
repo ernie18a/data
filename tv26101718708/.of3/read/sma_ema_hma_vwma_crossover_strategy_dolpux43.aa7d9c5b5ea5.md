@@ -1,0 +1,2 @@
+Long: On chart bars, crossover(MA(close, longer lookback, type 1), MA(close, shorter lookback, type 2)), with each type selected independently from SMA, EMA, HMA, or VWMA
+Short: On chart bars, crossunder(MA(close, longer lookback, type 1), MA(close, shorter lookback, type 2)), with each type selected independently from SMA, EMA, HMA, or VWMA

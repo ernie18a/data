@@ -1,0 +1,2 @@
+Long: (reverse disabled AND volume < SMA(volume, lookback)) OR (reverse enabled AND volume > SMA(volume, lookback)) OR (volume = SMA(volume, lookback) AND position side is long)
+Short: (reverse disabled AND volume > SMA(volume, lookback)) OR (reverse enabled AND volume < SMA(volume, lookback)) OR (volume = SMA(volume, lookback) AND position side is short)

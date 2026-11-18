@@ -1,0 +1,4 @@
+Long: MFI(hlc3, MFI lookback) < long threshold AND RSI(hlc3, RSI lookback) < long threshold AND SMA(StochRSI(close, Stoch RSI RSI lookback, Stochastic lookback), K smoothing) < long threshold AND SMA(SMA(StochRSI(close, Stoch RSI RSI lookback, Stochastic lookback), K smoothing), D smoothing) < long threshold
+Short: MFI(hlc3, MFI lookback) > short threshold AND RSI(hlc3, RSI lookback) > short threshold AND SMA(StochRSI(close, Stoch RSI RSI lookback, Stochastic lookback), K smoothing) > short threshold AND SMA(SMA(StochRSI(close, Stoch RSI RSI lookback, Stochastic lookback), K smoothing), D smoothing) > short threshold
+Exit: long, low <= entry price * long stop multiplier
+Exit: short, high >= entry price * short stop multiplier

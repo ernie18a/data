@@ -1,0 +1,4 @@
+Calculation: Combined volume = sum of source instrument volumes on each chart bar
+Calculation: Volume percentage above average = 100 * (combined volume - SMA(combined volume, lookback parameter)) / SMA(combined volume, lookback parameter)
+Long: close > close[1] AND open - close < price-difference parameter AND close - low < price-difference parameter AND high - open < price-difference parameter AND volume percentage above average > volume-percentage parameter AND combined volume > SMA(combined volume, lookback parameter)
+Exit: long, low <= entry price - stop-loss parameter in ticks OR high >= entry price + take-profit parameter in ticks OR, after high reaches entry price + trailing-activation parameter in ticks, low <= highest high since activation - trailing-offset parameter in ticks

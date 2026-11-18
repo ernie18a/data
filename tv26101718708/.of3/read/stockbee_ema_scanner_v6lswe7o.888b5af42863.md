@@ -1,0 +1,3 @@
+Calculation: average volume = SMA(volume, lookback)
+Long: close > EMA(close, shortest lookback) AND EMA(close, shortest lookback) > EMA(close, intermediate lookback) AND EMA(close, intermediate lookback) > EMA(close, longest lookback) AND close > open * momentum threshold AND volume > average volume * volume threshold
+Long: close > EMA(close, shortest lookback) AND EMA(close, shortest lookback) > EMA(close, intermediate lookback) AND EMA(close, intermediate lookback) > EMA(close, longest lookback) AND close > open * episodic pivot threshold AND volume > average volume * episodic pivot volume threshold

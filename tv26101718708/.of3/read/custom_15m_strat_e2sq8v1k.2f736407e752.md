@@ -1,0 +1,9 @@
+Calculation: T1 return = (T1 close on the bar still forming - T1 close on the last completed bar) / T1 close on the last completed bar, sampled on chart bars
+Long: HMA(close, lookback) > HMA(close, lookback)[1]
+Short: HMA(close, lookback) <= HMA(close, lookback)[1]
+Long: HMA(close, lookback) crosses above HMA(close, lookback)[1]
+Short: HMA(close, lookback) crosses below HMA(close, lookback)[1]
+Long: open trade count < open-trade limit parameter AND HMA(close, lookback) > HMA(close, lookback)[1] AND close > HMA(close, lookback)[1] AND T1 return > return threshold AND unshifted Ichimoku Span A(conversion lookback, base lookback) > unshifted Ichimoku Span B(lookback) AND open < close AND MACD(close, fast lookback, slow lookback) > EMA(MACD(close, fast lookback, slow lookback), signal lookback)
+Short: open trade count < open-trade limit parameter AND HMA(close, lookback) < HMA(close, lookback)[1] AND close < HMA(close, lookback)[1] AND T1 return < return threshold AND unshifted Ichimoku Span A(conversion lookback, base lookback) < unshifted Ichimoku Span B(lookback) AND open > close AND MACD(close, fast lookback, slow lookback) < EMA(MACD(close, fast lookback, slow lookback), signal lookback)
+Exit: Long, HMA(close, lookback) < HMA(close, lookback)[1] AND close < HMA(close, lookback)[1] AND T1 return < return threshold OR unrealized profit < stop-loss threshold OR unrealized profit > profit-target threshold
+Exit: Short, HMA(close, lookback) > HMA(close, lookback)[1] AND close > HMA(close, lookback)[1] AND T1 return > return threshold OR unrealized profit < stop-loss threshold OR unrealized profit > profit-target threshold

@@ -1,0 +1,2 @@
+Calculation: Composite Bitcoin volume = sum of volume from Binance BTCUSDC, Bitstamp BTCUSD, Bitfinex BTCUSD, Coinbase BTCUSD, BitMEX XBTUSD, HitBTC BTCUSD, Kraken BTCUSD, Bittrex BTCUSD, and Huobi BTCUSDT on T1
+Long: open - close < P1 AND close - low < P1 AND high - open < P1 AND ((composite Bitcoin volume - SMA(composite Bitcoin volume, P2)) / SMA(composite Bitcoin volume, P2)) * 100 > P3 AND composite Bitcoin volume > SMA(composite Bitcoin volume, P2) AND close > previous close

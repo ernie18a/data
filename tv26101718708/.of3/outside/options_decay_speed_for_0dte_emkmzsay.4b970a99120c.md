@@ -1,0 +1,4 @@
+Calculation: underlying range speed = (highest underlying high over lookback bars − lowest underlying low over lookback bars) × bars per hour ÷ lookback bars
+Calculation: option decay threshold = if bar hour > late-session cutoff hour then late-session cap else ((time cubic coefficient × elapsed days³ − time quadratic coefficient × elapsed days² + time linear coefficient × elapsed days − time constant) × volatility index ÷ volatility normalization ÷ decay scale) × (−delta cubic magnitude × option delta³ + delta quadratic coefficient × option delta² − delta linear coefficient × option delta + delta constant), where elapsed days = (bar timestamp − timestamp of bar date at reference-hour offset) ÷ milliseconds per day
+Option: sell call, underlying range speed ≤ option decay threshold
+Option: sell put, underlying range speed ≤ option decay threshold

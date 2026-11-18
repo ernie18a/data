@@ -1,0 +1,2 @@
+Long: flat AND close >= MA(close, long-term lookback, long-term type) AND close >= MA(close, short-term lookback, short-term type) AND ROC(close, lookback) >= ROC threshold AND close(T1, current possibly forming bar) * volume(T1, current possibly forming bar) > minimum T1 close-times-volume threshold, evaluated on chart bars
+Exit: long, crosses below MA(close, stop-MA lookback, stop-MA type)

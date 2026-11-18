@@ -1,0 +1,8 @@
+Calculation: Smoothed stochastic = SMA(Stochastic(close, high, low, stochastic lookback), stochastic smoothing lookback)
+Calculation: Relative-flow line = clamp((MFI(hlc3, MFI lookback) / RSI(close, RSI lookback)) * ((RSI(close, RSI lookback) + MFI(hlc3, MFI lookback)) / 2), 0, 100)
+Calculation: Smoothed relative-flow midpoint = SMA((Relative-flow line + clamp((RSI(close, RSI lookback) / MFI(hlc3, MFI lookback)) * ((RSI(close, RSI lookback) + MFI(hlc3, MFI lookback)) / 2), 0, 100)) / 2, relative-flow smoothing lookback)
+Calculation: Smoothed relative-flow line = SMA(Relative-flow line, relative-flow smoothing lookback)
+Long: Smoothed stochastic crosses above Smoothed relative-flow midpoint OR (Smoothed stochastic <= long oversold threshold AND Smoothed relative-flow line < long flow threshold)
+Short: Smoothed stochastic crosses below Smoothed relative-flow midpoint OR (Smoothed stochastic >= short overbought threshold AND Smoothed relative-flow line > short flow threshold)
+Exit: long, low <= entry signal bar low - ATR(ATR lookback) OR high >= entry signal bar close * long profit multiple OR (Smoothed relative-flow line > long exit threshold AND Smoothed stochastic > long exit threshold)
+Exit: short, high >= entry signal bar high + ATR(ATR lookback) OR low <= entry signal bar close * short profit multiple OR (Smoothed relative-flow line < short exit threshold AND Smoothed stochastic < short exit threshold) OR Smoothed stochastic <= short oversold exit threshold

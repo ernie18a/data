@@ -1,0 +1,2 @@
+Short: current time > timestamp(P1, P2, P3, P4, P5) AND closing price > opening price AND opening price > previous closing price
+Long: current time > timestamp(P1, P2, P3, P4, P5) AND closing price < opening price AND opening price < previous closing price

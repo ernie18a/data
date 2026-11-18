@@ -1,0 +1,5 @@
+Calculation: T2 OHLC4 return = (T2 OHLC4 - previous T2 OHLC4) / previous T2 OHLC4
+Long: HMA(DXY OHLC4 on T1, P1)[1] < HMA(DXY OHLC4 on T1, P1)[2] AND HMA(XAUAUD OHLC4 on T1, P1)[1] > HMA(XAUAUD OHLC4 on T1, P1)[2] AND HMA(BTCUSD OHLC4 on T1, P1)[1] > HMA(BTCUSD OHLC4 on T1, P1)[2] AND T2 OHLC4 return[1] > P2 AND open trades < P3
+Short: HMA(DXY OHLC4 on T1, P1)[1] > HMA(DXY OHLC4 on T1, P1)[2] AND HMA(XAUAUD OHLC4 on T1, P1)[1] < HMA(XAUAUD OHLC4 on T1, P1)[2] AND HMA(BTCUSD OHLC4 on T1, P1)[1] < HMA(BTCUSD OHLC4 on T1, P1)[2] AND T2 OHLC4 return[1] < P2 AND open trades < P3
+Exit: Long, HMA(DXY OHLC4 on T1, P1)[1] > HMA(DXY OHLC4 on T1, P1)[2] AND T2 OHLC4 return[1] < P2
+Exit: Short, HMA(DXY OHLC4 on T1, P1)[1] < HMA(DXY OHLC4 on T1, P1)[2] AND T2 OHLC4 return[1] > P2

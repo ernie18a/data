@@ -1,0 +1,2 @@
+Long: (volume - SMA(volume, lookback)) / standard deviation(volume, lookback) >= standard deviation threshold AND close >= open
+Short: (volume - SMA(volume, lookback)) / standard deviation(volume, lookback) >= standard deviation threshold AND close < open

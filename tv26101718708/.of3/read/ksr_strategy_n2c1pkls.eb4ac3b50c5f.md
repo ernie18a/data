@@ -1,0 +1,7 @@
+Long: EMA(close, shorter crossover lookback) crosses above EMA(close, longer crossover lookback)
+Short: EMA(close, shorter crossover lookback) crosses below EMA(close, longer crossover lookback)
+Long: EMA(close, shorter crossover lookback) > EMA(close, longer crossover lookback)
+Long: EMA(Heikin-Ashi close, HA EMA lookback, T1 shorter timeframe still-forming bar, sampled on chart bars) > EMA(Heikin-Ashi open, same HA EMA lookback, T1 shorter timeframe still-forming bar, sampled on chart bars)
+Short: EMA(Heikin-Ashi close, HA EMA lookback, T1 shorter timeframe still-forming bar, sampled on chart bars) <= EMA(Heikin-Ashi open, same HA EMA lookback, T1 shorter timeframe still-forming bar, sampled on chart bars)
+Long: EMA(Heikin-Ashi close, HA EMA lookback, T2 longer timeframe still-forming bar, sampled on chart bars) > EMA(Heikin-Ashi open, same HA EMA lookback, T2 longer timeframe still-forming bar, sampled on chart bars)
+Short: EMA(Heikin-Ashi close, HA EMA lookback, T2 longer timeframe still-forming bar, sampled on chart bars) <= EMA(Heikin-Ashi open, same HA EMA lookback, T2 longer timeframe still-forming bar, sampled on chart bars)

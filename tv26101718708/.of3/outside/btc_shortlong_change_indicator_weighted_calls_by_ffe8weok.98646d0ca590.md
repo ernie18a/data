@@ -1,0 +1,3 @@
+Calculation: weighted position-change value = BTCUSD long positions − BTCUSD short positions + P3 × ((change in BTCUSD long positions + P1 × absolute change in BTCUSD long positions) − (change in BTCUSD short positions + P2 × absolute change in BTCUSD short positions))
+Long: weighted position-change value crosses above WMA(weighted position-change value, P4)
+Short: weighted position-change value crosses below WMA(weighted position-change value, P4)

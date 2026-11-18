@@ -1,0 +1,2 @@
+Long: day of week is Monday AND close > VWAP AND close[1] < VWAP
+Exit: long, day of week is Sunday OR high >= entry price × (1 + take-profit parameter) OR low <= entry price × (1 - stop-loss parameter)

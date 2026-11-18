@@ -1,0 +1,3 @@
+Calculation: exponentially volume-weighted price = EMA(volume * close, lookback) / EMA(volume, same lookback)
+Long: exponentially volume-weighted price < close[1] when unreversed OR exponentially volume-weighted price > close[1] when reversed OR exponentially volume-weighted price = close[1] AND position side is long
+Short: exponentially volume-weighted price > close[1] when unreversed OR exponentially volume-weighted price < close[1] when reversed OR exponentially volume-weighted price = close[1] AND position side is short

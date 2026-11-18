@@ -1,0 +1,10 @@
+Long: HMA(close, shorter HMA lookback) > HMA(close[2], same lookback)
+Short: HMA(close, shorter HMA lookback) <= HMA(close[2], same lookback)
+Long: HMA(close, shorter HMA lookback) crosses above HMA(close[2], same lookback)
+Short: HMA(close, shorter HMA lookback) crosses below HMA(close[2], same lookback)
+Long: HMA(close, shorter HMA lookback) > HMA(close[2], same lookback) AND HMA(close, longer HMA lookback) crosses HMA(close[2], same lookback)
+Short: HMA(close, shorter HMA lookback) <= HMA(close[2], same lookback) AND HMA(close, longer HMA lookback) crosses HMA(close[2], same lookback)
+Long: no open trades AND HMA(close, shorter HMA lookback) > HMA(close[2], same lookback) AND MACD(close, shorter MACD lookback, longer MACD lookback) > EMA(MACD(close, shorter MACD lookback, longer MACD lookback), signal lookback) AND HMA(close, shorter HMA lookback) < VWMA(close, VWMA lookback) AND HMA(close, longer HMA lookback) > HMA(close[2], same lookback) AND EMA(TSI(close, longer TSI lookback, shorter TSI lookback), TSI signal lookback) > lower threshold
+Short: no open trades AND HMA(close, shorter HMA lookback) < HMA(close[2], same lookback) AND MACD(close, shorter MACD lookback, longer MACD lookback) < EMA(MACD(close, shorter MACD lookback, longer MACD lookback), signal lookback) AND HMA(close, shorter HMA lookback) > VWMA(close, VWMA lookback) AND HMA(close, longer HMA lookback) < HMA(close[2], same lookback) AND EMA(TSI(close, longer TSI lookback, shorter TSI lookback), TSI signal lookback) < upper threshold
+Exit: long, HMA(close, shorter HMA lookback) < HMA(close[2], same lookback) AND HMA(close, longer HMA lookback) < HMA(close[2], same lookback) AND HMA(close, shorter HMA lookback) > VWMA(close, VWMA lookback)
+Exit: short, HMA(close, shorter HMA lookback) > HMA(close[2], same lookback) AND HMA(close, longer HMA lookback) > HMA(close[2], same lookback) AND HMA(close, shorter HMA lookback) < VWMA(close, VWMA lookback)

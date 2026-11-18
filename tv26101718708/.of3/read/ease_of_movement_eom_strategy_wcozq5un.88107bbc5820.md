@@ -1,0 +1,3 @@
+Calculation: range-momentum score = scale parameter × Momentum((high - low) / 2, one-bar lookback) / (volume / (high - low)) when (high - low) != 0 and volume / (high - low) != 0, otherwise 0
+Long: range-momentum score > long threshold OR (range-momentum score >= short threshold AND range-momentum score <= long threshold AND previous signal state is long)
+Short: range-momentum score <= long threshold AND (range-momentum score < short threshold OR (range-momentum score >= short threshold AND previous signal state is short))

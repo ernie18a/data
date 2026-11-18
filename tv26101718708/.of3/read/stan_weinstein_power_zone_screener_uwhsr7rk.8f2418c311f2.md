@@ -1,0 +1,2 @@
+Long: chart close crosses above the selected SMA or EMA of T1 close over lookback, using the still-forming T1 bar and evaluated on chart bars
+Exit: long, chart close crosses below the selected SMA or EMA of T1 close over lookback, using the still-forming T1 bar and evaluated on chart bars

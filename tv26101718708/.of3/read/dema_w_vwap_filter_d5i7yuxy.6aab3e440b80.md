@@ -1,0 +1,2 @@
+Long: change(EMA(close, lookback)) > 0 AND EMA(close, lookback) < VWAP
+Exit: long, (change(EMA(close, lookback)) < 0 AND close > VWAP) OR (crosses below(EMA(close, lookback), VWAP) AND change(EMA(close, lookback)) > 0)

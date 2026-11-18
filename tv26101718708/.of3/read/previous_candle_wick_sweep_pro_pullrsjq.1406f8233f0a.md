@@ -1,0 +1,2 @@
+Long: low < low[1] AND close > low[1], using chart bars, OR low < low[1, T1, last completed bar, sampled on chart bars] AND close > low[1, T1, last completed bar, sampled on chart bars]
+Short: high > high[1] AND close < high[1], using chart bars, OR high > high[1, T1, last completed bar, sampled on chart bars] AND close < high[1, T1, last completed bar, sampled on chart bars]

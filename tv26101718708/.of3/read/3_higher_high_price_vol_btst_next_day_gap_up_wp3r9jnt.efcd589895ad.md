@@ -1,0 +1,2 @@
+Long: volume > volume[1] AND volume[1] > volume[2] AND volume > SMA(volume, lookback) AND volume[1] > SMA(volume, lookback)[1] AND volume[2] > SMA(volume, lookback)[2] AND time(T1, entry-session parameter, current/forming T1 bar) is nonempty on the chart bar AND ((high > high[1] AND high[1] > high[2] AND close > open AND close[1] > open[1] AND close[2] > open[2]) OR (low < low[1] AND low[1] < low[2] AND close < open AND close[1] < open[1] AND close[2] < open[2]))
+Exit: Long, time(T1, exit-session parameter, current/forming T1 bar) is nonempty on the chart bar

@@ -1,0 +1,3 @@
+Long: EMA(close, shorter lookback) > EMA(close, longer lookback) AND ZVWAP(close, lookback) crosses above zero AND ZVWAP(close, lookback) was at or below the oversold threshold within the prior dip lookback
+Long: While long, close < entry price AND ZVWAP(close, lookback) crosses above zero
+Exit: Long, close < entry price × (1 − stop-loss percentage) OR ZVWAP(close, lookback) crosses below the overbought threshold

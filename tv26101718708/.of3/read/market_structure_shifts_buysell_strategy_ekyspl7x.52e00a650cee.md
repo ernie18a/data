@@ -1,0 +1,2 @@
+Long: crosses above close and high[structure lookback] AND close > EMA(close, long-term lookback) AND RSI(close, RSI lookback) > threshold AND OBV > EMA(OBV, OBV EMA lookback)
+Short: crosses below close and low[structure lookback] AND close < EMA(close, long-term lookback) AND RSI(close, RSI lookback) < threshold AND OBV < EMA(OBV, OBV EMA lookback)

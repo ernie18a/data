@@ -1,0 +1,5 @@
+Calculation: spread = first security close - second security close * SMA(first security close / second security close, P1)
+Long: spread crosses below lower Bollinger Band(spread, P2, P3)
+Short: spread crosses above upper Bollinger Band(spread, P2, P3)
+Exit: long, spread crosses above middle Bollinger Band(spread, P2, P3)
+Exit: short, spread crosses below middle Bollinger Band(spread, P2, P3)

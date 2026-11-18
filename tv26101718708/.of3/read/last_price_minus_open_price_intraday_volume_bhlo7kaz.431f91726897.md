@@ -1,0 +1,4 @@
+Calculation: Intraday lookback = max(1, nz(bars since the last change in the last completed T1 close, on chart bars) + 1)
+Calculation: Signed volume = volume * round_to_mintick(round_to_mintick(close) - last completed T1 close), evaluated on chart bars using the T1 close carried onto chart bars
+Long: Signed volume crosses above SMA(Signed volume, Intraday lookback) on chart bars AND volume crosses above SMA(volume, Volume lookback) on chart bars
+Short: Signed volume crosses below SMA(Signed volume, Intraday lookback) on chart bars AND volume crosses below SMA(volume, Volume lookback) on chart bars

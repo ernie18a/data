@@ -1,0 +1,2 @@
+Long: chart close > the pivot resistance level selected by a resistance-level parameter, calculated on chart bars from high, low, and close of the still-forming T1 bar carried onto chart bars
+Short: chart close < the pivot support level selected by a separate support-level parameter, calculated on chart bars from high, low, and close of the still-forming T1 bar carried onto chart bars

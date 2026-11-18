@@ -1,0 +1,3 @@
+Calculation: Scaled triple log VWMA change = scale factor * change(VWMA(VWMA(VWMA(log(close), TRAX lookback), TRAX lookback), TRAX lookback))
+Long: DPO(close, DPO lookback) crosses above scaled triple log VWMA change AND scaled triple log VWMA change < 0 AND close > SMA(selected source, SMA confirmation lookback)
+Short: DPO(close, DPO lookback) crosses below scaled triple log VWMA change AND scaled triple log VWMA change > 0 AND close < SMA(selected source, SMA confirmation lookback)

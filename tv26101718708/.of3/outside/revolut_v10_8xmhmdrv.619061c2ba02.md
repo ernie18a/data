@@ -1,0 +1,1 @@
+Long: chart time >= timestamp(start year parameter, start month parameter, start day parameter, 00:00) AND chart time <= timestamp(end year parameter, end month parameter, end day parameter, 23:59)

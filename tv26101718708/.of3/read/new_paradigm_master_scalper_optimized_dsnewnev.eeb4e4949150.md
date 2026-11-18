@@ -1,0 +1,4 @@
+Long: low <= (VWAP - expected-move multiple * base volatility * global volatility multiplier) * lower-wall touch factor AND close > open AND volume > SMA(volume, volume lookback) * volume-spike factor AND (trend filter disabled OR close > EMA(close, trend lookback)) AND (session filter disabled OR chart bar time is in the configured session)
+Short: high >= (VWAP + expected-move multiple * base volatility * global volatility multiplier) * upper-wall touch factor AND close < open AND volume > SMA(volume, volume lookback) * volume-spike factor AND (trend filter disabled OR close < EMA(close, trend lookback)) AND (session filter disabled OR chart bar time is in the configured session)
+Exit: long, high >= entry price + take-profit tick distance OR low <= entry price - stop-loss tick distance
+Exit: short, low <= entry price - take-profit tick distance OR high >= entry price + stop-loss tick distance

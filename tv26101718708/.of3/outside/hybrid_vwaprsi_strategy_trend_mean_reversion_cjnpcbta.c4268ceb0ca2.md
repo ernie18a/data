@@ -1,0 +1,2 @@
+Long: chart close < VWAP AND RSI(chart close, P1) < P2 AND ATR(P3) / chart close > P4 AND (trend filter disabled OR T1 close of the external trend instrument > SMA(T1 close of the external trend instrument, P5))
+Short: chart close > VWAP AND RSI(chart close, P1) > P6 AND ATR(P3) / chart close > P4 AND trend filter enabled AND T1 close of the external trend instrument <= SMA(T1 close of the external trend instrument, P5)

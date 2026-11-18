@@ -1,0 +1,3 @@
+Calculation: Body percentage = abs(open - close) / abs(high - low) * 100
+Long: datetime >= start parameter AND datetime <= finish parameter AND close > EMA(close, shorter lookback) AND EMA(close, shorter lookback) > EMA(close, longer lookback) AND open[1] > close[1] AND open <= close AND low < low[1] AND high > high[1] AND Body percentage > body threshold parameter AND Body percentage[1] > body threshold parameter AND volume > volume[1] * volume multiplier parameter
+Exit: long, datetime >= start parameter AND datetime <= finish parameter AND (close < EMA(close, shorter lookback) AND EMA(close, shorter lookback) < EMA(close, longer lookback) OR open[1] < close[1] AND open >= close AND low < low[1] AND high > high[1])

@@ -1,0 +1,2 @@
+Long: KAMA(close, lookback L1, fast length F1, slow length S1) > KAMA(close, lookback L2, fast length F2, slow length S2) AND FRAMA(hl2, lookback L3, fast parameter F3, slow parameter S3) > FRAMA(hl2, lookback L4, fast parameter F4, slow parameter S4)
+Short: KAMA(close, lookback L1, fast length F1, slow length S1) < KAMA(close, lookback L2, fast length F2, slow length S2) AND FRAMA(hl2, lookback L3, fast parameter F3, slow parameter S3) < FRAMA(hl2, lookback L4, fast parameter F4, slow parameter S4)

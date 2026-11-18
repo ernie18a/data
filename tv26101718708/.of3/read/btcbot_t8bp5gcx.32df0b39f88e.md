@@ -1,0 +1,8 @@
+Calculation: A = external OHLC4 series 1 from the previous completed T1 bar, mapped onto chart bars
+Calculation: B = external OHLC4 series 2 from the previous completed T1 bar, mapped onto chart bars
+Calculation: C = external OHLC4 series 3 from the previous completed T1 bar, mapped onto chart bars
+Calculation: R = (chart instrument OHLC4 from the previous completed T2 bar - chart instrument OHLC4 from the second previous T2 bar) / chart instrument OHLC4 from the second previous T2 bar, mapped onto chart bars
+Long: HMA(A, lookback parameter, on chart bars) < HMA(A[one chart bar ago], same lookback parameter, on chart bars) AND HMA(B, lookback parameter, on chart bars) > HMA(B[one chart bar ago], same lookback parameter, on chart bars) AND HMA(C, lookback parameter, on chart bars) > HMA(C[one chart bar ago], same lookback parameter, on chart bars) AND open-trade count < trade-count parameter AND R > return-threshold parameter
+Short: HMA(A, lookback parameter, on chart bars) > HMA(A[one chart bar ago], same lookback parameter, on chart bars) AND HMA(B, lookback parameter, on chart bars) < HMA(B[one chart bar ago], same lookback parameter, on chart bars) AND HMA(C, lookback parameter, on chart bars) < HMA(C[one chart bar ago], same lookback parameter, on chart bars) AND open-trade count < trade-count parameter AND R < return-threshold parameter
+Exit: long, HMA(A, lookback parameter, on chart bars) > HMA(A[one chart bar ago], same lookback parameter, on chart bars) AND R < return-threshold parameter
+Exit: short, HMA(A, lookback parameter, on chart bars) < HMA(A[one chart bar ago], same lookback parameter, on chart bars) AND R > return-threshold parameter

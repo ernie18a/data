@@ -1,0 +1,2 @@
+Long: MA(source, MA2 type [SMA/EMA/WMA/RMA], MA2 lookback, T2) >= MA(source, MA1 type [SMA/EMA/WMA/RMA], MA1 lookback, T1), calculated on each timeframe and mapped to chart bars using the forming timeframe bar in real time and the last completed value on historical bars
+Short: MA(source, MA2 type [SMA/EMA/WMA/RMA], MA2 lookback, T2) < MA(source, MA1 type [SMA/EMA/WMA/RMA], MA1 lookback, T1), calculated on each timeframe and mapped to chart bars using the forming timeframe bar in real time and the last completed value on historical bars

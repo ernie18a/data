@@ -1,0 +1,2 @@
+Long: source crosses above EMA(source, lookback) + standard deviation multiplier * standard deviation(source, lookback) AND volume > SMA(volume, volume lookback) * volume multiplier
+Short: source crosses below EMA(source, lookback) - standard deviation multiplier * standard deviation(source, lookback) AND volume > SMA(volume, volume lookback) * volume multiplier

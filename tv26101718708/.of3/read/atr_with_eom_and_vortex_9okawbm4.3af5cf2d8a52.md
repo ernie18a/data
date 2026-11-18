@@ -1,0 +1,3 @@
+Calculation: average vortex = (SUM(ABS(high - low[1]), vortex lookback) / SUM(TrueRange, vortex lookback) + SUM(ABS(low - high[1]), vortex lookback) / SUM(TrueRange, vortex lookback)) / 2
+Long: ATR(ATR lookback) > EMA(ATR(ATR lookback), EMA lookback) AND EaseOfMovement(EOM scale, EOM lookback) > 0 AND average vortex > vortex threshold
+Exit: long, ATR(ATR lookback) < EMA(ATR(ATR lookback), EMA lookback) AND EaseOfMovement(EOM scale, EOM lookback) < 0 AND average vortex < vortex threshold

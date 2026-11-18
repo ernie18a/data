@@ -1,0 +1,1 @@
+Long: traded instrument close < traded instrument open AND comparing instrument close > comparing instrument open

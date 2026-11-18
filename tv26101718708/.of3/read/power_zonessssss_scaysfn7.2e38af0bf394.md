@@ -1,0 +1,2 @@
+Long: close crosses above VWAP(close) AND RSI(close, RSI lookback) < RSI threshold AND close > EMA(close, EMA lookback)
+Short: close crosses below VWAP(close) AND RSI(close, RSI lookback) > RSI threshold AND close < EMA(close, EMA lookback)

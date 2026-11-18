@@ -1,0 +1,4 @@
+Calculation: percentage drop from prior high = (close - highest(high[1], high lookback)) / highest(high[1], high lookback)
+Calculation: consecutive green/flat bars = if close >= open then consecutive green/flat bars[1] + 1 else 0
+Long: percentage drop from prior high <= minimum drop threshold AND volume <= SMA(volume, volume-average lookback) × maximum volume fraction AND RSI(close, RSI lookback) <= RSI threshold AND consecutive green/flat bars >= minimum consecutive-bar threshold
+Exit: long, high >= entry price × (1 + profit-target percentage) OR low <= entry price × (1 - stop-loss percentage)

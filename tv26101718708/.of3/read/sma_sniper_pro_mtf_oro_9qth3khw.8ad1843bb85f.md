@@ -1,0 +1,2 @@
+Long: On chart bars using values from the still-forming T1 bar, low(T1) <= SMA(close, lookback, T1) AND high(T1) >= SMA(close, lookback, T1) AND close(T1) > SMA(close, lookback, T1) AND min(close(T1), open(T1)) - low(T1) > abs(close(T1) - open(T1)) * wick/body multiplier
+Short: On chart bars using values from the still-forming T1 bar, low(T1) <= SMA(close, lookback, T1) AND high(T1) >= SMA(close, lookback, T1) AND close(T1) < SMA(close, lookback, T1) AND high(T1) - max(close(T1), open(T1)) > abs(close(T1) - open(T1)) * wick/body multiplier

@@ -1,0 +1,2 @@
+Calculation: Latest confirmed pivot low = most recent non-na Pivot Low(low, left lookback parameter, right lookback parameter)
+Long: latest confirmed pivot low exists AND close > latest confirmed pivot low AND close > SMA(close, lookback parameter) AND close < SMA(close, lookback parameter) × upper multiplier parameter AND close > open AND volume > volume[1]

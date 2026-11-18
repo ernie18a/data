@@ -1,0 +1,4 @@
+Calculation: Opening range high = highest high within the opening-range window on the current day
+Calculation: Opening range = highest high within the opening-range window on the current day − lowest low within the opening-range window on the current day
+Long: UTC date is on or after the start-date parameter AND weekday AND UTC time is within the entry window AND the opening-range window has ended AND close crosses above Opening range high AND close > open AND volume > SMA(volume, volume-average lookback) × volume multiplier AND Opening range ≤ ATR(ATR lookback) × opening-range limit multiplier AND ATR(ATR lookback) ≤ SMA(ATR(high, low, close, ATR lookback), average lookback) × regime limit multiplier AND no earlier long signal occurred that day
+Exit: Long, low ≤ long-signal bar close − opening range at entry × stop multiplier OR high ≥ long-signal bar close + opening range at entry × target multiplier OR weekday and UTC time equals the session-close-time parameter

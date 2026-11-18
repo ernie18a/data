@@ -1,0 +1,3 @@
+Calculation: Change in whale asset holdings on T1 = whale asset holdings on T1 minus whale asset holdings on T1 change period parameter bars ago
+Long: Change in whale asset holdings on T1 > 0 AND (strategy mode is off OR Change in whale asset holdings on T1 > upper Bollinger Band of change in whale asset holdings on T1 (band length parameter, standard deviation parameter))
+Short: Change in whale asset holdings on T1 < 0 AND (strategy mode is off OR Change in whale asset holdings on T1 < lower Bollinger Band of change in whale asset holdings on T1 (band length parameter, standard deviation parameter))

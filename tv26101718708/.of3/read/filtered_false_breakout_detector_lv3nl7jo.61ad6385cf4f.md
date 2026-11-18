@@ -1,0 +1,2 @@
+Long: low[2] <= lowest(low, swing lookback)[3] AND low[1] < low[2] AND close > low[2] AND (higher-volume filter disabled OR volume[1] > volume[2])
+Short: high[2] >= highest(high, swing lookback)[3] AND high[1] > high[2] AND close < high[2] AND (higher-volume filter disabled OR volume[1] > volume[2])

@@ -1,0 +1,2 @@
+Long: On chart bars, the last completed T1 values of DEMA(close, shorter lookback) cross above DEMA(close, longer lookback).
+Short: On chart bars, the last completed T1 values of DEMA(close, shorter lookback) cross below DEMA(close, longer lookback).

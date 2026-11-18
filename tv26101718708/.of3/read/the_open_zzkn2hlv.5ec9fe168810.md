@@ -1,0 +1,2 @@
+Long: New York time equals the first configured time OR New York time equals the second configured time OR the prior bar's close remains locked
+Short: New York time equals the first configured time OR New York time equals the second configured time OR the prior bar's close remains locked

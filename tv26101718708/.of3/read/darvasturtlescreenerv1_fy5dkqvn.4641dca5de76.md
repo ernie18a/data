@@ -1,0 +1,1 @@
+Long: close crosses above high[3] AND volume > SMA(volume, lookback) * multiplier AND close = highest(close, lookback)

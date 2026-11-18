@@ -1,0 +1,5 @@
+Calculation: Bull trend = close > session VWAP(hlc3) AND EMA(close, short-term lookback) > EMA(close, medium-term lookback) > EMA(close, long-term lookback), where short-term < medium-term < long-term lookback, AND RSI(close, RSI lookback) > upper RSI threshold, which is greater than the separate lower RSI threshold, AND MACD histogram(close, fast lookback, slow lookback, signal lookback) > MACD zero line, where fast lookback < slow lookback
+Calculation: Bear trend = close < session VWAP(hlc3) AND EMA(close, short-term lookback) < EMA(close, medium-term lookback) < EMA(close, long-term lookback), where short-term < medium-term < long-term lookback, AND RSI(close, RSI lookback) < lower RSI threshold, which is less than the separate upper RSI threshold, AND MACD histogram(close, fast lookback, slow lookback, signal lookback) < MACD zero line, where fast lookback < slow lookback
+Calculation: Candle body fraction = abs(close - open) / (high - low)
+Long: Bull trend AND high > low AND Candle body fraction >= body-fraction threshold AND NOT Bull trend[1]
+Short: Bear trend AND high > low AND Candle body fraction >= body-fraction threshold AND NOT Bear trend[1]

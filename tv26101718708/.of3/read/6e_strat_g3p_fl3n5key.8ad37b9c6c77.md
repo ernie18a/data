@@ -1,0 +1,5 @@
+Calculation: active bullish FVG bottom = low on the latest chart bar where low > high[2] AND close[1] > open[1], retained until a short entry; undefined until such a bar
+Calculation: short target = signal-bar close - reward/risk parameter × max(signal-bar high - signal-bar close, minimum risk-distance parameter)
+Calculation: active short stop = signal-bar high until any bar low < entry price - break-even trigger parameter × tick size; thereafter entry price - break-even offset parameter × tick size until exit
+Short: active bullish FVG exists AND chart-bar close < active bullish FVG bottom AND chart-bar close < open(T1, still-forming T1 bar) AND (time-filter parameter is disabled OR chart bar is within the configured session in America/New_York)
+Exit: Short, chart-bar high >= active short stop OR chart-bar low <= short target

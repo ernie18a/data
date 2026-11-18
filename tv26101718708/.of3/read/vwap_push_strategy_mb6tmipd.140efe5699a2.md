@@ -1,0 +1,6 @@
+Calculation: Push-high = high of the latest bar where close > close[1] AND close[1] > close[2] AND close[2] > close[3] AND close[4] < VWAP(close) AND close[3] > VWAP(close)
+Calculation: Push-low = low of the latest bar where close < close[1] AND close[1] < close[2] AND close[2] < close[3] AND close[4] > VWAP(close) AND close[3] < VWAP(close) AND close < VWAP(close)
+Long: close crosses above Push-high AND close > VWAP(close)
+Short: close crosses below Push-low AND close < VWAP(close)
+Exit: long, close crosses below VWAP(close)
+Exit: short, close crosses above VWAP(close)

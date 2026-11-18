@@ -1,0 +1,1 @@
+Option: buy call, TTM Squeeze (length P1, Keltner multiplier P2, Bollinger multiplier P3) was on two bars ago and off on the previous and current bars AND EMA of close over P4 bars >= EMA of close over P5 bars AND TTM Squeeze momentum histogram > 0 and > its previous value (treat a missing previous value as 0)

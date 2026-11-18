@@ -1,0 +1,3 @@
+Calculation: Candle flow = SMA(((close - open) / max(high - low, minimum tick)) * multiplier, period) on T1 bars, including the bar still forming, with values mapped to chart bars
+Long: EMA(close, shorter lookback, T1 bar still forming) > EMA(close, longer lookback, T1 bar still forming) AND Candle flow > 0
+Short: EMA(close, shorter lookback, T1 bar still forming) < EMA(close, longer lookback, T1 bar still forming) AND Candle flow < 0

@@ -1,0 +1,5 @@
+Long: Bollinger %B(high of T1 current bar, longer lookback over chart bars taking T1 values) crosses above EMA(Bollinger %B, shorter lookback over chart bars) AND Bollinger %B − EMA(Bollinger %B) > margin parameter
+Short: Bollinger %B(high of T1 current bar, longer lookback over chart bars taking T1 values) crosses below EMA(Bollinger %B, shorter lookback over chart bars) AND Bollinger %B − EMA(Bollinger %B) < −margin parameter
+Calculation: trailing offset in ticks = tick-offset parameter in tick mode, otherwise signal-bar close × percentage-offset parameter × decimal-scale parameter
+Exit: long, after high reaches entry price + activation-distance parameter in ticks, low ≤ highest high since activation − trailing offset in ticks
+Exit: short, after low reaches entry price − activation-distance parameter in ticks, high ≥ lowest low since activation + trailing offset in ticks

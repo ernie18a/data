@@ -1,0 +1,2 @@
+Long: RSI(close, lookback) on T1 bars, using the bar still forming and sampled on chart bars, > long threshold
+Short: RSI(close, lookback) on T1 bars, using the bar still forming and sampled on chart bars, < short threshold

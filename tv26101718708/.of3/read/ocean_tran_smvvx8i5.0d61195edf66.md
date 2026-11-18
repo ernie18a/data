@@ -1,0 +1,2 @@
+Calculation: pivot-low trendline = line through the latest two confirmed pivot lows of low, using separate left and right lookbacks
+Short: close < MA(close, lookback) AND RSI(close, lookback) touches the pivot-low trendline

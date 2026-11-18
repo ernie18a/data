@@ -1,0 +1,4 @@
+Calculation: Current volume ratio = volume / volume[1]
+Calculation: Mean adjacent-bar volume ratio = mean(volume[n−1] / volume[n], n = 1…volume-ratio lookback)
+Long: close > SMA(close, channel lookback) + SMA(true range or high − low, selected by a parameter, same channel lookback) × channel multiplier AND Ichimoku conversion line (midpoint of highest high and lowest low over a shorter lookback) > Ichimoku base line (midpoint of highest high and lowest low over a longer lookback) AND current volume ratio > volume multiplier × mean adjacent-bar volume ratio
+Short: close < SMA(close, channel lookback) − SMA(true range or high − low, selected by a parameter, same channel lookback) × channel multiplier AND Ichimoku conversion line (midpoint of highest high and lowest low over a shorter lookback) < Ichimoku base line (midpoint of highest high and lowest low over a longer lookback) AND current volume ratio > volume multiplier × mean adjacent-bar volume ratio

@@ -1,0 +1,2 @@
+Option: buy put, previous bar open > previous bar close AND two-bars-prior open > two-bars-prior close AND SMA of bar midpoint (high + low) / 2 over P1 bars < SMA of bar midpoint (high + low) / 2 over P2 bars
+Option: buy call, previous bar open < previous bar close AND two-bars-prior open < two-bars-prior close AND SMA of bar midpoint (high + low) / 2 over P1 bars > SMA of bar midpoint (high + low) / 2 over P2 bars

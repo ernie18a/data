@@ -1,0 +1,1 @@
+Long: prior-bar McClellan Oscillator of (advancing issues - declining issues), using the short EMA length and long EMA length, < long threshold AND current-bar McClellan Oscillator of (advancing issues - declining issues), using the short EMA length and long EMA length, > long threshold

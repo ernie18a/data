@@ -1,0 +1,1 @@
+Long: (benchmark close / benchmark close N bars ago - 1) <= benchmark drop threshold AND (traded-instrument close / traded-instrument close N bars ago - 1) >= stock hold threshold

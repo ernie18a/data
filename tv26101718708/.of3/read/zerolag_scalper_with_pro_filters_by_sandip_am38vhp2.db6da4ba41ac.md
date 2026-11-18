@@ -1,0 +1,2 @@
+Long: close crosses above ZLEMA(close, lookback) AND ADX(DI lookback, smoothing) > minimum ADX AND (VWAP filter disabled OR close > VWAP(hlc3))
+Short: close crosses below ZLEMA(close, lookback) AND ADX(DI lookback, smoothing) > minimum ADX AND (VWAP filter disabled OR close < VWAP(hlc3))

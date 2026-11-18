@@ -1,0 +1,2 @@
+Long: RSI(BTC long-position count, P1) crosses above RSI(BTC short-position count, P1) AND change in BTC long-position count > EMA(change in BTC long-position count, P2) AND change in BTC short-position count < EMA(change in BTC short-position count, P2)
+Exit: long, RSI(BTC long-position count, P1) crosses below RSI(BTC short-position count, P1) AND change in BTC long-position count < EMA(change in BTC long-position count, P2) AND change in BTC short-position count > EMA(change in BTC short-position count, P2)

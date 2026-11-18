@@ -1,0 +1,4 @@
+Calculation: Short ratio SMA = SMA(ratio-series close from T1 (last completed historical value; forming value in real time), short ratio lookback, on chart bars)
+Calculation: Long ratio SMA = SMA(ratio-series close from T1 (last completed historical value; forming value in real time), long ratio lookback, on chart bars)
+Long: SMA(price-series close from T1 (last completed historical value; forming value in real time), short price lookback, on chart bars) crosses above SMA(price-series close from T1 (last completed historical value; forming value in real time), long price lookback, on chart bars) AND ratio-series close from T1 (last completed historical value; forming value in real time) > overbought threshold AND Short ratio SMA < Long ratio SMA
+Short: ratio-series close from T1 (last completed historical value; forming value in real time) < oversold threshold AND Short ratio SMA crosses above Long ratio SMA

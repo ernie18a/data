@@ -1,0 +1,5 @@
+Calculation: net liquidity = U.S. central bank balance sheet assets converted to billions (T1) - overnight reverse repurchase agreement balance (T1) - Treasury General Account balance (T1)
+Long: nearest-rank percentile of net liquidity over parameter P1 chart bars at parameter P2 is greater than its prior value OR nearest-rank percentile of net liquidity over parameter P1 chart bars at parameter P3 is greater than its prior value
+Short: net liquidity crosses below the nearest-rank percentile of net liquidity over parameter P1 chart bars at parameter P2 AND net liquidity crosses below the nearest-rank percentile of net liquidity over parameter P1 chart bars at parameter P3
+Exit: long, nearest-rank percentile of net liquidity over parameter P1 chart bars at parameter P2 is less than its prior value
+Exit: short, net liquidity crosses above the nearest-rank percentile of net liquidity over parameter P1 chart bars at parameter P2 AND net liquidity crosses above the nearest-rank percentile of net liquidity over parameter P1 chart bars at parameter P3

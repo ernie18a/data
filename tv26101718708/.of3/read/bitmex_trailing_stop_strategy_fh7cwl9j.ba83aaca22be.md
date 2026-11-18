@@ -1,0 +1,3 @@
+Calculation: Trailing stop = on chart bars, if low(T1, bar still forming) <= trailing stop[1] AND low(T1, bar still forming)[1] >= trailing stop[2], then close(T1, bar still forming) + short offset; else if high(T1, bar still forming) >= trailing stop[1] AND high(T1, bar still forming)[1] <= trailing stop[2], then close(T1, bar still forming) - long offset; else if high(T1, bar still forming) > trailing stop[1], then max(high(T1, bar still forming) - long offset, trailing stop[1]); else if low(T1, bar still forming) < trailing stop[1], then min(low(T1, bar still forming) + short offset, trailing stop[1]); else close(T1, bar still forming)
+Long: Trailing stop <= close(T1, bar still forming)
+Short: Trailing stop > close(T1, bar still forming)

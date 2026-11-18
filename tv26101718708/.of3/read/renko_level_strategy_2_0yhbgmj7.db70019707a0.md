@@ -1,0 +1,5 @@
+Calculation: threshold level = close on the first chart bar; thereafter, set to close when close > threshold level[1] + ATR(lookback, T1, calculated on T1 bars and sampled on chart bars, using the prior chart-bar sample) or close < threshold level[1] - ATR(lookback, T1, calculated on T1 bars and sampled on chart bars, using the prior chart-bar sample); otherwise retain threshold level[1]
+Calculation: upward-event count = number of upward threshold events since the latest downward threshold event; initialize to zero and reset to zero on a downward threshold event
+Long: close > threshold level[1] + ATR(lookback, T1, calculated on T1 bars and sampled on chart bars, using the prior chart-bar sample)
+Long: upward-event count = 2 AND upward-event count[1] = 1
+Short: close < threshold level[1] - ATR(lookback, T1, calculated on T1 bars and sampled on chart bars, using the prior chart-bar sample)

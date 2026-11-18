@@ -1,0 +1,2 @@
+Long: DEMA(selected close or Heikin Ashi close, longer lookback, T1, still-forming bar sampled on chart bars) crosses below DEMA(selected close or Heikin Ashi close, shorter lookback, T1, still-forming bar sampled on chart bars)
+Exit: long, DEMA(selected close or Heikin Ashi close, longer lookback, T1, still-forming bar sampled on chart bars) crosses above DEMA(selected close or Heikin Ashi close, shorter lookback, T1, still-forming bar sampled on chart bars)

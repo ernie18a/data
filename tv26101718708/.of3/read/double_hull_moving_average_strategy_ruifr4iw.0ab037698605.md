@@ -1,0 +1,2 @@
+Long: datetime is within the configured date range AND HMA(close, shorter lookback) > HMA(close, longer lookback)
+Exit: long, datetime is within the configured date range AND HMA(close, shorter lookback) < HMA(close, longer lookback)

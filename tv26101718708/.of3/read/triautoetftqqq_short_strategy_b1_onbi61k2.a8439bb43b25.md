@@ -1,0 +1,2 @@
+Short: On chart bars taking values from T1, VWMA(close, volume, lookback, T1, bar still forming) crosses above HMA(close, lookback, T1, bar still forming).
+Exit: short, on chart bars taking values from T1, EMA(close, shorter lookback, T1, bar still forming) crosses above EMA(close, longer lookback, T1, bar still forming) OR EMA(close, shorter lookback, T1, bar still forming) crosses above VWMA(close, volume, lookback, T1, bar still forming).

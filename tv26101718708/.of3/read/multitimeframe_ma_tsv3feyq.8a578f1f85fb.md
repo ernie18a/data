@@ -1,0 +1,5 @@
+Calculation: A = EMA(chart-bar series of close from the still-forming T1 bar, shorter lookback) - EMA(chart-bar series of close from the still-forming T1 bar, longer lookback)
+Calculation: B = EMA(chart-bar series of close from the still-forming T3 bar, shorter lookback) - EMA(chart-bar series of close from the still-forming T2 bar, longer lookback)
+Calculation: C = EMA(chart-bar series of close from the still-forming T3 bar, shorter lookback) - EMA(chart-bar series of close from the still-forming T3 bar, longer lookback)
+Long: A > 0 AND B > 0 AND C > 0 AND month(datetime) >= lower month bound AND month(datetime) <= upper month bound AND dayofmonth(datetime) >= lower day bound AND dayofmonth(datetime) <= upper day bound AND year(datetime) >= lower year bound AND year(datetime) <= upper year bound
+Short: A < 0 AND B < 0 AND C < 0 AND month(datetime) >= lower month bound AND month(datetime) <= upper month bound AND dayofmonth(datetime) >= lower day bound AND dayofmonth(datetime) <= upper day bound AND year(datetime) >= lower year bound AND year(datetime) <= upper year bound

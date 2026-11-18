@@ -1,0 +1,4 @@
+Long: EMA(VWAP - EVWMA(close, volume, lookback), shorter smoothing parameter) crosses above EMA(VWAP - EVWMA(close, volume, lookback), longer smoothing parameter)
+Short: EMA(VWAP - EVWMA(close, volume, lookback), shorter smoothing parameter) crosses below EMA(VWAP - EVWMA(close, volume, lookback), longer smoothing parameter)
+Long: EMA(VWAP - EVWMA(close, volume, lookback), shorter smoothing parameter) - EMA(VWAP - EVWMA(close, volume, lookback), longer smoothing parameter) >= 0
+Short: EMA(VWAP - EVWMA(close, volume, lookback), shorter smoothing parameter) - EMA(VWAP - EVWMA(close, volume, lookback), longer smoothing parameter) < 0

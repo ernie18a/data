@@ -1,0 +1,4 @@
+Calculation: Balance of Power ensemble = mean of Balance of Power and five EMAs of Balance of Power with separate lookbacks ordered shortest to longest
+Calculation: volume-adjusted ensemble = Balance of Power ensemble + (Balance of Power ensemble - Balance of Power ensemble[1]) * volume[1] / SUM(volume, volume lookback) + (Balance of Power ensemble[1] - Balance of Power ensemble[2]) * volume[2] / SUM(volume, volume lookback) + (Balance of Power ensemble[2] - Balance of Power ensemble[3]) * volume[3] / SUM(volume, volume lookback)
+Long: volume-adjusted ensemble crosses above threshold
+Short: volume-adjusted ensemble crosses below threshold

@@ -1,0 +1,2 @@
+Long: EMA(close, EMA lookback, T1, still-forming bar, sampled on chart bars) > its value one chart bar ago
+Short: EMA(close, EMA lookback, T1, still-forming bar, sampled on chart bars) < its value one chart bar ago

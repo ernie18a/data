@@ -1,0 +1,2 @@
+Long: Stochastic of 10-Year Treasury yield close over T1 lookback parameter <= threshold parameter
+Exit: long, Stochastic of 10-Year Treasury yield close over T1 lookback parameter > threshold parameter

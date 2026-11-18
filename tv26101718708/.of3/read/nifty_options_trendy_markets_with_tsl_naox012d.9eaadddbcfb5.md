@@ -1,0 +1,4 @@
+Long: crosses above close and Upper Bollinger Band(close, lookback, standard deviation multiplier) AND ADX(DI lookback, smoothing lookback) > entry threshold AND volume > SMA(volume, lookback) * volume spike multiplier AND close > Supertrend(lookback, multiplier)
+Short: crosses below close and Lower Bollinger Band(close, lookback, standard deviation multiplier) AND ADX(DI lookback, smoothing lookback) > entry threshold AND volume > SMA(volume, lookback) * volume spike multiplier AND close < Supertrend(lookback, multiplier)
+Exit: long, crosses below MACD(close, fast lookback, slow lookback) and its signal line( signal lookback) OR close < close - ATR(lookback) * trailing stop multiplier OR ADX(DI lookback, smoothing lookback) < exit threshold
+Exit: short, crosses above MACD(close, fast lookback, slow lookback) and its signal line( signal lookback) OR close > close + ATR(lookback) * trailing stop multiplier OR ADX(DI lookback, smoothing lookback) < exit threshold

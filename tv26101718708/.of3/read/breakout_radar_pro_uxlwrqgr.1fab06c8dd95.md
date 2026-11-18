@@ -1,0 +1,2 @@
+Calculation: current range percent = (highest(high, range lookback) - lowest(low, range lookback)) / lowest(low, range lookback)
+Long: close > highest(high, range lookback)[1] AND current range percent <= maximum range percent AND current range percent < ((highest(high, 2 * range lookback)[range lookback] - lowest(low, 2 * range lookback)[range lookback]) / lowest(low, 2 * range lookback)[range lookback]) * squeeze factor AND SMA(volume, volume average lookback) < SMA(volume, volume average lookback)[range lookback]

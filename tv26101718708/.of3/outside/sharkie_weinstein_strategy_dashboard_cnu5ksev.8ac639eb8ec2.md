@@ -1,0 +1,2 @@
+Calculation: Relative strength ratio = chart closing price / SPY closing price
+Long: chart closing price > P1-period SMA of chart closing price AND P1-period SMA of chart closing price is rising over P2 chart bars AND Relative strength ratio > P3-period SMA of Relative strength ratio

@@ -1,0 +1,5 @@
+Long: position is flat AND close > EMA(close, longer lookback, T1, still-forming bar), sampled on chart bars AND close <= EMA(close, shorter lookback) * (1 + entry tolerance) AND close[1] > EMA(close, shorter lookback) AND RSI(close, lookback) > RSI threshold AND ADX(lookback) > ADX threshold AND volume > SMA(volume, longer lookback) * volume threshold
+Long: position is long AND position size < equity * allocation cap / close AND close > EMA(close, longer lookback, T1, still-forming bar), sampled on chart bars AND close <= Highest(high, lookback) * (1 - retracement level) AND close[1] > Highest(high, lookback) * (1 - retracement level) AND RSI(close, lookback) > RSI threshold AND ADX(lookback) > ADX threshold
+Exit: long, high >= average entry price + ATR(lookback) * stop distance multiple * first profit multiple
+Exit: long, high >= average entry price + ATR(lookback) * stop distance multiple * second profit multiple
+Exit: long, low <= average entry price - ATR(lookback) * stop distance multiple

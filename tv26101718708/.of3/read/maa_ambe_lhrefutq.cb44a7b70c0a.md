@@ -1,0 +1,4 @@
+Long: position is flat AND fewer than the maximum trades for the current calendar date have been taken AND datetime is within either of two parameterized trading sessions AND close > EMA(close, lookback) AND RSI(close, lookback) > upper RSI threshold AND ADX(DI lookback, ADX smoothing) > ADX threshold AND volume > SMA(volume, lookback)
+Short: position is flat AND fewer than the maximum trades for the current calendar date have been taken AND datetime is within either of two parameterized trading sessions AND close < EMA(close, lookback) AND RSI(close, lookback) < lower RSI threshold AND ADX(DI lookback, ADX smoothing) > ADX threshold AND volume > SMA(volume, lookback)
+Exit: long, high >= entry price + target distance OR low <= entry price - stop distance
+Exit: short, low <= entry price - target distance OR high >= entry price + stop distance

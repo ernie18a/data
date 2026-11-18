@@ -1,0 +1,2 @@
+Long: RSI(close, RSI lookback) < RSI oversold threshold AND Stochastic(close, high, low, stochastic lookback) < stochastic oversold threshold
+Short: RSI(close, RSI lookback) > RSI overbought threshold AND Stochastic(close, high, low, stochastic lookback) > stochastic overbought threshold

@@ -1,0 +1,6 @@
+Calculation: ChartST = SuperTrend(hl2, ATR(lookback), multiplier) on chart bars, with direction and line
+Calculation: T1Trend = on each chart bar, use hl2 and close from the current/forming T1 bar and ATR(lookback) calculated on T1 bars; initialize upper and lower bands to 0; lower band = max(hl2 - multiplier * ATR, previous lower band) if previous chart bar's T1 close > previous lower band, otherwise hl2 - multiplier * ATR; upper band = min(hl2 + multiplier * ATR, previous upper band) if previous chart bar's T1 close < previous upper band, otherwise hl2 + multiplier * ATR; direction = 1 if current T1 close > previous upper band, otherwise -1 if current T1 close < previous lower band, otherwise previous direction (initially 1)
+Long: close crosses above ChartST line OR (ChartST direction = 1 AND ChartST direction[1] = -1 AND T1Trend = 1)
+Short: close crosses below ChartST line OR (ChartST direction = -1 AND ChartST direction[1] = 1 AND T1Trend = -1)
+Exit: long, high >= entry price + take-profit parameter ticks OR low <= entry price - stop-loss parameter ticks
+Exit: short, low <= entry price - take-profit parameter ticks OR high >= entry price + stop-loss parameter ticks

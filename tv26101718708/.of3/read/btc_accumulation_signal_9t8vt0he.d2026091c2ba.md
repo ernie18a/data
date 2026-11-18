@@ -1,0 +1,4 @@
+Calculation: score = (close > EMA(close, shorter lookback) ? positive contribution : negative contribution) + (close > EMA(close, longer lookback) ? positive contribution : negative contribution) + (RSI(close, RSI lookback) > upper RSI threshold ? overbought contribution : RSI(close, RSI lookback) < lower RSI threshold ? positive contribution : negative contribution) + (volume > SMA(volume, volume lookback) ? positive contribution : negative contribution)
+Calculation: trend state = bullish when score >= bullish score threshold, bearish when score <= bearish score threshold, otherwise the prior trend state; initially neutral
+Long: trend state is bullish AND trend state[1] is not bullish
+Short: trend state is bearish AND trend state[1] is not bearish

@@ -1,0 +1,2 @@
+Long: CCI(close, shorter lookback) > 0 AND CCI(close, longer lookback) > 0 AND PVT > SMA(PVT, lookback)
+Short: CCI(close, shorter lookback) < 0 AND CCI(close, longer lookback) < 0 AND PVT < SMA(PVT, lookback)

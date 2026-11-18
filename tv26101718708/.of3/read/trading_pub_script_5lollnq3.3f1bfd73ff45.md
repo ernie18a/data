@@ -1,0 +1,2 @@
+Long: HighestBars(high, short lookback) < LowestBars(low, short lookback) AND HighestBars(high, long lookback) < LowestBars(low, long lookback) AND EMA(close, lookback) > VWAP AND (session filter disabled OR current chart bar is within the configured session according to T1)
+Short: HighestBars(high, short lookback) > LowestBars(low, short lookback) AND HighestBars(high, long lookback) > LowestBars(low, long lookback) AND EMA(close, lookback) < VWAP AND (session filter disabled OR current chart bar is within the configured session according to T1)

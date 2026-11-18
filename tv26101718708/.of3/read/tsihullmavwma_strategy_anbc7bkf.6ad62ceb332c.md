@@ -1,0 +1,4 @@
+Long: TSI(OHLC4, same lookback for both EMA smoothings) > EMA(TSI(OHLC4, same lookback for both EMA smoothings), signal lookback) AND OHLC4 > OHLC4[1] AND OHLC4 > OHLC4[2] AND OHLC4 > OHLC4[3] AND HMA(OHLC4, lookback) > HMA(OHLC4, lookback)[1] AND HMA(OHLC4, lookback) > HMA(OHLC4, lookback)[2] AND VWMA(OHLC4, lookback) > VWMA(OHLC4, twice that lookback)
+Short: TSI(OHLC4, same lookback for both EMA smoothings) < EMA(TSI(OHLC4, same lookback for both EMA smoothings), signal lookback) AND OHLC4 < OHLC4[1] AND OHLC4 < OHLC4[2] AND OHLC4 < OHLC4[3] AND HMA(OHLC4, lookback) < HMA(OHLC4, lookback)[1] AND HMA(OHLC4, lookback) < HMA(OHLC4, lookback)[2] AND VWMA(OHLC4, lookback) < VWMA(OHLC4, twice that lookback)
+Exit: long, open profit > take-profit parameter OR open profit < stop-loss parameter
+Exit: short, open profit > take-profit parameter OR open profit < stop-loss parameter

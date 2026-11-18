@@ -1,0 +1,2 @@
+Long: Benchmark close < EMA(Benchmark close, P1) AND traded instrument close > EMA(traded instrument close, P1) AND NOT (previous bar Benchmark close < previous bar EMA(Benchmark close, P1) AND previous bar traded instrument close > previous bar EMA(traded instrument close, P1))
+Exit: long, (Benchmark close >= EMA(Benchmark close, P1) OR traded instrument close <= EMA(traded instrument close, P1)) AND previous bar Benchmark close < previous bar EMA(Benchmark close, P1) AND previous bar traded instrument close > previous bar EMA(traded instrument close, P1)

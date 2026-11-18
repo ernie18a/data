@@ -1,0 +1,2 @@
+Long: close > open AND volume < every prior chart-bar volume where close > open in the current T1 period
+Short: close < open AND volume < every prior chart-bar volume where close < open in the current T1 period

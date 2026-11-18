@@ -1,0 +1,2 @@
+Option: buy call, (close 2 bars ago > open 2 bars ago) = (close 1 bar ago > open 1 bar ago) AND close 2 bars ago < close 1 bar ago
+Option: buy put, (close 2 bars ago > open 2 bars ago) = (close 1 bar ago > open 1 bar ago) AND close 2 bars ago >= close 1 bar ago

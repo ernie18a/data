@@ -1,0 +1,2 @@
+Long: Smoothed Stochastic K of McClellan Summation Index(advancing issues, declining issues, fast EMA length, slow EMA length), with stochastic length and K smoothing, crosses above threshold AND date is on or after start date (year, month, day)
+Exit: long, Smoothed Stochastic K of McClellan Summation Index(advancing issues, declining issues, fast EMA length, slow EMA length), with stochastic length and K smoothing, crosses below threshold AND date is on or after start date (year, month, day)

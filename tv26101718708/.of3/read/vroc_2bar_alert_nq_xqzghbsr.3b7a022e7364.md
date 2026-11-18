@@ -1,0 +1,1 @@
+Short: ROC(volume from T1, lookback), calculated on chart bars taking values from T1, one completed chart bar ago >= threshold AND ROC(volume from T1, lookback), calculated on chart bars taking values from T1, two completed chart bars ago >= threshold

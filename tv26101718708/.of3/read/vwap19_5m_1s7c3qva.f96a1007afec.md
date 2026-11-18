@@ -1,0 +1,6 @@
+Long: close crosses above VWAP(hlc3)
+Short: close crosses below VWAP(hlc3)
+Long: close crosses above SMA(close, lookback)
+Short: close crosses below SMA(close, lookback)
+Exit: long, close crosses below SMA(close, lookback)
+Exit: short, close crosses above SMA(close, lookback)

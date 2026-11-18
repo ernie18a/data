@@ -1,0 +1,1 @@
+Long: On chart bars, volume >= SMA(volume, lookback) * chart-volume multiplier AND volume(T1, bar still forming) >= volume(T1, previous completed bar) * T1-volume multiplier AND volume(T1, bar still forming) >= minimum T1 volume AND volume(T2, bar still forming) >= minimum T2 volume AND close > open AND close > EMA(close, lookback)

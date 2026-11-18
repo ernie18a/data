@@ -1,0 +1,2 @@
+Long: On chart bars, current forming T1 close (New York week) >= current forming T1 open (New York week)
+Short: On chart bars, current forming T1 close (New York week) < current forming T1 open (New York week)

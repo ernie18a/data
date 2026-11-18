@@ -1,0 +1,1 @@
+Long: chart close > high of the last completed T1 bar carried onto chart bars AND chart close[1] <= high of the last completed T1 bar carried onto chart bars

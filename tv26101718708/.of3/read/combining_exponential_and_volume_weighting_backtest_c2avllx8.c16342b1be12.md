@@ -1,0 +1,4 @@
+Calculation: Volume-weighted EMA price(lookback) = EMA(close * volume, lookback) / EMA(volume, lookback)
+Calculation: VMACD = Volume-weighted EMA price(shorter lookback) - Volume-weighted EMA price(longer lookback)
+Long: (reversal parameter disabled AND VMACD > EMA(VMACD, smoothing lookback)) OR (reversal parameter enabled AND VMACD < EMA(VMACD, smoothing lookback)) OR (VMACD = EMA(VMACD, smoothing lookback) AND position side is long)
+Short: (reversal parameter disabled AND VMACD < EMA(VMACD, smoothing lookback)) OR (reversal parameter enabled AND VMACD > EMA(VMACD, smoothing lookback)) OR (VMACD = EMA(VMACD, smoothing lookback) AND position side is short)

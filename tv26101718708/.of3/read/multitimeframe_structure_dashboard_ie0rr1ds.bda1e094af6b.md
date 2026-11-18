@@ -1,0 +1,9 @@
+Calculation: Bias(T) = close > highest(high, lookback)[1] ? 1 : close < lowest(low, lookback)[1] ? -1 : nz(Bias(T)[1]); calculated on T bars using the current, still-forming T bar, with the value mapped to chart bars; initial value is 0
+Long: Bias(T1) = 1
+Short: Bias(T1) = -1
+Long: Bias(T2) = 1
+Short: Bias(T2) = -1
+Long: Bias(T3) = 1
+Short: Bias(T3) = -1
+Long: Bias(T4) = 1
+Short: Bias(T4) = -1

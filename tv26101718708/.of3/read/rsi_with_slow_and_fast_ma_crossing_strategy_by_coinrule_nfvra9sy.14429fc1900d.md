@@ -1,0 +1,2 @@
+Long: RSI(close, lookback) > RSI(close, lookback)[1] + increase AND RSI(close, lookback) < upper threshold AND EMA(close, shorter lookback) crosses above EMA(close, longer lookback) AND datetime >= start time
+Exit: long, EMA(close, longer lookback) crosses above EMA(close, shorter lookback) AND datetime >= start time

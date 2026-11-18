@@ -1,0 +1,5 @@
+Calculation: upper band = SMA(close, band lookback) * upper multiplier
+Calculation: lower band = SMA(close, band lookback) * lower multiplier
+Calculation: volume flow = VFI(hlc3, volume, flow lookback, volatility lookback, cutoff coefficient, volume cap coefficient, unsmoothed)
+Long: (chart bar's current T1 session time is within the session AND close[lag] > upper band AND close > SMA(close, band lookback) AND volume flow[lag] > 0 AND volume flow > 0 AND volume flow > volume flow[momentum lookback] AND bars since the long exit condition > re-entry delay) OR close > open * breakout multiplier
+Exit: long, close < lower band OR close > entry price * profit target multiplier OR close < entry price - loss allowance OR volume flow < negative flow threshold OR EMA(volume flow, signal lookback) < negative flow threshold OR close < open * loss ratio

@@ -1,0 +1,1 @@
+Long: S&P 500 close > SMA(S&P 500 close) AND TIPS ETF close > SMA(TIPS ETF close) AND at T1 boundary

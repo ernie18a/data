@@ -1,0 +1,1 @@
+Long: On chart bars taking values from calculations on the still-forming bars of T1, T2, and T3, RSI(close, lookback, T1) > threshold AND MACD(close, fast lookback, slow lookback, signal lookback, T1) > 0 AND MACD(close, fast lookback, slow lookback, signal lookback, T2) > 0 AND MACD(close, fast lookback, slow lookback, signal lookback, T3) > 0

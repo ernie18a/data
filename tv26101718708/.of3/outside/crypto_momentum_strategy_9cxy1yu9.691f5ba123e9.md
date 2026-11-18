@@ -1,0 +1,1 @@
+Long: (Squeeze Momentum(P1) − Squeeze Momentum(P1)[2]) / abs(Squeeze Momentum(P1) − Squeeze Momentum(P1)[2]) crosses above 0 AND close > EMA(close, P2) AND EMA(close, P2) > its prior value AND (market filter disabled OR total crypto market capitalization > EMA(total crypto market capitalization, P2) AND EMA(total crypto market capitalization, P2) > its prior value)

@@ -1,0 +1,3 @@
+Calculation: RSI band center = center blend weight * EMA(RSI(close, RSI lookback) * volume, band lookback) / EMA(volume, band lookback) + (1 - center blend weight) * center level
+Long: RSI(close, RSI lookback) crosses above RSI band center - standard deviation(RSI(close, RSI lookback), band lookback) * band multiplier AND NOT (long position AND close < long entry price * stop-loss rate)
+Short: RSI(close, RSI lookback) crosses below RSI band center + standard deviation(RSI(close, RSI lookback), band lookback) * band multiplier OR (long position AND close < long entry price * stop-loss rate)

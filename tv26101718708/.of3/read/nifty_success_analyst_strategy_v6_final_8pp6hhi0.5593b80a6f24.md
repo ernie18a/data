@@ -1,0 +1,4 @@
+Calculation: Body = abs(close - open)
+Calculation: Pivot = (high + low + close) / 3 on chart bars using high, low, and close from the last completed T1 bar
+Long: close > VWAP(close) AND close > EMA(close, EMA lookback) AND close > open AND high - max(close, open) < Body * wick/body ratio threshold AND volume > SMA(volume, volume-average lookback) * volume-spike multiplier AND high(T1, last completed bar) - close > distance threshold AND 2 * Pivot - low(T1, last completed bar) - close > distance threshold AND close > high of previous chart bar
+Short: close < VWAP(close) AND close < EMA(close, EMA lookback) AND close < open AND min(close, open) - low < Body * wick/body ratio threshold AND volume > SMA(volume, volume-average lookback) * volume-spike multiplier AND close - low(T1, last completed bar) > distance threshold AND close - (2 * Pivot - high(T1, last completed bar)) > distance threshold AND close < low of previous chart bar

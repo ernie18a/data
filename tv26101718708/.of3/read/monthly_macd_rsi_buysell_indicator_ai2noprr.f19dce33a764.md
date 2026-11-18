@@ -1,0 +1,2 @@
+Long: On chart bars at the start of each T1 period, MACD(close, fast lookback, slow lookback, signal lookback, T1, last completed bar) crosses above its signal line AND RSI(close, lookback, T1, last completed bar) > threshold
+Short: On chart bars at the start of each T1 period, MACD(close, fast lookback, slow lookback, signal lookback, T1, last completed bar) crosses below its signal line

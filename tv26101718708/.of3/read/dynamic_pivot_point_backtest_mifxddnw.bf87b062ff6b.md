@@ -1,0 +1,4 @@
+Calculation: R1 = Pivot Point Resistance 1(high(T1, last completed bar), low(T1, last completed bar), close(T1, last completed bar)), evaluated on chart bars
+Calculation: S1 = Pivot Point Support 1(high(T1, last completed bar), low(T1, last completed bar), close(T1, last completed bar)), evaluated on chart bars
+Long: (reverse setting is off AND close > R1) OR (reverse setting is on AND close < S1) OR (close <= R1 AND close >= S1 AND ((reverse setting is off AND position side is long) OR (reverse setting is on AND position side is short))
+Short: (reverse setting is off AND close < S1) OR (reverse setting is on AND close > R1) OR (close <= R1 AND close >= S1 AND ((reverse setting is off AND position side is short) OR (reverse setting is on AND position side is long))

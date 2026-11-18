@@ -1,0 +1,1 @@
+Long: volume > highest(volume[1], lookback) AND hour(datetime, New York time) >= start-hour parameter AND hour(datetime, New York time) < end-hour parameter

@@ -1,0 +1,2 @@
+Long: chart-bar close > close of the last completed T1 bar + (high − low of the last completed T1 bar) × range multiplier / divisor, computed on T1 bars and carried onto chart bars AND chart-bar Choppiness Index(lookback) <= threshold
+Short: chart-bar close < close of the last completed T1 bar − (high − low of the last completed T1 bar) × range multiplier / divisor, computed on T1 bars and carried onto chart bars AND chart-bar Choppiness Index(lookback) <= threshold

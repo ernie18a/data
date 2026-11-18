@@ -1,0 +1,2 @@
+Long: MFI(hlc3, lookback) crosses above the lower Bollinger Band of MFI(hlc3, the same lookback), using that same lookback and a deviation multiplier
+Short: MFI(hlc3, lookback) crosses below the upper Bollinger Band of MFI(hlc3, the same lookback), using that same lookback and a deviation multiplier

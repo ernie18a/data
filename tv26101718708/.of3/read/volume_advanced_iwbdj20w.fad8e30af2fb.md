@@ -1,0 +1,5 @@
+Calculation: relative volume = SUM(volume, volume lookback) / (SUM(volume, smoothing lookback) / (smoothing lookback / volume lookback))
+Calculation: volume trigger = rising(relative volume, rising lookback) OR relative volume crosses above first threshold
+Calculation: signal state = from inactive, switch to long when volume trigger AND close > close[lookback]; switch to short when volume trigger AND close < close[lookback]; from long, switch to inactive when (volume trigger AND close < close[lookback]) OR falling(relative volume, falling lookback), otherwise remain long; from short, switch to inactive when (volume trigger AND close > close[lookback]) OR falling(relative volume, falling lookback), otherwise remain short; otherwise remain inactive
+Long: signal state is long AND close > close[lookback] AND datetime >= start timestamp AND datetime <= end timestamp
+Exit: long, signal state is inactive OR relative volume crosses above second threshold AND close < close[lookback]

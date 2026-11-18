@@ -1,0 +1,3 @@
+Calculation: Cumulative normalized close-change volume = cumulative sum(volume * ((close - close[1]) / (high - low))), treating an unavailable prior close as 0
+Long: crossover(Cumulative normalized close-change volume, EMA(Cumulative normalized close-change volume, lookback)) AND close > open AND Cumulative normalized close-change volume > Cumulative normalized close-change volume[1]
+Exit: long, crossunder(Cumulative normalized close-change volume, EMA(Cumulative normalized close-change volume, lookback)) AND close < open AND Cumulative normalized close-change volume < Cumulative normalized close-change volume[1] AND close < low[1]

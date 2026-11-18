@@ -1,0 +1,3 @@
+Long: On chart bars, EMA(close, shorter lookback, T1 current bar mapped with lookahead off) crosses above EMA(close, longer lookback, T1 current bar mapped with lookahead off) AND within the configured test date range AND position is flat or short
+Short: On chart bars, EMA(close, shorter lookback, T1 current bar mapped with lookahead off) crosses below EMA(close, longer lookback, T1 current bar mapped with lookahead off) AND within the configured test date range AND margin is enabled AND position is flat or long
+Exit: Long, on chart bars EMA(close, shorter lookback, T1 current bar mapped with lookahead off) crosses below EMA(close, longer lookback, T1 current bar mapped with lookahead off) AND within the configured test date range AND margin is disabled

@@ -1,0 +1,2 @@
+Long: KST(close, ROC lookbacks 1–4, smoothing lookbacks 1–4) crosses above SMA(KST, signal lookback)
+Short: KST(close, ROC lookbacks 1–4, smoothing lookbacks 1–4) crosses below SMA(KST, signal lookback)

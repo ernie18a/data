@@ -1,0 +1,2 @@
+Long: EMA(EMA(Accumulation/Distribution Line, shorter lookback) - EMA(Accumulation/Distribution Line, longer lookback), smoothing lookback) >= 0
+Short: EMA(EMA(Accumulation/Distribution Line, shorter lookback) - EMA(Accumulation/Distribution Line, longer lookback), smoothing lookback) < 0

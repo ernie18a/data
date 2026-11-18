@@ -1,0 +1,4 @@
+Calculation: active gap-up = (first chart bar of a regular T1 session AND open > close[1] × gap-up factor AND open < high of the still-forming T1 bar sampled on chart bars) OR (active gap-up[1] AND current chart bar is within the session-window parameter)
+Long: active gap-up
+Long: active gap-up AND close < low of the still-forming T1 bar sampled on chart bars × near-low factor AND close of the still-forming T1 bar sampled on chart bars < open of the still-forming T1 bar sampled on chart bars AND hour(time) < entry-hour parameter
+Exit: long, hour(time) = exit-hour parameter AND minute(time) > exit-minute parameter
