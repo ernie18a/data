@@ -1,0 +1,3 @@
+Calculation: currency strength = EMA(signed return − mean of the signed returns for all eight currencies, EMA smoothing parameter), where USD return is zero, EUR/GBP/AUD/NZD returns are 10000 × (current chart-bar quote close / reference quote close − 1), and JPY/CHF/CAD returns are the negatives of the corresponding USDJPY/USDCHF/USDCAD returns; use the session anchor as the reference in session mode, otherwise the quote close at the return-lookback parameter bars ago
+Long: a currency's strength is greater than or equal to every other enabled currency's strength, with at least one other enabled currency
+Short: a currency's strength is less than or equal to every other enabled currency's strength, with at least one other enabled currency

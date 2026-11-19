@@ -1,0 +1,1 @@
+Long: stock priced in gold is in an uptrend AND stock priced in gold is pulling back

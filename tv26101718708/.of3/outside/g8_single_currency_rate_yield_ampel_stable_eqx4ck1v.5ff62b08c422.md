@@ -1,0 +1,3 @@
+Calculation: selected-currency score = (2Y-yield inclusion setting enabled and data available ? sign(2Y government yield now − 2Y government yield lookback bars ago) : 0) + (10Y-yield inclusion setting enabled and data available ? sign(10Y government yield now − 10Y government yield lookback bars ago) : 0) + (rate-futures inclusion setting enabled and data available ? sign(negative short-rate futures price change over the lookback period) : 0) + (FX-proxy inclusion setting enabled and data available ? sign(FX-proxy price change over the lookback period, reversed for CHF, JPY, and CAD) : 0)
+Long: selected-currency score ≥ long threshold
+Short: selected-currency score ≤ short threshold

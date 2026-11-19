@@ -1,0 +1,2 @@
+Long: on chart bars, open[1] > close[1] AND high < low[2], OR on chart bars when a new T1 bar starts, the previous completed T1 bar's open > close AND the still-forming T1 bar's high < low[2]
+Short: on chart bars, open[1] <= close[1] AND low > high[2], OR on chart bars when a new T1 bar starts, the previous completed T1 bar's open <= close AND the still-forming T1 bar's low > high[2]

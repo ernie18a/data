@@ -1,0 +1,3 @@
+Calculation: Lorentzian k-NN signal = +1 when at least the confidence threshold of the k nearest historical feature vectors predict close after the target horizon > setup close; -1 when at least the confidence threshold predict close after the target horizon <= setup close; otherwise 0
+Long: Lorentzian k-NN signal[1] = +1 AND position side is not long
+Short: Lorentzian k-NN signal[1] = -1 AND position side is not short

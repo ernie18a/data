@@ -1,0 +1,2 @@
+Long: On each chart bar, low < low(T1, last completed bar) AND close > low(T1, last completed bar)
+Short: On each chart bar, high > high(T1, last completed bar) AND close < high(T1, last completed bar)

@@ -1,0 +1,16 @@
+Calculation: Uptrend state = on chart bars using T1 security values, current T1 close from its still-forming bar >= T1 close[trend lookback] from a completed bar * (1 + trend-growth percentage / 100)
+Calculation: Downtrend state = on chart bars using T1 security values, current T1 close from its still-forming bar <= T1 close[trend lookback] from a completed bar * (1 - trend-growth percentage / 100)
+Calculation: Sideways-uptrend state = on chart bars using T1 security values, current T1 close from its still-forming bar < T1 close[trend lookback] from a completed bar * (1 + trend-growth percentage / 100) AND current T1 close > T1 close[trend lookback]
+Calculation: Sideways-downtrend state = on chart bars using T1 security values, current T1 close from its still-forming bar > T1 close[trend lookback] from a completed bar * (1 - trend-growth percentage / 100) AND current T1 close < T1 close[trend lookback]
+Calculation: Trend filter passes = current trend state belongs to the set admitted by the selected trend-requirement parameter; selectable sets are nested from uptrend only, to uptrend and sideways-uptrend, to those states plus sideways-downtrend, to all four states
+Calculation: Long stop price = on the long-signal bar, if the ATR-stop setting is enabled then min(low, high - stop ATR multiple * ATR(ATR lookback)) else low
+Calculation: Long target price = long-signal-bar close + (long-signal-bar close - long stop price) * target multiple
+Long: Uptrend state
+Long: Sideways-uptrend state
+Short: Downtrend state
+Short: Sideways-downtrend state
+Long: close[1] < SMA/EMA/WMA(close, fast MA lookback)[1] AND close > SMA/EMA/WMA(close, fast MA lookback) AND close > SMA/EMA/WMA(close, second MA lookback) AND close > SMA/EMA/WMA(close, intermediate MA lookback) AND (short-MA-cross filter disabled OR SMA/EMA/WMA(close, fast MA lookback) > SMA/EMA/WMA(close, second MA lookback)) AND SMA/EMA/WMA(close, fast MA lookback) > SMA/EMA/WMA(close, intermediate MA lookback) AND (long-MA-cross filter disabled OR SMA/EMA/WMA(close, long-term MA lookback) >= SMA/EMA/WMA(close, longest MA lookback)) AND trend filter passes
+Long: position size <= 0 AND year >= start-year parameter AND close[1] < SMA/EMA/WMA(close, fast MA lookback)[1] AND close > SMA/EMA/WMA(close, fast MA lookback) AND close > SMA/EMA/WMA(close, second MA lookback) AND close > SMA/EMA/WMA(close, intermediate MA lookback) AND (short-MA-cross filter disabled OR SMA/EMA/WMA(close, fast MA lookback) > SMA/EMA/WMA(close, second MA lookback)) AND SMA/EMA/WMA(close, fast MA lookback) > SMA/EMA/WMA(close, intermediate MA lookback) AND (long-MA-cross filter disabled OR SMA/EMA/WMA(close, long-term MA lookback) >= SMA/EMA/WMA(close, longest MA lookback)) AND trend filter passes
+Exit: Long, early-exit setting enabled AND year >= start-year parameter AND close < SMA/EMA/WMA(close, fast MA lookback)
+Exit: Long, stop-order setting enabled AND year >= start-year parameter AND low <= stored long stop price
+Exit: Long, target-order setting enabled AND year >= start-year parameter AND high >= stored long target price

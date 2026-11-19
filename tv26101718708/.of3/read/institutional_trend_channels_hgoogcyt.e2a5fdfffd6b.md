@@ -1,0 +1,4 @@
+Long: LinearRegression(close, channel lookback, offset 0) >= LinearRegression(close, channel lookback, offset 1)
+Short: LinearRegression(close, channel lookback, offset 0) < LinearRegression(close, channel lookback, offset 1)
+Long: close crosses above LinearRegression(close, channel lookback, offset 0) + StandardDeviation(close, channel lookback) * channel width on a confirmed bar AND (volume confirmation is disabled OR (SMA(volume, volume average lookback) > 0 AND volume >= SMA(volume, volume average lookback) * volume multiple))
+Short: close crosses below LinearRegression(close, channel lookback, offset 0) - StandardDeviation(close, channel lookback) * channel width on a confirmed bar AND (volume confirmation is disabled OR (SMA(volume, volume average lookback) > 0 AND volume >= SMA(volume, volume average lookback) * volume multiple))

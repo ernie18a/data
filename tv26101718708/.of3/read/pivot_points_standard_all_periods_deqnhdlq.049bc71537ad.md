@@ -1,0 +1,2 @@
+Long: On chart bars, close crosses above any standard pivot level (P, R1, S1, R2, S2, R3) calculated from the last completed bar of T1, plus the shared breakout buffer.
+Short: On chart bars, close crosses below any standard pivot level (P, R1, S1, R2, S2, R3) calculated from the last completed bar of T1, minus the shared breakout buffer.

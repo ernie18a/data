@@ -1,0 +1,2 @@
+Long: close > the latest confirmed PivotHigh(high, swing length, swing length) not previously broken OR high[2] < low AND close[1] > open[1]
+Short: close < the latest confirmed PivotLow(low, swing length, swing length) not previously broken OR low[2] > high AND close[1] < open[1]

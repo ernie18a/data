@@ -1,0 +1,7 @@
+Calculation: Absorption = abs(close - open) / (high - low) < body threshold AND volume > SMA(volume, volume lookback) * volume multiplier AND high - low > ATR(ATR lookback) * minimum range multiplier
+Calculation: Bullish Absorption = Absorption AND close >= open AND (structure isolation disabled OR abs(low - Lowest(low, structure lookback)) <= ATR(ATR lookback) * structure proximity) AND (trend filter disabled OR close > EMA(close, trend lookback))
+Calculation: Bearish Absorption = Absorption AND close < open AND (structure isolation disabled OR abs(high - Highest(high, structure lookback)) <= ATR(ATR lookback) * structure proximity) AND (trend filter disabled OR close < EMA(close, trend lookback))
+Long: (confirmation enabled AND Bullish Absorption[1] AND close > open) OR (confirmation disabled AND Bullish Absorption)
+Short: (confirmation enabled AND Bearish Absorption[1] AND close < open) OR (confirmation disabled AND Bearish Absorption)
+Long: imbalance display enabled AND bullish imbalance count since the current T1 period began < maximum imbalances per period AND low > high[2] AND ((confirmation enabled AND Bullish Absorption[1] AND close > open) OR (confirmation disabled AND Bullish Absorption[1]))
+Short: imbalance display enabled AND bearish imbalance count since the current T1 period began < maximum imbalances per period AND high < low[2] AND ((confirmation enabled AND Bearish Absorption[1] AND close < open) OR (confirmation disabled AND Bearish Absorption[1]))

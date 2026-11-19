@@ -1,0 +1,13 @@
+Calculation: HA range = HA high - HA low
+Calculation: HA body percentage = 100 * abs(HA close - HA open) / HA range when HA range > 0, otherwise 100
+Calculation: No upper wick = HA high <= max(HA open, HA close) + wick tolerance
+Calculation: No lower wick = HA low >= min(HA open, HA close) - wick tolerance
+Calculation: EMA touch = HA low <= EMA(HA close, EMA lookback) + EMA tolerance AND HA high >= EMA(HA close, EMA lookback) - EMA tolerance
+Long: HA close > EMA(HA close, EMA lookback) AND HA close > HA open AND HA body percentage <= doji body threshold AND HA close[1] < HA open[1] AND No upper wick[1] AND HA close[2] < HA open[2] AND No upper wick[2]
+Long: HA close > EMA(HA close, EMA lookback) AND HA close > HA open AND HA body percentage <= doji body threshold AND HA close[1] < HA open[1] AND No upper wick[1] AND HA close[2] < HA open[2] AND No upper wick[2] AND chart bar is closed AND HA range > min(HA range[1], HA range[2]) AND (volume filter disabled OR HA volume >= SMA(HA volume, volume lookback) * volume multiplier)
+Short: HA close < EMA(HA close, EMA lookback) AND HA close < HA open AND HA body percentage <= doji body threshold AND HA close[1] > HA open[1] AND No lower wick[1] AND HA close[2] > HA open[2] AND No lower wick[2]
+Short: HA close < EMA(HA close, EMA lookback) AND HA close < HA open AND HA body percentage <= doji body threshold AND HA close[1] > HA open[1] AND No lower wick[1] AND HA close[2] > HA open[2] AND No lower wick[2] AND chart bar is closed AND HA range > min(HA range[1], HA range[2]) AND (volume filter disabled OR HA volume >= SMA(HA volume, volume lookback) * volume multiplier)
+Long: chart bar is still forming AND Lowest(HA close - EMA(HA close, EMA lookback), reclaim lookback) < 0 AND HA close > EMA(HA close, EMA lookback) AND HA close > HA open AND EMA touch
+Long: chart bar is closed AND Lowest(HA close - EMA(HA close, EMA lookback), reclaim lookback) < 0 AND HA close > EMA(HA close, EMA lookback) AND HA close > HA open AND HA body percentage >= strong body threshold AND EMA touch AND (volume filter disabled OR HA volume >= SMA(HA volume, volume lookback) * volume multiplier)
+Short: chart bar is still forming AND Highest(HA close - EMA(HA close, EMA lookback), reclaim lookback) > 0 AND HA close < EMA(HA close, EMA lookback) AND HA close < HA open AND EMA touch
+Short: chart bar is closed AND Highest(HA close - EMA(HA close, EMA lookback), reclaim lookback) > 0 AND HA close < EMA(HA close, EMA lookback) AND HA close < HA open AND HA body percentage >= strong body threshold AND EMA touch AND (volume filter disabled OR HA volume >= SMA(HA volume, volume lookback) * volume multiplier)

@@ -1,0 +1,2 @@
+Long: EMA(close, shorter lookback) crosses above EMA(close, longer lookback) AND RSI(close, lookback) < overbought threshold AND volume > SMA(volume, lookback)
+Short: EMA(close, shorter lookback) crosses below EMA(close, longer lookback) AND RSI(close, lookback) > oversold threshold AND volume > SMA(volume, lookback)

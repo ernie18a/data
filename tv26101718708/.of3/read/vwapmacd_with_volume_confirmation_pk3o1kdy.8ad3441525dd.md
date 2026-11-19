@@ -1,0 +1,4 @@
+Long: MACD(VWAP(hlc3, volume, anchored at each T1 boundary and accumulated on chart bars), fast lookback, slow lookback, signal lookback) crosses above its signal line AND (volume confirmation is disabled OR volume >= SMA(volume, lookback))
+Short: MACD(VWAP(hlc3, volume, anchored at each T1 boundary and accumulated on chart bars), fast lookback, slow lookback, signal lookback) crosses below its signal line AND (volume confirmation is disabled OR volume >= SMA(volume, lookback))
+Long: When a pivot low is confirmed by pivotlow(low, left lookback, right lookback), its low < the previous confirmed pivot low AND MACD histogram at the current pivot (right lookback bars ago) > MACD histogram at the previous confirmed pivot
+Short: When a pivot high is confirmed by pivothigh(high, left lookback, right lookback), its high > the previous confirmed pivot high AND MACD histogram at the current pivot (right lookback bars ago) < MACD histogram at the previous confirmed pivot

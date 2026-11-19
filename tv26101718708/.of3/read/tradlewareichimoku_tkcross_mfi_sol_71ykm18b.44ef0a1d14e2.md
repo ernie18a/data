@@ -1,0 +1,3 @@
+Long: Ichimoku Tenkan(high, low, shorter lookback) crosses above Ichimoku Kijun(high, low, longer lookback) AND close > max(Ichimoku Senkou A, Ichimoku Senkou B) from Kijun lookback bars ago AND MFI(hlc3, lookback) > threshold AND datetime >= start datetime AND datetime <= end datetime
+Exit: long, close < Ichimoku Kijun(high, low, longer lookback) AND datetime >= start datetime AND datetime <= end datetime
+Exit: long, low <= min(Ichimoku Senkou A, Ichimoku Senkou B) from Kijun lookback bars ago

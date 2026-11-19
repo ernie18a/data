@@ -1,0 +1,15 @@
+Calculation: Rolling VWAP = time-window VWAP(hlc3, volume, hour-window parameter, minute-window parameter, minimum-observation parameter), optionally smoothed with the smoothing-method and smoothing-lookback parameters; calculated on T1 bars, using the still-forming T1 bar in real time and the last completed T1 value historically, then carried onto chart bars with lookahead off
+Calculation: Rolling VWAP standard deviation = standard deviation paired with the time-window VWAP of hlc3 and volume over the same window and minimum observations, optionally smoothed with the same smoothing parameters; calculated on T1 bars and carried onto chart bars on the same basis
+Calculation: Upper band = rolling VWAP + band-multiplier parameter × rolling VWAP standard deviation
+Calculation: Lower band = rolling VWAP − band-multiplier parameter × rolling VWAP standard deviation
+Calculation: T1 comparison lookback = max(1, round(T1 duration / chart-bar duration)) chart bars
+Calculation: Rolling time mean(x) = mean of x over the trailing duration parameter through the current chart bar, requiring the minimum-observation parameter
+Calculation: Band width = (upper band − lower band) / rolling VWAP
+Calculation: Up-bar volume mean = mean(volume on chart bars where close > open, over the directional-volume lookback parameter, requiring the minimum qualifying-bar parameter)
+Calculation: Down-bar volume mean = mean(volume on chart bars where close < open, over the directional-volume lookback parameter, requiring the same minimum qualifying-bar parameter)
+Long: close > upper band
+Long: rolling VWAP > rolling VWAP[T1 comparison lookback] AND close > upper band
+Long: crossover(close, upper band) AND (ATR filter disabled OR SWMA(ATR(ATR lookback parameter)) > SWMA(ATR(ATR lookback parameter))[1]) AND (trend filter disabled OR (rolling VWAP > rolling VWAP[T1 comparison lookback] AND close > upper band)) AND (relative-volume filter disabled OR volume > rolling time mean(volume, baseline-duration parameter, minimum-observation parameter) × relative-volume multiplier parameter) AND (directional-volume filter disabled OR up-bar volume mean[1] > down-bar volume mean[1]) AND (narrow-band filter disabled OR band width[1] <= rolling time mean(band width, baseline-duration parameter, minimum-observation parameter)[1] × narrow-band multiplier parameter)
+Short: close < lower band
+Short: rolling VWAP < rolling VWAP[T1 comparison lookback] AND close < lower band
+Short: crossunder(close, lower band) AND (ATR filter disabled OR SWMA(ATR(ATR lookback parameter)) > SWMA(ATR(ATR lookback parameter))[1]) AND (trend filter disabled OR (rolling VWAP < rolling VWAP[T1 comparison lookback] AND close < lower band)) AND (relative-volume filter disabled OR volume > rolling time mean(volume, baseline-duration parameter, minimum-observation parameter) × relative-volume multiplier parameter) AND (directional-volume filter disabled OR down-bar volume mean[1] > up-bar volume mean[1]) AND (narrow-band filter disabled OR band width[1] <= rolling time mean(band width, baseline-duration parameter, minimum-observation parameter)[1] × narrow-band multiplier parameter)

@@ -1,0 +1,3 @@
+Calculation: Projected price level(threshold) = lowest(low, range lookback) + threshold / 100 * (highest(high, range lookback) - lowest(low, range lookback))
+Long: close crosses above Projected price level(oversold threshold) AND (all-signals mode OR HA confirmation is disabled OR current Heikin Ashi candle is bullish) AND (all-signals mode OR alternation is disabled OR previous signal was not long)
+Short: close crosses below Projected price level(overbought threshold) AND (all-signals mode OR HA confirmation is disabled OR current Heikin Ashi candle is bearish) AND (all-signals mode OR alternation is disabled OR previous signal was not short)

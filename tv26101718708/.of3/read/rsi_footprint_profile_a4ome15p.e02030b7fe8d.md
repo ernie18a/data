@@ -1,0 +1,3 @@
+Calculation: Row RSI = volume-weighted mean of RSI(close, RSI lookback) over completed chart bars in each of the most recent Profile count fixed blocks of Box period chart bars, aligned to chart-bar index multiples; divide each block’s low-to-high range into Price row count equal rows and allocate each bar’s volume equally among rows touched by its low-to-high range; use 50 when RSI is unavailable
+Long: Row RSI <= Oversold threshold for a row with positive allocated volume
+Short: Row RSI >= Overbought threshold for a row with positive allocated volume

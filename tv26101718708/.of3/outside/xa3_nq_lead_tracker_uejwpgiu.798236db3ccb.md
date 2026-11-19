@@ -1,0 +1,4 @@
+Calculation: Upside breakout(x) = x > the highest of x's prior lookback-period values when the lookback filter is enabled, otherwise x > its prior value
+Calculation: Downside breakout(x) = x < the lowest of x's prior lookback-period values when the lookback filter is enabled, otherwise x < its prior value
+Long: count(enabled non-inverse lead symbols with upside breakout(high), enabled inverse lead symbols with downside breakout(low)) >= the upside lead threshold AND NOT upside breakout(reference-symbol high)
+Short: count(enabled non-inverse lead symbols with downside breakout(low), enabled inverse lead symbols with upside breakout(high)) >= the downside lead threshold AND NOT downside breakout(reference-symbol low)

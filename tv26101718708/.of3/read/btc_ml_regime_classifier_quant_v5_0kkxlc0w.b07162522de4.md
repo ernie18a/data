@@ -1,0 +1,5 @@
+Calculation: Smoothed bullish probability = WMA(ML bullish vote percentage, smoothing lookback)
+Long: smoothed bullish probability >= bullish regime threshold AND <= upper exhaustion threshold AND EMA(close, shorter lookback) crosses above EMA(close, longer lookback) AND no long signal since the most recent short signal AND chart bar is confirmed
+Short: smoothed bullish probability <= bearish regime threshold AND >= lower exhaustion threshold AND EMA(close, shorter lookback) crosses below EMA(close, longer lookback) AND no short signal since the most recent long signal AND chart bar is confirmed
+Exit: long, smoothed bullish probability crosses above upper exhaustion threshold AND chart bar is confirmed
+Exit: short, smoothed bullish probability crosses below lower exhaustion threshold AND chart bar is confirmed

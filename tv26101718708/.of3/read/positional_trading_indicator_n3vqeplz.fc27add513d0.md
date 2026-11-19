@@ -1,0 +1,5 @@
+Long: The latest PivotHigh(high, pivot-high left lookback, pivot-high right lookback) from T1 bars, mapped to chart bars while the T1 bar is forming, is greater than the preceding PivotHigh with the same parameters AND the latest PivotLow(low, pivot-low left lookback, pivot-low right lookback) from T1 bars, mapped to chart bars while the T1 bar is forming, is greater than the preceding PivotLow with the same parameters.
+Short: The latest PivotHigh(high, pivot-high left lookback, pivot-high right lookback) from T1 bars, mapped to chart bars while the T1 bar is forming, is less than the preceding PivotHigh with the same parameters AND the latest PivotLow(low, pivot-low left lookback, pivot-low right lookback) from T1 bars, mapped to chart bars while the T1 bar is forming, is less than the preceding PivotLow with the same parameters.
+Calculation: relative strength ratio = close / benchmark close * 100
+Long: relative strength ratio > SMA(relative strength ratio, lookback)
+Short: relative strength ratio <= SMA(relative strength ratio, lookback)

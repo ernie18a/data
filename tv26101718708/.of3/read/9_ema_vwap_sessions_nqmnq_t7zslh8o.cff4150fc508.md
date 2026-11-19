@@ -1,0 +1,2 @@
+Long: EMA(close, lookback) crosses above VWAP(hlc3) AND (price filter disabled OR close > VWAP(hlc3)) AND (slope filter disabled OR EMA(close, lookback) > EMA(close, lookback)[slope lookback]) AND abs(EMA(close, lookback)[1] - VWAP(hlc3)[1]) >= minimum distance
+Short: EMA(close, lookback) crosses below VWAP(hlc3) AND (price filter disabled OR close < VWAP(hlc3)) AND (slope filter disabled OR EMA(close, lookback) < EMA(close, lookback)[slope lookback]) AND abs(EMA(close, lookback)[1] - VWAP(hlc3)[1]) >= minimum distance

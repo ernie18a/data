@@ -1,0 +1,7 @@
+Calculation: Stop price = min(Lowest(low, swing lookback, chart bars) and VWAP(hlc3) on the entry bar) × (1 − stop buffer percentage / 100), fixed at entry
+Calculation: Risk = entry price − stop price, fixed at entry
+Long: close > VWAP(hlc3) AND ((close − VWAP(hlc3)) / VWAP(hlc3)) × 100 <= maximum extension percentage AND a pullback cycle is active, where a cycle activates on a bar with close > VWAP(hlc3), extension <= maximum extension percentage, and (abs((low − VWAP(hlc3)) / VWAP(hlc3)) × 100 <= pullback tolerance percentage OR (low <= VWAP(hlc3) AND close >= VWAP(hlc3))); a cycle resets when close < VWAP(hlc3) or extension > maximum extension percentage AND no long signal has fired in the cycle AND at least one enabled confirmation holds (close > open; bullish engulfing; high − low > 0 AND (min(open, close) − low) / (high − low) >= 0.5 AND low <= VWAP(hlc3) × (1 + pullback tolerance percentage / 100) AND close > open; or low > Lowest(low, swing lookback, chart bars)[1] AND close > open), using close > open if no confirmations are enabled
+Exit: long, during an active trade, on the first bar with high >= entry price + Risk × target 1 reward/risk parameter
+Exit: long, during an active trade, on the first bar with high >= entry price + Risk × target 2 reward/risk parameter
+Exit: long, during an active trade, on the first bar with high >= entry price + Risk × target 3 reward/risk parameter
+Exit: long, during an active trade, when low <= Stop price

@@ -1,0 +1,3 @@
+Calculation: Weekday average return(weekday, lookback, T1) = mean(100 × (close[k] - close[k+1]) / close[k+1]) for k = 1..lookback on T1 bars where dayofweek(time[k], UTC) = weekday and both closes are valid and close[k+1] ≠ 0; undefined if there are no matching bars; use last completed T1 bars.
+Long: On chart bars, Weekday average return(dayofweek(time, UTC), lookback, T1) ≥ 0.
+Short: On chart bars, Weekday average return(dayofweek(time, UTC), lookback, T1) < 0.

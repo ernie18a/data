@@ -1,0 +1,2 @@
+Long: Lowest(low, lookback) on chart bars < low(T1, last completed bar) AND Lowest(comparison instrument low, same lookback) on chart bars >= low(comparison instrument, T1, last completed bar)
+Short: Highest(high, lookback) on chart bars > high(T1, last completed bar) AND Highest(comparison instrument high, same lookback) on chart bars <= high(comparison instrument, T1, last completed bar)

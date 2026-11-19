@@ -1,0 +1,6 @@
+Long: on chart bars, close(T1, last completed bar) >= open(T1, last completed bar)
+Short: on chart bars, close(T1, last completed bar) < open(T1, last completed bar)
+Long: on chart bars, close(T2, last completed bar) >= open(T2, last completed bar)
+Short: on chart bars, close(T2, last completed bar) < open(T2, last completed bar)
+Long: on chart bars, close(T3, last completed bar) >= open(T3, last completed bar)
+Short: on chart bars, close(T3, last completed bar) < open(T3, last completed bar)

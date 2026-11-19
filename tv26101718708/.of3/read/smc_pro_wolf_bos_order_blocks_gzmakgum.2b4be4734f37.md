@@ -1,0 +1,7 @@
+Calculation: Unbroken swing high = the latest confirmed Pivot High(high, swing lookback, swing lookback), replaced by each newly confirmed pivot high and cleared when close crosses above it
+Calculation: Unbroken swing low = the latest confirmed Pivot Low(low, swing lookback, swing lookback), replaced by each newly confirmed pivot low and cleared when close crosses below it
+Calculation: Order block direction = bearish if high[OB lookback] > Highest(high, OB lookback), otherwise bullish if low[OB lookback] < Lowest(low, OB lookback), otherwise the previous direction; initially bearish
+Calculation: Bullish order blocks = add a zone with top hl2[OB lookback] and bottom low[OB lookback] when Pivot High(volume, OB lookback, OB lookback) confirms and order block direction is bullish; remove a zone when the lowest selected bullish mitigation source over OB lookback is below its bottom, using low or close according to the mitigation method
+Calculation: Bearish order blocks = add a zone with top high[OB lookback] and bottom hl2[OB lookback] when Pivot High(volume, OB lookback, OB lookback) confirms and order block direction is bearish; remove a zone when the highest selected bearish mitigation source over OB lookback is above its top, using high or close according to the mitigation method
+Long: close crosses above the unbroken swing high OR a bullish order block is added OR any bullish order block is removed by mitigation
+Short: close crosses below the unbroken swing low OR a bearish order block is added OR any bearish order block is removed by mitigation

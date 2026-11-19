@@ -1,0 +1,1 @@
+Option: buy call, market temperature bars are green AND volatility line is white or rising AND negative-bias bars are shallow or absent AND price is above key moving averages

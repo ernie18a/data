@@ -1,0 +1,7 @@
+Calculation: Z-scored MACD histogram = (MACD histogram(selected data field, shorter lookback, longer lookback, signal smoothing) - SMA(MACD histogram, normalization lookback)) / STDEV(MACD histogram, normalization lookback)
+Long: Z-scored MACD histogram on chart bars crosses above 0
+Short: Z-scored MACD histogram on chart bars crosses below 0
+Calculation: Resonance state(T) is initialized to 0 and updated on chart bars from the z-scored MACD histogram on T's last completed bar, using its previous chart-bar sample: in order, set to 1 when it is below the negative z-score threshold and rising; set to 0 when the state is 1 and it is above 0 or falling; set to -1 when it is above the z-score threshold and falling; set to 0 when the state is -1 and it is below 0 or rising; otherwise retain the state. T1 through T6 are distinct timeframes in descending duration and share the same MACD and normalization parameters.
+Calculation: Resonance score = 100 × sum of each available T1–T6 state multiplied by its separate timeframe weight / sum of available timeframe weights; if no timeframe is available, the score is 0
+Long: Resonance score crosses above the resonance alert threshold
+Short: Resonance score crosses below the negative resonance alert threshold

@@ -1,0 +1,8 @@
+Calculation: Bullish alignment = EMA(close, shorter lookback) > EMA(close, longer lookback) AND Supertrend(ATR multiplier, ATR lookback) bullish
+Calculation: Bearish alignment = EMA(close, shorter lookback) <= EMA(close, longer lookback) AND Supertrend(ATR multiplier, ATR lookback) non-bullish
+Calculation: Bullish T1 alignment = EMA(close, same shorter lookback, current still-forming T1 bar sampled on chart bars) > EMA(close, same longer lookback, current still-forming T1 bar sampled on chart bars) AND Supertrend(same ATR multiplier, same ATR lookback, current still-forming T1 bar sampled on chart bars) bullish
+Calculation: Bearish T1 alignment = EMA(close, same shorter lookback, current still-forming T1 bar sampled on chart bars) < EMA(close, same longer lookback, current still-forming T1 bar sampled on chart bars) AND Supertrend direction(same ATR multiplier, same ATR lookback, current still-forming T1 bar sampled on chart bars) > 0
+Long: Bullish alignment AND NOT Bullish alignment[1]
+Long: Bullish alignment AND NOT Bullish alignment[1] AND RSI(close, lookback) > midpoint threshold AND RSI(close, lookback) < overbought threshold AND Bullish T1 alignment
+Short: Bearish alignment AND (EMA(close, shorter lookback)[1] >= EMA(close, longer lookback)[1] OR Supertrend direction(ATR multiplier, ATR lookback)[1] <= 0)
+Short: Bearish alignment AND (EMA(close, shorter lookback)[1] >= EMA(close, longer lookback)[1] OR Supertrend direction(ATR multiplier, ATR lookback)[1] <= 0) AND RSI(close, lookback) < midpoint threshold AND RSI(close, lookback) > oversold threshold AND Bearish T1 alignment

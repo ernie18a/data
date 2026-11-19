@@ -1,0 +1,2 @@
+Long: Renko close (primary box-size parameter) on the current chart bar differs from its value on the previous chart bar AND Renko close > Renko open
+Short: Renko close (primary box-size parameter) on the current chart bar differs from its value on the previous chart bar AND Renko close < Renko open

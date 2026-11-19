@@ -1,0 +1,6 @@
+Long: On chart bars, close[shorter lag] > high[longer lag]
+Short: On chart bars, close[shorter lag] < low[longer lag]
+Long: On chart bars taking values from completed T1 bars, close[shorter lag] > high[longer lag]
+Short: On chart bars taking values from completed T1 bars, close[shorter lag] < low[longer lag]
+Long: On chart bars, current high > high[shorter lag]
+Short: On chart bars, current low < low[shorter lag]

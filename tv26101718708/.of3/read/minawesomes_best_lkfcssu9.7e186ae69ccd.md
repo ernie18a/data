@@ -1,0 +1,8 @@
+Long: low > high[2]
+Short: high < low[2]
+Long: CRT enabled AND chart is intraday AND chart-bar low < low of the last completed T1 bar AND chart-bar close > low of the last completed T1 bar
+Short: CRT enabled AND chart is intraday AND chart-bar high > high of the last completed T1 bar AND chart-bar close < high of the last completed T1 bar
+Long: current close > the stored top (low[2] on the formation bar) of a tracked, not-yet-inverted bearish FVG zone formed when high < low[2] and the gap meets the minimum FVG size parameter, with FVG enabled
+Short: current close < the stored bottom (high[2] on the formation bar) of a tracked, not-yet-inverted bullish FVG zone formed when low > high[2] and the gap meets the minimum FVG size parameter, with FVG enabled
+Short: a chart-bar pivot high of high (pivot-lookback parameter bars on each side) is confirmed AND its value > the preceding confirmed chart pivot high AND the latest confirmed correlated-symbol pivot high < its preceding confirmed pivot high AND the latest correlated pivot is no more than the maximum pivot-age parameter bars old; correlated-symbol pivots use the chart timeframe with lookahead off
+Long: a chart-bar pivot low of low (pivot-lookback parameter bars on each side) is confirmed AND its value < the preceding confirmed chart pivot low AND the latest confirmed correlated-symbol pivot low > its preceding confirmed pivot low AND the latest correlated pivot is no more than the maximum pivot-age parameter bars old; correlated-symbol pivots use the chart timeframe with lookahead off

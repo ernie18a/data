@@ -1,0 +1,2 @@
+Long: On chart bars, close crosses above the Central Pivot Point of the high, low, and close of T1's last completed bar or bar still forming, as selected by a parameter.
+Short: On chart bars, close crosses below the Central Pivot Point of the high, low, and close of T1's last completed bar or bar still forming, as selected by a parameter.

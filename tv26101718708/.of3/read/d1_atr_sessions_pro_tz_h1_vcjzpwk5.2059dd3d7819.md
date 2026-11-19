@@ -1,0 +1,6 @@
+Calculation: White-zone body bounds = on the first white candle, upper = max(open, close) and lower = min(open, close); retain both bounds while white continues; clear both outside white state
+Calculation: Candle state = on the first bar, green if close >= open else red; after red, white if close > open[1] else red; after green, white if close < open[1] else green; after white, green if close > white-zone upper bound, red if close < white-zone lower bound, else white
+Long: Candle state == green
+Short: Candle state == red
+Long: On chart bars whose timeframe is no greater than a parameter timeframe, chart close > open(T1, current-forming or last-completed bar selected by an open-source parameter) + ATR(parameter lookback, calculated on T1 bars using the current-forming or last-completed bar selected by a separate ATR-source parameter)
+Short: On chart bars whose timeframe is no greater than a parameter timeframe, chart close < open(T1, current-forming or last-completed bar selected by an open-source parameter) - ATR(parameter lookback, calculated on T1 bars using the current-forming or last-completed bar selected by a separate ATR-source parameter)

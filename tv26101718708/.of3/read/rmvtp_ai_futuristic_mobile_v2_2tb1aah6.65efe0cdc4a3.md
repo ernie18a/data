@@ -1,0 +1,8 @@
+Calculation: timeframe score = trend weight × sign(close - EMA(close, longer EMA lookback)) + momentum weight × sign(close - close[momentum lookback]) + candle weight × candle score + volume confirmation weight × sign(close - EMA(close, longer EMA lookback)) × volume score; candle score is 1 when (close - open) / (high - low) > pressure threshold, -1 when it is below the negative pressure threshold, and 0 otherwise or when high = low; volume score is full volume score when volume / SMA(volume, volume lookback) >= higher volume ratio, partial volume score when it is >= lower volume ratio, and 0 otherwise, with ratio 0 when SMA(volume, volume lookback) = 0; compute on each T1–T5 timeframe’s bars and use the last completed bar historically or the still-forming bar in real time on chart bars
+Calculation: final score = T1 weight × T1 score + T2 weight × T2 score + T3 weight × T3 score + T4 weight × T4 score + T5 weight × T5 score, using each timeframe’s value mapped to chart bars
+Long: final score > 0
+Short: final score < 0
+Long: T1 score >= status threshold OR T2 score >= status threshold OR T3 score >= status threshold OR T4 score >= status threshold OR T5 score >= status threshold
+Short: T1 score <= -status threshold OR T2 score <= -status threshold OR T3 score <= -status threshold OR T4 score <= -status threshold OR T5 score <= -status threshold
+Long: final score >= strong threshold AND close > EMA(close, longer EMA lookback) AND EMA(close, shorter EMA lookback) > EMA(close, longer EMA lookback)
+Short: final score <= -strong threshold AND close < EMA(close, longer EMA lookback) AND EMA(close, shorter EMA lookback) < EMA(close, longer EMA lookback)

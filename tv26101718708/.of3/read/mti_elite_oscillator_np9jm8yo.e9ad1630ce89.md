@@ -1,0 +1,6 @@
+Calculation: Bullish divergence = On the bar a pivot low of low is confirmed using the same divergence lookback on each side, current pivot low < previous confirmed pivot low AND (RSI(close, RSI lookback) at current pivot bar > RSI(close, RSI lookback) at previous pivot bar OR MFI(hlc3, MFI lookback) at current pivot bar > MFI(hlc3, MFI lookback) at previous pivot bar)
+Calculation: Bearish divergence = On the bar a pivot high of high is confirmed using the same divergence lookback on each side, current pivot high > previous confirmed pivot high AND (RSI(close, RSI lookback) at current pivot bar < RSI(close, RSI lookback) at previous pivot bar OR MFI(hlc3, MFI lookback) at current pivot bar < MFI(hlc3, MFI lookback) at previous pivot bar)
+Long: RSI(close, RSI lookback) < RSI oversold threshold AND MFI(hlc3, MFI lookback) < MFI oversold threshold
+Long: Bullish divergence
+Short: RSI(close, RSI lookback) > RSI overbought threshold AND MFI(hlc3, MFI lookback) > MFI overbought threshold
+Short: Bearish divergence

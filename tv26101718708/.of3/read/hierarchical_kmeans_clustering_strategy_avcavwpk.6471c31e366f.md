@@ -1,0 +1,7 @@
+Long: SuperTrend(high, low, close, ATR lookback, SuperTrend factor) changes from bearish to bullish
+Short: SuperTrend(high, low, close, ATR lookback, SuperTrend factor) changes from bullish to bearish
+Long: SuperTrend(high, low, close, ATR lookback, SuperTrend factor) changes from bearish to bullish AND year(datetime) > start year OR (year(datetime) = start year AND month(datetime) >= start month) AND (MA filter disabled OR close > SMA(close, MA lookback)) AND (trend-strength filter disabled OR ADX(high, low, close, trend-strength lookback, same trend-strength lookback) > ADX threshold)
+Short: SuperTrend(high, low, close, ATR lookback, SuperTrend factor) changes from bullish to bearish AND year(datetime) > start year OR (year(datetime) = start year AND month(datetime) >= start month) AND (MA filter disabled OR close < SMA(close, MA lookback)) AND (trend-strength filter disabled OR ADX(high, low, close, trend-strength lookback, same trend-strength lookback) > ADX threshold)
+Calculation: Volume ratio = sum(volume where close > open, volume lookback) / max(sum(volume where close < open, same volume lookback), denominator floor)
+Exit: long, at least monitoring-delay bars since entry AND absolute value of (Volume ratio - balance ratio) <= balance ratio - volume ratio threshold
+Exit: short, at least monitoring-delay bars since entry AND absolute value of (Volume ratio - balance ratio) <= balance ratio - volume ratio threshold

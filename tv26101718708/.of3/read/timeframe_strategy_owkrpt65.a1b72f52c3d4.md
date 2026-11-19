@@ -1,0 +1,13 @@
+Calculation: Shortest EMA = EMA(close, shortest EMA lookback)
+Calculation: Second-shortest EMA = EMA(close, second-shortest EMA lookback)
+Calculation: Second-longest EMA = EMA(close, second-longest EMA lookback)
+Calculation: Longest EMA = EMA(close, longest EMA lookback)
+Calculation: Volume average = SMA(volume, volume-average lookback)
+Calculation: RSI value = RSI(close, RSI lookback)
+Calculation: ATR value = ATR(ATR lookback)
+Calculation: ADX value = ADX(ADX lookback)
+Calculation: Range percentage = (high - low) / close * 100
+Long: Position is flat AND Shortest EMA crosses above Second-shortest EMA AND Second-longest EMA > Longest EMA AND (volume filter is disabled OR volume > Volume average * volume multiplier) AND UTC hour(datetime) >= start-hour parameter AND UTC hour(datetime) < end-hour parameter AND (no prior entry OR chart bars since prior entry >= cooldown parameter for the chart timeframe) AND high - low < ATR value * volatility multiplier AND RSI value > RSI threshold AND (chart timeframe is not T1 OR ADX value > ADX threshold) AND (chart timeframe is not T1 OR Range percentage > T1 minimum range percentage) AND (chart timeframe is not T1 OR close > Longest EMA)
+Short: Position is flat AND Shortest EMA crosses below Second-shortest EMA AND Second-longest EMA < Longest EMA AND (volume filter is disabled OR volume > Volume average * volume multiplier) AND UTC hour(datetime) >= start-hour parameter AND UTC hour(datetime) < end-hour parameter AND (no prior entry OR chart bars since prior entry >= cooldown parameter for the chart timeframe) AND high - low < ATR value * volatility multiplier AND RSI value < RSI threshold AND (chart timeframe is not T1 OR ADX value > ADX threshold) AND (chart timeframe is not T1 OR Range percentage > T1 minimum range percentage) AND (chart timeframe is not T1 OR close < Longest EMA)
+Exit: long, (trailing is enabled AND (high >= entry price * (1 + chart-timeframe take-profit percentage / 100) OR (highest high since entry >= entry price AND low <= highest high since entry - chart-timeframe trailing percentage / 100))) OR (trailing is disabled AND (high >= entry price * (1 + chart-timeframe take-profit percentage / 100) OR low <= entry price * (1 - chart-timeframe stop-loss percentage / 100)))
+Exit: short, (trailing is enabled AND (low <= entry price * (1 - chart-timeframe take-profit percentage / 100) OR (lowest low since entry <= entry price AND high >= lowest low since entry + chart-timeframe trailing percentage / 100))) OR (trailing is disabled AND (low <= entry price * (1 - chart-timeframe take-profit percentage / 100) OR high >= entry price * (1 + chart-timeframe stop-loss percentage / 100)))

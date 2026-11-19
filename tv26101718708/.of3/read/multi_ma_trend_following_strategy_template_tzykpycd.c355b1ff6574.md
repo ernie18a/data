@@ -1,0 +1,7 @@
+Calculation: Selected trend = the configured choice of ALMA(source, lookback, offset, sigma), DEMA(source, lookback), DSMA(source, lookback, filter lookback, pole count), EMA(source, lookback), HMA(source, lookback), JMA(source, lookback, power, phase), KAMA(source, lookback, alpha), LSMA(source, lookback, offset), RMA(source, lookback), SMA(source, lookback), SMMA(source, lookback), source, SuperTrend(source, ATR lookback, ATR multiplier), TEMA(source, lookback), TMA(source, lookback), VAMA(source, lookback, volatility lookback), VIDYA(source, lookback, momentum lookback), VMA(source, lookback), VWMA(source, lookback), WMA(source, lookback), WWMA(source, lookback), or ZLEMA(source, lookback)
+Long: selected trend > selected trend one bar ago
+Short: selected trend < selected trend one bar ago
+Long: datetime is within the configured start and end times AND long trading is enabled AND selected trend crosses above its value one bar ago
+Short: datetime is within the configured start and end times AND short trading is enabled AND selected trend crosses below its value one bar ago
+Exit: Long, datetime is before the configured start time OR after the configured end time
+Exit: Short, datetime is before the configured start time OR after the configured end time

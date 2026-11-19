@@ -1,0 +1,7 @@
+Calculation: volume-weighted momentum = if Sum(volume with missing values treated as zero, VW averaging window) > 0 then Sum((close - close[ROC lookback]) * volume with missing values treated as zero, VW averaging window) / Sum(volume with missing values treated as zero, VW averaging window) else 0
+Long: volume-weighted momentum crosses above zero
+Long: close crosses above EMA(close, reclaim lookback)
+Long: session filter is disabled or the bar is within the configured session AND (ATR(ATR lookback) <= 0 or abs(volume-weighted momentum) >= minimum magnitude × ATR(ATR lookback)) AND cooldown bars have elapsed since the prior signal or the chart's initial bar AND the bar is confirmed AND position is not already long AND ((zero-cross-only mode AND volume-weighted momentum crosses above zero) OR (zero-cross-only mode is disabled AND volume-weighted momentum > 0 AND close crosses above EMA(close, reclaim lookback)))
+Short: volume-weighted momentum crosses below zero
+Short: close crosses below EMA(close, reclaim lookback)
+Short: session filter is disabled or the bar is within the configured session AND (ATR(ATR lookback) <= 0 or abs(volume-weighted momentum) >= minimum magnitude × ATR(ATR lookback)) AND cooldown bars have elapsed since the prior signal or the chart's initial bar AND the bar is confirmed AND position is not already short AND ((zero-cross-only mode AND volume-weighted momentum crosses below zero) OR (zero-cross-only mode is disabled AND volume-weighted momentum < 0 AND close crosses below EMA(close, reclaim lookback)))

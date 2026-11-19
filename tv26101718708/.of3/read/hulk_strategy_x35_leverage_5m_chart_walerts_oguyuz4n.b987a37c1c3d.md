@@ -1,0 +1,6 @@
+Calculation: Centered RSI = RSI(close, lookback) - 50
+Calculation: MACD histogram = MACD histogram of close with fast lookback, longer slow lookback, and signal lookback, calculated on T1 bars; chart bars use the last completed T1 bar
+Long: close > EMA(close, longer lookback) AND MACD histogram < -MACD threshold AND ADX(high, low, close, DI lookback, smoothing lookback) > ADX threshold AND EMA(close, shorter lookback) > EMA(close, longer lookback) AND Centered RSI < upper RSI threshold AND Centered RSI > lower RSI threshold AND previous trade count < maximum-trades parameter AND position is flat
+Short: close < EMA(close, longer lookback) AND MACD histogram > MACD threshold AND ADX(high, low, close, DI lookback, smoothing lookback) > ADX threshold AND EMA(close, shorter lookback) < EMA(close, longer lookback) AND Centered RSI < upper RSI threshold AND Centered RSI > lower RSI threshold AND previous trade count < maximum-trades parameter AND position is flat
+Exit: long, high >= close of the long-entry signal bar * (1 + take-profit parameter) OR low <= close of the long-entry signal bar * (1 - stop-loss parameter)
+Exit: short, low <= close of the short-entry signal bar * (1 - take-profit parameter) OR high >= close of the short-entry signal bar * (1 + stop-loss parameter)

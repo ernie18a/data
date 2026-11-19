@@ -1,0 +1,8 @@
+Long: selected MA(close, lookback × resolution multiplier, T1 bars; last completed bar, carried onto chart bars) crosses above selected MA(open, lookback × resolution multiplier, T1 bars; last completed bar, carried onto chart bars) AND trade selection does not disable long entries
+Long: selected MA(close, lookback × resolution multiplier, T1 bars; last completed bar, carried onto chart bars) > selected MA(open, lookback × resolution multiplier, T1 bars; last completed bar, carried onto chart bars)
+Long: selected MA(close, lookback, chart bars) > selected MA(open, lookback × resolution multiplier, T1 bars; last completed bar, carried onto chart bars)
+Short: selected MA(close, lookback × resolution multiplier, T1 bars; last completed bar, carried onto chart bars) crosses below selected MA(open, lookback × resolution multiplier, T1 bars; last completed bar, carried onto chart bars) AND trade selection does not disable short entries
+Short: selected MA(close, lookback × resolution multiplier, T1 bars; last completed bar, carried onto chart bars) <= selected MA(open, lookback × resolution multiplier, T1 bars; last completed bar, carried onto chart bars)
+Short: selected MA(close, lookback, chart bars) <= selected MA(open, lookback × resolution multiplier, T1 bars; last completed bar, carried onto chart bars)
+Exit: long, (target-profit distance is enabled AND high >= entry price + target-profit distance) OR (stop-loss distance is enabled AND low <= entry price - stop-loss distance)
+Exit: short, (target-profit distance is enabled AND low <= entry price - target-profit distance) OR (stop-loss distance is enabled AND high >= entry price + stop-loss distance)

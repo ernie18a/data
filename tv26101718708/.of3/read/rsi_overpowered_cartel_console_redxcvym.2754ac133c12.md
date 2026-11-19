@@ -1,0 +1,7 @@
+Calculation: Volume RSI composite = average(RSI(PVI(close, volume), RSI lookback), RSI(NVI(close, volume), RSI lookback), RSI(OBV(close, volume), RSI lookback))
+Calculation: Smoothed volume RSI composite = EMA(Volume RSI composite, composite smoothing lookback)
+Calculation: Composite RSI = EMA(RSI(Volume RSI composite, RSI lookback), oscillator smoothing lookback)
+Long: Composite RSI crosses above oversold AND Supertrend(ATR multiplier, ATR lookback) is bullish
+Short: Composite RSI crosses below overbought AND Supertrend(ATR multiplier, ATR lookback) is bearish
+Long: Smoothed volume RSI composite confirms a pivot low using left and right pivot lookbacks, its value at the pivot is at or below oversold, and, compared with the most recent earlier qualifying pivot low no more than the maximum pivot gap ago, the price low is lower and the Smoothed volume RSI composite value is higher
+Short: Smoothed volume RSI composite confirms a pivot high using left and right pivot lookbacks, its value at the pivot is at or above overbought, and, compared with the most recent earlier qualifying pivot high no more than the maximum pivot gap ago, the price high is higher and the Smoothed volume RSI composite value is lower

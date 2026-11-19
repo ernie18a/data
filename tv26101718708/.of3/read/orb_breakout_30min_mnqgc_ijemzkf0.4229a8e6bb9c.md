@@ -1,0 +1,3 @@
+Calculation: opening-range high = maximum high of chart bars in the opening-range interval for each session
+Calculation: opening-range average volume = sum of volume of chart bars in the opening-range interval for each session / number of those bars
+Long: close > opening-range high AND volume >= volume multiplier × opening-range average volume AND close > VWAP(hlc3) AND current bar time is at or after the opening-range end and before the entry-window cutoff in New York time AND the preceding chart bar did not satisfy all four price, volume, VWAP, and time conditions

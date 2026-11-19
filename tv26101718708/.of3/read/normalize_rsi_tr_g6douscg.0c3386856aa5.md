@@ -1,0 +1,6 @@
+Calculation: RangeNormalize(x, lookback) = 100 * (x - Lowest(x, lookback)) / (Highest(x, lookback) - Lowest(x, lookback)) when the range is positive, otherwise nz(x[1])
+Calculation: FactorSmooth(x, factor) = x on the first bar, otherwise y[1] + factor * (x - y[1]), where y is FactorSmooth(x, factor)
+Calculation: Normalized oscillator = FactorSmooth(RangeNormalize(FactorSmooth(RangeNormalize(clamp(selected moving average of RSI(close, RSI lookback) - 50 using the RSI smoothing lookback and selected moving-average type, -clipping limit, clipping limit), normalization lookback), smoothing factor), normalization lookback), smoothing factor) - 50
+Calculation: Trend state = 1 when the normalized oscillator is greater than its oversold level and greater than or equal to its prior value; -1 when it is below its overbought level and below its prior value; otherwise its prior value, defaulting to 0
+Long: the normalized oscillator crosses above its oversold level OR crosses above zero OR crosses below its oversold level OR trend state = 1
+Short: the normalized oscillator crosses below its overbought level OR crosses below zero OR crosses above its overbought level OR trend state = -1

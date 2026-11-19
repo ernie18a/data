@@ -1,0 +1,3 @@
+Calculation: Stock price difference = Stock 1 closing price on T1 − Stock 2 closing price on T1
+Long: Price Spread comparison mode selected AND (high/low markers enabled OR high/low alerts enabled) AND stock price difference > highest stock price difference over the preceding P1 bars
+Short: Price Spread comparison mode selected AND (high/low markers enabled OR high/low alerts enabled) AND stock price difference < lowest stock price difference over the preceding P1 bars

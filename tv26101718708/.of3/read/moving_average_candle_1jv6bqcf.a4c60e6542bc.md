@@ -1,0 +1,6 @@
+Long: MA(close, type A, lookback A) > MA(close, type A, lookback A)[1]
+Short: MA(close, type A, lookback A) <= MA(close, type A, lookback A)[1]
+Long: MA(close, type B, lookback B) > MA(close, type B, lookback B)[1]
+Short: MA(close, type B, lookback B) <= MA(close, type B, lookback B)[1]
+Long: MA(close, type C, lookback C) > MA(close, type C, lookback C)[1]
+Short: MA(close, type C, lookback C) <= MA(close, type C, lookback C)[1]

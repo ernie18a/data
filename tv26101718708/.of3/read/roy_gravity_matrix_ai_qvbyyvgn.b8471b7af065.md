@@ -1,0 +1,5 @@
+Calculation: EMA direction(T,L) = +1 when the close of the still-forming T bar is above EMA(close,L) calculated on T bars, otherwise -1; map the value onto chart bars, where L1 < L2 < L3 < L4 < L5 are shared EMA lookback parameters.
+Calculation: Weighted trend score = sum over T1–T7 and L1–L5 of W(T,L) × EMA direction(T,L), where each W(T,L) is a separate positive weight parameter.
+Calculation: Trigger timeframe(M) = T1 when M is T1 or T2, otherwise the timeframe immediately shorter than M; T1–T7 are ordered shortest to longest, and M is the selected main timeframe.
+Long: Weighted trend score > 0 AND EMA direction(M,L2) = +1 AND EMA direction(M,L3) = +1 AND EMA direction(Trigger timeframe(M),L2) = +1
+Short: Weighted trend score < 0 AND EMA direction(M,L2) = -1 AND EMA direction(M,L3) = -1 AND EMA direction(Trigger timeframe(M),L2) = -1

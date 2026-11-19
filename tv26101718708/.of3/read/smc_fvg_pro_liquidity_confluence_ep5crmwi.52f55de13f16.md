@@ -1,0 +1,4 @@
+Calculation: latest unbroken pivot high = most recently confirmed PivotHigh(high, swing length, swing length), cleared when close crosses above it
+Calculation: latest unbroken pivot low = most recently confirmed PivotLow(low, swing length, swing length), cleared when close crosses below it
+Long: crossover(close, latest unbroken pivot high) OR (low > high[2] AND low - high[2] >= minimum gap size in ticks × tick size) OR (on chart bars using T1 values, low of the forming T1 bar > high two T1 bars ago)
+Short: crossunder(close, latest unbroken pivot low) OR (high < low[2] AND low[2] - high >= minimum gap size in ticks × tick size) OR (on chart bars using T1 values, high of the forming T1 bar < low two T1 bars ago)

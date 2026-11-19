@@ -1,0 +1,8 @@
+Calculation: Trailing stop = highest(chart-bar close since both profit targets have triggered) - chandelier ATR multiplier * highest(ATR(chart bars, ATR lookback), ATR-smoothing lookback)
+Long: position is flat AND T1 Supertrend direction is up (computed on T1 bars; chart bars use the live T1 bar in real time and the last completed T1 value historically) AND chart-bar close > HMA(chart-bar close, HMA lookback) AND chart-bar ADX(high, low, close, ADX lookback) > ADX threshold AND (ADX-slope filter disabled OR ADX > ADX[1]) AND (HMA-slope filter disabled OR HMA > HMA[1]) AND (price-acceleration filter disabled OR high - high[1] > ATR(ATR lookback) * acceleration multiplier) AND no full-position exit occurred within the cooldown lookback
+Exit: long, high >= entry price + first-target multiple * ATR(ATR lookback) at entry AND first target has not already triggered
+Exit: long, high >= entry price + second-target multiple * ATR(ATR lookback) at entry AND second target has not already triggered
+Exit: long, low < entry price - stop multiple * ATR(ATR lookback) at entry
+Exit: long, first target has not triggered AND chart-bar close >= entry price + stage-one exit multiple * ATR(ATR lookback) at entry AND low < entry price + stage-one exit multiple * ATR(ATR lookback) at entry
+Exit: long, both profit targets have triggered AND chandelier trailing stop is enabled AND low <= trailing stop
+Exit: long, both profit targets have triggered AND chart-bar Supertrend direction changes from up to down

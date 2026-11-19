@@ -1,0 +1,4 @@
+Calculation: Volume Z-Score = (volume - SMA(volume, volume lookback)) / population StDev(volume, volume lookback)
+Calculation: Compass = EMA(clamp((Vortex Indicator positive line(vortex lookback) - Vortex Indicator negative line(vortex lookback)) × directional scale × (choppiness maximum - Choppiness Index(choppiness lookback)) / trendiness divisor × clamp(multiplier baseline + Volume Z-Score × volume adjustment, volume multiplier minimum, volume multiplier maximum), compass minimum, compass maximum), smoothing lookback)
+Long: Compass crosses above rotation threshold AND Choppiness Index(choppiness lookback) < its value one bar ago AND Volume Z-Score > volume confirmation threshold
+Short: Compass crosses below the negative of the same rotation threshold AND Choppiness Index(choppiness lookback) < its value one bar ago AND Volume Z-Score > volume confirmation threshold

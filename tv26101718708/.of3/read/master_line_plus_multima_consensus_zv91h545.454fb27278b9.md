@@ -1,0 +1,5 @@
+Calculation: consensus = (EMA(source, lookback) + SMA(source, lookback) + WMA(source, lookback) + HMA(source, lookback) + RMA(source, lookback) + DEMA(source, lookback) + TEMA(source, lookback) + ALMA(source, lookback, offset, sigma)) / 8
+Calculation: flip band = band multiplier × ATR(ATR lookback)
+Calculation: trend state = 1 when close > consensus + flip band, -1 when close < consensus - flip band, otherwise previous trend state (initially 0)
+Long: trend state = 1 AND previous trend state <= 0 AND (higher-timeframe filter disabled OR (T1 consensus is available AND chart close > consensus(source, lookback, offset, sigma, evaluated on chart bars using T1 with lookahead off: completed T1 values historically and the developing T1 value in realtime)))
+Short: trend state = -1 AND previous trend state >= 0 AND (higher-timeframe filter disabled OR (T1 consensus is available AND chart close < consensus(source, lookback, offset, sigma, evaluated on chart bars using T1 with lookahead off: completed T1 values historically and the developing T1 value in realtime)))

@@ -1,0 +1,6 @@
+Short: The traded instrument's high > its prior-bar high AND a comparison asset's high <= its prior-bar high AND this divergence condition was false on the prior bar
+Long: The traded instrument's low < its prior-bar low AND a comparison asset's low >= its prior-bar low AND this divergence condition was false on the prior bar
+Short: The traded instrument and a comparison asset confirm pivot highs on the same bar at length P1, P2, or P3, and their changes from stored prior pivot highs have opposite signs
+Long: The traded instrument and a comparison asset confirm pivot lows on the same bar at length P1, P2, or P3, and their changes from stored prior pivot lows have opposite signs
+Long: A bullish FVG in the traded instrument is newly mitigated while a comparison asset's latest bullish FVG is unmitigated and was formed within P4 bars, OR a comparison asset's bullish FVG is newly mitigated while the traded instrument's latest bullish FVG is unmitigated and was formed within P4 bars
+Short: A bearish FVG in the traded instrument is newly mitigated while a comparison asset's latest bearish FVG is unmitigated and was formed within P4 bars, OR a comparison asset's bearish FVG is newly mitigated while the traded instrument's latest bearish FVG is unmitigated and was formed within P4 bars

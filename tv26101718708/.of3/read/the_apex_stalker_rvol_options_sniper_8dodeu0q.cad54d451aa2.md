@@ -1,0 +1,5 @@
+Calculation: RVOL = volume of the current (possibly forming) T1 bar, sampled at chart-bar close, divided by SMA(volume, volume lookback, T1 current bar, sampled at chart-bar close), replacing a zero SMA with 1
+Calculation: Price change percentage = (close of current T1 bar − close of previous T1 bar) / close of previous T1 bar × 100, sampled at chart-bar close
+Calculation: ATR travel percentage = abs(close of current T2 bar − close of previous T2 bar) / ATR(ATR lookback, T2 current bar), replacing a zero ATR with 1, × 100; sampled at chart-bar close
+Long: RVOL ≥ RVOL threshold AND Price change percentage > 0 AND ATR travel percentage < ATR warning threshold AND close of current T1 bar > EMA(close, EMA lookback, T2 current bar)
+Short: RVOL ≥ RVOL threshold AND ATR travel percentage ≥ ATR exhaustion threshold

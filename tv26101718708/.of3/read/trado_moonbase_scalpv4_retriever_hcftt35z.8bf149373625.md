@@ -1,0 +1,1 @@
+Long: On T1 chart bars, HyperWave on the last completed bar > HyperWave Signal on the last completed bar AND HyperWave two bars ago >?

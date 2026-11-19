@@ -1,0 +1,4 @@
+Long: the latest confirmed Pivot Low of the chart instrument, using P1 bars left and right, is lower than its preceding confirmed Pivot Low AND the latest confirmed Pivot Low of the comparison asset, using P1 bars left and right, is greater than or equal to its preceding confirmed Pivot Low AND the two latest pivot bars are at most P2 bars apart
+Short: the latest confirmed Pivot High of the chart instrument, using P1 bars left and right, is higher than its preceding confirmed Pivot High AND the latest confirmed Pivot High of the comparison asset, using P1 bars left and right, is less than or equal to its preceding confirmed Pivot High AND the two latest pivot bars are at most P2 bars apart
+Long: the chart instrument's close is greater than its open AND the comparison asset's close is less than its open
+Short: the chart instrument's close is less than its open AND the comparison asset's close is greater than its open

@@ -1,0 +1,3 @@
+Calculation: volume delta = (volume if close - low > high - close, otherwise volume if close > open, otherwise 0) - (volume if close - low < high - close, otherwise volume if close < open, otherwise 0)
+Long: EMA(volume delta, oscillator smoothing lookback) crosses above SMA(EMA(volume delta, oscillator smoothing lookback), signal lookback) AND EMA(volume delta, oscillator smoothing lookback) < 0
+Short: EMA(volume delta, oscillator smoothing lookback) crosses below SMA(EMA(volume delta, oscillator smoothing lookback), signal lookback) AND EMA(volume delta, oscillator smoothing lookback) > 0

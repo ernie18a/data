@@ -1,0 +1,4 @@
+Calculation: Reversal threshold = swing-size parameter when positive, otherwise swing multiplier × ATR(ATR lookback)
+Calculation: Swing-leg state = starts upward on the first bar with that bar’s high as the running extreme and leg start; on confirmed bars, updates the running extreme before testing reversals, using higher highs while upward and lower lows while downward; after a reversal, starts the next leg at the prior extreme’s bar, switches direction, and resets the extreme to the confirmation bar’s low when switching downward or high when switching upward
+Long: downward swing leg AND confirmed bar AND current bar index − leg start ≥ minimum leg bars AND close ≥ running low + reversal threshold
+Short: upward swing leg AND confirmed bar AND current bar index − leg start ≥ minimum leg bars AND close ≤ running high − reversal threshold

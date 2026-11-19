@@ -1,0 +1,10 @@
+Calculation: TriAnchorEnergy = sum of ((close - VWAP(hlc3, anchor T1)) / N)^2, ((close - VWAP(hlc3, anchor T2)) / N)^2, and ((close - VWAP(hlc3, anchor T3)) / N)^2, where each anchored VWAP is calculated on chart bars through the current bar and N is ATR(ATR lookback), or TrueRange when ATR is zero
+Calculation: BarCloseFraction = (close - low) / max(high - low, instrument minimum tick)
+Calculation: BreadthRobustZAverage = arithmetic mean of RobustZ(close, Z lookback) for three breadth series, evaluated on current chart bars
+Calculation: SessionGapPercent = when the chart is non-intraday or the bar is the first regular-session bar, 100 * (open - close[1]) / close[1] if close[1] exists, otherwise 0; on other intraday bars, 0
+Long: PercentRank(TriAnchorEnergy, energy lookback) >= energy threshold AND RobustZ(close, Z lookback) <= -Z threshold AND BarCloseFraction <= shape threshold AND (breadth filter disabled OR BreadthRobustZAverage <= -breadth threshold) AND abs(SessionGapPercent) < gap threshold, all evaluated delay bars ago
+Short: PercentRank(TriAnchorEnergy, energy lookback) >= energy threshold AND RobustZ(close, Z lookback) >= Z threshold AND BarCloseFraction >= 1 - shape threshold AND (breadth filter disabled OR BreadthRobustZAverage >= breadth threshold) AND abs(SessionGapPercent) < gap threshold
+Exit: long, PercentRank(TriAnchorEnergy, energy lookback) >= energy threshold AND RobustZ(close, Z lookback) <= -Z threshold AND BarCloseFraction <= shape threshold AND (breadth filter disabled OR BreadthRobustZAverage <= -breadth threshold) AND abs(SessionGapPercent) < gap threshold
+Exit: short, PercentRank(TriAnchorEnergy, energy lookback) >= energy threshold AND RobustZ(close, Z lookback) <= -Z threshold AND BarCloseFraction <= shape threshold AND (breadth filter disabled OR BreadthRobustZAverage <= -breadth threshold) AND abs(SessionGapPercent) < gap threshold
+Exit: short, short brackets enabled AND high >= entry price + short stop multiple * ATR(ATR lookback)
+Exit: short, short brackets enabled AND low <= entry price - short take-profit multiple * ATR(ATR lookback) AND high < entry price + short stop multiple * ATR(ATR lookback)

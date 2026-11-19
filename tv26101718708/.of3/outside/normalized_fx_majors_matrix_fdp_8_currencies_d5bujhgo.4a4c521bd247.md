@@ -1,0 +1,1 @@
+Long: Base currency strength is highest-ranked AND quote currency strength is lowest-ranked

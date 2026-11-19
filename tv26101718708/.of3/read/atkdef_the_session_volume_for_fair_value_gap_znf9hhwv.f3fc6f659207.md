@@ -1,0 +1,2 @@
+Long: On a confirmed chart bar, the middle bar is within a configured session, low > high[2], and low - high[2] >= the minimum gap
+Short: On a confirmed chart bar, the middle bar is within a configured session, high < low[2], and low[2] - high >= the minimum gap

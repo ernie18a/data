@@ -1,0 +1,6 @@
+Calculation: EMA momentum = 100 × (EMA(close, P4) − EMA(close, P5)) / EMA(close, P5)
+Calculation: Normalized EMA momentum = 2 × (EMA momentum − lowest(EMA momentum, P6)) / (highest(EMA momentum, P6) − lowest(EMA momentum, P6)) − 1 when highest(EMA momentum, P6) > lowest(EMA momentum, P6); otherwise 0
+Long: close > EMA(close, P3) AND EMA(close, P1) > EMA(close, P2)
+Short: close < EMA(close, P3) AND EMA(close, P1) < EMA(close, P2)
+Long: close > EMA(close, P3) AND EMA(close, P1) > EMA(close, P2) AND Normalized EMA momentum > 0 AND Normalized EMA momentum > EMA(Normalized EMA momentum, P7) AND Normalized EMA momentum < P8 AND (P12 is disabled OR (volume ≥ SMA(volume, P10) × P11 AND close > open)) AND the last emitted signal is not long
+Short: close < EMA(close, P3) AND EMA(close, P1) < EMA(close, P2) AND Normalized EMA momentum < 0 AND Normalized EMA momentum < EMA(Normalized EMA momentum, P7) AND Normalized EMA momentum > P9 AND (P12 is disabled OR (volume ≥ SMA(volume, P10) × P11 AND close < open)) AND the last emitted signal is not short

@@ -1,0 +1,11 @@
+Calculation: range = high - low
+Calculation: body = abs(close - open)
+Calculation: upper wick = high - max(open, close)
+Calculation: lower wick = min(open, close) - low
+Calculation: body ratio = if range > 0 then body / range else 0
+Calculation: upper wick ratio = if range > 0 then upper wick / range else 0
+Calculation: lower wick ratio = if range > 0 then lower wick / range else 0
+Calculation: body bottom = min(open, close)
+Calculation: body top = max(open, close)
+Long: body ratio <= body-ratio maximum AND lower wick ratio >= dominant-wick-ratio minimum AND upper wick ratio <= opposite-wick-ratio maximum AND lower wick > body AND lower wick > upper wick AND (short-SMA filter disabled OR (body bottom > SMA(close, short SMA lookback) AND low - SMA(close, short SMA lookback) <= distance multiplier * ATR(ATR lookback) AND SMA(close, short SMA lookback) - SMA(close, short SMA lookback)[short-SMA slope lag] > 0)) AND (long-SMA filter disabled OR (SMA(close, longer SMA lookback) - SMA(close, longer SMA lookback)[long-SMA slope lag] > 0 AND body bottom > SMA(close, longer SMA lookback))) AND (EMA filter disabled OR (body bottom >= EMA(close, EMA lookback) AND EMA(close, EMA lookback) - EMA(close, EMA lookback)[EMA slope lag] > 0)) AND (volume filter disabled OR (volume >= minimum-volume multiplier * SMA(volume, volume lookback) AND volume <= maximum-volume multiplier * SMA(volume, volume lookback)))
+Short: body ratio <= body-ratio maximum AND upper wick ratio >= dominant-wick-ratio minimum AND lower wick ratio <= opposite-wick-ratio maximum AND upper wick > body AND upper wick > lower wick AND (short-SMA filter disabled OR (body top < SMA(close, short SMA lookback) AND SMA(close, short SMA lookback) - high <= distance multiplier * ATR(ATR lookback) AND SMA(close, short SMA lookback) - SMA(close, short SMA lookback)[short-SMA slope lag] < 0)) AND (long-SMA filter disabled OR (SMA(close, longer SMA lookback) - SMA(close, longer SMA lookback)[long-SMA slope lag] < 0 AND body top < SMA(close, longer SMA lookback))) AND (EMA filter disabled OR (body top <= EMA(close, EMA lookback) AND EMA(close, EMA lookback) - EMA(close, EMA lookback)[EMA slope lag] < 0)) AND (volume filter disabled OR (volume >= minimum-volume multiplier * SMA(volume, volume lookback) AND volume <= maximum-volume multiplier * SMA(volume, volume lookback)))

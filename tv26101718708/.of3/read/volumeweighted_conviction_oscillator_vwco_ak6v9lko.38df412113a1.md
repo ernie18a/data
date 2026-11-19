@@ -1,0 +1,3 @@
+Calculation: VWCO = if EMA(max(-v, 0), VWCO lookback) = 0 then 100 else 100 * EMA(max(v, 0), VWCO lookback) / (EMA(max(v, 0), VWCO lookback) + EMA(max(-v, 0), VWCO lookback)), where v = volume / SMA(volume, volume lookback) * (high - low) * (if high - low = 0 then 0 else (2 * close - low - high) / (high - low))
+Long: VWCO > VWCO midpoint OR VWCO crosses above EMA(VWCO, signal lookback)
+Short: VWCO < VWCO midpoint OR VWCO crosses below EMA(VWCO, signal lookback)

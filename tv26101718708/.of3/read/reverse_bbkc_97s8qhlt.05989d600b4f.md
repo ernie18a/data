@@ -1,0 +1,13 @@
+Calculation: Bars since squeeze = 0 on chart bars where Bollinger upper(close, Bollinger lookback, deviation multiplier) < Keltner upper(close, Keltner lookback, ATR lookback, ATR multiplier) AND Bollinger lower(close, Bollinger lookback, deviation multiplier) > Keltner lower(close, Keltner lookback, ATR lookback, ATR multiplier); otherwise previous value + 1.
+Calculation: Initial short stop = entry price * (1 + stop percent / 100) when stop type is percent, otherwise signal-bar high; when the maximum-loss parameter is positive, tighten the stop to cap the position loss at that amount.
+Calculation: Initial long stop = entry price * (1 - stop percent / 100) when stop type is percent, otherwise signal-bar low; when the maximum-loss parameter is positive, tighten the stop to cap the position loss at that amount.
+Calculation: Short risk distance = initial short stop - entry price.
+Calculation: Long risk distance = entry price - initial long stop.
+Calculation: Short target = entry price - short risk distance * risk-reward parameter.
+Calculation: Long target = entry price + long risk distance * risk-reward parameter.
+Calculation: Active short stop = entry price after low <= entry price - short risk distance * breakeven trigger; otherwise initial short stop. Once moved, it remains at entry price for the rest of the position.
+Calculation: Active long stop = entry price after high >= entry price + long risk distance * breakeven trigger; otherwise initial long stop. Once moved, it remains at entry price for the rest of the position.
+Long: confirmed chart bar AND bars since squeeze <= squeeze-grace parameter AND close < Keltner lower(close, Keltner lookback, ATR lookback, ATR multiplier) AND (signal-candle direction filter is disabled OR close < open) AND position is flat AND (one-trade-per-breakout restriction is disabled OR no entry has occurred since the current squeeze began) AND no winning exit has occurred since the current squeeze began AND no loss-triggered signal skip is pending while squeeze grace is enabled.
+Short: confirmed chart bar AND bars since squeeze <= squeeze-grace parameter AND close > Keltner upper(close, Keltner lookback, ATR lookback, ATR multiplier) AND (signal-candle direction filter is disabled OR close > open) AND position is flat AND (one-trade-per-breakout restriction is disabled OR no entry has occurred since the current squeeze began) AND no winning exit has occurred since the current squeeze began AND no loss-triggered signal skip is pending while squeeze grace is enabled.
+Exit: short, high >= active short stop OR low <= short target.
+Exit: long, low <= active long stop OR high >= long target.

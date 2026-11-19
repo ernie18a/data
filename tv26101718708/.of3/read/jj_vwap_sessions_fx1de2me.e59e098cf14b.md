@@ -1,0 +1,2 @@
+Calculation: Touch(value) = (touch-source parameter selects high/low AND high >= value AND low <= value) OR (touch-source parameter selects open/close AND min(open, close) <= value AND value <= max(open, close))
+Long: Touch(VWAP(hlc3, chart bars)) OR Touch(VWAP(hlc3, volume, Asia-session parameter, America/New_York, chart bars)) OR Touch(VWAP(hlc3, volume, London-session parameter, America/New_York, chart bars)) OR Touch(VWAP(hlc3, volume, New-York-session parameter, America/New_York, chart bars))

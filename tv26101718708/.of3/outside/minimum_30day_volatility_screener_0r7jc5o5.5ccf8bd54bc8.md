@@ -1,0 +1,1 @@
+Option: buy call, underlying close >= P1 AND ATR(P2) of underlying / underlying close * 100 <= P3 AND call delta = P4

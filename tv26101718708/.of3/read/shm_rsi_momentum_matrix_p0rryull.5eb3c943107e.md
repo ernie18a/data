@@ -1,0 +1,6 @@
+Calculation: Shorter WMA = WMA(OHLC4, shorter WMA lookback)
+Calculation: Longer WMA = WMA(OHLC4, longer WMA lookback)
+Calculation: Filter SMA = SMA(OHLC4, sensitivity lookback)
+Calculation: RSI value = RSI(OHLC4, RSI lookback) on T1 bars, using the last completed T1 bar's value on each chart bar
+Long: (close crosses above Shorter WMA OR close crosses above Longer WMA OR (candle body trigger and wick trigger both enabled AND (high crosses above Shorter WMA OR high crosses above Longer WMA))) AND close > Filter SMA AND (macro tide filter disabled OR close > Longer WMA) AND (RSI filter disabled OR (RSI value >= long lower threshold AND RSI value <= long upper threshold))
+Short: (close crosses below Shorter WMA OR close crosses below Longer WMA OR (candle body trigger and wick trigger both enabled AND (low crosses below Shorter WMA OR low crosses below Longer WMA))) AND close < Filter SMA AND (macro tide filter disabled OR close < Longer WMA) AND (RSI filter disabled OR (RSI value <= short upper threshold AND RSI value >= short lower threshold))

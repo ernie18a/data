@@ -1,0 +1,2 @@
+Long: traded instrument price > resistance AND momentum points > P1 AND momentum rank <= P2 AND volatility state = Explosive
+Short: traded instrument price < support AND momentum points > P1 AND momentum rank <= P2 AND volatility state = Explosive

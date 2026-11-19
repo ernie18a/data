@@ -1,0 +1,13 @@
+Calculation: Bullish FVG = low > high[2] AND close[1] > open[1] AND ((low - high[2]) / close) * 100 >= minimum FVG size
+Calculation: Bearish FVG = high < low[2] AND close[1] < open[1] AND ((low[2] - high) / close) * 100 >= minimum FVG size
+Calculation: Bullish BOS = a latest confirmed PivotHigh(high, swing lookback, swing lookback) exists AND close > latest confirmed PivotHigh(high, swing lookback, swing lookback) AND close[1] <= latest confirmed PivotHigh(high, swing lookback, swing lookback)
+Calculation: Bearish BOS = a latest confirmed PivotLow(low, swing lookback, swing lookback) exists AND close < latest confirmed PivotLow(low, swing lookback, swing lookback) AND close[1] >= latest confirmed PivotLow(low, swing lookback, swing lookback)
+Calculation: Bullish engulfing = close > open AND close[1] < open[1] AND close > open[1] AND open < close[1] AND close - open > open[1] - close[1]
+Calculation: Bearish engulfing = close < open AND close[1] > open[1] AND close < open[1] AND open > close[1] AND open - close > close[1] - open[1]
+Calculation: Volume spike = volume > SMA(volume, volume lookback) * volume multiplier
+Long: Bullish FVG OR Bullish BOS OR Bullish engulfing
+Short: Bearish FVG OR Bearish BOS OR Bearish engulfing
+Calculation: Long exit anchor = close on the latest bar where Bullish FVG AND Volume spike AND (trend filter disabled OR close > EMA(close, trend lookback)) AND (engulfing filter disabled OR Bullish engulfing) AND (session-only filter disabled OR ((session start hour parameter <= session end hour parameter AND GMT hour >= session start hour parameter AND GMT hour < session end hour parameter) OR (session start hour parameter > session end hour parameter AND (GMT hour >= session start hour parameter OR GMT hour < session end hour parameter))))
+Calculation: Short exit anchor = close on the latest bar where Bearish FVG AND Volume spike AND (trend filter disabled OR close < EMA(close, trend lookback)) AND (engulfing filter disabled OR Bearish engulfing) AND (session-only filter disabled OR ((session start hour parameter <= session end hour parameter AND GMT hour >= session start hour parameter AND GMT hour < session end hour parameter) OR (session start hour parameter > session end hour parameter AND (GMT hour >= session start hour parameter OR GMT hour < session end hour parameter))))
+Exit: long, Bearish BOS OR low <= Long exit anchor * (1 - stop-loss percentage / 100) OR high >= Long exit anchor * (1 + take-profit percentage / 100)
+Exit: short, Bullish BOS OR high >= Short exit anchor * (1 + stop-loss percentage / 100) OR low <= Short exit anchor * (1 - take-profit percentage / 100)

@@ -1,0 +1,11 @@
+Calculation: Chart squeeze = chart Bollinger Bands(close, BB lookback, deviation multiplier) upper band < chart Keltner Channel(close, EMA lookback, ATR lookback, ATR multiplier) upper band AND Bollinger lower band > Keltner lower band
+Calculation: Maximum-loss stop distance = maximum-loss amount / max(10% of strategy equity / entry price, minimum tick), when the maximum-loss cap is enabled
+Calculation: Long initial stop = max(entry price × (1 − stop percentage / 100) if percentage stop is selected, otherwise entry-bar low; and entry price − maximum-loss stop distance if the cap is enabled
+Calculation: Short initial stop = min(entry price × (1 + stop percentage / 100) if percentage stop is selected, otherwise entry-bar high; and entry price + maximum-loss stop distance if the cap is enabled
+Calculation: Initial risk = max(absolute difference between entry price and the applicable initial stop, minimum tick)
+Calculation: Long active stop = entry price if breakeven is enabled and any high since entry >= entry price + initial risk × breakeven trigger; otherwise long initial stop
+Calculation: Short active stop = entry price if breakeven is enabled and any low since entry <= entry price − initial risk × breakeven trigger; otherwise short initial stop
+Long: On a confirmed chart bar, close > chart Keltner Channel(close, EMA lookback, ATR lookback, ATR multiplier) upper band AND chart squeeze is true now or the number of consecutive chart bars since it was last true <= grace-period parameter AND position size = 0 AND (one-trade-per-breakout is disabled OR no entry has occurred since the latest chart squeeze began)
+Short: On a confirmed chart bar, close < chart Keltner Channel(close, EMA lookback, ATR lookback, ATR multiplier) lower band AND chart squeeze is true now or the number of consecutive chart bars since it was last true <= grace-period parameter AND position size = 0 AND (one-trade-per-breakout is disabled OR no entry has occurred since the latest chart squeeze began)
+Exit: Long, low <= long active stop OR high >= entry price + initial risk × risk/reward parameter
+Exit: Short, high >= short active stop OR low <= entry price − initial risk × risk/reward parameter

@@ -1,0 +1,2 @@
+Long: flat AND chart-bar datetime in the selected market timezone is Monday through Thursday AND chart-bar datetime >= market close - entry lead AND chart-bar datetime < market close AND (EMA filter disabled OR close > EMA(close, EMA lookback, T1, last completed bar), mapped to chart bars)
+Exit: long, (chart-bar datetime in the selected market timezone is Monday through Friday AND chart-bar datetime >= market open + exit delay AND chart-bar datetime < market close) OR (chart-bar datetime is Friday AND chart-bar datetime >= market close - Friday close offset)

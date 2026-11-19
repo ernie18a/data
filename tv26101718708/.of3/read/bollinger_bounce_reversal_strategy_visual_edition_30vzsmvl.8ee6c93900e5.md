@@ -1,0 +1,4 @@
+Long: close[1] < Bollinger lower band(close, lookback, deviation multiplier) AND close > Bollinger lower band(close, lookback, deviation multiplier) AND MACD(close, fast lookback, slow lookback, signal lookback).line > MACD(close, fast lookback, slow lookback, signal lookback).signal AND volume >= volume factor * SMA(volume, lookback)
+Short: close[1] > Bollinger upper band(close, lookback, deviation multiplier) AND close < Bollinger upper band(close, lookback, deviation multiplier) AND MACD(close, fast lookback, slow lookback, signal lookback).line < MACD(close, fast lookback, slow lookback, signal lookback).signal AND volume >= volume factor * SMA(volume, lookback)
+Exit: long, low <= entry price * (1 - stop-loss percentage) OR high >= entry price * (1 + take-profit percentage)
+Exit: short, high >= entry price * (1 + stop-loss percentage) OR low <= entry price * (1 - take-profit percentage)

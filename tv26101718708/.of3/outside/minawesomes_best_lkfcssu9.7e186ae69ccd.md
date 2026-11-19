@@ -1,0 +1,4 @@
+Long: low < prior T1 low AND close > prior T1 low
+Short: high > prior T1 high AND close < prior T1 high
+Long: latest traded-instrument pivot low using P1 bars on each side < its previous pivot low AND latest correlated-instrument pivot low using P1 bars on each side > its previous pivot low AND latest correlated-instrument pivot low was confirmed within P2 chart bars
+Short: latest traded-instrument pivot high using P1 bars on each side > its previous pivot high AND latest correlated-instrument pivot high using P1 bars on each side < its previous pivot high AND latest correlated-instrument pivot high was confirmed within P2 chart bars

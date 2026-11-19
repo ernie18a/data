@@ -1,0 +1,3 @@
+Calculation: CVD = on chart bars, cumulatively sum volume(T1) when close(T1) > open(T1), negative volume(T1) when close(T1) < open(T1), otherwise zero; reset at each configured reset interval; use the T1 bar returned with lookahead off, including the still-forming T1 bar in real time
+Long: a newly confirmed pivot low of CVD using the same pivot lookback on both sides AND the latest CVD pivot low > the preceding CVD pivot low AND close at the latest CVD pivot low < close at the preceding CVD pivot low
+Short: a newly confirmed pivot high of CVD using the same pivot lookback on both sides AND the latest CVD pivot high < the preceding CVD pivot high AND close at the latest CVD pivot high > close at the preceding CVD pivot high

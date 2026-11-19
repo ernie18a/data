@@ -1,0 +1,11 @@
+Calculation: Smoothed RSI = EMA(RSI(source, RSI lookback), RSI smoothing)
+Calculation: Fast QQE trailing line = QQE trailing line(Smoothed RSI, RSI lookback, QQE factor)
+Calculation: Medium MA direction = RISING(medium MA, direction lookback) ? 1 : FALLING(medium MA, direction lookback) ? -1 : 0
+Calculation: Long eligible state = Smoothed RSI > center + threshold AND (MA filter disabled OR (source > fast MA AND fast MA > medium MA AND medium MA > slow MA)) AND (direction filter disabled OR (Medium MA direction > 0 AND source > slow MA))
+Calculation: Short eligible state = Smoothed RSI < center - threshold AND (MA filter disabled OR (source < fast MA AND fast MA < medium MA AND medium MA < slow MA)) AND (direction filter disabled OR (Medium MA direction < 0 AND source < slow MA))
+Calculation: Long channel trigger = Long eligible state AND NOT Long eligible state[1]
+Calculation: Short channel trigger = Short eligible state AND NOT Short eligible state[1]
+Long: Long channel trigger OR (QQE signal-cross option enabled AND crossover(Fast QQE trailing line, Smoothed RSI) AND NOT Long channel trigger) OR (QQE zero-cross option enabled AND crossover(Smoothed RSI, center) AND NOT Long channel trigger AND NOT (QQE signal-cross option enabled AND crossover(Fast QQE trailing line, Smoothed RSI)))
+Short: Short channel trigger OR (QQE signal-cross option enabled AND crossunder(Fast QQE trailing line, Smoothed RSI) AND NOT Short channel trigger) OR (QQE zero-cross option enabled AND crossunder(Smoothed RSI, center) AND NOT Short channel trigger AND NOT (QQE signal-cross option enabled AND crossunder(Fast QQE trailing line, Smoothed RSI)))
+Exit: Long, Medium MA direction != Medium MA direction[1] OR enabled take-profit tick distance is reached above entry price OR enabled stop-loss tick distance is reached below entry price OR enabled trailing stop is reached below the highest high since activation, where activation occurs at the configured favorable tick distance above entry price
+Exit: Short, Medium MA direction != Medium MA direction[1] OR enabled take-profit tick distance is reached below entry price OR enabled stop-loss tick distance is reached above entry price OR enabled trailing stop is reached above the lowest low since activation, where activation occurs at the configured favorable tick distance below entry price

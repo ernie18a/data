@@ -1,0 +1,4 @@
+Long: datetime >= start timestamp AND datetime < end timestamp AND RSI(close, RSI lookback) was at or below oversold threshold within recency lookback bars AND SMA(source, MA lookback) crosses above VWAP
+Short: datetime >= start timestamp AND datetime < end timestamp AND RSI(close, RSI lookback) was at or above overbought threshold within recency lookback bars AND SMA(source, MA lookback) crosses below VWAP
+Exit: long, low <= entry price × (1 - long stop-loss percentage / 100) OR high >= entry price × (1 + long take-profit percentage / 100)
+Exit: short, high >= entry price × (1 + short stop-loss percentage / 100) OR low <= entry price × (1 - short take-profit percentage / 100)

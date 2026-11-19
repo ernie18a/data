@@ -1,0 +1,6 @@
+Calculation: previous T1 high = high of the last completed T1 bar, sampled onto chart bars
+Calculation: previous T1 low = low of the last completed T1 bar, sampled onto chart bars
+Short: high >= previous T1 high, when no break above that level has occurred since T1 rollover or since a chart bar with high < previous T1 high
+Long: low <= previous T1 low, when no break below that level has occurred since T1 rollover or since a chart bar with low > previous T1 low
+Long: after a break above the previous T1 high or below the previous T1 low in the current T1 period, close crosses above the latest confirmed Pivot High(high, swing lookback, swing lookback) whose value is strictly between the previous T1 low and high; consume that pivot after the signal
+Short: after a break above the previous T1 high or below the previous T1 low in the current T1 period, close crosses below the latest confirmed Pivot Low(low, swing lookback, swing lookback) whose value is strictly between the previous T1 low and high; consume that pivot after the signal

@@ -1,0 +1,4 @@
+Long: close > EMA(close, parameter, T1, current T1 bar in realtime and last completed T1 bar on historical chart bars via lookahead_off), evaluated on chart bars using T1 values
+Short: close <= EMA(close, parameter, T1, current T1 bar in realtime and last completed T1 bar on historical chart bars via lookahead_off), evaluated on chart bars using T1 values
+Long: close crosses above highest(high, bars in the configured opening session) AND close > EMA(close, parameter, T1, current T1 bar in realtime and last completed T1 bar on historical chart bars via lookahead_off), evaluated on chart bars using T1 values after the opening session ends
+Short: close crosses below lowest(low, bars in the configured opening session) AND close <= EMA(close, parameter, T1, current T1 bar in realtime and last completed T1 bar on historical chart bars via lookahead_off), evaluated on chart bars using T1 values after the opening session ends

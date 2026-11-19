@@ -1,0 +1,9 @@
+Calculation: Range direction(T) = On T bars, initialize the range to the first bar's high and low with neutral direction; when a bar closes above the range high, replace the range with that bar's high and low and set direction to up; when it closes below the range low, replace the range and set direction to down; otherwise retain the range and direction. On chart bars, use the last completed T bar.
+Long: Range direction(T1) = up
+Short: Range direction(T1) = down
+Long: Range direction(T2) = up
+Short: Range direction(T2) = down
+Long: Range direction(T3) = up
+Short: Range direction(T3) = down
+Long: Range direction(T4) = up
+Short: Range direction(T4) = down

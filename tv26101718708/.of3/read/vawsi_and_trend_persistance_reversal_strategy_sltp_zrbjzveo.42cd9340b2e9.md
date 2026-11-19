@@ -1,0 +1,11 @@
+Calculation: cycle lookback = Ehlers Homodyne Discriminator dominant-cycle length(Heikin-Ashi close, cycle multiplier)
+Calculation: volume/range-weighted mean(x, N) = sum from i=0 through N of x[i] × weight[i] divided by sum from i=0 through N of weight[i], where weight[i] = (volume[i]/SMA(volume, N)[i] + ATR(ATR lookback)[i]/SMA(ATR(ATR lookback), N)[i])/2; cap the lookback by the history-cap parameter
+Calculation: volume/range-weighted RSI(x, N) = 100 − 100/(1 + volume/range-weighted mean(max(change(x), 0), N)/volume/range-weighted mean(−min(change(x), 0), N))
+Calculation: persistence oscillator(x, N, smoothing lookback) = RSI(WMA(max(WMA(abs(x − highest(x, N + 1)), smoothing lookback), WMA(abs(x − lowest(x, N + 1)), smoothing lookback)), smoothing lookback), N)
+Calculation: normalized range change(x, N) = 100 × abs(change(RMA(max(abs(change(x)), high − low), N)))/x
+Calculation: adjustment = combination multiplier × ((volume/range-weighted RSI weight as a fraction)/max(distance multiplier × abs(volume/range-weighted RSI(Heikin-Ashi close, cycle lookback) − RSI midpoint), denominator floor) + (persistence weight as a fraction)/persistence oscillator(Heikin-Ashi close, cycle lookback, smoothing lookback) − (ATR weight as a fraction) × normalized range change(Heikin-Ashi close, cycle lookback))
+Calculation: down-side band = highest over bars since the most recent confirmed cross, or initialization if none, of min(max(highest(close over the since-cross window ending at each bar) × (1 − adjustment), close × (1 − minimum SL/TP percentage)), open); cap the since-cross window by the history-cap parameter
+Calculation: up-side band = lowest over bars since the most recent confirmed cross, or initialization if none, of max(min(lowest(close over the since-cross window ending at each bar) × (1 + adjustment), close × (1 + minimum SL/TP percentage)), open); cap the since-cross window by the history-cap parameter
+Calculation: reversal threshold = down-side band in the initial or long direction and up-side band in the short direction; a confirmed cross above it sets the direction long, and a confirmed cross below it sets the direction short
+Long: on a confirmed chart bar, Heikin-Ashi close crosses above the reversal threshold
+Short: on a confirmed chart bar, Heikin-Ashi close crosses below the reversal threshold

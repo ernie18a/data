@@ -1,0 +1,2 @@
+Long: US RTH enabled AND on a confirmed chart bar after the opening-range duration and before the RTH close, close crosses above the highest T1 high sampled on chart bars from T1 bars still forming during the opening range.
+Short: US RTH enabled AND on a confirmed chart bar after the opening-range duration and before the RTH close, close crosses below the lowest T1 low sampled on chart bars from T1 bars still forming during the opening range.

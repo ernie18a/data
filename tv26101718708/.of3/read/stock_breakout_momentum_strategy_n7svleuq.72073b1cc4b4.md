@@ -1,0 +1,8 @@
+Calculation: Long stop = signal-bar open − ATR(ATR lookback) × stop multiplier; on each later in-position bar, max(previous long stop, close − ATR(ATR lookback) × stop multiplier)
+Calculation: Short stop = signal-bar open + ATR(ATR lookback) × stop multiplier; on each later in-position bar, min(previous short stop, close + ATR(ATR lookback) × stop multiplier)
+Calculation: Long target = signal-bar open + signal-bar ATR(ATR lookback) × target multiplier, when enabled
+Calculation: Short target = signal-bar open − signal-bar ATR(ATR lookback) × target multiplier, when enabled
+Long: confirmed bar AND flat position AND ATR(ATR lookback) available AND close > Highest(high, breakout lookback)[1] AND (trend filter disabled OR close > SMA(close, trend lookback)) AND (volume filter disabled OR volume > SMA(volume, volume lookback) × volume multiplier)
+Short: short entries enabled AND confirmed bar AND flat position AND ATR(ATR lookback) available AND close < Lowest(low, breakout lookback)[1] AND (trend filter disabled OR close < SMA(close, trend lookback)) AND (volume filter disabled OR volume > SMA(volume, volume lookback) × volume multiplier)
+Exit: long, low <= long stop OR (profit target enabled AND high >= long target) OR bars since signal bar >= time-exit period
+Exit: short, high >= short stop OR (profit target enabled AND low <= short target) OR bars since signal bar >= time-exit period

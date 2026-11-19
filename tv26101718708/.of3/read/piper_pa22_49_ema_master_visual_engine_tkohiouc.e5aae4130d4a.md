@@ -1,0 +1,6 @@
+Calculation: fast EMA = EMA(Heikin-Ashi close, shorter lookback, T1 sampled on chart bars; forming T1 bar in real time and last completed T1 bar historically, or chart timeframe when higher-timeframe mode is disabled)
+Calculation: slow EMA = EMA(Heikin-Ashi close, longer lookback, T1 sampled on chart bars; forming T1 bar in real time and last completed T1 bar historically, or chart timeframe when higher-timeframe mode is disabled)
+Calculation: ribbon distance = abs(fast EMA - slow EMA)
+Calculation: normalized ribbon distance = ribbon distance / (ATR on chart bars with the separate normalization lookback if positive, otherwise 1) * 100
+Long: fast EMA crosses above slow EMA AND normalized ribbon distance is at least the squeeze threshold AND ribbon distance > ATR on chart bars with the expansion lookback * expansion multiplier AND datetime is a weekday within the New York session window
+Short: fast EMA crosses below slow EMA AND normalized ribbon distance is at least the squeeze threshold AND ribbon distance > ATR on chart bars with the expansion lookback * expansion multiplier AND datetime is a weekday within the New York session window

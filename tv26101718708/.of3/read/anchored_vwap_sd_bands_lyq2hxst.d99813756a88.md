@@ -1,0 +1,4 @@
+Calculation: BandsReady = chart-bar count since selected anchor >= warm-up bar-count parameter
+Calculation: AnchoredWeightedSD(source) = sqrt(max(sum(volume × source²) / sum(volume) − VWAP(source, selected anchor)², 0)) over chart bars since selected anchor, treating missing volume as 1 and returning 0 when cumulative volume is not positive
+Long: BandsReady AND (low <= VWAP(source, selected anchor) − band-width parameter × AnchoredWeightedSD(source) OR close crosses above VWAP(source, selected anchor))
+Short: BandsReady AND (high >= VWAP(source, selected anchor) + band-width parameter × AnchoredWeightedSD(source) OR close crosses below VWAP(source, selected anchor))

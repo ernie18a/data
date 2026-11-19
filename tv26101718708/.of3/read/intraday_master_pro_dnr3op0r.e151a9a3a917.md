@@ -1,0 +1,8 @@
+Long: EMA(close, shorter entry EMA lookback) crosses above EMA(close, longer entry EMA lookback) AND volume > volume multiplier × SMA(volume, entry volume lookback) AND RSI(close, entry RSI lookback) > RSI midpoint threshold AND RSI(close, entry RSI lookback) < long RSI upper threshold AND current chart bar index minus most recent long or short signal bar index, initialized to zero, > cooldown bars
+Short: EMA(close, shorter entry EMA lookback) crosses below EMA(close, longer entry EMA lookback) AND volume > volume multiplier × SMA(volume, entry volume lookback) AND RSI(close, entry RSI lookback) < RSI midpoint threshold AND RSI(close, entry RSI lookback) > short RSI lower threshold AND current chart bar index minus most recent long or short signal bar index, initialized to zero, > cooldown bars
+Long: On chart bars, EMA(close, shorter entry EMA lookback) > EMA(close, longer entry EMA lookback)
+Short: On chart bars, EMA(close, shorter entry EMA lookback) <= EMA(close, longer entry EMA lookback)
+Long: On chart bars, close of the last completed T1 bar > EMA(close, T1 dashboard EMA lookback, T1, last completed bar)
+Short: On chart bars, close of the last completed T1 bar <= EMA(close, T1 dashboard EMA lookback, T1, last completed bar)
+Long: On chart bars, close of the last completed T2 bar > EMA(close, T2 dashboard EMA lookback, T2, last completed bar)
+Short: On chart bars, close of the last completed T2 bar <= EMA(close, T2 dashboard EMA lookback, T2, last completed bar)

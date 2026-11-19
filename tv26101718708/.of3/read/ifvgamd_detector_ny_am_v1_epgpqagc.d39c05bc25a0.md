@@ -1,0 +1,10 @@
+Calculation: Short FVG bottom = high[2] on the latest in-session chart bar where low > high[2]; reset at session start, replaced by each new such FVG, and both short and long setups are cleared after any signal if no tracked position was active before that bar.
+Calculation: Short manipulation high = highest high from the latest short FVG bar through the current chart bar; reset or replaced with that FVG.
+Calculation: Long FVG top = low[2] on the latest in-session chart bar where high < low[2]; reset at session start, replaced by each new such FVG, and cleared with the short setup as specified above.
+Calculation: Long manipulation low = lowest low from the latest long FVG bar through the current chart bar; reset or replaced with that FVG.
+Calculation: HTF FVG zone on each independent timeframe T1–T4 = [high, low] of the third-most-recent and most-recent completed bars when the latter low > the former high, or [high, low] of the most-recent and third-most-recent completed bars when the former high > the latter low.
+Calculation: Retained HTF FVGs = newest zones across T1–T4, capped at four times the gap-capacity parameter; a zone is mitigated once any chart bar has high >= its bottom AND low <= its top.
+Long: On a confirmed chart bar in the configured session, with session bias long, the selected inversion reference (close in body-close mode, otherwise high) > long FVG top AND close[1] <= long FVG top AND (HTF gap gate disabled OR no unmitigated retained HTF FVG has top < long manipulation low).
+Short: On a confirmed chart bar in the configured session, with session bias short, the selected inversion reference (close in body-close mode, otherwise low) < short FVG bottom AND close[1] >= short FVG bottom AND (HTF gap gate disabled OR no unmitigated retained HTF FVG has bottom > short manipulation high).
+Exit: Long, low <= long manipulation low at entry OR high >= entry price + target multiple × abs(long manipulation low at entry − entry price).
+Exit: Short, high >= short manipulation high at entry OR low <= entry price − target multiple × abs(short manipulation high at entry − entry price).

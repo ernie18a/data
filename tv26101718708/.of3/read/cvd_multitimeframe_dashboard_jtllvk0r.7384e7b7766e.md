@@ -1,0 +1,4 @@
+Long: CVD(T7 lower-timeframe bars, T1 reset period, current still-forming period, sampled on chart bars) >= 0 for any enabled monitored timeframe T1–T6
+Short: CVD(T7 lower-timeframe bars, T1 reset period, current still-forming period, sampled on chart bars) < 0 for any enabled monitored timeframe T1–T6
+Long: CVD(T7 lower-timeframe bars, T1 reset period, current still-forming period, sampled on chart bars) crosses above 0 for any enabled monitored timeframe T1–T6
+Short: CVD(T7 lower-timeframe bars, T1 reset period, current still-forming period, sampled on chart bars) crosses below 0 for any enabled monitored timeframe T1–T6

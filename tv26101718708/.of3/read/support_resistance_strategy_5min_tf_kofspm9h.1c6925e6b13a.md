@@ -1,0 +1,4 @@
+Long: close crosses above the last non-missing Pivot High(high, left lookback, right lookback)[1] AND Volume Oscillator(volume, shorter lookback, longer lookback) > volume threshold AND open - low <= close - open AND position is flat AND bar is confirmed AND datetime is within the entry session AND close >= EMA(close, lookback)
+Short: close crosses below the last non-missing Pivot Low(low, left lookback, right lookback)[1] AND Volume Oscillator(volume, shorter lookback, longer lookback) > volume threshold AND open - close >= high - open AND position is flat AND bar is confirmed AND datetime is within the entry session AND close <= EMA(close, lookback)
+Exit: long, low <= (close - ATR(lookback) * long multiplier)[1] OR hour(datetime) = close hour AND minute(datetime) = close minute
+Exit: short, high >= (close + ATR(lookback) * short multiplier)[1] OR hour(datetime) = close hour AND minute(datetime) = close minute

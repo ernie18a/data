@@ -1,0 +1,4 @@
+Calculation: High AVWAP = AVWAP(high when the AVWAP-source parameter selects high/low, otherwise HLC3, volume, active high anchor)
+Calculation: Low AVWAP = AVWAP(low when the AVWAP-source parameter selects high/low, otherwise HLC3, volume, active low anchor)
+Long: selected alert price (open or close) > High AVWAP OR selected high-violation price (open, close, or high when the violation-source parameter selects high/low) > High AVWAP for the violation-count parameter consecutive bars, counting only closed bars when the closed-bar-only parameter is enabled
+Short: selected alert price (open or close) < Low AVWAP OR selected low-violation price (open, close, or low when the violation-source parameter selects high/low) < Low AVWAP for the violation-count parameter consecutive bars, counting only closed bars when the closed-bar-only parameter is enabled

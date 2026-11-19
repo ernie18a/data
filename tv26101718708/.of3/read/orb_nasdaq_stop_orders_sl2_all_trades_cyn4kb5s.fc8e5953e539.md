@@ -1,0 +1,7 @@
+Calculation: Opening-range high = maximum high during the configured range-building session, reset at each session's start
+Calculation: Opening-range low = minimum low during the configured range-building session, reset at each session's start
+Calculation: Opening-range midpoint = (opening-range high + opening-range low) / 2
+Long: opening-range session has ended AND current bar is in the configured entry session AND no entry has occurred since the current range-building session AND no position is open AND high >= opening-range high
+Short: opening-range session has ended AND current bar is in the configured entry session AND no entry has occurred since the current range-building session AND no position is open AND low <= opening-range low AND high < opening-range high
+Exit: Long, on a bar after the entry bar, high >= entry price + (entry price - opening-range midpoint at entry) * risk-reward parameter OR low <= opening-range midpoint at entry OR bar closing time >= configured daily stop time
+Exit: Short, on a bar after the entry bar, low <= entry price - (opening-range midpoint at entry - entry price) * risk-reward parameter OR high >= opening-range midpoint at entry OR bar closing time >= configured daily stop time

@@ -1,0 +1,8 @@
+Long: high > close[1] + TrueRange(high, low, close)[1]
+Long: high > close[1] + TrueRange(high, low, close)[1] AND close > close[1]
+Long: high > close[1] + TrueRange(high, low, close)[1] AND close > close[1] AND volume > volume[1]
+Long: high > close[1] + TrueRange(high, low, close)[1] AND close > close[1] AND volume <= volume[1]
+Short: low < close[1] - TrueRange(high, low, close)[1]
+Short: low < close[1] - TrueRange(high, low, close)[1] AND close < close[1]
+Short: low < close[1] - TrueRange(high, low, close)[1] AND close < close[1] AND volume > volume[1]
+Short: low < close[1] - TrueRange(high, low, close)[1] AND close < close[1] AND volume <= volume[1]

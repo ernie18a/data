@@ -1,0 +1,5 @@
+Calculation: MI = Σ pᵣᵥ ln(pᵣᵥ/(pᵣpᵥ)) over nonzero joint bin fractions, where each of the MI lookback’s pairs is (close[k] − close[k+1], volume[k]) for k = 0 through lookback − 1; return bins are below −return-bin multiplier × STDEV(close − close[1], MI lookback), between those bounds, or above the upper bound; volume bins are below lower-volume multiplier × SMA(volume, MI lookback), between those bounds, or above upper-volume multiplier × SMA(volume, MI lookback); pᵣᵥ is the joint fraction and pᵣ and pᵥ are its marginal fractions, with bin boundaries assigned to the middle bin
+Long: MI >= MI threshold AND close > SMA(close, long lookback) AND close crosses above EMA(close, short lookback) AND position is flat or short AND cooldown has elapsed since the prior signal AND bar is confirmed
+Short: MI >= MI threshold AND close < SMA(close, long lookback) AND close crosses below EMA(close, short lookback) AND position is flat or long AND cooldown has elapsed since the prior signal AND bar is confirmed
+Long: close crosses above EMA(close, short lookback)
+Short: close crosses below EMA(close, short lookback)

@@ -1,0 +1,5 @@
+Calculation: opening moving average = selected moving average(open, lookback, selected type)
+Calculation: closing moving average = selected moving average(close, lookback, selected type)
+Long: datetime >= configured start datetime if set AND datetime < configured end datetime if set AND closing moving average >= opening moving average AND closing moving average[1] < opening moving average[1]
+Short: shorting enabled AND datetime >= configured start datetime if set AND datetime < configured end datetime if set AND closing moving average < opening moving average AND closing moving average[1] >= opening moving average[1]
+Exit: long, shorting disabled AND datetime >= configured start datetime if set AND datetime < configured end datetime if set AND closing moving average < opening moving average AND closing moving average[1] >= opening moving average[1]

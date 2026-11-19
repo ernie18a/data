@@ -1,0 +1,4 @@
+Calculation: Bullish OB low = low of the nearest preceding candle within the search lookback with close < open before a confirmed Pivot Low(low, left lookback, right lookback), if that candle’s volume is at least the nearest-rank percentile of volume over the volume lookback, evaluated on that candle.
+Calculation: Bearish OB high = high of the nearest preceding candle within the search lookback with close > open before a confirmed Pivot High(high, left lookback, right lookback), if that candle’s volume is at least the nearest-rank percentile of volume over the volume lookback, evaluated on that candle.
+Long: mitigation enabled AND bearish OBs enabled AND on a confirmed bar close > the high of any unmitigated Bearish OB, including one created on that bar.
+Short: mitigation enabled AND bullish OBs enabled AND on a confirmed bar close < the low of any unmitigated Bullish OB, including one created on that bar.

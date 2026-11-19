@@ -1,0 +1,3 @@
+Calculation: price-bin delta = sum of assigned lower-timeframe volume where close > open minus sum of assigned lower-timeframe volume where close < open; assign each lower-timeframe bar to the first price level when high exceeds the next level, an interior level when close is below the preceding level and above that level, or the last level when low is below the preceding level; calculate on chart bars using lower-timeframe bars, including the bar still forming
+Long: delta coloring is selected AND price-bin delta > 0
+Short: delta coloring is selected AND price-bin delta < 0

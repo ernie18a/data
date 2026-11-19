@@ -1,0 +1,4 @@
+Long: EMA(close, shorter lookback) > EMA(close, longer lookback) AND close > EMA(close, shorter lookback) AND RSI(close, lookback) > long RSI threshold AND close > Highest(high, structure lookback)[1] AND volume > SMA(volume, volume lookback) * volume multiplier
+Short: EMA(close, shorter lookback) < EMA(close, longer lookback) AND close < EMA(close, shorter lookback) AND RSI(close, lookback) < short RSI threshold AND close < Lowest(low, structure lookback)[1] AND volume > SMA(volume, volume lookback) * volume multiplier
+Exit: long, low <= close of latest bar meeting the long condition * (1 - stop loss percentage / 100) OR high >= close of latest bar meeting the long condition * (1 + take profit percentage / 100)
+Exit: short, high >= close of latest bar meeting the short condition * (1 + stop loss percentage / 100) OR low <= close of latest bar meeting the short condition * (1 - take profit percentage / 100)

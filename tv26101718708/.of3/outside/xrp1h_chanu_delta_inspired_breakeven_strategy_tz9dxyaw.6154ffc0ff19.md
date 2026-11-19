@@ -1,0 +1,3 @@
+Calculation: Scaled price spread = ((USD-quoted selected source value at T1 - USDT-quoted selected source value at T1) / USD-quoted selected source value at T1) * scaling parameter
+Long: Scaled price spread crosses above bullish threshold OR previous-bar Scaled price spread crossed above bullish threshold AND Scaled price spread does not cross below bearish threshold
+Short: Scaled price spread crosses below bearish threshold OR previous-bar Scaled price spread crossed below bearish threshold AND Scaled price spread does not cross above bullish threshold

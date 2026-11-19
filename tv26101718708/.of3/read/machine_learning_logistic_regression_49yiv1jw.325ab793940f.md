@@ -1,0 +1,13 @@
+Calculation: Selected source = the configured choice of open, high, low, close, (high+low)/2, (open+close)/2, (open+high+low)/3, (high+low+close)/3, or (open+high+low+close)/4 from T1; on chart bars use the T1 value mapped to historical bars and the last completed T1 bar on real-time bars. All subsequent calculations run on chart bars using these mapped values.
+Calculation: Regression inputs (X,Y) = (chart datetime, selected source) when the optional input mode is enabled; otherwise (selected source, ln(abs(selected source² − A) + B)), where A and B are separate parameters.
+Calculation: Regression outputs(X,Y,L,learning rate,N) = [loss,prediction], where SUM(x,L) is the rolling sum over L chart bars, h=1/(1+exp(−SUM(X×0,L))), w=−N×learning rate×SUM(X×(h−Y),L)/L, loss=−SUM(SUM(Y×(ln(h)+1−Y),L)×ln(1−h),L)/L, and prediction=1/(1+exp(−SUM(X×w,L))); L is the model lookback, separate from the normalization lookback.
+Calculation: Range scale(x) = lowest(selected source, normalization lookback) + (highest(selected source, normalization lookback) − lowest(selected source, normalization lookback)) × (x − lowest(x, normalization lookback))/(highest(x, normalization lookback) − lowest(x, normalization lookback)).
+Calculation: Scaled loss = Range scale(Regression loss).
+Calculation: Scaled prediction = Range scale(Regression prediction).
+Calculation: Filter passes = (volatility filter not selected OR ATR(shorter ATR lookback) > ATR(longer ATR lookback)) AND (volume filter not selected OR HMA(RSI(volume, separate RSI lookback), separate HMA lookback) > volume threshold); these indicators use chart bars.
+Calculation: Signal state = on each chart bar, in price-comparison mode with the filter passing, set to short when selected source < scaled loss, else set to long when selected source > scaled loss; in cross mode with the filter passing, set to short when scaled loss crosses below scaled prediction, else set to long when scaled loss crosses above scaled prediction; otherwise retain the prior state; initially neutral.
+Calculation: Signal age = zero when signal state changes, otherwise prior signal age plus one chart bar; initially zero.
+Long: Signal state is long AND previous signal state is not long.
+Short: Signal state is short AND previous signal state is not short.
+Exit: long, signal state is long AND signal age equals the holding-period parameter in chart bars.
+Exit: short, signal state is short AND signal age equals the holding-period parameter in chart bars.

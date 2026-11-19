@@ -1,0 +1,19 @@
+Calculation: Smoothed Heikin-Ashi close = WMA((RMA(open, first smoothing lookback) + RMA(high, first smoothing lookback) + RMA(low, first smoothing lookback) + RMA(close, first smoothing lookback)) / 4, second smoothing lookback)
+Calculation: Smoothed Heikin-Ashi open = WMA(Heikin-Ashi open, second smoothing lookback), where Heikin-Ashi open is initialized to (RMA(open, first smoothing lookback) + RMA(close, first smoothing lookback)) / 2 and thereafter equals (prior Heikin-Ashi open + prior Heikin-Ashi close) / 2
+Calculation: Pivot P = (high(T1, last completed bar) + low(T1, last completed bar) + close(T1, last completed bar)) / 3, calculated on chart bars
+Calculation: Pivot R1 = 2 * Pivot P - low(T1, last completed bar)
+Calculation: Pivot R2 = Pivot P + high(T1, last completed bar) - low(T1, last completed bar)
+Calculation: Pivot S1 = 2 * Pivot P - high(T1, last completed bar)
+Calculation: Pivot S2 = Pivot P - (high(T1, last completed bar) - low(T1, last completed bar))
+Long: EMA(close, shorter EMA lookback) > EMA(close, longer EMA lookback) > SMA(close, shorter SMA lookback) > SMA(close, longer SMA lookback)
+Short: EMA(close, shorter EMA lookback) < EMA(close, longer EMA lookback) < SMA(close, shorter SMA lookback) < SMA(close, longer SMA lookback)
+Long: Smoothed Heikin-Ashi close >= Smoothed Heikin-Ashi open
+Short: Smoothed Heikin-Ashi close < Smoothed Heikin-Ashi open
+Long: ADX from DMI(length, same length) > its prior chart-bar value AND ADX > threshold AND +DI from the same DMI > -DI from the same DMI
+Short: ADX from DMI(length, same length) > its prior chart-bar value AND ADX > threshold AND -DI from the same DMI > +DI from the same DMI
+Long: TRIX(close, shorter TRIX lookback) > TRIX(close, longer TRIX lookback)
+Short: TRIX(close, shorter TRIX lookback) <= TRIX(close, longer TRIX lookback)
+Long: Trend-following mode AND EMA(close, shorter EMA lookback) > EMA(close, longer EMA lookback) > SMA(close, shorter SMA lookback) > SMA(close, longer SMA lookback) AND Smoothed Heikin-Ashi close >= Smoothed Heikin-Ashi open AND prior-bar Smoothed Heikin-Ashi close < prior-bar Smoothed Heikin-Ashi open AND ADX from DMI(length, same length) > its prior chart-bar value AND ADX > threshold AND +DI from the same DMI > -DI from the same DMI AND at most the recency lookback bars since volume > SMA(volume, volume lookback) * volume multiplier
+Short: Trend-following mode AND EMA(close, shorter EMA lookback) < EMA(close, longer EMA lookback) < SMA(close, shorter SMA lookback) < SMA(close, longer SMA lookback) AND Smoothed Heikin-Ashi close < Smoothed Heikin-Ashi open AND prior-bar Smoothed Heikin-Ashi close >= prior-bar Smoothed Heikin-Ashi open AND ADX from DMI(length, same length) > its prior chart-bar value AND ADX > threshold AND -DI from the same DMI > +DI from the same DMI AND at most the recency lookback bars since volume > SMA(volume, volume lookback) * volume multiplier
+Long: Countertrend mode AND (abs(low - Pivot S1) <= ATR(lookback) * distance multiplier OR abs(low - Pivot S2) <= ATR(lookback) * distance multiplier OR abs(close - Pivot S1) <= ATR(lookback) * distance multiplier) AND Smoothed Heikin-Ashi close >= Smoothed Heikin-Ashi open AND prior-bar Smoothed Heikin-Ashi close < prior-bar Smoothed Heikin-Ashi open AND TRIX(close, shorter TRIX lookback) > TRIX(close, longer TRIX lookback)
+Short: Countertrend mode AND (abs(high - Pivot R1) <= ATR(lookback) * distance multiplier OR abs(high - Pivot R2) <= ATR(lookback) * distance multiplier OR abs(close - Pivot R1) <= ATR(lookback) * distance multiplier) AND Smoothed Heikin-Ashi close < Smoothed Heikin-Ashi open AND prior-bar Smoothed Heikin-Ashi close >= prior-bar Smoothed Heikin-Ashi open AND TRIX(close, shorter TRIX lookback) <= TRIX(close, longer TRIX lookback)

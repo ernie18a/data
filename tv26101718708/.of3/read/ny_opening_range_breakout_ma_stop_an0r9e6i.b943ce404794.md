@@ -1,0 +1,8 @@
+Calculation: Opening range high = highest(high) on chart bars in the New York opening-range session, fixed when the session ends
+Calculation: Opening range low = lowest(low) on chart bars in the New York opening-range session, fixed when the session ends
+Long: opening range complete AND close[1] > opening range high AND no earlier long breakout this session AND current bar before the New York entry cutoff AND long side enabled
+Short: opening range complete AND close[1] < opening range low AND no earlier short breakout this session AND current bar before the New York entry cutoff AND short side enabled
+Long: opening range complete AND close[1] > opening range high AND no earlier long breakout this session AND current bar before the New York entry cutoff AND long side enabled AND flat AND (MA-based take profit not selected OR close > selected MA(source, lookback))
+Short: opening range complete AND close[1] < opening range low AND no earlier short breakout this session AND current bar before the New York entry cutoff AND short side enabled AND flat AND (MA-based take profit not selected OR close < selected MA(source, lookback))
+Exit: Long, low <= opening range low OR (fixed-risk/reward take profit selected AND high >= entry price + (entry price - opening range low) * reward/risk ratio) OR (MA-based take profit selected AND close < selected MA(source, lookback))
+Exit: Short, high >= opening range high OR (fixed-risk/reward take profit selected AND low <= entry price - (opening range high - entry price) * reward/risk ratio) OR (MA-based take profit selected AND close > selected MA(source, lookback))

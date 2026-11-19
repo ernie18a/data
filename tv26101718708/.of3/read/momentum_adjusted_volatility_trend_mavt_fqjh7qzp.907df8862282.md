@@ -1,0 +1,5 @@
+Calculation: RangeNormalize(series, window) = (series - Lowest(series, window)) / (Highest(series, window) - Lowest(series, window)) when Highest(series, window) > Lowest(series, window), otherwise 0.5
+Calculation: normalized trend score = 100 × RangeNormalize((RangeNormalize(EMA(close, fast lookback) - EMA(close, slow lookback), normalization lookback) × RangeNormalize(volume / max(SMA(volume, volume-average lookback), volume denominator floor), normalization lookback)) / (1 + RangeNormalize(ATR(volatility lookback), normalization lookback)), normalization lookback)
+Calculation: momentum difference = normalized trend score - EMA(normalized trend score, signal lookback)
+Long: normalized trend score > 50 OR momentum difference >= 0
+Short: normalized trend score <= 50 OR momentum difference < 0

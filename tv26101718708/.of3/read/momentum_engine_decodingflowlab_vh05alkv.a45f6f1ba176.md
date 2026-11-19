@@ -1,0 +1,12 @@
+Calculation: bounded normalization(value, lower bound, upper bound) = 100 * (min(max(value, lower bound), upper bound) - lower bound) / (upper bound - lower bound)
+Calculation: volatility score = bounded normalization(ATR(shorter ATR lookback) / ATR(longer ATR lookback) if ATR(longer ATR lookback) != 0 else zero ratio fallback, lower volatility ratio, upper volatility ratio)
+Calculation: candle-body score = bounded normalization(abs(close - open) / (high - low) if high != low else zero ratio fallback, lower body ratio, upper body ratio)
+Calculation: volume score = bounded normalization(volume / EMA(volume, volume lookback) if EMA(volume, volume lookback) != 0 else zero ratio fallback, lower volume ratio, upper volume ratio)
+Calculation: breakout-speed score = bounded normalization((close - highest(high[1], breakout lookback) if close > highest(high[1], breakout lookback) else lowest(low[1], breakout lookback) - close if close < lowest(low[1], breakout lookback) else zero breakout distance) / ATR(longer ATR lookback) if ATR(longer ATR lookback) != 0 else zero speed fallback, lower breakout speed, upper breakout speed)
+Calculation: pullback score = 100 - bounded normalization((highest(high, swing lookback) - close) / (highest(high, swing lookback) - lowest(low, swing lookback)) if highest(high, swing lookback) != lowest(low, swing lookback) else no-range depth, lower pullback depth, upper pullback depth) if close > EMA(close, trend lookback) else 100 - bounded normalization((close - lowest(low, swing lookback)) / (highest(high, swing lookback) - lowest(low, swing lookback)) if highest(high, swing lookback) != lowest(low, swing lookback) else no-range depth, lower pullback depth, upper pullback depth) if close < EMA(close, trend lookback) else neutral pullback score
+Calculation: composite momentum = volatility weight * volatility score + candle-body weight * candle-body score + volume weight * volume score + breakout-speed weight * breakout-speed score + pullback weight * pullback score
+Calculation: strong momentum = composite momentum >= strong momentum threshold AND (close > EMA(close, trend lookback) OR close < EMA(close, trend lookback))
+Long: composite momentum >= strong momentum threshold AND close > EMA(close, trend lookback)
+Short: composite momentum >= strong momentum threshold AND close < EMA(close, trend lookback)
+Long: strong momentum AND close > EMA(close, trend lookback) AND NOT strong momentum[1]
+Short: strong momentum AND close < EMA(close, trend lookback) AND NOT strong momentum[1]

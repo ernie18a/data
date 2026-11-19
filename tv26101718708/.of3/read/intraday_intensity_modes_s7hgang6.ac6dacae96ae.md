@@ -1,0 +1,3 @@
+Calculation: Color Basis = SUM(Oscillator Length, ((2 × close − H − L) / (H − L)) × (Inverse Volume mode ? 1 / V : V)) / (Normalized mode ? (Intrabar mode ? chart-bar volume : SUM(Oscillator Length, V)) : 1), where H, L, and V are chart-bar high, low, and volume when Intrabar mode is enabled or chart bars are not intraday; otherwise they are the high, low, and volume so far of the still-forming T1 bar, evaluated on chart bars.
+Long: sign(Color Basis) != -1
+Short: sign(Color Basis) = -1

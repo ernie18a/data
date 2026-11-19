@@ -1,0 +1,2 @@
+Long: On each chart-bar close, close > the latest confirmed, unbroken PivotHigh(high, longer swing lookback, longer swing lookback) OR close > the latest confirmed, unbroken PivotHigh(high, shorter internal lookback, shorter internal lookback)
+Short: On each chart-bar close, close < the latest confirmed, unbroken PivotLow(low, longer swing lookback, longer swing lookback) OR close < the latest confirmed, unbroken PivotLow(low, shorter internal lookback, shorter internal lookback)

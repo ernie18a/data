@@ -1,0 +1,7 @@
+Calculation: Pivot levels = pivot point and support levels 1–3 from the high, low, and close of the last completed T1 bar using the selected pivot method, applied on chart bars
+Calculation: VWAP = cumulative VWAP of OHLC4 and volume from the start of T2 through the current chart bar, including the still-forming T2 bar
+Calculation: StochRSI = stochastic RSI with a source parameter, RSI lookback, stochastic lookback, K smoothing lookback, and D smoothing lookback, calculated on chart bars
+Long: StochRSI %K crosses above %D on either of the previous two chart bars AND low < VWAP < high and close > open on either of the previous two chart bars AND the previous chart bar has low below and close above any of PivotPoint or support levels 1–3 AND the previous and current chart bars each have close > open
+Short: StochRSI %K crosses below %D on either of the previous two chart bars AND low < VWAP < high and close < open on either of the previous two chart bars AND the previous chart bar has high above and close below any of PivotPoint or support levels 1–3 AND the previous and current chart bars each have close < open
+Exit: long, close > average entry price × (1 + take-profit percentage parameter) OR datetime < configured start timestamp OR datetime >= configured end timestamp
+Exit: short, close < average entry price × (1 − take-profit percentage parameter) OR datetime < configured start timestamp OR datetime >= configured end timestamp

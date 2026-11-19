@@ -1,0 +1,3 @@
+Calculation: session extrema = highest high and lowest low over chart bars in each configured session, retained after that session ends
+Long: intraday chart AND Module B enabled AND ((Session 1 enabled AND outside Session 1 AND close[1] < Session 1 low AND close > Session 1 low) OR (Session 2 enabled AND outside Session 2 AND close[1] < Session 2 low AND close > Session 2 low))
+Short: intraday chart AND Module B enabled AND ((Session 1 enabled AND outside Session 1 AND close[1] > Session 1 high AND close < Session 1 high) OR (Session 2 enabled AND outside Session 2 AND close[1] > Session 2 high AND close < Session 2 high))

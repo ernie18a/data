@@ -1,0 +1,9 @@
+Calculation: Bullish FVG = on T1, high[3] < low[1] on the last completed T1 bar; gap boundaries are high[3] and low[1]. T1 may equal the chart timeframe; these values are taken onto chart bars.
+Calculation: Bearish FVG = on T1, low[3] > high[1] on the last completed T1 bar; gap boundaries are high[1] and low[3]. T1 may equal the chart timeframe; these values are taken onto chart bars.
+Calculation: Upper penetration price = high when P_wicks is enabled, otherwise max(open, close) on the chart bar.
+Calculation: Lower penetration price = low when P_wicks is enabled, otherwise min(open, close) on the chart bar.
+Calculation: Stored FVGs = add newly confirmed FVGs detected within P_recent_days only when their side's visibility parameter is enabled; check all stored FVGs on each chart bar, count near-edge penetration even when that bar removes the FVG by filling its threshold, then remove threshold-filled FVGs and retain at most P_capacity newest FVGs per side.
+Calculation: Fill-threshold balance = the number of stored bearish FVGs first penetrated above lower boundary + (upper boundary - lower boundary) * P_fill_pct / 100 on this chart bar minus the number of stored bullish FVGs first penetrated below upper boundary - (upper boundary - lower boundary) * P_fill_pct / 100 on this chart bar.
+Calculation: Near-edge balance = the number of stored bearish FVGs whose lower boundary is below the upper penetration price on this chart bar minus the number of stored bullish FVGs whose upper boundary is above the lower penetration price on this chart bar.
+Long: A new bullish FVG is confirmed on a chart bar whose datetime is within P_recent_days of the current datetime OR fill-threshold balance > 0 OR near-edge balance > 0.
+Short: A new bearish FVG is confirmed on a chart bar whose datetime is within P_recent_days of the current datetime OR fill-threshold balance < 0 OR near-edge balance < 0.

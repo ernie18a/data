@@ -1,0 +1,5 @@
+Calculation: RMA volume-weighted average = RMA(close * volume, RMA lookback) / RMA(volume, RMA lookback)
+Long: Z-score(abs(close - open) / volume, z-score lookback) > sensitivity AND close > open AND (zone filter permits all qualifying bars OR (zone filter selects discounted-side bars AND (high + low) / 2 < RMA volume-weighted average) OR (zone filter selects extension-side bars AND (high + low) / 2 > RMA volume-weighted average))
+Long: Z-score(volume, z-score lookback) > sensitivity AND close < open
+Short: Z-score(abs(close - open) / volume, z-score lookback) > sensitivity AND close < open AND (zone filter permits all qualifying bars OR (zone filter selects discounted-side bars AND (high + low) / 2 > RMA volume-weighted average) OR (zone filter selects extension-side bars AND (high + low) / 2 < RMA volume-weighted average))
+Short: Z-score(volume, z-score lookback) > sensitivity AND close > open

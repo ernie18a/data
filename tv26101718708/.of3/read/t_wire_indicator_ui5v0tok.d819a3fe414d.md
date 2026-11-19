@@ -1,0 +1,2 @@
+Long: EMA(close, shorter lookback) > EMA(close, longer lookback) AND Supertrend direction is bullish AND NOT (EMA(close, shorter lookback)[1] > EMA(close, longer lookback)[1] AND Supertrend direction[1] is bullish)
+Short: EMA(close, shorter lookback) <= EMA(close, longer lookback) AND Supertrend direction is bearish AND NOT (EMA(close, shorter lookback)[1] < EMA(close, longer lookback)[1] AND Supertrend direction[1] is bearish)

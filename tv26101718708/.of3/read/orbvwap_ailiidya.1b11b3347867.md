@@ -1,0 +1,4 @@
+Calculation: opening range high = highest(high, bars in the session's opening-range interval)
+Calculation: opening range low = lowest(low, bars in the session's opening-range interval)
+Long: opening range is complete AND no long signal has fired this session AND close crosses above opening range high AND (VWAP filter is off OR close > session VWAP(vwap source)) AND (volume filter is off OR volume >= SMA(volume, volume lookback) * volume multiplier)
+Short: opening range is complete AND no short signal has fired this session AND close crosses below opening range low AND (VWAP filter is off OR close < session VWAP(vwap source)) AND (volume filter is off OR volume >= SMA(volume, volume lookback) * volume multiplier)

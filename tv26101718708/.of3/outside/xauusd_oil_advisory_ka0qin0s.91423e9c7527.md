@@ -1,0 +1,3 @@
+Calculation: Oil bullish trend = Oil closing price > EMA(Oil closing price, fast EMA period) AND EMA(Oil closing price, fast EMA period) > EMA(Oil closing price, middle EMA period) AND EMA(Oil closing price, middle EMA period) > EMA(Oil closing price, slow EMA period)
+Short: Oil bullish trend AND 100 × (Oil closing price − Oil closing price[spike lookback]) / Oil closing price[spike lookback] >= spike threshold
+Short: Oil bullish trend AND NOT prior Oil bullish trend

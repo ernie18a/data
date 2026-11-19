@@ -1,0 +1,5 @@
+Calculation: Classic and Fibonacci pivot levels = classic and Fibonacci pivot points from the high, low, and close of the last completed T1 bar, held on chart bars
+Long: On chart bars, close > open AND close[1] < open[1] AND open <= close[1] AND close >= open[1] AND the absolute distance from close to at least one central, first-through-fourth standard, or first-through-third Fibonacci pivot level <= ATR(lookback) × proximity multiple
+Long: On chart bars, close crosses above the first or second standard resistance pivot or the second Fibonacci resistance pivot
+Short: On chart bars, high - close > rejection ratio × (close - low) AND high > open AND close < open AND the absolute distance from close to at least one central, first-through-fourth standard, or first-through-third Fibonacci pivot level <= ATR(lookback) × proximity multiple
+Short: On chart bars, close crosses below the first or second standard support pivot or the second Fibonacci support pivot

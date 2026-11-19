@@ -1,0 +1,6 @@
+Calculation: Bullish timeframe count = count of T1–T6 where EMA(close, shorter lookback, T bars, current T bar requested on chart bars with lookahead off) > EMA(close, longer lookback, T bars, current T bar requested on chart bars with lookahead off)
+Calculation: Bearish timeframe count = count of T1–T6 where EMA(close, shorter lookback, T bars, current T bar requested on chart bars with lookahead off) <= EMA(close, longer lookback, T bars, current T bar requested on chart bars with lookahead off)
+Long: For any T in T1–T6, EMA(close, shorter lookback, T bars, current T bar requested on chart bars with lookahead off) > EMA(close, longer lookback, T bars, current T bar requested on chart bars with lookahead off) AND RSI(close, RSI lookback, T bars, current T bar requested on chart bars with lookahead off) < upper RSI threshold
+Short: For any T in T1–T6, EMA(close, shorter lookback, T bars, current T bar requested on chart bars with lookahead off) <= EMA(close, longer lookback, T bars, current T bar requested on chart bars with lookahead off) AND RSI(close, RSI lookback, T bars, current T bar requested on chart bars with lookahead off) > lower RSI threshold
+Long: Bullish timeframe count >= minimum aligned timeframe count
+Short: Bearish timeframe count >= minimum aligned timeframe count

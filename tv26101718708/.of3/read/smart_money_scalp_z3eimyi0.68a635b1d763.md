@@ -1,0 +1,3 @@
+Calculation: Pivot half-lookback = floor((fractal-length parameter + 1 if even, otherwise fractal-length parameter) / 2)
+Long: The latest confirmed PivotHigh(high, pivot half-lookback left and right) exists and has not previously been broken, AND (close > that pivot high if the close-break parameter is enabled, otherwise high > that pivot high)
+Short: The latest confirmed PivotLow(low, pivot half-lookback left and right) exists and has not previously been broken, AND (close < that pivot low if the close-break parameter is enabled, otherwise low < that pivot low)

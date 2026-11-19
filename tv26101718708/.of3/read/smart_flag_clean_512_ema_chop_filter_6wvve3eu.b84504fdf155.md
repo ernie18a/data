@@ -1,0 +1,39 @@
+Calculation: Fast EMA slope percentage = the percentage change in EMA(close, shorter EMA lookback) from the previous chart bar to the current chart bar, or zero when its previous value is zero
+Calculation: Slow EMA slope percentage = the percentage change in EMA(close, longer EMA lookback) from the previous chart bar to the current chart bar, or zero when its previous value is zero
+Calculation: Trend SMA slope percentage = the percentage change in SMA(close, trend lookback) from the previous chart bar to the current chart bar, or zero when its previous value is zero
+Calculation: Bearish EMA stack = EMA(close, shorter EMA lookback) < EMA(close, longer EMA lookback)
+Calculation: Bullish EMA stack = EMA(close, shorter EMA lookback) > EMA(close, longer EMA lookback)
+Calculation: Fast EMA falling = Fast EMA slope percentage < negative flat-slope threshold
+Calculation: Slow EMA falling = Slow EMA slope percentage < negative flat-slope threshold
+Calculation: Fast EMA rising = Fast EMA slope percentage > flat-slope threshold
+Calculation: Slow EMA rising = Slow EMA slope percentage > flat-slope threshold
+Calculation: Bearish EMA alignment = Bearish EMA stack AND Fast EMA falling AND Slow EMA falling
+Calculation: Bullish EMA alignment = Bullish EMA stack AND Fast EMA rising AND Slow EMA rising
+Calculation: EMA flat = absolute Fast EMA slope percentage <= flat-slope threshold AND absolute Slow EMA slope percentage <= flat-slope threshold
+Calculation: EMA tight = absolute difference between EMA(close, shorter EMA lookback) and EMA(close, longer EMA lookback) <= ATR(high, low, close, ATR lookback) times EMA-separation ATR multiple
+Calculation: EMA chop zone = EMA flat OR EMA tight
+Calculation: Lower-high context = high < high of the previous chart bar AND high of the previous chart bar <= high of the chart bar before it
+Calculation: Higher-low context = low > low of the previous chart bar AND low of the previous chart bar >= low of the chart bar before it
+Calculation: Candle body fraction = absolute(close - open) / (high - low), or zero when high = low
+Calculation: Bearish rejection = close < open AND Candle body fraction >= rejection body-fraction threshold AND close <= low + (high - low) times rejection close-location fraction
+Calculation: Bullish rejection = close > open AND Candle body fraction >= rejection body-fraction threshold AND close >= high - (high - low) times rejection close-location fraction
+Calculation: Room below in ATR = (close - lowest(low, swing lookback)) / ATR(high, low, close, ATR lookback), or zero when ATR is not positive
+Calculation: Room above in ATR = (highest(high, swing lookback) - close) / ATR(high, low, close, ATR lookback), or zero when ATR is not positive
+Calculation: Failed pop = high < highest(high, swing lookback) AND close < open AND close < EMA(close, shorter EMA lookback)
+Calculation: Lost both EMAs = close < EMA(close, shorter EMA lookback) AND close < EMA(close, longer EMA lookback)
+Calculation: Middle of range = close > lowest(low, swing lookback) + (highest(high, swing lookback) - lowest(low, swing lookback)) times lower middle-range fraction AND close < lowest(low, swing lookback) + (highest(high, swing lookback) - lowest(low, swing lookback)) times upper middle-range fraction, with lower middle-range fraction < upper middle-range fraction
+Calculation: Short VWAP filter passes = VWAP filter disabled OR close < VWAP(close)
+Calculation: Long VWAP filter passes = VWAP filter disabled OR close > VWAP(close)
+Calculation: Mean-chop bar = distance from close to SMA(close, trend lookback), divided by ATR(high, low, close, ATR lookback) when ATR is positive and otherwise zero, is <= maximum distance from trend SMA in ATR AND absolute Trend SMA slope percentage <= maximum trend-SMA slope percentage AND (candle-overlap requirement disabled OR low <= SMA(close, trend lookback) AND high >= SMA(close, trend lookback))
+Calculation: Mean chop = chop filter enabled AND the lowest value of 1 for Mean-chop bar and 0 otherwise over the mean-chop bar count is 1
+Calculation: Trend-short score = trend-short unit point weight times the count of true conditions among Bearish EMA stack, close < SMA(close, trend lookback), Trend SMA slope percentage <= 0, Lower-high context, Bearish rejection, volume >= SMA(volume, volume-average lookback), volume >= SMA(volume, volume-average lookback) times strong-volume multiple, Room below in ATR >= minimum room threshold, Room below in ATR >= strong room threshold, and Short VWAP filter passes; plus trend-short alignment bonus times Bearish EMA alignment; minus trend-short chop-zone penalty times EMA chop zone; minus trend-short low-room penalty times Room below in ATR < minimum room threshold; minus trend-short mean-chop penalty times Mean chop
+Calculation: Reversal-short score = reversal-short unit point weight times the count of true conditions among Bearish EMA stack, Fast EMA falling, Slow EMA falling, Lower-high context, Bearish rejection, Failed pop, Lost both EMAs, volume >= SMA(volume, volume-average lookback), volume >= SMA(volume, volume-average lookback) times strong-volume multiple, Room below in ATR >= minimum room threshold, Room below in ATR >= strong room threshold, and Short VWAP filter passes; minus reversal-short chop-zone penalty times EMA chop zone; minus reversal-short middle-range penalty times Middle of range; minus reversal-short low-room penalty times Room below in ATR < minimum room threshold; minus reversal-short mean-chop penalty times Mean chop
+Calculation: Long score = long unit point weight times the count of true conditions among Bullish EMA stack, close > SMA(close, trend lookback), Trend SMA slope percentage >= 0, Higher-low context, Bullish rejection, volume >= SMA(volume, volume-average lookback), volume >= SMA(volume, volume-average lookback) times strong-volume multiple, Room above in ATR >= minimum room threshold, Room above in ATR >= strong room threshold, and Long VWAP filter passes; plus long alignment bonus times Bullish EMA alignment; minus long chop-zone penalty times EMA chop zone; minus long low-room penalty times Room above in ATR < minimum room threshold; minus long mean-chop penalty times Mean chop
+Calculation: Trend-short A setup = EMA(close, shorter EMA lookback) crosses below EMA(close, longer EMA lookback) AND Trend-short score >= trend-short A score cutoff AND Bearish EMA alignment AND close < SMA(close, trend lookback) AND Room below in ATR >= strong room threshold AND NOT EMA chop zone AND Short VWAP filter passes
+Calculation: Reversal-short A setup = EMA(close, shorter EMA lookback) crosses below EMA(close, longer EMA lookback) AND Reversal-short score >= reversal-short A score cutoff AND Bearish EMA stack AND Room below in ATR >= minimum room threshold AND NOT EMA flat AND Short VWAP filter passes
+Calculation: Long A setup = EMA(close, shorter EMA lookback) crosses above EMA(close, longer EMA lookback) AND Long score >= long A score cutoff AND Bullish EMA alignment AND close > SMA(close, trend lookback) AND Room above in ATR >= strong room threshold AND NOT EMA chop zone AND Long VWAP filter passes
+Long: Long A setup AND NOT Mean chop
+Long: EMA(close, shorter EMA lookback) crosses above EMA(close, longer EMA lookback) AND NOT Long A setup AND Long score >= long B score cutoff AND NOT Mean chop
+Short: Trend-short A setup AND NOT Mean chop
+Short: Reversal-short A setup AND NOT Mean chop
+Short: EMA(close, shorter EMA lookback) crosses below EMA(close, longer EMA lookback) AND NOT Trend-short A setup AND NOT Reversal-short A setup AND (Trend-short score >= trend-short B score cutoff OR Reversal-short score >= reversal-short B score cutoff) AND NOT Mean chop

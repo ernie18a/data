@@ -1,0 +1,1 @@
+Long: chart time >= P1 AND prior chart time < P1 OR (chart time > P1 AND day of month >= P2 AND no purchase has occurred in the current calendar month)

@@ -1,0 +1,7 @@
+Calculation: Hidden bullish divergence = low > low[divergence lookback] AND RSI(close, RSI lookback) < RSI(close, RSI lookback)[divergence lookback] AND RSI(close, RSI lookback) < upper divergence RSI threshold
+Calculation: Hidden bearish divergence = high < high[divergence lookback] AND RSI(close, RSI lookback) > RSI(close, RSI lookback)[divergence lookback] AND RSI(close, RSI lookback) > lower divergence RSI threshold
+Calculation: Strong candle = high > low AND abs(close - open) / (high - low) > body fraction parameter
+Calculation: Long score = count of true conditions among (EMA(close, fast lookback) > EMA(close, middle lookback) AND EMA(close, middle lookback) > EMA(close, slow lookback); RSI(close, RSI lookback) > RSI midpoint AND RSI(close, RSI lookback) < overbought level; close > VWAP(hlc3); volume > SMA(volume, volume lookback) * volume multiplier; hidden bullish divergence; strong candle)
+Calculation: Short score = count of true conditions among (EMA(close, fast lookback) < EMA(close, middle lookback) AND EMA(close, middle lookback) < EMA(close, slow lookback); RSI(close, RSI lookback) < RSI midpoint AND RSI(close, RSI lookback) > oversold level; close < VWAP(hlc3); volume > SMA(volume, volume lookback) * volume multiplier; hidden bearish divergence; strong candle)
+Long: Long score >= minimum score AND Long score > Long score[1] AND no long signal in the previous cooldown bars
+Short: Short score >= minimum score AND Short score > Short score[1] AND no short signal in the previous cooldown bars

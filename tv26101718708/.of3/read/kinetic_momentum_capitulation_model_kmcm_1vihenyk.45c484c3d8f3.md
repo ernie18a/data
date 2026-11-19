@@ -1,0 +1,7 @@
+Calculation: normalized ATR volatility = ATR(ATR lookback) / (if SMA(ATR(ATR lookback), ATR averaging lookback) is undefined or zero then ATR average floor else SMA(ATR(ATR lookback), ATR averaging lookback))
+Calculation: price-rate lookback = int(max(minimum lookback floor, nz(round(clamp(price-rate period scale / normalized ATR volatility, minimum price-rate lookback, maximum price-rate lookback)), price-rate fallback lookback)))
+Calculation: volume lookback = int(max(minimum lookback floor, nz(round(clamp(volume period scale / normalized ATR volatility, minimum volume lookback, maximum volume lookback)), volume fallback lookback)))
+Calculation: signed volume-weighted energy = (ROC(close, price-rate lookback) >= 0 ? energy coefficient : -energy coefficient) × volume / (if SMA(volume, volume lookback) is undefined or zero then average volume floor else SMA(volume, volume lookback)) × ROC(close, price-rate lookback)^2
+Calculation: energy regime oscillator = EMA(oscillator scale × tanh((signed volume-weighted energy − SMA(signed volume-weighted energy, volume lookback)) / (if STDEV(signed volume-weighted energy, volume lookback) is undefined or zero then energy deviation floor else STDEV(signed volume-weighted energy, volume lookback))), oscillator smoothing lookback)
+Long: energy regime oscillator > upper regime threshold
+Short: energy regime oscillator < lower regime threshold

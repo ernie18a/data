@@ -1,0 +1,4 @@
+Calculation: volume measure = volume or hlc3 * volume, according to the size-type parameter
+Calculation: volume direction = sign of the most recent nonzero change in T1 close, carried forward across equal closes
+Long: flash-enabled parameter AND latest T1 volume measure >= SMA(T1 volume measure, lookback parameter, including the latest bar) * spike-multiplier parameter AND volume direction > 0, evaluated on the last chart bar; the latest T1 bar may still be forming
+Short: flash-enabled parameter AND latest T1 volume measure >= SMA(T1 volume measure, lookback parameter, including the latest bar) * spike-multiplier parameter AND volume direction < 0, evaluated on the last chart bar; the latest T1 bar may still be forming

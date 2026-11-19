@@ -1,0 +1,4 @@
+Calculation: selected oscillator(source, oscillator lookback) = selected oscillator of source, or source itself when price is selected
+Calculation: selected oscillator bands = selected Bollinger Bands, Keltner Channels, or Donchian Channels of selected oscillator(close, oscillator lookback), using selected oscillator(high, oscillator lookback) and selected oscillator(low, oscillator lookback), band lookback, and multiplier where applicable; Keltner Channels use the SMA of the selected oscillator close plus or minus the SMA of max(close, high, low) minus min(close, high, low), multiplied by the multiplier
+Long: selected oscillator(close, oscillator lookback) crosses above the lower selected oscillator band
+Short: selected oscillator(close, oscillator lookback) crosses below the upper selected oscillator band

@@ -1,0 +1,4 @@
+Long: WaveTrend fast line(source, channel length, average length) crosses above WaveTrend signal line(source, channel length, average length, MA length) AND WaveTrend signal line <= oversold level 2
+Long: WaveTrend fast line(source, channel length, average length) crosses above WaveTrend signal line(source, channel length, average length, MA length) AND WaveTrend signal line <= oversold level 1 AND WaveTrend signal line > oversold level 2
+Short: WaveTrend fast line(source, channel length, average length) crosses below WaveTrend signal line(source, channel length, average length, MA length) AND WaveTrend signal line >= overbought level 2
+Short: WaveTrend fast line(source, channel length, average length) crosses below WaveTrend signal line(source, channel length, average length, MA length) AND WaveTrend signal line >= overbought level 1 AND WaveTrend signal line < overbought level 2

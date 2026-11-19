@@ -1,0 +1,4 @@
+Long: Ichimoku Leading Span A(tenkan lookback, kijun lookback) > Ichimoku Leading Span B(senkou B lookback), calculated on T1 bars using the still-forming T1 bar and mapped to chart bars
+Short: Ichimoku Leading Span A(tenkan lookback, kijun lookback) < Ichimoku Leading Span B(senkou B lookback), calculated on T1 bars using the still-forming T1 bar and mapped to chart bars
+Long: Ichimoku Leading Span A(tenkan lookback, kijun lookback) > Ichimoku Leading Span B(senkou B lookback), calculated on T2 bars using the still-forming T2 bar and mapped to chart bars
+Short: Ichimoku Leading Span A(tenkan lookback, kijun lookback) < Ichimoku Leading Span B(senkou B lookback), calculated on T2 bars using the still-forming T2 bar and mapped to chart bars

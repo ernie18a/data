@@ -1,0 +1,3 @@
+Long: low <= support level <= high AND abs(close - open) <= small-body parameter AND high - low <= tight-range parameter AND VPT > massive-VPT parameter AND VPT column is blue or green
+Long: close[1] < close[n] AND VPT[1] < low-VPT parameter AND VPT crosses above high-VPT parameter AND VPT column is blue or green
+Short: close[1] > close[n] AND VPT[1] < low-VPT parameter AND VPT crosses above high-VPT parameter AND VPT column is blue or green

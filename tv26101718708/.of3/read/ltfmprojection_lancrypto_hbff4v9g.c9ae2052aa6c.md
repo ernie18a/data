@@ -1,0 +1,5 @@
+Calculation: candle body = abs(close - open)
+Long: on chart bars, close[2] < open[2] AND close[1] < open[1] AND candle body[1] < candle body[2] * shrink threshold parameter AND close > open AND close > (open[1] + close[1]) / 2
+Short: on chart bars, close[2] > open[2] AND close[1] > open[1] AND candle body[1] < candle body[2] * shrink threshold parameter AND close < open AND close < (open[1] + close[1]) / 2
+Long: on T1 bars, using the current T1 bar (which may still be forming), when it is at least the fourth T1 bar within its chart bar: close[2] < open[2] AND close[1] < open[1] AND candle body[1] < candle body[2] * shrink threshold parameter AND close > open AND close > (open[1] + close[1]) / 2
+Short: on T1 bars, using the current T1 bar (which may still be forming), when it is at least the fourth T1 bar within its chart bar: close[2] > open[2] AND close[1] > open[1] AND candle body[1] < candle body[2] * shrink threshold parameter AND close < open AND close < (open[1] + close[1]) / 2

@@ -1,0 +1,12 @@
+Calculation: Market structure state = initialize bullish; on chart bars with at least two ZigZag pivot highs and lows (ZigZag length), switch bullish to bearish when the latest high and low pivots both differ from their values at the previous state change (or no previous state change exists) and latest low pivot < preceding low pivot - abs(latest high pivot - preceding low pivot) * breakout confirmation factor; switch bearish to bullish under the same pivot-change condition when latest high pivot > preceding high pivot + abs(preceding high pivot - latest low pivot) * breakout confirmation factor; otherwise retain the state
+Long: Market structure state changes from bearish to bullish
+Short: Market structure state changes from bullish to bearish
+Calculation: Upper liquidity = max(latest ZigZag pivot high, current still-forming T1-period high accumulated on chart bars)
+Calculation: Lower liquidity = min(latest ZigZag pivot low, current still-forming T1-period low accumulated on chart bars)
+Calculation: Pending bullish sweep = initially false; set true when low < Lower liquidity AND close > Lower liquidity; clear on any market structure state change and after a long signal, with the state change clearing after sweep detection
+Calculation: Pending bearish sweep = initially false; set true when high > Upper liquidity AND close < Upper liquidity; clear on any market structure state change and after a short signal, with the state change clearing after sweep detection
+Long: Pending bullish sweep AND close > open[1] AND close > high[1] AND open < close[1] AND low <= Lower liquidity * long proximity factor
+Short: Pending bearish sweep AND close < open[1] AND close < low[1] AND open > close[1] AND high >= Upper liquidity * short proximity factor
+Calculation: Prior T1 percent body change = 100 * (close of last completed T1 bar - open of last completed T1 bar) / open of last completed T1 bar, sampled on chart bars using lookahead_on values
+Long: On the first chart bar of each T1 period, using lookahead_on values, low of the still-forming T1 bar > high of the T1 bar two bars ago AND close of the last completed T1 bar > high of the T1 bar two bars ago AND Prior T1 percent body change > FVG threshold
+Short: On the first chart bar of each T1 period, using lookahead_on values, high of the still-forming T1 bar < low of the T1 bar two bars ago AND close of the last completed T1 bar < low of the T1 bar two bars ago AND -Prior T1 percent body change > FVG threshold

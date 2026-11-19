@@ -1,0 +1,3 @@
+Calculation: Gap-down level = low of the latest setup bar; each new setup bar replaces the level and resets its life
+Short: The setup bar has (open / close[1] - 1) * 100 <= -gap percentage AND (close / open - 1) * 100 <= -red-body percentage AND close >= minimum price AND (VIX gate disabled OR volatility-index close from T1's current bar, sampled on chart bars, is unavailable OR that close <= VIX threshold); current bar is one of the next life-duration bars after the latest setup bar AND low <= gap-down level AND no earlier bar since that setup bar has had low <= gap-down level; T1 uses its current bar, including while forming
+Exit: short, at the close of the bar where the short entry occurred

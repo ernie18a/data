@@ -1,0 +1,3 @@
+Calculation: beta-adjusted z-score = sum over the measurement window of (instrument log return − prior-bar beta × benchmark log return) ÷ (prior-bar standard deviation of those residuals over the beta window × square root of the measurement window); beta = rolling correlation of instrument and benchmark log returns over the beta window × instrument log-return standard deviation ÷ benchmark log-return standard deviation
+Long: beta-adjusted z-score ≥ signal threshold
+Short: beta-adjusted z-score ≤ −signal threshold

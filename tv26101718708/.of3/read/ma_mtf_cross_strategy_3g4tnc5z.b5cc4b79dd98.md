@@ -1,0 +1,6 @@
+Calculation: MA source(T) = regular close or Heikin-Ashi close from T, sampled on chart bars from the last completed T bar historically and the still-forming T bar in real time; one shared source choice applies to all three MA inputs
+Calculation: Short-lookback MA = independently selected MA type(MA source(T1), short lookback), calculated on chart bars; its lookback is shorter than the long-lookback MA's
+Calculation: Long-lookback MA = independently selected MA type(MA source(T2), long lookback), calculated on chart bars
+Calculation: Confirmation MA = independently selected MA type(MA source(T3), separate lookback), calculated on chart bars
+Long: short-lookback MA crosses above long-lookback MA AND (trend confirmation is disabled OR chart close > Confirmation MA) AND datetime is within the configured date window
+Exit: long, (long-lookback MA crosses above short-lookback MA OR (trend confirmation is enabled AND chart close < Confirmation MA)) AND datetime is within the configured date window

@@ -1,0 +1,5 @@
+Calculation: combined score = EMA(if trend weight + momentum weight + session weight > 0 then 100 × (trend weight × (ATR > 0 ? clamp((EMA(close, shorter trend lookback, T1 bars still forming, calculated on T1 bars and sampled on chart bars) − EMA(close, longer trend lookback, T1 bars still forming, calculated on T1 bars and sampled on chart bars)) / ATR(high, low, close, chart bars, ATR lookback), −1, 1) : 0) + momentum weight × clamp((RSI(close, momentum lookback, chart bars) − 50) / 50, −1, 1) + (session weighting enabled and the current chart bar is in any configured exchange-time session ? session weight : 0) × (weighted trend plus weighted momentum >= 0 ? 1 : −1)) / (trend weight + momentum weight + session weight) else 0, smoothing lookback)
+Long: combined score >= signal threshold
+Long: combined score >= signal threshold AND NOT (prior chart bar combined score >= signal threshold)
+Short: combined score <= −signal threshold
+Short: combined score <= −signal threshold AND NOT (prior chart bar combined score <= −signal threshold)

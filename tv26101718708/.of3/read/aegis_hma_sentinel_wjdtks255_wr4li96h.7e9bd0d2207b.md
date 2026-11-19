@@ -1,0 +1,5 @@
+Calculation: candle body = abs(close - open)
+Long: position side is not long AND close > HMA(close, shorter lookback) AND close crosses above highest(high, lookback)[1] AND (volume filter is off OR volume > SMA(volume, lookback) * multiplier) AND (candle filter is off OR candle body > SMA(candle body[1], lookback)) AND (white line filter is off OR close > HMA(close, longer lookback))
+Short: position side is not short AND close <= HMA(close, shorter lookback) AND close crosses below lowest(low, lookback)[1] AND (volume filter is off OR volume > SMA(volume, lookback) * multiplier) AND (candle filter is off OR candle body > SMA(candle body[1], lookback)) AND (white line filter is off OR close < HMA(close, longer lookback))
+Exit: long, high >= entry price + ATR(lookback at entry) * target multiplier OR low <= entry-bar low - ATR(lookback at entry) * stop multiplier
+Exit: short, low <= entry price - ATR(lookback at entry) * target multiplier OR high >= entry-bar high + ATR(lookback at entry) * stop multiplier

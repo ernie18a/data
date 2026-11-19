@@ -1,0 +1,2 @@
+Long: For each enabled timeframe T1–T7, on its bars, close > EMA(close, trend lookback), using the last completed bar historically and the still-forming bar live
+Short: For each enabled timeframe T1–T7, on its bars, close <= EMA(close, trend lookback), using the last completed bar historically and the still-forming bar live

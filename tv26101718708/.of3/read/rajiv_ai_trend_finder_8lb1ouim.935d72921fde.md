@@ -1,0 +1,2 @@
+Long: Bullish score > Bearish score AND Bullish score > Sideways score AND EMA(close, shorter lookback) crosses above EMA(close, longer lookback)
+Short: Bearish score > Bullish score AND Bearish score > Sideways score AND EMA(close, shorter lookback) crosses below EMA(close, longer lookback)

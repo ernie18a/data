@@ -1,0 +1,9 @@
+Calculation: momentum state = bullish when RSI(close, RSI lookback) calculated on T1 bars and sampled onto chart bars with lookahead off was below the positive threshold on the prior chart bar and is above it now, the current sampled RSI is above the negative threshold, and EMA(close, EMA lookback) on the current T1 bar is above its prior T1 bar value; bearish when the current sampled RSI is below the negative threshold and the current T1 EMA is below its prior T1 bar value; otherwise retain its prior state; initially neutral. The current requested T1 bar is forming in realtime and completed historically.
+Long: momentum state changes to bullish
+Short: momentum state changes to bearish
+Long: momentum state changes to bullish AND position is flat AND datetime is within the configured date range AND long trades are enabled
+Short: momentum state changes to bearish AND position is flat AND datetime is within the configured date range AND short trades are enabled
+Exit: long, percentage stop/target mode AND (low <= entry price * (1 - stop-loss percentage / 100) OR high >= entry price * (1 + take-profit percentage / 100)) OR ATR stop/target mode AND (low <= entry price - ATR(ATR lookback, chart bars, at entry) * stop-loss ATR multiplier OR high >= entry price + ATR(ATR lookback, chart bars, at entry) * take-profit ATR multiplier)
+Exit: short, percentage stop/target mode AND (high >= entry price * (1 + stop-loss percentage / 100) OR low <= entry price * (1 - take-profit percentage / 100)) OR ATR stop/target mode AND (high >= entry price + ATR(ATR lookback, chart bars, at entry) * stop-loss ATR multiplier OR low <= entry price - ATR(ATR lookback, chart bars, at entry) * take-profit ATR multiplier)
+Exit: long, trend-reversal mode AND momentum state changes to bearish
+Exit: short, trend-reversal mode AND momentum state changes to bullish

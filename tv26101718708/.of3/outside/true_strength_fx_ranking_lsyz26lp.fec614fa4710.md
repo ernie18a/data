@@ -1,0 +1,2 @@
+Long: bullish macro bias for the base currency AND the quote currency has the lowest performance over T1
+Short: bullish macro bias for the quote currency AND the base currency has the lowest performance over T1

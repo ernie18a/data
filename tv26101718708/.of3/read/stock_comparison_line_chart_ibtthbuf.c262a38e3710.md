@@ -1,0 +1,3 @@
+Calculation: spread = first instrument's close on T1 (current bar while forming, otherwise last completed bar), minus second instrument's close on T1 (current bar while forming, otherwise last completed bar), sampled on chart bars
+Long: price spread mode AND highest(spread, lookback) on chart bars [1] is available AND spread > highest(spread, lookback) on chart bars [1]
+Short: price spread mode AND lowest(spread, lookback) on chart bars [1] is available AND spread < lowest(spread, lookback) on chart bars [1]

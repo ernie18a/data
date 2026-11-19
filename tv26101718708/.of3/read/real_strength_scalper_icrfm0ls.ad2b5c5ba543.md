@@ -1,0 +1,11 @@
+Calculation: Volume ratio = volume / SMA(volume, volume lookback)
+Calculation: Real strength = EMA(ROC(close, momentum lookback) * max(volume ratio, volume-ratio floor) * max(ADX(DI lookback, ADX smoothing lookback) / ADX scaling parameter, ADX-amplifier floor), histogram smoothing lookback)
+Calculation: Long-trade peak = maximum real strength since long entry, initialized at entry and updated each bar
+Calculation: Short-trade peak = minimum real strength since short entry, initialized at entry and updated each bar
+Calculation: Bars held = current chart bar index minus entry chart bar index
+Calculation: Long re-entry lock = active after a long stop loss until real strength <= 0
+Calculation: Short re-entry lock = active after a short stop loss until real strength >= 0
+Long: real strength > strength threshold AND real strength > real strength[1] AND ADX(DI lookback, ADX smoothing lookback) >= minimum ADX AND DI+ > DI− AND volume ratio >= minimum volume ratio AND (SMA trend filter disabled OR SMA(close, shorter fast-SMA lookback) > SMA(close, longer slow-SMA lookback)) AND no long re-entry lock is active AND position is flat or short
+Short: real strength < −strength threshold AND real strength < real strength[1] AND ADX(DI lookback, ADX smoothing lookback) >= minimum ADX AND DI− > DI+ AND volume ratio >= minimum volume ratio AND (SMA trend filter disabled OR SMA(close, shorter fast-SMA lookback) < SMA(close, longer slow-SMA lookback)) AND no short re-entry lock is active AND position is flat or long
+Exit: long, low <= entry price * (1 − stop-loss percentage / 100) OR (SMA(close, shorter fast-SMA lookback) > SMA(close, longer slow-SMA lookback) AND real strength <= −flip threshold AND bars held >= minimum hold) OR (SMA(close, shorter fast-SMA lookback) <= SMA(close, longer slow-SMA lookback) AND long-trade peak > 0 AND real strength < long-trade peak * (1 − peak-drop percentage / 100) AND bars held >= minimum hold)
+Exit: short, high >= entry price * (1 + stop-loss percentage / 100) OR (SMA(close, shorter fast-SMA lookback) < SMA(close, longer slow-SMA lookback) AND real strength >= flip threshold AND bars held >= minimum hold) OR (SMA(close, shorter fast-SMA lookback) >= SMA(close, longer slow-SMA lookback) AND short-trade peak < 0 AND real strength > short-trade peak * (1 − peak-drop percentage / 100) AND bars held >= minimum hold)

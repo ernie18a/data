@@ -1,0 +1,5 @@
+Calculation: MACD line = EMA(close, shorter lookback) - EMA(close, longer lookback) on chart bars
+Calculation: Chart-bar average true range = ATR(lookback)
+Calculation: T1 %K = SMA(Stochastic(close, high, low, lookback), K smoothing lookback), calculated on T1 bars; chart bars use the current T1 value, including the still-forming T1 bar in realtime
+Long: MACD line crosses above EMA(MACD line, signal lookback) AND current T1 %K > current T1 SMA(T1 %K, D smoothing lookback) AND current T1 %K < upper threshold AND datetime >= start-time parameter AND datetime <= stop-time parameter
+Exit: Long, low <= entry price - chart-bar average true range * stop-loss multiplier OR (close < EMA(close, trailing EMA lookback) AND (high crosses above entry price + chart-bar average true range * activation multiplier at or after entry OR no such crossover has occurred in the available chart history))

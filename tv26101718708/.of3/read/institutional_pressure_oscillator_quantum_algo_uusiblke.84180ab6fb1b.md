@@ -1,0 +1,5 @@
+Calculation: Gated contribution = if HLC3 - HLC3[1] > noise sensitivity * stdev(log(HLC3) - log(HLC3[1]), volatility lookback) * close, min(volume, SMA(volume, accumulation lookback)[1] * participation cap), else if HLC3 - HLC3[1] < -noise sensitivity * stdev(log(HLC3) - log(HLC3[1]), volatility lookback) * close, -min(volume, SMA(volume, accumulation lookback)[1] * participation cap), otherwise 0; HLC3 = (high + low + close) / 3
+Calculation: Raw pressure = SUM(Gated contribution, accumulation lookback) / SMA(volume, accumulation lookback)[1]
+Calculation: Pressure = SMA(Raw pressure, extra smoothing lookback) if extra smoothing is enabled, otherwise Raw pressure
+Long: Pressure >= 0 OR Pressure >= EMA(Pressure, trigger lookback) OR crosses above(Pressure, 0) OR crosses above(Pressure, EMA(Pressure, trigger lookback))
+Short: Pressure < 0 OR Pressure < EMA(Pressure, trigger lookback) OR crosses below(Pressure, 0) OR crosses below(Pressure, EMA(Pressure, trigger lookback))

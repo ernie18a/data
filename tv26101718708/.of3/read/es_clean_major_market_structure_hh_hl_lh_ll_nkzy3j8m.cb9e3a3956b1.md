@@ -1,0 +1,11 @@
+Calculation: Most recent confirmed swing high = most recent non-na PivotHigh(high, swing strength, swing strength)
+Calculation: Previous confirmed swing high = second most recent non-na PivotHigh(high, swing strength, swing strength)
+Calculation: Most recent confirmed swing low = most recent non-na PivotLow(low, swing strength, swing strength)
+Calculation: Previous confirmed swing low = second most recent non-na PivotLow(low, swing strength, swing strength)
+Calculation: Major higher high = both confirmed swing highs exist AND most recent confirmed swing high > previous confirmed swing high AND absolute difference between them >= minimum swing move
+Calculation: Major lower high = both confirmed swing highs exist AND most recent confirmed swing high < previous confirmed swing high AND absolute difference between them >= minimum swing move
+Calculation: Major higher low = both confirmed swing lows exist AND most recent confirmed swing low > previous confirmed swing low AND absolute difference between them >= minimum swing move
+Calculation: Major lower low = both confirmed swing lows exist AND most recent confirmed swing low < previous confirmed swing low AND absolute difference between them >= minimum swing move
+Calculation: Structure bias = initialize neutral; on each bar set bullish if (major higher high AND most recent confirmed swing low > previous confirmed swing low) OR (major higher low AND most recent confirmed swing high > previous confirmed swing high); then set bearish if (major lower low AND most recent confirmed swing high < previous confirmed swing high) OR (major lower high AND most recent confirmed swing low < previous confirmed swing low); if still neutral, set bullish on major higher high, then set bearish on major lower low; otherwise retain the previous bias
+Long: (PivotHigh(high, swing strength, swing strength) is not na AND major higher high AND (structure bias = bullish OR structure bias = neutral)) OR (PivotLow(low, swing strength, swing strength) is not na AND major higher low AND structure bias = bullish)
+Short: (PivotHigh(high, swing strength, swing strength) is not na AND major lower high AND structure bias = bearish) OR (PivotLow(low, swing strength, swing strength) is not na AND major lower low AND (structure bias = bearish OR structure bias = neutral))

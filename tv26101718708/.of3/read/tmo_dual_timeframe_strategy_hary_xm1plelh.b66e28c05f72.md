@@ -1,0 +1,6 @@
+Calculation: TMO main = MA(second MA-type parameter, MA(first MA-type parameter, sum over i=0 through length parameter of +1 if close > open[i], -1 if close < open[i], otherwise 0, calc-length parameter), smooth-length parameter); calculate on each timeframe’s current bar (possibly still forming), map values to chart bars, and use the same TMO parameters on T1 and T2
+Calculation: price distance(amount, unit, price) = price × amount / 100 for percent, or amount × minimum tick × ticks-per-pip parameter for pips
+Long: T1 (higher-timeframe) TMO main > 0 AND T2 (entry-timeframe) TMO main crosses above 0 on chart bars
+Short: T1 (higher-timeframe) TMO main < 0 AND T2 (entry-timeframe) TMO main crosses below 0 on chart bars
+Exit: long, (stop loss enabled AND low <= entry price - price distance(stop-loss amount, stop-loss unit, entry price)) OR (take profit enabled AND high >= entry price + price distance(take-profit amount, take-profit unit, entry price))
+Exit: short, (stop loss enabled AND high >= entry price + price distance(stop-loss amount, stop-loss unit, entry price)) OR (take profit enabled AND low <= entry price - price distance(take-profit amount, take-profit unit, entry price))

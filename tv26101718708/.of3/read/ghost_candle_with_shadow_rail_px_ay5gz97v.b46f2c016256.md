@@ -1,0 +1,22 @@
+Calculation: synthetic close = (open + high + low + close) / 4
+Calculation: synthetic open = (open + close) / 2 on the first bar; otherwise (synthetic open[1] + synthetic close[1]) / 2
+Calculation: synthetic high = max(high, synthetic open, synthetic close)
+Calculation: synthetic low = min(low, synthetic open, synthetic close)
+Calculation: synthetic span = synthetic high - synthetic low when the prior synthetic close is unavailable; otherwise max(synthetic high - synthetic low, abs(synthetic high - synthetic close[1]), abs(synthetic low - synthetic close[1]))
+Calculation: trend quality = 0 when sum(abs(change(synthetic close)), quality lookback) = 0; otherwise abs(synthetic close - synthetic close[quality lookback]) / sum(abs(change(synthetic close)), quality lookback)
+Calculation: average span = SMA(synthetic span, swing lookback)
+Calculation: impulse = 0 when average span = 0; otherwise (synthetic close - synthetic close[1]) / average span
+Calculation: base spread = rail spread × (1 + impulse widening weight × abs(impulse))
+Calculation: raw volume flow = 0 when synthetic high = synthetic low; otherwise (synthetic close - synthetic open) / (synthetic high - synthetic low) × volume
+Calculation: flow bias = 0 when EMA(volume, flow smoothing length) = 0; otherwise clamp(EMA(raw volume flow, flow smoothing length) / EMA(volume, flow smoothing length), -1, 1)
+Calculation: lower spread = base spread × max(spread multiplier floor, 1 + flow widening weight × flow bias)
+Calculation: upper spread = base spread × max(spread multiplier floor, 1 - flow widening weight × flow bias)
+Calculation: damping = max(rail damping floor, (100 - rail drive) × (1 - quality damping weight × (2 × trend quality - 1)))
+Calculation: slow damping = slow damping coefficient × damping
+Calculation: fast damping = fast damping coefficient × damping
+Calculation: upper and lower references = synthetic close + average span × upper spread; synthetic close - average span × lower spread
+Calculation: trend side and active rails = start neutral; on the first bar with valid references, set trend side up and set the lower rail and lower extreme to the lower reference. While up, set the lower extreme to max(prior lower extreme, lower reference); if it increases, add the increase to the lower rail; otherwise, if the lower reference fell from its prior value, subtract that fall divided by slow damping, or if it rose, add that rise divided by fast damping. If synthetic close is then below the lower rail, switch down and set the upper rail and upper extreme to the upper reference. While down, set the upper extreme to min(prior upper extreme, upper reference); if it decreases, subtract the decrease from the upper rail; otherwise, if the upper reference rose from its prior value, add that rise divided by slow damping, or if it fell, subtract that fall divided by fast damping. If synthetic close is then above the upper rail, switch up and set the lower rail and lower extreme to the lower reference. Treat an unavailable prior reference as the current reference.
+Long: trend side changes from down to up AND trend quality × 100 ≥ minimum quality percent AND (higher timeframe filter is disabled OR the last completed bar of T1 (or the chart timeframe when T1 is not higher) has close > EMA(close, filter EMA lookback) computed on that timeframe
+Short: trend side changes from up to down AND trend quality × 100 ≥ minimum quality percent AND (higher timeframe filter is disabled OR the last completed bar of T1 (or the chart timeframe when T1 is not higher) has close ≤ EMA(close, filter EMA lookback) computed on that timeframe
+Long: trend side changes from down to up AND trend quality × 100 ≥ minimum quality percent AND trend quality ≥ strong-flip quality threshold AND (higher timeframe filter is disabled OR the last completed bar of T1 (or the chart timeframe when T1 is not higher) has close > EMA(close, filter EMA lookback) computed on that timeframe
+Short: trend side changes from up to down AND trend quality × 100 ≥ minimum quality percent AND trend quality ≥ strong-flip quality threshold AND (higher timeframe filter is disabled OR the last completed bar of T1 (or the chart timeframe when T1 is not higher) has close ≤ EMA(close, filter EMA lookback) computed on that timeframe

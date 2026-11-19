@@ -1,0 +1,11 @@
+Calculation: Trend states = on chart bars using T1 values, compare the current T1 close (bar still forming) with the T1 close at the trend-lookback parameter (completed bar): up when current close >= past close * (1 + growth percentage / 100); down when current close <= past close * (1 - growth percentage / 100); sideways up when past close < current close < past close * (1 + growth percentage / 100); sideways down when past close * (1 - growth percentage / 100) < current close < past close.
+Long: trend state is up or sideways up.
+Short: trend state is down or sideways down.
+Calculation: First, second, third, fourth, and fifth MA = selected SMA, EMA, or WMA of close, using five separate lookback and type parameters, with lookbacks ordered shortest to longest.
+Long: close[1] < first MA[1] AND close > first MA AND close > second MA AND close > third MA AND (short-MA filter disabled OR first MA > second MA) AND first MA > third MA AND (long-MA filter disabled OR fourth MA >= fifth MA) AND selected trend mode passes (green: up; yellow: up or sideways up; orange: up, sideways up, or sideways down; red: any trend state).
+Long: position is flat or short AND close[1] < first MA[1] AND close > first MA AND close > second MA AND close > third MA AND (short-MA filter disabled OR first MA > second MA) AND first MA > third MA AND (long-MA filter disabled OR fourth MA >= fifth MA) AND selected trend mode passes (green: up; yellow: up or sideways up; orange: up, sideways up, or sideways down; red: any trend state) AND year >= start-year parameter.
+Calculation: Long stop price = on each bar with the long-signal condition while position is flat or short, the lower of that bar's low and (high - ATR(ATR-lookback parameter) * stop-multiple parameter) when ATR stops are enabled, otherwise that bar's low; retain the latest value.
+Calculation: Long target price = on each bar with the long-signal condition while position is flat or short, that bar's close + (that bar's close - that bar's long stop price) * target-multiple parameter; retain the latest value.
+Exit: long, year >= start-year parameter AND stops enabled AND low <= latest long stop price.
+Exit: long, year >= start-year parameter AND targets enabled AND high >= latest long target price.
+Exit: long, year >= start-year parameter AND early exit enabled AND close < first MA.

@@ -1,0 +1,12 @@
+Calculation: Speed norm = clamp(abs(EMA(change(source), speed lookback)) / ATR(ATR lookback), lower speed bound, upper speed bound)
+Calculation: Volatility speed = clamp((EMA(ATR(ATR lookback), shorter volatility lookback) / EMA(ATR(ATR lookback), longer volatility lookback), using neutral ratio when unavailable, minus neutral ratio) × speed boost, lower volatility speed bound, upper volatility speed bound)
+Calculation: Curve weight = clamp(base curve weight + speed norm × speed coefficient + volatility speed × volatility coefficient, minimum curve weight, maximum curve weight)
+Calculation: Arc core = EMA(EMA(source, longer arc lookback) + (EMA(source, shorter arc lookback) − EMA(source, longer arc lookback)) × curve weight, smoothing lookback)
+Calculation: Value anchor = VWAP(source) when available, otherwise EMA(source, longer arc lookback)
+Calculation: Trail multiplier = clamp(base trail width × (1 − volatility speed × width volatility coefficient), base trail width × minimum width fraction, base trail width × maximum width fraction)
+Calculation: Arc slope = EMA(change(arc core), smoothing lookback)
+Calculation: Long band = arc core − ATR(ATR lookback) × trail multiplier + positive part of arc slope × (slope offset base + volatility speed)
+Calculation: Short band = arc core + ATR(ATR lookback) × trail multiplier + negative part of arc slope × (slope offset base + volatility speed)
+Calculation: Regime and trail = initially bullish when close ≥ arc core, otherwise bearish, with trail set to the corresponding band; thereafter, a bearish regime turns bullish when close > prior trail, close ≥ value anchor, and arc core ≥ prior arc core, otherwise it stays bearish; a bullish regime turns bearish when close < prior trail, close ≤ value anchor, and arc core ≤ prior arc core, otherwise it stays bullish; the bullish trail is the long band on a bullish flip and otherwise the maximum of the long band and prior trail; the bearish trail is the short band on a bearish flip and otherwise the minimum of the short band and prior trail; when prior trail is unavailable use close, and when prior regime is unavailable use bullish if close ≥ arc core, otherwise bearish
+Long: on a completed chart bar, prior regime is bearish AND close > prior trail AND close ≥ value anchor AND arc core ≥ prior arc core
+Short: on a completed chart bar, prior regime is bullish AND close < prior trail AND close ≤ value anchor AND arc core ≤ prior arc core

@@ -1,0 +1,2 @@
+Long: close crosses above the upper Bollinger Band(lookback, deviation multiplier) AND the most recent breakout was not an upper breakout
+Short: close crosses below the lower Bollinger Band(lookback, deviation multiplier) AND the most recent breakout was not a lower breakout

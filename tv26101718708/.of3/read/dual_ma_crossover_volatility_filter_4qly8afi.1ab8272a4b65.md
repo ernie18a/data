@@ -1,0 +1,11 @@
+Calculation: Initial risk = ATR(shorter volatility lookback) on entry bar × initial stop multiple
+Calculation: Long favorable extreme = maximum of entry price and highs after entry through current bar
+Calculation: Short favorable extreme = minimum of entry price and lows after entry through current bar
+Calculation: Long protective stop = entry price − initial risk at entry; thereafter, if long favorable extreme − entry price ≥ initial risk × breakeven trigger, maximum of previous long protective stop, entry price, and long favorable extreme − ATR(shorter volatility lookback) × trailing stop multiple; otherwise previous long protective stop
+Calculation: Short protective stop = entry price + initial risk at entry; thereafter, if entry price − short favorable extreme ≥ initial risk × breakeven trigger, minimum of previous short protective stop, entry price, and short favorable extreme + ATR(shorter volatility lookback) × trailing stop multiple; otherwise previous short protective stop
+Long: long entries enabled AND selected moving average of close with shorter MA lookback crosses above selected moving average of close with longer MA lookback AND (volatility filter disabled OR ATR(shorter volatility lookback) > ATR(longer baseline lookback)) AND (RSI filter disabled OR RSI(close, RSI lookback) > long RSI threshold) AND (session filter disabled OR bars since session open ≥ skipped-bars parameter) AND position is flat
+Short: short entries enabled AND selected moving average of close with shorter MA lookback crosses below selected moving average of close with longer MA lookback AND (volatility filter disabled OR ATR(shorter volatility lookback) > ATR(longer baseline lookback)) AND (RSI filter disabled OR RSI(close, RSI lookback) < short RSI threshold) AND (session filter disabled OR bars since session open ≥ skipped-bars parameter) AND position is flat
+Exit: long, low ≤ long protective stop
+Exit: short, high ≥ short protective stop
+Exit: long, bars since entry ≥ time-stop lookback AND Highest(high, time-stop lookback) ≤ Highest(high, time-stop lookback)[1]
+Exit: short, bars since entry ≥ time-stop lookback AND Lowest(low, time-stop lookback) ≥ Lowest(low, time-stop lookback)[1]

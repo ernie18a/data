@@ -1,0 +1,1 @@
+Long: Stage changes to 2 AND volume > SMA(volume, common length parameter) × volume multiplier AND (ROC(WMA(macro index close, common length parameter), slope lookback parameter) > slope threshold OR macro filter = disabled) AND (ROC(WMA(sector index close, common length parameter), slope lookback parameter) > slope threshold OR sector filter = disabled)

@@ -1,0 +1,4 @@
+Calculation: Bullish MTF count = number of T1–T6 whose close is above EMA(close, shared MTF lookback parameter) calculated on that timeframe’s bars, using its current/forming bar value on chart bars in real time
+Calculation: Bearish MTF count = number of T1–T6 whose close is below EMA(close, shared MTF lookback parameter) calculated on that timeframe’s bars, using its current/forming bar value on chart bars in real time
+Long: Supertrend direction changes from bearish to bullish AND (MTF filter is disabled OR Bullish MTF count >= bullish-count parameter) AND the chart bar is allowed by the selected trading session AND the direction setting permits long
+Short: Supertrend direction changes from bullish to bearish AND (MTF filter is disabled OR Bearish MTF count >= bearish-count parameter) AND the chart bar is allowed by the selected trading session AND the direction setting permits short

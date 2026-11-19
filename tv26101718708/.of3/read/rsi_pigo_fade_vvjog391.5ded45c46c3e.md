@@ -1,0 +1,3 @@
+Calculation: KDE extremity(T) = 2 × ABS(PercentRank(RSI(RSI source, RSI lookback), KDE lookback) − 50), calculated on T bars using T's current, still-forming bar
+Long: On chart bars taking values from T1 and T2's current, still-forming bars, (RSI(RSI source, RSI lookback, T1) ≤ lower RSI threshold AND KDE extremity(T1) ≥ T1 KDE threshold) OR (RSI(RSI source, RSI lookback, T2) ≤ lower RSI threshold AND KDE extremity(T2) ≥ T2 KDE threshold)
+Short: On chart bars taking values from T1 and T2's current, still-forming bars, (RSI(RSI source, RSI lookback, T1) ≥ upper RSI threshold AND KDE extremity(T1) ≥ T1 KDE threshold) OR (RSI(RSI source, RSI lookback, T2) ≥ upper RSI threshold AND KDE extremity(T2) ≥ T2 KDE threshold)

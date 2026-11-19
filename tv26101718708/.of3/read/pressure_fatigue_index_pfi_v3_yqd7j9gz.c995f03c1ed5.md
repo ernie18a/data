@@ -1,0 +1,20 @@
+Calculation: close location = (2 * selected source - high - low) / (high - low), or 0 when high = low
+Calculation: bar weight = min((high - low) / ATR(volatility lookback), bar-weight cap), or 1 when ATR = 0
+Calculation: raw pressure = oscillator midpoint + half the oscillator scale * (exp(x) - 1) / (exp(x) + 1), where x = clamp(2 * RMA(close location * bar weight, pressure lookback) / sensitivity, -raw-pressure clamp, raw-pressure clamp)
+Calculation: PFI = oscillator midpoint + (raw pressure - oscillator midpoint) * exp(-fatigue * fatigue impact), where fatigue starts at 0 and on each bar becomes min(previous fatigue + fatigue pressure * fatigue build rate, fatigue cap) when raw pressure is above overbought or below oversold, and otherwise becomes previous fatigue * fatigue release; fatigue pressure is (raw pressure - overbought) / max(oscillator scale - overbought, positive denominator floor) above overbought, (oversold - raw pressure) / max(oversold, positive denominator floor) below oversold, and 0 otherwise
+Calculation: long arm = false when raw pressure reaches the oscillator midpoint; otherwise it latches true after raw pressure is below oversold and PFI - raw pressure >= arm gap
+Calculation: short arm = false when raw pressure reaches the oscillator midpoint; otherwise it latches true after raw pressure is above overbought and raw pressure - PFI >= arm gap
+Calculation: long flush = false when raw pressure reaches the oscillator midpoint; otherwise it latches true after raw pressure is below oversold, bar weight >= flush range, and close location <= -flush close location
+Calculation: short flush = false when raw pressure reaches the oscillator midpoint; otherwise it latches true after raw pressure is above overbought, bar weight >= flush range, and close location >= flush close location
+Calculation: long divergence = false when raw pressure reaches the oscillator midpoint; otherwise it latches true when raw pressure is below oversold, low <= the lowest low on prior below-oversold bars in the current episode, and raw pressure > the lowest raw pressure on those prior bars + divergence minimum
+Calculation: short divergence = false when raw pressure reaches the oscillator midpoint; otherwise it latches true when raw pressure is above overbought, high >= the highest high on prior above-overbought bars in the current episode, and raw pressure < the highest raw pressure on those prior bars - divergence minimum
+Calculation: long entry lock = initially clear; set by a long entry, then remains set as raw pressure stays below the oscillator midpoint while its cooldown counter is above 0; the counter is set to cooldown bars on entry and decreases by 1 on each later bar; clear when raw pressure reaches the oscillator midpoint or the counter reaches 0
+Calculation: short entry lock = initially clear; set by a short entry, then remains set as raw pressure stays above the oscillator midpoint while its cooldown counter is above 0; the counter is set to cooldown bars on entry and decreases by 1 on each later bar; clear when raw pressure reaches the oscillator midpoint or the counter reaches 0
+Long: raw pressure < oversold AND bar weight >= flush range AND close location <= -flush close location
+Short: raw pressure > overbought AND bar weight >= flush range AND close location >= flush close location
+Long: long arm = true
+Short: short arm = true
+Long: long arm = true AND long flush = true AND close location >= trigger close location AND bar weight >= trigger range AND raw pressure > prior-bar raw pressure AND raw pressure <= oversold + near-zone buffer AND prior-bar long entry lock = false AND (divergence filter is disabled OR long divergence = true)
+Short: short arm = true AND short flush = true AND close location <= -trigger close location AND bar weight >= trigger range AND raw pressure < prior-bar raw pressure AND raw pressure >= overbought - near-zone buffer AND prior-bar short entry lock = false AND (divergence filter is disabled OR short divergence = true)
+Long: PFI crosses above the oscillator midpoint
+Short: PFI crosses below the oscillator midpoint

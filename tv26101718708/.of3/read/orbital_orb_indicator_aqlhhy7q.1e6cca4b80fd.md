@@ -1,0 +1,4 @@
+Calculation: OpeningRangeHigh = highest high across chart bars in the configured opening-range session and session time zone, locked when the session ends
+Calculation: OpeningRangeLow = lowest low across chart bars in the configured opening-range session and session time zone, locked when the session ends
+Long: opening range is complete AND (range filter is disabled OR (opening-range size / minimum tick size ≥ minimum-range parameter AND opening-range size / minimum tick size ≤ maximum-range parameter)) AND no earlier long breakout signal in the current day AND close > OpeningRangeHigh AND close[1] ≤ OpeningRangeHigh
+Short: opening range is complete AND (range filter is disabled OR (opening-range size / minimum tick size ≥ minimum-range parameter AND opening-range size / minimum tick size ≤ maximum-range parameter)) AND no earlier short breakout signal in the current day AND close < OpeningRangeLow AND close[1] ≥ OpeningRangeLow

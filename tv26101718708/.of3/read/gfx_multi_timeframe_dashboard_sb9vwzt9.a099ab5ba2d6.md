@@ -1,0 +1,4 @@
+Calculation: Bias(chart bars) = bullish if EMA(close, shorter fast lookback) > EMA(close, longer slow lookback) AND close > EMA(close, longest trend lookback); bearish if EMA(close, shorter fast lookback) < EMA(close, longer slow lookback) AND close < EMA(close, longest trend lookback); neutral otherwise
+Calculation: Bias(T) = bullish if EMA(close, shorter fast lookback, T) > EMA(close, longer slow lookback, T) AND close(T) > EMA(close, longest trend lookback, T); bearish if EMA(close, shorter fast lookback, T) < EMA(close, longer slow lookback, T) AND close(T) < EMA(close, longest trend lookback, T); neutral otherwise, calculated on T bars using T's current bar (still forming) and mapped to chart bars
+Long: Bias(chart bars) is bullish OR Bias(T1) is bullish OR Bias(T2) is bullish OR Bias(T3) is bullish OR Bias(T4) is bullish
+Short: Bias(chart bars) is bearish OR Bias(T1) is bearish OR Bias(T2) is bearish OR Bias(T3) is bearish OR Bias(T4) is bearish

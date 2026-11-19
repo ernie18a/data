@@ -1,0 +1,14 @@
+Calculation: Signed square root of OBV rate of change = IF(ROC(OBV, OBV lookback) >= 0, SQRT(ABS(ROC(OBV, OBV lookback))), -SQRT(ABS(ROC(OBV, OBV lookback))))
+Calculation: Raw energy = π * ATR(ATR lookback)^2 * Signed square root of OBV rate of change
+Calculation: Energy = EMA(IF(Highest(Raw energy, normalization lookback) != Lowest(Raw energy, normalization lookback), 100 * (Raw energy - Lowest(Raw energy, normalization lookback)) / (Highest(Raw energy, normalization lookback) - Lowest(Raw energy, normalization lookback)), 50), energy smoothing lookback)
+Calculation: Energy average line = EMA(Energy, energy average lookback) + average buffer
+Calculation: Energy spread = Energy - Energy average line
+Calculation: Energy trend average = EMA(Energy, energy trend lookback)
+Calculation: Momentum Z score = IF(StDev(ROC(close, momentum lookback), Z lookback) != 0, (ROC(close, momentum lookback) - SMA(ROC(close, momentum lookback), Z lookback)) / StDev(ROC(close, momentum lookback), Z lookback), 0)
+Calculation: Recent squeeze = BarsSince(StDev(Energy, squeeze lookback) < SMA(StDev(Energy, squeeze lookback), squeeze lookback) * squeeze sensitivity) <= squeeze recency bars
+Long: Energy spread > 0
+Short: Energy spread < 0
+Long: Energy > Energy trend average
+Long: pill display enabled AND (light filter disabled OR (PercentRank(ATR(ATR lookback), filter lookback) >= minimum ATR rank AND PercentRank(volume, filter lookback) >= minimum volume rank AND Momentum Z score >= minimum momentum Z)) AND (energy trend filter disabled OR Energy > Energy trend average) AND Recent squeeze AND Lowest(Energy, bottom zone lookback) < bottom threshold AND Energy > Energy[1] AND Energy[1] <= Energy[2] AND Signed square root of OBV rate of change > Signed square root of OBV rate of change[1]
+Long: pill display enabled AND (light filter disabled OR (PercentRank(ATR(ATR lookback), filter lookback) >= minimum ATR rank AND PercentRank(volume, filter lookback) >= minimum volume rank AND Momentum Z score >= minimum momentum Z)) AND (energy trend filter disabled OR Energy > Energy trend average) AND Crosses above(Energy, Energy average line) AND Recent squeeze
+Long: pill display enabled AND (light filter disabled OR (PercentRank(ATR(ATR lookback), filter lookback) >= minimum ATR rank AND PercentRank(volume, filter lookback) >= minimum volume rank AND Momentum Z score >= minimum momentum Z)) AND (energy trend filter disabled OR Energy > Energy trend average) AND Energy spread > 0 AND ABS(Energy spread) >= power threshold AND Energy > Energy[1] AND Signed square root of OBV rate of change > Signed square root of OBV rate of change[1]

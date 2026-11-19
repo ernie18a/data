@@ -1,0 +1,3 @@
+Calculation: signed-volume percentage = if SUM(volume, lookback) != 0 then 100 * SUM((close - close[1] >= 0 ? volume : -volume), lookback) / SUM(volume, lookback) else 0
+Long: at least two of SuperTrend(ATR lookback, multiplier) is up, MACD(close, fast lookback, slow lookback, signal lookback) line > signal line, signed-volume percentage > 0
+Short: at least two of SuperTrend(ATR lookback, multiplier) is down, MACD(close, fast lookback, slow lookback, signal lookback) line < signal line, signed-volume percentage < 0

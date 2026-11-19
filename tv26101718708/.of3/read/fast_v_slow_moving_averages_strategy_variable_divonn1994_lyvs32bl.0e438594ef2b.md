@@ -1,0 +1,2 @@
+Long: the selected moving average of close with the shorter lookback changes from below to at or above the selected moving average of close with the longer lookback
+Short: the selected moving average of close with the longer lookback changes from at or above to below the selected moving average of close with the shorter lookback

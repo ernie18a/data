@@ -1,0 +1,15 @@
+Calculation: Adaptive RSI = 50 + 50 * RMA(d, ARSI lookback) / RMA(abs(d), ARSI lookback), where d = highest(close, ARSI lookback) - lowest(close, ARSI lookback) if highest(close, ARSI lookback) > highest(close, ARSI lookback)[1], else lowest(close, ARSI lookback) - highest(close, ARSI lookback) if lowest(close, ARSI lookback) < lowest(close, ARSI lookback)[1], else close - close[1]
+Calculation: ARSI signal = EMA(Adaptive RSI, signal lookback) on chart bars
+Calculation: ATR = ATR on chart bars using the ATR lookback
+Calculation: ATR average = SMA(ATR, volatility average lookback) on chart bars
+Calculation: Long initial stop = entry price + entry price * break-even offset if break-even is enabled and any chart bar since entry has high - entry price >= ATR * break-even trigger; otherwise entry price - ATR on the entry bar * initial-stop ATR multiplier
+Calculation: Long trailing stop = maximum of entry price - ATR on the entry bar * trailing ATR multiplier and each chart-bar value of close - ATR * trailing ATR multiplier since entry
+Calculation: Long stop = maximum of long initial stop and long trailing stop if trailing is enabled; otherwise long initial stop
+Calculation: Short initial stop = entry price - entry price * break-even offset if break-even is enabled and any chart bar since entry has entry price - low >= ATR * break-even trigger; otherwise entry price + ATR on the entry bar * initial-stop ATR multiplier
+Calculation: Short trailing stop = minimum of entry price + ATR on the entry bar * trailing ATR multiplier and each chart-bar value of close + ATR * trailing ATR multiplier since entry
+Calculation: Short stop = minimum of short initial stop and short trailing stop if trailing is enabled; otherwise short initial stop
+Long: Adaptive RSI crosses above ARSI signal AND (trend filter is off OR close > EMA(close of the last completed T1 bar, carried onto chart bars, shared higher-timeframe EMA lookback), calculated on chart bars) AND Adaptive RSI <= long ARSI ceiling AND (volatility filter is off OR ATR > ATR average) AND (wick filter is off OR high - low <= abs(close - open) * wick ratio) AND cooldown has elapsed since the last position became flat AND position is flat or short
+Short: Adaptive RSI crosses below ARSI signal AND (trend filter is off OR close < EMA(close of the last completed T2 bar, carried onto chart bars, shared higher-timeframe EMA lookback), calculated on chart bars) AND Adaptive RSI >= short ARSI floor AND (volatility filter is off OR ATR > ATR average) AND (wick filter is off OR high - low <= abs(close - open) * wick ratio) AND cooldown has elapsed since the last position became flat AND position is flat or long
+Exit: long, low <= long stop
+Exit: short, high >= short stop
+Exit: long, high >= entry price + ATR * take-profit ATR multiple AND no earlier chart bar since entry met the same comparison

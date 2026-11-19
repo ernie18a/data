@@ -1,0 +1,3 @@
+Calculation: selected ATR factor = mean candidate factor in the selected cluster after clustering the EMA of each candidate SuperTrend’s sign(close[1] − prior candidate stop) × (close − close[1]) score into best, average, and worst; candidate factors run from the minimum to the maximum by step.
+Long: SuperTrend(ATR lookback, selected ATR factor) crosses SMA(close, lookback) in either direction AND its trend is bullish AND volume >= SMA(volume, lookback) × rising-volume multiplier AND close > open
+Short: SuperTrend(ATR lookback, selected ATR factor) crosses SMA(close, lookback) in either direction AND its trend is bearish AND volume >= SMA(volume, lookback) × rising-volume multiplier AND close < open

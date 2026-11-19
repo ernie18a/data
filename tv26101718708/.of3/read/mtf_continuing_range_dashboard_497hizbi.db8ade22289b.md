@@ -1,0 +1,11 @@
+Calculation: Range direction history(T) = On each confirmed T bar, seed the active range from the first bar’s high and low with neutral direction; thereafter, if close > active range high or close < active range low, shift the current direction into previous directions, set the current direction up or down respectively, and reset the active range to that bar’s high and low; otherwise retain the active range and direction. On chart bars, use the current and configured previous directions from the latest completed T bar.
+Long: Range direction history(T1), current or any configured previous range, = up
+Short: Range direction history(T1), current or any configured previous range, = down
+Long: Range direction history(T2), current or any configured previous range, = up
+Short: Range direction history(T2), current or any configured previous range, = down
+Long: Range direction history(T3), current or any configured previous range, = up
+Short: Range direction history(T3), current or any configured previous range, = down
+Long: Range direction history(T4), current or any configured previous range, = up
+Short: Range direction history(T4), current or any configured previous range, = down
+Long: Range direction history(T5), current or any configured previous range, = up
+Short: Range direction history(T5), current or any configured previous range, = down

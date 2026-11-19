@@ -1,0 +1,2 @@
+Long: close >= VWAP(source, reset interval T1, accumulated on chart bars through the current bar; reset on change of T1 bar time with lookahead off, using the forming T1 bar in real time and the last completed T1 bar historically)
+Short: close < VWAP(source, reset interval T1, accumulated on chart bars through the current bar; reset on change of T1 bar time with lookahead off, using the forming T1 bar in real time and the last completed T1 bar historically)

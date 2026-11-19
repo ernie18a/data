@@ -1,0 +1,2 @@
+Long: On chart bars, close(T1, current still-forming bar; lookahead on) >= open(T1, current still-forming bar; lookahead on)
+Short: On chart bars, close(T1, current still-forming bar; lookahead on) < open(T1, current still-forming bar; lookahead on)

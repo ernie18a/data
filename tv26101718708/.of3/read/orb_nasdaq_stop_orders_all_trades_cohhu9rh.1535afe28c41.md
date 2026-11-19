@@ -1,0 +1,7 @@
+Calculation: Opening-range high = maximum chart-bar high during the opening-range session
+Calculation: Opening-range low = minimum chart-bar low during the opening-range session
+Calculation: Opening-range size = opening-range high - opening-range low
+Long: opening-range session has ended AND datetime is within the entry session AND no position is open AND no earlier entry has occurred since the current opening-range session began AND high >= opening-range high
+Short: opening-range session has ended AND datetime is within the entry session AND no position is open AND no earlier entry has occurred since the current opening-range session began AND low <= opening-range low AND high < opening-range high
+Exit: long, on a bar after the entry bar AND (high >= entry price + opening-range size at entry * risk/reward ratio OR low <= entry price - opening-range size at entry OR bar close datetime >= the configured stop time on the entry day in the exchange timezone)
+Exit: short, on a bar after the entry bar AND (low <= entry price - opening-range size at entry * risk/reward ratio OR high >= entry price + opening-range size at entry OR bar close datetime >= the configured stop time on the entry day in the exchange timezone)

@@ -1,0 +1,4 @@
+Calculation: Lower band = VWMA(close, VWMA lookback) - standard deviation(close, standard-deviation lookback)
+Calculation: Peak price since entry = maximum of entry price and all highs since entry
+Long: On chart bars, use T1-bar values from the still-forming T1 bar in realtime and the last completed T1 bar historically, with lookahead off; (two-close filter disabled OR (T1 close > VWMA(T1 close, VWMA lookback) AND previous T1 close > previous T1 VWMA)) AND (lower-band filter disabled OR T1 close > Lower band) AND (ROC filter disabled OR ROC(T1 close, ROC lookback) > 0)
+Exit: long, chart-bar low <= entry price * (1 - emergency-stop percentage / 100) OR (trailing enabled AND Peak price since entry >= entry price * (1 + trail-activation percentage / 100) AND chart-bar low <= max(entry price * (1 - emergency-stop percentage / 100), Peak price since entry * (1 - trailing-distance percentage / 100)))

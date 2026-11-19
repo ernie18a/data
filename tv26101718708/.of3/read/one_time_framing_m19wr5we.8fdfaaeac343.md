@@ -1,0 +1,11 @@
+Calculation: Inside bar = high < high[1] AND low > low[1]
+Calculation: Up OTF = the up-run counter is at least Consecutive Bars minus one; on each non-inside bar, increment it if low > low[1], otherwise reset it; inside bars leave it unchanged
+Calculation: Down OTF = the down-run counter is at least Consecutive Bars minus one; on each non-inside bar, increment it if high < high[1], otherwise reset it; inside bars leave it unchanged
+Calculation: Pending inside-bar setup = each inside bar replaces the stored high and low; the setup is live only on non-inside bars no more than Expiry bars after that inside bar, and is disarmed after either confirmation
+Calculation: Bullish inside-bar confirmation = pending inside-bar setup is live AND close > stored inside high AND low > low[1]
+Calculation: Bearish inside-bar confirmation = pending inside-bar setup is live AND close < stored inside low AND high < high[1]
+Calculation: OTF trend state = initialize flat; on each bar, using the prior state, set up if bullish inside-bar confirmation and prior state is not up; otherwise set down if bearish inside-bar confirmation and prior state is not down; otherwise set flat if prior state is up and the bar is not inside and Up OTF is false, or prior state is down and the bar is not inside and Down OTF is false; otherwise, if prior state is flat and the bar is not inside, set up if Up OTF, else set down if Down OTF; otherwise retain prior state
+Long: bullish inside-bar confirmation AND prior OTF trend state is not up OR (prior OTF trend state is flat or up AND the bar is not inside AND Up OTF)
+Short: bearish inside-bar confirmation AND prior OTF trend state is not down OR (prior OTF trend state is flat or down AND the bar is not inside AND Down OTF)
+Exit: long, prior OTF trend state is up AND the bar is not inside AND Up OTF is false AND bearish inside-bar confirmation is false
+Exit: short, prior OTF trend state is down AND the bar is not inside AND Down OTF is false AND bullish inside-bar confirmation is false

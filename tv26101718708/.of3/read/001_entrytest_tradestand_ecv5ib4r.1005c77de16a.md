@@ -1,0 +1,4 @@
+Long: no entry has previously occurred AND ((trade mode selects new buy AND datetime >= start-time parameter AND datetime >= current chart-bar datetime + seconds-offset parameter) OR (trade mode selects repay sell AND current chart-bar datetime differs from previous chart-bar datetime))
+Short: no entry has previously occurred AND ((trade mode selects new sell AND datetime >= start-time parameter AND datetime >= current chart-bar datetime + seconds-offset parameter) OR (trade mode selects repay buy AND current chart-bar datetime differs from previous chart-bar datetime))
+Exit: long, trade mode selects repay sell AND datetime >= start-time parameter AND datetime >= current chart-bar datetime + seconds-offset parameter
+Exit: short, trade mode selects repay buy AND datetime >= start-time parameter AND datetime >= current chart-bar datetime + seconds-offset parameter

@@ -1,0 +1,3 @@
+Calculation: volume delta = volume when close > open, -volume when close < open, and 0 when close = open
+Long: EMA(volume delta, longer smoothing lookback) crosses above EMA(EMA(volume delta, longer smoothing lookback), shorter signal lookback) AND EMA(volume delta, longer smoothing lookback) > 0
+Short: EMA(volume delta, longer smoothing lookback) crosses below EMA(EMA(volume delta, longer smoothing lookback), shorter signal lookback) AND EMA(volume delta, longer smoothing lookback) < 0

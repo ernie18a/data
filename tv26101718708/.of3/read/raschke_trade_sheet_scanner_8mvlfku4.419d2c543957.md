@@ -1,0 +1,9 @@
+Calculation: fast oscillator line = SMA(close, shorter lookback) - SMA(close, longer lookback), calculated on T1 bars using the current T1 bar (possibly still forming)
+Long: On T1 bars using the current T1 bar (possibly still forming), fast oscillator line > fast oscillator line[1] AND SMA(fast oscillator line, smoothing lookback) > SMA(fast oscillator line, smoothing lookback)[1] AND Momentum(close, momentum lag) > Momentum(close, momentum lag)[1]
+Short: On T1 bars using the current T1 bar (possibly still forming), fast oscillator line < fast oscillator line[1] AND SMA(fast oscillator line, smoothing lookback) < SMA(fast oscillator line, smoothing lookback)[1] AND Momentum(close, momentum lag) < Momentum(close, momentum lag)[1]
+Long: On T1 bars using the current T1 bar (possibly still forming), barssince(close > SMA(close, average lookback))[1] >= extension threshold AND close > SMA(close, average lookback)
+Short: On T1 bars using the current T1 bar (possibly still forming), barssince(close < SMA(close, average lookback))[1] >= extension threshold AND close < SMA(close, average lookback)
+Long: On T1 bars using the current T1 bar (possibly still forming), Momentum(close, momentum lag) >= Highest(Momentum(close, momentum lag), momentum extreme lookback)
+Short: On T1 bars using the current T1 bar (possibly still forming), Momentum(close, momentum lag) <= Lowest(Momentum(close, momentum lag), momentum extreme lookback) AND Momentum(close, momentum lag) < Highest(Momentum(close, momentum lag), momentum extreme lookback)
+Long: On T1 bars using the current T1 bar (possibly still forming), high >= Highest(high, channel lookback)
+Short: On T1 bars using the current T1 bar (possibly still forming), low <= Lowest(low, channel lookback) AND high < Highest(high, channel lookback)

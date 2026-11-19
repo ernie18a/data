@@ -1,0 +1,6 @@
+Calculation: Adjusted volume = nz(volume, 1)
+Calculation: Close position = IF(high > low, (close - low) / (high - low), 0.5)
+Calculation: Buy pressure = IF(SUM(Adjusted volume, pressure lookback) > 0, 2 * SUM(Adjusted volume * Close position, pressure lookback) / SUM(Adjusted volume, pressure lookback), 1)
+Calculation: Sell pressure = IF(SUM(Adjusted volume, pressure lookback) > 0, 2 * SUM(Adjusted volume * (1 - Close position), pressure lookback) / SUM(Adjusted volume, pressure lookback), 1)
+Long: On a completed chart bar, buy pressure >= pressure threshold AND buy pressure > sell pressure AND NOT (buy pressure[1] >= pressure threshold AND buy pressure[1] > sell pressure[1]) AND (no previous long signal OR more than the zone-extension parameter bars since the previous long signal)
+Short: On a completed chart bar, sell pressure >= pressure threshold AND sell pressure > buy pressure AND NOT (sell pressure[1] >= pressure threshold AND sell pressure[1] > buy pressure[1]) AND (no previous short signal OR more than the zone-extension parameter bars since the previous short signal)

@@ -1,0 +1,2 @@
+Long: EMA(close, shorter lookback, T1, bar still forming) > EMA(close, medium lookback, T1, bar still forming) > EMA(close, longer lookback, T1, bar still forming), returned on chart bars
+Short: EMA(close, longer lookback, T1, bar still forming) > EMA(close, medium lookback, T1, bar still forming) > EMA(close, shorter lookback, T1, bar still forming), returned on chart bars

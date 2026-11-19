@@ -1,0 +1,3 @@
+Long: (highest(high, compression lookback) - lowest(low, compression lookback)) / lowest(low, compression lookback) * 100 < compression limit AND SMA(volume, shorter volume lookback) < SMA(volume, longer volume lookback) * volume contraction threshold AND close > EMA(close, trend lookback) AND EMA(close, trend lookback) > EMA(close, trend lookback)[EMA slope lookback] AND RSI(close, RSI lookback) > lower RSI bound AND RSI(close, RSI lookback) < upper RSI bound
+Calculation: locked setup support = lowest low across each consecutive run of bars satisfying Long, retained after the run ends until a close falls below it
+Exit: long, close < locked setup support

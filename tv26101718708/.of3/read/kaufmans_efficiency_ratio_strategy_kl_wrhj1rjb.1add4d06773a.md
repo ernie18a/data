@@ -1,0 +1,13 @@
+Calculation: Long trailing stop = running maximum, since long entry, of low - ATR(stop lookback) * ATR multiplier
+Calculation: Short trailing stop = running minimum, since short entry, of high + ATR(stop lookback) * ATR multiplier
+Calculation: Risk distance = ATR(stop lookback) * ATR multiplier at the most recent bar satisfying the long-entry condition since flat; zero if none
+Long: Kaufman's Efficiency Ratio(close, lookback) > 0 AND datetime >= start-time parameter AND (end-time filter disabled OR datetime <= end-time parameter)
+Short: Kaufman's Efficiency Ratio(close, lookback) < 0 AND True Range > ATR(short-filter lookback) AND volume > SMA(volume, volume lookback) AND short entries enabled AND datetime >= start-time parameter AND (end-time filter disabled OR datetime <= end-time parameter)
+Exit: long, low <= Long trailing stop
+Exit: short, high >= Short trailing stop
+Exit: long, Kaufman's Efficiency Ratio(close, lookback) <= 0 AND close >= entry price + first-profit parameter * Risk distance AND no long profit-taking level has yet been triggered since flat
+Exit: long, Kaufman's Efficiency Ratio(close, lookback) <= 0 AND close >= entry price + second-profit parameter * Risk distance AND exactly one long profit-taking level has been triggered since flat
+Exit: long, Kaufman's Efficiency Ratio(close, lookback) <= 0 AND close >= entry price + third-profit parameter * Risk distance AND exactly two long profit-taking levels have been triggered since flat
+Exit: short, NOT (Kaufman's Efficiency Ratio(close, lookback) < 0 AND True Range > ATR(short-filter lookback) AND volume > SMA(volume, volume lookback) AND short entries enabled) AND close <= entry price - first-profit parameter * Risk distance AND no short profit-taking level has yet been triggered since flat
+Exit: short, NOT (Kaufman's Efficiency Ratio(close, lookback) < 0 AND True Range > ATR(short-filter lookback) AND volume > SMA(volume, volume lookback) AND short entries enabled) AND close <= entry price - second-profit parameter * Risk distance AND exactly one short profit-taking level has been triggered since flat
+Exit: short, NOT (Kaufman's Efficiency Ratio(close, lookback) < 0 AND True Range > ATR(short-filter lookback) AND volume > SMA(volume, volume lookback) AND short entries enabled) AND close <= entry price - third-profit parameter * Risk distance AND exactly two short profit-taking levels have been triggered since flat

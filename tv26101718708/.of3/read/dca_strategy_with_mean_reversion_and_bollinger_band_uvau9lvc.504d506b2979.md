@@ -1,0 +1,2 @@
+Long: datetime >= open date AND datetime <= close date AND ((entry mode enables Bollinger entries AND chart-bar selected source crosses below (EMA(selected source, lookback, T1) - deviation multiplier × standard deviation(selected source, lookback, T1), calculated on T1 bars and requested on chart bars using the developing T1 bar in realtime and completed T1 values historically)) OR (entry mode enables monthly entries AND the chart bar is the first chart bar of a month))
+Exit: long, datetime >= close date

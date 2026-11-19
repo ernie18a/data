@@ -1,0 +1,3 @@
+Calculation: Bitcoin Logarithmic MACD risk = (Logarithmic MACD of Bitcoin closing price using separate fast and slow length parameters − lower regression fit)/(upper regression fit − lower regression fit), where each fit is selected from A × ln(time − start time + offset) + B and K × (time − start time) + B using separate parameters for each line and timeframe; the T2 lower fit is linear
+Long: Bitcoin Logarithmic MACD risk on T1 or T2 <= buy-zone threshold parameter
+Short: Bitcoin Logarithmic MACD risk on T1 or T2 >= sell-zone threshold parameter

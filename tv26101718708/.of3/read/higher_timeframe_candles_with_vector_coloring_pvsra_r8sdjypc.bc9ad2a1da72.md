@@ -1,0 +1,3 @@
+Calculation: Vector activity = on each configured color-source T1, T2, T3, and T4 bar, volume >= SMA(volume[1], average-volume lookback) * vector threshold OR (spread-volume override enabled AND (high - low) * volume >= highest(((high - low) * volume)[1], average-volume lookback)) OR volume >= SMA(volume[1], average-volume lookback) * elevated threshold; use the still-forming bar when available and request the result on chart bars
+Long: On chart bars taking configured color-source values from T1, T2, T3, or T4, close >= open AND Vector activity
+Short: On chart bars taking configured color-source values from T1, T2, T3, or T4, close < open AND Vector activity

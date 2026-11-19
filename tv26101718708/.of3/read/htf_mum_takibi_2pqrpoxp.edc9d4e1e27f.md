@@ -1,0 +1,2 @@
+Long: On chart bars, close of the T1 bar >= open of the T1 bar; use the still-forming T1 bar in realtime and the latest value returned by the default lookahead-off request on historical bars.
+Short: On chart bars, close of the T1 bar < open of the T1 bar; use the still-forming T1 bar in realtime and the latest value returned by the default lookahead-off request on historical bars.

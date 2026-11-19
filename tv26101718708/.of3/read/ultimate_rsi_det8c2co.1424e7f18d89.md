@@ -1,0 +1,9 @@
+Calculation: Adaptive RSI = 100 - 100 / (1 + smoothed gains / smoothed losses), where gains = max(change(source), 0), losses = max(-change(source), 0), volatility = STDEV(source, base lookback), average volatility = SMA(volatility, 2 × base lookback), volatility ratio = average volatility / volatility (or 1 if either is zero), and the smoothing lookback = clamp(round(adaptation enabled ? base lookback × volatility ratio × sensitivity : base lookback), 3, 3 × base lookback); initialize smoothed gains and losses with their SMA over the base lookback, then smooth with alpha = 1 / smoothing lookback. Calculate RSI and its selected MA on chart bars or T1 bars using the current, still-forming T1 bar, and carry T1 values to chart bars; evaluate colors, RSI/MA crosses, and RSI pivots on chart bars using that series.
+Long: Adaptive RSI >= 50
+Short: Adaptive RSI < 50
+Long: Adaptive RSI crosses above selected MA(Adaptive RSI, MA lookback)
+Short: Adaptive RSI crosses below selected MA(Adaptive RSI, MA lookback)
+Long: On chart bars, at a confirmed pivot low of Adaptive RSI (left pivot lookback, right pivot lookback), low[right pivot lookback] < the prior confirmed pivot-low price AND the current RSI pivot value > the prior RSI pivot-low value
+Long: On chart bars, at a confirmed pivot low of Adaptive RSI (left pivot lookback, right pivot lookback), low[right pivot lookback] > the prior confirmed pivot-low price AND the current RSI pivot value < the prior RSI pivot-low value
+Short: On chart bars, at a confirmed pivot high of Adaptive RSI (left pivot lookback, right pivot lookback), high[right pivot lookback] > the prior confirmed pivot-high price AND the current RSI pivot value < the prior RSI pivot-high value
+Short: On chart bars, at a confirmed pivot high of Adaptive RSI (left pivot lookback, right pivot lookback), high[right pivot lookback] < the prior confirmed pivot-high price AND the current RSI pivot value > the prior RSI pivot-high value

@@ -1,0 +1,2 @@
+Long: PivotLow(low, left lookback, right lookback) is confirmed AND (volume filter is disabled OR volume[right lookback] > volume threshold)
+Short: PivotHigh(high, left lookback, right lookback) is confirmed AND (volume filter is disabled OR volume[right lookback] > volume threshold)

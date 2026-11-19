@@ -1,0 +1,3 @@
+Calculation: Dynamic POC = hl2 of the most recent bar with the highest volume in the lookback
+Long: EMA(close, shorter lookback) > EMA(close, longer lookback) AND close > Dynamic POC AND Stoch RSI %K (RSI lookback, stochastic lookback, %K smoothing) crosses above the oversold threshold
+Short: EMA(close, shorter lookback) < EMA(close, longer lookback) AND close < Dynamic POC AND Stoch RSI %K (RSI lookback, stochastic lookback, %K smoothing) crosses below the overbought threshold

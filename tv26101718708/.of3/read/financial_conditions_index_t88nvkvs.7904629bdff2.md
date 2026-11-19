@@ -1,0 +1,3 @@
+Calculation: FCI = the weighted mean of four component Z-scores, using a separate weight for each and omitting unavailable components and their weights; each component Z-score = (close - SMA(close, shared lookback, T1, current bar)) / Stdev(close, shared lookback, T1, current bar), calculated on T1 bars including the still-forming bar and mapped to chart bars.
+Long: FCI < -status band
+Short: FCI > status band

@@ -1,0 +1,9 @@
+Calculation: Band containment = HLC3 < upper band of Bollinger Bands(HLC3, shared lookback, second multiplier) AND HLC3 > lower band of Bollinger Bands(HLC3, shared lookback, second multiplier)
+Calculation: Bullish setup = (SMA-crossing method selected AND crossover(SMA(close, shared lookback), SMA(open, shared lookback))) OR (Bollinger method selected AND crossover(HLC3, upper band of Bollinger Bands(HLC3, shared lookback, first multiplier)) AND Band containment)
+Calculation: Bearish setup = (SMA-crossing method selected AND crossunder(SMA(close, shared lookback), SMA(open, shared lookback))) OR (Bollinger method selected AND crossunder(HLC3, lower band of Bollinger Bands(HLC3, shared lookback, first multiplier)) AND Band containment)
+Calculation: Stop distance = ATR(ATR lookback) * ATR multiplier in ATR mode; otherwise signal bar close * maximum loss fraction
+Calculation: Scheduled exit = chart bar is within the configured exit session OR news filter is enabled and bar datetime is within the configured news window around the configured event time
+Long: long direction enabled AND ((inverse setting off AND Bullish setup) OR (inverse setting on AND Bearish setup))
+Short: short direction enabled AND ((inverse setting on AND Bullish setup) OR (inverse setting off AND Bearish setup))
+Exit: Long, low <= signal bar close - Stop distance OR high >= signal bar close + Stop distance * reward-risk ratio OR Scheduled exit OR (trailing enabled AND high reaches entry price + (signal bar close * trail activation fraction) ticks AND low <= highest high since activation - (signal bar close * trail distance fraction) ticks)
+Exit: Short, high >= signal bar close + Stop distance OR low <= signal bar close - Stop distance * reward-risk ratio OR Scheduled exit OR (trailing enabled AND low reaches entry price - (signal bar close * trail activation fraction) ticks AND high >= lowest low since activation + (signal bar close * trail distance fraction) ticks)

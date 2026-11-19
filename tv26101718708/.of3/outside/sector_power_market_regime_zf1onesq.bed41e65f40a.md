@@ -1,0 +1,1 @@
+Long: SPY market regime = Stable AND traded instrument regime = Efficient AND traded instrument Power > SPY Power

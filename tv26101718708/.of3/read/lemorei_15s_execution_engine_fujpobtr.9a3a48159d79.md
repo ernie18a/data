@@ -1,0 +1,7 @@
+Calculation: session VWAP = sum(((high + low + close) / 3) * volume from session start through current bar) / sum(volume from session start through current bar)
+Calculation: estimated delta = if high > low then volume * ((close - low) - (high - close)) / (high - low) else 0
+Calculation: smoothed delta = EMA(estimated delta, smoothing parameter)
+Calculation: session CVD = sum(estimated delta from session start through current bar)
+Calculation: weak delta = highest(abs(smoothed delta), divergence lookback) > 0 AND abs(smoothed delta) < highest(abs(smoothed delta), divergence lookback) * weakness fraction
+Long: count(close > session VWAP, EMA(close, shorter EMA lookback) > EMA(close, longer EMA lookback), EMA(close, shorter EMA lookback) > EMA(close, shorter EMA lookback)[lag parameter bars ago], smoothed delta > 0, session CVD > session CVD[CVD comparison lag bars ago]) >= score threshold OR (low <= lowest(low, divergence lookback) AND smoothed delta < 0 AND weak delta AND smoothed delta > smoothed delta[lag parameter bars ago])
+Short: count(close <= session VWAP, EMA(close, shorter EMA lookback) <= EMA(close, longer EMA lookback), EMA(close, shorter EMA lookback) <= EMA(close, shorter EMA lookback)[lag parameter bars ago], smoothed delta <= 0, session CVD <= session CVD[CVD comparison lag bars ago]) >= score threshold OR (high >= highest(high, divergence lookback) AND smoothed delta > 0 AND weak delta AND smoothed delta < smoothed delta[lag parameter bars ago])

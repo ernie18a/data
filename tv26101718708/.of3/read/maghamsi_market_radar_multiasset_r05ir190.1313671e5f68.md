@@ -1,0 +1,3 @@
+Calculation: momentum = Squeeze Momentum(high, low, close, momentum lookback)
+Long: close > EMA(close, trend lookback) AND momentum > 0 OR (close > open AND close > high[1] AND volume > SMA(volume, volume lookback) * volume multiplier) OR (momentum > 0 AND momentum > momentum[1])
+Short: close < EMA(close, trend lookback) AND NOT (close > open AND close > high[1] AND volume > SMA(volume, volume lookback) * volume multiplier) AND NOT (momentum > 0 AND momentum > momentum[1])

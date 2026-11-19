@@ -1,0 +1,4 @@
+Calculation: Per-bar return = in time-of-day mode, 100 * (close - open) / open when open ≠ 0, else 0; otherwise, 100 * (close - close[1]) / nz(close[1]) when nz(close[1]) ≠ 0, else 0
+Calculation: Bucket win rate = 100 * count(per-bar returns > 0) / count(per-bar returns), over the recent lookback chart bars, including the forming bar, grouped by weekday or configured Asia/Bangkok hour bucket according to the selected mode
+Calculation: Bucket mean return = mean(per-bar return) over the same bars in each bucket
+Long: On the last chart bar, the bucket with the highest win rate among buckets with positive mean return, choosing the first in bucket order on ties, has a win rate at least the minimum win-rate parameter

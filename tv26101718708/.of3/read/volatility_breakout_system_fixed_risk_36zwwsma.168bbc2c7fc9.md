@@ -1,0 +1,8 @@
+Long: close crosses above Keltner upper band(close, channel lookback, channel ATR lookback, channel multiplier) AND volume > SMA(volume, volume lookback) AND close > EMA(close, trend lookback) AND RSI(close, RSI lookback) > RSI midpoint AND ADX(DI lookback, ADX smoothing lookback) > ADX threshold AND position is flat AND elapsed time since previous entry > cooldown duration
+Short: close crosses below Keltner lower band(close, channel lookback, channel ATR lookback, channel multiplier) AND volume > SMA(volume, volume lookback) AND close < EMA(close, trend lookback) AND RSI(close, RSI lookback) < RSI midpoint AND ADX(DI lookback, ADX smoothing lookback) > ADX threshold AND position is flat AND elapsed time since previous entry > cooldown duration
+Calculation: Long stop = if high > entry price * (1 + breakeven trigger) then entry price else entry price - ATR(stop lookback) * stop multiplier
+Calculation: Short stop = if low < entry price * (1 - breakeven trigger) then entry price else entry price + ATR(stop lookback) * stop multiplier
+Calculation: Long trailing stop = highest high since high first reaches entry price * (1 + trail activation) - entry price * trail offset
+Calculation: Short trailing stop = lowest low since low first reaches entry price * (1 - trail activation) + entry price * trail offset
+Exit: Long, low <= Long stop OR low <= Long trailing stop
+Exit: Short, high >= Short stop OR high >= Short trailing stop

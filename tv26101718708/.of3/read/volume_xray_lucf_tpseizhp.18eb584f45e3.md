@@ -1,0 +1,3 @@
+Calculation: cumulative intraday/EOD volume ratio = last valid value of cumulative regular-session volume from last completed T1 bars on historical chart bars where EOD volume is available divided by cumulative EOD volume from last completed T1 bars on historical chart bars where regular-session volume is available
+Long: cumulative intraday/EOD volume ratio is available AND current EOD and regular-session volume from T1 are available (using the still-forming T1 bar in realtime) AND cumulative intraday/EOD volume ratio >= threshold
+Short: cumulative intraday/EOD volume ratio is available AND current EOD and regular-session volume from T1 are available (using the still-forming T1 bar in realtime) AND cumulative intraday/EOD volume ratio < threshold

@@ -1,0 +1,2 @@
+Long: on chart bars shorter than T1, the session filter is disabled or the bar is within its configured New York session, low < the last completed T1 bar's low, and no earlier bar in the current T1 period breached either the last completed T1 bar's high or low
+Short: on chart bars shorter than T1, the session filter is disabled or the bar is within its configured New York session, high > the last completed T1 bar's high, and no earlier bar in the current T1 period breached either the last completed T1 bar's high or low

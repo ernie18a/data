@@ -1,0 +1,13 @@
+Calculation: Relative volume = volume / SMA(volume, relative-volume lookback)
+Calculation: T1 trend aligned = SMA(close, shorter lookback, T1) > SMA(close, intermediate lookback, T1) AND SMA(close, intermediate lookback, T1) > SMA(close, longer lookback, T1) AND T1 close > SMA(close, intermediate lookback, T1), sampled on chart bars with lookahead off (last completed T1 bar historically and still-forming T1 bar in realtime)
+Calculation: T1 relative strength = ((close - close[RS lookback]) / close[RS lookback] * 100 for the instrument) - ((close - close[RS lookback]) / close[RS lookback] * 100 for the benchmark), calculated on T1 bars and sampled on chart bars with lookahead off (last completed T1 bar historically and still-forming T1 bar in realtime)
+Calculation: Coiled = Bollinger/Keltner squeeze, where SMA(close, squeeze lookback) - BB multiplier * population standard deviation(close, squeeze lookback) > SMA(close, squeeze lookback) - KC multiplier * SMA(true range, squeeze lookback) AND SMA(close, squeeze lookback) + BB multiplier * population standard deviation(close, squeeze lookback) < SMA(close, squeeze lookback) + KC multiplier * SMA(true range, squeeze lookback), occurring within the coil lookback bars including the current chart bar
+Calculation: Prior range high = highest(high[1], breakout lookback)
+Calculation: Prior range low = lowest(low[1], breakout lookback)
+Calculation: Consolidation breakout setup = close > prior range high AND Relative volume >= relative-volume threshold AND Coiled AND T1 trend aligned
+Calculation: Power-play setup = (high[1] - low[1]) / low[1] * 100 >= prior-bar range threshold AND (close[1] - low[1]) / (high[1] - low[1]) >= prior-bar close-location threshold AND close[1] > open[1] AND Relative volume[1] >= relative-volume threshold AND low < close[1] AND close > open AND (close - low) / (high - low) > current-bar close-location threshold
+Calculation: Long score = (Relative volume >= relative-volume threshold ? RVOL points : 0) + (T1 trend aligned ? trend points : 0) + (T1 relative strength > 0 ? relative-strength points : 0) + (Consolidation breakout setup OR Power-play setup ? setup points : 0) + (Coiled ? coil points : 0) + (abs(close - prior range high) / close * 100 <= proximity threshold ? proximity points : 0) + ((prior range high - close) / max(close - prior range low, risk denominator floor) >= minimum risk/reward ? risk/reward points : 0)
+Long: Consolidation breakout setup
+Long: Power-play setup
+Long: Long score >= high-conviction score threshold
+Long: Long score >= watchlist score threshold

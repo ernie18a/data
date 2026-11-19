@@ -1,0 +1,3 @@
+Calculation: volatility unit = (T1 volatility-index price selected by source parameter and price-field parameter / 100) / sqrt(annualization parameter)
+Exit: long, instrument low <= average entry price × (1 − volatility unit × stop factor) OR instrument high >= average entry price × (1 + volatility unit × target factor) OR instrument close >= session open × (1 + volatility unit)
+Exit: short, instrument high >= average entry price × (1 + volatility unit × stop factor) OR instrument low <= average entry price × (1 − volatility unit × target factor) OR instrument close <= session open × (1 − volatility unit)

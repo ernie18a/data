@@ -1,0 +1,7 @@
+Calculation: Relative strength = natural log(symbol close / benchmark close)
+Calculation: Rotation score = average of the percentile ranks of relative strength changes over three separately parameterized horizons, each ranked over a percentile window
+Calculation: RS slope z-score = the current-bar linear regression value of relative strength minus its previous-bar value, divided by the standard deviation of that difference over a percentile window
+Long: Rotation score crosses above the entry threshold AND (Mansfield relative strength > 0 OR Mansfield filter disabled) AND (RS slope z-score > slope threshold OR slope filter disabled) AND (symbol close > EMA of symbol close OR price EMA filter disabled)
+Short: Rotation score crosses below 100 minus the entry threshold AND (Mansfield relative strength < 0 OR Mansfield filter disabled) AND (RS slope z-score < negative slope threshold OR slope filter disabled) AND (symbol close < EMA of symbol close OR price EMA filter disabled)
+Exit: long, Rotation score < exit threshold OR (Mansfield relative strength < 0 AND Mansfield filter enabled)
+Exit: short, Rotation score > 100 minus the exit threshold OR (Mansfield relative strength > 0 AND Mansfield filter enabled)

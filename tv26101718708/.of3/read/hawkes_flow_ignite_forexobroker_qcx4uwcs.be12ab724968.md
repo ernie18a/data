@@ -1,0 +1,5 @@
+Calculation: Hawkes intensity = 2^(-1 / decay half-life) * Hawkes intensity[1] + (volume > SMA(volume, volume lookback) + burst multiplier * standard deviation(volume, volume lookback) ? 1 : 0), initialized to 0
+Long: close - open > bar strength multiplier * ATR(ATR lookback)
+Short: close - open < -bar strength multiplier * ATR(ATR lookback)
+Long: Hawkes intensity > SMA(Hawkes intensity, cluster lookback) + intensity threshold multiplier * standard deviation(Hawkes intensity, cluster lookback) AND close - open > bar strength multiplier * ATR(ATR lookback) AND position is flat or short AND cooldown bars have elapsed since the prior signal AND bar is confirmed
+Short: Hawkes intensity > SMA(Hawkes intensity, cluster lookback) + intensity threshold multiplier * standard deviation(Hawkes intensity, cluster lookback) AND close - open < -bar strength multiplier * ATR(ATR lookback) AND position is flat or long AND cooldown bars have elapsed since the prior signal AND bar is confirmed

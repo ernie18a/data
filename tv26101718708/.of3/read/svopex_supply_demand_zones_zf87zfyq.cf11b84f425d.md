@@ -1,0 +1,4 @@
+Calculation: Zone signal = on T1 bars, demand when the last completed bar closes above its open by more than the explosive-body multiplier × ATR(ATR lookback) and is immediately preceded by 1 through maximum-base-bars consecutive bars, each with abs(close − open) < base-body multiplier × ATR(the same ATR lookback); supply when that bar opens above its close by more than the explosive-body multiplier × ATR(the same ATR lookback) after such a base; otherwise none; chart bars take the last completed T1 value
+Calculation: Fresh zone = Zone signal is demand or supply and its base-start datetime differs from the value carried on the preceding chart bar
+Long: Fresh zone and Zone signal is demand
+Short: Fresh zone and Zone signal is supply

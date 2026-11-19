@@ -1,0 +1,2 @@
+Long: low equals lowest(low, liquidity lookback) AND fade duration differs from sweep confirmation count
+Short: high equals highest(high, liquidity lookback) AND fade duration differs from sweep confirmation count

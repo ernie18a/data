@@ -1,0 +1,22 @@
+Calculation: Bullish context = close > EMA(close, shorter EMA lookback) AND EMA(close, shorter EMA lookback) > EMA(close, longer EMA lookback) AND EMA(close, shorter EMA lookback) > its value on the previous chart bar
+Calculation: Bearish context = close < EMA(close, longer EMA lookback) AND EMA(close, shorter EMA lookback) < EMA(close, longer EMA lookback) AND EMA(close, shorter EMA lookback) < its value on the previous chart bar
+Calculation: Bullish break confirmation = (confirmation mode selects close only AND close > last confirmed Pivot High(high, swing lookback, swing lookback)) OR (confirmation mode selects ATR only AND close > last confirmed pivot high + ATR(ATR lookback) * breakout ATR multiple) OR (confirmation mode selects ATR and RSI AND close > last confirmed pivot high + ATR(ATR lookback) * breakout ATR multiple AND RSI(close, RSI lookback) > RSI threshold) OR (confirmation mode selects ATR, RSI, and volume AND close > last confirmed pivot high + ATR(ATR lookback) * breakout ATR multiple AND RSI(close, RSI lookback) > RSI threshold AND volume > SMA(volume, volume lookback))
+Calculation: Bearish break confirmation = (confirmation mode selects close only AND close < last confirmed Pivot Low(low, swing lookback, swing lookback)) OR (confirmation mode selects ATR only AND close < last confirmed pivot low - ATR(ATR lookback) * breakout ATR multiple) OR (confirmation mode selects ATR and RSI AND close < last confirmed pivot low - ATR(ATR lookback) * breakout ATR multiple AND RSI(close, RSI lookback) < RSI threshold) OR (confirmation mode selects ATR, RSI, and volume AND close < last confirmed pivot low - ATR(ATR lookback) * breakout ATR multiple AND RSI(close, RSI lookback) < RSI threshold AND volume > SMA(volume, volume lookback))
+Calculation: Bullish BOS = bullish break confirmation AND prior last BOS direction is not bullish
+Calculation: Bearish BOS = bearish break confirmation AND prior last BOS direction is not bearish
+Calculation: Structure bias = neutral initially; compare its prior value for CHoCH, then set it bullish on bullish BOS or bearish on bearish BOS
+Calculation: Last BOS direction = neutral initially; update it to the current BOS direction, then reset it to neutral if the current bar confirms a pivot high while structure bias is bearish or a pivot low while structure bias is bullish
+Calculation: Bullish CHoCH = bullish BOS AND prior structure bias is bearish
+Calculation: Bearish CHoCH = bearish BOS AND prior structure bias is bullish
+Long: Bullish BOS
+Short: Bearish BOS
+Long: Bullish context
+Short: Bearish context
+Calculation: Demand zone creation = a confirmed pivot low AND high - pivot low > ATR(ATR lookback) * minimum impulse ATR AND (bullish context OR bullish CHoCH); zone lower boundary = pivot low and upper boundary = pivot low + ATR(ATR lookback) * zone height ATR
+Calculation: Supply zone creation = a confirmed pivot high AND pivot high - low > ATR(ATR lookback) * minimum impulse ATR AND (bearish context OR bearish CHoCH); zone upper boundary = pivot high and lower boundary = pivot high - ATR(ATR lookback) * zone height ATR
+Calculation: Active zone = no zone initially; the latest created demand or supply zone replaces the prior zone, with supply taking precedence if both are created on the same bar; delete a demand zone when close < its lower boundary and a supply zone when close > its upper boundary
+Calculation: Zone used = false when a zone is created and true after either entry signal
+Long: Active zone is demand
+Short: Active zone is supply
+Long: Active zone is demand AND bullish context AND structure bias is bullish AND low <= zone upper boundary AND high >= zone lower boundary AND close > open AND close > low + (high - low) * rejection fraction AND abs(close - EMA(close, shorter EMA lookback)) / EMA(close, shorter EMA lookback) < maximum EMA distance AND zone is unused
+Short: Active zone is supply AND bearish context AND structure bias is bearish AND low <= zone upper boundary AND high >= zone lower boundary AND close < open AND close < high - (high - low) * rejection fraction AND abs(close - EMA(close, shorter EMA lookback)) / EMA(close, shorter EMA lookback) < maximum EMA distance AND zone is unused

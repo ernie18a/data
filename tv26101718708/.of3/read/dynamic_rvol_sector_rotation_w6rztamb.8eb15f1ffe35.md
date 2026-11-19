@@ -1,0 +1,5 @@
+Calculation: Relative Volume = current volume(T1) / (SMA(volume, relative-volume lookback) on T1 bars through the still-forming T1 bar, or 1 if that SMA is zero), calculated on chart bars using T1 values
+Calculation: Percent change = (current close(T1) - prior close(T1)) / prior close(T1) * 100, calculated on chart bars using the still-forming T1 bar and prior completed T1 bar
+Calculation: ATR travel percentage = abs(current close(T2) - prior close(T2)) / (ATR(ATR lookback) on T2 bars through the still-forming T2 bar, or 1 if that ATR is zero) * 100, calculated on chart bars using T2 values
+Long: Relative Volume >= relative-volume threshold AND Percent change > 0 AND ATR travel percentage < ATR exhaustion threshold AND current close(T1) > EMA(close, macro EMA lookback) on T2 bars through the still-forming T2 bar, evaluated on chart bars using current T1 and T2 values
+Short: Relative Volume is highest among scanned instruments AND Percent change > 0 AND Relative Volume >= relative-volume threshold AND current close(T1) <= EMA(close, macro EMA lookback) on T2 bars through the still-forming T2 bar, evaluated on chart bars using current T1 and T2 values

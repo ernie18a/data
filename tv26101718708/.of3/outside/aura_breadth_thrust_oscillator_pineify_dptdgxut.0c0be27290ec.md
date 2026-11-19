@@ -1,0 +1,3 @@
+Calculation: breadth ratio = 100 × advancing issues ÷ (advancing issues + declining issues), using the selected exchange’s advancing and declining issue counts when both are available and their sum is positive; otherwise use 100 × rolling up-candle count ÷ (rolling up-candle count + rolling down-candle count) over the proxy lookback period, or 50 when that denominator is zero
+Long: EMA(breadth ratio, EMA period) crosses above bullish thrust level
+Short: EMA(breadth ratio, EMA period) crosses below oversold level

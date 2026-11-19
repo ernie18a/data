@@ -1,0 +1,8 @@
+Calculation: normalized trend distance = ATR(ATR lookback) is nonzero ? abs(close - EMA(close, EMA lookback)) / ATR(ATR lookback) : 0
+Calculation: volume ratio = SMA(volume, volume lookback) is nonzero ? volume / SMA(volume, volume lookback) : 0
+Long: Supertrend(fast factor, shorter ATR lookback).direction < 0 AND Supertrend(mid factor, longer ATR lookback).direction < 0
+Short: Supertrend(fast factor, shorter ATR lookback).direction > 0 AND Supertrend(mid factor, longer ATR lookback).direction > 0
+Long: Supertrend(fast factor, shorter ATR lookback).direction < 0 AND Supertrend(mid factor, longer ATR lookback).direction < 0 AND NOT (Supertrend(fast factor, shorter ATR lookback).direction[1] < 0 AND Supertrend(mid factor, longer ATR lookback).direction[1] < 0) AND (market filter disabled OR normalized trend distance > market trend threshold) AND (volume filter disabled OR volume ratio >= volume threshold) AND (session filter disabled OR datetime is within the New York or London session) AND bar is confirmed
+Short: Supertrend(fast factor, shorter ATR lookback).direction > 0 AND Supertrend(mid factor, longer ATR lookback).direction > 0 AND NOT (Supertrend(fast factor, shorter ATR lookback).direction[1] > 0 AND Supertrend(mid factor, longer ATR lookback).direction[1] > 0) AND (market filter disabled OR normalized trend distance > market trend threshold) AND (volume filter disabled OR volume ratio >= volume threshold) AND (session filter disabled OR datetime is within the New York or London session) AND bar is confirmed
+Long: low > high[2] AND bar is confirmed
+Short: high < low[2] AND bar is confirmed

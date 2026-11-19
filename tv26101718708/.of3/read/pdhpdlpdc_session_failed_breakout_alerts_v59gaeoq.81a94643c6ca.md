@@ -1,0 +1,4 @@
+Calculation: Completed session high = maximum high of chart bars in that session, held from session end until its next end
+Calculation: Completed session low = minimum low of chart bars in that session, held from session end until its next end
+Long: intraday chart bar AND failed-breakout module enabled AND ((Session 1 enabled AND outside Session 1 AND close[1] < Session 1 completed low AND close > Session 1 completed low) OR (Session 2 enabled AND outside Session 2 AND close[1] < Session 2 completed low AND close > Session 2 completed low))
+Short: intraday chart bar AND failed-breakout module enabled AND ((Session 1 enabled AND outside Session 1 AND close[1] > Session 1 completed high AND close < Session 1 completed high) OR (Session 2 enabled AND outside Session 2 AND close[1] > Session 2 completed high AND close < Session 2 completed high))

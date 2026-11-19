@@ -1,0 +1,2 @@
+Long: On the first confirmed bar each quarter with previous-quarter lows available for all three correlated instruments, at least one but not all three current-quarter lows are below their respective previous-quarter lows.
+Short: On the first confirmed bar each quarter with previous-quarter highs available for all three correlated instruments, at least one but not all three current-quarter highs are above their respective previous-quarter highs.

@@ -1,0 +1,17 @@
+Calculation: Relative speed = EMA(if SMA(selected speed amount (volume or one tick per bar) / seconds per chart bar, data lookback) > 0 then (selected speed amount / seconds per chart bar) / SMA(selected speed amount / seconds per chart bar, data lookback) else na, speed smoothing)
+Calculation: Smoothed acceleration = EMA(relative speed - relative speed[1], acceleration smoothing)
+Calculation: Normalized acceleration = if STDEV(smoothed acceleration, data lookback) > 0 then (smoothed acceleration - SMA(smoothed acceleration, data lookback)) / STDEV(smoothed acceleration, data lookback) else smoothed acceleration
+Calculation: Price velocity = (close - close[1]) / ATR(price velocity ATR length)
+Calculation: Price velocity score = (if STDEV(price velocity, data lookback) > 0 then (price velocity - SMA(price velocity, data lookback)) / STDEV(price velocity, data lookback) else price velocity) * price velocity scale
+Calculation: Acceleration score = normalized acceleration * acceleration scale
+Calculation: Smoothed jerk = EMA(smoothed acceleration - smoothed acceleration[1], jerk smoothing)
+Calculation: Jerk score = (if STDEV(smoothed jerk, data lookback) > 0 then (smoothed jerk - SMA(smoothed jerk, data lookback)) / STDEV(smoothed jerk, data lookback) else smoothed jerk) * jerk scale
+Calculation: Impulse score = SUM(normalized acceleration, impulse length) * impulse scale
+Long: price velocity score >= 3
+Short: price velocity score <= -3
+Long: acceleration score >= 3
+Short: acceleration score <= -3
+Long: jerk score >= 3
+Short: jerk score <= -3
+Long: impulse score >= 3
+Short: impulse score <= -3

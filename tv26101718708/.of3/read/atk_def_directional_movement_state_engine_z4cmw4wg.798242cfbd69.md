@@ -1,0 +1,6 @@
+Calculation: Candle body size = abs(close - open)
+Calculation: Candle range = high - low
+Calculation: Upper wick length = high - max(open, close)
+Calculation: Lower wick length = min(open, close) - low
+Long: (close > SMA(close, shorter lookback) AND close > SMA(close, longer lookback) AND close > open AND Candle body size > Candle range * body-to-range threshold) OR (EMA(close, shorter lookback) > EMA(close, medium lookback) AND EMA(close, medium lookback) > EMA(close, longer lookback) AND close > EMA(close, shorter lookback) AND close > EMA(close, medium lookback)) OR (ADX(lookback, lookback) > lower ADX threshold AND +DI(lookback) > -DI(lookback))
+Short: (close < SMA(close, shorter lookback) AND close < SMA(close, longer lookback) AND close < open AND Candle body size > Candle range * body-to-range threshold) OR (Lower wick length > Upper wick length * wick-dominance threshold AND close < open) OR (EMA(close, shorter lookback) <= EMA(close, medium lookback) AND EMA(close, medium lookback) <= EMA(close, longer lookback) AND close < EMA(close, shorter lookback) AND close < EMA(close, medium lookback)) OR (ADX(lookback, lookback) > lower ADX threshold AND +DI(lookback) <= -DI(lookback))

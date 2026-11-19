@@ -1,0 +1,3 @@
+Calculation: effective body = abs(close - open) when nonzero, otherwise minimum tick
+Long: (min(open, close) - low) / effective body >= wick/body ratio parameter AND QStick(close - open, lookback) > 0 AND QStick(close - open, lookback) > QStick(close - open, lookback)[1]
+Short: (high - max(open, close)) / effective body >= wick/body ratio parameter AND QStick(close - open, lookback) < 0 AND QStick(close - open, lookback) < QStick(close - open, lookback)[1]

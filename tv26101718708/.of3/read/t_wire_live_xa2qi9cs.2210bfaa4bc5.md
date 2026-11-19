@@ -1,0 +1,11 @@
+Calculation: Shorter-lookback EMA = EMA(close, shorter EMA lookback) on chart bars
+Calculation: Longer-lookback EMA = EMA(close, longer EMA lookback) on chart bars
+Calculation: Supertrend direction = Supertrend(ATR lookback, ATR multiplier).direction on chart bars
+Calculation: RSI = RSI(close, RSI lookback) on chart bars
+Calculation: T1 shorter-lookback EMA = EMA(close, shorter EMA lookback) on T1 bars, sampled on chart bars with lookahead off; current T1 bar while forming in real time
+Calculation: T1 longer-lookback EMA = EMA(close, longer EMA lookback) on T1 bars, sampled on chart bars with lookahead off; current T1 bar while forming in real time
+Calculation: T1 Supertrend direction = Supertrend(ATR lookback, ATR multiplier).direction on T1 bars, sampled on chart bars with lookahead off; current T1 bar while forming in real time
+Long: Shorter-lookback EMA > Longer-lookback EMA AND Supertrend direction < 0 AND (Shorter-lookback EMA[previous chart bar] <= Longer-lookback EMA[previous chart bar] OR Supertrend direction[previous chart bar] >= 0)
+Long: Shorter-lookback EMA > Longer-lookback EMA AND Supertrend direction < 0 AND (Shorter-lookback EMA[previous chart bar] <= Longer-lookback EMA[previous chart bar] OR Supertrend direction[previous chart bar] >= 0) AND RSI > RSI midpoint threshold AND RSI < RSI overbought threshold AND T1 shorter-lookback EMA > T1 longer-lookback EMA AND T1 Supertrend direction < 0
+Short: Shorter-lookback EMA <= Longer-lookback EMA AND Supertrend direction >= 0 AND (Shorter-lookback EMA[previous chart bar] >= Longer-lookback EMA[previous chart bar] OR Supertrend direction[previous chart bar] <= 0)
+Short: Shorter-lookback EMA <= Longer-lookback EMA AND Supertrend direction >= 0 AND (Shorter-lookback EMA[previous chart bar] >= Longer-lookback EMA[previous chart bar] OR Supertrend direction[previous chart bar] <= 0) AND RSI < RSI midpoint threshold AND RSI > RSI oversold threshold AND T1 shorter-lookback EMA < T1 longer-lookback EMA AND T1 Supertrend direction > 0
