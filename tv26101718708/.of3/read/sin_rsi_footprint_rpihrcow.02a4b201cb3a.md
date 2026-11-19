@@ -1,0 +1,2 @@
+Long: RSI(close, lookback) on each T1 intrabar of the chart bar, including the bar still forming, > threshold
+Short: RSI(close, lookback) on each T1 intrabar of the chart bar, including the bar still forming, <= threshold

@@ -1,0 +1,24 @@
+Calculation: Smoothed regression = EMA(Linear Regression(close, regression lookback, zero offset), smoothing lookback)
+Calculation: Cloud trend line = AlphaTrend(RSI(close, RSI lookback), SMA(True Range, ATR lookback), ATR multiplier) in cloud-MA mode; otherwise Supertrend(ATR lookback, ATR multiplier)
+Calculation: Cloud high = max(EMA(close, EMA lookback), Smoothed regression, lagged Cloud trend line)
+Calculation: Cloud low = min(EMA(close, EMA lookback), Smoothed regression, lagged Cloud trend line)
+Calculation: Cloud MA = max(previous Cloud MA, Cloud low) when the Andean oscillator bull output exceeds its bear output; min(previous Cloud MA, Cloud high) when the bear output exceeds the bull output; otherwise previous Cloud MA
+Calculation: Cloud trend = bullish when Cloud MA is rising over its direction lookback, bearish when falling over its direction lookback, otherwise its previous value
+Calculation: Bullish close trigger = Cloud trend changes to bullish in cloud-MA mode; otherwise close > Cloud high AND close > latest confirmed pivot high
+Calculation: Bearish close trigger = Cloud trend changes to bearish in cloud-MA mode; otherwise close < Cloud low AND close < latest confirmed pivot low
+Calculation: Tracked high = high while flat; while positioned, high if high > prior-bar high, otherwise its previous value
+Calculation: Tracked low = low while flat; while positioned, low if low < prior-bar low, otherwise its previous value
+Calculation: Long stop = lowest value of latest confirmed pivot lows over the pivot-window lookback on a Bullish close trigger; entry price when long and Tracked high exceeds entry price plus the initial long risk; otherwise its previous value
+Calculation: Short stop = highest value of latest confirmed pivot highs over the pivot-window lookback on a Bearish close trigger; entry price when short and Tracked low falls below entry price minus the initial short risk; otherwise its previous value
+Calculation: Initial long risk = entry price minus the rolling lowest confirmed pivot low at the Bullish close trigger
+Calculation: Initial short risk = rolling highest confirmed pivot high at the Bearish close trigger minus entry price
+Calculation: Long target 1 = entry price + initial long risk × first reward multiple; Long target 2 = entry price + initial long risk × second reward multiple
+Calculation: Short target 1 = entry price − initial short risk × first reward multiple; Short target 2 = entry price − initial short risk × second reward multiple
+Calculation: Long setup = configured pivot-cloud mode: close > latest confirmed pivot high AND close > Cloud high; or configured filtered pivot-cloud mode: the same conditions AND Smoothed regression is rising over its direction lookback; or configured cloud-MA mode: Cloud trend is bullish AND close > Cloud high; AND flat or short; AND bar time is within the configured date range
+Calculation: Short setup = configured pivot-cloud mode: close < latest confirmed pivot low AND close < Cloud low; or configured filtered pivot-cloud mode: the same conditions AND Smoothed regression is falling over its direction lookback; or configured cloud-MA mode: Cloud trend is bearish AND close < Cloud low; AND flat or long; AND bar time is within the configured date range
+Calculation: Long-entry lock = set when Cloud trend changes to bullish; otherwise cleared when Tracked low crosses below Long stop; otherwise set while long; otherwise cleared when Cloud trend is bearish; otherwise its previous value
+Calculation: Short-entry lock = set when Cloud trend changes to bearish; otherwise cleared when Tracked high crosses above Short stop; otherwise set while short; otherwise cleared when Cloud trend is bullish; otherwise its previous value
+Long: Long setup changes value from the prior bar AND prior-bar Long-entry lock is clear AND long entries are enabled
+Short: Short setup changes value from the prior bar AND prior-bar Short-entry lock is clear AND short entries are enabled
+Exit: Long, low <= Long stop OR high >= Long target 1 OR high >= Long target 2 OR (filtered pivot-cloud mode AND close < Cloud low AND close < latest confirmed pivot low AND Smoothed regression is not falling over its direction lookback) OR (cloud-MA mode AND Cloud trend changes to bearish AND close >= Cloud low)
+Exit: Short, high >= Short stop OR low <= Short target 1 OR low <= Short target 2 OR (filtered pivot-cloud mode AND close > Cloud high AND close > latest confirmed pivot high AND Smoothed regression is not rising over its direction lookback) OR (cloud-MA mode AND Cloud trend changes to bullish AND close <= Cloud high)

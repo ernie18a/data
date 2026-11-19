@@ -1,0 +1,13 @@
+Calculation: Drawdown from highest close = 100 × (close − highest close over min(P1, available bars)) / highest close over min(P1, available bars)
+Calculation: Average dollar volume = SMA(close × volume / P4 / 1,000,000, P5 bars)
+Calculation: Accumulation eligibility = drawdown from highest close ≤ −P2 AND average dollar volume ≥ P3
+Calculation: Drawdown edge = (drawdown from highest close ≤ P6 AND drawdown from highest close > P7) OR (drawdown from highest close ≤ P7 AND drawdown from highest close > P8)
+Calculation: Mature base = count over the last P12 bars of (low ≤ lowest low over min(P9, available bars), ending one bar earlier) ≤ P10 + P11
+Calculation: Aged support = lowest low over min(P16, max(available bars − P15, 1)) bars, offset P15 bars
+Calculation: Bullish reclaim candle = close > open AND (high > low ? (close − low) / (high − low) : 0) ≥ P17
+Calculation: Spring recovery = ((low < current aged support AND close > current aged support) OR (previous low < previous aged support AND previous close < previous aged support AND close > previous aged support) OR (lowest low and lowest close over P18 bars ending one bar earlier are both below current aged support AND close > current aged support AND previous close ≤ current aged support)) AND bullish reclaim candle
+Calculation: Relative-strength divergence = configured benchmark close > 0 AND price range position over P21 bars ≤ P22 AND (relative-strength range position over P21 bars − price range position over P21 bars) ≥ P23; price range position is (close − lowest low) / (highest high − lowest low), and relative-strength range position uses the relative-strength ratio (instrument close / configured benchmark close) with its rolling low and high; either position is 0.5 when its range is flat
+Calculation: Long invalidation level at entry = min(max((lowest low over P26 bars at entry, or entry-bar low if unavailable or nonpositive) × (1 − P27/100), entry close × (1 − P28/100)), entry close × (1 − P29/100))
+Long: accumulation eligibility AND drawdown edge AND mature base AND spring recovery AND chart bar confirmed AND bars since prior confirmed spring signal ≥ P19
+Long: accumulation eligibility AND drawdown edge AND drawdown from highest close ≤ P6 AND drawdown from highest close > P7 AND mature base AND spring recovery AND close ≤ lowest low over min(P13, available bars) × (1 + P14/100) AND relative-strength divergence AND normalized Stochastic %K over P24 bars < P25, using 0.5 when its range is flat, AND chart bar unconfirmed
+Exit: long, (chart bar confirmed AND close < stored long invalidation level AND volume z-score over P9 bars ≥ P30) OR bars since entry > P31

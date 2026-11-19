@@ -1,0 +1,14 @@
+Calculation: Yield-inversion latch = highest(1 if the current chart-bar close of the requested long-yield series minus the requested short-yield series is below zero, otherwise 0, over the latch lookback converted to chart bars; uses current chart-bar values, including a still-forming bar.
+Calculation: Tight-credit-spread latch = highest(1 if the current chart-bar close of the requested high-yield spread series is below the tight-spread threshold, otherwise 0, over the same latch lookback converted to chart bars; uses current chart-bar values, including a still-forming bar.
+Calculation: Rule-of-20 z-score = z-score(trailing P/E + CPI year-over-year inflation, z-score lookback converted to chart bars); computed on chart bars using current T1 values, including a still-forming T1 bar. Trailing P/E is a manual value or, when selected, the T1 P/E close; CPI inflation = (T1 CPI close / T1 CPI close[YoY lag in T1 bars] - 1) * 100.
+Calculation: Value-minus-growth return spread = (value-proxy current chart-bar close / value-proxy close[return lookback] - growth-proxy current chart-bar close / growth-proxy close[return lookback]) * 100; both proxies use requested chart-timeframe values, and the return lookback is converted to chart bars. Uses current chart-bar values, including a still-forming bar.
+Calculation: Sentiment z-score = z-score(current T1 sentiment close, the same z-score lookback as the Rule-of-20 z-score, converted to chart bars); computed on chart bars using the current T1 value, including a still-forming T1 bar.
+Calculation: Triggered percentage = 100 * (number of true core triggers + number of true enabled and available optional triggers) / (4 + (1 if SLOOS is enabled and its current T2 close is available, else 0) + (1 if sentiment is enabled and its T1 z-score is defined, else 0)); the four core triggers are yield-inversion latch > 0, tight-credit-spread latch > 0, Rule-of-20 z-score > its trigger, and value-minus-growth return spread < -underperformance threshold; optional triggers are available T2 SLOOS close > 0 and defined T1 sentiment z-score > its trigger. Undefined core triggers count as false but remain in the denominator.
+Short: Yield-inversion latch > 0.
+Short: Tight-credit-spread latch > 0.
+Short: Rule-of-20 z-score > Rule-of-20 trigger, when defined.
+Short: Value-minus-growth return spread < -underperformance threshold, when defined.
+Short: Current T2 SLOOS close > 0, when SLOOS is enabled and available; uses the current T2 value, including a still-forming T2 bar.
+Short: Sentiment z-score > sentiment trigger, when sentiment is enabled and the z-score is defined.
+Short: Triggered percentage >= composite alert threshold.
+Short: Triggered percentage >= midline threshold AND Triggered percentage < composite alert threshold.

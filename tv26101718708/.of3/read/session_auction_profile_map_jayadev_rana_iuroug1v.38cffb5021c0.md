@@ -1,0 +1,2 @@
+Long: In session AND the initial balance is complete AND the high breaks above the initial balance high for the first time
+Short: In session AND the initial balance is complete AND the low breaks below the initial balance low for the first time

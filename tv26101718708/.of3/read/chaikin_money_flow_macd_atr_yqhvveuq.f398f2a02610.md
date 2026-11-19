@@ -1,0 +1,8 @@
+Calculation: MACD line and signal line = MACD(source, fast lookback, slow lookback, signal lookback, oscillator MA type, signal MA type)
+Calculation: money flow = Chaikin Money Flow(lookback)
+Calculation: EMA filter = EMA(close, lookback) on T1 bars, using the last completed T1 bar on each chart bar
+Calculation: entry ATR = ATR(lookback) on the entry bar
+Long: long entries enabled AND no position open AND datetime >= start timestamp AND datetime <= finish timestamp AND at least one entry filter enabled AND (crossover filter disabled OR MACD line crosses above signal line) AND (MACD-zero filter disabled OR MACD line > 0) AND (money-flow filter disabled OR money flow > 0) AND (EMA filter disabled OR close > EMA filter)
+Short: short entries enabled AND no position open AND datetime >= start timestamp AND datetime <= finish timestamp AND at least one entry filter enabled AND (crossover filter disabled OR MACD line crosses below signal line) AND (MACD-zero filter disabled OR MACD line < 0) AND (money-flow filter disabled OR money flow < 0) AND (EMA filter disabled OR close < EMA filter)
+Exit: long, datetime >= start timestamp AND datetime <= finish timestamp AND (low <= entry price - entry ATR * long stop factor OR high >= entry price + entry ATR * long profit factor)
+Exit: short, datetime >= start timestamp AND datetime <= finish timestamp AND (high >= entry price + entry ATR * short stop factor OR low <= entry price - entry ATR * short profit factor)

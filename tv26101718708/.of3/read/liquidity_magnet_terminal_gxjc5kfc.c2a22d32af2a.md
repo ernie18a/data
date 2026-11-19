@@ -1,0 +1,3 @@
+Calculation: Ranked liquidity zones = on chart bars, compute pivot highs and lows with equal left and right pivot-strength lookbacks; assign each pivot the volume at its pivot bar and resistance direction for highs or support direction for lows; in pivot order, merge each pivot into the first existing zone with the same direction whose price is within max(minimum tick size × tick-multiplier parameter, pivot price × merge-percentage parameter / 100), using summed volume as zone strength and the volume-weighted average as zone price; retain the top zone-count parameter zones by descending strength, breaking ties by earlier zone order
+Long: a selected zone has support direction
+Short: a selected zone has resistance direction

@@ -1,0 +1,5 @@
+Calculation: Session weighted standard deviation(source, session) = sqrt(max(sum_session(volume * source^2) / sum_session(volume) - VWAP(source, session)^2, 0)), using chart bars through the current bar
+Calculation: Upper band(k) = VWAP(source, session) + k * Session weighted standard deviation(source, session)
+Calculation: Lower band(k) = VWAP(source, session) - k * Session weighted standard deviation(source, session)
+Long: Retest signals enabled AND VWAP(source, session) is available AND at least the cooldown lookback has passed since the previous long signal AND, for any k in {band multiplier 1, band multiplier 2, band multiplier 3}, ((low <= Upper band(k) AND low[1] > Upper band(k)[1]) OR (low <= Lower band(k) AND low[1] > Lower band(k)[1]))
+Short: Retest signals enabled AND VWAP(source, session) is available AND at least the cooldown lookback has passed since the previous short signal AND, for any k in {band multiplier 1, band multiplier 2, band multiplier 3}, ((high >= Upper band(k) AND high[1] < Upper band(k)[1]) OR (high >= Lower band(k) AND high[1] < Lower band(k)[1]))

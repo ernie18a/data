@@ -1,0 +1,14 @@
+Calculation: Bullish bias = selected bias source (chart-bar close or previous completed T1 close) > EMA(close, EMA lookback, T1, still-forming bar)
+Calculation: Bearish bias = NOT bullish bias
+Calculation: Bullish MSS state = the latest MSS event in the current T1 interval is bullish; a bullish event occurs when close > the latest confirmed Williams fractal high (fractal span parameter) AND close[1] <= that same high; reset at the T1 interval boundary or on a later bearish event
+Calculation: Bearish MSS state = the latest MSS event in the current T1 interval is bearish; a bearish event occurs when close < the latest confirmed Williams fractal low (fractal span parameter) AND close[1] >= that same low; reset at the T1 interval boundary or on a later bullish event
+Calculation: Bullish OB bounds = on a new bullish MSS state while bullish bias, use the nearest preceding bearish candle within the OB search lookback; if refinement is defensive and its range <= ATR(ATR lookback, chart bars) × range-threshold factor, use its high and low, otherwise if defensive use its close and low; if refinement is off or aggressive, use its high and low; clear at the T1 interval boundary or before setup evaluation on a chart bar whose low <= its lower bound
+Calculation: Bearish OB bounds = on a new bearish MSS state while bearish bias, use the nearest preceding bullish candle within the OB search lookback; if refinement is defensive and its range <= ATR(ATR lookback, chart bars) × range-threshold factor, use its high and low, otherwise if defensive use its high and close; if refinement is off or aggressive, use its high and low; clear at the T1 interval boundary or before setup evaluation on a chart bar whose high >= its upper bound
+Calculation: Long setup = bullish bias AND a chart bar in the current T1 interval had low < previous completed T1 low AND close > previous completed T1 low AND bullish MSS state AND the chart bar's America/New_York time is within the configured entry window AND an active bullish OB exists AND low <= its upper bound
+Calculation: Short setup = bearish bias AND a chart bar in the current T1 interval had high > previous completed T1 high AND close < previous completed T1 high AND bearish MSS state AND the chart bar's America/New_York time is within the configured entry window AND an active bearish OB exists AND high >= its lower bound
+Long: Long setup
+Short: Short setup
+Long: Long setup AND no entry has occurred in the current T1 interval AND position is flat
+Short: Short setup AND no entry has occurred in the current T1 interval AND position is flat
+Exit: Long, after entry, low <= the bullish OB lower bound captured at entry OR high >= entry price + (entry price - bullish OB lower bound captured at entry) × risk-reward parameter
+Exit: Short, after entry, high >= the bearish OB upper bound captured at entry OR low <= entry price - (bearish OB upper bound captured at entry - entry price) × risk-reward parameter

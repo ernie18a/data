@@ -1,0 +1,2 @@
+Long: close > latest confirmed unbroken pivot high(high, p, p) in close-break mode OR high > latest confirmed unbroken pivot high(high, p, p) in wick-break mode, where p = ceil((fractal length - 1) / 2)
+Short: close < latest confirmed unbroken pivot low(low, p, p) in close-break mode OR low < latest confirmed unbroken pivot low(low, p, p) in wick-break mode, where p = ceil((fractal length - 1) / 2)

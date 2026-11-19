@@ -1,0 +1,11 @@
+Long: Supertrend(factor, ATR lookback) direction < 0 on chart bars
+Short: Supertrend(factor, ATR lookback) direction >= 0 on chart bars
+Long: Supertrend(factor, ATR lookback) direction < 0 on T1, T2, T3, or T4 bars using each timeframe’s current bar (still forming in real time), with values carried to chart bars using lookahead off
+Short: Supertrend(factor, ATR lookback) direction >= 0 on T1, T2, T3, or T4 bars using each timeframe’s current bar (still forming in real time), with values carried to chart bars using lookahead off
+Long: close >= EMA(selected OHLC source, chart EMA lookback)
+Short: close < EMA(selected OHLC source, chart EMA lookback)
+Long: chart close >= EMA(selected OHLC source, EMA 1 lookback on T5) OR chart close >= EMA(selected OHLC source, EMA 2 lookback on T6) OR chart close >= EMA(selected OHLC source, EMA 3 lookback on T7) OR chart close >= EMA(selected OHLC source, EMA 4 lookback on T8); each EMA is calculated on its timeframe’s current bar (still forming in real time) and carried to chart bars using lookahead off
+Short: chart close < EMA(selected OHLC source, EMA 1 lookback on T5) OR chart close < EMA(selected OHLC source, EMA 2 lookback on T6) OR chart close < EMA(selected OHLC source, EMA 3 lookback on T7) OR chart close < EMA(selected OHLC source, EMA 4 lookback on T8); each EMA is calculated on its timeframe’s current bar (still forming in real time) and carried to chart bars using lookahead off
+Calculation: Structure state = on each completed T9 bar, update protected levels to the latest confirmed pivot high and pivot low, each using the swing lookback on both sides; each level can break once until replaced by a new pivot. A high breaks when close > protected high in close mode or high > protected high in wick mode; a low breaks when close < protected low in close mode or low < protected low in wick mode. Start neutral; the first high break sets bullish state and the first low break sets bearish state. Thereafter a high break sets bullish state and a low break sets bearish state. If both break on one bar, process the high first when neutral or bearish, and the low first when bullish. Compute on T9 bars and carry the state to chart bars using lookahead off.
+Long: Structure state on T9 is bullish
+Short: Structure state on T9 is bearish

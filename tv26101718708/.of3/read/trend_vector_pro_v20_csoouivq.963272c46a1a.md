@@ -1,0 +1,16 @@
+Calculation: Smoothed momentum = EMA(Awesome Oscillator(hl2, shorter lookback, effective longer lookback), smoothing lookback); when adaptive length is enabled, effective longer lookback is the minimum of the longer lookback and available bars, and momentum is unavailable until max(2 × shorter lookback, shorter lookback + 2) bars are available
+Calculation: Momentum state = unavailable unless current and prior smoothed momentum exist; otherwise neutral if abs(smoothed momentum) < StDev(smoothed momentum, noise lookback) × noise factor; otherwise strong bull if smoothed momentum > 0 and greater than its prior value; weak bull if smoothed momentum > 0 and less than or equal to its prior value; strong bear if smoothed momentum ≤ 0 and less than its prior value; weak bear if smoothed momentum ≤ 0 and greater than or equal to its prior value
+Long: Momentum state is strong bull or weak bull
+Short: Momentum state is strong bear or weak bear
+Long: (reversal mode and momentum state is bullish and prior momentum state was not bullish) OR (strong-pulse mode and momentum state is strong bull and prior momentum state was not strong bull), AND (ADX filter disabled OR ADX(DI lookback, smoothing lookback) > ADX threshold)
+Short: (reversal mode and momentum state is bearish and prior momentum state was not bearish) OR (strong-pulse mode and momentum state is strong bear and prior momentum state was not strong bear), AND (ADX filter disabled OR ADX(DI lookback, smoothing lookback) > ADX threshold)
+Long: early entry enabled and smoothed momentum < 0 and smoothed momentum > its prior value and its prior value ≤ the value two bars ago and no regular long signal, AND (ADX filter disabled OR ADX(DI lookback, smoothing lookback) > ADX threshold)
+Long: bottom reversal enabled and momentum is ready and momentum state is not bullish and prior close < prior Lower Bollinger Band(close, band lookback, deviation multiplier) and close > current Lower Bollinger Band(close, band lookback, deviation multiplier) and close > open and Lowest(RSI(close, RSI lookback), recent-bar lookback) < oversold threshold and no regular long signal and no early long signal, AND (ADX filter disabled OR ADX(DI lookback, smoothing lookback) > ADX threshold)
+Long: momentum state is bullish and high[1] > high and high[1] > high[2]
+Short: momentum state is bearish and low[1] < low and low[1] < low[2]
+Exit: Long, early entry or bottom reversal enabled and smoothed momentum < 0 and smoothed momentum < its prior value and its prior value ≥ the value two bars ago
+Exit: Short, early entry or bottom reversal enabled and smoothed momentum < 0 and smoothed momentum < its prior value and its prior value ≥ the value two bars ago
+Exit: Long, percent stop enabled and low ≤ entry-signal close × (1 − stop percent / 100)
+Exit: Short, percent stop enabled and high ≥ entry-signal close × (1 + stop percent / 100)
+Exit: Long, ATR stop enabled and low ≤ entry-signal close − ATR(ATR lookback) sampled on the entry-signal bar × ATR multiplier
+Exit: Short, ATR stop enabled and high ≥ entry-signal close + ATR(ATR lookback) sampled on the entry-signal bar × ATR multiplier

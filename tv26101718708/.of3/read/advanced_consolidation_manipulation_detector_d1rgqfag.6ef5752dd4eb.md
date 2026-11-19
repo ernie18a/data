@@ -1,0 +1,2 @@
+Long: low < LOWEST(low, pivot lookback)[1] AND volume > SMA(volume, slow ATR lookback) * volume multiplier AND close > open
+Short: high > HIGHEST(high, pivot lookback)[1] AND volume > SMA(volume, slow ATR lookback) * volume multiplier AND close < open

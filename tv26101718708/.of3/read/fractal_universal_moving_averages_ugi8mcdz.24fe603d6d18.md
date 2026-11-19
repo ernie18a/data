@@ -1,0 +1,2 @@
+Long: chart timeframe is T1 AND (SMA(close, shorter SMA lookback) > SMA(close, longer SMA lookback) OR EMA(close, shorter EMA lookback) > EMA(close, longer EMA lookback) OR SMA(close, shared lookback) > EMA(close, same shared lookback))
+Short: chart timeframe is T1 AND (SMA(close, shorter SMA lookback) <= SMA(close, longer SMA lookback) OR EMA(close, shorter EMA lookback) <= EMA(close, longer EMA lookback) OR SMA(close, shared lookback) <= EMA(close, same shared lookback))

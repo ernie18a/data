@@ -1,0 +1,9 @@
+Calculation: Balance Zone = selected OHLC4(open, high, low, close, T1, last completed bar), HLC3(open, high, low, close, T1, last completed bar), (high + low) / 2 of T1's last completed bar, or SMA(close, lookback, T1, last completed bar)
+Long: low <= a lower High, Very High, or Extreme reaction tier AND close > that tier AND its score >= strength threshold
+Short: high >= an upper High, Very High, or Extreme reaction tier AND close < that tier AND its score >= strength threshold
+Long: close > an upper High, Very High, or Extreme reaction tier AND close[1] <= that tier OR low <= that tier AND close > that tier AND its score < strength threshold AND (Volatility Context indicates expansion OR Range Regime indicates a trend)
+Short: close < a lower High, Very High, or Extreme reaction tier AND close[1] >= that tier OR high >= that tier AND close < that tier AND its score < strength threshold AND (Volatility Context indicates expansion OR Range Regime indicates a trend)
+Exit: long, entry price < Balance Zone AND (low moves beyond the next lower tier out from the entry tier OR high reaches the next inner tier toward Balance Zone OR high reaches Balance Zone OR high reaches the opposite-side inner tier)
+Exit: short, entry price > Balance Zone AND (high moves beyond the next upper tier out from the entry tier OR low reaches the next inner tier toward Balance Zone OR low reaches Balance Zone OR low reaches the opposite-side inner tier)
+Exit: long, entry price > Balance Zone AND price moves back inside the broken upper tier
+Exit: short, entry price < Balance Zone AND price moves back inside the broken lower tier

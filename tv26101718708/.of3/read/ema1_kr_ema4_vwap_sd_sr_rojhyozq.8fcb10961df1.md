@@ -1,0 +1,11 @@
+Calculation: KernelRegression(close, lookback) = the Gaussian-weighted average of close[i] for i=0 through lookback, with weight exp(-i^2/(lookback^2/2)); use close before lookback previous bars are available
+Long: EMA(close, lookback) crosses above KernelRegression(close, lookback)
+Short: EMA(close, lookback) crosses below KernelRegression(close, lookback)
+Long: EMA(close, lookback) > KernelRegression(close, lookback)
+Short: EMA(close, lookback) <= KernelRegression(close, lookback)
+Long: close < close[4] on the current bar and previous 8 bars AND close[9] >= close[13]
+Short: close > close[4] on the current bar and previous 8 bars AND close[9] <= close[13]
+Long: On chart bars using the current Heikin-Ashi values, Heikin-Ashi close crosses above max(EMA(close, lookback), KernelRegression(close, lookback)) AND Heikin-Ashi close > Heikin-Ashi open
+Long: On the chart bar that confirms a new PivotLow(low, left lookback, right lookback), the new pivot low > the preceding confirmed pivot low AND close > the new pivot low
+Long: On chart bars and each enabled zone timeframe T1/T2, with the condition calculated on that timeframe's bars and chart bars using its last completed bar historically or its still-forming bar in realtime, at least the momentum-count parameter of offsets i=0 through momentum-span parameter minus 1 satisfy close[i] > open[i] AND abs(close[i]-open[i]) >= SMA(abs(close-open), body-average lookback)[0] * body-size factor AND the current bar index minus the previous demand-zone creation bar index (initially zero) > zone-spacing parameter
+Short: On chart bars and each enabled zone timeframe T1/T2, with the condition calculated on that timeframe's bars and chart bars using its last completed bar historically or its still-forming bar in realtime, at least the momentum-count parameter of offsets i=0 through momentum-span parameter minus 1 satisfy close[i] <= open[i] AND abs(close[i]-open[i]) >= SMA(abs(close-open), body-average lookback)[0] * body-size factor AND the current bar index minus the previous supply-zone creation bar index (initially zero) > zone-spacing parameter

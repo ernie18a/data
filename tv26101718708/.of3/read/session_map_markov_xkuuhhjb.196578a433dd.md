@@ -1,0 +1,9 @@
+Calculation: Opening-range high/low = highest high and lowest low of chart bars from each regular-session open until the opening-range duration elapses
+Calculation: Initial-balance high/low = highest high and lowest low of chart bars from each regular-session open until the initial-balance duration elapses
+Calculation: Anchored VWAP standard deviation = sqrt(max(0, cumulative(weight × HLC3²) / cumulative(weight) − VWAP(HLC3, anchor, weight)²)) since the anchor, where weight is volume when positive and the fallback-weight parameter otherwise
+Long: During the regular session after the opening-range duration elapses, a confirmed chart-bar close is above the opening-range high and no earlier opening-range-high break was signaled that session
+Short: During the regular session after the opening-range duration elapses, a confirmed chart-bar close is below the opening-range low and no earlier opening-range-low break was signaled that session
+Long: During the regular session after the initial-balance duration elapses, a confirmed chart-bar close is above the initial-balance high and no earlier initial-balance-high break was signaled that session
+Short: During the regular session after the initial-balance duration elapses, a confirmed chart-bar close is below the initial-balance low and no earlier initial-balance-low break was signaled that session
+Long: On any confirmed chart bar, anchored VWAP standard deviation > 0 and low ≤ VWAP(HLC3, anchor, weight) − deviation-multiplier × anchored VWAP standard deviation
+Short: On any confirmed chart bar, anchored VWAP standard deviation > 0 and high ≥ VWAP(HLC3, anchor, weight) + deviation-multiplier × anchored VWAP standard deviation

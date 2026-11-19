@@ -1,0 +1,14 @@
+Calculation: Z(X,T) = (close_X - close_X[1] - SMA(close_X - close_X[1], P_z)) / population_STDEV(close_X - close_X[1], P_z); calculate on T1, T2, and T3 bars and carry the latest available value to chart bars (last completed bar historically, current forming bar in realtime); T1 < T2 < T3 < T4 by duration.
+Calculation: Corr(X,T) = Pearson correlation of the target and X completed one-bar close changes on T3 or T4; on each new T bar, append the pair only if both changes are nonzero, retain up to P_pairsT3 pairs on T3 or P_pairsT4 pairs on T4, and leave undefined until P_pairsMin pairs exist.
+Calculation: Link(X) = Corr(X,T4) if defined, otherwise Corr(X,T3).
+Calculation: R(X) = sign(Link(X)) when abs(Link(X)) >= P_neutral; otherwise use inverse polarity for the dollar, configured fallback polarity for the yield, and zero for oil.
+Calculation: A(X,T) = R(X) * Z(X,T).
+Calculation: S(P,T) = 0 if the dollar and yield adjusted moves are both at least P in magnitude and have opposite signs; otherwise use the sign of the first eligible move in dollar, yield, oil order, skipping any later move that opposes the selected sign; an eligible move has magnitude at least P, and oil also requires a nonzero relationship direction; use 0 if none is eligible.
+Calculation: Push = the weighted mean of eligible dollar, yield, and oil adjusted moves on T1 that have the same sign as S(P_move,T1); use the separate parameters P_weightDollar, P_weightYield, and P_weightOil, and leave undefined if the selected weights sum to zero.
+Calculation: Room = max(Push - Z(target,T1), 0) when S(P_move,T1) is positive; min(Push - Z(target,T1), 0) when it is negative; otherwise 0.
+Calculation: Opposed = S(P_move,T1) is nonzero and either S(P_context,T2) or S(P_context,T3) is nonzero with the opposite sign.
+Calculation: Unstable = initially off; turn on when Corr(dollar,T3) >= P_unstable, turn off when Corr(dollar,T3) <= P_unstable - P_unstableBand, and otherwise retain the previous state.
+Long: confirmed chart bar AND Room >= P_room AND NOT Opposed AND NOT Unstable.
+Short: confirmed chart bar AND Room <= -P_room AND NOT Opposed AND NOT Unstable.
+Long: confirmed chart bar AND Room >= P_room AND NOT Opposed AND NOT Unstable AND (session filter disabled OR chart bar is within P_session in New York time) AND (no prior alert OR at least P_cool chart bars since the last alert of either side) AND the prior chart bar did not satisfy the long-entry condition.
+Short: confirmed chart bar AND Room <= -P_room AND NOT Opposed AND NOT Unstable AND (session filter disabled OR chart bar is within P_session in New York time) AND (no prior alert OR at least P_cool chart bars since the last alert of either side) AND the prior chart bar did not satisfy the short-entry condition.

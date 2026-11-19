@@ -1,0 +1,5 @@
+Calculation: upper wick = high - max(open, close)
+Calculation: lower wick = min(open, close) - low
+Calculation: candle body = max(abs(close - open), minimum tick size)
+Long: on a confirmed chart-bar close, lower wick >= ATR multiplier * ATR(ATR lookback) AND lower wick >= wick/body multiplier * candle body AND lower wick > upper wick * wick-dominance multiplier AND more than the minimum-gap parameter chart bars have passed since the last long or short signal, with the first chart bar as the initial reference
+Short: on a confirmed chart-bar close, upper wick >= ATR multiplier * ATR(ATR lookback) AND upper wick >= wick/body multiplier * candle body AND upper wick > lower wick * wick-dominance multiplier AND more than the minimum-gap parameter chart bars have passed since the last long or short signal, with the first chart bar as the initial reference

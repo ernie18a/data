@@ -1,0 +1,3 @@
+Calculation: CVD momentum z-score = if StDev(change(CVD, CVD change lookback), normalization lookback) > 0.000000001 then (change(CVD, CVD change lookback) - SMA(change(CVD, CVD change lookback), normalization lookback)) / StDev(change(CVD, CVD change lookback), normalization lookback) else 0, where CVD is the cumulative sum starting at zero of (2 × volume × (close − low) / (high − low) − volume), using volume / 2 when high = low
+Long: CVD momentum z-score >= 0 OR (confirmed bar close AND ATR(ATR period) > 0 AND high[2] < low AND low − high[2] >= minimum gap size in ATR multiples × ATR(ATR period))
+Short: CVD momentum z-score < 0 OR (confirmed bar close AND ATR(ATR period) > 0 AND low[2] > high AND low[2] − high >= minimum gap size in ATR multiples × ATR(ATR period))

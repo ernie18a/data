@@ -1,0 +1,4 @@
+Calculation: ZoneUpper(i) = max(open of the T1 bar starting at zone i's configured start time, close of the T1 bar ending at that start time plus the duration parameter, on the active date in Asia/Kolkata), for each enabled zone i; the ending bar's close may still be forming in real time
+Calculation: ZoneLower(i) = min(open of the T1 bar starting at zone i's configured start time, close of the T1 bar ending at that start time plus the duration parameter, on the active date in Asia/Kolkata), for each enabled zone i; the ending bar's close may still be forming in real time
+Long: On chart bars, close crosses above ZoneUpper(i) for any of the three zones whose bound has been created
+Short: On chart bars, close crosses below ZoneLower(i) for any of the three zones whose bound has been created

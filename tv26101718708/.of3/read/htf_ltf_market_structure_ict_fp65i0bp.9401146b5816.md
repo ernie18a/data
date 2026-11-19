@@ -1,0 +1,6 @@
+Calculation: bullish fractal pivot(high, length) = high[p] when sum(sign(high - high[1]), p) = -p AND sum(sign(high - high[1]), p)[p] = p AND high[p] = highest(high, length), where p is half the length rounded down
+Calculation: bearish fractal pivot(low, length) = low[p] when sum(sign(low - low[1]), p) = p AND sum(sign(low - low[1]), p)[p] = -p AND low[p] = lowest(low, length), where p is half the length rounded down
+Long: On chart bars, a confirmed close crosses above the most recent unbroken bullish fractal pivot(high, chart fractal length) calculated on chart bars
+Short: On chart bars, a confirmed close crosses below the most recent unbroken bearish fractal pivot(low, chart fractal length) calculated on chart bars
+Long: On T1 bars, a completed close crosses above the most recent unbroken bullish fractal pivot(high, HTF fractal length) calculated on T1 bars
+Short: On T1 bars, a completed close crosses below the most recent unbroken bearish fractal pivot(low, HTF fractal length) calculated on T1 bars

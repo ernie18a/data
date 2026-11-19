@@ -1,0 +1,3 @@
+Calculation: ZigZag pivot sequence = on each chart bar, detect confirmed pivot highs and lows using equal left and right lookback P; append opposite-type pivots and replace the latest same-type pivot only with a higher high or lower low
+Long: at least two ZigZag pivots and close crosses above the second-most-recent pivot price OR at least three ZigZag pivots and close crosses above the third-most-recent pivot price
+Short: at least two ZigZag pivots and close crosses below the second-most-recent pivot price OR at least three ZigZag pivots and close crosses below the third-most-recent pivot price

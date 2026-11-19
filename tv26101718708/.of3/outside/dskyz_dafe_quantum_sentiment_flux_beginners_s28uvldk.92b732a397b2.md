@@ -1,0 +1,2 @@
+Calculation: EMA direction state = 1 when EMA(close, fast EMA length) > EMA(close, slow EMA length) + ATR(ATR length) * separation factor, -1 when EMA(close, fast EMA length) < EMA(close, slow EMA length) - ATR(ATR length) * separation factor, otherwise 0
+Long: EMA(close, fast EMA length) crosses above EMA(close, slow EMA length) AND EMA direction state = 1 AND VIX close < VIX threshold

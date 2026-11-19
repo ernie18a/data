@@ -1,0 +1,1 @@
+Long: On T1, close > MA(close, P1) AND close > MA(close, P2) AND close > MA(close, P3) AND prior consecutive closes < each corresponding MA for at least P4 bars AND volume > SMA(volume, P5) × P6

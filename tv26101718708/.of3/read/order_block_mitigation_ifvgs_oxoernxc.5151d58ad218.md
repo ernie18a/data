@@ -1,0 +1,5 @@
+Calculation: Change Z-Score = (change(close) - SMA(change(close), momentum lookback)) / StDev(change(close), momentum lookback)
+Long: close > latest confirmed PivotHigh(high, pivot lookback, pivot lookback) not consumed by a prior bullish market-structure break AND close[1] <= that pivot high AND Change Z-Score > momentum threshold
+Short: close < latest confirmed PivotLow(low, pivot lookback, pivot lookback) not consumed by a prior bearish market-structure break AND close[1] >= that pivot low AND Change Z-Score < -momentum threshold
+Long: an un-inverted bearish Fair Value Gap formed when high < low[2] AND PercentRank(volume, volume-rank lookback)[1] >= volume threshold, close > its top (low[2] on the formation bar), and it is within the gap lifetime counting the formation bar
+Short: an un-inverted bullish Fair Value Gap formed when low > high[2] AND PercentRank(volume, volume-rank lookback)[1] >= volume threshold, close < its bottom (high[2] on the formation bar), and it is within the gap lifetime counting the formation bar

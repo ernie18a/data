@@ -1,0 +1,5 @@
+Calculation: SOPR proxy = SMA(short-term price position minus long-term price position, SOPR smoothing period), where each position is (Bitcoin close price - lowest Bitcoin low over its range lookback) / (highest Bitcoin high over its range lookback - lowest Bitcoin low over its range lookback), or the midpoint if that range is zero
+Calculation: Bull-Bear index = the weighted mean of available Z-scores for Bitcoin market value to realized value (market cap / realized cap), net unrealized profit/loss (one minus realized cap / market cap), and SOPR proxy, using separate MVRV, NUPL, and SOPR weights, minus SMA of that weighted mean over cycle length; each Z-score is (component - SMA(component, Z-score lookback)) / standard deviation(component, Z-score lookback); the weighted mean is defined only when available component weight / total component weight meets the minimum valid-weight fraction
+Long: Bull-Bear index <= extreme-bear threshold
+Long: Bull-Bear index > 0 AND <= early-bull upper limit
+Exit: long, Bull-Bear index > overheated-bull threshold

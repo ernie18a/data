@@ -1,0 +1,15 @@
+Calculation: Flip level = EMA(VWMA(close, flip lookback) on chart bars, smoothing lookback), or EMA(VWMA(close, flip lookback, T1 bars, last completed bar) sampled onto chart bars, smoothing lookback) on chart bars
+Calculation: Zone volatility = ATR(ATR lookback) when ATR scaling is enabled, otherwise standard deviation(close, flip lookback); use standard deviation(close, flip lookback) if the selected value is zero or unavailable
+Calculation: Gamma exposure = (close - Flip level) / Zone volatility
+Calculation: Gamma velocity = change(Gamma exposure)
+Calculation: Upper acceleration boundary = Flip level + Zone volatility * volatility multiplier
+Calculation: Lower acceleration boundary = Flip level - Zone volatility * volatility multiplier
+Calculation: Upper zone boundary = Flip level + Zone volatility * (volatility multiplier / 2)
+Calculation: Lower zone boundary = Flip level - Zone volatility * (volatility multiplier / 2)
+Calculation: Cooldown elapsed = current chart bar index - prior signal bar index for that signal class, with each prior index initialized to zero; long and short breakout classes are separate, both reversal directions share a class, and both fade directions share a class
+Long: ADX(DI lookback, ADX smoothing lookback) > trend ADX threshold AND crossover(close, highest(high[1], breakout lookback)) AND close > Upper zone boundary AND Gamma velocity > 0 AND volume > SMA(volume, volume-average lookback) * volume threshold multiplier AND breakout-long cooldown elapsed >= cooldown period
+Short: ADX(DI lookback, ADX smoothing lookback) > trend ADX threshold AND crossunder(close, lowest(low[1], breakout lookback)) AND close < Lower zone boundary AND Gamma velocity < 0 AND volume > SMA(volume, volume-average lookback) * volume threshold multiplier AND breakout-short cooldown elapsed >= cooldown period
+Long: lowest(low, reversal lookback) < Lower acceleration boundary AND crossover(close, Lower acceleration boundary) AND Gamma velocity > 0 AND RSI(close, RSI lookback) < oversold threshold AND reversal cooldown elapsed >= cooldown period
+Short: highest(high, reversal lookback) > Upper acceleration boundary AND crossunder(close, Upper acceleration boundary) AND Gamma velocity < 0 AND RSI(close, RSI lookback) > overbought threshold AND reversal cooldown elapsed >= cooldown period
+Long: ADX(DI lookback, ADX smoothing lookback) < choppy ADX threshold AND lowest(low, fade lookback) <= Lower acceleration boundary AND crossover(close, Lower zone boundary) AND Gamma velocity > 0 AND fade cooldown elapsed >= cooldown period
+Short: ADX(DI lookback, ADX smoothing lookback) < choppy ADX threshold AND highest(high, fade lookback) >= Upper acceleration boundary AND crossunder(close, Upper zone boundary) AND Gamma velocity < 0 AND fade cooldown elapsed >= cooldown period

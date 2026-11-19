@@ -1,0 +1,13 @@
+Calculation: Normalized pressure = volume * (close - open) / max(high - low, minimum tick increment), divided by SMA(abs(volume * (close - open) / max(high - low, minimum tick increment)), normalization lookback); use zero when the SMA is zero
+Calculation: Normalized price movement = selected price movement divided by SMA(abs(selected price movement), normalization lookback); selected price movement is close - open in close-open mode, otherwise high - low when close > open, -(high - low) when close < open, or zero when close = open; use zero when the SMA is zero
+Calculation: PVDO main = the selected MA type (SMA, EMA, HMA, linear regression, RMA, WMA, VWMA, or TEMA) of -(normalized price movement - normalized pressure) * abs(normalized price movement), using the PVDO MA lookback
+Calculation: Logistic-smoothed PVDO = the first PVDO main value, then previous logistic-smoothed PVDO + (1 / (1 + exp(-abs(PVDO main - previous logistic-smoothed PVDO) / logistic bandwidth))) * (PVDO main - previous logistic-smoothed PVDO)
+Calculation: Stored imbalance = the first PVDO main value, then previous stored imbalance * (stored lookback - 1) / stored lookback + PVDO main
+Calculation: Logistic-smoothed stored imbalance = the first stored imbalance value, then previous logistic-smoothed stored imbalance + (1 / (1 + exp(-abs(stored imbalance - previous logistic-smoothed stored imbalance) / logistic bandwidth))) * (stored imbalance - previous logistic-smoothed stored imbalance)
+Calculation: Stored normalized value = (exp(2 * logistic-smoothed stored imbalance / SMA(abs(logistic-smoothed stored imbalance), stored lookback)) - 1) / (exp(2 * logistic-smoothed stored imbalance / SMA(abs(logistic-smoothed stored imbalance), stored lookback)) + 1); use zero when the SMA is zero
+Calculation: Direction evidence sum = stored normalized value + logistic-smoothed PVDO / (1 + abs(logistic-smoothed PVDO)) + normalized pressure / (1 + abs(normalized pressure))
+Calculation: Direction evidence magnitude = abs(stored normalized value) + abs(logistic-smoothed PVDO / (1 + abs(logistic-smoothed PVDO))) + abs(normalized pressure / (1 + abs(normalized pressure)))
+Calculation: Direction agreement = abs(direction evidence sum) / direction evidence magnitude when magnitude > 0, otherwise zero
+Calculation: Direction bias = direction evidence sum / direction evidence magnitude when magnitude > 0, otherwise zero
+Long: direction agreement >= direction-agreement threshold AND direction bias > 0
+Short: direction agreement >= direction-agreement threshold AND direction bias < 0

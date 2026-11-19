@@ -1,0 +1,10 @@
+Calculation: Short-lookback MA = configured MA(close, shorter lookback) on chart bars
+Calculation: Long-lookback MA = configured MA(close, longer lookback) on chart bars
+Calculation: ATR = ATR(lookback) on chart bars
+Calculation: Volume average = SMA(volume, lookback) on chart bars
+Calculation: T1 short-lookback SMA = SMA(close, shorter lookback, T1), sampled on chart bars from the most recently available T1 bar (last completed historically, forming in real time)
+Calculation: T1 long-lookback SMA = SMA(close, longer lookback, T1), sampled on chart bars from the most recently available T1 bar (last completed historically, forming in real time)
+Long: position is flat AND close > Short-lookback MA AND Short-lookback MA > Long-lookback MA AND (trend filter disabled OR T1 short-lookback SMA >= T1 long-lookback SMA) AND close > Long-lookback MA + ATR * ATR-filter multiplier AND volume >= minimum volume AND volume > volume-spike multiplier * Volume average AND hour(datetime) >= start-hour parameter AND hour(datetime) <= end-hour parameter AND nz(ATR / close, 0) <= volatility threshold
+Short: position is flat AND close < Short-lookback MA AND Short-lookback MA < Long-lookback MA AND (trend filter disabled OR T1 short-lookback SMA <= T1 long-lookback SMA) AND close < Long-lookback MA - ATR * ATR-filter multiplier AND volume >= minimum volume AND volume > volume-spike multiplier * Volume average AND hour(datetime) >= start-hour parameter AND hour(datetime) <= end-hour parameter AND nz(ATR / close, 0) <= volatility threshold
+Exit: Long, low <= entry price - ATR * fixed-stop multiplier OR high >= entry price + ATR * profit-target multiplier OR, after price advances by ATR * trail-offset from entry price, low <= highest high since activation - ATR * trail-offset
+Exit: Short, high >= entry price + ATR * fixed-stop multiplier OR low <= entry price - ATR * profit-target multiplier OR, after price declines by ATR * trail-offset from entry price, high >= lowest low since activation + ATR * trail-offset

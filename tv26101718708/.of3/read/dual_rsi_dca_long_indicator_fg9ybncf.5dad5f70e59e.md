@@ -1,0 +1,5 @@
+Calculation: Cumulative deviation(k) = first safety-order deviation × Σ(i=0 to k−1)(deviation-step multiplier^i)
+Calculation: Running average fill price = [base-order quote size + Σ(k=1 to filled safety orders)(first safety-order quote size × order-size multiplier^(k−1))] / [base-order quote size / base-entry close + Σ(k=1 to filled safety orders)((first safety-order quote size × order-size multiplier^(k−1)) / close at safety-order fill k)]
+Long: flat AND at chart-bar close, RSI(close, entry RSI length) from the last completed T1 bar >= entry RSI level AND the prior chart bar's sampled RSI(close, entry RSI length) from T1 < entry RSI level
+Long: long position AND filled safety orders < maximum safety orders AND chart-bar close <= base-entry close × (1 − cumulative deviation(next safety-order number) / 100)
+Exit: long, chart-bar close >= running average fill price × (1 + minimum profit percentage / 100) AND at chart-bar close, RSI(close, exit RSI length) from the last completed T2 bar <= exit RSI level AND the prior chart bar's sampled RSI(close, exit RSI length) from T2 > exit RSI level

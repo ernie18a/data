@@ -1,0 +1,2 @@
+Long: SMA(close, shorter lookback, T1) crosses above SMA(close, longer lookback, T1), calculated on T1 bars using the last completed T1 bar
+Short: SMA(close, shorter lookback, T1) crosses below SMA(close, longer lookback, T1), calculated on T1 bars using the last completed T1 bar

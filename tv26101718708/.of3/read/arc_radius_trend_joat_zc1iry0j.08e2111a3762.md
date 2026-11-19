@@ -1,0 +1,16 @@
+Calculation: ART radius = ATR(ART ATR lookback) × ART radius multiplier × (1 + min(abs(EMA(change(EMA(change(close), ART acceleration smoothing length)), ART acceleration smoothing length) / ATR(ART ATR lookback)), ART acceleration cap)) ^ ART curve strength
+Calculation: ART upper band = hl2 + ART radius on the first bar or when the previous close is not above the previous ART upper band; otherwise max(hl2 + ART radius, previous ART upper band). ART lower band = hl2 − ART radius on the first bar or when the previous close is not below the previous ART lower band; otherwise min(hl2 − ART radius, previous ART lower band)
+Calculation: ART direction = bullish when close > previous ART upper band, bearish when close < previous ART lower band, otherwise the previous ART direction (initially bullish)
+Long: ART direction is bullish
+Short: ART direction is bearish
+Long: current bar is confirmed AND ART direction is bullish AND previous ART direction is bearish
+Short: current bar is confirmed AND ART direction is bearish AND previous ART direction is bullish
+Calculation: Signed efficiency = (close − close[signed-efficiency lookback]) / sum(abs(change(close)), signed-efficiency lookback), or 0 when the denominator is 0
+Calculation: Shannon entropy = −(pUp × log2(pUp) + pDown × log2(pDown)), where up and down events count close > previous close and close < previous close over the entropy lookback, each probability is its event count divided by max(total events, minimum event count), and each probability is clamped to the entropy probability bounds
+Calculation: Impact ratio = EMA(guarded absolute log return / max(close × volume, dollar-volume floor) × impact scale, impact lookback) / SMA(EMA(guarded absolute log return / max(close × volume, dollar-volume floor) × impact scale, impact lookback), impact lookback), or the neutral impact ratio when the denominator is not positive; guarded absolute log return is abs(log(close / previous close)) when both closes are positive, otherwise 0
+Calculation: Expansion score = EMA(direction weight × signed efficiency + persistence weight × (1 − Shannon entropy) + clamp((volume / max(SMA(volume, impact lookback), volume-average floor) − 1) × participation weight + (abs(close − open) / max(high − low, minimum price increment)) × (((close − low) / max(high − low, minimum price increment) − pressure midpoint) × pressure scale) × body weight, participation score bounds) − clamp((impact ratio − 1) × liquidity penalty weight, liquidity penalty bounds), score smoothing length)
+Calculation: Expansion direction = positive when expansion score > neutral score boundary, negative when expansion score < −neutral score boundary, otherwise neutral
+Long: Expansion direction is positive
+Short: Expansion direction is negative
+Long: current bar is confirmed AND Expansion direction is positive AND previous Expansion direction is neutral or negative
+Short: current bar is confirmed AND Expansion direction is negative AND previous Expansion direction is neutral or positive

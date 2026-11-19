@@ -1,0 +1,7 @@
+Calculation: FVG = on confirmed chart bars, a bullish zone [high[2], low] when low > high[2] and low - high[2] >= minimum-size parameter × ATR(ATR-lookback parameter), or a bearish zone [high, low[2]] when high < low[2] and low[2] - high >= minimum-size parameter × ATR(ATR-lookback parameter); when the displacement filter is enabled, also require high[1] - low[1] > displacement-multiple parameter × ATR(ATR-lookback parameter). When T1 gaps are enabled, evaluate on chart bars using last completed T1 bars: bullish if low(T1)[1] > high(T1)[3], bearish if high(T1)[1] < low(T1)[3], with the same size filter against chart ATR and no displacement filter.
+Long: A new bullish FVG forms.
+Short: A new bearish FVG forms.
+Long: Inversion is enabled and a currently tracked bearish FVG closes above its top.
+Short: Inversion is enabled and a currently tracked bullish FVG closes below its bottom.
+Long: A currently tracked bearish FVG was inverted by a prior confirmed close above its top, has not been retested or invalidated by a close below its bottom, and a later confirmed bar has low <= its top and close >= its bottom.
+Short: A currently tracked bullish FVG was inverted by a prior confirmed close below its bottom, has not been retested or invalidated by a close above its top, and a later confirmed bar has high >= its bottom and close <= its top.

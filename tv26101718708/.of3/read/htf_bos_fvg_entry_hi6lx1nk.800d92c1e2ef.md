@@ -1,0 +1,7 @@
+Calculation: body/range ratio = abs(close - open) / (high - low) when high > low, otherwise 1
+Long: on chart bars, close crosses above the high of the last completed T1 bar, sampled from T1
+Short: on chart bars, close crosses below the low of the last completed T1 bar, sampled from T1
+Long: while a bullish BOS is active, on a later chart bar, low > high[gap lookback]
+Short: while a bearish BOS is active, on a later chart bar, high < low[gap lookback]
+Long: while a bullish BOS is active, form a bullish FVG on a later chart bar when low > high[gap lookback] and no bullish or bearish FVG is active; its bounds are high[gap lookback] and low. While that FVG remains active, after a later chart bar overlaps its bounds, closes at or below its upper bound, and has body/range ratio < body/range threshold, enter on a subsequent chart bar when close >= touch-bar close + confirmation ticks × minimum tick. The FVG remains active until a new BOS, a close below its lower bound, or entry.
+Short: while a bearish BOS is active, form a bearish FVG on a later chart bar when high < low[gap lookback] and no bullish or bearish FVG is active; its bounds are high and low[gap lookback]. While that FVG remains active, after a later chart bar overlaps its bounds, closes at or above its lower bound, and has body/range ratio < body/range threshold, enter on a subsequent chart bar when close <= touch-bar close - confirmation ticks × minimum tick. The FVG remains active until a new BOS, a close above its upper bound, or entry.

@@ -1,0 +1,15 @@
+Calculation: External structure = on chart bars, update each BOS and CHoCH level to its latest confirmed pivot high(high, its separate pivot-strength parameter, same parameter) or pivot low(low, its separate pivot-strength parameter, same parameter), resetting that level to unbroken. While the external trend is neutral, initialize it once a preferred high and low exist (latest CHoCH level when available, otherwise BOS level): bullish if close is at least their midpoint, bearish otherwise. Then, in order: an unbroken CHoCH high with up source > level while trend is neutral or bearish emits bullish CHoCH and sets trend bullish; an unbroken CHoCH low with down source < level while trend is neutral or bullish emits bearish CHoCH and sets trend bearish; an unbroken BOS high with up source > level while trend is bullish and no bullish CHoCH emitted on that bar emits bullish BOS; an unbroken BOS low with down source < level while trend is bearish and no bearish CHoCH emitted on that bar emits bearish BOS. Each event marks its level broken until replaced. Up source is close or high, and down source is close or low, as selected by the break-confirmation parameter.
+Calculation: Internal breaks = on chart bars, update the latest internal pivot high(high, internal swing-strength parameter, same parameter) and pivot low(low, internal swing-strength parameter, same parameter), resetting each level to unbroken when replaced; an unbroken high emits an upward break when up source > level, and an unbroken low emits a downward break when down source < level, using the selected break-confirmation sources defined above.
+Calculation: Master trend = external trend, except set neutral when the HTF filter is enabled and the external trend is bullish while chart close < EMA(close, HTF EMA-length parameter) on T1 bars, or the external trend is bearish while chart close > that EMA. The EMA is sampled on chart bars with lookahead_off: the last completed T1 bar historically and the still-forming T1 bar in realtime.
+Long: External trend is bullish.
+Short: External trend is bearish.
+Long: HTF filter is enabled, the HTF EMA is available, and chart close > EMA(close, HTF EMA-length parameter) on T1 bars, sampled on chart bars with lookahead_off (last completed T1 bar historically; still-forming T1 bar in realtime).
+Short: HTF filter is enabled, the HTF EMA is available, and chart close <= EMA(close, HTF EMA-length parameter) on T1 bars, sampled on chart bars with lookahead_off (last completed T1 bar historically; still-forming T1 bar in realtime).
+Long: Master trend is bullish.
+Short: Master trend is bearish.
+Long: Bullish CHoCH event.
+Short: Bearish CHoCH event.
+Long: Bullish BOS event.
+Short: Bearish BOS event.
+Long: Internal upward break and master trend is bullish.
+Short: Internal downward break and master trend is bearish.

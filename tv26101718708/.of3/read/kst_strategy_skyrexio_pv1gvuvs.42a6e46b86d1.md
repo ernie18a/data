@@ -1,0 +1,3 @@
+Long: KST(close, four separate ROC lookbacks, four separate smoothing lookbacks) crosses above SMA(KST, signal lookback) AND close > SMMA(hl2, jaw lookback)[jaw lag] AND close > selected moving average(close, filter lookback) AND (choppiness filter disabled OR Choppiness Index(choppiness lookback) < threshold) AND datetime >= trade start time AND datetime <= trade stop time
+Short: KST(close, four separate ROC lookbacks, four separate smoothing lookbacks) crosses below SMA(KST, signal lookback)
+Exit: long, high >= entry-bar close + take-profit multiple * ATR(ATR lookback) on entry bar OR low <= entry-bar low - stop-loss multiple * ATR(ATR lookback) on entry bar

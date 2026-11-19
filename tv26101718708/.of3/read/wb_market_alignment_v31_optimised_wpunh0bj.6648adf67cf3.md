@@ -1,0 +1,19 @@
+Calculation: Bullish chart trend = close > EMA(close, long-term lookback) AND EMA(close, shorter lookback) > EMA(close, long-term lookback)
+Calculation: Bearish chart trend = close < EMA(close, long-term lookback) AND EMA(close, shorter lookback) < EMA(close, long-term lookback)
+Calculation: Bullish higher-timeframe trend = on chart bars, last completed T1 close > EMA(close, higher-timeframe lookback) calculated on T1 bars and carried from the last completed T1 bar
+Calculation: Bearish higher-timeframe trend = on chart bars, last completed T1 close < EMA(close, higher-timeframe lookback) calculated on T1 bars and carried from the last completed T1 bar
+Calculation: Long higher-timeframe pass = higher-timeframe filter disabled OR bullish higher-timeframe trend
+Calculation: Short higher-timeframe pass = higher-timeframe filter disabled OR bearish higher-timeframe trend
+Calculation: Long VWAP pass = VWAP filter disabled OR close > session VWAP(hlc3)
+Calculation: Short VWAP pass = VWAP filter disabled OR close < session VWAP(hlc3)
+Calculation: EMA zone touch = low <= EMA(close, shorter lookback) + ATR(ATR lookback) * pullback tolerance AND high >= EMA(close, shorter lookback) - ATR(ATR lookback) * pullback tolerance
+Calculation: Bullish EMA reclaim = EMA zone touch AND close > EMA(close, shorter lookback)
+Calculation: Bearish EMA rejection = EMA zone touch AND close < EMA(close, shorter lookback)
+Calculation: ATR ratio = ATR(ATR lookback) / SMA(ATR(ATR lookback), ATR baseline lookback), when the baseline is positive
+Calculation: Relative volume = volume / SMA(volume, volume-average lookback)
+Calculation: Long setup score = one point for each true condition among: bullish chart trend; long higher-timeframe pass; long VWAP pass; RSI filter disabled OR RSI(close, RSI lookback) >= long RSI threshold; bullish EMA reclaim; EMA-slope requirement disabled OR EMA(close, shorter lookback) > EMA(close, shorter lookback)[1]; ATR filter disabled OR ATR ratio is available and between its separate lower and upper thresholds, inclusive; volume filter disabled OR volume or its positive average is unavailable OR relative volume >= minimum relative-volume threshold
+Calculation: Short setup score = one point for each true condition among: bearish chart trend; short higher-timeframe pass; short VWAP pass; RSI filter disabled OR RSI(close, RSI lookback) <= short RSI threshold; bearish EMA rejection; EMA-slope requirement disabled OR EMA(close, shorter lookback) < EMA(close, shorter lookback)[1]; ATR filter disabled OR ATR ratio is available and between its separate lower and upper thresholds, inclusive; volume filter disabled OR volume or its positive average is unavailable OR relative volume >= minimum relative-volume threshold
+Long: long setup score >= minimum score AND bullish chart trend AND bullish EMA reclaim AND (directional-candle requirement disabled OR close > open) AND chart bar is confirmed AND (session filter disabled OR chart bar is within the configured session and timezone) AND manual news blackout is inactive AND (no previous long or short signal OR at least the cooldown number of chart bars have elapsed since the most recent signal)
+Short: short setup score >= minimum score AND bearish chart trend AND bearish EMA rejection AND (directional-candle requirement disabled OR close < open) AND chart bar is confirmed AND (session filter disabled OR chart bar is within the configured session and timezone) AND manual news blackout is inactive AND (no previous long or short signal OR at least the cooldown number of chart bars have elapsed since the most recent signal)
+Long: long setup score >= minimum score AND bullish chart trend AND long higher-timeframe pass AND long VWAP pass
+Short: short setup score >= minimum score AND bearish chart trend AND short higher-timeframe pass AND short VWAP pass

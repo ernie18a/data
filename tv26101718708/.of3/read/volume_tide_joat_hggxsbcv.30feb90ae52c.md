@@ -1,0 +1,3 @@
+Calculation: pool pressure delta = cumulative sum over each live pool’s bars of volume × max(min(high, pool high) − max(low, pool low), 0) / (high − low) × (2 × (close − low) / (high − low) − 1), with zero contribution when high equals low; each pool starts when SMA(volume, shorter lookback) / SMA(volume, longer lookback) reaches the surge threshold, expands across consecutive surge bars, and expires after its lifetime parameter
+Long: pool pressure delta >= 0
+Short: pool pressure delta < 0

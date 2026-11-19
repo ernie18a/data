@@ -1,0 +1,24 @@
+Calculation: SafeDivide(numerator, denominator, fallback) = numerator / denominator when abs(denominator) > denominator tolerance; otherwise fallback.
+Calculation: Return = log(close / close[1]) when close[1] is nonzero; otherwise 0.
+Calculation: Return z-score = SafeDivide(Return - SMA(Return, basis/return lookback), StDev(Return, basis/return lookback), 0).
+Calculation: Bullish state condition = EMA(close, shorter trend lookback) > EMA(close, longer trend lookback) AND close > EMA(close, basis/return lookback) AND return z-score > lower return-z threshold.
+Calculation: Bearish state condition = EMA(close, shorter trend lookback) < EMA(close, longer trend lookback) AND close < EMA(close, basis/return lookback) AND return z-score < upper return-z threshold.
+Calculation: State = bullish when the bullish state condition is true; otherwise bearish when the bearish state condition is true; otherwise neutral.
+Calculation: Efficiency = clamp(abs(close - close[efficiency lookback]) / (SMA(abs(close - close[1]), efficiency lookback) * efficiency lookback), 0, 1), using SafeDivide with fallback 0.
+Calculation: Adaptive basis = EMA(close, basis/return lookback) on initialization; otherwise prior adaptive basis + clamp(alpha base + efficiency * alpha sensitivity, alpha minimum, alpha maximum) * (close - prior adaptive basis).
+Calculation: Volatility rank = PercentRank(ATR(ATR lookback) / close * 100, volatility rank lookback), using ATR percent 0 when close is zero and rank 50 when unavailable.
+Calculation: Transition probability from state A to state B = SafeDivide(SMA(indicator(previous state = A AND current state = B), transition lookback), SMA(indicator(previous state = A), transition lookback), a separate fallback parameter for that transition); previous state defaults to neutral when unavailable. Use for bull-to-bull, bull-to-bear, bear-to-bull, bear-to-bear, neutral-to-bull, and neutral-to-bear transitions.
+Calculation: Bull probability = transition probability to bull from the current state: bull-to-bull in bullish state, bear-to-bull in bearish state, or neutral-to-bull in neutral state.
+Calculation: Bear probability = transition probability to bear from the current state: bear-to-bear in bearish state, bull-to-bear in bullish state, or neutral-to-bear in neutral state.
+Calculation: Bull percentage = clamp(bull probability * 100, 0, 100).
+Calculation: Bear percentage = clamp(bear probability * 100, 0, 100).
+Calculation: Probability spread = abs(bull percentage - bear percentage).
+Calculation: Directional continuation percentage = clamp((bull probability in bullish state, or bear probability in bearish state) * 100, 0, 100).
+Calculation: Corridor width = ATR(ATR lookback) * (base width factor + volatility rank / 100) * (neutral width factor in neutral state, otherwise directional width factor) * (base probability factor + abs(directional continuation percentage - probability midpoint) / probability expansion scale).
+Calculation: Upper rail = adaptive basis + corridor width; lower rail = adaptive basis - corridor width.
+Long: (signal confirmation disabled OR chart bar confirmed) AND bullish state AND bull percentage >= continuation probability threshold AND probability spread >= minimum probability spread AND (HTF filter disabled OR close > EMA(close, HTF EMA lookback, T1, last completed T1 bar), sampled on chart bars) AND close crosses above adaptive basis.
+Long: (signal confirmation disabled OR chart bar confirmed) AND bullish state AND bull percentage >= continuation probability threshold AND probability spread >= minimum probability spread AND (HTF filter disabled OR close > EMA(close, HTF EMA lookback, T1, last completed T1 bar), sampled on chart bars) AND close > upper rail AND close[1] <= upper rail[1].
+Short: (signal confirmation disabled OR chart bar confirmed) AND bearish state AND bear percentage >= continuation probability threshold AND probability spread >= minimum probability spread AND (HTF filter disabled OR close < EMA(close, HTF EMA lookback, T1, last completed T1 bar), sampled on chart bars) AND close crosses below adaptive basis.
+Short: (signal confirmation disabled OR chart bar confirmed) AND bearish state AND bear percentage >= continuation probability threshold AND probability spread >= minimum probability spread AND (HTF filter disabled OR close < EMA(close, HTF EMA lookback, T1, last completed T1 bar), sampled on chart bars) AND close < lower rail AND close[1] >= lower rail[1].
+Exit: long, (signal confirmation disabled OR chart bar confirmed) AND (state is not bullish OR close < lower rail OR bear percentage > bull percentage + minimum probability spread).
+Exit: short, (signal confirmation disabled OR chart bar confirmed) AND (state is not bearish OR close > upper rail OR bull percentage > bear percentage + minimum probability spread).

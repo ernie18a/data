@@ -1,0 +1,2 @@
+Long: low > high[2] OR low <= the top of any bullish FVG created on this or a prior bar, where its top is the creation-bar low and its bottom is the high two bars before creation, and not fully mitigated before this bar
+Short: high < low[2] OR high >= the bottom of any bearish FVG created on this or a prior bar, where its bottom is the creation-bar high and its top is the low two bars before creation, and not fully mitigated before this bar

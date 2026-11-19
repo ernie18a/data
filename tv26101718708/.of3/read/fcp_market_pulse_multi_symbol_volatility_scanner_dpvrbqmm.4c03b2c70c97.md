@@ -1,0 +1,4 @@
+Calculation: range_atr_ratio = (high - low) / ATR(ATR lookback)[1], computed on T1 bars using the current T1 bar and the last completed T1 bar for ATR; T1 values are returned to chart bars with lookahead_off
+Calculation: percent_change = if open = 0 then 0 else 100 * (close - open) / open, computed on the current T1 bar; T1 values are returned to chart bars with lookahead_off
+Long: T1 data is available AND datetime(chart bar) - datetime(T1 bar) <= freshness parameter * duration(T1) AND range_atr_ratio >= volatility threshold AND percent_change >= 0
+Short: T1 data is available AND datetime(chart bar) - datetime(T1 bar) <= freshness parameter * duration(T1) AND range_atr_ratio >= volatility threshold AND percent_change < 0

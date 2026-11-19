@@ -1,0 +1,3 @@
+Calculation: Volume zone = [high, low] of bars where volume > SMA(volume, lookback) × volume multiplier
+Long: Close crosses above the high of an active volume zone when its age is less than the breakout-age limit and its early signal has not fired, OR when its age is at least the breakout-age limit
+Short: Close crosses below the low of an active volume zone when its age is less than the breakout-age limit and its early signal has not fired, OR when its age is at least the breakout-age limit

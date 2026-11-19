@@ -1,0 +1,13 @@
+Calculation: Trend factor = (trend step parameter if EMA(close, short lookback) > EMA(close, medium lookback), otherwise negative trend step parameter) + (trend step parameter if EMA(close, medium lookback) > EMA(close, long lookback), otherwise negative trend step parameter), with short < medium < long lookbacks
+Calculation: Momentum factor = clamp(RSI contribution coefficient × (RSI(close, common short indicator lookback) − RSI midpoint parameter) / RSI scale parameter + MACD contribution coefficient × MACD histogram(close, fast lookback, slower lookback, signal lookback) / ATR(close, common short indicator lookback), normalized negative-to-positive unit range)
+Calculation: HTF factor = positive unit score if close on T1 > EMA(close, medium lookback, T1), otherwise negative unit score; requested on chart bars with lookahead off, using the still-forming T1 bar in real time and the last completed T1 value historically until the final chart bar of its interval
+Calculation: Volume-flow factor = clamp(EMA(sign(close − open) × volume, common short indicator lookback) / (SMA(volume, short lookback) + positive offset parameter), normalized negative-to-positive unit range)
+Calculation: Mean-reversion factor = clamp(−(close − VWAP((high + low + close) / 3)) / (mean-reversion scale parameter × ATR(close, common short indicator lookback)), normalized negative-to-positive unit range)
+Calculation: Bias = clamp(EMA((trend weight × Trend factor + momentum weight × Momentum factor + HTF weight × HTF factor + volume-flow weight × Volume-flow factor + mean-reversion weight × Mean-reversion factor) / (sum of weights if positive, otherwise a positive fallback denominator), bias smoothing lookback), normalized negative-to-positive unit range)
+Calculation: Sideways = absolute Bias < neutral dead-zone parameter OR (ADX filter enabled AND ADX(common short indicator lookback, common short indicator lookback) < ADX threshold parameter)
+Long: Bias is positive AND NOT Sideways
+Short: Bias is nonpositive AND NOT Sideways
+Long: Bias is positive AND NOT Sideways AND NOT (Bias[1] is positive AND NOT Sideways[1])
+Short: Bias is negative AND NOT Sideways AND NOT (Bias[1] is negative AND NOT Sideways[1])
+Long: Bias is positive AND absolute Bias ≥ strong-conviction threshold parameter AND NOT Sideways AND NOT (absolute Bias[1] ≥ strong-conviction threshold parameter AND NOT Sideways[1])
+Short: Bias is nonpositive AND absolute Bias ≥ strong-conviction threshold parameter AND NOT Sideways AND NOT (absolute Bias[1] ≥ strong-conviction threshold parameter AND NOT Sideways[1])

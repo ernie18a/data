@@ -1,0 +1,14 @@
+Long: close > EMA(close, lookback)
+Short: close < EMA(close, lookback)
+Long: close > Open(T2, current still-forming period, read on chart bars)
+Short: close < Open(T2, current still-forming period, read on chart bars)
+Long: close > VWAP(hlc3, volume, T2, current still-forming period, accumulated on chart bars)
+Short: close < VWAP(hlc3, volume, T2, current still-forming period, accumulated on chart bars)
+Calculation: T1 VWAP upper band = VWAP(hlc3, volume, T1, current still-forming period, accumulated on chart bars) + VWAP standard deviation(hlc3, volume, T1, current still-forming period, accumulated on chart bars) * VWAP band multiplier
+Calculation: T1 VWAP lower band = VWAP(hlc3, volume, T1, current still-forming period, accumulated on chart bars) - VWAP standard deviation(hlc3, volume, T1, current still-forming period, accumulated on chart bars) * VWAP band multiplier
+Long: T1 VWAP lower band > Open(T1, current still-forming period, read on chart bars) * (1 + open band percent / 100) OR (VWAP(hlc3, volume, T1, current still-forming period, accumulated on chart bars) > Open(T1, current still-forming period, read on chart bars) AND T1 VWAP lower band <= Open(T1, current still-forming period, read on chart bars) * (1 + open band percent / 100))
+Short: T1 VWAP upper band < Open(T1, current still-forming period, read on chart bars) * (1 - open band percent / 100) OR (VWAP(hlc3, volume, T1, current still-forming period, accumulated on chart bars) < Open(T1, current still-forming period, read on chart bars) AND T1 VWAP upper band >= Open(T1, current still-forming period, read on chart bars) * (1 - open band percent / 100))
+Long: close > VWAP(hlc3, volume, T1, current still-forming period, accumulated on chart bars) AND close > Open(T1, current still-forming period, read on chart bars) AND NOT (close[1] > VWAP(hlc3, volume, T1, prior chart bar's period, accumulated on chart bars)[1] AND close[1] > Open(T1, prior chart bar's period, read on chart bars)[1]) AND more than one chart bar since the previous long or short signal
+Short: close < VWAP(hlc3, volume, T1, current still-forming period, accumulated on chart bars) AND close < Open(T1, current still-forming period, read on chart bars) AND NOT (close[1] < VWAP(hlc3, volume, T1, prior chart bar's period, accumulated on chart bars)[1] AND close[1] < Open(T1, prior chart bar's period, read on chart bars)[1]) AND more than one chart bar since the previous long or short signal
+Exit: long, current chart bar touches the high of the previous completed T1 period for the first time in the current T1 period
+Exit: short, current chart bar touches the low of the previous completed T1 period for the first time in the current T1 period

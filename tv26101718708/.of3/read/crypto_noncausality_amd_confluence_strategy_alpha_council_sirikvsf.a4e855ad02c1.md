@@ -1,0 +1,5 @@
+Calculation: Entry regime = (HMM enabled AND HMM state is chop or calm) OR (HMM disabled AND Hurst exponent(high, low, ATR(1), lookback) < Hurst threshold)
+Long: low < session A low AND close > session A low AND during session B AND Laguerre RSI(close, gamma) < lower threshold AND Entry regime AND change(secondary close) < 0
+Short: high > session A high AND close < session A high AND during session B AND Laguerre RSI(close, gamma) > upper threshold AND Entry regime AND change(secondary close) > 0
+Exit: long, close >= entry price * (1 + take-profit threshold) AND close < EMA(close, fast lookback) OR close <= entry price * (1 - logical stop percentage) OR low <= entry price * (1 - catastrophic wick stop percentage)
+Exit: short, close <= entry price * (1 - take-profit threshold) AND close > EMA(close, fast lookback) OR close >= entry price * (1 + logical stop percentage) OR high >= entry price * (1 + catastrophic wick stop percentage)

@@ -1,0 +1,7 @@
+Calculation: Weighted EMA center = EMA(sum(i=1..6, EMA(close, Li) * max(abs(EMA(close, Li) - EMA(close, Li)[W]), minimum price increment)) / sum(i=1..6, max(abs(EMA(close, Li) - EMA(close, Li)[W]), minimum price increment)), S), on chart bars, where L1 < L2 < L3 < L4 < L5 < L6 and W and S are separate parameters
+Long: close > Weighted EMA center AND Weighted EMA center > Weighted EMA center[Q], on chart bars
+Short: close < Weighted EMA center AND Weighted EMA center < Weighted EMA center[Q], on chart bars
+Long: close > Weighted EMA center AND Weighted EMA center > Weighted EMA center[Q] AND close > Pivot Point(high(T1, last completed bar), low(T1, last completed bar), close(T1, last completed bar)), sampled on chart bars
+Short: close < Weighted EMA center AND Weighted EMA center < Weighted EMA center[Q] AND close <= Pivot Point(high(T1, last completed bar), low(T1, last completed bar), close(T1, last completed bar)), sampled on chart bars
+Long: close crosses above Pivot Point(high(T1, last completed bar), low(T1, last completed bar), close(T1, last completed bar)), sampled on chart bars
+Short: close crosses below Pivot Point(high(T1, last completed bar), low(T1, last completed bar), close(T1, last completed bar)), sampled on chart bars

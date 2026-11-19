@@ -1,0 +1,6 @@
+Long: close > Parabolic SAR(SAR start, SAR increment, SAR maximum) on chart bars
+Short: close <= Parabolic SAR(SAR start, SAR increment, SAR maximum) on chart bars
+Long: close > Parabolic SAR(SAR start, SAR increment, SAR maximum) AND close[1] <= Parabolic SAR(SAR start, SAR increment, SAR maximum)[1] AND T1 close > Parabolic SAR(the same SAR parameters, calculated on T1 bars and sampled onto chart bars with lookahead off; current T1 bar in real time, completed T1 value historically)
+Short: close <= Parabolic SAR(SAR start, SAR increment, SAR maximum) AND close[1] > Parabolic SAR(SAR start, SAR increment, SAR maximum)[1] AND T1 close <= Parabolic SAR(the same SAR parameters, calculated on T1 bars and sampled onto chart bars with lookahead off; current T1 bar in real time, completed T1 value historically)
+Long: close > Parabolic SAR(SAR start, SAR increment, SAR maximum) AND close[1] <= Parabolic SAR(SAR start, SAR increment, SAR maximum)[1] AND Lowest(low, sweep lookback) < Lowest(low[sweep lookback], sweep lookback)
+Short: close <= Parabolic SAR(SAR start, SAR increment, SAR maximum) AND close[1] > Parabolic SAR(SAR start, SAR increment, SAR maximum)[1] AND Highest(high, sweep lookback) > Highest(high[sweep lookback], sweep lookback)

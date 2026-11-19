@@ -1,0 +1,2 @@
+Long: SMT display enabled AND traded instrument low on T1 < lowest traded instrument low over the preceding P1 bars on T1 AND ES low on T1 > lowest ES low over the preceding P1 bars on T1
+Short: SMT display enabled AND traded instrument high on T1 > highest traded instrument high over the preceding P1 bars on T1 AND ES high on T1 < highest ES high over the preceding P1 bars on T1

@@ -1,0 +1,7 @@
+Calculation: Adaptive lookback = clamp(round(base period × ATR(high, low, close, longer ATR lookback) / ATR(high, low, close, shorter ATR lookback)), minimum lookback, maximum lookback)
+Calculation: Regression center(k) = linear regression fit of selected source over the current adaptive-lookback window, evaluated k bars after its oldest bar
+Calculation: Channel deviation = population standard deviation of selected source over the current adaptive-lookback window
+Calculation: Lower signal band(k) = Regression center(k) − Channel deviation × signal-band multiplier
+Calculation: Upper signal band(k) = Regression center(k) + Channel deviation × signal-band multiplier
+Long: abs(Regression center(adaptive lookback − 1) − Regression center(0)) < Channel deviation × flatness threshold AND there is an integer k from 1 through adaptive lookback − 1 such that close[adaptive lookback − k] ≥ Lower signal band(k − 1) AND close[adaptive lookback − 1 − k] < Lower signal band(k)
+Short: abs(Regression center(adaptive lookback − 1) − Regression center(0)) < Channel deviation × flatness threshold AND there is an integer k from 1 through adaptive lookback − 1 such that close[adaptive lookback − k] ≤ Upper signal band(k − 1) AND close[adaptive lookback − 1 − k] > Upper signal band(k)

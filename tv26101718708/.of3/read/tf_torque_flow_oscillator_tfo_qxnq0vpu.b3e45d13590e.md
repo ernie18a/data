@@ -1,0 +1,3 @@
+Calculation: TFO = EMA(flow, TFO smoothing lookback), where flow starts at torque and, when torque is valid, equals exp(-1 / flow memory) * flow[1] + (1 - exp(-1 / flow memory)) * torque; otherwise flow carries forward; torque = (body * body weight + (lower wick - upper wick) * wick weight) * volume mass; body = (close - open) / ATR(ATR lookback)[1]; upper wick = (high - max(open, close)) / ATR(ATR lookback)[1]; lower wick = (min(open, close) - low) / ATR(ATR lookback)[1]; volume mass = 1 when volume is missing, 0 when volume is zero, sqrt(clamp(volume / median(volume[1], volume lookback), 0.25, 4)) when volume and its lagged median are positive, and undefined otherwise.
+Long: TFO >= 0
+Short: TFO < 0

@@ -1,0 +1,7 @@
+Calculation: Absolute volume score = if stdev(volume, lookback) > 0 then (volume - SMA(volume, lookback)) / stdev(volume, lookback) else 0
+Calculation: Volume acceleration score = if stdev(volume, lookback) > 0 then (volume - volume[1]) / stdev(volume, lookback) else 0
+Calculation: Absolute volume level = Exceptional if absolute volume score >= max(exceptional absolute threshold, max(very-high absolute threshold, high absolute threshold + threshold-separation parameter) + threshold-separation parameter), else Very High if absolute volume score >= max(very-high absolute threshold, high absolute threshold + threshold-separation parameter), else High if absolute volume score >= high absolute threshold, else Normal
+Calculation: Acceleration volume level = Exceptional if volume acceleration score >= max(exceptional acceleration threshold, max(very-high acceleration threshold, high acceleration threshold + threshold-separation parameter) + threshold-separation parameter), else Very High if volume acceleration score >= max(very-high acceleration threshold, high acceleration threshold + threshold-separation parameter), else High if volume acceleration score >= high acceleration threshold, else Normal
+Calculation: Volume level = absolute volume level in absolute-only mode, acceleration volume level in acceleration-only mode, or the higher of both levels in hybrid mode, ordered Normal < High < Very High < Exceptional
+Long: close > open AND volume level > Normal
+Short: close < open AND volume level > Normal

@@ -1,0 +1,12 @@
+Calculation: Momentum(source, lookback, smoothing) = EMA(LinReg(source - (((Highest(high, lookback) + Lowest(low, lookback)) / 2 + SMA(close, lookback)) / 2), lookback, 0), smoothing)
+Calculation: SqueezeOff = Bollinger lower band (SMA(source, BB lookback) - BB multiplier * StdDev(source, BB lookback)) < Keltner lower band (SMA(source, KC lookback) - KC multiplier * SMA(KC range, KC lookback)) AND Bollinger upper band (SMA(source, BB lookback) + BB multiplier * StdDev(source, BB lookback)) > Keltner upper band (SMA(source, KC lookback) + KC multiplier * SMA(KC range, KC lookback)); KC range = True Range when enabled, otherwise high - low
+Long: Momentum(source, momentum lookback, smoothing lookback) > 0
+Short: Momentum(source, momentum lookback, smoothing lookback) < 0
+Long: SqueezeOff AND Momentum(source, momentum lookback, smoothing lookback) > 0 AND (Momentum(source, momentum lookback, smoothing lookback) > Momentum(source, momentum lookback, smoothing lookback)[1] OR Momentum(source, momentum lookback, smoothing lookback) < Momentum(source, momentum lookback, smoothing lookback)[1])
+Short: SqueezeOff AND Momentum(source, momentum lookback, smoothing lookback) < 0 AND (Momentum(source, momentum lookback, smoothing lookback) > Momentum(source, momentum lookback, smoothing lookback)[1] OR Momentum(source, momentum lookback, smoothing lookback) < Momentum(source, momentum lookback, smoothing lookback)[1])
+Long: SqueezeOff AND Momentum(source, momentum lookback, smoothing lookback) > 0 AND Momentum(source, momentum lookback, smoothing lookback) > Momentum(source, momentum lookback, smoothing lookback)[1]
+Short: SqueezeOff AND Momentum(source, momentum lookback, smoothing lookback) < 0 AND Momentum(source, momentum lookback, smoothing lookback) < Momentum(source, momentum lookback, smoothing lookback)[1]
+Long: Momentum(close, momentum lookback, smoothing lookback, T1), calculated on T1 bars using the current/forming T1 bar with lookahead off and returned to chart bars, > 0
+Short: Momentum(close, momentum lookback, smoothing lookback, T1), calculated on T1 bars using the current/forming T1 bar with lookahead off and returned to chart bars, < 0
+Long: close > EMA(close, EMA lookback)
+Short: close < EMA(close, EMA lookback)

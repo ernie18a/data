@@ -1,0 +1,8 @@
+Calculation: bullish bias = Donchian lower band(N) > T1 Donchian midpoint(N) AND within the configured trading window
+Calculation: bearish bias = Donchian upper band(N) < T1 Donchian midpoint(N) AND within the configured trading window
+Long: bullish bias AND ((entry mode is market or stop-limit AND high crosses above the prior Donchian upper band(N)) OR entry mode is stop OR (entry mode is limit AND high > Donchian midpoint(N)))
+Short: bearish bias AND ((entry mode is market or stop-limit AND low crosses below the prior Donchian lower band(N)) OR entry mode is stop OR (entry mode is limit AND low < Donchian midpoint(N)))
+Calculation: long profit target = if there is no long position, Donchian upper band(N) + R × (Donchian upper band(N) − Donchian lower band(N)); otherwise, if prior high > prior long profit target, prior long profit target + R × (Donchian upper band(N) − Donchian lower band(N)); otherwise, prior long profit target
+Calculation: short profit target = if there is no short position, Donchian lower band(N) − R × (Donchian upper band(N) − Donchian lower band(N)); otherwise, if prior low < prior short profit target, prior short profit target − R × (Donchian upper band(N) − Donchian lower band(N)); otherwise, prior short profit target
+Exit: Long, bearish bias OR (exit mode is market AND low crosses below the prior Donchian lower band(N) AND NOT bullish bias) OR (bullish bias AND initial profit taking is enabled AND high ≥ long profit target)
+Exit: Short, bullish bias OR (exit mode is market AND high crosses above the prior Donchian upper band(N) AND NOT bearish bias) OR (bearish bias AND initial profit taking is enabled AND low ≤ short profit target)

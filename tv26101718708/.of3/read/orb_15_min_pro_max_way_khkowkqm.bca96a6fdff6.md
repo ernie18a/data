@@ -1,0 +1,17 @@
+Calculation: opening-range high = maximum chart-bar high during the opening-range window
+Calculation: opening-range low = minimum chart-bar low during the opening-range window
+Calculation: opening-range midpoint = (opening-range high + opening-range low) / 2
+Calculation: opening-range width = opening-range high - opening-range low
+Calculation: opening-range average volume = sum of chart-bar volume during the opening-range window / number of chart bars in that window
+Calculation: prior opening-range midpoint = midpoint of the prior completed opening range
+Calculation: confirmation close = last completed T1 close, read on chart bars only when the chart timeframe is shorter than T1, T1-close confirmation is selected, and a new T1 close is available; otherwise chart-bar close
+Long: Opening range complete AND chart bar inside the trading window AND confirmation close > opening-range high AND no prior long breakout that day AND (if one-breakout-per-day is enabled, no prior breakout of either direction that day) AND (volume filter disabled OR chart-bar volume >= volume multiplier * opening-range average volume) AND (VWAP filter disabled OR close > session VWAP(hlc3)) AND (EMA filter disabled OR close > EMA(close, EMA lookback)) AND (range filter disabled OR opening-range width >= minimum range-to-ATR ratio * ATR(ATR lookback, T2, last completed bar) AND opening-range width <= maximum range-to-ATR ratio * ATR(ATR lookback, T2, last completed bar))
+Short: Opening range complete AND chart bar inside the trading window AND confirmation close < opening-range low AND no prior short breakout that day AND (if one-breakout-per-day is enabled, no prior breakout of either direction that day) AND (volume filter disabled OR chart-bar volume >= volume multiplier * opening-range average volume) AND (VWAP filter disabled OR close < session VWAP(hlc3)) AND (EMA filter disabled OR close < EMA(close, EMA lookback)) AND (range filter disabled OR opening-range width >= minimum range-to-ATR ratio * ATR(ATR lookback, T2, last completed bar) AND opening-range width <= maximum range-to-ATR ratio * ATR(ATR lookback, T2, last completed bar))
+Long: Retest signals enabled AND opening range complete AND chart bar inside the trading window AND a long breakout occurred today AND no long failure or long retest occurred today AND low <= opening-range high AND close > opening-range high
+Short: Retest signals enabled AND opening range complete AND chart bar inside the trading window AND a short breakout occurred today AND no short failure or short retest occurred today AND high >= opening-range low AND close < opening-range low
+Long: Failed-breakout signals enabled AND opening range complete AND a short breakout occurred today AND no short failure occurred today AND the active breakout direction is short AND confirmation close is strictly between opening-range low and opening-range high
+Short: Failed-breakout signals enabled AND opening range complete AND a long breakout occurred today AND no long failure occurred today AND the active breakout direction is long AND confirmation close is strictly between opening-range low and opening-range high
+Long: Opening range complete AND close > opening-range midpoint
+Short: Opening range complete AND close <= opening-range midpoint
+Long: Opening range just completed AND (no prior completed opening range OR opening-range midpoint >= prior opening-range midpoint)
+Short: Opening range just completed AND prior completed opening range exists AND opening-range midpoint < prior opening-range midpoint

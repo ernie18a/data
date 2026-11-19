@@ -1,0 +1,4 @@
+Calculation: RTH VWAP = sum(source price * volume since RTH start) / sum(volume since RTH start)
+Calculation: RTH volume-weighted standard deviation = sqrt(max(sum(source price^2 * volume since RTH start) / sum(volume since RTH start) - RTH VWAP^2, 0))
+Long: close crosses above RTH VWAP OR close crosses above RTH VWAP + RTH volume-weighted standard deviation * second-band multiplier OR close crosses above RTH VWAP + RTH volume-weighted standard deviation * third-band multiplier
+Short: close crosses below RTH VWAP OR close crosses below RTH VWAP - RTH volume-weighted standard deviation * second-band multiplier OR close crosses below RTH VWAP - RTH volume-weighted standard deviation * third-band multiplier

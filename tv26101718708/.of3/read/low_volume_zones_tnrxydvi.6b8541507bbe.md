@@ -1,0 +1,2 @@
+Long: PivotLow(low, left lookback, right lookback, selected timeframe—chart timeframe or T1, bar still forming) != NA
+Short: PivotHigh(high, left lookback, right lookback, selected timeframe—chart timeframe or T1, bar still forming) != NA

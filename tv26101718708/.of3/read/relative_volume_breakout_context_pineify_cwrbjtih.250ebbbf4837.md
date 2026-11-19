@@ -1,0 +1,11 @@
+Calculation: Same-slot volume Z = clamp((current volume − exponentially weighted mean of prior completed volumes in the same elapsed-session slot) / max(their exponentially weighted standard deviation, mean × dispersion-floor fraction), lower Z bound, upper Z bound)
+Calculation: Same-slot baseline ready = the current completed chart bar is within the configured session on an eligible intraday interval, volume is nonnegative, and the same slot has at least the minimum number of prior observations with positive mean and positive floored dispersion
+Calculation: Active tracked breakout = the most recent confirmed qualifying breakout with its crossed prior-range rail frozen, active while its age is within the tracking-bar limit and completed closes remain beyond that rail; age advances once per subsequent completed chart bar
+Long: On a completed chart bar, same-slot baseline ready, no active tracked breakout at bar start, close > highest(high, range lookback)[1], close[1] <= highest(high, range lookback)[1], close − highest(high, range lookback)[1] >= minimum ATR fraction × ATR(ATR lookback), and same-slot volume Z >= volume Z threshold
+Short: On a completed chart bar, same-slot baseline ready, no active tracked breakout at bar start, close < lowest(low, range lookback)[1], close[1] >= lowest(low, range lookback)[1], lowest(low, range lookback)[1] − close >= minimum ATR fraction × ATR(ATR lookback), and same-slot volume Z >= volume Z threshold
+Long: Same-slot baseline ready, ATR(ATR lookback) > 0, close > highest(high, range lookback)[1], and same-slot volume Z > 0
+Short: Same-slot baseline ready, ATR(ATR lookback) > 0, close < lowest(low, range lookback)[1], and same-slot volume Z > 0
+Long: An active tracked breakout is bullish and (same-slot baseline is not ready or same-slot volume Z > decay Z threshold)
+Short: An active tracked breakout is bearish and (same-slot baseline is not ready or same-slot volume Z > decay Z threshold)
+Exit: long, a bullish tracked breakout was active before the completed bar and (close <= its frozen rail or its age exceeds the tracking-bar limit)
+Exit: short, a bearish tracked breakout was active before the completed bar and (close >= its frozen rail or its age exceeds the tracking-bar limit)

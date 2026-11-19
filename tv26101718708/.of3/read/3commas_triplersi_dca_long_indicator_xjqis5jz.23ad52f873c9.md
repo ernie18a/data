@@ -1,0 +1,7 @@
+Calculation: base entry price = close on the base-entry bar
+Calculation: cumulative safety-order deviation(n) = first safety-order step percentage × sum(step scale^i, i=0..n−1)
+Calculation: safety-order price(n) = base entry price × (1 − cumulative safety-order deviation(n))
+Calculation: average entry price = (base-order volume + sum(first safety-order volume × volume scale^(k−1), k=1..number of filled safety orders)) / (base-order volume / base entry price + sum((first safety-order volume × volume scale^(k−1)) / min(open on fill bar k, safety-order price(k)), k=1..number of filled safety orders))
+Long: position side is flat AND, on chart bars, RSI(close, entry RSI lookback) from the last completed T1 bar crosses above the entry RSI threshold
+Long: position side is long AND number of filled safety orders < maximum safety orders AND low <= safety-order price(number of filled safety orders + 1) AND (on chart bars, RSI(close, SO1 RSI lookback) from the last completed T2 bar crosses above the SO1 RSI threshold OR, on chart bars, RSI(close, SO2 RSI lookback) from the last completed T1 bar crosses above the SO2 RSI threshold)
+Exit: long, high >= average entry price × (1 + take-profit percentage)

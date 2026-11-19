@@ -1,0 +1,21 @@
+Calculation: Effective lookback scale = configured alternate multiplier when enabled, otherwise 1; multiply each MA lookback by this scale and calculate all MAs on chart bars.
+Calculation: Selected MA(source, lookback, type, gamma) = the selected SMA, EMA, WMA, VWMA, SMMA, DEMA, TEMA, Laguerre MA, Hull MA, zero-lag EMA, triangular MA, or Super Smoother; gamma applies to Laguerre MA.
+Calculation: Fast lower MA = selected fast MA type(close, fast lower lookback × effective lookback scale, fast lower gamma).
+Calculation: Fast upper MA = selected fast MA type(close, fast upper lookback × effective lookback scale, fast upper gamma).
+Calculation: Slow lower MA = selected slow MA type(close, slow lower lookback × effective lookback scale, slow lower gamma).
+Calculation: Slow upper MA = selected slow MA type(close, slow upper lookback × effective lookback scale, slow upper gamma).
+Calculation: Fast average = (fast lower MA + fast upper MA) / 2.
+Calculation: Slow average = (slow lower MA + slow upper MA) / 2.
+Calculation: Fast-slow spread = fast average − slow average.
+Calculation: Fast-ribbon spread = fast lower MA − fast upper MA.
+Calculation: Slow-ribbon spread = slow lower MA − slow upper MA.
+Calculation: Adjusted high = max(open, close) when Renko mode is enabled, otherwise high.
+Calculation: Adjusted low = min(open, close) when Renko mode is enabled, otherwise low.
+Calculation: Entry reference price = close on the signal-entry bar.
+Calculation: Long peak = highest adjusted high from the long signal-entry bar through the current bar, reset at entry.
+Calculation: Short trough = lowest adjusted low from the short signal-entry bar through the current bar, reset at entry.
+Calculation: Effective trailing-profit rate = the lower of the trailing-profit rate and take-profit rate.
+Long: Within the configured test period, on a confirmed or historical bar, while flat, with no exit signal on the preceding bar, and when the configured order setting permits long entry; the configured direction mapping maps a bullish setup to long (or, when reversed, a bearish setup to long). The setup is the first bar on which all three spreads have been positive and increasing for two consecutive bars: each spread > 0 AND each spread > its value one bar ago AND each spread one bar ago > 0 AND each spread one bar ago > its value two bars ago; this conjunction was false on the preceding bar.
+Short: Within the configured test period, on a confirmed or historical bar, while flat, with no exit signal on the preceding bar, and when the configured order setting permits short entry; the configured direction mapping maps a bearish setup to short (or, when reversed, a bullish setup to short). The setup is the first bar on which all three spreads have been negative and decreasing for two consecutive bars: each spread < 0 AND each spread < its value one bar ago AND each spread one bar ago < 0 AND each spread one bar ago < its value two bars ago; this conjunction was false on the preceding bar.
+Exit: Long, within the configured test period AND ((trailing stop enabled AND adjusted low <= long peak − long peak × trailing-stop rate) OR (take profit enabled AND long peak >= entry reference price + entry reference price × take-profit rate AND adjusted low <= long peak − long peak × effective trailing-profit rate) OR (stop loss enabled AND adjusted low <= entry reference price − entry reference price × stop-loss rate) OR ((opposite-trade close enabled OR trailing stop disabled AND stop loss disabled) AND fast average one bar ago < slow average one bar ago AND open < slow average one bar ago, with this condition false on the preceding bar)).
+Exit: Short, within the configured test period AND ((trailing stop enabled AND adjusted high >= short trough + short trough × trailing-stop rate) OR (take profit enabled AND short trough <= entry reference price − entry reference price × take-profit rate AND adjusted high >= short trough + short trough × effective trailing-profit rate) OR (stop loss enabled AND adjusted high >= entry reference price + entry reference price × stop-loss rate) OR ((opposite-trade close enabled OR trailing stop disabled AND stop loss disabled) AND fast average one bar ago > slow average one bar ago AND open > slow average one bar ago, with this condition false on the preceding bar)).

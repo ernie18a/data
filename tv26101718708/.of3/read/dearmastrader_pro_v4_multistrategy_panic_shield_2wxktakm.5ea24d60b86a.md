@@ -1,0 +1,27 @@
+Calculation: long entry eligibility = long direction enabled AND (trend filter disabled OR price source > EMA(price source, trend lookback)) AND (volume filter disabled OR volume >= EMA(volume, volume lookback) * volume multiplier)
+Calculation: short entry eligibility = short direction enabled AND (trend filter disabled OR price source < EMA(price source, trend lookback)) AND (volume filter disabled OR volume >= EMA(volume, volume lookback) * volume multiplier)
+Long: Zero Lag Signals entry mode selected AND long entry eligibility AND price source crosses above DEMA(price source, DEMA lookback) + ATR(ATR lookback) * Zero Lag ATR multiplier AND DEMA(price source, DEMA lookback) > DEMA(price source, DEMA lookback)[1]
+Short: Zero Lag Signals entry mode selected AND short entry eligibility AND price source crosses below DEMA(price source, DEMA lookback) - ATR(ATR lookback) * Zero Lag ATR multiplier AND DEMA(price source, DEMA lookback) < DEMA(price source, DEMA lookback)[1]
+Long: Bollinger + ATR entry mode selected AND long entry eligibility AND price source crosses above the upper Bollinger Band(price source, Bollinger lookback, standard-deviation multiplier)
+Short: Bollinger + ATR entry mode selected AND short entry eligibility AND price source crosses below the lower Bollinger Band(price source, Bollinger lookback, standard-deviation multiplier)
+Long: RSI Divergence entry mode selected AND long entry eligibility AND a confirmed RSI pivot low (left pivot lookback, right pivot lookback) is higher than the previous confirmed RSI pivot low AND price source at that pivot is lower than price source at the previous pivot
+Short: RSI Divergence entry mode selected AND short entry eligibility AND a confirmed RSI pivot high (left pivot lookback, right pivot lookback) is lower than the previous confirmed RSI pivot high AND price source at that pivot is higher than price source at the previous pivot
+Long: MACD / SMA Cross entry mode selected AND long entry eligibility AND MACD(price source, fast lookback, slow lookback, signal lookback) crosses above its signal line
+Short: MACD / SMA Cross entry mode selected AND short entry eligibility AND MACD(price source, fast lookback, slow lookback, signal lookback) crosses below its signal line
+Long: Magical DCA Shield entry mode selected AND long entry eligibility AND price source > EMA(price source, macro lookback) AND price source crosses above DEMA(price source, DEMA lookback) AND RSI(price source, RSI lookback) < macro overbought threshold
+Short: Magical DCA Shield entry mode selected AND short entry eligibility AND price source < EMA(price source, macro lookback) AND price source crosses below DEMA(price source, DEMA lookback) AND RSI(price source, RSI lookback) > macro oversold threshold
+Exit: Long, Zero Lag Signals exit mode selected AND price source crosses below DEMA(price source, DEMA lookback)
+Exit: Short, Zero Lag Signals exit mode selected AND price source crosses above DEMA(price source, DEMA lookback)
+Calculation: ATR trailing stop = while long, initialize to price source - ATR(ATR lookback) * trailing multiplier and thereafter use the greater of the previous stop and that value; while short, initialize to price source + ATR(ATR lookback) * trailing multiplier and thereafter use the lesser of the previous stop and that value; reset when flat
+Exit: Long, Bollinger + ATR exit mode selected AND trailing stop enabled AND price source crosses below ATR trailing stop
+Exit: Short, Bollinger + ATR exit mode selected AND trailing stop enabled AND price source crosses above ATR trailing stop
+Exit: Long, RSI Divergence exit mode selected AND RSI(price source, RSI lookback) crosses above the overbought exit threshold
+Exit: Short, RSI Divergence exit mode selected AND RSI(price source, RSI lookback) crosses below the oversold exit threshold
+Exit: Long, Magical DCA Shield exit mode selected AND (price source crosses below lowest(low, structural lookback) OR price source crosses below EMA(price source, macro lookback))
+Exit: Short, Magical DCA Shield exit mode selected AND (price source crosses above highest(high, structural lookback) OR price source crosses above EMA(price source, macro lookback))
+Calculation: long stop level = close on entry signal minus ATR(ATR lookback) * stop ATR multiplier in ATR mode, or close on entry signal * (1 - stop percentage / 100) in percentage mode; undefined when disabled
+Calculation: short stop level = close on entry signal plus ATR(ATR lookback) * stop ATR multiplier in ATR mode, or close on entry signal * (1 + stop percentage / 100) in percentage mode; undefined when disabled
+Calculation: long target level = close on entry signal plus ATR(ATR lookback) * target ATR multiplier in ATR mode, or close on entry signal * (1 + target percentage / 100) in percentage mode; undefined when disabled
+Calculation: short target level = close on entry signal minus ATR(ATR lookback) * target ATR multiplier in ATR mode, or close on entry signal * (1 - target percentage / 100) in percentage mode; undefined when disabled
+Exit: Long, stop loss enabled AND low <= long stop level OR take profit enabled AND high >= long target level
+Exit: Short, stop loss enabled AND high >= short stop level OR take profit enabled AND low <= short target level

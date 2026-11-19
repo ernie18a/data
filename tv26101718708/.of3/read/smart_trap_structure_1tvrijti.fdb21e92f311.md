@@ -1,0 +1,2 @@
+Long: latest confirmed PivotHigh(high, fractal half-width, fractal half-width) on chart bars has not already been broken, and close > that pivot when the close-break parameter is enabled, otherwise high > that pivot
+Short: latest confirmed PivotLow(low, fractal half-width, fractal half-width) on chart bars has not already been broken, and close < that pivot when the close-break parameter is enabled, otherwise low < that pivot

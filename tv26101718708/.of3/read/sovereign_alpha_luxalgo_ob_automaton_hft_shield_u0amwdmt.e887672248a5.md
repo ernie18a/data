@@ -1,0 +1,13 @@
+Calculation: Structure break levels = the latest confirmed Pivot High(high, pivot lookback, pivot lookback) and Pivot Low(low, pivot lookback, pivot lookback), each reset to unavailable after its matching break.
+Calculation: Momentum z-score = (change(close) - SMA(change(close), momentum lookback)) / StDev(change(close), momentum lookback).
+Long: close > bullish structure break level AND close[1] <= bullish structure break level AND momentum z-score > MSB threshold.
+Short: close < bearish structure break level AND close[1] >= bearish structure break level AND momentum z-score < -MSB threshold.
+Calculation: Active order blocks = blocks created on each bullish or bearish structure break using the high and low of the nearest prior candle within the opposite-candle search lookback with close < open for a bullish break or close > open for a bearish break, or the break candle if none qualifies; when overlap filtering is enabled, skip creation if either new boundary lies within any unmitigated existing block; mark bullish blocks mitigated when low < bottom and bearish blocks when high > top; retain only the newest active-block limit blocks, counting mitigated blocks too.
+Long: position is flat AND at least one active bullish order block has low <= its top AND close > its bottom.
+Short: position is flat AND at least one active bearish order block has high >= its bottom AND close < its top.
+Calculation: Long trailing stop = reset while flat; initialize to entry price on the first close >= entry price + break-even trigger; on each later bar satisfying that condition, update to max(previous long trailing stop, close - ATR(ATR lookback) × trailing multiple); otherwise retain its value.
+Calculation: Short trailing stop = reset while flat; initialize to entry price on the first close <= entry price - break-even trigger; on each later bar satisfying that condition, update to min(previous short trailing stop, close + ATR(ATR lookback) × trailing multiple); otherwise retain its value.
+Calculation: Long active stop = max(entry price - stop distance, long trailing stop) when the trailing stop is initialized, otherwise entry price - stop distance.
+Calculation: Short active stop = min(entry price + stop distance, short trailing stop) when the trailing stop is initialized, otherwise entry price + stop distance.
+Exit: long, low <= long active stop OR high >= entry price + profit target.
+Exit: short, high >= short active stop OR low <= entry price - profit target.

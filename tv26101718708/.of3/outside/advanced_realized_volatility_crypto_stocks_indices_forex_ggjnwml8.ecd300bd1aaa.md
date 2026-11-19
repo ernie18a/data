@@ -1,0 +1,1 @@
+Long: BTC realized volatility is rising AND ETH realized volatility is flat or declining

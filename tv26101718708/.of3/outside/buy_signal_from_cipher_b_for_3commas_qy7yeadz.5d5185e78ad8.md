@@ -1,0 +1,3 @@
+Long: position flat AND chart bar confirmed AND WaveTrend(traded instrument source P1, channel length P2, average length P3, smoothing length P4) crosses upward with its signal line <= P5 AND (BTC perpetual close on T1 > SMA(BTC perpetual close on T1, P6) OR prior BTC perpetual close on T1 > prior SMA) AND (traded instrument close > T2 SMA(traded instrument close, P7) OR prior traded instrument close > prior T2 SMA)
+Exit: long, BTC perpetual close crosses below SMA(BTC perpetual close on T1, P6)
+Exit: short, BTC perpetual close crosses below SMA(BTC perpetual close on T1, P6)

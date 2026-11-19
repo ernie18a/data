@@ -1,0 +1,3 @@
+Calculation: rolling-window = rolling-days × round(median(T1-bar counts for up to session-lookback most recent completed trading sessions in session-scope)); update at each session boundary once minimum-completed-sessions counts exist.
+Long: chart close > SMA(close, rolling-window, T1 bars, current available T1 value with lookahead off, sampled on chart bars) AND current sampled SMA > previous chart bar's sampled SMA.
+Short: chart close < SMA(close, rolling-window, T1 bars, current available T1 value with lookahead off, sampled on chart bars) AND current sampled SMA < previous chart bar's sampled SMA.

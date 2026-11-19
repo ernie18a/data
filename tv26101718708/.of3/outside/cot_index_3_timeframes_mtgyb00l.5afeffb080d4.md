@@ -1,0 +1,2 @@
+Long: extreme marking enabled AND at least one available displayed Commercials COT Index(T1, respective lookback parameter) AND every available displayed Commercials COT Index(T1, respective lookback parameter) >= upper-threshold parameter
+Short: extreme marking enabled AND at least one available displayed Commercials COT Index(T1, respective lookback parameter) AND every available displayed Commercials COT Index(T1, respective lookback parameter) <= lower-threshold parameter

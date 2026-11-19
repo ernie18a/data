@@ -1,0 +1,10 @@
+Calculation: covered-call strike = ceil(close * (1 + high-volatility call distance)) when volatility-index close >= volatility threshold; otherwise ceil(close * (1 + normal call distance)); store only when the strike is at least entry price while long and no SMA exit is due.
+Long: position is flat AND current chart-bar datetime >= start-date parameter AND previous chart-bar datetime < start-date parameter; enter at the open.
+Long: position is flat after covered-call assignment AND instant-reentry mode is enabled; re-enter at the next trading-bar open.
+Long: position is flat AND regime-exited state is active AND close > SMA(close, long-term lookback).
+Long: CSP mode is enabled AND position is flat AND regime-exited state is inactive AND close > SMA(close, long-term lookback) AND close > EMA(close, short-term lookback) AND (RSI(close, RSI lookback) is outside the inclusive lower-to-upper RSI band OR the lower RSI bound > the upper RSI bound) AND volatility-index close is available and < volatility threshold AND (VWAP gate is disabled OR close >= VWAP((high + low + close) / 3)) AND macro-event block is off.
+Long: CSP mode is enabled AND position is flat AND regime-exited state is inactive AND all CSP gates pass AND at least one chart bar has elapsed since the start-date entry AND this is not the SMA-reclaim entry bar; place a limit entry at floor(open * (1 - CSP distance)).
+Short: long position is held AND hedge-alert display is enabled AND close < EMA(close, short-term lookback) for the hedge-alert confirmation count of consecutive chart bars.
+Exit: long, close < SMA(close, long-term lookback) for the SMA-exit confirmation count of consecutive chart bars; exit at the next open.
+Exit: long, SMA exit is not due AND (volatility-index close is unavailable OR volatility-index close < volatility threshold) AND close > the prior chart bar's stored covered-call strike AND that strike >= entry price.
+Exit: long, SMA exit is not due AND volatility-index close >= volatility threshold AND close > ceil(close * (1 + high-volatility call distance)) AND ceil(close * (1 + high-volatility call distance)) >= entry price.

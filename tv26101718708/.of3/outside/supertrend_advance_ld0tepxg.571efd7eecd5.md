@@ -1,0 +1,4 @@
+Option: buy call, built-in option syntax selected AND option order action is buy AND Supertrend turns bullish AND long side enabled AND within configured date and entry times
+Option: sell put, built-in option syntax selected AND option order action is sell AND Supertrend turns bullish AND long side enabled AND within configured date and entry times
+Option: buy put, built-in option syntax selected AND option order action is buy AND Supertrend turns bearish AND short side enabled AND within configured date and entry times
+Option: sell call, built-in option syntax selected AND option order action is sell AND Supertrend turns bearish AND short side enabled AND within configured date and entry times

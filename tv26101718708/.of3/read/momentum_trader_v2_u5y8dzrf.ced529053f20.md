@@ -1,0 +1,7 @@
+Calculation: SR tolerance(level) = max(if tolerance mode is ATR, ATR(high, low, close, ATR lookback) × ATR multiplier, else level × percentage tolerance / 100; minimum tick size × tick-floor multiplier)
+Calculation: Clustered pivot levels = on each chart bar, process all confirmed PivotHigh(high, left pivot lookback, right pivot lookback) and PivotLow(low, left pivot lookback, right pivot lookback) values in chronological order, merging each into the first existing level within SR tolerance(pivot) by replacing that level with the mean of the two, or appending it if none match
+Calculation: Qualifying support = highest clustered pivot level below close with at least minimum touches among closes in the last SR touch lookback bars, each within SR tolerance(level)
+Calculation: Qualifying resistance = lowest clustered pivot level above close with at least minimum touches among closes in the last SR touch lookback bars, each within SR tolerance(level)
+Long: close crosses above (qualifying resistance + SR tolerance(qualifying resistance)) AND ADX(high, low, close, ADX lookback) >= ADX threshold AND volume / SMA(volume, relative-volume lookback) >= relative-volume threshold AND EMA(close, short EMA lookback) > EMA(close, long EMA lookback)
+Short: close crosses below (qualifying support - SR tolerance(qualifying support)) AND volume / SMA(volume, relative-volume lookback) >= relative-volume threshold
+Long: low <= qualifying support + SR tolerance(qualifying support) AND close > qualifying support + SR tolerance(qualifying support) AND close > open

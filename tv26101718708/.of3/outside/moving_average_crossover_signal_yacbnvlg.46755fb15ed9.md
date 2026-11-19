@@ -1,0 +1,4 @@
+Calculation: first configured moving average = Moving Average(selected ticker's selected price source on T1, length P1, method P2)
+Calculation: second configured moving average = Moving Average(selected ticker's selected price source on T1, length P3, method P4)
+Long: first configured moving average > second configured moving average AND (slope filter not selected OR (first configured moving average > its value P5 T1 bars ago AND second configured moving average > its value P5 T1 bars ago))
+Long: first configured moving average crosses above second configured moving average AND (slope filter not selected OR (first configured moving average > its value P5 T1 bars ago AND second configured moving average > its value P5 T1 bars ago))

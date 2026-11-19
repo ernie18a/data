@@ -1,0 +1,6 @@
+Long: after price is above VWAP and SMA(close, lookback parameter), a bar has low at or below the lower Bollinger Band and close at or above VWAP, then a bullish bar closes above the SMA; enter at the next bar open
+Long: close crosses above the upper band or basis of either independently parameterized Bollinger Bands calculation, evaluated on chart bars using its configured timeframe; for a higher timeframe, use its last completed bar when repaint is off and its forming bar when repaint is on
+Short: with price below VWAP and SMA(close, lookback parameter), a bar touches the upper Bollinger Band, then a bearish bar closes below the SMA
+Short: close crosses below the lower band or basis of either independently parameterized Bollinger Bands calculation, evaluated on chart bars using its configured timeframe; for a higher timeframe, use its last completed bar when repaint is off and its forming bar when repaint is on
+Exit: long, close falls below whichever of the lower Bollinger Band or VWAP is closer to the entry price, or high reaches the upper Bollinger Band
+Exit: short, close rises above whichever of the upper Bollinger Band or VWAP is closer to the entry price, or low reaches the lower Bollinger Band

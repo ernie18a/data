@@ -1,0 +1,2 @@
+Long: composite score > bullish threshold AND composite score[1] <= bullish threshold AND (HTF filter disabled OR composite score on the current, potentially still-forming T1 bar >= HTF bullish minimum) OR composite score crosses above EMA(composite score, signal lookback)
+Short: composite score < bearish threshold AND composite score[1] >= bearish threshold AND (HTF filter disabled OR composite score on the current, potentially still-forming T1 bar <= HTF bearish maximum) OR composite score crosses below EMA(composite score, signal lookback)

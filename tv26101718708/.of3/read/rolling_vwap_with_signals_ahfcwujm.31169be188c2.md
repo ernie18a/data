@@ -1,0 +1,15 @@
+Calculation: Rolling VWAP = volume-weighted mean of hlc3 over the RVWAP-hours and RVWAP-minutes window on T1 bars, using a minimum-sample-count parameter; optionally smooth it with the selected moving-average type and lookback when smoothing is enabled; map T1 values to chart bars with lookahead off (last completed T1 bar historically, forming T1 bar in realtime).
+Calculation: Rolling standard deviation = the rolling standard deviation returned with the rolling VWAP over the same T1 window and minimum sample count; optionally smooth it with the same moving-average settings.
+Calculation: Upper band = rolling VWAP + band-multiplier parameter × rolling standard deviation.
+Calculation: Lower band = rolling VWAP - band-multiplier parameter × rolling standard deviation.
+Calculation: Band width = (upper band - lower band) / rolling VWAP.
+Calculation: Average volume = rolling time mean of volume over the shared baseline-window parameter on chart bars, using the same minimum-sample-count parameter.
+Calculation: Average band width = rolling time mean of band width over the same baseline-window parameter on chart bars, using the same minimum-sample-count parameter.
+Calculation: Up-bar volume mean = rolling mean of volume over the flow-lookback parameter on chart bars, including bars where close > open, using a minimum-qualifying-sample parameter.
+Calculation: Down-bar volume mean = rolling mean of volume over the flow-lookback parameter on chart bars, including bars where close < open, using the same minimum-qualifying-sample parameter.
+Long: close > upper band.
+Long: rolling VWAP > its value one T1 bar ago AND close > upper band.
+Long: close crosses above upper band AND (if the ATR filter is enabled, SWMA(ATR(high, low, close, ATR-lookback parameter)) > its value one chart bar ago) AND (if the trend filter is enabled, rolling VWAP > its value one T1 bar ago) AND (if the relative-volume filter is enabled, volume > average volume × relative-volume multiplier parameter) AND (if the directional-volume filter is enabled, up-bar volume mean[1] > down-bar volume mean[1]) AND (if the narrow-band filter is enabled, band width[1] <= average band width[1] × narrow-band multiplier parameter).
+Short: close < lower band.
+Short: rolling VWAP < its value one T1 bar ago AND close < lower band.
+Short: close crosses below lower band AND (if the ATR filter is enabled, SWMA(ATR(high, low, close, ATR-lookback parameter)) > its value one chart bar ago) AND (if the trend filter is enabled, rolling VWAP < its value one T1 bar ago) AND (if the relative-volume filter is enabled, volume > average volume × relative-volume multiplier parameter) AND (if the directional-volume filter is enabled, down-bar volume mean[1] > up-bar volume mean[1]) AND (if the narrow-band filter is enabled, band width[1] <= average band width[1] × narrow-band multiplier parameter).

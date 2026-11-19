@@ -1,0 +1,6 @@
+Calculation: move z-score = (close - close[1]) / stdev(close - close[1], statistics lookback) when that standard deviation is greater than 0, otherwise 0
+Calculation: close location = (close - low) / (high - low) when high - low is greater than 0, otherwise 0.5
+Calculation: average range = SMA(high - low, statistics lookback)
+Calculation: average volume = SMA(volume, volume lookback)
+Long: move z-score >= move z-score threshold AND close location >= close-location threshold AND high - low > average range * range expansion factor AND (volume filter disabled OR (volume is available AND volume > 0 AND average volume is available AND average volume > 0 AND volume > average volume * volume expansion factor)) AND (prior high/low filter disabled OR high > highest(high[1], structure lookback))
+Short: move z-score <= -move z-score threshold AND close location <= 1 - close-location threshold AND high - low > average range * range expansion factor AND (volume filter disabled OR (volume is available AND volume > 0 AND average volume is available AND average volume > 0 AND volume > average volume * volume expansion factor)) AND (prior high/low filter disabled OR low < lowest(low[1], structure lookback))

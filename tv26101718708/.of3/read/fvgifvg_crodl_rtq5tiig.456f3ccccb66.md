@@ -1,0 +1,6 @@
+Calculation: Bullish FVG zone on T = [high(T, 3 bars ago), low(T, last completed bar)] when low(T, last completed bar) > high(T, 3 bars ago)
+Calculation: Bearish FVG zone on T = [high(T, last completed bar), low(T, 3 bars ago)] when high(T, last completed bar) < low(T, 3 bars ago)
+Long: On chart bars taking values from each of the independently selected timeframes T1–T5, a new T bar begins and a bullish FVG zone forms, provided T is enabled, the chart bar is within the configured lookback, lower timeframes are not hidden or T is at least the chart timeframe, and FVG or iFVG display is enabled
+Short: On chart bars taking values from each of the independently selected timeframes T1–T5, a new T bar begins and a bearish FVG zone forms, provided T is enabled, the chart bar is within the configured lookback, lower timeframes are not hidden or T is at least the chart timeframe, and FVG or iFVG display is enabled
+Short: On a chart bar, an active tracked bullish FVG zone is filled and iFVG display is enabled: in Close mode, the chart bar is confirmed and close < zone bottom; in Wick mode, low <= zone bottom
+Long: On a chart bar, an active tracked bearish FVG zone is filled and iFVG display is enabled: in Close mode, the chart bar is confirmed and close > zone top; in Wick mode, high >= zone top

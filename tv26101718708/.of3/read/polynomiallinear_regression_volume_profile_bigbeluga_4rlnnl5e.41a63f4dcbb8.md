@@ -1,0 +1,3 @@
+Calculation: Polynomial regression = least-squares polynomial fit of the price source against consecutive bar indices over the lookback window, returned from oldest to newest
+Long: Polynomial regression(price source, lookback, fit degree) at newest bar > Polynomial regression(price source, lookback, fit degree) at oldest bar
+Short: Polynomial regression(price source, lookback, fit degree) at newest bar ≤ Polynomial regression(price source, lookback, fit degree) at oldest bar

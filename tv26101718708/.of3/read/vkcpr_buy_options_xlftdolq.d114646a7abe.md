@@ -1,0 +1,2 @@
+Long: selected price source crosses above CPR Top(high, low, close of the last completed T1 bar), sampled on chart bars AND CPR levels are available AND calls are enabled AND no long position is open AND chart-bar weekday is enabled AND chart-bar time is within the configured date range
+Short: selected price source crosses below CPR Bottom(high, low, close of the last completed T1 bar), sampled on chart bars AND CPR levels are available AND puts are enabled AND no short position is open AND chart-bar weekday is enabled AND chart-bar time is within the configured date range

@@ -1,0 +1,26 @@
+Calculation: Relative volume = if SMA(volume, volume lookback) > 0 then volume / SMA(volume, volume lookback) else 0
+Calculation: Candle body fraction = if high > low then abs(close - open) / (high - low) else 0
+Calculation: Bullish candle = close > open and candle body fraction >= minimum candle-body fraction
+Calculation: Bearish candle = close < open and candle body fraction >= minimum candle-body fraction
+Calculation: Bullish EMA filter = close > EMA(close, longer lookback) and EMA(close, shorter lookback) > EMA(close, longer lookback) and EMA(close, shorter lookback) > EMA(close, shorter lookback)[1]
+Calculation: Bearish EMA filter = close < EMA(close, longer lookback) and EMA(close, shorter lookback) < EMA(close, longer lookback) and EMA(close, shorter lookback) < EMA(close, shorter lookback)[1]
+Calculation: Bullish MACD filter = MACD line > MACD signal line and MACD histogram > 0 and MACD histogram >= MACD histogram[1]
+Calculation: Bearish MACD filter = MACD line < MACD signal line and MACD histogram < 0 and MACD histogram <= MACD histogram[1]
+Calculation: Bullish ADX filter = ADX(DI lookback, ADX smoothing) >= minimum ADX and +DI > -DI
+Calculation: Bearish ADX filter = ADX(DI lookback, ADX smoothing) >= minimum ADX and -DI > +DI
+Calculation: Bullish momentum RSI = RSI(close, RSI lookback) > bullish momentum RSI threshold and RSI(close, RSI lookback) > RSI(close, RSI lookback)[1]
+Calculation: Bearish momentum RSI = RSI(close, RSI lookback) < bearish momentum RSI threshold and RSI(close, RSI lookback) < RSI(close, RSI lookback)[1]
+Calculation: Bullish higher-timeframe filter = on chart bars, close(T1, last completed bar) > EMA(close, longer lookback, T1, last completed bar) and that EMA > its value on the preceding T1 bar
+Calculation: Bearish higher-timeframe filter = on chart bars, close(T1, last completed bar) < EMA(close, longer lookback, T1, last completed bar) and that EMA < its value on the preceding T1 bar
+Calculation: Primary long score = count of true conditions: bullish EMA filter; RSI(close, RSI lookback) within the inclusive primary bullish RSI bounds and greater than its prior value; bullish MACD filter; bullish ADX filter; relative volume >= primary volume threshold; bullish higher-timeframe filter; bullish candle
+Calculation: Primary short score = count of true conditions: bearish EMA filter; RSI(close, RSI lookback) within the inclusive primary bearish RSI bounds and less than its prior value; bearish MACD filter; bearish ADX filter; relative volume >= primary volume threshold; bearish higher-timeframe filter; bearish candle
+Calculation: Breakout long score = count of true conditions: bullish EMA filter; bullish momentum RSI; bullish MACD filter; bullish ADX filter; bullish higher-timeframe filter; bullish candle
+Calculation: Breakout short score = count of true conditions: bearish EMA filter; bearish momentum RSI; bearish MACD filter; bearish ADX filter; bearish higher-timeframe filter; bearish candle
+Calculation: Flash long score = count of true conditions: close > highest(high[1], flash breakout lookback); bullish momentum RSI; bullish MACD filter; +DI > -DI; bullish candle
+Calculation: Flash short score = count of true conditions: close < lowest(low[1], flash breakout lookback); bearish momentum RSI; bearish MACD filter; -DI > +DI; bearish candle
+Calculation: Flash body move in ATR = if ATR(high, low, close, flash ATR lookback) > 0 then abs(close - open) / ATR(high, low, close, flash ATR lookback) else 0
+Calculation: Flash candle range in ATR = if ATR(high, low, close, flash ATR lookback) > 0 then (high - low) / ATR(high, low, close, flash ATR lookback) else 0
+Long: ((Supertrend(high, low, close, Supertrend ATR lookback, factor) is bullish and changed from bearish to bullish within the confirmation window and primary long score >= minimum primary score and the chart bar is confirmed) OR (close > highest(high[1], breakout lookback) and relative volume >= breakout volume threshold and breakout long score >= minimum breakout score and the chart bar is confirmed)) and the most recent confirmed signal is not long
+Short: ((Supertrend(high, low, close, Supertrend ATR lookback, factor) is bearish and changed from bullish to bearish within the confirmation window and primary short score >= minimum primary score and the chart bar is confirmed) OR (close < lowest(low[1], breakout lookback) and relative volume >= breakout volume threshold and breakout short score >= minimum breakout score and the chart bar is confirmed)) and the most recent confirmed signal is not short
+Long: the chart bar is realtime and still forming and close > open and Flash body move in ATR >= minimum flash body-move ATR and Flash candle range in ATR >= minimum flash range ATR and relative volume >= flash volume threshold and flash long score >= minimum flash score and no FLASH event has already fired on this chart bar
+Short: the chart bar is realtime and still forming and close < open and Flash body move in ATR >= minimum flash body-move ATR and Flash candle range in ATR >= minimum flash range ATR and relative volume >= flash volume threshold and flash short score >= minimum flash score and no FLASH event has already fired on this chart bar

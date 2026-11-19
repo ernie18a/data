@@ -1,0 +1,5 @@
+Calculation: Sell absorption = if close < open then volume / abs(open - close) / close else 0
+Calculation: Buy absorption = if close > open then volume / abs(open - close) / close else 0
+Calculation: Structural bias = initially NEUTRAL; BULLISH if close > Highest(high, structure lookback)[1]; BEARISH if close < Lowest(low, structure lookback)[1]; otherwise retain the previous value
+Long: high[2] >= open[1] AND low <= close[1] AND low > high[2] OR close > open AND Buy absorption / StDev(Buy absorption, absorption lookback) >= absorption threshold OR Structural bias is BULLISH OR LOW(T1, 3 bars ago) > HIGH(T1, 1 bar ago) AND HIGH(T1, 3 bars ago) differs from its value on the previous chart bar, using values from completed T1 bars
+Short: low[2] <= open[1] AND high >= close[1] AND low[2] > high OR close < open AND Sell absorption / StDev(Sell absorption, absorption lookback) >= absorption threshold OR Structural bias is BEARISH OR HIGH(T1, 3 bars ago) < LOW(T1, 1 bar ago) AND LOW(T1, 3 bars ago) differs from its value on the previous chart bar, using values from completed T1 bars

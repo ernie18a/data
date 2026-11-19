@@ -1,0 +1,2 @@
+Long: Pivot Point SuperTrend(high, low, close, pivot lookback, ATR multiplier, ATR lookback) changes from bearish to bullish
+Short: Pivot Point SuperTrend(high, low, close, pivot lookback, ATR multiplier, ATR lookback) changes from bullish to bearish

@@ -1,0 +1,14 @@
+Calculation: T1 prior high/low = high and low of the last completed T1 bar, sampled on chart bars
+Calculation: T2 prior high/low = high and low of the last completed T2 bar, sampled on chart bars
+Calculation: Session S1 high/low = highest high and lowest low across chart bars in S1, in America/New_York; use the developing range while S1 is active and retain the latest completed range afterward
+Calculation: Session S2 high/low = highest high and lowest low across chart bars in S2, in America/New_York; use the developing range while S2 is active and retain the latest completed range afterward
+Calculation: Opening range S3 high/low = highest high and lowest low across chart bars in S3 of duration T3, in America/New_York; use the developing range while S3 is active and retain the latest completed range afterward
+Calculation: Initial stop = high[FVG lookback parameter] minus the SL buffer parameter for long positions; low[FVG lookback parameter] plus the SL buffer parameter for short positions
+Calculation: Initial risk = absolute value of entry price minus initial stop
+Calculation: Current profit in R = (close minus entry price) divided by initial risk for long positions; (entry price minus close) divided by initial risk for short positions
+Calculation: Target = entry price plus target-R parameter times initial risk for long positions; entry price minus target-R parameter times initial risk for short positions
+Calculation: Stop = initial stop until current profit in R first reaches the trigger-R parameter; then use the nearest same-side FVG boundary stored since entry, including the current bar, that is at or behind the trigger price in the favorable direction (long boundary <= entry price + trigger-R parameter × initial risk; short boundary >= entry price - trigger-R parameter × initial risk); if none qualify, use the most recently stored same-side FVG boundary; thereafter update to each same-side FVG boundary only when it tightens the stop
+Long: (close crosses above T1 prior high OR close crosses above T2 prior high OR close crosses above opening range S3 high OR close crosses above session S2 high OR close crosses above session S1 high OR close crosses above the most recently confirmed pivot high of high using separate left- and right-lookback parameters on chart bars) AND low > high[FVG lookback parameter] AND (flat on this chart bar OR flat on the preceding chart bar)
+Short: (close crosses below T1 prior low OR close crosses below T2 prior low OR close crosses below opening range S3 low OR close crosses below session S2 low OR close crosses below session S1 low OR close crosses below the most recently confirmed pivot low of low using separate left- and right-lookback parameters on chart bars) AND high < low[FVG lookback parameter] AND (flat on this chart bar OR flat on the preceding chart bar)
+Exit: Long, low <= stop OR high >= target
+Exit: Short, high >= stop OR low <= target

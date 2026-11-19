@@ -1,0 +1,3 @@
+Calculation: active liquidity levels = the most recent max-level confirmed PivotHigh(high, pivot strength, pivot strength) and PivotLow(low, pivot strength, pivot strength) levels per side; remove a level after a sweep satisfying the volume filter or, when clean-break retirement is enabled, after price pierces it and closes at or beyond it
+Long: low < an active pivot-low level AND close > that level AND (volume filter disabled OR volume > SMA(volume, volume lookback), with unavailable values treated as zero, × volume multiplier)
+Short: high > an active pivot-high level AND close < that level AND (volume filter disabled OR volume > SMA(volume, volume lookback), with unavailable values treated as zero, × volume multiplier)

@@ -1,0 +1,8 @@
+Long: On chart bars using still-forming T1, T2, or T3 values (lookahead off), low(T1) > high(T1)[2] OR low(T2) > high(T2)[2] OR low(T3) > high(T3)[2]
+Short: On chart bars using still-forming T1, T2, or T3 values (lookahead off), high(T1) < low(T1)[2] OR high(T2) < low(T2)[2] OR high(T3) < low(T3)[2]
+Long: On chart bars using still-forming T4 or T5 values (lookahead off), low(T4) > high(T4)[2] OR low(T5) > high(T5)[2]
+Short: On chart bars using still-forming T4 or T5 values (lookahead off), high(T4) < low(T4)[2] OR high(T5) < low(T5)[2]
+Long: On chart bars using still-forming T6, T7, or T8 values (lookahead off), high(T6) < low(T6)[2] AND chart close > low(T6)[2] OR high(T7) < low(T7)[2] AND chart close > low(T7)[2] OR high(T8) < low(T8)[2] AND chart close > low(T8)[2]
+Short: On chart bars using still-forming T6, T7, or T8 values (lookahead off), low(T6) > high(T6)[2] AND chart close < high(T6)[2] OR low(T7) > high(T7)[2] AND chart close < high(T7)[2] OR low(T8) > high(T8)[2] AND chart close < high(T8)[2]
+Long: On chart bars using still-forming T9 values (lookahead off), chart low(T9) < lowest(chart low(T9), lookback)[1] AND comparison low(T9) > lowest(comparison low(T9), lookback)[1], where lowest is evaluated over chart bars
+Short: On chart bars using still-forming T9 values (lookahead off), chart high(T9) > highest(chart high(T9), lookback)[1] AND comparison high(T9) < highest(comparison high(T9), lookback)[1], where highest is evaluated over chart bars

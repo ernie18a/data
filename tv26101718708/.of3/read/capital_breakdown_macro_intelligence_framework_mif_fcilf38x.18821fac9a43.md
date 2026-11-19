@@ -1,0 +1,5 @@
+Calculation: pivot point(T) = (high[1,T] + low[1,T] + close[1,T]) / 3, using the last completed T bar on chart bars
+Calculation: zone buffer = minimum tick size × buffer-in-ticks parameter
+Calculation: reversal suppression condition = abs(close - (2 × pivot point(T2) - low[1,T2])) < zone buffer OR abs(close - (2 × pivot point(T2) - high[1,T2])) < zone buffer OR abs(close - (pivot point(T2) + high[1,T2] - low[1,T2])) < zone buffer OR abs(close - (pivot point(T2) - high[1,T2] + low[1,T2])) < zone buffer OR RSI(close, lookback) > upper exhaustion threshold OR RSI(close, lookback) < lower exhaustion threshold, using the last completed T2 bar on chart bars
+Long: abs(close - pivot point(T1)) < zone buffer AND Supertrend(multiplier, ATR lookback) is in an uptrend AND close > DEMA(close, lookback) AND NOT reversal suppression condition
+Short: abs(close - pivot point(T1)) < zone buffer AND Supertrend(multiplier, ATR lookback) is in a downtrend AND close < DEMA(close, lookback) AND NOT reversal suppression condition

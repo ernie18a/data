@@ -1,0 +1,2 @@
+Long: (trigger mode selects EMA cross AND EMA(close, shorter lookback) crosses above EMA(close, longer lookback)) OR (trigger mode selects Donchian AND high > highest(high, shorter lookback)[1])
+Short: (trigger mode selects EMA cross AND EMA(close, shorter lookback) crosses below EMA(close, longer lookback)) OR (trigger mode selects Donchian AND low < lowest(low, shorter lookback)[1])

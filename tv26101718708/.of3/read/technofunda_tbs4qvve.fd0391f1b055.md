@@ -1,0 +1,3 @@
+Calculation: Volatility Stop = initialize positive with stop at close; each chart bar use ATR(lookback) × multiplier, falling back to True Range while ATR is unavailable, and track the highest and lowest close since the last flip; in the positive state trail at max(previous stop, highest close − band), and in the negative state at min(previous stop, lowest close + band); the state is positive when close ≥ stop, and on a state change reset the stop to close − band if positive or close + band if negative
+Long: close ≥ Volatility Stop(ATR lookback, multiplier) OR high ≥ Highest(high, lookback)
+Short: close < Volatility Stop(ATR lookback, multiplier) OR low ≤ Lowest(low, same lookback)

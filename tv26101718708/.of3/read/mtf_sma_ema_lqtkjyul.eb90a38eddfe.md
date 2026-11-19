@@ -1,0 +1,7 @@
+Calculation: TickRound(x) = round(x / minimum tick) * minimum tick, or round(x) if the minimum tick is zero or unavailable
+Calculation: MA values = SMA(source, each of three distinct SMA lookback parameters in ascending order) and EMA(source, each of nine distinct EMA lookback parameters in ascending order), calculated on chart bars and selected T1–T4 bars; source is close in live mode and close[1] in confirmed mode, with T1–T4 values from the forming bar in live mode or the last completed bar in confirmed mode
+Calculation: Radar price = TickRound(close) in live mode or TickRound(close[1]) in confirmed mode
+Calculation: Radar support = highest TickRound(MA value) among enabled MA values on chart bars and selected T1–T4 bars that is strictly below Radar price by more than the radar separation parameter in minimum ticks
+Calculation: Radar resistance = lowest TickRound(MA value) among enabled MA values on chart bars and selected T1–T4 bars that is strictly above Radar price by more than the radar separation parameter in minimum ticks
+Long: For any enabled MA value on selected T1–T4 bars, TickRound(close) >= TickRound(MA value) OR Radar support and Radar resistance both exist AND Radar price - Radar support <= Radar resistance - Radar price
+Short: For any enabled MA value on selected T1–T4 bars, TickRound(close) < TickRound(MA value) OR Radar support and Radar resistance both exist AND Radar price - Radar support > Radar resistance - Radar price

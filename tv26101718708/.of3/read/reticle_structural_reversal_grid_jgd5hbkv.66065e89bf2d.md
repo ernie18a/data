@@ -1,0 +1,9 @@
+Calculation: Swing anchors A and B = the rolling highest high and lowest low over a shared swing-lookback parameter, ordered by occurrence time; use the earlier extreme as A and later as B, and require B after A. Calculate extrema and ATR at each extreme on chart bars, or on T1 bars and use their still-forming values on each chart bar when higher-timeframe swings are selected.
+Calculation: Exhaustion zone = the interval between B − shallow-retracement parameter × (B − A) and B − deep-retracement parameter × (B − A), using the lesser value as the bottom and the greater as the top.
+Calculation: Death Line at chart bar n = A + direction × slope × (n − A's chart-bar index), where direction is positive when B ≥ A and negative otherwise; slope is the selected method—price-per-bar parameter, |B − A| divided by chart bars from A to B, ATR at A, ATR at A × chart-bar duration / hour, or ATR at A × chart-bar duration / day—multiplied by a separate slope parameter. ATR uses its own lookback parameter and the same bar sequence as the selected swing anchors.
+Long: A and B exist, B ≥ A, low ≤ exhaustion-zone top, and close > exhaustion-zone top.
+Long: A and B exist, the current chart bar is after B, close > current Death Line, and prior close ≤ prior Death Line.
+Long: A and B exist, the chart bar is confirmed, either anchor changes from the prior chart bar, and B ≥ A.
+Short: A and B exist, B < A, high ≥ exhaustion-zone bottom, and close < exhaustion-zone bottom.
+Short: A and B exist, the current chart bar is after B, close < current Death Line, and prior close ≥ prior Death Line.
+Short: A and B exist, the chart bar is confirmed, either anchor changes from the prior chart bar, and B < A.

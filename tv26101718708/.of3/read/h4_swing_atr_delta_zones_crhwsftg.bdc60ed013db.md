@@ -1,0 +1,2 @@
+Long: On T1 chart bars, close crosses above the latest confirmed pivot high(high, pivot lookback, pivot lookback)
+Short: On T1 chart bars, close crosses below the latest confirmed pivot low(low, pivot lookback, pivot lookback)

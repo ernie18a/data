@@ -1,0 +1,19 @@
+Calculation: InternalStructure(stream, pivot lookback) = maintain a leg that changes to bearish when high[pivot lookback] > highest(high, pivot lookback), otherwise changes to bullish when low[pivot lookback] < lowest(low, pivot lookback); on a change to bearish set the latest pivot high to high[pivot lookback], and on a change to bullish set the latest pivot low to low[pivot lookback]; each new pivot is un-crossed until crossed.
+Calculation: ParsedOBPrices(stream, ATR lookback, volatility mode, volatility multiplier) = volatility measure is ATR(ATR lookback) or cumulative mean true range, defined as cumulative_sum(true range) / bar_index; when high - low >= volatility multiplier * volatility measure, parsed high = low and parsed low = high, otherwise parsed high = high and parsed low = low.
+Calculation: ActiveInternalOBs(stream, creation enabled, mitigation source, block cap) = on crossover(close, latest un-crossed pivot high), create a bullish block using parsed high and parsed low from the bar with the minimum parsed low between the pivot bar and the bar before the cross; on crossunder(close, latest un-crossed pivot low), create a bearish block using parsed high and parsed low from the bar with the maximum parsed high in that interval; create blocks only when enabled, retain at most the block cap, remove a bearish block when its mitigation source (close or high) > its high, and remove a bullish block when its mitigation source (close or low) < its low. T1 and T2 states are computed on their own bars with creation enabled; chart state uses the internal OB enable input.
+Calculation: InternalOBBias(stream, recent-block count, same-side threshold) = bullish when at least the same-side threshold of the recent-block count active blocks are bullish, bearish when at least that threshold are bearish, otherwise neutral; bias is evaluated only when at least the recent-block count active blocks exist.
+Calculation: InternalOBRetests(active chart blocks) = a bullish block becomes touched when high >= block low, low <= block high, and close >= block low; an unretested bullish block signals on a later bar when touched and close > block high, then becomes retested. A bearish block becomes touched when high >= block low, low <= block high, and close <= block high; an unretested bearish block signals on a later bar when touched and close < block low, then becomes retested.
+Long: internal OB creation is enabled AND crossover(close, latest un-crossed pivot high)
+Short: internal OB creation is enabled AND crossunder(close, latest un-crossed pivot low)
+Long: an active bullish chart OB is among the most recent display-count active chart OBs
+Short: an active bearish chart OB is among the most recent display-count active chart OBs
+Long: an active chart OB has a bullish retest
+Short: an active chart OB has a bearish retest
+Long: InternalOBBias(chart bars) is bullish
+Short: InternalOBBias(chart bars) is bearish
+Long: InternalOBBias(T1 bars, current bar projected onto chart bars) is bullish
+Short: InternalOBBias(T1 bars, current bar projected onto chart bars) is bearish
+Long: InternalOBBias(T2 bars, current bar projected onto chart bars) is bullish
+Short: InternalOBBias(T2 bars, current bar projected onto chart bars) is bearish
+Long: InternalOBBias(T1 bars, current bar projected onto chart bars) is bullish AND InternalOBBias(T2 bars, current bar projected onto chart bars) is bullish AND InternalOBBias(T2 bars, previous bar) is not bullish
+Short: InternalOBBias(T1 bars, current bar projected onto chart bars) is bearish AND InternalOBBias(T2 bars, current bar projected onto chart bars) is bearish AND InternalOBBias(T2 bars, previous bar) is not bearish

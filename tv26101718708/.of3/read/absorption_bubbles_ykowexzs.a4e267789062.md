@@ -1,0 +1,7 @@
+Calculation: Candle range = high - low
+Calculation: Safe range = max(Candle range, minimum tick size)
+Calculation: Body size = abs(close - open)
+Calculation: Upper wick ratio = (high - max(open, close)) / Safe range
+Calculation: Lower wick ratio = (min(open, close) - low) / Safe range
+Long: (next-bar confirmation disabled AND volume > SMA(volume, volume lookback) * volume multiplier AND Body size < Candle range * maximum body fraction AND Lower wick ratio >= minimum wick ratio AND (reversal-close requirement disabled OR close > open)) OR (next-bar confirmation enabled AND volume[1] > SMA(volume, volume lookback)[1] * volume multiplier AND Body size[1] < Candle range[1] * maximum body fraction AND Lower wick ratio[1] >= minimum wick ratio AND (reversal-close requirement disabled OR close[1] > open[1]) AND low >= low[1] - confirmation tolerance * minimum tick size)
+Short: (next-bar confirmation disabled AND volume > SMA(volume, volume lookback) * volume multiplier AND Body size < Candle range * maximum body fraction AND Upper wick ratio >= minimum wick ratio AND (reversal-close requirement disabled OR close < open)) OR (next-bar confirmation enabled AND volume[1] > SMA(volume, volume lookback)[1] * volume multiplier AND Body size[1] < Candle range[1] * maximum body fraction AND Upper wick ratio[1] >= minimum wick ratio AND (reversal-close requirement disabled OR close[1] < open[1]) AND high <= high[1] + confirmation tolerance * minimum tick size)

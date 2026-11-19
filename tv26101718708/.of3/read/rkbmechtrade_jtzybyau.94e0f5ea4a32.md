@@ -1,0 +1,7 @@
+Calculation: Relative momentum score = 0 when strict mode is enabled and chart bar index < history threshold; otherwise round(min(score cap, score baseline + (−1 if S < 0 else +1) × sqrt(abs(S)) × score scale)), where S = nz(R1) + R2 + R3 + R4; each Ri = weight_i × ((source / source[lookback_i]) / (benchmark source / benchmark source[lookback_i]) − 1) when both lagged sources are nonzero; R1 is missing otherwise, R2 falls back to R1/2, R3 to R2, and R4 to R3 when its lookback test fails; source and benchmark source are evaluated on chart bars, and lookback_1 < lookback_2 < lookback_3 < lookback_4
+Long: close >= highest(high, high lookback, T1 bars calculated on T1 bars using the still-forming T1 bar and mapped to chart bars)
+Long: Relative momentum score >= score threshold
+Short: Relative momentum score < score threshold
+Calculation: Selected-MA slope ratio = (MA(close, angle lookback, selected MA type) − MA(close, angle lookback, selected MA type)[1]) / MA(close, angle lookback, selected MA type)[1]
+Long: Selected-MA slope ratio > 0
+Short: Selected-MA slope ratio <= 0

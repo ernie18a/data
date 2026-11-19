@@ -1,0 +1,20 @@
+Calculation: Body size = ABS(close - open)
+Calculation: Candle range = high - low
+Calculation: Upper wick = high - MAX(open, close)
+Calculation: Lower wick = MIN(open, close) - low
+Calculation: Bullish candle pattern = (engulfing enabled AND close[1] < open[1] AND close > open AND close >= open[1] AND open <= close[1]) OR (hammer enabled AND lower wick >= body size * dominant wick/body ratio AND upper wick <= body size * opposite wick/body limit AND close > open) OR (pin bar enabled AND lower wick >= candle range * pin wick/range fraction AND body size <= candle range * pin body/range ceiling)
+Calculation: Bearish candle pattern = (engulfing enabled AND close[1] > open[1] AND close < open AND close <= open[1] AND open >= close[1]) OR (hammer enabled AND upper wick >= body size * dominant wick/body ratio AND lower wick <= body size * opposite wick/body limit AND close < open) OR (pin bar enabled AND upper wick >= candle range * pin wick/range fraction AND body size <= candle range * pin body/range ceiling)
+Calculation: Stored FVG top = low on a bullish FVG while FVGs are enabled; low[FVG gap lag] on a bearish FVG while FVGs are enabled; otherwise the previous value, initially unset
+Calculation: Stored FVG bottom = high[FVG gap lag] on a bullish FVG while FVGs are enabled; high on a bearish FVG while FVGs are enabled; otherwise the previous value, initially unset
+Calculation: Active bullish FVG = true on a bullish FVG while FVGs are enabled; false when close < stored FVG top and iFVGs are enabled; otherwise the previous value, initially false
+Calculation: Active bearish FVG = true on a bearish FVG while FVGs are enabled; false when close > stored FVG bottom and iFVGs are enabled; otherwise the previous value, initially false
+Long: FVGs enabled AND low > high[FVG gap lag]
+Short: FVGs enabled AND high < low[FVG gap lag]
+Long: iFVGs enabled AND active bullish FVG AND close < stored FVG top
+Short: iFVGs enabled AND active bearish FVG AND close > stored FVG bottom
+Long: swing tracking enabled AND BOS enabled AND a confirmed pivot high remains unbroken AND close > that pivot high
+Short: swing tracking enabled AND BOS enabled AND a confirmed pivot low remains unbroken AND close < that pivot low
+Long: pattern annotations enabled AND bullish candle pattern
+Short: pattern annotations enabled AND bearish candle pattern
+Long: (signal mode selects BOS plus FVG AND signal display enabled AND swing tracking enabled AND BOS enabled AND a confirmed pivot high remains unbroken AND close > that pivot high AND low > high[FVG gap lag]) OR (signal mode selects FVG plus swing AND a pivot low is confirmed on the current chart bar AND close > that pivot low AND low > high[FVG gap lag]) OR (signal mode selects confluence AND signal display enabled AND the count of T1–T5 chart-bar values from their still-forming timeframe bars where EMA(close, shorter EMA lookback) > EMA(close, longer EMA lookback) is at least the alignment count threshold AND the count of T1–T3 chart-bar values from their still-forming timeframe bars where low > high[FVG gap lag] is at least the FVG count threshold AND bullish candle pattern AND a pivot low is confirmed on the current chart bar)
+Short: (signal mode selects BOS plus FVG AND signal display enabled AND swing tracking enabled AND BOS enabled AND a confirmed pivot low remains unbroken AND close < that pivot low AND high < low[FVG gap lag]) OR (signal mode selects FVG plus swing AND a pivot high is confirmed on the current chart bar AND close < that pivot high AND high < low[FVG gap lag]) OR (signal mode selects confluence AND signal display enabled AND the count of T1–T5 chart-bar values from their still-forming timeframe bars where EMA(close, shorter EMA lookback) <= EMA(close, longer EMA lookback) is at least the alignment count threshold AND the count of T1–T3 chart-bar values from their still-forming timeframe bars where high < low[FVG gap lag] is at least the FVG count threshold AND bearish candle pattern AND a pivot high is confirmed on the current chart bar)

@@ -1,0 +1,2 @@
+Long: On the Nth closed chart bar after an event candle, highest(high, N) > high[N] AND lowest(low, N) >= low[N]
+Short: On the Nth closed chart bar after an event candle, lowest(low, N) < low[N] AND highest(high, N) <= high[N]

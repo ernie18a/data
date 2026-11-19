@@ -1,0 +1,4 @@
+Calculation: Resistance zone = on each T1 bar, set to max(open[3], close[3]) when high[3] > high[4] AND high[4] > high[5] AND high[2] < high[3] AND high[1] < high[2] AND volume[3] > SMA(volume, volume lookback)[3]; otherwise retain the prior value. Compute on T1 bars and request on chart bars with lookahead off, using completed T1 bars historically and the developing T1 bar in real time.
+Calculation: Support zone = on each T1 bar, set to min(open[3], close[3]) when low[3] < low[4] AND low[4] < low[5] AND low[2] > low[3] AND low[1] > low[2] AND volume[3] > SMA(volume, volume lookback)[3]; otherwise retain the prior value. Compute on T1 bars and request on chart bars with lookahead off, using completed T1 bars historically and the developing T1 bar in real time.
+Long: Chart-bar close crosses below the support zone AND position side is flat or short.
+Exit: Long, chart-bar close crosses above the resistance zone.

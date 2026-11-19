@@ -1,0 +1,5 @@
+Long: |VIX1D − VIX9D| + |VIX9D − VIX| + |VIX − VIX3M| + 0.5 × |VIX3M − VIX6M| < P1 AND NOT (VIX1D > VIX9D AND VIX9D > VIX)
+Option: buy call, |VIX1D − VIX9D| + |VIX9D − VIX| + |VIX − VIX3M| + 0.5 × |VIX3M − VIX6M| < P1 AND NOT (VIX1D > VIX9D AND VIX9D > VIX)
+Option: buy put, |VIX1D − VIX9D| + |VIX9D − VIX| + |VIX − VIX3M| + 0.5 × |VIX3M − VIX6M| < P1 AND NOT (VIX1D > VIX9D AND VIX9D > VIX)
+Option: sell call, VIX1D is below each of its values on the previous P2 bars AND VIX9D is below each of its values on the previous P2 bars AND VIX is below each of its values on the previous P2 bars AND VVIX − previous-bar VVIX ≤ P3
+Option: sell put, VIX1D is below each of its values on the previous P2 bars AND VIX9D is below each of its values on the previous P2 bars AND VIX is below each of its values on the previous P2 bars AND VVIX − previous-bar VVIX ≤ P3

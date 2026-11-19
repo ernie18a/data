@@ -1,0 +1,3 @@
+Calculation: session reference = selected previous T1 session’s final chart-bar close or current T1 session’s first chart-bar open
+Long: chart timeframe is intraday AND session reference exists AND current bar is not the first chart bar of a T1 session AND close crosses above the session reference
+Short: chart timeframe is intraday AND session reference exists AND current bar is not the first chart bar of a T1 session AND close crosses below the session reference

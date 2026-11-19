@@ -1,0 +1,22 @@
+Calculation: EMA bias(T, lookback) = 1 if close > EMA(close, lookback), otherwise -1; calculated on T bars and read on chart bars from the last completed T bar historically and the still-forming T bar in real time.
+Calculation: Supertrend bias(T, ATR lookback, multiplier) = 1 if close > the Supertrend line, otherwise -1; calculated on T bars and read on chart bars from the last completed T bar historically and the still-forming T bar in real time.
+Calculation: CMF bias(T, lookback) = 1 if CMF(high, low, close, volume, lookback) > 0, -1 if it is < 0, otherwise 0; calculated on T bars and read on chart bars from the last completed T bar historically and the still-forming T bar in real time.
+Calculation: CDV direction(T, neutral lookback, neutral multiplier) = 0 if abs(delta) <= neutral multiplier * SMA(abs(delta), neutral lookback), 1 if delta > that threshold, and -1 if delta < the negative of that threshold, where delta = volume if close > close[1], -volume if close < close[1], otherwise 0; calculated on T bars and read on chart bars from the last completed T bar historically and the still-forming T bar in real time.
+Calculation: OBV breakout state(T, lookback) = 1 if OBV(close, volume) > Highest(OBV(close, volume), lookback)[1], -1 if OBV(close, volume) < Lowest(OBV(close, volume), lookback)[1], otherwise 0; calculated on T bars and read on chart bars from the last completed T bar historically and the still-forming T bar in real time.
+Calculation: Trend score(T) = EMA bias(T, longer EMA lookback) + EMA bias(T, shorter EMA lookback) + Supertrend bias(T, ATR lookback, multiplier); the longer EMA lookback exceeds the shorter one, and the score is evaluated on chart bars from T values.
+Calculation: Participation score(T) = CMF bias(T, CMF lookback) + CDV direction(T, neutral lookback, neutral multiplier) + OBV breakout state(T, breakout lookback); evaluated on chart bars from T values.
+Calculation: Total score(T) = Trend score(T) + Participation score(T); evaluated on chart bars from T values.
+Long: EMA bias(T, longer EMA lookback) = 1, separately for each displayed timeframe T (T1 and T2 when two-timeframe mode is enabled).
+Short: EMA bias(T, longer EMA lookback) = -1, separately for each displayed timeframe T (T1 and T2 when two-timeframe mode is enabled).
+Long: EMA bias(T, shorter EMA lookback) = 1, separately for each displayed timeframe T (T1 and T2 when two-timeframe mode is enabled).
+Short: EMA bias(T, shorter EMA lookback) = -1, separately for each displayed timeframe T (T1 and T2 when two-timeframe mode is enabled).
+Long: Supertrend bias(T, ATR lookback, multiplier) = 1, separately for each displayed timeframe T (T1 and T2 when two-timeframe mode is enabled).
+Short: Supertrend bias(T, ATR lookback, multiplier) = -1, separately for each displayed timeframe T (T1 and T2 when two-timeframe mode is enabled).
+Long: CMF bias(T, CMF lookback) = 1, separately for each displayed timeframe T (T1 and T2 when two-timeframe mode is enabled).
+Short: CMF bias(T, CMF lookback) = -1, separately for each displayed timeframe T (T1 and T2 when two-timeframe mode is enabled).
+Long: CDV direction(T, neutral lookback, neutral multiplier) = 1, separately for each displayed timeframe T (T1 and T2 when two-timeframe mode is enabled).
+Short: CDV direction(T, neutral lookback, neutral multiplier) = -1, separately for each displayed timeframe T (T1 and T2 when two-timeframe mode is enabled).
+Long: OBV breakout state(T, breakout lookback) = 1, separately for each displayed timeframe T (T1 and T2 when two-timeframe mode is enabled).
+Short: OBV breakout state(T, breakout lookback) = -1, separately for each displayed timeframe T (T1 and T2 when two-timeframe mode is enabled).
+Long: Trend score(T) >= 2 AND Total score(T) > 0, separately for each displayed timeframe T (T1 and T2 when two-timeframe mode is enabled).
+Short: Trend score(T) <= -2 AND Total score(T) < 0, separately for each displayed timeframe T (T1 and T2 when two-timeframe mode is enabled).

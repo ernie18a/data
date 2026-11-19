@@ -1,0 +1,3 @@
+Calculation: retained pivot = a pivot high(high, pivot strength parameter, pivot strength parameter) or pivot low(low, pivot strength parameter, pivot strength parameter) on chart bars, confirmed on the current bar, whose price is at least the minimum swing ATR multiple times ATR(ATR lookback parameter) at the pivot bar from the previous retained pivot price; retain it unconditionally when there is no previous retained pivot or the minimum swing ATR multiple is zero
+Long: current retained pivot low price < previous retained pivot low price AND OBV at the current pivot low > OBV at the previous retained pivot low
+Short: current retained pivot high price > previous retained pivot high price AND OBV at the current pivot high < OBV at the previous retained pivot high

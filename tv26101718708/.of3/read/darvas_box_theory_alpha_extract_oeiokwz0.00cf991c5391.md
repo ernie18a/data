@@ -1,0 +1,8 @@
+Calculation: Active box ceiling = highest(high, box lookback) when a box starts; retain until a boundary break
+Calculation: Active box floor = lowest(low, box lookback) when a box starts; retain until a boundary break
+Calculation: Base stop = active box ceiling in ceiling mode, selected source − ATR(ATR lookback) × ATR multiplier in ATR mode, otherwise active box floor
+Calculation: Trailing stop = base stop at entry; when higher-box trailing is enabled and a completed box ceiling exceeds the previous completed box ceiling, max(previous trailing stop, base stop)
+Long: flat AND active eligible box AND (close > active box ceiling in close mode OR high > active box ceiling in wick mode) AND (volume filter disabled OR volume >= SMA(volume, volume lookback) × volume multiplier) AND (trend filter disabled OR selected source > EMA(selected source, trend lookback))
+Long: long position AND active eligible box AND (close > active box ceiling in close mode OR high > active box ceiling in wick mode) AND (volume filter disabled OR volume >= SMA(volume, volume lookback) × volume multiplier) AND (trend filter disabled OR selected source > EMA(selected source, trend lookback)) AND selected source > entry price
+Short: flat AND active eligible box AND (close < active box floor in close mode OR low < active box floor in wick mode)
+Exit: long, selected source < trailing stop OR (active eligible box AND (close < active box floor in close mode OR low < active box floor in wick mode))

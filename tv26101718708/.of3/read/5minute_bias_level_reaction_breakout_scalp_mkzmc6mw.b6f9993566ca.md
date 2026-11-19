@@ -1,0 +1,11 @@
+Calculation: Bias = neutral initially; set bearish when close < the latest confirmed chart-bar PivotLow(low, pivot lookback, pivot lookback), then set bullish when close > the latest confirmed chart-bar PivotHigh(high, pivot lookback, pivot lookback); otherwise retain the prior bias
+Calculation: Long stop = at entry, min(reaction candle low, latest confirmed pivot low) - ATR(ATR lookback) * stop buffer ATR multiplier
+Calculation: Long target = at entry, entry price + (entry price - long stop) * reward multiple
+Calculation: Short stop = at entry, max(reaction candle high, latest confirmed pivot high) + ATR(ATR lookback) * stop buffer ATR multiplier
+Calculation: Short target = at entry, entry price - (short stop - entry price) * reward multiple
+Long: bullish bias AND no setup armed AND latest confirmed pivot low exists AND low <= latest confirmed pivot low + proximity ATR multiplier * ATR(ATR lookback) AND close > open AND (wick requirement disabled OR (high > low AND (min(open, close) - low) / (high - low) >= minimum rejection wick fraction))
+Short: bearish bias AND no setup armed AND latest confirmed pivot high exists AND high >= latest confirmed pivot high - proximity ATR multiplier * ATR(ATR lookback) AND close < open AND (wick requirement disabled OR (high > low AND (high - max(open, close)) / (high - low) >= minimum rejection wick fraction))
+Long: a long setup armed on a prior chart bar and still armed (cleared when bias turns bearish, the wait limit is exceeded, or a breakout occurs) AND bullish bias AND bars since reaction <= breakout wait limit AND ((wick-break mode AND high >= reaction candle high) OR (close-break mode AND close >= reaction candle high)) AND no tracked position open AND trade signals today < daily trade cap
+Short: a short setup armed on a prior chart bar and still armed (cleared when bias turns bullish, the wait limit is exceeded, or a breakout occurs) AND bearish bias AND bars since reaction <= breakout wait limit AND ((wick-break mode AND low <= reaction candle low) OR (close-break mode AND close <= reaction candle low)) AND no tracked position open AND trade signals today < daily trade cap
+Exit: long, high >= long target OR low <= long stop
+Exit: short, low <= short target OR high >= short stop

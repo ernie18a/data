@@ -1,0 +1,6 @@
+Calculation: YieldSpread = (US yield close(T1) - paired local yield close(T1)) × pair-direction sign (+1 when USD is the base currency, -1 when USD is the quote currency); use nominal US yield or real US yield according to the real-yield setting, and nominal local yield in either case; sample T1 values on chart bars, using the last completed T1 bar historically and the still-forming T1 bar in real time
+Calculation: ZScore(x, normalization lookback) = (x - SMA(x, normalization lookback)) / StDev(x, normalization lookback), or 0 when StDev is 0
+Calculation: Normalized spread = ZScore(EMA(YieldSpread, spread smoothing), normalization lookback), calculated on chart bars
+Calculation: Normalized price = ZScore(chart close, normalization lookback), calculated on chart bars
+Long: Normalized spread > Normalized spread[divergence lookback] AND Normalized price < Normalized price[divergence lookback] AND abs(Normalized spread - Normalized price) >= divergence gap threshold
+Short: Normalized spread < Normalized spread[divergence lookback] AND Normalized price > Normalized price[divergence lookback] AND abs(Normalized spread - Normalized price) >= divergence gap threshold

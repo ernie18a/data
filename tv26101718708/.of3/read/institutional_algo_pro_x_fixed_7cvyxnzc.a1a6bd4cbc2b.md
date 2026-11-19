@@ -1,0 +1,16 @@
+Calculation: Signed volume = volume when close > open, -volume when close < open, and 0 when close = open
+Calculation: Latest confirmed pivot high = most recent confirmed PivotHigh(high, swing lookback, swing lookback)
+Calculation: Latest confirmed pivot low = most recent confirmed PivotLow(low, swing lookback, swing lookback)
+Calculation: Opening-range high = highest high during the configured session, reset at session start and held after session end
+Calculation: Opening-range low = lowest low during the configured session, reset at session start and held after session end
+Calculation: Initial risk = ATR(ATR lookback) on the entry bar * stop-distance multiplier
+Calculation: First long target = entry price + initial risk * first reward-risk parameter
+Calculation: First short target = entry price - initial risk * first reward-risk parameter
+Calculation: Long stop = entry price - initial risk until the first long target is reached; if the breakeven move is enabled, then entry price + ATR(ATR lookback) on the first-target-hit bar * breakeven-buffer parameter, held thereafter
+Calculation: Short stop = entry price + initial risk until the first short target is reached; if the breakeven move is enabled, then entry price - ATR(ATR lookback) on the first-target-hit bar * breakeven-buffer parameter, held thereafter
+Calculation: Long third target = entry price + initial risk * third reward-risk parameter
+Calculation: Short third target = entry price - initial risk * third reward-risk parameter
+Long: close crosses above the latest confirmed pivot high AND that pivot high differs from the most recent pivot high already broken OR (close crosses above the opening-range high after the configured session ends AND EMA(close, short lookback) > EMA(close, medium lookback) > EMA(close, long lookback) AND RSI(close, RSI lookback) > bullish RSI threshold AND EMA(Signed volume, delta lookback) > minimum delta threshold AND cumulative sum of Signed volume since the first chart bar > its value one chart bar ago AND (VWAP((high + low + close) / 3) < close when the VWAP filter is enabled) AND (close > EMA(close, higher-timeframe EMA lookback, T1) when the higher-timeframe filter is enabled; evaluated on chart bars using the T1 value, which is still forming in real time and last completed on historical bars))
+Short: close crosses below the latest confirmed pivot low AND that pivot low differs from the most recent pivot low already broken OR (close crosses below the opening-range low after the configured session ends AND EMA(close, short lookback) < EMA(close, medium lookback) < EMA(close, long lookback) AND RSI(close, RSI lookback) < bearish RSI threshold AND EMA(Signed volume, delta lookback) < -minimum delta threshold AND cumulative sum of Signed volume since the first chart bar < its value one chart bar ago AND (VWAP((high + low + close) / 3) > close when the VWAP filter is enabled) AND (close < EMA(close, higher-timeframe EMA lookback, T1) when the higher-timeframe filter is enabled; evaluated on chart bars using the T1 value, which is still forming in real time and last completed on historical bars))
+Exit: Long, high >= Long third target OR low <= Long stop
+Exit: Short, low <= Short third target OR high >= Short stop

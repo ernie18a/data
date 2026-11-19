@@ -1,0 +1,11 @@
+Calculation: Anchored weighted standard deviation(source, volume, anchor) = sqrt(max(sum from anchor through current bar(volume × source²) / sum from anchor through current bar(volume) − Anchored VWAP(source, anchor)², 0))
+Calculation: Band 1 deviation = anchored weighted standard deviation(source, volume, anchor) or standard deviation(source, lookback), according to deviation mode
+Calculation: Upper Band 1 = Anchored VWAP(source, anchor) + Band 1 deviation × band multiplier
+Calculation: Lower Band 1 = Anchored VWAP(source, anchor) − Band 1 deviation × band multiplier
+Long: anchor active AND close >= Anchored VWAP(source, anchor)
+Short: anchor active AND close < Anchored VWAP(source, anchor)
+Long: anchor active AND Anchored VWAP(source, anchor) > Anchored VWAP(source, anchor)[slope lookback]
+Short: anchor active AND Anchored VWAP(source, anchor) < Anchored VWAP(source, anchor)[slope lookback]
+Long: long side enabled AND anchor active AND ((signal mode permits AVWAP retests AND low <= Anchored VWAP(source, anchor) + Anchored VWAP(source, anchor) × retest tolerance / 100 AND close > Anchored VWAP(source, anchor) AND close[1] <= Anchored VWAP(source, anchor)[1]) OR (signal mode permits band reversals AND low <= Lower Band 1 AND close > Lower Band 1)) AND (close confirmation disabled OR close > open) AND (slope filter disabled OR Anchored VWAP(source, anchor) > Anchored VWAP(source, anchor)[slope lookback])
+Long: long side enabled AND Long-S enabled AND anchor active AND low <= Lower Band 1 + Lower Band 1 × retest tolerance / 100 AND (close > open OR close >= low + (high − low) × reaction fraction)
+Short: short side enabled AND anchor active AND ((signal mode permits AVWAP retests AND high >= Anchored VWAP(source, anchor) − Anchored VWAP(source, anchor) × retest tolerance / 100 AND close < Anchored VWAP(source, anchor) AND close[1] >= Anchored VWAP(source, anchor)[1]) OR (signal mode permits band reversals AND high >= Upper Band 1 AND close < Upper Band 1)) AND (close confirmation disabled OR close < open) AND (slope filter disabled OR Anchored VWAP(source, anchor) < Anchored VWAP(source, anchor)[slope lookback])

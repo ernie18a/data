@@ -1,0 +1,6 @@
+Calculation: Currency strength(c) = mean over the other seven currencies x in {EUR, USD, JPY, CHF, GBP, AUD, CAD, NZD} of 10000 × ln(current chart-bar close of c/x ÷ T1 close[anchor bars back] of c/x), using the last completed T1 bar.
+Calculation: Currency momentum(c) = Linear Regression Slope(Currency strength(c), RoC lookback), optionally z-scored over the normalization lookback.
+Calculation: Selected momentum(c) = Currency momentum(c) on the current chart bar, or its previous chart-bar value when last-closed is enabled.
+Calculation: Auto threshold = auto multiplier × StDev(maximum absolute Selected momentum across the eight currencies, auto lookback), calculated on chart bars.
+Long: On chart bars, any of EUR, USD, JPY, CHF, GBP, AUD, CAD, or NZD Selected momentum crosses above the positive trigger, which is either the fixed positive trigger parameter or Auto threshold.
+Short: On chart bars, any of EUR, USD, JPY, CHF, GBP, AUD, CAD, or NZD Selected momentum crosses below the negative trigger, which is either the fixed negative trigger parameter or negative Auto threshold.

@@ -1,0 +1,6 @@
+Long: Primary selected Williams %R variant > nz(Primary selected Williams %R variant[1])
+Short: NOT (Primary selected Williams %R variant > nz(Primary selected Williams %R variant[1]))
+Long: Secondary selected Williams %R variant > nz(Secondary selected Williams %R variant[1])
+Short: NOT (Secondary selected Williams %R variant > nz(Secondary selected Williams %R variant[1]))
+Long: Tertiary selected Williams %R variant > nz(Tertiary selected Williams %R variant[1])
+Short: NOT (Tertiary selected Williams %R variant > nz(Tertiary selected Williams %R variant[1]))

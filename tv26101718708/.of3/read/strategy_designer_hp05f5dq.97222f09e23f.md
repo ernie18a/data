@@ -1,0 +1,15 @@
+Calculation: ATR = ATR(high, low, close, ATR lookback)
+Calculation: First moving average = selected EMA, SMA, RMA, or WMA(configured moving-average source, shorter moving-average lookback)
+Calculation: Second moving average = separately selected EMA, SMA, RMA, or WMA(the same source, longer moving-average lookback)
+Calculation: RSI = RSI(configured RSI source, RSI lookback)
+Calculation: CCI = CCI(configured CCI source, CCI lookback)
+Calculation: Bollinger Band Width = Bollinger Band Width(SMA(configured Bollinger source, Bollinger lookback), Bollinger lookback, Bollinger multiplier)
+Calculation: ADX = ADX(DI lookback, ADX smoothing lookback)
+Calculation: MFI = MFI(configured MFI source, MFI lookback)
+Calculation: Momentum = Momentum(configured momentum source, momentum lookback)
+Calculation: Long trailing stop = while long, max(current low * (1 - trailing parameter / 100) in percentage mode or current low - trailing parameter in absolute mode, prior long trailing stop); reset to the long reset level while flat
+Calculation: Short trailing stop = while short, min(current high * (1 + trailing parameter / 100) in percentage mode or current high + trailing parameter in absolute mode, prior short trailing stop); reset to the short reset level while flat
+Long: (date filter disabled OR start datetime <= datetime <= end datetime) AND the configured AND/OR combination of active long-directed conditions, each comparing one of the listed indicators with another listed indicator or a numeric threshold using >, <, >=, <=, =, !=, crosses above, or crosses below
+Short: bidirectional mode AND (date filter disabled OR start datetime <= datetime <= end datetime) AND the configured AND/OR combination of active short-directed conditions, each comparing one of the listed indicators with another listed indicator or a numeric threshold using >, <, >=, <=, =, !=, crosses above, or crosses below
+Exit: long, (spot mode AND (date filter disabled OR start datetime <= datetime <= end datetime) AND the configured AND/OR combination of active short-directed conditions) OR (trailing stop enabled AND low <= long trailing stop) OR (fixed stop enabled AND trailing stop disabled AND ((percentage mode AND low <= entry price * (1 - stop parameter / 100)) OR (absolute mode AND low <= entry price - stop parameter))) OR (take-profit enabled AND ((percentage mode AND high >= entry price * (1 + take-profit parameter / 100)) OR (absolute mode AND high >= entry price + take-profit parameter)))
+Exit: short, (trailing stop enabled AND high >= short trailing stop) OR (fixed stop enabled AND trailing stop disabled AND ((percentage mode AND high >= entry price * (1 + stop parameter / 100)) OR (absolute mode AND high >= entry price + stop parameter))) OR (take-profit enabled AND ((percentage mode AND low <= entry price * (1 - take-profit parameter / 100)) OR (absolute mode AND low <= entry price - take-profit parameter)))

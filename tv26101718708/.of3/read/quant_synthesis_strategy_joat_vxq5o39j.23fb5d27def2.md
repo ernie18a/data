@@ -1,0 +1,40 @@
+Calculation: ATR floor = max(ATR(ATR lookback), instrument tick size)
+Calculation: Normalized EMA spread = (EMA(close, shorter chart EMA lookback) - EMA(close, longer chart EMA lookback)) / ATR floor
+Calculation: Normalized regression slope = (LinReg(close, regression lookback, current chart bar) - LinReg(close, regression lookback, preceding chart bar)) / ATR floor
+Calculation: Normalized signal EMA = EMA(EMA(close, shorter chart EMA lookback) - EMA(close, longer chart EMA lookback), signal lookback) / ATR floor
+Calculation: Trend pulse = EMA(normalized EMA spread + normalized regression slope, trend-pulse lookback)
+Calculation: Momentum composite = clamp(normalized EMA spread × EMA-spread weight + normalized regression slope × slope weight + trend pulse × pulse weight + pivot divergence contribution × divergence weight, negative momentum cap, positive momentum cap)
+Calculation: Volume z-score = 0 if StDev(volume, volume lookback) is 0; otherwise (volume - SMA(volume, volume lookback)) / StDev(volume, volume lookback)
+Calculation: Directional volume = volume × (close - open) / max(SMA(volume × abs(close - open), volume lookback), instrument tick size)
+Calculation: Volume composite = clamp(volume z-score × volume-z weight + directional volume × directional-volume weight, negative volume cap, positive volume cap)
+Calculation: Bullish pivot structure = the two latest confirmed PivotHigh(high, left pivot strength, right pivot strength) values are rising AND the two latest confirmed PivotLow(low, left pivot strength, right pivot strength) values are rising; false until two of each are confirmed
+Calculation: Bearish pivot structure = the two latest confirmed PivotHigh(high, left pivot strength, right pivot strength) values are falling AND the two latest confirmed PivotLow(low, left pivot strength, right pivot strength) values are falling; false until two of each are confirmed
+Calculation: Pivot divergence contribution = positive one on a bar confirming a PivotLow whose low is below the preceding confirmed PivotLow and whose pivot-bar oscillator is above the oscillator at the preceding PivotLow; otherwise negative one on a bar confirming a PivotHigh whose high is above the preceding confirmed PivotHigh and whose pivot-bar oscillator is below the oscillator at the preceding PivotHigh; otherwise zero, with the positive condition taking precedence if both occur; pivot-bar oscillator = normalized EMA spread + normalized regression slope + normalized signal EMA sampled at the pivot bar
+Calculation: Directional trend regime = ADX(ADX lookback) >= trend ADX threshold AND abs(normalized EMA spread) >= normalized-spread threshold
+Calculation: Balance regime = ADX(ADX lookback) < balance ADX threshold OR ATR fraction < its SMA over the ATR-fraction averaging lookback × balance-volatility factor; ATR fraction = ATR(ATR lookback) / close, and use the current ATR fraction when its SMA is undefined
+Calculation: Volatility expansion regime = ATR fraction > its SMA over the ATR-fraction averaging lookback × expansion-volatility factor
+Calculation: HTF bullish bias = EMA(close, shorter HTF EMA lookback) > EMA(close, longer HTF EMA lookback) AND the current chart-bar sampled shorter HTF EMA > its preceding chart-bar sampled value; request both EMAs on T1 with lookahead off and carry values onto chart bars, using the forming T1 bar in realtime and completed T1 values historically
+Calculation: HTF bearish bias = EMA(close, shorter HTF EMA lookback) < EMA(close, longer HTF EMA lookback) AND the current chart-bar sampled shorter HTF EMA < its preceding chart-bar sampled value; request both EMAs on T1 with lookahead off and carry values onto chart bars, using the forming T1 bar in realtime and completed T1 values historically
+Calculation: Opening range = at the first chart bar in the session window, session open is that bar's open and opening high and low start at its high and low; update opening high and low through the opening-range length, then hold them for the session; range is ready when the in-session bar count reaches the opening-range length; midpoint = (opening high + opening low) / 2
+Calculation: Long session context = session filter disabled OR (opening range ready AND close > opening high AND close > opening midpoint)
+Calculation: Short session context = session filter disabled OR (opening range ready AND close < opening low AND close < opening midpoint)
+Calculation: Long session bias = opening range ready AND close > session open AND close > opening midpoint
+Calculation: Short session bias = opening range ready AND close < session open AND close < opening midpoint
+Calculation: Long confluence = (directional trend regime AND normalized EMA spread > 0 ? trend-regime points : volatility expansion regime AND normalized EMA spread > 0 ? expansion-regime points : 0) + (HTF-bias filter enabled ? (HTF bullish bias ? HTF-bias points : 0) : neutral-bias points) + (bullish pivot structure ? structure points : 0) + (momentum composite > 0 ? min(momentum composite, momentum cap) : 0) + (volume z-score > volume-surprise threshold AND close > open ? min(volume composite, volume cap) : 0) + (long session bias OR (long session context AND close > Highest(high, breakout lookback) over preceding chart bars) ? session points : 0)
+Calculation: Short confluence = (directional trend regime AND normalized EMA spread < 0 ? trend-regime points : volatility expansion regime AND normalized EMA spread < 0 ? expansion-regime points : 0) + (HTF-bias filter enabled ? (HTF bearish bias ? HTF-bias points : 0) : neutral-bias points) + (bearish pivot structure ? structure points : 0) + (momentum composite < 0 ? min(abs(momentum composite), momentum cap) : 0) + (volume z-score > volume-surprise threshold AND close < open ? min(abs(volume composite), volume cap) : 0) + (short session bias OR (short session context AND close < Lowest(low, breakout lookback) over preceding chart bars) ? session points : 0)
+Long: EMA(close, shorter chart EMA lookback) > EMA(close, longer chart EMA lookback)
+Short: EMA(close, shorter chart EMA lookback) <= EMA(close, longer chart EMA lookback)
+Long: HTF bullish bias
+Short: HTF bearish bias
+Long: Long confluence >= minimum confluence
+Short: Short confluence >= minimum confluence
+Long: chart bar is confirmed AND Long confluence >= minimum confluence AND Long confluence > Short confluence AND directional trend regime AND NOT balance regime AND no prior entry or chart bars since last entry >= cooldown length AND entries in current session < session entry limit AND position is flat or short
+Short: chart bar is confirmed AND Short confluence >= minimum confluence AND Short confluence > Long confluence AND directional trend regime AND NOT balance regime AND no prior entry or chart bars since last entry >= cooldown length AND entries in current session < session entry limit AND position is flat or long
+Exit: Long, low <= entry price - max(ATR(ATR lookback) × stop ATR multiple, minimum stop distance in ticks × instrument tick size) OR high >= entry price + max(ATR(ATR lookback) × target ATR multiple, minimum target distance in ticks × instrument tick size)
+Exit: Short, high >= entry price + max(ATR(ATR lookback) × stop ATR multiple, minimum stop distance in ticks × instrument tick size) OR low <= entry price - max(ATR(ATR lookback) × target ATR multiple, minimum target distance in ticks × instrument tick size)
+Exit: Long, chart bars since entry >= maximum bars in trade
+Exit: Short, chart bars since entry >= maximum bars in trade
+Exit: Long, chart bar is confirmed AND (bearish pivot structure OR HTF bearish bias OR balance regime)
+Exit: Short, chart bar is confirmed AND (bullish pivot structure OR HTF bullish bias OR balance regime)
+Exit: Long, current chart bar is outside the session window AND preceding chart bar was inside it
+Exit: Short, current chart bar is outside the session window AND preceding chart bar was inside it

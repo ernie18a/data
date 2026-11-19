@@ -1,0 +1,7 @@
+Calculation: Hull = selected HMA, EHMA, or THMA(hull source, hull lookback × length multiplier), on chart bars or, when higher-timeframe mode is enabled, the T1 bar still forming sampled on chart bars
+Calculation: LSMA = linear regression(LSMA source, lookback, offset)
+Calculation: ADX signal = Average Directional Index(DI lookback, smoothing lookback)
+Long: long-direction permission AND position side is not long AND Hull trend coloring enabled AND Hull <= Hull[2 chart bars ago] AND LSMA crosses above Hull AND (ADX filter disabled OR ADX signal > threshold)
+Short: short-direction permission AND position side is not short AND Hull trend coloring enabled AND Hull > Hull[2 chart bars ago] AND LSMA crosses below Hull AND (ADX filter disabled OR ADX signal > threshold)
+Exit: Long, high >= entry price × (1 + target 1 percent) OR high >= entry price × (1 + target 2 percent) OR high >= entry price × (1 + target 3 percent) OR high >= entry price × (1 + target 4 percent) OR close < entry price × (1 − stop-loss percent)
+Exit: Short, low <= entry price × (1 − target 1 percent) OR low <= entry price × (1 − target 2 percent) OR low <= entry price × (1 − target 3 percent) OR low <= entry price × (1 − target 4 percent) OR close > entry price × (1 + stop-loss percent)

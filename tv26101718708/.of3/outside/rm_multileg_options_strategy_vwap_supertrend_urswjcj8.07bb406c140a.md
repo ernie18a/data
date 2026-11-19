@@ -1,0 +1,3 @@
+Calculation: Synthetic strategy OHLC = sum of each selected leg's corresponding OHLC multiplied by its direction
+Long: Supertrend of synthetic strategy OHLC or Nifty Spot high, low, and close, using factor P1 and chart OHLC ATR period P2, changes from bearish to bullish
+Short: Supertrend of synthetic strategy OHLC or Nifty Spot high, low, and close, using factor P1 and chart OHLC ATR period P2, changes from bullish to bearish

@@ -1,0 +1,10 @@
+Calculation: Raw delta = footprint delta with row size and value-area percentage parameters when available; otherwise volume * (2 * (close - low) / max(high - low, minimum price increment) - 1)
+Calculation: Bar delta = EMA(raw delta, smoothing lookback)
+Calculation: Cumulative delta = cumulative sum(raw delta)
+Calculation: CVD baseline = SMA(cumulative delta, CVD baseline lookback)
+Calculation: Volume average = SMA(volume, volume lookback)
+Calculation: Delta change percent = abs(current bar delta - previous same-type pivot delta) / max(abs(previous same-type pivot delta), delta denominator floor) * 100
+Long: current chart bar is a pivot low using only a left-side lookback AND a previous pivot low exists AND pivot distance <= maximum pivot distance AND low < previous pivot low AND bar delta > previous pivot low's bar delta AND delta change percent >= minimum delta change AND (volume filter disabled OR volume >= volume average * volume multiplier) AND (CVD filter disabled OR cumulative delta > CVD baseline)
+Long: current chart bar is a pivot low using only a left-side lookback AND a previous pivot low exists AND pivot distance <= maximum pivot distance AND low > previous pivot low AND bar delta < previous pivot low's bar delta AND delta change percent >= minimum delta change AND (volume filter disabled OR volume >= volume average * volume multiplier)
+Short: current chart bar is a pivot high using only a left-side lookback AND a previous pivot high exists AND pivot distance <= maximum pivot distance AND high > previous pivot high AND bar delta < previous pivot high's bar delta AND delta change percent >= minimum delta change AND (volume filter disabled OR volume >= volume average * volume multiplier) AND (CVD filter disabled OR cumulative delta <= CVD baseline)
+Short: current chart bar is a pivot high using only a left-side lookback AND a previous pivot high exists AND pivot distance <= maximum pivot distance AND high < previous pivot high AND bar delta > previous pivot high's bar delta AND delta change percent >= minimum delta change AND (volume filter disabled OR volume >= volume average * volume multiplier)

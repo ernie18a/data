@@ -1,0 +1,6 @@
+Calculation: Rolling midpoint(x, lookback) = (highest(x, lookback) + lowest(x, lookback)) / 2
+Calculation: Fast composite line = (Rolling midpoint(VWAP(Typical Price, volume, fast Tenkan lookback), fast Tenkan lookback) + Rolling midpoint(VWAP(Typical Price, volume, fast Kijun lookback), fast Kijun lookback)) / 2
+Calculation: Slow composite line = (Rolling midpoint(VWAP(Typical Price, volume, slow Tenkan lookback), slow Tenkan lookback) + Rolling midpoint(VWAP(Typical Price, volume, slow Kijun lookback), slow Kijun lookback)) / 2
+Calculation: Leading-line average = (Fast composite line + Slow composite line) / 2
+Long: Fast composite line > Fast composite line[1] AND Slow composite line > Slow composite line[1] AND close > upper Bollinger Band(Leading-line average, lookback, deviation multiplier) AND TSV(close, volume, lookback) > 0 AND TSV(close, volume, lookback) > EMA(TSV(close, volume, lookback), EMA lookback) AND (VIDYA(source, lookback) < close if VIDYA filter is enabled) AND datetime >= start datetime AND datetime < end datetime
+Short: Fast composite line < Fast composite line[1] AND Slow composite line < Slow composite line[1]

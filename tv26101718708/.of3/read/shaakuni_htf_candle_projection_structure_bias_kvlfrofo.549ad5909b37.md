@@ -1,0 +1,3 @@
+Calculation: StructureBias(T, P) = bullish if the latest confirmed PivotHigh(high, P, P) is greater than the preceding confirmed PivotHigh(high, P, P) AND the latest confirmed PivotLow(low, P, P) is greater than the preceding confirmed PivotLow(low, P, P); bearish if both are lower; otherwise neutral. Calculate on T bars and request on chart bars with lookahead off (latest completed T bar historically, forming T bar in real time).
+Long: StructureBias(T1, P) = bullish OR StructureBias(T2, P) = bullish OR StructureBias(T3, P) = bullish
+Short: StructureBias(T1, P) = bearish OR StructureBias(T2, P) = bearish OR StructureBias(T3, P) = bearish

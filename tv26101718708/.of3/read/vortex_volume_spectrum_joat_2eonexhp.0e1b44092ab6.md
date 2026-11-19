@@ -1,0 +1,2 @@
+Long: the latest pivot event confirmed on a closed chart bar after a warm-up of warm-up-multiple times swing-lookback chart bars is pivotlow(low, swing-lookback, swing-lookback); pivot low wins if both pivot types confirm on the same bar
+Short: the latest pivot event confirmed on a closed chart bar after a warm-up of warm-up-multiple times swing-lookback chart bars is pivothigh(high, swing-lookback, swing-lookback); pivot low wins if both pivot types confirm on the same bar

@@ -1,0 +1,5 @@
+Calculation: Bid ratio = for each k from 1 through lookback, r_k = (close - lowest(low, k)) / (highest(high, k) - lowest(low, k)), or 0 when the range is zero; if smoothing is enabled, sum r_k weighted by (lookback + 1 - k) / [lookback × (lookback + 1) / 2] when triangular weighting is enabled, otherwise by 1 / lookback; if smoothing is disabled, use r_lookback.
+Calculation: Pair score = min(maximum-score parameter, floor(bid ratio / score-step parameter)); a currency's score is the pair score when it is the base currency and maximum-score parameter minus the pair score when it is the quote currency.
+Calculation: Currency strength(currency) = average of its scores across the meter's supported currency pairs.
+Long: signals enabled AND base and quote currency strengths are available AND Currency strength(base currency) >= upper-strength parameter AND Currency strength(quote currency) <= lower-strength parameter.
+Short: signals enabled AND base and quote currency strengths are available AND Currency strength(base currency) <= lower-strength parameter AND Currency strength(quote currency) >= upper-strength parameter.

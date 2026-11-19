@@ -1,0 +1,11 @@
+Calculation: Volume-profile difference = upper volume-profile mean - lower volume-profile mean
+Calculation: Normalized volume-profile difference = (volume-profile difference + highest(abs(volume-profile difference), normalization lookback)) / (2 * highest(abs(volume-profile difference), normalization lookback))
+Calculation: Adaptive length = minimum adaptive length + normalized volume-profile difference * (maximum cluster period - minimum adaptive length)
+Calculation: Normalized acceleration = abs(volume-profile difference - previous volume-profile difference, using 0 when unavailable) / highest(abs(volume-profile difference - previous volume-profile difference), acceleration lookback), using 1 as the denominator when that highest value is 0
+Calculation: Adaptive smoothing coefficient = min(1, 2 / (adaptive length + 1) * (1 + normalized acceleration * acceleration multiplier))
+Calculation: Adaptive cluster = current close * current adaptive smoothing coefficient + previous adaptive cluster * (1 - current adaptive smoothing coefficient), initialized to current close
+Calculation: Dynamic price cluster = recursively filtered adaptive cluster; current value = previous filtered value + filter-strength parameter * (adaptive cluster - previous filtered value), initialized to adaptive cluster
+Long: close > dynamic price cluster
+Short: close < dynamic price cluster
+Long: retest signals enabled AND close crosses below the lower volume-profile mean AND SMA(close, retest lookback) is falling over the retest lookback AND bars since the last lower reset >= minimum retest wait AND bars since the last lower reset <= maximum retest wait AND current lower volume-profile mean <= previous lower volume-profile mean
+Short: retest signals enabled AND close crosses above the upper volume-profile mean AND SMA(close, retest lookback) is rising over the retest lookback AND bars since the last upper reset >= minimum retest wait AND bars since the last upper reset <= maximum retest wait AND previous upper volume-profile mean <= current upper volume-profile mean

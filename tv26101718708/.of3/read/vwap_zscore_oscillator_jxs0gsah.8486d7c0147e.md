@@ -1,0 +1,6 @@
+Calculation: Moving VWAP = VWMA(source, lookback) when SMA(volume, lookback) > 0; otherwise SMA(source, lookback) if no-volume fallback is enabled, else undefined
+Calculation: Standard deviation = sqrt(max(SMA(source^2 * volume, same lookback) / SMA(volume, same lookback) - Moving VWAP^2, 0)) when this volume-weighted standard deviation is available and positive; otherwise STDEV(source, same lookback)
+Calculation: Oscillator = source - Moving VWAP in distance mode; (source - Moving VWAP) / Standard deviation when positive, else 0, in z-score mode; calculate on T1 bars and sample on chart bars using the active, forming T1 bar
+Calculation: Band 2 threshold = Band 2 level * Standard deviation in distance mode; Band 2 level in z-score mode
+Long: chart-bar crossover of sampled T1 oscillator above 0 OR chart-bar crossover of sampled T1 oscillator above Band 2 threshold
+Short: chart-bar crossunder of sampled T1 oscillator below 0 OR chart-bar crossunder of sampled T1 oscillator below negative Band 2 threshold

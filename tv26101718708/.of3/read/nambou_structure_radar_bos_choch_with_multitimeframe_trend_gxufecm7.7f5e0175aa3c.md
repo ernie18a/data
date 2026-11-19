@@ -1,0 +1,13 @@
+Calculation: Structure trend = bullish after an upward break of a confirmed swing high, bearish after a downward break of a confirmed swing low, unchanged between breaks and neutral before the first break; if both breaks occur on one bar, the downward break determines the trend.
+Long: A newly confirmed PivotHigh(high, swing lookback, swing lookback) is greater than the prior confirmed swing high, or a newly confirmed PivotLow(low, swing lookback, swing lookback) is greater than the prior confirmed swing low.
+Short: A newly confirmed PivotHigh(high, swing lookback, swing lookback) is less than the prior confirmed swing high, or a newly confirmed PivotLow(low, swing lookback, swing lookback) is less than the prior confirmed swing low.
+Long: On a confirmed chart bar, the selected upward break source is greater than the latest confirmed PivotHigh(high, swing lookback, swing lookback) that has not been broken since confirmation.
+Short: On a confirmed chart bar, the selected downward break source is less than the latest confirmed PivotLow(low, swing lookback, swing lookback) that has not been broken since confirmation.
+Long: The chart-timeframe Structure trend is bullish.
+Short: The chart-timeframe Structure trend is bearish.
+Long: For each enabled higher timeframe T1, T2, or T3 above the chart, its Structure trend is bullish, calculated on Tn bars and read on chart bars from the last completed Tn bar.
+Short: For each enabled higher timeframe T1, T2, or T3 above the chart, its Structure trend is bearish, calculated on Tn bars and read on chart bars from the last completed Tn bar.
+Long: On a confirmed chart bar, for any enabled higher timeframe T1, T2, or T3 above the chart, its Structure trend from the last completed Tn bar differs from its value sampled on the previous chart bar, a prior sampled value exists, and the current value is bullish.
+Short: On a confirmed chart bar, for any enabled higher timeframe T1, T2, or T3 above the chart, its Structure trend from the last completed Tn bar differs from its value sampled on the previous chart bar, a prior sampled value exists, and the current value is bearish.
+Long: The number of bullish Structure trends among the chart timeframe and enabled higher timeframes above the chart is greater than the number of bearish Structure trends among them.
+Short: The number of bearish Structure trends among the chart timeframe and enabled higher timeframes above the chart is greater than the number of bullish Structure trends among them.

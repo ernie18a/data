@@ -1,0 +1,7 @@
+Long: position is flat at chart-bar start AND RSI(close, lookback) calculated on T1 bars and sampled on chart bars using the last completed T1 bar historically and the forming T1 bar in real time (lookahead off) < RSI threshold
+Long: position is long at chart-bar start AND safety rung 1 is the next unfilled rung AND chart-bar close <= base-entry fill close * (1 - rung-1 deviation / 100)
+Long: position is long at chart-bar start AND safety rung 2 is the next unfilled rung AND chart-bar close <= base-entry fill close * (1 - rung-2 deviation / 100)
+Long: position is long at chart-bar start AND safety rung 3 is the next unfilled rung AND chart-bar close <= base-entry fill close * (1 - rung-3 deviation / 100)
+Long: position is long at chart-bar start AND safety rung 4 is the next unfilled rung AND chart-bar close <= base-entry fill close * (1 - rung-4 deviation / 100)
+Long: position is long at chart-bar start AND safety rung 5 is the next unfilled rung AND chart-bar close <= base-entry fill close * (1 - rung-5 deviation / 100)
+Exit: long, position was long at chart-bar start AND chart-bar close >= ((base quote-order size + sum of each safety rung's quote-order size filled before this bar) / (base quote-order size / base-entry fill close + sum over those filled rungs of each rung's quote-order size / its fill close)) * (1 + take-profit percentage / 100)

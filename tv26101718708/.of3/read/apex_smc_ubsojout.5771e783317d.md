@@ -1,0 +1,18 @@
+Long: On chart bars, the current T1 bar's close > EMA(close, EMA lookback, T1 current bar)
+Short: On chart bars, the current T1 bar's close <= EMA(close, EMA lookback, T1 current bar)
+Long: On chart bars, the current T2 bar's close > EMA(close, EMA lookback, T2 current bar)
+Short: On chart bars, the current T2 bar's close <= EMA(close, EMA lookback, T2 current bar)
+Long: On chart bars, the current T3 bar's close > EMA(close, EMA lookback, T3 current bar)
+Short: On chart bars, the current T3 bar's close <= EMA(close, EMA lookback, T3 current bar)
+Long: On chart bars, the current T4 bar's close > EMA(close, EMA lookback, T4 current bar)
+Short: On chart bars, the current T4 bar's close <= EMA(close, EMA lookback, T4 current bar)
+Long: On chart bars, the current T5 bar's close > EMA(close, EMA lookback, T5 current bar)
+Short: On chart bars, the current T5 bar's close <= EMA(close, EMA lookback, T5 current bar)
+Long: On chart bars, the current T6 bar's close > EMA(close, EMA lookback, T6 current bar)
+Short: On chart bars, the current T6 bar's close <= EMA(close, EMA lookback, T6 current bar)
+Long: low > high two bars ago AND close one bar ago > open one bar ago
+Short: high < low two bars ago AND close one bar ago < open one bar ago
+Long: A low <= the lowest low of the preceding scalp sweep lookback bars occurred within the scalp recency lookback bars AND close > open AND MACD histogram(close, shorter lookback, longer lookback, signal smoothing) > its value one bar ago AND (Chandelier Exit direction(lookback, stop multiplier) is bullish OR close - open > ATR(displacement lookback) * displacement multiplier) AND more than the scalp cooldown bars have elapsed since the previous bullish scalp trigger, with the count reset by a bearish scalp trigger
+Short: A high >= the highest high of the preceding scalp sweep lookback bars occurred within the scalp recency lookback bars AND close < open AND MACD histogram(close, shorter lookback, longer lookback, signal smoothing) < its value one bar ago AND (Chandelier Exit direction(lookback, stop multiplier) is bearish OR open - close > ATR(displacement lookback) * displacement multiplier) AND more than the scalp cooldown bars have elapsed since the previous bearish scalp trigger, with the count reset by a bullish scalp trigger
+Long: low <= the previous completed T1 bar's low OR low <= Pivot Low(low, major pivot radius, major pivot radius) on the current chart bar; this macro sweep occurred within the macro recency lookback bars AND close > open AND MACD histogram(close, shorter lookback, longer lookback, signal smoothing) > its value one bar ago AND (Chandelier Exit direction(lookback, stop multiplier) is bullish OR close - open > ATR(displacement lookback) * displacement multiplier) AND more than the swing cooldown bars have elapsed since the previous bullish swing trigger
+Short: high >= the previous completed T1 bar's high OR high >= Pivot High(high, major pivot radius, major pivot radius) on the current chart bar; this macro sweep occurred within the macro recency lookback bars AND close < open AND MACD histogram(close, shorter lookback, longer lookback, signal smoothing) < its value one bar ago AND (Chandelier Exit direction(lookback, stop multiplier) is bearish OR open - close > ATR(displacement lookback) * displacement multiplier) AND more than the swing cooldown bars have elapsed since the previous bearish swing trigger

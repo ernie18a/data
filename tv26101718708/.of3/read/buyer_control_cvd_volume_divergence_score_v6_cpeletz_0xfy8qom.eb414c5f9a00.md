@@ -1,0 +1,4 @@
+Calculation: Bearish divergence = a confirmed pivot high is higher than the preceding confirmed pivot high AND (EMA(CVD, CVD smoothing lookback) at the current pivot is lower than at the preceding pivot OR volume at the current pivot is lower than at the preceding pivot); each pivot uses the swing pivot lookback on both sides
+Calculation: Bullish divergence = a confirmed pivot low is lower than the preceding confirmed pivot low AND (EMA(CVD, CVD smoothing lookback) at the current pivot is higher than at the preceding pivot OR volume at the current pivot is lower than at the preceding pivot); each pivot uses the swing pivot lookback on both sides
+Long: Bullish divergence
+Short: Bearish divergence

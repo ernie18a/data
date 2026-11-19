@@ -1,0 +1,2 @@
+Long: close > open AND volume > SMA(volume, 50) * bubble-volume parameter * lowest bubble-tier parameter AND current bar is within the latest profile-lookback parameter bars
+Short: close < open AND volume > SMA(volume, 50) * bubble-volume parameter * lowest bubble-tier parameter AND current bar is within the latest profile-lookback parameter bars

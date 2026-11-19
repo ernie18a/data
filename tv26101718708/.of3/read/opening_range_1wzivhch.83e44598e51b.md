@@ -1,0 +1,6 @@
+Calculation: Opening-range high and low = highest high and lowest low during each session's configured opening interval
+Calculation: Opening-range range = abs(opening-range high - opening-range low)
+Calculation: Opening-range midpoint = (opening-range high + opening-range low) / 2
+Calculation: Session bias = bullish if the current opening-range midpoint is above the previous session's, bearish if below, neutral if equal
+Long: Armed at the start of each session or after close falls below the opening-range midpoint following the previous long signal, AND ((bias is disabled or session bias is not bearish) AND close crosses above the opening-range high OR (bias is enabled and session bias is bearish AND close crosses above opening-range high + opening-range range × extension fraction))
+Short: Armed at the start of each session or after close rises above the opening-range midpoint following the previous short signal, AND ((bias is disabled or session bias is not bullish) AND close crosses below the opening-range low OR (bias is enabled and session bias is bullish AND close crosses below opening-range low − opening-range range × extension fraction))

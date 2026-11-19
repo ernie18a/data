@@ -1,0 +1,5 @@
+Calculation: cumulative deviation for rung k = Σ(first AO deviation × deviation-step multiplier^(i − 1)), for i = 1 through k
+Calculation: average entry price = (base order size + Σ(first AO size × order-size multiplier^(k − 1), over filled rungs k)) / (base order size / initial entry price + Σ((first AO size × order-size multiplier^(k − 1)) / AO fill price(k), over filled rungs k))
+Short: position is flat AND RSI(close, RSI length, T1, last completed bar) crosses below the crossing level on T1 bars, sampled on chart bars with lookahead off, AND (date filter is disabled OR datetime is within the configured active window)
+Short: position is short AND an unfilled averaging-order rung remains within the configured order count AND close ≥ initial entry price × (1 + cumulative deviation for the next rung / 100) AND (date filter is disabled OR datetime is within the configured active window)
+Exit: short, close ≤ average entry price × (1 − take-profit percentage / 100) AND (date filter is disabled OR datetime is within the configured active window)

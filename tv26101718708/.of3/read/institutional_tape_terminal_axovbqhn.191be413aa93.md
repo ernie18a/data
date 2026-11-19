@@ -1,0 +1,6 @@
+Long: close (T1, still-forming bar on realtime chart bars and last completed bar on historical chart bars, sampled on chart bars) > open (T1, same bar)
+Short: close (T1, still-forming bar on realtime chart bars and last completed bar on historical chart bars, sampled on chart bars) < open (T1, same bar)
+Long: close (T2, still-forming bar on realtime chart bars and last completed bar on historical chart bars, sampled on chart bars) > open (T2, same bar)
+Short: close (T2, still-forming bar on realtime chart bars and last completed bar on historical chart bars, sampled on chart bars) < open (T2, same bar)
+Long: close (T3, still-forming bar on realtime chart bars and last completed bar on historical chart bars, sampled on chart bars) > open (T3, same bar)
+Short: close (T3, still-forming bar on realtime chart bars and last completed bar on historical chart bars, sampled on chart bars) < open (T3, same bar)

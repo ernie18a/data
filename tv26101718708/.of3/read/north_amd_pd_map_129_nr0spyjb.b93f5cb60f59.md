@@ -1,0 +1,13 @@
+Calculation: Valid FVG = high(T1, 1) - low(T1, 1) >= minimum middle-candle range
+Calculation: OB upper(open, high, close) = high in wick mode, otherwise max(open, close)
+Calculation: OB lower(open, low, close) = low in wick mode, otherwise min(open, close)
+Calculation: Pending bullish OB on T1 = on each confirmed T1 bar with low < lowest(low[1], sweep lookback), select that bar’s OB zone and timestamp, except when close >= open and a bearish candle exists in the prior opposite-candle search lookback, then select the most recent such candle; replace on each new low sweep and retain until marked
+Calculation: Pending bearish OB on T1 = on each confirmed T1 bar with high > highest(high[1], sweep lookback), select that bar’s OB zone and timestamp, except when close <= open and a bullish candle exists in the prior opposite-candle search lookback, then select the most recent such candle; replace on each new high sweep and retain until marked
+Long: On confirmed chart bars when an FVG-enabled T1 timestamp changes, low of the current T1 bar reported by lookahead-off security > high(T1, 2), low of the current T1 bar - high(T1, 2) >= minimum FVG gap, and (Valid FVG OR invalid FVG inclusion enabled)
+Short: On confirmed chart bars when an FVG-enabled T1 timestamp changes, low(T1, 2) > high of the current T1 bar reported by lookahead-off security, low(T1, 2) - high of the current T1 bar >= minimum FVG gap, and (Valid FVG OR invalid FVG inclusion enabled)
+Long: On chart-bar updates, IFVG conversion is enabled, a live valid bearish FVG zone exists on T1, and current chart close > its upper boundary
+Short: On chart-bar updates, IFVG conversion is enabled, a live valid bullish FVG zone exists on T1, and current chart close < its lower boundary
+Long: On a confirmed chart bar when an OB-enabled T1 timestamp changes, the last completed T1 bar is bullish, its close > OB upper of the most recent earlier bearish T1 candle, that candle’s OB zone height >= minimum OB height, and its timestamp has not already been marked by this close-through method
+Short: On a confirmed chart bar when an OB-enabled T1 timestamp changes, the last completed T1 bar is bearish, its close < OB lower of the most recent earlier bullish T1 candle, that candle’s OB zone height >= minimum OB height, and its timestamp has not already been marked by this close-through method
+Long: On a confirmed T1 bar, close > open, close > OB upper of the pending bullish OB, its zone height >= minimum OB height, and its timestamp has not already been marked by this sweep method
+Short: On a confirmed T1 bar, close < open, close < OB lower of the pending bearish OB, its zone height >= minimum OB height, and its timestamp has not already been marked by this sweep method
