@@ -1,0 +1,2 @@
+Long: current chart price pivot low < previous chart price pivot low AND breadth symbol low at current pivot > breadth symbol low at previous pivot
+Short: current chart price pivot high > previous chart price pivot high AND breadth symbol high at current pivot < breadth symbol high at previous pivot

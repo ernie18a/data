@@ -1,0 +1,10 @@
+Calculation: Bullish OB range = the high and low of the nearest prior chart bar with close < open within the OB search lookback at a bullish BOS; update only when such a bar is found
+Calculation: Bearish OB range = the high and low of the nearest prior chart bar with close > open within the same OB search lookback at a bearish BOS; update only when such a bar is found
+Long: For some prior chart bar j, low[j] > high[j − FVG offset] AND low <= low[j] AND close >= high[j − FVG offset]
+Short: For some prior chart bar j, high[j] < low[j − FVG offset] AND high >= high[j] AND close <= low[j − FVG offset]
+Long: close > the most recent confirmed PivotHigh(high, pivot lookback, pivot lookback) AND close[1] <= that same pivot high
+Short: close < the most recent confirmed PivotLow(low, pivot lookback, pivot lookback) AND close[1] >= that same pivot low
+Long: low <= bullish OB high AND close >= bullish OB low AND close > close[1]
+Short: high >= bearish OB low AND close <= bearish OB high AND close < close[1]
+Long: On chart bars, using lookahead-off T1 lows mapped to chart bars (the T1 bar still forming in real time; i counts chart bars ago on the mapped series), for some i from the liquidity start-offset parameter through the liquidity lookback parameter, abs(T1 low[i] − T1 low[i+1]) / T1 low[i] < equal-level threshold / 100 AND low < min(T1 low[i], T1 low[i+1]) AND close > min(T1 low[i], T1 low[i+1])
+Short: On chart bars, using lookahead-off T1 highs mapped to chart bars (the T1 bar still forming in real time; i counts chart bars ago on the mapped series), for some i from the liquidity start-offset parameter through the liquidity lookback parameter, abs(T1 high[i] − T1 high[i+1]) / T1 high[i] < equal-level threshold / 100 AND high > max(T1 high[i], T1 high[i+1]) AND close < max(T1 high[i], T1 high[i+1])

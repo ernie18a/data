@@ -1,0 +1,2 @@
+Long: low > high[gap offset] AND low - high[gap offset] >= ATR(ATR lookback) × minimum gap percentage / 100 AND low - high[gap offset] <= ATR(ATR lookback) × maximum gap percentage / 100
+Short: low[gap offset] > high AND low[gap offset] - high >= ATR(ATR lookback) × minimum gap percentage / 100 AND low[gap offset] - high <= ATR(ATR lookback) × maximum gap percentage / 100

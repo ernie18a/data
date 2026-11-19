@@ -1,0 +1,3 @@
+Calculation: Sigma distance = (close - anchored VWAP(source parameter, anchor parameter, effective volume)) / sqrt(max(cumulative sum of effective volume × source parameter² since the anchor / cumulative sum of effective volume since the anchor - anchored VWAP(source parameter, anchor parameter, effective volume)², 0)), where effective volume is volume when positive and nonmissing, otherwise 1
+Long: close crosses above anchored VWAP(source parameter, anchor parameter, effective volume) OR sigma distance crosses above the upper sigma multiplier
+Short: close crosses below anchored VWAP(source parameter, anchor parameter, effective volume) OR sigma distance crosses below the negative upper sigma multiplier

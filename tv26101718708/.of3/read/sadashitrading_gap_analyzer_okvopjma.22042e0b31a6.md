@@ -1,0 +1,5 @@
+Calculation: Gap percentage = 100 * (open - close[1]) / close[1]
+Long: Gap percentage >= minimum gap percentage AND (relative-volume filter disabled OR volume / SMA(volume[1], relative-volume lookback) >= minimum relative volume)
+Short: Gap percentage <= -minimum gap percentage AND (relative-volume filter disabled OR volume / SMA(volume[1], relative-volume lookback) >= minimum relative volume)
+Exit: long, (Gap percentage[evaluation delay] >= minimum gap percentage OR Gap percentage[evaluation delay] <= -minimum gap percentage) AND (relative-volume filter disabled OR (volume / SMA(volume[1], relative-volume lookback))[evaluation delay] >= minimum relative volume)
+Exit: short, (Gap percentage[evaluation delay] >= minimum gap percentage OR Gap percentage[evaluation delay] <= -minimum gap percentage) AND (relative-volume filter disabled OR (volume / SMA(volume[1], relative-volume lookback))[evaluation delay] >= minimum relative volume)

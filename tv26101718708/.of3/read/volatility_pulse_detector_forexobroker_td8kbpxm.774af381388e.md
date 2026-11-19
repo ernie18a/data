@@ -1,0 +1,3 @@
+Long: ATR(fast ATR lookback) > ATR(baseline ATR lookback) AND close > EMA(close, axis lookback)
+Long: ATR(fast ATR lookback) > ATR(baseline ATR lookback) AND ATR(fast ATR lookback)[1] <= ATR(baseline ATR lookback)[1] AND close > EMA(close, axis lookback) AND close > Highest(high, pivot lookback)[1] AND volume > SMA(volume, volume lookback) AND bars since prior signal >= cooldown parameter AND chart bar is confirmed
+Short: ATR(fast ATR lookback) > ATR(baseline ATR lookback) AND ATR(fast ATR lookback)[1] <= ATR(baseline ATR lookback)[1] AND close < EMA(close, axis lookback) AND close < Lowest(low, pivot lookback)[1] AND volume > SMA(volume, volume lookback) AND bars since prior signal >= cooldown parameter AND chart bar is confirmed

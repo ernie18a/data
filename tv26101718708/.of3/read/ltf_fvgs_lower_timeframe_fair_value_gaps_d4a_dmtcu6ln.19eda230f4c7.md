@@ -1,0 +1,3 @@
+Calculation: Gap exceeds threshold(a, b) = a - b > ATR(lookback, chart bars, current bar) * threshold
+Long: On T1 bars, using the current bar, which may still be forming, and two prior bars: high[1] > high[2] AND low > high[2] AND low[2] < low AND Gap exceeds threshold(low, high[2])
+Short: On T1 bars, using the current bar, which may still be forming, and two prior bars: low[1] < low[2] AND high < low[2] AND high[2] > high AND Gap exceeds threshold(low[2], high)

@@ -1,0 +1,6 @@
+Calculation: relative EMA spread = (EMA(close, P1) - EMA(close, P2)) / EMA(close, P2)
+Calculation: normalized momentum = if highest(relative EMA spread, P3) = lowest(relative EMA spread, P3) then 0 else 2 * (relative EMA spread - lowest(relative EMA spread, P3)) / (highest(relative EMA spread, P3) - lowest(relative EMA spread, P3)) - 1
+Option: buy call, close > EMA(close, P4) AND EMA(close, P1) > EMA(close, P2) AND normalized momentum > 0 AND normalized momentum > EMA(normalized momentum, P5) AND normalized momentum < P6 AND (P12 is disabled OR (volume >= SMA(volume, P7) * P8 AND close > open)) AND the last entry signal was not long
+Option: buy put, close < EMA(close, P4) AND EMA(close, P1) < EMA(close, P2) AND normalized momentum < 0 AND normalized momentum < EMA(normalized momentum, P5) AND normalized momentum > P9 AND (P12 is disabled OR (volume >= SMA(volume, P7) * P8 AND close < open)) AND the last entry signal was not short
+Exit: long, (normalized momentum < 0 AND normalized momentum < EMA(normalized momentum, P5)) OR (normalized momentum >= P6 AND normalized momentum < EMA(normalized momentum, P5))
+Exit: short, (normalized momentum > 0 AND normalized momentum > EMA(normalized momentum, P5)) OR (normalized momentum <= P9 AND normalized momentum > EMA(normalized momentum, P5))

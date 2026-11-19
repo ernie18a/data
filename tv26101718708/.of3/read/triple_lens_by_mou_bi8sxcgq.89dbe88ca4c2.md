@@ -1,0 +1,7 @@
+Calculation: Accumulation count = sum over the last P_count chart bars of 1 when close > close[1] * (1 + P_daily_move) AND volume > SMA(volume, P_volume_lookback), otherwise 0
+Calculation: Distribution count = sum over the last P_count chart bars of 1 when close < close[1] * (1 - P_daily_move) AND volume > SMA(volume, P_volume_lookback), otherwise 0
+Calculation: Net accumulation = Accumulation count - Distribution count
+Calculation: Uptrend stage 2 = close > SMA(close, P_MA_lookback, T1, still-forming T1 bar, value on chart bars) AND SMA(close, P_MA_lookback, T1, still-forming T1 bar, value on chart bars) > SMA(close, P_MA_lookback, T1, T1 bar P_slope_lookback bars earlier, value on chart bars)
+Long: Uptrend stage 2 = true
+Long: Net accumulation >= P_accumulation_threshold
+Exit: long, close > SMA(close, P_MA_lookback, T1, still-forming T1 bar, value on chart bars) AND SMA(close, P_MA_lookback, T1, still-forming T1 bar, value on chart bars) <= SMA(close, P_MA_lookback, T1, T1 bar P_slope_lookback bars earlier, value on chart bars) AND Distribution count >= P_distribution_warning_threshold OR Uptrend stage 2 on the previous chart bar = true AND close < SMA(close, P_MA_lookback, T1, still-forming T1 bar, value on chart bars)

@@ -1,0 +1,6 @@
+Long: EMA(close, shorter lookback) crosses above EMA(close, longer lookback)
+Long: The latest EMA crossover is bullish, the setup is waiting for the touch candle’s breakout, and current high exceeds the high of a candle since that crossover whose low <= EMA(close, shorter lookback) <= high
+Long: The latest EMA crossover is bullish, the setup is waiting for swing confirmation after the touch candle’s high was exceeded, and current close > highest(high, swing lookback)[1] captured on the crossover bar
+Short: EMA(close, shorter lookback) crosses below EMA(close, longer lookback)
+Short: The latest EMA crossover is bearish, the setup is waiting for the touch candle’s breakout, and current low is below the low of a candle since that crossover whose low <= EMA(close, shorter lookback) <= high
+Short: The latest EMA crossover is bearish, the setup is waiting for swing confirmation after the touch candle’s low was exceeded, and current close < lowest(low, swing lookback)[1] captured on the crossover bar

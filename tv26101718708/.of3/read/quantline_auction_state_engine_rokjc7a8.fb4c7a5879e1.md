@@ -1,0 +1,9 @@
+Calculation: relative volume = volume / SMA(volume, volume lookback)
+Long: on a confirmed chart bar with no active test or accepted range, close > Highest(high[1], range lookback) + ATR(ATR lookback) * break distance; lock both prior-range edges from this bar
+Short: on a confirmed chart bar with no active test or accepted range, close < Lowest(low[1], range lookback) - ATR(ATR lookback) * break distance; lock both prior-range edges from this bar
+Long: during an active downward test or accepted downside, close > locked low + ATR(ATR lookback) * failure distance
+Short: during an active upward test or accepted upside, close < locked high - ATR(ATR lookback) * failure distance
+Long: during an active upward test, close >= locked high - ATR(ATR lookback) * failure distance, at least the acceptance count of closes since the test (including its bar) exceeded locked high + ATR(ATR lookback) * break distance, Kaufman efficiency ratio(close, efficiency lookback) >= minimum efficiency, and (relative-volume filter is off or relative volume >= minimum relative volume)
+Short: during an active downward test, close <= locked low + ATR(ATR lookback) * failure distance, at least the acceptance count of closes since the test (including its bar) fell below locked low - ATR(ATR lookback) * break distance, Kaufman efficiency ratio(close, efficiency lookback) >= minimum efficiency, and (relative-volume filter is off or relative volume >= minimum relative volume)
+Long: on the first confirmed chart bar after upward acceptance, low <= locked high + ATR(ATR lookback) * retest tolerance and close >= locked high
+Short: on the first confirmed chart bar after downward acceptance, high >= locked low - ATR(ATR lookback) * retest tolerance and close <= locked low

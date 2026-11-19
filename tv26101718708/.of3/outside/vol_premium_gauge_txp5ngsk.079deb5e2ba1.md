@@ -1,0 +1,3 @@
+Calculation: Volatility premium = EMA(implied volatility of the traded instrument at T1, smoothing period) − 100 × sqrt(annualization factor) × standard deviation over the realized-volatility window of ln(traded-instrument close / prior close)
+Option: sell call, implied volatility is available AND volatility premium >= rich-premium threshold AND IV Rank of EMA(implied volatility of the traded instrument at T1, smoothing period) over rank lookback > high-rank threshold
+Option: sell put, implied volatility is available AND volatility premium >= rich-premium threshold AND IV Rank of EMA(implied volatility of the traded instrument at T1, smoothing period) over rank lookback > high-rank threshold

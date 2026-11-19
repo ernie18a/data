@@ -1,0 +1,8 @@
+Calculation: Active zone = the highest high and lowest low over at least the minimum zone bars when their width is within a parameterized ATR multiple; lock the ATR at formation, test each close for a break before absorbing that bar, and extend the edges only when the resulting width does not exceed the formation width
+Calculation: Breakout strength = 100 × the weighted sum of capped displacement beyond the broken edge divided by formation ATR, true range divided by its simple moving average over the average lookback and then by a range expansion cap, zone age divided by a coil reference and capped at 1, and—when average volume is positive—volume divided by its simple moving average over the average lookback and then by a volume surge cap; when average volume is unavailable or zero, omit the volume term and divide the remaining weighted sum by the sum of its weights
+Long: an active zone exists AND close > zone top + break buffer × formation ATR
+Short: an active zone exists AND close < zone bottom − break buffer × formation ATR
+Long: an active zone exists AND close > zone top + break buffer × formation ATR AND breakout strength ≥ strong threshold
+Short: an active zone exists AND close < zone bottom − break buffer × formation ATR AND breakout strength ≥ strong threshold
+Long: an active zone exists AND close > zone top + break buffer × formation ATR AND breakout strength ≥ label strength threshold AND (no prior break label OR bars since prior break label ≥ minimum bars between labels)
+Short: an active zone exists AND close < zone bottom − break buffer × formation ATR AND breakout strength ≥ label strength threshold AND (no prior break label OR bars since prior break label ≥ minimum bars between labels)

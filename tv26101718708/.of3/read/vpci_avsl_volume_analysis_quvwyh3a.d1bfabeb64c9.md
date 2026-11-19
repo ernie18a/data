@@ -1,0 +1,11 @@
+Calculation: normalized VPCI = if close = 0 then 0, otherwise [VPCI(close, volume, short lookback, long lookback)] / close; the VPCI long lookback is the long-to-short lookback ratio parameter times the short lookback. In VPCI, use 1 when the short-price SMA or long-volume SMA is 0.
+Calculation: VPCI per mille = (normalized VPCI, or 0 if unavailable) × per-mille scale parameter.
+Calculation: AVSL price adjustment = clamp((baseline adjustment parameter + (normalized VPC, or 0 if unavailable)) × (VWMA(close, short lookback) / SMA(close, short lookback), or 1 if unavailable or the denominator is 0), adjustment floor parameter, adjustment ceiling parameter), where normalized VPC = (VWMA(close, long lookback) − SMA(close, long lookback)) / close, or 0 if unavailable or close = 0.
+Calculation: AVSL adaptive lookback = clamp(round(AVSL base lookback parameter + (normalized VPCI, or 0 if unavailable) × lookback adjustment parameter), minimum lookback parameter, maximum lookback parameter).
+Calculation: AVSL width multiplier = clamp(AVSL standard deviation multiplier parameter × (baseline multiplier parameter + (normalized VPCI, or 0 if unavailable)), minimum width parameter, maximum width parameter).
+Calculation: AVSL buy line = SMA(low / AVSL price adjustment, AVSL adaptive lookback) − standard deviation(low / AVSL price adjustment, AVSL adaptive lookback) × AVSL width multiplier.
+Calculation: AVSL sell line = SMA(high × AVSL price adjustment, AVSL adaptive lookback) + standard deviation(high × AVSL price adjustment, AVSL adaptive lookback) × AVSL width multiplier.
+Long: VPCI per mille crosses above its lower Bollinger Band after having been below it since the previous long signal or the start of data; use the VPCI band lookback and band standard deviation multiplier parameters.
+Short: VPCI per mille crosses below its upper Bollinger Band after having been above it since the previous short signal or the start of data; use the VPCI band lookback and band standard deviation multiplier parameters.
+Exit: long, close crosses below the AVSL buy line.
+Exit: short, close crosses above the AVSL sell line.

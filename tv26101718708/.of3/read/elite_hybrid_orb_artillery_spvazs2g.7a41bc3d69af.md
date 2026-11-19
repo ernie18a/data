@@ -1,0 +1,7 @@
+Calculation: OpeningRangeHigh = highest high of chart bars with timestamps >= configured session start and < session start + opening-range duration
+Calculation: OpeningRangeLow = lowest low of chart bars over the same interval
+Calculation: OpeningRangeWidth = OpeningRangeHigh - OpeningRangeLow
+Long: On a closed chart bar, bar time >= opening-range end AND bar time < flatten-window start AND OpeningRangeWidth in ticks >= minimum-width parameter AND OpeningRangeWidth in ticks <= maximum-width parameter AND entries in the current session < maximum-entries parameter AND position is flat AND close > OpeningRangeHigh + OpeningRangeWidth * buffer percentage
+Short: On a closed chart bar, bar time >= opening-range end AND bar time < flatten-window start AND OpeningRangeWidth in ticks >= minimum-width parameter AND OpeningRangeWidth in ticks <= maximum-width parameter AND entries in the current session < maximum-entries parameter AND position is flat AND long-only mode is off AND close < OpeningRangeLow - OpeningRangeWidth * buffer percentage
+Exit: Long, low <= OpeningRangeLow OR high >= entry-signal bar close + OpeningRangeWidth * target multiple OR bar time is within the flatten window
+Exit: Short, high >= OpeningRangeHigh OR low <= entry-signal bar close - OpeningRangeWidth * target multiple OR bar time is within the flatten window

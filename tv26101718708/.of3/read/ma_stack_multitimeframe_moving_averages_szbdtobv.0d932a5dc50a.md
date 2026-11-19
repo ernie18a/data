@@ -1,0 +1,3 @@
+Calculation: Slot i MA = the slot’s selected SMA, EMA, WMA, VWMA, HMA, or RMA of source over lookback i; calculate on chart bars when its timeframe is the chart timeframe, otherwise calculate on T_i bars and map values to chart bars, using the last completed T_i bar in real time and the current T_i bar historically with lookahead off; i = 1–5.
+Long: At least one adjacent enabled slot pair has the earlier slot MA > the later slot MA, OR the first enabled slot MA > every later enabled slot MA when at least one later slot is enabled.
+Short: At least one adjacent enabled slot pair has the earlier slot MA <= the later slot MA, OR the first enabled slot MA < every later enabled slot MA when at least one later slot is enabled.

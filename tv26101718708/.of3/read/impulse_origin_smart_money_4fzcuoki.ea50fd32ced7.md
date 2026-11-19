@@ -1,0 +1,11 @@
+Calculation: Support origin = for Off, the smallest i in 1..Max Origin Lookback with close[i] < open[i]; for First Only, that same nearest such i only if low[i-1] < low[i]; for Search Back, the smallest such i satisfying low[i-1] < low[i]; no origin if none qualifies
+Calculation: Resistance origin = for Off, the smallest i in 1..Max Origin Lookback with close[i] > open[i]; for First Only, that same nearest such i only if high[i-1] > high[i]; for Search Back, the smallest such i satisfying high[i-1] > high[i]; no origin if none qualifies
+Calculation: Origin zone high = for the selected origin at offset i, high[i] if Liquidity Sweep is Off, otherwise max(high[i], high[i-1])
+Calculation: Origin zone low = for the selected origin at offset i, low[i] if Liquidity Sweep is Off, otherwise min(low[i], low[i-1])
+Calculation: Zone top = max(Origin zone high, (Origin zone high + Origin zone low) / 2 + ATR(ATR Length) * Min Zone Height / 200)
+Calculation: Zone bottom = min(Origin zone low, (Origin zone high + Origin zone low) / 2 - ATR(ATR Length) * Min Zone Height / 200)
+Calculation: Unflipped original zone pools = zones from support and resistance markings, capped separately at Max Original Support and Max Original Resistance zones by removing the oldest when over capacity; remove each zone from its pool at its first close below its bottom (support) or above its top (resistance)
+Long: Original Support is enabled AND on bar close, close[k] >= close[k+1] for every k in 0..Streak Length-1 AND SMA(volume, Volume Average Length) > 0 AND volume / SMA(volume, Volume Average Length) >= Min Volume Ratio AND a Support origin exists AND its candle differs from the origin used by the previous support-zone marking
+Short: Original Resistance is enabled AND on bar close, close[k] <= close[k+1] for every k in 0..Streak Length-1 AND SMA(volume, Volume Average Length) > 0 AND volume / SMA(volume, Volume Average Length) >= Min Volume Ratio AND a Resistance origin exists AND its candle differs from the origin used by the previous resistance-zone marking
+Long: On bar close, close > Zone top of an unflipped original resistance zone created on an earlier bar
+Short: On bar close, close < Zone bottom of an unflipped original support zone created on an earlier bar

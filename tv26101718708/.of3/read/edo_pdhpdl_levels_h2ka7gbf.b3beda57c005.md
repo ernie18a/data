@@ -1,0 +1,2 @@
+Long: On chart bars, close crosses above the high of the last completed bar of shorter timeframe T1, when available, OR the high of the last completed bar of longer timeframe T2, when available
+Short: On chart bars, close crosses below the low of the last completed bar of shorter timeframe T1, when available, OR the low of the last completed bar of longer timeframe T2, when available

@@ -1,0 +1,5 @@
+Calculation: RecentInsideClose = on chart bars, at least one of close[n] for n=1 through inside-lookback is inclusively between low and high of the last completed T1 bar
+Calculation: UpperSweep = on a chart bar, high > high(T1, last completed bar) AND close <= high(T1, last completed bar) AND RecentInsideClose
+Calculation: LowerSweep = on a chart bar, low < low(T1, last completed bar) AND close >= low(T1, last completed bar) AND RecentInsideClose
+Long: the most recent UpperSweep or LowerSweep since the active range was set from the last completed T1 bar is a LowerSweep on an earlier chart bar, no signal has been confirmed since that range was set, and close > low(T1, last completed bar)
+Short: the most recent UpperSweep or LowerSweep since the active range was set from the last completed T1 bar is an UpperSweep on an earlier chart bar, no signal has been confirmed since that range was set, and close < high(T1, last completed bar)

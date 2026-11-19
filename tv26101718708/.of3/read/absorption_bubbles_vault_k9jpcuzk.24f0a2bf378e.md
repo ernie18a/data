@@ -1,0 +1,6 @@
+Calculation: Active parameters = shared STDEV lookback, EMA lookback, and small, medium, and large volume multipliers, or the separate parameter set for any enabled configured timeframe T1–T4 when overrides are enabled and the chart timeframe matches it; calculations use chart bars
+Calculation: Midpoint = (high + low) / 2
+Calculation: Scaled volume = volume / STDEV(volume, active STDEV lookback) when that STDEV is nonzero, else 0
+Calculation: Volume tier = large if scaled volume >= active large multiplier, else medium if scaled volume >= active medium multiplier, else small if scaled volume >= active small multiplier, else none
+Long: Midpoint <= min(open, close) AND Midpoint >= low AND low <= LOWEST(low, swing lookback) AND volume > EMA(volume, active EMA lookback) AND scaled volume >= active small multiplier AND ((small tier enabled AND volume tier = small) OR (medium tier enabled AND volume tier = medium) OR (large tier enabled AND volume tier = large))
+Short: Midpoint >= max(open, close) AND Midpoint <= high AND high >= HIGHEST(high, swing lookback) AND volume > EMA(volume, active EMA lookback) AND scaled volume >= active small multiplier AND ((small tier enabled AND volume tier = small) OR (medium tier enabled AND volume tier = medium) OR (large tier enabled AND volume tier = large))

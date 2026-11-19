@@ -1,0 +1,3 @@
+Calculation: Currency strength(c) = raw return(c) minus the mean raw return of all eight currencies; raw return is 100 * (current price / reference price - 1), except USD = 0 and spot CAD, CHF, and JPY use 100 * (reference price / current price - 1); reference price is close(return lookback bars ago on T1) or open of the current T2 bar; optionally apply EMA with the smoothing lookback to the de-meaned strength, using current T1 values on chart bars while T1 is forming.
+Long: base-currency strength crosses above quote-currency strength AND their absolute difference exceeds the overextension threshold.
+Short: base-currency strength crosses below quote-currency strength AND their absolute difference exceeds the overextension threshold.

@@ -1,0 +1,9 @@
+Calculation: MA_i(T) = EMA or SMA(close, lookback_i) using independently selected type_i and lookback_i for each i=1..6, calculated on T bars and mapped to chart bars using the shared lookahead setting to include either the forming T bar or the last completed T bar; each slot's settings are shared across T1 and T2.
+Long: alerts enabled AND ((T1 cross-above alert enabled AND chart close crosses above MA_alertSlot(T1)) OR (T2 cross-above alert enabled AND chart close crosses above MA_alertSlot(T2)))
+Short: alerts enabled AND ((T1 cross-below alert enabled AND chart close crosses below MA_alertSlot(T1)) OR (T2 cross-below alert enabled AND chart close crosses below MA_alertSlot(T2)))
+Long: bar coloring enabled AND selected bar-color MA slot is available AND chart close >= that slot's MA on the selected reference timeframe (T1 or T2; auto selects T2 when the chart timeframe is T2, otherwise T1)
+Short: bar coloring enabled AND selected bar-color MA slot is available AND chart close < that slot's MA on the selected reference timeframe (T1 or T2; auto selects T2 when the chart timeframe is T2, otherwise T1)
+Long: slope coloring enabled AND any displayed MA_i(T1) or MA_i(T2) value > its previous chart-bar value (zero if unavailable)
+Short: slope coloring enabled AND any displayed MA_i(T1) or MA_i(T2) value <= its previous chart-bar value (zero if unavailable)
+Long: ribbon enabled AND both MA values are available and displayed for any adjacent T1 slot pair AND (MA_1(T1) >= MA_2(T1) OR MA_2(T1) >= MA_3(T1) OR MA_3(T1) >= MA_4(T1) OR MA_4(T1) >= MA_5(T1) OR MA_5(T1) >= MA_6(T1))
+Short: ribbon enabled AND both MA values are available and displayed for any adjacent T1 slot pair AND (MA_1(T1) < MA_2(T1) OR MA_2(T1) < MA_3(T1) OR MA_3(T1) < MA_4(T1) OR MA_4(T1) < MA_5(T1) OR MA_5(T1) < MA_6(T1))

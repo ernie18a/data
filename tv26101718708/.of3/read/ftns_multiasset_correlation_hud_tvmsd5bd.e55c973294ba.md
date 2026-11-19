@@ -1,0 +1,6 @@
+Calculation: Bullish count = number of enabled tracked assets whose correlation parameter is positive and ROC(close, lookback, T1 bars, current bar including while forming) > 0, or whose correlation parameter is negative and ROC(close, lookback, T1 bars, current bar including while forming) < 0
+Calculation: Bearish count = number of enabled tracked assets not counted as bullish
+Long: For any enabled tracked asset, its correlation parameter is positive and ROC(close, lookback, T1 bars, current bar including while forming) > 0, or its correlation parameter is negative and ROC(close, lookback, T1 bars, current bar including while forming) < 0
+Short: For any enabled tracked asset, its correlation parameter is positive and ROC(close, lookback, T1 bars, current bar including while forming) < 0, or its correlation parameter is negative and ROC(close, lookback, T1 bars, current bar including while forming) > 0
+Long: At least one tracked asset is enabled AND bullish count >= bearish count
+Short: At least one tracked asset is enabled AND bearish count > bullish count

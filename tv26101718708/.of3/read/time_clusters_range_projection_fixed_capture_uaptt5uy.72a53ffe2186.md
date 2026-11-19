@@ -1,0 +1,3 @@
+Calculation: Captured slot range = For each enabled slot, capture the high and low of the first T1 bar whose time changes while chart datetime is within the slot, using lookahead-off T1 values on chart bars (last completed T1 bar historically; still-forming T1 bar in realtime); standard slots cover an hour and retain their range until the date changes, while custom slots begin at their configured start minute and retain their range only until that hour ends
+Long: For any enabled slot with a stored range, close > that slot's captured high AND close[1] <= that slot's captured high
+Short: For any enabled slot with a stored range, close < that slot's captured low AND close[1] >= that slot's captured low

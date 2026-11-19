@@ -1,0 +1,2 @@
+Long: buy signals enabled AND the configured crossover, crossunder, greater-than, or less-than comparison between the selected buy signal sources
+Short: sell signals enabled AND the configured crossover, crossunder, greater-than, or less-than comparison between the selected sell signal sources

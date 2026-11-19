@@ -1,0 +1,4 @@
+Calculation: bullish close-run length = consecutive bars with close > close[1], reset otherwise; use chart bars except when chart timeframe is T2 or T3, when using T1 bars within each chart bar, including the still-forming T1 bar, where T1 is shorter than T2 and T3
+Calculation: bearish close-run length = consecutive bars with close < close[1], reset otherwise; use the same bars as for bullish close-run length
+Long: bullish close-run length >= minimum run length and the run ends on the following bar with close <= close[1], or the run is active on the last available bar
+Short: bearish close-run length >= minimum run length and the run ends on the following bar with close >= close[1], or the run is active on the last available bar

@@ -1,0 +1,6 @@
+Calculation: Z-score = (close - VWAP(hlc3)) / max(STDEV(hlc3 - VWAP(hlc3), Z-score lookback), minimum tick), when defined
+Calculation: Directional signal = long if long is enabled and ((trend regime is active and EMA(close, shorter lookback) > EMA(close, longer lookback) and close > HIGHEST(high, breakout lookback)[1]) or (range regime is active and Z-score is defined and Z-score < -Z-score threshold and close > close[1])); otherwise short if short is enabled and ((trend regime is active and EMA(close, shorter lookback) < EMA(close, longer lookback) and close < LOWEST(low, breakout lookback)[1]) or (range regime is active and Z-score is defined and Z-score > Z-score threshold and close < close[1])); otherwise neutral
+Long: Directional signal = long and Directional signal[1] != long
+Short: Directional signal = short and Directional signal[1] != short
+Exit: Long, low <= entry price - ATR(ATR lookback at entry) * ATR stop multiple at entry or high >= entry price + ATR(ATR lookback at entry) * ATR stop multiple at entry * reward/risk multiple at entry
+Exit: Short, high >= entry price + ATR(ATR lookback at entry) * ATR stop multiple at entry or low <= entry price - ATR(ATR lookback at entry) * ATR stop multiple at entry * reward/risk multiple at entry

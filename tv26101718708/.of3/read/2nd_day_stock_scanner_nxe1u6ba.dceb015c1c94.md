@@ -1,0 +1,3 @@
+Calculation: RangePosition = if high != low then (close - low) / (high - low) * 100 else 50
+Long: On T1 bars, using the bar still forming for current values and the previous completed bar for [1] values, ROC(close, 1) > 0 AND abs(ROC(close, 1)) >= move threshold AND RangePosition >= 100 - range threshold AND volume / SMA(volume, volume lookback)[1] * 100 > relative-volume threshold AND TrueRange > ATR(ATR lookback)[1]
+Short: On T1 bars, using the bar still forming for current values and the previous completed bar for [1] values, ROC(close, 1) <= 0 AND abs(ROC(close, 1)) >= move threshold AND RangePosition <= range threshold AND volume / SMA(volume, volume lookback)[1] * 100 > relative-volume threshold AND TrueRange > ATR(ATR lookback)[1]

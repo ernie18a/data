@@ -1,0 +1,11 @@
+Calculation: Fractionally differenced close = if differencing is enabled and the current bar index is at least the weight count, sum(weight[k] * nz(close[k], close)) for k from 0 through weight count minus one; otherwise close. Set weight[0] = 1 and weight[k] = -weight[k-1] * (differencing order - k + 1) / k, stopping before the first weight whose absolute value is below the weight threshold or at the maximum window.
+Calculation: Fractionally differenced open = if differencing is enabled and the current bar index is at least the weight count, fractionally differenced close - (close - open); otherwise open.
+Calculation: Sigmoid z-score normalization(value, lookback, compression scale) = 100 / (1 + exp(-(((value - SMA(fractionally differenced close, lookback)) / max(StDev(fractionally differenced close, lookback), minimum standard deviation)) / (compression scale / 2))).
+Calculation: Normalized close = Sigmoid z-score normalization(fractionally differenced close, z-score lookback, compression scale).
+Calculation: Normalized open = Sigmoid z-score normalization(fractionally differenced open, z-score lookback, compression scale).
+Long: Normalized close >= normalized open
+Short: Normalized close < normalized open
+Long: Normalized close crosses above regime threshold
+Short: Normalized close crosses below regime threshold
+Long: divergence enabled AND pivotlow(RSI(source, RSI lookback), left pivot lookback, right pivot lookback) is present AND range lower <= bars since pivotlow(RSI(source, RSI lookback), left pivot lookback, right pivot lookback) was present on the previous bar <= range upper AND RSI(source, RSI lookback)[right pivot lookback] > RSI at the preceding confirmed pivot low AND low[right pivot lookback] < low at the preceding confirmed RSI pivot low
+Short: divergence enabled AND pivothigh(RSI(source, RSI lookback), left pivot lookback, right pivot lookback) is present AND range lower <= bars since pivothigh(RSI(source, RSI lookback), left pivot lookback, right pivot lookback) was present on the previous bar <= range upper AND RSI(source, RSI lookback)[right pivot lookback] < RSI at the preceding confirmed pivot high AND high[right pivot lookback] > high at the preceding confirmed RSI pivot high

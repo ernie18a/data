@@ -1,0 +1,5 @@
+Calculation: Session volume weight = max(volume, with missing volume treated as zero; volume-floor parameter)
+Calculation: Session VWAP = cumulative VWAP(source, chart bars from session start through current bar), using session volume weight
+Calculation: Session weighted standard deviation = sqrt(max(sum(source² × session volume weight) / sum(session volume weight) − Session VWAP², 0)) over chart bars from session start through current bar
+Long: On confirmed chart-bar close, close crosses above Session VWAP OR (low <= Session VWAP − band-multiplier parameter × Session weighted standard deviation AND low[1] > Session VWAP[1] − band-multiplier parameter × Session weighted standard deviation[1])
+Short: On confirmed chart-bar close, close crosses below Session VWAP OR (high >= Session VWAP + band-multiplier parameter × Session weighted standard deviation AND high[1] < Session VWAP[1] + band-multiplier parameter × Session weighted standard deviation[1])

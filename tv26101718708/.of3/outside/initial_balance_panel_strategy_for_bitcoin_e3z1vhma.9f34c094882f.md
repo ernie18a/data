@@ -1,0 +1,6 @@
+Calculation: Initial Balance High(session) = highest high during session
+Calculation: Initial Balance Low(session) = lowest low during session
+Long: close > each of the three configured session Initial Balance Highs
+Short: close < each of the three configured session Initial Balance Lows
+Long: at least P1 selected cryptocurrency pairs have closes above all three of their configured session Initial Balance Highs AND source P2 >= Volatility Stop(source P2, length P3, multiplier P4) AND (same-direction Bitcoin filter disabled OR Bitcoin close > each of its three configured session Initial Balance Highs) AND (neutral Bitcoin filter disabled OR Bitcoin close is neither above all three configured session Initial Balance Highs nor below all three configured session Initial Balance Lows)
+Short: at least P5 selected cryptocurrency pairs have closes below all three of their configured session Initial Balance Lows AND source P2 < Volatility Stop(source P2, length P3, multiplier P4) AND (same-direction Bitcoin filter disabled OR Bitcoin close < each of its three configured session Initial Balance Lows) AND (neutral Bitcoin filter disabled OR Bitcoin close is neither above all three configured session Initial Balance Highs nor below all three configured session Initial Balance Lows)

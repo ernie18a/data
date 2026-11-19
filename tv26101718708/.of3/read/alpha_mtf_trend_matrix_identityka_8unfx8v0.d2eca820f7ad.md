@@ -1,0 +1,4 @@
+Calculation: Trend score(frame) = sign(EMA(close, shorter lookback) − EMA(close, longer lookback)) + sign(close − EMA(close, longer lookback)) + sign(EMA(close, longer lookback) − EMA(close, longer lookback)[slope lookback]), computed on that frame’s bars; for T1–T6, use the last completed or still-forming bar as selected by the confirmation parameter.
+Calculation: Alignment share = 100 × (number of active frames with Trend score > 0 − number with Trend score < 0) / number of active frames; active frames are the chart timeframe and each enabled T1–T6 whose timeframe is at least the chart timeframe.
+Long: Trend score(chart) > 0 OR any enabled eligible T1–T6 has Trend score > 0 OR Alignment share ≥ alignment threshold.
+Short: Trend score(chart) < 0 OR any enabled eligible T1–T6 has Trend score < 0 OR Alignment share ≤ −alignment threshold.

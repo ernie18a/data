@@ -1,0 +1,3 @@
+Long: flat AND EMA(close, shorter lookback) crosses above EMA(close, longer lookback) AND ADX(DI lookback, smoothing lookback) ≥ ADX threshold
+Calculation: long trailing stop = max(previous trailing stop, new stop), where gain = close / entry price − 1; new stop = entry price × initial stop multiplier when gain < first profit threshold, entry price when first profit threshold ≤ gain < second profit threshold, or entry price × raised stop multiplier when gain ≥ second profit threshold; reset when flat; first profit threshold < second profit threshold
+Exit: long, high ≥ entry price × take-profit multiplier OR low ≤ long trailing stop

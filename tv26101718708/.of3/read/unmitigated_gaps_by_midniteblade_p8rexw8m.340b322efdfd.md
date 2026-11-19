@@ -1,0 +1,2 @@
+Long: On chart bars, the low of the latest available T1 bar is above the high of the T1 bar two bars earlier.
+Short: On chart bars, the high of the latest available T1 bar is below the low of the T1 bar two bars earlier.

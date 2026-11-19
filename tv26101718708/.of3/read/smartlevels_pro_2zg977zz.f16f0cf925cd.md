@@ -1,0 +1,8 @@
+Long: close crosses above VWAP(hlc3)
+Short: close crosses below VWAP(hlc3)
+Long: EMA(close, shorter lookback) crosses above EMA(close, longer lookback)
+Short: EMA(close, shorter lookback) crosses below EMA(close, longer lookback)
+Long: at least two of (close > VWAP(hlc3), EMA(close, shorter lookback) > EMA(close, longer lookback), RSI(close, lookback) > parameter)
+Short: at least two of (close <= VWAP(hlc3), EMA(close, shorter lookback) <= EMA(close, longer lookback), RSI(close, lookback) <= parameter)
+Long: ADX(lookback, same lookback) >= parameter AND at least two of (close > VWAP(hlc3), EMA(close, shorter lookback) > EMA(close, longer lookback), RSI(close, lookback) > parameter)
+Short: ADX(lookback, same lookback) >= parameter AND at least two of (close <= VWAP(hlc3), EMA(close, shorter lookback) <= EMA(close, longer lookback), RSI(close, lookback) <= parameter)

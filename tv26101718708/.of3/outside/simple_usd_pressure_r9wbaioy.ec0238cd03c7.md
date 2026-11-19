@@ -1,0 +1,5 @@
+Calculation: Composite USD score = EMA(if any confirming instruments are enabled, USD pressure weight * pair vote average + confirmation weight * confirmation vote average, pair vote average; pair vote average is 0 if no major pairs are enabled, otherwise the sum of enabled pair votes divided by the number enabled; confirmation vote average is the sum of enabled confirmation votes divided by the number enabled; EUR/USD, GBP/USD, AUD/USD, and NZD/USD votes are -sign(close on T1 - close N bars earlier on T1); USD/JPY, USD/CHF, USD/CAD, DXY, and US10Y votes are sign(close on T1 - close N bars earlier on T1); Gold and SPX votes are -sign(close on T1 - close N bars earlier on T1); EMA length L
+Long: Composite USD score >= trend threshold
+Short: Composite USD score <= -trend threshold
+Exit: long, -trend threshold < Composite USD score < trend threshold
+Exit: short, -trend threshold < Composite USD score < trend threshold

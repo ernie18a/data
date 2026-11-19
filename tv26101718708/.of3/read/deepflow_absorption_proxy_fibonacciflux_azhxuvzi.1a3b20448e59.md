@@ -1,0 +1,4 @@
+Calculation: Volume z-score = if population standard deviation(volume, volume lookback) is unavailable or zero then 0 else (volume - SMA(volume, volume lookback)) / population standard deviation(volume, volume lookback)
+Calculation: Bar range = max(high - low, minimum tick)
+Long: Volume z-score >= volume z-score threshold AND abs(close - open) / Bar range <= maximum body/range AND (min(open, close) - low) / Bar range >= minimum lower-wick/range AND (same-price filter disabled OR abs(low - lowest(low, cluster lookback)[1]) <= ATR(ATR lookback) * cluster distance) AND close > low + Bar range * close-position parameter
+Short: Volume z-score >= volume z-score threshold AND abs(close - open) / Bar range <= maximum body/range AND (high - max(open, close)) / Bar range >= minimum upper-wick/range AND (same-price filter disabled OR abs(high - highest(high, cluster lookback)[1]) <= ATR(ATR lookback) * cluster distance) AND close < high - Bar range * close-position parameter

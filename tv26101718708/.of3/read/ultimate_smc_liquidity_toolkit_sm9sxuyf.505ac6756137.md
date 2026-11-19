@@ -1,0 +1,2 @@
+Long: (low > high[2] AND close[1] > high[2]) OR (close > the most recently confirmed PivotHigh(high, swing lookback, swing lookback) AND that pivot has not previously been broken)
+Short: (high < low[2] AND close[1] < low[2]) OR (close < the most recently confirmed PivotLow(low, swing lookback, swing lookback) AND that pivot has not previously been broken)

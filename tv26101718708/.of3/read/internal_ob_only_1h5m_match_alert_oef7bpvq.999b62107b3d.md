@@ -1,0 +1,9 @@
+Calculation: InternalOBBias(T) = on T bars, maintain alternating internal pivots with lookback P: set a pivot high/low P bars ago when high[P] > highest(high, P) / low[P] < lowest(low, P), respectively, only when the leg changes (the high test takes precedence); each pivot triggers once when close crosses its level; on a cross above a pivot high create a bullish block from the bar with minimum parsed low, and on a cross below a pivot low create a bearish block from the bar with maximum parsed high, searching from the pivot bar through the bar before the cross; parsed high/low are high/low unless high - low >= S * volatility, then low/high, where volatility is ATR(A) or cumulative mean true range, selected by the filter setting; block bounds are that bar's parsed high/low; mitigation source is close or, by block side, high/low, selected by the mitigation setting; remove bearish blocks when source > block high and bullish blocks when source < block low; bias is bullish if at least M of the latest N active blocks are bullish, bearish if at least M are bearish, and neutral otherwise, including when fewer than N blocks exist; chart bars create blocks only when the chart internal-block setting is enabled, while requested-timeframe calculations always create them; T biases run on T bars and chart bars take T's current bar value (forming in real time, last completed historically).
+Long: InternalOBBias(chart) = bullish
+Short: InternalOBBias(chart) = bearish
+Long: InternalOBBias(T1) = bullish
+Short: InternalOBBias(T1) = bearish
+Long: InternalOBBias(T2) = bullish
+Short: InternalOBBias(T2) = bearish
+Long: InternalOBBias(T1) = bullish AND InternalOBBias(T2) = bullish AND the previous chart bar did not have matching non-neutral T1 and T2 biases
+Short: InternalOBBias(T1) = bearish AND InternalOBBias(T2) = bearish AND the previous chart bar did not have matching non-neutral T1 and T2 biases

@@ -1,0 +1,14 @@
+Calculation: Fast EMA = EMA(close, shorter lookback, chart bars)
+Calculation: Slow EMA = EMA(close, longer lookback, chart bars)
+Calculation: Trend EMA = EMA(close, trend lookback, chart bars), or EMA(close, trend lookback, T1, still-forming bar in real time, lookahead off) when the higher-timeframe trend option is enabled
+Calculation: RSI = RSI(close, RSI lookback, chart bars)
+Calculation: Anchored VWAP = VWAP(hlc3, volume, configured daily or weekly reset, chart bars)
+Calculation: Candle body = abs(close - open)
+Calculation: Upper wick = high - max(open, close)
+Calculation: Lower wick = min(open, close) - low
+Calculation: Bullish reversal = (close > open AND prior-bar close < prior-bar open AND close > prior-bar open AND open < prior-bar close) OR (close > open AND lower wick > wick/body ratio parameter * candle body)
+Calculation: Bearish reversal = (close < open AND prior-bar close > prior-bar open AND close < prior-bar open AND open > prior-bar close) OR (close < open AND upper wick > wick/body ratio parameter * candle body)
+Long: close > Trend EMA AND (VWAP filter disabled OR close > Anchored VWAP) AND Fast EMA > Slow EMA AND Fast EMA > its prior-bar value AND RSI < long RSI ceiling AND (session filter disabled OR within configured session and timezone) AND low >= Slow EMA * (1 - long pullback lower tolerance) AND low <= Slow EMA * (1 + long pullback upper tolerance) AND Bullish reversal
+Long: close > Trend EMA AND (VWAP filter disabled OR close > Anchored VWAP) AND Fast EMA > Slow EMA AND Fast EMA > its prior-bar value AND RSI < long RSI ceiling AND (session filter disabled OR within configured session and timezone) AND low >= Slow EMA * (1 - long pullback lower tolerance) AND low <= Slow EMA * (1 + approach-zone percentage / 100) AND NOT (low >= Slow EMA * (1 - long pullback lower tolerance) AND low <= Slow EMA * (1 + long pullback upper tolerance) AND Bullish reversal)
+Short: close < Trend EMA AND (VWAP filter disabled OR close < Anchored VWAP) AND Fast EMA < Slow EMA AND Fast EMA < its prior-bar value AND RSI > short RSI floor AND (session filter disabled OR within configured session and timezone) AND high >= Slow EMA * (1 - short pullback lower tolerance) AND high <= Slow EMA * (1 + short pullback upper tolerance) AND Bearish reversal
+Short: close < Trend EMA AND (VWAP filter disabled OR close < Anchored VWAP) AND Fast EMA < Slow EMA AND Fast EMA < its prior-bar value AND RSI > short RSI floor AND (session filter disabled OR within configured session and timezone) AND high >= Slow EMA * (1 - approach-zone percentage / 100) AND high <= Slow EMA * (1 + short pullback upper tolerance) AND NOT (high >= Slow EMA * (1 - short pullback lower tolerance) AND high <= Slow EMA * (1 + short pullback upper tolerance) AND Bearish reversal)

@@ -1,0 +1,5 @@
+Calculation: Smoothed IV = EMA(selected IV-source close on the still-forming T1 bar, sampled onto chart bars and calculated on chart bars, IV-smoothing lookback)
+Calculation: Premium spread = Smoothed IV - Historical Volatility(close, realized-volatility lookback, annualization factor), calculated on chart bars
+Calculation: IV Rank = 100 * (Smoothed IV - lowest(Smoothed IV, IV-rank lookback)) / (highest(Smoothed IV, IV-rank lookback) - lowest(Smoothed IV, IV-rank lookback)), calculated on chart bars when Smoothed IV is available and highest exceeds lowest
+Long: Premium spread <= cheap-premium threshold AND IV Rank < low IV-rank threshold AND IV Rank is defined AND NOT (Premium spread[1] <= cheap-premium threshold AND IV Rank[1] < low IV-rank threshold AND IV Rank[1] is defined)
+Short: Premium spread >= rich-premium threshold AND IV Rank > high IV-rank threshold AND IV Rank is defined AND NOT (Premium spread[1] >= rich-premium threshold AND IV Rank[1] > high IV-rank threshold AND IV Rank[1] is defined)

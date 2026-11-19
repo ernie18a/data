@@ -1,0 +1,5 @@
+Calculation: FVG profile bin counts and volumes = for each bin k, count bullish and bearish FVGs and sum their middle-bar volume (volume[i+1]) over the profile lookback when their midpoint is within half a bin width of the bin center; bin width = (highest(high, profile lookback) - lowest(low, profile lookback)) / bin count; bin center = lowest(low, profile lookback) + (k + 0.5) * bin width; bullish gaps have high[i+2] < low[i] and midpoint avg(high[i+2], low[i]); bearish gaps have low[i+2] > high[i] and midpoint avg(low[i+2], high[i])
+Long: high[2] < low
+Short: low[2] > high
+Long: a profile bin contains at least one bullish or bearish FVG AND bullish FVG volume in the bin > bearish FVG volume in the bin
+Short: a profile bin contains at least one bullish or bearish FVG AND bullish FVG volume in the bin <= bearish FVG volume in the bin

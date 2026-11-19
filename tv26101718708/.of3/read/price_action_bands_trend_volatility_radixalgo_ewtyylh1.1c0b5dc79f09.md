@@ -1,0 +1,5 @@
+Calculation: trend baseline = selected SMA(close, baseline lookback), EMA(close, baseline lookback), HMA(close, baseline lookback), RMA(close, baseline lookback), WMA(close, baseline lookback), SWMA(close), or VWMA(close, baseline lookback)
+Long: trend baseline >= EMA(trend baseline, trend smoothing lookback)
+Short: trend baseline < EMA(trend baseline, trend smoothing lookback)
+Long: trend baseline >= EMA(trend baseline, separate fill smoothing lookback)
+Short: trend baseline < EMA(trend baseline, separate fill smoothing lookback)

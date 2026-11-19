@@ -1,0 +1,6 @@
+Long: moving average(type 1, source 1, lookback 1) >= moving average(type 1, source 1, lookback 1)[1]
+Short: moving average(type 1, source 1, lookback 1) < moving average(type 1, source 1, lookback 1)[1]
+Long: moving average(type 2, source 2, lookback 2) >= moving average(type 2, source 2, lookback 2)[1]
+Short: moving average(type 2, source 2, lookback 2) < moving average(type 2, source 2, lookback 2)[1]
+Long: moving average(type 3, source 3, lookback 3) >= moving average(type 3, source 3, lookback 3)[1]
+Short: moving average(type 3, source 3, lookback 3) < moving average(type 3, source 3, lookback 3)[1]

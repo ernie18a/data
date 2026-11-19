@@ -1,0 +1,2 @@
+Long: calendar month is selected AND calendar year >= start-year parameter
+Exit: long, calendar month is immediately after a selected month OR (risk management enabled AND (low <= entry price - ATR(lookback parameter, T1, bar still forming) on chart bars taking values from T1 * ATR multiplier parameter OR high >= entry price + ATR(lookback parameter, T1, bar still forming) on chart bars taking values from T1 * ATR multiplier parameter))

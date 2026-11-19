@@ -1,0 +1,4 @@
+Long: On each chart bar, close >= EMA(close, shorter EMA lookback) AND EMA(close, shorter EMA lookback) >= EMA(close, middle EMA lookback) AND EMA(close, middle EMA lookback) >= EMA(close, longer EMA lookback)
+Short: On each chart bar, close <= EMA(close, shorter EMA lookback) AND EMA(close, shorter EMA lookback) <= EMA(close, middle EMA lookback) AND EMA(close, middle EMA lookback) <= EMA(close, longer EMA lookback)
+Long: On each chart bar, close > selected reference close(T1, parameter-selected last completed or still-forming T1 bar) + trigger fraction × ATR(selected reference OHLC, T1, ATR lookback, same T1 bar)
+Short: On each chart bar, close < selected reference close(T1, parameter-selected last completed or still-forming T1 bar) - trigger fraction × ATR(selected reference OHLC, T1, ATR lookback, same T1 bar)

@@ -1,0 +1,13 @@
+Calculation: Session VWAP = VWAP((high + low) / 2, volume, current T1 session), accumulated on chart bars through the current bar
+Calculation: Session deviation = sqrt(max(sum(volume * ((high + low) / 2)^2) / sum(volume) - Session VWAP^2, 0)), with sums over chart bars in the current T1 session through the current bar
+Calculation: Upper extreme band = Session VWAP + the band-specific upper deviation multiplier for the extreme-band parameter * Session deviation
+Calculation: Lower extreme band = Session VWAP - the band-specific lower deviation multiplier for the extreme-band parameter * Session deviation
+Calculation: Upper second band = Session VWAP + the band-specific upper deviation multiplier for the second-band parameter * Session deviation
+Calculation: Lower second band = Session VWAP - the band-specific lower deviation multiplier for the second-band parameter * Session deviation
+Calculation: Session-eligible trigger bar = chart bars since T1 boundary >= warmup parameter AND (no prior completed T1 session length OR cutoff parameter = 0 OR chart bars since T1 boundary < the prior completed T1 session's chart-bar count after its first bar - cutoff parameter)
+Calculation: Long arm = reset at each T1 boundary; set or refresh to active with age 0 on a session-eligible bar when low <= Lower extreme band OR close < Lower second band; age advances by one per chart bar while active; remains active through age <= arm-expiry parameter and expires when age exceeds it; after evaluating the current bar, clear when close > open
+Calculation: Short arm = reset at each T1 boundary; set or refresh to active with age 0 on a session-eligible bar when high >= Upper extreme band OR close > Upper second band; age advances by one per chart bar while active; remains active through age <= arm-expiry parameter and expires when age exceeds it; after evaluating the current bar, clear when close < open
+Long: Long arm active AND close > open AND close <= Session VWAP AND close > lowest(low, swing lookback) AND (Upper second band - close) / (close - lowest(low, swing lookback)) >= minimum risk/reward parameter
+Short: Short arm active AND close < open AND close >= Session VWAP AND close < highest(high, swing lookback) AND (close - Lower second band) / (highest(high, swing lookback) - close) >= minimum risk/reward parameter
+Exit: long, low <= lowest(low, swing lookback) calculated on the entry-signal bar OR high >= Upper second band calculated on the entry-signal bar
+Exit: short, high >= highest(high, swing lookback) calculated on the entry-signal bar OR low <= Lower second band calculated on the entry-signal bar

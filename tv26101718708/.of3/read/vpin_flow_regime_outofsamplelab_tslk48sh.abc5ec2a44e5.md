@@ -1,0 +1,3 @@
+Calculation: Flow pressure = 50 × (1 + SUM(volume × (2 × CDF((close − close[1]) / STDEV(close − close[1], sigma lookback)) − 1), flow lookback) / SUM(volume, flow lookback)), where the distribution parameter selects the normal CDF or Student-t CDF with a degrees-of-freedom parameter
+Long: When a pivot low of low is confirmed using pivot-left and pivot-right lookbacks, its low is below the preceding confirmed pivot low AND flow pressure at the current pivot is above flow pressure at the preceding pivot
+Short: When a pivot high of high is confirmed using pivot-left and pivot-right lookbacks, its high is above the preceding confirmed pivot high AND flow pressure at the current pivot is below flow pressure at the preceding pivot

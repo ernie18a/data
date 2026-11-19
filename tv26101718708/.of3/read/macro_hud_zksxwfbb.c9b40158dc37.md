@@ -1,0 +1,2 @@
+Long: On chart bars using the requested symbol’s T1 values (the forming T1 bar live; the latest available completed T1 bar historically), close > EMA(close, lookback, T1)
+Short: On chart bars using the requested symbol’s T1 values (the forming T1 bar live; the latest available completed T1 bar historically), close <= EMA(close, lookback, T1)

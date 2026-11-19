@@ -1,0 +1,5 @@
+Calculation: previous liquidity high = highest(high, liquidity lookback)[1]
+Calculation: previous liquidity low = lowest(low, liquidity lookback)[1]
+Calculation: minimum sweep size = ATR(ATR lookback, T1, still-forming bar mapped to chart bars) × ATR fraction × minimum sweep fraction
+Long: low < previous liquidity low AND close > previous liquidity low AND (min(open, close) - low) / max(high - low, minimum tick) ≥ minimum rejection wick ratio AND (BOS filter disabled OR close > highest(high, BOS lookback)[1]) AND (VWAP filter disabled OR close ≥ VWAP(hlc3)) AND previous liquidity low - low ≥ minimum sweep size AND chart bar is within an enabled session window
+Short: high > previous liquidity high AND close < previous liquidity high AND (high - max(open, close)) / max(high - low, minimum tick) ≥ minimum rejection wick ratio AND (BOS filter disabled OR close < lowest(low, BOS lookback)[1]) AND (VWAP filter disabled OR close ≤ VWAP(hlc3)) AND high - previous liquidity high ≥ minimum sweep size AND chart bar is within an enabled session window

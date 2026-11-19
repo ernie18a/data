@@ -1,0 +1,2 @@
+Long: For any active channel, (strong closes enabled AND (open + close) / 2 > channel top) OR (strong closes disabled AND close > channel top)
+Short: For any active channel, (strong closes enabled AND (open + close) / 2 < channel bottom) OR (strong closes disabled AND close < channel bottom)

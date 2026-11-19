@@ -1,0 +1,2 @@
+Long: (max(open[1], close[1]) < min(open, close) AND abs(low - min(open, close)) <= No-Wick Tolerance (Ticks) * minimum tick) OR (first chart bar of T1 AND open > close[1]) OR (first chart bar of T2 AND open > close[1])
+Short: (min(open[1], close[1]) > max(open, close) AND abs(high - max(open, close)) <= No-Wick Tolerance (Ticks) * minimum tick) OR (first chart bar of T1 AND open < close[1]) OR (first chart bar of T2 AND open < close[1])

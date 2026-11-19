@@ -1,0 +1,12 @@
+Calculation: StochRSI K line = SMA(StochRSI(close, RSI lookback, Stochastic lookback), K smoothing)
+Calculation: StochRSI signal line = SMA(StochRSI K line, D smoothing)
+Calculation: Volume percentile rank = PercentRank(volume, volume lookback)
+Calculation: Average candle range = SMA(high - low, gap average range lookback)
+Calculation: Active bullish gap level = high[1] when low - high[1] > Average candle range * gap deviation percent / 100, otherwise its prior value; clear when low <= the level
+Calculation: Active bearish gap level = low[1] when low[1] - high > Average candle range * gap deviation percent / 100, otherwise its prior value; clear when high >= the level
+Calculation: Divergence watch = bearish after StochRSI K line > upper extreme, bullish after StochRSI K line < lower extreme, otherwise its prior value
+Calculation: Divergence reference price = close on each bar where StochRSI K line > upper extreme or < lower extreme, or after each qualifying recross for the active watch, otherwise its prior value; use its prior value for the recross comparison
+Calculation: Bear heat reference = close on each bar where StochRSI K line >= upper extreme, otherwise its prior value
+Calculation: Bull heat reference = close on each bar where StochRSI K line <= lower extreme, otherwise its prior value
+Long: (Divergence watch is bullish AND StochRSI K line >= lower extreme AND StochRSI K line <= midpoint AND StochRSI K line crosses above StochRSI signal line AND close < prior Divergence reference price AND (volume filter disabled OR Volume percentile rank >= minimum volume percentile)) OR (Active bullish gap level exists AND low <= Active bullish gap level) OR (heat signals enabled AND StochRSI K line <= lower extreme AND prior Bull heat reference exists AND close <= prior Bull heat reference * (1 - heat distance percent / 100))
+Short: (Divergence watch is bearish AND StochRSI K line <= upper extreme AND StochRSI K line >= midpoint AND StochRSI K line crosses below StochRSI signal line AND close > prior Divergence reference price AND (volume filter disabled OR Volume percentile rank >= minimum volume percentile)) OR (Active bearish gap level exists AND high >= Active bearish gap level) OR (heat signals enabled AND StochRSI K line >= upper extreme AND prior Bear heat reference exists AND close >= prior Bear heat reference * (1 + heat distance percent / 100))

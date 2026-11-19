@@ -1,0 +1,5 @@
+Calculation: Volume z-score = (volume - SMA(volume, baseline lookback)) / StandardDeviation(volume, baseline lookback)
+Calculation: Body/range ratio = abs(close - open) / (high - low)
+Calculation: Real-surge probability = sigmoid(online logistic regression of a bias, clipped volume z-score, clipped abs(close - open) / ATR(ATR lookback), scaled body/range ratio, and clipped (close - close[1]) / ATR(ATR lookback)); update weights by stochastic gradient descent using each buffered surge's directional continuation label after the follow-through horizon, positive when the directional move from surge close reaches the follow-through ATR threshold
+Long: Volume z-score >= surge threshold AND Body/range ratio >= minimum body/range ratio AND close > open AND (AI classifier disabled OR Real-surge probability >= real-probability threshold)
+Short: Volume z-score >= surge threshold AND Body/range ratio >= minimum body/range ratio AND close < open AND (AI classifier disabled OR Real-surge probability >= real-probability threshold)

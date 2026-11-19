@@ -1,0 +1,10 @@
+Calculation: Opening-range high = highest high of chart bars in the configured opening-range window
+Calculation: Opening-range low = lowest low of chart bars in the configured opening-range window
+Calculation: External-liquidity levels = highs and lows of the last completed bars on T1, T2, and T3, where T1 is shorter than T2 and T2 is shorter than T3, plus highs and lows accumulated from chart bars in the latest configured Asia and London session windows, updated while each window forms
+Calculation: Nearest external-liquidity level(x) = the external-liquidity level with the minimum absolute distance from x
+Calculation: Bullish FVG-123 = after a chart bar where low > high[2] AND close[1] > open[1], signal on a later bar where close exceeds that formation bar's low; a newer qualifying gap replaces the stored level, and a signal clears it
+Calculation: Bearish FVG-123 = after a chart bar where high < low[2] AND close[1] < open[1], signal on a later bar where close is below that formation bar's high; a newer qualifying gap replaces the stored level, and a signal clears it
+Calculation: Lower-sweep state = initially false; set true on a bar where abs(opening-range low - nearest external-liquidity level(opening-range low)) <= P AND low < min(opening-range low, nearest external-liquidity level(opening-range low)); remain true until a long sweep setup fires, then clear
+Calculation: Upper-sweep state = initially false; set true on a bar where abs(opening-range high - nearest external-liquidity level(opening-range high)) <= P AND high > max(opening-range high, nearest external-liquidity level(opening-range high)); remain true until a short sweep setup fires, then clear
+Long: session lines are active AND Bullish FVG-123 AND ((Lower-sweep state AND close > opening-range low) OR (abs(opening-range high - nearest external-liquidity level(opening-range high)) > P AND close > opening-range high))
+Short: session lines are active AND Bearish FVG-123 AND ((Upper-sweep state AND close < opening-range high) OR (abs(opening-range low - nearest external-liquidity level(opening-range low)) > P AND close < opening-range low))

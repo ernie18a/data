@@ -1,0 +1,2 @@
+Calculation: ADR% = 100 * SMA(high - low, ADR lookback) / close
+Long: close[1] / close[2] <= prior-up-swing cap AND high > low AND (close - low) / (high - low) >= strong-close threshold AND close - open > close[1] - open[1] AND close >= price floor AND volume >= minimum volume AND ((100 * (high - low) / close >= range-development multiplier * ADR% AND 100 * (close - low) / close <= ADR%) OR (100 * (high - low) / close < range-development multiplier * ADR% AND ADR-floor multiplier * ADR% <= ADR%)

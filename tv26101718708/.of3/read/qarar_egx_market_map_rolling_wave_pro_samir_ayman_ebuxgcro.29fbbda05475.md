@@ -1,0 +1,3 @@
+Calculation: Rolling trend = initialize rolling raw to close, trend bullish, active slope zero and fast mode off; when ATR is available, let distance = close - prior rolling raw, flip bearish to bullish when distance > reverse threshold × ATR, and flip bullish to bearish when -distance > reverse threshold × ATR; let fast candidate = abs(distance) > fast threshold × ATR; when a reversal occurs, fast candidate differs from fast mode, or active slope is zero, set fast mode to fast candidate and active slope to ATR divided by the fast slope length when fast mode is on, otherwise the slow slope length; advance rolling raw by active slope in trend direction; when ATR is unavailable, set rolling raw to close.
+Long: rolling trend is bullish
+Short: rolling trend is bearish

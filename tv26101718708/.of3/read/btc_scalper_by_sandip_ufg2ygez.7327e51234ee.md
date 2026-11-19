@@ -1,0 +1,10 @@
+Calculation: Demand zone = latest confirmed Pivot Low(low, zone lookback, zone lookback) and its upper boundary, Pivot Low + ATR(lookback) * zone width at confirmation
+Calculation: Supply zone = latest confirmed Pivot High(high, zone lookback, zone lookback) and its lower boundary, Pivot High - ATR(lookback) * zone width at confirmation
+Long: EMA(close, fast lookback) > EMA(close, slow lookback)
+Short: EMA(close, fast lookback) <= EMA(close, slow lookback)
+Long: EMA(close, fast lookback) crosses above EMA(close, slow lookback)
+Short: EMA(close, fast lookback) crosses below EMA(close, slow lookback)
+Long: low <= demand-zone upper boundary AND low >= demand-zone Pivot Low - ATR(lookback) * bounce-distance AND close > open AND close > low[1] AND EMA(close, fast lookback) crosses above EMA(close, slow lookback) on the current chart bar or within the preceding recent-cross lookback bars AND (RSI filter disabled OR (RSI(close, lookback) > lower RSI threshold AND RSI(close, lookback) < upper RSI threshold)) AND (volume filter disabled OR volume > SMA(volume, lookback) * volume multiplier) AND (CPR filter disabled OR close > Pivot Point(high, low, close, T1, last completed bar), sampled on chart bars)
+Short: high >= supply-zone lower boundary AND high <= supply-zone Pivot High + ATR(lookback) * bounce-distance AND close < open AND close < high[1] AND EMA(close, fast lookback) crosses below EMA(close, slow lookback) on the current chart bar or within the preceding recent-cross lookback bars AND (RSI filter disabled OR (RSI(close, lookback) > lower RSI threshold AND RSI(close, lookback) < upper RSI threshold)) AND (volume filter disabled OR volume > SMA(volume, lookback) * volume multiplier) AND (CPR filter disabled OR close < Pivot Point(high, low, close, T1, last completed bar), sampled on chart bars)
+Exit: long, high >= entry price + ATR(lookback) * take-profit multiplier OR low <= entry price - ATR(lookback) * stop-loss multiplier
+Exit: short, low <= entry price - ATR(lookback) * take-profit multiplier OR high >= entry price + ATR(lookback) * stop-loss multiplier

@@ -1,0 +1,3 @@
+Calculation: Pullback = count of prior pullback-lookback bars with close < open >= minimum red candles
+Calculation: FirstGreen = close > open AND the number of consecutive prior bars with close < open, counted up to the streak-lookback, >= minimum red candles
+Long: (VWAP filter disabled OR close > VWAP(hlc3)) AND (trend EMA filter disabled OR close > EMA(close, trend lookback)) AND ((close >= open AND EMA(close, fast lookback) crosses above EMA(close, slow lookback) AND (MACD(close, fast lookback, slow lookback, signal lookback).line crosses above its signal line OR (MACD line > signal line AND Pullback))) OR (Pullback AND FirstGreen AND MACD line > signal line) OR (Pullback AND MACD histogram crosses above zero)

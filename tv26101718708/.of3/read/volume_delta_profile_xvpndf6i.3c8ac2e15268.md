@@ -1,0 +1,5 @@
+Calculation: Price bucket(close) = clamp(floor((close - lowest(low, lookback)) / ((highest(high, lookback) - lowest(low, lookback)) / number of price levels)), 0, number of price levels - 1), using the current chart bar and the lookback chart bars
+Calculation: Positive delta per price bucket = sum(max(VolumeDelta(T1 data, including the bar still forming, aggregated on chart bars), 0)) over lookback chart bars assigned to that bucket by Price bucket
+Calculation: Negative delta per price bucket = sum(abs(min(VolumeDelta(T1 data, including the bar still forming, aggregated on chart bars), 0))) over lookback chart bars assigned to that bucket by Price bucket
+Long: Positive delta per price bucket >= Negative delta per price bucket AND Positive delta per price bucket + Negative delta per price bucket > 0
+Short: Negative delta per price bucket > Positive delta per price bucket AND Positive delta per price bucket + Negative delta per price bucket > 0

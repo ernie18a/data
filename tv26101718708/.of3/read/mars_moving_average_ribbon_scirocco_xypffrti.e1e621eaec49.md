@@ -1,0 +1,3 @@
+Calculation: Master average = the selected of four separately configured SMA, EMA, RMA, WMA, or VWMA values, each with its own OHLC source, lookback, and timeframe (T1–T4); calculate each on its timeframe and evaluate its values on chart bars, using the forming timeframe bar in real time and the last completed bar historically, with missing values carried forward; if the selected average is hidden, choices 1–3 use the first enabled average in order 1–4 (or 4 if none are enabled), and choice 4 uses the last enabled average in order 4–1 (or 1 if none are enabled)
+Long: Master average > Master average[1]
+Short: Master average < Master average[1]

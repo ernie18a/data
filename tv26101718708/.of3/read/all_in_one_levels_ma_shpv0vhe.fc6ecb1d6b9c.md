@@ -1,0 +1,2 @@
+Long: close > VWAP(close) AND close > EMA(close, shorter lookback) AND close > EMA(close, longer lookback) AND close > SMA(close, same lookback as the longer EMA)
+Short: close < VWAP(close) AND close < EMA(close, shorter lookback) AND close < EMA(close, longer lookback) AND close < SMA(close, same lookback as the longer EMA)

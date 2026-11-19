@@ -1,0 +1,5 @@
+Calculation: Void zones = up to the maximum void zones, the lowest-price grid cells spanning the lowest low to highest high over the volume-profile lookback whose volume is below the void threshold times the average grid-cell volume; divide the range into the price-grid divisions
+Long: For any void zone, close > its lower bound AND close < its upper bound AND close[1] <= its lower bound
+Short: For any void zone, close > its lower bound AND close < its upper bound AND close[1] >= its upper bound
+Long: For any void zone, close > its lower bound AND close < its upper bound AND close[1] <= its lower bound AND close > EMA(close, trend lookback) AND volume > SMA(volume, volume-confirmation lookback) AND the signal cooldown has elapsed since the last long or short signal AND the chart bar is confirmed
+Short: For any void zone, close > its lower bound AND close < its upper bound AND close[1] >= its upper bound AND close < EMA(close, trend lookback) AND volume > SMA(volume, volume-confirmation lookback) AND the signal cooldown has elapsed since the last long or short signal AND the chart bar is confirmed

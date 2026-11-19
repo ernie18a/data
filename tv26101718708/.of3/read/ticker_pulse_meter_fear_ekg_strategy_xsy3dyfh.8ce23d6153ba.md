@@ -1,0 +1,5 @@
+Calculation: Range position(L) = (T1 close - Lowest(T1 low mapped to chart bars, L chart bars)) / (Highest(T1 high mapped to chart bars, L chart bars) - Lowest(T1 low mapped to chart bars, L chart bars)); evaluated on chart bars using lookahead-off T1 OHLC values (forming T1 bar in realtime, completed T1 values historically)
+Calculation: Strength score = 100 * Range position(longer lookback) * Range position(shorter lookback)
+Calculation: Selling pressure score = 100 * (1 - Range position(longer lookback)) * (1 - Range position(shorter lookback))
+Long: (Strength score[1] crosses above high-entry threshold AND Selling pressure score[1] < low-entry threshold) OR Selling pressure score[1] crosses below extreme-selling threshold
+Exit: Long, Strength score[1] crosses below profit-taking threshold

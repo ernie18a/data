@@ -1,0 +1,4 @@
+Calculation: conviction weight = abs(close - open) / (high - low) when high > low, otherwise 0
+Calculation: smoothed buy share = EMA(SUM(volume * conviction weight when close > open, lookback) / max(SUM(volume * conviction weight when close > open, lookback) + SUM(volume * conviction weight when close < open, lookback), 1), smoothing period)
+Long: smoothed buy share > dominance threshold / 100 OR smoothed buy share[1] > dominance threshold / 100 OR (smoothed buy share > extreme threshold / 100 AND smoothed buy share[1] <= extreme threshold / 100)
+Short: smoothed buy share < (100 - dominance threshold) / 100 OR smoothed buy share[1] < (100 - dominance threshold) / 100 OR (smoothed buy share < (100 - extreme threshold) / 100 AND smoothed buy share[1] >= (100 - extreme threshold) / 100)

@@ -1,0 +1,19 @@
+Calculation: Bar range = max(high - low, minimum tick size)
+Calculation: Volume average = SMA(volume, volume lookback)
+Calculation: Relative volume = volume / volume average when volume average > 0, otherwise 0
+Calculation: Lower wick share = (min(open, close) - low) / bar range
+Calculation: Upper wick share = (high - max(open, close)) / bar range
+Calculation: Opening-range high/low = highest high and lowest low over chart bars in the opening-range window T1 from session open; available when the window completes and held until the next session
+Calculation: Bull swept level = opening-range low when an enabled, ready opening-range sweep occurs; otherwise the most recent confirmed PivotLow(low, pivot-confirmation lookback, pivot-confirmation lookback)
+Calculation: Bear swept level = opening-range high when an enabled, ready opening-range sweep occurs; otherwise the most recent confirmed PivotHigh(high, pivot-confirmation lookback, pivot-confirmation lookback)
+Calculation: VWAP deviation = STDEV(close - VWAP(hlc3), VWAP-deviation lookback)
+Calculation: Delta pressure = EMA(volume * ((close - low) - (high - close)) / bar range / max(volume average, volume-normalization floor), delta-pressure lookback) * delta scale
+Calculation: Volume score = clamp((relative volume - relative-volume baseline) / relative-volume score scale, 0, score cap)
+Calculation: Bull trap score = clamp((bull swept level - low) / max(ATR(ATR lookback), minimum tick size), 0, sweep-depth cap) / sweep-depth cap * sweep weight + lower wick share * wick weight + volume score * volume weight + (close < VWAP(hlc3) ? clamp((VWAP(hlc3) - low) / max(VWAP deviation, minimum tick size), 0, score cap) : neutral VWAP score) * VWAP weight + (delta pressure > delta pressure[1] AND delta pressure > bullish delta floor ? delta-flip weight : 0) + (EMA(close, shorter lookback) > EMA(close, longer lookback) ? aligned-trend score : EMA(close, shorter lookback) < EMA(close, longer lookback) ? opposing-trend score : neutral-trend score) * trend weight
+Calculation: Bear trap score = clamp((high - bear swept level) / max(ATR(ATR lookback), minimum tick size), 0, sweep-depth cap) / sweep-depth cap * sweep weight + upper wick share * wick weight + volume score * volume weight + (close > VWAP(hlc3) ? clamp((high - VWAP(hlc3)) / max(VWAP deviation, minimum tick size), 0, score cap) : neutral VWAP score) * VWAP weight + (delta pressure < delta pressure[1] AND delta pressure < bearish delta ceiling ? delta-flip weight : 0) + (EMA(close, shorter lookback) < EMA(close, longer lookback) ? aligned-trend score : EMA(close, shorter lookback) > EMA(close, longer lookback) ? opposing-trend score : neutral-trend score) * trend weight
+Long: ((a most recent confirmed pivot low exists AND low < it AND close > it) OR (opening-range tracking is enabled and ready AND low < opening-range low AND close > opening-range low)) AND lower wick share >= minimum wick share AND relative volume >= minimum relative volume AND bull trap score >= selected strictness score threshold AND (no prior trap signal OR bars since the latest long or short trap signal > cooldown lookback)
+Long: EMA(close, shorter lookback) > EMA(close, longer lookback)
+Long: delta pressure >= 0
+Short: ((a most recent confirmed pivot high exists AND high > it AND close < it) OR (opening-range tracking is enabled and ready AND high > opening-range high AND close < opening-range high)) AND upper wick share >= minimum wick share AND relative volume >= minimum relative volume AND bear trap score >= selected strictness score threshold AND (no prior trap signal OR bars since the latest long or short trap signal > cooldown lookback)
+Short: EMA(close, shorter lookback) < EMA(close, longer lookback)
+Short: delta pressure < 0

@@ -1,0 +1,3 @@
+Calculation: ApproxDelta = volume * (2 * (close - low) / (high - low) - 1), or 0 when high = low
+Long: confirmed bar AND SMA(volume, volume lookback) > 0 AND volume >= SMA(volume, volume lookback) * volume threshold AND high - low <= range threshold * ATR(ATR lookback) AND ApproxDelta <= -volume * directional delta threshold
+Short: confirmed bar AND SMA(volume, volume lookback) > 0 AND volume >= SMA(volume, volume lookback) * volume threshold AND high - low <= range threshold * ATR(ATR lookback) AND ApproxDelta >= volume * directional delta threshold

@@ -1,0 +1,8 @@
+Calculation: Resistance = most recent confirmed Pivot High(high, pivot lookback, pivot lookback) on chart bars
+Calculation: Support = most recent confirmed Pivot Low(low, pivot lookback, pivot lookback) on chart bars
+Calculation: Bearish rejection at resistance = high >= Resistance - ATR(ATR lookback) * zone-width parameter AND low <= Resistance + ATR(ATR lookback) * zone-width parameter AND ((high - max(open, close) >= max(abs(close - open), minimum price increment) * wick/body threshold AND close <= low + max(high - low, minimum price increment) * close-location threshold) OR (engulfing enabled AND close < open AND close < low[1] AND open >= close[1]))
+Calculation: Bullish rejection at support = high >= Support - ATR(ATR lookback) * zone-width parameter AND low <= Support + ATR(ATR lookback) * zone-width parameter AND ((min(open, close) - low >= max(abs(close - open), minimum price increment) * wick/body threshold AND close >= high - max(high - low, minimum price increment) * close-location threshold) OR (engulfing enabled AND close > open AND close > high[1] AND open <= close[1]))
+Exit: long, Bearish rejection at resistance
+Exit: short, Bullish rejection at support
+Exit: long, Bearish rejection at resistance AND (HTF KAMA filter disabled OR chart close > KAMA(close, KAMA lookback, fast smoothing, slow smoothing) on T1 bars at the last completed T1 bar) AND (close-confirmation parameter disabled OR chart bar is confirmed)
+Exit: short, Bullish rejection at support AND (HTF KAMA filter disabled OR chart close < KAMA(close, KAMA lookback, fast smoothing, slow smoothing) on T1 bars at the last completed T1 bar) AND (close-confirmation parameter disabled OR chart bar is confirmed)

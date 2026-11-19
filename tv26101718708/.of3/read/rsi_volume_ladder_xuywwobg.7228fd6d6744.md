@@ -1,0 +1,2 @@
+Long: RSI(close, lookback) < oversold threshold AND volume > SMA(volume, lookback) × volume multiplier AND (no open long fills OR close < most recent long fill price × (1 − minimum drop percent / 100)) AND open long fills < maximum positions AND (no prior exit OR bars since prior exit > take-profit cooldown if its actual exit price was no farther from its take-profit level than its stop-loss level, otherwise > stop-loss cooldown)
+Exit: long, high >= average long entry price × (1 + take-profit percent / 100) OR low <= lowest long fill price × (1 − stop-loss percent / 100)

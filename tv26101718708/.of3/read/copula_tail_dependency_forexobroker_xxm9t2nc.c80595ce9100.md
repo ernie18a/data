@@ -1,0 +1,6 @@
+Calculation: Upper-tail dependence = EMA(count over the last N chart bars where PercentRank(change(log(close)), N) and PercentRank(change(volume), N) are both >= 1 − tail fraction / count over the last N chart bars where PercentRank(change(volume), N) >= 1 − tail fraction; use 0 if the denominator is 0, with smoothing lookback
+Calculation: Lower-tail dependence = EMA(count over the last N chart bars where PercentRank(change(log(close)), N) and PercentRank(change(volume), N) are both <= tail fraction / count over the last N chart bars where PercentRank(change(volume), N) <= tail fraction; use 0 if the denominator is 0, with smoothing lookback
+Long: Upper-tail dependence crosses above threshold OR (Upper-tail dependence > threshold AND Upper-tail dependence > Lower-tail dependence)
+Short: Lower-tail dependence crosses above threshold OR (Lower-tail dependence > threshold AND Lower-tail dependence > Upper-tail dependence)
+Exit: Long, Upper-tail dependence crosses below threshold
+Exit: Short, Lower-tail dependence crosses below threshold

@@ -1,0 +1,3 @@
+Calculation: plotted ETF flow = if flow mode is raw, sum the BTC balance change for each separately selectable IBIT, FBTC, GBTC, ARKB, BITB, HODL, BRRR, BTCO, BTCW, and EZBC ETF (T1 balance sampled on the prior chart bar minus T1 balance sampled two chart bars ago, with missing balances treated as zero); otherwise, SMA of that sum over the smoothing-length parameter
+Long: plotted ETF flow >= 0
+Short: plotted ETF flow < 0

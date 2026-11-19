@@ -1,0 +1,10 @@
+Calculation: center = VWAP(hlc3) when VWAP center mode is selected, otherwise EMA(close, center EMA lookback)
+Calculation: upper strike = CEILING((center + ATR(ATR lookback) × strike distance multiplier) / strike increment) × strike increment
+Calculation: lower strike = FLOOR((center − ATR(ATR lookback) × strike distance multiplier) / strike increment) × strike increment
+Calculation: strike width percentage = (upper strike − lower strike) / close × 100
+Calculation: upper stop = upper strike at entry + (upper strike at entry − center at entry) × (stop multiplier − 1)
+Calculation: lower stop = lower strike at entry − (center at entry − lower strike at entry) × (stop multiplier − 1)
+Long: flat AND no entry has occurred this week AND the chart bar is on an enabled entry weekday and within the configured entry window in the configured timezone AND strike width percentage ≥ minimum width AND (SuperTrend filter is disabled OR SuperTrend direction is neither bullish nor bearish OR strike width percentage ≥ trend width threshold) AND (RSI filter is disabled OR RSI(close, RSI lookback) is between the oversold and overbought thresholds, inclusive)
+Short: flat AND no entry has occurred this week AND the chart bar is on an enabled entry weekday and within the configured entry window in the configured timezone AND strike width percentage ≥ minimum width AND (SuperTrend filter is disabled OR SuperTrend direction is neither bullish nor bearish OR strike width percentage ≥ trend width threshold) AND (RSI filter is disabled OR RSI(close, RSI lookback) is between the oversold and overbought thresholds, inclusive)
+Exit: long, high ≥ upper stop OR low ≤ lower stop OR the chart bar is on the configured expiry weekday and within the interval from the configured expiry exit time through session close OR the chart bar is Friday and within the Friday safety interval
+Exit: short, high ≥ upper stop OR low ≤ lower stop OR the chart bar is on the configured expiry weekday and within the interval from the configured expiry exit time through session close OR the chart bar is Friday and within the Friday safety interval

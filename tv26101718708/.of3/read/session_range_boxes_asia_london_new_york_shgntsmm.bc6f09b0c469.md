@@ -1,0 +1,2 @@
+Long: On a confirmed chart bar outside the selected reference session, close crosses above the high of its most recently completed session; if first-breakout-only is enabled, this is the first such breakout since that session ran again.
+Short: On a confirmed chart bar outside the selected reference session, close crosses below the low of its most recently completed session; if first-breakout-only is enabled, this is the first such breakout since that session ran again.

@@ -1,0 +1,15 @@
+Calculation: RSI average = (RSI(traded-instrument close, P4) + SMA(RSI(traded-instrument close, P4), P5)) / 2
+Calculation: bullish TICK divergence = TICK pivot low at right offset P23 AND TICK[P23] > TICK[P23] at the preceding TICK pivot low AND P25 <= bars since the preceding TICK pivot low <= P26 AND traded-instrument low[P23] < traded-instrument low[P23] at the preceding TICK pivot low
+Calculation: bearish TICK divergence = TICK pivot high at right offset P23 AND TICK[P23] < TICK[P23] at the preceding TICK pivot high AND P25 <= bars since the preceding TICK pivot high <= P26 AND traded-instrument high[P23] > traded-instrument high[P23] at the preceding TICK pivot high
+Long: crossover(HMA(TICK, P2), EMA(HMA(TICK, P2), P3))
+Short: crossunder(HMA(TICK, P2), EMA(HMA(TICK, P2), P3))
+Long: P27 AND bullish TICK divergence
+Short: P28 AND bearish TICK divergence
+Long: crossover(HMA(TICK, P2), EMA(HMA(TICK, P2), P3)) AND RSI average > P6 AND RSI(traded-instrument close, P4) < P6 + P7 AND VIX > P8 AND EMA(TICK, P1) > P22 AND traded-instrument close > EMA(traded-instrument close, P9) AND within date range (P10, P11, P12)–(P13, P14, P15) and weekday session P16–P17 AND confirmed bar
+Short: crossunder(HMA(TICK, P2), EMA(HMA(TICK, P2), P3)) AND RSI average < P6 AND RSI(traded-instrument close, P4) > P6 - P7 AND VIX > P8 AND EMA(TICK, P1) < P22 AND traded-instrument close < EMA(traded-instrument close, P9) AND within date range (P10, P11, P12)–(P13, P14, P15) and weekday session P16–P17 AND confirmed bar
+Long: no open position AND bars since (crossover(HMA(TICK, P2), EMA(HMA(TICK, P2), P3)) AND RSI average > P6 AND RSI(traded-instrument close, P4) < P6 + P7 AND VIX > P8 AND EMA(TICK, P1) > P22) < P29 AND traded-instrument close > EMA(traded-instrument close, P9) AND within date range (P10, P11, P12)–(P13, P14, P15) and weekday session P16–P17 AND confirmed bar
+Exit: long, primary entry AND more than P30 bars since entry AND within date range (P10, P11, P12)–(P13, P14, P15) and weekday session P18–P19 AND (traded-instrument low <= min(traded-instrument low[1] at entry − ATR(T1, P20) at entry × P21 / 100, traded-instrument low[1] − ATR(T1, P20) × P21 / 100) OR (HMA(TICK, P2) < EMA(HMA(TICK, P2), P3) AND RSI average < RSI average[1]) OR (P28 AND bearish TICK divergence))
+Exit: long, delayed entry AND within date range (P10, P11, P12)–(P13, P14, P15) and weekday session P18–P19 AND (traded-instrument low <= min(traded-instrument low[1] at entry − ATR(T1, P20) at entry × P21 / 100, traded-instrument low[1] − ATR(T1, P20) × P21 / 100) OR (HMA(TICK, P2) < EMA(HMA(TICK, P2), P3) AND RSI average < RSI average[1]) OR (P28 AND bearish TICK divergence))
+Exit: short, more than P30 bars since entry AND within date range (P10, P11, P12)–(P13, P14, P15) and weekday session P18–P19 AND (traded-instrument high >= max(traded-instrument high[1] at entry + ATR(T1, P20) at entry × P21 / 100, traded-instrument high[1] + ATR(T1, P20) × P21 / 100) OR (HMA(TICK, P2) > EMA(HMA(TICK, P2), P3) AND RSI average > RSI average[1]) OR (P27 AND bullish TICK divergence))
+Exit: long, weekday session P31–P32
+Exit: short, weekday session P31–P32

@@ -1,0 +1,5 @@
+Calculation: weekly SMA growth percentage = 100 * (SMA(T1 close series on chart bars, lookback, using the current T1 bar) - its prior chart-bar value) / its prior chart-bar value
+Calculation: yield spread = 100 * (longer-term yield close on T2 minus shorter-term yield close on T2), evaluated on chart bars using the current T2 bar
+Calculation: recession score = sum of the GDP, money-supply, price-momentum, and leading-indicator state scores (bullish = 0, neutral = 10, bearish = 20) + yield-spread score (positive = 0, zero = 10, negative = 20) + growth score (negative = 20, from zero up to the sustainable-growth threshold = 0, at or above that threshold = 10)
+Long: GDP state is bullish AND yield spread > 0 AND money-supply state is bullish AND weekly SMA growth percentage >= 0 AND price-momentum state is bullish AND leading-indicator state is bullish OR recession score <= low-score threshold
+Short: GDP state is bearish AND yield spread < 0 AND money-supply state is bearish AND weekly SMA growth percentage < 0 AND price-momentum state is bearish AND leading-indicator state is bearish OR recession score >= high-score threshold

@@ -1,0 +1,3 @@
+Long: datetime >= start date AND initial entry has not occurred
+Long: Fear & Greed Index <= fear threshold
+Exit: long, bull-year logic is enabled AND current year is a configured bull year AND ((current quarter is Q1 AND Q1 sell parameter > 0) OR (current quarter is Q2 AND Q2 sell parameter > 0) OR (current quarter is Q3 AND Q3 sell parameter > 0) OR (current quarter is Q4 AND Q4 sell parameter > 0)) AND position value exceeds the minimum BTC allocation floor

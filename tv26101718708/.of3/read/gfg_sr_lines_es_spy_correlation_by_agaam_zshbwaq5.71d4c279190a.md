@@ -1,0 +1,12 @@
+Calculation: smoothed stochastic %K = SMA(Stochastic(high, low, close, stochastic lookback), K smoothing)
+Calculation: stochastic %D = SMA(smoothed stochastic %K, D smoothing)
+Calculation: long stop = lowest(low, swing lookback + 1 bar) at entry - ATR(ATR lookback) at entry * stop buffer
+Calculation: short stop = highest(high, swing lookback + 1 bar) at entry + ATR(ATR lookback) at entry * stop buffer
+Long: EMA(close, trend lookback) > EMA(close, trend lookback)[1]
+Short: EMA(close, trend lookback) < EMA(close, trend lookback)[1]
+Long: close > EMA(close, trend lookback) AND EMA(close, trend lookback) > EMA(close, trend lookback)[1] AND abs(close - EMA(close, trend lookback)) <= ATR(ATR lookback) * proximity multiplier AND min(smoothed stochastic %K, stochastic %D) >= bullish-zone lower bound AND min(smoothed stochastic %K, stochastic %D) <= bullish-zone upper bound AND smoothed stochastic %K crosses above stochastic %D AND MACD histogram(close, fast lookback, slow lookback, signal lookback) > MACD histogram(close, fast lookback, slow lookback, signal lookback)[1] AND close > open AND ADX(ADX lookback) >= minimum ADX AND volume > SMA(volume, volume lookback) * volume multiplier AND each correlation market's close > EMA(its close, trend lookback) AND each correlation market's EMA(its close, trend lookback) > its previous-bar value
+Short: close < EMA(close, trend lookback) AND EMA(close, trend lookback) < EMA(close, trend lookback)[1] AND abs(close - EMA(close, trend lookback)) <= ATR(ATR lookback) * proximity multiplier AND max(smoothed stochastic %K, stochastic %D) >= bearish-zone lower bound AND max(smoothed stochastic %K, stochastic %D) <= bearish-zone upper bound AND smoothed stochastic %K crosses below stochastic %D AND MACD histogram(close, fast lookback, slow lookback, signal lookback) < MACD histogram(close, fast lookback, slow lookback, signal lookback)[1] AND close < open AND ADX(ADX lookback) >= minimum ADX AND volume > SMA(volume, volume lookback) * volume multiplier AND each correlation market's close < EMA(its close, trend lookback) AND each correlation market's EMA(its close, trend lookback) < its previous-bar value
+Exit: long, low <= long stop
+Exit: long, smoothed stochastic %K >= long exit threshold AND smoothed stochastic %K crosses below stochastic %D
+Exit: short, high >= short stop
+Exit: short, smoothed stochastic %K <= short exit threshold AND smoothed stochastic %K crosses above stochastic %D

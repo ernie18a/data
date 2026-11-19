@@ -1,0 +1,19 @@
+Calculation: Relative volume = volume / SMA(volume, volume lookback), when volume is available and positive
+Calculation: Panic score = max(0, neutral RSI level - RSI(close, RSI lookback)) / RSI normalization divisor × relative volume, when volume is available and positive; otherwise zero
+Calculation: FOMO score = max(0, RSI(close, RSI lookback) - neutral RSI level) / RSI normalization divisor × relative volume, when volume is available and positive; otherwise zero
+Calculation: Momentum score = base level + ((close - Lowest(low, range lookback)) / (Highest(high, range lookback) - Lowest(low, range lookback)) - midpoint fraction) × range scale factor, when the range is positive; otherwise base level
+Long: On a confirmed chart bar, (RTH filter disabled OR within the New York regular session), FOMO score > shared Panic/FOMO threshold, close > open, and abs(close - EMA(close, shorter EMA lookback)) > ATR(high, low, close, ATR lookback) × extension multiple
+Long: On a confirmed chart bar, (RTH filter disabled OR within the New York regular session), Momentum score < oversold threshold
+Long: On a confirmed chart bar, RSI(close, RSI lookback) crosses above RSI oversold level, EMA(close, intermediate EMA lookback) > EMA(close, longer EMA lookback), and NOT ((RTH filter disabled OR within the New York regular session) AND Panic score > shared Panic/FOMO threshold AND close < open)
+Long: close > EMA(close, shorter EMA lookback) > EMA(close, intermediate EMA lookback) > EMA(close, longer EMA lookback), with shorter < intermediate < longer EMA lookbacks
+Long: EMA(close, intermediate EMA lookback) > EMA(close, longer EMA lookback), close > EMA(close, longer EMA lookback), and NOT (close > EMA(close, shorter EMA lookback) > EMA(close, intermediate EMA lookback) > EMA(close, longer EMA lookback), with shorter < intermediate < longer EMA lookbacks
+Long: On a confirmed chart bar, EMA(close, shorter EMA lookback) > EMA(close, intermediate EMA lookback) > EMA(close, longer EMA lookback), and this ordering was not true on the preceding chart bar, with shorter < intermediate < longer EMA lookbacks
+Long: SMA(close, macro lookback) > SMA(close, macro lookback)[slope lookback] AND close > SMA(close, macro lookback)
+Long: On a confirmed chart bar, SMA(close, macro lookback) > SMA(close, macro lookback)[slope lookback] AND close > SMA(close, macro lookback), and this same condition was false on the preceding chart bar
+Short: On a confirmed chart bar, (RTH filter disabled OR within the New York regular session), Panic score > shared Panic/FOMO threshold AND close < open
+Short: On a confirmed chart bar, (RTH filter disabled OR within the New York regular session), Momentum score > overbought threshold
+Short: close < EMA(close, shorter EMA lookback) < EMA(close, intermediate EMA lookback) < EMA(close, longer EMA lookback), with shorter < intermediate < longer EMA lookbacks
+Short: EMA(close, intermediate EMA lookback) < EMA(close, longer EMA lookback), close < EMA(close, longer EMA lookback), and NOT (close < EMA(close, shorter EMA lookback) < EMA(close, intermediate EMA lookback) < EMA(close, longer EMA lookback), with shorter < intermediate < longer EMA lookbacks
+Short: On a confirmed chart bar, EMA(close, shorter EMA lookback) < EMA(close, intermediate EMA lookback) < EMA(close, longer EMA lookback), and this ordering was not true on the preceding chart bar, with shorter < intermediate < longer EMA lookbacks
+Short: SMA(close, macro lookback) < SMA(close, macro lookback)[slope lookback] AND close < SMA(close, macro lookback)
+Short: On a confirmed chart bar, SMA(close, macro lookback) < SMA(close, macro lookback)[slope lookback] AND close < SMA(close, macro lookback), and this same condition was false on the preceding chart bar

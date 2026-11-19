@@ -1,0 +1,3 @@
+Calculation: Trend and Stop 4 = initialize trend bullish; on chart bars, let distance = ATR(ATR lookback) × (base band multiplier + outer-band offset); if prior trend is bullish and source < prior Stop 4, set trend bearish and Stop 4 = source + distance; if prior trend is bullish and source ≥ prior Stop 4, keep trend bullish and set Stop 4 = max(source − distance, prior Stop 4); if prior trend is bearish and source > prior Stop 4, set trend bullish and Stop 4 = source − distance; otherwise keep trend bearish and set Stop 4 = min(source + distance, prior Stop 4). On the first bar, set Stop 4 = source − distance.
+Long: prior trend is bearish AND source > prior Stop 4
+Short: prior trend is bullish AND source < prior Stop 4

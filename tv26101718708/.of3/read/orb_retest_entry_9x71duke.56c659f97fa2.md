@@ -1,0 +1,7 @@
+Calculation: upper ORB level = maximum(high during the opening-range window) × (1 + ORB buffer percentage)
+Calculation: lower ORB level = minimum(low during the opening-range window) × (1 − ORB buffer percentage)
+Calculation: half ORB range = (upper ORB level − lower ORB level) / 2
+Long: opening range completion bar has passed AND current bar time is at or before the entry-time cutoff AND session entry count < maximum session trades AND no long signal has occurred since the latest session reset or long stop-loss exit AND a bar's high > upper ORB level has occurred, followed by a low <= upper ORB level (possibly on the same bar), AND current high > upper ORB level
+Short: opening range completion bar has passed AND current bar time is at or before the entry-time cutoff AND session entry count < maximum session trades AND no short signal has occurred since the latest session reset or short stop-loss exit AND a bar's low < lower ORB level has occurred, followed by a high >= lower ORB level (possibly on the same bar), AND current low < lower ORB level
+Exit: long, low <= entry price − half ORB range OR high >= entry price + half ORB range × risk-reward parameter
+Exit: short, high >= entry price + half ORB range OR low <= entry price − half ORB range × risk-reward parameter

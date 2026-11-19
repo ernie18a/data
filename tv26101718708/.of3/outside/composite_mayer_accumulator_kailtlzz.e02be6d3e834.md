@@ -1,0 +1,4 @@
+Calculation: Z-score = (underlying index closing price - SMA(underlying index closing price, P1)) / standard deviation(underlying index closing price, P1)
+Calculation: Mayer multiple = underlying index closing price / SMA(underlying index closing price, P1)
+Long: (RSI(underlying index closing price, P2) < P3 AND Z-score <= P4) OR (RSI(underlying index closing price, P5) < P6 AND Z-score <= P7 AND VIX closing price >= P8) OR (Z-score <= P9 AND VIX closing price >= P8) OR (Z-score <= P4 AND VIX closing price >= P10) OR Mayer multiple <= P11 OR (Mayer multiple <= P11 + P12 AND VIX closing price >= P8)
+Short: underlying index closing price crosses below EMA(underlying index closing price, P13) AND ((bars since (RSI(underlying index closing price, P2) > P14 AND Z-score >= P15) < P16) OR (Z-score >= P17 AND VIX closing price <= P18) OR (bars since Mayer multiple >= P19 < P16))

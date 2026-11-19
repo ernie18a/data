@@ -1,0 +1,6 @@
+Calculation: Range high = highest(high, lookback) captured when a consolidation range is established
+Calculation: Range low = lowest(low, lookback) captured when a consolidation range is established
+Calculation: Discount EQ = midpoint(range low, range low + zone fraction × (range high − range low))
+Calculation: Premium EQ = midpoint(range high, range high − zone fraction × (range high − range low))
+Long: In an active range, close > range high OR (low < range low AND close > range low) OR (after a chart bar closes below Discount EQ, a later chart bar closes above Discount EQ, and a subsequent chart bar has low <= Discount EQ AND close > Discount EQ); the retest signal fires once per range
+Short: In an active range, close < range low OR (high > range high AND close < range high) OR (high > range high AND close < range high AND NOT (low < range low AND close > range low)) OR (after a chart bar closes above Premium EQ, a later chart bar closes below Premium EQ, and a subsequent chart bar has high >= Premium EQ AND close < Premium EQ); the retest signal fires once per range

@@ -1,0 +1,3 @@
+Calculation: VQI = let O=MA(open, price-smoothing parameter, selected moving-average type), H=MA(high, price-smoothing parameter, selected moving-average type), L=MA(low, price-smoothing parameter, selected moving-average type), C=MA(close, price-smoothing parameter, selected moving-average type), P=C[1], R=H-L, TR=max(H,C)-min(L,P), V=if R!=0 and TR!=0 then ((C-P)/TR+(C-O)/R)/2 else 0, Q=abs(V)*(C-P+C-O)/2; if abs(Q)>1 then Q else if 10*abs(Q)>1 then 10*Q else Q
+Long: (VQI-SMA(VQI, z-score lookback parameter))/stdev(VQI, z-score lookback parameter) > 0
+Short: (VQI-SMA(VQI, z-score lookback parameter))/stdev(VQI, z-score lookback parameter) < 0

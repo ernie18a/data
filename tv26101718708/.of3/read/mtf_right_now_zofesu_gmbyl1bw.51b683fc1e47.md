@@ -1,0 +1,4 @@
+Calculation: Delta = footprint delta using a footprint row-count parameter when available, otherwise volume × (2 × close − high − low) / (high − low), or 0 when high = low; calculated on T1 bars, with the still-forming T1 value read on chart bars
+Calculation: Mean close-range percentage = SMA(100 × (close − low) / (high − low), lookback), with zero-range bars contributing 50; calculated on T1 bars, with the still-forming T1 value read on chart bars
+Long: Delta > 0 AND Mean close-range percentage > bullish threshold AND close on the still-forming T1 bar, read on chart bars, != close[lookback] on T1 bars
+Short: Delta < 0 AND Mean close-range percentage < bearish threshold AND close on the still-forming T1 bar, read on chart bars, != close[lookback] on T1 bars

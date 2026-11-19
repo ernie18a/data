@@ -1,0 +1,6 @@
+Calculation: VWAP deviation percent = if close != 0 then 100 * (close - VWAP((high + low + close) / 3, reset on T3 changes, chart bars)) / VWAP((high + low + close) / 3, reset on T3 changes, chart bars) else 0
+Calculation: bullish agreement count = number of true conditions among close > EMA(close, longest lookback), EMA(close, shortest lookback) > EMA(close, middle lookback), EMA(close, middle lookback) > EMA(close, longest lookback), RSI(mid source, mid lookback, T1; calculated on T1 bars and mapped to chart bars with lookahead off, using the last completed T1 bar historically and the forming T1 bar in realtime) > shared RSI threshold, and RSI(slow source, slow lookback, T2; calculated on T2 bars and mapped to chart bars with lookahead off, using the last completed T2 bar historically and the forming T2 bar in realtime) > shared RSI threshold; T2 is longer than T1
+Long: bullish agreement count >= higher long cutoff
+Short: bullish agreement count <= lower short cutoff
+Long: VWAP deviation percent >= 0
+Short: VWAP deviation percent < 0

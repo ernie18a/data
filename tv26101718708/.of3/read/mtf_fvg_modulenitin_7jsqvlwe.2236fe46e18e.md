@@ -1,0 +1,2 @@
+Long: On a confirmed chart-timeframe bar, low >= high[2] AND low[2] < high; OR on chart bars using the last completed T1 bar, low >= high[2] AND low[2] < high
+Short: On a confirmed chart-timeframe bar, low[2] >= high; OR on chart bars using the last completed T1 bar, low[2] >= high

@@ -1,0 +1,1 @@
+Short: Altcoin futures open-interest share excluding Bitcoin and Ether has fallen by at least P1 percentage points from its highest value over P2 bars on T1

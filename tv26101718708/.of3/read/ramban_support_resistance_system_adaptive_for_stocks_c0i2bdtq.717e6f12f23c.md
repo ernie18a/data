@@ -1,0 +1,5 @@
+Calculation: T1 pivot levels = PivotHigh(high, left lookback, right lookback) and PivotLow(low, left lookback, right lookback), calculated on the current, still-forming T1 bar and carried onto chart bars with lookahead off
+Calculation: NearestLevel(x, primary levels, fallback levels, tolerance) = the closest stored level in the primary set within x × tolerance, or, if none exists, the closest stored level in the fallback set within that distance
+Long: flat AND (signal session filter disabled OR current bar is in the configured session) AND NearestLevel(low, pivot lows, pivot highs, signal tolerance) exists AND low <= selected level × (1 + signal tolerance)
+Short: NearestLevel(high, pivot highs, pivot lows, signal tolerance) exists AND high >= selected level × (1 - signal tolerance)
+Exit: long, low <= entry price × (1 - stop-loss percentage) OR (signal session filter disabled OR current bar is in the configured session) AND NearestLevel(high, pivot highs, pivot lows, signal tolerance) exists AND high >= selected level × (1 - signal tolerance) OR signal session filter enabled AND previous chart bar was in the configured session AND current bar is outside it

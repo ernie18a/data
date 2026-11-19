@@ -1,0 +1,3 @@
+Calculation: Return(close, prior close) = (close - prior close) / prior close or ln(close / prior close), selected return mode
+Long: Return(chart-bar close, last completed T1 close) > median(Return(T1-bar close, prior T1-bar close), lookback, T1, last completed bars)
+Short: Return(chart-bar close, last completed T1 close) <= median(Return(T1-bar close, prior T1-bar close), lookback, T1, last completed bars)

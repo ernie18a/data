@@ -1,0 +1,18 @@
+Calculation: reference bearish trend = reference close from T1's current/forming bar, sampled on chart bars, < EMA(reference close sampled on chart bars, trend length)
+Calculation: reference bullish trend = reference close from T1's current/forming bar, sampled on chart bars, > EMA(reference close sampled on chart bars, trend length)
+Calculation: bullish divergence event = (a new confirmed reference pivot high OR a new confirmed chart pivot low) AND latest reference pivot high > preceding reference pivot high AND latest chart pivot low > preceding chart pivot low AND absolute time difference between the latest reference pivot high and chart pivot low <= maximum pivot separation AND (trend filter disabled OR reference bullish trend) AND (push filter disabled OR reference close > highest(reference high[1], DXY push lookback) over chart bars) AND (no prior bullish divergence event OR chart bars since the most recent bullish divergence event > minimum signal gap); reference pivots use PivotHigh(reference high, pivot length, pivot length) on T1 bars, sampled on chart bars, and chart pivots use PivotLow(chart low, pivot length, pivot length) on chart bars
+Calculation: bearish divergence event = (a new confirmed reference pivot low OR a new confirmed chart pivot high) AND latest reference pivot low < preceding reference pivot low AND latest chart pivot high < preceding chart pivot high AND absolute time difference between the latest reference pivot low and chart pivot high <= maximum pivot separation AND (trend filter disabled OR reference bearish trend) AND (push filter disabled OR reference close < lowest(reference low[1], DXY push lookback) over chart bars) AND (no prior bearish divergence event OR chart bars since the most recent bearish divergence event > minimum signal gap); reference pivots use PivotLow(reference low, pivot length, pivot length) on T1 bars, sampled on chart bars, and chart pivots use PivotHigh(chart high, pivot length, pivot length) on chart bars
+Calculation: bullish divergence active = a bullish divergence event occurred on the current chart bar or within the preceding divergence hold bars
+Calculation: bearish divergence active = a bearish divergence event occurred on the current chart bar or within the preceding divergence hold bars
+Calculation: bullish lead = reference close < lowest(reference low[1], lead/lag lookback) over chart bars AND (reference high - reference low) > EMA(reference high - reference low, impulse average-range length) * minimum impulse multiple AND chart close > lowest(chart low[1], lead/lag lookback)
+Calculation: bearish lead = reference close > highest(reference high[1], lead/lag lookback) over chart bars AND (reference high - reference low) > EMA(reference high - reference low, impulse average-range length) * minimum impulse multiple AND chart close < highest(chart high[1], lead/lag lookback)
+Calculation: bullish gold score = one point for each true condition among reference bearish trend, bullish divergence active, and bullish lead
+Calculation: bearish gold score = one point for each true condition among reference bullish trend, bearish divergence active, and bearish lead
+Long: reference bearish trend
+Long: bullish divergence event OR (bullish divergence active AND NOT bearish divergence active)
+Long: bullish lead
+Long: bullish gold score > bearish gold score
+Short: reference bullish trend
+Short: bearish divergence event OR (bearish divergence active AND NOT bullish divergence active)
+Short: bearish lead
+Short: bearish gold score > bullish gold score

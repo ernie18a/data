@@ -1,0 +1,6 @@
+Long: close(T1, still-forming bar sampled on chart bars) > EMA(close, shared lookback, T1, still-forming bar sampled on chart bars)
+Short: close(T1, still-forming bar sampled on chart bars) < EMA(close, shared lookback, T1, still-forming bar sampled on chart bars)
+Long: close(T2, still-forming bar sampled on chart bars) > EMA(close, shared lookback, T2, still-forming bar sampled on chart bars)
+Short: close(T2, still-forming bar sampled on chart bars) < EMA(close, shared lookback, T2, still-forming bar sampled on chart bars)
+Long: close(T3, still-forming bar sampled on chart bars) > EMA(close, shared lookback, T3, still-forming bar sampled on chart bars)
+Short: close(T3, still-forming bar sampled on chart bars) < EMA(close, shared lookback, T3, still-forming bar sampled on chart bars)

@@ -1,0 +1,8 @@
+Long: confirmed PivotLow(low, pivot lookback, pivot lookback) exists AND a previous confirmed pivot low exists AND current pivot low != previous confirmed pivot low
+Short: confirmed PivotHigh(high, pivot lookback, pivot lookback) exists AND a previous confirmed pivot high exists AND current pivot high != previous confirmed pivot high
+Long: confirmed chart bar AND no open position AND confirmed PivotLow(low, pivot lookback, pivot lookback) exists AND (MA filter disabled OR close > selected moving average(close, MA type, MA lookback, ALMA offset, ALMA sigma)) AND high >= min(open[pivot lookback], close[pivot lookback])
+Short: confirmed chart bar AND no open position AND confirmed PivotHigh(high, pivot lookback, pivot lookback) exists AND (MA filter disabled OR close < selected moving average(close, MA type, MA lookback, ALMA offset, ALMA sigma)) AND low <= max(open[pivot lookback], close[pivot lookback])
+Exit: Long, high >= entry price + first take-profit distance OR low <= entry price - stop-loss distance
+Exit: Long, double-entry enabled AND (high >= entry price + first take-profit distance + second take-profit distance OR (first take-profit hit while long AND low <= entry price + post-target stop offset) OR (first take-profit not hit while long AND low <= entry price - stop-loss distance))
+Exit: Short, low <= entry price - first take-profit distance OR high >= entry price + stop-loss distance
+Exit: Short, double-entry enabled AND (low <= entry price - first take-profit distance - second take-profit distance OR (first take-profit hit while short AND high >= entry price - post-target stop offset) OR (first take-profit not hit while short AND high >= entry price + stop-loss distance))

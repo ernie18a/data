@@ -1,0 +1,5 @@
+Calculation: Upper boundary = SMA(highest(median(high, median lookback), rounded(zone lookback / 2)), zone lookback)
+Calculation: Lower boundary = SMA(lowest(median(low, median lookback), rounded(zone lookback / 2)), zone lookback)
+Calculation: Center level = (Upper boundary + Lower boundary) / 2
+Long: low > Upper boundary OR (low > Center level AND low < Upper boundary) OR (SMA(hl2, short lookback) > SMA(hl2, intermediate lookback) AND SMA(hl2, short lookback) > SMA(hl2, short lookback)[1] AND SMA(hl2, intermediate lookback) != SMA(hl2, long lookback)) OR close >= highest(close[1], direction lookback)
+Short: (high < Center level AND high > Lower boundary) OR high < Lower boundary OR (SMA(hl2, short lookback) < SMA(hl2, intermediate lookback) AND SMA(hl2, short lookback) < SMA(hl2, short lookback)[1] AND SMA(hl2, intermediate lookback) != SMA(hl2, long lookback)) OR close < highest(close[1], direction lookback)

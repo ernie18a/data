@@ -1,0 +1,4 @@
+Calculation: Zone ATR snapshot = ATR(zone ATR lookback, T1, current bar still forming, sampled on chart bars), latched at the start of each T2 bar and falling back to the current sampled ATR when unavailable
+Calculation: Opening zone bounds = [current T2 open − Zone ATR snapshot × zone ATR multiplier, current T2 open + Zone ATR snapshot × zone ATR multiplier]
+Long: confirmed chart bar AND low > high[2] AND low − high[2] >= Zone ATR snapshot × FVG minimum-size multiplier AND low <= current still-forming T2 high AND high[2] >= current still-forming T2 low AND low >= opening zone lower bound AND high[2] <= opening zone upper bound
+Short: confirmed chart bar AND high < low[2] AND low[2] − high >= Zone ATR snapshot × FVG minimum-size multiplier AND low[2] <= current still-forming T2 high AND high >= current still-forming T2 low AND low[2] >= opening zone lower bound AND high <= opening zone upper bound

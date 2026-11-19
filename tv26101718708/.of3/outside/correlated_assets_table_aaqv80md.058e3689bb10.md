@@ -1,0 +1,4 @@
+Calculation: EMA-envelope score for each external asset on T1 = strong envelope weight if low > EMA(high, envelope length); normal envelope weight if high > EMA(high, envelope length) AND low > EMA(low, envelope length); −strong envelope weight if high < EMA(low, envelope length); −normal envelope weight if high < EMA(high, envelope length) AND low < EMA(low, envelope length); otherwise 0
+Calculation: Cross-asset bias percentage = clamp(100 × (Nasdaq 100, S&P 500, and Dow futures EMA-envelope scores − VIX EMA-envelope score + EMA200 weight × (the sum of +1 when each index close is above its EMA(close, long EMA length), otherwise −1, minus the VIX state by the same comparison) + VWAP weight × (the sum of +1 when each index close is above its VWAP, otherwise −1) + normalization offset) / normalization range, 0, 100)
+Long: cross-asset bias percentage ≥ long-bias threshold
+Short: cross-asset bias percentage < short-bias threshold

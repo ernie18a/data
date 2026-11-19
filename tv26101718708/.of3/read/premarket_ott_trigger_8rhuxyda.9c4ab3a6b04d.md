@@ -1,0 +1,6 @@
+Calculation: OTT crossing = (crossing mode selects wick AND low <= OTT(source, lookback, percent) AND high >= OTT(source, lookback, percent)) OR (crossing mode selects body AND min(open, close) <= OTT(source, lookback, percent) AND max(open, close) >= OTT(source, lookback, percent)) OR (crossing mode selects close AND close crosses OTT(source, lookback, percent)), evaluated on T1 bars
+Calculation: Premarket box high and low = high and low of the active T1 bar that OTT-crosses during the configured premarket session; T1 bar values are mapped onto chart bars (last completed historically, still forming live)
+Long: close > premarket box high
+Short: close < premarket box low
+Long: OTT(source, lookback, percent) on the current T1 bar, mapped onto chart bars (last completed historically, still forming live), > that mapped value one chart bar ago
+Short: OTT(source, lookback, percent) on the current T1 bar, mapped onto chart bars (last completed historically, still forming live), < that mapped value one chart bar ago

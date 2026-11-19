@@ -1,0 +1,5 @@
+Calculation: Prior VWAP = VWAP((high + low + close) / 3) computed on T1 bars, using the last completed T1 bar on each chart bar; use current chart-bar VWAP((high + low + close) / 3) if unavailable
+Calculation: Bearish score = count of true conditions among close < open, close < current chart-bar VWAP, close < Prior VWAP, and close crosses below current chart-bar VWAP
+Calculation: Bullish score = count of true conditions among close > open, close > current chart-bar VWAP, close > Prior VWAP, and close crosses above current chart-bar VWAP
+Long: close crosses above current chart-bar VWAP AND Bullish score >= minimum score AND volatility-index close on the current chart bar >= minimum volatility and <= maximum volatility AND within the configured Monday-Friday session in New York time AND at least the minimum signal-gap bars since the prior signal
+Short: close crosses below current chart-bar VWAP AND Bearish score >= minimum score AND volatility-index close on the current chart bar >= minimum volatility and <= maximum volatility AND within the configured Monday-Friday session in New York time AND at least the minimum signal-gap bars since the prior signal

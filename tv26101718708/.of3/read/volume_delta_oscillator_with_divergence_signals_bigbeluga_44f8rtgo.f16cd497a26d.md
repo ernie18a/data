@@ -1,0 +1,3 @@
+Calculation: delta ratio = (close >= open ? 1 : -1) * abs(close - open) / (high - low) * volume / max(volume, volume floor), or 0 when high = low
+Long: a confirmed pivot low of EMA(delta ratio, lookback), using separate left and right pivot lookbacks, is higher than the preceding confirmed pivot low of that EMA, and the low at the current pivot is lower than the low at the preceding pivot
+Short: a confirmed pivot high of EMA(delta ratio, lookback), using separate left and right pivot lookbacks, is lower than the preceding confirmed pivot high of that EMA, and the high at the current pivot is higher than the high at the preceding pivot

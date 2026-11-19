@@ -1,0 +1,3 @@
+Calculation: Currency strength = its return minus the mean return of USD, EUR, GBP, AUD, NZD, CAD, CHF, and JPY; USD return is zero, and each other return is the percentage change from a P1-bar-prior close or T2 opening price to its close on the chart timeframe or T1, with spot pairs quoted as USD per currency reversed and currency futures direct; optionally EMA-smoothed over P2 bars
+Long: alerts enabled AND traded instrument is forex AND bar is confirmed AND base-currency strength crosses above quote-currency strength
+Short: alerts enabled AND traded instrument is forex AND bar is confirmed AND base-currency strength crosses below quote-currency strength

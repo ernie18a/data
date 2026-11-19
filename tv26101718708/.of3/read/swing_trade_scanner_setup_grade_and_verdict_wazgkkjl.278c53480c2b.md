@@ -1,0 +1,1 @@
+Long: close > MA(close, fast lookback, moving-average type) AND MA(close, fast lookback, moving-average type) > MA(close, next-longer lookback, moving-average type) AND MA(close, next-longer lookback, moving-average type) > MA(close, next-longer lookback, moving-average type)

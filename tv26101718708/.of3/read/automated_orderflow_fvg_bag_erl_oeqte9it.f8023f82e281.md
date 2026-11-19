@@ -1,0 +1,7 @@
+Calculation: Latest bullish FVG = the most recent chart bar with low > high[2]; its top is low and its bottom is high[2].
+Calculation: Latest bearish FVG = the most recent chart bar with high < low[2]; its top is low[2] and its bottom is high.
+Calculation: Local bias starts at 0, retains its prior value unless updated, and processes these events in order: bullish FVG sets it to 1; bearish FVG sets it to -1; latest bullish FVG failure (a later chart bar with close below its bottom) sets it to -1; latest bearish FVG failure (a later chart bar with close above its top) sets it to 1.
+Calculation: When higher-timeframe bias is enabled, it starts at 0 and updates on chart bars when a new T1 bar begins: a bullish T1 FVG (low > high[2]) sets it to 1, and a bearish T1 FVG (high < low[2]) sets it to -1. The T1 condition comes from the security value on that chart bar: the forming T1 bar in real time and the last completed T1 bar on historical bars.
+Calculation: Final bias = higher-timeframe bias when it is enabled and nonzero; otherwise local bias.
+Long: final bias = 1 OR low > high[2] OR, on the first later chart bar after the latest bullish FVG is created where low <= its top and close > its bottom.
+Short: final bias = -1 OR high < low[2] OR, on the first later chart bar after the latest bearish FVG is created where high >= its bottom and close < its top.

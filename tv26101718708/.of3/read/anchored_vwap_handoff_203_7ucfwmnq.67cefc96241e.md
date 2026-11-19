@@ -1,0 +1,2 @@
+Long: source > VWAP(source, volume, anchored at the start date); for each subsequent leg, source > VWAP(source, volume, since the most recent cross in either direction of source and the preceding leg)
+Short: source < VWAP(source, volume, anchored at the start date); for each subsequent leg, source < VWAP(source, volume, since the most recent cross in either direction of source and the preceding leg)

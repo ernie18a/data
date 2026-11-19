@@ -1,0 +1,2 @@
+Long: close >= close[1] * (1 + price change threshold) AND volume > volume[1] AND volume >= volume threshold
+Short: close <= close[1] * (1 - price change threshold) AND volume > volume[1] AND volume >= volume threshold

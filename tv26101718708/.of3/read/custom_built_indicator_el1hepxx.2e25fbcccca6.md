@@ -1,0 +1,11 @@
+Calculation: Baseline = the selected baseline calculation on source with baseline lookback: RMA(source, baseline lookback) for RMA, SMA, EMA, DEMA, TEMA, WMA, or HMA selections; ALMA(source, baseline lookback, ALMA offset parameter, ALMA sigma parameter); rolling median(source, baseline lookback); rolling mode(source, baseline lookback); or source[1].
+Calculation: Volatility = the selected calculation: ATR(volatility lookback), rolling median(True Range, volatility lookback), standard deviation(source, volatility lookback), mean(|source − SMA(source, volatility lookback)|, volatility lookback), or mean(|source − rolling median(source, volatility lookback)|, volatility lookback).
+Calculation: Upper band = apply the selected upper smoothing method (none, RMA, SMA, EMA, DEMA, TEMA, WMA, HMA, ALMA, rolling median, or rolling mode) to baseline + volatility × upper multiplier, using the extra smoothing lookback and ALMA offset and sigma parameters.
+Calculation: Lower band = apply the separately selected lower smoothing method (none, RMA, SMA, EMA, DEMA, TEMA, WMA, HMA, ALMA, rolling median, or rolling mode) to baseline − volatility × lower multiplier, using the extra smoothing lookback and ALMA offset and sigma parameters.
+Calculation: Long condition = the selected long logic: crossover source > upper band, crossover source > baseline, or baseline > baseline[1].
+Calculation: Short condition = the selected short logic: crossunder source < lower band, crossunder source < baseline, or baseline < baseline[1].
+Calculation: Long confirmation = the condition selected by the shared confirmation type: true, volume > volume[1], baseline > baseline[1], or long condition[1] AND long condition.
+Calculation: Short confirmation = the condition selected by the shared confirmation type: true, volume < volume[1], baseline < baseline[1], or short condition[1] AND short condition.
+Calculation: Trend state = −1 if short condition AND short confirmation; otherwise 1 if long condition AND long confirmation; otherwise the previous trend state; initially 0.
+Long: trend state == 1
+Short: trend state == −1

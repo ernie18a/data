@@ -1,0 +1,3 @@
+Long: On chart bars at the start of a new T1 bar, using the last completed T1 bar, low[1] > high[3] AND a pending Pivot High(high, left pivot lookback, right pivot lookback)[1] is strictly between high[3] and low[1].
+Short: On chart bars at the start of a new T1 bar, using the last completed T1 bar, high[1] < low[3] AND a pending Pivot Low(low, left pivot lookback, right pivot lookback)[1] is strictly between high[1] and low[3].
+A pivot remains pending until it matches an FVG, is discarded after a nonmatching evaluation whose preceding T1 bar contains the pivot price, or is discarded by the maximum pending-age parameter.

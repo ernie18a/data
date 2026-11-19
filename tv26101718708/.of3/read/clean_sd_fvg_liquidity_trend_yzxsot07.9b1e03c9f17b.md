@@ -1,0 +1,11 @@
+Calculation: DemandZoneEvent = on chart bars using the last completed T1 bar, true once per source bar when close > open, close - close[displacement bars] >= ATR(ATR length, T1) * minimum displacement (ATR), and a nearest prior bearish candle exists within the preceding base-search bars of T1.
+Calculation: SupplyZoneEvent = on chart bars using the last completed T1 bar, true once per source bar when close < open, close[displacement bars] - close >= ATR(ATR length, T1) * minimum displacement (ATR), and a nearest prior bullish candle exists within the preceding base-search bars of T1.
+Calculation: ActiveZones = when zone display is enabled, create demand or supply zones from the respective event's nearest prior base candle, using its wick or body boundaries; retain at most the newest max-zones per direction; remove a demand zone when chart close < its bottom and a supply zone when chart close > its top.
+Calculation: ZoneDistance = minimum across active zones of max(zone bottom - close, close - zone top, 0); undefined when there are no active zones.
+Calculation: TrendDirection = on T2 bars, bullish when the latest two confirmed PivotHigh(high, structure sensitivity, structure sensitivity) values rise and the latest two confirmed PivotLow(low, structure sensitivity, structure sensitivity) values rise; bearish when both pairs fall; when EMA confirmation is enabled, require EMA(close, fast lookback, T2) > EMA(close, slow lookback, T2) for bullish or < for bearish; otherwise neutral. On chart bars use the direction from the last completed T2 bar.
+Long: Zone display is enabled AND DemandZoneEvent is true.
+Short: Zone display is enabled AND SupplyZoneEvent is true.
+Long: FVG display is enabled AND low > high[2] AND low - high[2] >= minimum FVG size (ticks) * tick size AND ZoneDistance <= ATR(ATR length, chart timeframe) * maximum FVG distance (ATR).
+Short: FVG display is enabled AND high < low[2] AND low[2] - high >= minimum FVG size (ticks) * tick size AND ZoneDistance <= ATR(ATR length, chart timeframe) * maximum FVG distance (ATR).
+Long: TrendDirection from the last completed T2 bar is bullish.
+Short: TrendDirection from the last completed T2 bar is bearish.

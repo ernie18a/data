@@ -1,0 +1,18 @@
+Long: selected mode uses the prior-period level AND close crosses above the high of the last completed T1 bar, read on chart bars
+Short: selected mode uses the prior-period level AND close crosses below the low of the last completed T1 bar, read on chart bars
+Long: selected mode uses Bollinger Bands AND close crosses above the upper Bollinger Band(close, lookback, multiplier)
+Short: selected mode uses Bollinger Bands AND close crosses below the lower Bollinger Band(close, lookback, multiplier)
+Long: selected mode uses volume confirmation AND volume > SMA(volume, lookback) AND ((intrabar evaluation is enabled AND high > highest(high[1], lookback)) OR (intrabar evaluation is disabled AND close crosses above highest(high[1], lookback)))
+Short: selected mode uses volume confirmation AND volume > SMA(volume, lookback) AND ((intrabar evaluation is enabled AND low < lowest(low[1], lookback)) OR (intrabar evaluation is disabled AND close crosses below lowest(low[1], lookback)))
+Long: selected mode uses ATR range confirmation AND (intrabar evaluation is enabled AND high > highest(high[1], lookback) OR intrabar evaluation is disabled AND close crosses above highest(high[1], lookback)) AND high - close[1] > ATR(lookback)
+Short: selected mode uses ATR range confirmation AND (intrabar evaluation is enabled AND low < lowest(low[1], lookback) OR intrabar evaluation is disabled AND close crosses below lowest(low[1], lookback)) AND close[1] - low > ATR(lookback)
+Long: selected mode uses session filtering AND (intrabar evaluation is enabled AND high > highest(high[1], lookback) OR intrabar evaluation is disabled AND close crosses above highest(high[1], lookback)) AND datetime is within the session
+Short: selected mode uses session filtering AND (intrabar evaluation is enabled AND low < lowest(low[1], lookback) OR intrabar evaluation is disabled AND close crosses below lowest(low[1], lookback)) AND datetime is within the session
+Long: selected mode uses EMA trend confirmation AND (intrabar evaluation is enabled AND high > highest(high[1], lookback) OR intrabar evaluation is disabled AND close crosses above highest(high[1], lookback)) AND EMA(close, shorter lookback) > EMA(close, longer lookback)
+Short: selected mode uses EMA trend confirmation AND (intrabar evaluation is enabled AND low < lowest(low[1], lookback) OR intrabar evaluation is disabled AND close crosses below lowest(low[1], lookback)) AND EMA(close, shorter lookback) < EMA(close, longer lookback)
+Long: selected mode uses RSI confirmation AND (intrabar evaluation is enabled AND high > highest(high[1], lookback) OR intrabar evaluation is disabled AND close crosses above highest(high[1], lookback)) AND RSI(close, lookback) > long RSI threshold
+Short: selected mode uses RSI confirmation AND (intrabar evaluation is enabled AND low < lowest(low[1], lookback) OR intrabar evaluation is disabled AND close crosses below lowest(low[1], lookback)) AND RSI(close, lookback) < short RSI threshold
+Long: selected mode uses candle confirmation AND (intrabar evaluation is enabled AND high > highest(high[1], lookback) OR intrabar evaluation is disabled AND close crosses above highest(high[1], lookback)) AND close > open AND close > close[1]
+Short: selected mode uses candle confirmation AND (intrabar evaluation is enabled AND low < lowest(low[1], lookback) OR intrabar evaluation is disabled AND close crosses below lowest(low[1], lookback)) AND close < open AND close < close[1]
+Exit: long, auto-flat is enabled AND datetime reaches session end
+Exit: short, auto-flat is enabled AND datetime reaches session end

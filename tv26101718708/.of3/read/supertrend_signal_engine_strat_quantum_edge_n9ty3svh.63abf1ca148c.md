@@ -1,0 +1,20 @@
+Long: Supertrend(hl2, ATR lookback, multiplier, ATR or SMA of true range as selected) changes from bearish to bullish
+Short: Supertrend(hl2, ATR lookback, multiplier, ATR or SMA of true range as selected) changes from bullish to bearish
+Long: Supertrend(hl2, ATR lookback, multiplier, ATR or SMA of true range as selected) changes from bearish to bullish AND datetime is within the configured start and end dates, inclusive
+Short: Supertrend(hl2, ATR lookback, multiplier, ATR or SMA of true range as selected) changes from bullish to bearish AND datetime is within the configured start and end dates, inclusive
+Long: MA(close, fast lookback, selected EMA or SMA, T1 still-forming bar on chart bars, lookahead off) >= MA(close, slow lookback, selected EMA or SMA, T1 still-forming bar on chart bars, lookahead off)
+Short: MA(close, fast lookback, selected EMA or SMA, T1 still-forming bar on chart bars, lookahead off) < MA(close, slow lookback, selected EMA or SMA, T1 still-forming bar on chart bars, lookahead off)
+Long: MA(close, fast lookback, selected EMA or SMA, T2 still-forming bar on chart bars, lookahead off) >= MA(close, slow lookback, selected EMA or SMA, T2 still-forming bar on chart bars, lookahead off)
+Short: MA(close, fast lookback, selected EMA or SMA, T2 still-forming bar on chart bars, lookahead off) < MA(close, slow lookback, selected EMA or SMA, T2 still-forming bar on chart bars, lookahead off)
+Long: MA(close, fast lookback, selected EMA or SMA, T3 still-forming bar on chart bars, lookahead off) >= MA(close, slow lookback, selected EMA or SMA, T3 still-forming bar on chart bars, lookahead off)
+Short: MA(close, fast lookback, selected EMA or SMA, T3 still-forming bar on chart bars, lookahead off) < MA(close, slow lookback, selected EMA or SMA, T3 still-forming bar on chart bars, lookahead off)
+Long: MA(close, fast lookback, selected EMA or SMA, T4 still-forming bar on chart bars, lookahead off) >= MA(close, slow lookback, selected EMA or SMA, T4 still-forming bar on chart bars, lookahead off)
+Short: MA(close, fast lookback, selected EMA or SMA, T4 still-forming bar on chart bars, lookahead off) < MA(close, slow lookback, selected EMA or SMA, T4 still-forming bar on chart bars, lookahead off)
+Long: MA(close, fast lookback, selected EMA or SMA, T5 still-forming bar on chart bars, lookahead off) >= MA(close, slow lookback, selected EMA or SMA, T5 still-forming bar on chart bars, lookahead off)
+Short: MA(close, fast lookback, selected EMA or SMA, T5 still-forming bar on chart bars, lookahead off) < MA(close, slow lookback, selected EMA or SMA, T5 still-forming bar on chart bars, lookahead off)
+Long: MA(close, fast lookback, selected EMA or SMA, T6 still-forming bar on chart bars, lookahead off) >= MA(close, slow lookback, selected EMA or SMA, T6 still-forming bar on chart bars, lookahead off)
+Short: MA(close, fast lookback, selected EMA or SMA, T6 still-forming bar on chart bars, lookahead off) < MA(close, slow lookback, selected EMA or SMA, T6 still-forming bar on chart bars, lookahead off)
+Long: MA(close, fast lookback, selected EMA or SMA, T7 still-forming bar on chart bars, lookahead off) >= MA(close, slow lookback, selected EMA or SMA, T7 still-forming bar on chart bars, lookahead off)
+Short: MA(close, fast lookback, selected EMA or SMA, T7 still-forming bar on chart bars, lookahead off) < MA(close, slow lookback, selected EMA or SMA, T7 still-forming bar on chart bars, lookahead off)
+Long: MA(close, fast lookback, selected EMA or SMA, T8 still-forming bar on chart bars, lookahead off) >= MA(close, slow lookback, selected EMA or SMA, T8 still-forming bar on chart bars, lookahead off)
+Short: MA(close, fast lookback, selected EMA or SMA, T8 still-forming bar on chart bars, lookahead off) < MA(close, slow lookback, selected EMA or SMA, T8 still-forming bar on chart bars, lookahead off)

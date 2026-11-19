@@ -1,0 +1,38 @@
+Calculation: Developing profile on each chart bar = use chart bars since the start of the current T1 period, including the current bar, capped at a maximum-bars parameter; divide the price range from the lowest low to highest high into a row-count parameter of equal bins, with span floored at minimum tick size times row count; distribute each bar's nonnegative volume among intersected bins in proportion to price-range overlap, using minimum tick size for a zero-range bar; select the greatest-volume bin as control, choosing the lowest row on ties; expand contiguously from that bin toward the higher-volume adjacent bin until the coverage-fraction parameter of total volume is reached or a boundary is reached, choosing the lower row on ties; return control midpoint and lower and upper area edges
+Calculation: Value center = midpoint of developing profile lower and upper edges
+Calculation: Value width = maximum of developing profile upper edge minus lower edge and minimum tick size
+Calculation: Floored ATR = maximum of ATR(close, high, low, ATR lookback) and minimum tick size
+Calculation: Average volume = maximum of EMA(volume with missing values treated as zero, average-volume lookback) and minimum average-volume denominator
+Calculation: Relative volume = current volume divided by average volume when current volume is positive, otherwise one
+Calculation: Pressure balance = EMA(signed volume divided by average volume, pressure lookback), where signed volume is volume when close > open, negative volume when close < open, and zero otherwise
+Calculation: Pressure change = pressure balance minus its previous chart-bar value, or zero when that value is unavailable
+Calculation: Momentum = EMA(change(close) divided by floored ATR, pressure lookback)
+Calculation: Close location = (close - low) divided by maximum(high - low, minimum tick size)
+Calculation: Candle body = absolute value of close - open
+Calculation: Lower wick = minimum(open, close) - low
+Calculation: Upper wick = high - maximum(open, close)
+Calculation: Adaptive center = KAMA(hlc3, efficiency ratio from close over efficiency lookback, shorter fast smoothing period, longer slow smoothing period)
+Calculation: Adaptive center slope = adaptive center minus its value slope lookback chart bars ago
+Calculation: Structure tolerance = maximum(floored ATR times ATR-tolerance parameter, value width times width-tolerance parameter)
+Calculation: Bull trend = EMA(close, shorter trend lookback) > EMA(close, longer trend lookback) AND close >= adaptive center AND adaptive center slope is nonnegative
+Calculation: Bear trend = EMA(close, shorter trend lookback) < EMA(close, longer trend lookback) AND close <= adaptive center AND adaptive center slope is nonpositive
+Calculation: Bull core rejection = low <= developing profile lower edge + structure tolerance AND close > developing profile lower edge AND lower wick >= maximum(candle body, minimum tick size) times wick-to-body parameter AND close location >= bullish close-location parameter
+Calculation: Bear core rejection = high >= developing profile upper edge - structure tolerance AND close < developing profile upper edge AND upper wick >= maximum(candle body, minimum tick size) times wick-to-body parameter AND close location <= bearish close-location parameter
+Calculation: Bull control reclaim = low <= developing profile control AND close > developing profile control AND close > open AND pressure change is positive
+Calculation: Bear control reclaim = high >= developing profile control AND close < developing profile control AND close < open AND pressure change is negative
+Calculation: Bull liquidity sweep = low < lowest(low, structure lookback) over prior chart bars AND close > that prior low AND close location >= bullish sweep-location parameter
+Calculation: Bear liquidity sweep = high > highest(high, structure lookback) over prior chart bars AND close < that prior high AND close location <= bearish sweep-location parameter
+Calculation: Bull value acceptance = close > developing profile upper edge AND prior chart-bar close <= that prior bar's developing profile upper edge AND close location >= bullish acceptance-location parameter
+Calculation: Bear value acceptance = close < developing profile lower edge AND prior chart-bar close >= that prior bar's developing profile lower edge AND close location <= bearish acceptance-location parameter
+Calculation: Bull initiative = relative volume >= initiative relative-volume parameter AND close > open AND candle body >= floored ATR times initiative body parameter AND close location >= bullish initiative-location parameter
+Calculation: Bear initiative = relative volume >= initiative relative-volume parameter AND close < open AND candle body >= floored ATR times initiative body parameter AND close location <= bearish initiative-location parameter
+Calculation: Bull location = close >= value center OR bull core rejection OR bull control reclaim OR bull liquidity sweep
+Calculation: Bear location = close <= value center OR bear core rejection OR bear control reclaim OR bear liquidity sweep
+Calculation: Bull evidence = count of true conditions among bull trend, pressure balance positive, pressure change positive, momentum positive, bull location, and close location >= bullish close-location parameter
+Calculation: Bear evidence = count of true conditions among bear trend, pressure balance negative, pressure change negative, momentum negative, bear location, and close location <= bearish close-location parameter
+Calculation: Bull score = bull trend times trend weight + pressure balance positive times pressure-balance weight + pressure change positive times pressure-change weight + momentum positive times momentum weight + bull core rejection times rejection weight + bull control reclaim times reclaim weight + bull liquidity sweep times sweep weight + bull value acceptance times acceptance weight + bull initiative times initiative weight
+Calculation: Bear score = bear trend times trend weight + pressure balance negative times pressure-balance weight + pressure change negative times pressure-change weight + momentum negative times momentum weight + bear core rejection times rejection weight + bear control reclaim times reclaim weight + bear liquidity sweep times sweep weight + bear value acceptance times acceptance weight + bear initiative times initiative weight
+Calculation: Bull raw signal = confirmed chart bar AND (bull core rejection OR bull control reclaim OR bull liquidity sweep OR bull value acceptance OR bull initiative) AND bull evidence >= minimum evidence parameter AND bull score >= minimum score parameter AND bull score >= bear score + minimum advantage parameter AND NOT (bear trend AND pressure balance < negative opposition parameter AND momentum negative)
+Calculation: Bear raw signal = confirmed chart bar AND (bear core rejection OR bear control reclaim OR bear liquidity sweep OR bear value acceptance OR bear initiative) AND bear evidence >= minimum evidence parameter AND bear score >= minimum score parameter AND bear score >= bull score + minimum advantage parameter AND NOT (bull trend AND pressure balance > opposition parameter AND momentum positive)
+Long: bull raw signal AND (position is flat or short) AND (NOT bear raw signal OR bull score > bear score)
+Short: bear raw signal AND (position is flat or long) AND (NOT bull raw signal OR bear score > bull score)

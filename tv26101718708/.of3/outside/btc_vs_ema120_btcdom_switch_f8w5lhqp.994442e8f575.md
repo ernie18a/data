@@ -1,0 +1,2 @@
+Long: Time >= P2 AND BTC close one bar ago > EMA(BTC close, P1) one bar ago AND BTC close two bars ago <= EMA(BTC close, P1) two bars ago
+Exit: long, Time >= P2 AND BTC close one bar ago <= EMA(BTC close, P1) one bar ago AND BTC close two bars ago > EMA(BTC close, P1) two bars ago

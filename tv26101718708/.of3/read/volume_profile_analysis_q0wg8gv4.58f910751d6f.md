@@ -1,0 +1,3 @@
+Calculation: large-order share at a profile level = 100 × (large-buy volume + large-sell volume) / (large-buy volume + large-sell volume + small-buy volume + small-sell volume) at that level
+Long: large-order share at a profile level > the large-order percentage parameter AND large-buy volume at that level > large-sell volume at that level
+Short: large-order share at a profile level > the large-order percentage parameter AND large-sell volume at that level >= large-buy volume at that level

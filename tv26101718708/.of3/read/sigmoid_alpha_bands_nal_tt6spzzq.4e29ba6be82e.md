@@ -1,0 +1,11 @@
+Calculation: Weight feed = change(RSI(source, weight lookback), weight change window) for momentum; change(ATR(weight lookback), weight change window) for volatility; change(EMA(volume, weight lookback), weight change window) for volume; or change(source / EMA(source, weight lookback), weight change window) for disparity, selected by weight source
+Calculation: Sigmoid EMA(source, feed, length) = source on the first bar; thereafter prior value + clamp(2 / (length + 1) × (sigmoid alpha offset + 1 / (1 + exp(−feed))) × (source − prior value), alpha floor, alpha ceiling)
+Calculation: Sigmoid baseline = Sigmoid EMA(source, weight feed, baseline length)
+Calculation: Raw volatility = standard deviation(source, volatility lookback), ATR(volatility lookback), mean absolute deviation(source, volatility lookback), or median absolute deviation(source, volatility lookback), selected by volatility method
+Calculation: Volatility feed = change(raw volatility / EMA(raw volatility, volatility lookback), weight change window)
+Calculation: Symmetric volatility = Sigmoid EMA(raw volatility, volatility feed, volatility lookback)
+Calculation: Asymmetric volatility = for each bar, let return be log(source / source[1]) when both are positive, otherwise 0; smooth the squared positive return, squared negative return, and their sum with Sigmoid EMA using volatility feed and baseline length; let each directional ratio be sqrt(max(variance scaling factor × its smoothed squared return / smoothed sum, 0)) when the smoothed sum is positive, otherwise 1; let each directional multiplier be 1 + asymmetry multiplier factor × (ratio − 1); clamp each multiplier to the mean of both multipliers' SMA over the asymmetry averaging lookback, using available history if shorter, plus or minus half the maximum asymmetry spread; multiply each adjusted multiplier by symmetric volatility, using minimum tick when symmetric volatility is unavailable, and floor the result at minimum tick
+Calculation: Upper band = Sigmoid baseline + (asymmetric bands enabled ? upper asymmetric volatility : symmetric volatility) × volatility multiple
+Calculation: Lower band = Sigmoid baseline − (asymmetric bands enabled ? lower asymmetric volatility : symmetric volatility) × volatility multiple
+Long: close > upper band
+Short: close < lower band

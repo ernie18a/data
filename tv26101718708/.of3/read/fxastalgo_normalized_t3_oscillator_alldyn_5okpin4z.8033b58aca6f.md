@@ -1,0 +1,3 @@
+Calculation: normalized T3 oscillator = if highest(T3(source, T3 period, volume factor), normalization period) - lowest(T3(source, T3 period, volume factor), normalization period) = 0 then 0 else (T3(source, T3 period, volume factor) - lowest(T3(source, T3 period, volume factor), normalization period)) / (highest(T3(source, T3 period, volume factor), normalization period) - lowest(T3(source, T3 period, volume factor), normalization period)) - 0.50
+Long: normalized T3 oscillator crosses above 0
+Short: normalized T3 oscillator crosses below 0

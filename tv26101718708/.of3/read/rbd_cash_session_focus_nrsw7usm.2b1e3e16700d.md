@@ -1,0 +1,2 @@
+Long: close > VWAP AND close > initial-balance high AND (low <= VWAP OR low <= initial-balance high)
+Short: close < VWAP AND close < initial-balance low AND (high >= VWAP OR high >= initial-balance low)

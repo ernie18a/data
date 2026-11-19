@@ -1,0 +1,4 @@
+Calculation: Composite momentum score = (mean(clamp(RMA((close - Lowest(low, lookback)) / (Highest(high, lookback) - Lowest(low, lookback)), smoothing), 0, score lookback), clamp(Bollinger %B(close, lookback, standard deviation multiplier), 0, score lookback), clamp((close - Highest(high, lookback)) / (Highest(high, lookback) - Lowest(low, lookback)), 0, score lookback)) * score lookback / component count - offset) / scale
+Long: Composite momentum score <= lower score threshold
+Long: Bollinger %B(close, lookback, standard deviation multiplier) crosses above -SMA(Bollinger %B(close, lookback, standard deviation multiplier), smoothing)
+Short: Composite momentum score >= upper score threshold

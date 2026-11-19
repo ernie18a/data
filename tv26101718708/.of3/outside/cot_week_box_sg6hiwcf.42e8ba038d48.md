@@ -1,0 +1,3 @@
+Calculation: T1 COT net-position change for selected participant group = change in T1 reported long positions - change in T1 reported short positions
+Long: PercentRank(abs(T1 COT net-position change), lookback parameter) >= move threshold parameter AND T1 COT net-position change > 0
+Short: PercentRank(abs(T1 COT net-position change), lookback parameter) >= move threshold parameter AND T1 COT net-position change < 0

@@ -1,0 +1,6 @@
+Calculation: Reference close = selected current or prior T1 close of the chart instrument when SPX levels are disabled; otherwise selected current or prior T1 close of SPX plus basis, where basis is the difference between selected chart-instrument and SPX closes in static mode, current chart close minus current SPX close in live mode, or the chart close minus SPX close on the first RTH bar held until the next RTH open in locked-open mode; use static basis when the selected basis is unavailable
+Calculation: Reference ATR = ATR(T1, ATR length parameter) of the chart instrument when SPX levels are disabled or SPX when enabled, using the current or prior T1 period selected by the period setting
+Long: options labels disabled AND chart close > Reference close + trigger percentage parameter × Reference ATR
+Short: options labels disabled AND chart close < Reference close − trigger percentage parameter × Reference ATR
+Option: buy call, options labels enabled AND chart close > Reference close + trigger percentage parameter × Reference ATR
+Option: buy put, options labels enabled AND chart close < Reference close − trigger percentage parameter × Reference ATR

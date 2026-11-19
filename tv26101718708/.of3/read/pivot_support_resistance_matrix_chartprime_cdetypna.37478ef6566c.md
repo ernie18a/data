@@ -1,0 +1,4 @@
+Long: close > an unbroken resistance level from Pivot High(high, left-bars parameter, right-bars parameter), created only if no unbroken support or resistance level was within ATR(ATR-length parameter) * proximity-multiplier parameter when the pivot was confirmed
+Short: close < an unbroken support level from Pivot Low(low, left-bars parameter, right-bars parameter), created only if no unbroken support or resistance level was within ATR(ATR-length parameter) * proximity-multiplier parameter when the pivot was confirmed
+Long: the count of unbroken support levels whose pivot bars are within the lookback parameter is >= the count of unbroken resistance levels whose pivot bars are within the lookback parameter
+Short: the count of unbroken resistance levels whose pivot bars are within the lookback parameter is > the count of unbroken support levels whose pivot bars are within the lookback parameter

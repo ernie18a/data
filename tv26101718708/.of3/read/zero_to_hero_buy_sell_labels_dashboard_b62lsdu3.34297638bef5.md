@@ -1,0 +1,14 @@
+Calculation: trend points = full trend points if close > EMA(close, fast EMA lookback) AND EMA(close, fast EMA lookback) > EMA(close, slow EMA lookback), where fast EMA lookback is shorter than slow EMA lookback; else partial trend points if close > EMA(close, fast EMA lookback) OR EMA(close, fast EMA lookback) > EMA(close, slow EMA lookback); else 0
+Calculation: slope points = slope points if LinearRegressionSlope(close, slope lookback) > 0; -slope points if LinearRegressionSlope(close, slope lookback) < 0; else 0
+Calculation: RSI points = maximum RSI points if RSI(close, RSI lookback) > RSI midpoint AND RSI(close, RSI lookback) < upper RSI boundary; else secondary RSI points if RSI(close, RSI lookback) > upper RSI boundary OR (RSI(close, RSI lookback) < RSI midpoint AND RSI(close, RSI lookback) > lower RSI boundary); else 0
+Calculation: volume points = volume score points if volume / SMA(volume, volume average lookback) >= minimum volume ratio; else 0
+Calculation: volatility points = volatility score points if ATR(ATR lookback) / close * 100 >= minimum ATR percentage AND ATR(ATR lookback) / close * 100 <= maximum ATR percentage; else 0
+Calculation: latest pivot high = most recent non-null PivotHigh(high, pivot lookback, pivot lookback)
+Calculation: latest pivot low = most recent non-null PivotLow(low, pivot lookback, pivot lookback)
+Calculation: structure points = structure breakout points if latest pivot high and latest pivot low exist AND close > latest pivot high; else -structure breakout points if close < latest pivot low; else higher/lower structure points if low > latest pivot low AND latest pivot low > latest pivot low[structure comparison lookback]; else -higher/lower structure points if high < latest pivot high AND latest pivot high < latest pivot high[structure comparison lookback]; else 0
+Calculation: long score = clamp(trend points + max(slope points, 0) + RSI points + volume points + volatility points + max(structure points, 0), 0, score ceiling)
+Calculation: short score = clamp(score ceiling - trend points + max(-slope points, 0) + (maximum RSI points - RSI points) + volume points + volatility points + max(-structure points, 0), 0, score ceiling)
+Long: long score >= long score threshold on a confirmed chart bar
+Short: short score <= short score threshold on a confirmed chart bar
+Exit: long, after entry, low <= entry price - ATR(ATR lookback) at entry * stop ATR multiplier OR high >= entry price + ATR(ATR lookback) at entry * target ATR multiplier
+Exit: short, after entry, high >= entry price + ATR(ATR lookback) at entry * stop ATR multiplier OR low <= entry price - ATR(ATR lookback) at entry * target ATR multiplier

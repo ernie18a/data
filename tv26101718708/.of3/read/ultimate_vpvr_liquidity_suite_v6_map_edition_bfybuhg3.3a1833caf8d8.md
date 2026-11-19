@@ -1,0 +1,2 @@
+Long: close > close[n] * long impulse multiplier AND close > open AND close[1] > open[1] AND close[n] < open[n]
+Short: close < close[n] * short impulse multiplier AND close < open AND close[1] < open[1] AND close[n] > open[n]

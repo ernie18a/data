@@ -1,0 +1,2 @@
+Long: chart timeframe is T1 AND open[1] > close[1] AND close > open AND close >= open[1] AND close[1] >= open AND close - open > open[1] - close[1]
+Short: chart timeframe is T1 AND close[1] > open[1] AND open > close AND open >= close[1] AND open[1] >= close AND open - close > close[1] - open[1]

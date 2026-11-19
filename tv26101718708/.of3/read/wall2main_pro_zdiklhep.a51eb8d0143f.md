@@ -1,0 +1,18 @@
+Calculation: Timeframe sampling(Tn) = calculate on Tn bars and merge onto chart bars with lookahead off, using the last completed Tn bar historically and the still-forming Tn bar in realtime.
+Calculation: TTM Squeeze momentum(Tn, squeeze lookback) = linear regression over the squeeze lookback of close minus the average of the midpoint of highest high and lowest low over the squeeze lookback and SMA(close, squeeze lookback), with zero offset.
+Calculation: Squeeze release(Tn) = (Bollinger lower < Keltner lower(wide) OR Bollinger upper > Keltner upper(wide)) AND on the previous Tn bar, at least one of (Bollinger lower >= Keltner lower(wide) OR Bollinger upper <= Keltner upper(wide)), (Bollinger lower >= Keltner lower(mid) OR Bollinger upper <= Keltner upper(mid)), or (Bollinger lower >= Keltner lower(narrow) OR Bollinger upper <= Keltner upper(narrow)); Bollinger bands use SMA(close, squeeze lookback) plus or minus BB multiplier times stdev(close, squeeze lookback), and each Keltner band uses SMA(close, squeeze lookback) plus or minus its KC multiplier times SMA(true range, squeeze lookback).
+Calculation: Configured moving average(Tn, source, lookback) = SMA, EMA, or DEMA of source over lookback, selected by the MA-type parameter.
+Calculation: Downward momentum rollover(Tn, rollover mode) = momentum < momentum[1] in one-decline mode; momentum < momentum[1] AND momentum[1] < momentum[2] in two-decline mode; momentum <= 0 in sign-flip mode.
+Calculation: Upward momentum rollover(Tn, rollover mode) = momentum > momentum[1] in one-decline mode; momentum > momentum[1] AND momentum[1] > momentum[2] in two-decline mode; momentum >= 0 in sign-flip mode.
+Calculation: Active squeeze side(Tn) = on a squeeze release, take the sign of TTM Squeeze momentum; otherwise keep long only while momentum > 0 and downward momentum rollover is false, keep short only while momentum < 0 and upward momentum rollover is false, and clear otherwise.
+Long: TTM Squeeze momentum(Tn) > 0 AND TTM Squeeze momentum(Tn) >= TTM Squeeze momentum(Tn)[1].
+Short: TTM Squeeze momentum(Tn) < 0 AND TTM Squeeze momentum(Tn) <= TTM Squeeze momentum(Tn)[1].
+Long: Configured moving average(Tn, source, L1) > Configured moving average(Tn, source, L2) AND Configured moving average(Tn, source, L2) > Configured moving average(Tn, source, L3) AND (L4 disabled OR Configured moving average(Tn, source, L3) > Configured moving average(Tn, source, L4)) AND (L4 disabled OR L5 disabled OR Configured moving average(Tn, source, L4) > Configured moving average(Tn, source, L5)).
+Short: (L5 disabled OR L4 disabled OR Configured moving average(Tn, source, L5) > Configured moving average(Tn, source, L4)) AND (L4 disabled OR Configured moving average(Tn, source, L4) > Configured moving average(Tn, source, L3)) AND Configured moving average(Tn, source, L3) > Configured moving average(Tn, source, L2) AND Configured moving average(Tn, source, L2) > Configured moving average(Tn, source, L1).
+Long: ADX(Tn, DMI lookback) >= ADX threshold AND +DI(Tn, DMI lookback) > -DI(Tn, DMI lookback).
+Short: ADX(Tn, DMI lookback) >= ADX threshold AND +DI(Tn, DMI lookback) <= -DI(Tn, DMI lookback).
+Long: Active squeeze side(Tn) is long.
+Short: Active squeeze side(Tn) is short.
+Long: Squeeze release(Tn) AND TTM Squeeze momentum(Tn) > 0.
+Exit: Long, TTM Squeeze momentum(Tn) <= 0 OR downward momentum rollover(Tn).
+Exit: Short, TTM Squeeze momentum(Tn) >= 0 OR upward momentum rollover(Tn).

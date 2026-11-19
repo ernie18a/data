@@ -1,0 +1,5 @@
+Calculation: rising long SMA = SMA(close, long MA lookback)[i] > SMA(close, long MA lookback)[i+1] for every i from 0 through trend run length minus one
+Calculation: relative-strength rating = clamp(lower rating bound, upper rating bound, midpoint rating + ROC(close, short-horizon lookback) × rating scale)
+Calculation: criteria score = number of true conditions among: close > SMA(close, short MA lookback) AND close > SMA(close, medium MA lookback) AND close > SMA(close, long MA lookback); SMA(close, short MA lookback) > SMA(close, medium MA lookback) AND SMA(close, medium MA lookback) > SMA(close, long MA lookback); rising long SMA; close >= lowest(low, long-horizon lookback) × (1 + minimum percentage rise from low); close >= highest(high, long-horizon lookback) × (1 - maximum percentage drop from high); relative-strength rating >= minimum rating; volume >= SMA(volume, volume-average lookback) × volume multiplier; close > close[long-horizon lookback] AND close > close[short-horizon lookback]
+Long: criteria score = total number of listed criteria
+Exit: long, criteria score <= exit score cutoff

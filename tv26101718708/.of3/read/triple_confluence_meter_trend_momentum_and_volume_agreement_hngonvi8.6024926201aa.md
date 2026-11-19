@@ -1,0 +1,2 @@
+Long: close > EMA(close, EMA lookback) AND RSI(close, RSI lookback) > 50 AND (volume unavailable OR volume <= 0 OR SMA(nz(volume), volume lookback) <= 0 OR (volume > SMA(nz(volume), volume lookback) AND close > open)), and this bullish alignment condition was false on the previous bar
+Short: close <= EMA(close, EMA lookback) AND RSI(close, RSI lookback) <= 50 AND (volume unavailable OR volume <= 0 OR SMA(nz(volume), volume lookback) <= 0 OR (volume > SMA(nz(volume), volume lookback) AND close <= open)), and this bearish alignment condition was false on the previous bar

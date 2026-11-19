@@ -1,0 +1,2 @@
+Long: source crosses above upper Bollinger Band(source, lookback, deviation multiplier, basis moving average type)
+Short: source crosses below lower Bollinger Band(source, lookback, deviation multiplier, basis moving average type)

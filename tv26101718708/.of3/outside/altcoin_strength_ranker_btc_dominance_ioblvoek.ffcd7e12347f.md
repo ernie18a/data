@@ -1,0 +1,3 @@
+Calculation: normalized log momentum(price, N) = log(current price / price N bars ago) / (standard deviation over N bars of log(current price / previous-bar price) × square root of N)
+Long: normalized log momentum of the altcoin/BTC ratio on T1 over P1 bars > P3 AND normalized log momentum of Bitcoin dominance on T1 over P2 bars ≤ -P4
+Short: normalized log momentum of the altcoin/BTC ratio on T1 over P1 bars < -P3 AND normalized log momentum of Bitcoin dominance on T1 over P2 bars ≥ P4

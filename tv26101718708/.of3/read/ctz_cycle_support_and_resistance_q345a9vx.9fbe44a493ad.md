@@ -1,0 +1,4 @@
+Long: At each confirmed pivot low with equal left and right pivot lookback parameters, the pivot low is below the preceding confirmed pivot low AND the Accumulation/Distribution line at the pivot is above its value at the preceding confirmed pivot low.
+Short: At each confirmed pivot high with equal left and right pivot lookback parameters, the pivot high is above the preceding confirmed pivot high AND the Accumulation/Distribution line at the pivot is below its value at the preceding confirmed pivot high.
+Long: On chart bars, within the selected cycle lookback, bars since the highest high are less than or equal to bars since the lowest low.
+Short: On chart bars, within the selected cycle lookback, bars since the highest high are greater than bars since the lowest low.

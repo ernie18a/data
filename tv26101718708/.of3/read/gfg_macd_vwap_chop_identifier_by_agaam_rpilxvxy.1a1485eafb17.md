@@ -1,0 +1,3 @@
+Calculation: Chop score = number of true chop-detection tests among nine tests
+Long: MACD histogram(source parameter, fast lookback, slow lookback, signal lookback, T1 bars; evaluated on T1 bars and sampled on chart bars, using the last completed T1 bar historically and the forming T1 bar in real time; T1 is the chart timeframe when the timeframe parameter is blank) >= 0 AND Chop score < chop-reason threshold
+Short: MACD histogram(source parameter, fast lookback, slow lookback, signal lookback, T1 bars; evaluated on T1 bars and sampled on chart bars, using the last completed T1 bar historically and the forming T1 bar in real time; T1 is the chart timeframe when the timeframe parameter is blank) < 0 AND Chop score < chop-reason threshold

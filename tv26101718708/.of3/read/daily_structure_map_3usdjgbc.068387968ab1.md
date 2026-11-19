@@ -1,0 +1,2 @@
+Long: On chart bars taking the current forming T1 close and the last completed T1 close, the percentage change exceeds the threshold and changes to above the threshold from the previous chart bar.
+Short: On chart bars taking the current forming T1 close and the last completed T1 close, the percentage change is below the negative threshold and changes to below the negative threshold from the previous chart bar.

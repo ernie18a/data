@@ -1,0 +1,4 @@
+Calculation: net positioning change = the sum of selected COT groups’ long-position changes minus their short-position changes, each position change being the current still-forming T1 close minus the prior completed T1 close, sampled on chart bars
+Calculation: move rank = 100 × the count of nonmissing absolute net-position changes in the current and preceding lookback−1 chart bars that are strictly less than the current absolute net-position change ÷ the count of nonmissing absolute net-position changes in those bars
+Long: the pending week’s Tuesday chart bar has move rank ≥ the movement threshold AND the first subsequent Friday-through-Monday chart bar with a nonmissing net positioning change has net positioning change > 0
+Short: the pending week’s Tuesday chart bar has move rank ≥ the movement threshold AND the first subsequent Friday-through-Monday chart bar with a nonmissing net positioning change has net positioning change < 0

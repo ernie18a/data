@@ -1,0 +1,4 @@
+Long: On a confirmed chart bar, for any ribbon MA, close > configured MA(OHLC4, its lookback) AND close > configured MA(OHLC4, longest lookback), OR for any shorter ribbon MA, close[1] > configured MA(OHLC4, its lookback)[1] AND close > configured MA(OHLC4, its lookback) AND close < configured MA(OHLC4, longest lookback)
+Long: On a confirmed chart bar, close > every ribbon MA and previous close was not above every corresponding ribbon MA
+Short: On a confirmed chart bar, for any ribbon MA, close < configured MA(OHLC4, its lookback) AND close < configured MA(OHLC4, longest lookback), OR for any shorter ribbon MA, close[1] < configured MA(OHLC4, its lookback)[1] AND close < configured MA(OHLC4, its lookback) AND close > configured MA(OHLC4, longest lookback)
+Short: On a confirmed chart bar, close < every ribbon MA and previous close was not below every corresponding ribbon MA

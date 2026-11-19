@@ -1,0 +1,4 @@
+Calculation: Delta = sum(volume × sign(close − previous close)) over lower-timeframe T1 bars within the current chart bar, including any bar still forming
+Calculation: Expected move = Alpha + Beta × Delta, where Beta = nz(correlation(Delta, close − open, lookback)[1] × stdev(close − open, lookback)[1] / stdev(Delta, lookback)[1]) and Alpha = nz(SMA(close − open, lookback)[1] − Beta × SMA(Delta, lookback)[1]); calculations use chart bars and [1] means the previous completed chart bar
+Long: ZScore(sign(Expected move) × (Expected move − (close − open)), lookback) >= threshold AND Expected move < 0
+Short: ZScore(sign(Expected move) × (Expected move − (close − open)), lookback) >= threshold AND Expected move > 0

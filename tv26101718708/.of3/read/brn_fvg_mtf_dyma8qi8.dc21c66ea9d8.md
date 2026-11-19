@@ -1,0 +1,2 @@
+Long: On chart bars when a new T1 bar closes, if T1 is equal to or higher than the chart timeframe, low of the last completed T1 bar > high of the third previous T1 bar AND low of the last completed T1 bar - high of the third previous T1 bar >= minimum FVG size parameter in ticks
+Short: On chart bars when a new T1 bar closes, if T1 is equal to or higher than the chart timeframe, high of the last completed T1 bar < low of the third previous T1 bar AND low of the third previous T1 bar - high of the last completed T1 bar >= minimum FVG size parameter in ticks

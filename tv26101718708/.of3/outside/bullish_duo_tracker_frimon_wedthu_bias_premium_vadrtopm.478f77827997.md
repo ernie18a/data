@@ -1,0 +1,1 @@
+Long: bullish bias AND price breaks and holds above Friday high or Wednesday high.

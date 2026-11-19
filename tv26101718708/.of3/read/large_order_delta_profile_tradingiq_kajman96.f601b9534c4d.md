@@ -1,0 +1,4 @@
+Calculation: Delta(F,L) = bullish dollar volume minus bearish dollar volume assigned to price level L in the profile; evaluate on chart bars using T1 bars within each chart bar, including any still-forming T1 bar; classify close > open as bullish and close < open as bearish, and divide each bar’s dollar volume equally among profile levels from low to high; include dollar volumes > F and < the next higher threshold, with no upper bound for the highest of the three separate increasing thresholds; dollar volume = volume when quote-denominated, otherwise volume × close; profile levels are spaced ATR(14) / 10 × the granularity parameter apart.
+Calculation: ScaledDelta(F,L) = round(20 × Delta(F,L) / max(abs(Delta(F, every profile level)))).
+Long: ScaledDelta(F,L) > 0
+Short: ScaledDelta(F,L) < 0

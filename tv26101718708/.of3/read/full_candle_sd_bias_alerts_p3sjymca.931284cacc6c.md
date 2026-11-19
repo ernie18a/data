@@ -1,0 +1,30 @@
+Calculation: Smoothed stochastic %K = SMA(Stochastic %K(close, high, low, K lookback), K smoothing)
+Calculation: Stochastic %D = SMA(smoothed stochastic %K, D smoothing)
+Calculation: T1 trend bias = bullish when EMA(close, shorter EMA lookback) > EMA(close, longer EMA lookback), bearish when less, otherwise neutral; calculate on T1 bars using the current T1 bar and sample onto chart bars
+Calculation: T2 trend bias = bullish when EMA(close, shorter EMA lookback) > EMA(close, longer EMA lookback), bearish when less, otherwise neutral; calculate on T2 bars using the current T2 bar and sample onto chart bars
+Calculation: T3 trend bias = bullish when EMA(close, shorter EMA lookback) > EMA(close, longer EMA lookback), bearish when less, otherwise neutral; calculate on T3 bars using the current T3 bar and sample onto chart bars
+Calculation: Bullish confirmation count = count of bullish states among T1 trend bias, T2 trend bias, T3 trend bias, and smoothed stochastic %K > Stochastic %D
+Calculation: Bearish confirmation count = count of bearish states among T1 trend bias, T2 trend bias, T3 trend bias, and smoothed stochastic %K < Stochastic %D
+Calculation: Signal bar eligible = close-only confirmation is disabled or the chart bar is confirmed
+Calculation: Last confirmed swing high = most recent confirmed Pivot High(high, swing strength, swing strength)
+Calculation: Last confirmed swing low = most recent confirmed Pivot Low(low, swing strength, swing strength)
+Calculation: Bullish BOS = signal bar eligible AND close > last confirmed swing high AND close[1] <= last confirmed swing high AND close - last confirmed swing high > ATR(ATR lookback) * minimum BOS ATR move
+Calculation: Bearish BOS = signal bar eligible AND close < last confirmed swing low AND close[1] >= last confirmed swing low AND last confirmed swing low - close > ATR(ATR lookback) * minimum BOS ATR move
+Calculation: Current demand zone = on bullish BOS, choose the prior bearish candle with the lowest low within zone candle lookback, choosing the nearest on ties; set bottom to its low and top to its open when body-to-wick mode is enabled, otherwise its high; retain the prior zone if no candle is found; clear it when broken-zone hiding is enabled and close < bottom
+Calculation: Current supply zone = on bearish BOS, choose the prior bullish candle with the highest high within zone candle lookback, choosing the nearest on ties; set top to its high and bottom to its open when body-to-wick mode is enabled, otherwise its low; retain the prior zone if no candle is found; clear it when broken-zone hiding is enabled and close > top
+Calculation: Demand rejection = low <= current demand-zone top AND high >= current demand-zone bottom AND close > open AND close > current demand-zone bottom
+Calculation: Strong demand rejection = low <= current demand-zone top AND high >= current demand-zone bottom AND close > open AND close > current demand-zone top
+Calculation: Supply rejection = high >= current supply-zone bottom AND low <= current supply-zone top AND close < open AND close < current supply-zone top
+Calculation: Strong supply rejection = high >= current supply-zone bottom AND low <= current supply-zone top AND close < open AND close < current supply-zone bottom
+Calculation: Safe-to-buy filter = smoothed stochastic %K <= overbought block level AND NOT (smoothed stochastic %K < smoothed stochastic %K[1] AND smoothed stochastic %K > turning-down level) AND no bullish candle with close - open > ATR(ATR lookback) * oversized-candle ATR multiple on the current or prior oversized-candle lookback bars
+Calculation: Safe-to-sell filter = smoothed stochastic %K >= oversold block level AND NOT (smoothed stochastic %K > smoothed stochastic %K[1] AND smoothed stochastic %K < turning-up level) AND no bearish candle with open - close > ATR(ATR lookback) * oversized-candle ATR multiple on the current or prior oversized-candle lookback bars
+Long: T1 trend bias is bullish OR T2 trend bias is bullish OR T3 trend bias is bullish
+Short: T1 trend bias is bearish OR T2 trend bias is bearish OR T3 trend bias is bearish
+Long: smoothed stochastic %K > Stochastic %D
+Short: smoothed stochastic %K < Stochastic %D
+Long: (T1 trend bias, T2 trend bias, and T3 trend bias are bullish AND smoothed stochastic %K > Stochastic %D) OR bullish confirmation count = B+ confirmation count
+Short: (T1 trend bias, T2 trend bias, and T3 trend bias are bearish AND smoothed stochastic %K < Stochastic %D) OR bearish confirmation count = B+ confirmation count
+Long: Bullish BOS
+Short: Bearish BOS
+Long: signals enabled AND signal bar eligible AND ((strong demand rejection AND T1 trend bias, T2 trend bias, and T3 trend bias are bullish AND smoothed stochastic %K > Stochastic %D AND safe-to-buy filter) OR (demand rejection AND bullish confirmation count = B+ confirmation count AND safe-to-buy filter) OR (reversal signals enabled AND demand rejection AND bearish confirmation count >= reversal confirmation minimum AND smoothed stochastic %K < oversold block level AND ((smoothed stochastic %K > smoothed stochastic %K[1] AND smoothed stochastic %K < reversal-buy ceiling) OR smoothed stochastic %K crosses above Stochastic %D)))
+Short: signals enabled AND signal bar eligible AND ((strong supply rejection AND T1 trend bias, T2 trend bias, and T3 trend bias are bearish AND smoothed stochastic %K < Stochastic %D AND safe-to-sell filter) OR (supply rejection AND bearish confirmation count = B+ confirmation count AND safe-to-sell filter) OR (reversal signals enabled AND supply rejection AND bullish confirmation count >= reversal confirmation minimum AND smoothed stochastic %K > overbought block level AND ((smoothed stochastic %K < smoothed stochastic %K[1] AND smoothed stochastic %K > turning-down level) OR smoothed stochastic %K crosses below Stochastic %D)))

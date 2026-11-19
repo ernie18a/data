@@ -1,0 +1,5 @@
+Calculation: Strat candle type(T) = 1 if high(T, current forming bar) <= high(T, last completed bar) AND low(T, current forming bar) >= low(T, last completed bar); 3 if high(T, current forming bar) > high(T, last completed bar) AND low(T, current forming bar) < low(T, last completed bar); 2U if high(T, current forming bar) > high(T, last completed bar) AND low(T, current forming bar) >= low(T, last completed bar); otherwise 2D, evaluated on chart bars using values from timeframe T
+Calculation: Bullish alignment score = count of enabled timeframes T1–T10 whose Strat candle type is 2U
+Calculation: Bearish alignment score = count of enabled timeframes T1–T10 whose Strat candle type is 2D
+Long: scanner direction is Bullish or Both AND Bullish alignment score >= minimum aligned-timeframe parameter
+Short: scanner direction is Bearish or Both AND Bearish alignment score >= minimum aligned-timeframe parameter

@@ -1,0 +1,10 @@
+Calculation: Demand pattern = a bearish origin candle followed by a consecutive bullish or doji sequence whose length is between the minimum-sequence-length and maximum-sequence-length parameters; the final sequence close is above the origin open, and every earlier sequence close is below the origin open
+Calculation: Supply pattern = a bullish origin candle followed by a consecutive bearish or doji sequence whose length is between the minimum-sequence-length and maximum-sequence-length parameters; the final sequence close is below the origin open, and every earlier sequence close is above the origin open
+Long: Demand pattern on confirmed chart bars, using the preceding completed chart-bar sequence
+Long: Demand pattern on T1 bars using the last completed T1-bar sequence, read on confirmed chart bars when the chart timeframe is shorter than T1
+Long: Demand pattern on T2 bars using the last completed T2-bar sequence, read on confirmed chart bars when the chart timeframe is shorter than T2
+Short: Supply pattern on confirmed chart bars, using the preceding completed chart-bar sequence
+Short: Supply pattern on T1 bars using the last completed T1-bar sequence, read on confirmed chart bars when the chart timeframe is shorter than T1
+Short: Supply pattern on T2 bars using the last completed T2-bar sequence, read on confirmed chart bars when the chart timeframe is shorter than T2
+Long: On a confirmed chart bar, low > high[2] AND high[1] > high[2] AND (low - high[2]) / stdev(low - high[2], gap-deviation-lookback) > minimum-gap-deviation AND that standard deviation is positive AND each adjacent datetime gap in the three-candle pattern is no greater than the maximum-time-gap parameter times chart-bar duration
+Short: On a confirmed chart bar, high < low[2] AND low[1] < low[2] AND (low[2] - high) / stdev(low[2] - high, gap-deviation-lookback) > minimum-gap-deviation AND that standard deviation is positive AND each adjacent datetime gap in the three-candle pattern is no greater than the maximum-time-gap parameter times chart-bar duration

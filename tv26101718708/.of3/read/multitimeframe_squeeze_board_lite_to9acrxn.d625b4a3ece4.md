@@ -1,0 +1,3 @@
+Calculation: M(T) = linreg(close - avg(avg(highest(high, lookback), lowest(low, lookback)), SMA(close, lookback)), lookback, 0), calculated on T bars; chart bars use the last completed T bar when confirmation is enabled or on historical bars, and the still-forming T bar on realtime bars when confirmation is disabled
+Long: For each of T1–T5 at least as large as the chart timeframe, M(T) > 0 OR (M(T) <= 0 AND M(T) >= M(T)[1])
+Short: For each of T1–T5 at least as large as the chart timeframe, M(T) <= 0 OR (M(T) > 0 AND M(T) <= M(T)[1])

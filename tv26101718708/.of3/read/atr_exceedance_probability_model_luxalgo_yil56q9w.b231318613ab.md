@@ -1,0 +1,3 @@
+Calculation: exceedance frequency = 100 × SMA(exceedance indicator, short frequency window), where the indicator is 1 when True Range > ATR(ATR lookback) × ATR multiplier in true-range detection mode, or when high > previous upper band OR low < previous lower band in previous-band detection mode, and 0 otherwise; bands are basis ± ATR × ATR multiplier in central-basis mode or high/low ± ATR × ATR multiplier in high/low-offset mode, with basis selected from SMA, EMA, WMA, VWMA, LSMA of close over a separate basis lookback, or close
+Long: ZScore(exceedance frequency, long baseline window) > sensitivity threshold
+Short: ZScore(exceedance frequency, long baseline window) < -sensitivity threshold

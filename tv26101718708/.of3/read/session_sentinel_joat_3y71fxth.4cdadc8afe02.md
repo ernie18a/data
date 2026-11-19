@@ -1,0 +1,4 @@
+Calculation: session high(S) = maximum high of chart bars since the latest S session start, including the current bar while S is active, then held until the next S session starts
+Calculation: session low(S) = minimum low of chart bars since the latest S session start, including the current bar while S is active, then held until the next S session starts
+Long: (S1 tracking enabled AND session high(S1) is defined AND close crosses above session high(S1)) OR (S2 tracking enabled AND session high(S2) is defined AND close crosses above session high(S2))
+Short: (S1 tracking enabled AND session low(S1) is defined AND close crosses below session low(S1)) OR (S2 tracking enabled AND session low(S2) is defined AND close crosses below session low(S2))

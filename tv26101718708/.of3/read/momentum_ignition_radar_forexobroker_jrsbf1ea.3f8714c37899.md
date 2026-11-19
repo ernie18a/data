@@ -1,0 +1,7 @@
+Calculation: Volume score = min(component maximum score × (SMA(volume, volume lookback) > 0 ? volume / SMA(volume, volume lookback) : 0) / volume spike multiplier, component maximum score)
+Calculation: Range score = min(component maximum score × (ATR(ATR lookback) > 0 ? (high − low) / ATR(ATR lookback) : 0) / range expansion multiplier, component maximum score)
+Calculation: Close score = max(min(component maximum score × (close > open ? ((high > low ? (close − low) / (high − low) : 0.5) − (1 − close extreme fraction)) / close extreme fraction : (close extreme fraction − (high > low ? (close − low) / (high − low) : 0.5)) / close extreme fraction), component maximum score), 0)
+Calculation: Compression score = max(min(component maximum score × (compression ratio − (ATR(ATR lookback) > 0 AND SMA(high − low, compression lookback)[1] is defined ? SMA(high − low, compression lookback)[1] / ATR(ATR lookback) : 1)) / compression ratio, component maximum score), 0)
+Calculation: Ignition score = round(volume score + range score + close score + compression score)
+Long: On a closed chart bar, ignition score ≥ ignition threshold AND close > open AND current chart bar index − last signal chart bar index ≥ cooldown bars (last signal chart bar index initially 0)
+Short: On a closed chart bar, ignition score ≥ ignition threshold AND close ≤ open AND current chart bar index − last signal chart bar index ≥ cooldown bars (last signal chart bar index initially 0)

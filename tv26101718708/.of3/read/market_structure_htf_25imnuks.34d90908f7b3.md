@@ -1,0 +1,4 @@
+Calculation: Bull break on T = On T bars, the current close is above the latest confirmed, unbroken PivotHigh(high(T), pivot-length parameter, same pivot-length parameter); use the still-forming T bar in realtime and return the break bar's timestamp to chart bars.
+Calculation: Bear break on T = On T bars, the current close is below the latest confirmed, unbroken PivotLow(low(T), pivot-length parameter, same pivot-length parameter); use the still-forming T bar in realtime and return the break bar's timestamp to chart bars.
+Long: A bull-break timestamp from any enabled T1, T2, or T3 is non-null and differs from its value on the previous chart bar.
+Short: A bear-break timestamp from any enabled T1, T2, or T3 is non-null and differs from its value on the previous chart bar.

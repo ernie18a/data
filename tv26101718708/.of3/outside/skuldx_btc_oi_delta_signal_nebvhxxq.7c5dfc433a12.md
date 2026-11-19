@@ -1,0 +1,3 @@
+Calculation: BTC-denominated aggregate open-interest change = if BTC spot price is valid and positive, (P1 × Binance USDT perpetual open-interest change + P2 × Binance USD perpetual open-interest change + P3 × Binance BUSD perpetual open-interest change + P4 × Bybit USDT perpetual open-interest change + P5 × OKX USDT perpetual open-interest change) / BTC spot price; otherwise the same weighted sum; each change is current-bar open interest minus prior-bar open interest, and P1–P5 independently include or exclude the corresponding source
+Long: traded instrument price > prior-bar price AND BTC-denominated aggregate open-interest change != 0
+Short: traded instrument price < prior-bar price AND BTC-denominated aggregate open-interest change != 0

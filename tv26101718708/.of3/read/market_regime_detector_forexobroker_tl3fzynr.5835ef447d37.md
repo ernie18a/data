@@ -1,0 +1,10 @@
+Calculation: Bollinger width percentile = PercentRank(Bollinger Band Width(close, Bollinger lookback, Bollinger multiplier), percentile lookback)
+Calculation: ATR percentile = PercentRank(ATR(ATR lookback), percentile lookback)
+Calculation: Volatile regime = ATR percentile > volatility ATR threshold OR Bollinger width percentile > volatile Bollinger width threshold
+Calculation: Trending condition = ADX(ADX lookback) > trend ADX threshold AND Bollinger width percentile > trend Bollinger width threshold AND ATR percentile < volatility ATR threshold
+Calculation: Regime 1 = NOT Volatile regime AND Trending condition
+Calculation: Regime 0 = NOT Volatile regime AND NOT Trending condition
+Calculation: Long cooldown counter = initialize at zero; increment by one each chart bar before evaluation; reset to zero after a Long signal
+Calculation: Short cooldown counter = initialize at zero; increment by one each chart bar before evaluation; reset to zero after a Short signal
+Long: confirmed chart bar AND Long cooldown counter > cooldown bars AND volume > SMA(volume, volume lookback) * volume multiplier AND ((Regime 1 AND EMA(close, short EMA lookback) crosses above EMA(close, long EMA lookback) AND close > EMA(close, filter EMA lookback)) OR (Regime 0 AND close <= lower Bollinger Band(close, Bollinger lookback, Bollinger multiplier) AND RSI(close, RSI lookback) < oversold threshold))
+Short: confirmed chart bar AND Short cooldown counter > cooldown bars AND volume > SMA(volume, volume lookback) * volume multiplier AND ((Regime 1 AND EMA(close, short EMA lookback) crosses below EMA(close, long EMA lookback) AND close < EMA(close, filter EMA lookback)) OR (Regime 0 AND close >= upper Bollinger Band(close, Bollinger lookback, Bollinger multiplier) AND RSI(close, RSI lookback) > overbought threshold))

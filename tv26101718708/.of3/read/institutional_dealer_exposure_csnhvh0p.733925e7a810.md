@@ -1,0 +1,12 @@
+Calculation: VWAP-distance Z-score = (close - VWAP(hlc3)) / StDev(close - VWAP(hlc3), shared lookback)
+Calculation: Relative volume = volume / SMA(volume, shared lookback)
+Calculation: Estimated buy-pressure fraction = if high != low then (close - low) / (high - low) else 0.5
+Calculation: Exposure-zone midpoint = (max(zone-creation bar open, zone-creation bar close) + min(zone-creation bar open, zone-creation bar close)) / 2
+Long: volume >= Highest(volume, volume-climax lookback) AND relative volume >= relative-volume threshold AND VWAP-distance Z-score <= -exposure Z-score threshold AND at least cooldown length bars since the most recent exposure-bubble signal AND (session filter disabled OR current chart-bar datetime is within the configured UTC session) AND (trend filter disabled OR close > EMA(close, trend lookback))
+Short: volume >= Highest(volume, volume-climax lookback) AND relative volume >= relative-volume threshold AND VWAP-distance Z-score >= exposure Z-score threshold AND at least cooldown length bars since the most recent exposure-bubble signal AND (session filter disabled OR current chart-bar datetime is within the configured UTC session) AND (trend filter disabled OR close < EMA(close, trend lookback))
+Long: relative volume >= relative-volume threshold AND volume * estimated buy-pressure fraction > volume * (1 - estimated buy-pressure fraction) * absorption ratio AND close <= open
+Short: relative volume >= relative-volume threshold AND volume * (1 - estimated buy-pressure fraction) > volume * estimated buy-pressure fraction * absorption ratio AND close >= open
+Long: Lowest(low, divergence lookback) = low AND VWAP-distance Z-score > Lowest(VWAP-distance Z-score, divergence lookback) AND VWAP-distance Z-score < -divergence Z-score threshold
+Short: Highest(high, divergence lookback) = high AND VWAP-distance Z-score < Highest(VWAP-distance Z-score, divergence lookback) AND VWAP-distance Z-score > divergence Z-score threshold
+Long: low <= exposure-zone midpoint AND close > exposure-zone midpoint for a tracked bullish zone created 1 to zone-life bars earlier and among the latest zone-count exposure zones
+Short: high >= exposure-zone midpoint AND close < exposure-zone midpoint for a tracked bearish zone created 1 to zone-life bars earlier and among the latest zone-count exposure zones

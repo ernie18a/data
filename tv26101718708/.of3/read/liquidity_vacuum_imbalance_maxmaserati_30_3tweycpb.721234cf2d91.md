@@ -1,0 +1,6 @@
+Calculation: bar volume = footprint total volume when footprint use is enabled and available; otherwise volume
+Calculation: bar delta = footprint delta(footprint row-size parameter, footprint value-area parameter) when footprint use is enabled and available; otherwise volume × (2 × up-bar buy-fraction − 1) when close > open, volume × (2 × down-bar buy-fraction − 1) when close < open, or volume × (2 × doji buy-fraction − 1) when close = open
+Calculation: qualifying void bar = (high − low) / ATR(lookback) > price-movement sensitivity AND ((detection mode selects vacuums AND SMA(bar volume, lookback) > 0 AND bar volume < SMA(bar volume, lookback) × low-volume threshold AND NOT (bar volume > 0 AND abs(bar delta) / bar volume > imbalance threshold)) OR (detection mode selects flows AND bar volume > 0 AND abs(bar delta) / bar volume > imbalance threshold AND NOT (SMA(bar volume, lookback) > 0 AND bar volume < SMA(bar volume, lookback) × low-volume threshold)))
+Calculation: void-run delta = sum(bar delta across a consecutive run of qualifying void bars of the same type)
+Long: A consecutive run of qualifying void bars of the same type, at least minimum void bars long, has just ended AND void-run delta >= 0
+Short: A consecutive run of qualifying void bars of the same type, at least minimum void bars long, has just ended AND void-run delta < 0

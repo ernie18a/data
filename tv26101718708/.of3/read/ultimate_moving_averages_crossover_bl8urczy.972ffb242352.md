@@ -1,0 +1,2 @@
+Long: MovingAverage(fast source, fast lookback, fast type) crosses above MovingAverage(slow source, slow lookback, slow type)
+Short: MovingAverage(fast source, fast lookback, fast type) crosses below MovingAverage(slow source, slow lookback, slow type)

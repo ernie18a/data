@@ -1,0 +1,6 @@
+Calculation: A bullish FVG zone is between high[2] and low when low > high[2]; a bearish FVG zone is between high and low[2] when high < low[2].
+Calculation: Local bias starts neutral and retains its value unless updated: a bullish FVG sets it bullish, a bearish FVG sets it bearish, a later close below the latest bullish FVG’s lower boundary sets it bearish, and a later close above the latest bearish FVG’s upper boundary sets it bullish; apply updates in that order.
+Calculation: T1 bias starts neutral and updates on the first chart bar of each T1 interval from the still-forming T1 bar: a bullish FVG sets it bullish, a bearish FVG sets it bearish, and otherwise it retains its value.
+Calculation: Final bias is T1 bias when higher-timeframe bias is enabled and T1 bias is non-neutral; otherwise it is local bias.
+Long: close >= open OR low > high[2] OR, on a later chart bar, low <= the upper boundary and close > the lower boundary of the latest bullish FVG that has not yet been marked respected OR final bias is bullish.
+Short: close < open OR high < low[2] OR, on a later chart bar, high >= the lower boundary and close < the upper boundary of the latest bearish FVG that has not yet been marked respected OR final bias is bearish.

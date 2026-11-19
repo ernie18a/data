@@ -1,0 +1,2 @@
+Long: entry price != 0 AND ((stop price != 0 AND stop price != entry price AND stop price < entry price) OR ((stop price = 0 OR stop price = entry price) AND target price != 0 AND target price != entry price AND target price > entry price))
+Short: entry price != 0 AND ((stop price != 0 AND stop price != entry price AND stop price > entry price) OR ((stop price = 0 OR stop price = entry price) AND target price != 0 AND target price != entry price AND target price < entry price))

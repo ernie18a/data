@@ -1,0 +1,9 @@
+Calculation: session range high = highest(high) during the configured daily range window, locked at its end
+Calculation: session range low = lowest(low) during the configured daily range window, locked at its end
+Calculation: consolidation range = highest(high, consolidation lookback on chart bars) - lowest(low, same lookback)
+Long: during the trade window, after low < session range low, close > session range low
+Short: during the trade window, after high > session range high, close < session range high
+Long: a completed low-sweep count for the day reaches the minimum sweep count
+Short: a completed high-sweep count for the day reaches the minimum sweep count
+Long: during the trade window, no signal has occurred that day, long is armed, close > the most recent confirmed pivot high(high, pivot lookback, pivot lookback) since arming, consolidation is disabled or (bars since arming >= consolidation lookback and consolidation range <= consolidation ATR multiple * ATR(ATR lookback on chart bars)), and the higher-timeframe filter is disabled or EMA(close, shorter lookback, T1, bar still forming) > EMA(close, longer lookback, T1, bar still forming)
+Short: during the trade window, no signal has occurred that day, short is armed, close < the most recent confirmed pivot low(low, pivot lookback, pivot lookback) since arming, consolidation is disabled or (bars since arming >= consolidation lookback and consolidation range <= consolidation ATR multiple * ATR(ATR lookback on chart bars)), and the higher-timeframe filter is disabled or EMA(close, shorter lookback, T1, bar still forming) < EMA(close, longer lookback, T1, bar still forming)

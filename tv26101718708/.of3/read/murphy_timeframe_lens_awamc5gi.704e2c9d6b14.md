@@ -1,0 +1,2 @@
+Long: On chart bars taking values from T1, T1 time changes AND close(T1, bar still forming) > open(T1, bar still forming)
+Short: On chart bars taking values from T1, T1 time changes AND close(T1, bar still forming) < open(T1, bar still forming)

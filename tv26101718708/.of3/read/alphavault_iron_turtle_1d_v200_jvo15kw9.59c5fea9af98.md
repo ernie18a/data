@@ -1,0 +1,1 @@
+Long: On confirmed chart bars of T1, accumulation mode enabled AND both averages are available AND close < SMA(close, longer lookback, T1, last completed bar) AND close < EMA(close, shorter lookback, T2, last completed bar) AND (no prior long signal OR at least the schedule-interval parameter number of T1 bars since the prior long signal)

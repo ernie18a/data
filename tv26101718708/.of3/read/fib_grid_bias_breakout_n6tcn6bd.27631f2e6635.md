@@ -1,0 +1,6 @@
+Calculation: Fast EMA = EMA(close, fast lookback)
+Calculation: Slow EMA = EMA(close, slow lookback)
+Calculation: T1 fast EMA = EMA(close, fast lookback, T1, lookahead_off, sampled on chart bars; uses the forming T1 bar in real time and the latest available completed T1 bar historically)
+Calculation: T1 slow EMA = EMA(close, slow lookback, T1, lookahead_off, sampled on chart bars; uses the forming T1 bar in real time and the latest available completed T1 bar historically)
+Long: Fast EMA > Slow EMA AND Fast EMA − Slow EMA > close × neutral band percentage / 100 AND Fast EMA > Fast EMA[1] AND T1 fast EMA > T1 slow EMA AND no prior alert or at least the cooldown lookback in chart bars since the prior alert AND, for any Fib grid level L, close[1] < L AND close > L
+Short: Fast EMA < Slow EMA AND Slow EMA − Fast EMA > close × neutral band percentage / 100 AND Fast EMA < Fast EMA[1] AND T1 fast EMA < T1 slow EMA AND no prior alert or at least the cooldown lookback in chart bars since the prior alert AND, for any Fib grid level L, close[1] > L AND close < L

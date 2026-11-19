@@ -1,0 +1,7 @@
+Calculation: trend score = clamp((EMA weight * nz(clamp((EMA(close, shorter EMA lookback) - EMA(close, longer EMA lookback)) / ATR(ATR lookback))) + RSI weight * clamp((RSI(close, RSI lookback) - RSI center) / RSI scale) + VWAP weight * nz(clamp((close - VWAP(hlc3)) / ATR(ATR lookback))) + Supertrend weight * (1 if Supertrend(Supertrend factor, Supertrend ATR lookback) direction < 0 else -1)) / (sum of weights if nonzero else 1), -1, 1); missing EMA or VWAP terms are 0, and VWAP is missing on non-intraday bars
+Calculation: combined trend score on chart bars = (chart-bar trend score + T1 trend score + T2 trend score) / 3; T1 and T2 scores use each timeframe's last completed bar when non-repainting is enabled, otherwise its still-forming bar
+Calculation: expected move on chart bars = close * STDEV(log(close / close[1]), volatility lookback bars) * sqrt(annualization factor) * sqrt(days to expiry / days per year)
+Long: combined trend score >= -range band
+Short: combined trend score <= range band
+Exit: Long, combined trend score > range band AND ((expected move is available AND close <= close - safety distance * expected move + exit buffer * expected move) OR close < LOWEST(low, swing lookback)[1])
+Exit: Short, combined trend score < -range band AND ((expected move is available AND close >= close + safety distance * expected move - exit buffer * expected move) OR close > HIGHEST(high, swing lookback)[1])

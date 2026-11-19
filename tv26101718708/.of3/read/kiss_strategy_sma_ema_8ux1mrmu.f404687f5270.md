@@ -1,0 +1,14 @@
+Calculation: MACD signal = SMA(MACD(price source, fast lookback, slow lookback), signal lookback)
+Calculation: Strong slope = abs(abs(SMA(price source, shorter lookback) - SMA(price source, shorter lookback)[slope lookback]) - abs(SMA(price source, longer lookback) - SMA(price source, longer lookback)[slope lookback])) > slope threshold
+Calculation: Bear trend = the most recent non-equal T1 close sample at chart-bar offsets 1 through WiT is greater than the current price source; false if all samples are equal. Use the T1 bar still forming, sampled on chart bars.
+Calculation: Bull trend = the most recent non-equal T1 close sample at chart-bar offsets 1 through WiT is less than the current price source; false if all samples are equal. Use the T1 bar still forming, sampled on chart bars.
+Calculation: Long trailing stop = while long, max(close × (1 − trailing distance), previous long trailing stop); otherwise the long trailing reset level
+Calculation: Short trailing stop = while short, min(close × (1 + trailing distance), previous short trailing stop); otherwise the short trailing reset level
+Long: SMA(price source, shorter lookback) crosses above SMA(price source, longer lookback)
+Short: SMA(price source, shorter lookback) crosses below SMA(price source, longer lookback)
+Long: Bull trend
+Short: Bear trend
+Long: long direction is enabled AND (SMA filter is disabled OR (SMA(price source, shorter lookback) crosses above SMA(price source, longer lookback) AND Strong slope AND Bear trend[WiT × trend-delay multiplier chart bars ago])) AND (MACD filter is disabled OR (MACD signal crosses below MACD(price source, fast lookback, slow lookback) at countback chart bars ago AND MACD(price source, fast lookback, slow lookback)[countback] < 0 AND Strong slope AND Bear trend))
+Short: short direction is enabled AND (SMA filter is disabled OR (SMA(price source, shorter lookback) crosses below SMA(price source, longer lookback) AND Strong slope AND Bull trend[WiT × trend-delay multiplier chart bars ago])) AND (MACD filter is disabled OR (MACD(price source, fast lookback, slow lookback) crosses below MACD signal at countback chart bars ago AND MACD signal[countback] > 0 AND Strong slope AND Bull trend))
+Exit: long, time is within the configured date window AND (low <= entry price × (1 − stop-loss parameter) OR high >= entry price × (1 + take-profit parameter) OR (trailing stop is enabled AND low <= long trailing stop))
+Exit: short, time is within the configured date window AND (high >= entry price × (1 + stop-loss parameter) OR low <= entry price × (1 − take-profit parameter) OR (trailing stop is enabled AND high >= short trailing stop))

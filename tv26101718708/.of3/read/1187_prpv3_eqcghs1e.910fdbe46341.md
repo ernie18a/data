@@ -1,0 +1,11 @@
+Calculation: adaptive lookback = round(base lookback × length multiplier)
+Calculation: adaptive flow(source, lookback) = WMA(3 × WMA(source, max(1, round(lookback / 3))) − WMA(source, max(1, round(lookback / 2))) − WMA(source, lookback), lookback)
+Calculation: lagged adaptive flow(source, lookback) = adaptive flow(source, lookback)[guide lag]
+Long: adaptive flow(close, adaptive lookback) > lagged adaptive flow(close, adaptive lookback)
+Short: adaptive flow(close, adaptive lookback) ≤ lagged adaptive flow(close, adaptive lookback)
+Long: on a confirmed chart bar, continuation limit > 0, adaptive flow(close, adaptive lookback) ≥ lagged adaptive flow(close, adaptive lookback), and on the preceding chart bar adaptive flow(close, adaptive lookback) > lagged adaptive flow(close, adaptive lookback), adaptive flow(close, adaptive lookback)[1] ≤ lagged adaptive flow(close, adaptive lookback)[1], and EMA(close, shortest EMA lookback) > EMA(close, middle EMA lookback) > EMA(close, longest EMA lookback)
+Short: on a confirmed chart bar, continuation limit > 0, adaptive flow(close, adaptive lookback) ≤ lagged adaptive flow(close, adaptive lookback), and on the preceding chart bar adaptive flow(close, adaptive lookback) < lagged adaptive flow(close, adaptive lookback), adaptive flow(close, adaptive lookback)[1] ≥ lagged adaptive flow(close, adaptive lookback)[1], and EMA(close, shortest EMA lookback) < EMA(close, middle EMA lookback) < EMA(close, longest EMA lookback)
+Long: on a confirmed chart bar, EMA(close, shortest EMA lookback) > EMA(close, middle EMA lookback) > EMA(close, longest EMA lookback)
+Short: on a confirmed chart bar, EMA(close, shortest EMA lookback) < EMA(close, middle EMA lookback) < EMA(close, longest EMA lookback)
+Long: on chart bars taking current values from the still-forming bar of any of T1, T2, T3, T4, or T5, EMA(close, shortest EMA lookback, T) > EMA(close, middle EMA lookback, T) > EMA(close, longest EMA lookback, T)
+Short: on chart bars taking current values from the still-forming bar of any of T1, T2, T3, T4, or T5, EMA(close, shortest EMA lookback, T) < EMA(close, middle EMA lookback, T) < EMA(close, longest EMA lookback, T)

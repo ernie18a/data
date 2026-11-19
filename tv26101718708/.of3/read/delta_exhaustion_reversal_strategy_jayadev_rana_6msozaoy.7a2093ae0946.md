@@ -1,0 +1,12 @@
+Calculation: bar delta = on each chart bar, sum over completed T1 bars within it of volume when close > open, negative volume when close < open, and zero otherwise; use the chart bar's signed volume by the same rule when no T1 data is available
+Calculation: close position = (close - low) / (high - low), or 0.5 when high = low
+Short: high >= highest(high, lookback) AND CVD(bar delta) < highest(CVD(bar delta), same lookback)[1] AND bar delta > 0 AND close position < effort threshold AND percent rank of ATR(shorter lookback) over longer lookback >= minimum percentile
+Long: low <= lowest(low, lookback) AND CVD(bar delta) > lowest(CVD(bar delta), same lookback)[1] AND bar delta < 0 AND close position > 1 - effort threshold AND percent rank of ATR(shorter lookback) over longer lookback >= minimum percentile
+Long: flat AND longs enabled AND the most recent exhaustion bar is bullish and occurred 1 to confirmation-window bars ago AND the current close > that bar's midpoint AND no intervening bar before the current bar traded below that bar's low
+Short: flat AND shorts enabled AND the most recent exhaustion bar is bearish and occurred 1 to confirmation-window bars ago AND the current close < that bar's midpoint AND no intervening bar before the current bar traded above that bar's high
+Calculation: long stop price = bullish exhaustion bar low - stop-buffer parameter × ATR(shorter lookback) on the confirmation bar
+Calculation: short stop price = bearish exhaustion bar high + stop-buffer parameter × ATR(shorter lookback) on the confirmation bar
+Calculation: long target price = confirmation-bar close + target-multiple parameter × (confirmation-bar close - long stop price)
+Calculation: short target price = confirmation-bar close - target-multiple parameter × (short stop price - confirmation-bar close)
+Exit: long, low <= long stop price OR high >= long target price OR close < entry price AND the latest delta-reclaim-parameter chart bars each have bar delta < 0 OR elapsed chart bars since entry signal >= holding-period parameter
+Exit: short, high >= short stop price OR low <= short target price OR close > entry price AND the latest delta-reclaim-parameter chart bars each have bar delta > 0 OR elapsed chart bars since entry signal >= holding-period parameter

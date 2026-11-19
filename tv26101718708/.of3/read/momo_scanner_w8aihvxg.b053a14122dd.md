@@ -1,0 +1,2 @@
+Long: at least MIN_ALIGN enabled timeframes among T1–T5 have RSI(close, RSI lookback) on the current timeframe bar, including while it is forming, sampled on chart bars, >= upper RSI threshold
+Short: at least MIN_ALIGN enabled timeframes among T1–T5 have RSI(close, RSI lookback) on the current timeframe bar, including while it is forming, sampled on chart bars, <= lower RSI threshold AND the Long condition is false

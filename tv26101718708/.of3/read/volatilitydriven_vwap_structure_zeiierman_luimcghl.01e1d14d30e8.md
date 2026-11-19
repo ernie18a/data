@@ -1,0 +1,11 @@
+Calculation: Adaptive VWAP step = ATR(volatility lookback) * structure multiplier * (minimum adaptive-volatility multiplier + adaptive-volatility multiplier range / (1 + EXP(-(volatility-ratio coefficient * (ATR(volatility lookback) / ATR(volatility lookback * slow-ATR length factor), or volatility-ratio baseline if the denominator is zero) - volatility-ratio baseline) + ATR-z-score coefficient * CLAMP((ATR(volatility lookback) - SMA(ATR(volatility lookback), rolling-VWAP lookback * volatility-statistics length factor)) / STDEV(ATR(volatility lookback), rolling-VWAP lookback * volatility-statistics length factor), -ATR-z-score clamp magnitude, ATR-z-score clamp magnitude), or 0 if the standard deviation is zero))))
+Calculation: VWAP structure = initialize upper bound to rolling VWAP, lower bound to rolling VWAP minus adaptive VWAP step, and direction as bullish; on each later bar, if rolling VWAP exceeds the prior upper bound plus adaptive VWAP step, set direction bullish, let n = floor(abs(rolling VWAP - prior upper bound) / adaptive VWAP step), set upper bound to prior upper bound + n * adaptive VWAP step and lower bound to prior upper bound + (n - 1) * adaptive VWAP step; else if rolling VWAP is below the prior lower bound minus adaptive VWAP step, set direction bearish, let n = floor(abs(rolling VWAP - prior lower bound) / adaptive VWAP step), set lower bound to prior lower bound - n * adaptive VWAP step and upper bound to prior lower bound - (n - 1) * adaptive VWAP step; otherwise retain direction and bounds
+Calculation: VWAP structure mean = midpoint(VWAP structure upper bound, VWAP structure lower bound)
+Long: VWAP structure direction is bullish
+Short: VWAP structure direction is bearish
+Long: VWAP structure direction changes from bearish to bullish
+Short: VWAP structure direction changes from bullish to bearish
+Long: close crosses above AnchoredVWAP(HLC3(high, low, close), volume, anchored at each VWAP structure direction change including that bar, initially anchored on the first bar)
+Short: close crosses below AnchoredVWAP(HLC3(high, low, close), volume, anchored at each VWAP structure direction change including that bar, initially anchored on the first bar)
+Long: close crosses above VWAP structure mean
+Short: close crosses below VWAP structure mean

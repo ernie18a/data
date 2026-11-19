@@ -1,0 +1,3 @@
+Calculation: inverted price = highest(high, maximum lookback) + lowest(low, minimum lookback) - close
+Long: close[1] > inverted price AND selected MA(close, fast lookback) crosses above selected MA(close, slow lookback) AND (MA trend filter is disabled OR close > selected MA(close, slow lookback)) AND datetime is within the configured date range
+Short: close[1] < inverted price AND selected MA(close, fast lookback) crosses below selected MA(close, slow lookback) AND (MA trend filter is disabled OR close < selected MA(close, slow lookback)) AND datetime is within the configured date range

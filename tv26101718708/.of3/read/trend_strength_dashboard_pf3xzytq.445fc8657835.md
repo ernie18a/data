@@ -1,0 +1,3 @@
+Calculation: trend strength(T) = ADX(high, low, close, direction lookback, trend-strength lookback) calculated on T bars, using T's current bar (still forming in real time) and mapped to chart bars
+Long: On chart bars, for every enabled timeframe T1–T6 (disabled rows ignored), trend strength(T) >= strong threshold AND DI+(high, low, close, direction lookback) > DI-(high, low, close, direction lookback), with the DI values calculated on T's current bar (still forming in real time)
+Short: On chart bars, for every enabled timeframe T1–T6 (disabled rows ignored), trend strength(T) >= strong threshold AND DI-(high, low, close, direction lookback) > DI+(high, low, close, direction lookback), with the DI values calculated on T's current bar (still forming in real time)

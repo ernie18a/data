@@ -1,0 +1,4 @@
+Long: Zero Lag MACD(shorter lookback, longer lookback, average type) crosses above its signal line(signal lookback, signal type) AND its signal line < 0 AND close > Kijun-Sen(lookback) AND Ease of Movement(lookback, divisor) > 0
+Short: Zero Lag MACD(shorter lookback, longer lookback, average type) crosses below its signal line(signal lookback, signal type) AND its signal line > 0 AND close < Kijun-Sen(lookback) AND Ease of Movement(lookback, divisor) < 0
+Exit: Long position, low <= entry price - ATR(lookback) * stop multiplier OR high >= entry price + ATR(lookback) * stop multiplier * reward-to-risk ratio
+Exit: Short position, high >= entry price + ATR(lookback) * stop multiplier OR low <= entry price - ATR(lookback) * stop multiplier * reward-to-risk ratio

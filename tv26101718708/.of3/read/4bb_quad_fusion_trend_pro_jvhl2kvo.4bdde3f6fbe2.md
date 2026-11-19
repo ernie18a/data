@@ -1,0 +1,26 @@
+Calculation: Bullish Bollinger signal = (prior low <= prior lower band of Bollinger Bands(close, BB lookback, standard-deviation multiplier) AND current close > current lower band) OR (current close > current upper band AND prior close <= prior upper band)
+Calculation: Bearish Bollinger signal = (prior high >= prior upper band of Bollinger Bands(close, BB lookback, standard-deviation multiplier) AND current close < current upper band) OR (current close < current lower band AND prior close >= prior lower band)
+Calculation: Reversal pattern = if high - close >= wick/body ratio parameter * (close - open) AND close > open then Shooting Star; else if close - low >= wick/body ratio parameter * (open - close) AND close < open then Hammer; else if close > prior open AND open < prior close AND prior close < prior open then Bull Engulf; else if close < prior open AND open > prior close AND prior close > prior open then Bear Engulf; else none
+Calculation: Weekly bullish priority = chart bar is Monday or Tuesday AND current T1 close > current T1 open AND abs(current T1 close - current T1 open) >= (current T1 high - current T1 low) * weekly body fraction parameter; use the current, still-forming T1 bar, calculated on T1 bars and carried to chart bars
+Calculation: Weekly bearish priority = chart bar is Monday or Tuesday AND (current T1 close < current T1 open OR current T1 high - max(current T1 open, current T1 close) >= abs(current T1 close - current T1 open) * weekly wick/body ratio parameter); use the current, still-forming T1 bar, calculated on T1 bars and carried to chart bars
+Calculation: Bullish confirmation = bullish Bollinger signal on T2 OR T3 OR T4 bars; calculate on each timeframe's bars and carry its current, still-forming value to chart bars
+Calculation: Bearish confirmation = bearish Bollinger signal on T2 OR T3 OR T4 bars; calculate on each timeframe's bars and carry its current, still-forming value to chart bars
+Calculation: Trendline slope = ATR(swing lookback) / swing lookback * trendline slope multiplier, calculated on chart bars
+Calculation: Pivot high slope = trendline slope when PivotHigh(high, swing lookback, swing lookback) occurs, otherwise its prior value; initially undefined, calculated on chart bars
+Calculation: Pivot low slope = trendline slope when PivotLow(low, swing lookback, swing lookback) occurs, otherwise its prior value; initially undefined, calculated on chart bars
+Calculation: Upper trendline = PivotHigh(high, swing lookback, swing lookback) value when it occurs, otherwise prior upper trendline - pivot high slope; initially undefined, calculated on chart bars
+Calculation: Lower trendline = PivotLow(low, swing lookback, swing lookback) value when it occurs, otherwise prior lower trendline + pivot low slope; initially undefined, calculated on chart bars
+Calculation: Up-break state = 0 when PivotHigh(high, swing lookback, swing lookback) occurs; otherwise 1 if close > upper trendline - pivot high slope * swing lookback, else its prior value; initially 0, calculated on chart bars
+Calculation: Down-break state = 0 when PivotLow(low, swing lookback, swing lookback) occurs; otherwise 1 if close < lower trendline + pivot low slope * swing lookback, else its prior value; initially 0, calculated on chart bars
+Long: EMA(close, shorter lookback) > EMA(close, longer lookback) on T2 bars OR EMA(close, shorter lookback) > EMA(close, longer lookback) on T3 bars OR EMA(close, shorter lookback) > EMA(close, longer lookback) on T4 bars OR EMA(close, shorter lookback) > EMA(close, longer lookback) on T5 bars; each is calculated on its timeframe's bars and its current, still-forming value is carried to chart bars
+Short: EMA(close, shorter lookback) <= EMA(close, longer lookback) on T2 bars OR EMA(close, shorter lookback) <= EMA(close, longer lookback) on T3 bars OR EMA(close, shorter lookback) <= EMA(close, longer lookback) on T4 bars OR EMA(close, shorter lookback) <= EMA(close, longer lookback) on T5 bars; each is calculated on its timeframe's bars and its current, still-forming value is carried to chart bars
+Long: Bullish Bollinger signal on T2 OR T3 OR T4 OR T5 bars; calculate on each timeframe's bars and carry its current, still-forming value to chart bars
+Short: Bearish Bollinger signal on T2 OR T3 OR T4 OR T5 bars; calculate on each timeframe's bars and carry its current, still-forming value to chart bars
+Long: Reversal pattern is Hammer or Bull Engulf on T3 OR T4 OR T5 bars; calculate on each timeframe's bars and carry its current, still-forming value to chart bars
+Short: Reversal pattern is Shooting Star or Bear Engulf on T3 OR T4 OR T5 bars; calculate on each timeframe's bars and carry its current, still-forming value to chart bars
+Long: Up-break state > its value on the prior chart bar
+Short: Down-break state > its value on the prior chart bar
+Long: Weekly bullish priority OR (Bullish confirmation AND NOT Bearish confirmation)
+Short: Weekly bearish priority OR (Bearish confirmation AND NOT Bullish confirmation)
+Long: Weekly bullish priority OR (NOT Weekly bearish priority AND Bullish confirmation AND NOT Bearish confirmation)
+Short: NOT Weekly bullish priority AND (Weekly bearish priority OR (Bearish confirmation AND NOT Bullish confirmation))

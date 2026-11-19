@@ -1,0 +1,8 @@
+Calculation: High swing pivot = each confirmed PivotHigh(high, left lookback, right lookback) at right lookback bars ago that starts a high swing when no swing exists or after a low swing pivot, or replaces the active high swing pivot only if higher before the next low swing pivot
+Calculation: Low swing pivot = each confirmed PivotLow(low, left lookback, right lookback) at right lookback bars ago that starts a low swing when no swing exists or after a high swing pivot, or replaces the active low swing pivot only if lower before the next high swing pivot
+Long: On a high swing pivot update, no preceding high swing pivot exists OR its pivot price > the preceding high swing pivot price
+Short: On a high swing pivot update, a preceding high swing pivot exists AND its pivot price <= the preceding high swing pivot price
+Long: On a low swing pivot update, a preceding low swing pivot exists AND its pivot price >= the preceding low swing pivot price
+Short: On a low swing pivot update, no preceding low swing pivot exists OR its pivot price < the preceding low swing pivot price
+Long: On a low swing pivot update, its pivot price < the preceding low swing pivot price AND RSI(close, RSI lookback) at the pivot > RSI(close, RSI lookback) at the preceding low swing pivot
+Short: On a high swing pivot update, its pivot price > the preceding high swing pivot price AND RSI(close, RSI lookback) at the pivot < RSI(close, RSI lookback) at the preceding high swing pivot

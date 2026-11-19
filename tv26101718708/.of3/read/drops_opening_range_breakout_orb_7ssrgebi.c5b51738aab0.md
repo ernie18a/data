@@ -1,0 +1,14 @@
+Calculation: OpeningRangeHigh = maximum high of chart bars in the configured range-definition session for the current day
+Calculation: OpeningRangeLow = minimum low of chart bars in the configured range-definition session for the current day
+Calculation: OpeningRangeWidth = OpeningRangeHigh - OpeningRangeLow
+Calculation: OpeningRangeMidpoint = OpeningRangeLow + OpeningRangeWidth / 2
+Calculation: LongInitialStop = OpeningRangeMidpoint if the midpoint-stop option is enabled, otherwise OpeningRangeLow
+Calculation: ShortInitialStop = OpeningRangeMidpoint if the midpoint-stop option is enabled, otherwise OpeningRangeHigh
+Calculation: LongSignalRisk = breakout-signal close - LongInitialStop
+Calculation: ShortSignalRisk = ShortInitialStop - breakout-signal close
+Calculation: LongTarget = breakout-signal close + LongSignalRisk * risk/reward parameter
+Calculation: ShortTarget = breakout-signal close - ShortSignalRisk * risk/reward parameter
+Long: flat AND the current day's range-definition session has ended AND within the configured entry session AND no earlier entry order was triggered today AND crossover(close, OpeningRangeHigh) AND (range-size filter disabled OR ATR unavailable at range definition OR (OpeningRangeWidth <= ATR(chart bars, ATR lookback, at range definition) * maximum range ATR multiple AND OpeningRangeWidth >= ATR(chart bars, ATR lookback, at range definition) * minimum range ATR multiple)) AND (volume filter disabled OR volume > SMA(volume, volume-average lookback) * volume multiplier) AND (daily-trend filter disabled OR T1 close > EMA(close, daily EMA lookback), calculated on the current T1 bar and requested on chart bars)
+Short: flat AND the current day's range-definition session has ended AND within the configured entry session AND no earlier entry order was triggered today AND crossunder(close, OpeningRangeLow) AND (range-size filter disabled OR ATR unavailable at range definition OR (OpeningRangeWidth <= ATR(chart bars, ATR lookback, at range definition) * maximum range ATR multiple AND OpeningRangeWidth >= ATR(chart bars, ATR lookback, at range definition) * minimum range ATR multiple)) AND (volume filter disabled OR volume > SMA(volume, volume-average lookback) * volume multiplier) AND (daily-trend filter disabled OR T1 close < EMA(close, daily EMA lookback), calculated on the current T1 bar and requested on chart bars)
+Exit: long, low <= (entry price if automatic breakeven is enabled and a close has reached entry price + (entry price - LongInitialStop), otherwise LongInitialStop) OR high >= LongTarget OR (bar time in the configured timezone >= cutoff time AND before regular-session close)
+Exit: short, high >= (entry price if automatic breakeven is enabled and a close has reached entry price - (ShortInitialStop - entry price), otherwise ShortInitialStop) OR low <= ShortTarget OR (bar time in the configured timezone >= cutoff time AND before regular-session close)

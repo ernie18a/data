@@ -1,0 +1,6 @@
+Calculation: ORB high = highest high of chart bars in the configured opening-range session, reset each calendar day and locked at session end
+Calculation: ORB low = lowest low of chart bars in the configured opening-range session, reset each calendar day and locked at session end
+Calculation: ORB midpoint = (ORB high + ORB low) / 2
+Calculation: bounce zone = (ORB high - ORB low) * bounce-zone fraction
+Long: ORB is locked AND news filter permits signals AND current-day entry signals are below the daily entry limit AND the prior chart bar's range contains the ORB midpoint OR abs(low[1] - ORB midpoint) <= bounce zone OR abs(high[1] - ORB midpoint) <= bounce zone AND close > ORB midpoint AND close > open AND close > EMA(close, EMA lookback) AND volume > SMA(volume, volume lookback) * volume multiplier
+Short: ORB is locked AND news filter permits signals AND current-day entry signals are below the daily entry limit AND the prior chart bar's range contains the ORB midpoint OR abs(low[1] - ORB midpoint) <= bounce zone OR abs(high[1] - ORB midpoint) <= bounce zone AND close < ORB midpoint AND close < open AND close < EMA(close, EMA lookback) AND volume > SMA(volume, volume lookback) * volume multiplier

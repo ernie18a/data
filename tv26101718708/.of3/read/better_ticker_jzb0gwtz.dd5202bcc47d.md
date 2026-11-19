@@ -1,0 +1,4 @@
+Long: On chart bars, the still-forming T1 close (or the still-forming T2 close if T1 is unavailable) is greater than its value sampled on the previous chart bar
+Short: On chart bars, the still-forming T1 close (or the still-forming T2 close if T1 is unavailable) is less than its value sampled on the previous chart bar
+Long: On chart bars, T1 close on the still-forming bar is greater than T1 close on the last completed bar when T1 is available, OR T2 close on the still-forming bar is greater than T2 close on the last completed bar when T1 is unavailable
+Short: On chart bars, T1 close on the still-forming bar is less than T1 close on the last completed bar when T1 is available, OR T2 close on the still-forming bar is less than T2 close on the last completed bar when T1 is unavailable

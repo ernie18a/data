@@ -1,0 +1,6 @@
+Calculation: SuperTrend basis = selected moving average(close × volume, SuperTrend lookback) / selected moving average(volume, SuperTrend lookback), using the same selected moving-average type and lookback
+Calculation: KNN state = bullish if all configured nearest neighbors, ranked by absolute distance from the current SuperTrend to SuperTrend values in the latest sample set including the current bar, have labels 1; bearish if all have labels 0; neutral otherwise; sample-set size is the greater of the neighbor-count parameter and sample-count parameter; each sample label is 1 iff WMA(close, shorter KNN lookback) > WMA(SuperTrend, longer KNN lookback) at that sample, else 0
+Long: (KNN state = bullish AND KNN state[1] != bullish) OR (SuperTrend direction changes from bearish to bullish AND KNN state = bullish)
+Short: (KNN state = bearish AND KNN state[1] != bearish) OR (SuperTrend direction changes from bullish to bearish AND KNN state = bearish)
+Exit: long, ((SuperTrend direction is bullish AND KNN state != bullish) OR (SuperTrend direction is bearish AND KNN state != bearish)) AND low <= SuperTrend - ATR(SuperTrend lookback) × SuperTrend multiplier
+Exit: short, ((SuperTrend direction is bullish AND KNN state != bullish) OR (SuperTrend direction is bearish AND KNN state != bearish)) AND high >= SuperTrend + ATR(SuperTrend lookback) × SuperTrend multiplier

@@ -1,0 +1,7 @@
+Calculation: Relative performance = (traded instrument close on T1 / traded instrument close P2 T1 bars earlier) / (selected index close on T1 / selected index close P2 T1 bars earlier) − 1
+Calculation: Long stop = setup candle low at initial entry; otherwise the maximum of the prior long stop and each applicable setup candle low on add-on entry or current low on an RSI weakness update; unchanged otherwise. An RSI weakness update occurs during a long position when RSI(close, P1) on T1 < P4 OR (RSI(close, P1) on T1 > P4 + P5 AND RSI(close, P1) on T1 < P3 AND Relative performance < P11).
+Long: (index filter disabled OR selected index close on T1 > EMA(selected index close on T1, P6)) AND (RSI(close, P1) on T3 unavailable OR RSI(close, P1) on T3 > P3) AND ((RSI(close, P1) on T1 crosses above P3 AND RSI(close, P1) on T2 > P3) OR (RSI(close, P1) on T2 crosses above P3 AND RSI(close, P1) on T1 > P3)) AND Relative performance > P11
+Long: While a long setup remains active, current bar high > setup candle high AND 100 × (current bar high − setup candle low) / current bar high ≤ P7 AND (the instrument is flat OR a partial profit exit has occurred and no add-on entry has occurred since).
+Exit: long, close < the lowest low of the prior P10 chart bars AND no partial profit exit has occurred since the latest entry.
+Exit: long, current bar low ≤ long stop × (1 − P9 / 100).
+Exit: long, on a later bar, low ≤ the low of the first bar that closed below the long stop, before a close above the long stop cancels the pending exit.

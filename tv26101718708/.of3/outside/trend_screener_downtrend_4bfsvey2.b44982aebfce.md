@@ -1,0 +1,2 @@
+Long: EMA(close, P1) > EMA(close, P2) AND EMA(close, P2) > EMA(close, P3) AND EMA(close, P3) > EMA(close, P4) AND close > EMA(close, P3) on T1
+Short: EMA(close, P1) < EMA(close, P2) AND EMA(close, P2) < EMA(close, P3) AND EMA(close, P3) < EMA(close, P4) AND close < EMA(close, P3) on T1

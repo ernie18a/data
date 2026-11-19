@@ -1,0 +1,25 @@
+Calculation: RangeFilter(source, lookback, multiplier) = recursively clamp source to the prior value of the filter within plus or minus EMA(EMA(abs(source - source[1]), lookback), 2 × lookback − 1) × multiplier
+Calculation: Range-filter direction = up when RangeFilter rises, down when it falls, otherwise retain the prior direction
+Calculation: Following-line direction = up when its line rises, down when it falls, otherwise retain the prior direction; when close exceeds SMA(close, Bollinger lookback) + stdev(close, Bollinger lookback) × deviation, set the line to the greater of its prior value and low minus the ATR adjustment; when close is below SMA(close, Bollinger lookback) − stdev(close, Bollinger lookback) × deviation, set the line to the lesser of its prior value and high plus the ATR adjustment; otherwise retain the prior line; the ATR adjustment is ATR(ATR lookback) when its adjustment parameter is enabled and zero otherwise
+Long: fast range-filter direction is up
+Short: fast range-filter direction is down
+Long: slow-range mode is selected and slow range-filter direction is up
+Short: slow-range mode is selected and slow range-filter direction is down
+Long: Hull color display is enabled and Hull(fast source, Hull lookback, Hull variation) > its value two chart bars ago
+Short: Hull color display is enabled and Hull(fast source, Hull lookback, Hull variation) <= its value two chart bars ago
+Long: following-line mode is selected and following-line direction is up
+Short: following-line mode is selected and following-line direction is down or neutral
+Long: for at least one of T1, T2, T3, or T4, Hull(fast source, Hull lookback, Hull variation) on chart bars using the current value from that timeframe, including its still-forming bar in real time, exceeds its value two chart bars ago
+Short: for at least one of T1, T2, T3, or T4, Hull(fast source, Hull lookback, Hull variation) on chart bars using the current value from that timeframe, including its still-forming bar in real time, is less than or equal to its value two chart bars ago
+Long: fast range-filter direction changes from down to up and Hull(fast source, Hull lookback, Hull variation) > its value two chart bars ago
+Short: fast range-filter direction changes from up to down and Hull(fast source, Hull lookback, Hull variation) < its value two chart bars ago
+Long: optional following/slow entry selector is enabled, following-line mode is selected, following-line direction changes from down to up, and Hull(fast source, Hull lookback, Hull variation) > its value two chart bars ago
+Short: optional following/slow entry selector is enabled, following-line mode is selected, following-line direction changes from up to down, and Hull(fast source, Hull lookback, Hull variation) < its value two chart bars ago
+Long: optional following/slow entry selector is enabled, slow-range mode is selected, slow range-filter direction changes from down to up, and Hull(fast source, Hull lookback, Hull variation) > its value two chart bars ago
+Short: optional following/slow entry selector is enabled, slow-range mode is selected, slow range-filter direction changes from up to down, and Hull(fast source, Hull lookback, Hull variation) < its value two chart bars ago
+Exit: long, position came from a fast- or slow-range entry and high >= entry price + profit-target parameter
+Exit: long, position came from a following-line entry, following-line direction changes from up to down, and high >= entry price + profit-target parameter
+Exit: short, position came from a fast- or slow-range entry and low <= entry price − profit-target parameter
+Exit: short, position came from a following-line entry, following-line direction changes from down to up, and low <= entry price − profit-target parameter
+Exit: long, exit selector chooses its Hull branch and Hull(fast source, Hull lookback, Hull variation) > its value two chart bars ago, or exit selector chooses its range-filter branch and fast range-filter direction two chart bars ago was up and current direction is down, or exit selector chooses its following/slow branch and following-line mode is selected and fast range-filter direction two chart bars ago was up and current direction is down
+Exit: short, exit selector chooses its Hull branch and Hull(fast source, Hull lookback, Hull variation) > its value two chart bars ago, or exit selector chooses its range-filter branch and fast range-filter direction one chart bar ago was down and current direction is up, or exit selector chooses its following/slow branch and following-line mode is selected and following-line direction changes from down to up, or exit selector chooses its following/slow branch and slow-range mode is selected and slow range-filter direction two chart bars ago was down and current direction is up

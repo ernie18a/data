@@ -1,0 +1,2 @@
+Long: high(T1, bar still forming) > high(T1, last completed bar) AND low(T1, bar still forming) >= low(T1, last completed bar)
+Short: low(T1, bar still forming) < low(T1, last completed bar) AND high(T1, bar still forming) <= high(T1, last completed bar)

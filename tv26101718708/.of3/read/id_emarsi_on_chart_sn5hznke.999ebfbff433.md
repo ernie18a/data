@@ -1,0 +1,10 @@
+Calculation: modified RSI = if down = 0 then 100 else if up = 0 then 0 else 100 - 100 / (1 + up / down), where up = RMA(max(change(RSI source), adaptive RSI base), shared slow lookback) and down = RMA(-min(change(RSI source), adaptive RSI base), RSI lookback)
+Calculation: adaptive RSI base = RSI base * scaling factor when adaptive scaling is enabled, otherwise RSI base
+Calculation: scaling factor = min(maximum scaling factor, max(1, minimum tick size / (ATR(ATR lookback) / SMA(close, deviation lookback)))) when ATR-based scaling is selected
+Calculation: mapped RSI = median + ((modified RSI - 50) / 50 * (highest(high, deviation lookback) - lowest(low, deviation lookback)) / 2 * min(1, 1 / scaling factor)) when adaptive scaling is enabled; otherwise, if down = lowest(low, deviation lookback), highest(high, deviation lookback); else if up = lowest(low, deviation lookback), lowest(low, deviation lookback); otherwise median - median / (1 + up / down), where median = (highest(high, deviation lookback) + lowest(low, deviation lookback)) / 2
+Long: mapped RSI crosses above moving average(mapped RSI, selected MA type, shared slow lookback)
+Short: mapped RSI crosses below moving average(mapped RSI, selected MA type, shared slow lookback)
+Long: mapped RSI > moving average(mapped RSI, selected MA type, shared slow lookback)
+Short: mapped RSI <= moving average(mapped RSI, selected MA type, shared slow lookback)
+Exit: long, (trailing stop enabled AND high reaches entry price + prior close * trailing stop percentage / 100 AND low falls below the highest high since activation) OR (take profit enabled AND high >= prior close * (1 + take-profit percentage / 100))
+Exit: short, (trailing stop enabled AND low reaches entry price - prior close * trailing stop percentage / 100 AND high rises above the lowest low since activation) OR (take profit enabled AND low <= prior close * (1 - take-profit percentage / 100))

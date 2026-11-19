@@ -1,0 +1,8 @@
+Calculation: Trend direction = bullish when +DI(shared ADX/DMI lookback) > -DI(shared ADX/DMI lookback), bearish when -DI(shared ADX/DMI lookback) > +DI(shared ADX/DMI lookback), otherwise retain the prior direction; initially unset
+Calculation: Trend age = number of chart bars in the current trend, including the bar its direction is first established
+Calculation: Peak ADX = highest ADX(shared ADX/DMI lookback) since the current trend began
+Calculation: Volume spike = volume > SMA(volume, volume lookback) * volume spike multiplier
+Calculation: Exhaustion = Volume spike AND Trend age > minimum trend bars AND Peak ADX - ADX(shared ADX/DMI lookback) > ADX decline threshold AND ((Trend direction is bullish AND MOM(close, momentum lookback) < SMA(MOM(close, momentum lookback), momentum lookback)) OR (Trend direction is bearish AND MOM(close, momentum lookback) > SMA(MOM(close, momentum lookback), momentum lookback))) AND current chart bar is confirmed
+Calculation: Continuation spike = Volume spike AND NOT Exhaustion AND current chart bar is confirmed
+Long: (Exhaustion AND Trend direction is bearish AND more than cooldown bars since the prior long exhaustion signal, counting from chart start before any such signal) OR (Continuation spike AND Trend direction is bullish)
+Short: (Exhaustion AND Trend direction is bullish AND more than cooldown bars since the prior short exhaustion signal, counting from chart start before any such signal) OR (Continuation spike AND Trend direction is bearish)

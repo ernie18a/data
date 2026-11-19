@@ -1,0 +1,2 @@
+Long: EMA(close, shorter lookback) crosses above EMA(close, longer lookback)
+Exit: long, high >= close on entry signal bar * take-profit multiplier OR low <= close on entry signal bar * stop-loss multiplier

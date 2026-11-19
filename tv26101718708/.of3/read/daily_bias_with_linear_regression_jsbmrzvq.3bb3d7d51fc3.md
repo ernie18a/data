@@ -1,0 +1,2 @@
+Long: Linear Regression Slope(close, parameter 1) on T1 bars, last completed bar > 0 AND Linear Regression Slope(close, parameter 2) on T2 bars, last completed bar > 0
+Short: Linear Regression Slope(close, parameter 1) on T1 bars, last completed bar < 0 AND Linear Regression Slope(close, parameter 2) on T2 bars, last completed bar < 0

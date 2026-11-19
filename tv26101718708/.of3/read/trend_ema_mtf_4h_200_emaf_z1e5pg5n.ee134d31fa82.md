@@ -1,0 +1,4 @@
+Calculation: selected trend EMA = EMA(close, lookback, T1), sampled on chart bars and carried across gaps; use the still-forming T1 bar in real time and the last completed T1 bar historically
+Calculation: trend direction = initialize neutral; when the current and previous T1-bar EMA values are available, set rising if the current value is greater and falling if it is lower; otherwise retain the prior direction, including across chart bars without a T1 sample
+Long: trend direction is rising AND chart close >= selected trend EMA
+Short: trend direction is falling AND chart close < selected trend EMA

@@ -1,0 +1,1 @@
+Long: pivot price > 0 AND high >= pivot price
