@@ -1,2 +1,0 @@
-Calculation: Swing sequence = Confirm pivot highs and lows using equal numbers of preceding and subsequent chart bars. Process confirmed highs before lows. Append a pivot if its type differs from the latest retained pivot; otherwise replace the latest pivot only if the new high is higher or the new low is lower. Retain only the most recent configured number of alternating pivots.
-Long: The swing sequence contains at least three pivots AND close > the most recent retained pivot high.

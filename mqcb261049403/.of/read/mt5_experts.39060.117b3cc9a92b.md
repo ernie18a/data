@@ -1,2 +1,0 @@
-Long: (reverse disabled AND last completed working-timeframe DeMarker < lower threshold) OR (reverse enabled AND last completed working-timeframe DeMarker > upper threshold)
-Short: (reverse disabled AND last completed working-timeframe DeMarker > upper threshold) OR (reverse enabled AND last completed working-timeframe DeMarker < lower threshold)

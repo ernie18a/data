@@ -1,4 +1,0 @@
-Calculation: DeMarker TSI = 100 times the twice-smoothed momentum of DeMarker divided by the twice-smoothed absolute momentum of DeMarker; momentum is the current DeMarker minus its value a lookback ago. Apply the same selectable smoothing method to both series, first with a shorter smoothing length and then with a longer smoothing length. If the denominator is zero, use zero; replace a zero result with a small positive value.
-Calculation: Signal = the DeMarker TSI smoothed using the same selectable method with a signal smoothing length longer than the second smoothing length; replace a zero result with a small positive value.
-Long: DeMarker TSI > Signal, calculated either on the chart timeframe or on the higher timeframe bar still forming.
-Short: DeMarker TSI < Signal, calculated either on the chart timeframe or on the higher timeframe bar still forming.

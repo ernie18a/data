@@ -1,5 +1,0 @@
-Calculation: Non-lag moving average = For a chosen price derived from each bar's OHLC and lookback N, let P = N - 1 and L = 4N + P. For i = 0 through L - 2, let t = i / (P - 1) when i <= P - 1, otherwise t = 1 + (i - P + 1) * 7 / (4P); let weight[i] = cos(pi * t) when t <= 0.5, otherwise cos(pi * t) / (3 * pi * t + 1). The average is the sum of weight[i] * chosen price i bars ago divided by the sum of the weights.
-Calculation: Filter threshold = A nonnegative filter parameter multiplied by the square root of the mean, over the moving average lookback, of (absolute moving-average change at each bar minus its own rolling mean over the same lookback) squared.
-Calculation: Direction = For the current bar's moving-average change d and filter threshold f, retain the previous direction if abs(d) < f; otherwise set direction to long if d > f, short if d < f, and retain the previous direction if d = f. Initialize direction to long.
-Long: Direction = long
-Short: Direction = short

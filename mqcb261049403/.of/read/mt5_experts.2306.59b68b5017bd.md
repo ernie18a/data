@@ -1,6 +1,0 @@
-Calculation: Oscillator = the close-to-close change smoothed successively by a first and a second moving average, divided by the absolute close-to-close change smoothed successively by the same respective moving averages; each stage has independently configurable smoothing method and length. Calculate on a configurable higher or lower timeframe, using its last completed bar; the two smoothing lengths have no required ordering.
-Calculation: Trigger = oscillator from a configurable number of oscillator-timeframe bars earlier.
-Long: Oscillator > trigger AND the preceding oscillator-timeframe bar's oscillator <= its trigger.
-Short: Oscillator < trigger AND the preceding oscillator-timeframe bar's oscillator >= its trigger.
-Exit: long, oscillator < trigger OR low <= entry price minus a configurable stop distance OR high >= entry price plus a configurable profit distance.
-Exit: short, oscillator > trigger OR high >= entry price plus a configurable stop distance OR low <= entry price minus a configurable profit distance.

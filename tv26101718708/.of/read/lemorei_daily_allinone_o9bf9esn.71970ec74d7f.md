@@ -1,2 +1,0 @@
-Long: Regular-session chart-bar close > long-term EMA AND (close > short-term EMA OR close > medium-term EMA OR close >= shorter-anchor VWAP OR close >= longer-anchor VWAP)
-Short: (Regular-session chart-bar close < short-term EMA AND short-term EMA < medium-term EMA AND medium-term EMA < long-term EMA) OR (close <= long-term EMA AND close < shorter-anchor VWAP AND close < longer-anchor VWAP)

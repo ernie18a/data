@@ -1,5 +1,0 @@
-Calculation: Trend state = initially neutral; on each indicator-timeframe bar, set bearish when the absolute change in the Jurik moving average of open over a configurable bar lag, with both values rounded to price precision, exceeds the shorter-lookback ATR divided by a positive factor AND stochastic main line is below a lower threshold AND the prior state is not bearish; set bullish when the same change exceeds that ATR threshold AND stochastic main line is above a higher threshold AND the prior state is not bullish; otherwise retain the prior state. The stochastic uses a configurable high/low or close/close price range, a configurable averaging method, and no slowing. Use the same Jurik length and phase throughout. Calculate on the chart timeframe or a configurable higher or lower timeframe, using either its last completed bar or its still-forming bar.
-Long: Trend state = bullish
-Short: Trend state = bearish
-Exit: long, trend state = bearish OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
-Exit: short, trend state = bullish OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

@@ -1,5 +1,0 @@
-Calculation: Volume-weighted oscillator = smooth((Williams %R + 50) × volume) using a selectable moving-average method and lookback.
-Calculation: Volume-scaled thresholds = each selected overbought or oversold level × smoothed volume, using the same moving-average method and lookback as the oscillator. The outer overbought level is higher than the inner overbought level; the outer oversold level is lower than the inner oversold level.
-Calculation: Higher-timeframe oscillator and thresholds = the same calculations on a higher timeframe, using the bar still forming when the first chart bar of that higher-timeframe bar is evaluated; retain those values until the next higher-timeframe bar begins.
-Long: Volume-weighted oscillator > inner overbought threshold OR higher-timeframe oscillator > higher-timeframe inner overbought threshold.
-Short: Volume-weighted oscillator < inner oversold threshold OR higher-timeframe oscillator < higher-timeframe inner oversold threshold.

@@ -1,5 +1,0 @@
-Calculation: Session bullish-volume share = volume on bars with close > open divided by total volume since the most recent start of any enabled session; reset both sums at each such start, accumulate only while at least one enabled session is active, and use one-half when total volume is zero.
-Long: At least one enabled session is active OR no sessions are enabled, AND close > open, AND the selected moving average and volume-bar height are available.
-Short: At least one enabled session is active OR no sessions are enabled, AND close <= open, AND the selected moving average and volume-bar height are available.
-Long: At least one enabled session is active OR no sessions are enabled, AND the selected moving average is available, AND session bullish-volume share > one-half.
-Short: At least one enabled session is active OR no sessions are enabled, AND the selected moving average is available, AND session bullish-volume share < one-half.

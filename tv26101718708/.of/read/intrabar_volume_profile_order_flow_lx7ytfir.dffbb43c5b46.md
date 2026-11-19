@@ -1,4 +1,0 @@
-Calculation: Buy volume and sell volume per price row = Divide a lookback range of chart bars into price rows. For each completed lower-timeframe bar within the range, allocate its volume to overlapping rows in proportion to the overlap with its high-low range; if high equals low, allocate all its volume to the row containing that price. Add allocated volume to buy volume when close > open and to sell volume when close < open; otherwise add it to neither.
-Calculation: Average intrabars = Number of available completed lower-timeframe bars in the lookback range divided by the number of covered chart bars.
-Long: Average intrabars >= minimum required average AND buy volume > sell volume for a price row.
-Short: Average intrabars >= minimum required average AND sell volume > buy volume for a price row.

@@ -1,7 +1,0 @@
-Calculation: Averaging deviation for order k = first deviation multiplied by the sum of the deviation-step multiplier raised to powers 0 through k−1.
-Calculation: Average entry price = quantity-weighted average fill price of the base short and filled averaging orders; each order's quantity is its quote-currency size divided by the signal-bar close, and each successive averaging order's quote-currency size is the preceding averaging order's size multiplied by the order-size multiplier.
-Calculation: Trailing minimum = lowest close since the short opened among bars whose close was at or below the take-profit level calculated from the average entry price on that bar.
-Short: Position is flat AND no trade is open AND the date filter is disabled OR position is flat AND no trade is open AND bar datetime is within the configured date window; in either case, RSI crosses below its threshold on the chart timeframe or on the last completed higher-timeframe bar, or on the last available lower-timeframe bar within the chart bar.
-Short: Position is short AND the date filter is disabled OR position is short AND bar datetime is within the configured date window; in either case, the number of filled averaging orders is below the configured maximum AND close >= base entry price × (1 + averaging deviation for the next order).
-Exit: short, close >= average entry price × (1 + stop-loss percentage).
-Exit: short, trailing minimum exists AND close >= trailing minimum × (1 + trailing percentage).

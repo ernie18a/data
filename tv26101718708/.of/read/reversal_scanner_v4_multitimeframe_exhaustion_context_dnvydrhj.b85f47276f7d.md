@@ -1,3 +1,0 @@
-Calculation: Impulse close = close on the impulse timeframe, which may be higher or lower than the chart timeframe; use the last completed bar on historical chart bars and the still-forming bar in real time. When the impulse timeframe is lower, use the last available intrabar.
-Long: Impulse close < impulse close at the direction lookback
-Short: Impulse close > impulse close at the direction lookback

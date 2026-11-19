@@ -1,4 +1,0 @@
-Calculation: Opening range = the highest high and lowest low during a configurable intraday session window, reset each trading day. Calculate on the analysis timeframe using the last completed bar; if that timeframe is lower than the chart timeframe, use the last completed lower-timeframe bar within each chart bar.
-Calculation: Breakout direction = 0 at the start of each trading day. After the opening-range window ends, set it to 1 on the first analysis-timeframe bar whose close is above the opening-range high, or to -1 on the first such bar whose close is below the opening-range low. Retain that direction until the next trading day.
-Long: Breakout direction > 0
-Short: Breakout direction < 0

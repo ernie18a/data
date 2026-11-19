@@ -1,2 +1,0 @@
-Long: Higher-timeframe MACD line (bar still forming) > higher-timeframe MACD signal line (bar still forming)
-Short: Higher-timeframe MACD line (bar still forming) < higher-timeframe MACD signal line (bar still forming)

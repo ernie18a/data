@@ -1,2 +1,0 @@
-Enter long SPY when the 50-day simple moving average of the put/call ratio crosses above its 200-day simple moving average.
-Enter short SPY when the 50-day simple moving average of the put/call ratio crosses below its 200-day simple moving average.

@@ -1,7 +1,0 @@
-Calculation: Step line = On the indicator timeframe, let W be Williams %R plus 100. For each step size independently, initialize the previous lower band to positive infinity, the previous upper band to negative infinity, and the trend to zero. On each bar, set lower = W - 2 × step size and upper = W + 2 × step size. Set trend to +1 if W > previous upper band, or to -1 if W < previous lower band; otherwise retain the previous trend. If trend is +1, set lower = max(lower, previous lower band) and the step line = lower + step size. If trend is -1, set upper = min(upper, previous upper band) and the step line = upper - step size. Store both bands for the next bar. Calculate fast and slow step lines using a smaller and a larger step size, respectively. Use the last completed indicator bar and its preceding bar; the indicator timeframe can be higher or lower than the chart timeframe.
-Long: Fast step line > slow step line AND preceding fast step line <= preceding slow step line
-Short: Fast step line < slow step line AND preceding fast step line >= preceding slow step line
-Exit: short, fast step line > slow step line
-Exit: long, fast step line < slow step line
-Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
-Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

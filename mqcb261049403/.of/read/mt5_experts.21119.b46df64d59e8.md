@@ -1,5 +1,0 @@
-Calculation: Smoothed candle direction = compare the smoothed close of each indicator-timeframe bar with the smoothed open from the oldest bar in a rolling candle lookback; smooth open and close separately using the same selected moving-average method and parameters. Use the last completed indicator-timeframe bar and its predecessor; the indicator timeframe may be higher or lower than the chart timeframe.
-Long: Smoothed close >= lookback-oldest smoothed open AND previous bar's smoothed close < its lookback-oldest smoothed open
-Short: Smoothed close < lookback-oldest smoothed open AND previous bar's smoothed close >= its lookback-oldest smoothed open
-Exit: long, smoothed close < lookback-oldest smoothed open OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
-Exit: short, smoothed close >= lookback-oldest smoothed open OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

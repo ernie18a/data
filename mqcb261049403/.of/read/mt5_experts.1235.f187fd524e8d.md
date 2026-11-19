@@ -1,5 +1,0 @@
-Calculation: Extremum sum = On a configurable indicator timeframe, for each bar, set n and m to zero. Iterate from the current bar backward over the lookback window, including the current bar. If current high minus the iterated bar's high is greater than n, set n to that difference. Separately iterate over the same bars in the same order; if current low minus the iterated bar's low is less than m, set m to current high minus the iterated bar's low. The sum is n + m. The indicator timeframe may be the chart timeframe, higher, or lower. Use the last completed indicator bar by default; a configurable signal-bar offset may instead select the forming bar or an earlier completed bar.
-Long: Selected bar's Extremum sum > 0 AND preceding indicator bar's Extremum sum < 0
-Short: Selected bar's Extremum sum < 0 AND preceding indicator bar's Extremum sum > 0
-Exit: long, selected bar's Extremum sum < 0 OR low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance
-Exit: short, selected bar's Extremum sum > 0 OR high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance

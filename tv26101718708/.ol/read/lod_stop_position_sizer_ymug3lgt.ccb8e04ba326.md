@@ -1,2 +1,0 @@
-Calculation: LoD distance (%) = 100 × (close − low) / ATR, using the still-forming daily bar (higher timeframe on intraday charts, lower timeframe on charts above daily)
-Long: LoD distance (%) ≤ threshold

@@ -1,8 +1,0 @@
-Calculation: Support shelf = the most recent confirmed pivot low, provided its pivot bar is no older than the maximum shelf age; a pivot requires the same number of bars on each side.
-Calculation: Resistance shelf = the most recent confirmed pivot high, provided its pivot bar is no older than the maximum shelf age; a pivot requires the same number of bars on each side.
-Calculation: Selected side = the manually selected side, or, in automatic mode: bullish if only a support shelf exists; bearish if only a resistance shelf exists; if both exist and close >= longer-period EMA OR shorter-period EMA >= longer-period EMA, bullish when the absolute distance from close to support <= the absolute distance from close to resistance multiplied by an above-one factor, otherwise bearish; if both exist and neither trend comparison holds, bullish when the absolute distance from close to support < the absolute distance from close to resistance multiplied by a below-one factor, otherwise bearish.
-Calculation: Risk edge = selected shelf minus an ATR multiple for bullish defense, or selected shelf plus an ATR multiple for bearish defense; recalculate on each bar. A breach is latched until the selected shelf's pivot bar or selected side changes.
-Long: selected side = bullish AND support shelf exists.
-Short: selected side = bearish AND resistance shelf exists.
-Exit: long, selected side = bullish AND support shelf exists AND close < risk edge AND no breach has been latched for the current selected shelf and side.
-Exit: short, selected side = bearish AND resistance shelf exists AND close > risk edge AND no breach has been latched for the current selected shelf and side.

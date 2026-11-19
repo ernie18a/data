@@ -1,9 +1,0 @@
-Calculation: Volume profile = On each chart bar, use the current bar and preceding bars up to the lookback, with the bar count capped at the current zero-based bar index. Require the minimum bar count and a positive highest-high minus lowest-low range. Divide that range into equal price bins. For each positive-volume bar, either distribute its volume equally among all bins touched by its low-to-high range, or assign it entirely to its close's bin; use the close's bin for a zero-range bar. Clamp bin indices to the profile range.
-Calculation: Value area = Start at the lowest-index bin with maximum profile volume. Expand one adjacent bin at a time toward the larger adjacent volume, choosing the upper bin on a tie, until the configured fraction of total profile volume is included or no bins remain. The value area low is the lower edge of the lowest included bin; the value area high is the upper edge of the highest included bin.
-Calculation: Order flow = Average buy pressure and upper acceptance. Buy pressure is the percentage of positive window volume from bars whose close is at least their open. Upper acceptance is the percentage of profile volume outside the maximum-volume bin that is in bins above it. Use a neutral percentage for either component when its denominator is zero. The bullish and bearish flow thresholds lie respectively above and below neutral.
-Long: Close < value area low AND order flow > bearish flow threshold
-Long: Close > value area high AND order flow >= bullish flow threshold
-Long: Close crosses above value area high, using the current and previous bars' respective value area highs
-Short: Close < value area low AND order flow <= bearish flow threshold
-Short: Close > value area high AND order flow < bullish flow threshold
-Short: Close crosses below value area low, using the current and previous bars' respective value area lows

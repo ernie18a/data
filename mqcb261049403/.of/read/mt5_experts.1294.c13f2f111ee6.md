@@ -1,5 +1,0 @@
-Calculation: Smoothed directional indicator = Apply the following recurrence independently to MetaTrader 5 ADX's +DI and -DI. For raw indicator x at bar t, set intermediate y[t] = 2*x[t] + (a-2)*x[t-1] + (1-a)*y[t-1], and smoothed value s[t] = b*y[t] + (1-b)*s[t-1], using the same smoothing parameters a and b for both indicators. Initialize y and s to zero on the oldest bar. Calculate on a configurable timeframe that may be higher or lower than the chart timeframe; use the last completed bar by default, or the still-forming bar when configured, with an optional additional bar offset.
-Long: Smoothed +DI > smoothed -DI AND previous indicator bar's smoothed +DI <= previous indicator bar's smoothed -DI AND position side = flat.
-Short: Smoothed +DI < smoothed -DI AND previous indicator bar's smoothed +DI >= previous indicator bar's smoothed -DI AND position side = flat.
-Exit: long, smoothed +DI < smoothed -DI OR low <= entry price - enabled stop-loss distance OR high >= entry price + enabled take-profit distance.
-Exit: short, smoothed +DI > smoothed -DI OR high >= entry price + enabled stop-loss distance OR low <= entry price - enabled take-profit distance.

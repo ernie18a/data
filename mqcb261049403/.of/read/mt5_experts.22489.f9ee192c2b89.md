@@ -1,4 +1,0 @@
-Long: Positive Vortex Indicator crosses above negative Vortex Indicator on the long system's configurable chart, higher, or lower timeframe, using the last completed bar or the still-forming bar as configured.
-Short: Positive Vortex Indicator crosses below negative Vortex Indicator on the short system's independently configured chart, higher, or lower timeframe, using the last completed bar or the still-forming bar as configured.
-Exit: long, positive Vortex Indicator is below negative Vortex Indicator on the long system's configured timeframe and signal bar OR low <= entry price minus the enabled stop-loss distance OR high >= entry price plus the enabled take-profit distance.
-Exit: short, positive Vortex Indicator is above negative Vortex Indicator on the short system's configured timeframe and signal bar OR high >= entry price plus the enabled stop-loss distance OR low <= entry price minus the enabled take-profit distance.

@@ -1,1 +1,0 @@
-For gold, take a long position when the negative 10-year TIPS yield is above its moving average; otherwise, take a short position.

@@ -1,6 +1,0 @@
-Calculation: Oscillator = On the selected chart timeframe or a higher or lower timeframe, calculate Williams %R and its change over a momentum lookback. Smooth the change and its absolute value separately with the same moving-average method and first lookback, then smooth each result again with the same method and a longer second lookback. Divide the twice-smoothed change by the twice-smoothed absolute change and multiply by 100; use zero when the denominator is zero, then replace an exact zero with 0.000000001. Use the selected signal bar: by default the last completed bar, or the still-forming bar if configured.
-Calculation: Signal line = Smooth the oscillator using the same moving-average method and a longer signal lookback; replace an exact zero with 0.000000001. Use the same signal bar as the oscillator.
-Long: Oscillator > signal line AND oscillator on the preceding indicator bar <= signal line on the preceding indicator bar
-Short: Oscillator < signal line AND oscillator on the preceding indicator bar >= signal line on the preceding indicator bar
-Exit: long, oscillator < signal line OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
-Exit: short, oscillator > signal line OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

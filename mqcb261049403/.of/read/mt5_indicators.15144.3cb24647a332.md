@@ -1,7 +1,0 @@
-Calculation: Smoothed midpoint = a selectable moving average of the midpoint of the high of the bar with the highest selected OHLC field over one lookback and the low of the bar with the lowest independently selected OHLC field over another lookback; both lookbacks include the current bar. Calculate on the chart timeframe or on a higher timeframe using its still-forming bar; for the higher-timeframe version, retain the value sampled at the first chart bar of each higher-timeframe bar until the next higher-timeframe bar starts.
-Calculation: Change = current smoothed midpoint minus its previous value on the calculation timeframe.
-Calculation: Thresholds = population standard deviation of changes over a lookback including the current change, multiplied separately by two independently configurable coefficients; round each threshold and the current change to the configured price precision plus two decimal places.
-Long: Smoothed midpoint > previous smoothed midpoint.
-Short: Smoothed midpoint < previous smoothed midpoint.
-Long: (Change > first threshold AND Change <= second threshold) OR Change > second threshold.
-Short: (Change < -first threshold AND Change >= -second threshold) OR Change < -second threshold.

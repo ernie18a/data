@@ -1,1 +1,0 @@
-At 23:59, close all open positions and delete all pending orders.

@@ -1,4 +1,0 @@
-Calculation: First average = moving average of a selected bar price using the first smoothing method and lookback.
-Calculation: Second average = moving average of the first average using a separately selected smoothing method and shorter lookback.
-Long: First average > second average on the chart timeframe OR first average > second average on a higher timeframe, using the still-forming higher-timeframe bar sampled at its first chart bar and held until the next higher-timeframe bar.
-Short: First average < second average on the chart timeframe OR first average < second average on a higher timeframe, using the still-forming higher-timeframe bar sampled at its first chart bar and held until the next higher-timeframe bar.

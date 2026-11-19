@@ -1,4 +1,0 @@
-Long: Every one of the configured number of consecutive candles on the configured signal timeframe (higher or lower than the chart timeframe), ending at the last completed bar, has close > open
-Short: Every one of the configured number of consecutive candles on the configured signal timeframe (higher or lower than the chart timeframe), ending at the last completed bar, has close < open
-Exit: long, every one of the configured number of consecutive candles on the configured signal timeframe (higher or lower than the chart timeframe), ending at the last completed bar, has close < open
-Exit: short, every one of the configured number of consecutive candles on the configured signal timeframe (higher or lower than the chart timeframe), ending at the last completed bar, has close > open

@@ -1,5 +1,0 @@
-Use account-wide equity and balance in these decisions:
-
-- If equity exceeds starting capital by the configured target percentage, close every open account position if a position belonging to this strategy and instrument exists, then stop processing the tick.
-- During enabled trading months, weekdays, and hours, if partial closing is enabled and this strategy's aggregate floating profit on the instrument exceeds a configured multiple of balance-based risk, or falls below half that risk as a loss, partially close each matching position by the configured minimum-lot multiple, or by one minimum lot if its volume is no greater than that multiple.
-- If the daily loss-count limit is enabled, count each observed decrease in account balance, reset that count on a new daily bar, and stop processing the tick when the count reaches the applicable limit. Set the limit from the configured base or profit-day limits according to whether the previous one, two, or three daily realized profits on this instrument exceed progressively larger configured thresholds. Also stop processing when today's losing exit-deal count reaches that limit.

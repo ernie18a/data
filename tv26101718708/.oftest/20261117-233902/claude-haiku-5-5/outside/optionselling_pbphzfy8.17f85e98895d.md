@@ -1,4 +1,0 @@
-Calculation: Slope(x, n) = (x - x[n]) / n
-Calculation: InSession(w) = bar time is within session window w
-Short: crossunder(MA(fast source, fast length, fast type), MA(slow source, slow length, slow type)) AND (slope filter disabled OR (Slope(MA(fast source, fast length, fast type), slope lookback) < -fast slope threshold AND Slope(MA(slow source, slow length, slow type), slope lookback) < -slow slope threshold)) AND (intraday filter disabled OR InSession(session window)) AND no position open
-Exit: Short, intraday filter enabled AND forced close enabled AND NOT InSession(session window) AND InSession(session window)[1]

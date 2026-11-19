@@ -1,8 +1,0 @@
-Long: close < R1(T1, last completed bar) AND close > Pivot(T1, last completed bar)
-Long: close >= R1(T1, last completed bar) AND close < R2(T1, last completed bar)
-Long: close >= R2(T1, last completed bar) AND close < R3(T1, last completed bar)
-Long: close >= R3(T1, last completed bar)
-Short: close > S1(T1, last completed bar) AND close < Pivot(T1, last completed bar)
-Short: close <= R1(T1, last completed bar) AND close > R2(T1, last completed bar)
-Short: close <= R2(T1, last completed bar) AND close > R3(T1, last completed bar)
-Short: close <= S3(T1, last completed bar)

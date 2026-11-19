@@ -1,3 +1,0 @@
-Long: position side = flat AND open trades = 0 AND (date filter disabled OR bar datetime within configured date window) AND RSI of the last completed higher-timeframe bar < entry threshold
-Long: position side = long AND (date filter disabled OR bar datetime within configured date window) AND filled averaging orders < configured ladder length AND close <= base entry price × (1 − next averaging order's deviation); evaluate only the next unfilled ladder rung, with at most one averaging order per bar
-Exit: long, close >= volume-weighted average entry price × (1 + take-profit percentage)

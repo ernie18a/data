@@ -1,8 +1,0 @@
-Calculation: Bullish crossover = shorter-period moving average > longer-period moving average on the signal bar AND on the preceding bar AND shorter-period moving average < longer-period moving average two bars before the signal bar; both averages use the same selectable moving-average method and price source.
-Calculation: Bearish crossover = shorter-period moving average < longer-period moving average on the signal bar AND on the preceding bar AND shorter-period moving average > longer-period moving average two bars before the signal bar; both averages use the same selectable moving-average method and price source.
-Long: Bullish crossover on the chart timeframe.
-Short: Bearish crossover on the chart timeframe.
-Long: Bullish crossover on the selected signal bar of a selectable signal timeframe, which may be higher, lower, or the same as the chart timeframe; the selected bar may be the still-forming bar, the last completed bar, or an older completed bar.
-Short: Bearish crossover on the selected signal bar of a selectable signal timeframe, which may be higher, lower, or the same as the chart timeframe; the selected bar may be the still-forming bar, the last completed bar, or an older completed bar.
-Exit: long, the most recent crossover at or before the selected signal bar is bearish OR low <= entry price - enabled stop-loss distance OR high >= entry price + enabled take-profit distance.
-Exit: short, the most recent crossover at or before the selected signal bar is bullish OR high >= entry price + enabled stop-loss distance OR low <= entry price - enabled take-profit distance.

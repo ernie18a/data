@@ -1,8 +1,0 @@
-Calculation: Active window = date filter disabled OR chart bar datetime >= start datetime AND chart bar datetime <= end datetime.
-Calculation: Averaging threshold for order k = base entry price × (1 + first deviation × sum of step multiplier^i for i from 0 through k−1), with deviations expressed as fractions.
-Calculation: Average entry = total quote amount of the base entry and filled averaging orders / sum of each order's quote amount divided by its fill price. Fill the base entry and averaging orders at chart bar close; averaging order k has quote amount equal to the first averaging order amount × size multiplier^(k−1). Process at most one averaging order per bar, before evaluating exits.
-Calculation: Trailing minimum = lowest chart close since entry among active-window bars whose close <= the current average entry × (1 − take-profit fraction). Retain this minimum until exit, including on bars outside the active window.
-Short: Active window AND position is flat AND RSI of the last completed lower-timeframe bar < RSI threshold AND RSI of the preceding lower-timeframe bar >= RSI threshold.
-Short: Active window AND position is short AND number of filled averaging orders < maximum averaging order count AND chart close >= averaging threshold for the next unfilled order.
-Exit: short, Active window AND chart close >= average entry × (1 + stop-loss fraction).
-Exit: short, Active window AND trailing minimum exists AND chart close >= trailing minimum × (1 + trailing fraction).

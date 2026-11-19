@@ -1,3 +1,0 @@
-Long: absolute value of current bar open minus close two bars ago > price-distance threshold AND current short-period linear weighted moving average of typical price > current long-period linear weighted moving average of typical price AND low two bars ago < previous bar high
-Exit: long, current bar low <= entry-bar open minus stop-loss distance OR current bar high >= entry-bar open plus take-profit distance
-Exit: long, break-even stop enabled AND a bar open since entry minus entry price > activation distance AND current bar low <= entry price plus stop-offset distance

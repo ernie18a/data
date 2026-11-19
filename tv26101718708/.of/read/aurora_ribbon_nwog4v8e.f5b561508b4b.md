@@ -1,2 +1,0 @@
-Long: Any of the three independently configured moving averages is greater than or equal to its previous-bar value.
-Short: Any of the three independently configured moving averages is less than its previous-bar value.

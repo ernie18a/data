@@ -1,2 +1,0 @@
-Long: Close >= open of the current forming higher-timeframe bar, or current chart bar when the reference timeframe equals the chart timeframe.
-Short: Close < open of the current forming higher-timeframe bar, or current chart bar when the reference timeframe equals the chart timeframe.

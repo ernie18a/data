@@ -1,9 +1,0 @@
-Calculation: Trailing line = For selected OHLC-derived price P and percentage distance k, initialize direction as up if the second bar's close > open, otherwise down; initialize the line from the first bar's P multiplied by (1 − k/100) for up or (1 + k/100) for down. On each subsequent bar, if the previous direction is up and P < the previous line, switch down and set the line to P × (1 + k/100); otherwise remain up and set it to max(previous line, P × (1 − k/100)). If the previous direction is down and P > the previous line, switch up and set the line to P × (1 − k/100); otherwise remain down and set it to min(previous line, P × (1 + k/100)). Round each newly calculated line value to the price's decimal precision.
-Calculation: Ratio = 100 × (moving average of (100 × abs(P − trailing line) / P / k)) raised to a configurable exponent. Calculate on chart bars or on higher-timeframe bars, using the still-forming higher-timeframe bar or a selected completed higher-timeframe bar. The upper threshold is greater than the lower threshold.
-Calculation: Most recent direction = the direction of the most recent ratio threshold crossing under the selected entry or exit crossing mode; retain it until an opposite crossing occurs.
-Long: Entry crossing mode AND previous ratio <= upper threshold AND current ratio > upper threshold
-Long: Exit crossing mode AND previous ratio <= lower threshold AND current ratio > lower threshold
-Long: Higher-timeframe most recent direction = long
-Short: Entry crossing mode AND previous ratio >= lower threshold AND current ratio < lower threshold
-Short: Exit crossing mode AND previous ratio >= upper threshold AND current ratio < upper threshold
-Short: Higher-timeframe most recent direction = short

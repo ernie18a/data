@@ -1,1 +1,0 @@
-Long: current bar close > high of the last completed day AND previous bar close <= high of the last completed day

@@ -1,1 +1,0 @@
-Unable to extract a complete, reproducible framework from the supplied source. The script combines many selectable leading indicators and confirmation filters, and several require stateful calculations whose full definitions are necessary to reproduce its decisions.

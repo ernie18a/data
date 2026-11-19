@@ -1,6 +1,0 @@
-Calculation: Distance = either a fixed price distance or a multiplier times the exponential moving average of average true range.
-Calculation: Pivot stop = initialize to the close immediately before the first calculated bar. On each subsequent bar, let P be the previous pivot stop, C the current close, and Cprev the previous close. If C = P, use P; otherwise, if Cprev < P AND C < P, use min(P, C + Distance); otherwise, if Cprev > P AND C > P, use max(P, C - Distance); otherwise, if C > P, use C - Distance; otherwise, use C + Distance.
-Long: Current close > current pivot stop AND previous close <= previous pivot stop.
-Short: Current close < current pivot stop AND previous close >= previous pivot stop.
-Long: The chart bar is the first bar of a higher-timeframe bar AND the still-forming higher-timeframe close > its pivot stop AND the previous higher-timeframe close <= its pivot stop.
-Short: The chart bar is the first bar of a higher-timeframe bar AND the still-forming higher-timeframe close < its pivot stop AND the previous higher-timeframe close >= its pivot stop.

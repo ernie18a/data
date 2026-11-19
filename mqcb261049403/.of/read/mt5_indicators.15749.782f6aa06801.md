@@ -1,3 +1,0 @@
-Calculation: Filtered line = round the Jurik moving average of the Fast Adaptive Trend Line (FATL) of the selected OHLC-derived price, plus a fixed price offset, to a configurable price increment. Calculate on the chart timeframe or on a higher timeframe using its still-forming bar; for the higher-timeframe version, carry its current value and direction across chart bars until the next higher-timeframe bar begins.
-Long: The filtered line's most recent nonzero change is positive.
-Short: The filtered line's most recent nonzero change is negative.

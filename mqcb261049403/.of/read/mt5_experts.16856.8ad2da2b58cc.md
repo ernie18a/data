@@ -1,4 +1,0 @@
-Long: In direct mode, MFI on the selected higher or lower timeframe crosses above the lower threshold; OR in reverse mode, it crosses below the higher threshold. Use the last completed bar or the still-forming bar, according to the selected signal-bar setting, and compare it with its preceding bar.
-Short: In direct mode, MFI on the selected higher or lower timeframe crosses below the higher threshold; OR in reverse mode, it crosses above the lower threshold. Use the last completed bar or the still-forming bar, according to the selected signal-bar setting, and compare it with its preceding bar.
-Exit: long, the short-entry MFI condition is met OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
-Exit: short, the long-entry MFI condition is met OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

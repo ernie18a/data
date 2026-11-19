@@ -1,1 +1,0 @@
-Long: higher-timeframe close < 0.60 × higher-timeframe simple moving average, using the higher-timeframe bar still forming

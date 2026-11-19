@@ -1,3 +1,0 @@
-Calculation: Bar delta = (close − open) ÷ (high − low) × volume
-Long: high > low AND volume > average volume over its lookback × high-volume multiplier AND abs(close − open) ÷ (high − low) × 100 ≤ maximum body percentage AND bar delta < 0
-Short: high > low AND volume > average volume over its lookback × high-volume multiplier AND abs(close − open) ÷ (high − low) × 100 ≤ maximum body percentage AND bar delta > 0

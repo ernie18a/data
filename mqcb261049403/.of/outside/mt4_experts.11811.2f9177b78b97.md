@@ -1,1 +1,0 @@
-If the trading-hours filter and outside-hours closing are enabled, close all strategy-owned long and short positions when the server hour is outside the configured inclusive trading window. Do not open positions outside that window.

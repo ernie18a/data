@@ -1,1 +1,0 @@
-For each open-interest strike level, compare call and put open interest. If call open interest is greater, indicate long; if put open interest is greater, indicate short. Equal values give no directional indication.

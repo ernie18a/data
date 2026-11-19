@@ -1,3 +1,0 @@
-Calculation: Bull and bear counts = apply a linear weighted moving average twice to a selected OHLC-derived price, then apply the same selected smoothing method to the result at a sequence of increasing lookbacks with a constant step. On each bar, count how many smoothed series are strictly greater than their previous-bar values as the bull count; count all others, including equal values, as the bear count. Smooth each count separately using the same selected smoothing method and parameters to obtain the bull and bear values. Calculate either on the chart timeframe or on a higher timeframe using its bar still forming.
-Long: Bull value > bear value
-Short: Bull value < bear value

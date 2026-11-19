@@ -1,6 +1,0 @@
-Calculation: UpVolume(T1 bar) = if weighted wicks, volume * (upper wick + body + lower wick) / (2 * upper wick + body + 2 * lower wick) for an up bar, volume * (upper wick + lower wick) / (2 * upper wick + body + 2 * lower wick) for a down bar, otherwise 0; if not weighted, volume when close >= open, otherwise 0
-Calculation: DownVolume(T1 bar) = if weighted wicks, volume * (upper wick + lower wick) / (2 * upper wick + body + 2 * lower wick) for an up bar, volume * (upper wick + body + lower wick) / (2 * upper wick + body + 2 * lower wick) for a down bar, otherwise 0; if not weighted, volume when close < open, otherwise 0
-Calculation: RSI = 100 * RMA(abs(Source - Source[1]) * UpVolume when Source > Source[1], RSI length) / (RMA(abs(Source - Source[1]) * UpVolume when Source > Source[1], RSI length) + RMA(abs(Source - Source[1]) * DownVolume when Source < Source[1], RSI length)); UpVolume and DownVolume are summed over the T1 bars in each chart bar, using the T1 bar still forming in real time
-Calculation: RMA(x, L) = (x + (min(L, bar index) - 1) * RMA(x, L)[1]) / min(L, bar index)
-Long: RSI > 50 + 50 * Threshold OR (RSI > 50 - 50 * Threshold AND prior trend is long)
-Short: RSI < 50 - 50 * Threshold OR (RSI < 50 + 50 * Threshold AND prior trend is short)

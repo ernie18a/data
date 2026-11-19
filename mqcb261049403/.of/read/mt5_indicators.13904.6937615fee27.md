@@ -1,5 +1,0 @@
-Calculation: Directional state = the direction of the most recent nonzero signal; initially neither long nor short.
-Long: Close > close one indicator period ago AND positive directional indicator > negative directional indicator, using the same period AND directional state is not long.
-Short: Close < close one indicator period ago AND positive directional indicator < negative directional indicator, using the same period AND directional state is not short.
-Long: Directional state calculated by the preceding signal rules on the higher timeframe is long, using the still-forming higher-timeframe bar or a selected completed higher-timeframe bar.
-Short: Directional state calculated by the preceding signal rules on the higher timeframe is short, using the still-forming higher-timeframe bar or a selected completed higher-timeframe bar.

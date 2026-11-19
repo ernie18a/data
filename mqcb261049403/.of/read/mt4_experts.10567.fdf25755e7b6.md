@@ -1,4 +1,0 @@
-Calculation: Volatility count = at initialization, count bars in a separate timeframe whose high is above and low is below the midpoint of the previous chart bar's open and close; include the bar still forming and retain this count thereafter. The separate timeframe may be higher, lower, or equal to the chart timeframe.
-Calculation: Moving-average slope = smoothed moving average of median price minus its value on the preceding bar.
-Long: Volatility count < threshold AND moving-average slope on the last completed bar > 0 AND moving-average slope on an earlier completed bar < 0 AND RSI of median price on the last completed bar <= upper threshold AND last completed bar's close > open.
-Short: Volatility count < threshold AND moving-average slope on the last completed bar < 0 AND moving-average slope on the same earlier completed bar > 0 AND RSI of median price on the last completed bar >= lower threshold AND last completed bar's close < open.

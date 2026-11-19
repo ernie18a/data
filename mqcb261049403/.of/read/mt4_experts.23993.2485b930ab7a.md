@@ -1,2 +1,0 @@
-Short: At the open of a new chart bar, the last completed chart bar's short-period simple moving average of close < its long-period simple moving average of close AND the MACD main line on the last completed higher-timeframe bar > its signal line AND the MACD main line != 0
-Exit: short, low <= entry price - take-profit distance

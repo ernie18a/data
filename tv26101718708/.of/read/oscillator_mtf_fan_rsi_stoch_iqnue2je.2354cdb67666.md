@@ -1,9 +1,0 @@
-Calculation: Fan legs = Choose either RSI or stochastic. For RSI, calculate three RSIs of a selected price source using short, medium, and long lookbacks; each leg's signal is its own RSI's EMA, using the same EMA length for all legs. For stochastic, calculate three stochastic %K values using short, medium, and long lookbacks, smooth each with an SMA of the same length, and calculate each leg's signal as an SMA of its smoothed %K using the same signal length. Calculate each fan on the chart timeframe or a higher timeframe; for a higher timeframe use the bar still forming.
-Calculation: Fan ready = The zero-based bar index in the fan timeframe is at least the longest RSI lookback plus the RSI signal length, or, for stochastic, at least the longest stochastic lookback plus the %K smoothing length plus the signal smoothing length; all three signals must also be available.
-Calculation: Unanimous = Fan ready AND all three legs are above their respective signals OR fan ready AND all three legs are below their respective signals.
-Long: Fan ready AND any leg is above its signal.
-Short: Fan ready AND any leg is below its signal.
-Long: All three legs are above their signals AND the preceding fan-timeframe bar was not unanimous AND this transition flag was not true on the preceding chart bar.
-Short: All three legs are below their signals AND the preceding fan-timeframe bar was not unanimous AND this transition flag was not true on the preceding chart bar.
-Long: On the last completed fan-timeframe bar, all three legs were above their signals AND the preceding fan-timeframe bar was not unanimous AND this confirmed transition flag was not true on the preceding chart bar.
-Short: On the last completed fan-timeframe bar, all three legs were below their signals AND the preceding fan-timeframe bar was not unanimous AND this confirmed transition flag was not true on the preceding chart bar.

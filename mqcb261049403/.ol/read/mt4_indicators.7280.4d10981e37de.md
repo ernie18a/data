@@ -1,2 +1,0 @@
-Long: The short-, intermediate-, or long-lookback moving average crosses above another of the three, with equal values retaining the previous ordering.
-Short: The short-, intermediate-, or long-lookback moving average crosses below another of the three, with equal values retaining the previous ordering.

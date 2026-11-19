@@ -1,8 +1,0 @@
-Calculation: Typical price = (high + low + close) / 3.
-Calculation: EMA convergence = all six typical-price EMAs in a shorter-lookback group are equal OR all six typical-price EMAs in a longer-lookback group are equal; each group uses six distinct, increasing lookbacks, and every lookback in the longer group exceeds every lookback in the shorter group.
-Long: At the chart bar open, absolute difference between open and the close two bars ago > a price-distance threshold AND short-period linear-weighted moving average of typical price > long-period linear-weighted moving average of typical price AND low two bars ago < previous high AND previous chart-timeframe RSI of close > a threshold AND RSI of close on the forming higher-timeframe bar > RSI on the last completed higher-timeframe bar.
-Short: At the chart bar open, absolute difference between open and the previous close > a price-distance threshold AND short-period linear-weighted moving average of typical price < long-period linear-weighted moving average of typical price AND previous low < high two bars ago AND previous chart-timeframe RSI of close < a threshold AND RSI of close on the forming higher-timeframe bar < RSI on the last completed higher-timeframe bar.
-Exit: long, previous close <= previous lower Bollinger Band OR EMA convergence.
-Exit: short, previous close <= previous lower Bollinger Band OR EMA convergence.
-Exit: long, low <= entry price minus a stop-loss distance OR high >= entry price plus a take-profit distance.
-Exit: short, high >= entry price plus a stop-loss distance OR low <= entry price minus a take-profit distance.

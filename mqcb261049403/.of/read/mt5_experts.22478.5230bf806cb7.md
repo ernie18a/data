@@ -1,5 +1,0 @@
-Calculation: Breakout range = For each day after applying a configurable clock offset, take the highest high and lowest low of bars whose opening times fall in the first specified intraday window. From the start of the following window until the shifted day ends, add a configurable price distance to the high and subtract it from the low. Use chart-timeframe bars for the indicator markings; the trading system may instead use higher-timeframe bars, normally the last completed bar or optionally the bar still forming.
-Long: Close > breakout range upper boundary.
-Short: Close < breakout range lower boundary.
-Exit: long, close < breakout range lower boundary OR low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance.
-Exit: short, close > breakout range upper boundary OR high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance.

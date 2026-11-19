@@ -1,7 +1,0 @@
-Calculation: Smoothed oscillator = a configurable moving average of (RSI of a selected bar price + 100 × DeMarker) / 2; RSI and DeMarker use the same lookback. For the trading decisions, calculate it on the configurable indicator timeframe, which may be the chart timeframe or a higher or lower timeframe, using the last completed bar by default or the still-forming bar if configured. For histogram decisions, calculate it on the chart timeframe.
-Long: Trading oscillator on the selected signal bar > its previous bar AND its previous bar <= its bar before that
-Short: Trading oscillator on the selected signal bar < its previous bar AND its previous bar >= its bar before that
-Long: Chart oscillator > upper threshold OR (chart oscillator >= lower threshold AND chart oscillator <= upper threshold AND chart oscillator >= its previous bar)
-Short: Chart oscillator < lower threshold OR (chart oscillator >= lower threshold AND chart oscillator <= upper threshold AND chart oscillator < its previous bar)
-Exit: long, trading oscillator on the selected signal bar < its previous bar OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
-Exit: short, trading oscillator on the selected signal bar > its previous bar OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

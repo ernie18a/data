@@ -1,6 +1,0 @@
-Calculation: Input price = a selectable bar price: open, high, low, close, (high + low)/2, (high + low + close)/3, (high + low + 2 × close)/4, (open + close)/2, (open + high + low + close)/4, or a direction-dependent price. For the direction-dependent choices, use high, (high + close)/2, or (2 × high + low + close)/2 − (high + low)/2 when close > open; low, (low + close)/2, or (high + 2 × low + close)/2 − (high + low)/2 respectively when close < open; otherwise use close for the first two choices and close/2 for the third.
-Calculation: Fast and slow rates = (current smoothed input price − previous smoothed input price) / previous smoothed input price, or zero if the previous smoothed value is zero. Apply the same selectable smoothing method and smoothing parameter to both, with a shorter smoothing length for the fast rate and a longer length for the slow rate. Calculate on the chart timeframe or on a higher timeframe using its still-forming bar.
-Long: Fast rate > slow rate
-Long: Fast rate > 0 AND fast rate != previous fast rate
-Short: Fast rate < slow rate
-Short: Fast rate < 0 AND fast rate != previous fast rate

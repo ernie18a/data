@@ -1,2 +1,0 @@
-Long: simple moving average of volume over a lookback > 0 AND volume / simple moving average of volume over a lookback >= threshold AND close >= open
-Short: simple moving average of volume over a lookback > 0 AND volume / simple moving average of volume over a lookback >= threshold AND close < open

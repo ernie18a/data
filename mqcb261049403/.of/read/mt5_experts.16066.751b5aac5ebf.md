@@ -1,5 +1,0 @@
-Calculation: PPO = (shorter-period moving average of the selected price − longer-period moving average of the selected price) / longer-period moving average of the selected price; use 1 as the denominator if the longer-period average is zero. The signal line is a separately parameterized moving average of PPO. Calculate both on the selected indicator timeframe, which may be the chart timeframe or a higher or lower timeframe; use the last completed indicator bar and its predecessor, or optionally the still-forming indicator bar and its predecessor.
-Long: PPO > signal line AND previous PPO <= previous signal line
-Short: PPO < signal line AND previous PPO >= previous signal line
-Exit: long, PPO < signal line OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance
-Exit: short, PPO > signal line OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance

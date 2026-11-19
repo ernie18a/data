@@ -1,7 +1,0 @@
-Calculation: Signal-bar range bounds = maximum of the current low and the highs over the lookback including the current bar, and minimum of the current close and the lows over the same lookback.
-Calculation: Trend state = initially bearish; on each signal-timeframe bar, set bearish if close < lower bound + (upper bound - lower bound) × (33 - risk parameter) / 100, then set bullish if close > upper bound - (upper bound - lower bound) × (33 - risk parameter) / 100; otherwise retain the preceding state. The signal timeframe is independently selectable as higher or lower than the chart timeframe; use the last completed signal-timeframe bar or the still-forming bar according to the signal-bar setting.
-Calculation: Latest signal direction = direction of the most recent change in trend state, including the selected signal bar; undefined until the first change.
-Long: Trend state = bullish AND preceding signal-timeframe bar's trend state = bearish
-Short: Trend state = bearish AND preceding signal-timeframe bar's trend state = bullish
-Exit: long, latest signal direction = bearish OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
-Exit: short, latest signal direction = bullish OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

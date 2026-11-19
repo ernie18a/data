@@ -1,1 +1,0 @@
-Unable to produce a complete framework from the supplied code: the bullish and bearish breakout markings depend on the full stateful range-zone detection, refinement, merging, and continuation logic. A breakout-only condition would not reproduce the author’s decisions.

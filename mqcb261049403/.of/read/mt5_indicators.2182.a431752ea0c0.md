@@ -1,4 +1,0 @@
-Calculation: Smoothed stochastic lines = apply the same selected smoothing method, length, and phase independently to the main and signal lines of a slow stochastic oscillator; use the same stochastic parameters for each timeframe.
-Calculation: Timeframe trend = on the first chart bar of each selected higher timeframe bar, compare the smoothed stochastic lines using the higher timeframe bar still forming; retain the previous trend when they are equal and carry the trend forward until the next higher timeframe bar. Apply the same rule on the chart timeframe when selected.
-Long: Chart-timeframe smoothed stochastic main line > signal line OR any selected timeframe trend's most recent unequal comparison has main line > signal line.
-Short: Chart-timeframe smoothed stochastic main line < signal line OR any selected timeframe trend's most recent unequal comparison has main line < signal line.

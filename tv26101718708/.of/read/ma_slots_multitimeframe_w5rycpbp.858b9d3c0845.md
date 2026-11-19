@@ -1,2 +1,0 @@
-Long: The first selected chart-timeframe moving average is greater than or equal to the second selected chart-timeframe moving average.
-Short: The first selected chart-timeframe moving average is less than the second selected chart-timeframe moving average.

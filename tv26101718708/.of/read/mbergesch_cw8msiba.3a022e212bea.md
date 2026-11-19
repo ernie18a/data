@@ -1,5 +1,0 @@
-Long: Close > any of six SMAs with strictly increasing lookbacks, or close > an EMA whose lookback is between the shortest and second-shortest SMA lookbacks
-Short: Close < any of six SMAs with strictly increasing lookbacks, or close < an EMA whose lookback is between the shortest and second-shortest SMA lookbacks
-Long: Shortest-lookback SMA > EMA, or EMA > second-shortest-lookback SMA, or second-shortest-lookback SMA > second-longest-lookback SMA
-Short: Shortest-lookback SMA <= EMA, or EMA <= second-shortest-lookback SMA, or second-shortest-lookback SMA <= second-longest-lookback SMA
-Calculation: Moving averages = SMAs and EMA of close, calculated either on the chart timeframe or on another timeframe; use the last completed bar when that timeframe is higher, or the last completed intrabar when it is lower.

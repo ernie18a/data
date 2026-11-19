@@ -1,2 +1,0 @@
-Long: ROC(T1 close, ROC lookback) < -StandardDeviation(ROC(T1 close, ROC lookback), volatility lookback) × entry multiplier, with both calculations on chart bars using T1 close values from the bar still forming
-Exit: long, ROC(T1 close, ROC lookback) > StandardDeviation(ROC(T1 close, ROC lookback), volatility lookback) × exit multiplier, with both calculations on chart bars using T1 close values from the bar still forming

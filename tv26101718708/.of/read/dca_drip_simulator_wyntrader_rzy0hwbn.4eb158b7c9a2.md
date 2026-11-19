@@ -1,1 +1,0 @@
-Long: The date is the first trading date on or after the configured start date OR the date is the first trading date of a subsequent configured calendar period; AND the date is within the configured simulation period AND that date's opening price > 0.

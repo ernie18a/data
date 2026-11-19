@@ -1,8 +1,0 @@
-Long: Chart-timeframe moving average > its previous-bar value AND moving average - ATR != 0
-Short: Chart-timeframe moving average < its previous-bar value AND moving average + ATR != 0
-Long: On a configurable higher or lower timeframe, the selected bar's moving average > its previous-bar value AND moving average - ATR != 0 AND the previous bar's moving average < its own previous-bar value AND its moving average + ATR != 0; use the last completed bar or the still-forming bar as selected
-Short: On a configurable higher or lower timeframe, the selected bar's moving average < its previous-bar value AND moving average + ATR != 0 AND the previous bar's moving average > its own previous-bar value AND its moving average - ATR != 0; use the last completed bar or the still-forming bar as selected
-Exit: long, on the same configurable higher or lower timeframe and selected bar as the entry calculation, moving average < its previous-bar value AND moving average + ATR != 0
-Exit: short, on the same configurable higher or lower timeframe and selected bar as the entry calculation, moving average > its previous-bar value AND moving average - ATR != 0
-Exit: long, stop-loss distance > 0 AND low <= entry price - stop-loss distance OR take-profit distance > 0 AND high >= entry price + take-profit distance
-Exit: short, stop-loss distance > 0 AND high >= entry price + stop-loss distance OR take-profit distance > 0 AND low <= entry price - take-profit distance

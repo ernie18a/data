@@ -1,4 +1,0 @@
-Long: On the signal timeframe, the close preceding the last completed bar > that bar's open + gap threshold.
-Short: On the signal timeframe, the close preceding the last completed bar < that bar's open - gap threshold.
-Exit: long, the most recent qualifying gap on or before the last completed signal-timeframe bar has preceding close < gap bar open - gap threshold OR the chart bar low <= entry price - stop-loss distance OR the chart bar high >= entry price + take-profit distance.
-Exit: short, the most recent qualifying gap on or before the last completed signal-timeframe bar has preceding close > gap bar open + gap threshold OR the chart bar high >= entry price + stop-loss distance OR the chart bar low <= entry price - take-profit distance.

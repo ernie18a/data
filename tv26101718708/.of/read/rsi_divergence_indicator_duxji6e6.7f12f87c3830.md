@@ -1,8 +1,0 @@
-Calculation: Confirmed RSI pivot low = an RSI value at a bar that is less than or equal to each RSI value in a configurable number of preceding bars and strictly less than each RSI value in a configurable number of following bars; it is confirmed on the last following bar. A confirmed RSI pivot high reverses these inequalities.
-Calculation: Pivot separation = the number of bars between the current and immediately previous confirmed RSI pivots of the same type, minus one.
-Long: Shorter-period RSI >= longer-period RSI
-Short: Shorter-period RSI < longer-period RSI
-Long: A new RSI pivot low is confirmed AND pivot separation is within the inclusive configured range AND the new pivot RSI > the previous pivot RSI AND the low at the new pivot < the low at the previous pivot
-Long: A new RSI pivot low is confirmed AND pivot separation is within the inclusive configured range AND the new pivot RSI < the previous pivot RSI AND the low at the new pivot > the low at the previous pivot
-Short: A new RSI pivot high is confirmed AND pivot separation is within the inclusive configured range AND the new pivot RSI < the previous pivot RSI AND the high at the new pivot > the high at the previous pivot
-Short: A new RSI pivot high is confirmed AND pivot separation is within the inclusive configured range AND the new pivot RSI > the previous pivot RSI AND the high at the new pivot < the high at the previous pivot

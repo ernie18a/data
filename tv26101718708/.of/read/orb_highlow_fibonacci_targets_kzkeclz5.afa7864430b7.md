@@ -1,3 +1,0 @@
-Calculation: Opening-range high and low = the highest high and lowest low from the session start through the opening-range duration, excluding bars starting at or after its end. Use chart-timeframe bars when their duration divides the opening-range duration and is no longer than it; otherwise use the last completed bar of the fallback timeframe, which may be higher or lower than the chart timeframe. Reset at each session start.
-Long: The current bar is within the session AND the opening range is complete AND close crosses above the opening-range high.
-Short: The current bar is within the session AND the opening range is complete AND close crosses below the opening-range low.

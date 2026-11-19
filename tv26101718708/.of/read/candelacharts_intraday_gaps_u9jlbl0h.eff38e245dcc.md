@@ -1,2 +1,0 @@
-Long: A new higher-timeframe bar begins AND its open > the last completed higher-timeframe bar’s selected reference, either close or high.
-Short: A new higher-timeframe bar begins AND its open < the last completed higher-timeframe bar’s selected reference, either close or low.

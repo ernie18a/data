@@ -1,3 +1,0 @@
-Calculation: Double-smoothed average = apply a selected moving-average method to a selected OHLC-derived price, then apply a second independently parameterized moving-average method to the result. Calculate on the chart timeframe or a higher timeframe; for a higher timeframe, use the bar still forming. Sample the result only on the first chart bar of each calculation-timeframe bar.
-Long: The chart bar is the first bar of a calculation-timeframe bar AND the sampled double-smoothed average is greater than its sample on the preceding calculation-timeframe bar.
-Short: The chart bar is the first bar of a calculation-timeframe bar AND the sampled double-smoothed average is less than its sample on the preceding calculation-timeframe bar.

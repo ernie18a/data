@@ -1,9 +1,0 @@
-Calculation: Ultra-linear smoothing = apply three successive stages to the input; in each stage update a = (1-k)*a + k*input and b = k*a + (1-k)*b, then output 1.5*a - 0.5*b as the next stage's input; k = 3/(length+2), and initialize each stage's a and b to its first input.
-Calculation: Smoothed oscillator = Jurik moving average of the ratio of ultra-linear-smoothed selected price change to ultra-linear-smoothed absolute price change, using the same length for both; clamp the ratio to [-1,1] before averaging, and treat a zero denominator as unavailable.
-Calculation: Trend cycle = subtract the longer-length smoothed oscillator from the shorter-length smoothed oscillator. Normalize the difference over its rolling cycle lookback to [0,100], retaining the previous normalized value if the range is zero; recursively smooth it with weight 0.5. Normalize that smoothed series over the same lookback to [-100,100], retaining the previous trend cycle if the range is zero; recursively smooth the result with weight 0.5. Calculate on the higher timeframe, using the last completed bar for the trading decisions; the forming bar may be selected instead.
-Long: Trend cycle > upper threshold
-Long: Trend cycle > upper threshold AND previous trend cycle <= upper threshold
-Short: Trend cycle < lower threshold
-Short: Trend cycle < lower threshold AND previous trend cycle >= lower threshold
-Exit: long, trend cycle < lower threshold OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
-Exit: short, trend cycle > upper threshold OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

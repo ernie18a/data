@@ -1,2 +1,0 @@
-Long: rate of change of NYSE Down Ticks on T1 over ROC length < -standard deviation of that rate of change over volatility lookback × entry multiplier
-Exit: long, rate of change of NYSE Down Ticks on T1 over ROC length > standard deviation of that rate of change over volatility lookback × exit multiplier

@@ -1,6 +1,0 @@
-Calculation: Adaptive bounds = on each signal-timeframe bar, set lookback to ceiling of an adjustable constant divided by the previous bar's ADX; find the highest high and lowest low over that many bars including the signal bar; lower bound = lowest low + an adjustable fraction of the range, upper bound = highest high - the same fraction of the range. The signal timeframe may be higher or lower than the chart timeframe; use its last completed bar, or its forming bar when configured.
-Calculation: Trend = initially unset; on each signal-timeframe bar set it to -1 if close < lower bound, then set it to +1 if close > upper bound; otherwise retain its previous value. The first established trend produces no signal.
-Long: Signal-bar close > upper bound AND previous established trend = -1
-Short: Signal-bar close < lower bound AND signal-bar close <= upper bound AND previous established trend = +1
-Exit: long, the most recent long or short signal is short OR low <= entry price - adjustable stop distance OR high >= entry price + adjustable profit distance
-Exit: short, the most recent long or short signal is long OR high >= entry price + adjustable stop distance OR low <= entry price - adjustable profit distance

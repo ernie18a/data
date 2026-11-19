@@ -1,2 +1,0 @@
-Enter long when the current total cryptocurrency market capitalization exceeds its highest close over the prior lookback period, during the configured date window.
-Enter short when the current total cryptocurrency market capitalization is below its lowest close over the prior lookback period, during the configured date window.

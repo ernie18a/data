@@ -1,7 +1,0 @@
-Calculation: Down-candle volume = if close < open, volume × (high − low + open − close) / (2 × (high − low)); if close > open, volume × (high − low − close + open) / (2 × (high − low)); otherwise 0. Replace zero volume with 1; the calculation is undefined when high = low.
-Calculation: Up-candle volume = if close > open, volume × (high − low + close − open) / (2 × (high − low)); if close < open, volume × (high − low − open + close) / (2 × (high − low)); otherwise 0. Replace zero volume with 1; the calculation is undefined when high = low.
-Calculation: Smoothed down-candle volume and smoothed up-candle volume = apply the same moving-average method and parameters independently to the respective volume series on a higher timeframe, using the last completed bar or, if configured, the bar still forming. Compare each selected bar with its preceding bar.
-Long: smoothed up-candle volume > smoothed down-candle volume AND preceding smoothed up-candle volume <= preceding smoothed down-candle volume
-Short: smoothed up-candle volume < smoothed down-candle volume AND preceding smoothed up-candle volume >= preceding smoothed down-candle volume
-Exit: long, smoothed up-candle volume < smoothed down-candle volume OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance
-Exit: short, smoothed up-candle volume > smoothed down-candle volume OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance

@@ -1,5 +1,0 @@
-Calculation: Rolling volume-weighted close = sum(close × volume) / sum(volume) over a trailing lookback; if summed volume is zero, use the preceding value. Calculate on a configurable higher or lower timeframe, using the last completed bar or, if configured, the still-forming bar. Let current, previous, and prior refer to consecutive values ending at the selected bar.
-Long: current rolling volume-weighted close > previous rolling volume-weighted close AND prior rolling volume-weighted close > previous rolling volume-weighted close
-Short: current rolling volume-weighted close < previous rolling volume-weighted close AND prior rolling volume-weighted close < previous rolling volume-weighted close
-Exit: long, current rolling volume-weighted close < previous rolling volume-weighted close OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance
-Exit: short, current rolling volume-weighted close > previous rolling volume-weighted close OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance

@@ -1,2 +1,0 @@
-Long: Bar opening time is within either of two configured session windows in the configured timezone AND close > open
-Short: Bar opening time is within either of two configured session windows in the configured timezone AND close < open

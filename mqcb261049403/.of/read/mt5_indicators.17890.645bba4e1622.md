@@ -1,6 +1,0 @@
-Calculation: Applied price = a selectable price series: open, high, low, close, (high + low)/2, (high + low + close)/3, (high + low + 2 × close)/4, (open + close)/2, or (open + high + low + close)/4; alternatively, use high when close > open, low when close < open, and close otherwise; or use (high + close)/2 when close > open, (low + close)/2 when close < open, and close otherwise.
-Calculation: Range trend = initialize upper and lower levels to the applied price immediately before the first eligible bar and trend to 0. On each subsequent bar, if applied price > prior upper level + range, set upper level to applied price, lower level to applied price − range, and trend to 1; otherwise, if applied price < prior lower level − range, set lower level to applied price, upper level to applied price + range, and trend to −1; otherwise retain the prior levels and trend. Range is a configurable price distance. The first eligible bar has sufficient history for the indicator's ATR lookback.
-Long: Chart-timeframe range trend = 1 AND previous chart-timeframe range trend = −1
-Short: Chart-timeframe range trend = −1 AND previous chart-timeframe range trend = 1
-Long: Range trend calculated on the still-forming higher-timeframe bar = 1
-Short: Range trend calculated on the still-forming higher-timeframe bar = −1

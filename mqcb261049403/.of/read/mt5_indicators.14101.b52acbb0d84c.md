@@ -1,4 +1,0 @@
-Long: Chart-timeframe TRIX of close > chart-timeframe TRIX of open, using the same lookback
-Short: Chart-timeframe TRIX of close < chart-timeframe TRIX of open, using the same lookback
-Long: Higher-timeframe TRIX of close >= higher-timeframe TRIX of open, using the same lookback and the still-forming higher-timeframe bar sampled at its first chart bar and held until the next higher-timeframe bar
-Short: Higher-timeframe TRIX of close < higher-timeframe TRIX of open, using the same lookback and the still-forming higher-timeframe bar sampled at its first chart bar and held until the next higher-timeframe bar

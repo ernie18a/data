@@ -1,4 +1,0 @@
-Calculation: Internal bar strength = (close - low) / (high - low).
-Long: The last completed decision-timeframe bar is dated Monday AND its close < the close of the most recent preceding bar not dated Saturday or Sunday AND no position is open AND (the internal bar strength filter is disabled OR (high > low AND internal bar strength <= its threshold)) AND (the moving-average filter is disabled OR close < the simple moving average of closes ending with that bar). Use the decision timeframe as the chart timeframe, or aggregate a higher timeframe from chart bars; evaluate only when a decision-timeframe bar completes, using its server-time date.
-Exit: long, the last completed decision-timeframe bar is dated Wednesday, Thursday, Friday, Saturday, or Sunday.
-Exit: long, the chart bar low <= entry price × (1 - stop-loss percentage / 100).

@@ -1,4 +1,0 @@
-Calculation: CPR = from the last completed higher-timeframe bar, pivot = (high + low + close) / 3, first edge = (high + low) / 2, second edge = 2 × pivot − first edge, top = max(first edge, second edge), bottom = min(first edge, second edge), midpoint = (top + bottom) / 2.
-Calculation: Anchor open = open of the first chart bar in the current, still-forming higher-timeframe bar.
-Long: CPR exists AND (selected side = bullish OR (selected side = automatic AND (close > CPR top OR (close >= CPR bottom AND close <= CPR top AND (anchor open > CPR midpoint OR (anchor open = CPR midpoint AND close >= CPR midpoint))))).
-Short: CPR exists AND (selected side = bearish OR (selected side = automatic AND (close < CPR bottom OR (close >= CPR bottom AND close <= CPR top AND (anchor open < CPR midpoint OR (anchor open = CPR midpoint AND close < CPR midpoint))))).

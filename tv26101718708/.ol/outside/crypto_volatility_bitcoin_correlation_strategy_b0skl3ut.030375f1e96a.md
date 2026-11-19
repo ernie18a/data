@@ -1,1 +1,0 @@
-Go long when a Bitcoin volatility measure—the gap between the rolling highest Bitcoin close and current Bitcoin low, scaled by that high—rises, an external Bitcoin volatility index rises, and Bitcoin is above its exponential moving average. Exit the long when Bitcoin falls below that average.

@@ -1,7 +1,0 @@
-Calculation: Fisher oscillator = On the indicator timeframe, for each bar let H and L be the highest high and lowest low over a lookback including that bar, with H raised to L plus a minimum range if H - L is smaller than that range. Let location = 2 * (((high + low) / 2 - L) / (H - L)) - 1. Recursively smooth location as S = price-smoothing factor * previous S + (1 - price-smoothing factor) * location, starting S at zero. Clamp S to [-0.99, 0.99] for the transform T = ln((1 + S) / (1 - S)); retain the unclamped S for the next bar. Recursively calculate the oscillator as F = index-smoothing factor * previous F + (1 - index-smoothing factor) * T, starting F at zero. Use the last completed indicator bar and its predecessor; the indicator timeframe may be higher or lower than the chart timeframe.
-Long: F > 0 AND F > upper threshold AND (previous F <= 0 OR previous F <= upper threshold)
-Short: F < 0 AND F < lower threshold AND (previous F >= 0 OR previous F >= lower threshold)
-Exit: long, F < 0
-Exit: short, F > 0
-Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
-Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

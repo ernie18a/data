@@ -1,4 +1,0 @@
-Long: On the chart timeframe or the still-forming higher-timeframe bar, the shorter-period moving average > the longer-period moving average AND on the preceding bar the shorter-period moving average <= the longer-period moving average.
-Short: On the chart timeframe or the still-forming higher-timeframe bar, the shorter-period moving average <= the longer-period moving average AND on the preceding bar the shorter-period moving average >= the longer-period moving average.
-Long: On the higher timeframe, the most recent long crossover occurred more recently than the most recent short crossover, or no short crossover has occurred; include the still-forming bar.
-Short: On the higher timeframe, the most recent short crossover occurred more recently than the most recent long crossover, or no long crossover has occurred; include the still-forming bar.

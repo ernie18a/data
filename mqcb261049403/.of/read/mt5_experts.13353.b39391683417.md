@@ -1,7 +1,0 @@
-Calculation: Composite moving average = smooth the weighted sum of ten moving averages of a selected OHLC-derived price, using the same moving-average method with successively longer lookbacks and independently adjustable weights; the final smoothing method and lookback are adjustable.
-Long: Chart-timeframe composite moving average > its previous-bar value.
-Short: Chart-timeframe composite moving average < its previous-bar value.
-Long: On the higher or lower indicator timeframe, the selected completed bar's composite moving average > the preceding bar's value AND the value two bars before the selected bar > the preceding bar's value.
-Short: On the higher or lower indicator timeframe, the selected completed bar's composite moving average < the preceding bar's value AND the value two bars before the selected bar < the preceding bar's value.
-Exit: long, on the higher or lower indicator timeframe, the selected completed bar's composite moving average < the preceding bar's value OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
-Exit: short, on the higher or lower indicator timeframe, the selected completed bar's composite moving average > the preceding bar's value OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

@@ -1,7 +1,0 @@
-Calculation: Input price = a selected bar price: open, high, low, close, (high + low)/2, (high + low + close)/3, (high + low + 2 × close)/4, (open + close)/2, (open + high + low + close)/4, or one of: high if close > open, low if close < open, otherwise close; (high + close)/2 if close > open, (low + close)/2 if close < open, otherwise close; or (X - low + X - high)/2, where X = (high + low + close + Y)/2 and Y is low if close < open, high if close > open, otherwise close.
-Calculation: Main line = linear regression endpoint of input price over a lookback, using the current selected bar and preceding bars.
-Calculation: Signal line = previous bar's main line + 2/(signal period + 1) × (current main line - previous bar's main line). Both lines use the chart timeframe or a selected higher or lower timeframe; evaluate either its last completed bar or its still-forming bar, with the preceding bar used for prior values.
-Long: Main line > signal line AND previous main line <= previous signal line.
-Short: Main line < signal line AND previous main line >= previous signal line.
-Exit: long, main line < signal line OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
-Exit: short, main line > signal line OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

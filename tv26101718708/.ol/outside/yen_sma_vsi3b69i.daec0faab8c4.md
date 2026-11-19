@@ -1,1 +1,0 @@
-For credit spreads, allow a trade only when the traded price is between the upper and lower bands around its simple moving average.

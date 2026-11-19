@@ -1,6 +1,0 @@
-Calculation: Volume oscillator = on a selectable higher, lower, or chart timeframe, using the last completed bar or optionally the forming bar, let up volume = (volume + (close - open) / price point size) / 2 and down volume = volume - up volume. Smooth each with the same moving-average method and first-stage lookback, then smooth each result with the same method and second-stage lookback. Let the volume index = 100 × (smoothed up volume - smoothed down volume) / (smoothed up volume + smoothed down volume), or zero when the denominator is zero. Smooth the volume index successively with three independently selectable lookbacks using the same moving-average method to obtain the oscillator.
-Calculation: Oscillator signal = the same moving-average method applied to the volume oscillator with a separate lookback.
-Long: Volume oscillator > oscillator signal AND previous indicator-timeframe bar's volume oscillator <= its oscillator signal
-Short: Volume oscillator < oscillator signal AND previous indicator-timeframe bar's volume oscillator >= its oscillator signal
-Exit: long, volume oscillator < oscillator signal OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
-Exit: short, volume oscillator > oscillator signal OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

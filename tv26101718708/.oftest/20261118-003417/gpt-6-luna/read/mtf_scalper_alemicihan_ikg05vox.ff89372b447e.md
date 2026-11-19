@@ -1,4 +1,0 @@
-Long: flat AND close > EMA(close, lookback, T1, last completed bar) AND close > EMA(close, lookback, T2, last completed bar) AND close > EMA(close, lookback, T3, last completed bar) AND Stochastic RSI K crosses above Stochastic RSI D
-Short: flat AND close < EMA(close, lookback, T1, last completed bar) AND close < EMA(close, lookback, T2, last completed bar) AND close < EMA(close, lookback, T3, last completed bar) AND Stochastic RSI K crosses below Stochastic RSI D
-Exit: long, low <= entry price - ATR(lookback) at entry signal bar * stop multiplier OR high >= entry price + ATR(lookback) at entry signal bar * target multiplier
-Exit: short, high >= entry price + ATR(lookback) at entry signal bar * stop multiplier OR low <= entry price - ATR(lookback) at entry signal bar * target multiplier

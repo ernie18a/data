@@ -1,8 +1,0 @@
-Calculation: Higher-timeframe volume nodes = For the higher-timeframe bar still forming, reset both volume maps at its start. On each chart bar, round (high + low + close) / 3 to the nearest price-bin width and add volume to that bin in the upper map if the unrounded value is at least the higher-timeframe open, otherwise in the lower map. Each node is the bin whose cumulative volume first strictly exceeds the previous maximum for its map. After updating the maps, if both nodes exist and low <= lower node AND close > upper node, clear the upper map and node; otherwise, if both nodes exist and high >= upper node AND close < lower node, clear the lower map and node. Evaluate breakout decisions using the nodes before this clearing. The bin width is a parameter, either fixed or calculated at the start of the higher-timeframe bar as a price increment multiplied by max(1, round((last completed higher-timeframe high - low) / price increment / row-count parameter)).
-Long: close >= open of the higher-timeframe bar still forming
-Long: low < last completed higher-timeframe low AND previous chart-bar low >= last completed higher-timeframe low
-Long: lower and upper higher-timeframe volume nodes exist AND low <= lower node AND close > upper node
-Short: close < open of the higher-timeframe bar still forming
-Short: current chart bar is after the first chart bar of the higher-timeframe bar still forming AND its high so far <= its open AND its low so far < its open
-Short: high > last completed higher-timeframe high AND previous chart-bar high <= last completed higher-timeframe high
-Short: lower and upper higher-timeframe volume nodes exist AND high >= upper node AND close < lower node

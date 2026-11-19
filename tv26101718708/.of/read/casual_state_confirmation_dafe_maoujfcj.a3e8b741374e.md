@@ -1,6 +1,0 @@
-Calculation: Wavelet approximations = Apply a four-level cascaded stationary wavelet transform to close using the selected wavelet family's low-pass filter. At level j, filter the previous level's raw approximation, or close for the first level, with coefficient lags spaced 2^(j-1) bars apart; replace unavailable history with zero. Smooth each raw approximation with an EMA whose length is j times the base smoothing length.
-Calculation: Entry risk distance = ATR at entry multiplied by the stop-distance parameter.
-Long: First wavelet approximation > second wavelet approximation AND second > third AND third > fourth.
-Short: First wavelet approximation < second wavelet approximation AND second < third AND third < fourth.
-Exit: long, low <= entry price - entry risk distance OR high >= entry price + entry risk distance multiplied by the second target parameter.
-Exit: short, high >= entry price + entry risk distance OR low <= entry price - entry risk distance multiplied by the second target parameter.

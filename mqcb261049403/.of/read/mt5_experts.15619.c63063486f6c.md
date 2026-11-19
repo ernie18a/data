@@ -1,6 +1,0 @@
-Calculation: Channel bounds = apply the same selected moving-average method and parameters separately to high and low, then add the same positive price offset to both averages. If one-way movement is enabled and the previous trend is up, replace the lower bound with the greater of its current and previous values; if the previous trend is down, replace the upper bound with the lesser of its current and previous values. Use a higher, lower, or identical indicator timeframe relative to the chart timeframe, with the last completed indicator bar by default; optionally use the forming indicator bar or an older completed indicator bar.
-Calculation: Channel trend = initially neutral; on each indicator bar set it to up if high > upper bound, otherwise set it to down if low < lower bound, otherwise retain the previous trend. Commit the trend and bounds only when the indicator bar completes.
-Long: Channel trend = up
-Short: Channel trend = down
-Exit: long, channel trend = down OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
-Exit: short, channel trend = up OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

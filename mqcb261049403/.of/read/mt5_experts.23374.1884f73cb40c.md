@@ -1,9 +1,0 @@
-Calculation: Adaptive brick state = On each bar, choose H and L as either high and low or both as close. After the volatility lookback, initialize upper = H, lower = L, brick = max(multiplier × (H − L), minimum brick size), and trend = 0. For each bar in chronological order, set volatility size = max(multiplier × either ATR or close standard deviation, minimum brick size). If H > upper + brick, set upper = upper + floor((H − upper) / brick) × brick, then brick = volatility size and lower = upper − brick. Next, if L < lower − brick, set lower = lower − floor((lower − L) / brick) × brick, then brick = volatility size and upper = lower + brick. Set trend = 1 if upper > previous upper; then set trend = −1 if lower < previous lower; otherwise retain trend. Bullish support = lower − brick when trend > 0, otherwise 0; bearish resistance = upper + brick when trend < 0, otherwise 0. Calculate separate states with independently configurable parameters for long and short decisions. The indicator timeframe may be higher or lower than the chart timeframe; use the last completed indicator bar, or the still-forming bar if the signal-bar setting selects it, and the preceding indicator bar for comparisons.
-Long: bullish support ≠ 0
-Short: bearish resistance ≠ 0
-Long: long-state bullish support on the selected indicator bar ≠ 0 AND long-state bearish resistance on the preceding indicator bar ≠ 0
-Short: short-state bearish resistance on the selected indicator bar ≠ 0 AND short-state bullish support on the preceding indicator bar ≠ 0
-Exit: long, long-state bearish resistance on the selected indicator bar ≠ 0
-Exit: short, short-state bullish support on the selected indicator bar ≠ 0
-Exit: long, low ≤ entry price − stop-loss distance OR high ≥ entry price + take-profit distance
-Exit: short, high ≥ entry price + stop-loss distance OR low ≤ entry price − take-profit distance

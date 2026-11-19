@@ -1,3 +1,0 @@
-Calculation: Smoothed balance of power = 100 times a selected moving average of (close - open) / (high - low), using zero when high equals low. Calculate on the chart timeframe or on a higher timeframe; for the higher timeframe, sample the still-forming bar at the start of each higher-timeframe bar and hold that result until the next higher-timeframe bar.
-Long: Smoothed balance of power > 0 AND smoothed balance of power differs from its previous bar's value
-Short: Smoothed balance of power < 0 AND smoothed balance of power differs from its previous bar's value

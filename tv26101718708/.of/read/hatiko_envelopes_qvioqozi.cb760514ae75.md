@@ -1,9 +1,0 @@
-Calculation: Moving average = selectable SMA, EMA, WMA, DEMA, ZLEMA, HMA, or midpoint of the highest high and lowest low over the lookback. Apply it to a selectable OHLC-derived source, except that the midpoint uses high and low. For another timeframe, use the last completed higher-timeframe bar or the last completed lower-timeframe bar within the chart bar. Apply the configured historical offset and round to a price increment.
-Calculation: Envelope level = opening moving average multiplied by one plus a nonzero signed percentage, rounded to a price increment. Long percentages are negative and short percentages are positive; successive envelope levels are farther from the moving average.
-Calculation: Closing level = opening moving average, or a separately configured moving average multiplied by one plus a signed deviation percentage and rounded to a price increment.
-Long: Bar low <= a long envelope level calculated on the preceding chart bar AND preceding bar datetime is within the optional backtest period AND preceding bar long opening moving average > 0.
-Short: Bar high >= a short envelope level calculated on the preceding chart bar AND preceding bar datetime is within the optional backtest period AND preceding bar short opening moving average > 0.
-Exit: long, bar high >= the long closing level calculated on the preceding chart bar AND preceding bar datetime is within the optional backtest period AND preceding bar long opening moving average > 0.
-Exit: long, close > long closing level AND datetime is within the optional backtest period AND long opening moving average > 0.
-Exit: short, bar low <= the short closing level calculated on the preceding chart bar AND preceding bar datetime is within the optional backtest period AND preceding bar short opening moving average > 0.
-Exit: short, close < short closing level AND datetime is within the optional backtest period AND short opening moving average > 0.

@@ -1,1 +1,0 @@
-On each tick, sum the floating profit, commission, and swap of the strategy's open positions in the traded instrument. If the total loss exceeds a configured percentage of account balance, close all of those long and short positions.

@@ -1,9 +1,0 @@
-Calculation: Applied price = a selectable price series: open, high, low, close, (high + low)/2, (high + low + close)/3, (high + low + 2 × close)/4, (open + close)/2, (open + high + low + close)/4, high if close > open and low if close < open and close otherwise, or (high + close)/2 if close > open and (low + close)/2 if close < open and close otherwise.
-Calculation: Recursive filtered price and velocity = initialize filtered price to the first applied price and velocity to zero; on each subsequent bar, distance = applied price − previous filtered price, velocity = previous velocity + distance × smoothing coefficient/100, and filtered price = previous filtered price + distance × sqrt(smoothing coefficient/100) + velocity + a fixed price offset. Calculate either on the chart timeframe or on the higher timeframe using its still-forming bar.
-Calculation: Filtered-price change = filtered price − previous filtered price on the same timeframe. Round the change and each threshold independently to a configurable decimal precision. Each threshold is a separate configurable multiplier times the population standard deviation of filtered-price changes over a configurable lookback, including the current change.
-Long: Trend mode AND filtered price >= previous filtered price on the same timeframe.
-Short: Trend mode AND filtered price < previous filtered price on the same timeframe.
-Long: Velocity mode AND velocity > 0.
-Short: Velocity mode AND velocity <= 0.
-Long: (filtered-price change > first threshold AND filtered-price change <= second threshold) OR filtered-price change > second threshold.
-Short: (filtered-price change < −first threshold AND filtered-price change >= −second threshold) OR filtered-price change < −second threshold.

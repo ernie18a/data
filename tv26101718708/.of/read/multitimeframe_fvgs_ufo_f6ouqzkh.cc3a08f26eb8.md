@@ -1,3 +1,0 @@
-Calculation: Three-bar gap = for consecutive bars A, B, C, require A.low <= B.high AND B.low <= A.high AND B.low <= C.high AND C.low <= B.high. Use chart bars, the last three completed higher-timeframe bars, or consecutive completed lower-timeframe bars. For a potential gap, C is the still-forming higher- or lower-timeframe bar and A and B are completed.
-Long: Three-bar gap AND C.low > A.high AND, if the minimum-size filter is enabled, C.low - A.high >= the minimum size or the specified multiple of ATR on the gap timeframe.
-Short: Three-bar gap AND C.high < A.low AND, if the minimum-size filter is enabled, A.low - C.high >= the minimum size or the specified multiple of ATR on the gap timeframe.

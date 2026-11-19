@@ -1,3 +1,0 @@
-Calculation: Double JMA = Jurik moving average applied twice in sequence to a selected OHLC-derived price, with independently configurable length and phase for each pass.
-Long: Double JMA on the chart timeframe > its previous-bar value OR double JMA on a higher timeframe using the bar still forming > its previous higher-timeframe bar value.
-Short: Double JMA on the chart timeframe < its previous-bar value OR double JMA on a higher timeframe using the bar still forming < its previous higher-timeframe bar value.

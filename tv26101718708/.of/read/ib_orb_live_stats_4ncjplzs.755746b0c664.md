@@ -1,4 +1,0 @@
-Calculation: Window extremes = the highest high and lowest low of each of two independently configured session windows, one starting at the regular-session open; evaluate when the window ends.
-Calculation: Extreme order = the first lower-than-or-equal-to-chart-timeframe completed bar in the window whose high reaches the window high and the first whose low reaches the window low; if both occur on the same bar, the high is first.
-Long: A window has ended AND its low formed first AND its final close >= (window high + window low) / 2.
-Short: A window has ended AND its high formed first AND its final close < (window high + window low) / 2.

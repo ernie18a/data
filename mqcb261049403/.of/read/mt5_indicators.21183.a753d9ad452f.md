@@ -1,7 +1,0 @@
-Calculation: Range-scaled trend = For each bar, let d be the mean of high minus low over a lookback ending at that bar, multiplied by a configurable decimal scaling factor. Initialize trend to 0 and both extreme and level to the close of the first bar with a full lookback. Process bars chronologically: if the prior trend is nonnegative, set extreme = max(prior extreme, close) and level = max(prior level, extreme × (1 − d)); if close < level, set extreme = close, level = close × (1 + d), and trend = −1. If the prior trend is negative, set extreme = min(prior extreme, close) and level = min(prior level, extreme × (1 + d)); if close > level, set extreme = close, level = close × (1 − d), and trend = +1. Otherwise retain the prior trend. Calculate independently for long and short decisions with independently configurable lookbacks, scaling factors, and timeframes. Each decision may use the chart timeframe, a higher timeframe, or a lower timeframe; for another timeframe, use either its last completed bar or its still-forming bar according to the configured signal-bar offset.
-Long: long-configuration trend = +1 AND its level != 0
-Short: short-configuration trend = −1 AND its level != 0
-Exit: long, long-configuration trend = −1 AND its level != 0
-Exit: short, short-configuration trend = +1 AND its level != 0
-Exit: long, low <= entry price − configured stop distance OR high >= entry price + configured profit distance
-Exit: short, high >= entry price + configured stop distance OR low <= entry price − configured profit distance

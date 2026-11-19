@@ -1,1 +1,0 @@
-Using daily QQQ data, enter a short position in TQQQ when its volume-weighted moving average crosses above its Hull moving average. Exit that short when its short-term exponential moving average crosses above either its medium-term exponential moving average or its volume-weighted moving average.

@@ -1,2 +1,0 @@
-Long: Previous FAMA > previous MAMA AND current FAMA < current MAMA on the selected higher timeframe bar, which may still be forming
-Short: Previous FAMA < previous MAMA AND current FAMA > current MAMA on the selected higher timeframe bar, which may still be forming

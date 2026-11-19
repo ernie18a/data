@@ -1,4 +1,0 @@
-Calculation: Cumulative averaging deviation for order k = first deviation × sum of the deviation multiplier raised to powers 0 through k−1. Orders are numbered sequentially; reset the count when the position becomes flat, and execute at most one averaging order per chart bar.
-Long: Position is flat AND optional date window is satisfied AND entry RSI on the last completed lower-timeframe bar was below its threshold on the previous chart bar AND is at or above that threshold on the current chart bar.
-Long: Position is long AND optional date window is satisfied AND filled averaging orders are fewer than the configured maximum AND close <= base entry price × (1 − cumulative averaging deviation for the next order).
-Exit: long, close >= average position entry price × (1 + minimum profit fraction) AND exit RSI on the last completed lower-timeframe bar was above its threshold on the previous chart bar AND is at or below that threshold on the current chart bar.

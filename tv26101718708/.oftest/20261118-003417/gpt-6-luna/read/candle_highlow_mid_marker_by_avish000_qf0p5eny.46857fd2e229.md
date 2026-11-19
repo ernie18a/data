@@ -1,2 +1,0 @@
-Long: close crosses above EMA(close, lookback, T1, latest available bar; still-forming in real time and last completed historically), evaluated on chart bars
-Short: close crosses below EMA(close, lookback, T1, latest available bar; still-forming in real time and last completed historically), evaluated on chart bars

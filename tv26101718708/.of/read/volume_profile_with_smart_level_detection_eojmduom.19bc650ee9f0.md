@@ -1,3 +1,0 @@
-Calculation: Point of control = Divide the high-to-low range of the profile bars into equal price bins. Use either a fixed lookback including the current bar, or, in session mode, the greater of two bars and the number of bars elapsed since the current trading day began, including the current bar. If the range is zero, use a fixed positive bin width. For each bar with positive volume and high greater than low, distribute its volume among overlapping bins in proportion to the overlap with its high-to-low range. The point of control is the midpoint of the lowest-priced bin with the greatest volume. If all bin volumes are zero, retain the previous point of control; it is undefined until first calculated.
-Long: close > point of control
-Short: close <= point of control

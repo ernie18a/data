@@ -1,4 +1,0 @@
-Long: Any chart-timeframe Money Flow Index, calculated using volume and one of a set of equally spaced, progressively longer lookbacks, is above the upper threshold.
-Short: Any chart-timeframe Money Flow Index, calculated using volume and one of the same lookbacks, is below the lower threshold.
-Long: Any Money Flow Index on the still-forming higher-timeframe bar, calculated using aggregated volume and one of a set of equally spaced, progressively longer lookbacks, is above the upper threshold.
-Short: Any Money Flow Index on the still-forming higher-timeframe bar, calculated using aggregated volume and one of the same lookbacks, is below the lower threshold.

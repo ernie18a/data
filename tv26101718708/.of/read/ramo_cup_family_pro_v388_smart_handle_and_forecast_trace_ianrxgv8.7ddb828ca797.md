@@ -1,1 +1,0 @@
-Unable to provide a complete, reproducible framework from this source without omitting material conditions. The displayed directions depend on pattern scoring and selection, cross-timeframe context, and persistent structure state.

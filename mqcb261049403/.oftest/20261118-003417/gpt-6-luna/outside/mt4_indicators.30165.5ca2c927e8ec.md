@@ -1,3 +1,0 @@
-Calculation: GBP strength = (-EURGBP close + GBPUSD close + GBPJPY close / 100 + GBPAUD close + GBPCAD close + GBPNZD close + GBPCHF close) / 7
-Long: base currency strength > EMA(base currency strength, P1) AND quote currency strength < EMA(quote currency strength, P1) in trend mode OR base currency strength < EMA(base currency strength, P1) AND quote currency strength > EMA(quote currency strength, P1) in counter-trend mode
-Short: base currency strength < EMA(base currency strength, P1) AND quote currency strength > EMA(quote currency strength, P1) in trend mode OR base currency strength > EMA(base currency strength, P1) AND quote currency strength < EMA(quote currency strength, P1) in counter-trend mode

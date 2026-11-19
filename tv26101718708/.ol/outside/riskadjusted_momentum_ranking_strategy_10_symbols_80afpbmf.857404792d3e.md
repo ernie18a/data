@@ -1,1 +1,0 @@
-At each monthly rebalance, rank the candidate instruments by trailing price return divided by the volatility of their daily returns. Hold the four highest-ranked instruments in equal weights until the next rebalance.

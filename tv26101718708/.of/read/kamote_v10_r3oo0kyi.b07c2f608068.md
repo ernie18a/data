@@ -1,6 +1,0 @@
-Calculation: Higher-timeframe data = use either the last completed higher-timeframe bar or the higher-timeframe bar still forming, according to the confirmation setting; map values to chart bars with lookahead off and carry the last available value forward.
-Calculation: Normalized slope = (linear regression of higher-timeframe close at offset 0 minus linear regression of higher-timeframe close at offset 1) / higher-timeframe close.
-Calculation: Slope threshold = slope multiplier × higher-timeframe ATR / higher-timeframe close.
-Calculation: Data ready = higher-timeframe ATR percentile rank, ATR, linear regression slope, efficiency ratio and close, and chart-timeframe efficiency ratio, volume and volume percentile rank are available AND higher-timeframe close ≠ 0 AND chart bar index ≥ max(ceil(max(ATR percentile lookback, regression lookback) × higher-timeframe duration / chart-timeframe duration), chart-timeframe efficiency-ratio lookback, volume percentile lookback) + 10. The efficiency-ratio lookbacks on both timeframes are equal.
-Long: Data ready AND normalized slope > slope threshold.
-Short: Data ready AND abs(normalized slope) ≥ slope threshold AND normalized slope ≤ slope threshold.

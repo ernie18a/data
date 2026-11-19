@@ -1,9 +1,0 @@
-Calculation: Segmented regression channel = Start the first segment at the first bar and each subsequent segment at the breakout bar. Before freezing, fit ordinary least squares to the selected price source over the latest min(segment bar count, maximum channel length) bars, with x=0 at the current bar and increasing by 1 for each older bar. Calculate residual RMSE over the same bars. At the minimum segment length, freeze the slope, intercept and RMSE. Thereafter, basis = frozen intercept - frozen slope * bars elapsed since freezing; upper and lower bands = basis plus and minus a deviation multiplier times frozen RMSE. Reset the segment after a breakout, using the old channel for that bar's decisions. Before freezing, use the current regression slope for directional decisions; after freezing, use the frozen slope.
-Calculation: Entry risk distance = ATR at entry multiplied by an ATR multiplier OR entry price multiplied by a percentage. Keep the selected distance fixed at entry.
-Calculation: Farthest enabled target distance = entry risk distance multiplied by the largest reward-to-risk ratio among the enabled profit targets.
-Long: Segment bar count >= minimum channel length AND bars elapsed since freezing >= 1 AND close > upper band.
-Short: Segment bar count >= minimum channel length AND bars elapsed since freezing >= 1 AND close < lower band.
-Long: Segment bar count >= 2 AND regression slope <= 0.
-Short: Segment bar count >= 2 AND regression slope > 0.
-Exit: long, bar is after entry bar AND (low <= entry price - entry risk distance OR high >= entry price + farthest enabled target distance).
-Exit: short, bar is after entry bar AND (high >= entry price + entry risk distance OR low <= entry price - farthest enabled target distance).

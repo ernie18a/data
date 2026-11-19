@@ -1,2 +1,0 @@
-Long: McClellan Oscillator of advancing issues minus declining issues, using separate short and long EMA length parameters, was below the threshold parameter on the previous chart bar AND is above it on the current chart bar
-Exit: long, elapsed chart bars since entry >= holding period parameter

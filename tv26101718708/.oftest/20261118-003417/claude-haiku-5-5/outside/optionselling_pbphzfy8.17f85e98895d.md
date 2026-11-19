@@ -1,3 +1,0 @@
-Calculation: Slope(Series, Lookback) = (Series - Series[Lookback]) / Lookback
-Short: MovingAverage(FastSource, FastLength, FastType)[1] >= MovingAverage(SlowSource, SlowLength, SlowType)[1] AND MovingAverage(FastSource, FastLength, FastType) < MovingAverage(SlowSource, SlowLength, SlowType) AND (slope filter disabled OR (Slope(MovingAverage(FastSource, FastLength, FastType), SlopeLookback) < -FastSlopeThreshold AND Slope(MovingAverage(SlowSource, SlowLength, SlowType), SlopeLookback) < -SlowSlopeThreshold)) AND (intraday filter disabled OR bar time within Session)
-Exit: Short, intraday filter enabled AND forced close enabled AND bar time not within Session AND bar time within Session[1]

@@ -1,9 +1,0 @@
-Calculation: Composite = (IBS weight × 100 × (moving average of ((close − low) / max(high − low, minimum price increment)) − 0.5) + CCI weight × CCI + RSI weight × (RSI − 50)) / 3
-Calculation: Main line = previous main line if the absolute difference between composite and previous main line is at most the threshold; otherwise composite minus the threshold when composite is higher, or composite plus the threshold when composite is lower; initialize the main line to zero
-Calculation: Signal line = (moving average of the rolling maximum of the main line + moving average of the rolling minimum of the main line) / 2, using the same lookback and smoothing parameters for both
-Calculation: Fast lines = main and signal lines on the chart timeframe, evaluated on the last completed bar and its preceding bar
-Calculation: Slow lines = independently parameterized main and signal lines on a higher timeframe, evaluated on its last completed bar
-Long: Position side = flat AND slow main line > slow signal line AND preceding fast main line <= preceding fast signal line AND fast main line > fast signal line
-Short: Position side = flat AND slow main line < slow signal line AND preceding fast main line >= preceding fast signal line AND fast main line < fast signal line
-Exit: long, slow main line < slow signal line OR fast main line < fast signal line OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance
-Exit: short, slow main line > slow signal line OR fast main line > fast signal line OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance

@@ -1,4 +1,0 @@
-Long: Chart-timeframe Williams %R is above the oversold level AND its previous-bar value is at or below the oversold level.
-Short: Chart-timeframe Williams %R is below the overbought level AND its previous-bar value is at or above the overbought level.
-Long: On the higher timeframe using the bar still forming, the most recent Williams %R crossing is above the oversold level, with the previous higher-timeframe bar at or below that level, AND no crossing below the overbought level occurred on the same higher-timeframe bar.
-Short: On the higher timeframe using the bar still forming, the most recent Williams %R crossing is below the overbought level, with the previous higher-timeframe bar at or above that level, including when both crossings occur on the same higher-timeframe bar.

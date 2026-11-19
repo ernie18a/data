@@ -1,6 +1,0 @@
-Long: Shorter-period exponential moving average of close > longer-period simple moving average of close on the chart bar.
-Short: Shorter-period exponential moving average of close <= longer-period simple moving average of close on the chart bar.
-Long: Shorter-period exponential moving average of close > longer-period simple moving average of close on the last completed higher-timeframe bar AND shorter-period exponential moving average of close <= longer-period simple moving average of close on the preceding higher-timeframe bar.
-Short: Shorter-period exponential moving average of close <= longer-period simple moving average of close on the last completed higher-timeframe bar AND shorter-period exponential moving average of close > longer-period simple moving average of close on the preceding higher-timeframe bar.
-Exit: long, shorter-period exponential moving average of close <= longer-period simple moving average of close on the last completed higher-timeframe bar OR low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance.
-Exit: short, shorter-period exponential moving average of close > longer-period simple moving average of close on the last completed higher-timeframe bar OR high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance.

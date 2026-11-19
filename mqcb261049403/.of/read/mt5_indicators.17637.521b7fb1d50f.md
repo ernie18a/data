@@ -1,5 +1,0 @@
-Calculation: Centered smoothed money flow index = Smooth the money flow index of a selected OHLC-derived price and volume, then subtract 50. For each bar in the money-flow lookback, classify price × volume as positive or negative according to whether that bar's selected price is greater or less than the preceding bar's selected price; ignore unchanged prices. The money flow index is 100 − 100 / (1 + positive flow sum / negative flow sum), or 100 when the negative flow sum is zero.
-Long: Level mode = selected AND centered smoothed money flow index > middle level
-Short: Level mode = selected AND centered smoothed money flow index < middle level
-Long: Direction mode = selected AND centered smoothed money flow index != middle level AND centered smoothed money flow index > its previous bar value
-Short: Direction mode = selected AND centered smoothed money flow index != middle level AND centered smoothed money flow index < its previous bar value

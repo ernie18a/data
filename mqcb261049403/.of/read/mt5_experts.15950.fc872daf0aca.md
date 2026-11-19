@@ -1,5 +1,0 @@
-Calculation: Aroon oscillator = 100 × (bars since lowest low − bars since highest high) / lookback, using the most recent occurrence of each extreme within the lookback including the evaluated bar. Calculate on the chart timeframe for indicator markings; for trading, calculate on the configured timeframe, which may be higher or lower than the chart timeframe, using the last completed bar or the still-forming bar according to the configured signal-bar offset.
-Long: Aroon oscillator > lower threshold AND previous Aroon oscillator <= lower threshold
-Short: Aroon oscillator < upper threshold AND previous Aroon oscillator >= upper threshold
-Exit: long, the most recent oscillator threshold crossing is a short signal OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance
-Exit: short, the most recent oscillator threshold crossing is a long signal OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance

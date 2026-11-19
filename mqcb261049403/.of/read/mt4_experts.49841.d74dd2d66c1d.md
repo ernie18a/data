@@ -1,3 +1,0 @@
-Calculation: RSI = For the forming bar of a configurable timeframe, which may be higher than, lower than, or the same as the chart timeframe, sum positive close-to-close changes and absolute negative close-to-close changes over the lookback, including the forming bar. If either sum is zero, return zero; otherwise return the integer part of 100 × positive sum / (positive sum + negative sum).
-Long: Time is within the configured trading hours AND no long position is open AND RSI <= lower threshold.
-Short: Time is within the configured trading hours AND no short position is open AND RSI >= upper threshold.

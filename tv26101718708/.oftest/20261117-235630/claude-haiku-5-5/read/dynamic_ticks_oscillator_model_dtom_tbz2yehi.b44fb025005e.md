@@ -1,2 +1,0 @@
-Long: ROC(external close, rocLength, T1 last completed bar, chart bars) < -STDEV(ROC(external close, rocLength, T1 last completed bar, chart bars), volatilityLookback) * entryStdDevMultiplier
-Exit: long, ROC(external close, rocLength, T1 last completed bar, chart bars) > STDEV(ROC(external close, rocLength, T1 last completed bar, chart bars), volatilityLookback) * exitStdDevMultiplier

@@ -1,2 +1,0 @@
-Long: low > high two bars earlier AND (ATR size filter disabled OR low - high two bars earlier >= minimum gap-size multiple × ATR)
-Short: high < low two bars earlier AND (ATR size filter disabled OR low two bars earlier - high >= minimum gap-size multiple × ATR)

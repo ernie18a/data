@@ -1,3 +1,0 @@
-Calculation: Let bar 0 be the current chart bar, or the still-forming higher-timeframe bar; bars 1, 2, and 3 are the preceding completed bars on that same timeframe.
-Long: open[3] > close[3] AND open[2] > close[2] AND close[2] > low[3] AND open[1] < close[1] AND close[1] > open[2] AND (volume filter disabled OR high[3] - low[3] > range threshold OR volume[3] < volume[2] OR volume[1] > volume[2] OR volume[1] > volume[3])
-Short: open[3] < close[3] AND open[2] < close[2] AND close[2] < high[3] AND open[1] > close[1] AND close[1] < open[2] AND (volume filter disabled OR high[3] - low[3] > range threshold OR volume[3] < volume[2] OR volume[1] > volume[2] OR volume[1] > volume[3])

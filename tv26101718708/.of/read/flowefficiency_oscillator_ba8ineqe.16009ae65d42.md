@@ -1,5 +1,0 @@
-Calculation: Bar delta and aggression = Sum volume × sign(close − previous close) and sum volume, respectively, over lower-timeframe bars within the chart bar, including the lower-timeframe bar still forming if present. If summed volume is zero and chart-bar volume is positive, use chart-bar volume × sign(chart close − previous chart close) as delta and chart-bar volume as aggression. Use zero for a missing signed-volume contribution.
-Calculation: Delta share = bar delta / aggression if aggression > 0, otherwise 0.
-Calculation: Cost percentile = Percentile rank over a lookback of the EMA of abs(bar delta) / max(tick-travel floor, abs(chart close − previous chart close) / tick size), where tick size is a parameter.
-Long: Cost percentile >= upper threshold AND delta share <= negative one-sided threshold.
-Short: Cost percentile >= upper threshold AND delta share >= one-sided threshold.

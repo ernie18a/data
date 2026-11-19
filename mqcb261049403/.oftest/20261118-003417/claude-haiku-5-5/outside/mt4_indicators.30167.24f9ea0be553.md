@@ -1,9 +1,0 @@
-Calculation: average JPY currency strength = moving average of JPY currency strength over P2 bars
-Long: instrument base currency is JPY AND P1 = M1 AND JPY currency strength > average JPY currency strength
-Long: instrument base currency is JPY AND P1 = M2 AND JPY currency strength < average JPY currency strength
-Long: instrument profit currency is JPY AND P1 = M1 AND JPY currency strength < average JPY currency strength
-Long: instrument profit currency is JPY AND P1 = M2 AND JPY currency strength > average JPY currency strength
-Short: instrument base currency is JPY AND P1 = M1 AND JPY currency strength < average JPY currency strength
-Short: instrument base currency is JPY AND P1 = M2 AND JPY currency strength > average JPY currency strength
-Short: instrument profit currency is JPY AND P1 = M1 AND JPY currency strength > average JPY currency strength
-Short: instrument profit currency is JPY AND P1 = M2 AND JPY currency strength < average JPY currency strength

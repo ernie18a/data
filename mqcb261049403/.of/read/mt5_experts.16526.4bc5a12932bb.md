@@ -1,5 +1,0 @@
-Long: RSI on the selected price of the last completed or still-forming indicator bar >= upper threshold AND (slowdown filter disabled OR absolute RSI change from the preceding indicator bar < slowdown threshold)
-Short: RSI on the selected price of the last completed or still-forming indicator bar <= lower threshold AND (slowdown filter disabled OR absolute RSI change from the preceding indicator bar < slowdown threshold)
-Exit: long, the most recent indicator-bar signal is short OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
-Exit: short, the most recent indicator-bar signal is long OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance
-Calculation: Indicator bars = chart-timeframe bars or bars aggregated to a configurable higher or lower timeframe; use the last completed bar or the still-forming bar according to the signal-bar setting.

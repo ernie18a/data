@@ -1,7 +1,0 @@
-Calculation: Center of gravity = for each bar, let median price be (high + low) / 2; over the lookback, sum (age + 1) × median price, with age zero for the newest bar. Divide the negative of this sum by the sum of median prices and add (lookback + 1) / 2. If the sum of median prices is zero, use zero.
-Calculation: Oscillator = normalize the center of gravity within its highest and lowest values over the same lookback, using zero when the range is zero; take the weighted average of the current and three preceding normalized values with weights 4, 3, 2, 1, then subtract 0.5 and multiply by 2. Calculate on a higher timeframe using the last completed bar; optionally use the still-forming bar instead.
-Calculation: Trigger = 0.96 × (previous higher-timeframe oscillator + 0.02).
-Long: oscillator > trigger AND previous higher-timeframe oscillator <= previous higher-timeframe trigger
-Short: oscillator < trigger AND previous higher-timeframe oscillator >= previous higher-timeframe trigger
-Exit: long, oscillator < trigger OR low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance
-Exit: short, oscillator > trigger OR high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance

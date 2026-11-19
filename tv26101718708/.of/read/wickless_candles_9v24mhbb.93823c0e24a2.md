@@ -1,2 +1,0 @@
-Long: the last completed bar, on the chart timeframe or a higher timeframe, has low >= min(open, close) (no lower wick)
-Short: the last completed bar, on the chart timeframe or a higher timeframe, has high <= max(open, close) (no upper wick)

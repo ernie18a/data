@@ -1,8 +1,0 @@
-Calculation: Selected price P = a configurable choice of open, high, low, close, (high + low)/2, (high + low + close)/3, (high + low + 2 × close)/4, (open + close)/2, (open + high + low + close)/4, high if close > open else low if close < open else close, (high + close)/2 if close > open else (low + close)/2 if close < open else close, or (high + low + close + X)/2 − (high + low)/2 where X is low if close < open, high if close > open, and close otherwise.
-Calculation: Trailing level T = initialize the previous level to zero; for each successive bar, set T to the previous level if P equals it, min(previous level, P × (1 + offset)) if both previous P and P are below it, max(previous level, P × (1 − offset)) if both previous P and P are above it, P × (1 − offset) if P is above it, and P × (1 + offset) otherwise. Calculate P and T on the chart timeframe or a configurable higher or lower timeframe; use the last completed bar by default, with the still-forming bar as an alternative.
-Long: P > T AND previous P < previous T AND previous T != 0.
-Short: P < T AND previous P > previous T AND previous T != 0.
-Exit: long, P < T AND previous P > previous T AND previous T != 0.
-Exit: short, P > T AND previous P < previous T AND previous T != 0.
-Exit: long, low <= entry price − stop-loss distance OR high >= entry price + take-profit distance.
-Exit: short, high >= entry price + stop-loss distance OR low <= entry price − take-profit distance.

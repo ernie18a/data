@@ -1,8 +1,0 @@
-Calculation: Period high and period low = highest high and lowest low over a lookback including the current bar, calculated separately on each selected timeframe. For a higher timeframe, use the last completed bar; for a lower timeframe, use the last completed lower-timeframe bar within the chart bar. Use the chart bar when the selected timeframe equals the chart timeframe.
-Calculation: Low distance = round(100 × (selected high source / period low − 1), 2 decimal places), where the selected high source is either high or close on the selected timeframe.
-Calculation: High distance = −round(100 × (1 − selected low source / period high), 2 decimal places), where the selected low source is low when the high source is high, otherwise close.
-Calculation: Retracement = 0 when period high equals period low; otherwise 1 − round((close − period low) / (period high − period low), 2 decimal places), or round((close − period low) / (period high − period low), 2 decimal places) when reverse retracement is selected.
-Long: Low distance > buy threshold OR retracement < buy-zone threshold
-Short: Low distance <= buy threshold AND retracement >= buy-zone threshold AND (high distance > sell threshold OR retracement > sell-zone threshold)
-Long: Low distance > 0 OR high distance > 0 OR retracement > upper retracement-color threshold
-Short: Low distance < 0 OR high distance < 0 OR retracement < lower retracement-color threshold

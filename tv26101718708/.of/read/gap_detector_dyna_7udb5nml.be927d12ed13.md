@@ -1,2 +1,0 @@
-Long: First confirmed bar of a new session AND previous close exists AND ATR of the last completed higher-timeframe session bar is greater than zero AND open - previous close >= ATR multiplier × ATR AND open - previous close > minimum price increment
-Short: First confirmed bar of a new session AND previous close exists AND ATR of the last completed higher-timeframe session bar is greater than zero AND previous close - open >= ATR multiplier × ATR AND previous close - open > minimum price increment

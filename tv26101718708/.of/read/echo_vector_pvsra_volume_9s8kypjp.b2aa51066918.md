@@ -1,5 +1,0 @@
-Calculation: Confirmed pivot = a TradingView pivot high or low using the same configurable strength on both sides; it becomes available on the confirmation bar after the right-side bars have elapsed. Previous price and volume pivots are found independently.
-Long: close > open OR (a price-low pivot and a volume-low pivot are confirmed on the same bar AND the price-low pivot < the previous price-low pivot AND the volume-low pivot > the previous volume-low pivot)
-Short: close <= open OR (a price-high pivot and a volume-high pivot are confirmed on the same bar AND the price-high pivot > the previous price-high pivot AND the volume-high pivot < the previous volume-high pivot)
-Exit: long, high >= entry price * (1 + target percentage) OR low <= entry price * (1 - stop percentage)
-Exit: short, low <= entry price * (1 - target percentage) OR high >= entry price * (1 + stop percentage)

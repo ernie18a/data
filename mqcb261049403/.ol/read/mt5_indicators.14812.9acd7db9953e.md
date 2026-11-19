@@ -1,2 +1,0 @@
-Long: Current bar close > highest high of the preceding lookback bars on the calculation timeframe (the chart timeframe or the selected higher timeframe)
-Short: Current bar close < lowest low of the preceding lookback bars on the calculation timeframe (the chart timeframe or the selected higher timeframe)

@@ -1,2 +1,0 @@
-Long: weekly RSI of close > simple moving average of weekly RSI (weekly is higher than the chart timeframe; use the bar still forming)
-Short: weekly RSI of close <= simple moving average of weekly RSI (weekly is higher than the chart timeframe; use the bar still forming)

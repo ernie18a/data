@@ -1,3 +1,0 @@
-Calculation: Currency strength = arithmetic mean of the seven pair close prices containing that currency, with JPY pair prices divided by 100
-Long: base currency strength > EMA(base currency strength, P1) in trend mode or < EMA(base currency strength, P1) in counter-trend mode AND quote currency strength < EMA(quote currency strength, P1) in trend mode or > EMA(quote currency strength, P1) in counter-trend mode
-Short: base currency strength < EMA(base currency strength, P1) in trend mode or > EMA(base currency strength, P1) in counter-trend mode AND quote currency strength > EMA(quote currency strength, P1) in trend mode or < EMA(quote currency strength, P1) in counter-trend mode

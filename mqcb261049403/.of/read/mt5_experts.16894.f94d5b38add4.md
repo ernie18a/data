@@ -1,5 +1,0 @@
-Calculation: Trend state = initially neutral; on each indicator bar, if the absolute difference between the JMA of close rounded to price precision and its value two bars earlier rounded to price precision is greater than short-lookback ATR divided by a positive threshold, set the state to short when stochastic main line is below a lower threshold and the prior state is not short, or to long when it is above a higher threshold and the prior state is not long; otherwise retain the prior state. The stochastic slowing is one. Compute the state on the chart timeframe for indicator markings; for trading, use the last completed bar of the configurable indicator timeframe, which may be higher or lower than the chart timeframe.
-Long: Trend state = long
-Short: Trend state = short
-Exit: long, trading-timeframe trend state = short OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
-Exit: short, trading-timeframe trend state = long OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

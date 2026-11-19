@@ -1,6 +1,0 @@
-Calculation: Trend = for each bar, let highest high and lowest low be taken over a lookback including that bar, and let threshold = (highest high - lowest low) × a Fibonacci ratio parameter. Initialize the preceding trend to 0. If open > close, trend = -1 when preceding trend < 0 AND threshold < close - lowest low, otherwise trend = +1. If open <= close, trend = +1 when preceding trend > 0 AND threshold < highest high - close, otherwise trend = -1.
-Calculation: Candle state = bearish when trend = +1 AND open != close; bullish otherwise. Calculate it on the chart timeframe and on a higher timeframe. For the higher timeframe, use the bar still forming as observed on its first chart bar, and hold that observation through the remaining chart bars in that higher-timeframe bar.
-Long: Candle state = bullish on the chart timeframe OR higher timeframe.
-Short: Candle state = bearish on the chart timeframe OR higher timeframe.
-Long: Candle state at a configurable bar offset = bearish AND candle state one bar before that = bullish, on the chart timeframe OR higher timeframe.
-Short: Candle state at a configurable bar offset = bullish AND candle state one bar before that = bearish, on the chart timeframe OR higher timeframe.

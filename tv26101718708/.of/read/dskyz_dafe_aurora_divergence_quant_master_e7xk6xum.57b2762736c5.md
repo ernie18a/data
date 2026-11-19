@@ -1,6 +1,0 @@
-Calculation: Divergence = linear regression slope of close and linear regression slope of on-balance volume, using the same lookback.
-Calculation: ATR threshold = sort the available ATR values in the rolling window, including the current bar, in ascending order; select the value at the rounded index percentile × (number of values − 1). Begin collecting values only after the bar index exceeds the window length.
-Long: On both the current and preceding chart bars, close regression slope < 0 AND on-balance volume regression slope > 0 AND close > its simple moving average.
-Short: On both the current and preceding chart bars, close regression slope > 0 AND on-balance volume regression slope < 0 AND close < its simple moving average.
-Exit: long, low <= entry price − stop multiplier × previous bar's ATR OR high >= entry price + profit multiplier × previous bar's ATR OR bars since entry >= maximum holding period OR bar index <= ATR threshold window length OR ATR <= ATR threshold.
-Exit: short, high >= entry price + stop multiplier × previous bar's ATR OR low <= entry price − profit multiplier × previous bar's ATR OR bars since entry >= maximum holding period OR bar index <= ATR threshold window length OR ATR <= ATR threshold.

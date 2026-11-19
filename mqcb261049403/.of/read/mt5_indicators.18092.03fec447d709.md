@@ -1,4 +1,0 @@
-Calculation: Input price = (close + low) / 2 if close < open, (close + high) / 2 if close > open, otherwise close; use close if the result is zero.
-Calculation: Smoothed price = a selectable SMA, EMA, SMMA, LWMA, JJMA, Jurik ultra-linear moving average, parabolic regression moving average, T3, VIDYA, or Kaufman adaptive moving average of input price, calculated either on the chart timeframe or on the still-forming higher-timeframe bar. For the higher-timeframe calculation, compare it with the preceding completed higher-timeframe bar.
-Long: Smoothed price > previous smoothed price.
-Short: Smoothed price < previous smoothed price.

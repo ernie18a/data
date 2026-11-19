@@ -1,8 +1,0 @@
-Calculation: UpVolume = on chart bars taking values from T1, the bar still forming: the sum of per-chart-bar up-volume from the start of the current T1 bar through the current chart bar, where per-chart-bar up-volume is volume if open <= close else 0 when the weighted-wicks parameter is off, and when it is on, with U = high - max(open, close), L = min(open, close) - low, B = abs(close - open), D = 2*U + B + 2*L: volume*(U+B+L)/D if close > open, volume*(U+L)/D if close < open, 0 if close = open
-Calculation: DownVolume = on chart bars taking values from T1, the bar still forming: the sum of per-chart-bar down-volume from the start of the current T1 bar through the current chart bar, where per-chart-bar down-volume is volume if open > close else 0 when the weighted-wicks parameter is off, and when it is on, with U, L, B, D defined as in UpVolume: volume*(U+L)/D if close > open, volume*(U+B+L)/D if close < open, 0 if close = open
-Calculation: UpMove = on chart bars, abs(source - source[1]) * UpVolume if source > source[1] else 0
-Calculation: DownMove = on chart bars, abs(source - source[1]) * DownVolume if source < source[1] else 0
-Calculation: VolumeRSI = 100 * RMA(UpMove, rsi_length) / (RMA(UpMove, rsi_length) + RMA(DownMove, rsi_length)), on chart bars
-Calculation: TrendState = up if VolumeRSI > 50 + 50 * rsi_threshold OR (VolumeRSI > 50 - 50 * rsi_threshold AND TrendState[1] == up); down if VolumeRSI < 50 - 50 * rsi_threshold OR (VolumeRSI < 50 + 50 * rsi_threshold AND TrendState[1] == down); none otherwise, on chart bars
-Long: TrendState == up
-Short: TrendState == down

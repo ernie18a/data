@@ -1,1 +1,0 @@
-The framework cannot be made reproducible from the supplied document alone: the imported Zigzag library defines pivot detection, pivot ratios, and update flags used by the long and short decisions, but its implementation is not included.

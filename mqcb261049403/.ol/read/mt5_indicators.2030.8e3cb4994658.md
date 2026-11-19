@@ -1,2 +1,0 @@
-Long: MACD line on a higher timeframe, latest completed bar > preceding completed bar AND Force Index on a higher timeframe, last completed bar < 0
-Short: MACD line on a higher timeframe, latest completed bar < preceding completed bar AND Force Index on a higher timeframe, last completed bar > 0

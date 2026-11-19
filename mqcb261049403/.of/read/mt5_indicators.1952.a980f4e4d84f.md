@@ -1,5 +1,0 @@
-Calculation: Candle Stochastic Index = For a configurable lookback, subtract the selected price of the oldest bar in the lookback from a separately selected price of the current bar. Separately calculate the highest high minus the lowest low over the same lookback. Smooth each series through three successive moving averages using the same selectable method and corresponding smoothing periods for both series. Divide the smoothed price difference by the smoothed range and multiply by 100; use zero when the smoothed range is zero.
-Long: Chart-timeframe Candle Stochastic Index > 0 AND chart-timeframe Candle Stochastic Index != its previous-bar value
-Short: Chart-timeframe Candle Stochastic Index < 0 AND chart-timeframe Candle Stochastic Index != its previous-bar value
-Long: Higher-timeframe Candle Stochastic Index on the selected bar, either still forming or last completed, > 0 AND that value != its previous higher-timeframe bar value
-Short: Higher-timeframe Candle Stochastic Index on the selected bar, either still forming or last completed, < 0 AND that value != its previous higher-timeframe bar value

@@ -1,4 +1,0 @@
-Calculation: RSI pivot low = a chart bar whose close-based RSI is strictly below the RSI of every bar in specified numbers of preceding and following chart bars; it is confirmed when the last following bar is available.
-Calculation: RSI pivot high = a chart bar whose close-based RSI is strictly above the RSI of every bar in specified numbers of preceding and following chart bars; it is confirmed when the last following bar is available.
-Long: A newly confirmed RSI pivot low has a lower price low AND a higher RSI than the preceding RSI pivot low.
-Short: A newly confirmed RSI pivot high has a higher price high AND a lower RSI than the preceding RSI pivot high.

@@ -1,6 +1,0 @@
-Calculation: Gap size percentage = the maximum of (current low − high two bars ago) / current low × 100 when current low > high two bars ago, otherwise zero, and (low two bars ago − current high) / current high × 100 when low two bars ago > current high, otherwise zero.
-Calculation: Size score = min(100 × gap size percentage / the maximum gap size percentage over a lookback including the current bar, 100), or zero if that maximum is zero.
-Calculation: Bull volume percentage = 100 × the sum of volume from completed lower-timeframe bars within the current chart bar whose close > open / the sum of volume from those whose close > open or close < open; use 50 if the denominator is zero.
-Calculation: Directional strength score = truncate to an integer the equally weighted average of size score and directional volume percentage, where directional volume percentage is bull volume percentage for a bullish gap and 100 − bull volume percentage for a bearish gap.
-Long: Previous bar close > previous bar open AND current low > high two bars ago AND size score > minimum size score AND bullish directional strength score >= minimum strength score.
-Short: Previous bar close < previous bar open AND current high < low two bars ago AND size score > minimum size score AND bearish directional strength score >= minimum strength score.

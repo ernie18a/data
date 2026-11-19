@@ -1,2 +1,0 @@
-Long: close > AVWAP(hlc3, volume, anchor at earnings) AND close > AVWAP(hlc3, volume, anchor at swing low)
-Short: close < AVWAP(hlc3, volume, anchor at earnings) AND close < AVWAP(hlc3, volume, anchor at swing low)

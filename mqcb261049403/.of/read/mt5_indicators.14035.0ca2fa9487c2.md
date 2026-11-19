@@ -1,2 +1,0 @@
-Long: Any independently configured stochastic main line on the chart timeframe, a higher timeframe, or a lower timeframe, evaluated on its last completed bar, is greater than its upper threshold.
-Short: Any independently configured stochastic main line on the chart timeframe, a higher timeframe, or a lower timeframe, evaluated on its last completed bar, is less than its lower threshold.

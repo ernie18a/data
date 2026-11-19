@@ -1,2 +1,0 @@
-Long: close > open AND (close crosses above EMA(close, lookback, T1, last completed bar) OR close crosses below EMA(close, lookback, T1, last completed bar))
-Short: close < open AND (close crosses above EMA(close, lookback, T1, last completed bar) OR close crosses below EMA(close, lookback, T1, last completed bar))

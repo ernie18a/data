@@ -1,5 +1,0 @@
-Calculation: Pattern bars = three consecutive completed bars C1, C2, C3, oldest to newest, on the chart timeframe or a higher timeframe; evaluate once when C3 becomes available as the last completed bar.
-Calculation: Body top and bottom = max(open, close) and min(open, close) of a bar, respectively.
-Calculation: Session break between consecutive pattern bars = the later bar opens after the earlier bar's scheduled close OR their opening timestamps differ by more than their timeframe duration; the break is false when the optional session-gap filter is disabled or does not apply to the pattern timeframe.
-Long: (C3 low > C1 high OR (C1 body top < C2 body bottom AND C3 low > C2 body bottom AND no session break between C1 and C2)) AND (no session break between C1 and C2 OR C2 open <= C1 high) AND (no session break between C2 and C3 OR C3 open <= C2 high).
-Short: (C3 high < C1 low OR (C2 body top < C1 body bottom AND C3 high < C2 body top AND no session break between C1 and C2)) AND (no session break between C1 and C2 OR C2 open >= C1 low) AND (no session break between C2 and C3 OR C3 open >= C2 low).

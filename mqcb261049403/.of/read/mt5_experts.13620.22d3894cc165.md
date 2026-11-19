@@ -1,6 +1,0 @@
-Calculation: Body momentum = (close - open) + (previous close - previous open) / sqrt(2) + (close two bars ago - open two bars ago) / sqrt(3), calculated on higher-timeframe bars.
-Calculation: Fast and slow lines = independently smoothed moving averages of body momentum, using a shorter lookback for the fast line and a longer lookback for the slow line; evaluate the last completed higher-timeframe bar and the bar before it.
-Long: Fast line > slow line on the last completed higher-timeframe bar AND fast line < slow line on the preceding higher-timeframe bar.
-Short: Fast line < slow line on the last completed higher-timeframe bar AND fast line > slow line on the preceding higher-timeframe bar.
-Exit: long, fast line < slow line on the last completed higher-timeframe bar OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
-Exit: short, fast line > slow line on the last completed higher-timeframe bar OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

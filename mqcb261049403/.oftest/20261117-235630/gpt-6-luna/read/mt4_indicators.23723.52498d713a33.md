@@ -1,2 +1,0 @@
-Long: close > (high(T1, last completed bar) + low(T1, last completed bar) + close(T1, last completed bar)) / 3
-Short: 2 * ((high(T1, last completed bar) + low(T1, last completed bar) + close(T1, last completed bar)) / 3) - high(T1, last completed bar) < close AND close < (high(T1, last completed bar) + low(T1, last completed bar) + close(T1, last completed bar)) / 3

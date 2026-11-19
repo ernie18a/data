@@ -1,3 +1,0 @@
-Calculation: VolRegPrice = A + B*volume, where B = SUM((volume - SMA(volume, N)) * (close - SMA(close, N)), N) / SUM((volume - SMA(volume, N)) * (volume - SMA(volume, N)), N) and A = SMA(close, N) - B * SMA(volume, N)
-Long: crosses above(VolRegPrice, WMA(VolRegPrice, L)) AND MACD line(VolRegPrice, F, S) > MACD signal(VolRegPrice, F, S, G) AND rising(MACD line(VolRegPrice, F, S), M)
-Short: MACD line(VolRegPrice, F, S) < MACD signal(VolRegPrice, F, S, G) AND falling(MACD line(VolRegPrice, F, S), K) AND falling(low, J)

@@ -1,1 +1,0 @@
-Unable to produce a complete, reproducible framework from this source with confidence. The candle classification and sequence engines use precedence, configurable filters, and score thresholds that must be preserved; omitting them would change the decisions.

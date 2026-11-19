@@ -1,9 +1,0 @@
-Calculation: Double LWMA = apply a linearly weighted moving average to a selected OHLC-derived price, then apply another linearly weighted moving average of the same length to the result; the newest observation has the greatest weight.
-Long: Chart-timeframe double LWMA > its previous-bar value.
-Short: Chart-timeframe double LWMA < its previous-bar value.
-Long: The still-forming higher-timeframe double LWMA > its previous higher-timeframe bar value.
-Short: The still-forming higher-timeframe double LWMA < its previous higher-timeframe bar value.
-Long: The last completed higher-timeframe double LWMA > its previous higher-timeframe bar value AND the last completed chart-timeframe double LWMA > its previous chart-timeframe bar value AND its previous value <= its value two chart bars earlier.
-Short: The last completed higher-timeframe double LWMA < its previous higher-timeframe bar value AND the last completed chart-timeframe double LWMA < its previous chart-timeframe bar value AND its previous value >= its value two chart bars earlier.
-Exit: long, the last completed higher-timeframe double LWMA < its previous higher-timeframe bar value OR the last completed chart-timeframe double LWMA < its previous chart-timeframe bar value OR low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance.
-Exit: short, the last completed higher-timeframe double LWMA > its previous higher-timeframe bar value OR the last completed chart-timeframe double LWMA > its previous chart-timeframe bar value OR high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance.

@@ -1,4 +1,0 @@
-Calculation: Smoothed candle open = the open smoothed by a selected moving-average method, taken from the oldest bar in a rolling candle-period window ending at the current bar.
-Calculation: Smoothed candle close = the current close smoothed independently using the same moving-average method and parameters as the smoothed candle open. The method is selectable from SMA, EMA, SMMA, LWMA, JJMA, JurX, parabolic moving average, T3, VIDYA, or AMA. Apply both calculations either on the chart timeframe or on the still-forming bar of a higher timeframe.
-Long: Smoothed candle close >= smoothed candle open.
-Short: Smoothed candle close < smoothed candle open.

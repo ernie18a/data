@@ -1,7 +1,0 @@
-Calculation: Signal bars = chart-timeframe bars or bars from a configurable higher or lower timeframe; evaluate the last completed signal bar by default, or the still-forming signal bar if configured.
-Calculation: Adaptive average = Kaufman adaptive moving average of a selected price, with a shorter fast period and a longer slow period, calculated on signal bars.
-Calculation: Comparison average = moving average of a selected price, using a configurable averaging method and period, calculated on signal bars.
-Long: Adaptive average on the previous signal bar > comparison average on the previous signal bar AND adaptive average on the evaluated signal bar < comparison average on the evaluated signal bar.
-Short: Adaptive average on the previous signal bar < comparison average on the previous signal bar AND adaptive average on the evaluated signal bar > comparison average on the evaluated signal bar.
-Exit: long, the most recent signal-bar crossover is a short crossover OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
-Exit: short, the most recent signal-bar crossover is a long crossover OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

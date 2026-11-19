@@ -1,8 +1,0 @@
-Calculation: Return = (close - previous close) / previous close.
-Calculation: Volume z-score = (volume - simple moving average of volume) / sample standard deviation of volume over the same bars, including the signal bar.
-Calculation: Narrow-range bar = a bar whose high minus low is less than or equal to every bar range in a lookback ending at that bar.
-Calculation: Entry ATR = Wilder ATR of the signal bar, initialized with the true range at the oldest available bar in a warm-up of up to a parameterized multiple of the ATR period and updated through the signal bar.
-Long: No position is open AND no position was closed by the holding-period exit on this bar AND the previous bar's opening weekday is in the allowed set AND the previous bar's opening time is within the allowed session AND the sample standard deviation of returns over a shorter lookback divided by that over a longer lookback is below a threshold AND the volume z-score is above a threshold AND (the average-volume ceiling is disabled OR the simple moving average of volume over a longer lookback is below its ceiling) AND at least one narrow-range bar occurs within a recent lookback ending at the previous bar AND entry ATR > 0; enter at the current bar's open.
-Exit: long, low <= entry price - stop multiplier × entry ATR OR high >= entry price + target multiplier × entry ATR.
-Exit: long, bars elapsed since entry >= maximum holding period.
-Exit: long, time of day >= flat-time threshold.

@@ -1,9 +1,0 @@
-Calculation: Smoothed RSI of a price series = RSI of that series followed by a first moving-average smoothing and, optionally, a second moving-average smoothing of the first; use the same RSI and smoothing parameters for open and close.
-Long: On the chart timeframe, first-smoothed RSI of the selected price > second-smoothed RSI of the selected price.
-Short: On the chart timeframe, first-smoothed RSI of the selected price < second-smoothed RSI of the selected price.
-Long: On the chart timeframe, smoothed RSI of close > smoothed RSI of open.
-Short: On the chart timeframe, smoothed RSI of close < smoothed RSI of open.
-Long: On the selected indicator timeframe, which may be higher or lower than the chart timeframe, smoothed RSI of close > smoothed RSI of open on the selected signal bar AND smoothed RSI of close <= smoothed RSI of open on the preceding indicator bar; the selected signal bar may be the last completed bar, an earlier completed bar, or the bar still forming.
-Short: On the selected indicator timeframe, which may be higher or lower than the chart timeframe, smoothed RSI of close < smoothed RSI of open on the selected signal bar AND smoothed RSI of close >= smoothed RSI of open on the preceding indicator bar; the selected signal bar may be the last completed bar, an earlier completed bar, or the bar still forming.
-Exit: long, smoothed RSI of close < smoothed RSI of open on the selected indicator-timeframe signal bar OR low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance.
-Exit: short, smoothed RSI of close > smoothed RSI of open on the selected indicator-timeframe signal bar OR high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance.

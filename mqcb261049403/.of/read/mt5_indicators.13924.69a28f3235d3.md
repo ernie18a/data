@@ -1,3 +1,0 @@
-Calculation: Trend = initially 0; on each bar, start with the previous bar's Trend, set it to 0 if it is 1 and close < Bollinger Bands middle band or if it is -1 and close > middle band, then set it to 1 if close > upper band or to -1 if close < lower band. Calculate the bands from a selected applied price on the chart timeframe or on a higher timeframe using its still-forming bar.
-Long: Trend = 1
-Short: Trend = -1

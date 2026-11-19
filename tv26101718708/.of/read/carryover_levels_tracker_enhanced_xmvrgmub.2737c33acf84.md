@@ -1,7 +1,0 @@
-Calculation: Session range = the highest high and lowest low of chart bars whose opening times fall within the specified session, using the configured timezone and session hours.
-Calculation: Session direction = up if the session's last close is greater than its first open; otherwise down. Alternatively, compare the last close with the previous close of the same session type, falling back to the first open when that previous close is unavailable.
-Calculation: Sequence statistics = for all eligible completed New York sessions in the configured historical date window, group sessions by the directions of their preceding Asia and London sessions; for each group, count sessions and calculate the percentage whose New York session direction is up. Update statistics when New York ends.
-Long: After London ends and before the next Asia session starts, London session high > Asia session high AND London session low >= Asia session low.
-Short: After London ends and before the next Asia session starts, London session low < Asia session low AND London session high <= Asia session high.
-Long: After Asia and London have ended and before the next Asia session starts, the matching sequence's sample count >= the minimum sample count AND its up percentage >= the confirmation threshold.
-Short: After Asia and London have ended and before the next Asia session starts, the matching sequence's sample count >= the minimum sample count AND its up percentage <= 100% minus the confirmation threshold.

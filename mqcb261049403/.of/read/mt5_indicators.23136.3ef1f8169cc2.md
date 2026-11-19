@@ -1,4 +1,0 @@
-Calculation: Signal state = initially neutral; update to long on a long signal and to short on a short signal, evaluating long before short on each bar.
-Calculation: Range high and range low = highest high and lowest low, respectively, over the same lookback of completed bars preceding the evaluated bar.
-Long: Signal state is neutral or short AND high >= range high AND close > (high + low) / 2 AND close > triple exponential moving average of median price AND high > triple exponential moving average of median price AND money flow index >= upper threshold.
-Short: Signal state is neutral or long AND low <= range low AND close < (high + low) / 2 AND close < triple exponential moving average of median price AND low < triple exponential moving average of median price AND money flow index <= lower threshold.

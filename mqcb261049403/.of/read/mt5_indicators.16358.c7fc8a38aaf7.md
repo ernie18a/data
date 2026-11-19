@@ -1,5 +1,0 @@
-Calculation: Volume-weighted price = sum(selected bar price × volume) / max(sum(volume), 1) over a lookback including the current bar; selected bar price is a configurable OHLC-derived price.
-Calculation: Normalized value = 100 × (volume-weighted price − rolling minimum of volume-weighted price) / max(rolling maximum − rolling minimum, minimum price increment) − 50; the extrema lookback includes the current bar.
-Calculation: First line = moving average of normalized value; second line = moving average of the first line using the same method and parameters. Calculate both either on the chart timeframe or on a higher timeframe; for the higher timeframe, take the value of the still-forming higher-timeframe bar at the first chart bar of that interval and hold it until the next interval.
-Long: first line > second line
-Short: first line <= second line

@@ -1,8 +1,0 @@
-Calculation: LongEntryLevel = Pivot Point(high(T1, last completed bar), low(T1, last completed bar), close(T1, last completed bar)) + Offset × point
-Calculation: ShortEntryLevel = Pivot Point(high(T1, last completed bar), low(T1, last completed bar), close(T1, last completed bar)) − Offset × point
-Calculation: LongTarget = max(close(T1, last completed bar) + (high(T1, last completed bar) − low(T1, last completed bar)) × RangeMultiplier ÷ RangeDivisor, Pivot Point(high(T1, last completed bar), low(T1, last completed bar), close(T1, last completed bar)) − TargetOffset × point)
-Calculation: ShortTarget = min(close(T1, last completed bar) − (high(T1, last completed bar) − low(T1, last completed bar)) × RangeMultiplier ÷ RangeDivisor, Pivot Point(high(T1, last completed bar), low(T1, last completed bar), close(T1, last completed bar)) − TargetOffset × point)
-Long: chart-bar opening hour is between StartHour and EndHour inclusive AND previous tick close < LongEntryLevel AND current tick close ≥ LongEntryLevel AND no open long or short position AND no entry has been attempted on the current chart bar
-Short: chart-bar opening hour is between StartHour and EndHour inclusive AND previous tick close > ShortEntryLevel AND current tick close ≤ ShortEntryLevel AND no open long or short position AND no entry has been attempted on the current chart bar
-Exit: Long, chart-bar opening hour < StartHour OR chart-bar opening hour > EndHour OR price ≤ ShortEntryLevel OR price ≥ LongTarget
-Exit: Short, chart-bar opening hour < StartHour OR chart-bar opening hour > EndHour OR price ≥ LongEntryLevel OR price ≤ ShortTarget

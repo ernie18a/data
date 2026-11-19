@@ -1,2 +1,0 @@
-Long: Parabolic SAR on the chart timeframe, or on the higher timeframe using its current forming bar, was >= the previous bar’s midpoint and is < the current bar’s midpoint, where midpoint = (high + low) / 2
-Short: Parabolic SAR on the chart timeframe, or on the higher timeframe using its current forming bar, was <= the previous bar’s midpoint and is > the current bar’s midpoint, where midpoint = (high + low) / 2

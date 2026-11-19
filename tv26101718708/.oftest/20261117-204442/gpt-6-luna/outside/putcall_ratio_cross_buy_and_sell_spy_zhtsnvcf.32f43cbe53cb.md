@@ -1,2 +1,0 @@
-Go long SPY when the PC close moving average with parameter period 1 crosses above the PC close moving average with parameter period 2.
-Go short SPY when the PC close moving average with parameter period 1 crosses below the PC close moving average with parameter period 2.

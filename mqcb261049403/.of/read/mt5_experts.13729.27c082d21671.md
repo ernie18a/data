@@ -1,5 +1,0 @@
-Calculation: Band oscillator = Jurik moving average, with its phase at the maximum, of 100 × (price − (moving average − deviation)) / (2 × denominator) − 50; price is a selected OHLC-derived price, moving average is a selected moving-average method applied to price, deviation is a multiplier × sqrt(mean((price over the deviation lookback − current moving average)²)), and denominator is deviation unless deviation is zero, when it is 1. The moving-average, deviation and Jurik smoothing lookbacks are independent parameters. Calculate on the selected indicator timeframe, which may be higher or lower than the chart timeframe, using its last completed bar and preceding completed bar.
-Long: Previous band oscillator ≤ upper threshold AND current band oscillator > upper threshold
-Short: Previous band oscillator ≥ lower threshold AND current band oscillator < lower threshold
-Exit: long, current band oscillator < 0 OR low ≤ entry price − stop-loss distance OR high ≥ entry price + take-profit distance
-Exit: short, current band oscillator ≥ 0 OR high ≥ entry price + stop-loss distance OR low ≤ entry price − take-profit distance

@@ -1,4 +1,0 @@
-Calculation: Normalized EMA slope = (medium-term EMA of close − its value a slope-lookback bars ago) / ATR.
-Calculation: Smoothed momentum = EMA of the rate of change of close.
-Long: Short-term EMA of close > medium-term EMA of close AND medium-term EMA of close > long-term EMA of close AND normalized EMA slope >= bullish slope threshold AND smoothed momentum >= bullish momentum threshold.
-Short: Short-term EMA of close < medium-term EMA of close AND medium-term EMA of close < long-term EMA of close AND normalized EMA slope <= negative bearish slope threshold AND smoothed momentum <= negative bearish momentum threshold.

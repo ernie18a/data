@@ -1,1 +1,0 @@
-A complete reproducible framework cannot be derived from the specified fields: the entry conditions use Bid and Ask, which are not present in the backtest data. Several exits also depend on broker quotes, account equity, position sizes, commissions, or swap charges. Substituting bar prices would not necessarily produce the same decisions.

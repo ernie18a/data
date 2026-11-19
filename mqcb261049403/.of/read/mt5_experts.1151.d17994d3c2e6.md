@@ -1,5 +1,0 @@
-Calculation: Coefficient = s × log(A/B), where s is a selectable sign; for lookback n, median price p[t]=(high[t]+low[t])/2, m[t] is the n-period smoothed moving average of median price shifted forward by 3 bars, M=sum(i, i=1..n), N=sum(i², i=1..n), A=(sum(p[t-i+1])+(N-2×sum(p[t-i+1]×(6-i)))×n/M)/M, and B=(sum(m[t-i+1])+(N-2×sum(m[t-i+1]×(n+1-i)))×n/M)/M; sums are over i=1..n. Calculate on the chart timeframe or a selectable higher or lower timeframe, using the last completed indicator-timeframe bar by default or the forming bar if selected.
-Long: Coefficient > 0 AND previous indicator-timeframe bar coefficient < 0
-Short: Coefficient < 0 AND previous indicator-timeframe bar coefficient > 0
-Exit: long, coefficient < 0 OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
-Exit: short, coefficient > 0 OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

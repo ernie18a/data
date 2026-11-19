@@ -1,7 +1,0 @@
-Calculation: Profile value area = Divide the profile's high-low range into a configurable number of equal price bins. Assign each bar's entire volume to the bin containing its high-low midpoint, clamping the highest endpoint to the last bin. Start at the highest-volume bin, choosing the lowest bin on a tie. Add the higher-volume adjacent bin until a configurable fraction of total profile volume is included; choose the upper bin on a tie and use the remaining side at a boundary. The value area high and low are the upper and lower edges of the included bins.
-Calculation: Session profile = Profile value area from the start of the current session through the current bar, including bars outside the session until the next session starts; available after the session's first bar.
-Calculation: Range profile = Profile value area over a configurable lookback plus the current bar; its number of bins may differ from the session profile's.
-Calculation: Initial balance low = Lowest low of the first configurable number of bars from a session's start; retain the most recently completed initial balance until the next one completes.
-Long: Close > session profile value area high AND close > range profile value area high.
-Short: Close < session profile value area low AND close < range profile value area low.
-Short: Close < initial balance low.

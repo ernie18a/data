@@ -1,3 +1,0 @@
-Calculation: Filter comparison = fast adaptive trend line (FATL) minus slow adaptive trend line (SATL), both applied to the same selected price series; use the chart timeframe or a higher timeframe. For a higher timeframe, evaluate the still-forming bar at its first chart bar and hold that comparison until the next higher-timeframe bar.
-Long: Filter comparison > 0 OR (filter comparison = 0 AND the most recent nonzero filter comparison > 0)
-Short: Filter comparison < 0 OR (filter comparison = 0 AND the most recent nonzero filter comparison < 0)

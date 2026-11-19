@@ -1,4 +1,0 @@
-Calculation: First oscillator = 100 × smoothed(close − lowest low) / smoothed(highest high − lowest low), using the same lookback and first smoothing method and period for both series; use 100 if the smoothed range is zero. The lookback includes the current bar.
-Calculation: Second oscillator = 100 × second smoothing of smoothed(close − lowest low) / second smoothing of smoothed(highest high − lowest low), using the same second smoothing method and period for both series; use 100 if the twice-smoothed range is zero. Calculate both oscillators on the chart timeframe or on a higher timeframe using its still-forming bar.
-Long: First oscillator > second oscillator
-Short: First oscillator < second oscillator

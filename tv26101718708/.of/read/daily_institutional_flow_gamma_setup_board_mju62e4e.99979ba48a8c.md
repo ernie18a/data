@@ -1,2 +1,0 @@
-Long: Shorter-lookback execution EMA of the selected price source >= longer-lookback execution EMA of the selected price source.
-Short: Shorter-lookback execution EMA of the selected price source < longer-lookback execution EMA of the selected price source.

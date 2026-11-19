@@ -1,7 +1,0 @@
-Calculation: Shorter-period pivot = (high + low + close) / 3 of the last completed higher-timeframe bar.
-Calculation: Longer-period pivot = (high + low + close) / 3 of the last completed higher-timeframe bar; its timeframe is higher than the shorter-period pivot timeframe.
-Calculation: Longer-period resistance levels = 2 × longer-period pivot − low, and longer-period pivot + high − low, using the last completed longer-period bar.
-Calculation: Longer-period support levels = 2 × longer-period pivot − high, and longer-period pivot − high + low, using the last completed longer-period bar.
-Calculation: Double-smoothed EMA = EMA of the EMA of close, with the same lookback for both EMAs.
-Long: Close > shorter-period pivot − price buffer AND close < shorter-period pivot + price buffer AND Supertrend direction is bullish AND close > double-smoothed EMA AND absolute distance from close to each longer-period resistance and support level >= price buffer AND RSI <= upper threshold AND RSI >= lower threshold.
-Short: Close > shorter-period pivot − price buffer AND close < shorter-period pivot + price buffer AND Supertrend direction is bearish AND close < double-smoothed EMA AND absolute distance from close to each longer-period resistance and support level >= price buffer AND RSI <= upper threshold AND RSI >= lower threshold.

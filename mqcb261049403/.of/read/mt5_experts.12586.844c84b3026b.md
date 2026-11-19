@@ -1,5 +1,0 @@
-Calculation: Histogram = Jurik moving average of the normalized difference between close and its simple moving average. Normalize each difference by multiplying it by 100 and dividing by the value at zero-based index floor(lookback × percentile) in the ascending sorted rolling lookback of absolute differences, including the current bar. Use the chart timeframe or a configurable higher or lower timeframe; for another timeframe use the last completed bar and its predecessors.
-Long: Histogram on the last completed bar > histogram on the preceding bar AND histogram on the bar before that > histogram on the preceding bar
-Short: Histogram on the last completed bar < histogram on the preceding bar AND histogram on the bar before that < histogram on the preceding bar
-Exit: long, histogram on the last completed bar < histogram on the preceding bar OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
-Exit: short, histogram on the last completed bar > histogram on the preceding bar OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

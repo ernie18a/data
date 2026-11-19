@@ -1,2 +1,0 @@
-Long: Heikin Ashi close >= Heikin Ashi open on the chart timeframe or the still-forming higher-timeframe bar
-Short: Heikin Ashi close < Heikin Ashi open on the chart timeframe or the still-forming higher-timeframe bar

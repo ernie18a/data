@@ -1,3 +1,0 @@
-Calculation: Oscillator = shorter-period moving average of the accumulation/distribution line minus longer-period moving average of the accumulation/distribution line, using the same selectable smoothing method for both
-Long: upper Bollinger Band minus middle Bollinger Band >= flat threshold AND oscillator > moving average of oscillator
-Short: upper Bollinger Band minus middle Bollinger Band >= flat threshold AND oscillator < moving average of oscillator

@@ -1,1 +1,0 @@
-If account equity falls below balance by the configured hard-stop drawdown, close all open positions in the traded instrument.

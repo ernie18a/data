@@ -1,2 +1,0 @@
-Long: Bollinger upper band minus middle band >= flatness threshold AND RSI > moving average of RSI, calculated on the chart timeframe or on the higher timeframe bar still forming
-Short: Bollinger upper band minus middle band >= flatness threshold AND RSI < moving average of RSI, calculated on the chart timeframe or on the higher timeframe bar still forming

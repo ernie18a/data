@@ -1,2 +1,0 @@
-Long: Any completed lower-timeframe bar within the chart bar has RSI > threshold AND (RSI < hide-range minimum OR RSI > hide-range maximum)
-Short: Any completed lower-timeframe bar within the chart bar has RSI <= threshold AND (RSI < hide-range minimum OR RSI > hide-range maximum)

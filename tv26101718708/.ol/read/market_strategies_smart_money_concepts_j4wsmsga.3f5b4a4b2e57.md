@@ -1,2 +1,0 @@
-Long: bearish structural trend AND close >= protected structural high (bullish CHoCH) OR bullish structural trend AND close >= continuation high (bullish BOS)
-Short: bullish structural trend AND close <= protected structural low (bearish CHoCH) OR bearish structural trend AND close <= continuation low (bearish BOS)

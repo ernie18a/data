@@ -1,7 +1,0 @@
-Calculation: Price = a selected bar price: open, high, low, close, (high + low)/2, (high + low + close)/3, (high + low + 2 × close)/4, (open + close)/2, (open + high + low + close)/4, high if close > open and low if close < open and close otherwise, (high + close)/2 if close > open and (low + close)/2 if close < open and close otherwise, or DeMark price.
-Calculation: Volume-weighted Fisher = 100 × selected moving average of (Fisher × volume), where range high and range low are the highest high and lowest low over the Fisher lookback including the current bar; normalized price = (price − range low)/(range high − range low); value = normalized price − 0.5 + 0.67 × previous value; ratio = (1 + value)/(1 − value), replaced by 1 when below 0.0000001; Fisher = 0.5 × ln(ratio) + 0.5 × previous Fisher. Initialize previous value and previous Fisher to zero. If range high equals range low, increase range high by one price increment.
-Calculation: Volume-scaled levels = upper and lower level parameters multiplied by the selected moving average of volume, using the same method and parameters as the volume-weighted Fisher smoothing.
-Long: Volume-weighted Fisher > previous volume-weighted Fisher.
-Short: Volume-weighted Fisher < previous volume-weighted Fisher.
-Long: Volume-weighted Fisher > upper volume-scaled level AND volume-weighted Fisher >= previous volume-weighted Fisher.
-Short: Volume-weighted Fisher < lower volume-scaled level AND volume-weighted Fisher <= previous volume-weighted Fisher.

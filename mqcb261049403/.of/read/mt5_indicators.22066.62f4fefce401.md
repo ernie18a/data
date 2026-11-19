@@ -1,3 +1,0 @@
-Calculation: Volume-weighted oscillator = smooth ((100 × DeMarker(high, low) − 50) × volume) using the selected moving-average method.
-Long: Volume-weighted oscillator > previous bar’s value OR (volume-weighted oscillator = previous bar’s value AND its most recent unequal change was upward).
-Short: Volume-weighted oscillator < previous bar’s value OR (volume-weighted oscillator = previous bar’s value AND its most recent unequal change was downward).

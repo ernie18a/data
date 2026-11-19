@@ -1,6 +1,0 @@
-Long: close > EMA(close, longer lookback, T1, current bar) AND RSI(close, lookback, T2, current bar) < pullback threshold AND Stochastic RSI K(RSI(close, lookback, T3, current bar), lookback) crosses above SMA(Stochastic RSI K, smoothing lookback) AND Stochastic RSI K < oversold threshold
-Short: close < EMA(close, longer lookback, T1, current bar) AND RSI(close, lookback, T2, current bar) > rally threshold AND Stochastic RSI K(RSI(close, lookback, T3, current bar), lookback) crosses below SMA(Stochastic RSI K, smoothing lookback) AND Stochastic RSI K > overbought threshold
-Long: position side is long AND (low <= average entry price - ATR(lookback) * first DCA distance parameter OR low <= average entry price - ATR(lookback) * second DCA distance parameter)
-Short: position side is short AND (high >= average entry price + ATR(lookback) * first DCA distance parameter OR high >= average entry price + ATR(lookback) * second DCA distance parameter)
-Exit: long, low <= average entry price - ATR(lookback) * stop distance parameter OR high >= average entry price + ATR(lookback) * take-profit distance parameter
-Exit: short, high >= average entry price + ATR(lookback) * stop distance parameter OR low <= average entry price - ATR(lookback) * take-profit distance parameter

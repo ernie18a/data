@@ -1,2 +1,0 @@
-Long: low < lower Bollinger Band AND volume > average volume × a multiplier AND RSI < an oversold threshold AND low = the lowest low over the Bollinger Band lookback
-Short: high > upper Bollinger Band AND volume > average volume × a multiplier AND RSI > an overbought threshold AND high = the highest high over the Bollinger Band lookback

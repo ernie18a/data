@@ -1,6 +1,0 @@
-Calculation: Average high and average low = divide by the lookback the sum of the highs or lows of the preceding lookback minus one completed higher-timeframe periods and either the next older completed period or the still-forming higher-timeframe period. For the still-forming period, exclude its first chart-timeframe bar. Aggregate each period from chart-timeframe bars.
-Calculation: Trend = up when close is above average high; down when close is below average low; otherwise retain the preceding bar's trend. Initially neither trend is set. For the trading system, calculate trend on the selected indicator timeframe, which may be higher or lower than the chart timeframe, using either its last completed bar or its still-forming bar according to the signal-bar setting.
-Long: Trend = up
-Short: Trend = down
-Exit: long, trend = down OR low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance
-Exit: short, trend = up OR high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance

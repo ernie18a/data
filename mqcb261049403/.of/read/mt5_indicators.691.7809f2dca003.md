@@ -1,4 +1,0 @@
-Long: Stochastic %K > upper threshold AND absolute difference between close and close a fixed number of bars ago > ATR / positive multiplier
-Short: Stochastic %K < lower threshold AND absolute difference between close and close a fixed number of bars ago > ATR / positive multiplier
-Long: Stochastic %K on the still-forming higher-timeframe bar > upper threshold AND absolute difference between its close and the close a fixed number of higher-timeframe bars ago > higher-timeframe ATR / positive multiplier
-Short: Stochastic %K on the still-forming higher-timeframe bar < lower threshold AND absolute difference between its close and the close a fixed number of higher-timeframe bars ago > higher-timeframe ATR / positive multiplier

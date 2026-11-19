@@ -1,7 +1,0 @@
-Calculation: Fisher cycle = On a configurable indicator timeframe, which may be higher, lower, or equal to the chart timeframe, use the last completed indicator bar by default; a forming bar may be selected instead. Let p = (high + low)/2 and s = (p + 2*p[1] + 2*p[2] + p[3])/6, where [1] means one indicator bar earlier. For the initial lookback-plus-three bars, cycle = (p + 2*p[1] + p[2])/4; thereafter cycle = (1-alpha/2)^2*(s - 2*s[1] + s[2]) + 2*(1-alpha)*cycle[1] - (1-alpha)^2*cycle[2]. Initialize prior price, smoothed price, cycle, and normalized-cycle values to the midpoint of the fourth bar. Normalize cycle to its minimum and maximum over the lookback including the current bar, using zero when the range is zero. Let w be the four-bar weighted average of normalized cycle with weights 4, 3, 2, 1 from newest to oldest. Fisher cycle = 0.5*ln((1 + 1.98*(w - 0.5))/(1 - 1.98*(w - 0.5))).
-Long: Fisher cycle > Fisher cycle[1] AND Fisher cycle[1] <= Fisher cycle[2]
-Short: Fisher cycle < Fisher cycle[1] AND Fisher cycle[1] >= Fisher cycle[2]
-Exit: long, Fisher cycle < Fisher cycle[1]
-Exit: short, Fisher cycle > Fisher cycle[1]
-Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
-Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

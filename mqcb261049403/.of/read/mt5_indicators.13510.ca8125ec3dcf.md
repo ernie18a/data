@@ -1,3 +1,0 @@
-Calculation: Extrapolated moving average = 2 × shorter-period simple moving average of close − longer-period simple moving average of close; calculate either on the chart timeframe or on the higher timeframe using its still-forming bar.
-Long: Extrapolated moving average > its value on the previous bar of its calculation timeframe.
-Short: Extrapolated moving average < its value on the previous bar of its calculation timeframe.

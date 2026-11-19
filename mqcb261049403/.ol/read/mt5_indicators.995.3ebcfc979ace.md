@@ -1,2 +1,0 @@
-Long: RSI on the higher timeframe, using the bar still forming, > RSI on the previous completed higher-timeframe bar
-Short: RSI on the higher timeframe, using the bar still forming, < RSI on the previous completed higher-timeframe bar

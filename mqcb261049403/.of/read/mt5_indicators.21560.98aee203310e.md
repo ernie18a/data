@@ -1,2 +1,0 @@
-Long: Money Flow Index calculated from close is greater than Money Flow Index calculated from open, using the same lookback on either the chart timeframe or the still-forming higher-timeframe bar.
-Short: Money Flow Index calculated from close is less than Money Flow Index calculated from open, using the same lookback on either the chart timeframe or the still-forming higher-timeframe bar.

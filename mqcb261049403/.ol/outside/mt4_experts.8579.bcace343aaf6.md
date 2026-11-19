@@ -1,1 +1,0 @@
-Close all open and pending orders when the account’s floating profit or loss reaches its configured basket profit or loss threshold.

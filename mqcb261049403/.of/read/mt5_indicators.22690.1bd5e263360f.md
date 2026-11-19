@@ -1,7 +1,0 @@
-Calculation: Smoothed candle = apply the same selected moving-average method and parameters separately to open, high, low, and close; candle close is the average of those four smoothed values. Candle open is the previous candle close when abs(open - close) <= the gap threshold; otherwise it is the average of the initial raw open and the previous candle close. Initialize the initial raw open and previous candle close from the first calculation bar's raw open and close, respectively.
-Calculation: Candle trend = +1 when candle close > candle open, -1 when candle close < candle open, and the previous trend when they are equal; initialize the trend to 0.
-Calculation: Higher-timeframe trend signal = calculate the same smoothed candle and trend on the still-forming higher-timeframe bar; sample its trend change on the first chart bar in each higher-timeframe bar and carry that sampled signal through the remaining chart bars in that higher-timeframe bar.
-Long: Chart-timeframe candle trend > 0 AND previous chart-timeframe candle trend <= 0
-Short: Chart-timeframe candle trend < 0 AND previous chart-timeframe candle trend >= 0
-Long: Higher-timeframe trend signal indicates a change from a nonnegative trend to a negative trend
-Short: Higher-timeframe trend signal indicates a change from a nonpositive trend to a positive trend

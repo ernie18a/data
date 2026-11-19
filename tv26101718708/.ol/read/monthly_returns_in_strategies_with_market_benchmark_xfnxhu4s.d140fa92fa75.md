@@ -1,1 +1,0 @@
-Long: VWMA of hl2 over a longer lookback is greater than each of its values over a shorter lookback

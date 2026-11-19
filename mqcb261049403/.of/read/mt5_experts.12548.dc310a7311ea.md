@@ -1,8 +1,0 @@
-Calculation: MACD difference = EMA of close with the shorter MACD period minus EMA of close with the longer MACD period; MACD histogram = MACD difference minus its simple moving average over the signal period.
-Calculation: Impulse state = bullish when the close EMA rises from the preceding bar AND the MACD histogram rises from the preceding bar AND the MACD histogram > 0; bearish when the close EMA falls AND the MACD histogram falls AND the MACD histogram < 0; neutral when (the close EMA does not rise AND the histogram > 0) OR (the close EMA does not rise AND the histogram rises) OR (the close EMA does not fall AND the histogram < 0) OR (the close EMA does not fall AND the histogram falls). If none applies, retain that bar's previously assigned state, initially neutral. The standalone indicator uses chart bars; the trading system uses the last completed bar of a configurable higher timeframe and its preceding bar.
-Long: Chart-bar impulse state = bullish.
-Short: Chart-bar impulse state = bearish.
-Long: Last completed higher-timeframe impulse state = bullish AND preceding higher-timeframe impulse state = bearish OR neutral.
-Short: Last completed higher-timeframe impulse state = bearish AND preceding higher-timeframe impulse state = bullish OR neutral.
-Exit: long, last completed higher-timeframe impulse state = bearish OR low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance.
-Exit: short, last completed higher-timeframe impulse state = bullish OR high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance.

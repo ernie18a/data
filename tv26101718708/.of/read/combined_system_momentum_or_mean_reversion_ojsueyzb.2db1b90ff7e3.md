@@ -1,3 +1,0 @@
-Calculation: Candle type = Outside if high > previous high AND low < previous low; inside if high <= previous high AND low >= previous low; up if high > previous high AND the candle is not outside; down otherwise.
-Long: Current candle type = up AND (previous candle type = down OR (previous candle type = inside AND candle type two bars ago = outside)).
-Short: Current candle type = down AND (previous candle type = up OR (previous candle type = inside AND candle type two bars ago = outside)).

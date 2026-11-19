@@ -1,6 +1,0 @@
-Calculation: Oscillator = on the indicator timeframe, let H and L be the highest high and lowest low over a lookback including the evaluated bar; smooth close − (H + L) / 2 and H − L separately with the same long-period EMA, then smooth each result with the same shorter-period Jurik moving average; oscillator = 100 × smoothed displacement / (smoothed range / 2), or 100 when the smoothed range is zero.
-Calculation: Signal line = Jurik moving average of the oscillator, using a longer smoothing period than the oscillator's second smoothing.
-Long: Oscillator on the last completed indicator-timeframe bar > signal line on that bar AND oscillator on the preceding indicator-timeframe bar <= signal line on that bar.
-Short: Oscillator on the last completed indicator-timeframe bar < signal line on that bar AND oscillator on the preceding indicator-timeframe bar >= signal line on that bar.
-Exit: long, oscillator on the last completed indicator-timeframe bar < signal line on that bar OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance.
-Exit: short, oscillator on the last completed indicator-timeframe bar > signal line on that bar OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance.

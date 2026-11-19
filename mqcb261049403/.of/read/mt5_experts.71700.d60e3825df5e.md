@@ -1,2 +1,0 @@
-Long: Time is within the configured trading session AND no long position is open AND RSI of close, rounded to two decimal places, on the last completed bar of a configurable higher or lower timeframe <= lower threshold.
-Short: Time is within the configured trading session AND no short position is open AND RSI of close, rounded to two decimal places, on the last completed bar of a configurable higher or lower timeframe >= upper threshold.

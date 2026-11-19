@@ -1,2 +1,0 @@
-Long: Sum of volume on bars with close > open over the lookback >= sum of volume on bars with close < open over the same lookback
-Short: Sum of volume on bars with close > open over the lookback < sum of volume on bars with close < open over the same lookback

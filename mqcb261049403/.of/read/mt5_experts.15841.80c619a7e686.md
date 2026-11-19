@@ -1,5 +1,0 @@
-Calculation: Volume-weighted moving average = sum of selected price times volume over the lookback divided by sum of volume over the same lookback; calculate on a configurable timeframe that may be higher or lower than the chart timeframe, using either the last completed bar or the still-forming bar as the signal bar and the two preceding bars.
-Long: Signal-bar volume-weighted moving average > preceding bar's volume-weighted moving average AND volume-weighted moving average two bars before the signal bar > preceding bar's volume-weighted moving average.
-Short: Signal-bar volume-weighted moving average < preceding bar's volume-weighted moving average AND volume-weighted moving average two bars before the signal bar < preceding bar's volume-weighted moving average.
-Exit: long, signal-bar volume-weighted moving average < preceding bar's volume-weighted moving average OR low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance.
-Exit: short, signal-bar volume-weighted moving average > preceding bar's volume-weighted moving average OR high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance.

@@ -1,6 +1,0 @@
-Calculation: Adaptive average = for each bar, let N be the lookback, noise be the sum of the absolute close-to-close changes over N bars plus a small positive constant, and efficiency be the absolute change in close over N bars divided by noise. Let fast and slow smoothing constants be 2 divided by their respective moving-average periods plus 1, with the fast period shorter than the slow period. Update the average as previous average + (slow constant + efficiency × (fast constant − slow constant)) raised to a configurable power × (close − previous average). Seed the average with the close immediately before the first calculated bar.
-Calculation: Filtered adaptive change = the current adaptive average minus its previous value, rounded to configurable precision. The threshold is a configurable multiplier times the population standard deviation of the latest N adaptive-average changes, rounded to the same precision.
-Long: On the chart timeframe, filtered adaptive change > threshold AND adaptive average != 0
-Short: On the chart timeframe, filtered adaptive change < negative threshold AND adaptive average != 0
-Long: On a higher timeframe, using its still-forming bar, filtered adaptive change > threshold AND adaptive average != 0
-Short: On a higher timeframe, using its still-forming bar, filtered adaptive change < negative threshold AND adaptive average != 0

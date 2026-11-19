@@ -1,4 +1,0 @@
-Long: mode is trend AND strength of base currency > average strength of base currency AND strength of quote currency < average strength of quote currency
-Short: mode is trend AND strength of base currency < average strength of base currency AND strength of quote currency > average strength of quote currency
-Long: mode is equal AND strength of base currency < average strength of base currency AND strength of quote currency > average strength of quote currency
-Short: mode is equal AND strength of base currency > average strength of base currency AND strength of quote currency < average strength of quote currency

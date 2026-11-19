@@ -1,5 +1,0 @@
-Calculation: Shifted SMA = simple moving average of chart-bar closes, shifted forward by a configurable number of bars and evaluated at the first tick of the current chart bar; the current bar's close at that tick is its open.
-Long: position is flat AND available chart-bar count exceeds the minimum history requirement AND previous bar open < shifted SMA AND previous bar close > shifted SMA
-Short: position is flat AND available chart-bar count exceeds the minimum history requirement AND previous bar open > shifted SMA AND previous bar close < shifted SMA
-Exit: long, available chart-bar count exceeds the minimum history requirement AND previous bar open > shifted SMA AND previous bar close < shifted SMA
-Exit: short, available chart-bar count exceeds the minimum history requirement AND previous bar open < shifted SMA AND previous bar close > shifted SMA

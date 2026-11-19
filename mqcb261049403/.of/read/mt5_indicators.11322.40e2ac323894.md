@@ -1,3 +1,0 @@
-Calculation: Oscillator = shorter-period moving average of the accumulation/distribution line minus its longer-period moving average, using the same smoothing method for both.
-Long: Upper Bollinger Band minus its middle band >= flatness threshold AND oscillator > moving average of oscillator, evaluated on either the chart timeframe or the still-forming higher-timeframe bar.
-Short: Upper Bollinger Band minus its middle band >= flatness threshold AND oscillator < moving average of oscillator, evaluated on either the chart timeframe or the still-forming higher-timeframe bar.

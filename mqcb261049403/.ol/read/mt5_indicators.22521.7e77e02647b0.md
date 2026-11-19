@@ -1,2 +1,0 @@
-Long: JMA-smoothed close > JMA-smoothed open, using either chart-timeframe bars or a higher-timeframe bar still forming
-Short: JMA-smoothed close < JMA-smoothed open, using either chart-timeframe bars or a higher-timeframe bar still forming

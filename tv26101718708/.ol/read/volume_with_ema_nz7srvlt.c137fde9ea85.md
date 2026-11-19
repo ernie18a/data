@@ -1,1 +1,0 @@
-Long: volume > volume EMA × high-volume multiplier

@@ -1,2 +1,0 @@
-Long: A lower fractal forms AND volume on its center bar > average volume of the 3 bars immediately before its center bar
-Short: An upper fractal forms AND volume on its center bar > average volume of the 3 bars immediately before its center bar

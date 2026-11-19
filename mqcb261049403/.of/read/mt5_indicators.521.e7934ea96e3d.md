@@ -1,3 +1,0 @@
-Calculation: Smoothed ease of movement = moving average of raw ease of movement, where midpoint = (high + low) / 2 and raw ease of movement = (midpoint - previous bar's midpoint) * midpoint / (2 * volume) when volume is nonzero, otherwise 0.
-Long: Previous smoothed ease of movement <= 0 AND current smoothed ease of movement > 0
-Short: Previous smoothed ease of movement >= 0 AND current smoothed ease of movement < 0

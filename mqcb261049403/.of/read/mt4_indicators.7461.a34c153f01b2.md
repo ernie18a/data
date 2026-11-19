@@ -1,2 +1,0 @@
-Long: RSX on any one of four independently configured timeframes > upper threshold; use its bar still forming if the timeframe is higher than the chart timeframe, or its latest bar if lower or equal.
-Short: RSX on any one of the same four timeframes < lower threshold; use its bar still forming if the timeframe is higher than the chart timeframe, or its latest bar if lower or equal.

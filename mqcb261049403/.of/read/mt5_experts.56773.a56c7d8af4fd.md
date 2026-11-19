@@ -1,9 +1,0 @@
-Calculation: Price windows = equal-length close-price windows on three ordered timeframes: shortest, intermediate, and longest. Each window includes its still-forming bar and is ordered oldest to newest. Each timeframe may be lower than, equal to, or higher than the chart timeframe, depending on its configured value.
-Calculation: Weibull density = Weibull probability density of the newest close in the shortest-timeframe window, with fixed shape and scale parameters.
-Calculation: Poisson probability = Poisson cumulative probability at the final cumulative event count in the shortest-timeframe window. Starting at zero, increment the count whenever the absolute change between consecutive closes exceeds a price-distance parameter. The Poisson mean is the average of all cumulative counts; use a positive fallback mean if that average is zero. For a one-close window, use a count and mean of one.
-Calculation: Stop distance = the greater of a fixed minimum price distance and a multiplier of chart-timeframe ATR at entry, using the still-forming bar.
-Calculation: Target distance = the greater of a larger fixed minimum price distance and a larger multiplier of the same chart-timeframe ATR at entry.
-Long: Poisson probability > breakout threshold AND Weibull density > mean-reversion threshold AND oldest close > newest close in the shortest-timeframe window AND oldest close > newest close in the intermediate-timeframe window AND maximum close minus minimum close in the longest-timeframe window > volatility threshold.
-Short: Weibull density < mean-reversion threshold AND absolute difference between newest and oldest closes in the longest-timeframe window < trend threshold.
-Exit: long, low <= entry price minus stop distance OR high >= entry price plus target distance.
-Exit: short, high >= entry price plus stop distance OR low <= entry price minus target distance.

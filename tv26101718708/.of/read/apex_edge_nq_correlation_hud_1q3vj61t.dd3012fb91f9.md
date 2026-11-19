@@ -1,4 +1,0 @@
-Calculation: Bullish confluence = count of true conditions among: chart close > chart-timeframe Hull moving average; higher-timeframe close > higher-timeframe Hull moving average; chart-timeframe RSI > its midpoint; higher-timeframe RSI > its midpoint; chart close > midpoint of the rolling highest high and lowest low. Use the same Hull period and RSI period on both timeframes. For higher-timeframe calculations, use the last completed bar on historical bars and the still-forming bar in real time.
-Calculation: Bearish confluence = number of confluence conditions minus bullish confluence.
-Long: Bullish confluence > bearish confluence
-Short: Bearish confluence > bullish confluence

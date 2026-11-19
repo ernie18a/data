@@ -1,7 +1,0 @@
-Calculation: Third-generation moving average = (1 + a) × A − a × B, where A is a selected moving average of the selected bar price with a longer period L, B is the same type of moving average of A with half that period, and a = 2 × (L − 1) / (L − 2).
-Long: Third-generation moving average on the chart bar > its value on the preceding chart bar.
-Short: Third-generation moving average on the chart bar < its value on the preceding chart bar.
-Exit: long, third-generation moving average on the selected indicator bar < its value on the preceding indicator bar; the indicator timeframe may be higher or lower than the chart timeframe, using the last completed bar or the still-forming bar according to the selected signal-bar setting.
-Exit: short, third-generation moving average on the selected indicator bar > its value on the preceding indicator bar; the indicator timeframe may be higher or lower than the chart timeframe, using the last completed bar or the still-forming bar according to the selected signal-bar setting.
-Exit: long, low <= entry price − stop-loss distance OR high >= entry price + take-profit distance.
-Exit: short, high >= entry price + stop-loss distance OR low <= entry price − take-profit distance.

@@ -1,7 +1,0 @@
-Calculation: Weighted TRIX histogram = Calculate five TRIX series of the selected applied price with successively longer periods. Sum the five series with their respective weights, using the second series' weight also for the third series. Smooth this sum recursively with smoothing factor 1 divided by a first smoothing period; subtract the result from the sum, then smooth that difference recursively with smoothing factor 1 divided by a second smoothing period. Initialize the first smoother to the initial sum divided by its period and the second to the initial difference divided by its period. For the expert's decisions, calculate on a selectable timeframe that may be the chart timeframe, higher, or lower; use a selectable signal bar, including either the last completed bar or the bar still forming, and the two preceding bars on that timeframe.
-Long: Histogram on the signal bar > histogram on the preceding bar AND histogram two bars before the signal bar > histogram on the preceding bar.
-Short: Histogram on the signal bar < histogram on the preceding bar AND histogram two bars before the signal bar < histogram on the preceding bar.
-Exit: short, histogram on the signal bar > histogram on the preceding bar.
-Exit: long, histogram on the signal bar < histogram on the preceding bar.
-Exit: long, low <= entry price - enabled stop-loss distance OR high >= entry price + enabled take-profit distance.
-Exit: short, high >= entry price + enabled stop-loss distance OR low <= entry price - enabled take-profit distance.

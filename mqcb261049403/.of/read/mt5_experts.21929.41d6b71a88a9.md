@@ -1,7 +1,0 @@
-Calculation: Aligned indicator values = Parabolic SAR and directional indicators calculated on the configured signal timeframe, which may be the chart timeframe or a higher or lower timeframe. Copy their values by bar index from the still-forming signal-timeframe bar into chart bars by index from the still-forming chart bar; compare them with the close of the selected chart bar, which may be the still-forming bar or an earlier bar.
-Long: At the start of a new chart bar AND (hour filter disabled OR current hour >= start hour AND current hour < end hour) AND aligned Parabolic SAR < selected chart-bar close AND aligned +DI > aligned -DI
-Short: At the start of a new chart bar AND (hour filter disabled OR current hour >= start hour AND current hour < end hour) AND aligned Parabolic SAR >= selected chart-bar close AND aligned +DI <= aligned -DI
-Exit: long, aligned Parabolic SAR >= selected chart-bar close OR aligned +DI <= aligned -DI
-Exit: short, aligned Parabolic SAR < selected chart-bar close OR aligned +DI > aligned -DI
-Exit: long, stop loss enabled AND low <= entry price - stop-loss distance OR take profit enabled AND high >= entry price + take-profit distance
-Exit: short, stop loss enabled AND high >= entry price + stop-loss distance OR take profit enabled AND low <= entry price - take-profit distance

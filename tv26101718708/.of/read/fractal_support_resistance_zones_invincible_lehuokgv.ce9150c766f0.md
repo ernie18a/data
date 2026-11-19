@@ -1,4 +1,0 @@
-Calculation: Momentum Z-score = (current close change minus the simple moving average of close changes) divided by their population standard deviation over the same lookback; use zero when the standard deviation is unavailable or zero.
-Calculation: Structural pivot high or low = a high or low confirmed as a pivot using equal numbers of chart bars on each side; retain the latest confirmed pivot and its bar index separately for highs and lows.
-Long: Close > latest structural pivot high AND previous close <= that same pivot high AND momentum Z-score > positive threshold AND that pivot index differs from the last bullishly broken pivot index.
-Short: Close < latest structural pivot low AND previous close >= that same pivot low AND momentum Z-score < negative threshold AND that pivot index differs from the last bearishly broken pivot index.

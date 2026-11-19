@@ -1,2 +1,0 @@
-Long: Close[1] > Close[shift] + long threshold AND no open long position, where shift is the chart-bar index returned by locating the parameter start time on T1
-Short: Close[1] < Close[shift] - short threshold AND no open short position, where shift is the chart-bar index returned by locating the parameter start time on T1

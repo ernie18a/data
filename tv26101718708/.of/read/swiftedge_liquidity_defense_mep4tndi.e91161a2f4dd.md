@@ -1,6 +1,0 @@
-Calculation: Active swing levels = Confirm a swing high or low after an equal lookback of bars on each side, using the rightmost bar when extremes tie. Add its high or low as a level after processing that confirmation bar. Keep at most a configurable number of levels per side, discarding the oldest on that side when exceeded. Starting on the next bar, remove a high level when high > level or close > level, and remove a low level when low < level or close < level; evaluate decisions before removal.
-Calculation: Buy and sell volume = Either sum the volume of all completed lower-timeframe bars within the chart bar, assigning bars with close >= open to buy volume and the rest to sell volume, or estimate buy volume as volume × (close − low) / (high − low) and sell volume as the remainder. Use the estimate when lower-timeframe data is unavailable; if high = low, split volume equally. Buy and sell shares are their respective volumes divided by total volume; if total volume is zero, both shares are one half.
-Long: low < an active swing-low level AND close >= that level
-Short: high > an active swing-high level AND close <= that level
-Long: low < an active swing-low level AND close >= that level AND buy share >= a configurable threshold
-Short: high > an active swing-high level AND close <= that level AND sell share >= a configurable threshold

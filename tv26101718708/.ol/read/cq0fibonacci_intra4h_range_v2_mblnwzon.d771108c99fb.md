@@ -1,2 +1,0 @@
-Long: On an intraday chart, current chart close >= open of the still-forming gauge-timeframe bar (that timeframe may be higher than, equal to, or lower than the chart timeframe).
-Short: On an intraday chart, current chart close < open of the still-forming gauge-timeframe bar (that timeframe may be higher than, equal to, or lower than the chart timeframe).

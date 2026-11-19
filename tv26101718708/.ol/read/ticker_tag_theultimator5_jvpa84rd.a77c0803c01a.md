@@ -1,2 +1,0 @@
-Long: current price >= previous completed higher-timeframe close; if unavailable, current price >= open of the still-forming higher-timeframe bar
-Short: current price < previous completed higher-timeframe close; if unavailable, current price < open of the still-forming higher-timeframe bar

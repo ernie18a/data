@@ -1,3 +1,0 @@
-Calculation: Sampled RSI = RSI of a chosen price derived from OHLC, calculated independently for each configured timeframe at or above the chart timeframe; on a higher timeframe, sample the RSI of the bar still forming on its first chart bar and hold that value until the next higher-timeframe bar begins; on the chart timeframe, use the current bar's RSI.
-Long: Sampled RSI > upper threshold
-Short: Sampled RSI < lower threshold

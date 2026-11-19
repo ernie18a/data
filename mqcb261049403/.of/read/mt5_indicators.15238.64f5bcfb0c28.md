@@ -1,8 +1,0 @@
-Calculation: Input price = a selectable price: close, open, high, low, (high + low)/2, (high + low + close)/3, (high + low + 2 × close)/4, (open + close)/2, (open + high + low + close)/4, high if close > open and low if close < open and close otherwise, (high + close)/2 if close > open and (low + close)/2 if close < open and close otherwise, or DeMark price.
-Calculation: Oscillator = 100 × smoothed deviation / smoothed absolute deviation, where deviation = input price − a selectable moving average of input price; smooth deviation and absolute deviation separately with the same selectable moving-average method and parameters. The price average and deviation averages have independently selectable methods and parameters. The oscillator is unavailable when smoothed deviation is zero or the denominator is zero.
-Calculation: Change = oscillator − previous-bar oscillator; threshold = a selectable multiplier × population standard deviation of change over a selectable lookback including the current bar. Round change and threshold separately to a selectable decimal precision.
-Calculation: Evaluate the oscillator and change either on the chart timeframe or on the still-forming higher-timeframe bar aggregated through the current chart bar.
-Long: Oscillator > previous-bar oscillator.
-Short: Oscillator < previous-bar oscillator.
-Long: Rounded change > rounded threshold.
-Short: Rounded change < −rounded threshold.

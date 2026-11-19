@@ -1,5 +1,0 @@
-Calculation: AUD strength = (-EURAUD close - GBPAUD close + AUDUSD close + AUDCAD close + AUDNZD close + AUDJPY close / 100 + AUDCHF close) / 7
-Long: AUD is the base currency AND (trend mode favors rising AUD strength AND AUD strength > EMA(AUD strength, parameter) OR trend mode favors falling AUD strength AND AUD strength < EMA(AUD strength, parameter))
-Short: AUD is the base currency AND (trend mode favors rising AUD strength AND AUD strength < EMA(AUD strength, parameter) OR trend mode favors falling AUD strength AND AUD strength > EMA(AUD strength, parameter))
-Long: AUD is the quote currency AND (trend mode favors rising AUD strength AND AUD strength < EMA(AUD strength, parameter) OR trend mode favors falling AUD strength AND AUD strength > EMA(AUD strength, parameter))
-Short: AUD is the quote currency AND (trend mode favors rising AUD strength AND AUD strength > EMA(AUD strength, parameter) OR trend mode favors falling AUD strength AND AUD strength < EMA(AUD strength, parameter))

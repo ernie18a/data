@@ -1,3 +1,0 @@
-Calculation: net advances = advancing issues - declining issues
-Long: McClellan Oscillator(net advances, short EMA length, long EMA length) on the previous bar < threshold AND McClellan Oscillator(net advances, short EMA length, long EMA length) > threshold
-Long: McClellan Oscillator(net advances, short EMA length, long EMA length) on the previous bar < threshold AND McClellan Oscillator(net advances, short EMA length, long EMA length) > threshold AND no position is open

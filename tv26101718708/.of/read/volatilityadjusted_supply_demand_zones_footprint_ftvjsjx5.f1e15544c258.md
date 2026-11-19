@@ -1,2 +1,0 @@
-Long: Close of the candle a confirmation lookback ago > its open AND its ATR > 0 AND its absolute body size / its ATR > the displacement multiplier AND every bar since that candle through the current bar has low >= that candle's high - its ATR × the zone-width multiplier.
-Short: Close of the candle a confirmation lookback ago < its open AND its ATR > 0 AND its absolute body size / its ATR > the displacement multiplier AND every bar since that candle through the current bar has high <= that candle's low + its ATR × the zone-width multiplier.

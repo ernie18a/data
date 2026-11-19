@@ -1,3 +1,0 @@
-Calculation: Aroon oscillator = 100 × (bars since the lowest low − bars since the highest high) / lookback, using the current bar and preceding bars within the lookback; choose the most recent occurrence of tied highs or lows. Calculate on the chart timeframe or a higher timeframe, using the bar still forming. At the first chart bar of each oscillator timeframe bar, sample its oscillator value and hold that value until the next oscillator timeframe bar; historical calculations use the final value of that oscillator timeframe bar.
-Long: Aroon oscillator > upper threshold.
-Short: Aroon oscillator < lower threshold.

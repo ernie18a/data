@@ -1,4 +1,0 @@
-Long: Any chart-timeframe RSI, calculated for a series of equally spaced lookback periods, is greater than the upper RSI threshold.
-Short: Any chart-timeframe RSI, calculated for the same series of lookback periods, is less than the lower RSI threshold.
-Long: Any higher-timeframe RSI, calculated for the same series of lookback periods using the higher-timeframe bar still forming at the first chart bar of that higher-timeframe bar and held until the next higher-timeframe bar, is greater than the upper RSI threshold.
-Short: Any higher-timeframe RSI, calculated for the same series of lookback periods using the higher-timeframe bar still forming at the first chart bar of that higher-timeframe bar and held until the next higher-timeframe bar, is less than the lower RSI threshold.

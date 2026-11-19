@@ -1,9 +1,0 @@
-Calculation: Double weighted average = linear weighted moving average of a linear weighted moving average of a selected price series, using the same lookback for both averages and the greatest weight on the newest bar. The selected series is close, open, high, low, (high + low) / 2, (high + low + close) / 3, (high + low + 2 × close) / 4, (open + close) / 2, (open + high + low + close) / 4, or a trend-following price: high when close > open, low when close < open, otherwise close; or (high + close) / 2 when close > open, (low + close) / 2 when close < open, otherwise close; or DeMark price: let x = (high + low + close + low) / 2 when close < open, (high + low + close + high) / 2 when close > open, otherwise (high + low + 2 × close) / 2; return x - (high + low) / 2.
-Long: Chart-timeframe double weighted average > its previous-bar value.
-Short: Chart-timeframe double weighted average < its previous-bar value.
-Long: Higher- or lower-than-chart-timeframe double weighted average on the selected last completed or still-forming bar > its previous-bar value AND its previous-bar value <= its value two bars earlier.
-Short: Higher- or lower-than-chart-timeframe double weighted average on the selected last completed or still-forming bar < its previous-bar value AND its previous-bar value >= its value two bars earlier.
-Exit: short, higher- or lower-than-chart-timeframe double weighted average on the selected last completed or still-forming bar > its previous-bar value.
-Exit: long, higher- or lower-than-chart-timeframe double weighted average on the selected last completed or still-forming bar < its previous-bar value.
-Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
-Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

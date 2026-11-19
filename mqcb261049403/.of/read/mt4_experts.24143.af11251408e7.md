@@ -1,3 +1,0 @@
-Short: No open position AND chart-timeframe ATR on the forming bar < volatility threshold AND chart-timeframe longest-lookback stochastic main line on the forming bar < upper threshold AND medium-lookback stochastic main line on the forming bar < lower threshold AND its previous-bar value > lower threshold AND shortest-lookback stochastic main line on the forming bar < lower threshold AND its previous-bar value > lower threshold; all stochastic calculations use high-low prices and simple moving average smoothing
-Exit: short, price <= entry price - market-entry profit target
-Exit: short, price <= entry price - grid-entry profit target

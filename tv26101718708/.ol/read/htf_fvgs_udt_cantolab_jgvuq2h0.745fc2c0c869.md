@@ -1,2 +1,0 @@
-Long: On a higher timeframe, the high of the completed bar three bars back < the low of the most recent completed bar
-Short: On a higher timeframe, the low of the completed bar three bars back > the high of the most recent completed bar

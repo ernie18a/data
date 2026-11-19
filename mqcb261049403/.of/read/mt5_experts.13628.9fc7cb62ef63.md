@@ -1,5 +1,0 @@
-Calculation: Weighted average M[t] = sum over h from 0 to N-1 of w[h] * P[t-h] divided by sum of w[h], where x=h/(N-1), w[h]=(a+(1-a)*x^p)*(b+(1-b)*(1-x)^q)*(c+(1-c)*abs(1-2*x)^r), and N, a, b, c, p, q and r are adjustable parameters. P is an adjustable applied price: open, high, low, close, (high+low)/2, (high+low+close)/3, (high+low+2*close)/4, (open+close)/2, (open+high+low+close)/4, or a trend-following price. The trend-following price is high when close > open, low when close < open, and close otherwise; its alternative is the average of that price and close. Calculate M on a higher timeframe using its last completed bar as t and its preceding bars.
-Long: M[t] > M[t-1] AND M[t-2] > M[t-1]
-Short: M[t] < M[t-1] AND M[t-2] < M[t-1]
-Exit: long, M[t] < M[t-1] OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
-Exit: short, M[t] > M[t-1] OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

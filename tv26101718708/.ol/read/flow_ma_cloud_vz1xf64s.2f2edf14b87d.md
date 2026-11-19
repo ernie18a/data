@@ -1,2 +1,0 @@
-Long: shorter-lookback MA crosses above longer-lookback MA OR (shorter-lookback MA > longer-lookback MA AND shorter-lookback MA > its value at the slope lookback AND, when both-MA slope confirmation is enabled, longer-lookback MA > its value at the slope lookback)
-Short: shorter-lookback MA crosses below longer-lookback MA OR (shorter-lookback MA < longer-lookback MA AND shorter-lookback MA < its value at the slope lookback AND, when both-MA slope confirmation is enabled, longer-lookback MA < its value at the slope lookback)

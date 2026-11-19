@@ -1,2 +1,0 @@
-Go long SPY when the short moving average of the put/call ratio crosses above its long moving average.
-Go short SPY when the short moving average of the put/call ratio crosses below its long moving average.

@@ -1,7 +1,0 @@
-Calculation: Adaptive line = For each bar, calculate a moving average of a selected price and the mean squared deviation of that price over the same lookback from the current moving average. Starting with the moving average as the initial previous line, let d be the current moving average minus the previous rounded line. Set the weight to zero if d² is zero or less than the mean squared deviation; otherwise set it to 1 minus the mean squared deviation divided by d². The line is the previous rounded line plus weight times d, rounded to a configurable price increment.
-Calculation: Line direction = Up when the adaptive line is greater than its previous value, down when it is less, and otherwise unchanged from the previous bar; initialize as up.
-Calculation: Higher-timeframe direction = Calculate the adaptive line direction on the higher timeframe using its still-forming bar at the first chart bar of each higher-timeframe interval; hold that sampled direction through the interval. The calculation may instead use the chart timeframe.
-Long: Chart-timeframe line direction = up
-Short: Chart-timeframe line direction = down
-Long: Higher-timeframe direction at the selected chart-bar offset = up AND higher-timeframe direction on the preceding chart bar = down
-Short: Higher-timeframe direction at the selected chart-bar offset = down AND higher-timeframe direction on the preceding chart bar = up

@@ -1,2 +1,0 @@
-Long: Chart-timeframe close > upper DEMA of high, using the channel value from the configured horizontal shift; in the higher-timeframe version, use the higher-timeframe bar still forming
-Short: Chart-timeframe close < lower DEMA of low, using the channel value from the configured horizontal shift; in the higher-timeframe version, use the higher-timeframe bar still forming

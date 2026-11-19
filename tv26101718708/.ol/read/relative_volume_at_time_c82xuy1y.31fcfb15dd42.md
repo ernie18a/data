@@ -1,1 +1,0 @@
-Long: High >= user-defined pivot price, on the first bar of the session to touch it

@@ -1,7 +1,0 @@
-Calculation: Session VWAP = cumulative sum of ((high + low + close) / 3) * volume divided by cumulative volume, reset at the start of the selected session; when restricted to that session, calculate only on bars inside it.
-Calculation: Volume percentile = 100 * number of available bars in the lookback, including the current bar, whose volume is less than or equal to current volume / number of available bars in the lookback.
-Long: Volume percentile >= threshold AND abs(close - open) / ATR <= displacement threshold AND (close - session VWAP) / ATR < -distance threshold.
-Short: Volume percentile >= threshold AND abs(close - open) / ATR <= displacement threshold AND (close - session VWAP) / ATR > distance threshold.
-Exit: long, eligible bar low <= signal-bar low - signal-bar ATR * stop multiplier OR eligible bar high >= signal-bar session VWAP OR bars since entry >= holding-period threshold OR close - entry price <= -price-loss threshold OR session time crosses the flattening time.
-Exit: short, eligible bar high >= signal-bar high + signal-bar ATR * stop multiplier OR eligible bar low <= signal-bar session VWAP OR bars since entry >= holding-period threshold OR entry price - close <= -price-loss threshold OR session time crosses the flattening time.
-Calculation: Eligible bar = entry bar or later when same-bar exits are enabled; otherwise a bar after the entry bar. Stop and target orders become active after the eligible bar is evaluated.

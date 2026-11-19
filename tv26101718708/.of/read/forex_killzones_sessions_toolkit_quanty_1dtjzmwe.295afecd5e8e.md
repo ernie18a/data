@@ -1,2 +1,0 @@
-Long: Chart timeframe is lower than the trading-day timeframe AND current bar is not the first bar of the trading day AND close > the last completed trading-day bar's high AND previous chart-bar close <= that same high AND no earlier long condition has occurred in the current trading day.
-Short: Chart timeframe is lower than the trading-day timeframe AND current bar is not the first bar of the trading day AND close < the last completed trading-day bar's low AND previous chart-bar close >= that same low AND no earlier short condition has occurred in the current trading day.

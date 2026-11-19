@@ -1,6 +1,0 @@
-Calculation: Volatility = mean high minus low over a lookback of completed higher-timeframe bars.
-Calculation: Price change = close of the last completed chart bar minus the close one higher-timeframe duration earlier; when the chart timeframe is at least the volatility timeframe, use the preceding chart bar instead.
-Long: No long position exists AND the last completed close-based CCI is above zero AND the preceding CCI is below zero AND trading is allowed for longs AND the trading session is open.
-Short: No short position exists AND the last completed close-based CCI is below zero AND the preceding CCI is above zero AND trading is allowed for shorts AND the trading session is open.
-Exit: long, volatility exit is enabled AND the trading session is open AND absolute price change exceeds volatility multiplied by its threshold multiplier AND (close-all mode is enabled OR price change is below zero).
-Exit: short, volatility exit is enabled AND the trading session is open AND absolute price change exceeds volatility multiplied by its threshold multiplier AND (close-all mode is enabled OR price change is above zero).

@@ -1,4 +1,0 @@
-Long: P1 = trend AND base-currency strength > moving average of base-currency strength over P2 AND quote-currency strength < moving average of quote-currency strength over P2
-Long: P1 = counter-trend AND base-currency strength < moving average of base-currency strength over P2 AND quote-currency strength > moving average of quote-currency strength over P2
-Short: P1 = trend AND base-currency strength < moving average of base-currency strength over P2 AND quote-currency strength > moving average of quote-currency strength over P2
-Short: P1 = counter-trend AND base-currency strength > moving average of base-currency strength over P2 AND quote-currency strength < moving average of quote-currency strength over P2

@@ -1,6 +1,0 @@
-Calculation: Fast line = weighted sum of the main lines of five stochastic oscillators with progressively longer K and D periods and common slowing, moving-average method, and price-field choice; the third oscillator uses the same weight as the second.
-Calculation: Slow line = Fast line / smoothing period + previous Slow line × (smoothing period − 1) / smoothing period; initialize it to the first Fast line / smoothing period. Calculate both lines on the chart timeframe or a higher timeframe, using the last completed indicator bar; the still-forming indicator bar may be selected instead.
-Long: Fast line > Slow line AND previous indicator bar's Fast line <= previous indicator bar's Slow line AND position side = flat
-Short: Fast line < Slow line AND previous indicator bar's Fast line >= previous indicator bar's Slow line AND position side = flat
-Exit: long, Fast line < Slow line OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance
-Exit: short, Fast line > Slow line OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance

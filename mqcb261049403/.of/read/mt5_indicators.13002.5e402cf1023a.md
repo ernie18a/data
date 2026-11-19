@@ -1,6 +1,0 @@
-Calculation: Triple-smoothed stochastic index = 100 × triple-smoothed(selected price − lowest low over the lookback) / triple-smoothed(highest high − lowest low over the same lookback) − 50; use zero when the smoothed range is zero. Smooth the numerator and denominator separately with the same moving-average method and three successive, independently parameterized smoothing periods.
-Calculation: Higher-timeframe index = triple-smoothed stochastic index on the higher timeframe, using its still-forming bar at the first chart bar of each higher-timeframe interval; retain that value and its comparison with the preceding higher-timeframe bar throughout the interval.
-Long: Chart-timeframe index != 0 AND chart-timeframe index > its previous bar value
-Short: Chart-timeframe index != 0 AND chart-timeframe index < its previous bar value
-Long: Higher-timeframe index != 0 AND higher-timeframe index > its preceding higher-timeframe bar value
-Short: Higher-timeframe index != 0 AND higher-timeframe index < its preceding higher-timeframe bar value

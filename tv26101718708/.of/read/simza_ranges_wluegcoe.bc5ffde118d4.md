@@ -1,3 +1,0 @@
-Calculation: Base = selected price source of the still-forming higher-timeframe bar.
-Calculation: Upper and lower levels = base multiplied by one plus or minus a configurable percentage, respectively; each percentage has its own alert setting.
-Long: Alert direction permits upward crossings AND close > an alert-enabled upper level or alert-enabled base AND previous close <= that same current level, OR alert direction permits downward crossings AND close < an alert-enabled lower level or alert-enabled base AND previous close >= that same current level.

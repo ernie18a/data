@@ -1,6 +1,0 @@
-Long: On completion of a lower signal-timeframe bar, its Relative Vigor Index (RVI) main line > its signal line AND on the preceding signal-timeframe bar its RVI main line <= its signal line AND the last completed bars of both the chart timeframe and an intermediate timeframe, which is lower than the chart timeframe and higher than the signal timeframe, each have RVI main line > signal line; all three RVIs use the same lookback
-Short: On completion of a lower signal-timeframe bar, its RVI main line < its signal line AND on the preceding signal-timeframe bar its RVI main line >= its signal line AND the last completed bars of both the chart timeframe and an intermediate timeframe, which is lower than the chart timeframe and higher than the signal timeframe, each have RVI main line < signal line; all three RVIs use the same lookback
-Exit: long, RVI main line < signal line on the last completed bar of the chart timeframe OR the intermediate lower timeframe OR the signal lower timeframe
-Exit: short, RVI main line > signal line on the last completed bar of the chart timeframe OR the intermediate lower timeframe OR the signal lower timeframe
-Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
-Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

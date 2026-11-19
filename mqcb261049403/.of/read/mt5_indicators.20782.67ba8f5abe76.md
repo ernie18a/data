@@ -1,5 +1,0 @@
-Calculation: Adjusted +DI = 2 × +DI with the shorter ADX lookback − +DI with the longer ADX lookback; the shorter lookback is the floor of half the longer lookback.
-Calculation: Adjusted −DI = 2 × −DI with the shorter ADX lookback − −DI with the longer ADX lookback.
-Calculation: Trend = initially neutral; set to long when the previous bar's adjusted +DI < adjusted −DI AND the current bar's adjusted +DI > adjusted −DI; set to short when the previous bar's adjusted +DI > adjusted −DI AND the current bar's adjusted +DI < adjusted −DI; otherwise retain the previous trend. Calculate separately on the chart timeframe and on a higher timeframe. For the higher timeframe, sample the trend of the still-forming higher-timeframe bar on the first chart bar of that interval and retain that sample through the interval.
-Long: Chart-timeframe trend = long OR sampled higher-timeframe trend = long.
-Short: Chart-timeframe trend = short OR sampled higher-timeframe trend = short.

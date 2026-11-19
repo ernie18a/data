@@ -1,6 +1,0 @@
-Calculation: ZigZag pivot indices = calculate the MetaTrader ZigZag with depth, deviation, and backstep on the chart timeframe or a configurable higher or lower timeframe, including its forming bar. Scan its nonzero pivot values backward from the forming bar; classify a value as a high if it exceeds the next older unequal pivot value, and as a low if it is below that value. For the most recent classified high and low, find the greatest bar offset within a configurable search window whose ZigZag value equals that pivot value; use offset zero if no match is found.
-Calculation: Trailing stop = initialize at entry price minus the stop-loss distance for a long, or plus it for a short. After price moves strictly more than the trailing-start distance in favor of the position, move the stop to current price minus the trailing distance for a long, or plus it for a short, only if this improves the existing stop by at least the trailing-step distance.
-Long: position side is flat AND most recent ZigZag high offset >= most recent ZigZag low offset
-Short: position side is flat AND most recent ZigZag high offset < most recent ZigZag low offset
-Exit: long, price <= trailing stop OR price >= entry price + take-profit distance
-Exit: short, price >= trailing stop OR price <= entry price - take-profit distance

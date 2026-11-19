@@ -1,1 +1,0 @@
-When a bar’s timestamp matches a timestamped signal from an external file, go long if the signal says buy and short if it says sell. No decision is made without a matching signal; no exit rule is specified.

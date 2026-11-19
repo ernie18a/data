@@ -1,5 +1,0 @@
-Calculation: Volume-weighted open and close = sum(price × volume) / sum(volume) over the same lookback, calculated separately for open and close. For the trading system, calculate on a selectable higher or lower timeframe using the last completed bar or, if selected, the bar still forming; for indicator markings, calculate on the chart timeframe.
-Long: Volume-weighted close > volume-weighted open.
-Short: Volume-weighted close < volume-weighted open.
-Exit: long, volume-weighted close < volume-weighted open on the selected trading-system timeframe OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
-Exit: short, volume-weighted close > volume-weighted open on the selected trading-system timeframe OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

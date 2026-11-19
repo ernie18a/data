@@ -1,3 +1,0 @@
-Long: Position is flat AND (date filter is disabled OR bar datetime is within the configured inclusive date window) AND RSI of the last completed lower-timeframe bar < RSI threshold AND close < price ceiling.
-Long: Position is long AND bar datetime is within the configured inclusive date window if the date filter is enabled AND an unfilled safety order remains AND close <= base entry price * (1 - deviation of the next safety order). Safety orders are evaluated in configured sequence, at most one per bar; each deviation is measured from the base entry price.
-Exit: long, close >= average entry price * (1 + take-profit percentage).

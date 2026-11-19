@@ -1,5 +1,0 @@
-Calculation: StochRSI K = SMA(StochRSI(close, RSI lookback, stoch lookback), K smoothing)
-Long: position side is flat AND close > EMA(close, EMA lookback, T1, last completed bar)[1] AND close > EMA(close, EMA lookback, T2, last completed bar)[1] AND close > EMA(close, EMA lookback, T3, last completed bar)[1] AND StochRSI K crosses above SMA(StochRSI K, D smoothing)
-Short: position side is flat AND close < EMA(close, EMA lookback, T1, last completed bar)[1] AND close < EMA(close, EMA lookback, T2, last completed bar)[1] AND close < EMA(close, EMA lookback, T3, last completed bar)[1] AND StochRSI K crosses below SMA(StochRSI K, D smoothing)
-Exit: long, low <= close at entry signal bar - SL multiplier * ATR(high, low, close, ATR lookback) at entry signal bar OR high >= close at entry signal bar + TP multiplier * ATR(high, low, close, ATR lookback) at entry signal bar
-Exit: short, high >= close at entry signal bar + SL multiplier * ATR(high, low, close, ATR lookback) at entry signal bar OR low <= close at entry signal bar - TP multiplier * ATR(high, low, close, ATR lookback) at entry signal bar

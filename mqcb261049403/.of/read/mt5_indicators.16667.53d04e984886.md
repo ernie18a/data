@@ -1,7 +1,0 @@
-Calculation: Price-change oscillator = Jurik moving average, with configurable length and phase, of 100 × ultra-linear smoothing of the selected price change / ultra-linear smoothing of its absolute value. Use the same smoothing length for numerator and denominator; replace a zero absolute price change with a configurable positive price increment.
-Calculation: Ultra-linear smoothing = three successive stages, each with two recursive filters: a = (1-k) × previous a + k × input; b = k × a + (1-k) × previous b; stage output = 1.5 × a - 0.5 × b; k = 3 / (length + 2). Initialize both filters in each stage to the first input of that stage.
-Calculation: Higher-timeframe oscillator = price-change oscillator on higher-timeframe bars, sampled from the still-forming higher-timeframe bar at the first chart bar of each higher-timeframe bar and held until the next higher-timeframe bar.
-Long: Chart-timeframe price-change oscillator > its previous chart-bar value
-Short: Chart-timeframe price-change oscillator < its previous chart-bar value
-Long: Higher-timeframe oscillator > its previous higher-timeframe-bar value AND higher-timeframe oscillator > upper threshold
-Short: Higher-timeframe oscillator < its previous higher-timeframe-bar value AND higher-timeframe oscillator < lower threshold

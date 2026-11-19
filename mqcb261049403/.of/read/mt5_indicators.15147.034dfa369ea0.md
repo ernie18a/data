@@ -1,7 +1,0 @@
-Calculation: Applied price = a selectable price series: open, high, low, (high + low)/2, (high + low + close)/3, (high + low + 2 × close)/4, (open + close)/2, (open + high + low + close)/4, close, high if close > open and low if close < open and close otherwise, or (high + close)/2 if close > open and (low + close)/2 if close < open and close otherwise.
-Calculation: Weighted moving average = sum over offsets h from 0 through N − 1 of applied price at offset h multiplied by w(h), divided by the sum of w(h), where x = h/(N − 1) and w(h) = [s1 + x^r1 × (1 − s1)] × [s2 + (1 − x)^r2 × (1 − s2)] × [s3 + |2x − 1|^r3 × (1 − s3)]; N, s1, s2, s3, r1, r2, and r3 are parameters.
-Calculation: Change = current weighted moving average minus its previous-bar value, rounded to the configured price precision plus two decimal places.
-Calculation: Lower and upper filters = population standard deviation of the unrounded weighted moving average changes over a lookback, multiplied by the respective lower and upper filter coefficients and rounded to the configured price precision plus two decimal places.
-Long: Change > lower filter AND change <= upper filter OR change > upper filter.
-Short: Change < −lower filter AND change >= −upper filter OR change < −upper filter.
-Calculation: The same weighted moving average, change, filters, and decisions can also be calculated on a higher timeframe using its bar still forming at each chart bar.

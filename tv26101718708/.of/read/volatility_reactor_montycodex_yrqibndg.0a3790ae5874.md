@@ -1,4 +1,0 @@
-Calculation: Price efficiency = clamp(abs(close - close N bars ago) / sum of abs(close - previous close) over N bars, 0, 1); use 0 if the sum is unavailable or zero.
-Calculation: Directional pressure = EMA of 100 × (0.35 × body pressure + 0.25 × close-location pressure + 0.30 × momentum pressure + 0.10 × signed efficiency), where body pressure = (close - open) / (high - low), close-location pressure = 2 × (close - low) / (high - low) - 1, and both are 0 when high equals low; momentum = close - close M bars ago; momentum pressure = clamp(momentum / (2.5 × ATR), -1, 1), or 0 if ATR is unavailable or nonpositive; signed efficiency = price efficiency × sign(momentum).
-Long: Directional pressure > 0 AND directional pressure >= minimum pressure threshold.
-Short: Directional pressure < 0 AND directional pressure <= negative minimum pressure threshold.

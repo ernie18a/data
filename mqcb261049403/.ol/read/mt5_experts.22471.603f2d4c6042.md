@@ -1,2 +1,0 @@
-Long: CCI on a higher timeframe than the chart, using the bar still forming, > −threshold AND CCI on that same timeframe, using the last completed bar, < −threshold
-Short: CCI on a higher timeframe than the chart, using the bar still forming, < threshold AND CCI on that same timeframe, using the last completed bar, > threshold

@@ -1,2 +1,0 @@
-Long: On each configured timeframe’s bar containing the tracked chart-bar time, using a completed or still-forming bar as applicable: every shorter-lookback EMA of close is >= the next longer-lookback EMA OR the close is > every EMA
-Short: On each configured timeframe’s bar containing the tracked chart-bar time, using a completed or still-forming bar as applicable: every shorter-lookback EMA of close is <= the next longer-lookback EMA OR the close is < every EMA

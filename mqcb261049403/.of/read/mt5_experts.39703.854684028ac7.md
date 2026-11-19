@@ -1,4 +1,0 @@
-Long: At the start of a new working-timeframe bar, the last completed working-timeframe bar's open < shifted VIDYA AND its close > shifted VIDYA; the working timeframe may be higher or lower than the chart timeframe.
-Short: At the start of a new working-timeframe bar, the last completed working-timeframe bar's open > shifted VIDYA AND its close < shifted VIDYA; the working timeframe may be higher or lower than the chart timeframe.
-Exit: long, the short-entry condition is met OR an enabled stop-loss price is reached at entry price minus the stop-loss distance OR an enabled take-profit price is reached at entry price plus the take-profit distance.
-Exit: short, the long-entry condition is met OR an enabled stop-loss price is reached at entry price plus the stop-loss distance OR an enabled take-profit price is reached at entry price minus the take-profit distance.

@@ -1,2 +1,0 @@
-Long: RVI(open, high, low, close, lookback, T1, last completed bar) > RVI signal line(open, high, low, close, lookback, T1, chart bars taking values from T1)
-Short: RVI(open, high, low, close, lookback, T1, last completed bar) < RVI signal line(open, high, low, close, lookback, T1, chart bars taking values from T1)

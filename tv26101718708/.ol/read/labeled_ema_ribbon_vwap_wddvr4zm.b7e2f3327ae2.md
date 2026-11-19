@@ -1,2 +1,0 @@
-Long: shorter-lookback EMA >= the next longer-lookback EMA for any adjacent pair among the first four EMAs
-Short: shorter-lookback EMA < the next longer-lookback EMA for any adjacent pair among the first four EMAs

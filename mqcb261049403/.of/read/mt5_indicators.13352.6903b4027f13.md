@@ -1,3 +1,0 @@
-Calculation: Composite average = Apply a selectable moving-average method to a selected OHLC-derived price using ten progressively longer lookbacks; sum the ten averages with independently selectable weights, then smooth the sum with a selectable moving-average method.
-Long: Chart-timeframe composite average > its previous bar value OR the composite average of the forming higher-timeframe bar > its previous completed higher-timeframe bar value.
-Short: Chart-timeframe composite average < its previous bar value OR the composite average of the forming higher-timeframe bar < its previous completed higher-timeframe bar value.

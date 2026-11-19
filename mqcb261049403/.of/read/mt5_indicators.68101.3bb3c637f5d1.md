@@ -1,6 +1,0 @@
-Calculation: Range = high - low of the last completed chart bar
-Calculation: Upper wick fraction = (high - max(open, close)) / Range of the last completed chart bar
-Calculation: Lower wick fraction = (min(open, close) - low) / Range of the last completed chart bar
-Calculation: Body fraction = abs(close - open) / Range of the last completed chart bar
-Long: Range > minimum range AND Lower wick fraction >= wick threshold AND Upper wick fraction < wick threshold AND Body fraction >= minimum body fraction AND Upper wick fraction <= maximum opposite wick fraction AND (ATR filter disabled OR ATR of the last completed chart bar <= 0 OR Range >= ATR of the last completed chart bar * ATR multiplier)
-Short: Range > minimum range AND Upper wick fraction >= wick threshold AND Body fraction >= minimum body fraction AND Lower wick fraction <= maximum opposite wick fraction AND (ATR filter disabled OR ATR of the last completed chart bar <= 0 OR Range >= ATR of the last completed chart bar * ATR multiplier)

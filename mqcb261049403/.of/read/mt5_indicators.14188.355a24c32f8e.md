@@ -1,4 +1,0 @@
-Long: JMA of chart-timeframe close > JMA of chart-timeframe open, using the same length and phase
-Short: JMA of chart-timeframe close < JMA of chart-timeframe open, using the same length and phase
-Long: JMA of higher-timeframe close >= JMA of higher-timeframe open, using the same length and phase, sampled from the still-forming higher-timeframe bar at the close of its first chart bar and held until the next higher-timeframe bar
-Short: JMA of higher-timeframe close < JMA of higher-timeframe open, using the same length and phase, sampled from the still-forming higher-timeframe bar at the close of its first chart bar and held until the next higher-timeframe bar

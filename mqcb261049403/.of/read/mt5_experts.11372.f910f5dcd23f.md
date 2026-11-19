@@ -1,5 +1,0 @@
-Calculation: Short and long price changes = signal-bar close minus the close a configurable number of bars earlier, using a shorter lookback for the short change and a longer lookback for the long change. Calculate on a configurable timeframe that may be higher or lower than the chart timeframe, using a configurable signal bar: the last completed bar or the bar still forming.
-Long: Short price change > long price change AND on the preceding signal-timeframe bar short price change <= long price change
-Short: Short price change < long price change AND on the preceding signal-timeframe bar short price change >= long price change
-Exit: long, short price change < long price change OR low <= entry price minus the enabled stop-loss distance OR high >= entry price plus the enabled take-profit distance
-Exit: short, short price change > long price change OR high >= entry price plus the enabled stop-loss distance OR low <= entry price minus the enabled take-profit distance

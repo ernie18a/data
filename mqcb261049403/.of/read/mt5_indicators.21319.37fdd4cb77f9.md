@@ -1,4 +1,0 @@
-Calculation: Upper channel = linear weighted moving average of the linear weighted moving average of high, using the same lookback for both averages, plus a configurable price offset; the most recent value has the greatest weight.
-Calculation: Lower channel = linear weighted moving average of the linear weighted moving average of low, using the same lookback as the upper channel for both averages, plus the same price offset.
-Long: Chart-timeframe close > chart-timeframe upper channel OR forming higher-timeframe close > forming higher-timeframe upper channel.
-Short: Chart-timeframe close < chart-timeframe lower channel OR forming higher-timeframe close < forming higher-timeframe lower channel.

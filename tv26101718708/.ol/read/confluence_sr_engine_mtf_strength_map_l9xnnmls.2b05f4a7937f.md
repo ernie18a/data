@@ -1,2 +1,0 @@
-Long: cluster score >= effective display threshold AND ((zone price < close AND (cluster has no POC OR POC bias = neutral)) OR (cluster has a POC AND POC bias = bullish))
-Short: cluster score >= effective display threshold AND ((zone price > close AND (cluster has no POC OR POC bias = neutral)) OR (cluster has a POC AND POC bias = bearish))

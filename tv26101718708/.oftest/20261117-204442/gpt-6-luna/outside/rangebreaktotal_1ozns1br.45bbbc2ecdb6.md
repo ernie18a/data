@@ -1,2 +1,0 @@
-Go long when TOTAL’s close exceeds its highest close over the configured lookback during the configured date range.
-Go short when TOTAL’s close is below its lowest close over the configured lookback during the configured date range.

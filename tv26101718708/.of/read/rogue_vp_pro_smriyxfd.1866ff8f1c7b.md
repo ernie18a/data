@@ -1,2 +1,0 @@
-Long: bar is within the regular trading session AND volume / SMA of volume > surge threshold AND close >= previous close
-Short: bar is within the regular trading session AND volume / SMA of volume > surge threshold AND close < previous close

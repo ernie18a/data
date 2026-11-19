@@ -1,3 +1,0 @@
-Calculation: Active pivot = the most recently confirmed pivot high whose age at confirmation is no greater than the base lookback, provided its current age is no greater than the maximum pivot age; otherwise, if fallback is enabled, the highest high over the fallback lookback ending at the previous bar. A pivot high is confirmed after the configured number of right-hand bars and uses configured left- and right-hand pivot windows.
-Long: Close > active pivot AND previous close <= current active pivot AND volume >= SMA of volume multiplied by the breakout-volume factor.
-Long: Close > active pivot AND (close / active pivot - 1) <= maximum ideal entry extension.

@@ -1,4 +1,0 @@
-Calculation: Oscillator = Jurik moving average of Laguerre RSI of a selectable OHLC-derived price, multiplied by 100. Calculate on the chart timeframe or on a higher timeframe using its bar still forming.
-Calculation: Direction = initially neutral; on each oscillator bar, set to long if the oscillator is above the upper threshold, otherwise set to short if it is below the lower threshold. Within the thresholds, set to long when the oscillator rises from below the lower threshold to at least the lower threshold or rises from at or below the middle threshold to above it; set to short when it falls from above the upper threshold to at or below the upper threshold or falls from above the middle threshold to at or below it. Otherwise retain the previous direction. The lower threshold is below the middle threshold, which is below the upper threshold.
-Long: Direction equals long
-Short: Direction equals short

@@ -1,2 +1,0 @@
-Long: low < lowest low over the preceding lookback bars AND volume > volume SMA × volume multiplier AND close > open
-Short: high > highest high over the preceding lookback bars AND volume > volume SMA × volume multiplier AND close < open

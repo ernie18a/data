@@ -1,7 +1,0 @@
-Calculation: Analysis bars = bars from a timeframe that may be higher or lower than the chart timeframe; for historical higher-timeframe data use the last completed bar, for historical lower-timeframe data use the last intrabar, and in real time use the bar still forming. Use the chart bar when timeframes coincide.
-Calculation: EMA ribbon = five close EMAs on analysis bars, ordered from shortest to longest as E1, E2, E3, E4 and E5.
-Calculation: Trend regime = bullish if E1 >= E2 AND E2 >= E3 AND E3 >= E4 AND E4 >= E5, OR close > E5 AND (E1 >= E2 AND E2 >= E3 AND E3 >= E4 OR close >= E4); otherwise bearish if close > E5 AND close < E4 AND NOT (E1 <= E2 AND E2 <= E3 AND E3 <= E4), OR close < E5, OR close < E4; otherwise neutral.
-Calculation: Bullish swing count = number of confirmed pivot highs on analysis bars since the latest trend-regime change, including a pivot confirmed on the change bar. Reset the count on every regime change.
-Long: Trend regime = bullish AND analysis close >= E4 AND analysis close >= E5 AND analysis bars since the latest trend-regime change < trend-age threshold AND bullish swing count < swing-count threshold AND, according to the selected extension method, (analysis close - E3) / analysis ATR <= ATR-extension threshold OR (analysis close - E3) / E3 <= percentage-extension threshold.
-Long: Trend regime = bullish AND analysis close >= E4 AND chart low <= E1 AND chart high >= E1.
-Exit: long, analysis close < E4 for at least the specified number of consecutive analysis bars.

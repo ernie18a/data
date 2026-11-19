@@ -1,4 +1,0 @@
-Calculation: Oscillator = a selectable moving average of (RSI of the selected price + 100 × DeMarker) / 2; RSI and DeMarker use the same lookback. The moving average may be SMA, EMA, SMMA, LWMA, Jurik moving average, quadratic regression moving average, T3, VIDYA, Kaufman adaptive moving average, or the three-stage filter defined below. For the higher-timeframe version, calculate it on the higher timeframe's still-forming bar and compare it with the preceding higher-timeframe bar.
-Calculation: Three-stage filter = apply three successive stages to the input; each stage returns 1.5 × its first EMA − 0.5 × an EMA of that first EMA, with both EMAs using smoothing factor 3 / (length + 2).
-Long: Oscillator > upper threshold OR (oscillator >= lower threshold AND oscillator <= upper threshold AND oscillator >= previous oscillator)
-Short: Oscillator < lower threshold OR (oscillator >= lower threshold AND oscillator <= upper threshold AND oscillator < previous oscillator)

@@ -1,2 +1,0 @@
-Long: Shorter-period moving average of close > longer-period moving average of close on the closed chart bar AND (higher-timeframe confirmation = disabled OR shorter-period moving average of close > longer-period moving average of close on the last completed higher-timeframe bar).
-Short: Shorter-period moving average of close < longer-period moving average of close on the closed chart bar AND (higher-timeframe confirmation = disabled OR shorter-period moving average of close < longer-period moving average of close on the last completed higher-timeframe bar).

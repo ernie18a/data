@@ -1,4 +1,0 @@
-Calculation: Bar buy and sell volume = sum the volumes of completed lower-timeframe bars within each chart bar, assigning each volume to buy if its close is greater than or equal to the preceding lower-timeframe close, otherwise to sell; compare the first lower-timeframe close with the previous chart close, or with itself if that close is unavailable.
-Calculation: Profile bin buy and sell volume = divide the range of a chart-bar lookback into equal price bins, using either the range of bar midpoints or the range from lowest low to highest high; assign each chart bar's buy and sell volume to the bin containing its midpoint, clamping the bin index to the valid range.
-Long: Bar buy volume > bar sell volume OR any profile bin buy volume > its sell volume.
-Short: Bar buy volume < bar sell volume OR any profile bin buy volume < its sell volume.

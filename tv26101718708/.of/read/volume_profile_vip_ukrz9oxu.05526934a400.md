@@ -1,5 +1,0 @@
-Calculation: Value area = Divide the lookback range from lowest low to highest high into equal price rows. Allocate each bar's volume to each overlapping row as volume × overlap of the bar's high-low range with the row / max(bar range, row height). Start at the row with the greatest allocated volume, choosing the lowest row on a tie. Expand one row at a time toward the adjacent row with greater volume, choosing the upper row on a tie, until the included volume reaches the specified fraction of total allocated volume. At an edge, expand toward the available row; if neither side can be expanded, stop. Value area high is the upper edge of the highest included row; value area low is the lower edge of the lowest included row.
-Long: Short-period EMA of close > medium-period EMA of close AND medium-period EMA of close > long-period EMA of close
-Long: Close > value area high
-Short: Short-period EMA of close < medium-period EMA of close AND medium-period EMA of close < long-period EMA of close
-Short: Close < value area low

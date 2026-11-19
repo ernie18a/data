@@ -1,6 +1,0 @@
-Calculation: First smoothed stochastic = EMA of 100 × (close − lowest low) / (highest high − lowest low), using a configurable lookback including the current bar; initialize the EMA to 50.
-Calculation: Double-smoothed stochastic = EMA of 100 × (first smoothed stochastic − its rolling minimum) / (its rolling maximum − its rolling minimum), using the same lookback and EMA period as the first smoothed stochastic; initialize the EMA to 50. Calculate both series on a configurable timeframe that can be higher or lower than the chart timeframe, or the chart timeframe itself; use the last completed bar by default, or the still-forming bar if configured.
-Long: Double-smoothed stochastic > first smoothed stochastic AND double-smoothed stochastic on the preceding indicator bar <= first smoothed stochastic on that bar.
-Short: Double-smoothed stochastic < first smoothed stochastic AND double-smoothed stochastic on the preceding indicator bar >= first smoothed stochastic on that bar.
-Exit: long, double-smoothed stochastic < first smoothed stochastic OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance.
-Exit: short, double-smoothed stochastic > first smoothed stochastic OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance.

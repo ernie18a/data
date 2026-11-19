@@ -1,4 +1,0 @@
-Calculation: Gap = smooth(high − moving average(open)) on the current bar minus smooth(high − moving average(close)) on the previous bar. The open and close moving averages use the same method and parameters; the two smoothing calculations use the same method and parameters, independently of the moving averages.
-Calculation: Higher-timeframe gap = Gap calculated on a higher timeframe using its forming bar, sampled on the first chart bar of each higher-timeframe bar and held until the next higher-timeframe bar.
-Long: Gap > 0 OR higher-timeframe gap > 0
-Short: Gap < 0 OR higher-timeframe gap < 0 OR higher-timeframe gap = 0 AND previous chart bar's higher-timeframe gap > 0

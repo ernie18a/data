@@ -1,8 +1,0 @@
-Calculation: Signal bar = a configurable bar on the indicator timeframe, which may be the chart timeframe or a higher or lower timeframe; use the last completed bar by default, with the still-forming bar or an older completed bar selectable. All moving averages use the same selectable OHLC-derived price on that timeframe; previous means the preceding bar on that timeframe.
-Calculation: Up signal = (shorter-period LWMA > longer-period LWMA + price offset AND previous shorter-period LWMA <= previous longer-period LWMA) OR (longer-period LWMA > longer-period EMA + price offset AND previous longer-period LWMA <= current longer-period EMA).
-Calculation: Down signal = (shorter-period LWMA < longer-period LWMA - price offset AND previous shorter-period LWMA >= previous longer-period LWMA) OR (longer-period LWMA < longer-period EMA - price offset AND previous longer-period LWMA >= current longer-period EMA).
-Calculation: Most recent earlier signal = the direction of the nearest earlier indicator bar with an up or down signal; if both occur on that bar, select up.
-Long: Up signal on the signal bar = true.
-Short: Down signal on the signal bar = true.
-Exit: long, down signal on the signal bar = true OR (up signal on the signal bar = false AND down signal on the signal bar = false AND most recent earlier signal = down) OR (stop loss enabled AND low <= entry price - stop-loss distance) OR (take profit enabled AND high >= entry price + take-profit distance).
-Exit: short, up signal on the signal bar = true OR (up signal on the signal bar = false AND down signal on the signal bar = false AND most recent earlier signal = up) OR (stop loss enabled AND high >= entry price + stop-loss distance) OR (take profit enabled AND low <= entry price - take-profit distance).

@@ -1,4 +1,0 @@
-Calculation: Fast trend = weighted sum of five TRIX values of the selected applied price, using successively longer periods; the second and third TRIX use the same weight.
-Calculation: Slow trend = recursively smoothed fast trend: current fast trend divided by the smoothing period plus the previous slow trend multiplied by (smoothing period minus 1) divided by the smoothing period; initialize the first slow trend as the first fast trend divided by the smoothing period.
-Long: Fast trend > slow trend on the chart timeframe OR fast trend > slow trend on the higher timeframe using its still-forming bar.
-Short: Fast trend < slow trend on the chart timeframe OR fast trend < slow trend on the higher timeframe using its still-forming bar.

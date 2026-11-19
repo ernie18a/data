@@ -1,3 +1,0 @@
-Track account equity from initialization or the last equity-triggered closure. If enabled and equity rises or falls by the configured percentage from that reference, close all positions and cancel all pending orders for this strategy and instrument, then reset the reference to current equity. The corresponding setting may also stop subsequent trading until the strategy is restarted.
-
-When updating the grid, count all open long and short positions across the account. If a per-side limit is configured, place new orders on a side only when that account-wide count is below the limit. Optional account-equity-based and position-imbalance-based sizing can change each side's order size; place orders on a side only if its calculated size is positive.

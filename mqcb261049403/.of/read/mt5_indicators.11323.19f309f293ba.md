@@ -1,2 +1,0 @@
-Long: Bollinger upper band minus middle band >= flat threshold in price units AND Relative Vigor Index main line > signal line, using either chart-timeframe bars or the forming higher-timeframe bar.
-Short: Bollinger upper band minus middle band >= flat threshold in price units AND Relative Vigor Index main line < signal line, using either chart-timeframe bars or the forming higher-timeframe bar.

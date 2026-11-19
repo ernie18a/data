@@ -1,4 +1,0 @@
-Long: position side is flat AND last completed chart-bar close >= preceding chart-bar close AND RSI of closes on the last completed RSI-timeframe bar < upper RSI threshold; the RSI timeframe may be higher or lower than the chart timeframe.
-Short: position side is flat AND last completed chart-bar close < preceding chart-bar close AND RSI of closes on the last completed RSI-timeframe bar > lower RSI threshold; the RSI timeframe may be higher or lower than the chart timeframe.
-Exit: long, CCI of typical price on the forming CCI-timeframe bar < negative CCI threshold; the CCI timeframe may be higher or lower than the chart timeframe.
-Exit: short, CCI of typical price on the forming CCI-timeframe bar > positive CCI threshold; the CCI timeframe may be higher or lower than the chart timeframe.

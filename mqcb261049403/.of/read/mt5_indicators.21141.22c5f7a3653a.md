@@ -1,3 +1,0 @@
-Calculation: Smoothed candle change = moving average of close minus the same moving average of open from lookback minus one bars ago; use the same smoothing method and parameters for both averages.
-Long: Smoothed candle change > 0 on the chart timeframe OR smoothed candle change > 0 on a higher timeframe using its still-forming bar.
-Short: Smoothed candle change < 0 on the chart timeframe OR smoothed candle change < 0 on a higher timeframe using its still-forming bar.

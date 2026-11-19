@@ -1,4 +1,0 @@
-Calculation: Fast trend = weighted sum of five stochastic main lines with progressively longer %K and %D periods and a common slowing period, moving-average method, and price-field choice; the second and third stochastic lines share the same weight.
-Calculation: Slow trend = fast trend / smoothing period + previous slow trend × (smoothing period − 1) / smoothing period; initialize the first slow trend to the first fast trend / smoothing period.
-Long: Fast trend > slow trend on the chart timeframe OR fast trend > slow trend on a higher timeframe using the bar still forming.
-Short: Fast trend < slow trend on the chart timeframe OR fast trend < slow trend on a higher timeframe using the bar still forming.

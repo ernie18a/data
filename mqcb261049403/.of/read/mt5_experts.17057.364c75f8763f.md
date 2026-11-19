@@ -1,5 +1,0 @@
-Long: At the start of a new higher-timeframe bar, the shorter-period moving average of the still-forming higher-timeframe bar > the longer-period moving average of that bar AND the current hour is within the inclusive entry-hour range, if enabled.
-Short: At the start of a new higher-timeframe bar, the shorter-period moving average of the still-forming higher-timeframe bar < the longer-period moving average of that bar AND the current hour is within the inclusive entry-hour range, if enabled.
-Exit: long, at the start of a new higher-timeframe bar, the shorter-period moving average of the still-forming higher-timeframe bar < the longer-period moving average of that bar OR Friday's current hour is at or after the configured closing hour, if enabled.
-Exit: short, at the start of a new higher-timeframe bar, the shorter-period moving average of the still-forming higher-timeframe bar > the longer-period moving average of that bar OR Friday's current hour is at or after the configured closing hour, if enabled.
-Exit: long, low <= entry price minus the stop-loss distance, if enabled, OR high >= entry price plus the take-profit distance, if enabled.

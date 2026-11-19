@@ -1,2 +1,0 @@
-Long: Last completed higher-timeframe bar high < previous bar high AND low > previous bar low AND close > open
-Short: Last completed higher-timeframe bar high < previous bar high AND low > previous bar low AND close < open

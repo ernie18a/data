@@ -1,1 +1,0 @@
-When account equity exceeds a configured multiple of account balance, close every open buy and sell position at the current market price.

@@ -1,7 +1,0 @@
-Calculation: Moving-average set = six moving averages of close, all using the same selected type (EMA, SMA, WMA, HMA, or VWMA), with strictly increasing consecutive Fibonacci lookbacks; order them from shortest to longest.
-Long: For any prefix of the moving-average set from the shortest through any member, every average in the prefix is greater than its previous-bar value AND every remaining average is less than its previous-bar value.
-Long: Every moving average is greater than its previous-bar value AND each shorter-lookback average is greater than the next longer-lookback average.
-Long: Every moving average is greater than its previous-bar value AND at least one moving average on the previous bar was less than or equal to its value two bars ago.
-Short: For any prefix of the moving-average set from the shortest through any member, every average in the prefix is less than its previous-bar value AND every remaining average is greater than its previous-bar value.
-Short: Every moving average is less than its previous-bar value AND each shorter-lookback average is less than the next longer-lookback average.
-Short: Every moving average is less than its previous-bar value AND at least one moving average on the previous bar was greater than or equal to its value two bars ago.

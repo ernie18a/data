@@ -1,7 +1,0 @@
-Calculation: First and second moving averages = independently selected SMA, EMA, WMA, or VWMA of close, with independently configurable lookbacks; the first normally has a shorter lookback than the second.
-Long: First moving average crosses above the second AND, if the trend filter is enabled, close is above or below a separate trend SMA of close, as selected.
-Short: First moving average crosses below the second AND, in short-only mode if the trend filter is enabled, close is above or below the trend SMA, as selected.
-Exit: long, in long-only or both-sides mode, the first moving average crosses below the second.
-Exit: short, in short-only mode, the first moving average crosses above the second; OR in both-sides mode, the first moving average crosses above the second AND, if the trend filter is enabled, close is above or below the trend SMA, as selected.
-Exit: long, if the profit target is enabled, high reaches entry price plus the preceding bar's close multiplied by the configured profit-target percentage; OR if the stop loss is enabled, low reaches entry price minus the preceding bar's close multiplied by the configured stop-loss percentage magnitude.
-Exit: short, if the profit target is enabled, low reaches entry price minus the preceding bar's close multiplied by the configured profit-target percentage; OR if the stop loss is enabled, high reaches entry price plus the preceding bar's close multiplied by the configured stop-loss percentage magnitude.

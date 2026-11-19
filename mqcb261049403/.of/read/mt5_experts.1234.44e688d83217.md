@@ -1,5 +1,0 @@
-Long: On the selected indicator timeframe, positive Vortex Indicator crosses above negative Vortex Indicator AND position side is flat.
-Short: On the selected indicator timeframe, negative Vortex Indicator crosses above positive Vortex Indicator AND position side is flat.
-Exit: long, negative Vortex Indicator > positive Vortex Indicator on the selected indicator timeframe OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
-Exit: short, positive Vortex Indicator > negative Vortex Indicator on the selected indicator timeframe OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.
-Calculation: Selected indicator timeframe = a configurable timeframe that may be the chart timeframe, higher, or lower; evaluate the Vortex Indicator on a configurable bar offset, using the last completed bar or an earlier completed bar, or the still-forming bar when the offset selects it.

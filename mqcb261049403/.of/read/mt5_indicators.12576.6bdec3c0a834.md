@@ -1,6 +1,0 @@
-Calculation: Trend state = On the chart timeframe, initialize state to up, next state to down, tracked low to zero, and tracked high to 9999999. On each bar in chronological order, calculate the lowest low and highest high over the same lookback, and moving averages of high and low with the same lookback and method. If next state is down, set tracked low to the maximum of its prior value and the lowest low; if the high moving average < tracked low AND close < previous bar's low, set state to down, next state to up, and tracked high to the highest high. Then, if next state is up, set tracked high to the minimum of its current value and the highest high; if the low moving average > tracked high AND close > previous bar's high, set state to up, next state to down, and tracked low to the lowest low.
-Calculation: Sampled trend state = Calculate the same trend state on a higher timeframe or the chart timeframe, using the bar still forming. At the first chart bar of each such timeframe bar, if its trend state differs from the preceding timeframe bar's state, set sampled trend state to its trend state; otherwise retain the previous sampled trend state. Initially sampled trend state is undefined.
-Long: Trend state = up
-Short: Trend state = down
-Long: Sampled trend state = up
-Short: Sampled trend state = down

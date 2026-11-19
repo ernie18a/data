@@ -1,3 +1,0 @@
-Calculation: MACD main = shorter-period EMA of close minus longer-period EMA of close; MACD signal = SMA of MACD main.
-Long: No open position AND the shorter-period SMA of close on the last completed chart bar < the longer-period SMA of close on that bar AND MACD main on the last completed higher-timeframe bar > MACD signal on that bar AND MACD main on that bar != 0.
-Exit: long, low <= entry price - take-profit distance - recovery-zone distance OR high >= entry price + take-profit distance.

@@ -1,9 +1,0 @@
-Calculation: Anchored VWAP = cumulative sum of chart-bar source × volume divided by cumulative volume since the start of the current, still-forming higher-timeframe anchor period; use HLC3 for the shortest anchor, HL2 for the intermediate anchor, or close for the longest anchor.
-Calculation: Outer bands = anchored VWAP ± either an ATR multiple or a percentage of anchored VWAP, using the same deviation parameter for both bands.
-Calculation: Entry target = anchored VWAP on the entry bar, or entry price adjusted by a direction-specific target percentage: upward for long and downward for short; hold the target fixed after entry.
-Calculation: Entry stop = entry price adjusted by a direction-specific stop percentage: downward for long and upward for short.
-Long: Close crosses below the lower outer band AND, if the outside filter is enabled, close > upper outer band × (1 + outside percentage) OR close < lower outer band × (1 − outside percentage), with the OR grouped within the filter AND, if cooldown is enabled, bars since the last accepted long or short signal >= cooldown period.
-Short: Close crosses above the upper outer band AND, if the outside filter is enabled, close > upper outer band × (1 + outside percentage) OR close < lower outer band × (1 − outside percentage), with the OR grouped within the filter AND, if cooldown is enabled, bars since the last accepted long or short signal >= cooldown period.
-Exit: long, bar is after the entry bar AND (low <= entry stop OR high >= entry target).
-Exit: short, bar is after the entry bar AND (high >= entry stop OR low <= entry target).
-Exit: long or short, optional reset is enabled AND the higher-timeframe anchor period changes.

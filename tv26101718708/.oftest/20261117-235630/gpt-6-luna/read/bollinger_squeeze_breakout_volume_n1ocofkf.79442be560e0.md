@@ -1,4 +1,0 @@
-Long: position is flat AND BB BandWidth(close, BB lookback, standard deviation multiplier)[1] < SMA(BB BandWidth(close, BB lookback, standard deviation multiplier), squeeze lookback)[1] * squeeze threshold AND close crosses above Bollinger upper band(close, BB lookback, standard deviation multiplier) AND volume > SMA(volume, volume lookback)
-Short: position is flat AND BB BandWidth(close, BB lookback, standard deviation multiplier)[1] < SMA(BB BandWidth(close, BB lookback, standard deviation multiplier), squeeze lookback)[1] * squeeze threshold AND close crosses below Bollinger lower band(close, BB lookback, standard deviation multiplier) AND volume > SMA(volume, volume lookback)
-Exit: long, low <= entry price - ATR(ATR lookback) * stop multiplier OR high >= entry price + ATR(ATR lookback) * target multiplier
-Exit: short, high >= entry price + ATR(ATR lookback) * stop multiplier OR low <= entry price - ATR(ATR lookback) * target multiplier

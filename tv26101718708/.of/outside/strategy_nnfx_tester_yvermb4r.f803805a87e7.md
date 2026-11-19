@@ -1,1 +1,0 @@
-Optionally filter entries using the previous daily close of the EVZ volatility index. Block both long and short entries, including continuation entries, when that close is below a configurable threshold. Otherwise, allow the strategy's other entry conditions to decide. This filter does not trigger exits.

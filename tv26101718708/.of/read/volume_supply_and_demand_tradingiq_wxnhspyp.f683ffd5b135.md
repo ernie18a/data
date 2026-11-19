@@ -1,3 +1,0 @@
-Calculation: Expansion angle = absolute value of arctangent, in degrees, of (current close minus close before the current consecutive-bar run) divided by the cumulative EMA of high minus low; initialize the EMA to zero and update it on bar number n with smoothing factor 2 / (n + 1).
-Long: On a completed bar, the consecutive run of bars with close > open reaches the minimum run length AND expansion angle >= threshold AND no previous bar in this run has satisfied both conditions.
-Short: On a completed bar, the consecutive run of bars with close <= open reaches the minimum run length AND expansion angle >= threshold AND no previous bar in this run has satisfied both conditions.

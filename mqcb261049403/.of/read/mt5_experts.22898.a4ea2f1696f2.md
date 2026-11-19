@@ -1,8 +1,0 @@
-Calculation: Weighted open and close = for each price series X, sum(w[i] * X[t-i]) / sum(w[i]) over i = 0 to N-1, where x = i/(N-1) and w[i] = (a1 + x^r1 * (1-a1)) * (a2 + (1-x)^r2 * (1-a2)) * (a3 + abs(1-2*x)^r3 * (1-a3)); N, a1, a2, a3, r1, r2 and r3 are parameters.
-Calculation: Adjusted open = previous bar's weighted close plus vertical price shift if abs(open - close) <= gap threshold; otherwise current weighted open. Candle direction compares adjusted open with current weighted close before applying the current bar's vertical price shift. The trading system uses zero vertical price shift and independently configurable weighted candles for long and short decisions; its indicator can use a higher, lower, or chart timeframe, with a configurable signal-bar offset selecting the last completed bar, an earlier completed bar, or the still-forming bar.
-Long: Chart-timeframe adjusted open < chart-timeframe weighted close.
-Short: Chart-timeframe adjusted open > chart-timeframe weighted close.
-Long: Long-system signal-bar adjusted open < signal-bar weighted close AND preceding indicator bar's adjusted open >= preceding indicator bar's weighted close.
-Short: Short-system signal-bar adjusted open > signal-bar weighted close AND preceding indicator bar's adjusted open <= preceding indicator bar's weighted close.
-Exit: long, long-system signal-bar adjusted open > signal-bar weighted close OR low <= entry price - long stop distance OR high >= entry price + long profit target distance.
-Exit: short, short-system signal-bar adjusted open < signal-bar weighted close OR high >= entry price + short stop distance OR low <= entry price - short profit target distance.

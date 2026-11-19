@@ -1,5 +1,0 @@
-Calculation: Channel boundaries = Apply the FATL digital filter separately to highs and lows, then apply Jurik moving average smoothing with the same length and phase to each series. Add a configurable price offset and round each result to the nearest configurable price increment. Compare each bar with the boundaries calculated a configurable number of bars earlier. For the standalone indicator use chart bars; for the trading system use the last completed bar of a higher timeframe and its preceding higher-timeframe bars.
-Long: Close > upper channel boundary AND close >= lower channel boundary
-Short: Close < lower channel boundary
-Exit: long, close < lower channel boundary OR low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance
-Exit: short, close > upper channel boundary AND close >= lower channel boundary OR high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance

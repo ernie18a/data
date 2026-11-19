@@ -1,9 +1,0 @@
-Calculation: Opening range = maximum high and minimum low of the first configured number of chart bars in each configured session, frozen after those bars.
-Calculation: Chart break state = separately record whether a session bar has closed above the opening-range high or below the opening-range low after the range is complete; retain each state until the next session.
-Calculation: Armed direction = reset at each session start; on the first chart break in either direction, set to that direction only if ATR is available and greater than zero and the optional volume gate passes on that break bar; a later first break in the opposite direction replaces it. The volume gate passes when disabled, when volume or its SMA is unavailable or the SMA is nonpositive, or when volume / volume SMA is at least the configured threshold.
-Long: Within the session AND the chart break state above the opening-range high is true.
-Short: Within the session AND the chart break state below the opening-range low is true.
-Long: Within the session AND no confirmed signal has fired this session AND armed direction is long AND ATR is available and greater than zero AND the volume gate passes AND no basket symbol is live.
-Short: Within the session AND no confirmed signal has fired this session AND armed direction is short AND ATR is available and greater than zero AND the volume gate passes AND no basket symbol is live.
-Exit: long, within the entry signal's session AND a confirmed long signal has fired AND close is below that session's opening-range low.
-Exit: short, within the entry signal's session AND a confirmed short signal has fired AND close is above that session's opening-range high.

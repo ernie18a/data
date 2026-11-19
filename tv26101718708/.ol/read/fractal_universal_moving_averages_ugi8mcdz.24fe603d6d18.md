@@ -1,2 +1,0 @@
-Long: shorter-lookback SMA > longer-lookback SMA OR shorter-lookback EMA > longer-lookback EMA OR SMA > EMA with the same lookback
-Short: shorter-lookback SMA < longer-lookback SMA OR shorter-lookback EMA < longer-lookback EMA OR SMA < EMA with the same lookback

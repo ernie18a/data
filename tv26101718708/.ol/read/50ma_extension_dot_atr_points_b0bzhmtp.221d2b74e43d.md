@@ -1,1 +1,0 @@
-Long: (threshold mode is ATR extension AND ((extension price − daily moving average) / daily moving average × 100) / (daily ATR / extension price × 100) ≥ threshold) OR (threshold mode is percent AND (extension price − daily moving average) / daily moving average × 100 ≥ threshold) OR (threshold mode is points AND extension price − daily moving average ≥ threshold)

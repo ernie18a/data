@@ -1,2 +1,0 @@
-Long: close crosses above SMA or EMA of either linear regression(close, LR lookback, offset 0) or close, using a separate signal lookback
-Short: close crosses below SMA or EMA of either linear regression(close, LR lookback, offset 0) or close, using a separate signal lookback

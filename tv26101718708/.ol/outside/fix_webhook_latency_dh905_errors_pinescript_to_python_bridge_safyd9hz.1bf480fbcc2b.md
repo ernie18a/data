@@ -1,1 +1,0 @@
-At bar close, buy an at-the-money call when a faster exponential moving average crosses above a slower one; sell an at-the-money put when it crosses below.

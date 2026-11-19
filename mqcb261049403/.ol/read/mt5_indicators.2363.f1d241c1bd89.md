@@ -1,2 +1,0 @@
-Long: Digital MACD > 0 OR Digital MACD > signal line on the previous bar OR higher-timeframe Digital MACD > higher-timeframe signal line on the still-forming bar
-Short: Digital MACD < 0 OR Digital MACD < signal line on the previous bar OR higher-timeframe Digital MACD < higher-timeframe signal line on the still-forming bar

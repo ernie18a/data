@@ -1,2 +1,0 @@
-Long: shorter-lookback chart-timeframe momentum > longer-lookback chart-timeframe momentum OR shorter-lookback momentum > longer-lookback momentum on the higher timeframe (still-forming bar)
-Short: shorter-lookback chart-timeframe momentum < longer-lookback chart-timeframe momentum OR shorter-lookback momentum < longer-lookback momentum on the higher timeframe (still-forming bar)

@@ -1,4 +1,0 @@
-Calculation: VWMA = for the current bar, the sum of (price * volume) over the most recent period bars, including the current bar and fewer if fewer exist, divided by the sum of volume over the same bars; price is the selected applied price field, volume is the selected volume field, and a volume of zero counts as one
-Calculation: VWMA direction = up if the most recent nonzero difference between VWMA values of consecutive bars, up to and including the current bar, is positive; down if it is negative; undefined if no nonzero difference exists yet
-Long: VWMA direction = up
-Short: VWMA direction = down

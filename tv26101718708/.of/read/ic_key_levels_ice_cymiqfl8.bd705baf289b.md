@@ -1,2 +1,0 @@
-Long: low < previous bar low AND high > previous bar high AND close > previous bar high AND (wick filter enabled = false OR min(open, close) - low > high - max(open, close))
-Short: high > previous bar high AND low < previous bar low AND close < previous bar low AND (wick filter enabled = false OR high - max(open, close) > min(open, close) - low)

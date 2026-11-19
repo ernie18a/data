@@ -1,2 +1,0 @@
-Long: The current chart bar is the first bar of a new higher-timeframe bar AND the last completed higher-timeframe bar's close > the preceding higher-timeframe bar's high.
-Short: The current chart bar is the first bar of a new higher-timeframe bar AND the last completed higher-timeframe bar's close < the preceding higher-timeframe bar's low.

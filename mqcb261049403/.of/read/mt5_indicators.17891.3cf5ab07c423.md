@@ -1,8 +1,0 @@
-Calculation: WATR bands = On chart bars, let offset be an adjustable fixed price distance plus an adjustable multiplier times ATR. Initialize the upper band on the bar before the first calculated bar to its close minus the fixed price distance; initialize the lower band as absent. For each subsequent bar, define prior uptrend as the previous upper band being present and the previous close being greater than it. If prior uptrend and close < open, or not prior uptrend and close > open, copy both previous bands. Otherwise, if prior uptrend, set the upper band to max(close - offset, previous upper band) and the lower band absent; if not prior uptrend, set the lower band to min(close + offset, previous lower band) when the previous lower band is present, otherwise close + offset, and set the upper band absent. Then, if prior uptrend and close < the current upper band, set the lower band to close + offset and the upper band absent. If not prior uptrend and the current lower band is present and close > it, set the upper band to close - offset and the lower band absent.
-Calculation: Higher-timeframe WATR bands = Calculate WATR bands on higher-timeframe bars using the higher-timeframe bar still forming.
-Long: The upper WATR band is present.
-Short: The lower WATR band is present.
-Long: The previous higher-timeframe upper WATR band is absent AND the current higher-timeframe upper WATR band is present.
-Short: The previous higher-timeframe lower WATR band is absent AND the current higher-timeframe lower WATR band is present.
-Long: The most recent higher-timeframe band-appearance decision is long.
-Short: The most recent higher-timeframe band-appearance decision is short.

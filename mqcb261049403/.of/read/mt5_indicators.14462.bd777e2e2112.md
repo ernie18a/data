@@ -1,5 +1,0 @@
-Calculation: Step-stochastic line = Apply the following independently for a smaller step and a larger step to the stochastic oscillator's signal line (%D). Initialize the previous upper bound to -999999, the previous lower bound to 999999, and the trend to 0. On each bar, set upper = %D + 2 × step and lower = %D - 2 × step. If %D > previous upper, set trend to +1; if %D < previous lower, set trend to -1; otherwise retain the trend. If trend > 0 and lower < previous lower, set lower to previous lower. If trend < 0 and upper > previous upper, set upper to previous upper. The line is lower + step when trend > 0 and upper - step when trend < 0. Save upper and lower for the next bar.
-Long: Chart-timeframe smaller-step line > chart-timeframe larger-step line.
-Short: Chart-timeframe smaller-step line < chart-timeframe larger-step line.
-Long: Higher-timeframe smaller-step line from the bar still forming > higher-timeframe larger-step line from the bar still forming + 0.00000001.
-Short: Higher-timeframe smaller-step line from the bar still forming < higher-timeframe larger-step line from the bar still forming + 0.00000001.

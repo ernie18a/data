@@ -1,1 +1,0 @@
-A complete reproducible framework cannot be expressed using only the specified backtest data. Entry and exit decisions depend on an external index's close and EMAs, which are not present in the data header and cannot be derived from the chart bars.

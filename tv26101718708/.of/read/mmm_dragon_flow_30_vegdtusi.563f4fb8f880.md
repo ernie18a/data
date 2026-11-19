@@ -1,5 +1,0 @@
-Calculation: Session pivot = (session high + session low + session close) / 3 for the most recently completed session, using chart bars whose opening times fall within the session; retain it until the next session completes.
-Long: close > short-term EMA of close AND short-term EMA of close > long-term EMA of close
-Short: close < short-term EMA of close AND short-term EMA of close < long-term EMA of close
-Long: close > short-term EMA of close AND short-term EMA of close > long-term EMA of close AND close > session pivot AND (ATR is unavailable OR abs(close - session pivot) > ATR × proximity multiplier)
-Short: close < short-term EMA of close AND short-term EMA of close < long-term EMA of close AND close < session pivot AND (ATR is unavailable OR abs(close - session pivot) > ATR × proximity multiplier)

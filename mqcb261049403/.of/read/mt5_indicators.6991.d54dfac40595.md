@@ -1,4 +1,0 @@
-Calculation: High index = smooth the maximum of zero and (current high - low k bars ago) / (ATR k bars ago × sqrt(k + 1)) over k from zero through one less than the lookback; skip terms with zero denominator. ATR uses the same lookback.
-Calculation: Low index = smooth the maximum of zero and (high k bars ago - current low) / (ATR k bars ago × sqrt(k + 1)) over the same range, using the same ATR and smoothing parameters. Calculate both indices on the chart timeframe or on the still-forming higher-timeframe bar.
-Long: High index > threshold OR High index > Low index
-Short: Low index > threshold OR Low index > High index

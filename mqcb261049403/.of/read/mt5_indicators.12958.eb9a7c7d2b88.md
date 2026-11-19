@@ -1,6 +1,0 @@
-Calculation: Gravity = SMA of the selected price multiplied by the linearly weighted moving average of the same price, both using the same lookback. The selected price is one of: close, open, high, low, (high + low)/2, (high + low + close)/3, (high + low + 2 × close)/4, (open + close)/2, (open + high + low + close)/4, high if close > open else low if close < open else close, (high + close)/2 if close > open else (low + close)/2 if close < open else close, or (high + low + 2 × close + X)/4 where X is low if close < open, high if close > open, otherwise close.
-Calculation: Signal = moving average of Gravity using a separately selected lookback and SMA, EMA, SMMA, or linearly weighted method.
-Long: Chart-timeframe Gravity >= Signal.
-Short: Chart-timeframe Gravity < Signal.
-Long: Higher-timeframe Gravity > Signal, using the still-forming higher-timeframe bar sampled on the first chart bar of that higher-timeframe bar and held until the next higher-timeframe bar.
-Short: Higher-timeframe Gravity < Signal, using the still-forming higher-timeframe bar sampled on the first chart bar of that higher-timeframe bar and held until the next higher-timeframe bar.

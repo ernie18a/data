@@ -1,3 +1,0 @@
-Calculation: SuperTrend state = initialize the trend as bullish; smooth true range with Wilder's RMA or EMA, initialized to the first true range. On each bar, set the lower band to the selected OHLC price basis minus the multiplier times smoothed true range, retaining the previous lower band if the previous close was above it and it is higher; set the upper band to the basis plus the multiplier times smoothed true range, retaining the previous upper band if the previous close was below it and it is lower. Change a bearish trend to bullish when the close exceeds the current upper band; change a bullish trend to bearish when the close falls below the current lower band.
-Long: Plot SuperTrend state = bullish
-Short: Plot SuperTrend state = bearish

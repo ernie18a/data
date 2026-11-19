@@ -1,4 +1,0 @@
-Calculation: Session opening price = open at the first chart bar of the active session, using the higher-timeframe bar's open when the chart timeframe is shorter than the configured higher timeframe; otherwise use the chart bar's open.
-Calculation: Session comparison close = chart bar close, except when the chart timeframe is shorter than the configured higher timeframe, use that higher-timeframe bar's close; historically the final close is exposed from the start of the higher-timeframe bar, while in real time it is the close of the bar still forming.
-Long: Chart timeframe is intraday AND bar time is within an enabled session AND session comparison close > session opening price.
-Short: Chart timeframe is intraday AND bar time is within an enabled session AND session comparison close <= session opening price.

@@ -1,3 +1,0 @@
-Long: Shorter-period moving average > longer-period moving average AND on the previous chart bar the shorter-period moving average <= the longer-period moving average.
-Short: Shorter-period moving average < longer-period moving average AND on the previous chart bar the shorter-period moving average >= the longer-period moving average.
-Calculation: Moving averages = EMA, SMA, WMA, HMA, RMA, or VWMA of a selected price source. Use either a dedicated pair with the same type and timeframe or two independently configured moving averages. Each average uses chart-timeframe bars or higher-timeframe bars, using either the still-forming higher-timeframe bar or the last completed higher-timeframe bar.

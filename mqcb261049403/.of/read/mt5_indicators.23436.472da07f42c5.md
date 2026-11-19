@@ -1,3 +1,0 @@
-Calculation: Rounded average = round to a configurable price increment the sum 8×E1 − 28×E2 + 56×E3 − 70×E4 + 56×E5 − 28×E6 + 8×E7 − E8 plus a configurable price offset, where E1 is the EMA of a configurable OHLC-derived price and E2 through E8 are successive EMAs of the preceding EMA, all with the same length; initialize each EMA with its first available input, starting E1 on the first bar and each subsequent EMA one bar later. Calculate either on the chart timeframe or on a higher timeframe using the higher-timeframe bar still forming.
-Long: Rounded average > its most recent earlier unequal value.
-Short: Rounded average < its most recent earlier unequal value.

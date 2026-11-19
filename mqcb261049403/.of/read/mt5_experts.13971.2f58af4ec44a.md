@@ -1,6 +1,0 @@
-Calculation: Laguerre line = On a configurable indicator timeframe, which may be higher or lower than the chart timeframe, use the last completed bar or, if configured, the forming bar. For each indicator bar t, let p[t]=(high[t]+low[t])/2. Initialize L0, L1, L2 and L3 to zero before the first bar; update in order: L0[t]=(1-gamma)*p[t]+gamma*L0[t-1]; L1[t]=-gamma*L0[t]+L0[t-1]+gamma*L1[t-1]; L2[t]=-gamma*L1[t]+L1[t-1]+gamma*L2[t-1]; L3[t]=-gamma*L2[t]+L2[t-1]+gamma*L3[t-1]. The line is (L0[t]+2*L1[t]+2*L2[t]+L3[t])/6 after the initial warm-up bars.
-Calculation: Weighted price line = On the same indicator timeframe and bar selection as the Laguerre line, (p[t]+2*p[t-1]+2*p[t-2]+p[t-3])/6.
-Long: Weighted price line > Laguerre line AND previous indicator bar's weighted price line < previous indicator bar's Laguerre line.
-Short: Weighted price line < Laguerre line AND previous indicator bar's weighted price line > previous indicator bar's Laguerre line.
-Exit: long, weighted price line < Laguerre line OR low <= entry price minus enabled stop-loss distance OR high >= entry price plus enabled take-profit distance.
-Exit: short, weighted price line > Laguerre line OR high >= entry price plus enabled stop-loss distance OR low <= entry price minus enabled take-profit distance.

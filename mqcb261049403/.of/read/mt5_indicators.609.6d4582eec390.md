@@ -1,3 +1,0 @@
-Calculation: Smoothed trend filter = Jurik moving average of the FATL digital filter applied to the selected price series on a higher timeframe, using the still-forming higher-timeframe bar.
-Long: The chart bar is the first bar of a higher-timeframe period AND the smoothed trend filter is greater than its value on the preceding higher-timeframe bar.
-Short: The chart bar is the first bar of a higher-timeframe period AND the smoothed trend filter is less than its value on the preceding higher-timeframe bar.

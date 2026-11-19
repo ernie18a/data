@@ -1,2 +1,0 @@
-Exit: long, low <= entry price - max(multiplier * ATR of the last completed bar on the chart timeframe, minimum stop distance)
-Exit: short, high >= entry price + max(multiplier * ATR of the last completed bar on the chart timeframe, minimum stop distance)

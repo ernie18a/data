@@ -1,8 +1,0 @@
-Calculation: Fast double-smoothed average = a shorter-lookback moving average of the selected price, smoothed again with another shorter-lookback moving average.
-Calculation: Slow double-smoothed average = a longer-lookback moving average of the selected price, smoothed again with another longer-lookback moving average.
-Long: Chart-timeframe fast double-smoothed average > chart-timeframe slow double-smoothed average.
-Short: Chart-timeframe fast double-smoothed average < chart-timeframe slow double-smoothed average.
-Long: On the last completed higher-timeframe bar, fast double-smoothed average > slow double-smoothed average AND on the preceding higher-timeframe bar, fast double-smoothed average <= slow double-smoothed average.
-Short: On the last completed higher-timeframe bar, fast double-smoothed average < slow double-smoothed average AND on the preceding higher-timeframe bar, fast double-smoothed average >= slow double-smoothed average.
-Exit: long, last completed higher-timeframe fast double-smoothed average < last completed higher-timeframe slow double-smoothed average OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
-Exit: short, last completed higher-timeframe fast double-smoothed average > last completed higher-timeframe slow double-smoothed average OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

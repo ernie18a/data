@@ -1,5 +1,0 @@
-Calculation: Opening-range high and low = highest high and lowest low from the session's first bar through the bar whose opening time is at or before the session start plus the opening-range duration and less than one chart-bar duration before that time; fix both values on that bar.
-Calculation: Average session range = mean of the high minus low of a configurable number of preceding completed sessions of the same session.
-Calculation: Upper targets = opening-range low + one quarter of the opening-range width + average session range multiplied by either of two positive coefficients, one smaller than the other. Lower targets = opening-range high - one quarter of the opening-range width - average session range multiplied by the corresponding coefficient.
-Long: The session is active AND the opening range is fixed AND high crosses above either upper target for the first time since the session began.
-Short: The session is active AND the opening range is fixed AND low crosses below either lower target for the first time since the session began.

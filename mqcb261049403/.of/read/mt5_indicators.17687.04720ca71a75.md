@@ -1,5 +1,0 @@
-Calculation: Trend oscillator = smooth 100 × U / (U + D) − 50 with a selectable moving average; if U + D = 0, use 50 before smoothing. For lookback n, U is the sum of max(close − open, 0) over the current and preceding n − 1 bars, weighted n + 2 for the current bar and n + 1 − k for the bar k bars ago; D is the corresponding weighted sum of max(open − close, 0). Calculate on the chart timeframe or on a higher timeframe using its still-forming bar.
-Long: In level mode, trend oscillator > upper threshold OR (trend oscillator <= upper threshold AND trend oscillator > middle threshold)
-Short: In level mode, trend oscillator <= upper threshold AND trend oscillator <= middle threshold AND (trend oscillator < lower threshold OR trend oscillator < middle threshold)
-Long: In direction mode, trend oscillator > middle threshold AND trend oscillator > previous oscillator value OR trend oscillator < middle threshold AND trend oscillator > previous oscillator value
-Short: In direction mode, trend oscillator > middle threshold AND trend oscillator < previous oscillator value OR trend oscillator < middle threshold AND trend oscillator < previous oscillator value

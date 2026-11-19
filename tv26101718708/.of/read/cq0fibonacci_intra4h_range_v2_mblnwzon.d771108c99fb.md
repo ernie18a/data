@@ -1,2 +1,0 @@
-Long: Chart timeframe is intraday AND close >= open of the still-forming reference-timeframe bar, which may be higher or lower than the chart timeframe
-Short: Chart timeframe is intraday AND close < open of the still-forming reference-timeframe bar, which may be higher or lower than the chart timeframe

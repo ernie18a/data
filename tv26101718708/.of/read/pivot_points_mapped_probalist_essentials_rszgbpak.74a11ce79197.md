@@ -1,5 +1,0 @@
-Calculation: Pivot levels = support and resistance levels from the last completed higher-timeframe bar's high, low, and close, using a selected Classic, Fibonacci, Camarilla, or Woodie pivot method.
-Calculation: Fresh support touch = low <= support level + ATR multiplied by a tolerance AND the preceding bar was outside that support zone; the zone remains entered until low > support level + ATR multiplied by the tolerance. Track each level independently, including across pivot-period boundaries.
-Calculation: Fresh resistance touch = high >= resistance level - ATR multiplied by a tolerance AND the preceding bar was outside that resistance zone; the zone remains entered until high < resistance level - ATR multiplied by the tolerance. Track each level independently, including across pivot-period boundaries.
-Long: Previous bar had a fresh touch of a support level AND current bar is in the same pivot period AND close > that support level.
-Short: Previous bar had a fresh touch of a resistance level AND current bar is in the same pivot period AND close < that resistance level.

@@ -1,8 +1,0 @@
-Calculation: Confirmed fractal high = a bar whose high is higher than the highs of the two preceding and two following bars.
-Calculation: Confirmed fractal low = a bar whose low is lower than the lows of the two preceding and two following bars.
-Long: A confirmed fractal low exists.
-Short: A confirmed fractal high exists.
-Long: Absolute difference between the current chart-bar open and the close two chart bars ago > a price-distance threshold AND the shorter-period linear-weighted moving average of typical price > the longer-period linear-weighted moving average of typical price AND RSI of the still-forming higher-timeframe bar > RSI of the last completed higher-timeframe bar.
-Short: Absolute difference between the current chart-bar open and the previous chart-bar close > a price-distance threshold AND the shorter-period linear-weighted moving average of typical price < the longer-period linear-weighted moving average of typical price AND the previous chart-bar low < the high two chart bars ago AND RSI of the still-forming higher-timeframe bar < RSI of the last completed higher-timeframe bar.
-Exit: long, all six shorter-period exponential moving averages of typical price are equal OR all six longer-period exponential moving averages of typical price are equal OR the previous chart-bar close <= the previous chart-bar lower Bollinger Band.
-Exit: short, all six shorter-period exponential moving averages of typical price are equal OR all six longer-period exponential moving averages of typical price are equal OR the previous chart-bar close <= the previous chart-bar lower Bollinger Band.

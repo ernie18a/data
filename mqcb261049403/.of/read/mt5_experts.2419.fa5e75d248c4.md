@@ -1,6 +1,0 @@
-Calculation: PVT = cumulative volume-weighted relative change in a selected OHLC-derived price: initialize to the first bar's volume; thereafter add current volume × (current price − previous price) / previous price.
-Calculation: PVT signal = moving average of PVT using a selected smoothing method and lookback. Calculate both lines on the chart timeframe or a selected higher or lower timeframe; evaluate the last completed bar by default, with a configurable bar offset that may instead select the still-forming bar or an earlier completed bar.
-Long: PVT on the evaluated bar > PVT signal on that bar AND PVT on the preceding bar <= PVT signal on that bar.
-Short: PVT on the evaluated bar < PVT signal on that bar AND PVT on the preceding bar >= PVT signal on that bar.
-Exit: long, PVT on the evaluated bar < PVT signal on that bar OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance.
-Exit: short, PVT on the evaluated bar > PVT signal on that bar OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance.

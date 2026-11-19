@@ -1,8 +1,0 @@
-Calculation: Trend oscillator = Smooth the difference between two EMAs of equal length: the first EMA takes the sum, over short, medium, and long lookbacks, of current high minus the highest high in each lookback; the second takes the sum of the lowest low in each lookback minus current low. Each lookback excludes the current bar. The smoothing method and its parameters are selectable.
-Calculation: Higher-timeframe oscillator state = At the first chart bar of each higher-timeframe bar, calculate the trend oscillator using the still-forming higher-timeframe bar and compare it with the preceding higher-timeframe oscillator value; hold that state until the next higher-timeframe bar begins.
-Long: Chart-timeframe trend oscillator > 0 AND chart-timeframe trend oscillator != its previous-bar value
-Short: Chart-timeframe trend oscillator < 0 AND chart-timeframe trend oscillator != its previous-bar value
-Long: Higher-timeframe oscillator state > 0 AND higher-timeframe oscillator state != its preceding higher-timeframe oscillator value
-Short: Higher-timeframe oscillator state < 0 AND higher-timeframe oscillator state != its preceding higher-timeframe oscillator value
-Long: On the selected chart signal bar, higher-timeframe oscillator state < 0 AND it is below its preceding higher-timeframe oscillator value AND on the previous chart bar the state was < 0 AND above its preceding higher-timeframe oscillator value
-Short: On the selected chart signal bar, higher-timeframe oscillator state < 0 AND it is above its preceding higher-timeframe oscillator value AND on the previous chart bar the state was < 0 AND below its preceding higher-timeframe oscillator value

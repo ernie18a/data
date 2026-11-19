@@ -1,2 +1,0 @@
-Long: Short-term EMA calculated using the still-forming higher-timeframe bar > long-term EMA calculated using the still-forming higher-timeframe bar
-Short: Short-term EMA calculated using the still-forming higher-timeframe bar < long-term EMA calculated using the still-forming higher-timeframe bar

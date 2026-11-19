@@ -1,4 +1,0 @@
-Calculation: Oscillator = shorter-period moving average of the selected price minus longer-period moving average of the same price, using the same smoothing method.
-Calculation: Signal line = moving average of the oscillator, using a separately selected smoothing method and period.
-Long: Oscillator > signal line on the chart timeframe OR oscillator > signal line calculated from the still-forming higher-timeframe bar and sampled on the first chart bar of that higher-timeframe bar, then carried forward.
-Short: Oscillator < signal line on the chart timeframe OR oscillator < signal line calculated from the still-forming higher-timeframe bar and sampled on the first chart bar of that higher-timeframe bar, then carried forward.

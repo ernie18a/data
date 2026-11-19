@@ -1,3 +1,0 @@
-Calculation: Double-smoothed average = apply a moving average to a selected price series, then apply a second moving average to the result; the two stages have independently chosen periods and methods.
-Long: Shorter-period double-smoothed average > longer-period double-smoothed average, calculated on the chart timeframe OR on the higher timeframe using its still-forming bar.
-Short: Shorter-period double-smoothed average < longer-period double-smoothed average, calculated on the chart timeframe OR on the higher timeframe using its still-forming bar.

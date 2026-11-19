@@ -1,2 +1,0 @@
-Long: RSI on each enabled timeframe (chart timeframe, higher timeframe, or lower timeframe; current forming bar) <= oversold level
-Short: RSI on each enabled timeframe (chart timeframe, higher timeframe, or lower timeframe; current forming bar) >= overbought level

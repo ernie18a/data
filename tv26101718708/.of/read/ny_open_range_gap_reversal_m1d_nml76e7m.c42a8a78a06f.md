@@ -1,7 +1,0 @@
-Calculation: Session open = open of the first chart bar in the current regular session; previous session close = close of the last chart bar in the preceding regular session; gap = session open - previous session close.
-Calculation: Minimum gap = a configurable price amount, a configurable percentage of session open, or a configurable multiple of ATR from the last completed higher-timeframe daily bar; use the configurable price amount if daily ATR is unavailable.
-Calculation: Opening-range high and low = highest high and lowest low of chart bars whose opening times fall within the configurable opening-range interval beginning at the session open.
-Long: gap <= 0.
-Short: gap > 0.
-Long: gap <= 0 AND absolute gap >= minimum gap AND the bar opens during the regular session, at or after the opening-range end and before the detection cutoff AND low < opening-range low AND close > opening-range low AND no earlier low sweep has occurred in the current session.
-Short: gap > 0 AND absolute gap >= minimum gap AND the bar opens during the regular session, at or after the opening-range end and before the detection cutoff AND high > opening-range high AND close < opening-range high AND no earlier high sweep has occurred in the current session.

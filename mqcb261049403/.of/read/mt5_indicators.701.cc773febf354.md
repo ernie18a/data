@@ -1,5 +1,0 @@
-Calculation: Smoothed Heiken Ashi open and close = Apply the same chosen moving-average method and parameters independently to open, high, low, and close. After the smoothing method's warm-up period plus one bar, initialize Heiken Ashi open and close to the corresponding smoothed open and close. On each subsequent bar, Heiken Ashi open = (previous Heiken Ashi open + previous Heiken Ashi close) / 2; Heiken Ashi close = (smoothed open + smoothed high + smoothed low + smoothed close) / 4.
-Long: Chart-timeframe smoothed Heiken Ashi close > chart-timeframe smoothed Heiken Ashi open
-Short: Chart-timeframe smoothed Heiken Ashi close <= chart-timeframe smoothed Heiken Ashi open
-Long: Still-forming higher-timeframe smoothed Heiken Ashi close > still-forming higher-timeframe smoothed Heiken Ashi open
-Short: Still-forming higher-timeframe smoothed Heiken Ashi close <= still-forming higher-timeframe smoothed Heiken Ashi open

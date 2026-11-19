@@ -1,4 +1,0 @@
-Calculation: Smoothed price = Jurik moving average of the slow adaptive trend line filter applied to a price series, using the same smoothing parameters for open and close.
-Calculation: Higher-timeframe smoothed price = smoothed price calculated on the higher timeframe's still-forming bar, sampled on the first chart bar of that higher-timeframe bar and held until the next higher-timeframe bar.
-Long: Smoothed close > smoothed open OR higher-timeframe smoothed close > higher-timeframe smoothed open
-Short: Smoothed close < smoothed open OR higher-timeframe smoothed close < higher-timeframe smoothed open

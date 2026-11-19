@@ -1,4 +1,0 @@
-Long: The close of a still-forming higher-timeframe bar >= its open.
-Short: The close of a still-forming higher-timeframe bar < its open.
-Long: For an enabled higher timeframe, abs(chart close - still-forming higher-timeframe low) <= chart ATR × threshold AND abs(previous chart close - the same current higher-timeframe low) > chart ATR × threshold AND no high, low, or enabled open touch has previously fired during this higher-timeframe bar AND the high-touch condition is false on this bar.
-Short: For an enabled higher timeframe, abs(chart close - still-forming higher-timeframe high) <= chart ATR × threshold AND abs(previous chart close - the same current higher-timeframe high) > chart ATR × threshold AND no high, low, or enabled open touch has previously fired during this higher-timeframe bar.

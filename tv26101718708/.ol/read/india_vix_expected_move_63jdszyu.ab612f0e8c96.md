@@ -1,2 +1,0 @@
-Long: close > current day's open (the still-forming higher-timeframe daily bar) AND current EMA of close > previous chart bar's EMA of close
-Short: close < current day's open (the still-forming higher-timeframe daily bar) AND current EMA of close < previous chart bar's EMA of close

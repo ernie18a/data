@@ -1,9 +1,0 @@
-Calculation: Ichimoku levels = conversion line, base line, and the two leading spans at the last completed higher-timeframe bar; use the standard forward displacement for the leading spans, with the conversion lookback shorter than the base lookback and the span B lookback longer than the base lookback.
-Long: At the chart bar open, absolute difference between the open and the close two chart bars ago > a distance threshold AND the low two chart bars ago < the previous chart bar's high AND, for at least one Ichimoku level, the last completed higher-timeframe bar's low <= that level AND the forming higher-timeframe bar's open > that level.
-Short: At the chart bar open, absolute difference between the open and the close two chart bars ago > a distance threshold AND the previous chart bar's low < the high two chart bars ago AND, for at least one Ichimoku level, the last completed higher-timeframe bar's high >= that level AND the forming higher-timeframe bar's open < that level.
-Exit: long, price <= entry price minus the stop-loss distance OR price >= entry price plus the take-profit distance.
-Exit: short, price >= entry price plus the stop-loss distance OR price <= entry price minus the take-profit distance.
-Exit: long, after a chart bar open has exceeded entry price plus the break-even activation distance, price <= entry price plus the break-even stop offset.
-Exit: short, after a chart bar open has fallen below entry price minus the break-even activation distance, price >= entry price minus the break-even stop offset.
-Exit: long, previous chart bar's close = its upper Bollinger Band.
-Exit: short, previous chart bar's close = its lower Bollinger Band.

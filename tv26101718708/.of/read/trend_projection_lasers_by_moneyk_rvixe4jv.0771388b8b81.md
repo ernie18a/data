@@ -1,3 +1,0 @@
-Calculation: Regression slope = linear regression of close at offset 0 minus linear regression of close at offset 1, using the same lookback window. Calculate the slope and ATR independently on the chart timeframe and, where available, on a lower and a higher timeframe. Use the last completed lower-timeframe bar; for the higher timeframe, use the last completed bar on historical data and the forming bar in real time.
-Long: For any available timeframe, regression slope > 0 AND (ATR is unavailable OR regression slope > ATR multiplied by the flatness threshold).
-Short: For any available timeframe, (ATR is unavailable AND regression slope <= 0) OR (ATR is available AND regression slope < negative ATR multiplied by the flatness threshold).

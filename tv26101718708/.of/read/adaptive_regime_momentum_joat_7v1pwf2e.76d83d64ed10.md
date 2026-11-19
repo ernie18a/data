@@ -1,7 +1,0 @@
-Calculation: Composite MA = (ALMA of close + EMA(2 × EMA(close) − EMA(EMA(close)))) / 2; all moving averages use the same length.
-Long: Position is flat AND composite MA is greater than its preceding value on each of the last consecutive slope-confirmation bars AND close > composite MA AND (volume filter is disabled OR RSI of volume > volume threshold) AND (RSI filter is disabled OR RSI of close > long RSI threshold).
-Short: Position is flat AND composite MA is less than its preceding value on each of the last consecutive slope-confirmation bars AND close < composite MA AND (volume filter is disabled OR RSI of volume > volume threshold) AND (RSI filter is disabled OR RSI of close < short RSI threshold).
-Exit: long, low <= entry price − stop multiplier × ATR from the preceding completed bar OR high >= entry price + take-profit multiplier × ATR from the preceding completed bar.
-Exit: short, high >= entry price + stop multiplier × ATR from the preceding completed bar OR low <= entry price − take-profit multiplier × ATR from the preceding completed bar.
-Exit: long, close < composite MA − trail multiplier × current ATR OR composite MA < its preceding value.
-Exit: short, close > composite MA + trail multiplier × current ATR OR composite MA > its preceding value.

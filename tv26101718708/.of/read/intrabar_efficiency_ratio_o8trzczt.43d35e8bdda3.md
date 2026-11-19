@@ -1,6 +1,0 @@
-Calculation: Intrabar efficiency ratio = chart-bar close change divided by the sum of absolute lower-timeframe close changes for all completed lower-timeframe bars within the chart bar, including the change from the preceding lower-timeframe bar; replace an undefined ratio with zero. Optionally multiply by the percent rank of the absolute chart-bar close change over a lookback, divided by the percent-rank scale.
-Calculation: Efficiency average = a selected moving average of the intrabar efficiency ratio; use the same moving-average type for the short, medium, and long lengths, with short length ≤ medium length ≤ long length.
-Long: Short efficiency average > long efficiency average
-Short: Short efficiency average ≤ long efficiency average
-Long: Percent rank of any one of the short, medium, or long efficiency averages over a lookback > middle rank threshold AND ≤ upper rank threshold
-Short: Percent rank of any one of the short, medium, or long efficiency averages over a lookback ≥ lower rank threshold AND ≤ middle rank threshold

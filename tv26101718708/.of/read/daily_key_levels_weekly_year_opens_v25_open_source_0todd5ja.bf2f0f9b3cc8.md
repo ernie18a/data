@@ -1,2 +1,0 @@
-Long: shorter-lookback SMA of close > longer-lookback SMA of close AND close >= longer-lookback SMA of close
-Short: shorter-lookback SMA of close < longer-lookback SMA of close AND close <= longer-lookback SMA of close

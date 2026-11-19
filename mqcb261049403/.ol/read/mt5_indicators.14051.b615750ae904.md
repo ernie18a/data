@@ -1,2 +1,0 @@
-Long: DeMarker on each configured timeframe at or above the chart timeframe, calculated from its still-forming bar, > its upper threshold
-Short: DeMarker on each configured timeframe at or above the chart timeframe, calculated from its still-forming bar, < its lower threshold

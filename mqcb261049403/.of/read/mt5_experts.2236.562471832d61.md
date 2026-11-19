@@ -1,5 +1,0 @@
-Calculation: Fisher CG oscillator = On a higher-than-chart timeframe, use the last completed bar by default, or the still-forming bar if configured. For each bar, let n be the lookback and p[i] be the midpoint of high and low i bars ago. Center of gravity = (n+1)/2 - sum((i+1)*p[i], i=0..n-1)/sum(p[i], i=0..n-1), or 0 if the denominator is 0. Normalize it over its most recent n values as (current - minimum)/(maximum - minimum), or 0 if maximum equals minimum. Let v be the weighted average of the current and three preceding normalized values with weights 4, 3, 2, 1, divided by 10. The oscillator is 0.5*ln((1+1.98*(v-0.5))/(1-1.98*(v-0.5))). Its trigger is the oscillator one higher-timeframe bar earlier.
-Long: Oscillator > trigger AND previous oscillator <= previous trigger.
-Short: Oscillator < trigger AND previous oscillator >= previous trigger.
-Exit: long, oscillator < trigger OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
-Exit: short, oscillator > trigger OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

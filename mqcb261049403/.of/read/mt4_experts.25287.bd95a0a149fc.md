@@ -1,5 +1,0 @@
-Long: At the opening of a chart bar, the absolute difference between the open and the close two chart bars ago exceeds a price-distance threshold AND the shorter-period linearly weighted moving average of typical price exceeds the longer-period one on the still-forming higher-timeframe bar AND the low two chart bars ago is below the previous chart bar's high.
-Long: A chart bar is marked as a ZigZag low pivot by the recalculated ZigZag.
-Short: A chart bar is marked as a ZigZag high pivot by the recalculated ZigZag.
-Exit: long, the previous chart bar's close is at or below the lower Bollinger Band OR all six shorter-period exponential moving averages of typical price are equal on the still-forming lower-timeframe bar OR all six longer-period exponential moving averages of typical price are equal on that bar.
-Exit: short, the previous chart bar's close is at or below the lower Bollinger Band OR all six shorter-period exponential moving averages of typical price are equal on the still-forming lower-timeframe bar OR all six longer-period exponential moving averages of typical price are equal on that bar.

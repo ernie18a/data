@@ -1,7 +1,0 @@
-Long: RSI of close on its selected timeframe, using the bar still forming and rounded to the nearest integer, <= the lower RSI threshold
-Long: Stochastic %K on its selected timeframe, using the bar still forming, <= the lower stochastic threshold
-Long: Shorter-period moving average on its selected timeframe, using the bar still forming, >= longer-period moving average on its selected timeframe, using the bar still forming AND the shorter-period moving average on its previous completed bar < the longer-period moving average on its previous completed bar
-Short: RSI of close on its selected timeframe, using the bar still forming and rounded to the nearest integer, >= the upper RSI threshold
-Short: Stochastic %K on its selected timeframe, using the bar still forming, >= the upper stochastic threshold
-Short: Shorter-period moving average on its selected timeframe, using the bar still forming, <= longer-period moving average on its selected timeframe, using the bar still forming AND the shorter-period moving average on its previous completed bar > the longer-period moving average on its previous completed bar
-Calculation: Each selected timeframe may be higher or lower than the chart timeframe, or equal to it.

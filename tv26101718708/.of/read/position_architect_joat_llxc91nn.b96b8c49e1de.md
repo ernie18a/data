@@ -1,7 +1,0 @@
-Calculation: Signal source = a selectable chart-bar price series, with close as the fallback; its SMA uses a selectable lookback.
-Calculation: Initial stop = entry-bar low minus ATR multiplied by a stop multiplier for a long, or entry-bar high plus ATR multiplied by the stop multiplier for a short. Initial risk = absolute difference between entry price and initial stop. First target and final target = entry price plus initial risk multiplied by their respective independent target multipliers for a long, or minus those amounts for a short. Set entry price to close and reset these levels whenever an entry signal occurs, including while a position is open.
-Calculation: Working stop = initial stop until the first target is reached; if the optional breakeven setting is enabled, change it to entry price on the first bar after entry whose high reaches the first target for a long or whose low reaches it for a short, before checking that bar's stop.
-Long: Signal source > its SMA AND previous signal source <= its previous SMA.
-Short: Signal source < its SMA AND previous signal source >= its previous SMA.
-Exit: long, bar is after the entry bar AND (high >= final target OR low <= working stop).
-Exit: short, bar is after the entry bar AND (low <= final target OR high >= working stop).

@@ -1,6 +1,0 @@
-Calculation: Ideal smoothing of input x = initialize y to the first x; for each subsequent bar, let d = (x[current] - x[previous])² - 1 and y[current] = (a × (x[current] - y[previous]) + y[previous] + b × y[previous] × d) / (1 + b × d), where a and b are independently configurable smoothing coefficients.
-Calculation: Fast line = ideal smoothing of close. Slow line = three successive ideal smoothing stages of close, each with independently configurable coefficients. Both use the same configurable indicator timeframe, which may be the chart timeframe or a higher timeframe; evaluate the last completed indicator bar and its predecessor, or the still-forming bar and its predecessor when configured to use a forming bar.
-Long: Fast line on the selected indicator bar > slow line on that bar AND fast line on the preceding indicator bar < slow line on that bar.
-Short: Fast line on the selected indicator bar < slow line on that bar AND fast line on the preceding indicator bar > slow line on that bar.
-Exit: long, fast line on the selected indicator bar < slow line on that bar OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
-Exit: short, fast line on the selected indicator bar > slow line on that bar OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

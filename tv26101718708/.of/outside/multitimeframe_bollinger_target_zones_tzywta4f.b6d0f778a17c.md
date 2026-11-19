@@ -1,1 +1,0 @@
-For an open SPX jade lizard options position, close the position when its profit reaches the selected fraction of maximum profit.

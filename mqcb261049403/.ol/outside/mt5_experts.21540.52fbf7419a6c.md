@@ -1,1 +1,0 @@
-Close any open position when its holding time exceeds a configured maximum duration.

@@ -1,2 +1,0 @@
-Long: On each table timeframe, using its current bar (still forming when it is higher or lower than the chart timeframe): RSI > 50 OR close > EMA
-Short: On each table timeframe, using its current bar (still forming when it is higher or lower than the chart timeframe): RSI <= 50 AND close <= EMA AND (RSI < 50 OR close < EMA)

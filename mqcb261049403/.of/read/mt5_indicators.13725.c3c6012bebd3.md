@@ -1,3 +1,0 @@
-Calculation: Band-price oscillator = Jurik moving average, with maximum phase, of 100 × (price − lower band) / (2 × D) − 50, where price is the selected OHLC-derived price, the center is a selected moving average of price, D is a deviation multiplier times the root mean squared difference between the prices in the deviation lookback and the current center, and the lower band is center − D. If D is zero, use 1 as the denominator's D after calculating the lower band. Calculate either on the chart timeframe or on a higher timeframe using its still-forming bar.
-Long: Band-price oscillator > 0
-Short: Band-price oscillator < 0

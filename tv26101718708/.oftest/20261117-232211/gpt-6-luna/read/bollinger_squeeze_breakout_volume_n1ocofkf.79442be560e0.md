@@ -1,5 +1,0 @@
-Calculation: Bollinger band width = (upper Bollinger Band(close, BB lookback, BB deviation multiplier) - lower Bollinger Band(close, BB lookback, BB deviation multiplier)) / middle Bollinger Band(close, BB lookback, BB deviation multiplier)
-Long: Bollinger band width[1] < SMA(Bollinger band width, squeeze lookback)[1] * squeeze threshold AND close crosses above upper Bollinger Band(close, BB lookback, BB deviation multiplier) AND volume > SMA(volume, volume lookback) AND position is flat
-Short: Bollinger band width[1] < SMA(Bollinger band width, squeeze lookback)[1] * squeeze threshold AND close crosses below lower Bollinger Band(close, BB lookback, BB deviation multiplier) AND volume > SMA(volume, volume lookback) AND position is flat
-Exit: long, low <= entry price - ATR(ATR lookback) * stop multiplier OR high >= entry price + ATR(ATR lookback) * target multiplier
-Exit: short, high >= entry price + ATR(ATR lookback) * stop multiplier OR low <= entry price - ATR(ATR lookback) * target multiplier

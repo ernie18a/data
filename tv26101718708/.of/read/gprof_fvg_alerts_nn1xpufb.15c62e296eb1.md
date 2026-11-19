@@ -1,2 +1,0 @@
-Long: Current low > high two bars ago AND each of the two consecutive differences between the opening times of the three pattern bars <= the maximum permitted time gap.
-Short: Current high < low two bars ago AND each of the two consecutive differences between the opening times of the three pattern bars <= the maximum permitted time gap.

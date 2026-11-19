@@ -1,2 +1,0 @@
-Long: On a chart-timeframe or higher-timeframe bar, the preceding bar's low > the high two bars before that preceding bar; OR, on each completed lower-timeframe bar, its low > the high two lower-timeframe bars earlier.
-Short: On a chart-timeframe or higher-timeframe bar, the preceding bar's high < the low two bars before that preceding bar; OR, on each completed lower-timeframe bar, its high < the low two lower-timeframe bars earlier.

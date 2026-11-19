@@ -1,8 +1,0 @@
-Calculation: Breakout range = On the indicator timeframe, find the high and low of the first of two consecutive fixed intraday windows, using a configurable time-zone offset. After that window ends, use its high plus a configurable price offset as the upper boundary and its low minus the same offset as the lower boundary for the rest of the shifted day. Before the first window ends, the range is unavailable. At the end of each window, the indicator retrospectively replaces that window's boundaries with its own unexpanded high and low, making all its bars neutral.
-Calculation: Breakout state = Above when the indicator bar's close is greater than its upper boundary; below when its close is less than its lower boundary; neutral otherwise. The indicator timeframe is the chart timeframe or a higher timeframe. The EA evaluates a configurable indicator bar: the last completed bar or a bar still forming, and compares it with the immediately preceding indicator bar.
-Long: Indicator bar close > upper boundary.
-Short: Indicator bar close < lower boundary.
-Long: Evaluated breakout state = above AND preceding breakout state != above.
-Short: Evaluated breakout state = below AND preceding breakout state != below.
-Exit: long, evaluated breakout state = below OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
-Exit: short, evaluated breakout state = above OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

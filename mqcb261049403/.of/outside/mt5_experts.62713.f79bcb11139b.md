@@ -1,1 +1,0 @@
-When any position exists on the traded instrument, sum the profit, commission, and swap of every open position across the account. If the total reaches the configured profit threshold, close the configured set of positions: all positions, positions tagged as main trades, or positions tagged as hedges. The selected positions can include other instruments.

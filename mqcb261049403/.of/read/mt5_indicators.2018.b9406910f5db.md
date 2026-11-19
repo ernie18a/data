@@ -1,3 +1,0 @@
-Calculation: Bull and bear lines = Calculate Williams %R on the chart timeframe or on a higher timeframe using either its still-forming bar or its last completed bar. Smooth it with a configurable moving-average method at a sequence of progressively longer, equally spaced periods. Count how many smoothed values are strictly greater than their respective previous-bar values; count all remaining values, including equal values, separately. Smooth each count with the same configurable moving-average method and period to obtain the bull and bear lines, respectively.
-Long: Bull line > bear line
-Short: Bull line < bear line

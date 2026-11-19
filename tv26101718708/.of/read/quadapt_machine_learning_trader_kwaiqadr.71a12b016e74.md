@@ -1,1 +1,0 @@
-Unable to produce a short, complete framework from this source with confidence. The directional markings depend on stateful order-block, retest, regression, and quality-scoring logic; omitting or approximating those calculations would not reproduce all of the author's decisions.

@@ -1,3 +1,0 @@
-Calculation: Bar delta = sum of signed volumes of all completed lower-timeframe bars within the chart bar. A lower-timeframe bar has positive volume if its close is above its open and negative volume if below; if equal, use the sign of its close compared with the preceding lower-timeframe close, carrying forward the preceding direction if also equal.
-Long: Bar delta >= 0 AND absolute bar delta > a multiple of the simple moving average of absolute bar delta, including the current bar.
-Short: Bar delta < 0 AND absolute bar delta > a multiple of the simple moving average of absolute bar delta, including the current bar.

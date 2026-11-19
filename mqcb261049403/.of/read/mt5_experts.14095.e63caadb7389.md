@@ -1,7 +1,0 @@
-Calculation: Rounded moving average = apply the same moving-average method and lookback separately to open and close. For each series, let M be its current moving average, P its previous moving average, R its previous rounded value, D the direction of its last nonzero rounded-value change, and T a configurable price-distance threshold. Set the current rounded value to M if M > P + T OR M < P - T OR M > R + T OR M < R - T OR (M > R AND D > 0) OR (M < R AND D < 0); otherwise set it to R. Initialize the previous rounded value and direction to zero and the previous moving average to the first input price. Update D to the sign of the rounded-value change, retaining its previous value when unchanged.
-Long: Chart-timeframe rounded close > chart-timeframe rounded open
-Short: Chart-timeframe rounded close < chart-timeframe rounded open
-Long: Last completed higher-timeframe rounded close > rounded open AND preceding higher-timeframe rounded close <= rounded open
-Short: Last completed higher-timeframe rounded close < rounded open AND preceding higher-timeframe rounded close >= rounded open
-Exit: long, last completed higher-timeframe rounded close < rounded open OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
-Exit: short, last completed higher-timeframe rounded close > rounded open OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

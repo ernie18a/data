@@ -1,5 +1,0 @@
-Calculation: Weighted RSI oscillator = For five RSI calculations on the selected applied price, use successively longer lookbacks and weights w1, w2, w2, w4, and w5, respectively. Let F be their weighted sum. Recursively calculate S = F / n1 + previous S * (n1 - 1) / n1 and oscillator O = (F - S) / n2 + previous O * (n2 - 1) / n2, where n1 is longer than n2. Initialize S to F / n1 and O to (F - S) / n2. Calculate on the chart timeframe or a configurable higher or lower timeframe; use the last completed bar by default, with the forming bar as an alternative. Index O[0] as the selected bar and O[1], O[2] as its preceding bars.
-Long: O[0] > O[1] AND O[1] < O[2]
-Short: O[0] < O[1] AND O[1] > O[2]
-Exit: long, O[0] < O[1] OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
-Exit: short, O[0] > O[1] OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

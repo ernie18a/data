@@ -1,1 +1,0 @@
-Long: reference-series close > its simple moving average AND traded-series close > its simple moving average, using the same lookback for both, AND the current higher-timeframe bar timestamp differs from the previous chart bar’s higher-timeframe bar timestamp (current higher-timeframe bar still forming).

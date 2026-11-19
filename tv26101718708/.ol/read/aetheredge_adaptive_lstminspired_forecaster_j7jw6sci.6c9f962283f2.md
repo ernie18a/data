@@ -1,2 +1,0 @@
-Long: expected next-bar return > return standard deviation over a rolling lookback AND attention-weighted mean of recent log returns > 0 OR expected next-bar return crosses above 0
-Short: expected next-bar return < -return standard deviation over a rolling lookback AND attention-weighted mean of recent log returns < 0 OR expected next-bar return crosses below 0

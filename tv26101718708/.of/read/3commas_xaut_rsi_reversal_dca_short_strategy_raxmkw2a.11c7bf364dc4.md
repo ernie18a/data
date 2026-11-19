@@ -1,7 +1,0 @@
-Calculation: RSI cross-down = RSI of closes on a configurable timeframe is below a threshold and its preceding bar's RSI was at or above that threshold. On a higher timeframe, use the last completed bar; on a lower timeframe, use the last completed intrabar within the chart bar; on the chart timeframe, use the current bar.
-Calculation: Averaging-order deviation for rung k = the sum of k successive percentage steps, starting with a configured first step and multiplying each subsequent step by a configured step multiplier.
-Calculation: Trailing low = the lowest close since the position opened among bars whose close was at or below the take-profit price calculated from the average entry price on that bar; retain it until the position closes.
-Short: Within the enabled backtest date window AND position is flat AND RSI cross-down is true.
-Short: Within the enabled backtest date window AND position is short AND the number of averaging orders already triggered is below the configured maximum AND close is at or above the base entry price multiplied by one plus the averaging-order deviation for the next untriggered rung.
-Exit: short, close is at or above the average entry price multiplied by one plus the stop-loss percentage.
-Exit: short, a trailing low exists AND close is at or above the trailing low multiplied by one plus the trailing percentage.

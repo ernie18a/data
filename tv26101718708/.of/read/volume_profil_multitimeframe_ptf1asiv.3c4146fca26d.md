@@ -1,5 +1,0 @@
-Calculation: Confirmed volume profile = For the last completed higher-timeframe period, use its most recent chart bars up to a configurable maximum. Divide the range from the lowest low into a configurable number of equal rows, with total range at least the row count times the minimum price increment. Replace missing or nonpositive volume with one. Distribute each bar's volume equally among all rows spanned by its low through high, clamping row indices to the profile. POC is the midpoint of the highest-volume row, choosing the lowest row on a tie. Starting at the POC row, add the more voluminous adjacent row until the selected fraction of total volume is reached; choose the upper row on a tie. VAH and VAL are the upper and lower boundaries of the resulting rows.
-Long: Close > VAH of the last completed higher-timeframe profile.
-Short: Close < VAL of the last completed higher-timeframe profile.
-Long: POC of the last completed higher-timeframe profile > POC of the preceding completed higher-timeframe profile.
-Short: POC of the last completed higher-timeframe profile < POC of the preceding completed higher-timeframe profile.

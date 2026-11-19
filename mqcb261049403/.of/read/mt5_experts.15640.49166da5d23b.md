@@ -1,6 +1,0 @@
-Calculation: Momentum line = for its independently selected lookback n and type, use close − close[n], 100 × (close / close[n] − 1), (close − close[n]) / close[n], close / close[n], or 100 × close / close[n]. Calculate two lines with independently selected types and lookbacks; the first has a shorter default lookback than the second. Use the chart timeframe or a higher timeframe; evaluate the selected signal bar, normally the last completed bar, or the still-forming bar if selected, and its immediately preceding bar.
-Calculation: Directional lines = first and second momentum lines, respectively; swap their order when inverse trading is selected.
-Long: First directional line > second directional line AND on the preceding signal-timeframe bar first directional line <= second directional line.
-Short: First directional line < second directional line AND on the preceding signal-timeframe bar first directional line >= second directional line.
-Exit: long, first directional line < second directional line OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance.
-Exit: short, first directional line > second directional line OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance.

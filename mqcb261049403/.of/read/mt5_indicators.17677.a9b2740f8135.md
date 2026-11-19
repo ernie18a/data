@@ -1,4 +1,0 @@
-Calculation: Moving-average difference = shorter-period linear weighted moving average of close minus longer-period exponential moving average of close.
-Calculation: Higher-timeframe difference snapshot = moving-average difference calculated on the still-forming higher-timeframe bar at the first chart bar of that higher-timeframe bar, then held until the next higher-timeframe bar.
-Long: Moving-average difference < its previous chart-bar value OR higher-timeframe difference snapshot < the previous higher-timeframe bar's difference.
-Short: Moving-average difference > its previous chart-bar value OR higher-timeframe difference snapshot > the previous higher-timeframe bar's difference.

@@ -1,4 +1,0 @@
-Calculation: Session opening level = open of the first chart bar in the session.
-Calculation: Session initial close level = close of the last chart bar whose opening time is before the session's first chart-bar opening time plus the initial interval. Evaluate sweeps only from the first chart bar opening at or after the end of that interval.
-Long: For any of the three independently tracked sessions, the bar is in that session AND low < session initial close level AND close > session initial close level AND no earlier bar in that session has met these conditions.
-Short: For any of the three independently tracked sessions, the bar is in that session AND high > session opening level AND close < session opening level AND no earlier bar in that session has met these conditions.

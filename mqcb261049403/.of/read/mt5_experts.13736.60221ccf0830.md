@@ -1,5 +1,0 @@
-Calculation: Oscillator = Jurik moving average, with maximum phase, of 100 * (price - (price average - range average)) / (2 * divisor) - 50, where price is the selected bar price, price average is a moving average of price, range average is a separately selected moving average of high - low using the same lookback as the price average, and divisor equals the range average unless it is zero, in which case divisor is 1. Calculate on the last completed higher-timeframe bar and its predecessor.
-Long: oscillator > upper threshold AND previous oscillator <= upper threshold
-Short: oscillator < lower threshold AND previous oscillator >= lower threshold
-Exit: long, oscillator < 0 OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
-Exit: short, oscillator > 0 OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

@@ -1,2 +1,0 @@
-Long: datetime >= configured test start AND datetime <= configured test stop AND higher-timeframe still-forming close > higher-timeframe still-forming open AND previous higher-timeframe close <= previous higher-timeframe open
-Short: datetime >= configured test start AND datetime <= configured test stop AND higher-timeframe still-forming close < higher-timeframe still-forming open AND previous higher-timeframe close >= previous higher-timeframe open

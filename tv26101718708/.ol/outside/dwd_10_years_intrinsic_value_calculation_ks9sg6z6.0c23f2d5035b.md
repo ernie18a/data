@@ -1,1 +1,0 @@
-For a stock, use three times its quarterly Graham valuation as a reference price. Go long or add when the stock price approaches or falls below that reference. No short or exit rule is specified.

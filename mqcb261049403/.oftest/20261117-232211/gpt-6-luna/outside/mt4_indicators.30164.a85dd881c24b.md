@@ -1,4 +1,0 @@
-Calculation: currency strength = mean of the seven closing prices for pairs containing that currency, dividing a JPY pair’s closing price by 100
-Calculation: average currency strength = exponential moving average of currency strength over P1 bars
-Long: trend mode AND base-currency strength > its average AND quote-currency strength < its average OR counter-trend mode AND base-currency strength < its average AND quote-currency strength > its average
-Short: trend mode AND base-currency strength < its average AND quote-currency strength > its average OR counter-trend mode AND base-currency strength > its average AND quote-currency strength < its average

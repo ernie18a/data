@@ -1,2 +1,0 @@
-Long: The chart-timeframe SMA of a selectable price source crosses above the open, high, low, OR close of the last completed higher-timeframe bar AND the current bar is not the first bar of a new higher-timeframe period.
-Short: The chart-timeframe SMA of a selectable price source crosses below the open, high, low, OR close of the last completed higher-timeframe bar AND the current bar is not the first bar of a new higher-timeframe period.

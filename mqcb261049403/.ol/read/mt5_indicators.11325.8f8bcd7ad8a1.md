@@ -1,2 +1,0 @@
-Long: MFI > moving average of MFI AND (upper Bollinger Band − middle Bollinger Band) / minimum price increment ≥ flat threshold
-Short: MFI < moving average of MFI AND (upper Bollinger Band − middle Bollinger Band) / minimum price increment ≥ flat threshold

@@ -1,4 +1,0 @@
-Long: Awesome Oscillator >= its previous value AND Accelerator Oscillator >= its previous value
-Short: Awesome Oscillator <= its previous value AND Accelerator Oscillator <= its previous value AND (Awesome Oscillator < its previous value OR Accelerator Oscillator < its previous value)
-Long: At the start of a higher timeframe bar, its still-forming Awesome Oscillator >= its previous completed value AND its still-forming Accelerator Oscillator >= its previous completed value; retain this decision until the next higher timeframe bar starts
-Short: At the start of a higher timeframe bar, its still-forming Awesome Oscillator <= its previous completed value AND its still-forming Accelerator Oscillator <= its previous completed value AND (its still-forming Awesome Oscillator < its previous completed value OR its still-forming Accelerator Oscillator < its previous completed value); retain this decision until the next higher timeframe bar starts

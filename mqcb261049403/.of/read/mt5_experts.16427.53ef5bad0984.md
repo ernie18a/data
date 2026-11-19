@@ -1,7 +1,0 @@
-Calculation: Smoothed price = Jurik moving average of the SATL digital filter applied separately to open and close, using the same smoothing length and phase for both series.
-Long: Chart-timeframe smoothed close > chart-timeframe smoothed open
-Short: Chart-timeframe smoothed close < chart-timeframe smoothed open
-Long: Selected indicator-timeframe bar's smoothed close > smoothed open AND preceding indicator-timeframe bar's smoothed close <= smoothed open. The indicator timeframe may be higher or lower than the chart timeframe; the selected bar may be the last completed bar or the bar still forming.
-Short: Selected indicator-timeframe bar's smoothed close < smoothed open AND preceding indicator-timeframe bar's smoothed close >= smoothed open. The indicator timeframe may be higher or lower than the chart timeframe; the selected bar may be the last completed bar or the bar still forming.
-Exit: long, selected indicator-timeframe bar's smoothed close < smoothed open OR low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance
-Exit: short, selected indicator-timeframe bar's smoothed close > smoothed open OR high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance

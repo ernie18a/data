@@ -1,6 +1,0 @@
-Calculation: Adaptive smoothing of series x = initialize y to the first x; thereafter let d = (x[current] - x[previous])² - 1 and y[current] = y[previous] + (x[current] - y[previous]) / (coarse period × (1 + d / refinement period)).
-Calculation: Fast average = adaptive smoothing of close. Slow average = three successive adaptive smoothing stages of close, each with its own coarse and refinement periods; initialize each stage to the first close. Both averages use the same selectable chart, higher, or lower timeframe and the same selectable signal bar: the still-forming bar or a completed bar at a selectable offset.
-Long: Fast average on the signal bar > slow average on the signal bar AND fast average on the preceding bar < slow average on the preceding bar.
-Short: Fast average on the signal bar < slow average on the signal bar AND fast average on the preceding bar > slow average on the preceding bar.
-Exit: long, fast average on the signal bar < slow average on the signal bar OR low <= entry price - enabled stop-loss distance OR high >= entry price + enabled take-profit distance.
-Exit: short, fast average on the signal bar > slow average on the signal bar OR high >= entry price + enabled stop-loss distance OR low <= entry price - enabled take-profit distance.

@@ -1,5 +1,0 @@
-Calculation: Oscillator = apply a configurable causal finite-impulse-response filter to 1000 × (close − moving average of close − moving average of (close − moving average of close)); both moving averages use the same method and lookback. The filter is a weighted sum of the current and preceding oscillator inputs, with configurable weights; an identity filter leaves the input unchanged. Calculate on a selectable higher, lower, or chart timeframe, using the last completed bar or the still-forming bar as configured. Let O0 be the value on the selected signal bar, O1 the preceding value, and O2 the value before O1.
-Long: O1 < O0 AND O2 > O1
-Short: O1 > O0 AND O2 < O1
-Exit: long, O1 > O0 OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance
-Exit: short, O1 < O0 OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance

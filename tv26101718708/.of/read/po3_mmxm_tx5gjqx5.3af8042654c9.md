@@ -1,6 +1,0 @@
-Calculation: Bullish fair value gap = current low > high two chart bars earlier; its lower bound is that earlier high and its upper bound is the current low.
-Calculation: Bearish fair value gap = current high < low two chart bars earlier; its lower bound is the current high and its upper bound is that earlier low.
-Calculation: Opening gap direction = direction of the first bullish or bearish fair value gap detected during the opening window of the current session; reset at each new session.
-Calculation: Macro resolution = after the first bullish or bearish fair value gap detected during the session's macro window, record the direction of the first close above its upper bound or below its lower bound, including on the gap bar; retain that direction until the next session.
-Long: In session AND (macro resolution is above OR (macro resolution is absent AND opening gap direction is bullish)).
-Short: In session AND (macro resolution is below OR (macro resolution is absent AND opening gap direction is bearish)).

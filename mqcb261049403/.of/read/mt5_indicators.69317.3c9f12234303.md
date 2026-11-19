@@ -1,2 +1,0 @@
-Long: Close-based RSI on the forming bar of any selected timeframe, which may be higher or lower than or equal to the chart timeframe, <= oversold threshold.
-Short: Close-based RSI on the forming bar of any selected timeframe, which may be higher or lower than or equal to the chart timeframe, >= overbought threshold.

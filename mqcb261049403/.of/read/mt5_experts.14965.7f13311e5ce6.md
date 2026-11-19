@@ -1,7 +1,0 @@
-Calculation: Oscillator = shorter-lookback moving average of a selected bar price minus the longer-lookback moving average of the same price, evaluated a configurable number of bars earlier; the moving-average methods may differ.
-Long: On the chart timeframe, oscillator > previous bar's oscillator AND oscillator != 0.
-Short: On the chart timeframe, oscillator < previous bar's oscillator AND oscillator != 0.
-Long: On the selected higher or lower timeframe, the last completed bar's oscillator > the preceding bar's oscillator AND the preceding bar's oscillator < the oscillator two bars before it.
-Short: On the selected higher or lower timeframe, the last completed bar's oscillator < the preceding bar's oscillator AND the preceding bar's oscillator > the oscillator two bars before it.
-Exit: long, on the selected higher or lower timeframe, the last completed bar's oscillator < the preceding bar's oscillator OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
-Exit: short, on the selected higher or lower timeframe, the last completed bar's oscillator > the preceding bar's oscillator OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

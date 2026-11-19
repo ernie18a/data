@@ -1,4 +1,0 @@
-Calculation: Bullish votes = count of these true conditions: short EMA > medium EMA > long EMA; higher-timeframe close > higher-timeframe short EMA > higher-timeframe long EMA; short EMA > its value a lookback ago; close > short EMA; close > open. Use the last completed higher-timeframe bar and the same EMA lengths as on the chart timeframe.
-Calculation: Bearish votes = count of these true conditions: short EMA < medium EMA < long EMA; higher-timeframe close < higher-timeframe short EMA < higher-timeframe long EMA; short EMA < its value a lookback ago; close < short EMA; close < open. Use the last completed higher-timeframe bar and the same EMA lengths and slope lookback as for bullish votes.
-Long: Bullish votes > bearish votes
-Short: Bearish votes > bullish votes

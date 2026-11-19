@@ -1,7 +1,0 @@
-Calculation: Oscillator = 100 × second-stage moving average of the first-stage moving average of close-to-close changes / second-stage moving average of the first-stage moving average of absolute close-to-close changes. The numerator and denominator use the same independently parameterized first and second smoothing stages. Calculate on the selected indicator timeframe, which may be higher or lower than the chart timeframe, using either the last completed indicator bar or the still-forming indicator bar according to the selected signal offset.
-Calculation: Trigger = oscillator shifted back by a configurable number of indicator-timeframe bars.
-Calculation: Directed difference = oscillator minus trigger, multiplied by a configurable direction multiplier that reverses its sign for countertrend trading.
-Long: Directed difference > 0 AND previous indicator-bar directed difference <= 0
-Short: Directed difference < 0 AND previous indicator-bar directed difference >= 0
-Exit: long, directed difference < 0 OR low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance
-Exit: short, directed difference > 0 OR high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance

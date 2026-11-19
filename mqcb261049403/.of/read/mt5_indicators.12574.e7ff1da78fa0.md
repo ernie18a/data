@@ -1,5 +1,0 @@
-Calculation: Range oscillator = 100 × (current bar's (high + low) / 2 − lowest low over the lookback) / (highest high over the lookback − lowest low over the lookback), including the current bar; use 0 when the denominator is 0. Calculate on the chart timeframe or on a higher timeframe using the still-forming bar or a selected completed bar.
-Long: In entry-into-zone mode, the oscillator crosses above the upper threshold OR in exit-from-zone mode, the oscillator crosses above the lower threshold.
-Short: In entry-into-zone mode, the oscillator crosses below the lower threshold OR in exit-from-zone mode, the oscillator crosses below the upper threshold.
-Long: The most recent long crossing occurred more recently than the most recent short crossing, or no short crossing has occurred.
-Short: The most recent short crossing occurred more recently than the most recent long crossing, or no long crossing has occurred.

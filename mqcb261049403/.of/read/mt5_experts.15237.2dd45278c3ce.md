@@ -1,9 +1,0 @@
-Calculation: Step trend = Process bars chronologically. The calculation may use the chart timeframe or a configurable higher or lower timeframe, using either its last completed bar or its still-forming bar according to the signal-bar setting. Let p be the price-point size. For each bar, let s be either sensitivity times a configured constant step in points, or round(sensitivity times (maximum high-low range plus minimum high-low range over the lookback) divided by (2*p)); replace zero s with one. Set d=s*p. Initialize the previous upper boundary to the first bar's low+2*d, the previous lower boundary to its high-2*d, and the previous trend to zero. On each bar set upper=low+2*d and lower=high-2*d, or set upper=close+2*d and lower=close-2*d in the alternative price mode. Start the trend at its previous value; set it to +1 if close>previous upper boundary, then set it to -1 if close<previous lower boundary. If trend>0, set lower=max(lower, previous lower boundary); otherwise set upper=min(upper, previous upper boundary). Save both boundaries and the trend for the next completed bar.
-Long: Step trend>0 AND previous Step trend<0
-Short: Step trend<0 AND previous Step trend>0
-Exit: long, long closing enabled AND Step trend<0 AND (previous Step trend>0 OR long opening enabled)
-Exit: short, short closing enabled AND Step trend>0 AND (previous Step trend<0 OR short opening enabled)
-Exit: long, enabled stop-loss distance>0 AND low<=entry price-stop-loss distance
-Exit: long, enabled take-profit distance>0 AND high>=entry price+take-profit distance
-Exit: short, enabled stop-loss distance>0 AND high>=entry price+stop-loss distance
-Exit: short, enabled take-profit distance>0 AND low<=entry price-take-profit distance

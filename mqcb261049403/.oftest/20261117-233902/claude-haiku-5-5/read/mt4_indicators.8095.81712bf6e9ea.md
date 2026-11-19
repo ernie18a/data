@@ -1,7 +1,0 @@
-Calculation: Trend = (MACD(close, shorter lookback, longer lookback, T1) - MACD(close, shorter lookback, longer lookback, T1)[1]) * sensitivity, on T1 bars where index 0 is the bar still forming
-Calculation: Explosion = BollingerUpper(close, period, deviation, T1) - BollingerLower(close, period, deviation, T1), on T1 bars where index 0 is the bar still forming
-Calculation: DeadZone = dead-zone size * point size
-Long: Trend[0] > 0 AND Trend[0] > Explosion[0] AND Trend[0] > DeadZone AND Explosion[0] > DeadZone AND Explosion[0] > Explosion[1] AND Trend[0] > Trend[2] AND 100 * (Trend[0] - Trend[2]) / Trend[0] >= trend power threshold AND 100 * (Explosion[0] - Explosion[1]) / Explosion[0] >= explosion power threshold
-Short: Trend[0] < 0 AND ABS(Trend[0]) > Explosion[0] AND ABS(Trend[0]) > DeadZone AND Explosion[0] > DeadZone AND Explosion[0] > Explosion[1] AND ABS(Trend[0]) > ABS(Trend[2]) AND 100 * (ABS(Trend[0]) - ABS(Trend[2])) / ABS(Trend[0]) >= trend power threshold AND 100 * (Explosion[0] - Explosion[1]) / Explosion[0] >= explosion power threshold
-Exit: long, Trend[0] > 0 AND Trend[0] < Explosion[0] AND Trend[0] < Trend[2] AND Trend[2] > Explosion[1] AND Trend[0] > DeadZone AND Explosion[0] > DeadZone
-Exit: short, Trend[0] < 0 AND ABS(Trend[0]) < Explosion[0] AND ABS(Trend[0]) < ABS(Trend[2]) AND ABS(Trend[2]) > Explosion[1] AND Trend[0] > DeadZone AND Explosion[0] > DeadZone

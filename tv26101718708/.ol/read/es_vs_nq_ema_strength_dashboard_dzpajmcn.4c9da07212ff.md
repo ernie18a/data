@@ -1,2 +1,0 @@
-Long: On each evaluated timeframe, close > short-lookback EMA AND close > intermediate-lookback EMA AND close > long-lookback EMA (use the last completed bar on higher timeframes and the still-forming bar on lower timeframes)
-Short: On each evaluated timeframe, close < short-lookback EMA AND close < intermediate-lookback EMA AND close < long-lookback EMA (use the last completed bar on higher timeframes and the still-forming bar on lower timeframes)

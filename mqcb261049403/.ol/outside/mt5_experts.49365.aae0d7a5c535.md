@@ -1,1 +1,0 @@
-On each tick, sum the floating profit of all open positions. If the total reaches or exceeds the configured positive profit threshold, or reaches or falls below the configured negative loss threshold, close all open positions.

@@ -1,1 +1,0 @@
-When the user activates the close button, close open positions that match the configured symbol scope and profit/loss filter. Do not open long or short positions.

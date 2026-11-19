@@ -1,5 +1,0 @@
-Calculation: Direction line = smooth, with a selectable second moving-average method and a lookback equal to the integer square root of the main lookback, the series 2 × first-method moving average of the selected bar price over half the main lookback, rounded down, minus the first-method moving average of that price over the main lookback. The two first-method averages use the same smoothing method and parameters. Calculate either on chart bars or on higher-timeframe bars, using the higher-timeframe bar still forming; for the higher-timeframe version, carry its value and slope direction across the chart bars in that higher-timeframe interval.
-Long: Direction line on its calculation timeframe > its preceding bar's value.
-Short: Direction line on its calculation timeframe < its preceding bar's value.
-Long: Direction line on its calculation timeframe > its preceding bar's value AND its preceding bar's value <= its value two bars ago.
-Short: Direction line on its calculation timeframe < its preceding bar's value AND its preceding bar's value >= its value two bars ago.

@@ -1,7 +1,0 @@
-Calculation: Signal bars = chart-timeframe bars or bars aggregated to a selected higher or lower timeframe. For a higher timeframe, use the last completed bar and carry its decision forward until the next bar completes; for a lower timeframe, use the last completed lower-timeframe bar within each chart bar. Evaluate each decision and its previous-bar condition in the signal-bar timeframe.
-Long: On any selected signal timeframe, five moving averages with successively longer lookbacks are strictly ordered from highest to lowest, AND they were not so ordered on the previous signal bar.
-Short: On any selected signal timeframe, five moving averages with successively longer lookbacks are strictly ordered from lowest to highest, AND they were not so ordered on the previous signal bar.
-Long: On any selected signal timeframe, the third-shortest-lookback moving average crosses above the longest-lookback moving average.
-Short: On any selected signal timeframe, the third-shortest-lookback moving average crosses below the longest-lookback moving average.
-Long: On any selected signal timeframe, close crosses above any one of the five moving averages, OR low <= that moving average AND open > that moving average AND close > that moving average.
-Short: On any selected signal timeframe, close crosses below any one of the five moving averages, OR high >= that moving average AND open < that moving average AND close < that moving average.

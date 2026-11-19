@@ -1,3 +1,0 @@
-Calculation: Volume-weighted oscillator = smooth((RSI of the selected OHLC-derived price − 50) × volume); apply the same selected smoothing method and parameters to volume to obtain smoothed volume. Calculate on the chart timeframe or on the higher timeframe using its still-forming bar.
-Long: volume-weighted oscillator > higher overbought threshold × smoothed volume OR volume-weighted oscillator > lower overbought threshold × smoothed volume
-Short: volume-weighted oscillator ≤ higher overbought threshold × smoothed volume AND volume-weighted oscillator ≤ lower overbought threshold × smoothed volume AND (volume-weighted oscillator < lower oversold threshold × smoothed volume OR volume-weighted oscillator < higher oversold threshold × smoothed volume)

@@ -1,8 +1,0 @@
-Calculation: Adaptive level = For each bar, let n be the range lookback and L the smoothing lag. R1 is the highest high minus lowest low over the latest n bars, divided by n; R2 is the same over the preceding n bars; R3 is the highest high minus lowest low over both blocks, divided by 2n. Set dimension to log2((R1+R2)/R3) when R1+R2>0 AND R3>0, otherwise 0. Set alpha to exp(-L*(dimension-1)), bounded between 0.01 and 1. Smooth (high+low+2*open+2*close)/6 recursively with alpha, initializing prior smooth values to 0. If the absolute difference between the current smooth and the smooth L bars earlier is at least L squared times an adjustable price increment, set the level to the current smooth; otherwise retain the previous level.
-Calculation: Direction = 1 if the adaptive level is above its previous value, -1 if below, otherwise the previous direction; initialize direction to 0. Calculate it on chart bars for the indicator and independently on a higher timeframe for the trading system. The trading system uses the last completed higher-timeframe bar; its configurable alternative uses the still-forming bar.
-Long: Chart-timeframe direction = 1
-Short: Chart-timeframe direction = -1
-Long: Higher-timeframe direction = 1 AND previous higher-timeframe direction != 1
-Short: Higher-timeframe direction = -1 AND previous higher-timeframe direction != -1
-Exit: long, higher-timeframe direction = -1 OR low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance
-Exit: short, higher-timeframe direction = 1 OR high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance

@@ -1,2 +1,0 @@
-Long: AVWAP from earnings is available AND close > AVWAP from earnings AND close > AVWAP from swing low
-Short: AVWAP from earnings is available AND close < AVWAP from earnings AND close < AVWAP from swing low

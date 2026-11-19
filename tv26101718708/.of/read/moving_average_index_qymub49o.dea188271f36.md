@@ -1,3 +1,0 @@
-Long: First selected moving average > second selected moving average
-Short: First selected moving average <= second selected moving average
-Calculation: Each selected moving average = SMA, EMA, WMA, VWMA, HMA, or RMA of an independently selected price source and lookback. Each may use the chart timeframe, a higher timeframe's still-forming bar, or the last completed bar of a lower timeframe. The two averages may have any relationship between their lookbacks.

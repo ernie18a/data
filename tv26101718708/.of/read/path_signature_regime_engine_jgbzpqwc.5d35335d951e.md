@@ -1,9 +1,0 @@
-Calculation: Price source = chosen bar price: close, (high + low) / 2, (open + high + low + close) / 4, or (high + low + close) / 3.
-Calculation: Path signature = for each bar, divide the change in price source by ATR; if ATR is not positive, use the moving average of absolute price-source changes over the path window instead; if that is also not positive, use the unscaled change. Over the path window, drift is the sum of these increments. Signed area is one half the sum, over the window in chronological order, of (cumulative preceding increments within the window / path-window length) minus (number of preceding increments within the window × current increment / path-window length).
-Calculation: Drift percentile and area percentile = rolling percent ranks of absolute drift and absolute signed area, respectively, over the same normalization window.
-Calculation: Range position = (price source − lowest low over the path window) / (highest high − lowest low over the path window); use the midpoint if the range is zero.
-Calculation: Reversion = signed area changes sign, treating zero as nonnegative, AND previous bar's area percentile >= area threshold AND drift percentile < its recent rolling maximum minus a weakening threshold AND that maximum >= drift threshold AND range position is at or beyond either extreme threshold AND (drift percentile < drift threshold OR area percentile < area threshold).
-Long: drift >= 0 AND drift percentile >= drift threshold AND reversion is false.
-Short: drift < 0 AND drift percentile >= drift threshold AND reversion is false.
-Long: reversion is true AND range position < midpoint.
-Short: reversion is true AND range position >= midpoint.

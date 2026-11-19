@@ -1,9 +1,0 @@
-Calculation: Jurik oscillator = clamp to [-1, 1] the ratio of the three-stage smoothing filter applied to the selected bar price minus its Jurik adaptive moving average to the same filter applied to the absolute value of that difference; undefined when the denominator is zero.
-Calculation: Three-stage smoothing filter = for each of three successive stages, set a = 3 / (length + 2), update u = (1 - a) * previous u + a * stage input, update v = a * u + (1 - a) * previous v, and output 1.5 * u - 0.5 * v; initialize each stage's u and v to its first input.
-Calculation: Fast line = weighted sum of five Jurik oscillators with progressively longer Jurik adaptive moving-average lengths, a common averaging phase and a common three-stage filter length; the second and third oscillators share the same weight.
-Calculation: Slow line = fast line / smoothing length + previous slow line * (smoothing length - 1) / smoothing length; initialize the slow line to the first fast line divided by the smoothing length.
-Calculation: Signal lines = fast and slow lines calculated on a configurable chart, higher, or lower timeframe, using either the last completed bar or the bar still forming; previous values refer to the preceding bar of that timeframe.
-Long: Fast line > slow line AND previous fast line < previous slow line
-Short: Fast line < slow line AND previous fast line > previous slow line
-Exit: long, fast line < slow line OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
-Exit: short, fast line > slow line OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

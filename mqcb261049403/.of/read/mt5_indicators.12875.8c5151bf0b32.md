@@ -1,8 +1,0 @@
-Calculation: Smoothed RSI = moving average of RSI of a selected bar price, using a configurable smoothing method and lookback.
-Calculation: QQE distance = a configurable multiplier times the moving average, applied twice, of the absolute one-bar change in smoothed RSI. Both averages use the same smoothing method as smoothed RSI and the same lookback, equal to twice the RSI lookback minus one.
-Calculation: QQE trailing line = initialize the previous trailing line and previous smoothed RSI to 50. On each bar, if smoothed RSI is below the previous trailing line, set the line to smoothed RSI plus QQE distance, capped at the previous trailing line when the previous smoothed RSI was below that line. If smoothed RSI is above the previous trailing line, set the line to smoothed RSI minus QQE distance, floored at the previous trailing line when the previous smoothed RSI was above that line. Otherwise retain the previous trailing line.
-Calculation: QQE direction = the direction of the most recent crossover of smoothed RSI and the QQE trailing line; it remains unchanged until the next crossover. Calculate on the chart timeframe or on a higher timeframe using its still-forming bar.
-Long: Previous smoothed RSI <= previous QQE trailing line AND current smoothed RSI > current QQE trailing line.
-Short: Previous smoothed RSI >= previous QQE trailing line AND current smoothed RSI < current QQE trailing line.
-Long: QQE direction is upward.
-Short: QQE direction is downward.

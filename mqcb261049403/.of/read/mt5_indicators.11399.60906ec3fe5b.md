@@ -1,6 +1,0 @@
-Calculation: Evaluation bars = chart bars for SimpleBars, or higher-timeframe bars aggregated through the chart bar being evaluated for the higher-timeframe display; use the higher-timeframe bar still forming.
-Calculation: Buy comparison price = evaluation bar close if the close-price option is enabled; otherwise, evaluation bar low.
-Calculation: Sell comparison price = evaluation bar close if the close-price option is enabled; otherwise, evaluation bar high.
-Calculation: Previous trend = the preceding evaluation bar's long or short classification; initially unset.
-Long: Previous trend is unset AND evaluation bar close > evaluation bar open OR previous trend is long AND buy comparison price > lowest low of the preceding lookback evaluation bars OR previous trend is short AND sell comparison price >= highest high of the preceding lookback evaluation bars.
-Short: Previous trend is unset AND evaluation bar close <= evaluation bar open OR previous trend is long AND buy comparison price <= lowest low of the preceding lookback evaluation bars OR previous trend is short AND sell comparison price < highest high of the preceding lookback evaluation bars.

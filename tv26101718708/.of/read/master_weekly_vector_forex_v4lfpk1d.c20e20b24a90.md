@@ -1,7 +1,0 @@
-Calculation: PVSRA vector classification = unavailable in READ; the imported library's implementation is required to reproduce its major and secondary bullish and bearish classifications.
-Long: PVSRA classification equals major bullish vector OR secondary bullish vector.
-Short: PVSRA classification equals major bearish vector OR secondary bearish vector.
-Long: low > previous high AND low - previous high >= a parameter times SMA of high - low.
-Short: high < previous low AND previous low - high >= a parameter times SMA of high - low.
-Long: (close - SMA of close) / SMA of close > 0. The SMA uses any of three ordered lookbacks on each selected timeframe; for longer-period columns, it uses a proportionally longer lookback on the underlying timeframe. For a higher timeframe, use the last completed bar historically and the forming bar in real time; for a lower timeframe, use the last completed intrabar.
-Short: (close - SMA of close) / SMA of close < 0. The SMA uses any of three ordered lookbacks on each selected timeframe; for longer-period columns, it uses a proportionally longer lookback on the underlying timeframe. For a higher timeframe, use the last completed bar historically and the forming bar in real time; for a lower timeframe, use the last completed intrabar.

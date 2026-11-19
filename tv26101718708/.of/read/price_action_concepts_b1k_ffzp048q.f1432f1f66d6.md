@@ -1,2 +1,0 @@
-Long: Higher-timeframe last completed bar close > open AND open - low <= price tolerance AND high - close <= price tolerance
-Short: Higher-timeframe last completed bar close < open AND high - open <= price tolerance AND close - low <= price tolerance

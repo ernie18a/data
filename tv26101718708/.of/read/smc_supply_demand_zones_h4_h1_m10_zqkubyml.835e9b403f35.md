@@ -1,5 +1,0 @@
-Calculation: Bullish impulse = close > open AND abs(close - open) >= body multiplier × ATR AND close > highest high of the preceding lookback bars AND volume >= volume multiplier × volume moving average.
-Calculation: Bearish impulse = close < open AND abs(close - open) >= body multiplier × ATR AND close < lowest low of the preceding lookback bars AND volume >= volume multiplier × volume moving average.
-Calculation: Impulses use chart-timeframe bars or the last completed bar of each selected higher timeframe. ATR and the volume moving average include the impulse bar; the volume moving average is either SMA or WMA, with a separately configurable lookback for the shorter selected timeframes.
-Long: Bullish impulse is true on the current chart bar AND bullish impulse was false on the preceding chart bar for the same timeframe.
-Short: Bearish impulse is true on the current chart bar AND bearish impulse was false on the preceding chart bar for the same timeframe.

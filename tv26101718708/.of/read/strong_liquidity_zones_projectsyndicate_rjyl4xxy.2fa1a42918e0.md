@@ -1,2 +1,0 @@
-Long: A pivot low is confirmed OR (high > low AND (min(open, close) - low) / (high - low) > wick-ratio threshold AND close > open) OR (volume > volume SMA × volume multiplier AND close > open AND low equals the lowest low over the lookback including the current bar)
-Short: A pivot high is confirmed OR (high > low AND (high - max(open, close)) / (high - low) > wick-ratio threshold AND close < open) OR (volume > volume SMA × volume multiplier AND close < open AND high equals the highest high over the lookback including the current bar)

@@ -1,9 +1,0 @@
-Calculation: Projected bars to crossover = -(short-period close moving average - long-period close moving average) / (short-period moving average slope - long-period moving average slope), where each slope is the change in its moving average over the same lookback divided by that lookback.
-Long: Short-period close moving average crosses above long-period close moving average; both use the same selected moving-average type.
-Short: Short-period close moving average crosses below long-period close moving average; both use the same selected moving-average type.
-Long: Short-period close moving average < long-period close moving average AND short-period moving average slope > long-period moving average slope AND projected bars to crossover >= 1 AND projected bars to crossover <= projection horizon.
-Short: Short-period close moving average > long-period close moving average AND short-period moving average slope < long-period moving average slope AND projected bars to crossover >= 1 AND projected bars to crossover <= projection horizon.
-Long: Short-period close moving average > long-period close moving average.
-Short: Short-period close moving average <= long-period close moving average.
-Long: Short-period close moving average > long-period close moving average, calculated on another timeframe using the last completed bar for a higher timeframe on historical data, the forming bar for a higher timeframe in real time, or the last available lower-timeframe bar for a lower timeframe.
-Short: Short-period close moving average <= long-period close moving average, calculated on another timeframe using the last completed bar for a higher timeframe on historical data, the forming bar for a higher timeframe in real time, or the last available lower-timeframe bar for a lower timeframe.

@@ -1,4 +1,0 @@
-Long: On the last completed bar of the higher timeframe, the Awesome Oscillator four bars ago > 0 AND three bars ago > 0 AND four bars ago < three bars ago AND three bars ago > two bars ago AND two bars ago > one bar ago AND one bar ago > current bar.
-Short: On the last completed bar of the higher timeframe, the Awesome Oscillator four bars ago < 0 AND three bars ago < 0 AND four bars ago > three bars ago AND three bars ago < two bars ago AND two bars ago < one bar ago AND one bar ago < current bar.
-Exit: long, the most recent higher-timeframe signal through the last completed bar is Short OR low <= entry price minus the stop-loss distance OR high >= entry price plus the take-profit distance.
-Exit: short, the most recent higher-timeframe signal through the last completed bar is Long OR high >= entry price plus the stop-loss distance OR low <= entry price minus the take-profit distance.

@@ -1,1 +1,0 @@
-When there are no open trades on the current instrument, open a long position; if it succeeds, open a short position as well. Each position has a stop-loss and take-profit.

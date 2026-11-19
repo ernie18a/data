@@ -1,8 +1,0 @@
-Calculation: Wave = a configurable moving-average smoothing of the sum of seven independently weighted components: sign(close − moving average of a chosen price), sign(change in MACD main line), sign(MACD main line − its signal line), sign(CCI), sign(Momentum − 100), sign(RSI − 50), and sign(+DI − −DI). Each component has its own nonnegative weight and contributes zero on equality; indicator price sources and parameters are independently configurable, with MACD fast period shorter than slow period.
-Calculation: Wave change = current wave − previous wave.
-Calculation: Deviation threshold = population standard deviation of wave changes over a lookback including the current change, multiplied by a configurable coefficient. Round the threshold and wave change independently to a configurable decimal precision before comparing them.
-Calculation: Higher-timeframe wave and deviation threshold = the same calculations on a higher timeframe, using the still-forming higher-timeframe bar as sampled at the opening of each higher-timeframe interval and holding that sample throughout the interval.
-Long: Wave change > 0 OR rounded wave change > rounded deviation threshold.
-Short: Wave change < 0 OR rounded wave change < negative rounded deviation threshold.
-Long: Higher-timeframe wave change > 0 OR rounded higher-timeframe wave change > rounded higher-timeframe deviation threshold.
-Short: Higher-timeframe wave change < 0 OR rounded higher-timeframe wave change < negative rounded higher-timeframe deviation threshold.

@@ -1,5 +1,0 @@
-Calculation: Smoothed drawdown = EMA of 100 × (price source − running maximum price source) / running maximum price source; use zero when the running maximum is not positive.
-Calculation: Drawdown Z-score = (smoothed drawdown − SMA of smoothed drawdown) / standard deviation of smoothed drawdown, using the same distribution lookback for both statistics; require a positive standard deviation and at least one distribution lookback of prior chart bars.
-Calculation: Drawdown percentile rank = percentage of smoothed drawdown values in the distribution lookback that are less than or equal to the current smoothed drawdown; require at least one distribution lookback of prior chart bars.
-Long: Drawdown Z-score < negative Z-score threshold
-Exit: long, drawdown Z-score > positive Z-score threshold of the same magnitude as the entry threshold OR drawdown percentile rank < extreme-risk percentile threshold

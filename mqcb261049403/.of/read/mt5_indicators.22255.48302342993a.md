@@ -1,5 +1,0 @@
-Calculation: Histogram = a selected moving average of ((DeMarker(high, low) × 100) − 50) × volume; use the same moving-average method and length to smooth volume for the thresholds.
-Calculation: Zones = classify the histogram in order: A if histogram > outer upper threshold × smoothed volume; B if histogram > inner upper threshold × smoothed volume; D if histogram < outer lower threshold × smoothed volume; C if histogram < inner lower threshold × smoothed volume; otherwise N. The outer upper threshold is above the inner upper threshold; the outer lower threshold is below the inner lower threshold.
-Calculation: Direction = up if the histogram is above its previous value, down if below, and otherwise the previous direction.
-Long: direction = up OR zone = A OR zone = B OR (previous histogram <= 0 AND histogram > 0) OR (previous zone = C AND current zone = N) OR (previous zone = D AND current zone != D)
-Short: direction = down OR zone = C OR zone = D OR (previous histogram >= 0 AND histogram < 0) OR (previous zone = B AND current zone = N) OR (previous zone = A AND current zone != A)

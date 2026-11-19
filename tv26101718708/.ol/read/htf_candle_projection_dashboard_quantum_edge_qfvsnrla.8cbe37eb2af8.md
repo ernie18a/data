@@ -1,2 +1,0 @@
-Long: Higher-timeframe candle close >= its open, for each of the five most recent completed candles and the currently forming candle
-Short: Higher-timeframe candle close < its open, for each of the five most recent completed candles and the currently forming candle

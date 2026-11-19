@@ -1,5 +1,0 @@
-Calculation: Momentum = 100 × (EMA of the selected OHLC-derived price / SMA of the same price − 1), using a shorter EMA period and a longer SMA period. Calculate on the selected indicator timeframe, which may be higher or lower than the chart timeframe; use the last completed indicator bar, or the still-forming bar when configured. Compare consecutive indicator bars.
-Long: Momentum on the selected bar > momentum on the preceding bar AND momentum on the bar before that >= momentum on the preceding bar.
-Short: Momentum on the selected bar < momentum on the preceding bar AND momentum on the bar before that <= momentum on the preceding bar.
-Exit: long, momentum on the selected bar < momentum on the preceding bar OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance.
-Exit: short, momentum on the selected bar > momentum on the preceding bar OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance.

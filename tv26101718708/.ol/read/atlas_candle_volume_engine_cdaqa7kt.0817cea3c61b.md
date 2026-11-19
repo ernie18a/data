@@ -1,2 +1,0 @@
-Long: chart close > chart open OR higher-timeframe close > open on the last completed bar OR lower-timeframe close > open on the returned bar
-Short: chart close < chart open OR higher-timeframe close < open on the last completed bar OR lower-timeframe close < open on the returned bar

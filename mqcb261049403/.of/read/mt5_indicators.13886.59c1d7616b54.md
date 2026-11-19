@@ -1,6 +1,0 @@
-Calculation: Ultra-linear smoothing = three successive stages, each with a = 3/(length + 2), b = 1 - a, u = b × previous u + a × input, v = a × u + b × previous v, and output = 1.5 × u - 0.5 × v; initialize each stage's u and v to its first input.
-Calculation: Normalized oscillator = clamp(ultra-linear smoothing of (selected price - Jurik moving average of selected price) / ultra-linear smoothing of its absolute value, -1, 1); use the same smoothing length for numerator and denominator, and leave the result undefined when the denominator is zero.
-Calculation: Fast line = weighted sum of five normalized oscillators with progressively longer Jurik moving average lengths, a shared phase and ultra-linear smoothing length, and progressively larger weights, except that the third oscillator uses the second oscillator's weight.
-Calculation: Slow line = fast line / smoothing length + previous slow line × (smoothing length - 1) / smoothing length; initialize it to the first fast line / smoothing length.
-Long: Fast line > slow line on the chart bar OR fast line > slow line on the last completed bar of any selected higher or lower timeframe.
-Short: Fast line < slow line on the chart bar OR fast line < slow line on the last completed bar of any selected higher or lower timeframe.

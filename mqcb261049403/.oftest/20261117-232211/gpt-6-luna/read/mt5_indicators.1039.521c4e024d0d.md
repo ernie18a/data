@@ -1,2 +1,0 @@
-Long: Relative vigor index on the last completed T1 bar > relative vigor signal on the current chart bar
-Short: Relative vigor index on the last completed T1 bar < relative vigor signal on the current chart bar

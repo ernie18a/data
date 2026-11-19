@@ -1,4 +1,0 @@
-Long: Chart-timeframe RSI is above the oversold level AND its previous-bar value is at or below the oversold level.
-Short: Chart-timeframe RSI is below the overbought level AND its previous-bar value is at or above the overbought level.
-Long: On the higher timeframe, including its still-forming bar, the most recent RSI crossing above the oversold level occurred more recently than the most recent RSI crossing below the overbought level OR no crossing below the overbought level has occurred since the crossing above the oversold level.
-Short: On the higher timeframe, including its still-forming bar, the most recent RSI crossing below the overbought level occurred at or after the most recent RSI crossing above the oversold level OR no crossing above the oversold level has occurred since the crossing below the overbought level.

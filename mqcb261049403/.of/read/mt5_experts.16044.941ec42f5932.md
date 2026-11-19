@@ -1,5 +1,0 @@
-Calculation: Smoothed efficiency ratio = Jurik moving average of (close − close N bars ago) / (price point size + sum of absolute consecutive close changes over N bars), calculated on a selectable higher or lower timeframe; use the last completed bar or, if configured, the bar still forming.
-Long: Smoothed efficiency ratio > upper threshold AND its value on the preceding indicator-timeframe bar <= upper threshold.
-Short: Smoothed efficiency ratio < lower threshold AND its value on the preceding indicator-timeframe bar >= lower threshold.
-Exit: long, smoothed efficiency ratio < lower threshold OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance.
-Exit: short, smoothed efficiency ratio > upper threshold OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance.

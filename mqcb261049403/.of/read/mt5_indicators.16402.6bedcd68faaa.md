@@ -1,5 +1,0 @@
-Calculation: Smoothed trend line = Jurik moving average of the SATL digital filter applied to a selected OHLC-derived price, rounded to a configurable price increment.
-Calculation: Trend direction = sign of the change in the smoothed trend line from the preceding bar; retain the previous direction when the change is zero.
-Calculation: Higher-timeframe trend direction = trend direction calculated on the still-forming higher-timeframe bar, sampled on the first chart bar of that higher-timeframe bar and carried forward until the next higher-timeframe bar.
-Long: Chart-timeframe trend direction > 0 OR higher-timeframe trend direction > 0 AND previous chart bar's higher-timeframe trend direction < 0.
-Short: Chart-timeframe trend direction < 0 OR higher-timeframe trend direction < 0 AND previous chart bar's higher-timeframe trend direction > 0.

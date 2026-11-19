@@ -1,7 +1,0 @@
-Calculation: MACD = fast EMA of close minus slow EMA of close; its signal is the SMA of MACD.
-Calculation: Target distance = a multiplier times the standard deviation of close around its EMA on the last completed higher-timeframe bar, fixed at entry.
-Long: CCI of close on the forming higher-timeframe bar < negative CCI threshold AND MACD on the last completed lower-timeframe bar > its signal AND MACD on the preceding lower-timeframe bar <= its signal AND MACD on the last completed lower-timeframe bar < 0.
-Short: CCI of close on the forming higher-timeframe bar > CCI threshold AND MACD on the last completed lower-timeframe bar < its signal AND MACD on the preceding lower-timeframe bar >= its signal AND MACD on the last completed lower-timeframe bar > 0.
-Exit: long, price <= entry price minus stop distance OR price >= entry price plus target distance OR (price previously exceeded entry price plus breakeven distance AND price <= entry price).
-Exit: short, price >= entry price plus stop distance OR price <= entry price minus target distance OR (price previously fell below entry price minus breakeven distance AND price >= entry price).
-Exit: long, close minus open of the last completed lower-timeframe bar > a multiplier times ATR on that bar OR (MACD on the last completed lower-timeframe bar < MACD on the preceding lower-timeframe bar AND price minus entry price > profit threshold).

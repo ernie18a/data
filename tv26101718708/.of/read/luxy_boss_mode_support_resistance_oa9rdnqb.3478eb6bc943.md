@@ -1,4 +1,0 @@
-Calculation: Market structure = retain the latest confirmed pivot high and low. A pivot is confirmed after its right-hand lookback has elapsed. Mark each new pivot unbroken; mark it broken after the first confirmed close beyond it.
-Long: Close > latest unbroken pivot high.
-Short: Close < latest unbroken pivot low AND close <= latest unbroken pivot high, if an unbroken pivot high exists.
-Calculation: Complete reproduction is unavailable = the supplied source omits the imported Energy Index definition, and some zone calculations depend on instrument metadata and session information absent from the specified data fields.

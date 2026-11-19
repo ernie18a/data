@@ -1,4 +1,0 @@
-Long: Moving average of chart-bar close > moving average of chart-bar open, using the same smoothing method and length
-Short: Moving average of chart-bar close <= moving average of chart-bar open, using the same smoothing method and length
-Long: Moving average of higher-timeframe close >= moving average of higher-timeframe open, using the same smoothing method and length, sampled from the still-forming higher-timeframe bar on its first chart bar and held until the next higher-timeframe bar
-Short: Moving average of higher-timeframe close < moving average of higher-timeframe open, using the same smoothing method and length, sampled from the still-forming higher-timeframe bar on its first chart bar and held until the next higher-timeframe bar

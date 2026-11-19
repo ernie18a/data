@@ -1,3 +1,0 @@
-Calculation: Safe ATR = maximum of ATR, or true range if ATR is unavailable, and a positive price-increment parameter.
-Long: close minus close at the fuel lookback > Safe ATR × move threshold OR (close minus close at the fuel lookback is unavailable or is between −Safe ATR × move threshold and Safe ATR × move threshold inclusive) AND shorter-period EMA of close > longer-period EMA of close.
-Short: close minus close at the fuel lookback < −Safe ATR × move threshold OR (close minus close at the fuel lookback is unavailable or is between −Safe ATR × move threshold and Safe ATR × move threshold inclusive) AND shorter-period EMA of close < longer-period EMA of close.

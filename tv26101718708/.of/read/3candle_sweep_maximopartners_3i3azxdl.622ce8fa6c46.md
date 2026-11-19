@@ -1,7 +1,0 @@
-Calculation: Projection candles = candles on a selected timeframe that may be higher, lower, or equal to the chart timeframe. For a higher timeframe, use the forming candle as the current candle; for a lower timeframe, use the latest available lower-timeframe candle; for an equal timeframe, use the current chart candle. The sweep candle is the preceding completed projection candle, and the reference candle is the completed projection candle immediately before it.
-Long: Sweep close > reference low AND sweep close < reference high AND sweep low < reference low AND sweep high <= reference high.
-Short: Sweep close > reference low AND sweep close < reference high AND sweep high > reference high AND sweep low >= reference low.
-Long: Sweep close > reference low AND sweep close < reference high AND sweep low < reference low AND sweep high <= reference high AND current projection candle close > sweep high.
-Short: Sweep close > reference low AND sweep close < reference high AND sweep high > reference high AND sweep low >= reference low AND current projection candle close < sweep low.
-Long: Projection timeframe > chart timeframe AND sweep close > reference low AND sweep close < reference high AND sweep low < reference low AND sweep high <= reference high AND current projection candle high > sweep high.
-Short: Projection timeframe > chart timeframe AND sweep close > reference low AND sweep close < reference high AND sweep high > reference high AND sweep low >= reference low AND current projection candle low < sweep low.

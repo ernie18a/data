@@ -1,2 +1,0 @@
-Long: RSI of close > RSI of open on the chart timeframe OR RSI of close > RSI of open on the still-forming higher-timeframe bar
-Short: RSI of close < RSI of open on the chart timeframe OR RSI of close < RSI of open on the still-forming higher-timeframe bar

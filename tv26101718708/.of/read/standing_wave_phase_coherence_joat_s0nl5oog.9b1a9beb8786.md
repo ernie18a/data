@@ -1,5 +1,0 @@
-Calculation: Phase coherence = Clamp to [-1, 1] the EMA of cos(chart phase - higher-timeframe phase). Each phase is the same-length EMA, on chart bars, of atan2(RSI change from the previous chart bar, RSI - 50); use zero for the change when the previous RSI is unavailable. Calculate chart RSI from a selected price source and higher-timeframe RSI from close, both with the same RSI length. Use the last completed higher-timeframe bar by default; optionally use the higher-timeframe bar still forming. If higher-timeframe RSI is unavailable, use chart RSI.
-Long: Phase coherence >= positive threshold
-Long: Phase coherence >= positive threshold AND previous bar's phase coherence < positive threshold
-Short: Phase coherence <= negative threshold
-Short: Phase coherence <= negative threshold AND previous bar's phase coherence > negative threshold

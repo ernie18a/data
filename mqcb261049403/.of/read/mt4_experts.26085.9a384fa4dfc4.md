@@ -1,4 +1,0 @@
-Long: A Williams fractal low is marked on the chart timeframe, using the current forming bar.
-Short: A Williams fractal high is marked on the chart timeframe, using the current forming bar.
-Exit: long, the last completed close is at or below the lower Bollinger Band OR all six short-term EMAs of typical price are equal OR all six longer-term EMAs of typical price are equal; within each group, the EMA lookbacks are distinct.
-Exit: short, the last completed close is at or below the lower Bollinger Band OR all six short-term EMAs of typical price are equal OR all six longer-term EMAs of typical price are equal; within each group, the EMA lookbacks are distinct.

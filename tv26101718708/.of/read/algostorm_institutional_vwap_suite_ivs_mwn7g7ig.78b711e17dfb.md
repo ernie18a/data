@@ -1,4 +1,0 @@
-Calculation: Anchored VWAP = sum(((high + low + close) / 3) * volume) / sum(volume), accumulated from the first available bar and reset at each anchor; use separate calendar-day, New York, European, and Asian session anchors, with session anchors specified in New York local time.
-Calculation: Rolling VWAP = sum(((high + low + close) / 3) * volume) / sum(volume) over chart bars in a trailing time window, retaining at least a minimum number of the most recent bars; evict the oldest bars while they are older than the window and more than the minimum remain.
-Long: Close crosses above any anchored VWAP or rolling VWAP: current close > current VWAP AND previous close <= previous VWAP.
-Short: Close crosses below any anchored VWAP or rolling VWAP: current close < current VWAP AND previous close >= previous VWAP.

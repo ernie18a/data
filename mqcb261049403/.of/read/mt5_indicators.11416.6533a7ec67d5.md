@@ -1,2 +1,0 @@
-Long: high + low > 2 × configurable moving average of a configurable OHLC-derived price, calculated on the chart timeframe or on the forming bar of a higher timeframe
-Short: high + low < 2 × configurable moving average of a configurable OHLC-derived price, calculated on the chart timeframe or on the forming bar of a higher timeframe

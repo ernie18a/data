@@ -1,6 +1,0 @@
-Calculation: Body = abs(close - open); range = high - low; upper wick = high - max(open, close); lower wick = min(open, close) - low.
-Calculation: Body-driven event = body >= body threshold × ATR AND volume average > 0 AND volume >= body-event volume threshold × volume SMA AND (wick filter disabled OR upper wick + lower wick <= wick threshold × body) AND close != open. Use the current true range as ATR until ATR is available.
-Calculation: Absorption event = absorption enabled AND volume average > 0 AND volume >= absorption volume threshold × volume SMA AND body <= absorption body threshold × ATR AND (body / range if range > 0, otherwise 0) <= absorption range threshold AND close != open. Use the same ATR and volume SMA as the body-driven event.
-Calculation: Opposing wick fraction = upper wick / range for a bullish candle, otherwise lower wick / range; use 0 when range is zero.
-Long: (Absorption event AND close < open) OR (NOT absorption event AND body-driven event AND ((close > open AND opposing wick fraction < reversal threshold) OR (close < open AND opposing wick fraction >= reversal threshold))).
-Short: (Absorption event AND close > open) OR (NOT absorption event AND body-driven event AND ((close < open AND opposing wick fraction < reversal threshold) OR (close > open AND opposing wick fraction >= reversal threshold))).

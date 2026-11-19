@@ -1,1 +1,0 @@
-Long: close / previous close - 1 >= minimum price-change threshold AND volume >= minimum volume threshold

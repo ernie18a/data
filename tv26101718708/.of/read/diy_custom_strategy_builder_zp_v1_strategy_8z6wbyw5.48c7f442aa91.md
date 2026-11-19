@@ -1,1 +1,0 @@
-Unable to provide a complete reproducible framework from the supplied source. The configurable indicators, confirmation filters, signal-expiry state, independent chart markings, and exit logic require a more detailed extraction than I can reliably express here without omitting decisions.

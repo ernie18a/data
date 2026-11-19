@@ -1,3 +1,0 @@
-Calculation: AUD strength = (-EURAUD close - GBPAUD close + AUDUSD close + AUDCAD close + AUDNZD close + AUDJPY close / 100 + AUDCHF close) / 7
-Long: base-currency strength > EMA(base-currency strength, parameter) AND quote-currency strength < EMA(quote-currency strength, parameter)
-Short: base-currency strength < EMA(base-currency strength, parameter) AND quote-currency strength > EMA(quote-currency strength, parameter)

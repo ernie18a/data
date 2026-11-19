@@ -1,7 +1,0 @@
-Calculation: Trend and trailing bounds = On the chart timeframe, or on a configurable higher or lower timeframe using either the last completed bar or the bar still forming, calculate ATR and its rolling minimum and maximum over a separate lookback. Let step = price increment × trunc(sensitivity × (rolling ATR maximum + rolling ATR minimum) / (2 × price increment)). Initialize both bounds to the first eligible close and trend to neutral. For each bar, set trend bullish if close > previous upper bound; then set trend bearish if close < previous lower bound; otherwise retain trend. Set candidate upper bound to low + 2 × step and candidate lower bound to high − 2 × step, or use close in place of both high and low. In a bullish trend, set lower bound to max(candidate lower bound, previous lower bound) and upper bound to positive infinity. Otherwise, set upper bound to min(candidate upper bound, previous upper bound) and lower bound to the smallest positive representable number. Calculate independent instances with independently configurable parameters for long and short positions.
-Long: Trend is bullish.
-Short: Trend is bearish or neutral.
-Exit: long, long-position trend is bearish or neutral.
-Exit: short, short-position trend is bullish.
-Exit: long, low <= entry price − stop distance OR high >= entry price + profit distance.
-Exit: short, high >= entry price + stop distance OR low <= entry price − profit distance.

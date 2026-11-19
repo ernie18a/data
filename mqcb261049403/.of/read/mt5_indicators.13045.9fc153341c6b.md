@@ -1,5 +1,0 @@
-Calculation: Chandelier trend and stops = For each bar, calculate a raw lower stop as the highest high over the ATR lookback through the current bar minus a multiplier times ATR, and a raw upper stop as the lowest low over the same lookback plus the multiplier times ATR. Initialize trend to neutral. If close is below the previous bar's lower stop, set trend to down; otherwise, if close is above the previous bar's upper stop, set trend to up; otherwise retain the previous trend. When trend is up, set the lower stop to the maximum of its raw value and the previous lower stop; otherwise retain its raw value. When trend is down, set the upper stop to the minimum of its raw value and the previous upper stop; otherwise retain its raw value.
-Long: Chart-timeframe Chandelier trend is up AND previous chart bar's Chandelier trend is down
-Short: Chart-timeframe Chandelier trend is down AND previous chart bar's Chandelier trend is up
-Long: Chandelier trend on the still-forming higher-timeframe bar is up
-Short: Chandelier trend on the still-forming higher-timeframe bar is down

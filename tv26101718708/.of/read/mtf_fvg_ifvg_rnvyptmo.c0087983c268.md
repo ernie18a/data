@@ -1,7 +1,0 @@
-Calculation: Source bars = chart bars aggregated into each selected higher timeframe, or chart bars when the selected timeframe equals the chart timeframe; use completed source bars and evaluate at the start of the next source bar.
-Calculation: Bullish gap = latest completed source bar low > source bar high two bars earlier; top = latest low and bottom = earlier high. Bearish gap = latest completed source bar high < source bar low two bars earlier; top = earlier low and bottom = latest high.
-Calculation: Inversion candidates = on each new source bar, add any bullish or bearish gap formed by the source bar immediately before the latest completed source bar. Then test every candidate against the latest completed source bar: remove a bullish candidate if close < bottom or low <= top; remove a bearish candidate if close > top or high >= bottom. A break takes precedence over a tap on the same bar. After testing, discard the oldest candidates exceeding the candidate limit.
-Long: A bullish gap exists AND its top differs from the top of the last previously marked bullish gap in the same timeframe, or no bullish gap was previously marked in that timeframe.
-Short: A bearish gap exists AND its top differs from the top of the last previously marked bearish gap in the same timeframe, or no bearish gap was previously marked in that timeframe.
-Long: A bearish inversion candidate exists AND the latest completed source bar close > candidate top.
-Short: A bullish inversion candidate exists AND the latest completed source bar close < candidate bottom.

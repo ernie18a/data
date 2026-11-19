@@ -1,3 +1,0 @@
-Long: Jurik moving average of close > Jurik moving average of open OR (Jurik moving average of close = Jurik moving average of open AND previous bar's Jurik moving average of close > previous bar's Jurik moving average of open)
-Short: Jurik moving average of close < Jurik moving average of open OR (Jurik moving average of close = Jurik moving average of open AND previous bar's Jurik moving average of close < previous bar's Jurik moving average of open)
-Calculation: Both Jurik moving averages use the same smoothing length and phase. Evaluate each decision independently on each selected timeframe, which may be higher or lower than the chart timeframe; use the selected timeframe's forming bar or a completed bar at a configurable lag, and its immediately preceding bar.

@@ -1,4 +1,0 @@
-On each new bar, apply these optional account-based exits:
-
-- If the combined floating profit of this strategy's open positions on the traded instrument is negative and its absolute value exceeds a configured percentage of the account equity reference, close those positions. Update the reference when this loss check runs: if the stored reference is below the previously recorded account equity, replace it with that previous equity; otherwise replace it with current account equity. Then record current equity as the previous equity.
-- For the percentage profit target, scan open orders from the last position down to position 1, excluding position 0. Accumulate floating profit for market positions on the traded instrument. After each scanned order, if the accumulated profit reaches the configured percentage of account balance, close all market positions and delete all pending orders on the instrument, regardless of strategy identifier.

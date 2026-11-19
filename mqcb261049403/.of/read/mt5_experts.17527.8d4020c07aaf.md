@@ -1,8 +1,0 @@
-Calculation: Composite = (IBS weight × 100 × (moving average of (close − low) / max(high − low, minimum price increment) − 0.5) + CCI weight × CCI of a selected price + RSI weight × (RSI of a selected price − 50)) / 3; use separate lookbacks for the IBS average, CCI, and RSI, and fixed positive weights for the three components.
-Calculation: Filtered composite = initialize to zero before the first calculated bar; on each bar, clamp the previous filtered composite to the interval from composite minus a threshold to composite plus that threshold.
-Calculation: Cloud midpoint = average of the moving averages of the rolling maximum and rolling minimum of the filtered composite, including the current bar; use the same lookback for both extrema and the same smoothing method and period for both averages.
-Calculation: Signal values = filtered composite and cloud midpoint on the last completed higher-timeframe bar and its preceding bar.
-Long: Filtered composite > cloud midpoint on the last completed higher-timeframe bar AND filtered composite <= cloud midpoint on its preceding bar.
-Short: Filtered composite < cloud midpoint on the last completed higher-timeframe bar AND filtered composite >= cloud midpoint on its preceding bar.
-Exit: long, filtered composite < cloud midpoint on the last completed higher-timeframe bar OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance.
-Exit: short, filtered composite > cloud midpoint on the last completed higher-timeframe bar OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance.

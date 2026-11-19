@@ -1,5 +1,0 @@
-Long: A confirmed lower fractal occurs.
-Short: A confirmed upper fractal occurs.
-Long: At the chart bar open, the shorter-period linearly weighted moving average of typical price on the still-forming higher-timeframe bar is greater than the longer-period one AND the low two chart bars ago is less than the previous chart bar's high AND the absolute difference between the chart bar open and the close two chart bars ago exceeds a price-distance threshold.
-Exit: long, the still-forming chart-bar exponential moving averages of typical price are all equal within a group of six increasing short periods OR they are all equal within a group of six increasing longer periods OR the previous chart-bar close is at or below the lower Bollinger Band on that bar.
-Exit: short, the still-forming chart-bar exponential moving averages of typical price are all equal within a group of six increasing short periods OR they are all equal within a group of six increasing longer periods OR the previous chart-bar close is at or below the lower Bollinger Band on that bar.

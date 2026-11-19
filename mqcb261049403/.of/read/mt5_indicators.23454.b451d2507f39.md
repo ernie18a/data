@@ -1,4 +1,0 @@
-Calculation: Rounded moving average = round (8E1 - 28E2 + 56E3 - 70E4 + 56E5 - 28E6 + 8E7 - E8 + price offset) to a configurable price increment, where E1 is the EMA of the selected OHLC-derived price and each subsequent E is the EMA of the preceding E, all with the same length; initialize each EMA with its first available input.
-Calculation: Trend = 1 when the rounded moving average is greater than its preceding-bar value, -1 when it is less, and otherwise the preceding trend; initialize as 0. Calculate independently on the chart timeframe and on each selected higher or lower timeframe. For another timeframe, evaluate the selected bar offset from the currently forming bar, including either the forming bar or the last completed bar as configurable choices.
-Long: Trend > 0
-Short: Trend < 0

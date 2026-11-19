@@ -1,2 +1,0 @@
-Long: Shorter-period moving average of the selected price > longer-period moving average of the same price AND low > shorter-period moving average of that price.
-Short: Shorter-period moving average of the selected price < longer-period moving average of the same price AND high < shorter-period moving average of that price.

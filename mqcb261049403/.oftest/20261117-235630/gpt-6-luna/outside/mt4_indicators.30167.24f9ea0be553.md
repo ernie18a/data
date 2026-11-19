@@ -1,3 +1,0 @@
-Calculation: JPY strength = −(USDJPY close + EURJPY close + GBPJPY close + AUDJPY close + CADJPY close + NZDJPY close + CHFJPY close) / 7
-Long: trend mode AND base currency strength > EMA(base currency strength) AND quote currency strength < EMA(quote currency strength) OR countertrend mode AND base currency strength < EMA(base currency strength) AND quote currency strength > EMA(quote currency strength)
-Short: trend mode AND base currency strength < EMA(base currency strength) AND quote currency strength > EMA(quote currency strength) OR countertrend mode AND base currency strength > EMA(base currency strength) AND quote currency strength < EMA(quote currency strength)

@@ -1,9 +1,0 @@
-Calculation: Indicator = apply a second configurable moving average to V, where M is a configurable moving average of the selected OHLC-derived price, N is its lookback, a=floor(N/4), b=floor(N/8), c=floor(N/12), and V[t]=M[t]+(M[t]-M[t-a])+(M[t]-2*M[t-a]+M[t-b])/2+(M[t]-3*M[t-a]+3*M[t-b]-M[t-c])/6. Calculate on the chart timeframe or a configurable higher or lower timeframe, using the last completed bar or the forming bar according to the signal-bar setting.
-Calculation: Change = indicator minus its previous value, rounded to a configurable decimal precision; thresholds are the population standard deviation of the unrounded indicator changes over a configurable lookback multiplied by each of two configurable coefficients and rounded to the same precision.
-Calculation: Direction = the sign of the most recent nonzero change in the indicator rounded to a configurable price increment; retain the previous direction when the rounded indicator is unchanged.
-Long: (Change > first threshold AND Change <= second threshold) OR Change > second threshold
-Long: Direction = positive
-Short: (Change < -first threshold AND Change >= -second threshold) OR Change < -second threshold
-Short: Direction = negative
-Exit: long, (Change < -first threshold AND Change >= -second threshold) OR Change < -second threshold OR Direction = negative OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
-Exit: short, (Change > first threshold AND Change <= second threshold) OR Change > second threshold OR Direction = positive OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

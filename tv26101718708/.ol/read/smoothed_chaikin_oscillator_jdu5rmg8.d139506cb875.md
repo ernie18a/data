@@ -1,3 +1,0 @@
-Calculation: Smoothed Chaikin Oscillator = EMA of the raw Chaikin Oscillator over a smoothing lookback; raw Chaikin Oscillator = EMA of the Accumulation/Distribution Line over a shorter lookback minus EMA of that line over a longer lookback; Accumulation/Distribution Line = cumulative sum of volume × (2 × close − high − low) ÷ (high − low), using zero when high equals low
-Long: Smoothed Chaikin Oscillator >= 0
-Short: Smoothed Chaikin Oscillator < 0

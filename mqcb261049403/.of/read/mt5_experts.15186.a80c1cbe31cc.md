@@ -1,7 +1,0 @@
-Calculation: Signal oscillator = 100 + Williams %R. For each signal bar, use the shorter lookback if any absolute close-to-close change over a fixed lag within a recent window is at least a larger multiplier of the mean high-low range over a longer window ending at the signal bar; otherwise use the longer, risk-dependent lookback. Use the selected lookback for both the signal bar and all historical oscillator values examined for that signal.
-Calculation: Last outside value = the most recent oscillator value before the signal bar that is strictly below the lower threshold or strictly above the upper threshold, using the signal bar's selected lookback. The thresholds are symmetric around the midpoint of the oscillator's range.
-Calculation: Signal bar = the last completed bar on a configurable higher or lower timeframe relative to the chart; a configurable forming bar may be used instead.
-Long: Signal oscillator on the signal bar > upper threshold AND last outside value < lower threshold
-Short: Signal oscillator on the signal bar < lower threshold AND last outside value > upper threshold
-Exit: long, the most recent long or short marking at or before the signal bar is short OR low <= entry price - enabled stop-loss distance OR high >= entry price + enabled take-profit distance
-Exit: short, the most recent long or short marking at or before the signal bar is long OR high >= entry price + enabled stop-loss distance OR low <= entry price - enabled take-profit distance

@@ -1,4 +1,0 @@
-Long: On any selected timeframe, the last completed bar's close > shorter-period EMA of close AND shorter-period EMA of close > longer-period EMA of close; the selected timeframe may be higher than, lower than, or equal to the chart timeframe.
-Short: On any selected timeframe, the last completed bar's close < shorter-period EMA of close AND shorter-period EMA of close < longer-period EMA of close; the selected timeframe may be higher than, lower than, or equal to the chart timeframe.
-Long: At least four of the five selected timeframes satisfy the long condition AND all five have sufficient history to calculate their states.
-Short: At least four of the five selected timeframes satisfy the short condition AND all five have sufficient history to calculate their states.

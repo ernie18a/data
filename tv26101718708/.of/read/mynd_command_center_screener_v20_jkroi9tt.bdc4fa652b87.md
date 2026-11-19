@@ -1,2 +1,0 @@
-Long: Close > shorter-period EMA of close AND shorter-period EMA of close > longer-period EMA of close, calculated on the chart timeframe or on the last completed bar of a higher or lower timeframe.
-Short: Close < shorter-period EMA of close AND shorter-period EMA of close < longer-period EMA of close, calculated on the chart timeframe or on the last completed bar of a higher or lower timeframe.

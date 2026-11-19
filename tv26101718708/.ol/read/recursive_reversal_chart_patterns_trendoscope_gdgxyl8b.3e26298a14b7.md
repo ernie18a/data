@@ -1,2 +1,0 @@
-Long: detected pattern is Double Bottom OR Triple Bottom OR Cup and Handle OR Inverse Head and Shoulders
-Short: detected pattern is Double Top OR Triple Top OR Inverted Cup and Handle OR Head and Shoulders

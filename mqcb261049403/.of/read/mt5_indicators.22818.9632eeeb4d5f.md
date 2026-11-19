@@ -1,4 +1,0 @@
-Calculation: Smoothed open and close = weighted averages of the respective open and close over a lookback, including the current bar. For lag h from 0 to lookback minus 1, let x = h / (lookback minus 1) and the unnormalized weight be (a + x^p × (1 − a)) × (b + (1 − x)^q × (1 − b)) × (c + |1 − 2x|^r × (1 − c)); normalize the weights to sum to 1. Apply the calculation either on the chart timeframe or on a higher timeframe using its bar still forming.
-Calculation: Adjusted smoothed open = smoothed open plus a price offset; if the absolute difference between the current raw open and close is at most a gap threshold, use the previous bar's offset smoothed close plus the price offset instead. The offset smoothed close is the smoothed close plus the price offset.
-Long: Offset smoothed close > adjusted smoothed open
-Short: Offset smoothed close < adjusted smoothed open

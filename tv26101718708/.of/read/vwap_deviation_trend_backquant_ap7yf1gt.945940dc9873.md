@@ -1,8 +1,0 @@
-Calculation: Price source = a selected price series derived from the chart bar's OHLC fields; trigger = either close or the price source.
-Calculation: VWAP window = either a fixed number of chart bars, chart bars within a configured elapsed-time lookback including the cutoff and capped at 5,000 bars, or chart bars since the start of a configured fixed-time calendar anchor. Include the current bar.
-Calculation: VWAP and deviation = over the VWAP window, use volume with missing volume replaced by zero. If total volume > 0, VWAP = sum(price source × volume) / sum(volume) and mean square = sum(price source² × volume) / sum(volume); otherwise use the arithmetic means of price source and price source². Deviation = sqrt(max(mean square − VWAP², 0)).
-Calculation: Raw bands = VWAP ± width, where width = deviation × deviation multiplier, optionally floored at ATR × ATR-floor multiplier.
-Calculation: Lower trail = max(current raw lower band, previous lower trail) if the previous lower trail exists AND the previous trigger > previous lower trail; otherwise current raw lower band. Upper trail = min(current raw upper band, previous upper trail) if the previous upper trail exists AND the previous trigger < previous upper trail; otherwise current raw upper band.
-Calculation: Trend = initialize on the first valid VWAP as bullish if trigger >= VWAP, otherwise bearish. Thereafter change bearish to bullish when trigger > upper trail AND slope confirmation is disabled or current VWAP > VWAP at the slope lookback; change bullish to bearish when trigger < lower trail AND slope confirmation is disabled or current VWAP < VWAP at the slope lookback. Otherwise retain the previous trend.
-Long: trend = bullish
-Short: trend = bearish

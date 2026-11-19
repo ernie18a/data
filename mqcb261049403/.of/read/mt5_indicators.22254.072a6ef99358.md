@@ -1,8 +1,0 @@
-Calculation: Histogram = selected moving average of (CCI of selected OHLC-derived price × volume); apply the same moving-average method and parameters to volume to obtain smoothed volume. Available methods are SMA, EMA, SMMA, LWMA, Jurik moving average, three-stage double EMA filter, quadratic regression endpoint, Tillson T3, VIDYA, and Kaufman adaptive moving average.
-Calculation: Three-stage double EMA filter = apply three successive stages to the input; each stage outputs 1.5 × EMA(input) − 0.5 × EMA(EMA(input)), with smoothing coefficient 3 / (length + 2) and each EMA initialized to its first input.
-Calculation: Quadratic regression endpoint = the fitted value at the newest observation from a least-squares quadratic regression over the lookback.
-Calculation: Bands = smoothed volume multiplied by four configurable levels ordered from highest positive to lowest negative: upper outer, upper inner, lower inner, lower outer.
-Calculation: Histogram state = 0 if histogram > upper outer band; otherwise 1 if histogram > upper inner band; otherwise 4 if histogram < lower outer band; otherwise 3 if histogram < lower inner band; otherwise 2.
-Calculation: Direction state = up if histogram > previous histogram, down if histogram < previous histogram, and otherwise the previous direction state.
-Long: Histogram state = 0 OR histogram state = 1 OR direction state = up OR previous histogram <= 0 AND histogram > 0 OR previous histogram state = 3 AND histogram state < 3 OR previous histogram state = 4 AND histogram state < 4
-Short: Histogram state = 3 OR histogram state = 4 OR direction state = down OR previous histogram >= 0 AND histogram < 0 OR previous histogram state = 1 AND histogram state > 1 OR previous histogram state = 0 AND histogram state > 0

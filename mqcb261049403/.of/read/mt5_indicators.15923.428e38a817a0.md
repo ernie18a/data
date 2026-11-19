@@ -1,6 +1,0 @@
-Calculation: Channel bounds = over a configurable lookback ending at the reference bar, choose upper and lower raw bounds as one of: highest high and lowest low; averages of highest open with highest high and lowest open with lowest low; averages of highest close with highest high and lowest close with lowest low; highest and lowest open; or highest and lowest close. Upper bound = raw upper bound − (raw upper bound − raw lower bound) × margin percentage; lower bound = raw lower bound + (raw upper bound − raw lower bound) × margin percentage. The reference bar is a configurable number of bars before the decision bar.
-Long: close > upper channel bound AND close >= lower channel bound
-Short: close < lower channel bound
-Calculation: Higher-timeframe decision = apply the same channel and comparisons to the still-forming higher-timeframe bar, then project its decision onto chart bars belonging to that higher-timeframe bar; historical projected decisions can change as the higher-timeframe bar forms.
-Long: higher-timeframe decision = long
-Short: higher-timeframe decision = short

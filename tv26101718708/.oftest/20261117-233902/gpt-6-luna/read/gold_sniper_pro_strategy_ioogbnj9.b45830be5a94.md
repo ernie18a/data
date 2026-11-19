@@ -1,6 +1,0 @@
-Long: RSI(close, lookback) crosses above RSI oversold threshold AND close > EMA(close, shorter lookback) AND ATR(lookback) >= SMA(ATR(lookback), same lookback) * ATR multiplier AND (volume filter is disabled OR volume > SMA(volume, separate lookback) * volume multiplier)
-Long: RSI(close, lookback) < lower RSI limit AND close crosses above EMA(close, shorter lookback) AND ATR(lookback) >= SMA(ATR(lookback), same lookback) * ATR multiplier
-Long: EMA(close, shorter lookback) crosses above EMA(close, longer lookback) AND RSI(close, lookback) < upper RSI limit AND ATR(lookback) >= SMA(ATR(lookback), same lookback) * ATR multiplier
-Short: RSI(close, lookback) crosses below RSI overbought threshold AND close < EMA(close, shorter lookback) AND ATR(lookback) >= SMA(ATR(lookback), same lookback) * ATR multiplier AND (volume filter is disabled OR volume > SMA(volume, separate lookback) * volume multiplier)
-Short: RSI(close, lookback) > upper RSI limit AND close crosses below EMA(close, shorter lookback) AND ATR(lookback) >= SMA(ATR(lookback), same lookback) * ATR multiplier
-Short: EMA(close, shorter lookback) crosses below EMA(close, longer lookback) AND RSI(close, lookback) > lower RSI limit AND ATR(lookback) >= SMA(ATR(lookback), same lookback) * ATR multiplier

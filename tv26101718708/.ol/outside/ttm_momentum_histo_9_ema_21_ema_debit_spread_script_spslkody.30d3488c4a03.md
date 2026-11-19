@@ -1,1 +1,0 @@
-Go long when a shorter-term simple moving average crosses above a longer-term simple moving average. Go short when it crosses below.

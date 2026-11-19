@@ -1,3 +1,0 @@
-Calculation: Fractal slopes = On either the chart timeframe or a higher timeframe using its currently forming bar, identify a high fractal when the high three bars ago exceeds the highs two and four bars ago, the high four bars ago exceeds the high five bars ago, and the high two bars ago exceeds the high one bar ago. Identify a low fractal by reversing all comparisons and using lows. For each type, calculate the slope between the two most recent fractal prices as their price difference divided by the elapsed time between their timestamps; use zero until two fractals of that type are available.
-Long: High-fractal slope > low-fractal slope
-Short: High-fractal slope < low-fractal slope

@@ -1,2 +1,0 @@
-Long: ROC(NYSE down ticks close on T1, P1) < -P3 * StdDev(ROC(NYSE down ticks close on T1, P1), P2)
-Exit: Long, ROC(NYSE down ticks close on T1, P1) > P4 * StdDev(ROC(NYSE down ticks close on T1, P1), P2)

@@ -1,3 +1,0 @@
-Calculation: Weighted oscillator = a configurable moving average of (RSI of a selected price × RSI weight + MFI using volume × MFI weight + (Williams %R + 100) × Williams %R weight + 100 × DeMarker × DeMarker weight) / (RSI weight + MFI weight + Williams %R weight + DeMarker weight).
-Long: Weighted oscillator on the selected chart bar > upper threshold AND (trend mode is selected OR weighted oscillator on the preceding bar <= upper threshold).
-Short: Weighted oscillator on the selected chart bar < lower threshold AND (trend mode is selected OR weighted oscillator on the preceding bar >= lower threshold).

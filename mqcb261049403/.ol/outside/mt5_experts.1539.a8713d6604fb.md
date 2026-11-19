@@ -1,1 +1,0 @@
-On each market tick, monitor total current account profit. When it reaches or exceeds a configured profit threshold, record that the threshold has been reached. While this trigger remains recorded, close every open position, long or short, across all instruments. Keep retrying on subsequent ticks until no positions remain, then clear the trigger.

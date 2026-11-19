@@ -1,2 +1,0 @@
-Long: Shorter-period moving average of the selected price minus longer-period moving average of the same price >= divergence threshold, using chart bars OR the still-forming higher-timeframe bar
-Short: Longer-period moving average of the selected price minus shorter-period moving average of the same price > divergence threshold, using chart bars OR the still-forming higher-timeframe bar

@@ -1,6 +1,0 @@
-Calculation: Candidate candle = the chart-timeframe candle at a newly confirmed pivot high or pivot low, using equal numbers of left and right bars; evaluate on the confirmation bar. The preceding candle is immediately before the candidate.
-Calculation: Body = absolute value of candidate close minus open; range = candidate high minus low; upper wick = high minus max(open, close); lower wick = min(open, close) minus low.
-Long: Range > 0 AND ((lower wick >= body multiple × body AND upper wick <= range fraction × range) OR (upper wick >= body multiple × body AND lower wick <= range fraction × range))
-Long: Candidate close > candidate open AND preceding close < preceding open AND candidate close > preceding open AND candidate open < preceding close
-Short: Range > 0 AND ((lower wick >= body multiple × body AND upper wick <= range fraction × range AND candidate close < candidate open) OR (upper wick >= body multiple × body AND lower wick <= range fraction × range))
-Short: Candidate close < candidate open AND preceding close > preceding open AND candidate close < preceding open AND candidate open > preceding close

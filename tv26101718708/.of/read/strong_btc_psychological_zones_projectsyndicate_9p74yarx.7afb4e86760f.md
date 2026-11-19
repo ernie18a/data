@@ -1,7 +1,0 @@
-Calculation: Zone = each level L at an integer multiple of a configurable grid step, with upper edge L + configurable half-width and lower edge L - configurable half-width.
-Calculation: Zone test = on each completed statistics-timeframe bar, which may be higher or lower than the chart timeframe, use the last completed bar. For each zone without an active test, start a support test if the previous statistics-bar close is above the upper edge and the current low is at or below that edge; start a resistance test if the previous close is below the lower edge and the current high is at or above that edge. A test can resolve on its starting bar. End it at the first breakout or reversal, or when its age reaches the configurable timeout; breakout takes precedence over reversal, and both take precedence over timeout. Start new tests only when ATR is available and positive.
-Calculation: Reversal distance = the selected configurable grid-step fraction, ATR multiple, or maximum of the two, floored at the zone half-width plus a configurable minimum price increment. ATR and all test prices use completed statistics-timeframe bars.
-Long: An active support test AND statistics-bar close >= level + reversal distance.
-Long: An active resistance test AND statistics-bar close > upper edge + configurable ATR multiple.
-Short: An active resistance test AND statistics-bar close <= level - reversal distance.
-Short: An active support test AND statistics-bar close < lower edge - configurable ATR multiple.

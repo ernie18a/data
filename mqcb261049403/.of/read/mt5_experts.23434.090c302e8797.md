@@ -1,4 +1,0 @@
-Long: At the opening of a chart bar, the shorter-period moving average is above the longer-period moving average AND the previous chart bar's close is above its open AND the previous chart bar's close is above the longer-period moving average AND standard deviation is above its previous-bar value. Each indicator uses its independently selected chart, higher, or lower timeframe and its currently forming bar.
-Short: At the opening of a chart bar, the shorter-period moving average is below the longer-period moving average AND the previous chart bar's close is below its open AND the previous chart bar's close is below the longer-period moving average AND standard deviation is above its previous-bar value. Each indicator uses its independently selected chart, higher, or lower timeframe and its currently forming bar.
-Exit: long, the Short conditions are met.
-Exit: short, the Long conditions are met.

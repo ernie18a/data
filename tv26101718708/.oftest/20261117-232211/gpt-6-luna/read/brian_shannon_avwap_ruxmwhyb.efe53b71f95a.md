@@ -1,3 +1,0 @@
-Calculation: Anchored VWAP = cumulative(((high + low + close) / 3) * volume) / cumulative(volume), accumulated from its anchor
-Long: Anchored VWAP from earnings and anchored VWAP from swing low are available AND close > anchored VWAP from earnings AND close > anchored VWAP from swing low
-Short: Anchored VWAP from earnings is available AND close < anchored VWAP from earnings AND close < anchored VWAP from swing low

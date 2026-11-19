@@ -1,5 +1,0 @@
-Calculation: Signal direction = on each indicator-timeframe bar, compare its close with the close one directional-indicator period earlier and compare its positive and negative directional indicators of that same period. Emit long if both comparisons are greater and the previous emitted direction is not long; emit short if both are less and the previous emitted direction is not short; otherwise emit no direction. Initially the previous emitted direction is neither. The indicator timeframe may be higher or lower than the chart timeframe; evaluate a configurable bar offset, including the still-forming bar or the last completed bar.
-Long: Signal direction = long
-Short: Signal direction = short
-Exit: long, most recent emitted signal direction through the selected indicator-timeframe bar = short OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
-Exit: short, most recent emitted signal direction through the selected indicator-timeframe bar = long OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

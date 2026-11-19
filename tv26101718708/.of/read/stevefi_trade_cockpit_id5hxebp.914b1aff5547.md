@@ -1,4 +1,0 @@
-Calculation: Confirmed pivot low or high = a bar low or high identified as a pivot using configurable numbers of preceding and subsequent bars; it becomes available only after the subsequent bars have completed.
-Calculation: Impulse = the latest confirmed pivot high paired with the latest confirmed pivot low preceding that high; impulse range = pivot high minus pivot low.
-Long: Impulse range > 0 AND close <= impulse high minus impulse range multiplied by the smaller pullback fraction AND close >= impulse high minus impulse range multiplied by the larger pullback fraction AND close > impulse low AND close > medium-period EMA AND short-period EMA > medium-period EMA.
-Exit: long, close < impulse low.

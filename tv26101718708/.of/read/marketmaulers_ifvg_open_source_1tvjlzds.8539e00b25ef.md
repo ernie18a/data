@@ -1,1 +1,0 @@
-A complete reproducible framework cannot be derived from the specified data alone. The setup grade depends on SMT, which compares the chart instrument with a separate correlated instrument. Its data is not included in the permitted fields. The gap-size filter also depends on the instrument’s minimum tick size, which is not present in the data.

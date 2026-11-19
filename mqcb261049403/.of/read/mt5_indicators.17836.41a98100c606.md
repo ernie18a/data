@@ -1,3 +1,0 @@
-Calculation: Oscillator = selected moving average of Williams %R plus 50; if the lookback high equals the lookback low, reuse the previous Williams %R. Calculate on the chart timeframe or on the higher timeframe using its bar still forming; compare higher-timeframe values with the preceding higher-timeframe bar.
-Long: (level mode AND oscillator > middle level) OR (direction mode AND oscillator != middle level AND oscillator > previous oscillator)
-Short: (level mode AND oscillator < middle level) OR (direction mode AND oscillator != middle level AND oscillator < previous oscillator)

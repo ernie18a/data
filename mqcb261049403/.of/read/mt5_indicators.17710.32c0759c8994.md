@@ -1,3 +1,0 @@
-Calculation: Oscillator = selected moving average of the money flow index calculated using a selected bar price and volume, minus 50; use either chart-timeframe bars or the still-forming higher-timeframe bar and preceding higher-timeframe bars.
-Long: (level mode AND oscillator > middle level) OR (direction mode AND oscillator != middle level AND oscillator > oscillator on the preceding oscillator-timeframe bar)
-Short: (level mode AND oscillator < middle level) OR (direction mode AND oscillator != middle level AND oscillator < oscillator on the preceding oscillator-timeframe bar)

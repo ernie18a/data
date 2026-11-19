@@ -1,5 +1,0 @@
-Calculation: MA(type, source, length) = EMA, SMA or WMA of source over length, selected by type
-Calculation: slope(type, source, length, lookback) = (MA(type, source, length) - MA(type, source, length) lagged by lookback bars) / lookback
-Short: MA(fast MA type, fast MA source, fast MA length) crosses under MA(slow MA type, slow MA source, slow MA length) AND (slope filter disabled OR (slope(fast MA type, fast MA source, fast MA length, slope lookback) < -fast slope threshold AND slope(slow MA type, slow MA source, slow MA length, slope lookback) < -slow slope threshold)) AND (intraday filter disabled OR current bar is within trading session)
-Exit: short, MA(fast MA type, fast MA source, fast MA length) crosses over MA(slow MA type, slow MA source, slow MA length)
-Exit: short, intraday filter enabled AND forced close enabled AND current bar is outside trading session AND previous bar is within trading session

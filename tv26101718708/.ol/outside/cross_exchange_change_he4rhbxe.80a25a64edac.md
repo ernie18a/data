@@ -1,1 +1,0 @@
-Compare percentage price changes across the reference exchange and each of two other exchanges over the same bar interval. Enter long when the reference exchange’s change exceeds either other exchange’s by a threshold; enter short when it trails either by a downside threshold. Close each position at its profit target or loss limit.

@@ -1,7 +1,0 @@
-Calculation: Adaptive Renko state = On each indicator-timeframe bar, use close for both H and L, or use high for H and low for L. Initialize upper U = H, lower D = L, brick size B = max(volatility multiplier × (H − L), minimum brick size), and trend T = 0 on the first bar after the volatility lookback. For each bar, set V = max(volatility multiplier × ATR or close standard deviation, minimum brick size). If H > U + B, set U = U + floor((H − U) / B) × B, B = V, and D = U − B. Then, if L < D − B, set D = D − floor((D − L) / B) × B, B = V, and U = D + B. Set T = +1 if U exceeds its preceding bar's U; then set T = −1 if D is below its preceding bar's D; otherwise retain T. Bullish value = D − B when T > 0, otherwise 0; bearish value = U + B when T < 0, otherwise 0. The indicator uses chart-timeframe bars; the trading calculation may instead use a higher or lower timeframe, with a selectable signal bar: the still-forming bar, the last completed bar, or an earlier completed bar.
-Long: Chart-timeframe bullish value ≠ 0
-Short: Chart-timeframe bearish value ≠ 0
-Long: Selected signal bar's bullish value ≠ 0 AND preceding indicator bar's bullish value = 0
-Short: Selected signal bar's bearish value ≠ 0 AND preceding indicator bar's bearish value = 0
-Exit: long, selected signal bar's bearish value ≠ 0 OR low ≤ entry price − stop-loss distance OR high ≥ entry price + take-profit distance
-Exit: short, selected signal bar's bullish value ≠ 0 OR high ≥ entry price + stop-loss distance OR low ≤ entry price − take-profit distance

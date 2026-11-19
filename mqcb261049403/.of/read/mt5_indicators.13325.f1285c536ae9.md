@@ -1,6 +1,0 @@
-Calculation: Weighted momentum = weighted sum of five momentum values of the selected price, using five increasingly long lookbacks; the second and third momentum values share one weight.
-Calculation: Smoothed momentum = weighted momentum divided by the smoothing period plus the previous smoothed momentum multiplied by (smoothing period minus one) divided by the smoothing period. Initialize it to weighted momentum divided by the smoothing period at the zero-based bar index equal to three times the longest momentum lookback plus two.
-Long: Chart-timeframe weighted momentum > chart-timeframe smoothed momentum.
-Short: Chart-timeframe weighted momentum < chart-timeframe smoothed momentum.
-Long: Higher-timeframe weighted momentum > higher-timeframe smoothed momentum, sampled from the higher-timeframe bar still forming at the start of that bar and held until the next higher-timeframe bar.
-Short: Higher-timeframe weighted momentum < higher-timeframe smoothed momentum, sampled from the higher-timeframe bar still forming at the start of that bar and held until the next higher-timeframe bar.

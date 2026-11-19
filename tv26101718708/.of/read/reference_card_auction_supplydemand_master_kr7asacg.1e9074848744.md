@@ -1,1 +1,0 @@
-I cannot provide a complete reproducible framework from this source: its supply/demand zone detection, scoring, selection, and lifecycle require definitions too extensive to reconstruct reliably here, and some calculations depend on the instrument’s minimum tick, which is absent from the specified data fields.

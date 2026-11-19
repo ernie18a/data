@@ -1,1 +1,0 @@
-Enter long when the Supertrend direction is bullish, or enter short when it is bearish. Use the selected higher-timeframe Supertrend variant when enabled; otherwise use the current timeframe. Allow entries only within the configured backtest date range.

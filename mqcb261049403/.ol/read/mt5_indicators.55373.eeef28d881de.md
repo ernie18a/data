@@ -1,2 +1,0 @@
-Long: close > last completed higher-timeframe daily bar close OR close > last completed higher-timeframe weekly bar close OR close > last completed higher-timeframe monthly bar close
-Short: close < last completed higher-timeframe daily bar close OR close < last completed higher-timeframe weekly bar close OR close < last completed higher-timeframe monthly bar close

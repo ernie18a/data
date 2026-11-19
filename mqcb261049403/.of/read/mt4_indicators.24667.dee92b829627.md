@@ -1,6 +1,0 @@
-Long: RSI of close on the chart timeframe or a configurable higher or lower timeframe, using the forming bar and rounded to the nearest integer, <= its lower threshold
-Short: RSI of close on the chart timeframe or a configurable higher or lower timeframe, using the forming bar and rounded to the nearest integer, >= its upper threshold
-Long: stochastic main line on the chart timeframe or a configurable higher or lower timeframe, using the forming bar, <= its lower threshold
-Short: stochastic main line on the chart timeframe or a configurable higher or lower timeframe, using the forming bar, >= its upper threshold
-Long: shorter-period moving average on the forming bar >= longer-period moving average on the forming bar AND shorter-period moving average on its last completed bar < longer-period moving average on its last completed bar; each moving average uses the chart timeframe or an independently configurable higher or lower timeframe
-Short: shorter-period moving average on the forming bar <= longer-period moving average on the forming bar AND shorter-period moving average on its last completed bar > longer-period moving average on its last completed bar; each moving average uses the chart timeframe or an independently configurable higher or lower timeframe

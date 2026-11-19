@@ -1,8 +1,0 @@
-Calculation: Active gaps = for each configured timeframe, process its bars in order. Remove bullish gaps when the bar's low <= the gap's bottom and bearish gaps when its high >= the gap's top. Create a bullish gap when low > high two bars earlier, with bottom = that earlier high and top = current low; create a bearish gap when high < low two bars earlier, with bottom = current high and top = that earlier low. Create at most one gap per first-candle time. If overlap removal is enabled, remove existing gaps in that timeframe whose price intervals strictly overlap the new gap. Keep only the configured maximum number of newest gaps. For a higher timeframe, historical chart bars use the last completed bar; a realtime chart bar uses the still-forming bar. For a lower timeframe, use the last intrabar within the chart bar.
-Calculation: Visible gaps = active gaps from enabled timeframes, processed in configured timeframe order and newest first within each timeframe. If overlap removal is enabled, skip a gap whose price interval strictly overlaps any previously selected gap; select gaps before applying the direction filter.
-Long: An enabled timeframe has a visible bullish gap AND the direction filter permits bullish gaps.
-Short: An enabled timeframe has a visible bearish gap AND the direction filter permits bearish gaps.
-Long: The newest active gap of an enabled timeframe is bullish.
-Short: The newest active gap of an enabled timeframe is bearish.
-Long: At least one timeframe is enabled AND the newest active gap of every enabled timeframe is bullish.
-Short: At least one timeframe is enabled AND the newest active gap of every enabled timeframe is bearish.

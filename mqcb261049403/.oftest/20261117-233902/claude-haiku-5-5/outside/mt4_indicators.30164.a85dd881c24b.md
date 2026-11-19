@@ -1,9 +1,0 @@
-Calculation: Power of EUR = (close of EUR/USD + close of EUR/GBP + close of EUR/JPY / 100 + close of EUR/AUD + close of EUR/CHF + close of EUR/CAD + close of EUR/NZD) / 7
-Long: mode = P2 AND EUR is base currency AND Power of EUR > EMA(Power of EUR, P1) AND Power of non-EUR currency < EMA(Power of non-EUR currency, P1)
-Long: mode = P2 AND EUR is quote currency AND Power of EUR < EMA(Power of EUR, P1) AND Power of non-EUR currency > EMA(Power of non-EUR currency, P1)
-Short: mode = P2 AND EUR is base currency AND Power of EUR < EMA(Power of EUR, P1) AND Power of non-EUR currency > EMA(Power of non-EUR currency, P1)
-Short: mode = P2 AND EUR is quote currency AND Power of EUR > EMA(Power of EUR, P1) AND Power of non-EUR currency < EMA(Power of non-EUR currency, P1)
-Long: mode = P3 AND EUR is base currency AND Power of EUR < EMA(Power of EUR, P1) AND Power of non-EUR currency > EMA(Power of non-EUR currency, P1)
-Long: mode = P3 AND EUR is quote currency AND Power of EUR > EMA(Power of EUR, P1) AND Power of non-EUR currency < EMA(Power of non-EUR currency, P1)
-Short: mode = P3 AND EUR is base currency AND Power of EUR > EMA(Power of EUR, P1) AND Power of non-EUR currency < EMA(Power of non-EUR currency, P1)
-Short: mode = P3 AND EUR is quote currency AND Power of EUR < EMA(Power of EUR, P1) AND Power of non-EUR currency > EMA(Power of non-EUR currency, P1)

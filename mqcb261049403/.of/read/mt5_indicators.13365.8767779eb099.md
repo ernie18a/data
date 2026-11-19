@@ -1,4 +1,0 @@
-Calculation: Bull pressure = EMA of (3 × current high minus the sum of the highest highs over three lookbacks: short, medium, and long), with each lookback ending at the previous bar; initialize the EMA with the first value after the longest lookback is available.
-Calculation: Bear pressure = EMA, with the same smoothing period, of (the sum of the lowest lows over the same three lookbacks, each ending at the previous bar, minus 3 × current low); initialize the EMA with the first value after the longest lookback is available.
-Long: Bull pressure > bear pressure, calculated on the chart timeframe OR on the higher timeframe bar still forming.
-Short: Bull pressure < bear pressure, calculated on the chart timeframe OR on the higher timeframe bar still forming.

@@ -1,1 +1,0 @@
-Long: close crosses above the latest active flat VWMA of highs resistance segment

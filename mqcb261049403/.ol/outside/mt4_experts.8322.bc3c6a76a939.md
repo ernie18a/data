@@ -1,1 +1,0 @@
-At the configured daily close time, exit any open long or short position during the following 15 minutes.

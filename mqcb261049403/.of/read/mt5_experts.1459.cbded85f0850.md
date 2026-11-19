@@ -1,9 +1,0 @@
-Calculation: Shifted Williams %R = Williams %R + its full-scale magnitude; calculate it over short, medium, and long lookbacks.
-Calculation: Weighted oscillator = the weighted sum of the three shifted Williams %R values divided by the sum of their weights.
-Calculation: Trend state = bullish when the weighted oscillator is above an upper threshold and the long-lookback shifted Williams %R is at or above an upper midpoint threshold; bearish when the weighted oscillator is below a lower threshold and the long-lookback shifted Williams %R is at or below a lower midpoint threshold; otherwise neutral. The upper and lower oscillator thresholds move outward by the same swing parameter, and the midpoint thresholds are the midpoint minus and plus an average-swing parameter. If both conditions hold, bullish takes precedence.
-Calculation: Previous trend state = the most recent non-neutral trend state on an earlier completed indicator bar, initially neutral. Calculate the trend on the chart timeframe or an optional higher indicator timeframe; for the higher timeframe use the last completed bar. The standalone indicator also evaluates the still-forming chart bar.
-Calculation: Latest signal = the most recent long or short decision on the indicator timeframe, including the current evaluated bar.
-Long: Trend state = bullish AND previous trend state = bearish.
-Short: Trend state = bearish AND previous trend state = bullish.
-Exit: long, latest signal = short OR low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance.
-Exit: short, latest signal = long OR high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance.

@@ -1,3 +1,0 @@
-Calculation: Higher-timeframe moving average = moving average calculated on a higher timeframe using its last completed bar
-Long: any adjacent enabled pair of moving averages has the shorter-lookback average > the longer-lookback average OR the fastest moving average > every slower moving average
-Short: any adjacent enabled pair of moving averages has the shorter-lookback average < the longer-lookback average OR the fastest moving average < every slower moving average

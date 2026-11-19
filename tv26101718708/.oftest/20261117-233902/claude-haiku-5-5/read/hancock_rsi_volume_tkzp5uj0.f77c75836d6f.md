@@ -1,8 +1,0 @@
-Calculation: ChartUpVolume = if wick weighting is on: volume * (high - low) / (2 * (high - low) - abs(close - open)) when close > open; volume * ((high - low) - abs(close - open)) / (2 * (high - low) - abs(close - open)) when close < open; 0 when close = open; if wick weighting is off: volume when close >= open, else 0
-Calculation: ChartDownVolume = if wick weighting is on: volume * ((high - low) - abs(close - open)) / (2 * (high - low) - abs(close - open)) when close > open; volume * (high - low) / (2 * (high - low) - abs(close - open)) when close < open; 0 when close = open; if wick weighting is off: volume when open > close, else 0
-Calculation: T1UpVolume = sum of ChartUpVolume over the chart bars of the last completed T1 bar, taken on each chart bar
-Calculation: T1DownVolume = sum of ChartDownVolume over the chart bars of the last completed T1 bar, taken on each chart bar
-Calculation: VolumeRsi = 100 * RMA(Up, length) / (RMA(Up, length) + RMA(Down, length)), where Up = abs(close - close[1]) * T1UpVolume if close > close[1] else 0, Down = abs(close - close[1]) * T1DownVolume if close < close[1] else 0, and RMA is Wilder's moving average
-Calculation: VolumeRsiTrend = 1 if VolumeRsi > 50 + 50 * threshold OR (VolumeRsi > 50 - 50 * threshold AND VolumeRsiTrend[1] = 1); -1 if VolumeRsi < 50 - 50 * threshold OR (VolumeRsi < 50 + 50 * threshold AND VolumeRsiTrend[1] = -1); otherwise 0
-Long: VolumeRsiTrend > 0
-Short: VolumeRsiTrend < 0

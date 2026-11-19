@@ -1,4 +1,0 @@
-Long: The first configured moving average of close > the second configured moving average of close; each may use the chart timeframe or an independently configured higher or lower timeframe. On a higher timeframe use the last completed bar historically and the forming bar in real time; on a lower timeframe use the last completed intrabar historically and the latest available intrabar in real time.
-Short: The first configured moving average of close <= the second configured moving average of close, using the same timeframe rules as the long condition.
-Long: The forming higher-timeframe bar's close > its open.
-Short: The forming higher-timeframe bar's close < its open.

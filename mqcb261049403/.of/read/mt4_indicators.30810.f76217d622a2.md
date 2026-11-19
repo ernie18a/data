@@ -1,3 +1,0 @@
-Calculation: Rounded forward slope = negate the median of all pairwise slopes over a regression-length array, then round to the indicator's decimal precision. Array index increases into the past. For each index at or above the selected shift minus one, use the selected open, high, low, close, close SMA, or close EMA at bar offset index plus one; initialize lower indices to zero. The moving-average length equals the regression length. Use the chart timeframe or a selected higher or lower timeframe; offset zero is its still-forming bar, offset one its last completed bar, and larger offsets are older completed bars.
-Long: Rounded forward slope >= positive neutral threshold
-Short: Rounded forward slope < 0

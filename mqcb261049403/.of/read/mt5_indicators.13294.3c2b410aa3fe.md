@@ -1,5 +1,0 @@
-Calculation: Oscillator = Smooth the difference between a weighted sum of five TRIX calculations and its smoothed value, using recursive smoothing S_t = X_t / N + S_(t-1) * (N - 1) / N. The five TRIX periods increase from shortest to longest; the second and third TRIX use the same weight. Use a longer smoothing period for the weighted sum and a shorter one for the difference. Initialize each smoother with its first input divided by its period.
-Long: Oscillator != 0 AND oscillator > previous bar's oscillator.
-Short: Oscillator != 0 AND oscillator < previous bar's oscillator.
-Long: On any selected higher or lower timeframe, the last completed bar's oscillator != 0 AND its oscillator > the preceding bar's oscillator.
-Short: On any selected higher or lower timeframe, the last completed bar's oscillator != 0 AND its oscillator < the preceding bar's oscillator.

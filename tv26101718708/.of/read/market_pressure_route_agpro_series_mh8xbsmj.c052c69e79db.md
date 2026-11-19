@@ -1,3 +1,0 @@
-Calculation: Directional pressure = EMA of clamp(0.45 × body + 0.25 × close location + 0.20 × volume component + 0.10 × gap component, -1, 1); body = (close - open) / (high - low) and close location = (close - (high + low) / 2) / (high - low), both zero when high equals low; volume component = clamp(volume z-score / 3, -1, 1), with z-score zero when its rolling standard deviation is zero; gap component = clamp((open - previous close) / ATR, -1, 1), zero when ATR is not positive, and using open in place of a missing previous close. The volume z-score lookback is longer than the ATR lookback.
-Long: Directional pressure > 0
-Short: Directional pressure < 0

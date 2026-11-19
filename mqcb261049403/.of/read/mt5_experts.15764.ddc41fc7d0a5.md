@@ -1,5 +1,0 @@
-Long: RSI of the selected price on the last completed indicator-timeframe bar > lower threshold AND RSI on the preceding indicator-timeframe bar <= lower threshold
-Short: RSI of the selected price on the last completed indicator-timeframe bar < upper threshold AND RSI on the preceding indicator-timeframe bar >= upper threshold
-Exit: long, the most recent completed indicator-timeframe bar satisfying either entry condition satisfies the short condition OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
-Exit: short, the most recent completed indicator-timeframe bar satisfying either entry condition satisfies the long condition OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance
-Calculation: Indicator timeframe = the chart timeframe or a configurable higher or lower timeframe; use its last completed bar and preceding completed bars.

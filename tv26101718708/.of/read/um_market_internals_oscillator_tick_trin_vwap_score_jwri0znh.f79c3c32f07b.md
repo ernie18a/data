@@ -1,2 +1,0 @@
-Long: close > session VWAP AND absolute percentage distance between close and session VWAP > distance threshold AND percentage change in session VWAP from the previous bar >= negative slope threshold
-Short: close < session VWAP AND absolute percentage distance between close and session VWAP > distance threshold AND percentage change in session VWAP from the previous bar <= slope threshold

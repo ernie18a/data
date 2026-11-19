@@ -1,3 +1,0 @@
-Calculation: Slope = Jurik moving average of the selected price on the current bar minus its value on the preceding bar. For the higher-timeframe version, use the higher-timeframe bar still forming at the start of each higher-timeframe interval and carry that snapshot forward until the next interval; compare its slope with the preceding higher-timeframe bar's slope.
-Long: Slope > 0 AND slope != preceding bar's slope
-Short: Slope < 0 AND slope != preceding bar's slope

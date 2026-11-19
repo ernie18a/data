@@ -1,5 +1,0 @@
-Calculation: Gaussian average = weighted mean of a selected price over a lookback ending at the current bar, with weight exp(A × k^N) for lag k; cap N at 5 when its absolute value exceeds 5. The selected price is open, high, low, close, (high + low)/2, (high + low + close)/3, (high + low + 2 × close)/4, (open + close)/2, (open + high + low + close)/4, or a trend-following price: high if close > open, low if close < open, otherwise close; the trend-following price may instead be averaged with close. Calculate on the chart timeframe or on the higher timeframe's still-forming bar.
-Calculation: Rounded change = current Gaussian average minus its previous value, rounded to the configured price precision plus two decimal places.
-Calculation: Rounded threshold = a configured lower multiplier times the population standard deviation of Gaussian average changes over a lookback ending at the current bar, rounded to the configured price precision plus two decimal places.
-Long: Gaussian average > previous Gaussian average OR rounded change > rounded threshold
-Short: Gaussian average < previous Gaussian average OR rounded change < -rounded threshold

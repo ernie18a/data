@@ -1,2 +1,0 @@
-Long: On each requested timeframe (higher or lower than the chart timeframe, using its last completed bar historically and its still-forming bar in real time), close > EMA(50) OR close > EMA(200) OR close > VWAP
-Short: On each requested timeframe (higher or lower than the chart timeframe, using its last completed bar historically and its still-forming bar in real time), close < EMA(50) OR close < EMA(200) OR close < VWAP

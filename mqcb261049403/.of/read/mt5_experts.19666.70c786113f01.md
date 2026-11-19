@@ -1,9 +1,0 @@
-Calculation: Oscillator = Jurik moving average, with its own length and phase parameters, of 100 × ultra-linear smoothing of the selected price change divided by ultra-linear smoothing of its absolute change; both smoothing operations use the same length. Replace a zero absolute price change with a positive price increment. For ultra-linear smoothing, initialize six states to the first input; on each bar, with k = 3 / (length + 2) and h = 1 - k, update a = h*a + k*input, b = k*a + h*b, c = h*c + k*(1.5*a - 0.5*b), d = k*c + h*d, e = h*e + k*(1.5*c - 0.5*d), f = k*e + h*f; output 1.5*e - 0.5*f.
-Long: Chart-timeframe oscillator > previous chart-timeframe oscillator.
-Short: Chart-timeframe oscillator < previous chart-timeframe oscillator.
-Long: Oscillator on the selected higher or lower timeframe, using the last completed bar or the still-forming bar as selected, > its previous bar AND its previous bar < its bar before that.
-Short: Oscillator on the selected higher or lower timeframe, using the last completed bar or the still-forming bar as selected, < its previous bar AND its previous bar > its bar before that.
-Exit: long, oscillator on the selected higher or lower timeframe, using the last completed bar or the still-forming bar as selected, < its previous bar.
-Exit: short, oscillator on the selected higher or lower timeframe, using the last completed bar or the still-forming bar as selected, > its previous bar.
-Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
-Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

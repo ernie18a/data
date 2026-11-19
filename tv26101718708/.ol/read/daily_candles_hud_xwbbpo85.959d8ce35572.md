@@ -1,2 +1,0 @@
-Long: current daily close >= current daily open (higher timeframe than chart, bar still forming) OR previous completed daily close >= previous completed daily open (higher timeframe than chart, last completed bar)
-Short: current daily close < current daily open (higher timeframe than chart, bar still forming) OR previous completed daily close < previous completed daily open (higher timeframe than chart, last completed bar)

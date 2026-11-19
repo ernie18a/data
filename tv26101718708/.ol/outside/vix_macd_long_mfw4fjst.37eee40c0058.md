@@ -1,1 +1,0 @@
-Use the volatility index’s MACD, computed from its closing prices. Enter a long position in the traded instrument when the MACD line crosses below its signal line. Close the long position when the MACD line crosses above its signal line. Do not open short positions.

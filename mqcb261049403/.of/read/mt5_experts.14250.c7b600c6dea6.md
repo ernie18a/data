@@ -1,4 +1,0 @@
-Long: On the last completed signal bar, close-price Momentum crosses above open-price Momentum; both use the same lookback. The signal timeframe may be higher or lower than the chart timeframe.
-Short: On the last completed signal bar, close-price Momentum crosses below open-price Momentum; both use the same lookback. The signal timeframe may be higher or lower than the chart timeframe.
-Exit: long, the most recent signal through the last completed signal bar is short OR low <= entry price minus the stop-loss distance OR high >= entry price plus the take-profit distance.
-Exit: short, the most recent signal through the last completed signal bar is long OR high >= entry price plus the stop-loss distance OR low <= entry price minus the take-profit distance.

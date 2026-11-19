@@ -1,4 +1,0 @@
-Calculation: Raw Hull = 2 × moving average of the selected price over half the lookback, rounded down, minus the same type of moving average over the full lookback.
-Calculation: Smoothed Hull = the same type of moving average of Raw Hull over the square root of the full lookback, rounded down. Calculate both Hull values on the chart timeframe or on a higher timeframe. For the higher timeframe, use its still-forming bar as sampled on the first chart bar of that higher-timeframe bar, and carry those values forward until the next higher-timeframe bar.
-Long: Raw Hull > Smoothed Hull
-Short: Raw Hull < Smoothed Hull

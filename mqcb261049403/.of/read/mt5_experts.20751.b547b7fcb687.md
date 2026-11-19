@@ -1,7 +1,0 @@
-Calculation: Normalized candle open and close = independently smooth (open / moving average of median price)^exponent and (close / moving average of median price)^exponent with the same smoothing method and parameters; the price moving average and the smoothing use independently selected methods and parameters.
-Long: Chart-timeframe normalized candle close > normalized candle open.
-Short: Chart-timeframe normalized candle close < normalized candle open.
-Long: On a selectable higher or lower indicator timeframe, the last completed normalized candle close > its open AND the preceding normalized candle close <= its open.
-Short: On a selectable higher or lower indicator timeframe, the last completed normalized candle close < its open AND the preceding normalized candle close >= its open.
-Exit: long, last completed normalized candle close < its open on the selectable higher or lower indicator timeframe OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
-Exit: short, last completed normalized candle close > its open on the selectable higher or lower indicator timeframe OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.

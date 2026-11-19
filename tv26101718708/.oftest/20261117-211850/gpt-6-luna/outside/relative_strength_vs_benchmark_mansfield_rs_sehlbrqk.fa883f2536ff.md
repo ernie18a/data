@@ -1,2 +1,0 @@
-Go long when the traded instrument’s close-to-benchmark-close ratio, relative to its moving average over a configurable length, crosses above its average.
-Go short when the traded instrument’s close-to-benchmark-close ratio, relative to its moving average over a configurable length, crosses below its average.

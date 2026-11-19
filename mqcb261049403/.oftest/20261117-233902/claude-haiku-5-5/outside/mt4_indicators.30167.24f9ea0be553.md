@@ -1,2 +1,0 @@
-Long: mode is P1 AND power of base currency > EMA(power of base currency, P2) AND power of quote currency < EMA(power of quote currency, P2)
-Short: mode is P1 AND power of base currency < EMA(power of base currency, P2) AND power of quote currency > EMA(power of quote currency, P2)

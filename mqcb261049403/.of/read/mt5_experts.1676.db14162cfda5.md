@@ -1,8 +1,0 @@
-Calculation: Trend-following price = (high + close) / 2 when close > open; (low + close) / 2 when close < open; close when close = open; use close if the result is zero.
-Calculation: SMA momentum and EMA momentum = each moving average of trend-following price minus its value a momentum lookback earlier; both averages use the same period and both momentums use the same lookback.
-Calculation: Normalized momentum = 100 - 200 * (rolling maximum momentum - current momentum) / (rolling maximum momentum - rolling minimum momentum), using the same extrema lookback for both momentum series and including the current bar; if the range is zero, use 100. For the expert advisor, calculate on the selected higher or lower timeframe and use its last completed bar.
-Long: Normalized SMA momentum = 100 OR normalized EMA momentum = 100.
-Short: Normalized SMA momentum = -100 OR normalized EMA momentum = -100.
-Exit: long, normalized SMA momentum = -100 OR normalized EMA momentum = -100 OR neither current signal is present AND the most recent earlier signal is short OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance.
-Exit: short, normalized SMA momentum = 100 OR normalized EMA momentum = 100 OR neither current signal is present AND the most recent earlier signal is long OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance.
-Calculation: Most recent earlier signal = the latest earlier bar with either entry condition; if both conditions occur on that bar, classify it as long.

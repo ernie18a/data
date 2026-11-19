@@ -1,4 +1,0 @@
-Calculation: Raw wave = sum of independent nonnegative weights multiplied by sign(close − moving average of a selected price), sign(MACD main line − its previous value), sign(OsMA), sign(CCI), sign(momentum − 100), sign(RSI − 50), and sign(+DI − −DI), respectively; sign is +1, 0, or −1. MACD and OsMA each use a shorter and a longer EMA lookback and a signal lookback, independently selectable price inputs, and a signal line that is the SMA of their MACD main line.
-Calculation: Smoothed wave = moving average of the raw wave, using a selectable smoothing method and parameters. Calculate on the chart timeframe or a higher timeframe; for the higher timeframe use the bar still forming and its two preceding completed bars.
-Long: Smoothed wave two bars ago > smoothed wave one bar ago AND smoothed wave one bar ago < current smoothed wave
-Short: Smoothed wave two bars ago < smoothed wave one bar ago AND smoothed wave one bar ago > current smoothed wave

@@ -1,5 +1,0 @@
-Calculation: Smoothed CMO = apply a selectable moving average to a selectable price; sum its positive and negative bar-to-bar changes separately over a lookback equal to the moving-average length; return 100 × (sum of positive changes − sum of absolute negative changes) / (sum of positive changes + sum of absolute negative changes), or zero if the denominator is zero. Use a selectable chart, higher, or lower timeframe and a selectable signal bar: the forming bar, the last completed bar, or an earlier completed bar.
-Long: Smoothed CMO on the signal bar > 0 AND Smoothed CMO on the preceding bar < 0 AND position side = flat
-Short: Smoothed CMO on the signal bar < 0 AND Smoothed CMO on the preceding bar > 0 AND position side = flat
-Exit: long, Smoothed CMO on the signal bar < 0 OR low <= entry price − enabled stop-loss distance OR high >= entry price + enabled take-profit distance
-Exit: short, Smoothed CMO on the signal bar > 0 OR high >= entry price + enabled stop-loss distance OR low <= entry price − enabled take-profit distance

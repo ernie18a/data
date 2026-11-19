@@ -1,3 +1,0 @@
-Calculation: FlowTrend = EMA((typical price − EMA(typical price, channel lookback)) / (scale factor × EMA(abs(typical price − EMA(typical price, channel lookback)), channel lookback)), smoothing lookback), calculated independently on each enabled timeframe; use either its last completed bar or its still-forming bar according to that timeframe's confirmation setting. Each timeframe may be higher or lower than the chart timeframe.
-Long: FlowTrend >= 0 on any enabled timeframe
-Short: FlowTrend < 0 on any enabled timeframe

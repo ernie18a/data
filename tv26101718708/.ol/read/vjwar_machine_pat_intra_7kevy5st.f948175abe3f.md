@@ -1,4 +1,0 @@
-Long: close < open AND MFI < oversold threshold AND Choppiness Index < trend threshold AND volume > previous bar volume AND datetime is within the configured intraday session
-Short: close > open AND MFI > overbought threshold AND Choppiness Index < trend threshold AND volume > previous bar volume AND datetime is within the configured intraday session
-Exit: long, low <= entry price × (1 − stop-loss percentage) OR high >= entry price × (1 + take-profit percentage) OR datetime is outside the configured intraday session
-Exit: short, high >= entry price × (1 + stop-loss percentage) OR low <= entry price × (1 − take-profit percentage) OR datetime is outside the configured intraday session

@@ -1,9 +1,0 @@
-Calculation: Bar delta = buy volume minus sell volume. In intrabar mode, use all available lower-timeframe bars within the chart bar, including a still-forming lower-timeframe bar: assign each bar's volume to buying if close > open, to selling if close < open; if close = open, compare close with the preceding lower-timeframe close within the same chart bar, assigning to buying if higher, selling if lower, and splitting equally otherwise. If intrabar data is unavailable, or bar geometry mode is selected, buy volume = volume × (close − low) / (high − low) when high > low, otherwise volume / 2; sell volume = volume − buy volume. Missing volume is zero.
-Calculation: Delta z-score = (bar delta − simple moving average of bar delta) / population standard deviation of bar delta over the same lookback including the current bar; use zero if the standard deviation is zero.
-Calculation: Profile row delta = buy volume minus sell volume allocated to a price row over the chart-bar lookback including the current bar. Divide the range from the lowest low to the highest high into equal rows. Allocate each bar's buy and sell volume in proportion to the overlap of its high-low range with each row; allocate a zero-range bar entirely to the row containing its price.
-Long: Bar delta >= 0
-Short: Bar delta < 0
-Long: Delta z-score >= positive spike threshold AND bar delta > 0
-Short: Delta z-score <= negative spike threshold AND bar delta < 0
-Long: At least one profile row has positive total allocated volume AND profile row delta >= 0 AND at least one profile row has nonzero delta AND the profile range > 0 AND the profile contains more than one bar
-Short: At least one profile row has positive total allocated volume AND profile row delta < 0 AND the profile range > 0 AND the profile contains more than one bar

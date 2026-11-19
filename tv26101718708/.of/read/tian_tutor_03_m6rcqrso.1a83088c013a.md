@@ -1,2 +1,0 @@
-Long: Shorter-period EMA of close >= longer-period EMA of close, both calculated on the same selected timeframe; use the last completed bar if that timeframe is higher than the chart timeframe, the last completed intrabar if lower, or the current bar if equal.
-Short: Shorter-period EMA of close < longer-period EMA of close, both calculated on the same selected timeframe; use the last completed bar if that timeframe is higher than the chart timeframe, the last completed intrabar if lower, or the current bar if equal.

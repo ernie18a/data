@@ -1,3 +1,0 @@
-Long: The first moving average is greater than the second moving average AND on the previous chart bar the first moving average was less than or equal to the second.
-Short: The first moving average is less than the second moving average AND on the previous chart bar the first moving average was greater than or equal to the second.
-Calculation: First and second moving averages = moving averages of the same selected price source and type, with independently configurable lengths and timeframes; the first normally has the shorter length. Each uses chart-timeframe bars, the last completed higher-timeframe bar, or the last completed lower-timeframe bar within each chart bar, according to its selected timeframe.

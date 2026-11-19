@@ -1,4 +1,0 @@
-Calculation: ALMA set = three ALMAs of close with short, intermediate, and long lookbacks; optionally smooth each with a second ALMA. Evaluate independently for a shorter-lookback set and a longer-lookback set, with every longer-set lookback longer than every shorter-set lookback.
-Calculation: Raw engulf = open < minimum of an ALMA set AND close > maximum of that set OR open > maximum of that set AND close < minimum of that set.
-Long: For either ALMA set, open < minimum of the set AND close > maximum of the set AND ATR for that set is available AND no raw engulf for that set occurred within the preceding cooldown bars.
-Short: For either ALMA set, open > maximum of the set AND close < minimum of the set AND ATR for that set is available AND no raw engulf for that set occurred within the preceding cooldown bars.

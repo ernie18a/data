@@ -1,7 +1,0 @@
-Calculation: Typical price at the chart bar open = (open + open + open) / 3; use this as the forming bar's typical price in the linearly weighted moving averages, and use (high + low + close) / 3 for completed bars.
-Calculation: Long stop = entry price minus the stop distance until a chart bar opens more than the break-even trigger distance above entry; thereafter, if the break-even option is enabled, it is entry price plus the break-even offset.
-Calculation: Short stop = entry price plus the stop distance until a chart bar opens more than the break-even trigger distance below entry; thereafter, if the break-even option is enabled, it is entry price minus the break-even offset.
-Long: Chart bar open > last completed higher-timeframe bar high AND short-period linearly weighted moving average of typical price > long-period linearly weighted moving average of typical price AND chart low two bars ago < previous chart bar high AND absolute difference between chart bar open and chart close two bars ago > entry distance.
-Short: Chart bar open < last completed higher-timeframe bar low AND short-period linearly weighted moving average of typical price < long-period linearly weighted moving average of typical price AND previous chart bar low < chart high two bars ago AND absolute difference between chart bar open and previous chart bar close > entry distance.
-Exit: long, chart bar low <= long stop OR chart bar high >= entry price plus take-profit distance.
-Exit: short, chart bar high >= short stop OR chart bar low <= entry price minus take-profit distance.

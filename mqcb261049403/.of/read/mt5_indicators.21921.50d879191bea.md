@@ -1,3 +1,0 @@
-Calculation: Volume-weighted smoothed CCI = apply the selected smoothing method to CCI of the selected bar price multiplied by bar volume, using the same method and parameters on every bar.
-Long: Volume-weighted smoothed CCI is greater than its previous-bar value OR it equals its previous-bar value and its most recent unequal change was upward.
-Short: Volume-weighted smoothed CCI is less than its previous-bar value OR it equals its previous-bar value and its most recent unequal change was downward.

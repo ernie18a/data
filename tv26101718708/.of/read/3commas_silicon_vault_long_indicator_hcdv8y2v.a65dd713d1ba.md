@@ -1,7 +1,0 @@
-Calculation: Safety-order level n = base entry price × (1 − initial fractional price step × sum of the step coefficient raised to powers 0 through n−1).
-Calculation: Average entry price = total entry notional divided by total quantity; the base entry is filled at the entry bar's close, and each safety order is filled at its level with notional equal to the initial safety-order notional multiplied by the volume coefficient raised to n−1. Process safety orders in sequence, including multiple orders on the base entry bar or any subsequent bar.
-Calculation: Exit reference price = average entry price calculated before processing entries and safety orders on the current bar.
-Calculation: Exit RSI = RSI of close on the selected timeframe, using the last completed bar when that timeframe is higher than or equal to the chart timeframe; when it is lower, use the bar immediately preceding the last lower-timeframe bar within the chart bar.
-Long: Position side = flat AND date-range filter is disabled OR position side = flat AND bar datetime is within the enabled date range.
-Long: Position side = long AND filled safety-order count < maximum safety-order count AND low <= next safety-order level.
-Exit: long, close >= exit reference price × (1 + minimum profit fraction) AND (RSI gate is disabled OR exit RSI crosses above its threshold).

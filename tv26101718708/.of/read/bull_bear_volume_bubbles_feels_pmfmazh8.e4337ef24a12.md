@@ -1,8 +1,0 @@
-Calculation: Volume ratio = current chart-bar volume divided by the simple average volume of preceding chart bars, excluding the current bar; calculate only when that average is positive.
-Calculation: Bull classification = when configured to use lower-timeframe volume and completed lower-timeframe bars within the chart bar have positive total volume, their up-volume sum is greater than or equal to their down-volume sum; allocate half of a doji bar's volume to each sum. Otherwise, when the chart bar's high exceeds its low, its close is at or above the midpoint of its range; when high equals low, its close is at or above its open. Bear classification is the complement.
-Calculation: Bubble price = the high, low and close average of the earliest completed lower-timeframe bar within the chart bar having the greatest volume, when configured to use lower-timeframe prices and usable lower-timeframe volume is available; otherwise, the chart bar's high, low and close average.
-Calculation: Last heavy bull price = bubble price of the most recent completed chart bar whose volume ratio is at or above the heavy threshold and has bull classification. Last heavy bear price is defined likewise using bear classification.
-Long: Volume ratio is at or above the bubble threshold OR volume ratio is at or above the heavy threshold, AND bull classification holds.
-Short: Volume ratio is at or above the bubble threshold OR volume ratio is at or above the heavy threshold, AND bear classification holds.
-Long: Current close is above the previous chart bar's last heavy bear price AND previous close is at or below that same price.
-Short: Current close is below the previous chart bar's last heavy bull price AND previous close is at or above that same price.

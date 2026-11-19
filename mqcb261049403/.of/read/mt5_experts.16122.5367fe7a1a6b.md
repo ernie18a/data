@@ -1,6 +1,0 @@
-Calculation: Rising sequence = Awesome Oscillator and Accelerator Oscillator each rise strictly on every bar over the same lookback; falling sequence = both fall strictly on every bar over the same lookback.
-Calculation: Rising sequence available = no earlier rising sequence has occurred since either oscillator last fell; falling sequence available = no earlier falling sequence has occurred since either oscillator last rose. Initialize both as available. Evaluate the oscillators on the selected chart timeframe or a selected higher or lower timeframe, using the last completed bar or the still-forming bar according to the signal-bar setting.
-Long: (trend-following mode AND rising sequence AND rising sequence available) OR (countertrend mode AND falling sequence AND falling sequence available)
-Short: (trend-following mode AND falling sequence AND falling sequence available) OR (countertrend mode AND rising sequence AND rising sequence available)
-Exit: long, short condition OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
-Exit: short, long condition OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

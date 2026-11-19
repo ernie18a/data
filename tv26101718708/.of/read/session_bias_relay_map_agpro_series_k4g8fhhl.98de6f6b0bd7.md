@@ -1,7 +1,0 @@
-Calculation: Session OHLC = first open, maximum high, minimum low, and latest close of chart bars in each configured session window, using the still-forming session; evaluate only on intraday chart timeframes within the configured maximum.
-Calculation: Session range = max(session high - session low, minimum price increment).
-Calculation: Session close location = (session close - session low) / session range.
-Calculation: Relative volume = current chart-bar volume / simple moving average of chart-bar volume, or 1 when the average is unavailable or nonpositive.
-Calculation: Session score = clamp(body weight * abs(session close - session open) / session range + location weight * abs(session close location - midpoint) + volume pressure, score minimum, score maximum), where volume pressure is volume weight * clamp(relative volume, lower bound, upper bound) if volume confirmation is enabled, otherwise a fixed volume contribution.
-Long: Current bar is in a configured session AND session score > conflict threshold AND session close > session open AND session close location >= bullish location threshold.
-Short: Current bar is in a configured session AND session score > conflict threshold AND session close < session open AND session close location <= bearish location threshold.

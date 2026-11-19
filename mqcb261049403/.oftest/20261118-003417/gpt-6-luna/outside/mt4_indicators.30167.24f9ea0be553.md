@@ -1,3 +1,0 @@
-Calculation: Currency strength = negative mean of the closing prices of the seven pairs containing that currency
-Long: Trend mode AND base currency strength > EMA(currency strength, average period) AND quote currency strength < EMA(currency strength, average period) OR counter-trend mode AND base currency strength < EMA(currency strength, average period) AND quote currency strength > EMA(currency strength, average period)
-Short: Trend mode AND base currency strength < EMA(currency strength, average period) AND quote currency strength > EMA(currency strength, average period) OR counter-trend mode AND base currency strength > EMA(currency strength, average period) AND quote currency strength < EMA(currency strength, average period)

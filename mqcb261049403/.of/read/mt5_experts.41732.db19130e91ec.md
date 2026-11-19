@@ -1,9 +1,0 @@
-Calculation: Long trigger = high of the last completed higher-timeframe bar at order placement + entry offset; retain until the next order placement.
-Calculation: Short trigger = low of the last completed higher-timeframe bar at order placement - entry offset; retain until the next order placement.
-Calculation: Order placement = the first bar of each higher-timeframe period whose weekday is Monday through Friday AND whose hour is at or after the start-hour parameter, if the time filter is enabled; otherwise, the first bar of each higher-timeframe period whose weekday is Monday through Friday.
-Calculation: Long trailing stop = maximum of entry price and the highest price since entry - stop distance.
-Calculation: Short trailing stop = minimum of entry price and the lowest price since entry + stop distance.
-Long: An order has been placed AND high >= long trigger.
-Short: An order has been placed AND low <= short trigger.
-Exit: long, low <= long trailing stop.
-Exit: short, high >= short trailing stop.

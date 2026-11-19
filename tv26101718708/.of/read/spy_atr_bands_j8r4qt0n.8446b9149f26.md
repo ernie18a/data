@@ -1,6 +1,0 @@
-Calculation: Lower ATR bands = RMA of high minus ATR multiplied by a positive factor; calculate narrow, main, and wide bands with progressively larger factors. Calculate each band on each of three ordered timeframes, using the last completed bar when the timeframe is higher than the chart, the last available intrabar when lower, and the current bar when equal to the chart timeframe.
-Calculation: Lower-band incursion depth = for each band timeframe, while chart high >= wide lower band AND chart low <= narrow lower band, assign the deepest level reached by chart high: narrow if high >= narrow, otherwise main if high >= main, otherwise wide. Track the greatest depth reached during the continuous incursion; reset it when either intersection condition fails.
-Calculation: Daily trend comparison = previous daily close compared with its daily close EMA, sampled with higher-timeframe lookahead disabled; on a chart below the daily timeframe, update it when the current daily bar completes.
-Long: Chart high >= wide lower band AND chart low <= narrow lower band AND current lower-band incursion depth > the greatest depth reached earlier in the same incursion, for any of the three band timeframes.
-Long: Daily trend comparison close >= EMA.
-Short: Daily trend comparison close < EMA.

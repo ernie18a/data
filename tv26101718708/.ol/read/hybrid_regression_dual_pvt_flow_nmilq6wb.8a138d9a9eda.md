@@ -1,2 +1,0 @@
-Long: Chart-timeframe PVT > its short-term EMA AND higher-timeframe daily PVT > its short-term EMA using the last completed daily bar
-Short: Chart-timeframe PVT < its short-term EMA AND higher-timeframe daily PVT < its short-term EMA using the last completed daily bar

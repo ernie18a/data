@@ -1,2 +1,0 @@
-Long: DeMarker crosses above its lower threshold on the chart-timeframe bar OR on the still-forming bar of a higher timeframe
-Short: DeMarker crosses below its upper threshold on the chart-timeframe bar OR on the still-forming bar of a higher timeframe

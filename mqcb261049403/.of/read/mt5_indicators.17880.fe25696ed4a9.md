@@ -1,8 +1,0 @@
-Calculation: Oscillator for each of open, high, low, and close = 100 × smooth(price − smooth(price, price-smoothing method and period), deviation-smoothing method and period) / smooth(abs(price − smooth(price, price-smoothing method and period)), deviation-smoothing method and period); use independent smoothing histories for each price series; the oscillator is unavailable when the smoothed signed deviation is zero.
-Calculation: Oscillator candle high = max(oscillator high, oscillator open, oscillator close); oscillator candle low = min(oscillator low, oscillator open, oscillator close).
-Calculation: Channel center = simple moving average of oscillator close; channel width = a multiplier × simple moving average of oscillator candle high minus oscillator candle low over the same lookback; upper and lower channel boundaries = center + width and center − width.
-Calculation: For the higher-timeframe variant, calculate the oscillator and channel on higher-timeframe bars; sample the still-forming higher-timeframe bar on the first chart bar of each higher-timeframe period and hold those values until the next higher-timeframe period.
-Long: In level mode, oscillator close > upper level OR (oscillator close >= lower level AND oscillator close > oscillator open).
-Short: In level mode, oscillator close < lower level OR (oscillator close <= upper level AND oscillator close < oscillator open).
-Long: In channel mode, oscillator close > upper channel boundary OR (oscillator close >= lower channel boundary AND oscillator close > oscillator open).
-Short: In channel mode, oscillator close < lower channel boundary OR (oscillator close <= upper channel boundary AND oscillator close < oscillator open).

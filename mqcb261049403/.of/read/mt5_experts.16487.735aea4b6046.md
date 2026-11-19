@@ -1,8 +1,0 @@
-Long: On the chart timeframe, shorter-period RSI > longer-period RSI AND longer-period RSI > signal level.
-Short: On the chart timeframe, shorter-period RSI < longer-period RSI AND longer-period RSI < 100 − signal level.
-Long: On the selected signal timeframe, which may be the chart timeframe or a higher or lower timeframe, shorter-period RSI > longer-period RSI AND longer-period RSI > signal level on the selected signal bar AND at least one of these comparisons was false on the preceding signal-timeframe bar. The selected signal bar may be the still-forming bar or a completed bar at a configurable lag.
-Short: On the selected signal timeframe, which may be the chart timeframe or a higher or lower timeframe, shorter-period RSI < longer-period RSI AND longer-period RSI < 100 − signal level on the selected signal bar AND at least one of these comparisons was false on the preceding signal-timeframe bar. The selected signal bar may be the still-forming bar or a completed bar at a configurable lag.
-Exit: long, on the selected signal timeframe and signal bar, shorter-period RSI < longer-period RSI AND longer-period RSI < 100 − signal level.
-Exit: short, on the selected signal timeframe and signal bar, shorter-period RSI > longer-period RSI AND longer-period RSI > signal level.
-Exit: long, stop loss enabled AND low <= entry price − stop-loss distance OR take profit enabled AND high >= entry price + take-profit distance.
-Exit: short, stop loss enabled AND high >= entry price + stop-loss distance OR take profit enabled AND low <= entry price − take-profit distance.

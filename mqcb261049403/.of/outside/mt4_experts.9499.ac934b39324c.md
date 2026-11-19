@@ -1,1 +1,0 @@
-Optionally monitor the account’s aggregate floating profit across all instruments. If it reaches the configured profit threshold, close every open market position. If it falls strictly below the negative of the configured loss threshold, close every open market position. The profit and loss controls can be enabled independently.

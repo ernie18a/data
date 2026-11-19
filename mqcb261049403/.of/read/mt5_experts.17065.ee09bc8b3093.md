@@ -1,5 +1,0 @@
-Calculation: Trend state = on each indicator bar, let H be the maximum of its low and the highs over the lookback including that bar, L be the minimum of its close and the lows over the same lookback, and f = (33 − risk parameter) / 100. Set the state bearish if close < L + (H − L) × f, then set it bullish if close > H − (H − L) × f; otherwise retain the preceding state. Initialize the state bearish. The indicator timeframe may be the chart timeframe or a higher or lower timeframe; evaluate either its last completed bar or its still-forming bar according to the signal-bar setting.
-Long: Trend state changes from bearish to bullish.
-Short: Trend state changes from bullish to bearish.
-Exit: long, trend state is bearish OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance.
-Exit: short, trend state is bullish OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance.

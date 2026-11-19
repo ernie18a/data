@@ -1,1 +1,0 @@
-Go long on the traded instrument when the closing value of the selected external security crosses above a threshold. Go short when it crosses below the threshold. No separate exit rule is defined.

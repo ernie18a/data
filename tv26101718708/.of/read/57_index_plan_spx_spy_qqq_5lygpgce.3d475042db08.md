@@ -1,8 +1,0 @@
-Calculation: Opening range high and low = the highest high and lowest low among chart bars starting within a configured interval after the session opens.
-Long: Close > a configured long-entry level.
-Short: Close < a configured short-entry level.
-Short: During the configured session and on the configured event date if the date filter is enabled, at least a configured number of bars after the open, close crosses below a configured breakdown level AND, if the trend filter is enabled, close < short-period EMA AND short-period EMA <= long-period EMA AND close <= session VWAP.
-Short: During the configured session and on the configured event date if the date filter is enabled, at least a configured number of bars after the open, close crosses below a configured warning level.
-Short: During the configured session and on the configured event date if the date filter is enabled, at least a configured number of bars after the open, high > a configured upper confirmation level AND close < a configured failure level.
-Short: During the configured session and on the configured event date if the date filter is enabled, at least a configured number of bars after the open, high > a configured pivot level AND close < that pivot level.
-Short: During the configured session and on the configured event date if the date filter is enabled, at least a configured number of bars after the open, the opening range is complete AND close crosses below the opening range low AND close < a configured pivot level AND, if the trend filter is enabled, close < short-period EMA AND short-period EMA <= long-period EMA AND close <= session VWAP.

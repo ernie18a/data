@@ -1,9 +1,0 @@
-Calculation: Close z-score = (close − SMA of close) / population standard deviation of close over the same lookback; use 0 when the standard deviation is 0.
-Long: Zero-based bar index >= max(slow ATR period, 2 × trend SMA period) AND RSI of close crosses above the oversold threshold.
-Short: Zero-based bar index >= max(slow ATR period, 2 × trend SMA period) AND RSI of close crosses below the overbought threshold.
-Long: Zero-based bar index >= max(slow ATR period, 2 × trend SMA period) AND shorter-period SMA of close crosses above longer-period SMA of close.
-Short: Zero-based bar index >= max(slow ATR period, 2 × trend SMA period) AND shorter-period SMA of close crosses below longer-period SMA of close.
-Long: Zero-based bar index >= max(slow ATR period, 2 × trend SMA period) AND close > highest high over the lookback ending on the previous bar AND volume > SMA of volume × volume multiplier.
-Short: Zero-based bar index >= max(slow ATR period, 2 × trend SMA period) AND close < lowest low over the lookback ending on the previous bar AND volume > SMA of volume × volume multiplier.
-Long: Zero-based bar index >= max(slow ATR period, 2 × trend SMA period) AND close z-score < negative z-score threshold.
-Short: Zero-based bar index >= max(slow ATR period, 2 × trend SMA period) AND close z-score > positive z-score threshold.

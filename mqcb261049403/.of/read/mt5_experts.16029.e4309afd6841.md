@@ -1,7 +1,0 @@
-Calculation: Channel = On the chart timeframe or a selectable higher or lower timeframe, calculate a moving average M of a selectable OHLC-derived price P over a lookback. Calculate V as the mean of (P - current M)^2 over that same lookback. Initialize the adaptive center C to M through the moving average's warm-up plus the channel's bar shift. Thereafter let D = (previous C - M)^2, K = 0 if D = 0 or D < V, otherwise K = 1 - V/D, and C = previous C + K × (M - previous C). Upper = ceil((C + channel half-width) / rounding increment) × rounding increment; lower = floor((C - channel half-width) / rounding increment) × rounding increment. Compare each bar's close with the upper and lower values calculated a selectable number of bars earlier. Use the last completed indicator-timeframe bar, or the still-forming bar when the signal-bar setting selects it; compare its predecessor with that predecessor's own shifted channel.
-Long: Indicator-timeframe close > upper channel
-Short: Indicator-timeframe close < lower channel
-Exit: long, indicator-timeframe close < lower channel OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
-Exit: short, indicator-timeframe close > upper channel OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance
-Long: Indicator-timeframe close > upper channel AND previous indicator-timeframe close <= previous upper channel
-Short: Indicator-timeframe close < lower channel AND previous indicator-timeframe close >= previous lower channel

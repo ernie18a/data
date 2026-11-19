@@ -1,6 +1,0 @@
-Calculation: Averaging deviation for rung k = initial deviation multiplied by the sum of the step multiplier raised to powers 0 through k−1.
-Calculation: Trailing minimum = lowest chart-bar close since the short position opened among bars whose close was at or below the average entry price multiplied by one minus the take-profit fraction; reset when the position is flat.
-Short: Chart-bar time is within the enabled backtest window AND position is flat AND RSI on the last completed lower-timeframe bar is below the threshold AND RSI on the preceding lower-timeframe bar was greater than or equal to the threshold.
-Short: Chart-bar time is within the enabled backtest window AND position is short AND the number of filled averaging orders is below the limit AND close is greater than or equal to the initial entry price multiplied by one plus the averaging deviation for the next unfilled rung. Evaluate only the next rung per chart bar.
-Exit: short, close is greater than or equal to the average entry price multiplied by one plus the stop-loss fraction.
-Exit: short, close is below the stop-loss level AND trailing minimum exists AND close is greater than or equal to the trailing minimum multiplied by one plus the trailing fraction.

@@ -1,5 +1,0 @@
-Calculation: Cloud direction = for each indicator-timeframe bar, compare its high with the simple moving average of close, including that bar; direction is positive if high > the average and negative if high <= the average, provided the simple moving average of high minus low over a separate lookback is positive. Use the last completed indicator bar and its predecessor; the indicator timeframe may be the chart timeframe or a higher or lower timeframe.
-Long: Cloud direction > 0 AND previous cloud direction <= 0
-Short: Cloud direction < 0 AND previous cloud direction >= 0
-Exit: long, cloud direction < 0 OR low <= entry price minus stop-loss distance OR high >= entry price plus take-profit distance
-Exit: short, cloud direction > 0 OR high >= entry price plus stop-loss distance OR low <= entry price minus take-profit distance

@@ -1,7 +1,0 @@
-Calculation: Spectral Chaikin = Calculate the Chaikin oscillator from volume and the specified fast and slow moving averages, with the fast period shorter than the slow period. On the indicator timeframe, take a power-of-two number of the latest oscillator values plus one, ordered from the still-forming bar backward. Apply a type-I discrete cosine transform, zero all coefficients from the smoothing cutoff onward, and apply the inverse transform. Recalculate the entire window at each evaluation, including the still-forming bar; use the resulting values at the selected signal-bar offset and the next two older offsets. The indicator timeframe may be higher or lower than the chart timeframe.
-Long: Spectral Chaikin at the signal-bar offset > its value one bar older AND its value two bars older >= its value one bar older
-Short: Spectral Chaikin at the signal-bar offset < its value one bar older AND its value two bars older <= its value one bar older
-Exit: short, Spectral Chaikin at the signal-bar offset > its value one bar older
-Exit: long, Spectral Chaikin at the signal-bar offset < its value one bar older
-Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
-Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

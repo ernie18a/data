@@ -1,5 +1,0 @@
-Calculation: Power close = a configurable moving average of (high + low) / 2 minus a separately configurable moving average of close; calculate the subtraction bar by bar before applying the outer moving average.
-Calculation: Power open = the previous bar's power close if abs(previous close - current open) < a configurable price-gap threshold; otherwise, a moving average of (high + low) / 2 minus a moving average of open, with the same respective methods and parameters as power close. Calculate the subtraction bar by bar before applying the outer moving average.
-Calculation: Power values = power open and power close calculated on either the chart timeframe or a higher timeframe; for the higher timeframe, use the bar still forming, sample its values on the first chart bar of that higher-timeframe bar, and hold them until the next higher-timeframe bar.
-Long: Power close > power open
-Short: Power close < power open

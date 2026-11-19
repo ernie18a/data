@@ -1,3 +1,0 @@
-Calculation: Smoothed derivative = moving average of (selected price - selected price a configurable number of bars earlier) divided by that number of bars. Calculate on the chart timeframe or on a higher timeframe. For the higher timeframe, use the bar still forming at the first chart bar of each higher-timeframe bar and hold that result until the next higher-timeframe bar.
-Long: Smoothed derivative > smoothed derivative on the preceding bar of its calculation timeframe.
-Short: Smoothed derivative < smoothed derivative on the preceding bar of its calculation timeframe.

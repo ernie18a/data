@@ -1,4 +1,0 @@
-Calculation: Volume Z-score = (volume − rolling simple mean of volume) / rolling population standard deviation of volume; use 0 when the standard deviation is not positive or unavailable.
-Calculation: Spread Z-score = ((high − low) − rolling simple mean of high − low) / rolling population standard deviation of high − low; use 0 when the standard deviation is not positive or unavailable. Its lookback is independent of the volume lookback.
-Long: Volume Z-score >= positive volume threshold AND spread Z-score >= positive spread threshold AND close >= open
-Short: Volume Z-score >= positive volume threshold AND spread Z-score >= positive spread threshold AND close < open

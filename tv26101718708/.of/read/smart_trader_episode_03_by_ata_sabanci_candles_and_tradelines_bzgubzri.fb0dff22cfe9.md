@@ -1,2 +1,0 @@
-Calculation: Candle body, upper wick, and lower wick ratios = respectively abs(close - open), high - max(open, close), and min(open, close) - low, each divided by high - low; use zero for each ratio when high equals low.
-Long: Candle body ratio >= the doji threshold AND candle body ratio < the hammer threshold AND lower wick ratio > the hammer lower-wick threshold AND upper wick ratio < the hammer upper-wick threshold

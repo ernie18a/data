@@ -1,5 +1,0 @@
-Long: Close > open for every bar in a consecutive sequence ending at a configurable bar offset on the signal timeframe AND position side = flat
-Short: Close < open for every bar in the same-length consecutive sequence ending at the same bar offset on the signal timeframe AND position side = flat
-Exit: long, close < open for every bar in the same-length consecutive sequence ending at the same bar offset on the signal timeframe OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
-Exit: short, close > open for every bar in the same-length consecutive sequence ending at the same bar offset on the signal timeframe OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance
-Calculation: Signal timeframe bars = bars from a configurable timeframe that may be higher or lower than the chart timeframe; the configurable offset selects the still-forming bar or a completed bar, with preceding bars in the sequence completed.

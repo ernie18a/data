@@ -1,1 +1,0 @@
-On each tick, if total account floating profit exceeds either a configured cash threshold or a configured percentage of account balance, rounded to two decimal places, close all open long and short positions across all instruments.
