@@ -1,0 +1,15 @@
+Calculation: Footprint delta share = footprint bar delta / footprint total volume
+Calculation: Close location = (close - low) / max(high - low, tick size)
+Calculation: High-volume bar = footprint total volume >= SMA(footprint total volume, footprint-volume averaging lookback parameter) * high-volume multiple parameter
+Calculation: Near-level distance = ATR(ATR lookback parameter) * near-level ATR multiple parameter
+Calculation: Prior swing low = lowest(low[1], swing lookback parameter)
+Calculation: Prior swing high = highest(high[1], swing lookback parameter)
+Calculation: Current-session footprint Volume Profile levels = profile using the footprint row-size and value-area parameters; use its POC, VAH and VAL, with POC as the nearest HVN and the strict local minimum-volume row nearest close as the nearest LVN
+Calculation: Bullish absorption = footprint available AND high-volume bar AND footprint delta share <= -delta-share threshold parameter AND close location >= upper-close-location threshold parameter AND ((session VAL exists AND low <= session VAL + near-level distance) OR (nearest LVN exists AND low <= nearest LVN + near-level distance AND high >= nearest LVN - near-level distance) OR (low < prior swing low AND close > prior swing low))
+Calculation: Bearish absorption = footprint available AND high-volume bar AND footprint delta share >= delta-share threshold parameter AND close location <= lower-close-location threshold parameter AND ((session VAH exists AND high >= session VAH - near-level distance) OR (session POC exists AND low <= session POC + near-level distance AND high >= session POC - near-level distance) OR (high > prior swing high AND close < prior swing high))
+Calculation: Pending bullish setup = on a completed chart bar with bullish absorption and no setup active at the start of that bar, store its high as trigger and low as invalidation; on each later completed chart bar, increment age and clear if low < invalidation or age > confirmation-window parameter; ignore new bullish absorptions while active, including on a bar that clears it; clear after either directional confirmation
+Calculation: Pending bearish setup = on a completed chart bar with bearish absorption and no setup active at the start of that bar, store its low as trigger and high as invalidation; on each later completed chart bar, increment age and clear if high > invalidation or age > confirmation-window parameter; ignore new bearish absorptions while active, including on a bar that clears it; clear after either directional confirmation
+Long: bullish absorption
+Short: bearish absorption
+Long: completed chart bar AND pending bullish setup from an earlier bar is active AND close > its trigger AND ((session POC exists AND session POC > close) OR (session VAH exists AND session VAH > close))
+Short: completed chart bar AND pending bearish setup from an earlier bar is active AND close < its trigger AND ((session POC exists AND session POC < close) OR (session VAL exists AND session VAL < close))

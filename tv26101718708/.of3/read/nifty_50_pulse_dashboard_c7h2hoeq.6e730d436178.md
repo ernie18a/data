@@ -1,0 +1,3 @@
+Calculation: Buy turnover percentage = 100 × Σ(volume(T1, current still-forming bar) × close(T1, current still-forming bar) × (high(T1, current still-forming bar) > low(T1, current still-forming bar) ? (close(T1, current still-forming bar) − low(T1, current still-forming bar)) / (high(T1, current still-forming bar) − low(T1, current still-forming bar)) : 0.5)) / Σ(volume(T1, current still-forming bar) × close(T1, current still-forming bar)) across constituent stocks, evaluated on chart bars from current T1 values when the denominator is positive
+Long: Buy turnover percentage >= bullish threshold
+Short: Buy turnover percentage <= bearish threshold

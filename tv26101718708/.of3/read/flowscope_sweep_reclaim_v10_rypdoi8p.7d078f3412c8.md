@@ -1,0 +1,8 @@
+Calculation: Sweep threshold = clamp(ATR(ATR lookback) × sweep multiplier, minimum sweep, maximum sweep)
+Calculation: Support level = nearest enabled opening-range low, premarket low, or low of the last completed T1 bar to close on chart bars; ties favor opening-range low, then premarket low, then T1 low
+Calculation: Resistance level = nearest enabled opening-range high, premarket high, or high of the last completed T1 bar to close on chart bars; ties favor opening-range high, then premarket high, then T1 high
+Calculation: Relative volume = volume / SMA(volume, volume lookback)
+Long: During the configured active session, after a support sweep where low ≤ support level − sweep threshold and close < support level, within the sweep timeout, close > swept support level AND close > open
+Long: During the configured active session, after a bullish reclaim and before the sweep timeout, high > the latest bullish reclaim candle high AND (elevated-volume requirement is disabled OR Relative volume ≥ elevated-volume threshold)
+Short: During the configured active session, after a resistance sweep where high ≥ resistance level + sweep threshold and close > resistance level, within the sweep timeout, close < swept resistance level AND close < open
+Short: During the configured active session, after a bearish reclaim and before the sweep timeout, low < the latest bearish reclaim candle low AND (elevated-volume requirement is disabled OR Relative volume ≥ elevated-volume threshold)

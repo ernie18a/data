@@ -1,0 +1,8 @@
+Calculation: Average entry = (base order size + the sizes of all filled safety orders) / (base order size / base entry price + the sum of each filled safety-order size / its fill close)
+Long: Flat AND RSI(close, lookback, T1), calculated on T1 bars and sampled on chart bars with lookahead off (last completed T1 bar historically; still-forming T1 bar in realtime), is below its threshold AND the optional active date window passes; set base entry price to this bar's close
+Long: Long position open AND the first safety order is next unfilled AND close <= base entry price × (1 − first safety-order deviation / 100) AND the optional active date window passes
+Long: Long position open AND the second safety order is next unfilled AND close <= base entry price × (1 − second safety-order deviation / 100) AND the optional active date window passes
+Long: Long position open AND the third safety order is next unfilled AND close <= base entry price × (1 − third safety-order deviation / 100) AND the optional active date window passes
+Long: Long position open AND the fourth safety order is next unfilled AND close <= base entry price × (1 − fourth safety-order deviation / 100) AND the optional active date window passes
+Long: Long position open AND the fifth safety order is next unfilled AND close <= base entry price × (1 − fifth safety-order deviation / 100) AND the optional active date window passes
+Exit: long, Long position open AND close >= average entry × (1 + take-profit percentage / 100) AND the optional active date window passes

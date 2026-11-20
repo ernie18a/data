@@ -1,0 +1,8 @@
+Calculation: MA_A = MA(source A, shorter lookback A, type A), computed on T1 bars using the current, possibly still-forming bar, and sampled on each chart bar; T1 may be the chart timeframe
+Calculation: MA_B = MA(source B, middle lookback B, type B), computed on T2 bars using the current, possibly still-forming bar, and sampled on each chart bar; T2 may be the chart timeframe
+Calculation: MA_C = MA(source C, longest lookback C, type C), computed on T3 bars using the current, possibly still-forming bar, and sampled on each chart bar; T3 may be the chart timeframe
+Long: (A and B visibility enabled AND MA_A crosses above MA_B AND (cross labels enabled OR trading enabled for pair A/B)) OR (A and C visibility enabled AND MA_A crosses above MA_C AND (cross labels enabled OR trading enabled for pair A/C)) OR (B and C visibility enabled AND MA_B crosses above MA_C AND (cross labels enabled OR trading enabled for pair B/C))
+Short: cross labels enabled AND ((A and B visibility enabled AND MA_A crosses below MA_B) OR (A and C visibility enabled AND MA_A crosses below MA_C) OR (B and C visibility enabled AND MA_B crosses below MA_C))
+Exit: long, (A and B visibility enabled AND trading enabled for pair A/B AND MA_A crosses below MA_B) OR (A and C visibility enabled AND trading enabled for pair A/C AND MA_A crosses below MA_C) OR (B and C visibility enabled AND trading enabled for pair B/C AND MA_B crosses below MA_C)
+Exit: long, high >= entry price + signal-bar close × take-profit percentage / 100
+Exit: long, low <= entry price - signal-bar close × stop-loss percentage / 100

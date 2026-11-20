@@ -1,0 +1,6 @@
+Calculation: VWAP slope = session VWAP - session VWAP[1]
+Calculation: neutral-zone width = abs(upper VWAP band - session VWAP) * neutral-zone fraction
+Long: confirmed chart bar AND VWAP slope > 0 AND close > session VWAP + neutral-zone width; session VWAP and upper band use HLC3 and volume on chart bars, reset at T1 boundaries, with a band multiplier
+Short: confirmed chart bar AND VWAP slope < 0 AND close < session VWAP - neutral-zone width; session VWAP and upper band use HLC3 and volume on chart bars, reset at T1 boundaries, with a band multiplier
+Exit: long, previous confirmed chart bar had VWAP slope > 0 AND close > session VWAP + neutral-zone width, AND current confirmed chart bar does NOT have (VWAP slope > 0 AND close > session VWAP + neutral-zone width) AND does NOT have (VWAP slope < 0 AND close < session VWAP - neutral-zone width)
+Exit: short, previous confirmed chart bar had VWAP slope < 0 AND close < session VWAP - neutral-zone width, AND current confirmed chart bar does NOT have (VWAP slope > 0 AND close > session VWAP + neutral-zone width) AND does NOT have (VWAP slope < 0 AND close < session VWAP - neutral-zone width)

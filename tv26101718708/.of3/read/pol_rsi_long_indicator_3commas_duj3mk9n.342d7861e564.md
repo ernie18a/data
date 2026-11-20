@@ -1,0 +1,8 @@
+Calculation: average entry = (base order size + sum of each filled safety-order size) / (base order size / base entry price + sum of each filled safety-order size / its fill close)
+Long: while flat, at chart-bar close within the configured active date window when enabled, RSI(close, lookback, T1, last completed T1 bar requested on chart bars with lookahead off) < entry threshold
+Long: while long, at chart-bar close within the configured active date window when enabled, safety order 1 is next unfilled and close <= base entry price × (1 − safety-order-1 deviation / 100)
+Long: while long, at chart-bar close within the configured active date window when enabled, safety order 2 is next unfilled and close <= base entry price × (1 − safety-order-2 deviation / 100)
+Long: while long, at chart-bar close within the configured active date window when enabled, safety order 3 is next unfilled and close <= base entry price × (1 − safety-order-3 deviation / 100)
+Long: while long, at chart-bar close within the configured active date window when enabled, safety order 4 is next unfilled and close <= base entry price × (1 − safety-order-4 deviation / 100)
+Long: while long, at chart-bar close within the configured active date window when enabled, safety order 5 is next unfilled and close <= base entry price × (1 − safety-order-5 deviation / 100)
+Exit: long, at chart-bar close within the configured active date window when enabled, close >= average entry × (1 + take-profit percentage / 100)

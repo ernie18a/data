@@ -1,0 +1,2 @@
+Long: close[1] < open[1] AND close > open AND abs(close - open) >= displacement multiple * ATR(lookback) AND (structure-break filter disabled OR close > high[1])
+Short: close[1] > open[1] AND close < open AND abs(close - open) >= displacement multiple * ATR(lookback) AND (structure-break filter disabled OR close < low[1])

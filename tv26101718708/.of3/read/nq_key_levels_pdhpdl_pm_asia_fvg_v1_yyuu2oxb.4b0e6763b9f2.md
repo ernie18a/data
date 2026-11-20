@@ -1,0 +1,12 @@
+Calculation: sweep distance = sweep-tick parameter × instrument minimum tick
+Calculation: premarket high = highest chart-bar high during bars opening from 08:00 inclusive to 09:30 exclusive America/New_York; available after 09:30 and carried until the next premarket session
+Calculation: premarket low = lowest chart-bar low during bars opening from 08:00 inclusive to 09:30 exclusive America/New_York; available after 09:30 and carried until the next premarket session
+Calculation: Asia high = highest chart-bar high during bars opening from 20:00 inclusive to 00:00 exclusive America/New_York; available after the session and carried until the next Asia session
+Calculation: Asia low = lowest chart-bar low during bars opening from 20:00 inclusive to 00:00 exclusive America/New_York; available after the session and carried until the next Asia session
+Calculation: bullish level sweep = low < level - sweep distance AND close > level AND this level has not already produced a bullish sweep in the current T1 daily bar; Asia-level sweep flags also reset at each 20:00 America/New_York Asia-session start, where level is the low of the last completed T1 bar sampled onto chart bars, premarket low, or Asia low
+Calculation: bearish level sweep = high > level + sweep distance AND close < level AND this level has not already produced a bearish sweep in the current T1 daily bar; Asia-level sweep flags also reset at each 20:00 America/New_York Asia-session start, where level is the high of the last completed T1 bar sampled onto chart bars, premarket high, or Asia high
+Calculation: displacement = high - low > SMA(high - low, displacement lookback on chart bars) × displacement multiplier
+Calculation: bullish FVG = low of the current T2 bar > high of the T2 bar two bars earlier, sampled on chart bars with lookahead off when a new T2 bar is detected; the current T2 bar can still be forming in realtime
+Calculation: bearish FVG = high of the current T2 bar < low of the T2 bar two bars earlier, sampled on chart bars with lookahead off when a new T2 bar is detected; the current T2 bar can still be forming in realtime
+Long: bullish level sweep OR (displacement AND close > open) OR bullish FVG
+Short: bearish level sweep OR (displacement AND close < open) OR bearish FVG

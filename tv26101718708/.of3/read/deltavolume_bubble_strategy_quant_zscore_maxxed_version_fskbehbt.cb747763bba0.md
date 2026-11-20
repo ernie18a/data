@@ -1,0 +1,15 @@
+Calculation: Signed volume = selected footprint volume delta from T1 lower-timeframe bars aggregated on chart bars using the current, possibly forming, chart bar and T2 anchor, or volume when close >= open and -volume otherwise
+Calculation: Absolute volume = abs(Signed volume)
+Calculation: Volume Z-score = ZScore(Absolute volume, statistical lookback)
+Calculation: Trend line = selected EMA(close, trend lookback), WMA(close, trend lookback), KAMA(close, trend lookback, fast length, slow length), or Nadaraya-Watson rational quadratic regression(close, window size, relative weighting, start index)
+Calculation: Average candle body = SMA(abs(close - open), statistical lookback)
+Calculation: LNL ATR stop(factor) = state becomes bullish if close > EMA(close, LNL trend lookback) + factor * EMA(TrueRange, ATR smoothing lookback), bearish if not bullish and close < EMA(close, LNL trend lookback) - factor * EMA(TrueRange, ATR smoothing lookback), otherwise retains its prior state; initially inactive; level is EMA(close, LNL trend lookback) - factor * EMA(TrueRange, ATR smoothing lookback) when bullish or plus that offset when bearish
+Calculation: Exit ATR = ATR(exit lookback) on chart bars
+Calculation: Stop distance = stop multiplier * Exit ATR
+Calculation: Target distance = Stop distance * reward:risk
+Long: bullish bubble display enabled AND Signed volume > 0 AND ((adaptive mode AND Volume Z-score >= bubble z threshold) OR (fixed mode AND Absolute volume >= minimum volume))
+Short: bearish bubble display enabled AND Signed volume < 0 AND ((adaptive mode AND Volume Z-score >= bubble z threshold) OR (fixed mode AND Absolute volume >= minimum volume))
+Long: Signed volume > 0 AND ((adaptive mode AND Volume Z-score >= entry z threshold) OR (fixed mode AND Absolute volume >= minimum volume)) AND (trend filter disabled OR trend type is None OR close > Trend line) AND (absorption detection disabled OR NOT (((adaptive mode AND Volume Z-score >= bubble z threshold) OR (fixed mode AND Absolute volume >= minimum volume)) AND abs(close - open) < Average candle body * absorption ratio)) AND (LNL filter disabled OR NOT (at least one active LNL stop level is below close AND at least one active LNL stop level is above close)); use primary and secondary factors, plus three successively smaller factors in Net mode
+Short: Signed volume < 0 AND ((adaptive mode AND Volume Z-score >= entry z threshold) OR (fixed mode AND Absolute volume >= minimum volume)) AND (trend filter disabled OR trend type is None OR close < Trend line) AND (absorption detection disabled OR NOT (((adaptive mode AND Volume Z-score >= bubble z threshold) OR (fixed mode AND Absolute volume >= minimum volume)) AND abs(close - open) < Average candle body * absorption ratio)) AND (LNL filter disabled OR NOT (at least one active LNL stop level is below close AND at least one active LNL stop level is above close)); use primary and secondary factors, plus three successively smaller factors in Net mode
+Exit: long, low <= entry price - Stop distance OR high >= entry price + Target distance
+Exit: short, high >= entry price + Stop distance OR low <= entry price - Target distance

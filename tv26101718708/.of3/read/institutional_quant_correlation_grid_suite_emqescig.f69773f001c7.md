@@ -1,0 +1,4 @@
+Calculation: Price correlation = Correlation(close, benchmark close, lookback)
+Calculation: Relative-strength momentum = ((close / benchmark close) / SMA(close / benchmark close, lookback) - 1) * 100
+Long: Price correlation >= correlation threshold AND Relative-strength momentum > relative-strength threshold AND Beta(change(close) / close[1], change(benchmark close) / benchmark close[1], lookback) > minimum beta threshold
+Exit: Long, Relative-strength momentum < relative-strength threshold OR Price correlation < low-correlation cutoff OR ZScore(log(close / benchmark close), lookback) >= z-score threshold

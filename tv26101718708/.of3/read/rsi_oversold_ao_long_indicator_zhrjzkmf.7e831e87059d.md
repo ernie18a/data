@@ -1,0 +1,6 @@
+Calculation: Cumulative deviation(k) = first safety-order deviation × Σ(step multiplier^i, i = 0..k−1)
+Calculation: Safety-order size(k) = first safety-order size × order-size multiplier^(k−1)
+Calculation: Running average entry = (base-order size + Σ safety-order size(j) over filled orders) / (base-order size / base-entry close + Σ [safety-order size(j) / fill close(j)] over filled orders)
+Long: At chart-bar close, flat AND (date filter disabled OR datetime ≥ start date AND datetime ≤ end date) AND RSI(close, entry lookback, T1, last completed T1 bar)[1] > entry RSI level AND RSI(close, entry lookback, T1, last completed T1 bar) ≤ entry RSI level
+Long: At chart-bar close, long position AND (date filter disabled OR datetime ≥ start date AND datetime ≤ end date) AND k = 1 + number of filled safety orders AND k ≤ maximum safety-order count AND close ≤ base-entry close × (1 − Cumulative deviation(k) / 100) AND RSI(close, safety-order RSI lookback, T2, last completed T2 bar) < safety-order RSI level
+Exit: long, At chart-bar close, (date filter disabled OR datetime ≥ start date AND datetime ≤ end date) AND close ≥ Running average entry × (1 + take-profit percentage / 100)

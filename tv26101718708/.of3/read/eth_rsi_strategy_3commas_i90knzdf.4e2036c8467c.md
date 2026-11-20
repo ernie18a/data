@@ -1,0 +1,3 @@
+Long: (date filter disabled OR datetime is within the configured inclusive date range) AND flat AND RSI(close, lookback, T1 current bar still forming, sampled on chart bars) < oversold level
+Long: (date filter disabled OR datetime is within the configured inclusive date range) AND long AND an unfilled safety-order rung remains AND close <= base entry price × (1 − next rung deviation / 100), using the next deviation in the configured sequence of separate rung parameters
+Exit: long, close >= average entry price × (1 + take-profit percentage / 100)

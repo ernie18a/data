@@ -1,0 +1,12 @@
+Calculation: Member A/B/C = selected moving average of the selected data-field source using separate member types and lookbacks ordered short, intermediate, long, optionally smoothed by each member’s selected smoothing method and separate smoothing lookback; ALMA uses its offset and sigma parameters.
+Calculation: Normalized slope of each member = clamp((member − member[slope lookback]) / max(ATR(ATR lookback) × slope scale, slope floor), lower slope bound, upper slope bound).
+Calculation: Consensus = sum over members of (member weight × sign(normalized slope) × (confidence base + confidence scale × abs(normalized slope))) / max(sum of member weights, weight floor).
+Calculation: ATR ratio = ATR(ATR lookback) / SMA(ATR(ATR lookback), ATR base lookback).
+Calculation: Bull agreement = count of members with positive normalized slope; bear agreement = count of members with negative normalized slope.
+Calculation: Ensemble state starts neutral and changes only on confirmed chart bars: bullish when consensus ≥ mode-selected entry threshold, bull agreement ≥ minimum agreement, ADX(ADX lookback, ADX smoothing) ≥ mode-selected ADX threshold, and ATR ratio ≥ mode-adjusted ATR floor; bearish under the corresponding negative consensus and bear agreement conditions; neutral when the prior state is nonneutral and absolute consensus ≤ mode-selected reset threshold; otherwise it retains its prior state. The reset threshold is below the entry threshold.
+Long: confirmed chart bar AND consensus ≥ mode-selected entry threshold AND bull agreement ≥ minimum agreement AND ADX(ADX lookback, ADX smoothing) ≥ mode-selected ADX threshold AND ATR ratio ≥ mode-adjusted ATR floor AND prior ensemble state is not bullish.
+Short: confirmed chart bar AND consensus ≤ −mode-selected entry threshold AND bear agreement ≥ minimum agreement AND ADX(ADX lookback, ADX smoothing) ≥ mode-selected ADX threshold AND ATR ratio ≥ mode-adjusted ATR floor AND prior ensemble state is not bearish.
+Long: ensemble state is bullish OR (ensemble state is neutral AND consensus > mode-selected entry threshold) OR at least one member’s normalized slope > 0.
+Short: ensemble state is bearish OR (ensemble state is neutral AND consensus < −mode-selected entry threshold) OR at least one member’s normalized slope < 0.
+Exit: long, confirmed chart bar AND prior ensemble state is bullish AND absolute consensus ≤ mode-selected reset threshold.
+Exit: short, confirmed chart bar AND prior ensemble state is bearish AND absolute consensus ≤ mode-selected reset threshold.

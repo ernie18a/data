@@ -1,0 +1,5 @@
+Calculation: cumulative deviation(k) = sum_{i=1..k}(first averaging deviation × deviation-step multiplier^(i−1))
+Calculation: running average entry = (base order size + sum_{i=1..n}(first averaging order size × order-size multiplier^(i−1))) / (base order size / base entry price + sum_{i=1..n}((first averaging order size × order-size multiplier^(i−1)) / averaging fill price_i)), where n is the number of filled averaging orders
+Long: Flat AND RSI(close, entry RSI lookback, T1, last completed T1 bar), sampled at each chart-bar close, >= entry RSI level AND its previous chart-bar sample < entry RSI level
+Long: Long position AND filled averaging orders < maximum averaging orders AND close <= base entry price × (1 − cumulative deviation(filled averaging orders + 1) / 100)
+Exit: Long, close >= running average entry × (1 + minimum profit / 100) AND RSI(close, exit RSI lookback, T2, last completed T2 bar), sampled at each chart-bar close, <= exit RSI level AND its previous chart-bar sample > exit RSI level

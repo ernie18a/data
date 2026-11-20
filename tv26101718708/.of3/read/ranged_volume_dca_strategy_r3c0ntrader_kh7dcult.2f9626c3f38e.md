@@ -1,0 +1,6 @@
+Calculation: Safety-order threshold = initial-entry source × (1 − price deviation × sum(step scale^k for k from 0 through safety-order index − 1)); the index starts at one and advances after each safety order.
+Calculation: Trailing stop = max(close × (1 − trailing deviation), prior trailing stop), starting when the take-profit target is first reached and resetting when the position closes.
+Long: Position is flat AND selected chart source > 0 (using its last completed bar when repainting is disabled) AND bar time is within the configured date range AND ((repainting enabled AND highest(volume, volume lookback) > highest(volume, volume lookback)[1]) OR (repainting disabled AND highest(volume, volume lookback)[1] > highest(volume, volume lookback)[2])) AND ((Heikin Ashi disabled AND selected chart source > chart open) OR (Heikin Ashi enabled AND selected source on Heikin Ashi bars > Heikin Ashi open)).
+Long: Position is long AND safety-order index ≤ maximum safety orders AND trailing management was not active before this bar AND low ≤ safety-order threshold.
+Exit: long, high ≥ average entry price × (1 + take-profit) AND trailing is disabled.
+Exit: long, trailing is enabled AND the take-profit target has been reached during this position AND close ≤ trailing stop.

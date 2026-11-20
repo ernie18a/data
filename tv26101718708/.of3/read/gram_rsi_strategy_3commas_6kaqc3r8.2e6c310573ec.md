@@ -1,0 +1,3 @@
+Long: Flat AND RSI(close, lookback) calculated on T1 bars using the last completed T1 bar, with its value taken on each chart bar, < oversold level AND (date filter disabled OR datetime within the configured date range)
+Long: In a long position, the next unfilled safety-order rung is within the configured safety-order count AND close <= base entry × (1 − that rung’s separate deviation parameter / 100) AND (date filter disabled OR datetime within the configured date range); fill each rung once in order
+Exit: long, close >= average entry price × (1 + take-profit parameter / 100)

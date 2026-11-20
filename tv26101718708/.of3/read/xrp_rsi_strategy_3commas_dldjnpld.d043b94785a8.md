@@ -1,0 +1,3 @@
+Long: flat AND (date filter disabled OR datetime is within the configured start and end times) AND RSI(close, lookback, T1, last completed bar historically or still-forming bar in realtime), sampled on chart bars, < level
+Long: long position AND (date filter disabled OR datetime is within the configured start and end times) AND safety orders filled < safety-order count parameter AND close <= base entry × (1 − deviation parameter for the next safety order); each safety order has its own deviation parameter
+Exit: long, close >= average entry × (1 + take-profit parameter)

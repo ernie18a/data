@@ -1,0 +1,3 @@
+Long: flat AND (date filter disabled OR bar datetime is within the configured date bounds) AND RSI(close, lookback) on T1 is below its level; calculate RSI on T1 bars and sample it on chart bars with lookahead off (last completed T1 bar historically, still-forming T1 bar in realtime)
+Long: long position AND (date filter disabled OR bar datetime is within the configured date bounds) AND a next unfilled safety-order rung exists AND close <= base entry price * (1 - that rung's separate deviation parameter / 100)
+Exit: long, close >= average entry price * (1 + take-profit parameter / 100)

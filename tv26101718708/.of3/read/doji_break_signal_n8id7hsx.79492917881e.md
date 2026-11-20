@@ -1,0 +1,5 @@
+Calculation: ATR-normalized EMA distance = ATR(ATR lookback) > 0 ? (close - EMA(close, EMA lookback)) / ATR(ATR lookback) : 0
+Long: Long signal enabled AND current bar index - latest Doji bar index > Doji delay parameter AND the latest Doji has not already generated a long signal AND high > latest Doji high AND close > close[1] AND ATR-normalized EMA distance < long distance limit
+Short: Short signal enabled AND current bar index - latest Doji bar index > Doji delay parameter AND the latest Doji has not already generated a short signal AND low < latest Doji low AND close < close[1] AND ATR-normalized EMA distance > short distance limit
+Exit: long, after entry, at least one of close < entry Doji high, low < close[1] - exit offset, or low <= entry price - hard stop is true on each of two consecutive bars
+Exit: short, after entry, at least one of close > entry Doji low, high > close[1] + exit offset, or high >= entry price + hard stop is true on each of two consecutive bars

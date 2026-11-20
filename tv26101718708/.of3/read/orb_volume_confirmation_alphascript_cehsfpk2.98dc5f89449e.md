@@ -1,0 +1,8 @@
+Calculation: Opening range high = highest high of chart bars in the configured session whose start time is before session start + opening-range duration
+Calculation: Opening range low = lowest low of chart bars in the configured session whose start time is before session start + opening-range duration
+Calculation: RVOL = volume / baseline when volume and baseline are positive; baseline is the EMA of volume at the same chart-bar slot across prior sessions using the volume-baseline lookback when adaptive mode is selected and that slot has at least the minimum prior-session samples, otherwise SMA(volume, volume-baseline lookback)
+Calculation: Eligible breakout = configured session is active AND opening range is complete AND opening-range high and low are defined AND opening-range height is positive AND chart timeframe is intraday and no longer than the opening-range duration AND bar time is before opening-range end + signal-window duration
+Long: Eligible breakout AND close crosses above opening-range high AND RVOL >= RVOL threshold AND no prior confirmed long this session
+Long: Eligible breakout AND close crosses above opening-range high AND (RVOL is below RVOL threshold OR RVOL is undefined) AND no prior confirmed long this session AND no prior unconfirmed long this session
+Short: Eligible breakout AND close crosses below opening-range low AND RVOL >= RVOL threshold AND no prior confirmed short this session
+Short: Eligible breakout AND close crosses below opening-range low AND (RVOL is below RVOL threshold OR RVOL is undefined) AND no prior confirmed short this session AND no prior unconfirmed short this session

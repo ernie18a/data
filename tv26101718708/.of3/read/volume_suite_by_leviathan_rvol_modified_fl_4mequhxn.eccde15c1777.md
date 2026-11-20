@@ -1,0 +1,4 @@
+Calculation: buy volume = on each chart bar, sum volume of T1 bars within it where close > open, including any T1 bar still forming
+Calculation: sell volume = on each chart bar, sum volume of T1 bars within it where close < open, including any T1 bar still forming
+Long: display selects Volume, Relative Volume, or Cumulative Relative Volume AND close > open OR display selects Volume Delta or Cumulative Volume Delta AND buy volume > sell volume OR display selects Buy/Sell Volume AND buy volume > 0
+Short: display selects Volume, Relative Volume, or Cumulative Relative Volume AND close <= open OR display selects Volume Delta or Cumulative Volume Delta AND buy volume <= sell volume OR display selects Buy/Sell Volume AND sell volume > 0

@@ -1,0 +1,3 @@
+Calculation: structure bias = +1 on a bullish break when prior structure bias ≤ 0; −1 on a bearish break when prior structure bias ≥ 0; otherwise retain prior value; initially 0
+Long: (close if close confirmation is selected, otherwise high) > most recent confirmed Pivot High(high, pivot lookback, pivot lookback) AND prior structure bias ≤ 0
+Short: (close if close confirmation is selected, otherwise low) < most recent confirmed Pivot Low(low, pivot lookback, pivot lookback) AND prior structure bias ≥ 0

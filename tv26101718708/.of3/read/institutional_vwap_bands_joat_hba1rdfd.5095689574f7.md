@@ -1,0 +1,8 @@
+Calculation: VWAP deviation = sqrt(max(0, VWAP(source²) − VWAP(source)²)) using the same VWAP anchor
+Calculation: VWAP z-score = (close − VWAP(source)) / VWAP deviation when VWAP deviation > 0, otherwise 0
+Calculation: first target at entry = for a reversion entry, max(VWAP(source) at entry, entry price) for long or min(VWAP(source) at entry, entry price) for short; otherwise VWAP(source) at entry + second-band multiplier × VWAP deviation at entry for long or VWAP(source) at entry − second-band multiplier × VWAP deviation at entry for short
+Calculation: stop distance at entry = ATR(ATR lookback) × stop multiplier, or ATR(ATR lookback) if the product ≤ 0
+Long: ((reversion enabled AND VWAP z-score[1] ≤ −reversion trigger AND VWAP z-score > VWAP z-score[1] AND close > open) OR (pullbacks enabled AND close ≥ EMA(close, trend lookback) AND close crosses above VWAP(source))) AND NOT ((reversion enabled AND VWAP z-score[1] ≥ reversion trigger AND VWAP z-score < VWAP z-score[1] AND close < open) OR (pullbacks enabled AND close < EMA(close, trend lookback) AND close crosses below VWAP(source))) AND (no prior signal OR bars since last signal ≥ minimum signal gap)
+Short: ((reversion enabled AND VWAP z-score[1] ≥ reversion trigger AND VWAP z-score < VWAP z-score[1] AND close < open) OR (pullbacks enabled AND close < EMA(close, trend lookback) AND close crosses below VWAP(source))) AND (no prior signal OR bars since last signal ≥ minimum signal gap)
+Exit: long, after the entry bar, high ≥ first target at entry OR low ≤ entry price − stop distance at entry
+Exit: short, after the entry bar, low ≤ first target at entry OR high ≥ entry price + stop distance at entry

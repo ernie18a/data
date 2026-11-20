@@ -1,0 +1,4 @@
+Calculation: cumulative averaging-order deviation(k) = first averaging-order deviation × Σ(j=0 to k−1, deviation-step multiplier^j)
+Short: Position is flat AND (date filter is disabled OR datetime is within the configured date range) AND RSI(close, lookback, T1) crosses below the trigger level on a completed T1 bar, with the cross read on chart bars
+Short: Short position is open AND (date filter is disabled OR datetime is within the configured date range) AND fewer than the configured maximum averaging orders have filled AND close >= base entry price × (1 + cumulative averaging-order deviation of the next rung / 100)
+Exit: Short, close >= average entry price × (1 + stop-loss percentage / 100) OR (after a chart-bar close first reaches or falls below average entry price × (1 − take-profit percentage / 100), close >= the lowest close since that touch × (1 + trailing percentage / 100))

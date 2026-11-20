@@ -1,0 +1,4 @@
+Long: episode direction > 0 AND (lifecycle state is CONFIRMED, ESTABLISHED, MATURE, or STRESSED OR a bar closes on a transition into EMERGING)
+Short: episode direction < 0 AND (lifecycle state is CONFIRMED, ESTABLISHED, MATURE, or STRESSED OR a bar closes on a transition into EMERGING)
+Exit: long, episode direction > 0 AND (a bar closes on a transition into RELEASED with no prior RELEASED event or at least the event cooldown since the previous RELEASED event OR a bar closes on a transition into FAILED with no prior FAILED event or at least the event cooldown since the previous FAILED event)
+Exit: short, episode direction < 0 AND (a bar closes on a transition into RELEASED with no prior RELEASED event or at least the event cooldown since the previous RELEASED event OR a bar closes on a transition into FAILED with no prior FAILED event or at least the event cooldown since the previous FAILED event)

@@ -1,0 +1,8 @@
+Calculation: NY AM range = highest(high) - lowest(low) from the start of the current NY AM session through the current chart bar
+Calculation: NY AM average range = average of the lookback completed NY AM session ranges, excluding the current day, calculated on T1 bars and sampled on chart bars; only completed sessions enter the average
+Calculation: Prior regular-session high/low = highest(high)/lowest(low) over the previous completed regular session on chart bars
+Calculation: Pre-market body high/low = highest(max(open, close))/lowest(min(open, close)) over the pre-market window on T2 bars, sampled on chart bars from the current T2 bar; values are from the completed pre-market session
+Calculation: Previous-week high/low = highest(high)/lowest(low) over the previous completed week on T3 bars, sampled on chart bars from the still-forming T3 bar
+Calculation: Selected level distance = distance from close to the nearest eligible level on the side selected by close >= (highest(high) + lowest(low)) / 2 during the current NY AM session: nearest level above close if true, otherwise nearest level below close; eligible levels are prior regular-session high/low, pre-market body high/low, optional previous-week high/low, and optional EMA or SMA(close, MA length, T4 or chart timeframe, still-forming bar)
+Exit: long, NY AM session active AND NY AM average range available AND selected level distance exists AND max(0, NY AM average range - NY AM range) < selected level distance * reach multiplier
+Exit: short, NY AM session active AND NY AM average range available AND selected level distance exists AND max(0, NY AM average range - NY AM range) < selected level distance * reach multiplier

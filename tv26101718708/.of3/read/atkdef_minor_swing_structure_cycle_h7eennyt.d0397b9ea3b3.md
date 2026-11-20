@@ -1,0 +1,4 @@
+Calculation: dedup threshold = ATR(high, low, close, ATR lookback) × ATR multiplier when dedup mode is ATR; close × percent threshold / 100 when dedup mode is percent; points threshold when dedup mode is points
+Calculation: earliest swing direction = direction of the earliest pivot among the most recent reference swing lookback accepted pivot highs and lows; high pivots win ties
+Long: (PivotLow(low, pivot lookback, pivot lookback) is not na AND (no previous accepted pivot low OR ABS(PivotLow(low, pivot lookback, pivot lookback) - previous accepted pivot low) >= dedup threshold)) OR earliest swing direction is high
+Short: (PivotHigh(high, pivot lookback, pivot lookback) is not na AND (no previous accepted pivot high OR ABS(PivotHigh(high, pivot lookback, pivot lookback) - previous accepted pivot high) >= dedup threshold)) OR earliest swing direction is low

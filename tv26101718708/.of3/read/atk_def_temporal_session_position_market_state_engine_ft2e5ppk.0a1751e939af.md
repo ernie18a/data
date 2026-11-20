@@ -1,0 +1,5 @@
+Calculation: Session statistics = first(open), maximum(high), minimum(low), latest(close), and bar count for each configured session since its reset
+Calculation: HTF position average = mean of valid (chart close - low) / (high - low) values using the last completed bar high and low of T1, T2, T3, T4, and T5, evaluated on chart bars
+Calculation: Volume ratio = volume / SMA(volume, lookback)
+Long: (a session has bars AND its close > its open) OR (a session has bars AND its high > its low AND its close > (its high + its low) / 2) OR (HTF position average > upper position threshold AND volume ratio < volume ratio threshold AND SMA(ATR(ATR lookback), ATR average lookback) is defined and > 0)
+Short: (a session has bars AND its close < its open) OR (a session has bars AND its high > its low AND its close < (its high + its low) / 2) OR (HTF position average < lower position threshold AND volume ratio < volume ratio threshold AND SMA(ATR(ATR lookback), ATR average lookback) is defined and > 0)

@@ -1,0 +1,5 @@
+Calculation: cumulative rung deviation at rung k = first-rung deviation × sum(step multiplier^i for i from 0 to k−1)
+Calculation: lowest close since target was first reached = minimum close from the first close at or below average entry × (1 − take-profit percentage / 100) onward
+Short: flat AND (date filter disabled OR datetime is within the configured entry window) AND RSI(close, lookback) on T1 bars crosses below level, mapped to chart bars with lookahead off (last completed T1 bar historically; current, possibly still-forming T1 bar in real time)
+Short: short position AND (date filter disabled OR datetime is within the configured entry window) AND next unfilled rung is within the configured averaging-order count AND close >= base short entry × (1 + cumulative rung deviation at the next unfilled rung / 100)
+Exit: Short, close >= average entry × (1 + stop-loss percentage / 100) OR (take-profit target has been reached AND close >= lowest close since target was first reached × (1 + trailing percentage / 100))

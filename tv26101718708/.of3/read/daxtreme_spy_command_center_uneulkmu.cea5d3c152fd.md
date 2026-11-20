@@ -1,0 +1,27 @@
+Calculation: Opening-range levels = maximum high and minimum low of chart bars in the opening-range session; reset at each new T1 period and lock when the session ends.
+Calculation: Cumulative Volume Delta = cumulative sum of chart-bar volume × sign(close − open), reset at each new T1 period.
+Calculation: Bias RSI = RSI(close, bias lookback) calculated on T2 bars and sampled on chart bars with lookahead off (current T2 bar live, last completed T2 bar historically).
+Calculation: Entry RSI = RSI(close, entry lookback) calculated on T3 bars and sampled on chart bars with lookahead off (current T3 bar live, last completed T3 bar historically).
+Calculation: Rising short EMA = EMA(close, shorter lookback) > EMA(close, shorter lookback)[n1] AND EMA(close, shorter lookback)[n1] > EMA(close, shorter lookback)[n2], where n1 is a shorter lag than n2.
+Calculation: Falling short EMA = EMA(close, shorter lookback) < EMA(close, shorter lookback)[n1] AND EMA(close, shorter lookback)[n1] < EMA(close, shorter lookback)[n2], where n1 is a shorter lag than n2.
+Calculation: EMA stack = EMA(close, shorter lookback) > EMA(close, longer lookback), where the shorter lookback is less than the longer lookback.
+Calculation: Not extended = extension filter disabled OR abs(close − EMA(close, shorter lookback)) / close × 100 <= the active contract-mode maximum-distance parameter.
+Calculation: Long base = close > VWAP(hlc3) AND close > EMA(close, shorter lookback) AND (trend filter disabled OR (Rising short EMA AND EMA stack)) AND Not extended AND (chop filter disabled OR abs(close − VWAP(hlc3)) / close × 100 >= the active contract-mode minimum-distance parameter).
+Calculation: Short base = close < VWAP(hlc3) AND close < EMA(close, shorter lookback) AND (trend filter disabled OR (Falling short EMA AND EMA(close, shorter lookback) < EMA(close, longer lookback))) AND Not extended AND (chop filter disabled OR abs(close − VWAP(hlc3)) / close × 100 >= the active contract-mode minimum-distance parameter).
+Calculation: Long breakout = opening range locked AND close crosses above opening-range high.
+Calculation: Short breakout = opening range locked AND close crosses below opening-range low.
+Calculation: Long armed = reset at each new T1 period; set by Long breakout AND Long base; cleared by Short breakout AND Short base or by a long entry.
+Calculation: Short armed = reset at each new T1 period; set by Short breakout AND Short base; cleared by Long breakout AND Long base or by a short entry.
+Calculation: Long retest = Long armed AND low <= opening-range high AND close > opening-range high.
+Calculation: Short retest = Short armed AND high >= opening-range low AND close < opening-range low.
+Calculation: Long pullback rejection = low <= EMA(close, shorter lookback) AND close > EMA(close, shorter lookback) AND close > open.
+Calculation: Short pullback rejection = high >= EMA(close, shorter lookback) AND close < EMA(close, shorter lookback) AND close < open.
+Calculation: Long score = count of true conditions: close > VWAP(hlc3), close > EMA(close, shorter lookback), Rising short EMA, EMA stack, long retest eligibility, long pullback rejection eligibility, Bias RSI > upper RSI threshold, Entry RSI > upper RSI threshold, Cumulative Volume Delta > its prior chart-bar value, Not extended.
+Calculation: Short score = count of true conditions: close < VWAP(hlc3), close < EMA(close, shorter lookback), Falling short EMA, EMA(close, shorter lookback) < EMA(close, longer lookback), short retest eligibility, short pullback rejection eligibility, Bias RSI < lower RSI threshold, Entry RSI < lower RSI threshold, Cumulative Volume Delta < its prior chart-bar value, Not extended.
+Calculation: TP unit = max(ATR(ATR lookback) × ATR multiplier when the ATR method is selected, otherwise opening-range width (ATR fallback if unavailable), and minimum tick increment).
+Long: Long base AND long retest eligibility (Long retest if retest is required, otherwise Long breakout) AND long pullback rejection eligibility (Long pullback rejection if required, otherwise true) AND Long score >= minimum score AND (one-signal-per-side filter disabled OR no earlier long entry in the current T1 period).
+Short: Short base AND short retest eligibility (Short retest if retest is required, otherwise Short breakout) AND short pullback rejection eligibility (Short pullback rejection if required, otherwise true) AND Short score >= minimum score AND (one-signal-per-side filter disabled OR no earlier short entry in the current T1 period).
+Exit: long, (EMA exit enabled AND close < EMA(close, shorter lookback)) OR (VWAP exit enabled AND close < VWAP(hlc3)).
+Exit: short, (EMA exit enabled AND close > EMA(close, shorter lookback)) OR (VWAP exit enabled AND close > VWAP(hlc3)).
+Exit: long, TP-hit reporting enabled AND a long TP entry exists AND (retain-levels-after-exit enabled OR position active) AND a chart bar after the entry bar AND the relevant target has not previously hit for this entry AND (high >= entry price + TP unit × TP1 multiple OR high >= entry price + TP unit × TP2 multiple OR high >= entry price + TP unit × TP3 multiple).
+Exit: short, TP-hit reporting enabled AND a short TP entry exists AND (retain-levels-after-exit enabled OR position active) AND a chart bar after the entry bar AND the relevant target has not previously hit for this entry AND (low <= entry price − TP unit × TP1 multiple OR low <= entry price − TP unit × TP2 multiple OR low <= entry price − TP unit × TP3 multiple).

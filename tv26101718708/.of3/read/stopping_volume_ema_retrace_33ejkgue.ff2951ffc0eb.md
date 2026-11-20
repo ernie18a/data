@@ -1,0 +1,5 @@
+Calculation: lower wick percentage = if high > low then (min(open, close) - low) / (high - low) * 100 else 0
+Calculation: upper wick percentage = if high > low then (high - max(open, close)) / (high - low) * 100 else 0
+Calculation: close position percentage = if high > low then (close - low) / (high - low) * 100 else 50
+Long: At candle close, low <= EMA(close, EMA lookback) * (1 - distance percentage / 100) AND SMA(volume[1], volume lookback) > 0 AND volume >= SMA(volume[1], volume lookback) * volume multiplier AND lower wick percentage >= minimum wick percentage AND close position percentage >= close recovery threshold AND (wick dominance is disabled OR min(open, close) - low > high - max(open, close))
+Short: At candle close, high >= EMA(close, EMA lookback) * (1 + distance percentage / 100) AND SMA(volume[1], volume lookback) > 0 AND volume >= SMA(volume[1], volume lookback) * volume multiplier AND upper wick percentage >= minimum wick percentage AND close position percentage <= 100 - close recovery threshold AND (wick dominance is disabled OR high - max(open, close) > min(open, close) - low)

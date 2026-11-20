@@ -1,0 +1,4 @@
+Calculation: Safety-order trigger(n) = base entry price × (1 − Σ(i=1..n)[first-step deviation × step multiplier^(i−1)] / 100)
+Long: Flat AND (date filter disabled OR bar datetime is within the configured date window), on a confirmed chart bar
+Long: Long position active AND next safety-order level n is unfilled AND n ≤ maximum safety-order count AND low ≤ Safety-order trigger(n), on a confirmed chart bar
+Exit: Long, close ≥ average entry price × (1 + minimum profit) AND (RSI gate disabled OR RSI(close, lookback, T1, last completed bar) crosses above the overbought threshold on chart bars), on a confirmed chart bar

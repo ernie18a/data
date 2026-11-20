@@ -1,0 +1,3 @@
+Long: flat AND (date filter disabled OR datetime is within the configured window) AND RSI(close, lookback, T1, last completed bar historically and still-forming bar in real time), sampled on chart bars, is below the oversold threshold at chart-bar close
+Long: long AND (date filter disabled OR datetime is within the configured window) AND an unfilled safety-order rung remains AND chart-bar close is at or below base entry reduced by the next rung’s separately configured percentage deviation; check only the next rung per chart bar
+Exit: long, (date filter disabled OR datetime is within the configured window) AND chart-bar close is at or above blended average entry increased by the take-profit percentage

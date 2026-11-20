@@ -1,0 +1,7 @@
+Calculation: bullish chart trend = close > EMA(close, EMA lookback) AND close > open
+Calculation: equilibrium = average(highest(high, swing lookback), lowest(low, swing lookback))
+Calculation: P(up) = the rolling Bernoulli Naive Bayes posterior for close > close[horizon], using the training-window class counts and binary features: bullish chart trend; bullish T1 trend, calculated on chart bars from still-forming T1 close, open, and EMA values; close < equilibrium; close > VWAP(close); high one bar ago > high two bars ago; volume > SMA(volume, volume-average lookback); volume > volume one bar ago; MFI(hlc3, MFI lookback) > MFI midpoint; and, when macro features are enabled, each of six input drivers' still-forming chart-timeframe closes > EMA(close, EMA lookback). Align each historical feature with its outcome horizon bars later; use add-one smoothing for class priors and binary-feature likelihoods, sum the resulting log-odds, and apply the logistic function. P(down) is the complementary posterior; use equal probabilities until bar index > training window + horizon + warm-up margin.
+Long: bullish chart trend AND close < equilibrium
+Short: close < EMA(close, EMA lookback) AND close < open AND close > equilibrium
+Long: P(up) >= P(down)
+Short: P(up) < P(down)

@@ -1,0 +1,5 @@
+Calculation: cumulative deviation(k) = first averaging-order deviation × sum of deviation-step multiplier^j for j = 0 to k − 1
+Calculation: running average entry = (base-order size + sum of [first averaging-order size × order-size multiplier^(i − 1)] for each filled averaging order i) / (base-order size / base entry + sum of [first averaging-order size × order-size multiplier^(i − 1) / fill close] for each filled averaging order i)
+Long: flat AND RSI(close, RSI length, T1, current still-forming bar sampled on chart bars) < RSI level AND (active-window filter disabled OR start datetime parameter <= datetime <= end datetime parameter)
+Long: while long, fewer than the maximum averaging-order parameter have filled AND close <= base entry × (1 − cumulative deviation for the next unfilled averaging order / 100) AND (active-window filter disabled OR start datetime parameter <= datetime <= end datetime parameter)
+Exit: long, close >= running average entry × (1 + take-profit parameter / 100) AND (active-window filter disabled OR start datetime parameter <= datetime <= end datetime parameter)

@@ -1,0 +1,2 @@
+Long: On chart bars, when T1 is enabled, T1 is higher than the chart timeframe, and a new T1 bar begins, the last completed T1 close > the high of the preceding completed T1 bar.
+Short: On chart bars, when T1 is enabled, T1 is higher than the chart timeframe, and a new T1 bar begins, the last completed T1 close < the low of the preceding completed T1 bar.

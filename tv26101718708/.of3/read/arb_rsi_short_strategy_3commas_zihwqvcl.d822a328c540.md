@@ -1,0 +1,4 @@
+Calculation: Rung deviation(k, first spacing, spacing multiplier) = first spacing × Σ(i=0 to k−1)(spacing multiplier^i)
+Short: Flat AND (date filter is disabled OR datetime is within the configured date window) AND RSI(close, lookback) crosses below level on T1 bars, using the last completed T1-bar result sampled on each chart bar
+Short: Short position AND (date filter is disabled OR datetime is within the configured date window) AND an unfilled averaging rung k remains within the configured rung count AND close >= base entry price × (1 + Rung deviation(k, first spacing, spacing multiplier) / 100)
+Exit: Short, close <= average entry price × (1 − take profit percentage / 100)

@@ -1,0 +1,4 @@
+Calculation: nearest strong short-liquidation wall above close = closest detected short-liquidation level above close with 10 × (level weight / maximum level weight) ≥ wall-strength threshold
+Calculation: nearest strong long-liquidation wall below close = closest detected long-liquidation level below close with 10 × (level weight / maximum level weight) ≥ wall-strength threshold
+Long: nearest strong short-liquidation wall above close exists AND (wall − close ≤ close × proximity-percent / 100 OR close crosses above wall)
+Short: nearest strong long-liquidation wall below close exists AND (close − wall ≤ close × proximity-percent / 100 OR close crosses below wall)

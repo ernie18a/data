@@ -1,0 +1,4 @@
+Calculation: Rolling min-max percentage(x, window) = 100 × (x − lowest(x, window)) / (highest(x, window) − lowest(x, window) + epsilon)
+Calculation: Weariness = SMA((W1 × Rolling min-max percentage(SMA(volume, L) / (SMA(abs(close − open), L) + epsilon), L × normalization-window multiplier) + W2 × 100 × count(abs(close − open) < ATR(A) × small-body ATR factor, L) / L + W3 × Rolling min-max percentage(SMA(volume / (ATR(A) + epsilon), L), L × normalization-window multiplier)) / (W1 + W2 + W3), S)
+Long: Weariness[2] >= recovery threshold AND Weariness[1] < recovery threshold AND highest(Weariness, confirmation bars + recovery-window extension, ending 1 bar ago) > critical threshold
+Short: highest(Weariness, confirmation bars + reversal-window extension, ending 1 bar ago) > critical threshold AND Weariness[1] < Weariness[2] AND Weariness[2] < Weariness[3] AND Weariness[1] > recovery threshold

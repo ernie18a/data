@@ -1,0 +1,6 @@
+Calculation: Session VWAP = SUM(close * volume) / SUM(volume) over chart bars since day start
+Calculation: Week-to-date VWAP = SUM(close * volume) / SUM(volume) over chart bars since the configured week start, the weekday after the configured expiry weekday (skipping weekends)
+Calculation: Weekly anchor = VWMA(close, shorter lookback, T1, current still-forming T1 bar), sampled on each chart bar dated the configured expiry weekday and held until the next expiry date
+Calculation: Monthly anchor = VWMA(close, longer lookback, T1, current still-forming T1 bar), sampled on each chart bar dated the configured monthly expiry date and held until the next expiry date
+Long: (close > Session VWAP AND close > Week-to-date VWAP AND close > Weekly anchor AND close > Monthly anchor) OR Session VWAP > Session VWAP[1] OR Week-to-date VWAP > Week-to-date VWAP[1] OR Weekly anchor > Weekly anchor[1] OR Monthly anchor > Monthly anchor[1]
+Short: (close < Session VWAP AND close < Week-to-date VWAP AND close < Weekly anchor AND close < Monthly anchor) OR Session VWAP < Session VWAP[1] OR Week-to-date VWAP < Week-to-date VWAP[1] OR Weekly anchor < Weekly anchor[1] OR Monthly anchor < Monthly anchor[1]

@@ -1,0 +1,3 @@
+Calculation: HA streak = bars since the last Heikin Ashi candle on T2 that is not in the selected streak direction, calculated on T2 bars and sampled onto chart bars from the current T2 bar (still forming while T2 is open).
+Short: position is flat AND (entry-date filter is disabled OR datetime is within the configured entry window) AND RSI(close, RSI lookback) calculated on T1 bars, using the current T1 bar value sampled onto chart bars (still forming while T1 is open), compares with the RSI threshold using the configured greater-than or less-than mode AND HA streak in the selected direction >= streak length, at chart-bar close.
+Exit: Short, low <= entry price × (1 − take-profit percentage) OR high >= entry price × (1 + stop-loss percentage)

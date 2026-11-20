@@ -1,0 +1,3 @@
+Long: flat AND (date filter disabled OR datetime is within the date range) AND RSI(close, lookback, T1 bars, last completed T1 bar sampled on chart bars) < oversold threshold
+Long: in a long position AND (date filter disabled OR datetime is within the date range) AND the next unfilled averaging rung exists AND close <= original long entry price × (1 − that rung’s separate deviation parameter / 100)
+Exit: long, close >= average entry price × (1 + take-profit parameter / 100)

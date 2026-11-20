@@ -1,0 +1,6 @@
+Calculation: Cumulative order-flow imbalance = CUM(volume * ((close - low) - (high - close)) / (high - low))
+Calculation: Normalized order-flow imbalance = (Cumulative order-flow imbalance - SMA(Cumulative order-flow imbalance, smart-money lookback)) / STDEV(Cumulative order-flow imbalance - SMA(Cumulative order-flow imbalance, smart-money lookback), smart-money lookback)
+Calculation: Structure score = for each pair among the most recent structure-depth confirmed pivot highs and pivot lows, add score-step if the newer pivot is greater than the older pivot, otherwise subtract score-step; skip pairs without values; pivots use PivotHigh(high, structure-depth, structure-depth) and PivotLow(low, structure-depth, structure-depth)
+Calculation: Smart-money direction = 1 when ROC(close, smart-money lookback) > 0 and ROC(volume, smart-money lookback) > smart-money volume-change threshold; -1 when ROC(close, smart-money lookback) < 0 and ROC(volume, smart-money lookback) > smart-money volume-change threshold; otherwise 0
+Long: Normalized order-flow imbalance > 0 OR Structure score > structure-score threshold OR Smart-money direction = 1
+Short: Normalized order-flow imbalance <= 0 OR Structure score < -structure-score threshold OR Smart-money direction = -1
