@@ -1,0 +1,4 @@
+Calculation: FibLevel(A, B, ratio) = B + ratio × (A − B), where A is the swing high and B is the swing low
+Long: on a confirmed bar, close crosses above FibLevel(A, B, entry-high ratio) for the latest downward swing in ZigZag(high, low, deviation parameter, minimum pivot-spacing parameter), no confirmed bar from B onward has high ≥ FibLevel(A, B, target-low ratio), volume > SMA(volume, volume lookback) × volume multiplier if the volume filter is enabled, and close > EMA(close, shorter EMA lookback) and close > EMA(close, longer EMA lookback) if the EMA filter is enabled
+Exit: long, on a confirmed bar, high ≥ FibLevel(A, B, target-low ratio)
+Exit: long, on a confirmed bar, high < FibLevel(A, B, target-low ratio) and close < EMA(close, shorter EMA lookback) and close < EMA(close, longer EMA lookback)

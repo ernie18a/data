@@ -1,0 +1,2 @@
+Long: Confirmed chart bar AND active dominant range AND ((dominant range balance > balance threshold AND close > weighted equilibrium AND close <= range top) OR close crosses above weighted equilibrium OR close > range top)
+Short: Confirmed chart bar AND active dominant range AND ((dominant range balance < -balance threshold AND close < weighted equilibrium AND close >= range bottom) OR close crosses below weighted equilibrium OR close < range bottom)

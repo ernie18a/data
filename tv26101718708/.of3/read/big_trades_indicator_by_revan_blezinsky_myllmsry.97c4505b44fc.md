@@ -1,0 +1,3 @@
+Calculation: Candle direction = buy when close > the selected reference or close = the selected reference and close >= the selected tie-break reference; otherwise sell. The selected reference and tie-break reference are open and close[1] for close vs open, (high + low) / 2 and close[1] for close vs midpoint, or close[1] and open for close vs previous close.
+Long: Candle direction = buy
+Short: Candle direction = sell

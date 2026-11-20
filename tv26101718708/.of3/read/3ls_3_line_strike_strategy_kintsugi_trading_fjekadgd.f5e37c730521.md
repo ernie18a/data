@@ -1,0 +1,12 @@
+Calculation: Bullish three-line-strike pattern = close[3] < open[3] AND close[2] < open[2] AND close[1] < open[1] AND close > open AND abs(close − open) > abs(close[1] − open[1])
+Calculation: Bearish three-line-strike pattern = close[3] > open[3] AND close[2] > open[2] AND close[1] > open[1] AND close < open AND abs(close − open) > abs(close[1] − open[1])
+Calculation: Initial long stop = signal-bar low − stop offset in fixed-offset mode; otherwise entry price − ATR(ATR lookback) × ATR multiplier
+Calculation: Initial short stop = signal-bar high + stop offset in fixed-offset mode; otherwise entry price + ATR(ATR lookback) × ATR multiplier
+Calculation: Long stop = initial long stop in fixed-offset mode; otherwise initialize at initial long stop and update on each completed chart bar to max(previous long stop, chart-bar close − ATR(ATR lookback) × ATR multiplier)
+Calculation: Short stop = initial short stop in fixed-offset mode; otherwise initialize at initial short stop and update on each completed chart bar to min(previous short stop, chart-bar close + ATR(ATR lookback) × ATR multiplier)
+Long: bullish three-line-strike pattern
+Short: bearish three-line-strike pattern
+Long: bullish three-line-strike pattern AND volume > SMA(volume, volume-average lookback) × volume threshold multiplier AND SMA(close, shorter moving-average lookback) > SMA(close, longer moving-average lookback) AND position is flat AND chart bar is confirmed AND (session filter is disabled OR (chart-bar opening datetime is within the configured session in the configured timezone AND chart timeframe multiplier ≤ session timeframe limit))
+Short: bearish three-line-strike pattern AND volume > SMA(volume, volume-average lookback) × volume threshold multiplier AND SMA(close, shorter moving-average lookback) < SMA(close, longer moving-average lookback) AND position is flat AND chart bar is confirmed AND (session filter is disabled OR (chart-bar opening datetime is within the configured session in the configured timezone AND chart timeframe multiplier ≤ session timeframe limit))
+Exit: long, chart-bar low ≤ long stop OR (selected stop method has a target AND chart-bar high ≥ entry price + reward-risk ratio × (entry price − initial long stop))
+Exit: short, chart-bar high ≥ short stop OR (selected stop method has a target AND chart-bar low ≤ entry price − reward-risk ratio × (initial short stop − entry price))

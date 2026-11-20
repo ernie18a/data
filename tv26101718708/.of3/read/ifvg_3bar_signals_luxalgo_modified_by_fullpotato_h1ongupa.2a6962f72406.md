@@ -1,0 +1,5 @@
+Calculation: LVN overlap(high, low, zone) = high >= zone low AND low <= zone high
+Long: long signals enabled AND low[3] > high[1] AND close[2] < low[3] AND close > low[3] AND low[3] - high[1] > ATR(lookback) * minimum gap width AND (LVN filter disabled OR LVN overlap(high[1], low[1], any configured LVN zone)) AND volume >= volume[1] * volume multiplier
+Short: short signals enabled AND low[1] > high[3] AND close[2] > high[3] AND close < high[3] AND low[1] - high[3] > ATR(lookback) * minimum gap width AND (LVN filter disabled OR LVN overlap(high[1], low[1], any configured LVN zone)) AND volume >= volume[1] * volume multiplier
+Exit: long, TP zone enabled AND high > (active long signal's (low[3] + high[1]) / 2) + ATR(lookback) at that signal * TP multiplier OR SL zone enabled AND low < (active long signal's (low[3] + high[1]) / 2) - ATR(lookback) at that signal * SL multiplier
+Exit: short, TP zone enabled AND low < (active short signal's (low[1] + high[3]) / 2) - ATR(lookback) at that signal * TP multiplier OR SL zone enabled AND high > (active short signal's (low[1] + high[3]) / 2) + ATR(lookback) at that signal * SL multiplier

@@ -1,0 +1,6 @@
+Calculation: Smoothed profile levels = EMA(each rolling Volume Profile level (POC, VAH, VAL) from high, low, and volume over the profile lookback divided into row count buckets, smoothing lookback)
+Calculation: Lower trailing band = max(EMA(profile VAL, smoothing lookback) − ATR(ATR lookback) × buffer, prior lower trailing band) when prior close > prior lower trailing band; otherwise EMA(profile VAL, smoothing lookback) − ATR(ATR lookback) × buffer
+Calculation: Upper trailing band = min(EMA(profile VAH, smoothing lookback) + ATR(ATR lookback) × buffer, prior upper trailing band) when prior close < prior upper trailing band; otherwise EMA(profile VAH, smoothing lookback) + ATR(ATR lookback) × buffer
+Calculation: Trend state = bullish initially; thereafter, switch from bearish to bullish when the prior state is bearish and (high in wick mode, otherwise close) > prior upper trailing band; switch from bullish to bearish when the prior state is bullish and (low in wick mode, otherwise close) < prior lower trailing band; otherwise retain the prior state
+Long: Trend state is bullish
+Short: Trend state is bearish

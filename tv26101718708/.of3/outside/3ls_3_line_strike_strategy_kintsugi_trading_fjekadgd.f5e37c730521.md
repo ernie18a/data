@@ -1,0 +1,10 @@
+Calculation: Long initial stop = entry-bar low − stop offset in fixed-stop mode; entry-bar close − ATR(ATR period) × ATR multiplier otherwise
+Calculation: Short initial stop = entry-bar high + stop offset in fixed-stop mode; entry-bar close + ATR(ATR period) × ATR multiplier otherwise
+Calculation: Long ATR trail stop = max(previous long stop, close − ATR(ATR period) × ATR multiplier)
+Calculation: Short ATR trail stop = min(previous short stop, close + ATR(ATR period) × ATR multiplier)
+Calculation: Long profit target = entry-bar close + risk/reward ratio × (entry-bar close − long initial stop)
+Calculation: Short profit target = entry-bar close − risk/reward ratio × (short initial stop − entry-bar close)
+Long: close of each of the three preceding bars < its open AND close > open AND abs(close − open) > abs(previous-bar close − previous-bar open) AND volume > SMA(volume, volume-average period) × volume multiplier AND SMA(close, fast MA period) > SMA(close, slow MA period) AND long entries enabled AND position flat AND bar confirmed AND (session filter disabled OR current bar within selected session on a supported chart timeframe)
+Short: close of each of the three preceding bars > its open AND close < open AND abs(close − open) > abs(previous-bar close − previous-bar open) AND volume > SMA(volume, volume-average period) × volume multiplier AND SMA(close, fast MA period) < SMA(close, slow MA period) AND short entries enabled AND position flat AND bar confirmed AND (session filter disabled OR current bar within selected session on a supported chart timeframe)
+Exit: long, low ≤ long initial stop when stop mode is fixed-stop or ATR Trail-Stop OR low ≤ long ATR trail stop when stop mode is ATR Trail OR high ≥ long profit target when stop mode is fixed-stop or ATR Trail-Stop
+Exit: short, high ≥ short initial stop when stop mode is fixed-stop or ATR Trail-Stop OR high ≥ short ATR trail stop when stop mode is ATR Trail OR low ≤ short profit target when stop mode is fixed-stop or ATR Trail-Stop
