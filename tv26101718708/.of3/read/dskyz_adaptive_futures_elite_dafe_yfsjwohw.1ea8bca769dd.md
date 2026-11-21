@@ -1,0 +1,18 @@
+Calculation: AdaptiveSMA(length) = SMA(close, round(length / (1 + ATR(ATR length) / close)))
+Calculation: bullish engulfing = close[1] < open[1] AND close > open AND open < close[1] AND close > open[1] AND (close - open) > (open[1] - close[1]) * engulfing body ratio
+Calculation: bearish engulfing = close[1] > open[1] AND close < open AND open > close[1] AND close < open[1] AND (open - close) > (close[1] - open[1]) * engulfing body ratio
+Calculation: strong bar = volume > SMA(volume, average length) OR (high - low) > SMA(high - low, average length)
+Calculation: bullish engulfing within lookback = BarsSince(bullish engulfing) <= pattern lookback AND strong bar
+Calculation: bearish engulfing within lookback = BarsSince(bearish engulfing) <= pattern lookback AND strong bar
+Calculation: entry filter = volume >= minimum volume AND volume > volume spike multiplier * SMA(volume, average length) AND hour(datetime) >= start hour AND hour(datetime) <= end hour AND ATR(ATR length) / close <= volatility limit AND NOT (bullish engulfing within lookback AND bearish engulfing within lookback)
+Calculation: MA long = close > AdaptiveSMA(shorter length) AND AdaptiveSMA(shorter length) > AdaptiveSMA(longer length) AND close > close[1] AND (NOT use trend filter OR SMA(close, shorter length, T1, last completed bar) >= SMA(close, longer length, T1, last completed bar)) AND (NOT use RSI filter OR (RSI(close, RSI length) crosses above RSI lower level AND RSI(close, RSI length)[RSI lookback] < long RSI cap))
+Calculation: MA short = close < AdaptiveSMA(shorter length) AND AdaptiveSMA(shorter length) < AdaptiveSMA(longer length) AND close < close[1] AND (NOT use trend filter OR SMA(close, shorter length, T1, last completed bar) <= SMA(close, longer length, T1, last completed bar)) AND (NOT use RSI filter OR (RSI(close, RSI length) crosses below RSI upper level AND RSI(close, RSI length)[RSI lookback] > short RSI floor))
+Calculation: TrailDistance(profit) = ATR(ATR length) * IF(profit > ATR(ATR length) * upper profit threshold, upper profit trail multiplier, IF(profit > ATR(ATR length) * lower profit threshold, lower profit trail multiplier, base trail multiplier))
+Long: position side is flat AND entry filter AND ((pattern first AND (use patterns AND bullish engulfing within lookback OR MA long AND NOT (use patterns AND bearish engulfing within lookback))) OR (NOT pattern first AND (MA long OR use patterns AND bullish engulfing within lookback AND NOT MA short)))
+Short: position side is flat AND entry filter AND ((pattern first AND (use patterns AND bearish engulfing within lookback OR MA short AND NOT (use patterns AND bullish engulfing within lookback))) OR (NOT pattern first AND (MA short OR use patterns AND bearish engulfing within lookback AND NOT MA long)))
+Exit: Long, low <= entry price - ATR(ATR length) * fixed stop multiplier
+Exit: Long, bar after entry bar AND high >= entry price + ATR(ATR length) * profit target multiplier
+Exit: Long, bar after entry bar AND highest high since entry >= entry price + TrailDistance(close - entry price) AND low <= highest high since entry - ATR(ATR length) * trail offset multiplier
+Exit: Short, high >= entry price + ATR(ATR length) * fixed stop multiplier
+Exit: Short, bar after entry bar AND low <= entry price - ATR(ATR length) * profit target multiplier
+Exit: Short, bar after entry bar AND lowest low since entry <= entry price - TrailDistance(entry price - close) AND high >= lowest low since entry + ATR(ATR length) * trail offset multiplier

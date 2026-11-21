@@ -1,0 +1,4 @@
+Calculation: Donchian upper band(N) of previous bar = highest high of the N bars before the current bar
+Calculation: Donchian lower band(N) of previous bar = lowest low of the N bars before the current bar
+Short: closed chart candle AND high > Donchian upper band(N) of previous bar AND close < Donchian upper band(N) of previous bar AND count of other exchanges with a candle at the chart candle's open time and N preceding candles >= 2
+Long: closed chart candle AND low < Donchian lower band(N) of previous bar AND close > Donchian lower band(N) of previous bar AND count of other exchanges with a candle at the chart candle's open time and N preceding candles >= 2

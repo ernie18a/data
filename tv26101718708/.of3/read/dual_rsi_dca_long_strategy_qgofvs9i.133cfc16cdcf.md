@@ -1,0 +1,4 @@
+Calculation: CumulativeDeviation(k) = sum for i from 1 to k of (first deviation * deviation multiplier^(i - 1))
+Long: position side is flat AND (window filter disabled OR (datetime >= window start AND datetime <= window end)) AND RSI(close, entry lookback, T1, last completed bar) crosses above entry level
+Long: position side is long AND (window filter disabled OR (datetime >= window start AND datetime <= window end)) AND filled averaging orders in current position < maximum averaging orders AND close <= base entry price * (1 - CumulativeDeviation(filled averaging orders in current position + 1) / 100)
+Exit: long, RSI(close, exit lookback, T2, last completed bar) crosses below exit level AND close >= average entry price * (1 + minimum profit percent / 100)

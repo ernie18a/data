@@ -1,0 +1,6 @@
+Calculation: upper band(T) = close * (1 + index implied volatility at T / 100 / sqrt(bars per year at T))
+Calculation: lower band(T) = close * (1 - index implied volatility at T / 100 / sqrt(bars per year at T))
+Short: index high >= upper band(chart timeframe) AND index high >= upper band(T1) AND index high >= upper band(T2)
+Long: index low <= lower band(chart timeframe) AND index low <= lower band(T1) AND index low <= lower band(T2)
+Option: sell call, index high >= upper band(chart timeframe) AND index high >= upper band(T1) AND index high >= upper band(T2)
+Option: sell put, index low <= lower band(chart timeframe) AND index low <= lower band(T1) AND index low <= lower band(T2)

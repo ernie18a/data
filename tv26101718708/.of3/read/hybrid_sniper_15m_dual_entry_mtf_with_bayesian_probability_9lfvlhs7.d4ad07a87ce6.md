@@ -1,0 +1,14 @@
+Calculation: session active = session filter off OR bar time within session window
+Calculation: relative volume = volume / max(SMA(volume, volume SMA lookback), 1)
+Calculation: prior T1 low = T1 low[1] (on chart bars, T1 bar still forming)
+Calculation: prior T1 high = T1 high[1] (on chart bars, T1 bar still forming)
+Calculation: bullish bias = T1 close (on chart bars, T1 bar still forming) > EMA(close, T1 EMA lookback, T1, bar still forming) AND T1 close (on chart bars, T1 bar still forming) > T1 open (on chart bars, T1 bar still forming) AND T2 close (on chart bars, last completed T2 bar) > EMA(close, T2 EMA lookback, T2, last completed bar) AND T2 close (on chart bars, last completed T2 bar) > T2 open (on chart bars, last completed T2 bar)
+Calculation: bearish bias = T1 close (on chart bars, T1 bar still forming) < EMA(close, T1 EMA lookback, T1, bar still forming) AND T1 close (on chart bars, T1 bar still forming) < T1 open (on chart bars, T1 bar still forming) AND T2 close (on chart bars, last completed T2 bar) < EMA(close, T2 EMA lookback, T2, last completed bar) AND T2 close (on chart bars, last completed T2 bar) < T2 open (on chart bars, last completed T2 bar)
+Calculation: long stop-loss = min(low, prior T1 low) - ATR(ATR lookback) * ATR buffer multiplier, at entry bar
+Calculation: short stop-loss = max(high, prior T1 high) + ATR(ATR lookback) * ATR buffer multiplier, at entry bar
+Calculation: long take-profit = entry price + (entry price - long stop-loss) * reward ratio
+Calculation: short take-profit = entry price - (short stop-loss - entry price) * reward ratio
+Long: position side is flat AND session active AND bullish bias AND ((low < prior T1 low AND close > prior T1 low AND relative volume > strike RVOL threshold) OR (close > VWAP(close) AND close > EMA(close, T3 EMA lookback, T3, last completed bar) AND relative volume > trend RVOL threshold AND close > open))
+Short: position side is flat AND session active AND bearish bias AND ((high > prior T1 high AND close < prior T1 high AND relative volume > strike RVOL threshold) OR (close < VWAP(close) AND close < EMA(close, T3 EMA lookback, T3, last completed bar) AND relative volume > trend RVOL threshold AND close < open))
+Exit: long, (high >= long take-profit AND long take-profit > close[1]) OR (low <= long take-profit AND long take-profit < close[1]) OR (low <= long stop-loss AND long stop-loss < close[1]) OR (high >= long stop-loss AND long stop-loss > close[1])
+Exit: short, (high >= short take-profit AND short take-profit > close[1]) OR (low <= short take-profit AND short take-profit < close[1]) OR (low <= short stop-loss AND short stop-loss < close[1]) OR (high >= short stop-loss AND short stop-loss > close[1])

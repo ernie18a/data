@@ -1,0 +1,8 @@
+Calculation: average entry price = (base order size + sum over filled safety orders of safety order size) / (base order size / entry price + sum over filled safety orders of safety order size / fill price)
+Long: position side is flat AND RSI(close, RSI length, T1, last completed bar) < RSI level AND (window filter disabled OR (time >= window start time AND time <= window end time))
+Long: position side is long AND filled safety orders = 0 AND close <= entry price * (1 - safety order 1 deviation / 100) AND (window filter disabled OR (time >= window start time AND time <= window end time))
+Long: position side is long AND filled safety orders = 1 AND close <= entry price * (1 - safety order 2 deviation / 100) AND (window filter disabled OR (time >= window start time AND time <= window end time))
+Long: position side is long AND filled safety orders = 2 AND close <= entry price * (1 - safety order 3 deviation / 100) AND (window filter disabled OR (time >= window start time AND time <= window end time))
+Long: position side is long AND filled safety orders = 3 AND close <= entry price * (1 - safety order 4 deviation / 100) AND (window filter disabled OR (time >= window start time AND time <= window end time))
+Long: position side is long AND filled safety orders = 4 AND close <= entry price * (1 - safety order 5 deviation / 100) AND (window filter disabled OR (time >= window start time AND time <= window end time))
+Exit: long, close >= average entry price * (1 + take-profit percent / 100) AND (window filter disabled OR (time >= window start time AND time <= window end time))

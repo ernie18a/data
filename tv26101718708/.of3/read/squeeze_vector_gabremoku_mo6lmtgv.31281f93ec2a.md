@@ -1,0 +1,12 @@
+Calculation: Squeeze = Keltner multiplier * MA(True range, ATR length, MA type) >= BB multiplier * StDev(close, BB length)
+Calculation: BarsSinceRelease = bars since last bar where Squeeze[1] AND NOT Squeeze (0 on that bar; infinity if none)
+Calculation: RelativeVolume = 1 if MA(volume, volume length, MA type) = 0, else volume / MA(volume, volume length, MA type)
+Calculation: PressureFlow = min(max(50 * WMA(((high > low) ? CLV(close, high, low) : 0) * RelativeVolume, pressure length), -100), 100)
+Calculation: LongCore = long side enabled AND close > open AND (close - open) / (high - low) >= min body ratio AND (close - low) / (high - low) >= bull close threshold AND high > high[1] AND ((band break enabled AND max(close, high) > BollingerUpper(close, BB length, BB multiplier, MA type)) OR (band break disabled AND close > BollingerBasis(close, BB length, MA type))) AND PressureFlow > min pressure AND (regime filter disabled OR close > EMA(close, regime length))
+Calculation: ShortCore = short side enabled AND close < open AND (open - close) / (high - low) >= min body ratio AND (close - low) / (high - low) <= bear close threshold AND low < low[1] AND ((band break enabled AND min(close, low) < BollingerLower(close, BB length, BB multiplier, MA type)) OR (band break disabled AND close < BollingerBasis(close, BB length, MA type))) AND PressureFlow < -min pressure AND (regime filter disabled OR close < EMA(close, regime length))
+Calculation: ExpansionOpen = BarsSinceRelease <= expansion window AND (BarsSinceRelease = 0 OR EntrySide[1] = 0)
+Calculation: EntrySide = +1 if ExpansionOpen AND LongCore; -1 if ExpansionOpen AND ShortCore; 0 if BarsSinceRelease = 0; otherwise EntrySide[1]
+Long: ExpansionOpen AND LongCore
+Long: EntrySide[1] = +1 AND BarsSinceRelease >= 1 AND BarsSinceRelease <= expansion window + follow extension AND close > BollingerBasis(close, BB length, MA type) AND PressureFlow > strong pressure AND high > high[1]
+Short: ExpansionOpen AND ShortCore
+Short: EntrySide[1] = -1 AND BarsSinceRelease >= 1 AND BarsSinceRelease <= expansion window + follow extension AND close < BollingerBasis(close, BB length, MA type) AND PressureFlow < -strong pressure AND low < low[1]

@@ -1,0 +1,11 @@
+Calculation: Composite MACD = average of MACD(close, fast length, slow length, T1, last completed bar), MACD(close, fast length, slow length, T2, last completed bar) and MACD(close, fast length, slow length, T3, last completed bar), where fast length < slow length and T1 < T2 < T3
+Calculation: Histogram = Composite MACD - MA(Composite MACD, signal length, signal type)
+Calculation: Smoothed Histogram = MA(Histogram, smoothing length, smoothing type)
+Calculation: PriorPivotLow(src, divergence lookback, pivot lookback) = src[k] for the smallest k with pivot lookback < k <= divergence lookback such that PivotLow(src, pivot lookback)[k - pivot lookback] is defined; undefined if no such k
+Calculation: PriorPivotHigh(src, divergence lookback, pivot lookback) = src[k] for the smallest k with pivot lookback < k <= divergence lookback such that PivotHigh(src, pivot lookback)[k - pivot lookback] is defined; undefined if no such k
+Long: PivotLow(Histogram, pivot lookback) is defined AND Low[pivot lookback] < PriorPivotLow(Low, divergence lookback, pivot lookback) AND Histogram[pivot lookback] > PriorPivotLow(Histogram, divergence lookback, pivot lookback) AND Histogram[pivot lookback] < 0
+Long: PivotLow(Histogram, pivot lookback) is defined AND Low[pivot lookback] > PriorPivotLow(Low, divergence lookback, pivot lookback) AND Histogram[pivot lookback] < PriorPivotLow(Histogram, divergence lookback, pivot lookback) AND Histogram[pivot lookback] < 0
+Long: Smoothed Histogram >= 0
+Short: PivotHigh(Histogram, pivot lookback) is defined AND High[pivot lookback] > PriorPivotHigh(High, divergence lookback, pivot lookback) AND Histogram[pivot lookback] < PriorPivotHigh(Histogram, divergence lookback, pivot lookback) AND Histogram[pivot lookback] > 0
+Short: PivotHigh(Histogram, pivot lookback) is defined AND High[pivot lookback] < PriorPivotHigh(High, divergence lookback, pivot lookback) AND Histogram[pivot lookback] > PriorPivotHigh(Histogram, divergence lookback, pivot lookback) AND Histogram[pivot lookback] > 0
+Short: Smoothed Histogram < 0

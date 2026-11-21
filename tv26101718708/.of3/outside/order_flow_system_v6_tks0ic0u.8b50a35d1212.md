@@ -1,0 +1,6 @@
+Calculation: Pivot low(x, P1) = x P1 bars ago, if it is the lowest x among the 2*P1+1 bars ending with the current bar; otherwise none
+Calculation: Pivot high(x, P1) = x P1 bars ago, if it is the highest x among the 2*P1+1 bars ending with the current bar; otherwise none
+Calculation: Last pivot low(x, P1, k) = the most recent defined Pivot low(x, P1) evaluated on any bar at or before k bars ago; otherwise none
+Calculation: Last pivot high(x, P1, k) = the most recent defined Pivot high(x, P1) evaluated on any bar at or before k bars ago; otherwise none
+Long: Pivot low(traded low, P1) is defined AND Pivot low(correlated low, P1) is defined AND Pivot low(traded low, P1) < Last pivot low(traded low, P1, 2*P1) AND Pivot low(correlated low, P1) > Last pivot low(correlated low, P1, 1)
+Short: Pivot high(traded high, P1) is defined AND Pivot high(correlated high, P1) is defined AND Pivot high(traded high, P1) > Last pivot high(traded high, P1, 2*P1) AND Pivot high(correlated high, P1) < Last pivot high(correlated high, P1, 1)

@@ -1,0 +1,4 @@
+Calculation: upper wick = forming T1 high - max(forming T1 open, forming T1 close), where T1 is the bar still forming and its values are read on chart bars
+Calculation: lower wick = min(forming T1 open, forming T1 close) - forming T1 low, where T1 is the bar still forming and its values are read on chart bars
+Long: forming T1 close >= forming T1 open AND (NOT upper-wick check OR upper wick <= wick tolerance) AND (NOT lower-wick check OR lower wick <= wick tolerance)
+Short: forming T1 close < forming T1 open AND (NOT upper-wick check OR upper wick <= wick tolerance) AND (NOT lower-wick check OR lower wick <= wick tolerance)

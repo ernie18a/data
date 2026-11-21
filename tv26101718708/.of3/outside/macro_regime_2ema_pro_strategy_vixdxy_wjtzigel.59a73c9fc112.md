@@ -1,0 +1,14 @@
+Calculation: distance(X, T) = (close - MA) / MA, with close and MA of X on the last completed bar of T, where MA is the moving average of X close with regime MA type and regime MA length, and X is the volatility index, US dollar index or USDT dominance
+Calculation: slope(X, T) = (MA - MA k bars earlier) / (MA k bars earlier), with MA as in distance(X, T) on the last completed bar of T and k = regime slope lookback
+Calculation: risk-on(X, T) = distance(X, T) < -regime distance band AND slope(X, T) < -regime slope band
+Calculation: risk-off(X, T) = distance(X, T) > regime distance band AND slope(X, T) > regime slope band
+Calculation: regime state(X) = if regime TF mode is main-only: Risk-On if risk-on(X, T1), Risk-Off if risk-off(X, T1), else Neutral; if confirm-only: same with T2; if main+confirm: Warning if (risk-on(X, T1) AND risk-off(X, T2)) OR (risk-off(X, T1) AND risk-on(X, T2)), else Risk-On if risk-on(X, T1), else Risk-Off if risk-off(X, T1), else Neutral; if strict: Warning if the same Warning condition, else Risk-On if risk-on(X, T1) AND risk-on(X, T2), else Risk-Off if risk-off(X, T1) AND risk-off(X, T2), else Neutral; for each X selected by regime source
+Calculation: long votes = number of selected X with regime state Risk-On
+Calculation: short votes = number of selected X with regime state Risk-Off
+Calculation: regime warning = some selected X has regime state Warning OR long votes = short votes
+Calculation: long gate = long votes >= ceil(number of selected X / 2) AND long votes > short votes AND (warning trades allowed OR NOT regime warning)
+Calculation: short gate = short votes >= ceil(number of selected X / 2) AND short votes > long votes AND (warning trades allowed OR NOT regime warning)
+Long: long trading enabled AND close > EMA(close, EMA-1 length) AND close > EMA(close, EMA-2 length) AND long gate AND (position is flat OR (position is short AND reversal allowed)) AND (current bar is closed OR confirmed-bar-only option is off) AND (entry-on-every-opportunity option is on OR NOT (close > EMA(close, EMA-1 length) AND close > EMA(close, EMA-2 length) AND long gate) on the previous bar)
+Short: short trading enabled AND close < EMA(close, EMA-1 length) AND close < EMA(close, EMA-2 length) AND short gate AND (position is flat OR (position is long AND reversal allowed)) AND (current bar is closed OR confirmed-bar-only option is off) AND (entry-on-every-opportunity option is on OR NOT (close < EMA(close, EMA-1 length) AND close < EMA(close, EMA-2 length) AND short gate) on the previous bar)
+Exit: long, opposite-regime exit option is on AND short gate AND (current bar is closed OR confirmed-bar-only option is off)
+Exit: short, opposite-regime exit option is on AND long gate AND (current bar is closed OR confirmed-bar-only option is off)

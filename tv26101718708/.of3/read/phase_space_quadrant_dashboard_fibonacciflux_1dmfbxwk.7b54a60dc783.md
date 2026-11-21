@@ -1,0 +1,15 @@
+Calculation: PhaseX(T) = (RSI(source, RSI length, T, last completed bar) - 50) / 50
+Calculation: PhaseY(T) = (SMA(Stochastic(close, high, low, stoch length), K smoothing length, T, last completed bar) - 50) / 50
+Calculation: PhaseAngle(T) = atan2(PhaseY(T), PhaseX(T)), undefined when PhaseX(T) and PhaseY(T) are both 0
+Calculation: PhaseTurn(T) = PhaseAngle(T) minus PhaseAngle(T) on the prior T bar, wrapped to (-pi, pi], where an undefined prior value is replaced by PhaseAngle(T)
+Calculation: Weight(T) = raw weight(T) / sum over T1 to T4 of raw weight(T), if that sum is greater than 0; otherwise fallback weight(T)
+Calculation: CentroidX = sum over T1 to T4 of Weight(T) * PhaseX(T)
+Calculation: CentroidY = sum over T1 to T4 of Weight(T) * PhaseY(T)
+Calculation: Spread = sqrt(sum over T1 to T4 of Weight(T) * ((PhaseX(T) - CentroidX)^2 + (PhaseY(T) - CentroidY)^2))
+Calculation: Cluster = clamp(1 - Spread / spread reference, 0, 1)
+Calculation: Magnitude = clamp(sqrt(CentroidX^2 + CentroidY^2), 0, 1)
+Calculation: Alignment = sum over T1 to T4 of Weight(T) * -sign(PhaseTurn(T))
+Calculation: BullScore = cube root(Cluster * max(Alignment, 0) * Magnitude)
+Calculation: BearScore = cube root(Cluster * max(-Alignment, 0) * Magnitude)
+Long: BullScore >= score threshold AND (BullScore[1] is undefined OR BullScore[1] < score threshold) AND (confirmed-bar-only is false OR current chart bar is closed)
+Short: BearScore >= score threshold AND (BearScore[1] is undefined OR BearScore[1] < score threshold) AND (confirmed-bar-only is false OR current chart bar is closed)

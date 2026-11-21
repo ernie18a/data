@@ -1,0 +1,11 @@
+Calculation: killzone active = (Asian start <= bar open time of day < Asian end) OR (London start <= bar open time of day < London end) OR (NY start <= bar open time of day < NY end) OR (lunch start <= bar open time of day < lunch end), with time of day in the killzone time zone
+Calculation: killzone entry = killzone active AND NOT killzone active[1]
+Calculation: stop distance = ATR(ATR lookback) * stop multiplier
+Calculation: swing high level = latest non-na Pivot High(high, swing lookback, swing lookback) over bars from the later of the latest killzone entry bar and the bar after the latest long entry bar through the current bar, else na
+Calculation: swing low level = latest non-na Pivot Low(low, swing lookback, swing lookback) over bars from the later of the latest killzone entry bar and the bar after the latest short entry bar through the current bar, else na
+Calculation: displacement = abs(close - open) > SMA(abs(close[1] - open[1]), body lookback) * displacement multiplier AND SMA(abs(close[1] - open[1]), body lookback) > 0
+Calculation: bars since last entry = bars since the latest bar with a long or short entry decision
+Long: position side is flat AND bars since last entry > entry cooldown AND killzone active AND close > swing high level AND displacement AND close(T1, last completed bar) > EMA(close(T1, last completed bar) on chart bars, trend lookback) AND stop distance / minimum price increment >= minimum stop distance
+Short: position side is flat AND bars since last entry > entry cooldown AND killzone active AND close < swing low level AND displacement AND close(T1, last completed bar) < EMA(close(T1, last completed bar) on chart bars, trend lookback) AND stop distance / minimum price increment >= minimum stop distance
+Exit: long, low <= entry price - stop distance at entry bar OR high >= entry price + stop distance at entry bar * reward-to-risk ratio
+Exit: short, high >= entry price + stop distance at entry bar OR low <= entry price - stop distance at entry bar * reward-to-risk ratio

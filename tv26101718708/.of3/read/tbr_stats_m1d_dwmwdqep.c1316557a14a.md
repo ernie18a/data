@@ -1,0 +1,4 @@
+Calculation: WindowOpen = open of the first bar in the window
+Calculation: Trigger = trigger multiplier × STDEV(open-to-close change of the last standard deviation lookback completed windows, each measured on T1 bars, or on chart bars when the chart is at or above T1), read by chart bars from the last completed T1 bar; undefined until at least minimum window count windows have completed
+Long: bar datetime is within the window (New York time) AND close > WindowOpen + Trigger AND no earlier bar of the same window closed above WindowOpen + Trigger or below WindowOpen - Trigger
+Short: bar datetime is within the window (New York time) AND close < WindowOpen - Trigger AND no earlier bar of the same window closed above WindowOpen + Trigger or below WindowOpen - Trigger

@@ -1,0 +1,37 @@
+Calculation: UpperBand = VWAP(source, reset period) + band multiplier * STDEV(source, STDEV lookback)
+Calculation: LowerBand = VWAP(source, reset period) - band multiplier * STDEV(source, STDEV lookback)
+Calculation: DailyReset = (the T1 bar containing the bar differs from the T1 bar containing the previous bar) OR (time of day of bar close >= daily reset time AND time of day of previous bar close < daily reset time)
+Calculation: RealizedPnL = (DailyReset ? 0 : RealizedPnL[1]) + sum of profits of trades closed on this bar
+Calculation: DailyPnL = RealizedPnL + (position size != 0 ? (close - entry price) * position size * point value : 0)
+Calculation: DailyLimitHit = (daily limits enabled OR max intraday risk > 0) AND (DailyPnL >= daily take-profit value OR DailyPnL <= -MAX(daily stop-loss value, max intraday risk))
+Calculation: LimitReached = DailyLimitHit OR (LimitReached[1] AND NOT DailyReset)
+Calculation: DailyEntries = (DailyReset ? 0 : DailyEntries[1]) + number of entries executed on this bar
+Calculation: EnabledConfirmations = (RSI confirmation enabled ? 1 : 0) + (EMA confirmation enabled ? 1 : 0) + (MACD confirmation enabled ? 1 : 0)
+Calculation: LongConfirmations = count of enabled confirmations whose long test passes, where RSI test is RSI(close, RSI length) < RSI long threshold, EMA test is close > EMA(close, EMA length), MACD test is MACD histogram(close, MACD fast length, MACD slow length, MACD signal length) > 0
+Calculation: ShortConfirmations = count of enabled confirmations whose short test passes, where RSI test is RSI(close, RSI length) > RSI short threshold, EMA test is close < EMA(close, EMA length), MACD test is MACD histogram(close, MACD fast length, MACD slow length, MACD signal length) < 0
+Calculation: HighestHighSinceEntry = highest high from the entry bar through the current bar
+Calculation: LowestLowSinceEntry = lowest low from the entry bar through the current bar
+Long: close crosses above VWAP(source, reset period) AND price/VWAP/band entry enabled AND bar datetime is within entry session AND NOT LimitReached AND (daily trade limit disabled OR DailyEntries < max daily trades) AND bar day of week is enabled for trading AND long entries enabled AND (((confirmations combined by AND) AND LongConfirmations = EnabledConfirmations) OR ((confirmations combined by OR) AND (EnabledConfirmations = 0 OR LongConfirmations > 0))) AND position size >= 0 AND position size < max pyramiding entries
+Long: close crosses above UpperBand AND price/VWAP/band entry enabled AND bar datetime is within entry session AND NOT LimitReached AND (daily trade limit disabled OR DailyEntries < max daily trades) AND bar day of week is enabled for trading AND long entries enabled AND (((confirmations combined by AND) AND LongConfirmations = EnabledConfirmations) OR ((confirmations combined by OR) AND (EnabledConfirmations = 0 OR LongConfirmations > 0))) AND position size >= 0 AND position size < max pyramiding entries
+Long: close crosses below UpperBand AND price/VWAP/band entry enabled AND bar datetime is within entry session AND NOT LimitReached AND (daily trade limit disabled OR DailyEntries < max daily trades) AND bar day of week is enabled for trading AND long entries enabled AND (((confirmations combined by AND) AND LongConfirmations = EnabledConfirmations) OR ((confirmations combined by OR) AND (EnabledConfirmations = 0 OR LongConfirmations > 0))) AND position size >= 0 AND position size < max pyramiding entries
+Short: close crosses below VWAP(source, reset period) AND price/VWAP/band entry enabled AND bar datetime is within entry session AND NOT LimitReached AND (daily trade limit disabled OR DailyEntries < max daily trades) AND bar day of week is enabled for trading AND short entries enabled AND (((confirmations combined by AND) AND ShortConfirmations = EnabledConfirmations) OR ((confirmations combined by OR) AND (EnabledConfirmations = 0 OR ShortConfirmations > 0))) AND position size <= 0 AND absolute position size < max pyramiding entries
+Short: close crosses below LowerBand AND price/VWAP/band entry enabled AND bar datetime is within entry session AND NOT LimitReached AND (daily trade limit disabled OR DailyEntries < max daily trades) AND bar day of week is enabled for trading AND short entries enabled AND (((confirmations combined by AND) AND ShortConfirmations = EnabledConfirmations) OR ((confirmations combined by OR) AND (EnabledConfirmations = 0 OR ShortConfirmations > 0))) AND position size <= 0 AND absolute position size < max pyramiding entries
+Short: close crosses above LowerBand AND price/VWAP/band entry enabled AND bar datetime is within entry session AND NOT LimitReached AND (daily trade limit disabled OR DailyEntries < max daily trades) AND bar day of week is enabled for trading AND short entries enabled AND (((confirmations combined by AND) AND ShortConfirmations = EnabledConfirmations) OR ((confirmations combined by OR) AND (EnabledConfirmations = 0 OR ShortConfirmations > 0))) AND position size <= 0 AND absolute position size < max pyramiding entries
+Exit: long, exit strategy enabled AND (high >= entry price + take-profit ticks * tick size OR low <= entry price - stop-loss ticks * tick size)
+Exit: long, exit strategy enabled AND (high >= entry price + take-profit ticks * tick size OR low <= entry price - stop-loss ticks * tick size OR (HighestHighSinceEntry >= entry price + trailing trigger ticks * tick size AND low <= HighestHighSinceEntry - trailing distance ticks * tick size))
+Exit: long, exit strategy enabled AND (high >= entry price + ATR(ATR length) * ATR multiplier OR low <= entry price - ATR(ATR length) * ATR multiplier)
+Exit: long, exit strategy enabled AND (high >= MIN(entry price + ATR(ATR length) * ATR multiplier, entry price * (1 + cap percentage / 100)) OR low <= MAX(entry price - ATR(ATR length) * ATR multiplier, entry price * (1 - cap percentage / 100)))
+Exit: long, exit strategy enabled AND close crosses below VWAP(source, reset period)
+Exit: long, exit strategy enabled AND close crosses below UpperBand
+Exit: long, exit strategy enabled AND close crosses above LowerBand
+Exit: short, exit strategy enabled AND (low <= entry price - take-profit ticks * tick size OR high >= entry price + stop-loss ticks * tick size)
+Exit: short, exit strategy enabled AND (low <= entry price - take-profit ticks * tick size OR high >= entry price + stop-loss ticks * tick size OR (LowestLowSinceEntry <= entry price - trailing trigger ticks * tick size AND high >= LowestLowSinceEntry + trailing distance ticks * tick size))
+Exit: short, exit strategy enabled AND (low <= entry price - ATR(ATR length) * ATR multiplier OR high >= entry price + ATR(ATR length) * ATR multiplier)
+Exit: short, exit strategy enabled AND (low <= MAX(entry price - ATR(ATR length) * ATR multiplier, entry price * (1 - cap percentage / 100)) OR high >= MIN(entry price + ATR(ATR length) * ATR multiplier, entry price * (1 + cap percentage / 100)))
+Exit: short, exit strategy enabled AND close crosses above VWAP(source, reset period)
+Exit: short, exit strategy enabled AND close crosses below UpperBand
+Exit: short, exit strategy enabled AND close crosses above LowerBand
+Exit: long, DailyLimitHit
+Exit: short, DailyLimitHit
+Exit: long, close-all enabled AND bar close time is at close-all time
+Exit: short, close-all enabled AND bar close time is at close-all time

@@ -1,0 +1,15 @@
+Calculation: DayPct(x) = ROC(close of x, 1) computed on T1 bars using the T1 bar still forming, taken onto chart bars
+Calculation: CountUpA = count(x in GRP_A: DayPct(x) > 0)
+Calculation: ScoreVIX = if VOL < vix_low and DayPct(IDX_VOL) < -vix_band then vix_calm_falling_score, else if VOL < vix_low then vix_calm_score, else if VOL < vix_mid and DayPct(IDX_VOL) < -vix_band then vix_mid_falling_score, else if VOL < vix_mid and DayPct(IDX_VOL) > vix_band then vix_mid_rising_score, else if VOL < vix_high and DayPct(IDX_VOL) > vix_band then vix_high_rising_score, else if VOL >= vix_high then vix_panic_score, else 0; where VOL = close of IDX_VOL on the T1 bar still forming, taken onto chart bars
+Calculation: ScoreNQ = clip(CountUpA / count(GRP_A) * mag_scale - mag_offset + clip(sox_gain * (DayPct(IDX_SEMI) - DayPct(IDX_TECH)), -sox_clip, sox_clip) + ScoreVIX + rot_step * (count(x in {SEC_TECH, SEC_COMM, SEC_CDISC}: DayPct(x) > DayPct(IDX_BROAD) - rot_on_tol) - count(x in {SEC_HEALTH, SEC_UTIL, SEC_STAPLES}: DayPct(x) > DayPct(IDX_BROAD) + rot_def_tol)) + breadth_score, -score_clip, score_clip); where NDXPct = (CountUpA + count(x in GRP_B: DayPct(x) > 0)) / (count(GRP_A) + count(GRP_B)) * 100 and breadth_score = ndx_v1 if NDXPct >= ndx_t1, else ndx_v2 if NDXPct >= ndx_t2, else 0 if NDXPct >= ndx_t3, else ndx_v4 if NDXPct >= ndx_t4, else ndx_v5
+Calculation: ScoreES = clip(sum(x in {SEC_TECH, SEC_FIN, SEC_CDISC, SEC_COMM, SEC_IND, SEC_HEALTH, SEC_STAPLES, SEC_ENERGY, SEC_UTIL, SEC_MAT, SEC_RE}: side(x) * sgn(d(x)) * min(abs(d(x)) / es_full, es_mag_cap) * w(x) * es_scale) + eq_term + ScoreVIX + fin_term, -score_clip, score_clip); where d(x) = DayPct(x) - DayPct(IDX_BROAD), side(x) = -1 for SEC_HEALTH, SEC_STAPLES, SEC_UTIL and +1 otherwise, sgn(d) = +1 if d > 0 else -1, w(SEC_TECH) = w_tech, w(SEC_FIN) = w_fin, w(SEC_CDISC) = w_cdisc, w(SEC_COMM) = w_comm, w(SEC_IND) = w_ind, w(SEC_HEALTH) = w_health, w(SEC_STAPLES) = w_staples, w(SEC_ENERGY) = w_energy, w(SEC_UTIL) = w_util, w(SEC_MAT) = w_mat, w(SEC_RE) = w_re, eq_term = eq_val if DayPct(IDX_EQW) - DayPct(IDX_BROAD) >= eq_band, else -eq_val if DayPct(IDX_EQW) - DayPct(IDX_BROAD) <= -eq_band, else 0, fin_term = fin_high_score if DayPct(SEC_FIN) - DayPct(IDX_BROAD) >= fin_high, else fin_low_score if DayPct(SEC_FIN) - DayPct(IDX_BROAD) <= fin_low, else 0
+Long: ScoreNQ crosses above nq_very_strong
+Long: ScoreNQ crosses above nq_improving
+Long: ScoreNQ crosses below nq_collapsing
+Long: ScoreES crosses above es_improving
+Long: CountUpA = count(GRP_A)
+Short: ScoreNQ crosses below nq_fading
+Short: ScoreES crosses below es_fading
+Short: CountUpA <= breadth_narrow
+Short: DayPct(SEC_FIN) - DayPct(IDX_BROAD) <= fin_stress
+Short: mean(x in {SEC_HEALTH, SEC_UTIL, SEC_STAPLES}: DayPct(x)) - mean(x in {SEC_TECH, SEC_CDISC, SEC_FIN}: DayPct(x)) >= def_rotation
