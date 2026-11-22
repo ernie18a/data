@@ -1,0 +1,27 @@
+Calculation: BullTrend = EMA(close, shortest EMA lookback) > EMA(close, middle EMA lookback) AND EMA(close, middle EMA lookback) > EMA(close, longest EMA lookback) AND close > EMA(close, middle EMA lookback)
+Calculation: BearTrend = EMA(close, shortest EMA lookback) < EMA(close, middle EMA lookback) AND EMA(close, middle EMA lookback) < EMA(close, longest EMA lookback) AND close < EMA(close, middle EMA lookback)
+Calculation: Regime = BullTrend ? 1 : BearTrend ? -1 : 0
+Calculation: BarRange = max(high - low, minimum price increment)
+Calculation: PressureIndex = 100 * EMA((close - open) / BarRange * volume, pressure lookback) / EMA(abs((close - open) / BarRange * volume), pressure lookback)
+Calculation: RelativeVolume = volume / SMA(volume, volume baseline lookback)
+Calculation: UpperValueBand = VWMA(hlc3, auction lookback) + STDEV(hlc3, auction lookback) * value deviation multiplier
+Calculation: LowerValueBand = VWMA(hlc3, auction lookback) - STDEV(hlc3, auction lookback) * value deviation multiplier
+Calculation: DiscountZone = close < LowerValueBand AND close > low + BarRange * edge fraction
+Calculation: PremiumZone = close > UpperValueBand AND close < high - BarRange * edge fraction
+Calculation: RecentSwingHigh = most recent defined value of pivot high(high, pivot lookback, pivot lookback)
+Calculation: RecentSwingLow = most recent defined value of pivot low(low, pivot lookback, pivot lookback)
+Calculation: ImpulseBar = abs(close - open) > ATR(ATR lookback) * displacement ATR multiplier AND RelativeVolume > displacement volume threshold
+Calculation: StructureDirection = (close > RecentSwingHigh AND close[1] <= RecentSwingHigh AND ImpulseBar) ? 1 : (close < RecentSwingLow AND close[1] >= RecentSwingLow AND ImpulseBar) ? -1 : StructureDirection[1]
+Calculation: SessionPass = session filter off OR datetime within trading session
+Calculation: LongHtfPass = htf filter off OR close > EMA(close, HTF lookback, T1, last completed bar)
+Calculation: ShortHtfPass = htf filter off OR close < EMA(close, HTF lookback, T1, last completed bar)
+Calculation: Persistence(s, fallback) = SMA((Regime[1] == s) AND (Regime == s), transition memory lookback) / SMA(Regime[1] == s, transition memory lookback), or fallback if the denominator is zero
+Calculation: ContinuationPass = 100 * (Regime == 1 ? Persistence(1, bull persistence fallback) : Regime == -1 ? Persistence(-1, bear persistence fallback) : Persistence(0, neutral persistence fallback)) >= minimum continuation OR PercentRank(ATR(ATR lookback) / close * 100, regime memory lookback) > expansion percentile threshold
+Calculation: BullScore = clamp((BullTrend ? trend weight : 0) + ((MACD histogram(close, MACD shorter lookback, MACD longer lookback, MACD signal lookback) > 0 AND RSI(close, RSI lookback) > bull RSI threshold AND +DI(DI lookback) > -DI(DI lookback)) ? momentum weight : 0) + ((close > VWAP(hlc3) AND VWAP(hlc3) > VWAP(hlc3)[1]) ? VWAP weight : 0) + ((PressureIndex > pressure threshold AND RelativeVolume > pressure volume threshold) ? pressure weight : 0) + ((low < low[1] AND close > open AND PressureIndex > PressureIndex[1] AND RelativeVolume > absorption volume threshold) ? absorption weight : 0) + ((StructureDirection == 1 OR (low < RecentSwingLow AND close > RecentSwingLow) OR (low > high[2] AND close > open)) ? structure weight : 0) + ((DiscountZone OR (close > LowerValueBand AND close[1] <= LowerValueBand[1])) ? auction weight : 0) + (LongHtfPass ? HTF weight : 0) + (ContinuationPass ? continuation weight : 0) + clamp(ADX(ADX smoothing lookback) / ADX divisor, 0, ADX cap), 0, 100)
+Calculation: BearScore = clamp((BearTrend ? trend weight : 0) + ((MACD histogram(close, MACD shorter lookback, MACD longer lookback, MACD signal lookback) < 0 AND RSI(close, RSI lookback) < bear RSI threshold AND -DI(DI lookback) > +DI(DI lookback)) ? momentum weight : 0) + ((close < VWAP(hlc3) AND VWAP(hlc3) < VWAP(hlc3)[1]) ? VWAP weight : 0) + ((PressureIndex < -pressure threshold AND RelativeVolume > pressure volume threshold) ? pressure weight : 0) + ((high > high[1] AND close < open AND PressureIndex < PressureIndex[1] AND RelativeVolume > absorption volume threshold) ? absorption weight : 0) + ((StructureDirection == -1 OR (high > RecentSwingHigh AND close < RecentSwingHigh) OR (high < low[2] AND close < open)) ? structure weight : 0) + ((PremiumZone OR (close < UpperValueBand AND close[1] >= UpperValueBand[1])) ? auction weight : 0) + (ShortHtfPass ? HTF weight : 0) + (ContinuationPass ? continuation weight : 0) + clamp(ADX(ADX smoothing lookback) / ADX divisor, 0, ADX cap), 0, 100)
+Long: position side is flat AND SessionPass AND BullScore >= minimum execution score AND BullScore > BearScore + entry score margin AND LongHtfPass AND NOT PremiumZone
+Short: position side is flat AND SessionPass AND BearScore >= minimum execution score AND BearScore > BullScore + entry score margin AND ShortHtfPass AND NOT DiscountZone
+Exit: long, (regime exit enabled AND BearTrend) OR (pressure exit enabled AND PressureIndex < -pressure exit threshold) OR BearScore > BullScore + exit score margin
+Exit: short, (regime exit enabled AND BullTrend) OR (pressure exit enabled AND PressureIndex > pressure exit threshold) OR BullScore > BearScore + exit score margin
+Long: BullScore > BearScore
+Short: BearScore > BullScore

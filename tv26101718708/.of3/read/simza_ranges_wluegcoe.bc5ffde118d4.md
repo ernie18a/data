@@ -1,0 +1,15 @@
+Calculation: Base = Price(T1 bar still forming, price type) on each chart bar
+Calculation: Upper(p) = Base * (1 + p / 100)
+Calculation: Lower(p) = Base * (1 - p / 100)
+Long: close > Upper(P1) AND close[1] <= Upper(P1)
+Long: close > Upper(P2) AND close[1] <= Upper(P2)
+Long: close > Upper(P3) AND close[1] <= Upper(P3)
+Long: close > Upper(P4) AND close[1] <= Upper(P4)
+Long: close > Upper(P5) AND close[1] <= Upper(P5)
+Long: close > Base AND close[1] <= Base
+Short: close < Lower(P1) AND close[1] >= Lower(P1)
+Short: close < Lower(P2) AND close[1] >= Lower(P2)
+Short: close < Lower(P3) AND close[1] >= Lower(P3)
+Short: close < Lower(P4) AND close[1] >= Lower(P4)
+Short: close < Lower(P5) AND close[1] >= Lower(P5)
+Short: close < Base AND close[1] >= Base

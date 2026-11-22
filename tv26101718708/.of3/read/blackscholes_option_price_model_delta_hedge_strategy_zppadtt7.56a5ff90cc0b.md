@@ -1,0 +1,18 @@
+Calculation: price = bar price (open, high, low, close, or averages of these) selected by price source parameter
+Calculation: days = max(round((expiration time - bar datetime) / one day), 1)
+Calculation: log return = ln(price[1] / price[2])
+Calculation: lookback = max(round(lookback parameter / chart timeframe multiplier), minimum lookback parameter)
+Calculation: volatility = if volatility mode is implied: implied volatility index * (STDEV(price, lookback) / price) / (STDEV(benchmark asset price, lookback) / benchmark asset price) / 100; if volatility mode is custom: custom volatility parameter / 100; otherwise: (exp(days * SMA(log return, days) + interval width parameter * STDEV(log return, days) * sqrt(days)) - exp(days * SMA(log return, days) - interval width parameter * STDEV(log return, days) * sqrt(days))) / 2 / sqrt(days / 365)
+Calculation: Black-Scholes d1 = (ln(price / strike price) + (risk-free rate + volatility^2 / 2) * days / 365) / (volatility * sqrt(days / 365))
+Calculation: option delta = if option type is call: min(max(exp(-risk-free rate * days / 365) * normal CDF(Black-Scholes d1), 0), 1); otherwise: max(min(-(1 - exp(-risk-free rate * days / 365) * normal CDF(Black-Scholes d1)), 0), -1)
+Calculation: rebalance amount = option delta * position size parameter - current position
+Long: hedge model is simple AND close crosses above strike price AND (option type is call AND side parameter is long OR option type is put AND side parameter is short) AND strike price != 0 AND bar datetime > start time AND bar datetime < expiration time AND minute of bar datetime mod hedge interval = 0
+Short: hedge model is simple AND close crosses below strike price AND (option type is call AND side parameter is short OR option type is put AND side parameter is long) AND strike price != 0 AND bar datetime > start time AND bar datetime < expiration time AND minute of bar datetime mod hedge interval = 0
+Exit: long, hedge model is simple AND close crosses below strike price AND (option type is call AND side parameter is long OR option type is put AND side parameter is short) AND strike price != 0 AND bar datetime > start time AND bar datetime < expiration time AND minute of bar datetime mod hedge interval = 0
+Exit: short, hedge model is simple AND close crosses above strike price AND (option type is call AND side parameter is short OR option type is put AND side parameter is long) AND strike price != 0 AND bar datetime > start time AND bar datetime < expiration time AND minute of bar datetime mod hedge interval = 0
+Long: hedge model is synthetic option AND side parameter is long AND rebalance amount > 0 AND |rebalance amount| <= position size parameter AND strike price != 0 AND bar datetime > start time AND bar datetime < expiration time AND minute of bar datetime mod hedge interval = 0
+Long: hedge model is synthetic option AND side parameter is short AND rebalance amount < 0 AND |rebalance amount| <= position size parameter AND strike price != 0 AND bar datetime > start time AND bar datetime < expiration time AND minute of bar datetime mod hedge interval = 0
+Short: hedge model is synthetic option AND side parameter is long AND rebalance amount < 0 AND |rebalance amount| <= position size parameter AND strike price != 0 AND bar datetime > start time AND bar datetime < expiration time AND minute of bar datetime mod hedge interval = 0
+Short: hedge model is synthetic option AND side parameter is short AND rebalance amount > 0 AND |rebalance amount| <= position size parameter AND strike price != 0 AND bar datetime > start time AND bar datetime < expiration time AND minute of bar datetime mod hedge interval = 0
+Exit: long, bar datetime > expiration time
+Exit: short, bar datetime > expiration time

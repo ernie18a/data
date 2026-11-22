@@ -1,0 +1,10 @@
+Calculation: SessionHigh(S) = highest(high, bars with time within the most recent session S)
+Calculation: SessionLow(S) = lowest(low, bars with time within the most recent session S)
+Long: high > SessionHigh(S1) AND highest(high, bars since session S1 began, before this bar) <= SessionHigh(S1) AND no bar since session S1 began, before this bar, has time within C
+Long: high > SessionHigh(S2) AND highest(high, bars since session S2 began, before this bar) <= SessionHigh(S2) AND no bar since session S2 began, before this bar, has time within C
+Long: high > SessionHigh(S3) AND highest(high, bars since session S3 began, before this bar) <= SessionHigh(S3) AND no bar since session S3 began, before this bar, has time within C
+Long: high > SessionHigh(S4) AND highest(high, bars since session S4 began, before this bar) <= SessionHigh(S4) AND no bar since session S4 began, before this bar, has time within C
+Short: low < SessionLow(S1) AND lowest(low, bars since session S1 began, before this bar) >= SessionLow(S1) AND no bar since session S1 began, before this bar, has time within C
+Short: low < SessionLow(S2) AND lowest(low, bars since session S2 began, before this bar) >= SessionLow(S2) AND no bar since session S2 began, before this bar, has time within C
+Short: low < SessionLow(S3) AND lowest(low, bars since session S3 began, before this bar) >= SessionLow(S3) AND no bar since session S3 began, before this bar, has time within C
+Short: low < SessionLow(S4) AND lowest(low, bars since session S4 began, before this bar) >= SessionLow(S4) AND no bar since session S4 began, before this bar, has time within C

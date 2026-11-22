@@ -1,0 +1,31 @@
+Calculation: InBacktestWindow = datetime >= January 1 of (current year - backtest years)
+Calculation: PriorHighT1 = high of the last completed T1 bar, computed on T1 bars and taken on chart bars
+Calculation: PriorLowT1 = low of the last completed T1 bar, computed on T1 bars and taken on chart bars
+Calculation: SuperTrendDir = direction of Supertrend(supertrend factor, supertrend length), either up or down
+Calculation: PriceChange = abs(close - close[1])
+Calculation: BreakoutState = 1 if close > close[1] AND ((SuperTrendDir = up AND PriceChange > ATR(ATR length) * trend price multiplier AND volume > SMA(volume, volume MA length) * (1 + trend volume markup / 100)) OR (SuperTrendDir = down AND PriceChange > ATR(ATR length) * reverse price multiplier AND volume > SMA(volume, volume MA length) * (1 + reverse volume markup / 100)) OR volume > SMA(volume, volume MA length) * high volume multiplier OR PriceChange > ATR(ATR length) * high price multiplier); BreakoutState = -1 if close < close[1] AND ((SuperTrendDir = down AND PriceChange > ATR(ATR length) * trend price multiplier AND volume > SMA(volume, volume MA length) * (1 + trend volume markup / 100)) OR (SuperTrendDir = up AND PriceChange > ATR(ATR length) * reverse price multiplier AND volume > SMA(volume, volume MA length) * (1 + reverse volume markup / 100)) OR volume > SMA(volume, volume MA length) * high volume multiplier OR PriceChange > ATR(ATR length) * high price multiplier); otherwise 0
+Calculation: UpperTarget = (BreakoutState = 1) ? high + ((SuperTrendDir = up ? trend value markup : reverse value markup) / 100) * TrueRange : UpperTarget[1]
+Calculation: LowerTarget = (BreakoutState = -1) ? low - ((SuperTrendDir = down ? trend value markup : reverse value markup) / 100) * TrueRange : LowerTarget[1]
+Calculation: UpperStop = (BreakoutState = 1) ? low - ATR(ATR length) * breakout stop factor : UpperStop[1]
+Calculation: LowerStop = (BreakoutState = -1) ? high + ATR(ATR length) * breakout stop factor : LowerStop[1]
+Calculation: BreakoutPrice = (SuperTrendDir = up) ? high : low
+Calculation: LongExitPrice = (SuperTrendDir = up) ? close : low
+Calculation: ShortExitPrice = (SuperTrendDir = down) ? close : high
+Calculation: BuyLevel = if (BreakoutState > 0 OR position is long): ((close - stop multiplier * ATR(ATR length)) < BuyLevel[1] OR close < SellLevel[1]) ? BuyLevel[1] : (close - stop multiplier * ATR(ATR length)); if (BreakoutState < 0 OR position is short): ((close - compound multiplier * ATR(ATR length)) > BuyLevel[1] OR close > BuyLevel[1]) ? BuyLevel[1] : (close - compound multiplier * ATR(ATR length)); otherwise close - stop multiplier * ATR(ATR length)
+Calculation: SellLevel = if (BreakoutState > 0 OR position is long): ((close + compound multiplier * ATR(ATR length)) < SellLevel[1] OR close < SellLevel[1]) ? SellLevel[1] : (close + compound multiplier * ATR(ATR length)); if (BreakoutState < 0 OR position is short): ((close + stop multiplier * ATR(ATR length)) > SellLevel[1] OR close > BuyLevel[1]) ? SellLevel[1] : (close + stop multiplier * ATR(ATR length)); otherwise close + stop multiplier * ATR(ATR length)
+Calculation: CompoundGate = (position is long AND close > SellLevel) OR (position is short AND close < BuyLevel) OR position is flat
+Calculation: MaCenter = SMA(OHLC4, MA length)
+Calculation: MaBand = MA band multiplier * ATR(MA ATR length)
+Calculation: MaLongStop = (MaCenter > MaLongStop[1]) ? max(MaCenter - MaBand, MaLongStop[1]) : MaCenter - MaBand
+Calculation: MaShortStop = (MaCenter < MaShortStop[1]) ? min(MaCenter + MaBand, MaShortStop[1]) : MaCenter + MaBand
+Calculation: MaDir = up if (MaDir[1] = down AND MaCenter > MaShortStop[1]); down if (MaDir[1] = up AND MaCenter < MaLongStop[1]); otherwise MaDir[1]
+Calculation: AlignmentScore = 1 if close > SMA(close, alignment MA length 1) AND SMA(close, alignment MA length 1) > SMA(close, alignment MA length 2) AND ... AND SMA(close, alignment MA length 6) > SMA(close, alignment MA length 7); -1 if close < SMA(close, alignment MA length 1) AND SMA(close, alignment MA length 1) < SMA(close, alignment MA length 2) AND ... AND SMA(close, alignment MA length 6) < SMA(close, alignment MA length 7); otherwise high partial weight if U > high partial threshold, -low partial weight if U < low partial threshold, mid partial weight if U > mid partial threshold, else -mid partial weight; where alignment MA lengths increase with their index and U is the number of true comparisons among close > SMA(close, alignment MA length 1) and SMA(close, alignment MA length k) > SMA(close, alignment MA length k+1) for k = 1 to 6
+Calculation: AlignmentSum = SUM(AlignmentScore, lookback)
+Long: ((BreakoutPrice crosses above UpperTarget[1] AND close > LowerTarget[1]) OR BreakoutPrice crosses above LowerStop[1] OR (BreakoutState = 1 AND BreakoutPrice > UpperTarget[1])) AND (PriorHighT1 > max(PriorHighT1[yearly lag], PriorHighT1[2 * yearly lag]) OR close > max(PriorHighT1, min(PriorHighT1[yearly lag], PriorHighT1[2 * yearly lag]))) AND BreakoutState != -1 AND InBacktestWindow AND CompoundGate AND Highest(high, short high-low period) = Highest(high, long high-low period) AND AlignmentSum > alignment threshold AND MaDir = up AND PercentRank(OHLC4, lookback) > upper percentile threshold
+Short: ((BreakoutPrice crosses below LowerTarget[1] AND close < UpperTarget[1]) OR BreakoutPrice crosses below UpperStop[1] OR (BreakoutState = -1 AND BreakoutPrice < LowerTarget[1])) AND (PriorLowT1 < min(PriorLowT1[yearly lag], PriorLowT1[2 * yearly lag]) OR close < min(PriorLowT1, max(PriorLowT1[yearly lag], PriorLowT1[2 * yearly lag]))) AND BreakoutState != 1 AND InBacktestWindow AND CompoundGate AND Lowest(low, short high-low period) = Lowest(low, long high-low period) AND AlignmentSum < -alignment threshold AND MaDir = down AND PercentRank(OHLC4, lookback) < lower percentile threshold
+Long: BreakoutState = 1
+Short: BreakoutState = -1
+Exit: long, (LongExitPrice crosses below LowerTarget[1] OR LongExitPrice crosses below UpperStop[1]) AND BreakoutState != 1 AND InBacktestWindow
+Exit: short, (ShortExitPrice crosses above UpperTarget[1] OR ShortExitPrice crosses above LowerStop[1]) AND BreakoutState != -1 AND InBacktestWindow
+Exit: long, low <= BuyLevel[1]
+Exit: short, high >= SellLevel[1]

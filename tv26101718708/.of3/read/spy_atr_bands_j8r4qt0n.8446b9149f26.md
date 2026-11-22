@@ -1,0 +1,7 @@
+Calculation: LowerBand(T, f) = RMA(high, MA length of T) − ATR(ATR length of T) × main lower multiplier of T × f, computed on T bars at the last completed T bar and taken on chart bars; f = 1 for the main band, f = narrow factor (< 1) for the narrow band, f = wide factor (> 1) for the wide band
+Calculation: LowerDepth(T) = max(LowerDepth(T)[1], level) if high >= LowerBand(T, wide factor) AND low <= LowerBand(T, narrow factor), else 0; level = 3 if high >= LowerBand(T, narrow factor), else 2 if high >= LowerBand(T, 1), else 1; computed on chart bars
+Calculation: WEMA = EMA(close, trend lookback, T1, last completed bar) if the chart timeframe is T1 or higher, else EMA(close, intraday lookback, T3, last completed bar)
+Long: LowerDepth(T1) > LowerDepth(T1)[1] OR LowerDepth(T2) > LowerDepth(T2)[1] OR LowerDepth(T3) > LowerDepth(T3)[1]
+Long: (LowerDepth(T1) > LowerDepth(T1)[1] OR LowerDepth(T2) > LowerDepth(T2)[1] OR LowerDepth(T3) > LowerDepth(T3)[1]) AND close > WEMA AND close < highest(high, all bars so far) × (1 − pullback threshold)
+Long: T1 close[1] >= EMA(T1 close, trend lookback)[1], both taken at the last completed T1 bar
+Short: T1 close[1] < EMA(T1 close, trend lookback)[1], both taken at the last completed T1 bar

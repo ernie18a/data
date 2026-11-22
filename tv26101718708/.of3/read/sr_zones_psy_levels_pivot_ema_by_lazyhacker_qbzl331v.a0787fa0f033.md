@@ -1,0 +1,4 @@
+Long: close > EMA(close, shorter T1 lookback, T1, last completed bar) AND close > EMA(close, longer T1 lookback, T1, last completed bar)
+Long: EMA(close, shorter lookback) > EMA(close, shorter lookback)[1] AND EMA(close, longer lookback) > EMA(close, longer lookback)[1] AND close > EMA(close, shorter T1 lookback, T1, last completed bar) AND close > EMA(close, longer T1 lookback, T1, last completed bar)
+Short: close < EMA(close, shorter T1 lookback, T1, last completed bar) AND close < EMA(close, longer T1 lookback, T1, last completed bar)
+Short: EMA(close, shorter lookback) < EMA(close, shorter lookback)[1] AND EMA(close, longer lookback) < EMA(close, longer lookback)[1] AND close < EMA(close, shorter T1 lookback, T1, last completed bar) AND close < EMA(close, longer T1 lookback, T1, last completed bar)

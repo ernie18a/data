@@ -1,0 +1,11 @@
+Calculation: take profit target(manual price, percentage) = if percentage > 0 then entry price × (1 + percentage / 100) when position side is Long, or entry price × (1 − percentage / 100) when position side is Short; else manual price
+Exit: Long, stop loss price > 0 AND low <= stop loss price
+Exit: Short, stop loss price > 0 AND high >= stop loss price
+Exit: Long, take profit target(take profit 1 price, take profit 1 percentage) > 0 AND high >= take profit target(take profit 1 price, take profit 1 percentage)
+Exit: Short, take profit target(take profit 1 price, take profit 1 percentage) > 0 AND low <= take profit target(take profit 1 price, take profit 1 percentage)
+Exit: Long, take profit target(take profit 2 price, take profit 2 percentage) > 0 AND high >= take profit target(take profit 2 price, take profit 2 percentage)
+Exit: Short, take profit target(take profit 2 price, take profit 2 percentage) > 0 AND low <= take profit target(take profit 2 price, take profit 2 percentage)
+Exit: Long, take profit target(take profit 3 price, take profit 3 percentage) > 0 AND high >= take profit target(take profit 3 price, take profit 3 percentage)
+Exit: Short, take profit target(take profit 3 price, take profit 3 percentage) > 0 AND low <= take profit target(take profit 3 price, take profit 3 percentage)
+Exit: Long, take profit target(take profit 4 price, take profit 4 percentage) > 0 AND high >= take profit target(take profit 4 price, take profit 4 percentage)
+Exit: Short, take profit target(take profit 4 price, take profit 4 percentage) > 0 AND low <= take profit target(take profit 4 price, take profit 4 percentage)

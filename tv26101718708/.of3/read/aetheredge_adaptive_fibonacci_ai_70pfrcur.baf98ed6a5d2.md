@@ -1,0 +1,3 @@
+Calculation: SwingDirection = up if latest Pivot High(high, swing length, swing length) is at or after latest Pivot Low(low, swing length, swing length), else down; updated only on bars where either latest Pivot High or latest Pivot Low differs from its value at the previous update AND latest Pivot High − latest Pivot Low > min swing multiple × ATR(high, low, close, ATR length); otherwise unchanged
+Long: SwingDirection = up
+Short: SwingDirection = down

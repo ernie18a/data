@@ -1,0 +1,19 @@
+Calculation: TrendRatio = abs(close - close[trend lookback]) / (highest(high, trend lookback) - lowest(low, trend lookback))
+Calculation: PctDistance(level) = abs(close - level) / close * 100
+Calculation: POC = Volume profile POC(high, low, volume, profile lookback, profile rows)
+Calculation: VAH = Volume profile value area high(high, low, volume, profile lookback, profile rows, value area percent)
+Calculation: VAL = Volume profile value area low(high, low, volume, profile lookback, profile rows, value area percent)
+Calculation: Buy volume = (close - low) / (high - low) * volume
+Calculation: Sell volume = (high - close) / (high - low) * volume
+Calculation: Buy whale threshold(tier) = SMA(Buy volume, whale lookback)[1] + STDEV(Buy volume, whale lookback)[1] * (whale sigma + whale tier step * (tier - 1))
+Calculation: Sell whale threshold(tier) = SMA(Sell volume, whale lookback)[1] + STDEV(Sell volume, whale lookback)[1] * (whale sigma + whale tier step * (tier - 1))
+Calculation: Long stop = low[bars since entry] - ATR(ATR length)[bars since entry] * stop multiple
+Calculation: Short stop = high[bars since entry] + ATR(ATR length)[bars since entry] * stop multiple
+Long: Buy volume > Buy whale threshold(min tier) AND bar time within session start to session end AND position side is flat AND bars since last entry >= cooldown AND ((TrendRatio > trend strength AND close > close[trend lookback] AND (PctDistance(POC) < level tolerance OR PctDistance(VAH) < level tolerance OR PctDistance(VAL) < level tolerance)) OR (TrendRatio <= trend strength AND (PctDistance(VAL) < level tolerance OR PctDistance(POC) < level tolerance)) OR (close < VAL AND PctDistance(VAL) < level tolerance))
+Long: Buy volume > Buy whale threshold(1)
+Short: Sell volume > Sell whale threshold(min tier) AND bar time within session start to session end AND position side is flat AND bars since last entry >= cooldown AND ((TrendRatio > trend strength AND close < close[trend lookback] AND (PctDistance(POC) < level tolerance OR PctDistance(VAH) < level tolerance OR PctDistance(VAL) < level tolerance)) OR (TrendRatio <= trend strength AND (PctDistance(VAH) < level tolerance OR PctDistance(POC) < level tolerance)) OR (close > VAH AND PctDistance(VAH) < level tolerance))
+Short: Sell volume > Sell whale threshold(1)
+Option: buy call, Buy volume > Buy whale threshold(min tier) AND bar time within session start to session end AND position side is flat AND bars since last entry >= cooldown AND ((TrendRatio > trend strength AND close > close[trend lookback] AND (PctDistance(POC) < level tolerance OR PctDistance(VAH) < level tolerance OR PctDistance(VAL) < level tolerance)) OR (TrendRatio <= trend strength AND (PctDistance(VAL) < level tolerance OR PctDistance(POC) < level tolerance)) OR (close < VAL AND PctDistance(VAL) < level tolerance))
+Option: buy put, Sell volume > Sell whale threshold(min tier) AND bar time within session start to session end AND position side is flat AND bars since last entry >= cooldown AND ((TrendRatio > trend strength AND close < close[trend lookback] AND (PctDistance(POC) < level tolerance OR PctDistance(VAH) < level tolerance OR PctDistance(VAL) < level tolerance)) OR (TrendRatio <= trend strength AND (PctDistance(VAH) < level tolerance OR PctDistance(POC) < level tolerance)) OR (close > VAH AND PctDistance(VAH) < level tolerance))
+Exit: long, bar time outside session start to session end OR bars since entry >= max bars OR low <= Long stop OR high >= entry price + (entry price - Long stop) * reward multiple
+Exit: short, bar time outside session start to session end OR bars since entry >= max bars OR high >= Short stop OR low <= entry price - (Short stop - entry price) * reward multiple

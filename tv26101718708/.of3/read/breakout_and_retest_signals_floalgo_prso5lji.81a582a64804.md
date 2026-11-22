@@ -1,0 +1,8 @@
+Calculation: body top = max(open, close)
+Calculation: body bottom = min(open, close)
+Calculation: demand zone = at bar n, if PivotLow(low, swing length, swing length) is not NA, the zone with pivot bar n - swing length, bottom = low[swing length], and top = body top[swing length], recorded only if top > bottom, low[swing length] lies within no live demand zone's [bottom, top], and [bottom, top] overlaps no live supply zone's range (touching counts); when more than max zones per side are live after recording, the oldest live demand zone is dropped
+Calculation: live demand zone = demand zone that is not dropped, has no earlier bar since its pivot bar with close < its bottom, has no earlier bar since its pivot bar with low < its bottom AND close > its top, and has bars since its pivot bar <= max bars active
+Calculation: supply zone = at bar n, if PivotHigh(high, swing length, swing length) is not NA, the zone with pivot bar n - swing length, top = high[swing length], and bottom = body bottom[swing length], recorded only if top > bottom, high[swing length] lies within no live supply zone's [bottom, top], and [bottom, top] overlaps no live demand zone's range (touching counts, including one recorded at bar n); when more than max zones per side are live after recording, the oldest live supply zone is dropped
+Calculation: live supply zone = supply zone that is not dropped, has no earlier bar since its pivot bar with close > its top, has no earlier bar since its pivot bar with high > its top AND close < its bottom, and has bars since its pivot bar <= max bars active
+Long: for some live demand zone, low < its bottom AND close > its top
+Short: for some live supply zone, high > its top AND close < its bottom

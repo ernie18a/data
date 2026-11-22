@@ -1,0 +1,3 @@
+Calculation: POC = level(i) for the i in 0..bin count-1 that maximizes sum of volume[k] over k in 0..lookback-1 where abs(close[k] - level(i)) <= bin width, ties to highest i; level(i) = lowest(low, lookback) + i * bin width; bin width = (highest(high, lookback) - lowest(low, lookback)) / bin count
+Long: close > POC(close, volume, high, low, lookback, bin count)
+Short: close <= POC(close, volume, high, low, lookback, bin count)

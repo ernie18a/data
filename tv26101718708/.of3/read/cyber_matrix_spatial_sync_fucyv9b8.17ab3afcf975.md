@@ -1,0 +1,5 @@
+Calculation: edge distance = min(highest(high, window length) - close, close - lowest(low, window length)) / (highest(high, window length) - lowest(low, window length))
+Calculation: bin RSI = sum over n from 0 to window length - 1 of (RSI(close, RSI length)[n] * weight[n]) / sum over the same n of weight[n], restricted to n where bin[n] = bin[0], with weight[n] = volume[n] if volume[n] > 0 else 1 and bin[k] = min(bin count - 1, floor(bin count * (close[k] - lowest(low, window length)) / (highest(high, window length) - lowest(low, window length))))
+Long: close >= EMA(close, trend length) AND RSI(close, RSI length) crosses above long RSI level AND close > open
+Short: close < EMA(close, trend length) AND RSI(close, RSI length) crosses below short RSI level AND close < open
+Long: edge distance <= edge band AND bin RSI >= RSI block threshold AND close >= EMA(close, trend length)

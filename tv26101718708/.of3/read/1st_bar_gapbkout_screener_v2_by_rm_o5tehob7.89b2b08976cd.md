@@ -1,0 +1,11 @@
+Calculation: BarIndex = number of T1 bars from the first T1 bar of the current T2 bar (still forming) through the current T1 bar
+Calculation: OpeningHigh = high of the first T1 bar of the current T2 bar (still forming)
+Calculation: OpeningLow = low of the first T1 bar of the current T2 bar (still forming)
+Calculation: PriorBarGap = low > high[1] OR high < low[1]
+Calculation: InsideSinceOpen = high < OpeningHigh AND low > OpeningLow on every T1 bar after the first T1 bar of the current T2 bar through the previous bar
+Long: BarIndex = 1 AND low > high[1]
+Short: BarIndex = 1 AND high < low[1]
+Long: BarIndex = P1 AND PriorBarGap[P1-1] AND InsideSinceOpen AND close > OpeningHigh
+Short: BarIndex = P1 AND PriorBarGap[P1-1] AND InsideSinceOpen AND close < OpeningLow
+Long: BarIndex = P2 AND PriorBarGap[P2-1] AND InsideSinceOpen AND close > OpeningHigh
+Short: BarIndex = P2 AND PriorBarGap[P2-1] AND InsideSinceOpen AND close < OpeningLow

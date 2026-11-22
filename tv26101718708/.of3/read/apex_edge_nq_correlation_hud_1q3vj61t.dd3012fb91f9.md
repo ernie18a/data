@@ -1,0 +1,4 @@
+Calculation: Score(S, Tf) = sum of five terms, each +1 if its comparison holds else -1; comparisons: S.close > HMA(S.close, hullLength) on Tf bars; S.close > HMA(S.close, hullLength) on T1 bars; RSI(S.close, rsiLength) > rsiMid on Tf bars; RSI(S.close, rsiLength) > rsiMid on T1 bars; S.close > Donchian midline(S.high, S.low, structLength) on Tf bars; Tf bars are the current bar if Tf is the chart timeframe and the last completed bar if Tf is T2; T1 bars are the last completed bar
+Calculation: Aligned(d) = number of stocks i for which Correlation(close of traded instrument, close of stock i, corrLength) on chart bars >= corrMin AND sign(Score(stock i, T2)) = d
+Long: Score(traded instrument, chart) > 0 AND Aligned(+1) >= minAligned AND Score(volatility index, T2) < 0
+Short: Score(traded instrument, chart) < 0 AND Aligned(-1) >= minAligned AND Score(volatility index, T2) > 0

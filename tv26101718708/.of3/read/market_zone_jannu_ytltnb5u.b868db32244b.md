@@ -1,0 +1,7 @@
+Calculation: ImpulseBars = smallest n from 1 to impulse lookback such that (close - close[n] > impulse ATR multiple * ATR(ATR length)[n] AND count of k from 0 to n-1 with close[k] > close[k+1] >= round(directional share * n)) OR (close - close[n] < -impulse ATR multiple * ATR(ATR length)[n] AND count of k from 0 to n-1 with close[k] <= close[k+1] >= round(directional share * n))
+Calculation: TightBarExists = exists j from 1 to base lookback with high[ImpulseBars + j] - low[ImpulseBars + j] < base tightness * ATR(ATR length)[ImpulseBars + j]
+Calculation: CooldownActive = a Long or Short POI marking was made fewer than POI cooldown bars ago
+Long: low > high[2] AND (high[1] - low[1]) / ATR(ATR length) >= middle range threshold AND (low - high[2]) / ATR(ATR length) >= gap size threshold AND VWAP[1] > high[2] AND volume[1] / EMA(volume, volume lookback) > volume threshold AND abs(close[1] - open[1]) / (high[1] - low[1]) > body threshold
+Short: high < low[2] AND (high[1] - low[1]) / ATR(ATR length) >= middle range threshold AND (low[2] - high) / ATR(ATR length) >= gap size threshold AND VWAP[1] < low[2] AND volume[1] / EMA(volume, volume lookback) > volume threshold AND abs(close[1] - open[1]) / (high[1] - low[1]) > body threshold
+Long: close > close[ImpulseBars] AND TightBarExists AND CooldownActive = false
+Short: close < close[ImpulseBars] AND TightBarExists AND CooldownActive = false

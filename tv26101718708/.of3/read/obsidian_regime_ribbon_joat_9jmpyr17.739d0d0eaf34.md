@@ -1,0 +1,16 @@
+Calculation: smoothed efficiency ratio = EMA(Kaufman efficiency ratio(price source, efficiency length), efficiency smoothing length)
+Calculation: adaptive range multiplier = range low-efficiency factor * range multiplier if smoothed efficiency ratio < range low-efficiency threshold; range high-efficiency factor * range multiplier if smoothed efficiency ratio > range high-efficiency threshold; range multiplier otherwise
+Calculation: range width = ATR(range length) * adaptive range multiplier
+Calculation: adaptive range filter = price source - range width if price source > adaptive range filter[1] + range width; price source + range width if price source < adaptive range filter[1] - range width; adaptive range filter[1] otherwise
+Calculation: filter direction = 1 if adaptive range filter > adaptive range filter[1]; -1 if adaptive range filter < adaptive range filter[1]; filter direction[1] otherwise
+Calculation: direction run length = direction run length[1] + 1 if filter direction = filter direction[1]; 1 otherwise
+Calculation: required confirmation bars = max(base confirmation bars + low-efficiency confirmation boost, low-efficiency confirmation floor) if smoothed efficiency ratio < confirmation low-efficiency threshold; base confirmation bars + mid-efficiency confirmation boost if smoothed efficiency ratio < confirmation mid-efficiency threshold; base confirmation bars if smoothed efficiency ratio < confirmation high-efficiency threshold; max(base confirmation bars - high-efficiency confirmation reduction, high-efficiency confirmation floor) otherwise
+Calculation: regime state = filter direction if direction run length >= required confirmation bars; regime state[1] otherwise
+Calculation: T1 trend bias = 1 if close(T1, last completed bar) > EMA(close, HTF EMA length, T1, last completed bar); -1 otherwise
+Calculation: secondary band width = secondary band factor * range width
+Long: regime state = 1 AND regime state[1] = -1
+Long: regime state = 1 AND ADX(ADX length) >= ADX floor AND Choppiness index(chop length) <= chop ceiling AND EMA(Momentum(close, momentum length), momentum smoothing length) > 0 AND T1 trend bias = 1 AND low <= adaptive range filter AND close > adaptive range filter AND EMA(close, shorter lookback) > EMA(close, longer lookback)
+Long: regime state = 1 AND ADX(ADX length) >= ADX floor AND Choppiness index(chop length) <= chop ceiling AND EMA(Momentum(close, momentum length), momentum smoothing length) > 0 AND T1 trend bias = 1 AND close > adaptive range filter + secondary band width AND close[1] <= adaptive range filter + secondary band width
+Short: regime state = -1 AND regime state[1] = 1
+Short: regime state = -1 AND ADX(ADX length) >= ADX floor AND Choppiness index(chop length) <= chop ceiling AND EMA(Momentum(close, momentum length), momentum smoothing length) < 0 AND T1 trend bias = -1 AND high >= adaptive range filter AND close < adaptive range filter AND EMA(close, shorter lookback) <= EMA(close, longer lookback)
+Short: regime state = -1 AND ADX(ADX length) >= ADX floor AND Choppiness index(chop length) <= chop ceiling AND EMA(Momentum(close, momentum length), momentum smoothing length) < 0 AND T1 trend bias = -1 AND close < adaptive range filter - secondary band width AND close[1] >= adaptive range filter - secondary band width

@@ -1,0 +1,12 @@
+Calculation: body top = max(open, close)
+Calculation: body bottom = min(open, close)
+Calculation: resistance zone = box with top = max(high at prior pivot high bar, Pivot High(high, pivot length, pivot length)), bottom = min(body top at prior pivot high bar, body top[pivot length]), and left bar = prior pivot high bar, formed on a bar where Pivot High(high, pivot length, pivot length) is confirmed if prior pivot high bar >= current bar - pivot length - zone max age, Pivot High(high, pivot length, pivot length) is between body bottom and body top at prior pivot high bar, and top > bottom
+Calculation: support zone = box with top = max(body bottom at prior pivot low bar, body bottom[pivot length]), bottom = min(low at prior pivot low bar, Pivot Low(low, pivot length, pivot length)), and left bar = prior pivot low bar, formed on a bar where Pivot Low(low, pivot length, pivot length) is confirmed if prior pivot low bar >= current bar - pivot length - zone max age, Pivot Low(low, pivot length, pivot length) is between body bottom and body top at prior pivot low bar, and top > bottom
+Calculation: zone end bar = max(formation bar, left bar + zone max age)
+Calculation: entry zone height = top - bottom of the zone whose breakout produced the entry
+Calculation: long reset bar = latest earlier bar after the entry bar on which high first reached entry price + k * entry zone height / target count for some k from 1 to target count - 1, or the entry bar if none
+Calculation: short reset bar = latest earlier bar after the entry bar on which low first reached entry price - k * entry zone height / target count for some k from 1 to target count - 1, or the entry bar if none
+Long: close is above the top of a resistance zone for the first time since the zone formed AND current bar <= zone end bar of that zone AND (high - max(low, that top)) / max(high - low, minimum tick) >= minimum breakout range / 100
+Short: close is below the bottom of a support zone for the first time since the zone formed AND current bar <= zone end bar of that zone AND (min(high, that bottom) - low) / max(high - low, minimum tick) >= minimum breakout range / 100
+Exit: long, high >= entry price + entry zone height for the first time after the entry bar AND current bar <= long reset bar + target expiry
+Exit: short, low <= entry price - entry zone height for the first time after the entry bar AND current bar <= short reset bar + target expiry
