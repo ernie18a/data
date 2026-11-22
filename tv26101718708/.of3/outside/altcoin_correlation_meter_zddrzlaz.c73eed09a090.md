@@ -1,5 +1,0 @@
-Calculation: Pearson correlation = covariance of the traded instrument’s and selected reference market’s percentage changes in selected source price over the correlation lookback period on T1 divided by the product of their standard deviations
-Long: Pearson correlation < correlation entry threshold AND Hull Moving Average of the traded instrument’s selected source price over the HMA period > its value at the HMA comparison lag bars earlier
-Short: Pearson correlation < correlation entry threshold AND Hull Moving Average of the traded instrument’s selected source price over the HMA period < its value at the HMA comparison lag bars earlier
-Exit: Long, Pearson correlation > correlation exit target AND traded instrument’s close × (100 − minimum profit percentage) / 100 > average entry price
-Exit: Short, Pearson correlation > correlation exit target AND traded instrument’s close × (100 + minimum profit percentage) / 100 < average entry price

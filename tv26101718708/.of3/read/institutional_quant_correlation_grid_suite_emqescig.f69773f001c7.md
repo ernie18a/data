@@ -2,3 +2,8 @@ Calculation: Price correlation = Correlation(close, benchmark close, lookback)
 Calculation: Relative-strength momentum = ((close / benchmark close) / SMA(close / benchmark close, lookback) - 1) * 100
 Long: Price correlation >= correlation threshold AND Relative-strength momentum > relative-strength threshold AND Beta(change(close) / close[1], change(benchmark close) / benchmark close[1], lookback) > minimum beta threshold
 Exit: Long, Relative-strength momentum < relative-strength threshold OR Price correlation < low-correlation cutoff OR ZScore(log(close / benchmark close), lookback) >= z-score threshold
+Calculation: relative strength momentum = ((traded instrument close / benchmark close) / SMA(traded instrument close / benchmark close, P1) - 1) × 100
+Calculation: spread Z-score = (ln(traded instrument close / benchmark close) - SMA(ln(traded instrument close / benchmark close), P1)) / StdDev(ln(traded instrument close / benchmark close), P1)
+Long: correlation(traded instrument close, benchmark close, P1) ≥ P2 AND relative strength momentum > 0 AND Beta(traded instrument, benchmark, P1) > P5
+Long: correlation(traded instrument close, benchmark close, P1) ≥ P2 AND correlation(((traded instrument close - prior close) / prior close) × traded instrument volume / SMA(traded instrument volume, P1), ((benchmark close - prior benchmark close) / prior benchmark close) × benchmark volume / SMA(benchmark volume, P1), P1) ≥ P2 AND relative strength momentum > 0 AND Beta(traded instrument, benchmark, P1) > P5 AND spread Z-score < P3
+Short: relative strength momentum < 0 OR correlation(traded instrument close, benchmark close, P1) < P4 OR spread Z-score ≥ P3

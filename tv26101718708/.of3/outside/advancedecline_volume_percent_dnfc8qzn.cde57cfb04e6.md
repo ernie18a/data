@@ -1,3 +1,0 @@
-Calculation: advancing and declining volume imbalance change percent = 100 × ((advancing volume on T1 − declining volume on T1) − previous (advancing volume on T1 − declining volume on T1)) / (advancing volume on T1 + declining volume on T1), with the previous value defaulting to zero
-Long: advancing and declining volume imbalance change percent > Parameter 1
-Short: advancing and declining volume imbalance change percent < Parameter 2

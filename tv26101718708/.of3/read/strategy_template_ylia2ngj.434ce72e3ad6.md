@@ -4,3 +4,5 @@ Exit: long, close-before-exit setting is enabled AND crossunder(0, Supertrend(AT
 Exit: short, close-before-exit setting is enabled AND crossover(0, Supertrend(ATR multiplier, ATR lookback).direction)
 Exit: long, close-before-exit setting is disabled AND low <= Supertrend(ATR multiplier, ATR lookback)
 Exit: short, close-before-exit setting is disabled AND high >= Supertrend(ATR multiplier, ATR lookback)
+Long: Supertrend flips from bearish to bullish AND chart close is above the selected-type, selected-length T1 moving average of the prior T1 high when high/low range mode is enabled, otherwise the prior T1 close AND chart time is within the configured date range AND the configured trade direction permits long entries
+Short: Supertrend flips from bullish to bearish AND chart close is below the selected-type, selected-length T1 moving average of the prior T1 low when high/low range mode is enabled, otherwise the prior T1 close AND chart time is within the configured date range AND the configured trade direction permits short entries

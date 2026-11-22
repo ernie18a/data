@@ -1,3 +1,0 @@
-Calculation: smoothed signed volume = EMA(volume × (1 if close > open else −1), P1)
-Long: EMA(close, P2) crosses above EMA(close, P3) AND (change in open interest > P4 OR smoothed signed volume > 0) AND (P9 is false OR close > Ichimoku cloud top with conversion, base, and span B periods P5, P6, and P7, offset P8 bars back)
-Short: EMA(close, P2) crosses below EMA(close, P3) AND (change in open interest < −P4 OR smoothed signed volume < 0) AND (P9 is false OR close < Ichimoku cloud bottom with conversion, base, and span B periods P5, P6, and P7, offset P8 bars back)

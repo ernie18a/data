@@ -1,2 +1,0 @@
-Long: Previous Heikin Ashi close >= open AND previous Heikin Ashi open = low AND current Heikin Ashi close >= open AND current Heikin Ashi close > previous Heikin Ashi close on T1 for each selected symbol
-Short: Previous Heikin Ashi close < open AND previous Heikin Ashi open = high AND current Heikin Ashi close < open AND current Heikin Ashi close < previous Heikin Ashi close on T1 for each selected symbol

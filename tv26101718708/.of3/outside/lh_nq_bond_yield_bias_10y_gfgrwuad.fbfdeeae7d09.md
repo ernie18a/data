@@ -1,8 +1,0 @@
-Calculation: Fresh quote(market) = quote and timestamp are available, timestamp ≤ reference time (live clock on realtime bars, chart time otherwise), and reference time − timestamp ≤ maximum quote age
-Calculation: Yield move(yield) = EMA(yield close on T1, smoothing length) − its value comparison bars earlier on T1
-Calculation: Macro percentage move(market) = 100 × (EMA(market close on T1, smoothing length) / its value comparison bars earlier on T1 − 1)
-Calculation: Yield alignment(yield) = +1 when its quote is fresh and its yield move ≤ −minimum yield move; −1 when fresh and its yield move ≥ minimum yield move; otherwise 0
-Calculation: Inverse macro alignment(market, threshold) = +1 when its quote is fresh and its percentage move ≤ −threshold; −1 when fresh and its percentage move ≥ threshold; otherwise 0
-Calculation: Alignment score = 2 × 10Y yield alignment + enabled VIX inverse macro alignment using its minimum percentage move + enabled DXY inverse macro alignment using its minimum percentage move + enabled crude alignment using its minimum percentage move, where crude alignment is its inverse macro alignment for an inverse relationship and its negative for a direct relationship
-Long: 10Y yield alignment = +1 AND alignment score ≥ minimum alignment score AND (2Y confirmation disabled OR 2Y yield alignment = +1) AND (NQ EMA filter disabled OR NQ close > EMA(NQ close, NQ EMA length))
-Short: 10Y yield alignment = −1 AND alignment score ≤ −minimum alignment score AND (2Y confirmation disabled OR 2Y yield alignment = −1) AND (NQ EMA filter disabled OR NQ close < EMA(NQ close, NQ EMA length))

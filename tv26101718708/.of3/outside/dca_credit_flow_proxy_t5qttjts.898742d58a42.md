@@ -1,5 +1,0 @@
-Calculation: Financial credit-flow rate of change = ROC(average(financial-sector proxy close, real-estate proxy close, optional technology/speculation proxy close when enabled), P1)
-Calculation: Productive activity rate of change = ROC(industrial proxy close, P1)
-Calculation: Bubble score = min(P8, IF(ROC(Financial credit-flow rate of change, P5) > P12 AND broad-market volume > SMA(broad-market volume, P2) * P4, min(P8, max(P13, PercentRank(Financial credit-flow rate of change / Productive activity rate of change, P2 * P3) * P6)) * P7, min(P8, max(P13, PercentRank(Financial credit-flow rate of change / Productive activity rate of change, P2 * P3) * P6)))
-Short: Bubble score > P9 AND Financial credit-flow rate of change crosses below EMA(Financial credit-flow rate of change, P10)
-Long: Bubble score < P11 AND Productive activity rate of change crosses above P12

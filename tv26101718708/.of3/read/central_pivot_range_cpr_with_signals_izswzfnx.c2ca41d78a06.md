@@ -4,3 +4,5 @@ Long: close = BC
 Long: crosses above CPR top
 Short: close < BC
 Short: close = TC
+Long: Benchmark close > SMA(Benchmark close, P1)
+Short: Benchmark close <= SMA(Benchmark close, P1)

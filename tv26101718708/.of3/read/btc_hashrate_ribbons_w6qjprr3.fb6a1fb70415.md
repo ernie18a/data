@@ -4,3 +4,5 @@ Long: Short average crosses above Long average AND direction permits long entrie
 Exit: short, Short average crosses above Long average AND direction is short-only
 Short: Short average crosses below Long average AND direction permits short entries
 Exit: long, Short average crosses below Long average AND direction is long-only
+Long: crossover(short moving average of Bitcoin hash rate from the selected source at T1 using the short smoothing method and period, long moving average of Bitcoin hash rate from the selected source at T1 using the long smoothing method and period) AND direction setting permits long
+Short: crossunder(short moving average of Bitcoin hash rate from the selected source at T1 using the short smoothing method and period, long moving average of Bitcoin hash rate from the selected source at T1 using the long smoothing method and period) AND direction setting permits short

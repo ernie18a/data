@@ -1,4 +1,0 @@
-Calculation: QQQ drawdown from trailing peak = (QQQ close on T1 / highest(QQQ close on T1, peak lookback) - 1) × 100
-Calculation: 200-SMA-only mode = set to CPI YoY on T2 > CPI gate when a bear latch starts; turn on if CPI YoY on T2 > CPI gate during an active bear latch; persist through bear-latch release; reset when the next bear latch starts; bear latch starts when QQQ drawdown <= drawdown trigger while no bear latch is active and ends when QQQ drawdown >= drawdown release
-Long: chart instrument close > SMA(chart instrument close, slow SMA length) OR (200-SMA-only mode is false AND chart instrument close > SMA(chart instrument close, fast SMA length))
-Exit: long, chart instrument close <= SMA(chart instrument close, slow SMA length) AND (200-SMA-only mode is true OR chart instrument close <= SMA(chart instrument close, fast SMA length))

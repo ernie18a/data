@@ -1,3 +1,0 @@
-Calculation: breadth oscillator = EMA(new-high count (T1) − new-low count (T1), smoothing length)
-Short: pivot high of traded-instrument price over pivot lookback is higher than the previous pivot high AND breadth oscillator at that pivot is lower than at the previous pivot high AND breadth oscillator at that pivot > 0
-Long: pivot low of traded-instrument price over pivot lookback is lower than the previous pivot low AND breadth oscillator at that pivot is higher than at the previous pivot low AND breadth oscillator at that pivot < 0

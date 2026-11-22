@@ -1,2 +1,4 @@
 Long: ROC(risky-asset close from the still-forming T1 bar, sampled on chart bars, lookback in chart bars) > 0 AND ROC(risky-asset close from the still-forming T1 bar, sampled on chart bars, lookback in chart bars) > ROC(safe-asset close from the still-forming T1 bar, sampled on chart bars, lookback in chart bars)
 Long: ROC(risky-asset close from the still-forming T1 bar, sampled on chart bars, lookback in chart bars) <= 0 OR ROC(risky-asset close from the still-forming T1 bar, sampled on chart bars, lookback in chart bars) <= ROC(safe-asset close from the still-forming T1 bar, sampled on chart bars, lookback in chart bars)
+Long: risky asset's T1 close ROC over P1 bars > 0 AND risky asset's T1 close ROC over P1 bars > safe asset's T1 close ROC over P1 bars
+Long: risky asset's T1 close ROC over P1 bars <= 0 OR risky asset's T1 close ROC over P1 bars <= safe asset's T1 close ROC over P1 bars

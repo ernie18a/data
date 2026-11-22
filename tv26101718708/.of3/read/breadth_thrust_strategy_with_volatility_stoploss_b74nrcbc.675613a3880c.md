@@ -2,3 +2,4 @@ Calculation: combined ratio = (advancing count / (advancing count + declining co
 Long: SMA(combined ratio, smoothing lookback) on chart bars crosses above low threshold
 Calculation: long trailing stop = entry price − stop multiplier × ATR(high, low, close, ATR lookback) on entry; thereafter, maximum(previous long trailing stop, close − stop multiplier × ATR(high, low, close, ATR lookback)) on each chart bar
 Exit: Long, low <= long trailing stop OR chart bars since entry >= holding period
+Long: SMA((NYSE advancing stocks / (NYSE advancing stocks + NYSE declining stocks) + (NYSE advancing volume / (NYSE advancing volume + NYSE declining volume) if volume is included, otherwise NYSE advancing stocks / (NYSE advancing stocks + NYSE declining stocks))) over smoothing length crosses above low threshold, using NYSE data from T1

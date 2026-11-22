@@ -1,2 +1,0 @@
-Long: Bitcoin MVRV ratio on T1 < SMA(Bitcoin MVRV ratio on T2, P1) - STDEV(Bitcoin MVRV ratio on T2, P1) * P2 AND time >= P4 AND time <= P5
-Exit: Long, Bitcoin MVRV ratio on T1 > SMA(Bitcoin MVRV ratio on T2, P1) + STDEV(Bitcoin MVRV ratio on T2, P1) * P3 AND time >= P4 AND time <= P5

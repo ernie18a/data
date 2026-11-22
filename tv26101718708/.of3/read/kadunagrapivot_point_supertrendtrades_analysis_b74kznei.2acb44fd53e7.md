@@ -5,3 +5,5 @@ Long: pivot supertrend direction is bullish AND its prior bar value was bearish 
 Short: pivot supertrend direction is bearish AND its prior bar value was bullish AND close < selected moving average(selected source, lookback) AND (reference-market trend confirmation is disabled OR reference-market pivot supertrend direction is bearish; use the same pivot supertrend parameters)
 Exit: long, low <= entry price × (1 − stop-loss percentage / 100)
 Exit: short, high >= entry price × (1 + stop-loss percentage / 100)
+Long: Pivot Point Supertrend (pivot length, ATR length, ATR multiplier) turns bullish AND close is above moving average (source, type, length) AND (direction basis is the chart instrument OR Bitcoin Pivot Point Supertrend is bullish)
+Short: Pivot Point Supertrend (pivot length, ATR length, ATR multiplier) turns bearish AND close is below moving average (source, type, length) AND (direction basis is the chart instrument OR Bitcoin Pivot Point Supertrend is bearish)

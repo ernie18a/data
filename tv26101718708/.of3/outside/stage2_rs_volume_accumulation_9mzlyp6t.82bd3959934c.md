@@ -1,2 +1,0 @@
-Calculation: relative strength = close / benchmark index close
-Long: T1 close > SMA(T1 close, P4) AND SMA(T1 close, P4) > prior T1 SMA(T1 close, P4) AND RSI(T1 close, P1) > P5 AND benchmark index close is available and > 0 AND relative strength > SMA(relative strength, P2) AND ROC(relative strength, P2) > 0 AND high > Highest(previous highs, P3) AND low > Lowest(previous lows, P3)

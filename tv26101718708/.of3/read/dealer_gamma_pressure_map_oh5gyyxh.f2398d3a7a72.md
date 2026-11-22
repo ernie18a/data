@@ -13,3 +13,7 @@ Long: lowest(low, reversal lookback) < Lower acceleration boundary AND crossover
 Short: highest(high, reversal lookback) > Upper acceleration boundary AND crossunder(close, Upper acceleration boundary) AND Gamma velocity < 0 AND RSI(close, RSI lookback) > overbought threshold AND reversal cooldown elapsed >= cooldown period
 Long: ADX(DI lookback, ADX smoothing lookback) < choppy ADX threshold AND lowest(low, fade lookback) <= Lower acceleration boundary AND crossover(close, Lower zone boundary) AND Gamma velocity > 0 AND fade cooldown elapsed >= cooldown period
 Short: ADX(DI lookback, ADX smoothing lookback) < choppy ADX threshold AND highest(high, fade lookback) >= Upper acceleration boundary AND crossunder(close, Upper zone boundary) AND Gamma velocity < 0 AND fade cooldown elapsed >= cooldown period
+Long: Positive dealer gamma AND price below the midline
+Short: Positive dealer gamma AND price above the midline
+Long: Negative dealer gamma AND high-velocity upward breakout in an outer zone
+Short: Negative dealer gamma AND high-velocity downward breakout in an outer zone

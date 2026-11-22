@@ -14,3 +14,11 @@ Short: falling(Relative strength, RS trend-confirmation parameter) AND Fast MA <
 Short: Fast MA crosses below Slow MA AND falling(Relative strength, RS trend-confirmation parameter) AND RSI < (100 - RSI oversold threshold) AND Volume filter
 Exit: long, Fast MA crosses below Slow MA OR (falling(Relative strength, RS trend-confirmation parameter) AND RSI > RSI overbought threshold)
 Exit: short, Fast MA crosses above Slow MA OR rising(Relative strength, RS trend-confirmation parameter)
+Calculation: relative strength = EMA(traded instrument closing price / benchmark closing price, P1)
+Long: fast selected moving average crosses above slow selected moving average AND relative strength is higher than each of its preceding P2 values AND RSI(traded instrument closing price, P6) > P7 AND RSI(traded instrument closing price, P6) < P8 AND (volume filter is disabled by P9 OR volume >= SMA(volume, P11) × P10)
+Long: fast selected moving average > slow selected moving average AND traded instrument closing price > fast selected moving average AND previous bar's closing price < previous bar's fast selected moving average AND relative strength is higher than each of its preceding P2 values AND RSI(traded instrument closing price, P6) < P12 AND (volume filter is disabled by P9 OR volume >= SMA(volume, P11) × P10)
+Long: relative strength is higher than each of its preceding P2 values AND fast selected moving average > slow selected moving average AND RSI(traded instrument closing price, P6) < P8
+Exit: long, fast selected moving average crosses below slow selected moving average OR (relative strength is lower than each of its preceding P2 values AND RSI(traded instrument closing price, P6) > P8)
+Short: fast selected moving average crosses below slow selected moving average AND relative strength is lower than each of its preceding P2 values AND RSI(traded instrument closing price, P6) < 100 − P7 AND (volume filter is disabled by P9 OR volume >= SMA(volume, P11) × P10)
+Short: relative strength is lower than each of its preceding P2 values AND fast selected moving average < slow selected moving average AND RSI(traded instrument closing price, P6) > 100 − P8
+Exit: short, fast selected moving average crosses above slow selected moving average OR relative strength is higher than each of its preceding P2 values

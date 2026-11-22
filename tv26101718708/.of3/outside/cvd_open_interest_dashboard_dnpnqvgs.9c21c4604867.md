@@ -1,6 +1,0 @@
-Calculation: Candle-volume direction = 1 when signed volume delta > P1 × total volume, -1 when signed volume delta < -P1 × total volume, otherwise 0; signed volume delta is the sum of volume for candles closing above their open minus volume for candles closing below their open, using chart candles in normal mode or T1 candles in high-precision mode.
-Calculation: Open-interest anomaly = |open interest - prior-bar open interest| > SMA(|open interest - prior-bar open interest|, P2) × P3
-Long: (SMA(close, P4) > SMA(close, P4)[1] AND SMA(open interest, P4) > SMA(open interest, P4)[1]) OR (open-interest anomaly AND open interest - prior-bar open interest > 0 AND candle-volume direction = 1)
-Short: (SMA(close, P4) < SMA(close, P4)[1] AND SMA(open interest, P4) > SMA(open interest, P4)[1]) OR (open-interest anomaly AND open interest - prior-bar open interest > 0 AND candle-volume direction = -1)
-Exit: short, (SMA(close, P4) > SMA(close, P4)[1] AND SMA(open interest, P4) < SMA(open interest, P4)[1]) OR (open-interest anomaly AND open interest - prior-bar open interest < 0 AND candle-volume direction = -1)
-Exit: long, (SMA(close, P4) < SMA(close, P4)[1] AND SMA(open interest, P4) < SMA(open interest, P4)[1]) OR (open-interest anomaly AND open interest - prior-bar open interest < 0 AND candle-volume direction = 1)

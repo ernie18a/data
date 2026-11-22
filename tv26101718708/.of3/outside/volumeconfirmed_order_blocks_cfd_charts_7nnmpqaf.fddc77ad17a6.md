@@ -1,3 +1,0 @@
-Calculation: Candle range = candle high − candle low
-Long: bar is confirmed AND Candle range > P1 × ATR(P2) AND Candle range > 0 AND abs(close − open) / Candle range ≥ P3 AND close > open AND (P4 ≤ 0 OR (zero-filled corresponding futures-contract volume ≥ P4 × SMA(zero-filled corresponding futures-contract volume, P5) AND SMA(zero-filled corresponding futures-contract volume, P5) > 0))
-Short: bar is confirmed AND Candle range > P1 × ATR(P2) AND Candle range > 0 AND abs(close − open) / Candle range ≥ P3 AND close < open AND (P4 ≤ 0 OR (zero-filled corresponding futures-contract volume ≥ P4 × SMA(zero-filled corresponding futures-contract volume, P5) AND SMA(zero-filled corresponding futures-contract volume, P5) > 0))

@@ -1,2 +1,4 @@
 Long: Lowest(low, lookback) on chart bars < low(T1, last completed bar) AND Lowest(comparison instrument low, same lookback) on chart bars >= low(comparison instrument, T1, last completed bar)
 Short: Highest(high, lookback) on chart bars > high(T1, last completed bar) AND Highest(comparison instrument high, same lookback) on chart bars <= high(comparison instrument, T1, last completed bar)
+Long: SMT detection is enabled AND lowest(traded instrument low, P1 chart bars) < previous T1 low of traded instrument AND lowest silver low, P1 chart bars >= previous T1 low of silver
+Short: SMT detection is enabled AND highest(traded instrument high, P1 chart bars) > previous T1 high of traded instrument AND highest silver high, P1 chart bars <= previous T1 high of silver

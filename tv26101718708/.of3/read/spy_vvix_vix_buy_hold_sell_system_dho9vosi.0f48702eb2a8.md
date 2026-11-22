@@ -15,3 +15,5 @@ Calculation: Sell setup = Panic condition OR (Risk series A chart values >= dang
 Calculation: Signal state = if Long setup then 1 else if Sell setup then −1 else if (Primary bullish trend AND Range bullish AND NOT Panic condition) then 0 else nz(Signal state[1])
 Long: Long setup AND nz(Signal state[1]) != 1
 Exit: long, NOT Long setup AND Sell setup AND nz(Signal state[1]) != −1
+Long: SPY close > EMA(SPY close, P1) AND SPY close > Range Filter(SPY close, P2, P3) AND Range Filter direction(SPY close, P2, P3) is up AND VVIX(T1) < P4 AND NOT (VIX(T1) > EMA(VIX(T1), P5) AND VIX(T1) > VIX(T1)[1]) AND VVIX(T1) < EMA(VVIX(T1), P6) AND VVIX(T1) < VVIX(T1)[1]
+Exit: long, VVIX(T1) >= P7 OR (VVIX(T1) > EMA(VVIX(T1), P6) AND VVIX(T1) > VVIX(T1)[1] AND VIX(T1) > EMA(VIX(T1), P5) AND VIX(T1) > VIX(T1)[1]) OR (VVIX(T1) >= P8 AND VVIX(T1) > EMA(VVIX(T1), P6) AND VVIX(T1) > VVIX(T1)[1]) OR (SPY close < EMA(SPY close, P1) AND SPY close < Range Filter(SPY close, P2, P3) AND Range Filter direction(SPY close, P2, P3) is down)

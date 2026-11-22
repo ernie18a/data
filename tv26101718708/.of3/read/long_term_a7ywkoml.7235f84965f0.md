@@ -3,3 +3,5 @@ Long: close > EMA(close, fast EMA lookback) AND volume > standard volume multipl
 Long: close > EMA(close, slow EMA lookback) AND relative performance > 0 AND volume > standard volume multiplier * SMA(volume, volume-average lookback) AND close > Highest(high[1], breakout-high lookback)
 Long: close > EMA(close, fastest EMA lookback) AND volume > higher volume multiplier * SMA(volume, volume-average lookback)
 Exit: long, close < fast-exit fraction * EMA(close, fast EMA lookback) OR close < prior-close fraction * close[1] OR close > average-price multiplier * SMA(close, prior-close average lookback)[1] OR (close < EMA(close, shorter fastest EMA lookback) AND close < EMA(close, longer fast EMA lookback))
+Calculation: relative performance = (traded instrument close / traded instrument close P1 bars ago) / (comparative symbol close / comparative symbol close P1 bars ago) - 1
+Long: traded instrument close > EMA(traded instrument close, P2) AND relative performance > 0 AND traded instrument volume > P3 * SMA(traded instrument volume, P4) AND traded instrument close > Highest(traded instrument high, P5 bars ending one bar before current)

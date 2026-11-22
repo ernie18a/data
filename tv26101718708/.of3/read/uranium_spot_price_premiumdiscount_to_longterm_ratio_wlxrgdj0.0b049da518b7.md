@@ -1,2 +1,4 @@
 Calculation: Long-term price(year, month) = monthly term-price lookup for the chart bar's year and month
 Exit: long, close(T1, bar still forming, sampled on chart bars) > Long-term price(year, month)
+Calculation: Long-term uranium price = year-and-month contract-price parameter selected by the current calendar year and month, with a baseline parameter for earlier years
+Exit: long, uranium spot price > long-term uranium price

@@ -1,2 +1,0 @@
-Long: SPX low > EMA(SPX close, P1) on P2 consecutive T1 bars AND time >= start timestamp(P3 year, P4 month, P5 day)
-Exit: long, (SMA(SPX close, P6) crosses below SMA(SPX close, P7) AND SPX close < SMA(SPX close, P6) AND SPX close < EMA(SPX close, P8) AND QQQ close < EMA(QQQ close, P8)) OR (QQQ low < average long entry price * (1 - P9 * P10) AND QQQ low < SMA(QQQ close, P11)), AND time >= start timestamp(P3 year, P4 month, P5 day)

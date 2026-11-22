@@ -1,3 +1,0 @@
-Calculation: long stop = max(previous long stop, highest traded-instrument high since entry × (1 − (index close > SMA(index close, index average length) ? broad-index-up stop distance : broad-index-down stop distance) / 100)
-Long: close > highest traded-instrument high over the prior breakout lookback bars AND ROC(traded-instrument close, momentum lookback) > momentum threshold
-Exit: long, close < long stop

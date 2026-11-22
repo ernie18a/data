@@ -1,5 +1,0 @@
-Calculation: Range-filter rise count = prior count plus one when the Range Filter rises, zero when it falls, otherwise prior count; initially zero
-Calculation: Range-filter fall count = prior count plus one when the Range Filter falls, zero when it rises, otherwise prior count; initially zero
-Calculation: Long eligibility = SPY close > EMA(SPY close, SPY trend EMA length) AND SPY close > Range Filter(SPY close, range period, range multiplier) AND range-filter rise count > 0 AND VVIX(T1) < VVIX caution threshold AND NOT (VIX(T1) > EMA(VIX(T1), VIX EMA length) AND VIX(T1) > prior VIX(T1)) AND VVIX(T1) < EMA(VVIX(T1), VVIX EMA length) AND VVIX(T1) < prior VVIX(T1)
-Long: Long eligibility = true
-Exit: long, (VVIX(T1) >= VVIX panic threshold OR (VVIX(T1) > EMA(VVIX(T1), VVIX EMA length) AND VVIX(T1) > prior VVIX(T1) AND (VIX(T1) > EMA(VIX(T1), VIX EMA length) AND VIX(T1) > prior VIX(T1) OR VVIX(T1) >= VVIX danger threshold)) OR (SPY close < EMA(SPY close, SPY trend EMA length) AND SPY close < Range Filter(SPY close, range period, range multiplier) AND range-filter fall count > 0)) AND Long eligibility = false

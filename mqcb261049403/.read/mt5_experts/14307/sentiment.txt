@@ -1,0 +1,9 @@
+Robot that trades the open sentiment of the market.
+Source project.
+Recommendations:
+Place it on volatile instruments: for example, Brent or Sberbank.
+Update:
+The position is closed only after the volumes decrease below the specified level, or if the participants are overbalanced by 49\51% in favor of the new market players.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/14307

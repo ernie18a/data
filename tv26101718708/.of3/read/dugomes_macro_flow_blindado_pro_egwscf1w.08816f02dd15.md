@@ -2,3 +2,7 @@ Calculation: Macro line = close value lookback bars ago × (external close 1 / i
 Calculation: Buying volume = if high = low then 0 else volume × ((close − low) + (high − open)) / (2 × (high − low))
 Long: (Buying volume > SMA(volume, volume-average lookback) × sensitivity AND close > (high + low) / 2) OR (close crosses above Macro line AND close > EMA(close, trend lookback) AND MFI(close, MFI lookback) > buy threshold)
 Short: (volume − Buying volume > SMA(volume, volume-average lookback) × sensitivity AND close < (high + low) / 2) OR (close crosses below Macro line AND close < EMA(close, trend lookback) AND MFI(close, MFI lookback) < sell threshold)
+Calculation: Macro line = traded instrument close P1 bars ago * ((Brent crude close / Brent crude close P1 bars ago) + (gold close / gold close P1 bars ago) + (Dollar Index close P1 bars ago / Dollar Index close)) / 3
+Calculation: Buying volume estimate = 0 when high = low; otherwise volume * ((close - low) + (high - open)) / (2 * (high - low))
+Long: (close crosses above Macro line OR (Buying volume estimate > SMA(volume, P7) * P3 AND close > (high + low) / 2)) AND close > EMA(close, P2) AND MFI(close, P4) > P5
+Short: (close crosses below Macro line OR (volume - Buying volume estimate > SMA(volume, P7) * P3 AND close < (high + low) / 2)) AND close < EMA(close, P2) AND MFI(close, P4) < P6

@@ -11,3 +11,10 @@ Long: Consolidation breakout setup
 Long: Power-play setup
 Long: Long score >= high-conviction score threshold
 Long: Long score >= watchlist score threshold
+Calculation: Daily trend alignment = SMA(close, T1, P1) > SMA(close, T1, P2) AND SMA(close, T1, P2) > SMA(close, T1, P3) AND T1 close > SMA(close, T1, P2)
+Calculation: Coil = Bollinger Bands (SMA basis, length P4, deviation multiplier P5) are inside Keltner Channels (SMA basis, length P4, SMA true-range multiplier P6) now OR the last such squeeze occurred within P7 chart bars
+Calculation: Long Score = P18 when daily trend alignment, otherwise 0, plus P19 when 100 × (T1 close / T1 close P8 bars ago − 1) > 100 × (benchmark T1 close / benchmark T1 close P8 bars ago − 1), otherwise 0, plus P20 when volume / SMA(volume, P9) ≥ P10, otherwise 0, plus P21 when coil, otherwise 0, plus P22 when (close > highest high of the prior P11 chart bars AND volume / SMA(volume, P9) ≥ P10 AND coil AND daily trend alignment) OR (the prior bar's range / its low × 100 ≥ P12 AND (prior close − prior low) / (prior high − prior low) ≥ P13 AND prior close > prior open AND prior volume / prior SMA(volume, P9) ≥ P10 AND low < prior close AND close > open AND (close − low) / (high − low) > P14), otherwise 0, plus P23 when abs(close − highest high of the prior P11 chart bars) / close × 100 ≤ P15, otherwise 0, plus P24 when (highest high of the prior P11 chart bars − close) / max(close − lowest low of the prior P11 chart bars, P16) ≥ P17, otherwise 0
+Long: Long Score ≥ P25
+Long: Long Score ≥ P26
+Long: Long Score ≥ P27
+Long: Long Score > P28

@@ -1,3 +1,7 @@
 Calculation: smoothed BOP = EMA((Heikin-Ashi T1 close - Heikin-Ashi T1 open) / (Heikin-Ashi T1 high - Heikin-Ashi T1 low), EMA lookback) on chart bars using T1's still-forming bar values
 Long: nearest-rank percentile(smoothed BOP, shared percentile lookback, upper rank) > nearest-rank percentile(smoothed BOP, shared percentile lookback, upper rank)[1] AND (smoothed BOP > 0 OR (smoothed BOP > lower threshold AND smoothed BOP[1] < lower threshold))
 Short: (smoothed BOP < 0 AND nearest-rank percentile(smoothed BOP, shared percentile lookback, upper rank) < nearest-rank percentile(smoothed BOP, shared percentile lookback, upper rank)[1] AND nearest-rank percentile(smoothed BOP, shared percentile lookback, lower rank) < nearest-rank percentile(smoothed BOP, shared percentile lookback, lower rank)[1]) OR (smoothed BOP < upper threshold AND smoothed BOP[1] > upper threshold)
+Calculation: Smoothed Balance of Power = EMA(Balance of Power of SPY Heikin-Ashi prices on T1, P1)
+Calculation: Upper percentile = nearest-rank percentile of Smoothed Balance of Power over P2 observations at percentile P3
+Long: Upper percentile > prior Upper percentile AND (Smoothed Balance of Power > 0 OR (Smoothed Balance of Power > -P5 AND prior Smoothed Balance of Power < -P5))
+Short: (Smoothed Balance of Power < 0 AND Upper percentile < prior Upper percentile AND nearest-rank percentile of Smoothed Balance of Power over P2 observations at percentile P4 < its prior value) OR (Smoothed Balance of Power < P6 AND prior Smoothed Balance of Power > P6)

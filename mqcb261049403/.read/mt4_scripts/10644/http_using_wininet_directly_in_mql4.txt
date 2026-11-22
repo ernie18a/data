@@ -1,0 +1,16 @@
+Author:
+mapick
+This is a "conceptual" script I developed to test the WinINet functions to load a HTTP page directly from mql4
+The code imports the wininet.dll original windows library, then it calls all the needed functions, as stated in MSDN documentation, simply translating the mql data types:
+http://msdn.microsoft.com/en-us/library/windows/desktop/aa383630(v=vs.85).aspx
+You have only to run the script on a chart, and you'll see a MessageBox with the https://www.mql4.com html page
+I used this code in one of my EA, to upload a set of signals from my ASP.NET site, calling a page that send the data file
+This is the simple C# asp.net page code to send the file:
+f (File.Exists(@
+"C:\ ... my data directory .... \signs.csv"
+))
+{
+Response.TransmitFile(@"C:\ ... my data directory .... \signs.csv");
+Response.Flush();
+Response.End();
+}

@@ -2,3 +2,6 @@ Calculation: For each of six close series, normalized close = (T1 close sampled 
 Calculation: stress index = sum of each normalized close multiplied by its separate weight
 Long: stress index crosses below threshold AND no position is open
 Exit: long, bars since entry >= holding period
+Calculation: Proxy Financial Stress Index = Z-score(volatility index close on T1, moving-average length, standard-deviation length) × volatility-index weight + Z-score(10-year Treasury yield close on T1, moving-average length, standard-deviation length) × Treasury-yield weight + Z-score(dollar index close on T1, moving-average length, standard-deviation length) × dollar-index weight + Z-score(S&P 500 index close on T1, moving-average length, standard-deviation length) × S&P 500 weight + Z-score(EUR/USD exchange rate close on T1, moving-average length, standard-deviation length) × EUR/USD weight + Z-score(high-yield corporate bond ETF close on T1, moving-average length, standard-deviation length) × high-yield bond ETF weight
+Long: Proxy Financial Stress Index crosses below threshold AND no open position
+Exit: Long, bars since entry >= holding period

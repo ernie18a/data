@@ -6,3 +6,8 @@ Long: HMA(A, lookback parameter, on chart bars) < HMA(A[one chart bar ago], same
 Short: HMA(A, lookback parameter, on chart bars) > HMA(A[one chart bar ago], same lookback parameter, on chart bars) AND HMA(B, lookback parameter, on chart bars) < HMA(B[one chart bar ago], same lookback parameter, on chart bars) AND HMA(C, lookback parameter, on chart bars) < HMA(C[one chart bar ago], same lookback parameter, on chart bars) AND open-trade count < trade-count parameter AND R < return-threshold parameter
 Exit: long, HMA(A, lookback parameter, on chart bars) > HMA(A[one chart bar ago], same lookback parameter, on chart bars) AND R < return-threshold parameter
 Exit: short, HMA(A, lookback parameter, on chart bars) < HMA(A[one chart bar ago], same lookback parameter, on chart bars) AND R > return-threshold parameter
+Calculation: T2 OHLC4 return = (T2 OHLC4 - previous T2 OHLC4) / previous T2 OHLC4
+Long: HMA(DXY OHLC4 on T1, P1)[1] < HMA(DXY OHLC4 on T1, P1)[2] AND HMA(XAUAUD OHLC4 on T1, P1)[1] > HMA(XAUAUD OHLC4 on T1, P1)[2] AND HMA(BTCUSD OHLC4 on T1, P1)[1] > HMA(BTCUSD OHLC4 on T1, P1)[2] AND T2 OHLC4 return[1] > P2 AND open trades < P3
+Short: HMA(DXY OHLC4 on T1, P1)[1] > HMA(DXY OHLC4 on T1, P1)[2] AND HMA(XAUAUD OHLC4 on T1, P1)[1] < HMA(XAUAUD OHLC4 on T1, P1)[2] AND HMA(BTCUSD OHLC4 on T1, P1)[1] < HMA(BTCUSD OHLC4 on T1, P1)[2] AND T2 OHLC4 return[1] < P2 AND open trades < P3
+Exit: Long, HMA(DXY OHLC4 on T1, P1)[1] > HMA(DXY OHLC4 on T1, P1)[2] AND T2 OHLC4 return[1] < P2
+Exit: Short, HMA(DXY OHLC4 on T1, P1)[1] < HMA(DXY OHLC4 on T1, P1)[2] AND T2 OHLC4 return[1] > P2

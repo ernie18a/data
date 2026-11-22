@@ -6,3 +6,9 @@ Calculation: bear trigger = fast average < mid average AND (slow average crosses
 Calculation: market state = on the first chart bar, Bull if bullish condition else Pullback; on each later chart bar, Bull if bullish condition, else Bear if bear trigger, else Pullback if fast average crosses below mid average, else the prior market state, defaulting an undefined prior state to Pullback
 Long: market state = Bull AND prior market state is defined AND prior market state != Bull
 Short: market state = Bear AND prior market state is defined AND prior market state != Bear
+Calculation: Fast average = EMA(external market index closing price for instrument P1 on T1, length P2) or SMA of that price over P2 bars, selected by type P3
+Calculation: Middle average = EMA(external market index closing price for instrument P1 on T1, length P4) or SMA of that price over P4 bars, selected by type P5
+Calculation: Slow average = EMA(external market index closing price for instrument P1 on T1, length P6) or SMA of that price over P6 bars, selected by type P7
+Calculation: Market state = on the first chart bar, bullish if the fast average is above the middle average and the middle average is above the slow average for P8 consecutive chart bars, otherwise pullback; on later chart bars, in priority order, bullish if that ordering has held for P8 consecutive chart bars; bearish if the fast average is below the middle average and the slow average crosses above the fast or middle average; bearish if the prior state is bearish and the fast average is below the middle average and the slow average is above the fast or middle average; pullback if the fast average crosses below the middle average; pullback if the prior state is pullback; otherwise retain the prior state
+Long: Market state is bullish
+Short: Market state is bearish

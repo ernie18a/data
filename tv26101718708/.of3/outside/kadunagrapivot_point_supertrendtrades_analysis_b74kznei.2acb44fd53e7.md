@@ -1,2 +1,0 @@
-Long: Pivot Point Supertrend (pivot length, ATR length, ATR multiplier) turns bullish AND close is above moving average (source, type, length) AND (direction basis is the chart instrument OR Bitcoin Pivot Point Supertrend is bullish)
-Short: Pivot Point Supertrend (pivot length, ATR length, ATR multiplier) turns bearish AND close is below moving average (source, type, length) AND (direction basis is the chart instrument OR Bitcoin Pivot Point Supertrend is bearish)

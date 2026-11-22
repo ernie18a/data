@@ -1,2 +1,3 @@
 Long: volume > SMA(volume, lookback) * volume-multiplier AND ABS(close - close[lookback]) > close[lookback] * price-change-multiplier
 Exit: long, low <= entry price - stop-loss-multiplier * standard deviation(close, lookback) OR bars since entry >= hold-period parameter
+Long: volume > SMA(volume, lookback period) × volume multiplier AND |instrument close − instrument close lookback period bars ago| > instrument close lookback period bars ago × price-change multiplier AND T1 VIX close < VIX threshold

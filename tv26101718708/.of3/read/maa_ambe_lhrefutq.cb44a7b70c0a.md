@@ -2,3 +2,8 @@ Long: position is flat AND fewer than the maximum trades for the current calenda
 Short: position is flat AND fewer than the maximum trades for the current calendar date have been taken AND datetime is within either of two parameterized trading sessions AND close < EMA(close, lookback) AND RSI(close, lookback) < lower RSI threshold AND ADX(DI lookback, ADX smoothing) > ADX threshold AND volume > SMA(volume, lookback)
 Exit: long, high >= entry price + target distance OR low <= entry price - stop distance
 Exit: short, low <= entry price - target distance OR high >= entry price + stop distance
+Calculation: Daily entry count = number of entries since the start of T1
+Option: buy call, (time is within session P1 OR time is within session P2) AND Daily entry count < P3 AND no open position AND ADX(P4, P5) > P6 AND Sensex volume > SMA(Sensex volume, P7) AND Sensex close > EMA(Sensex close, P8) AND RSI(Sensex close, P9) > P10
+Option: buy put, (time is within session P1 OR time is within session P2) AND Daily entry count < P3 AND no open position AND ADX(P4, P5) > P6 AND Sensex volume > SMA(Sensex volume, P7) AND Sensex close < EMA(Sensex close, P8) AND RSI(Sensex close, P9) < P11
+Option: sell call, Sensex high >= Sensex close at call entry + P12 OR Sensex low <= Sensex close at call entry - P13
+Option: sell put, Sensex low <= Sensex close at put entry - P12 OR Sensex high >= Sensex close at put entry + P13

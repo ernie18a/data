@@ -1,3 +1,6 @@
 Calculation: Breadth oscillator = EMA(COALESCE(new-high index close, 0) - COALESCE(new-low index close, 0), smoothing parameter), calculated on chart bars using T1 closes mapped to chart bars (last completed T1 bar historically; still-forming T1 bar in real time)
 Long: On confirmation of a pivot low, pivot low(close, pivot lookback, pivot lookback) < preceding pivot low(close, pivot lookback, pivot lookback) AND Breadth oscillator[pivot lookback] > Breadth oscillator at the preceding pivot low AND Breadth oscillator[pivot lookback] < 0
 Short: On confirmation of a pivot high, pivot high(close, pivot lookback, pivot lookback) > preceding pivot high(close, pivot lookback, pivot lookback) AND Breadth oscillator[pivot lookback] < Breadth oscillator at the preceding pivot high AND Breadth oscillator[pivot lookback] > 0
+Calculation: breadth oscillator = EMA(new-high count (T1) − new-low count (T1), smoothing length)
+Short: pivot high of traded-instrument price over pivot lookback is higher than the previous pivot high AND breadth oscillator at that pivot is lower than at the previous pivot high AND breadth oscillator at that pivot > 0
+Long: pivot low of traded-instrument price over pivot lookback is lower than the previous pivot low AND breadth oscillator at that pivot is higher than at the previous pivot low AND breadth oscillator at that pivot < 0

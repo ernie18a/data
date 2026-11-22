@@ -1,2 +1,0 @@
-Calculation: Relative performance = (((close / close[P4]) / (benchmark close / benchmark close[P4])) - 1) * 100
-Long: close > Highest(high, P1)[1] AND volume / SMA(volume, P1) > P5 AND close > EMA(close, P1) AND EMA(close, P1) > SMA(close, P2) AND SMA(close, P2) > SMA(close, P3) AND Relative performance > 0

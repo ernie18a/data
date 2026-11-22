@@ -7,3 +7,6 @@ Long: trend-template score >= next-lower partial-score alert threshold
 Long: trend-template score >= middle partial-score alert threshold
 Long: trend-template score >= next-higher-than-lowest partial-score alert threshold
 Long: trend-template score >= lowest partial-score alert threshold
+Calculation: Normalized relative-performance score = 100 × (traded instrument close / S&P 500 close − lowest(traded instrument close / S&P 500 close, P1 chart bars)) / max(P2, highest(traded instrument close / S&P 500 close, P1 chart bars) − lowest(traded instrument close / S&P 500 close, P1 chart bars))
+Calculation: Trend-template score = count of true conditions: normalized relative-performance score > P3; traded instrument close > SMA(traded instrument close, P4); traded instrument close > SMA(traded instrument close, P5); traded instrument close > SMA(traded instrument close, P6); SMA(traded instrument close, P4) > SMA(traded instrument close, P5); SMA(traded instrument close, P4) > SMA(traded instrument close, P6); SMA(traded instrument close, P5) > SMA(traded instrument close, P6); traded instrument close ≥ lowest(traded instrument low, P7 bars on T1) × P8; traded instrument close ≥ highest(traded instrument high, P7 bars on T1) × P9; SMA(traded instrument close, P6) > the same SMA P10 chart bars ago
+Long: trend-template score ≥ P11

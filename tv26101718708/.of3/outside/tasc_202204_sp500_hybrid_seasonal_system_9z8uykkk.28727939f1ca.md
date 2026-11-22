@@ -1,4 +1,0 @@
-Calculation: Prior-high change(source, lookback) = 100 × (source / highest(source, lookback) on the previous chart bar − 1)
-Long: (calendar month ≥ P1 OR calendar month < P2) AND previous chart bar VFI(P3, P4, P5) > P6 AND (previous chart bar Prior-high change(VIX close at T1, P7) < P8 OR previous chart bar Prior-high change(ATR(P9), P7) < P10 × P8)
-Short: long-only mode is disabled AND (calendar month = P2 OR previous chart bar Prior-high change(VIX close at T1, P7) > P12 × P8 OR previous chart bar VFI(P3, P4, P5) crosses P6 AND its SMA(P11) is falling)
-Exit: long, long-only mode is enabled AND (calendar month = P2 OR previous chart bar Prior-high change(VIX close at T1, P7) > P12 × P8 OR previous chart bar VFI(P3, P4, P5) crosses P6 AND its SMA(P11) is falling)

@@ -2,3 +2,9 @@ Calculation: Adjusted correlation score = 1 − (1 − R²) × (lookback − 1) 
 Calculation: Direction score = 100 × M × (2 + adjusted correlation score) / [M × (2 + adjusted correlation score) + (100 − M) × (2 − adjusted correlation score)], where M is RSI(upper sum, lower sum) or RSI(close, lookback), according to the selected method; upper sum = SUM(volume × close when close > close[1], lookback), and lower sum = SUM(volume × close when close < close[1], lookback).
 Long: Direction score > 50
 Short: Direction score <= 50
+Calculation: Selected reference index series = US equity index close for markets outside USD currency pairs; negative US equity index close for USD currency pairs; cryptocurrency index close for cryptocurrency markets
+Calculation: Adjusted multiple R² = 1 - (1 - (sqrt((r_close,volume² + r_close,index² - 2 × r_close,volume × r_close,index × r_volume,index) / (1 - r_volume,index²)))²) × (lookback period - 1) / (lookback period - 3), where each r is the Pearson correlation of its named series over the lookback period, and index is the selected reference index series
+Calculation: Selected oscillator reading = RSI(traded close, lookback period) in RSI mode; otherwise RSI(rising volume-weighted close total, falling volume-weighted close total), where each total sums volume × close over the lookback period on bars where close rises or falls from the prior bar, respectively
+Calculation: Dow-adjusted bullish proportion = 100 × oscillator reading × (2 + adjusted multiple R²) / (oscillator reading × (2 + adjusted multiple R²) + (100 - oscillator reading) × (2 - adjusted multiple R²))
+Long: Dow-adjusted bullish proportion > decision threshold
+Short: Dow-adjusted bullish proportion <= decision threshold

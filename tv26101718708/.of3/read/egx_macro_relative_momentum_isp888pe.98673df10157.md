@@ -1,3 +1,8 @@
 Calculation: accumulated relative ROC = SMA(100 × (equity-source close(T1, last completed bar) / equity-source close(T1, preceding bar) − 1) − 100 × (currency-source close(T1, last completed bar) / currency-source close(T1, preceding bar) − 1), accumulation lookback) × accumulation lookback, evaluated on chart bars using T1 values from the last completed bar
 Long: equity-source close(T1, last completed bar) > equity-source close(T1, preceding bar) AND currency-source close(T1, last completed bar) < currency-source close(T1, preceding bar) AND accumulated relative ROC >= 0, evaluated on chart bars using T1 values from the last completed and preceding bars
 Short: equity-source close(T1, last completed bar) < equity-source close(T1, preceding bar) AND currency-source close(T1, last completed bar) > currency-source close(T1, preceding bar), evaluated on chart bars using T1 values from the last completed and preceding bars
+Calculation: accumulated relative momentum = P1 × SMA((100 × (EGX30 close on T1 − previous EGX30 close on T1) / previous EGX30 close on T1) − (100 × (USD/EGP close on T1 − previous USD/EGP close on T1) / previous USD/EGP close on T1), P1)
+Long: accumulated relative momentum ≥ 0
+Short: accumulated relative momentum ≤ 0
+Long: EGX30 close on T1 > previous EGX30 close on T1 AND USD/EGP close on T1 < previous USD/EGP close on T1
+Short: EGX30 close on T1 < previous EGX30 close on T1 AND USD/EGP close on T1 > previous USD/EGP close on T1

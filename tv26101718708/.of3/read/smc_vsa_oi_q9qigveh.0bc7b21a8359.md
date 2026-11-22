@@ -6,3 +6,7 @@ Calculation: Active sweep-high pivot = high of the latest Sweep high bar; cleare
 Calculation: Active sweep-low pivot = low of the latest Sweep low bar; cleared when close < pivot or at Asian session start
 Long: Sweep low OR (active sweep-high pivot is set AND close > active sweep-high pivot)
 Short: Sweep high OR (active sweep-low pivot is set AND close < active sweep-low pivot)
+Calculation: Open interest change = current open interest − previous bar's open interest
+Calculation: Average absolute open interest change = SMA(abs(open interest change), P1)
+Long: open interest change > 0 AND open interest change > average absolute open interest change × P2
+Short: open interest change < 0 AND abs(open interest change) > average absolute open interest change × P2

@@ -1,4 +1,0 @@
-Long: external ticker selected AND previous completed external ticker close on T1 > previous completed selected EMA or SMA of external ticker close on T2 over the moving average period
-Long: external ticker selected AND within the configured date window AND previous completed external ticker close on T1 > previous completed selected EMA or SMA of external ticker close on T2 over the moving average period
-Short: external ticker selected AND previous completed external ticker close on T1 < previous completed selected EMA or SMA of external ticker close on T2 over the moving average period
-Exit: long, external ticker selected AND within the configured date window AND previous completed external ticker close on T1 < previous completed selected EMA or SMA of external ticker close on T2 over the moving average period

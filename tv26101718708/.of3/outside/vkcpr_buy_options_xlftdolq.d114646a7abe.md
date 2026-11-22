@@ -1,2 +1,0 @@
-Option: buy call, selected price source crosses above the Central Pivot Range top from the previous T1 bar AND call entries are enabled AND no call position is open AND the weekday is enabled AND the date is within the configured range
-Option: buy put, selected price source crosses below the Central Pivot Range bottom from the previous T1 bar AND put entries are enabled AND no put position is open AND the weekday is enabled AND the date is within the configured range

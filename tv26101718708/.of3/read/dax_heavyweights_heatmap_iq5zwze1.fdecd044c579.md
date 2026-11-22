@@ -1,2 +1,4 @@
 Long: at least the breadth threshold number of the seven fixed component securities have a valid previous T1 close and ((close(T1, current bar) / close(T1, previous bar) - 1) * 100) > 0, using T1 values on each chart bar; the current T1 bar may still be forming
 Short: at least the breadth threshold number of the seven fixed component securities have a valid previous T1 close and ((close(T1, current bar) / close(T1, previous bar) - 1) * 100) < 0, using T1 values on each chart bar; the current T1 bar may still be forming
+Long: at least P1 of SAP, Siemens, Allianz, Deutsche Telekom, Airbus, Munich Re, and Mercedes-Benz have a positive close change on T1
+Short: at least P1 of SAP, Siemens, Allianz, Deutsche Telekom, Airbus, Munich Re, and Mercedes-Benz have a negative close change on T1

@@ -1,4 +1,0 @@
-Long: low < previous T1 candle low AND close > previous T1 candle low
-Short: high > previous T1 candle high AND close < previous T1 candle high
-Long: latest chart-instrument pivot low (P1 bars each side) < preceding chart-instrument pivot low (P1 bars each side) AND latest correlated-instrument pivot low (P1 bars each side) > preceding correlated-instrument pivot low (P1 bars each side) AND bars since latest correlated-instrument pivot low <= P2
-Short: latest chart-instrument pivot high (P1 bars each side) > preceding chart-instrument pivot high (P1 bars each side) AND latest correlated-instrument pivot high (P1 bars each side) < preceding correlated-instrument pivot high (P1 bars each side) AND bars since latest correlated-instrument pivot high <= P2

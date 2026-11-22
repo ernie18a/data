@@ -1,2 +1,0 @@
-Long: Relative Volume(volume, volume lookback) >= RVOL threshold AND chart-timeframe close > prior chart-timeframe close AND 100 × abs(T1 close − prior T1 close) / ATR(T1, ATR lookback) < range exhaustion threshold AND T1 close > EMA(T1 close, EMA lookback)
-Short: sector ranks first by Relative Volume among scanned sectors AND Relative Volume(volume, volume lookback) >= RVOL threshold AND chart-timeframe close > prior chart-timeframe close AND T1 close <= EMA(T1 close, EMA lookback) AND price is at resistance

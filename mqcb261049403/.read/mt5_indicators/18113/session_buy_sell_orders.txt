@@ -1,0 +1,11 @@
+The "
+Session Buy Sell Orders
+" indicator shows the maximum and minimum numbers of the following parameters in the form of a histogram:
+SYMBOL_SESSION_BUY_ORDERS —
+"the total number of current buy orders"
+SYMBOL_SESSION_SELL_ORDERS
+— "the total number of current sell orders".
+The indicator drawn using two buffers with the DRAW_HISTOGRAM drawing style.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/18113

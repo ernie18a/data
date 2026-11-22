@@ -1,3 +1,5 @@
 Calculation: Deviation = ((close of paired instrument from T1's last completed bar - SMA(close of paired instrument from T1's last completed bar, P_lookback, on chart bars)) / SMA(close of paired instrument from T1's last completed bar, P_lookback, on chart bars)) * 100
 Long: Deviation > P_deviation AND ABS(correlation(close of traded instrument from T1's last completed bar, close of paired instrument from T1's last completed bar, P_lookback, on chart bars)) >= P_correlation
 Short: Deviation < -P_deviation AND ABS(correlation(close of traded instrument from T1's last completed bar, close of paired instrument from T1's last completed bar, P_lookback, on chart bars)) >= P_correlation
+Long: USDMYR close on T1 > SMA(USDMYR close on T1, P1) × (1 + P2/100)
+Short: USDMYR close on T1 < SMA(USDMYR close on T1, P1) × (1 − P2/100)

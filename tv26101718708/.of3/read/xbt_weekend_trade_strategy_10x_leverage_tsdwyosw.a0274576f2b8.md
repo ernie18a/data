@@ -5,3 +5,7 @@ Short: position side is short AND close > average entry price × (1 + deviation 
 Long: position side is not short
 Exit: long, open profit / initial capital > profit target parameter OR day of week = Monday
 Exit: short, open profit / initial capital > profit target parameter OR day of week = Monday
+Long: Saturday or Sunday UTC chart close < Friday GXBT T1 close × (1 − P1)
+Short: Saturday or Sunday UTC chart close > Friday GXBT T1 close × (1 + P1)
+Exit: Long, UTC day = Monday
+Exit: Short, UTC day = Monday

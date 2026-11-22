@@ -1,3 +1,0 @@
-Calculation: Uptrend setup = EMA(traded instrument close, P1) > EMA(traded instrument close, P1)[P2] AND Highest(traded instrument close / EMA(traded instrument close, P1), P3)[1] >= 1 + P4 / 100 AND traded instrument close > EMA(traded instrument close, P1) AND (NOT P5 OR SPY close on T1 > EMA(SPY close on T1, P6))
-Long: Uptrend setup AND traded instrument low <= EMA(traded instrument close, P1) AND traded instrument low >= EMA(traded instrument close, P1) - ATR(traded instrument, P7)
-Long: Uptrend setup AND traded instrument close <= EMA(traded instrument close, P1) * (1 + P8 / 100) AND NOT (traded instrument low <= EMA(traded instrument close, P1) AND traded instrument low >= EMA(traded instrument close, P1) - ATR(traded instrument, P7))

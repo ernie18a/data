@@ -10,3 +10,10 @@ Long: RS momentum angle > 0 AND RS momentum angle on the previous chart bar <= 0
 Short: RS momentum angle < 0 AND RS momentum angle on the previous chart bar >= 0
 Long: SMA(close, price confirmation lookback) is rising over trend lookback AND close >= SMA(close, price confirmation lookback)
 Short: SMA(close, price confirmation lookback) is falling over trend lookback AND close < SMA(close, price confirmation lookback)
+Calculation: Mansfield RS = 100 × ((100 × instrument close ÷ benchmark close at T1) ÷ SMA(100 × instrument close ÷ benchmark close at T1, P1) − 1)
+Calculation: RS trend = arctan((Mansfield RS − Mansfield RS[P2]) ÷ P2)
+Short: Mansfield RS ≤ 0
+Long: RS trend > 0
+Short: RS trend ≤ 0
+Long: RS trend crosses above 0
+Short: RS trend crosses below 0

@@ -10,3 +10,6 @@ Exit: long, take-profit exit enabled AND high ≥ entry price × (1 + take-profi
 Exit: long, stop-loss exit enabled AND low ≤ entry price × (1 − stop-loss percentage / 100)
 Exit: short, take-profit exit enabled AND low ≤ entry price × (1 − take-profit percentage / 100)
 Exit: short, stop-loss exit enabled AND high ≥ entry price × (1 + stop-loss percentage / 100)
+Calculation: BTC futures–spot spread on T1, T2, and T3 = (W1 × Binance BTCUSD perpetual close + W1 × Binance BTCUSDT perpetual close + W2 × OKX BTCUSDT perpetual close) − (W1 × Binance BTCUSD spot close + W1 × Binance BTCUSDT spot close + W2 × OKX BTCUSDT spot close)
+Long: configured trading direction permits long AND Z-Score of BTC futures–spot spread over the lookback period on T1 > long threshold AND Z-Score of BTC futures–spot spread over the lookback period on T2 > long threshold AND Z-Score of BTC futures–spot spread over the lookback period on T3 > long threshold
+Short: configured trading direction permits short AND Z-Score of BTC futures–spot spread over the lookback period on T1 < short threshold AND Z-Score of BTC futures–spot spread over the lookback period on T2 < short threshold AND Z-Score of BTC futures–spot spread over the lookback period on T3 < short threshold

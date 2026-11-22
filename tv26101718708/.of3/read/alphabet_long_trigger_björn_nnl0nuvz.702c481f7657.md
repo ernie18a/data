@@ -1,1 +1,2 @@
 Long: close >= lower price AND close <= upper price AND close > open AND low > low[1] AND volume > SMA(volume, lookback) * volume factor AND index close on the current chart bar >= index close[1]
+Long: traded instrument close >= minimum price AND traded instrument close <= maximum price AND traded instrument close > traded instrument open AND traded instrument low > prior traded instrument low AND traded instrument volume > SMA(traded instrument volume, volume averaging period) * volume multiplier AND Nasdaq index close >= prior Nasdaq index close

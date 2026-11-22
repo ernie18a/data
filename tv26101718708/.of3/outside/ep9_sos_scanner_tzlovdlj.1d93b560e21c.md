@@ -1,4 +1,0 @@
-Calculation: ADR% = ADR(P5) / close * 100
-Calculation: Relative strength ratio = close / benchmark close
-Calculation: Stop risk% = IF((high - low) / close * 100 >= P6 * ADR%, (close - low) / close * 100, P7 * ADR%)
-Long: close[1] / close[2] <= P1 AND high > low AND (close - low) / (high - low) >= P2 AND (close - open) > (close[1] - open[1]) AND close >= P3 AND volume >= P4 AND Stop risk% <= ADR% AND ((close > SMA(close, P8) AND SMA(close, P8) > SMA(close, P8)[P9]) OR (close > SMA(close, P8) AND benchmark close != 0 AND Relative strength ratio > SMA(Relative strength ratio, P10)) OR (SMA(close, P8) > SMA(close, P8)[P9] AND benchmark close != 0 AND Relative strength ratio > SMA(Relative strength ratio, P10)))

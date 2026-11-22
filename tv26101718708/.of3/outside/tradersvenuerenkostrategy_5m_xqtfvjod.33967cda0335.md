@@ -1,2 +1,0 @@
-Long: current Renko low of traded-instrument close (ATR brick-size parameter) = current Renko open AND prior Renko close > prior Renko open AND time > start-date parameter
-Short: current Renko high of traded-instrument close (ATR brick-size parameter) = current Renko open AND prior Renko close < prior Renko open AND time > start-date parameter

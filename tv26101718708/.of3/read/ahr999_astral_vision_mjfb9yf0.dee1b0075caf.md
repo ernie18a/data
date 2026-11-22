@@ -1,1 +1,2 @@
 Long: AHR999(close, lookback, T1, current T1 bar—forming in real time and last completed on historical bars; evaluated on chart bars taking values from T1) < oversold threshold
+Long: Bitcoin AHR999 with geometric mean lookback P1 at T1 < P2

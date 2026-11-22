@@ -1,3 +1,0 @@
-Calculation: 10-year Treasury yield range position over P1 T1 bars = if highest(10-year Treasury yield, P1) > lowest(10-year Treasury yield, P1) then (10-year Treasury yield - lowest(10-year Treasury yield, P1)) / (highest(10-year Treasury yield, P1) - lowest(10-year Treasury yield, P1)) else 0.5
-Long: chart bar index > P1 AND chart time >= January 1 of P3 AND T1 10-year Treasury yield is available AND 10-year Treasury yield range position <= P2
-Exit: Long, chart bar index > P1 AND chart time >= January 1 of P3 AND T1 10-year Treasury yield is available AND 10-year Treasury yield range position > P2

@@ -1,3 +1,0 @@
-Calculation: Consensus score = 100 × (sum of enabled votes / number of enabled indicators), where each vote is +1 if the lagged indicator of Bitcoin closing price exceeds the lagged same indicator of Global Liquidity and −1 otherwise; indicators are ROC, CCI, RSI, MFI, and CMO, each with separate Bitcoin and Global Liquidity lookback parameters and lag parameters, and an individual enable parameter; score is 0 if no indicators are enabled
-Long: Consensus score > 0
-Short: Consensus score < 0

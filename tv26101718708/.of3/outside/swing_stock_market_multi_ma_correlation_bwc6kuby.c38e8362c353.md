@@ -1,5 +1,0 @@
-Calculation: selected OHLC4 = OHLC4 of traded-instrument Heikin-Ashi candles if P1 = true, otherwise OHLC4 of SP500 candles if P2 = true, otherwise OHLC4 of Nasdaq candles if P3 = true, otherwise OHLC4 of traded-instrument candles
-Long: P10 = true AND moving average(selected OHLC4, P5, P4) > moving average(selected OHLC4, P7, P6) AND moving average(selected OHLC4, P7, P6) > moving average(selected OHLC4, P9, P8)
-Short: P11 = true AND moving average(selected OHLC4, P5, P4) < moving average(selected OHLC4, P7, P6) AND moving average(selected OHLC4, P7, P6) < moving average(selected OHLC4, P9, P8)
-Exit: long, P10 = true AND P11 = false AND moving average(selected OHLC4, P5, P4) < moving average(selected OHLC4, P7, P6) AND moving average(selected OHLC4, P7, P6) < moving average(selected OHLC4, P9, P8)
-Exit: short, P11 = true AND P10 = false AND moving average(selected OHLC4, P5, P4) > moving average(selected OHLC4, P7, P6) AND moving average(selected OHLC4, P7, P6) > moving average(selected OHLC4, P9, P8)

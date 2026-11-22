@@ -16,3 +16,6 @@ Long: Relative strength > SMA(Relative strength, lookback)
 Short: Relative strength <= SMA(Relative strength, lookback)
 Long: volume > SMA(volume, lookback) * volume multiplier AND high > low AND close - low > upper close-position threshold * (high - low)
 Short: volume > SMA(volume, lookback) * volume multiplier AND (high = low OR close - low < lower close-position threshold * (high - low))
+Calculation: relative strength ratio = traded instrument close / benchmark index close
+Long: relative strength ratio > simple moving average of relative strength ratio over P1 bars
+Short: relative strength ratio <= simple moving average of relative strength ratio over P1 bars

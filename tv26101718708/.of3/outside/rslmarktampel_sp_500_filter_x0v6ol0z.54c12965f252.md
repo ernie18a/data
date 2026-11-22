@@ -1,2 +1,0 @@
-Long: S&P 500 close on T1 > SMA(S&P 500 close on T1, P1) AND S&P 500 close on T2 > SMA(S&P 500 close on T2, P3) AND S&P 500 close on T2 >= SMA(S&P 500 close on T2, P2)
-Exit: long, (S&P 500 close on T1 < SMA(S&P 500 close on T1, P1) AND previous T1 close < previous SMA(S&P 500 close on T1, P1)) OR S&P 500 close on T2 < SMA(S&P 500 close on T2, P3)

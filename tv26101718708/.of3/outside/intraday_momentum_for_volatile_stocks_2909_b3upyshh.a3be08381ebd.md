@@ -1,2 +1,0 @@
-Calculation: cumulative volume = sum of traded-instrument chart-bar volume since the start of the current T1 interval
-Long: traded-instrument high >= its T1 opening price × (1 + entry percentage) AND cumulative volume >= SMA of traded-instrument volume over the volume-lookback period through the previous completed T1 interval AND MFI((high + low + close) / 3, MFI period) > MFI threshold AND market-index T1 close > its SMA over the market-regime period AND chart time <= cutoff hour and minute AND position is flat

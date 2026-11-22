@@ -1,0 +1,15 @@
+This is a market sentiment indicator. It displays market sentiment — bullish or bearish.
+The indicator works on centralized markets, such as FORTS. More in the article
+Principles of Exchange Pricing through the Example of Moscow Exchange's Derivatives Market
+.
+It should be noted that when working with this indicator it is necessary to consider the current trend (e.g. by a technical analysis).
+Attention:
+By default the indicator is configured to RTS futures. The attached parameters are for Brent, although they fit RTS as well.
+Parameters:
+Min. order volume — the required volume of limit orders.
+Min. amount of orders — the required amount of limit orders.
+Order volume difference — the required difference of the volume of limit orders, i.e. how many times the volume of SELL is greater than BUY and vice versa.
+Order difference — the required difference of limit orders, i.e. how many times SELL orders are greater than BUY and vice versa.
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/13976

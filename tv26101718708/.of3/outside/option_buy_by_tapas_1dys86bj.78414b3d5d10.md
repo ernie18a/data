@@ -1,7 +1,0 @@
-Calculation: Setup price = close on the setup bar
-Calculation: Stop price = Heikin Ashi low of the most recent of the previous P12 chart bars whose Heikin Ashi candle is bearish and whose low is at or below its lower Bollinger Band(P1, P2)
-Long: bullish Heikin Ashi candle AND the Heikin Ashi candle P13 chart bars earlier was bearish and its low was at or below its lower Bollinger Band(P1, P2)
-Short: bearish Heikin Ashi candle AND the Heikin Ashi candle P13 chart bars earlier was bullish and its high was at or above its upper Bollinger Band(P1, P2)
-Long: during P3, close crosses above Setup price after an active, unentered setup formed in the same T1 period during P3 and P5, on a bullish Heikin Ashi bar with at least one bearish Heikin Ashi bar among the previous P12 chart bars whose low was at or below its lower Bollinger Band(P1, P2)
-Long: during P4, close crosses above Setup price after an active, unentered setup formed in the same T1 period during P4 and P5, on a bullish Heikin Ashi bar with at least one bearish Heikin Ashi bar among the previous P12 chart bars whose low was at or below its lower Bollinger Band(P1, P2) AND SMA(Stochastic(P6), P7) < P8 on the setup bar
-Exit: long, high >= Setup price + (Setup price - Stop price) * P9 OR close <= Stop price OR hour = P10 AND minute >= P11 OR time is outside P5

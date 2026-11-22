@@ -5,3 +5,10 @@ Long: Position side is not long AND source low > previous source high AND source
 Short: Position side is not short AND source high < previous source low AND previous source low - source high >= Gap threshold AND source close < SMA(correlated close, daily-SMA lookback, T1 bar still forming; evaluated on chart bars using T1 values); source OHLC is correlated when correlation is enabled, otherwise chart OHLC
 Exit: Long, after the signal bar, source high > Long target; source OHLC is correlated when correlation is enabled, otherwise chart OHLC
 Exit: Short, after the signal bar, source low < Short target; source OHLC is correlated when correlation is enabled, otherwise chart OHLC
+Calculation: decision candle high, low, and close = BTC futures high, low, and close when correlation candles are enabled, otherwise traded instrument high, low, and close
+Calculation: upward gap = decision candle low > previous decision candle high AND decision candle low − previous decision candle high ≥ P1 / 100 × SMA(decision candle high − decision candle low, P2)
+Calculation: downward gap = decision candle high < previous decision candle low AND previous decision candle low − decision candle high ≥ P1 / 100 × SMA(decision candle high − decision candle low, P2)
+Long: inverse mode disabled AND upward gap AND decision candle close > SMA(BTC futures close, P3) on T1 OR inverse mode enabled AND downward gap AND decision candle close < SMA(BTC futures close, P3) on T1
+Short: inverse mode disabled AND downward gap AND decision candle close < SMA(BTC futures close, P3) on T1 OR inverse mode enabled AND upward gap AND decision candle close > SMA(BTC futures close, P3) on T1
+Exit: long, decision candle low < 2 × decision candle close at short entry − Highest(decision candle high, P4) at short entry
+Exit: short, decision candle high > 2 × decision candle close at long entry − (decision candle close at long entry)² / Lowest(decision candle low, P4) at long entry

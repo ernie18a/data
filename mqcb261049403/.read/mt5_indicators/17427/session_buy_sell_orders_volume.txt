@@ -1,0 +1,10 @@
+The "
+Session Buy Sell Orders Volume
+" indicator shows a histogram of the minimum and maximum values of the following parameters:
+SYMBOL_SESSION_BUY_ORDERS_VOLUME
+- "Total current volume of buy orders"
+SYMBOL_SESSION_SELL_ORDERS_VOLUME
+- "Total current volume of sell orders"
+Translated from Russian by MetaQuotes Ltd.
+Original code:
+https://www.mql5.com/ru/code/17427

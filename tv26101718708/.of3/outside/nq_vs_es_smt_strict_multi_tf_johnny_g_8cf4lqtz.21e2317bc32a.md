@@ -1,6 +1,0 @@
-Calculation: Bullish SMT(A, B, T) = Pivot Low(A, T, P1, P2) < previous Pivot Low(A, T, P1, P2) AND Pivot Low(B, T, P1, P2) >= previous Pivot Low(B, T, P1, P2)
-Calculation: Bearish SMT(A, B, T) = Pivot High(A, T, P1, P2) > previous Pivot High(A, T, P1, P2) AND Pivot High(B, T, P1, P2) <= previous Pivot High(B, T, P1, P2)
-Long: Bullish SMT(chart instrument, S&P 500 futures, chart timeframe)
-Short: Bearish SMT(chart instrument, S&P 500 futures, chart timeframe)
-Long: Bullish SMT(Nasdaq 100 futures, S&P 500 futures, T1) OR Bullish SMT(Nasdaq 100 futures, S&P 500 futures, T2) OR Bullish SMT(Nasdaq 100 futures, S&P 500 futures, T3) OR Bullish SMT(Nasdaq 100 futures, S&P 500 futures, T4) OR Bullish SMT(Nasdaq 100 futures, S&P 500 futures, T5) OR Bullish SMT(Nasdaq 100 futures, S&P 500 futures, T6) OR Bullish SMT(Nasdaq 100 futures, S&P 500 futures, T7) OR Bullish SMT(Nasdaq 100 futures, S&P 500 futures, T8)
-Short: Bearish SMT(Nasdaq 100 futures, S&P 500 futures, T1) OR Bearish SMT(Nasdaq 100 futures, S&P 500 futures, T2) OR Bearish SMT(Nasdaq 100 futures, S&P 500 futures, T3) OR Bearish SMT(Nasdaq 100 futures, S&P 500 futures, T4) OR Bearish SMT(Nasdaq 100 futures, S&P 500 futures, T5) OR Bearish SMT(Nasdaq 100 futures, S&P 500 futures, T6) OR Bearish SMT(Nasdaq 100 futures, S&P 500 futures, T7) OR Bearish SMT(Nasdaq 100 futures, S&P 500 futures, T8)

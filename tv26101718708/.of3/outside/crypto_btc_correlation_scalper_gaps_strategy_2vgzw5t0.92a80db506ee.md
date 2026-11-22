@@ -1,7 +1,0 @@
-Calculation: decision candle high, low, and close = BTC futures high, low, and close when correlation candles are enabled, otherwise traded instrument high, low, and close
-Calculation: upward gap = decision candle low > previous decision candle high AND decision candle low − previous decision candle high ≥ P1 / 100 × SMA(decision candle high − decision candle low, P2)
-Calculation: downward gap = decision candle high < previous decision candle low AND previous decision candle low − decision candle high ≥ P1 / 100 × SMA(decision candle high − decision candle low, P2)
-Long: inverse mode disabled AND upward gap AND decision candle close > SMA(BTC futures close, P3) on T1 OR inverse mode enabled AND downward gap AND decision candle close < SMA(BTC futures close, P3) on T1
-Short: inverse mode disabled AND downward gap AND decision candle close < SMA(BTC futures close, P3) on T1 OR inverse mode enabled AND upward gap AND decision candle close > SMA(BTC futures close, P3) on T1
-Exit: long, decision candle low < 2 × decision candle close at short entry − Highest(decision candle high, P4) at short entry
-Exit: short, decision candle high > 2 × decision candle close at long entry − (decision candle close at long entry)² / Lowest(decision candle low, P4) at long entry

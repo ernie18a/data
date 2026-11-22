@@ -1,5 +1,0 @@
-Calculation: traded instrument T2 OHLC4 return = (prior T2 OHLC4 - two-bars-prior T2 OHLC4) / two-bars-prior T2 OHLC4
-Long: HMA(US Dollar Index OHLC4, T1, P1) < prior HMA(US Dollar Index OHLC4, T1, P1) AND HMA(gold price in Australian dollars OHLC4, T1, P1) > prior HMA(gold price in Australian dollars OHLC4, T1, P1) AND HMA(BTC/USD OHLC4, T1, P1) > prior HMA(BTC/USD OHLC4, T1, P1) AND open trade count < P3 AND traded instrument T2 OHLC4 return > P2
-Short: HMA(US Dollar Index OHLC4, T1, P1) > prior HMA(US Dollar Index OHLC4, T1, P1) AND HMA(gold price in Australian dollars OHLC4, T1, P1) < prior HMA(gold price in Australian dollars OHLC4, T1, P1) AND HMA(BTC/USD OHLC4, T1, P1) < prior HMA(BTC/USD OHLC4, T1, P1) AND open trade count < P3 AND traded instrument T2 OHLC4 return < P2
-Exit: long, HMA(US Dollar Index OHLC4, T1, P1) > prior HMA(US Dollar Index OHLC4, T1, P1) AND traded instrument T2 OHLC4 return < P2
-Exit: short, HMA(US Dollar Index OHLC4, T1, P1) < prior HMA(US Dollar Index OHLC4, T1, P1) AND traded instrument T2 OHLC4 return > P2

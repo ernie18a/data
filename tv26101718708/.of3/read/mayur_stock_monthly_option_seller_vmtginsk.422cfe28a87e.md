@@ -5,3 +5,10 @@ Long: combined trend score >= -range band
 Short: combined trend score <= range band
 Exit: Long, combined trend score > range band AND ((expected move is available AND close <= close - safety distance * expected move + exit buffer * expected move) OR close < LOWEST(low, swing lookback)[1])
 Exit: Short, combined trend score < -range band AND ((expected move is available AND close >= close + safety distance * expected move - exit buffer * expected move) OR close > HIGHEST(high, swing lookback)[1])
+Calculation: Composite trend score = clamp to [-1, 1] the weighted sum of clamp((fast EMA of closing price − slow EMA of closing price) / ATR, [-1, 1]), clamp((RSI − RSI midpoint parameter) / RSI scaling parameter, [-1, 1]), clamp((closing price − VWAP) / ATR, [-1, 1]), and Supertrend direction score (+1 bullish, −1 bearish), divided by the sum of their separate weights (or 1 if all weights are zero); use separate fast and slow EMA lengths, RSI length, ATR length, Supertrend ATR length and factor, and treat unavailable components as zero
+Calculation: Overall trend score = mean of the composite trend score on the chart timeframe, T1, and T2, using the configured current or last-closed bar on T1 and T2
+Calculation: Expected move = closing price × standard deviation of log(closing price / prior closing price) over the historical-volatility lookback × sqrt(252) × sqrt(expiry days / 365)
+Option: sell put, overall trend score ≥ −range threshold
+Option: sell call, overall trend score ≤ range threshold
+Exit: short put, (overall trend score > range threshold AND closing price < lowest low over the swing lookback bars before the current bar) OR (overall trend score ≥ −range threshold AND closing price ≤ closing price − (short-strike distance parameter − exit-buffer parameter) × expected move)
+Exit: short call, (overall trend score < −range threshold AND closing price > highest high over the swing lookback bars before the current bar) OR (overall trend score ≤ range threshold AND closing price ≥ closing price + (short-strike distance parameter − exit-buffer parameter) × expected move)

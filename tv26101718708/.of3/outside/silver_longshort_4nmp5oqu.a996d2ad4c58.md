@@ -1,2 +1,0 @@
-Long: time ≥ start date AND time ≤ end date AND crossover(SMA(silver close on T1, short silver period), SMA(silver close on T1, long silver period)) AND gold/silver ratio close on T1 > upper ratio threshold AND SMA(gold/silver ratio close on T1, short ratio period) < SMA(gold/silver ratio close on T1, long ratio period)
-Short: time ≥ start date AND time ≤ end date AND gold/silver ratio close on T1 < lower ratio threshold AND crossover(SMA(gold/silver ratio close on T1, short ratio period), SMA(gold/silver ratio close on T1, long ratio period))

@@ -1,6 +1,0 @@
-Calculation: Trend alignment = traded-instrument close > EMA(traded-instrument close, P1) AND EMA(traded-instrument close, P1) > EMA(traded-instrument close, P2) AND EMA(traded-instrument close, P2) > EMA(traded-instrument close, P3)
-Calculation: Relative strength = (traded-instrument close / traded-instrument close P5 chart bars ago) / (SPY close on T1 / SPY close on T1 P5 T1 bars ago)
-Calculation: Market regime = SPY close on T1 > EMA(SPY close on T1, P2) AND EMA(SPY close on T1, P2) > EMA(SPY close on T1, P3)
-Calculation: Setup score = P12 × IF(trend alignment, 1, 0) + P13 × IF(EMA(traded-instrument close, P1) > EMA(traded-instrument close, P2) AND EMA(traded-instrument close, P2) > EMA(traded-instrument close, P3), 1, 0) + P14 × IF(relative strength > P10, 1, 0) + P15 × IF(highest(traded-instrument high, P4) − lowest(traded-instrument low, P4) < traded-instrument close × P9, 1, 0) + P16 × IF(traded-instrument low > traded-instrument low P7 chart bars ago, 1, 0) + P17 × IF(traded-instrument volume > SMA(traded-instrument volume, P6), 1, 0) + P18 × IF(traded-instrument close / highest(traded-instrument high, P8) > P11, 1, 0) + P19 × IF(market regime, 1, 0)
-Long: setup score ≥ P20
-Long: setup score ≥ P21 AND trend alignment AND relative strength > P10 AND market regime

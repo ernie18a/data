@@ -1,2 +1,0 @@
-Long: At consecutive Pivot Lows(P1) of the traded instrument on T1, the traded-instrument low-price change and correlated-instrument low-price change have opposite signs
-Short: At consecutive Pivot Highs(P1) of the traded instrument on T1, the traded-instrument high-price change and correlated-instrument high-price change have opposite signs

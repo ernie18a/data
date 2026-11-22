@@ -1,3 +1,0 @@
-Calculation: Financial conditions index = weighted mean of available rolling z-scores of 10-year real yield, high-yield credit spread, US dollar index, and equity volatility, using separate weights P3, P4, P5, and P6; each rolling z-score = (value - SMA(value, P1)) / StDev(value, P1) on T1; exclude unavailable values and their weights.
-Long: Financial conditions index < -P2
-Short: Financial conditions index > P2

@@ -1,3 +1,0 @@
-Calculation: logarithmic price oscillator = (ln(Bitcoin USD close on T1) - SMA(ln(Bitcoin USD close on T1), length)) / StDev(ln(Bitcoin USD close on T1), length)
-Short: previous logarithmic price oscillator >= upper deviation threshold AND current logarithmic price oscillator < upper deviation threshold
-Long: previous logarithmic price oscillator <= lower deviation threshold AND current logarithmic price oscillator > lower deviation threshold

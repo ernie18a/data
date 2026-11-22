@@ -6,3 +6,10 @@ Calculation: Long ratchet stop = unset while flat; set to entry price * (1 + hig
 Calculation: Short ratchet stop = unset while flat; set to entry price * (1 - higher lock parameter) when low <= that level; otherwise, if unset, set to entry price * (1 - lower lock parameter) when low <= that level; otherwise retain the prior value, with lower lock parameter < higher lock parameter
 Exit: long, close <= entry price * (1 - logical stop parameter) OR low <= long ratchet stop when set, otherwise entry price * (1 - catastrophe stop parameter) OR high >= entry price * (1 + maximum take-profit parameter) OR (profit percentage >= minimum-profit parameter AND close < EMA(close, short lookback))
 Exit: short, close >= entry price * (1 + logical stop parameter) OR high >= short ratchet stop when set, otherwise entry price * (1 + catastrophe stop parameter) OR low <= entry price * (1 - maximum take-profit parameter) OR (profit percentage >= minimum-profit parameter AND close > EMA(close, short lookback))
+Calculation: Aggregated open interest = sum(open interest across three exchanges)
+Calculation: Bullish swing failure pattern = low < lowest low of prior P1 bars AND close > that lowest low
+Calculation: Bearish swing failure pattern = high > highest high of prior P1 bars AND close < that highest high
+Calculation: Volume anomaly = volume > SMA(volume, P2) + P3 × standard deviation(volume, P2)
+Calculation: Absorption = abs(close - open) < P4 × abs(high - low)
+Long: bullish swing failure pattern occurred within P5 bars AND (volume anomaly OR absorption) AND Tether dominance < SMA(Tether dominance, P6) AND aggregated open interest ≤ SMA(aggregated open interest, P6) AND more than P5 bars since the previous long signal
+Short: bearish swing failure pattern occurred within P5 bars AND (volume anomaly OR absorption) AND Tether dominance > SMA(Tether dominance, P6) AND aggregated open interest > SMA(aggregated open interest, P6) AND more than P5 bars since the previous short signal

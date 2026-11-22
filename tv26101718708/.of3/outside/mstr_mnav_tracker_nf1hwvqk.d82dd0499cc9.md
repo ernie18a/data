@@ -1,2 +1,0 @@
-Calculation: Bitcoin-backed net asset value multiple = MSTR share price / (BTCUSD close on T1 × (Bitcoin holdings parameter / MSTR shares outstanding parameter))
-Long: Bitcoin-backed net asset value multiple < valuation threshold parameter

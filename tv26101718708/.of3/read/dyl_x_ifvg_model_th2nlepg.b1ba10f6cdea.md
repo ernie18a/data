@@ -6,3 +6,5 @@ Long: On chart bars using still-forming T6, T7, or T8 values (lookahead off), hi
 Short: On chart bars using still-forming T6, T7, or T8 values (lookahead off), low(T6) > high(T6)[2] AND chart close < high(T6)[2] OR low(T7) > high(T7)[2] AND chart close < high(T7)[2] OR low(T8) > high(T8)[2] AND chart close < high(T8)[2]
 Long: On chart bars using still-forming T9 values (lookahead off), chart low(T9) < lowest(chart low(T9), lookback)[1] AND comparison low(T9) > lowest(comparison low(T9), lookback)[1], where lowest is evaluated over chart bars
 Short: On chart bars using still-forming T9 values (lookahead off), chart high(T9) > highest(chart high(T9), lookback)[1] AND comparison high(T9) < highest(comparison high(T9), lookback)[1], where highest is evaluated over chart bars
+Long: SMT display enabled AND traded instrument low on T1 < lowest traded instrument low over the preceding P1 bars on T1 AND ES low on T1 > lowest ES low over the preceding P1 bars on T1
+Short: SMT display enabled AND traded instrument high on T1 > highest traded instrument high over the preceding P1 bars on T1 AND ES high on T1 < highest ES high over the preceding P1 bars on T1

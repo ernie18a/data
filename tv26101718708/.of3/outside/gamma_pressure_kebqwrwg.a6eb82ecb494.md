@@ -1,8 +1,0 @@
-Calculation: Decayed signed volume flow = prior decayed signed volume flow × P6 + traded-instrument volume × sign(traded-instrument close − traded-instrument open), initialized at zero
-Calculation: Composite pressure = P24 × EMA(weighted mean of: P16 × momentum, P17 × volatility-index pressure, P18 × volume-flow pressure, P19 × trend pressure, P20 × dollar pressure, and P21 × body strength, using P16–P21 as weights; use zero if their sum is zero, smoothed over P22 bars), where momentum is clip((traded-instrument close − its value P1 bars ago) ÷ (ATR of traded-instrument high, low, and close over P3 bars × P2), −P23, P23) if ATR > 0, otherwise zero; volatility-index pressure is clip(−(symbol-matched implied-volatility index close − its value P4 bars ago) ÷ P5, −P23, P23); volume-flow pressure is clip(decayed signed volume flow ÷ (SMA of traded-instrument volume over P7 bars × P8), −P23, P23) if that SMA > 0, otherwise zero; trend pressure is the mean of the fast and slow terms, each term being clip(the P11-bar change in the corresponding traded-instrument closing-price EMA, over P9 or P10 bars, divided by P11 and by (ATR over P3 bars × P12), −P23, P23) if ATR > 0, otherwise zero; dollar pressure is clip(−(US Dollar Index close − its value P13 bars ago) ÷ P14, −P23, P23); body strength is clip((traded-instrument close − open) ÷ (high − low) × min(volume ÷ SMA(volume, P7), P15), −P23, P23), using zero for the body ratio if high ≤ low and one for the relative-volume factor if SMA(volume, P7) ≤ 0
-Long: Composite pressure crosses above zero
-Short: Composite pressure crosses below zero
-Long: Composite pressure crosses above P25
-Short: Composite pressure crosses below −P25
-Long: Composite pressure > P26
-Short: Composite pressure < −P26

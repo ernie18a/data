@@ -1,1 +1,4 @@
 Short: first chart bar of each new T1 period AND (short-dated volatility index close on T2 / longer-dated volatility index close on T2) <= term-structure threshold AND short-dated volatility index close on T2 >= volatility floor AND (trend filter disabled OR chart close > EMA(chart close, trend lookback)); request both T2 closes with lookahead off on chart bars, using the last completed T2 bar historically and the still-forming T2 bar live
+Calculation: volatility term structure ratio = short-dated volatility index close on T1 / longer-dated volatility index close on T1
+Option: sell put, volatility term structure ratio <= P1 AND short-dated volatility index close on T1 >= P2 AND (P3 = false OR traded instrument close > EMA(traded instrument close, P4))
+Option: buy put, volatility term structure ratio <= P1 AND short-dated volatility index close on T1 >= P2 AND (P3 = false OR traded instrument close > EMA(traded instrument close, P4))

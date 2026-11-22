@@ -1,1 +1,3 @@
 Long: 100 * (highest(close, lookback, T1) - close) / max(highest(close, lookback, T1) - lowest(close, lookback, T1), 1e-9) crosses above oversold level, evaluated on chart bars using the still-forming T1 bar
+Calculation: Inverted VIX = 100 × (highest(T1 VIX closing price, P1) − T1 VIX closing price) / max(highest(T1 VIX closing price, P1) − lowest(T1 VIX closing price, P1), P2)
+Long: Inverted VIX crosses above P3

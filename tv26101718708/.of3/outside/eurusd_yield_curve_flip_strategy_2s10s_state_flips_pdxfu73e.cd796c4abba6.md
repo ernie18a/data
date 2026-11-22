@@ -1,6 +1,0 @@
-Calculation: US yield curve = US 10Y yield - US 2Y yield
-Calculation: US yield curve change = current US yield curve - US yield curve lookback T1 bars earlier
-Calculation: US 2Y yield change = current US 2Y yield - US 2Y yield lookback T1 bars earlier
-Calculation: US 10Y yield change = current US 10Y yield - US 10Y yield lookback T1 bars earlier
-Long: US 2Y yield, US 10Y yield, and lookback data are available AND (new T1 rates bar OR new rates bar only is false) AND ((US yield curve change > curve threshold AND US 2Y yield change < -leg threshold) OR (US yield curve change < -curve threshold AND US 10Y yield change < -leg threshold)) AND (previous stored regime is bearish OR (trade from neutral AND previous stored regime is neutral))
-Short: US 2Y yield, US 10Y yield, and lookback data are available AND (new T1 rates bar OR new rates bar only is false) AND NOT ((US yield curve change > curve threshold AND US 2Y yield change < -leg threshold) OR (US yield curve change < -curve threshold AND US 10Y yield change < -leg threshold)) AND ((US yield curve change < -curve threshold AND US 2Y yield change > leg threshold) OR (allow bear steepener AND US yield curve change > curve threshold AND US 10Y yield change > leg threshold)) AND (previous stored regime is bullish OR (trade from neutral AND previous stored regime is neutral))

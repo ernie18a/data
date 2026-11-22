@@ -1,4 +1,0 @@
-Calculation: Weekly SMA slope = SMA(close, P1) on T1 minus its value P2 T1 bars ago
-Calculation: Distribution days = count over P3 chart bars where close percentage change < -P4 AND volume > SMA(volume, P5)
-Long: close > SMA(close, P1) on T1 AND Weekly SMA slope > 0 AND count over P3 chart bars where close percentage change > P4 AND volume > SMA(volume, P5) minus Distribution days >= P6 AND lowest(market breadth index on T2, P7) < P8 AND market breadth index on T2 > P9
-Exit: long, (close > SMA(close, P1) on T1 AND Weekly SMA slope <= 0 AND Distribution days >= P10) OR (the previous chart bar had close > SMA(close, P1) on T1 AND Weekly SMA slope > 0 AND close < SMA(close, P1) on T1) OR (highest(market breadth index on T2, P7) > P11 AND market breadth index on T2 < P9)

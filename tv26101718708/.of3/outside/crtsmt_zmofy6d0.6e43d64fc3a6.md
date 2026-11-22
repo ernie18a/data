@@ -1,2 +1,0 @@
-Long: SMT detection is enabled AND lowest(traded instrument low, P1 chart bars) < previous T1 low of traded instrument AND lowest silver low, P1 chart bars >= previous T1 low of silver
-Short: SMT detection is enabled AND highest(traded instrument high, P1 chart bars) > previous T1 high of traded instrument AND highest silver high, P1 chart bars <= previous T1 high of silver

@@ -10,3 +10,5 @@ Exit: Long, stop levels are enabled AND (close <= long stop OR close >= long tar
 Exit: Short, stop levels are enabled AND (close >= short stop OR close <= short target)
 Exit: Long, market is not always open AND chart-bar time >= end-of-day cutoff parameter
 Exit: Short, market is not always open AND chart-bar time >= end-of-day cutoff parameter
+Long: At chart-bar close, (chart close > opening-range high OR chart close > previous T1-period high) AND (confirmation filter disabled OR (RSI(chart close, RSI period) > upper RSI threshold AND chart volume > SMA(chart volume, volume averaging period) × volume multiplier AND chart close > chart open))
+Short: At chart-bar close, (chart close < opening-range low OR chart close < previous T1-period low) AND (confirmation filter disabled OR (RSI(chart close, RSI period) < lower RSI threshold AND chart volume > SMA(chart volume, volume averaging period) × volume multiplier AND chart close < chart open))

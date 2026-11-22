@@ -3,3 +3,5 @@ Long: ((close crosses above EMA(close, short lookback) AND volume > SMA(volume, 
 Long: momentum composite score ≥ accumulation threshold AND NOT (close < EMA(close, long lookback) AND EMA(close, short lookback) < EMA(close, medium lookback) AND EMA(close, medium lookback) < EMA(close, long lookback) AND momentum composite score < sell threshold) AND NOT (close < EMA(close, medium lookback) AND close[exit lag] < EMA(close, medium lookback)[exit lag])
 Short: close < EMA(close, long lookback) AND EMA(close, short lookback) < EMA(close, medium lookback) AND EMA(close, medium lookback) < EMA(close, long lookback) AND momentum composite score < sell threshold
 Exit: Long, close < EMA(close, medium lookback) AND close[exit lag] < EMA(close, medium lookback)[exit lag]
+Calculation: composite investment score = trend points + volume points + RSI momentum points + stock-versus-Nifty relative-strength points + proximity-to-high points
+Long: (close crosses above EMA(close, P1) AND volume > P2 × SMA(volume, P3) AND RSI(close, P4) > P5 OR close > prior highest high over P6 bars AND volume > P7 × SMA(volume, P3)) AND composite investment score >= P8

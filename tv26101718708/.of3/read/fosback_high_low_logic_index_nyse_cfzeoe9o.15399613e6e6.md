@@ -3,3 +3,7 @@ Long: High Low Logic Index <= bullish threshold
 Long: High Low Logic Index crosses below bullish threshold
 Short: High Low Logic Index >= bearish threshold
 Short: High Low Logic Index crosses above bearish threshold
+Long: High Low Logic Index(T1, EMA length) <= bullish threshold
+Short: High Low Logic Index(T1, EMA length) >= bearish threshold
+Long: High Low Logic Index(T1, EMA length) crosses below bullish threshold
+Short: High Low Logic Index(T1, EMA length) crosses above bearish threshold

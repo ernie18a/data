@@ -1,2 +1,0 @@
-Long: crossover(short moving average of Bitcoin hash rate from the selected source at T1 using the short smoothing method and period, long moving average of Bitcoin hash rate from the selected source at T1 using the long smoothing method and period) AND direction setting permits long
-Short: crossunder(short moving average of Bitcoin hash rate from the selected source at T1 using the short smoothing method and period, long moving average of Bitcoin hash rate from the selected source at T1 using the long smoothing method and period) AND direction setting permits short

@@ -1,2 +1,6 @@
 Long: On chart bars, close of the selected source on the last completed T1 bar > EMA(close, lookback, T2, last completed bar) if the MA-type parameter selects EMA, otherwise SMA(close, lookback, T2, last completed bar)
 Short: On chart bars, close of the selected source on the last completed T1 bar < EMA(close, lookback, T2, last completed bar) if the MA-type parameter selects EMA, otherwise SMA(close, lookback, T2, last completed bar)
+Long: external ticker selected AND previous completed external ticker close on T1 > previous completed selected EMA or SMA of external ticker close on T2 over the moving average period
+Long: external ticker selected AND within the configured date window AND previous completed external ticker close on T1 > previous completed selected EMA or SMA of external ticker close on T2 over the moving average period
+Short: external ticker selected AND previous completed external ticker close on T1 < previous completed selected EMA or SMA of external ticker close on T2 over the moving average period
+Exit: long, external ticker selected AND within the configured date window AND previous completed external ticker close on T1 < previous completed selected EMA or SMA of external ticker close on T2 over the moving average period

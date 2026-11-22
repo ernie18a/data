@@ -1,2 +1,4 @@
 Long: RSI(((close - close(T1, last completed bar on historical chart bars; still-forming bar in real time)) / close(T1, last completed bar on historical chart bars; still-forming bar in real time)) * 100, lookback), calculated on chart bars < oversold threshold
 Exit: long, RSI(((close - close(T1, last completed bar on historical chart bars; still-forming bar in real time)) / close(T1, last completed bar on historical chart bars; still-forming bar in real time)) * 100, lookback), calculated on chart bars > overbought threshold
+Long: RSI(((traded asset close − global benchmark index close at T1) / global benchmark index close at T1) × 100, RSI length parameter) < oversold threshold parameter
+Exit: long, RSI(((traded asset close − global benchmark index close at T1) / global benchmark index close at T1) × 100, RSI length parameter) > overbought threshold parameter

@@ -1,2 +1,4 @@
 Long: on chart bars, using the still-forming T1 bar of Renko(close, ATR, parameter), low = open AND the last completed T1 Renko bar's close > open AND chart datetime > start-datetime parameter
 Short: on chart bars, using the still-forming T1 bar of Renko(close, ATR, parameter), high = open AND the last completed T1 Renko bar's close < open AND chart datetime > start-datetime parameter
+Long: current Renko low of traded-instrument close (ATR brick-size parameter) = current Renko open AND prior Renko close > prior Renko open AND time > start-date parameter
+Short: current Renko high of traded-instrument close (ATR brick-size parameter) = current Renko open AND prior Renko close < prior Renko open AND time > start-date parameter

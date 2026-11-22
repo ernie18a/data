@@ -4,3 +4,7 @@ Long: Long entries enabled AND on chart bars using the still-forming T1 and T2 b
 Short: Short entries enabled AND on chart bars using the still-forming T1 and T2 bars, T1 MACD trigger is true AND T1 Stochastic RSI trigger is true AND T2 MACD trigger is true AND T2 Stochastic RSI trigger is true
 Exit: short, Long entries disabled AND on chart bars using the still-forming T1 and T2 bars, (T1 MACD trigger is false OR T1 Stochastic RSI trigger is false) AND (T2 MACD trigger is false OR T2 Stochastic RSI trigger is false)
 Exit: long, Short entries disabled AND on chart bars using the still-forming T1 and T2 bars, T1 MACD trigger is true AND T1 Stochastic RSI trigger is true AND T2 MACD trigger is true AND T2 Stochastic RSI trigger is true
+Short: Short trades enabled AND MACD line ≥ its signal line AND Stochastic RSI %K ≥ its signal line on T1 and T2
+Long: Long trades enabled AND (MACD line < its signal line OR Stochastic RSI %K < its signal line on T1) AND (MACD line < its signal line OR Stochastic RSI %K < its signal line on T2)
+Exit: Short, Long trades disabled AND (MACD line < its signal line OR Stochastic RSI %K < its signal line on T1) AND (MACD line < its signal line OR Stochastic RSI %K < its signal line on T2)
+Exit: Long, Short trades disabled AND MACD line ≥ its signal line AND Stochastic RSI %K ≥ its signal line on T1 and T2

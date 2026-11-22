@@ -7,3 +7,8 @@ Long: WMA-channel direction(high, low, close, fast confirmation lookback) is bul
 Short: WMA-channel direction(high, low, close, fast confirmation lookback) is bearish on the current chart bar AND bullish on the previous chart bar
 Exit: long, low <= entry price − stop-loss parameter OR high >= entry price + take-profit parameter OR WMA-channel direction(high, low, close, trend confirmation lookback) is bearish, evaluated on T1 bars and sampled from the last completed T1 bar on chart bars
 Exit: short, high >= entry price + stop-loss parameter OR low <= entry price − take-profit parameter OR WMA-channel direction(high, low, close, trend confirmation lookback) is bullish, evaluated on T1 bars and sampled from the last completed T1 bar on chart bars
+Calculation: Prior T1 SSL Channel direction = previous T1 bar's state, where state is bullish when T1 close > WMA(T1 high, confirmation-period parameter), bearish when T1 close < WMA(T1 low, confirmation-period parameter), otherwise its previous state
+Long: WMA(chart close, short-period parameter) crosses above WMA(chart close, long-period parameter) AND prior T1 SSL Channel direction is bullish
+Short: WMA(chart close, short-period parameter) crosses below WMA(chart close, long-period parameter) AND prior T1 SSL Channel direction is bearish
+Exit: long, prior T1 SSL Channel direction is bearish
+Exit: short, prior T1 SSL Channel direction is bullish

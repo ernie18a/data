@@ -1,1 +1,2 @@
 Short: ROC(volume from T1, lookback), calculated on chart bars taking values from T1, one completed chart bar ago >= threshold AND ROC(volume from T1, lookback), calculated on chart bars taking values from T1, two completed chart bars ago >= threshold
+Option: sell call, Volume Rate of Change of NQ futures volume on T1 over P1 bars[1] >= P2 AND Volume Rate of Change of NQ futures volume on T1 over P1 bars[2] >= P2

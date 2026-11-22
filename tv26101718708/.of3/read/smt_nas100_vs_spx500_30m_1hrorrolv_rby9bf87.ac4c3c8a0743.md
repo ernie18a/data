@@ -1,2 +1,4 @@
 Long: low-SMT detection enabled AND low(comparison symbol, T1, still-forming bar) < low(comparison symbol, T1, last completed bar) AND low(chart symbol, T1, still-forming bar) >= low(chart symbol, T1, last completed bar), evaluated on chart bars
 Short: high-SMT detection enabled AND high(comparison symbol, T1, still-forming bar) > high(comparison symbol, T1, last completed bar) AND high(chart symbol, T1, still-forming bar) <= high(chart symbol, T1, last completed bar), evaluated on chart bars
+Short: P1 AND SPX500 high at T1 > previous SPX500 high at T1 AND NAS100 high at T1 <= previous NAS100 high at T1
+Long: P2 AND SPX500 low at T1 < previous SPX500 low at T1 AND NAS100 low at T1 >= previous NAS100 low at T1

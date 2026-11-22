@@ -1,4 +1,0 @@
-Calculation: Bull score = count(EMA(closing price, P1) > EMA(closing price, P2), closing price > previous bar closing price, sector index closing price > EMA(sector index closing price, P3), RSI(closing price, P4) < P5, volume > SMA(volume, P6) × P7)
-Calculation: Bear score = count(EMA(closing price, P1) ≤ EMA(closing price, P2), closing price ≤ previous bar closing price, sector index closing price ≤ EMA(sector index closing price, P3), RSI(closing price, P4) > P8, volume > SMA(volume, P6) × P7)
-Option: buy call, Bull score ≥ P9 AND EMA(closing price, P1) > EMA(closing price, P2)
-Option: buy put, Bear score ≥ P9 AND EMA(closing price, P1) ≤ EMA(closing price, P2)

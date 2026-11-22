@@ -2,3 +2,5 @@ Calculation: normalized deviation(source, lookback, normalization) = (source - S
 Calculation: flow-price-crowd score = normalized deviation(cumulative sum(close >= open ? volume : -volume), lookback, normalization) - normalized deviation(close, lookback, normalization) - (if crowd layer is enabled and crowd close is available, normalized deviation(crowd close, lookback, normalization), otherwise 0)
 Long: flow-price-crowd score > state threshold
 Short: flow-price-crowd score < -state threshold
+Long: T1 REAL signal aligns with chart-timeframe long setup
+Short: T1 REAL signal aligns with chart-timeframe short setup

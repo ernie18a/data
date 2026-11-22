@@ -1,1 +1,0 @@
-The Expert Advisor makes random buy/sell with automatic Trailing Stop.

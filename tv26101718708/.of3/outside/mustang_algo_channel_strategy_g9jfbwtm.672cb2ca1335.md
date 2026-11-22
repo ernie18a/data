@@ -1,4 +1,0 @@
-Calculation: macro sentiment oscillator = WMA(RSI(BTC supply amount / ((DAI market capitalization + USDT market capitalization + USDC market capitalization) / BTC price), RSI length), oscillator smoothing length) on T1
-Calculation: reference line = WMA(macro sentiment oscillator, reference smoothing length) on T1
-Long: long direction enabled AND chart time within the test date range AND crossover(macro sentiment oscillator, reference line) AND macro sentiment oscillator < lower threshold
-Short: short direction enabled AND chart time within the test date range AND crossunder(macro sentiment oscillator, reference line) AND macro sentiment oscillator > upper threshold

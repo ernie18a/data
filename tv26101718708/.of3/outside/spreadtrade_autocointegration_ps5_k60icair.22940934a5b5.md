@@ -1,2 +1,0 @@
-Calculation: Log price ratio = log(chart-timeframe selected price / previous selected price on T1)
-Long: (selected moving average of Log price ratio over short lookback − selected moving average over long lookback) / standard deviation of the long moving average over the rounded mean of both lookbacks < −threshold; the VWAP long moving average uses previous Log price ratio

@@ -1,1 +1,0 @@
-Long: price > futures VWAP AND futures VWAP > prior futures VWAP

@@ -1,2 +1,3 @@
 Long: market filter disabled OR benchmark close > EMA(benchmark close, benchmark lookback) AND crosses above(close, EMA(close, price lookback)) AND RSI(close, RSI lookback) > RSI threshold AND volume > SMA(volume, volume lookback)
 Exit: long, crosses below(close, EMA(close, price lookback))
+Long: (NIFTY filter disabled OR NIFTY close > EMA(NIFTY close, NIFTY EMA period)) AND close crosses above EMA(close, EMA period) AND RSI(close, RSI period) > RSI threshold AND volume > SMA(volume, volume average period)

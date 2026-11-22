@@ -1,2 +1,0 @@
-Long: ETH implied volatility close on T1, or fallback volatility value if unavailable, <= volatility threshold AND traded instrument high >= highest traded instrument high over the preceding lookback bars AND position size = 0
-Short: ETH implied volatility close on T1, or fallback volatility value if unavailable, <= volatility threshold AND traded instrument low <= lowest traded instrument low over the preceding lookback bars AND position size = 0

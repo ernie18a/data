@@ -1,3 +1,0 @@
-Calculation: Gap-down setup = (open / previous close − 1) × 100 ≤ −minimum gap-down percentage AND (close / open − 1) × 100 ≤ −minimum red-body percentage AND close ≥ minimum closing price AND (VIX gate disabled OR VIX close on T1 unavailable OR VIX close on T1 ≤ VIX threshold)
-Short: Within the setup lifetime after the most recent gap-down setup, traded instrument low ≤ that setup session’s low, and the level has not already broken
-Exit: short, at the close of the breakdown session

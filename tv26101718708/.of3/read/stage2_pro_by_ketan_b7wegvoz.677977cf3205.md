@@ -3,3 +3,5 @@ Long: close(T1, still-forming bar, mapped to chart bars) > SMA(close, stage look
 Long: High volume AND close >= open
 Short: High volume AND close < open
 Exit: long, high < SMA(close, monthly MA lookback, T2, still-forming bar, mapped to chart bars)
+Long: Stage-2 trend of the traded instrument on T1 AND higher high of the traded instrument on T1 AND RSI strength of the traded instrument on T2 AND relative strength of the traded instrument versus NIFTY MidSmall
+Exit: long, traded instrument below its P1-period moving average on T2

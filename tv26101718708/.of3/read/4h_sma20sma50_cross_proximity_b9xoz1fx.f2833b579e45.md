@@ -2,3 +2,5 @@ Calculation: gap = abs(SMA(close, shorter lookback) - SMA(close, longer lookback
 Long: SMA(close, shorter lookback) < SMA(close, longer lookback) AND gap >= minimum gap AND gap <= maximum gap AND gap < gap[1]
 Long: On chart bars using T1's last completed bar values, SMA(close, shorter lookback, T1, last completed bar) >= SMA(close, longer lookback, T1, last completed bar)
 Long: On chart bars using T1's last completed bar values, SMA(close, shorter lookback, T1, last completed bar) < SMA(close, longer lookback, T1, last completed bar) AND gap(T1, last completed bar) >= minimum gap AND gap(T1, last completed bar) <= maximum gap AND gap(T1, last completed bar) < gap(T1, previous completed bar)
+Calculation: SMA gap (%) = if SMA(scanned stock close on T1, P2) != 0 then abs(SMA(scanned stock close on T1, P1) - SMA(scanned stock close on T1, P2)) / abs(SMA(scanned stock close on T1, P2)) * 100 else undefined
+Long: SMA(scanned stock close on T1, P1) < SMA(scanned stock close on T1, P2) AND SMA gap (%) >= P3 AND SMA gap (%) <= P4 AND SMA gap (%) < SMA gap (%)[1]

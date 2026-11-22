@@ -1,3 +1,0 @@
-Long: front-month VIX futures close at T1 - spot VIX close at T1 > threshold AND second-month VIX futures close at T1 - spot VIX close at T1 > threshold
-Short: front-month VIX futures close at T1 - spot VIX close at T1 < -threshold AND second-month VIX futures close at T1 - spot VIX close at T1 < -threshold
-Exit: long, front-month VIX futures close at T1 - spot VIX close at T1 < -threshold AND second-month VIX futures close at T1 - spot VIX close at T1 < -threshold

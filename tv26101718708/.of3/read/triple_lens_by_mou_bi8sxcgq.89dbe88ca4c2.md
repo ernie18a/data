@@ -5,3 +5,7 @@ Calculation: Uptrend stage 2 = close > SMA(close, P_MA_lookback, T1, still-formi
 Long: Uptrend stage 2 = true
 Long: Net accumulation >= P_accumulation_threshold
 Exit: long, close > SMA(close, P_MA_lookback, T1, still-forming T1 bar, value on chart bars) AND SMA(close, P_MA_lookback, T1, still-forming T1 bar, value on chart bars) <= SMA(close, P_MA_lookback, T1, T1 bar P_slope_lookback bars earlier, value on chart bars) AND Distribution count >= P_distribution_warning_threshold OR Uptrend stage 2 on the previous chart bar = true AND close < SMA(close, P_MA_lookback, T1, still-forming T1 bar, value on chart bars)
+Calculation: Weekly SMA slope = SMA(close, P1) on T1 minus its value P2 T1 bars ago
+Calculation: Distribution days = count over P3 chart bars where close percentage change < -P4 AND volume > SMA(volume, P5)
+Long: close > SMA(close, P1) on T1 AND Weekly SMA slope > 0 AND count over P3 chart bars where close percentage change > P4 AND volume > SMA(volume, P5) minus Distribution days >= P6 AND lowest(market breadth index on T2, P7) < P8 AND market breadth index on T2 > P9
+Exit: long, (close > SMA(close, P1) on T1 AND Weekly SMA slope <= 0 AND Distribution days >= P10) OR (the previous chart bar had close > SMA(close, P1) on T1 AND Weekly SMA slope > 0 AND close < SMA(close, P1) on T1) OR (highest(market breadth index on T2, P7) > P11 AND market breadth index on T2 < P9)

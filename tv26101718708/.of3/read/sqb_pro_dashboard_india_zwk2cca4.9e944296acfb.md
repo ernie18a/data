@@ -1,1 +1,3 @@
 Long: close > highest(high, breakout lookback)[1] AND volume / SMA(volume, relative-volume lookback) > relative-volume threshold AND close > EMA(close, short lookback) AND EMA(close, short lookback) > SMA(close, medium lookback) AND SMA(close, medium lookback) > SMA(close, long lookback) AND (close / close[relative-strength lookback]) / (benchmark close / benchmark close[relative-strength lookback]) > 1
+Calculation: Relative performance = (((close / close[P4]) / (benchmark close / benchmark close[P4])) - 1) * 100
+Long: close > Highest(high, P1)[1] AND volume / SMA(volume, P1) > P5 AND close > EMA(close, P1) AND EMA(close, P1) > SMA(close, P2) AND SMA(close, P2) > SMA(close, P3) AND Relative performance > 0

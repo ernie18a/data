@@ -1,3 +1,0 @@
-Calculation: normalized running risk = (ln(Bitcoin close on T1 / Bitcoin close lookback length T1 bars earlier) − (bottom-fit slope × elapsed milliseconds since fit start date + bottom-fit intercept)) / (selected top fit − (bottom-fit slope × elapsed milliseconds since fit start date + bottom-fit intercept)), where selected top fit is log-top slope × ln(elapsed milliseconds since fit start date + log-top time offset in days × milliseconds per day) + log-top intercept when the top-fit mode is log, and linear-top slope × elapsed milliseconds since fit start date + linear-top intercept when the top-fit mode is linear
-Long: normalized running risk ≤ buy-zone threshold
-Short: normalized running risk ≥ sell-zone threshold

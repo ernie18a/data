@@ -5,3 +5,10 @@ Long: bullish chart trend AND close < equilibrium
 Short: close < EMA(close, EMA lookback) AND close < open AND close > equilibrium
 Long: P(up) >= P(down)
 Short: P(up) < P(down)
+Calculation: Equilibrium = (highest chart-timeframe high over E bars + lowest chart-timeframe low over E bars) / 2
+Calculation: Up probability = 50% while the bar index is ≤ W + N + A, otherwise 100 / (1 + exp(−L)); L = log((U + α) / (D + α)) + Σj [zj·log(pUj / pDj) + (1 − zj)·log((1 − pUj) / (1 − pDj))], where U and D count outcomes in the W-bar training window in which the close after N bars is respectively higher or lower than the close at the feature bar; pUj = (u_j + α) / (U + 2α), pDj = (d_j + α) / (D + 2α), and u_j and d_j count those outcomes when feature j was true; features are: instrument close above EMA(P1) and above open; instrument close on T1 above EMA(P1) and above open; instrument close below Equilibrium; instrument close above VWAP; preceding bar high above the high one bar earlier; instrument volume above SMA(volume, P2); instrument volume above preceding-bar volume; instrument MFI(hlc3, P3) above P4; and, when the macro-feature toggle is enabled, gold price, US Dollar Index, gold/silver ratio, copper price, 2-year yield, and silver volatility index each closing above its EMA(P1). Each feature is measured N bars before its outcome; α is the smoothing pseudocount.
+Calculation: Macro bias score = the sum of +1 for gold price above EMA(P1), US Dollar Index below EMA(P1), gold/silver ratio below EMA(P1), copper price above EMA(P1), and 2-year yield below EMA(P1), and −1 for each opposite comparison.
+Long: Up probability ≥ 50%
+Short: Up probability < 50%
+Long: macro-feature toggle enabled AND Macro bias score > 0
+Short: macro-feature toggle enabled AND Macro bias score < 0

@@ -1,3 +1,0 @@
-Calculation: Currency strength = EMA(signed percentage change in the currency’s USD exchange rate from its baseline, minus the mean of the eight signed currency changes, with USD change set to zero and USD-base pair changes negated; smoothing length)
-Long: base currency strength is greatest AND quote currency strength is least
-Short: base currency strength is least AND quote currency strength is greatest

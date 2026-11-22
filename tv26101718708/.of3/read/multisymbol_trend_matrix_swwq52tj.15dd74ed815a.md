@@ -12,3 +12,10 @@ Long: For an enabled symbol, Symbol score equals the number of configured timefr
 Short: For an enabled symbol, Symbol score equals the negative number of configured timeframes AND Symbol score != its value on the prior chart bar AND the chart bar is confirmed.
 Long: Market maximum score > 0 AND Market total >= Market maximum score multiplied by market bias fraction.
 Short: Market maximum score > 0 AND Market total <= -Market maximum score multiplied by market bias fraction.
+Calculation: Symbol trend state at timeframe T = 1 when symbol closing price > EMA(symbol closing price, fast EMA length) AND EMA(symbol closing price, fast EMA length) > EMA(symbol closing price, slow EMA length) AND RSI(symbol closing price, RSI length) > RSI threshold; -1 when symbol closing price < EMA(symbol closing price, fast EMA length) AND EMA(symbol closing price, fast EMA length) < EMA(symbol closing price, slow EMA length) AND RSI(symbol closing price, RSI length) < RSI threshold; otherwise 0
+Long: Enabled symbol trend state at T1, T2, T3, or T4 = 1
+Short: Enabled symbol trend state at T1, T2, T3, or T4 = -1
+Calculation: Market trend score = sum of enabled symbols' trend states at T1, T2, T3, and T4
+Calculation: Maximum market trend score = enabled-symbol count × number of timeframes
+Long: Enabled-symbol count > 0 AND market trend score >= maximum market trend score × risk-bias threshold
+Short: Enabled-symbol count > 0 AND market trend score <= -maximum market trend score × risk-bias threshold

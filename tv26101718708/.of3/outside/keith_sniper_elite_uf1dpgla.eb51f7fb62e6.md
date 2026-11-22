@@ -1,4 +1,0 @@
-Calculation: VWAP distance = abs(close - VWAP)
-Calculation: ATR ratio = ATR(P9) / close
-Long: EMA(close, P1) crosses above EMA(close, P2) AND RSI(close, P4) < P5 AND close > EMA(close, P3) AND (VWAP filter off OR VWAP distance < P7) AND (VIX filter off OR VIX < SMA(VIX, P8)) AND (MTF confirmation off OR EMA(close, P1) crosses above EMA(close, P2) on T1) AND ATR ratio > P10
-Short: EMA(close, P1) crosses below EMA(close, P2) AND RSI(close, P4) > P6 AND close < EMA(close, P3) AND (VWAP filter off OR VWAP distance < P7) AND (VIX filter off OR VIX > SMA(VIX, P8)) AND (MTF confirmation off OR EMA(close, P1) crosses below EMA(close, P2) on T1) AND ATR ratio > P10

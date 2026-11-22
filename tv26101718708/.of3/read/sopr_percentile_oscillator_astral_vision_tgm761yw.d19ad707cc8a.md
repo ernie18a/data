@@ -1,2 +1,7 @@
 Long: (Extremes mode AND SMA(PercentRank(T1 close from the still-forming bar, percentile lookback), shorter lookback), calculated on chart bars taking T1 values) < oversold threshold) OR (Trend mode AND SMA(PercentRank(T1 close from the still-forming bar, percentile lookback), shorter lookback), calculated on chart bars taking T1 values) > SMA(PercentRank(T1 close from the still-forming bar, percentile lookback), longer lookback), calculated on chart bars taking T1 values)
 Short: (Extremes mode AND SMA(PercentRank(T1 close from the still-forming bar, percentile lookback), shorter lookback), calculated on chart bars taking T1 values) > overbought threshold) OR (Trend mode AND SMA(PercentRank(T1 close from the still-forming bar, percentile lookback), shorter lookback), calculated on chart bars taking T1 values) <= SMA(PercentRank(T1 close from the still-forming bar, percentile lookback), longer lookback), calculated on chart bars taking T1 values)
+Calculation: SOPR percentile rank = Percentile Rank(Bitcoin SOPR on T1, P3)
+Calculation: Short-window average = SMA(SOPR percentile rank, P4)
+Calculation: Long-window average = SMA(SOPR percentile rank, P5)
+Long: Mode = P1 AND Short-window average < P7 OR Mode = P2 AND Short-window average > Long-window average
+Short: Mode = P1 AND Short-window average > P6 OR Mode = P2 AND Short-window average <= Long-window average

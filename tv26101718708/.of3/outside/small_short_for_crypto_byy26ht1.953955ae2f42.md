@@ -1,6 +1,0 @@
-Calculation: RSI MFI = SMA(((close - open) / (high - low)) × P5, P4) on T1
-Long: RSI MFI(T1) > P7 AND WaveTrend signal line(hlc3, P1, P2, P3) < P9 AND WaveTrend crosses above its signal line AND WaveTrend line(T2) - WaveTrend signal line(T2) > P11
-Short: RSI MFI(T1) < P6 AND WaveTrend signal line(hlc3, P1, P2, P3) > P8 AND WaveTrend crosses below its signal line AND WaveTrend line(T2) - WaveTrend signal line(T2) < P10
-Long: WaveTrend signal line(hlc3, P1, P2, P3) ≤ P13 AND WaveTrend crosses above its signal line AND Heikin Ashi close > open at T3 AND Heikin Ashi close > open at T4
-Short: WaveTrend signal line(hlc3, P1, P2, P3) ≥ P12 AND WaveTrend crosses below its signal line AND Heikin Ashi close < open at T3 AND Heikin Ashi close < open at T4
-Short: WaveTrend signal line(hlc3, P1, P2, P3) ≥ P12 AND WaveTrend crosses below its signal line AND Heikin Ashi close < open at T3 AND Heikin Ashi close < open at T4 AND (BTC perpetual close at T6 < SMA(BTC perpetual close, P15) at T6 OR previous BTC perpetual close at T6 < previous SMA(BTC perpetual close, P15) at T6) AND (chart close < SMA(close, P16) at T5 OR previous chart close < previous SMA(close, P16) at T5) AND ATR(P14) is available

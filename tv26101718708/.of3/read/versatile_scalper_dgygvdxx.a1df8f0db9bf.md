@@ -12,3 +12,5 @@ Long: confirmed pivot high(selected high-or-close source, pivot lookback, same p
 Short: confirmed pivot high(selected high-or-close source, pivot lookback, same pivot lookback) < preceding confirmed pivot high OR confirmed pivot low(selected low-or-close source, pivot lookback, same pivot lookback) < preceding confirmed pivot low.
 Long: RSI candle state = bullish AND Smoothed regression signal > its value one bar ago AND close > session VWAP(hlc3) AND a bullish Supertrend signal fires AND the latest confirmed pivot high is higher than its preceding confirmed pivot high AND the latest confirmed pivot low is higher than its preceding confirmed pivot low.
 Short: RSI candle state = bearish AND Smoothed regression signal < its value one bar ago AND close < session VWAP(hlc3) AND a bearish Supertrend signal fires AND the latest confirmed pivot high is lower than its preceding confirmed pivot high AND the latest confirmed pivot low is lower than its preceding confirmed pivot low.
+Option: buy call, price > session VWAP
+Option: buy put, price < session VWAP

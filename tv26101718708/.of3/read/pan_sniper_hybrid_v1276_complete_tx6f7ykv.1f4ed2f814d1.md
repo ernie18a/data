@@ -22,3 +22,11 @@ Long: on chart bars, the confirmed pivot low of chart low using the SMT pivot lo
 Short: on chart bars, the confirmed pivot high of chart high using the SMT pivot lookback is higher than its previous confirmed pivot high AND the corresponding confirmed pivot high of the reference series on the chart timeframe is lower than its previous confirmed pivot high
 Short: a bearish OB target is created when the previous chart bar had a close crossing below the prior tracked swing low or a bearish fair-value gap
 Long: (close crosses above the prior-bar tracked swing high OR close crosses above the low[2] boundary of the latest bearish fair-value gap) AND a bearish OB target is active
+Long: Pivot High of traded-instrument high using left span P1 and right span P2 > previous Pivot High of traded-instrument high, or zero if none
+Short: Pivot High of traded-instrument high using left span P1 and right span P2 <= previous Pivot High of traded-instrument high, or zero if none
+Long: Pivot Low of traded-instrument low using left span P1 and right span P2 >= previous Pivot Low of traded-instrument low, or zero if none
+Short: Pivot Low of traded-instrument low using left span P1 and right span P2 < previous Pivot Low of traded-instrument low, or zero if none
+Long: Pivot Low of traded-instrument low using left and right span P3 < its previous paired Pivot Low AND Pivot Low of BTC low using left and right span P3 > its previous paired Pivot Low
+Short: Pivot High of traded-instrument high using left and right span P3 > its previous paired Pivot High AND Pivot High of BTC high using left and right span P3 < its previous paired Pivot High
+Long: traded-instrument low > traded-instrument high P4 bars earlier
+Short: traded-instrument high < traded-instrument low P4 bars earlier

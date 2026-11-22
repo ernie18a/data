@@ -1,2 +1,4 @@
 Long: On chart bars taking close from T1 (last completed T1 bar historically, still-forming T1 bar in real time), chart-bar ROC(close from T1, ROC lookback) < -StDev(chart-bar ROC(close from T1, ROC lookback), volatility lookback) * entry multiplier
 Exit: Long, on chart bars taking close from T1 (last completed T1 bar historically, still-forming T1 bar in real time), chart-bar ROC(close from T1, ROC lookback) > StDev(chart-bar ROC(close from T1, ROC lookback), volatility lookback) * exit multiplier
+Long: ROC(NYSE Down Ticks on T1, P1) < -STDEV(ROC(NYSE Down Ticks on T1, P1), P2) × P3
+Exit: long, ROC(NYSE Down Ticks on T1, P1) > STDEV(ROC(NYSE Down Ticks on T1, P1), P2) × P4

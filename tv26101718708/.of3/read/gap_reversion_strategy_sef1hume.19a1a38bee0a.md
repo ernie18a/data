@@ -1,3 +1,5 @@
 Calculation: Squared volatility deviation = (high(T1, last completed bar) - SMA(high(T1, last completed bar), mean lookback, chart bars using T1 values))^2
 Long: datetime within backtest date range AND RSI(source, RSI lookback) < RSI entry threshold AND close > 0 AND (variance filter disabled OR highest(squared volatility deviation, volatility persistence lookback, chart bars) < variance threshold) AND open < close[1] * (1 - minimum gap percentage) AND low <= (ATR limit enabled ? close * (1 - minimum gap percentage) - ATR(ATR lookback) * ATR limit percentage : close * (1 - minimum gap percentage) * (1 - price limit percentage))
 Exit: long, (datetime within backtest date range AND (RSI(source, RSI lookback) > RSI exit threshold OR low <= entry price * (1 - stop percentage))) OR datetime outside backtest date range
+Calculation: VIX variance warning = highest((VIX high on T1 - SMA(VIX high on T1, P1))^2, P2) < P3
+Long: RSI(traded instrument close, P4) < P5 AND ((VIX filter disabled AND traded instrument close > 0) OR (VIX filter enabled AND VIX variance warning))

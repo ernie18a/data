@@ -2,3 +2,7 @@ Long: close > opening-range high of the selected correlation symbol, using its c
 Short: close < opening-range low of the selected correlation symbol, using its configured regular or Heikin Ashi bars, AND within the trading-session parameter AND RelativeVolume(volume, lookback, T1, cumulative; current T1 period still forming and previous T1 periods completed, evaluated on chart bars) > threshold AND position is not long
 Exit: long, within the exit-session parameter
 Exit: short, within the exit-session parameter
+Long: traded-instrument close > correlation instrument P1's first opening-session-bar high (Heikin Ashi when enabled by P2) during opening session P3 AND during trading session P4 AND Relative Volume(traded instrument, length P5, anchor timeframe T1) > P6 AND no short signal is active
+Short: traded-instrument close < correlation instrument P1's first opening-session-bar low (Heikin Ashi when enabled by P2) during opening session P3 AND during trading session P4 AND Relative Volume(traded instrument, length P5, anchor timeframe T1) > P6 AND no long signal is active
+Exit: long, during ending session P7
+Exit: short, during ending session P7

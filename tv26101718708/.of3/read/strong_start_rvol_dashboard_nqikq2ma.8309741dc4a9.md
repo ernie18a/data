@@ -1,3 +1,8 @@
 Long: On each chart bar using the still-forming T1 bar, T1 open > previous completed T1 close AND T1 low >= previous completed T1 close × gap-hold multiplier
 Long: On each chart bar using the still-forming T1 bar, RVOL rank among scanned symbols with valid RVOL is within the top max(1, round(valid-symbol count × top-fraction parameter / 100)) (ranked by descending RVOL, ties in scan order), AND 100 × (T1 close - previous completed T1 close) / previous completed T1 close >= move-threshold parameter; RVOL = current T1 volume / SMA(volume[1], volume-lookback parameter, T1, last completed bars)
 Short: On each chart bar using the still-forming T1 bar, RVOL rank among scanned symbols with valid RVOL is within the top max(1, round(valid-symbol count × top-fraction parameter / 100)) (ranked by descending RVOL, ties in scan order), AND previous completed T1 close != 0 AND 100 × (T1 close - previous completed T1 close) / previous completed T1 close <= -move-threshold parameter; RVOL = current T1 volume / SMA(volume[1], volume-lookback parameter, T1, last completed bars)
+Calculation: Percentage change = (T1 close - previous T1 close) / previous T1 close × 100
+Calculation: RVOL rank = rank of relative volume among watchlist symbols with valid relative volume, highest first
+Long: T1 open > previous T1 close AND T1 low >= previous T1 close × gap-hold multiplier
+Long: RVOL rank < max(1, round(number of watchlist symbols with valid relative volume × top-ranked percentage / 100)) AND percentage change >= move threshold
+Short: RVOL rank < max(1, round(number of watchlist symbols with valid relative volume × top-ranked percentage / 100)) AND percentage change <= -move threshold

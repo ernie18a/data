@@ -1,7 +1,0 @@
-Calculation: Date filter = chart bar time is on or after the start date (month P16, day P17, year P18) and on or before the end date (month P19, day P20, year P21)
-Calculation: Long setup = close > VWAP(hlc3) AND close > VWMA(close, P1) AND EMA(close, P2) > EMA(close, P3) AND Supertrend(source P4, ATR length P5, multiplier P6) is bullish AND RSI(close, P7) > P8 AND EMA(close, P10) > EMA(close, P11) AND ADX(DI length P12, smoothing P13) > P14 AND volume > EMA(volume, P15) AND Date filter
-Calculation: Short setup = close < VWAP(hlc3) AND close < VWMA(close, P1) AND close < EMA(close, P3) AND Supertrend(source P4, ATR length P5, multiplier P6) is bearish AND RSI(close, P7) < P9 AND EMA(close, P10) < EMA(close, P11) AND ADX(DI length P12, smoothing P13) > P14 AND volume > EMA(volume, P15) AND Date filter
-Option: buy call, Long setup AND ((multiple-signal setting is enabled AND prior-bar Long setup is false) OR (multiple-signal setting is disabled AND no Long setup has occurred since the latest Short setup or initialization))
-Option: buy put, Short setup AND ((multiple-signal setting is enabled AND prior-bar Short setup is false) OR (multiple-signal setting is disabled AND no Short setup has occurred since the latest Long setup or initialization))
-Exit: long call, after the entry bar AND (low < entry close × (1 − P23/100) OR high > entry close × (1 + P24/100))
-Exit: long put, after the entry bar AND (high > entry close × (1 + P23/100) OR low < entry close × (1 − P24/100))

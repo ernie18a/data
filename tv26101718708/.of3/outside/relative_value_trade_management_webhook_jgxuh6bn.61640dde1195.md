@@ -1,3 +1,0 @@
-Calculation: Relative close = long asset close on T1 / short asset close on T1
-Long: Relative close crosses entry level AND traded instrument is the long asset AND position is flat AND entry level is nonzero AND stop-loss level is nonzero AND time is between start date and end date
-Short: Relative close crosses entry level AND traded instrument is the short asset AND position is flat AND entry level is nonzero AND stop-loss level is nonzero AND time is between start date and end date

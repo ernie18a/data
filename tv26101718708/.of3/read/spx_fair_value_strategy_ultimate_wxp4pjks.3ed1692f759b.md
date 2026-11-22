@@ -13,3 +13,13 @@ Exit: long, strategy mode permits both sides AND inverse disabled AND On close d
 Exit: short, strategy mode permits both sides AND inverse disabled AND On close date AND NOT (After start date AND Upper crossing) AND NOT (After start date AND Lower crossing)
 Exit: long, strategy mode permits both sides AND inverse enabled AND On close date AND use-close-date disabled AND NOT (After start date AND Upper crossing) AND NOT (After start date AND Lower crossing)
 Exit: short, strategy mode permits both sides AND inverse enabled AND On close date AND use-close-date disabled AND NOT (After start date AND Upper crossing) AND NOT (After start date AND Lower crossing)
+Calculation: Net liquidity = Federal Reserve balance sheet - Treasury General Account - reverse repo balance
+Calculation: SPX fair value = net liquidity / parameter 1 / parameter 2 - parameter 3
+Calculation: SPX deviation = SPX closing price on T1 - SPX fair value
+Short: net liquidity > parameter 4 AND previous SPX deviation < upper threshold AND current SPX deviation > upper threshold
+Long: net liquidity > parameter 4 AND previous SPX deviation > lower threshold AND current SPX deviation < lower threshold
+Long: direction reversal enabled AND long entries enabled AND net liquidity > parameter 4 AND previous SPX deviation < upper threshold AND current SPX deviation > upper threshold AND on or after the start date
+Short: direction reversal enabled AND short entries enabled AND net liquidity > parameter 4 AND previous SPX deviation > lower threshold AND current SPX deviation < lower threshold AND on or after the start date
+Short: direction reversal enabled AND both directions enabled AND (net liquidity > parameter 4 AND previous SPX deviation > lower threshold AND current SPX deviation < lower threshold AND on or after the start date OR close-date option enabled AND on the close date)
+Exit: Short, net liquidity > parameter 4 AND ((previous SPX deviation > lower threshold AND current SPX deviation < lower threshold AND normal direction AND only short entries enabled) OR (previous SPX deviation < upper threshold AND current SPX deviation > upper threshold AND reversed direction AND only long entries enabled)) OR on the close date when date-based closing is enabled
+Exit: Long, net liquidity > parameter 4 AND ((previous SPX deviation < upper threshold AND current SPX deviation > upper threshold AND normal direction AND only long entries enabled) OR (previous SPX deviation > lower threshold AND current SPX deviation < lower threshold AND reversed direction AND only short entries enabled)) OR on the close date when date-based closing is enabled

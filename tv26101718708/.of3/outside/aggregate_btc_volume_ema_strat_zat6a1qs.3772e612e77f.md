@@ -1,3 +1,0 @@
-Calculation: aggregated BTC volume = sum of volume from Binance BTCUSDT, BTCUSDTPERP; OKX BTCUSDT, BTCUSDTPERP; Huobi BTCUSDT, BTCPERP; FTX BTCUSD, BTCPERP; Kraken XBTUSD, XBTUSDPERP; Coinbase BTCUSD; Deribit BTCPERP; Bitfinex BTCUSD; BitMEX XBTUSD; Bitstamp BTCUSD; and Bybit BTCUSD
-Exit: long, aggregated BTC volume > volume multiplier × (fast SMA(aggregated BTC volume, fast volume SMA length) when the fast MA exit option is selected, otherwise slow SMA(aggregated BTC volume, slow volume SMA length))
-Exit: short, aggregated BTC volume > volume multiplier × (fast SMA(aggregated BTC volume, fast volume SMA length) when the fast MA exit option is selected, otherwise slow SMA(aggregated BTC volume, slow volume SMA length))

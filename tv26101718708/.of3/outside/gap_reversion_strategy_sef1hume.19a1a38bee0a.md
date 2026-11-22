@@ -1,2 +1,0 @@
-Calculation: VIX variance warning = highest((VIX high on T1 - SMA(VIX high on T1, P1))^2, P2) < P3
-Long: RSI(traded instrument close, P4) < P5 AND ((VIX filter disabled AND traded instrument close > 0) OR (VIX filter enabled AND VIX variance warning))

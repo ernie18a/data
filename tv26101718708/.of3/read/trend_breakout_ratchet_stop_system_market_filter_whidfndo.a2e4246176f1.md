@@ -4,3 +4,6 @@ Long: (market filter disabled OR benchmark close from T1's still-forming bar > S
 Exit: Long, low <= long ratchet stop
 Exit: Long, SMA(close, shorter momentum lookback) crosses below SMA(close, longer trend lookback)
 Exit: Long, volatility filter enabled AND VIX close from T1's still-forming bar > threshold, evaluated on chart bars
+Calculation: Three-bar breakout(price, average) = price > average AND price[1 bar ago] > average[1 bar ago] AND price[2 bars ago] > average[2 bars ago] AND price[3 bars ago] < average[3 bars ago]
+Long: (SMA(closing price, P1) crosses above SMA(closing price, P2) OR Three-bar breakout(closing price, SMA(closing price, P2)) OR Three-bar breakout(closing price, SMA(closing price, P3)) OR Three-bar breakout(closing price, SMA(closing price, P4))) AND (market filter disabled OR selected benchmark close on T1 > SMA(selected benchmark close on T1, P5)) AND (VIX filter disabled OR VIX close on T1 < P6)
+Exit: long, VIX filter enabled AND VIX close on T1 > P6

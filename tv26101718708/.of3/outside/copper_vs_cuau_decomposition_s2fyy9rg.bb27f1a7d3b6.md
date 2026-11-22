@@ -1,2 +1,0 @@
-Long: Copper strength exceeds the strength indicated by the copper-to-gold ratio AND gold is strong
-Short: Copper is flat AND gold collapses AND the copper-to-gold ratio rises AND the copper-gold spread is sharply negative

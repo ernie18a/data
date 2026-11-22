@@ -5,3 +5,4 @@ Long: Stage = 1 AND low < lowest(low[1], liquidity sweep lookback) AND close > l
 Long: Stage = 2 AND Stage[1] != 2 AND volume > SMA(volume, base lookback) * volume multiplier AND (macro filter disabled OR ROC(WMA(configured macro index close, base lookback), slope lookback) > flat threshold) AND (sector filter disabled OR ROC(WMA(configured sector index close, base lookback), slope lookback) > flat threshold)
 Short: Stage = 3 AND high > highest(high[1], liquidity sweep lookback) AND close < highest(high[1], liquidity sweep lookback)
 Exit: long, Stage = 3 OR Stage = 4 OR (Stage = 2 AND close < Stage 2 trailing stop)
+Long: Stage changes to 2 AND volume > SMA(volume, common length parameter) × volume multiplier AND (ROC(WMA(macro index close, common length parameter), slope lookback parameter) > slope threshold OR macro filter = disabled) AND (ROC(WMA(sector index close, common length parameter), slope lookback parameter) > slope threshold OR sector filter = disabled)

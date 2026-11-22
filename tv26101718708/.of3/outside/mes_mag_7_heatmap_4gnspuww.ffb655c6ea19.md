@@ -1,2 +1,0 @@
-Long: at least P1 of NVIDIA, Microsoft, Apple, Amazon, Meta, Alphabet, and Tesla have positive percentage change on T1
-Short: at least P1 of NVIDIA, Microsoft, Apple, Amazon, Meta, Alphabet, and Tesla have negative percentage change on T1

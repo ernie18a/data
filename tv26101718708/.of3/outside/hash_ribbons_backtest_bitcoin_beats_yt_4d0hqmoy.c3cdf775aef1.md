@@ -1,4 +1,0 @@
-Calculation: Hash rate downward cross = crossunder(SMA(BTC hash rate on T1, P1), SMA(BTC hash rate on T1, P2))
-Calculation: Hash rate upward cross = crossover(SMA(BTC hash rate on T1, P1), SMA(BTC hash rate on T1, P2))
-Long: (crossover(SMA(traded instrument closing price on T1, P3), SMA(traded instrument closing price on T1, P4)) AND bars since hash rate upward cross < bars since crossunder(SMA(traded instrument closing price on T1, P3), SMA(traded instrument closing price on T1, P4)) AND bars since hash rate upward cross < bars since hash rate downward cross) OR (SMA(traded instrument closing price on T1, P3) > SMA(traded instrument closing price on T1, P4) AND hash rate upward cross)
-Short: hash rate downward cross

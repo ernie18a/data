@@ -1,2 +1,0 @@
-Long: One instrument forms a lower confirmed pivot low while the other forms a higher low at the corresponding pivot, and (candle validation is disabled or both pivot candles are bullish)
-Short: One instrument forms a higher confirmed pivot high while the other forms a lower high at the corresponding pivot, and (candle validation is disabled or both pivot candles are bearish)

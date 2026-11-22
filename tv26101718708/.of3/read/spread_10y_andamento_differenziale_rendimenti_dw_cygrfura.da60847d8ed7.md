@@ -3,3 +3,7 @@ Calculation: comparison spread = spread[1] for the chart-bar comparison mode, or
 Long: yield spread >= comparison spread
 Short: yield spread < comparison spread
 Long: abs(close − EMA(close, lookback)) <= close × tolerance AND yield spread >= spread threshold
+Calculation: yield spread = (US 10-year yield − German 10-year yield) × 100
+Long: yield spread on T1 ≥ previous yield spread on T1
+Short: yield spread on T1 < previous yield spread on T1
+Long: |close − EMA(close, period parameter)| ≤ close × proximity parameter AND yield spread ≥ spread threshold parameter

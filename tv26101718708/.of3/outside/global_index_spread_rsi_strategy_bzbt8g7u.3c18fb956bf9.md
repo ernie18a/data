@@ -1,2 +1,0 @@
-Long: RSI(((traded asset close − global benchmark index close at T1) / global benchmark index close at T1) × 100, RSI length parameter) < oversold threshold parameter
-Exit: long, RSI(((traded asset close − global benchmark index close at T1) / global benchmark index close at T1) × 100, RSI length parameter) > overbought threshold parameter

@@ -1,6 +1,0 @@
-Calculation: Fiat currency strength = cumulative sum over chart bars of the mean signed 100 × (close − open) / open for its crosses with the other configured fiat currencies, positive for the base currency and negative for the quote currency
-Calculation: Gold strength = cumulative sum over chart bars of the mean 100 × (close − open) / open for gold crosses against each configured fiat currency
-Calculation: Strength gap = absolute difference between two currency strengths
-Calculation: Currency priority rank = position in the order XAU, EUR, GBP, AUD, NZD, USD, CAD, CHF, JPY, with all other currencies sharing the last rank
-Long: For a pair among all configured fiat pairs or gold against the first configured fiat currency, its strength gap is among the top N gaps AND the stronger currency has a lower priority rank than the weaker currency
-Short: For a pair among all configured fiat pairs or gold against the first configured fiat currency, its strength gap is among the top N gaps AND the stronger currency has an equal or higher priority rank than the weaker currency

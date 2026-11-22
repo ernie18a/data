@@ -22,3 +22,15 @@ Exit: Long, expiry option enabled AND datetime is within the configured expiry s
 Exit: Short, expiry option enabled AND datetime is within the configured expiry session on Monday, Wednesday, or Friday.
 Exit: Long, expiry option enabled AND datetime is within the configured expiry session on Tuesday or Thursday.
 Exit: Short, expiry option enabled AND datetime is within the configured expiry session on Tuesday or Thursday.
+Calculation: High-low index = SMA of the record-high percentage over P2 bars, using selected constituent data on T1; a constituent breaks high when its high or close exceeds its prior P1-bar highest high, and breaks low when its low or close falls below its prior P1-bar lowest low, with a high break taking precedence; record-high percentage is positive breaks divided by all positive or negative breaks, carried forward when there are none and initialized at P3; the selected source is P4.
+Calculation: Linear regression slope = current linear regression of close over P5 bars minus its prior-bar value.
+Calculation: Smoothed linear regression slope = EMA of linear regression slope over P6 bars.
+Calculation: Linear regression slope signal = SMA of smoothed linear regression slope over P7 bars.
+Long: MACD histogram (fast period P13, slow period P14, signal period P15, oscillator average type P16, signal average type P17) rises AND high-low index rises AND absolute smoothed linear regression slope exceeds P8 percent AND linear regression slope exceeds its signal and zero AND high-low index is below P9 AND time is within the configured trading date range and entry session AND the entry pause is disabled or time is outside its interval.
+Short: MACD histogram (fast period P13, slow period P14, signal period P15, oscillator average type P16, signal average type P17) falls AND high-low index falls AND absolute smoothed linear regression slope exceeds P8 percent AND linear regression slope is below its signal and zero AND high-low index is above P10 AND time is within the configured trading date range and entry session AND the entry pause is disabled or time is outside its interval.
+Exit: long, early profit-taking enabled AND position is profitable AND prior high-low index is above P11 AND current high-low index is below P11.
+Exit: short, early profit-taking enabled AND position is profitable AND prior high-low index is below P12 AND current high-low index is above P12.
+Exit: long, expiry exits enabled AND weekday is Monday, Wednesday, or Friday AND time is in the end-of-day interval.
+Exit: short, expiry exits enabled AND weekday is Monday, Wednesday, or Friday AND time is in the end-of-day interval.
+Exit: long, expiry exits enabled AND weekday is Tuesday or Thursday AND time is in the end-of-day interval.
+Exit: short, expiry exits enabled AND weekday is Tuesday or Thursday AND time is in the end-of-day interval.

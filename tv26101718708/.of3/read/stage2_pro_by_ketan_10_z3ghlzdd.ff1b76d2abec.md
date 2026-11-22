@@ -12,3 +12,5 @@ Calculation: recent daily volume maximum = on T3 bars including the current poss
 Calculation: historical daily volume maximum = on T3 bars including the current possibly forming bar, volume >= highest(volume, maximum-history lookback)
 Long: on chart bars using current (possibly forming) T3 values, close(T3) >= open(T3) AND (recent daily volume maximum OR elevated daily volume) AND NOT historical daily volume maximum
 Short: on chart bars using current (possibly forming) T3 values, close(T3) < open(T3) AND (recent daily volume maximum OR elevated daily volume) AND NOT historical daily volume maximum
+Calculation: Scaled NIFTY MidSmall 400 close on T1 = NIFTY MidSmall 400 close on T1 × SMA(traded instrument close on T1, P1) / SMA(NIFTY MidSmall 400 close on T1, P1)
+Long: traded instrument close on T1 > Scaled NIFTY MidSmall 400 close on T1

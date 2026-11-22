@@ -2,3 +2,6 @@ Calculation: relative close = T1 close of the configured long-side asset divided
 Long: (crossover(relative close, entry level) OR crossunder(relative close, entry level)) AND entry level != 0 AND stop level != 0 AND position_size == 0 AND chart asset is the configured long-side asset AND chart-bar datetime >= start datetime AND chart-bar datetime <= end datetime
 Short: (crossover(relative close, entry level) OR crossunder(relative close, entry level)) AND entry level != 0 AND stop level != 0 AND position_size == 0 AND chart asset is the configured short-side asset AND chart-bar datetime >= start datetime AND chart-bar datetime <= end datetime
 Exit: Long, (stop level != 0 AND chart-bar low <= stop level) OR (take-profit level != 0 AND chart-bar high >= take-profit level)
+Calculation: Relative close = long asset close on T1 / short asset close on T1
+Long: Relative close crosses entry level AND traded instrument is the long asset AND position is flat AND entry level is nonzero AND stop-loss level is nonzero AND time is between start date and end date
+Short: Relative close crosses entry level AND traded instrument is the short asset AND position is flat AND entry level is nonzero AND stop-loss level is nonzero AND time is between start date and end date

@@ -1,1 +1,2 @@
 Long: close(T1, current bar) > SMA(close, stage-MA lookback, T1) AND close(T1, current bar) > SMA(close, separate MA lookback, T2) AND barsSince(high(T1) >= highest(high(T1)[1], higher-high lookback), T1) <= higher-high hold AND RSI(close, RSI lookback, T2) > RSI threshold. T1 and T2 calculations run on their timeframe bars and map to chart bars with lookahead off (forming in real time, last completed historically).
+Short: close < moving average of close over P1 periods on T1
