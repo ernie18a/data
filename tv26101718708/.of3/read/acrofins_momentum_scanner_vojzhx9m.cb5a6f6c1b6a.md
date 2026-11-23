@@ -1,0 +1,16 @@
+Calculation: Candle body = abs(close - open)
+Calculation: Band width = BB upper(close, BB lookback, BB multiplier) - BB lower(close, BB lookback, BB multiplier)
+Calculation: Regime gate = ADX(ADX lookback) >= ADX minimum AND NOT (Band width < squeeze multiple * SMA(Band width, width average lookback))
+Calculation: Bull score = if(close > Highest(high, breakout lookback)[1], breakout weight, 0) + if(volume > SMA(volume, volume lookback) * volume multiple AND close > open, 1, 0) + if(RSI(close, RSI lookback) > bull zone threshold, 1, 0) + if(RSI(close, T1 RSI lookback, T1, last completed bar) > T1 RSI threshold, 1, 0) + if(bullish engulfing, 1, 0) + if(close > open AND Candle body > SMA(Candle body, body lookback) * body fraction, 1, 0) + if(DI+(ADX lookback) > DI-(ADX lookback), 1, 0) + if(ADX(ADX lookback) >= ADX strong threshold, 1, 0) + if(close > VWAP(HLC3), 1, 0) + if(abs(close - Camarilla L3(T2, last completed bar)) <= ATR(ATR lookback) OR abs(close - Camarilla L4(T2, last completed bar)) <= ATR(ATR lookback), 1, 0)
+Calculation: Bear score = if(close < Lowest(low, breakout lookback)[1], breakout weight, 0) + if(volume > SMA(volume, volume lookback) * volume multiple AND close < open, 1, 0) + if(RSI(close, RSI lookback) < bear zone threshold, 1, 0) + if(RSI(close, T1 RSI lookback, T1, last completed bar) < T1 RSI threshold, 1, 0) + if(bearish engulfing, 1, 0) + if(close < open AND Candle body > SMA(Candle body, body lookback) * body fraction, 1, 0) + if(DI-(ADX lookback) > DI+(ADX lookback), 1, 0) + if(ADX(ADX lookback) >= ADX strong threshold, 1, 0) + if(close < VWAP(HLC3), 1, 0) + if(abs(close - Camarilla H3(T2, last completed bar)) <= ATR(ATR lookback) OR abs(close - Camarilla H4(T2, last completed bar)) <= ATR(ATR lookback), 1, 0)
+Calculation: Bars since entry = 0 if a long or short entry holds on this bar, else Bars since entry[1] + 1
+Calculation: Bars since last exit = 0 if a long or short exit holds on this bar, else Bars since last exit[1] + 1
+Calculation: Entry ATR = ATR(ATR lookback)[Bars since entry]
+Calculation: Best high = max(entry price, Highest(high, Bars since entry))
+Calculation: Best low = min(entry price, Lowest(low, Bars since entry))
+Calculation: Long stop = if(Bars since entry = 0, entry price - stop-loss multiple * Entry ATR, if(Best high >= entry price + trail activation multiple * ATR(ATR lookback), max(Long stop[1], Best high - trail multiple * ATR(ATR lookback)), Long stop[1]))
+Calculation: Short stop = if(Bars since entry = 0, entry price + stop-loss multiple * Entry ATR, if(Best low <= entry price - trail activation multiple * ATR(ATR lookback), min(Short stop[1], Best low + trail multiple * ATR(ATR lookback)), Short stop[1]))
+Long: Bull score >= min score AND Regime gate AND (EMA filter off OR close > EMA(close, slow lookback)) AND position side is flat AND Bars since last exit >= cooldown length
+Short: Bear score >= min score AND Regime gate AND (EMA filter off OR close < EMA(close, slow lookback)) AND position side is flat AND Bars since last exit >= cooldown length
+Exit: long, close <= Long stop OR close >= entry price + take-profit multiple * Entry ATR
+Exit: short, close >= Short stop OR close <= entry price - take-profit multiple * Entry ATR

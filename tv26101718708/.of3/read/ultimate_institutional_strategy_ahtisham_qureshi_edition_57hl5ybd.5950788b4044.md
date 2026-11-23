@@ -1,0 +1,40 @@
+Calculation: AllRising = TEMA(close, TEMA lookback) > TEMA(close, TEMA lookback)[1] AND LSMA(close, LSMA lookback) > LSMA(close, LSMA lookback)[1] AND EMA(close, long EMA lookback) > EMA(close, long EMA lookback)[1]
+Calculation: NoneRising = TEMA(close, TEMA lookback) <= TEMA(close, TEMA lookback)[1] AND LSMA(close, LSMA lookback) <= LSMA(close, LSMA lookback)[1] AND EMA(close, long EMA lookback) <= EMA(close, long EMA lookback)[1]
+Calculation: TrendRunBars = TrendRunBars[1] + 1 if (AllRising AND AllRising[1]) OR (NoneRising AND NoneRising[1]); otherwise 1 if AllRising OR NoneRising; otherwise 0
+Calculation: StrengthNorm = ABS(average of (TEMA(close, TEMA lookback) - TEMA(close, TEMA lookback)[TEMA slope lookback], LSMA(close, LSMA lookback) - LSMA(close, LSMA lookback)[LSMA slope lookback], EMA(close, long EMA lookback) - EMA(close, long EMA lookback)[long EMA slope lookback])) / ATR(ATR lookback)
+Calculation: ExhaustedTrend = TrendRunBars > minimum trend bars * trend bars multiplier AND (StrengthNorm < trend strength threshold OR (divergence enabled AND ((AllRising AND close > close[divergence lookback] AND RSI(close, RSI lookback) < RSI(close, RSI lookback)[divergence lookback]) OR (NoneRising AND close < close[divergence lookback] AND RSI(close, RSI lookback) > RSI(close, RSI lookback)[divergence lookback]))))
+Calculation: VolumeSpike = volume > SMA(volume, volume lookback) * volume multiplier
+Calculation: RevVolumeSpike = volume > SMA(volume, volume lookback) * reversal volume multiplier
+Calculation: AvgPctDev = average of ((close - TEMA(close, TEMA lookback)) / TEMA(close, TEMA lookback), (close - LSMA(close, LSMA lookback)) / LSMA(close, LSMA lookback), (close - EMA(close, long EMA lookback)) / EMA(close, long EMA lookback)), expressed in percent
+Calculation: PivotHighLevel = high[pivot lookback] if high[pivot lookback] is the highest high of the pivot lookback bars before it, the bar itself, and the pivot lookback bars after it up to the current bar; otherwise PivotHighLevel[1]
+Calculation: PivotLowLevel = low[pivot lookback] if low[pivot lookback] is the lowest low of the pivot lookback bars before it, the bar itself, and the pivot lookback bars after it up to the current bar; otherwise PivotLowLevel[1]
+Calculation: SweepDown = low < PivotLowLevel AND close > high[1] AND (high[1] - low) > ATR(ATR lookback) * min sweep multiple
+Calculation: LastBullLevel = EMA(close, long EMA lookback) if close crosses above EMA(close, long EMA lookback) on this bar; otherwise LastBullLevel[1]
+Calculation: LastBearLevel = EMA(close, long EMA lookback) if close crosses below EMA(close, long EMA lookback) on this bar; otherwise LastBearLevel[1]
+Calculation: TestCount = 0 if ABS(close - EMA(close, long EMA lookback)) > ATR(ATR lookback) * reset band multiple; otherwise TestCount[1] + 1 if ABS(close - EMA(close, long EMA lookback)) < ATR(ATR lookback) * test band multiple AND (no earlier increase OR close differs from the close at the last increase); otherwise TestCount[1]
+Calculation: SlowK = SMA(Stochastic %K(close, high, low, stochastic lookback), stochastic smoothing)
+Calculation: SlowD = SMA(SlowK, stochastic D smoothing)
+Calculation: BullVotes = count of true among (RSI(close, reversal RSI lookback) > RSI midline; SlowK > stochastic midline OR SlowK > SlowD; StochRSI(close, RSI lookback, stochastic RSI lookback) > stochastic RSI midline; MACD line(close, MACD fast lookback, MACD slow lookback) > MACD signal line(close, MACD fast lookback, MACD slow lookback, MACD signal lookback); Williams %R(high, low, close, williams lookback) > Williams midline; CCI(close, CCI lookback) > CCI zero level)
+Calculation: BearVotes = count of true among (RSI(close, reversal RSI lookback) < RSI midline; SlowK < stochastic midline OR SlowK < SlowD; StochRSI(close, RSI lookback, stochastic RSI lookback) < stochastic RSI midline; MACD line(close, MACD fast lookback, MACD slow lookback) < MACD signal line(close, MACD fast lookback, MACD slow lookback, MACD signal lookback); Williams %R(high, low, close, williams lookback) < Williams midline; CCI(close, CCI lookback) < CCI zero level)
+Calculation: IdealShort = IDEAL enabled AND ((close > LastBearLevel * (1 - retest tolerance) AND close < LastBearLevel * (1 + retest tolerance) AND close < open AND TEMA(close, TEMA lookback) < LSMA(close, LSMA lookback) AND VolumeSpike) OR (high < PivotHighLevel AND high > high[1] AND AvgPctDev > overbought zone threshold AND TEMA(close, TEMA lookback) < LSMA(close, LSMA lookback)) OR (TestCount >= max tests AND close crosses below EMA(close, long EMA lookback) AND TEMA(close, TEMA lookback) < LSMA(close, LSMA lookback)))
+Calculation: IdealLong = IDEAL enabled AND ((SweepDown AND close > EMA(close, long EMA lookback) AND VolumeSpike) OR (close > LastBullLevel * (1 - retest tolerance) AND close < LastBullLevel * (1 + retest tolerance) AND close > open AND TEMA(close, TEMA lookback) > LSMA(close, LSMA lookback) AND VolumeSpike) OR (AvgPctDev <= -(oversold zone threshold) AND close > EMA(close, long EMA lookback) AND TEMA(close, TEMA lookback) > LSMA(close, LSMA lookback) AND VolumeSpike)) AND NOT IdealShort
+Calculation: RevLong = reversal enabled AND close > EMA(close, reversal EMA lookback) AND EMA(close, reversal EMA lookback) > EMA(close, reversal EMA lookback)[1] AND (ADX(ADX lookback) > ADX strong level OR +DI(ADX lookback) > -DI(ADX lookback)) AND BullVotes >= consensus count AND RevVolumeSpike AND active-hours enabled
+Calculation: RevShort = reversal enabled AND close < EMA(close, reversal EMA lookback) AND EMA(close, reversal EMA lookback) < EMA(close, reversal EMA lookback)[1] AND (ADX(ADX lookback) > ADX strong level OR -DI(ADX lookback) > +DI(ADX lookback)) AND BearVotes >= consensus count AND RevVolumeSpike AND active-hours enabled
+Calculation: OrigLong = (((alignment required AND AllRising) OR (alignment not required AND TEMA(close, TEMA lookback) > LSMA(close, LSMA lookback) AND close > EMA(close, long EMA lookback))) AND TEMA(close, TEMA lookback) crosses above LSMA(close, LSMA lookback) AND VolumeSpike) OR (exhaustion enabled AND ExhaustedTrend AND NoneRising AND TEMA(close, TEMA lookback) crosses above LSMA(close, LSMA lookback) AND VolumeSpike)
+Calculation: OrigShort = (((alignment required AND NoneRising) OR (alignment not required AND TEMA(close, TEMA lookback) < LSMA(close, LSMA lookback) AND close < EMA(close, long EMA lookback))) AND TEMA(close, TEMA lookback) crosses below LSMA(close, LSMA lookback) AND VolumeSpike) OR (exhaustion enabled AND ExhaustedTrend AND AllRising AND TEMA(close, TEMA lookback) crosses below LSMA(close, LSMA lookback) AND VolumeSpike)
+Long: position side is flat AND IdealLong
+Long: SweepDown
+Long: position side is flat AND RevLong AND NOT IdealShort
+Long: position side is flat AND OrigLong AND NOT IdealShort AND NOT RevShort
+Short: position side is flat AND IdealShort
+Short: high > PivotHighLevel AND close < low[1] AND (high - low[1]) > ATR(ATR lookback) * min sweep multiple
+Short: position side is flat AND RevShort AND NOT IdealLong
+Short: position side is flat AND OrigShort AND NOT IdealLong AND NOT RevLong
+Exit: long, low <= entry price - stop multiple * ATR(ATR lookback)
+Exit: long, high >= entry price + target multiple * ATR(ATR lookback)
+Exit: long, highest high since entry >= entry price + trail multiple * ATR(ATR lookback) AND low <= highest high since entry - trail multiple * ATR(ATR lookback)
+Exit: long, bars since entry >= max bars in trade
+Exit: short, high >= entry price + stop multiple * ATR(ATR lookback)
+Exit: short, low <= entry price - target multiple * ATR(ATR lookback)
+Exit: short, lowest low since entry <= entry price - trail multiple * ATR(ATR lookback) AND high >= lowest low since entry + trail multiple * ATR(ATR lookback)
+Exit: short, bars since entry >= max bars in trade

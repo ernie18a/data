@@ -1,0 +1,10 @@
+Calculation: MA(source, lookback, MA type) = moving average of source over lookback bars, of MA type
+Calculation: DI spread(lookback) = +DI(lookback) - -DI(lookback)
+Long: (MA(open, basis lookback, basis MA type, T1, last completed bar) crosses above MA(open[1], basis lookback, basis MA type, T1, last completed bar))[cross offset] AND (ATR(ATR lookback) >= min ATR OR NOT use ATR filter) AND ((RSI(close, RSI lookback, T2, last completed bar) >= lower RSI bound AND RSI(close, RSI lookback, T2, last completed bar) <= upper RSI bound) OR NOT use RSI filter) AND (close >= MA(close, MA filter lookback, MA filter type, T3, last completed bar) OR NOT use MA filter) AND ((ADX(DI lookback 1, ADX smoothing 1, T4, last completed bar) >= min ADX 1 AND ADX(DI lookback 1, ADX smoothing 1, T4, last completed bar) <= max ADX 1) OR NOT use ADX filter 1) AND (EMA(DI spread(DI lookback 1, T4, last completed bar), DI EMA lookback 1) > 0 OR NOT use DI uptrend filter 1) AND ((ADX(DI lookback 2, ADX smoothing 2, T5, last completed bar) >= min ADX 2 AND ADX(DI lookback 2, ADX smoothing 2, T5, last completed bar) <= max ADX 2) OR NOT use ADX filter 2) AND (EMA(DI spread(DI lookback 2, T5, last completed bar), DI EMA lookback 2) > 0 OR NOT use DI uptrend filter 2)
+Long: MA(open, basis lookback, basis MA type, T1, last completed bar) > MA(open[1], basis lookback, basis MA type, T1, last completed bar)
+Short: MA(open, basis lookback, basis MA type, T1, last completed bar) <= MA(open[1], basis lookback, basis MA type, T1, last completed bar)
+Exit: long, entry price <= entry price * (1 - fixed stop percent)
+Exit: long, MA(open, basis lookback, basis MA type) < entry price * (1 - fixed stop percent)
+Exit: long, entry price >= entry price * (1 + take-profit percent)
+Exit: long, highest close since entry > entry price * (1 + take-profit percent) AND low <= highest high since entry - entry price * (1 + take-profit percent) * trailing deviation percent AND use trailing
+Exit: long, highest close since entry > entry price * (1 + take-profit percent) AND high >= entry price * (1 + take-profit percent) AND NOT use trailing

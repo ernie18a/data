@@ -1,0 +1,6 @@
+Long: SMA(close, medium-term lookback, T1, last completed bar) crosses above SMA(close, long-term lookback, T1, last completed bar)
+Short: SMA(close, medium-term lookback, T1, last completed bar) crosses below SMA(close, long-term lookback, T1, last completed bar)
+Long: close > SMA(close, long-term lookback, T1, last completed bar)
+Short: close <= SMA(close, long-term lookback, T1, last completed bar)
+Long: SMA(close, short-term lookback, T1, last completed bar) > SMA(close, medium-term lookback, T1, last completed bar)
+Short: SMA(close, short-term lookback, T1, last completed bar) <= SMA(close, medium-term lookback, T1, last completed bar)

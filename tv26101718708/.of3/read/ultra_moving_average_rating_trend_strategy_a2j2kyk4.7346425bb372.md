@@ -1,0 +1,8 @@
+Calculation: IchimokuConversion = DonchianMid(high, low, Lc)
+Calculation: IchimokuBase = DonchianMid(high, low, Lb)
+Calculation: IchimokuSpanA = (IchimokuConversion + IchimokuBase) / 2
+Calculation: IchimokuSpanB = DonchianMid(high, low, Ls), where Lc < Lb < Ls
+Calculation: IchimokuRating = 1 if (IchimokuSpanA > IchimokuSpanB AND close > IchimokuSpanA AND close < IchimokuBase AND close[1] < IchimokuConversion AND close > IchimokuConversion), -1 if (IchimokuSpanB > IchimokuSpanA AND close < IchimokuSpanB AND close > IchimokuBase AND close[1] > IchimokuConversion AND close < IchimokuConversion), 0 otherwise
+Calculation: Consensus = mean of the defined terms: sign(close - SMA(close, L)) and sign(close - EMA(close, L)) for L in {L1, L2, M, L3, L4, L5}; sign(close - ALMA(close, L, offset, sigma)), sign(close - SMMA(close, L)), sign(close - LSMA(close, L)), sign(close - VWMA(close, volume, L)), sign(close - DEMA(close, L)), sign(close - HMA(close, L)), sign(close - KAMA(close, L, fast, slow)), sign(close - FRAMA(close, high, low, L)), sign(close - VIDYA(close, L)), sign(close - JMA(close, L, power, phase)), sign(close - TEMA(close, L)), sign(close - ZLEMA(close, L)), sign(close - TRIMA(close, L)) and sign(close - T3(close, L, vfactor)) for L in {L1, L2, L3, L4, L5}; and IchimokuRating; where L1 < L2 < M < L3 < L4 < L5 and fast < slow
+Long: Consensus(T1, last completed bar) >= P_long
+Short: Consensus(T1, last completed bar) <= -P_short

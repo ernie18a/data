@@ -1,0 +1,14 @@
+Calculation: SmaTrueRange = SMA(TrueRange(HeikinAshiHigh, HeikinAshiLow, HeikinAshiClose), ATR period)
+Calculation: TrendMagic = CCI(HeikinAshiClose, CCI period) >= 0 ? max(HeikinAshiLow - SmaTrueRange * ATR multiplier, TrendMagic[1]) : min(HeikinAshiHigh + SmaTrueRange * ATR multiplier, TrendMagic[1])
+Calculation: SqueezeMomentum = LinearRegression(HeikinAshiClose - ((Highest(HeikinAshiHigh, squeeze length) + Lowest(HeikinAshiLow, squeeze length)) / 2 + SMA(HeikinAshiClose, squeeze length)) / 2, squeeze length, 0)
+Calculation: CumulativeDeltaVolume = CumulativeSum((HeikinAshiClose >= HeikinAshiOpen ? 1 : -1) * volume * (HeikinAshiHigh == HeikinAshiLow ? 0.5 : 0.5 * (1 + abs(HeikinAshiClose - HeikinAshiOpen) / (HeikinAshiHigh - HeikinAshiLow))))
+Calculation: CdvHeikinAshiClose = (CumulativeDeltaVolume + CumulativeDeltaVolume[1]) / 2
+Calculation: CdvHeikinAshiOpen = (CdvHeikinAshiOpen[1] + CdvHeikinAshiClose[1]) / 2
+Long: CCI(HeikinAshiClose, CCI period) >= 0
+Short: CCI(HeikinAshiClose, CCI period) < 0
+Long: HeikinAshiLow crosses above TrendMagic
+Short: HeikinAshiHigh crosses below TrendMagic
+Long: HeikinAshiClose > TrendMagic + trend magic offset AND CCI(HeikinAshiClose, CCI period) >= 0 AND BarsSince(CCI(HeikinAshiClose, CCI period) < 0 AND HeikinAshiClose < TrendMagic - trend magic offset) > trend magic lookback AND SqueezeMomentum > 0 AND BarsSince(SqueezeMomentum < 0) > squeeze lookback AND CdvHeikinAshiOpen <= CdvHeikinAshiClose AND BarsSince(CdvHeikinAshiOpen > CdvHeikinAshiClose) > CDV lookback AND ADX(HeikinAshiHigh, HeikinAshiLow, HeikinAshiClose, DI length, ADX smoothing) > ADX threshold
+Short: HeikinAshiClose < TrendMagic - trend magic offset AND CCI(HeikinAshiClose, CCI period) < 0 AND BarsSince(CCI(HeikinAshiClose, CCI period) >= 0 AND HeikinAshiClose > TrendMagic + trend magic offset) > trend magic lookback AND SqueezeMomentum < 0 AND BarsSince(SqueezeMomentum > 0) > squeeze lookback AND CdvHeikinAshiOpen > CdvHeikinAshiClose AND BarsSince(CdvHeikinAshiOpen <= CdvHeikinAshiClose) > CDV lookback AND ADX(HeikinAshiHigh, HeikinAshiLow, HeikinAshiClose, DI length, ADX smoothing) > ADX threshold
+Exit: long, HeikinAshiClose < entry price * (1 - stop loss) OR high >= entry price * (1 + take profit 1) OR high >= entry price * (1 + take profit 2) OR high >= entry price * (1 + take profit 3) OR high >= entry price * (1 + take profit 4)
+Exit: short, HeikinAshiClose > entry price * (1 + stop loss) OR low <= entry price * (1 - take profit 1) OR low <= entry price * (1 - take profit 2) OR low <= entry price * (1 - take profit 3) OR low <= entry price * (1 - take profit 4)

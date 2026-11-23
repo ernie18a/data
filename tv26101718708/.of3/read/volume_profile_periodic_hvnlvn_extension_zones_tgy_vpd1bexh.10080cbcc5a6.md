@@ -1,0 +1,3 @@
+Calculation: POC(i, R, M, N, D) = midpoint of the highest-volume bin among R equal bins spanning the high-to-low range of up to the last M chart bars of the i-th most recent completed T1 period having more than N chart bars, where each bar counts only if its direction matches D (bullish: close >= open; bearish: close < open; both: all bars) and its volume is split across bins in proportion to the overlap of its high-to-low range with each bin, a zero-range bar's volume going wholly to the bin containing its close
+Long: POC(1, R, M, N, D) > POC(2, R, M, N, D)
+Short: POC(1, R, M, N, D) < POC(2, R, M, N, D)

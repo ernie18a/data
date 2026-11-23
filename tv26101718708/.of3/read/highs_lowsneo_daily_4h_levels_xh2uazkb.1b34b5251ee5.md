@@ -1,0 +1,21 @@
+Calculation: BreakHigh = high or close, selected by the mitigation source parameter
+Calculation: BreakLow = low or close, selected by the mitigation source parameter
+Calculation: T1HighBreak = a bar on which BreakHigh is at or above the high of a T1 high level tested on that bar; a T1 high level holds the high of the last completed T1 bar, is created on the first chart bar of the next T1 bar, is tested from the following chart bar onward, and is removed by the first test it passes
+Calculation: T1LowBreak = a bar on which BreakLow is at or below the low of a T1 low level tested on that bar; a T1 low level holds the low of the last completed T1 bar, with the same creation, testing, and removal as a T1 high level
+Calculation: T2HighBreak = a bar on which BreakHigh is at or above the high of a T2 high level tested on that bar; a T2 high level holds the high of the last completed T2 bar, with the same creation, testing, and removal as a T1 high level, except that it is dropped (never tested) from the first bar at whose start an unremoved T1 high or low level has the same price
+Calculation: T2LowBreak = a bar on which BreakLow is at or below the low of a T2 low level tested on that bar; a T2 low level holds the low of the last completed T2 bar, with the same creation, testing, removal, and dropping rules as a T2 high level
+Calculation: ZoneSide = below if T2LowBreak, else above if T2HighBreak, else below if T1LowBreak, else above if T1HighBreak, else the previous ZoneSide
+Calculation: NewZone = T1HighBreak OR T1LowBreak OR T2HighBreak OR T2LowBreak
+Calculation: InZone = a break has occurred on or before this bar AND datetime <= datetime of the latest break + zone duration in minutes
+Calculation: StoppedOut = InZone AND NOT NewZone AND (a long position open before this bar with low <= entry price * (1 - stop-loss percent / 100) OR a short position open before this bar with high >= entry price * (1 + stop-loss percent / 100))
+Calculation: EntryAllowed = InZone AND NOT StoppedOut AND no open position after this bar's exits AND entries since the latest break < maximum entries per zone
+Calculation: BullRunStart = the first bar of the run of consecutive bars with close > open ending at this bar, where a run starts at a NewZone bar and restarts on the bar after any bar that is not close > open, is a long entry, or is the bar that ends LongSweepPending; na when this bar is not close > open
+Calculation: BearRunStart = the first bar of the run of consecutive bars with close < open ending at this bar, where a run starts at a NewZone bar and restarts on the bar after any bar that is not close < open, is a short entry, or is the bar that ends ShortSweepPending; na when this bar is not close < open
+Calculation: LongSweepPending = the most recent long candle entry occurred on an earlier bar, and no bar from the bar after that entry through the previous bar is a NewZone bar or an EntryAllowed bar with low below the low of BullRunStart at that entry
+Calculation: ShortSweepPending = the most recent short candle entry occurred on an earlier bar, and no bar from the bar after that entry through the previous bar is a NewZone bar or an EntryAllowed bar with high above the high of BearRunStart at that entry
+Long: RSI signals disabled AND ZoneSide = below AND EntryAllowed AND NOT LongSweepPending AND close > high of BullRunStart
+Short: RSI signals disabled AND ZoneSide = above AND EntryAllowed AND NOT ShortSweepPending AND close < low of BearRunStart
+Long: RSI signals enabled AND ZoneSide = below AND EntryAllowed AND RSI(close, RSI length, T3) crosses above RSI oversold level on any T3 bar completed since the previous chart bar
+Short: RSI signals enabled AND ZoneSide = above AND EntryAllowed AND RSI(close, RSI length, T3) crosses below RSI overbought level on any T3 bar completed since the previous chart bar
+Exit: Long, NOT InZone OR NewZone OR low <= entry price * (1 - stop-loss percent / 100)
+Exit: Short, NOT InZone OR NewZone OR high >= entry price * (1 + stop-loss percent / 100)

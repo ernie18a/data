@@ -1,0 +1,5 @@
+Calculation: DSMA(src, length) = SMA(EMA(src, length), length)
+Long: bar index >= MAX(shorter lookback * warmup multiplier, longer lookback + warmup offset) AND DSMA(close, shorter lookback) > DSMA(close, shorter lookback)[1] AND close > DSMA(close, shorter lookback) + DSMA(high - low, longer lookback) AND RSI(close, RSI lookback) >= RSI threshold AND (NOT use volume filter OR volume <= 0 OR volume > SMA(volume, volume lookback) * volume multiplier)
+Short: bar index >= MAX(shorter lookback * warmup multiplier, longer lookback + warmup offset) AND DSMA(close, shorter lookback) <= DSMA(close, shorter lookback)[1] AND close < DSMA(close, shorter lookback) - DSMA(high - low, longer lookback) AND RSI(close, RSI lookback) <= 100 - RSI threshold AND (NOT use volume filter OR volume <= 0 OR volume > SMA(volume, volume lookback) * volume multiplier)
+Long: DSMA(close, shorter lookback) > DSMA(close, shorter lookback)[1]
+Short: DSMA(close, shorter lookback) < DSMA(close, shorter lookback)[1]

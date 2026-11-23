@@ -1,0 +1,16 @@
+Calculation: Anchor = tick-rounded close(T1 bars, last completed bar)
+Calculation: ATRUnit = tick-rounded ATR(high, low, close, N, T1 bars, last completed bar)
+Calculation: UpperLevel(k) = tick-rounded(Anchor + k * ATRUnit)
+Calculation: LowerLevel(k) = tick-rounded(Anchor - k * ATRUnit)
+Long: close > UpperLevel(k1)
+Long: close crosses above Anchor
+Long: close crosses above UpperLevel(k1)
+Long: close crosses above UpperLevel(k2)
+Long: close crosses above UpperLevel(k3)
+Long: close crosses above UpperLevel(k4)
+Short: close < LowerLevel(k1)
+Short: close crosses below Anchor
+Short: close crosses below LowerLevel(k1)
+Short: close crosses below LowerLevel(k2)
+Short: close crosses below LowerLevel(k3)
+Short: close crosses below LowerLevel(k4)

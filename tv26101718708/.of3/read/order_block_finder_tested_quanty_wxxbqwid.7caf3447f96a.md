@@ -1,0 +1,12 @@
+Calculation: SwingHigh = most recent PivotHigh(high, swing strength, swing strength) value, with its bar
+Calculation: BreakUp = close > SwingHigh AND bars since SwingHigh's bar <= max swing age AND close was not above SwingHigh on any bar from SwingHigh's bar to the previous bar
+Calculation: StrongUp = close - open >= ATR(high, low, close, atr length) OR low > high[2]
+Calculation: UpBlock = high and low of the last bearish candle (close < open) among the block search length bars ending at the lowest low (earliest if tied) from SwingHigh's bar through the current bar
+Calculation: SupportBlock = UpBlock on a bar where BreakUp AND StrongUp AND UpBlock exists AND UpBlock does not overlap any live support block among the newest tracked count support blocks (overlap: bottom <= other top AND other bottom <= top; live: no close below its bottom since formation)
+Long: low <= top AND close >= bottom of a SupportBlock formed on an earlier bar AND low > top on every bar from after its formation through the previous bar AND SupportBlock is among the newest tracked count support blocks
+Calculation: SwingLow = most recent PivotLow(low, swing strength, swing strength) value, with its bar
+Calculation: BreakDown = close < SwingLow AND bars since SwingLow's bar <= max swing age AND close was not below SwingLow on any bar from SwingLow's bar to the previous bar
+Calculation: StrongDown = open - close >= ATR(high, low, close, atr length) OR high < low[2]
+Calculation: DownBlock = high and low of the last bullish candle (close > open) among the block search length bars ending at the highest high (earliest if tied) from SwingLow's bar through the current bar
+Calculation: ResistanceBlock = DownBlock on a bar where BreakDown AND StrongDown AND DownBlock exists AND DownBlock does not overlap any live resistance block among the newest tracked count resistance blocks (overlap: bottom <= other top AND other bottom <= top; live: no close above its top since formation)
+Short: high >= bottom AND close <= top of a ResistanceBlock formed on an earlier bar AND high < bottom on every bar from after its formation through the previous bar AND ResistanceBlock is among the newest tracked count resistance blocks

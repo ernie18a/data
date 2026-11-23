@@ -1,0 +1,5 @@
+Calculation: cumulative safety deviation(n) = sum over i from 1 to n of (first safety step percent * step coefficient^(i-1))
+Calculation: average entry price = (base volume + sum over k from 1 to filled safety orders of safety volume * volume coefficient^(k-1)) / (base volume / entry price + sum over k from 1 to filled safety orders of (safety volume * volume coefficient^(k-1)) / (entry price * (1 - cumulative safety deviation(k)/100)))
+Long: no position open at the start of the bar AND datetime >= window start AND datetime <= window end
+Long: low <= entry price * (1 - cumulative safety deviation(filled safety orders + 1)/100) AND filled safety orders < maximum safety orders
+Exit: long, RSI(close, RSI length, T1, last completed bar) crosses above RSI threshold AND close >= average entry price * (1 + minimum profit percent/100)

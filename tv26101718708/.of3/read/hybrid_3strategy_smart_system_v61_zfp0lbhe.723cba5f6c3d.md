@@ -1,0 +1,43 @@
+Calculation: htf uptrend = close of T1 bars at last completed bar > EMA(close, EMA length) of T1 bars at last completed bar
+Calculation: htf downtrend = close of T1 bars at last completed bar < EMA(close, EMA length) of T1 bars at last completed bar
+Calculation: uptrend = close > EMA(close, EMA length) AND EMA(close, EMA length) > EMA(close, EMA length)[EMA slope lookback] AND htf uptrend AND ABS(close - EMA(close, EMA length)) <= ATR(ATR length) * max EMA distance ATR multiple
+Calculation: downtrend = close < EMA(close, EMA length) AND EMA(close, EMA length) < EMA(close, EMA length)[EMA slope lookback] AND htf downtrend AND ABS(close - EMA(close, EMA length)) <= ATR(ATR length) * max EMA distance ATR multiple
+Calculation: market trending = ADX(ADX length) > ADX threshold AND ABS(EMA(close, EMA length) - EMA(close, EMA length)[EMA slope lookback]) >= ATR(ATR length) * slope ATR multiple
+Calculation: high volume = volume > SMA(volume, volume MA length) * volume multiplier
+Calculation: cooldown ok = bars since last entry > cooldown bars
+Calculation: last pivot high = most recent confirmed PivotHigh(high, pivot length, pivot length)
+Calculation: last pivot low = most recent confirmed PivotLow(low, pivot length, pivot length)
+Calculation: bullish gap = low > high[2]
+Calculation: bearish gap = high < low[2]
+Calculation: qualifying bullish gap = bullish gap AND low - high[2] >= ATR(ATR length) * FVG min ATR multiple AND uptrend AND market trending
+Calculation: qualifying bearish gap = bearish gap AND low[2] - high >= ATR(ATR length) * FVG min ATR multiple AND downtrend AND market trending
+Calculation: bullish zone armed = the most recent qualifying bullish gap at bar k, provided bars since k <= FVG max age AND no FVG long setup at any bar from k to the bar before current
+Calculation: bearish zone armed = the most recent qualifying bearish gap at bar k, provided bars since k <= FVG max age AND no FVG short setup at any bar from k to the bar before current
+Calculation: bullish gap touch = bullish zone armed AND bars since k >= 1 AND low <= low at k AND high >= high[2] at k
+Calculation: bearish gap touch = bearish zone armed AND bars since k >= 1 AND high >= high at k AND low <= low[2] at k
+Calculation: FVG long setup = uptrend AND cooldown ok AND bullish gap touch AND close > open AND close > high[2] at k AND (FVG trend weight * uptrend + FVG htf weight * htf uptrend + FVG market weight * market trending + FVG touch weight * bullish gap touch + FVG candle weight * (close > open) + FVG volume weight * high volume + FVG gap weight * MIN((low - high[2] if bullish gap else 0) / ATR(ATR length), FVG gap cap)) >= score threshold
+Calculation: FVG short setup = downtrend AND cooldown ok AND bearish gap touch AND close < open AND close < low[2] at k AND (FVG trend weight * downtrend + FVG htf weight * htf downtrend + FVG market weight * market trending + FVG touch weight * bearish gap touch + FVG candle weight * (close < open) + FVG volume weight * high volume + FVG gap weight * MIN((low[2] - high if bearish gap else 0) / ATR(ATR length), FVG gap cap)) >= score threshold
+Calculation: exhaustion long setup = the most recent bar k satisfying close < EMA(close, EMA length) AND high volume AND RSI(RSI length) < exh long RSI threshold AND close > open AND MIN(open, close) - low > ABS(close - open) * exh wick ratio, provided 1 <= bars since k <= exh max age AND cooldown ok AND close > high at k AND close > open AND (exh EMA weight * (close > EMA(close, EMA length)) + exh RSI weight * (RSI(RSI length) < exh long score RSI threshold ? exh strong RSI weight : exh weak RSI weight) + exh volume weight * high volume + exh wick weight * (MIN(open, close) - low > ABS(close - open) ? exh strong wick weight : exh weak wick weight) + exh trigger weight * (close > high at k) + exh candle weight * (close > open) + exh ratio weight * MIN(volume / SMA(volume, volume MA length), exh ratio cap)) >= score threshold
+Calculation: exhaustion short setup = the most recent bar k satisfying close > EMA(close, EMA length) AND high volume AND RSI(RSI length) > exh short RSI threshold AND close < open AND high - MAX(open, close) > ABS(close - open) * exh wick ratio, provided 1 <= bars since k <= exh max age AND cooldown ok AND close < low at k AND close < open AND (exh EMA weight * (close < EMA(close, EMA length)) + exh RSI weight * (RSI(RSI length) > exh short score RSI threshold ? exh strong RSI weight : exh weak RSI weight) + exh volume weight * high volume + exh wick weight * (high - MAX(open, close) > ABS(close - open) ? exh strong wick weight : exh weak wick weight) + exh trigger weight * (close < low at k) + exh candle weight * (close < open) + exh ratio weight * MIN(volume / SMA(volume, volume MA length), exh ratio cap)) >= score threshold
+Calculation: trendline long setup = (the most recent bar k where close crosses above last pivot high AND uptrend AND market trending, provided 1 <= bars since k <= TL max age; break level = last pivot high at k) AND cooldown ok AND low <= break level AND close > break level AND close > open AND (TL trend weight * uptrend + TL market weight * market trending + TL htf weight * htf uptrend + TL touch weight * (low <= break level) + TL break weight * (close > break level) + TL candle weight * (close > open) + TL volume weight * high volume) >= score threshold
+Calculation: trendline short setup = (the most recent bar k where close crosses below last pivot low AND downtrend AND market trending, provided 1 <= bars since k <= TL max age; break level = last pivot low at k) AND cooldown ok AND high >= break level AND close < break level AND close < open AND (TL trend weight * downtrend + TL market weight * market trending + TL htf weight * htf downtrend + TL touch weight * (high >= break level) + TL break weight * (close < break level) + TL candle weight * (close < open) + TL volume weight * high volume) >= score threshold
+Calculation: any long setup = FVG long setup OR exhaustion long setup OR trendline long setup
+Calculation: any short setup = FVG short setup OR exhaustion short setup OR trendline short setup
+Calculation: FVG long signal = flat AND no pending signal from an earlier bar AND FVG long setup
+Calculation: exhaustion long signal = flat AND no pending signal from an earlier bar AND exhaustion long setup AND NOT FVG long setup
+Calculation: trendline long signal = flat AND no pending signal from an earlier bar AND trendline long setup AND NOT FVG long setup AND NOT exhaustion long setup
+Calculation: FVG short signal = flat AND no pending signal from an earlier bar AND FVG short setup AND NOT any long setup
+Calculation: exhaustion short signal = flat AND no pending signal from an earlier bar AND exhaustion short setup AND NOT any long setup AND NOT FVG short setup
+Calculation: trendline short signal = flat AND no pending signal from an earlier bar AND trendline short setup AND NOT any long setup AND NOT FVG short setup AND NOT exhaustion short setup
+Calculation: pending long = a long signal at bar k, provided bars since k <= validity bars AND no entry from bar k to the bar before current
+Calculation: pending short = a short signal at bar k, provided bars since k <= validity bars AND no entry from bar k to the bar before current
+Long: pending long AND flat AND ABS(close - pending entry) <= ATR(ATR length) * max entry distance ATR multiple AND close >= EMA(close, EMA length) * (1 - EMA band)
+Short: pending short AND flat AND ABS(close - pending entry) <= ATR(ATR length) * max entry distance ATR multiple AND close <= EMA(close, EMA length) * (1 + EMA band)
+Calculation: long stop = for FVG long signal at bar k: MIN(low at k, bullish zone bottom) - ATR(ATR length) at k * FVG stop ATR multiple; for exhaustion long signal at bar k: low at k - ATR(ATR length) at k * exh stop ATR multiple; for trendline long signal at bar k: MIN(low at k, break level) - ATR(ATR length) at k * TL stop ATR multiple
+Calculation: long target = entry price + (entry price - long stop) * RR of the pending signal type, where RR is FVG RR, exh RR, or TL RR
+Calculation: short stop = for FVG short signal at bar k: MAX(high at k, bearish zone top) + ATR(ATR length) at k * FVG stop ATR multiple; for exhaustion short signal at bar k: high at k + ATR(ATR length) at k * exh stop ATR multiple; for trendline short signal at bar k: MAX(high at k, break level) + ATR(ATR length) at k * TL stop ATR multiple
+Calculation: short target = entry price - (short stop - entry price) * RR of the pending signal type, where RR is FVG RR, exh RR, or TL RR
+Exit: Long, low <= long stop
+Exit: Long, high >= long target
+Exit: Short, high >= short stop
+Exit: Short, low <= short target

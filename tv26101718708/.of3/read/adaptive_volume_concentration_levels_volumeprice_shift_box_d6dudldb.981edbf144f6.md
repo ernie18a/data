@@ -1,0 +1,5 @@
+Calculation: BullPoints = sum of (VWAP weight if VWAP(close) > VWAP(close)[1]), (OBV weight if OBV(close, volume) > EMA(OBV(close, volume), lookback)), (A/D weight if A/D(high, low, close, volume) > EMA(A/D(high, low, close, volume), lookback)), (volume weight if volume > EMA(volume, lookback) AND close > open), (momentum weight if Momentum(close, lookback) > 0 AND close > VWAP(close))
+Calculation: BearPoints = sum of (VWAP weight if VWAP(close) <= VWAP(close)[1]), (OBV weight if OBV(close, volume) <= EMA(OBV(close, volume), lookback)), (A/D weight if A/D(high, low, close, volume) <= EMA(A/D(high, low, close, volume), lookback)), (volume weight if volume > EMA(volume, lookback) AND close < open), (momentum weight if Momentum(close, lookback) <= 0 AND close < VWAP(close))
+Calculation: NetScore = (BullPoints - BearPoints) * sensitivity
+Long: NetScore > neutral threshold
+Short: NetScore < -(neutral threshold)

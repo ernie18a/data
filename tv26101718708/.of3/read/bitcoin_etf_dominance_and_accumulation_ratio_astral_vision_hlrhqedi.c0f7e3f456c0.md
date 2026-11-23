@@ -1,0 +1,2 @@
+Calculation: FlowRatio = CUM(ETF holdings - ETF holdings[1]) / Bitcoin price, using last completed T1 bars, on chart bars that take values from T1
+Long: Mode = M2 AND -ZScore(FlowRatio, Z lookback) < lower threshold

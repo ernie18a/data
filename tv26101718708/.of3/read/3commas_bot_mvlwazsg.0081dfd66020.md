@@ -1,0 +1,10 @@
+Calculation: MA(type, lookback) = EMA(close, lookback) if type is EMA; EMA(Heikin-Ashi open, lookback) if type is HEMA; SMA(close, lookback) if type is SMA; HMA(close, lookback) if type is HMA; WMA(close, lookback) if type is WMA; DEMA(close, lookback) if type is DEMA; VWMA(close, lookback) if type is VWMA; VWAP if type is VWAP; T3(close, lookback, T3 volume factor) if type is T3
+Calculation: TrailSource = Lowest(low, swing lookback) for long or Highest(high, swing lookback) for short if trail source is swing high/low; close[1] if trail source is close; open[1] if trail source is open
+Calculation: InitialStop = Lowest(low, swing lookback) - ATR(atr lookback) * risk adjustment for long, or Highest(high, swing lookback) + ATR(atr lookback) * risk adjustment for short, evaluated on the entry bar
+Calculation: ProfitTarget = entry price + reward to risk ratio * (entry price - InitialStop)
+Calculation: TriggerLevel = entry price + trigger fraction * (ProfitTarget - entry price)
+Calculation: RatchetStop = InitialStop on the entry bar; otherwise RatchetStop[1], unless trail stop enabled and an earlier bar since entry has high >= TriggerLevel (long) or low <= TriggerLevel (short), then max(RatchetStop[1], TrailSource - ATR(atr lookback) * trailing multiplier) for long or min(RatchetStop[1], TrailSource + ATR(atr lookback) * trailing multiplier) for short
+Long: crosses above(MA(type 1, lookback 1), MA(type 2, lookback 2)) AND ATR(atr lookback) is not NA AND (position is flat OR (position is short AND reversal enabled)) AND long trades enabled AND (time filter disabled OR bar datetime is outside time session) AND bar datetime >= start time AND bar datetime <= end time
+Short: crosses below(MA(type 1, lookback 1), MA(type 2, lookback 2)) AND ATR(atr lookback) is not NA AND (position is flat OR (position is long AND reversal enabled)) AND short trades enabled AND (time filter disabled OR bar datetime is outside time session) AND bar datetime >= start time AND bar datetime <= end time
+Exit: long, low <= RatchetStop OR (use limit AND high >= ProfitTarget)
+Exit: short, high >= RatchetStop OR (use limit AND low <= ProfitTarget)
