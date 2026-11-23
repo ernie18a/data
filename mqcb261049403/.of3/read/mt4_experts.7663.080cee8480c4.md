@@ -1,0 +1,4 @@
+Long: On chart bars, day of week = weekday parameter AND (highest(high, lookback, T1, completed bars ending at offset bars ago) < close(T1, last completed bar) OR SMA(close, MA lookback, T1, last completed bar) > open(T1, bar still forming))
+Short: On chart bars, day of week = weekday parameter AND (lowest(low, lookback, T1, completed bars ending at offset bars ago) > close(T1, last completed bar) OR SMA(close, MA lookback, T1, last completed bar) < open(T1, bar still forming))
+Exit: Long, elapsed time since entry > holding duration parameter
+Exit: Short, elapsed time since entry > holding duration parameter

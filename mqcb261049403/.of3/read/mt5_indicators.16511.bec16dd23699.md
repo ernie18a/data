@@ -1,0 +1,4 @@
+Long: Williams %R(shorter lookback) > level AND Williams %R(shorter lookback) > Williams %R(longer lookback)
+Short: Williams %R(longer lookback) < -100 - level AND Williams %R(shorter lookback) < Williams %R(longer lookback)
+Long: Williams %R(shorter lookback, T1, still-forming bar), taken on chart bars, > level AND Williams %R(shorter lookback, T1, still-forming bar), taken on chart bars, > Williams %R(longer lookback, T1, still-forming bar), taken on chart bars
+Short: Williams %R(longer lookback, T1, still-forming bar), taken on chart bars, < -100 - level AND Williams %R(shorter lookback, T1, still-forming bar), taken on chart bars, < Williams %R(longer lookback, T1, still-forming bar), taken on chart bars

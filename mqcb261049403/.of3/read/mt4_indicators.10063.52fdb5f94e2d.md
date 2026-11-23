@@ -1,0 +1,3 @@
+Calculation: Tn upper/lower level = the high/low of the latest Tn bar sampled at a matching chart-bar open with a nonzero upper/lower Fractals value; carry forward otherwise, sampling the Tn bar still forming
+Long: T1 lower level = T2 lower level = T3 lower level AND (T1 upper level ≠ T2 upper level OR T2 upper level ≠ T3 upper level OR the previous chart-bar marker was short)
+Short: T1 upper level = T2 upper level = T3 upper level AND (T1 lower level ≠ T2 lower level OR T2 lower level ≠ T3 lower level OR the previous chart-bar marker was not short)

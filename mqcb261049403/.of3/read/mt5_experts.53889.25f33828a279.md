@@ -1,0 +1,2 @@
+Exit: long, close > upper Bollinger Band(close, Bollinger lookback, band deviation, T1, bar selected by offset parameter) AND RSI(close, RSI lookback, T1, bar selected by offset parameter) > upper RSI threshold AND close > entry price
+Exit: short, close < lower Bollinger Band(close, Bollinger lookback, band deviation, T1, bar selected by offset parameter) AND RSI(close, RSI lookback, T1, bar selected by offset parameter) < lower RSI threshold AND close < entry price

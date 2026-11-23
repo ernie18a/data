@@ -1,0 +1,2 @@
+Long: On chart bars, close(T1, bar) > 0 AND close(T1, bar) > close(T1, previous T1 bar); the current T1 bar may still be forming
+Short: On chart bars, close(T1, bar) > 0 AND close(T1, bar) < close(T1, previous T1 bar); the current T1 bar may still be forming

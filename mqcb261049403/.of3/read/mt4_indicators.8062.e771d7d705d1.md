@@ -1,0 +1,2 @@
+Long: MACD signal line(close, shorter lookback, longer lookback, signal lookback, T1, forming bar) < MACD line(close, shorter lookback, longer lookback, signal lookback, T1, forming bar)
+Short: MACD signal line(close, shorter lookback, longer lookback, signal lookback, T1, forming bar) > MACD line(close, shorter lookback, longer lookback, signal lookback, T1, forming bar)

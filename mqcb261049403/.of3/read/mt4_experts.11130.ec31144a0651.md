@@ -1,0 +1,2 @@
+Long: trader's trend prediction is uptrend AND RSI(close, lookback, T1, bar still forming) <= upper-threshold parameter
+Short: trader's trend prediction is downtrend AND RSI(close, lookback, T1, bar still forming) >= lower-threshold parameter

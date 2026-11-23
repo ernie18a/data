@@ -1,0 +1,3 @@
+Calculation: volume-weighted true range = (max(high - low, abs(high - close[1]), abs(low - close[1]))) * volume
+Long: Force Index(close, volume, force lookback, force smoothing method, T1, bar still forming, sampled on chart bars) > band multiplier * MA(volume-weighted true range, longer band lookback, band smoothing method, T1, bar still forming, sampled on chart bars)
+Short: Force Index(close, volume, force lookback, force smoothing method, T1, bar still forming, sampled on chart bars) < -band multiplier * MA(volume-weighted true range, longer band lookback, band smoothing method, T1, bar still forming, sampled on chart bars)

@@ -1,0 +1,1 @@
+Long: NVI(close, volume) > SMA(NVI(close, volume), lookback)

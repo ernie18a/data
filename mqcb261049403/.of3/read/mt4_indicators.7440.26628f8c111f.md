@@ -1,0 +1,3 @@
+Calculation: parity deviation = average of (first component exchange rate close × second component exchange rate close − cross exchange rate close), (first component exchange rate close − cross exchange rate close ÷ second component exchange rate close), and (second component exchange rate close − cross exchange rate close ÷ first component exchange rate close), with optional sign reversal, using each chart bar
+Long: parity deviation > 0
+Short: parity deviation < 0

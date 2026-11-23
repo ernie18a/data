@@ -1,0 +1,2 @@
+Long: MACD(close, shorter lookback, longer lookback, signal lookback, T1, bar still forming) > positive threshold on chart bars using T1 values
+Short: MACD(close, shorter lookback, longer lookback, signal lookback, T1, bar still forming) < negative threshold on chart bars using T1 values

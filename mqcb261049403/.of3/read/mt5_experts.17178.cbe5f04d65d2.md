@@ -1,0 +1,3 @@
+Calculation: order-distance threshold = max(broker minimum stop distance, minimum-distance parameter)
+Long: previous completed chart bar high − current forming chart bar close ≥ order-distance threshold AND current forming chart bar close − previous completed chart bar low ≥ order-distance threshold AND current forming chart bar open < previous completed chart bar high
+Short: previous completed chart bar high − current forming chart bar close ≥ order-distance threshold AND current forming chart bar close − previous completed chart bar low ≥ order-distance threshold AND current forming chart bar open > previous completed chart bar low

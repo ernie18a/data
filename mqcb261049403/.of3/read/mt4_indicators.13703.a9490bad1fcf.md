@@ -1,0 +1,5 @@
+Calculation: pip size = quote point size for 2- or 4-decimal quotes; 10 × quote point size for 3- or 5-decimal quotes
+Calculation: range = round((high - low) / pip size)
+Calculation: zone = round(range × depth percentage / 100)
+Long: on each completed chart bar, range > minimum range AND range < maximum range AND (T1 extremum filter is disabled OR low = low(T1, corresponding bar; use its forming value while open)) AND open >= round_to_quote_precision(high - zone × pip size) AND close >= round_to_quote_precision(high - zone × pip size)
+Short: on each completed chart bar, range > minimum range AND range < maximum range AND (T1 extremum filter is disabled OR high = high(T1, corresponding bar; use its forming value while open)) AND open <= round_to_quote_precision(low + zone × pip size) AND close <= round_to_quote_precision(low + zone × pip size)

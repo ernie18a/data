@@ -1,0 +1,2 @@
+Long: On every selected timeframe T, MA(close, period, T bars, last completed bar) > MA(close, period, T bars, preceding completed bar)
+Short: On every selected timeframe T, MA(close, period, T bars, last completed bar) < MA(close, period, T bars, preceding completed bar)

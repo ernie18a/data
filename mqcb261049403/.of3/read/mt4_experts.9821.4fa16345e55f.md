@@ -1,0 +1,4 @@
+Long: On chart bars, close > open(T1, forming bar) AND open(T1, forming bar) - low(T1, forming bar) > lower-range parameter × point size AND hour(datetime) < entry-hour parameter AND account order count < order-count parameter
+Short: On chart bars, close < open(T1, forming bar) AND high(T1, forming bar) - open(T1, forming bar) > upper-range parameter × point size AND hour(datetime) < entry-hour parameter AND account order count < order-count parameter
+Exit: long, hour(datetime) > market-close-hour parameter - exit-hour offset parameter
+Exit: short, hour(datetime) > market-close-hour parameter - exit-hour offset parameter

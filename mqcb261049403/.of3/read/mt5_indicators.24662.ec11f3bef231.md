@@ -1,0 +1,3 @@
+Calculation: Smoothed RSI(applied price, lookback) = 100 - 100 / (1 + Super Smoother(rolling sum(max(applied price - applied price[1], 0), lookback), lookback) / Super Smoother(rolling sum(max(applied price[1] - applied price, 0), lookback), lookback)), or 0 when smoothed loss is 0
+Long: Smoothed RSI(applied price, lookback) > Smoothed RSI(applied price, lookback)[1]
+Short: Smoothed RSI(applied price, lookback) < Smoothed RSI(applied price, lookback)[1]

@@ -1,0 +1,2 @@
+Long: close[1] > open[1] AND close(T1, last completed bar) > open(T1, last completed bar) AND close(T2, last completed bar) > open(T2, last completed bar) AND close(T3, last completed bar) > open(T3, last completed bar)
+Short: close[1] < open[1] AND close(T1, last completed bar) < open(T1, last completed bar) AND close(T2, last completed bar) < open(T2, last completed bar) AND close(T3, last completed bar) < open(T3, last completed bar)

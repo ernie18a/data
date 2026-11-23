@@ -1,0 +1,2 @@
+Long: low[1] < DonchianChannel(lower band, lookback, T1 still-forming bar sampled on chart bars) AND close[1] > high[2] AND low[1] < low[2]
+Short: high[1] > DonchianChannel(upper band, lookback, T1 still-forming bar sampled on chart bars) AND close[1] < low[2] AND high[1] > high[2]

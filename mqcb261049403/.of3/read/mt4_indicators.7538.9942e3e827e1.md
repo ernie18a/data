@@ -1,0 +1,2 @@
+Long: On each chart bar, XO(period, output 0, T1, corresponding bar including the still-forming bar) != 0 AND XO(period, output 0, T1, corresponding bar including the still-forming bar) != EMPTY_VALUE
+Short: On each chart bar, XO(period, output 1, T1, corresponding bar including the still-forming bar) != 0 AND XO(period, output 1, T1, corresponding bar including the still-forming bar) != EMPTY_VALUE

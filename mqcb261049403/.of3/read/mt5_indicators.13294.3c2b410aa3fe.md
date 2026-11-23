@@ -1,0 +1,2 @@
+Long: ColorZerolagTriXOSMA(T1, last completed bar) ≠ 0 AND ColorZerolagTriXOSMA(T1, last completed bar) > ColorZerolagTriXOSMA(T1, previous completed bar), evaluated on chart bars
+Short: ColorZerolagTriXOSMA(T1, last completed bar) ≠ 0 AND ColorZerolagTriXOSMA(T1, last completed bar) < ColorZerolagTriXOSMA(T1, previous completed bar), evaluated on chart bars
