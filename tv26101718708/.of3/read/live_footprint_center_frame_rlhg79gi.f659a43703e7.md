@@ -1,0 +1,5 @@
+Calculation: FootprintAsk(s), FootprintBid(s) = On each chart bar, use all T1 intrabars within it, including the still-forming T1 bar on a live chart bar; set slot width to max((chart high - chart low) / slot count, minimum price increment), map each intrabar's low and high to clamped slots by flooring their distances from chart low divided by slot width, and divide its volume equally among the slots from low slot through high slot, assigning it to FootprintAsk when intrabar close >= open and FootprintBid otherwise; if there are no T1 intrabars, divide chart-bar volume equally among all slots, assigning it to FootprintAsk when chart close >= open and FootprintBid otherwise
+Calculation: FootprintSlotDelta(s) = FootprintAsk(s) - FootprintBid(s)
+Calculation: FootprintBarDelta = sum of FootprintSlotDelta(s) over all slots
+Long: FootprintSlotDelta(s) > 0 for any slot s OR FootprintBarDelta = 0 OR, for any non-first slot s, FootprintBid(s-1) > 0 AND FootprintAsk(s) >= imbalance ratio * FootprintBid(s-1)
+Short: FootprintSlotDelta(s) < 0 for any slot s OR, for any non-last slot s, FootprintAsk(s+1) > 0 AND FootprintBid(s) >= imbalance ratio * FootprintAsk(s+1)

@@ -1,0 +1,3 @@
+Calculation: all-time high = maximum(high, from first available bar through current bar)
+Long: ((close < all-time high × buy parameter A AND this instrument's open scale-in count = 0) OR (close < all-time high × buy parameter B AND this instrument's open scale-in count = 1) OR (close < all-time high × buy parameter C AND this instrument's open scale-in count = 2) OR (close < all-time high × buy parameter D AND this instrument's open scale-in count = 3) OR (close < all-time high × buy parameter E AND this instrument's open scale-in count = 4)) AND total open position count < maximum-position parameter
+Exit: long, close > all-time high × sell parameter

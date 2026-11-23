@@ -1,0 +1,3 @@
+Calculation: SessionCorrelation(session parameter) = Pearson correlation of close and sequential chart-bar index from the session start, updated on in-session chart bars after the first including the still-forming bar, and otherwise held at its latest value
+Long: SessionCorrelation(session parameter A) > 0 OR SessionCorrelation(session parameter B) > 0 OR SessionCorrelation(session parameter C) > 0 OR SessionCorrelation(session parameter D) > 0
+Short: SessionCorrelation(session parameter A) <= 0 OR SessionCorrelation(session parameter B) <= 0 OR SessionCorrelation(session parameter C) <= 0 OR SessionCorrelation(session parameter D) <= 0

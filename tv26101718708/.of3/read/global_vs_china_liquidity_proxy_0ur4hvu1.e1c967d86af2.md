@@ -1,0 +1,14 @@
+Calculation: Global liquidity stock = selected global central-bank balance-sheet stock, selected global broad-money stock, or their mean; central-bank stock = US central-bank assets (or net US assets after subtracting the Treasury account and overnight reverse repos, unit adjusted) + Japan central-bank assets / USDJPY + China central-bank assets / USDCNY + euro-area central-bank assets / USDEUR; broad-money stock = US M2 + Japan M2 / USDJPY + China M2 / USDCNY + euro-area M2 / USDEUR
+Calculation: China liquidity stock = selected China M2, China M1, or China central-bank balance sheet
+Calculation: Global liquidity proxy = raw mode ? Global liquidity stock × China 10-year bond yield / dollar index / high-yield option-adjusted spread : Global liquidity stock × exp(−modulator sensitivity × (Z-score(dollar index, Z-score lookback) + Z-score(high-yield option-adjusted spread, Z-score lookback) − Z-score(China 10-year bond yield, Z-score lookback)))
+Calculation: China liquidity proxy = raw mode ? China liquidity stock × China 10-year bond yield / USD-CNY exchange rate / China interbank rate : China liquidity stock × exp(−modulator sensitivity × (Z-score(USD-CNY exchange rate, Z-score lookback) + Z-score(China interbank rate, Z-score lookback) − Z-score(China 10-year bond yield, Z-score lookback)))
+Calculation: YoY change(x) = year-over-year percentage change in x, sampled at T1 changes using chart-bar values
+Calculation: Composite liquidity score = clamp(score scale × mean(Z-score(Global liquidity proxy, Z-score lookback), Z-score(China liquidity proxy, Z-score lookback), −Z-score(dollar index, Z-score lookback)), −score bound, score bound)
+Long: Composite liquidity score > risk-state threshold
+Short: Composite liquidity score < −risk-state threshold
+Long: Composite liquidity score crosses above 0
+Short: Composite liquidity score crosses below 0
+Long: YoY change(Global liquidity proxy) > 0 AND YoY change(China liquidity proxy) > 0
+Short: YoY change(Global liquidity proxy) < 0 AND YoY change(China liquidity proxy) < 0
+Long: (Composite liquidity score > 0 AND correlation(YoY change(selected reference liquidity proxy), YoY change(scanned asset close), correlation lookback) >= 0) OR (Composite liquidity score < 0 AND correlation(YoY change(selected reference liquidity proxy), YoY change(scanned asset close), correlation lookback) < 0)
+Short: (Composite liquidity score < 0 AND correlation(YoY change(selected reference liquidity proxy), YoY change(scanned asset close), correlation lookback) >= 0) OR (Composite liquidity score > 0 AND correlation(YoY change(selected reference liquidity proxy), YoY change(scanned asset close), correlation lookback) < 0)

@@ -1,0 +1,3 @@
+Calculation: double-smoothed EMA = EMA(EMA(close, lookback), same lookback)
+Long: abs(close - PivotPoint(high, low, close, T1, last completed bar sampled on chart bars)) < zone-buffer parameter × instrument minimum tick AND Supertrend(multiplier, ATR lookback) direction is bullish AND close > double-smoothed EMA
+Short: abs(close - PivotPoint(high, low, close, T1, last completed bar sampled on chart bars)) < zone-buffer parameter × instrument minimum tick AND Supertrend(multiplier, ATR lookback) direction is bearish AND close < double-smoothed EMA

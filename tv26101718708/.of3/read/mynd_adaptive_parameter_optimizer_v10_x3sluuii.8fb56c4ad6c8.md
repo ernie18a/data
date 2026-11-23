@@ -1,0 +1,8 @@
+Calculation: EventSign(p, L) = if engine = E1: +1 if close crosses above SMA(close, L), -1 if close crosses below SMA(close, L), for bars p >= max length; if engine = E2: +1 if RSI(close, L) < oversold level, -1 if RSI(close, L) > overbought level, for bars p >= L + warmup bars; otherwise 0; p counts bars from the oldest bar of the evaluation window, and only bars with p + forward bars inside the window are considered
+Calculation: EventCount(L) = number of bars p with EventSign(p, L) != 0
+Calculation: Fitness(L) = (sum over bars p of EventSign(p, L) * (close(p + forward bars) - close(p)) / close(p)) / EventCount(L)
+Calculation: SelectedLength = the L among min length + k * step (k = 0, 1, ..., at most count cap values, L <= max length) with the highest Fitness(L) among those with EventCount(L) >= minimum events (earliest on ties), recomputed over the last evaluation window of closes every recalibration interval bars and applied from that bar; unchanged when no L qualifies; equals min length before the first computation
+Long: engine = E1 AND close crosses above SMA(close, SelectedLength) AND (volume gate off OR volume >= SMA(volume, volume length) * volume multiplier)
+Short: engine = E1 AND close crosses below SMA(close, SelectedLength) AND (volume gate off OR volume >= SMA(volume, volume length) * volume multiplier)
+Long: engine = E2 AND RSI(close, SelectedLength) crosses above oversold level AND (volume gate off OR volume >= SMA(volume, volume length) * volume multiplier)
+Short: engine = E2 AND RSI(close, SelectedLength) crosses below overbought level AND (volume gate off OR volume >= SMA(volume, volume length) * volume multiplier)

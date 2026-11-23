@@ -1,0 +1,11 @@
+Calculation: Safe volume = volume with missing values treated as zero
+Calculation: Candle range = max(high-low, minimum tick size)
+Calculation: Reference VWAP = cumulative(hl2*Safe volume)/cumulative(Safe volume) since selected anchor period T1, including the current chart bar; use hl2 when cumulative volume is zero
+Calculation: Normalized ATR = max(ATR(ATR lookback), minimum tick size)
+Calculation: Pressure = EMA(ZScore(EMA((close-open)/Candle range*(body offset+abs(close-open)/Candle range)*(Safe volume/SMA(Safe volume, pressure lookback) if SMA is positive, otherwise neutral volume ratio)*pressure scale, pressure lookback)+EMA((close-Reference VWAP)/Normalized ATR*context scale, max(minimum context lookback, round(pressure lookback*context lookback ratio))), normalization lookback), smoothing lookback)
+Calculation: Crowding = EMA(ZScore(EMA((RSI(selected price source, crowding lookback)-RSI midpoint)*RSI scale+(close-Reference VWAP)/Normalized ATR*stretch scale+((min(open,close)-low)-(high-max(open,close)))/Candle range*wick scale+((close-low)/Candle range-close-position midpoint)*close-position scale, crowding lookback), normalization lookback), smoothing lookback)
+Calculation: Volatility = EMA(ZScore((Normalized ATR/max(SMA(ATR(ATR lookback), volatility lookback), minimum tick size)-ATR ratio baseline)*ATR ratio scale+(PercentRank(Normalized ATR, volatility lookback)-volatility rank midpoint)*volatility rank scale, normalization lookback), smoothing lookback)
+Calculation: Skew = EMA(ZScore(EMA(((close-low)-(high-close))/Candle range*candle skew scale+((close-low)/Candle range-close-position midpoint)*skew position scale+(close-Reference VWAP)/Normalized ATR*skew VWAP scale, skew lookback), normalization lookback), smoothing lookback)
+Calculation: Composite = EMA(Pressure*pressure weight+Crowding*crowding weight+Volatility*volatility weight+Skew*skew weight, smoothing lookback)
+Long: Composite > 0 OR close >= Reference VWAP OR Pressure > color neutral band OR Skew > color neutral band
+Short: Composite < 0 OR close < Reference VWAP OR Pressure < -color neutral band OR Crowding < -color neutral band

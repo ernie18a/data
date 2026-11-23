@@ -1,0 +1,2 @@
+Calculation: ATR extension = ((close - MA(source, selected EMA or SMA, MA lookback)) / MA(source, selected EMA or SMA, MA lookback)) / (ATR(ATR length) / close), using the current forming T1 bar on chart bars of T1
+Long: on chart bars of T1, close(T1, current forming bar) > MA(source, selected EMA or SMA, MA lookback, T1, current forming bar) AND ATR extension > extension threshold

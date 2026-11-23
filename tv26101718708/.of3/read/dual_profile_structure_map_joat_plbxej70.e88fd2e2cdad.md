@@ -1,0 +1,4 @@
+Long: after the initial balance is complete, close > highest(high, initial-balance bar count from session open)
+Short: after the initial balance is complete, close < lowest(low, initial-balance bar count from session open)
+Long: close > Volume Profile VAH(session-to-date bars including current bar, session row-count, value-area percentage) AND close > Volume Profile VAH(rolling range-lookback bars including current bar, range row-count, value-area percentage)
+Short: close < Volume Profile VAL(session-to-date bars including current bar, session row-count, value-area percentage) AND close < Volume Profile VAL(rolling range-lookback bars including current bar, range row-count, value-area percentage)

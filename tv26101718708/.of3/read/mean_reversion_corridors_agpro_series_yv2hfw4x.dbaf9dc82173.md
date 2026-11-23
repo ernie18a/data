@@ -1,0 +1,11 @@
+Calculation: fair-value center = selected EMA, VWMA, or Hull MA(close, center lookback), evaluated on the current timeframe
+Calculation: corridor width = (1 − blend fraction) × max(ATR(volatility lookback) or True Range when ATR is unavailable, minimum tick) + blend fraction × StDev(close, volatility lookback); use the max-ATR term if the blend is unavailable or nonpositive
+Calculation: upper inner boundary = fair-value center + corridor width × inner multiplier
+Calculation: lower inner boundary = fair-value center − corridor width × inner multiplier
+Calculation: upper outer boundary = fair-value center + corridor width × outer multiplier
+Calculation: lower outer boundary = fair-value center − corridor width × outer multiplier
+Calculation: normalized trend slope = ((fair-value center on T1 − fair-value center on T1 trend-lookback bars ago) / trend lookback) / ATR(volatility lookback, T1), or zero if that ATR is nonpositive; calculate on T1 bars and map to chart bars with lookahead off, using the forming T1 bar in real time and the T1 value when it becomes available historically
+Long: the most recent outer-band hit was a crossunder of close below the lower outer boundary within the confirmation window AND close crosses above the lower inner boundary AND (the trend filter is disabled OR normalized trend slope on T1 is greater than or equal to negative the strength threshold)
+Long: close is above the upper outer boundary AND the trend filter is enabled AND normalized trend slope on T1 is greater than the strength threshold AND that same condition was false on the previous chart bar
+Short: the most recent outer-band hit was a crossover of close above the upper outer boundary within the confirmation window AND close crosses below the upper inner boundary AND (the trend filter is disabled OR normalized trend slope on T1 is less than or equal to the strength threshold)
+Short: close is below the lower outer boundary AND the trend filter is enabled AND normalized trend slope on T1 is less than negative the strength threshold AND that same condition was false on the previous chart bar

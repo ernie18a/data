@@ -1,0 +1,24 @@
+Calculation: Bullish engulfing = on chart bars, close[1] < open[1] AND close > open AND close ≥ open[1] AND open ≤ close[1] AND abs(close − open) > body multiplier × abs(close[1] − open[1]).
+Calculation: Bearish engulfing = on chart bars, close[1] > open[1] AND close < open AND open ≥ close[1] AND close ≤ open[1] AND abs(close − open) > body multiplier × abs(close[1] − open[1]).
+Calculation: ATR expansion = on chart bars, ATR(ATR lookback) > SMA(ATR(ATR lookback), ATR-average lookback).
+Calculation: Volume spike = on chart bars, volume > volume-spike multiplier × SMA(volume, volume-average lookback).
+Calculation: Long setup = on chart bars, RSI(close, RSI lookback) > long RSI threshold AND MACD(close, fast lookback, slow lookback, signal lookback) line > signal line AND bullish engulfing AND ATR expansion AND volume spike AND last completed T1 bar close > EMA(close, trend EMA lookback, T1 bars, last completed bar), sampled on chart bars, where T1 is the longer higher timeframe AND RSI(close, RSI lookback, T2 bars, last completed bar) > higher-timeframe RSI threshold, sampled on chart bars, where T2 is the shorter higher timeframe.
+Calculation: Short setup = on chart bars, RSI(close, RSI lookback) < short RSI threshold AND MACD(close, fast lookback, slow lookback, signal lookback) line < signal line AND bearish engulfing AND ATR expansion AND volume spike AND last completed T1 bar close < EMA(close, trend EMA lookback, T1 bars, last completed bar), sampled on chart bars, where T1 is the longer higher timeframe AND RSI(close, RSI lookback, T2 bars, last completed bar) < higher-timeframe RSI threshold, sampled on chart bars, where T2 is the shorter higher timeframe.
+Calculation: Initial long stop = max(min(low, low[1]) × (1 − stop buffer), entry-bar close × (1 − main stop cap)) for normal entries; max(lowest(low, swing lookback) × (1 − stop buffer), broken stop × (1 − flip stop cap)) for flip entries.
+Calculation: Initial short stop = min(max(high, high[1]) × (1 + stop buffer), entry-bar close × (1 + main stop cap)) for normal entries; min(highest(high, swing lookback) × (1 + stop buffer), broken stop × (1 + flip stop cap)) for flip entries.
+Calculation: Active long stop = initial long stop until the partial target is reached; then entry price × (1 + break-even buffer) if the buffer > 0, otherwise initial long stop.
+Calculation: Active short stop = initial short stop until the partial target is reached; then entry price × (1 − break-even buffer) if the buffer > 0, otherwise initial short stop.
+Calculation: Equity drawdown = (peak equity − current equity) / peak equity.
+Calculation: Drawdown halt active = equity drawdown has reached the drawdown limit and current chart bar is before the halt-end bar; each trigger sets the halt-end bar to the trigger bar + halt-duration parameter chart bars.
+Long: long setup AND position is flat AND no flip is pending AND no long stop-loss exit occurred within the same-side stop-cooldown parameter chart bars AND no full-position exit occurred within the generic exit-cooldown parameter chart bars AND drawdown halt is inactive.
+Short: short setup AND position is flat AND no flip is pending AND no short stop-loss exit occurred within the same-side stop-cooldown parameter chart bars AND no full-position exit occurred within the generic exit-cooldown parameter chart bars AND drawdown halt is inactive.
+Long: SL-flip enabled AND a pending long flip was queued by a non-flip short stop-loss exit AND at least the flip-wait parameter chart bars have elapsed since that exit AND position is flat AND at least the generic exit-cooldown parameter chart bars have elapsed since the last full-position exit AND drawdown halt is inactive AND close > initial long stop.
+Short: SL-flip enabled AND a pending short flip was queued by a non-flip long stop-loss exit AND at least the flip-wait parameter chart bars have elapsed since that exit AND position is flat AND at least the generic exit-cooldown parameter chart bars have elapsed since the last full-position exit AND drawdown halt is inactive AND close < initial short stop.
+Exit: long, low ≤ active long stop.
+Exit: short, high ≥ active short stop.
+Exit: long, no partial take-profit has already occurred in this position AND close ≥ entry price + take-profit R parameter × (entry price − initial long stop).
+Exit: short, no partial take-profit has already occurred in this position AND close ≤ entry price − take-profit R parameter × (initial short stop − entry price).
+Exit: long, short setup.
+Exit: short, long setup.
+Exit: long, position is a flip AND elapsed chart bars since flip entry ≥ flip time-stop parameter.
+Exit: short, position is a flip AND elapsed chart bars since flip entry ≥ flip time-stop parameter.

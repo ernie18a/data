@@ -1,0 +1,6 @@
+Calculation: Bull gap sigma = (low - high[2]) / max(STDEV(low - high[2], lookback), minimum price increment)
+Calculation: Bear gap sigma = (low[2] - high) / max(STDEV(low[2] - high, lookback), minimum price increment)
+Calculation: Bull register count = count of bullish gap registers after current-bar register creation and before current-bar retirement, capped at the maximum register count; when filled-zone retirement is enabled, a register is retired after the bar where low <= its bottom
+Calculation: Bear register count = count of bearish gap registers after current-bar register creation and before current-bar retirement, capped at the maximum register count; when filled-zone retirement is enabled, a register is retired after the bar where high >= its top
+Long: bar is confirmed AND low > high[2] AND high[1] > high[2] AND Bull gap sigma > gap threshold OR Bull register count > Bear register count
+Short: bar is confirmed AND high < low[2] AND low[1] < low[2] AND Bear gap sigma > gap threshold OR Bear register count > Bull register count

@@ -1,0 +1,4 @@
+Calculation: ORB high = highest high from session start through opening-range duration, using completed chart bars if the chart interval divides the duration, otherwise completed T1 bars sampled onto chart bars
+Calculation: ORB low = lowest low from session start through opening-range duration, using completed chart bars if the chart interval divides the duration, otherwise completed T1 bars sampled onto chart bars
+Long: ORB display is enabled AND chart timeframe is intraday AND the opening range is complete AND close crosses above ORB high
+Short: ORB display is enabled AND chart timeframe is intraday AND the opening range is complete AND close crosses below ORB low

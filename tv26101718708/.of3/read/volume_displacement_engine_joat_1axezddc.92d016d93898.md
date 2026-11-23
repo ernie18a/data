@@ -1,0 +1,9 @@
+Calculation: shortLongVolumeRatio = SMA(volume, shorterLookback) / max(SMA(volume, longerLookback), volumeFloor)
+Calculation: smoothedShortLongVolumeRatio = EMA(shortLongVolumeRatio, smoothingLength)
+Calculation: stopDistance = ATR(atrLength) at entry bar * atrMultiplier
+Long: close > Highest(high, breakoutLookback)[1] AND smoothedShortLongVolumeRatio >= volumeRegimeThreshold
+Short: close < Lowest(low, breakoutLookback)[1] AND smoothedShortLongVolumeRatio >= volumeRegimeThreshold
+Exit: long, low <= entryPrice - stopDistance
+Exit: long, high >= entryPrice + stopDistance * rewardRiskRatio AND low > entryPrice - stopDistance
+Exit: short, high >= entryPrice + stopDistance
+Exit: short, low <= entryPrice - stopDistance * rewardRiskRatio AND high < entryPrice + stopDistance

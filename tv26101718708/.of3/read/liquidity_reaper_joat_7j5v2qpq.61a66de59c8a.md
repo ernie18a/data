@@ -1,0 +1,10 @@
+Calculation: RelativeVolume = volume / SMA(volume, volume average length)
+Calculation: LowPools = list of PivotLow(low, swing strength, swing strength) values, each appended on its confirmation bar, the oldest dropped if the count exceeds maximum live pools, then every value above the current low removed
+Calculation: LowSweep = state from the most recent bar on which any LowPools value was removed: level = the oldest value removed on that bar; wick = the lowest low from that bar through the current bar; range = high - low on that bar
+Calculation: HighPools = list of PivotHigh(high, swing strength, swing strength) values, each appended on its confirmation bar, the oldest dropped if the count exceeds maximum live pools, then every value below the current high removed
+Calculation: HighSweep = state from the most recent bar on which any HighPools value was removed: level = the oldest value removed on that bar; wick = the highest high from that bar through the current bar; range = high - low on that bar
+Calculation: RiskDistance = ATR(ATR period) * stop ATR multiplier, evaluated on the entry bar
+Long: bars since LowSweep between 1 and confirmation window AND no Long since LowSweep AND close > LowSweep level AND close > open AND RelativeVolume >= volume multiplier AND (LowSweep level - LowSweep wick) / LowSweep range * 100 >= minimum rejection wick percent
+Short: bars since HighSweep between 1 and confirmation window AND no Short since HighSweep AND close < HighSweep level AND close < open AND RelativeVolume >= volume multiplier AND (HighSweep wick - HighSweep level) / HighSweep range * 100 >= minimum rejection wick percent
+Exit: Long, bars since entry >= 1 AND (low <= entry price - RiskDistance OR high >= entry price + RiskDistance * target reward multiple)
+Exit: Short, bars since entry >= 1 AND (high >= entry price + RiskDistance OR low <= entry price - RiskDistance * target reward multiple)

@@ -1,0 +1,34 @@
+Calculation: PivotLow(x) = x[right bars] is the lowest value of x over bars 0 through left bars + right bars ago
+Calculation: PivotHigh(x) = x[right bars] is the highest value of x over bars 0 through left bars + right bars ago
+Calculation: BullDiv(x, switch) = switch AND PivotLow(x) AND x[right bars] > ValueWhen(PivotLow(x), x[right bars], 1) AND low[right bars] < ValueWhen(PivotLow(x), low[right bars], 1) AND range min <= BarsSince(PivotLow(x)[1]) <= range max
+Calculation: BearDiv(x, switch) = switch AND PivotHigh(x) AND x[right bars] < ValueWhen(PivotHigh(x), x[right bars], 1) AND high[right bars] > ValueWhen(PivotHigh(x), high[right bars], 1) AND range min <= BarsSince(PivotHigh(x)[1]) <= range max
+Calculation: RSIBullDiv = BullDiv(RSI(close, RSI length), RSI divergence switch)
+Calculation: RSIBearDiv = BearDiv(RSI(close, RSI length), RSI divergence switch)
+Calculation: BullDivCount = count of true among RSIBullDiv, BullDiv(OBV, OBV divergence switch), BullDiv(MACD histogram(close, MACD fast length, MACD slow length, MACD signal length), MACD divergence switch), BullDiv(Momentum(close, momentum length), momentum divergence switch)
+Calculation: BearDivCount = count of true among RSIBearDiv, BearDiv(OBV, OBV divergence switch), BearDiv(MACD histogram(close, MACD fast length, MACD slow length, MACD signal length), MACD divergence switch), BearDiv(Momentum(close, momentum length), momentum divergence switch)
+Calculation: BullDivSignal = show divergence switch AND BullDivCount >= min divergence score
+Calculation: BearDivSignal = show divergence switch AND BearDivCount >= min divergence score
+Calculation: Body(k) = abs(close[k] - open[k])
+Calculation: Span(k) = max(high[k] - low[k], small positive constant)
+Calculation: UpperWick(k) = high[k] - max(open[k], close[k])
+Calculation: LowerWick(k) = min(open[k], close[k]) - low[k]
+Calculation: DojiCandle(k) = doji switch AND Body(k) / Span(k) <= doji body ratio AND high[k] > low[k]
+Calculation: BullCandle(k) = (hammer switch AND LowerWick(k) / Span(k) >= hammer wick ratio AND LowerWick(k) >= Body(k) * wick ratio AND UpperWick(k) <= Body(k) * opposite wick body ratio) OR (hammer switch AND close[k] >= open[k] AND UpperWick(k) >= Body(k) * wick ratio AND LowerWick(k) <= Body(k) * opposite wick body ratio AND UpperWick(k) / Span(k) >= inverted hammer wick ratio) OR (engulfing switch AND close[k] >= open[k] AND close[k+1] < open[k+1] AND close[k] > open[k+1] AND open[k] < close[k+1] AND Body(k) > Body(k+1) * engulfing body ratio) OR (pin bar switch AND LowerWick(k) / Span(k) >= pin bar dominant wick ratio AND UpperWick(k) / Span(k) <= pin bar opposite wick ratio) OR (doji switch AND LowerWick(k) / Span(k) >= long-wick doji wick ratio AND Body(k) / Span(k) <= long-wick doji body ratio) OR DojiCandle(k) OR (morning star switch AND close[k+2] < open[k+2] AND Body(k+2) / Span(k+2) >= star first body ratio AND Body(k+1) / Span(k+1) <= star middle body ratio AND close[k] >= open[k] AND close[k] >= (open[k+2] + close[k+2]) / 2) OR (key reversal bar switch AND low[k] < low[k+1] AND close[k] > close[k+1] AND LowerWick(k) / Span(k) >= key reversal wick ratio AND (close[k] - low[k]) / Span(k) >= key reversal close position)
+Calculation: BearCandle(k) = (shooting star switch AND UpperWick(k) / Span(k) >= hammer wick ratio AND UpperWick(k) >= Body(k) * wick ratio AND LowerWick(k) <= Body(k) * opposite wick body ratio) OR (engulfing switch AND close[k] <= open[k] AND close[k+1] > open[k+1] AND close[k] < open[k+1] AND open[k] > close[k+1] AND Body(k) > Body(k+1) * engulfing body ratio) OR (pin bar switch AND UpperWick(k) / Span(k) >= pin bar dominant wick ratio AND LowerWick(k) / Span(k) <= pin bar opposite wick ratio) OR (doji switch AND UpperWick(k) / Span(k) >= long-wick doji wick ratio AND Body(k) / Span(k) <= long-wick doji body ratio) OR DojiCandle(k) OR (evening star switch AND close[k+2] > open[k+2] AND Body(k+2) / Span(k+2) >= star first body ratio AND Body(k+1) / Span(k+1) <= star middle body ratio AND close[k] <= open[k] AND close[k] <= (open[k+2] + close[k+2]) / 2) OR (key reversal bar switch AND high[k] > high[k+1] AND close[k] < close[k+1] AND UpperWick(k) / Span(k) >= key reversal wick ratio AND (high[k] - close[k]) / Span(k) >= key reversal close position)
+Calculation: VolMA(k) = MA(volume, volume MA length, volume MA type) evaluated k bars ago
+Calculation: VolumeAboveAverage = volume[k] > VolMA(k) for some k from 0 to right bars + volume window extra
+Calculation: VolumeConfirm = NOT volume filter switch OR VolumeAboveAverage
+Calculation: RVOL = max(volume[k] over k from 0 to right bars + volume window extra) / VolMA(right bars) if VolMA(right bars) > 0, else 0
+Calculation: RVOLBoost = RVOL boost switch AND RVOL >= RVOL threshold
+Calculation: CurrentRVOL = volume[0] / VolMA(0) if VolMA(0) > 0, else 0
+Calculation: FibSwingHigh = high[S] at the most recent bar where high[S] is the highest of high over bars 0 through 2S ago, with S = max(fib lookback / 2, fib min swing bars)
+Calculation: FibSwingLow = low[S] at the most recent bar where low[S] is the lowest of low over bars 0 through 2S ago, with S = max(fib lookback / 2, fib min swing bars)
+Calculation: FibNear(p) = FibSwingHigh and FibSwingLow both exist AND abs(p - (FibSwingHigh - (FibSwingHigh - FibSwingLow) * r)) <= close[right bars] * fib zone width percent / 100 for some r in {0, Fibonacci ratios, 1}
+Calculation: BullScore = count of true among BullDivSignal, (NOT candle filter switch OR BullCandle(k) for some k from right bars to right bars + candle window), VolumeConfirm, (NOT fib filter switch OR RVOLBoost OR FibNear(low[right bars])), RVOLBoost
+Calculation: BearScore = count of true among BearDivSignal, (NOT candle filter switch OR BearCandle(k) for some k from right bars to right bars + candle window), VolumeConfirm, (NOT fib filter switch OR RVOLBoost OR FibNear(high[right bars])), RVOLBoost
+Long: show divergence switch AND RSIBullDiv
+Long: BullDivSignal AND BullScore >= min score
+Long: key reversal bar switch AND key reversal standalone switch AND low[0] < low[1] AND close[0] > close[1] AND LowerWick(0) / Span(0) >= key reversal wick ratio AND (close[0] - low[0]) / Span(0) >= key reversal close position AND CurrentRVOL >= key reversal RVOL minimum
+Short: show divergence switch AND RSIBearDiv
+Short: BearDivSignal AND BearScore >= min score
+Short: key reversal bar switch AND key reversal standalone switch AND high[0] > high[1] AND close[0] < close[1] AND UpperWick(0) / Span(0) >= key reversal wick ratio AND (high[0] - close[0]) / Span(0) >= key reversal close position AND CurrentRVOL >= key reversal RVOL minimum

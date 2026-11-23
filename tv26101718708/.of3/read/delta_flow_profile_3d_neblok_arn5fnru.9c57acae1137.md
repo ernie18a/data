@@ -1,0 +1,9 @@
+Calculation: BarFlow = (buy volume − sell volume, buy volume + sell volume) for each chart bar at its close, using completed T1 intrabars within that bar; classify intrabar volume by close versus open, or for ties by close versus the preceding T1 close within that bar, splitting equally on equality or with no predecessor; if there are no T1 intrabars, buy volume = chart volume × (close − low) / (high − low) and sell volume is the remainder, split equally when high = low.
+Calculation: DeltaLevelPrice = volume-weighted mean of T1 intrabar closes within the chart bar; use HLC3 if there are no intrabars or their total volume is zero.
+Calculation: ProfileRow(row) = (sum of allocated BarFlow delta, sum of allocated BarFlow volume) over the latest profile-lookback chart bars; rows evenly divide the range from the minimum low to maximum high using the profile row-count parameter, and each bar is allocated by its price-range overlap fraction, or entirely to its clamped price row when high = low.
+Long: ProfileRow(row).total volume > 0 AND ProfileRow(row).net delta >= 0
+Short: ProfileRow(row).total volume > 0 AND ProfileRow(row).net delta < 0
+Long: ZScore(BarFlow.delta, spike baseline lookback) >= spike threshold AND BarFlow.delta > 0, at chart-bar close
+Short: ZScore(BarFlow.delta, spike baseline lookback) <= −spike threshold AND BarFlow.delta < 0, at chart-bar close
+Long: a retained active bullish delta-spike level, created while levels are enabled, is mitigated when low < its DeltaLevelPrice in wick mode or close < its DeltaLevelPrice in close mode, at chart-bar close
+Short: a retained active bearish delta-spike level, created while levels are enabled, is mitigated when high > its DeltaLevelPrice in wick mode or close > its DeltaLevelPrice in close mode, at chart-bar close

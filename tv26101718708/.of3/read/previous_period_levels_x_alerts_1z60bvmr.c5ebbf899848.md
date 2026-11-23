@@ -1,0 +1,13 @@
+Calculation: T1 bar start = time(T1, bar still forming) on chart bars
+Calculation: previous T1 open = open(T1, last completed bar) on chart bars
+Calculation: previous T1 high = high(T1, last completed bar) on chart bars
+Calculation: previous T1 low = low(T1, last completed bar) on chart bars
+Calculation: previous T1 close = close(T1, last completed bar) on chart bars
+Long: SMA(source, lookback) crosses over previous T1 open AND T1 bar start = T1 bar start[1]
+Long: SMA(source, lookback) crosses over previous T1 high AND T1 bar start = T1 bar start[1]
+Long: SMA(source, lookback) crosses over previous T1 low AND T1 bar start = T1 bar start[1]
+Long: SMA(source, lookback) crosses over previous T1 close AND T1 bar start = T1 bar start[1]
+Short: SMA(source, lookback) crosses under previous T1 open AND T1 bar start = T1 bar start[1]
+Short: SMA(source, lookback) crosses under previous T1 high AND T1 bar start = T1 bar start[1]
+Short: SMA(source, lookback) crosses under previous T1 low AND T1 bar start = T1 bar start[1]
+Short: SMA(source, lookback) crosses under previous T1 close AND T1 bar start = T1 bar start[1]

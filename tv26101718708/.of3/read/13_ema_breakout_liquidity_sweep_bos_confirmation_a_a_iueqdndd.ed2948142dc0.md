@@ -1,0 +1,43 @@
+Calculation: last pivot high = last non-na PivotHigh(high, pivot left lookback, pivot right lookback)
+Calculation: last pivot low = last non-na PivotLow(low, pivot left lookback, pivot right lookback)
+Calculation: key high = high of last completed T1 bar if key level source = L1; highest high of the most recent completed previous-session window if key level source = L2; highest high of the first session range bars of the current trade session, once complete and until the session ends, if key level source = L3; otherwise na
+Calculation: key low = low of last completed T1 bar if key level source = L1; lowest low of the most recent completed previous-session window if key level source = L2; lowest low of the first session range bars of the current trade session, once complete and until the session ends, if key level source = L3; otherwise na
+Calculation: sweep threshold = max(sweep min ticks * tick size, ATR(ATR lookback) * sweep ATR multiple)
+Calculation: bull sweep event = close > key low AND for some n in [0, sweep confirm bars]: low[n] < key low[n] - sweep threshold[n] AND close[k] <= key low[k] for all k in [1, n]
+Calculation: bear sweep event = close < key high AND for some n in [0, sweep confirm bars]: high[n] > key high[n] + sweep threshold[n] AND close[k] >= key high[k] for all k in [1, n]
+Calculation: bull BOS event = close crosses above last pivot high
+Calculation: bear BOS event = close crosses below last pivot low
+Calculation: bull EMA event = close crosses above EMA(close, shorter lookback) AND ((not slope filter) OR EMA(close, shorter lookback) > EMA(close, shorter lookback)[1])
+Calculation: bear EMA event = close crosses below EMA(close, shorter lookback) AND ((not slope filter) OR EMA(close, shorter lookback) < EMA(close, shorter lookback)[1])
+Calculation: bull BOS level = last pivot high as of the most recent bull BOS event
+Calculation: bear BOS level = last pivot low as of the most recent bear BOS event
+Calculation: bull BOS retested = (not BOS retest filter) OR (within BOS retest lookback bars from the most recent bull BOS event, including its bar, some bar had low <= bull BOS level AND close > bull BOS level)
+Calculation: bear BOS retested = (not BOS retest filter) OR (within BOS retest lookback bars from the most recent bear BOS event, including its bar, some bar had high >= bear BOS level AND close < bear BOS level)
+Calculation: bull base event = bull BOS retested AND ((timing mode != M2 AND bull BOS event AND bull EMA event occurred within the last BOS timing bars including current) OR (timing mode != M1 AND bull EMA event AND bull BOS event occurred within the last BOS timing bars including current))
+Calculation: bear base event = bear BOS retested AND ((timing mode != M2 AND bear BOS event AND bear EMA event occurred within the last BOS timing bars including current) OR (timing mode != M1 AND bear EMA event AND bear BOS event occurred within the last BOS timing bars including current))
+Calculation: bull setup ready = bull base event occurred within the last setup valid bars including current
+Calculation: bear setup ready = bear base event occurred within the last setup valid bars including current
+Calculation: double bottom event = a pivot low is confirmed on this bar AND its pivot bar is at least double min separation bars after the pivot bar of the previous pivot low AND abs(last pivot low - previous pivot low) <= ATR(ATR lookback) * double tolerance
+Calculation: double top event = a pivot high is confirmed on this bar AND its pivot bar is at least double min separation bars after the pivot bar of the previous pivot high AND abs(last pivot high - previous pivot high) <= ATR(ATR lookback) * double tolerance
+Calculation: range breakout long = highest(high[1], range bars) - lowest(low[1], range bars) <= ATR(ATR lookback) * max range ATR multiple AND close > highest(high[1], range bars)
+Calculation: range breakout short = highest(high[1], range bars) - lowest(low[1], range bars) <= ATR(ATR lookback) * max range ATR multiple AND close < lowest(low[1], range bars)
+Calculation: wedge long = last pivot high < previous pivot high AND last pivot low > previous pivot low AND close > last pivot high
+Calculation: wedge short = last pivot high < previous pivot high AND last pivot low > previous pivot low AND close < last pivot low
+Calculation: bull pattern event = double bottom event if pattern type = P1; range breakout long if pattern type = P2; wedge long if pattern type = P3
+Calculation: bear pattern event = double top event if pattern type = P1; range breakout short if pattern type = P2; wedge short if pattern type = P3
+Calculation: long stop price = last pivot low - stop buffer ticks * tick size if stop method = S1; close - ATR(ATR lookback) * stop ATR multiple if stop method = S2; close - fixed stop ticks * tick size if stop method = S3
+Calculation: short stop price = last pivot high + stop buffer ticks * tick size if stop method = S1; close + ATR(ATR lookback) * stop ATR multiple if stop method = S2; close + fixed stop ticks * tick size if stop method = S3
+Calculation: long ATR trail = highest of (close - ATR(ATR lookback) * ATR trail multiple) over bars from the TP1 bar onward
+Calculation: short ATR trail = lowest of (close + ATR(ATR lookback) * ATR trail multiple) over bars from the TP1 bar onward
+Calculation: long stop level = long stop price at entry if TP1 not yet taken; otherwise highest of long stop price at entry, entry price, and the runner trail, where the runner trail is long ATR trail if runner mode = Q3, EMA(close, shorter lookback) if runner mode = Q4, and absent otherwise
+Calculation: short stop level = short stop price at entry if TP1 not yet taken; otherwise lowest of short stop price at entry, entry price, and the runner trail, where the runner trail is short ATR trail if runner mode = Q3, EMA(close, shorter lookback) if runner mode = Q4, and absent otherwise
+Long: bull setup ready AND (bull sweep event occurred within the last sweep valid bars including current OR bull pattern event occurred within the last pattern valid bars including current) AND (entry mode = E1 OR (entry mode = E2 AND low <= EMA(close, shorter lookback) AND close > EMA(close, shorter lookback)) OR (entry mode = E3 AND low <= bull BOS level AND close > bull BOS level)) AND (not middle-EMA filter OR close > EMA(close, middle lookback)) AND (not longer-EMA filter OR close > EMA(close, longer lookback)) AND (not stacked-EMA filter OR (EMA(close, shorter lookback) > EMA(close, middle lookback) AND EMA(close, middle lookback) > EMA(close, longer lookback))) AND (not volume filter OR volume > SMA(volume, volume SMA lookback)) AND (not ATR filter OR ATR(ATR lookback) > SMA(ATR(ATR lookback), ATR SMA lookback) * ATR min multiple) AND (not session filter OR bar time within trade session window) AND (not one-trade filter OR position side flat) AND close - long stop price > tick size
+Short: bear setup ready AND (bear sweep event occurred within the last sweep valid bars including current OR bear pattern event occurred within the last pattern valid bars including current) AND (entry mode = E1 OR (entry mode = E2 AND high >= EMA(close, shorter lookback) AND close < EMA(close, shorter lookback)) OR (entry mode = E3 AND high >= bear BOS level AND close < bear BOS level)) AND (not middle-EMA filter OR close < EMA(close, middle lookback)) AND (not longer-EMA filter OR close < EMA(close, longer lookback)) AND (not stacked-EMA filter OR (EMA(close, shorter lookback) < EMA(close, middle lookback) AND EMA(close, middle lookback) < EMA(close, longer lookback))) AND (not volume filter OR volume > SMA(volume, volume SMA lookback)) AND (not ATR filter OR ATR(ATR lookback) > SMA(ATR(ATR lookback), ATR SMA lookback) * ATR min multiple) AND (not session filter OR bar time within trade session window) AND (not one-trade filter OR position side flat) AND short stop price - close > tick size
+Exit: long, TP1 not yet taken AND close >= entry price + (entry price - long stop price at entry)
+Exit: long, close <= long stop level
+Exit: long, TP1 taken AND runner mode = Q1 AND close >= entry price + runner R multiple * (entry price - long stop price at entry)
+Exit: long, TP1 taken AND runner mode = Q2 AND close >= key high on entry bar
+Exit: short, TP1 not yet taken AND close <= entry price - (short stop price at entry - entry price)
+Exit: short, close >= short stop level
+Exit: short, TP1 taken AND runner mode = Q1 AND close <= entry price - runner R multiple * (short stop price at entry - entry price)
+Exit: short, TP1 taken AND runner mode = Q2 AND close <= key low on entry bar

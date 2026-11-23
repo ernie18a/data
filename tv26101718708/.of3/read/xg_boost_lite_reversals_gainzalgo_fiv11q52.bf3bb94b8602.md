@@ -1,0 +1,12 @@
+Calculation: RelVol = volume / SMA(volume, relvol_length)
+Calculation: ZScore = (close - SMA(close, zscore_length)) / STDEV(close, zscore_length)
+Calculation: LongTarget = 1 if (HIGHEST(high, target_window)[1] - close[target_window]) > target_atr_mult * ATR(atr_length)[target_window], else 0
+Calculation: ShortTarget = 1 if (close[target_window] - LOWEST(low, target_window)[1]) > target_atr_mult * ATR(atr_length)[target_window], else 0
+Calculation: ProbLong = probability from a gradient-boosted classifier (boosting_rounds, learning_rate) fit on RSI(close, rsi_length), RelVol, ZScore, and ADX(adx_length) of bars from target_window + 1 to training_lookback bars ago, each paired with LongTarget evaluated target_window bars later, applied to the current bar's features
+Calculation: ProbShort = probability from a gradient-boosted classifier (boosting_rounds, learning_rate) fit on RSI(close, rsi_length), RelVol, ZScore, and ADX(adx_length) of bars from target_window + 1 to training_lookback bars ago, each paired with ShortTarget evaluated target_window bars later, applied to the current bar's features
+Calculation: LongStop = MIN(low at entry bar - sl_buffer_atr * ATR(atr_length) at entry bar, entry price - min_stop_atr * ATR(atr_length) at entry bar)
+Calculation: ShortStop = MAX(high at entry bar + sl_buffer_atr * ATR(atr_length) at entry bar, entry price + min_stop_atr * ATR(atr_length) at entry bar)
+Long: ProbLong >= min_probability AND low < LOWEST(low, pivot_length)[1] AND close > (high + low) / 2 AND ADX(adx_length) >= adx_min AND (current bar is closed OR NOT wait_for_close_enabled)
+Short: ProbShort >= min_probability AND high > HIGHEST(high, pivot_length)[1] AND close < (high + low) / 2 AND ADX(adx_length) >= adx_min AND (current bar is closed OR NOT wait_for_close_enabled)
+Exit: long, current bar is closed AND (low <= LongStop OR (break_even_enabled AND HIGHEST(high, bars after entry) >= entry price + (entry price - LongStop) * tp1_r_multiple AND low <= entry price))
+Exit: short, current bar is closed AND (high >= ShortStop OR (break_even_enabled AND LOWEST(low, bars after entry) <= entry price - (ShortStop - entry price) * tp1_r_multiple AND high >= entry price))

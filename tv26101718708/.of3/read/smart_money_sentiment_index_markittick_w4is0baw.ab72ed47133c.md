@@ -1,0 +1,12 @@
+Calculation: Sentiment = normalized sigmoid of standard deviations of volatility and momentum
+Calculation: SwingHigh = na if Long, else PivotHigh(high, swing length, swing length - 1)[1] if not na, else SwingHigh[1]
+Calculation: SwingLow = na if Short, else PivotLow(low, swing length, swing length - 1)[1] if not na, else SwingLow[1]
+Calculation: BarsSinceBreak = bars since the latest bar before this one on which Long or Short is true
+Long: close[1] > SwingHigh[1] AND BarsSinceBreak >= swing length
+Short: close[1] < SwingLow[1] AND BarsSinceBreak >= swing length
+Long: Sentiment[2] < neutral level AND Sentiment[1] >= neutral level
+Short: Sentiment[2] >= neutral level AND Sentiment[1] < neutral level
+Short: Sentiment[2] < overbought alert level AND Sentiment[1] >= overbought alert level
+Long: Sentiment[2] > oversold alert level AND Sentiment[1] <= oversold alert level
+Short: Sentiment >= greed background level
+Long: Sentiment <= fear background level

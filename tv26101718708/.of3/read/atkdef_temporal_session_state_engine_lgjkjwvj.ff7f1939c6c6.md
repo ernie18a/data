@@ -1,0 +1,6 @@
+Calculation: Session open = first open of chart bars in each configured UTC-hour session during the current day
+Calculation: Session close = latest close of chart bars in each configured UTC-hour session during the current day
+Calculation: Session high = highest high of chart bars in each configured UTC-hour session during the current day
+Calculation: Session low = lowest low of chart bars in each configured UTC-hour session during the current day
+Long: (for any T in {T1, T2, T3, T4, T5}, on chart bars, close of T's bar still forming > high of T's last completed bar OR close of T's last completed bar > open of that bar × bullish direction multiplier OR close of T's bar still forming > close of T's last completed bar × bullish momentum multiplier) OR (for any S in {S1, S2, S3} with at least one recorded bar, session close > session open OR chart close > session high)
+Short: (for any T in {T1, T2, T3, T4, T5}, on chart bars, close of T's bar still forming < low of T's last completed bar OR close of T's last completed bar < open of that bar × bearish direction multiplier OR close of T's bar still forming < close of T's last completed bar × bearish momentum multiplier) OR (for any S in {S1, S2, S3} with at least one recorded bar, session close < session open OR chart close < session low)

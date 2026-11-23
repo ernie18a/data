@@ -1,0 +1,10 @@
+Calculation: BuysideLevel = value of PivotHigh(high, pivot length, pivot length), added on the bar it first appears, unless some BuysideLevel U with no high from U's addition through the previous bar >= U satisfies abs(U - new PivotHigh value) <= ATR(ATR length) * equality multiplier
+Calculation: SellsideLevel = value of PivotLow(low, pivot length, pivot length), added on the bar it first appears, unless some SellsideLevel S with no low from S's addition through the previous bar <= S satisfies abs(S - new PivotLow value) <= ATR(ATR length) * equality multiplier
+Calculation: HighLevel(T) = high of the last completed T bar, taken on chart bars and added on the first chart bar of each new T bar, valid on chart bars shorter than T
+Calculation: LowLevel(T) = low of the last completed T bar, taken on chart bars and added on the first chart bar of each new T bar, valid on chart bars shorter than T
+Short: for some BuysideLevel B, no high from B's addition through the previous bar >= B AND high >= B AND close < B AND volume > SMA(volume, volume lookback) * volume multiplier
+Short: for B = HighLevel(T1), no high from B's addition through the previous bar >= B AND high >= B AND close < B AND volume > SMA(volume, volume lookback) * volume multiplier
+Short: for B = HighLevel(T2), no high from B's addition through the previous bar >= B AND high >= B AND close < B AND volume > SMA(volume, volume lookback) * volume multiplier
+Long: for some SellsideLevel S, no low from S's addition through the previous bar <= S AND low <= S AND close > S AND volume > SMA(volume, volume lookback) * volume multiplier
+Long: for S = LowLevel(T1), no low from S's addition through the previous bar <= S AND low <= S AND close > S AND volume > SMA(volume, volume lookback) * volume multiplier
+Long: for S = LowLevel(T2), no low from S's addition through the previous bar <= S AND low <= S AND close > S AND volume > SMA(volume, volume lookback) * volume multiplier

@@ -1,0 +1,15 @@
+Calculation: higher-timeframe bias = bullish when the latest confirmed pivot high and pivot low on T1 both exceed their respective preceding pivots; bearish when both are lower; otherwise neutral, using the last completed T1 bar's pivot values on chart bars
+Long: higher-timeframe bias is bullish
+Short: higher-timeframe bias is bearish
+Long: close crosses above the latest confirmed chart-timeframe pivot high, calculated with the long-term-structure pivot lookback on each side
+Short: close crosses below the latest confirmed chart-timeframe pivot low, calculated with the long-term-structure pivot lookback on each side
+Long: close crosses above the latest confirmed chart-timeframe pivot high, calculated with the order-block pivot lookback on each side, AND at least one bearish candle occurs within the prior order-block search lookback
+Short: close crosses below the latest confirmed chart-timeframe pivot low, calculated with the order-block pivot lookback on each side, AND at least one bullish candle occurs within the prior order-block search lookback
+Long: low is below the latest confirmed pivot low calculated with the sweep pivot lookback on each side, close is above that pivot low, pivot low minus low is at least the minimum-penetration ATR multiplier times ATR(ATR lookback), and (lower wick is at least the pin-ratio parameter times the greater of absolute close minus open and minimum tick OR engulfing is enabled and close > open and close[1] < open[1] and close >= open[1]); AND (alignment filter is disabled OR higher-timeframe bias is bullish)
+Short: high is above the latest confirmed pivot high calculated with the sweep pivot lookback on each side, close is below that pivot high, high minus pivot high is at least the minimum-penetration ATR multiplier times ATR(ATR lookback), and (upper wick is at least the pin-ratio parameter times the greater of absolute close minus open and minimum tick OR engulfing is enabled and close < open and close[1] > open[1] and close <= open[1]); AND (alignment filter is disabled OR higher-timeframe bias is bearish)
+Long: low > high[2] AND (alignment filter is disabled OR higher-timeframe bias is not bearish)
+Short: high < low[2] AND (alignment filter is disabled OR higher-timeframe bias is not bullish)
+Long: high[1] - low[1] <= base-range ATR multiplier times ATR(ATR lookback), ATR(ATR lookback) > 0, close > open, and absolute close minus open >= impulse-body ATR multiplier times ATR(ATR lookback)
+Short: high[1] - low[1] <= base-range ATR multiplier times ATR(ATR lookback), ATR(ATR lookback) > 0, close < open, and absolute close minus open >= impulse-body ATR multiplier times ATR(ATR lookback)
+Short: order-block lifecycle tracking is enabled, an active bullish order block exists, and close is below its bottom
+Long: order-block lifecycle tracking is enabled, an active bearish order block exists, and close is above its top

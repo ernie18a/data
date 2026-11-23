@@ -1,0 +1,2 @@
+Long: close(T1, last completed bar) > SMA(close, shorter lookback, T1, last completed bar) AND close(T1, last completed bar) > SMA(close, middle lookback, T1, last completed bar) AND close(T1, last completed bar) > SMA(close, longer lookback, T1, last completed bar)
+Short: close(T1, last completed bar) <= SMA(close, middle lookback, T1, last completed bar) AND close(T1, last completed bar) <= SMA(close, longer lookback, T1, last completed bar)

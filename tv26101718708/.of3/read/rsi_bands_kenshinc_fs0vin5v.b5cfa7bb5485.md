@@ -1,0 +1,3 @@
+Calculation: RSI price level(r, n) = close + x if x >= 0 else close + x * (100 - r) / r, where x = (n - 1) * (downEMA * r / (100 - r) - upEMA), upEMA = EMA(max(close - close[1], 0), 2 * n - 1), and downEMA = EMA(max(close[1] - close, 0), 2 * n - 1)
+Long: low <= RSI price level(oversold level - extension step, RSI lookback) AND low[1] > RSI price level(oversold level - extension step, RSI lookback)[1]
+Short: high >= RSI price level(overbought level + extension step, RSI lookback) AND high[1] < RSI price level(overbought level + extension step, RSI lookback)[1]

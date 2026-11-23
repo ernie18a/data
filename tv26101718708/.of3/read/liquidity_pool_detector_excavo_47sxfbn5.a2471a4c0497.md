@@ -1,0 +1,5 @@
+Calculation: Tolerance = equal tolerance * ATR(high, low, close, ATR length)
+Calculation: HighLevels = the set of equal-highs levels after this bar's update: keep each L in HighLevels[1] where high[1] <= L AND close[1] < L; if PivotHigh(high, swing length, swing length) is not na, call it pivot and either merge it into the oldest level L with abs(L - pivot) <= Tolerance (L becomes the mean of the pivot highs merged into it) or, if no such level exists and the count of levels is below max clusters, add pivot as a new level
+Calculation: LowLevels = the set of equal-lows levels after this bar's update: keep each L in LowLevels[1] where low[1] >= L AND close[1] > L; if PivotLow(low, swing length, swing length) is not na, call it pivot and either merge it into the oldest level L with abs(L - pivot) <= Tolerance (L becomes the mean of the pivot lows merged into it) or, if no such level exists and the count of levels is below max clusters, add pivot as a new level
+Long: low < L AND close > L, for some L in LowLevels
+Short: high > L AND close < L, for some L in HighLevels

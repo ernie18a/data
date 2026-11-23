@@ -1,0 +1,11 @@
+Calculation: entry moving average = the selected one of SMA(external close, entry-MA lookback) and EMA(external close, entry-MA lookback)
+Calculation: EMA-entry average = EMA(external close, EMA-entry lookback)
+Calculation: exit moving average = the selected one of SMA(external close, exit-MA lookback) and EMA(external close, exit-MA lookback)
+Calculation: entry-MA state = (time-buffer filter disabled OR (barssince(external close < entry moving average) is defined AND barssince(external close < entry moving average) >= time-buffer length)) AND (percentage-buffer filter disabled OR external close >= entry moving average * (1 + entry buffer percent / 100))
+Calculation: EMA-entry state = external close > EMA-entry average AND (volume filter disabled OR external volume > SMA(external volume, volume-average lookback) * volume multiple) AND (trend filter disabled OR ((selected trend method is configurable-count consecutive increases AND EMA-entry average[i] > EMA-entry average[i+1] for every i from 0 through trend-lookback minus 1) OR (selected trend method is fixed-count consecutive increases AND EMA-entry average[i] > EMA-entry average[i+1] for every i from 0 through fixed-rise-count minus 1)); indexes count chart bars
+Calculation: exit-MA state = external close < exit moving average AND (exit-time-buffer filter disabled OR (barssince(external close >= exit moving average) is defined AND barssince(external close >= exit moving average) >= exit-time-buffer length - 1)) AND (exit-percent-buffer filter disabled OR external close <= exit moving average * (1 - exit buffer percent / 100))
+Long: entry-MA state AND NOT entry-MA state[1]
+Long: EMA-entry state AND NOT EMA-entry state[1] AND NOT (entry-MA state AND NOT entry-MA state[1])
+Exit: long, stop loss enabled AND low <= entry price * (1 - stop-loss percent / 100)
+Exit: long, (entry was by the entry-MA signal OR entry was by the EMA signal and any close since entry exceeded the entry moving average) AND exit-MA state AND NOT exit-MA state[1]
+Exit: long, entry was by the EMA signal AND no close since entry exceeded the entry moving average AND crossunder(external close, EMA-entry average)

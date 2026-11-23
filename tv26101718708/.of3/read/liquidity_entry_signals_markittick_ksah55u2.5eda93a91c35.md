@@ -1,0 +1,10 @@
+Calculation: Long Stop Distance = Entry Price - low[bars since entry] + ATR(stop ATR lookback)[bars since entry] * stop ATR multiple
+Calculation: Short Stop Distance = high[bars since entry] - Entry Price + ATR(stop ATR lookback)[bars since entry] * stop ATR multiple
+Long: low < Lowest(low[1], sweep lookback) AND close > Lowest(low[1], sweep lookback) AND close > open AND (not trend filter OR close[1] > SMA(close, trend lookback)[1]) AND (not HTF filter OR close(T1, last completed bar) > SMA(close, HTF lookback, T1, last completed bar)) AND (not volatility filter OR ATR(volatility lookback) / close * 100 >= volatility min percent) AND (not volume filter OR volume >= SMA(volume, volume lookback) * volume multiplier) AND (not cooldown filter OR no prior signal OR bars since last Long or Short signal >= cooldown bars)
+Short: high > Highest(high[1], sweep lookback) AND close < Highest(high[1], sweep lookback) AND close < open AND (not trend filter OR close[1] < SMA(close, trend lookback)[1]) AND (not HTF filter OR close(T1, last completed bar) < SMA(close, HTF lookback, T1, last completed bar)) AND (not volatility filter OR ATR(volatility lookback) / close * 100 >= volatility min percent) AND (not volume filter OR volume >= SMA(volume, volume lookback) * volume multiplier) AND (not cooldown filter OR no prior signal OR bars since last Long or Short signal >= cooldown bars)
+Exit: long, high >= Entry Price + take-profit multiple 1 * Long Stop Distance
+Exit: long, high >= Entry Price + take-profit multiple 2 * Long Stop Distance
+Exit: long, high >= Entry Price + take-profit multiple 3 * Long Stop Distance
+Exit: short, low <= Entry Price - take-profit multiple 1 * Short Stop Distance
+Exit: short, low <= Entry Price - take-profit multiple 2 * Short Stop Distance
+Exit: short, low <= Entry Price - take-profit multiple 3 * Short Stop Distance

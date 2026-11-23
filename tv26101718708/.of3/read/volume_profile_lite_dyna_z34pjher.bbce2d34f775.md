@@ -1,0 +1,7 @@
+Calculation: SessionId = time(T1, session window, timezone) of the T1 bar still forming at the current bar
+Calculation: ValueAreaHigh = upper edge of the topmost bin of the value area, where the value area is built over the bars inside the session window of the current and previous N-1 sessions as follows: the range from the lowest low to the highest high is divided into B equal bins; each bar's volume is spread over the bins in proportion to the overlap of the bar's high-low range with each bin, or wholly into the bin containing its price if its range is zero; starting from the bin with the most volume (lowest index on ties), at each step the bin just above or just below the value area is added, whichever has more volume (above on ties; a bin beyond the range is not chosen), until the value area volume reaches P percent of total volume
+Calculation: ValueAreaLow = lower edge of the bottommost bin of the value area that ValueAreaHigh defines
+Calculation: PreviousSessionValueAreaHigh = ValueAreaHigh at the last bar before the current SessionId began
+Calculation: PreviousSessionValueAreaLow = ValueAreaLow at the last bar before the current SessionId began
+Long: close crosses above PreviousSessionValueAreaHigh AND no earlier bar of the current session crossed above it
+Short: close crosses below PreviousSessionValueAreaLow AND no earlier bar of the current session crossed below it

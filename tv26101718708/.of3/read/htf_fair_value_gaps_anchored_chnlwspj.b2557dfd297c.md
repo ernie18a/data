@@ -1,0 +1,10 @@
+Long: Current-timeframe FVGs enabled AND current chart bar confirmed AND low > high[2].
+Short: Current-timeframe FVGs enabled AND current chart bar confirmed AND high < low[2].
+Long: For any enabled T1–T4 below the chart timeframe, a completed T bar within a confirmed chart bar has low > high 2 T bars ago AND no later T bar within that chart bar mitigates the gap under the selected mitigation mode.
+Short: For any enabled T1–T4 below the chart timeframe, a completed T bar within a confirmed chart bar has high < low 2 T bars ago AND no later T bar within that chart bar mitigates the gap under the selected mitigation mode.
+Long: For any enabled T1–T4 equal to or above the chart timeframe, on chart bars using T values, low of the current T bar > high 2 T bars ago AND the T bullish gap is new versus the previous chart bar (its mapped gap was absent or its top or bottom changed) AND the T bar is confirmed or live higher-timeframe FVGs are enabled.
+Short: For any enabled T1–T4 equal to or above the chart timeframe, on chart bars using T values, high of the current T bar < low 2 T bars ago AND the T bearish gap is new versus the previous chart bar (its mapped gap was absent or its top or bottom changed) AND the T bar is confirmed or live higher-timeframe FVGs are enabled.
+Long: T5 opening-gap display enabled AND current chart bar confirmed AND the mapped T5 bar datetime changed from the previous chart bar AND current T5 bar open > previous completed T5 bar close.
+Short: T5 opening-gap display enabled AND current chart bar confirmed AND the mapped T5 bar datetime changed from the previous chart bar AND current T5 bar open < previous completed T5 bar close.
+Long: T6 opening-gap display enabled AND current chart bar confirmed AND the mapped T6 bar datetime changed from the previous chart bar AND current T6 bar open > previous completed T6 bar close.
+Short: T6 opening-gap display enabled AND current chart bar confirmed AND the mapped T6 bar datetime changed from the previous chart bar AND current T6 bar open < previous completed T6 bar close.

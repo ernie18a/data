@@ -1,0 +1,7 @@
+Calculation: midnight open = open of the first chart bar in the 00:00–00:01 session each day
+Calculation: reference high = New York session high if available and its session is inactive; otherwise London session high if available and its session is inactive; otherwise Asian session high if available and its session is inactive; each session high is the maximum high of its chart bars
+Calculation: reference low = New York session low if available and its session is inactive; otherwise London session low if available and its session is inactive; otherwise Asian session low if available and its session is inactive; each session low is the minimum low of its chart bars
+Long: midnight open is available AND close > midnight open
+Short: midnight open is available AND close < midnight open
+Long: reference low is available AND low < reference low AND close > reference low AND close > midnight open AND close > open AND no prior bar since the reference low changed or the day began had low < reference low AND close > reference low
+Short: reference high is available AND high > reference high AND close < reference high AND close < midnight open AND close < open AND no prior bar since the reference high changed or the day began had high > reference high AND close < reference high

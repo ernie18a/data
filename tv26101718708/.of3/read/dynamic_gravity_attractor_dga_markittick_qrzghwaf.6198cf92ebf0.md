@@ -1,0 +1,9 @@
+Calculation: Eligible Gravity Levels = Maintain price clusters from strict symmetric Pivot High(high, pivot radius) and Pivot Low(low, pivot radius) events, processing highs before lows; at each event add SMA(volume, volume lookback)[volume offset] to the nearest existing cluster within ATR(ATR lookback) * cluster resolution percentage, choosing the later-created cluster on ties, or create a cluster if none qualifies; update cluster price by volume-weighted mean, accumulated volume by addition, touch count by one, and last update to the current bar; retain clusters for future merging, but calculate forces only for clusters updated within history lookback; normalize accumulated volume and touch count separately by their maxima across all such clusters, then set mass to normalized volume * volume weight / (volume weight + touch weight) + normalized touch count * touch weight / (volume weight + touch weight); keep clusters with touch count at least minimum touches and set gravity to gravitational constant * mass / max(abs(cluster price - close), ATR(ATR lookback) * minimum distance fraction)^2
+Calculation: Live Net Force = Sum gravity over Eligible Gravity Levels, positive for cluster prices at or below close and negative for prices above close
+Calculation: Top-Zone Net Force = Sum signed gravity over the N highest-gravity Eligible Gravity Levels, positive for cluster prices at or below close and negative for prices above close
+Long: Live Net Force > 0
+Short: Live Net Force < 0
+Long: Top-Zone Net Force > 0
+Short: Top-Zone Net Force < 0
+Long: Top-Zone Net Force[1] > 0 AND Top-Zone Net Force[2] <= 0
+Short: Top-Zone Net Force[1] < 0 AND Top-Zone Net Force[2] >= 0

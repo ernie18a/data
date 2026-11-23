@@ -1,0 +1,10 @@
+Calculation: Bull high bars ago = the smallest k from 1 to structure lookback such that high[k] = Highest(high, structure lookback)[1]
+Calculation: Bull low bars ago = the smallest k from 1 to Bull high bars ago - 1 such that low[k] = Lowest(low, Bull high bars ago - 1)[1]
+Calculation: Bull impulse bars ago = the largest k from 0 to Bull low bars ago - 1 such that close[k] > open[k] AND close[k] - open[k] >= ATR(ATR period) x impulse multiple, or -1 if none
+Calculation: Bull zone bars ago = the smallest k from Bull impulse bars ago + 1 to Bull low bars ago such that close[k] < open[k], or Bull low bars ago if none
+Long: close > Highest(high, structure lookback)[1] AND Bull high bars ago >= minimum swing age AND Bull impulse bars ago >= 0 AND low[k] > high[Bull zone bars ago] for every k from 0 to Bull zone bars ago - 2 AND the zone bar of the most recent earlier Long is not the bar at offset Bull zone bars ago
+Calculation: Bear low bars ago = the smallest k from 1 to structure lookback such that low[k] = Lowest(low, structure lookback)[1]
+Calculation: Bear high bars ago = the smallest k from 1 to Bear low bars ago - 1 such that high[k] = Highest(high, Bear low bars ago - 1)[1]
+Calculation: Bear impulse bars ago = the largest k from 0 to Bear high bars ago - 1 such that close[k] < open[k] AND open[k] - close[k] >= ATR(ATR period) x impulse multiple, or -1 if none
+Calculation: Bear zone bars ago = the smallest k from Bear impulse bars ago + 1 to Bear high bars ago such that close[k] > open[k], or Bear high bars ago if none
+Short: close < Lowest(low, structure lookback)[1] AND Bear low bars ago >= minimum swing age AND Bear impulse bars ago >= 0 AND high[k] < low[Bear zone bars ago] for every k from 0 to Bear zone bars ago - 2 AND the zone bar of the most recent earlier Short is not the bar at offset Bear zone bars ago

@@ -1,0 +1,13 @@
+Calculation: Williams VIX Fix(WVF lookback) = ((Highest(close, WVF lookback) - low) / Highest(close, WVF lookback)) * 100
+Calculation: Spike = Williams VIX Fix(WVF lookback) >= Bollinger upper band(Williams VIX Fix(WVF lookback), BB length, BB multiplier) OR Williams VIX Fix(WVF lookback) >= Highest(Williams VIX Fix(WVF lookback), percentile lookback)[1] * percentile threshold
+Calculation: HTF close = close of T1 bars at last completed T1 bar
+Calculation: HTF SMA = SMA(close, HTF SMA length) of T1 bars at last completed T1 bar
+Calculation: Stop Distance = ATR(ATR length) * stop ATR multiplier at entry bar
+Long: (Spike[1] OR Spike) AND close > open AND close > close[1] AND (spike strength filter disabled OR Williams VIX Fix(WVF lookback) >= Bollinger upper band(Williams VIX Fix(WVF lookback), BB length, BB multiplier + spike minimum)) AND (volatility filter disabled OR ATR(ATR length) >= SMA(ATR(ATR length), ATR length) * ATR minimum multiplier) AND (volume confirmation filter disabled OR (volume >= SMA(volume, volume length) * volume minimum multiplier AND volume > volume[1])) AND (HTF filter disabled OR (HTF close > HTF SMA AND HTF SMA > HTF SMA[1])) AND (trend filter disabled OR (close > SMA(close, trend length) AND SMA(close, trend length) > SMA(close, trend length)[trend slope lookback])) AND (cooldown disabled OR no previous Long OR bars since previous Long >= cooldown bars)
+Short: BarsSince(Spike) <= spike window AND Williams VIX Fix(WVF lookback) crosses below SMA(Williams VIX Fix(WVF lookback), BB length) AND close < open AND close < close[1] AND (volatility filter disabled OR ATR(ATR length) >= SMA(ATR(ATR length), ATR length) * ATR minimum multiplier) AND (volume confirmation filter disabled OR (volume >= SMA(volume, volume length) * volume minimum multiplier AND volume > volume[1])) AND (HTF filter disabled OR (HTF close < HTF SMA AND HTF SMA < HTF SMA[1])) AND (trend filter disabled OR (close < SMA(close, trend length) AND SMA(close, trend length) < SMA(close, trend length)[trend slope lookback])) AND (cooldown disabled OR no previous Short OR bars since previous Short >= cooldown bars)
+Exit: long, high >= entry price + Stop Distance * TP1 R-multiple
+Exit: long, high >= entry price + Stop Distance * TP2 R-multiple
+Exit: long, high >= entry price + Stop Distance * TP3 R-multiple
+Exit: short, low <= entry price - Stop Distance * TP1 R-multiple
+Exit: short, low <= entry price - Stop Distance * TP2 R-multiple
+Exit: short, low <= entry price - Stop Distance * TP3 R-multiple
