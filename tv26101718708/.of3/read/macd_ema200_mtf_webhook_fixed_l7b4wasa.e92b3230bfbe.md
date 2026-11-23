@@ -1,0 +1,22 @@
+Calculation: BullTFs = count over {chart, T1, T2, T3, T4, T5} of close > EMA(close, EMA length) on that timeframe's bars, using the last completed bar for T1..T5
+Calculation: AboveAllLookbacks = AND over i=1..7 of close[lookback i] > EMA(close, EMA length)[lookback i], where lookback 1 < lookback 2 < ... < lookback 7
+Calculation: BelowAllLookbacks = AND over i=1..7 of close[lookback i] < EMA(close, EMA length)[lookback i], using the same lookbacks as AboveAllLookbacks
+Calculation: LongStop = min(low, low[1]) - ATR(ATR length, ATR smoothing)[1] * ATR multiplier
+Calculation: ShortStop = max(high, high[1]) + ATR(ATR length, ATR smoothing)[1] * ATR multiplier
+Calculation: SpreadPrice = spread pips * pip size
+Calculation: InitialRisk = abs(entry price - stop at entry bar), where stop is LongStop for a long position and ShortStop for a short position
+Calculation: BETriggered = BE enabled AND (on this bar or any earlier bar since entry: high >= entry price + BE ratio * InitialRisk for a long position; low <= entry price - BE ratio * InitialRisk for a short position)
+Calculation: DateInWindow(w) = bar month and day are on or between the start and end month and day of window w, inclusive
+Calculation: AvoidCalendar = DateInWindow(New Year) OR DateInWindow(Christmas) OR DateInWindow(Summer) OR DateInWindow(May Day) OR DateInWindow(March End) OR DateInWindow(June End) OR DateInWindow(September End) OR (weekday in {Thursday, Friday} AND DateInWindow(Thanksgiving)) OR (weekday = Monday AND DateInWindow(Memorial)) OR (weekday = Monday AND DateInWindow(Labor)) OR ((bar day of year - Easter Sunday day of year) in [Easter start, Easter end]) OR (weekday = Friday AND day of month <= NFP last day AND bar open time in minutes (Vienna) in [NFP start hour * 60, NFP end hour * 60]), where each term applies only if its enable parameter is set
+Long: MACD(close, MACD fast, MACD slow, MACD signal) line crosses above its signal line AND MACD(close, MACD fast, MACD slow, MACD signal) line < 0 AND close > EMA(close, EMA length) AND AboveAllLookbacks AND BullTFs >= min timeframes aligned AND Choppiness Index(chop length) >= chop lower threshold AND Choppiness Index(chop length) <= chop upper threshold AND abs(close - LongStop) >= min stop distance (pips) * pip size AND no position open AND no exit within the last cooldown bars AND session start hour * 60 <= bar close time in minutes (Vienna) <= session end hour * 60 AND NOT (skip window enabled AND skip start hour * 60 <= bar open time in minutes (Vienna) < skip end hour * 60) AND NOT AvoidCalendar AND no pre-BE stop-loss exit earlier on the current day
+Short: MACD(close, MACD fast, MACD slow, MACD signal) line crosses below its signal line AND MACD(close, MACD fast, MACD slow, MACD signal) line > 0 AND close <= EMA(close, EMA length) AND BelowAllLookbacks AND (number of timeframes - BullTFs) >= min timeframes aligned AND Choppiness Index(chop length) >= chop lower threshold AND Choppiness Index(chop length) <= chop upper threshold AND abs(ShortStop - close) >= min stop distance (pips) * pip size AND no position open AND no exit within the last cooldown bars AND session start hour * 60 <= bar close time in minutes (Vienna) <= session end hour * 60 AND NOT (skip window enabled AND skip start hour * 60 <= bar open time in minutes (Vienna) < skip end hour * 60) AND NOT AvoidCalendar AND no pre-BE stop-loss exit earlier on the current day
+Exit: long, low <= LongStop at entry bar + SpreadPrice AND NOT BETriggered[1]
+Exit: long, high >= entry price + TP ratio * InitialRisk
+Exit: long, BETriggered[1] AND low <= entry price + BE stop spread multiple * SpreadPrice
+Exit: long, BETriggered AND NOT BETriggered[1] AND low <= entry price
+Exit: long, (weekday = Friday OR EOD every-day flag) AND (bar close time in minutes (Vienna) >= EOD hour * 60 OR bar date differs from previous bar date)
+Exit: short, high >= ShortStop at entry bar - SpreadPrice AND NOT BETriggered[1]
+Exit: short, low <= entry price - TP ratio * InitialRisk
+Exit: short, BETriggered[1] AND high >= entry price - BE stop spread multiple * SpreadPrice
+Exit: short, BETriggered AND NOT BETriggered[1] AND high >= entry price
+Exit: short, (weekday = Friday OR EOD every-day flag) AND (bar close time in minutes (Vienna) >= EOD hour * 60 OR bar date differs from previous bar date)

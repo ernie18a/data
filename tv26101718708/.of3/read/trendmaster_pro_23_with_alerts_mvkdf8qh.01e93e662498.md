@@ -1,0 +1,10 @@
+Calculation: MA(source, lookback, MA type) = EMA, SMA, or SMMA of source over lookback, as selected by MA type
+Calculation: MACD line = EMA(close, MACD shorter lookback) - EMA(close, MACD longer lookback)
+Calculation: MACD signal = EMA(MACD line, MACD signal lookback)
+Calculation: Slow %K = SMA(Fast %K(close, high, low, Stoch lookback), Stoch smoothing)
+Calculation: Slow %D = SMA(Slow %K, Stoch smoothing)
+Calculation: SessionActive = datetime is within any enabled session window on a selected weekday
+Long: MA(close, MA shorter lookback, MA type) crosses above MA(close, MA longer lookback, MA type) AND 2 * STDEV(close, BB lookback) > ATR(high, low, close, BB lookback) AND close > SMA(close, BB lookback) AND RSI(close, RSI lookback) > RSI long threshold AND MACD line > MACD signal AND Slow %K > stoch oversold level AND Slow %K > Slow %D AND ADX(high, low, close, ADX lookback) > ADX threshold AND (NOT trend filter enabled OR close > MA(close, trend lookback, trend MA type)) AND SessionActive
+Short: MA(close, MA shorter lookback, MA type) crosses below MA(close, MA longer lookback, MA type) AND 2 * STDEV(close, BB lookback) > ATR(high, low, close, BB lookback) AND close < SMA(close, BB lookback) AND RSI(close, RSI lookback) < RSI short threshold AND MACD line < MACD signal AND Slow %K < stoch overbought level AND Slow %K < Slow %D AND ADX(high, low, close, ADX lookback) > ADX threshold AND (NOT trend filter enabled OR close < MA(close, trend lookback, trend MA type)) AND SessionActive
+Exit: long, time of datetime equals market close time OR low <= entry price * (1 - SL percent / 100) OR high >= entry price * (1 + RR ratio * SL percent / 100)
+Exit: short, time of datetime equals market close time OR high >= entry price * (1 + SL percent / 100) OR low <= entry price * (1 - RR ratio * SL percent / 100)

@@ -1,0 +1,5 @@
+Calculation: PriorRefClose = ValueWhen(session time of T1 bar open = new reference time, ValueWhen(session time of T1 bar open = prior reference time, T1 close, 0), 0), last completed T1 bar
+Calculation: NewRefOpen = ValueWhen(session time of T1 bar open = new reference time, T1 open, 0), last completed T1 bar
+Calculation: GapUnfilled = ((last completed T1 bar changed on this chart bar AND session time of last completed T1 bar open = new reference time) OR GapUnfilled[1]) AND ((NewRefOpen > PriorRefClose AND low > PriorRefClose) OR (NewRefOpen <= PriorRefClose AND high < PriorRefClose))
+Long: NewRefOpen <= PriorRefClose AND ABS(NewRefOpen - PriorRefClose) >= minimum gap size AND GapUnfilled
+Short: NewRefOpen > PriorRefClose AND ABS(NewRefOpen - PriorRefClose) >= minimum gap size AND GapUnfilled

@@ -1,0 +1,5 @@
+Calculation: CandleDelta = volume * sign(close - open)
+Long: close crosses above VAH(open, high, low, close, volume, lookback, rows, value area percent) AND (RSI filter disabled OR RSI(close, RSI lookback) > bullish RSI threshold) AND (Delta filter disabled OR CandleDelta > 0)
+Long: close crosses above POC(open, high, low, close, volume, lookback, rows) AND RSI(close, RSI lookback) > RSI midline AND (RSI filter disabled OR RSI(close, RSI lookback) > bullish RSI threshold) AND (Delta filter disabled OR CandleDelta > 0)
+Short: close crosses below VAL(open, high, low, close, volume, lookback, rows, value area percent) AND (RSI filter disabled OR RSI(close, RSI lookback) < bearish RSI threshold) AND (Delta filter disabled OR CandleDelta < 0)
+Short: close crosses below POC(open, high, low, close, volume, lookback, rows) AND RSI(close, RSI lookback) < RSI midline AND (RSI filter disabled OR RSI(close, RSI lookback) < bearish RSI threshold) AND (Delta filter disabled OR CandleDelta < 0)

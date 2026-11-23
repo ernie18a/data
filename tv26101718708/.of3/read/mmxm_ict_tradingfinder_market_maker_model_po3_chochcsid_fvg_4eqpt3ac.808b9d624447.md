@@ -1,0 +1,20 @@
+Calculation: PremiumTouch = true on the first chart bar after each completed T1 bar when, on that T1 bar, high > lower edge AND close < upper edge of an untouched pivot-high zone among the latest Max Swing Back zones (all zones if Max Swing Back Method is All); zone = PivotHigh(high, PD Period, PD Period) on T1, edges = pivot price +/- ATR(ATR Length) on T1 x ATR Coefficient; untouched = the touch condition was not true for it before and it has not closed above its upper edge since formation
+Calculation: DiscountTouch = true on the first chart bar after each completed T1 bar when, on that T1 bar, low < upper edge AND close > lower edge of an untouched pivot-low zone among the latest Max Swing Back zones (all zones if Max Swing Back Method is All); zone = PivotLow(low, PD Period, PD Period) on T1, edges = pivot price +/- ATR(ATR Length) on T1 x ATR Coefficient; untouched = the touch condition was not true for it before and it has not closed below its lower edge since formation
+Calculation: BullArmed = (BullArmed[1] OR DiscountTouch) AND NOT BullMSS; initially true
+Calculation: BearArmed = (BearArmed[1] OR PremiumTouch) AND NOT BearMSS; initially true
+Calculation: BullMSS = (BullArmed[1] OR DiscountTouch) AND close >= H AND (bar index - H's bar index) <= MSS Validity Period; H = chart PivotHigh(high, MSS Pivot Left, MSS Pivot Right) price at the latest DiscountTouch; H and its bar index are 0 before the first DiscountTouch
+Calculation: BearMSS = (BearArmed[1] OR PremiumTouch) AND close[1] <= L AND (bar index[1] - L's bar index) <= MSS Validity Period; L = chart PivotLow(low, MSS Pivot Left, MSS Pivot Right) price at the latest PremiumTouch; L and its bar index are 0 before the first PremiumTouch
+Calculation: DemandFVG = top of a stack, none when empty; while BullArmed, push each bullish FVG on the bar it forms (low > high[2]; distal = high[2]; proximal = low; passes the FVG width filter when FVG Filter is on) and pop the top when low < its distal (at most one pop per bar); empty the stack on DiscountTouch
+Calculation: SupplyFVG = top of a stack, none when empty; while BearArmed, push each bearish FVG on the bar it forms (high < low[2]; distal = low[2]; proximal = high; passes the FVG width filter when FVG Filter is on) and pop the top when high > its distal (at most one pop per bar); empty the stack on PremiumTouch
+Calculation: DemandZone = DemandFVG at the latest BullMSS if bars since that DemandFVG formed < FVG Age Gate; otherwise unchanged; none initially
+Calculation: SupplyZone = SupplyFVG at the latest BearMSS if bars since that SupplyFVG formed < FVG Age Gate; otherwise unchanged; none initially
+Long: DiscountTouch = true
+Long: BullMSS = true
+Long: BullMSS = true AND bars since DemandFVG formed < FVG Age Gate
+Long: BullArmed = true AND bars since latest PivotLow(low, SMT Fractal Period, SMT Fractal Period) < SMT Window AND bars between latest and previous such pivot lows < SMT Window AND ((chart low at latest < previous AND second-instrument low at latest > previous) OR (chart low at latest > previous AND second-instrument low at latest < previous))
+Long: low crosses below Mitigation Level price of DemandZone AND bars since DemandZone formed <= FVG Validity Period
+Short: PremiumTouch = true
+Short: BearMSS = true
+Short: BearMSS = true AND bars since SupplyFVG formed < FVG Age Gate
+Short: BearArmed = true AND bars since latest PivotHigh(high, SMT Fractal Period, SMT Fractal Period) < SMT Window AND bars between latest and previous such pivot highs < SMT Window AND ((chart high at latest > previous AND second-instrument high at latest < previous) OR (chart high at latest < previous AND second-instrument high at latest > previous))
+Short: high crosses above Mitigation Level price of SupplyZone AND bars since SupplyZone formed <= FVG Validity Period

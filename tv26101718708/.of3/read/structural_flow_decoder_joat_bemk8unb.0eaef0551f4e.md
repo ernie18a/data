@@ -1,0 +1,11 @@
+Calculation: Prior pivot high(lookback) = value of the most recent pivot high(high, lookback, lookback) confirmed before the current bar
+Calculation: Prior pivot low(lookback) = value of the most recent pivot low(low, lookback, lookback) confirmed before the current bar
+Calculation: Structure bias(timeframe) = bullish on a bar where pivot high(high, longer pivot lookback, longer pivot lookback) > Prior pivot high(longer pivot lookback); bearish on a bar where pivot low(low, longer pivot lookback, longer pivot lookback) <= Prior pivot low(longer pivot lookback); otherwise unchanged; initially bullish; computed on bars of timeframe
+Long: pivot high(high, longer pivot lookback, longer pivot lookback) > Prior pivot high(longer pivot lookback) AND Structure bias(T1, last completed bar) = bullish
+Long: pivot low(low, longer pivot lookback, longer pivot lookback) > Prior pivot low(longer pivot lookback) AND Structure bias(chart) = bullish AND Structure bias(T1, last completed bar) = bullish
+Long: RSI(close, RSI lookback) crosses above RSI level AND MACD histogram(close, shorter MACD lookback, longer MACD lookback, MACD signal lookback) > 0 AND Structure bias(chart) = bullish AND Structure bias(T1, last completed bar) = bullish
+Long: pivot high(high, shorter pivot lookback, shorter pivot lookback) > Prior pivot high(shorter pivot lookback) AND Structure bias(chart) = bullish AND Structure bias(T1, last completed bar) = bullish
+Short: pivot low(low, longer pivot lookback, longer pivot lookback) <= Prior pivot low(longer pivot lookback) AND Structure bias(T1, last completed bar) = bearish
+Short: pivot high(high, longer pivot lookback, longer pivot lookback) <= Prior pivot high(longer pivot lookback) AND Structure bias(chart) = bearish AND Structure bias(T1, last completed bar) = bearish
+Short: RSI(close, RSI lookback) crosses below RSI level AND MACD histogram(close, shorter MACD lookback, longer MACD lookback, MACD signal lookback) < 0 AND Structure bias(chart) = bearish AND Structure bias(T1, last completed bar) = bearish
+Short: pivot low(low, shorter pivot lookback, shorter pivot lookback) < Prior pivot low(shorter pivot lookback) AND Structure bias(chart) = bearish AND Structure bias(T1, last completed bar) = bearish

@@ -1,0 +1,4 @@
+Calculation: RangeHigh = per range mode, the highest high over lookback bars including the current bar, or the latest PivotHigh(high, swing strength, swing strength) value within lookback bars, or the highest PivotHigh(high, swing strength, swing strength) value within lookback bars
+Calculation: RangeLow = per range mode, the lowest low over lookback bars including the current bar, or the latest PivotLow(low, swing strength, swing strength) value within lookback bars, or the lowest PivotLow(low, swing strength, swing strength) value within lookback bars
+Long: bar is closed AND close[1] <= RangeHigh AND close > RangeHigh
+Short: bar is closed AND close[1] >= RangeLow AND close < RangeLow

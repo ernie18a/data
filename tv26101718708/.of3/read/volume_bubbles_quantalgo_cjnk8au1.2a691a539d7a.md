@@ -1,0 +1,6 @@
+Calculation: NetVolumeDelta = net volume delta of the T1 bars within the chart bar
+Calculation: Agreement(a, b, c, consensus count) = at least consensus count of a, b, c are true
+Calculation: Combine(x, y, mode) = x when mode uses x only; y when mode uses y only; x AND y when mode requires x and y; x OR y when mode accepts x or y
+Calculation: Cluster = Combine(Agreement(volume >= PercentileLinear(volume, shorter lookback, small percentile), volume >= PercentileLinear(volume, middle lookback, small percentile), volume >= PercentileLinear(volume, longer lookback, small percentile), consensus count), Agreement(|NetVolumeDelta| >= PercentileLinear(|NetVolumeDelta|, shorter lookback, small percentile), |NetVolumeDelta| >= PercentileLinear(|NetVolumeDelta|, middle lookback, small percentile), |NetVolumeDelta| >= PercentileLinear(|NetVolumeDelta|, longer lookback, small percentile), consensus count), detection method)
+Long: Cluster AND Combine(close >= open, NetVolumeDelta > 0, classification method)
+Short: Cluster AND Combine(close < open, NetVolumeDelta < 0, classification method)

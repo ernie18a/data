@@ -1,0 +1,16 @@
+Calculation: DayOpen = open of T1 bar still forming, taken on chart bars
+Calculation: NewT1Bar = datetime of T1 bar still forming differs from its value on previous chart bar
+Calculation: ResistanceInner(center) = DayOpen * (1 + (center - zone half width) / 100)
+Calculation: SupportInner(center) = DayOpen * (1 - (center - zone half width) / 100)
+Calculation: ResistanceTouch(center) = high >= ResistanceInner(center) AND low <= DayOpen * (1 + (center + zone half width) / 100)
+Calculation: SupportTouch(center) = high >= DayOpen * (1 - (center + zone half width) / 100) AND low <= SupportInner(center)
+Calculation: ResistanceEntered(center) = (ResistanceTouch(center) AND NOT ResistanceTouch(center)[1]) OR (ResistanceEntered(center)[1] AND NOT NewT1Bar AND close[1] >= ResistanceInner(center)[1])
+Calculation: SupportEntered(center) = (SupportTouch(center) AND NOT SupportTouch(center)[1]) OR (SupportEntered(center)[1] AND NOT NewT1Bar AND close[1] <= SupportInner(center)[1])
+Short: close < ResistanceInner(R1 center) AND ResistanceEntered(R1 center)
+Short: close < ResistanceInner(R2 center) AND ResistanceEntered(R2 center)
+Short: close < ResistanceInner(R3 center) AND ResistanceEntered(R3 center)
+Short: close < ResistanceInner(R4 center) AND ResistanceEntered(R4 center)
+Long: close > SupportInner(S1 center) AND SupportEntered(S1 center)
+Long: close > SupportInner(S2 center) AND SupportEntered(S2 center)
+Long: close > SupportInner(S3 center) AND SupportEntered(S3 center)
+Long: close > SupportInner(S4 center) AND SupportEntered(S4 center)

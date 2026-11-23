@@ -1,0 +1,13 @@
+Calculation: SAR = Parabolic SAR(SAR step as start and increment, SAR maximum)
+Calculation: Dir = sign(price source - SAR)
+Calculation: AvgTR = ATR(ATR period, ATR smoothing)
+Calculation: Trend = Dir if AvgTR is defined and nonzero, else 0
+Calculation: Mag = 0 if Trend = 0, else min(max(0, Ext / AvgTR), clamp magnitude), where Ext = high source - SAR when Trend = 1, and Ext = SAR - low source when Trend = -1
+Calculation: Osc = Trend * S, where S = Mag in raw mode; S = (Mag - SMA(Mag, stat window)) / StdDev(Mag, stat window) in z-score mode; S = 0.6745 * (Mag - Median(Mag, stat window)) / Median(abs(Mag - Median(Mag, stat window)), stat window) in robust mode; S = 0 when its divisor is 0
+Calculation: HTFDir = Dir on T1 bars, read on chart bars as the value of the T1 bar before the last completed T1 bar
+Long: Osc crosses above (raw mode ? raw signal level : z-score signal level) AND (regime filter off OR ADX(DI length, ADX smoothing) >= ADX threshold) AND (HTF filter off OR HTFDir >= 0) AND bar index >= (raw mode ? ATR period : stat window)
+Short: Osc crosses below -(raw mode ? raw signal level : z-score signal level) AND (regime filter off OR ADX(DI length, ADX smoothing) >= ADX threshold) AND (HTF filter off OR HTFDir <= 0) AND bar index >= (raw mode ? ATR period : stat window)
+Long: divergence detection ON AND regular detection ON AND Pivot low(Osc, pivot left, pivot right) defined at current bar AND previous pivot low exists AND bars between the two pivot bars <= max bars between pivots AND Osc[pivot right] > Osc at previous pivot low AND low source[pivot right] < low source at previous pivot low
+Long: divergence detection ON AND hidden detection ON AND Pivot low(Osc, pivot left, pivot right) defined at current bar AND previous pivot low exists AND bars between the two pivot bars <= max bars between pivots AND Osc[pivot right] < Osc at previous pivot low AND low source[pivot right] > low source at previous pivot low
+Short: divergence detection ON AND regular detection ON AND Pivot high(Osc, pivot left, pivot right) defined at current bar AND previous pivot high exists AND bars between the two pivot bars <= max bars between pivots AND Osc[pivot right] < Osc at previous pivot high AND high source[pivot right] > high source at previous pivot high
+Short: divergence detection ON AND hidden detection ON AND Pivot high(Osc, pivot left, pivot right) defined at current bar AND previous pivot high exists AND bars between the two pivot bars <= max bars between pivots AND Osc[pivot right] > Osc at previous pivot high AND high source[pivot right] < high source at previous pivot high

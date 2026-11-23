@@ -1,0 +1,9 @@
+Calculation: previous pivot low bar = bar index of the last confirmed pivot low before the pivot low confirmed on this bar
+Calculation: previous pivot high bar = bar index of the last confirmed pivot high before the pivot high confirmed on this bar
+Calculation: risk distance = stop multiple * ATR(high, low, close, ATR length) at entry bar
+Calculation: long setup = (Pivot low(low, pivot length, pivot length) < low at previous pivot low bar) AND ((reference 1 enabled AND reference 1 low[pivot length] > reference 1 low at previous pivot low bar AND Correlation(close, reference 1 close, correlation length) >= min correlation) OR (reference 2 enabled AND reference 2 low[pivot length] > reference 2 low at previous pivot low bar AND Correlation(close, reference 2 close, correlation length) >= min correlation)) AND (RSI(close, RSI length) > RSI(close, RSI length)[1] OR RSI confirmation disabled) AND (close > open OR candle confirmation disabled) AND (bars since last long signal >= cooldown bars)
+Calculation: short setup = (Pivot high(high, pivot length, pivot length) > high at previous pivot high bar) AND ((reference 1 enabled AND reference 1 high[pivot length] < reference 1 high at previous pivot high bar AND Correlation(close, reference 1 close, correlation length) >= min correlation) OR (reference 2 enabled AND reference 2 high[pivot length] < reference 2 high at previous pivot high bar AND Correlation(close, reference 2 close, correlation length) >= min correlation)) AND (RSI(close, RSI length) < RSI(close, RSI length)[1] OR RSI confirmation disabled) AND (close < open OR candle confirmation disabled) AND (bars since last short signal >= cooldown bars)
+Long: long setup AND NOT short setup
+Short: short setup AND NOT long setup
+Exit: long, low <= entry price - risk distance OR high >= entry price + risk distance * risk/reward ratio
+Exit: short, high >= entry price + risk distance OR low <= entry price - risk distance * risk/reward ratio

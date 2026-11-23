@@ -1,0 +1,29 @@
+Calculation: Upper band = Bollinger Bands upper(close, BB lookback, BB deviation) if band indicator = Bollinger Bands, else Keltner Channel upper(close, KC lookback, KC multiplier, true range)
+Calculation: Lower band = Bollinger Bands lower(close, BB lookback, BB deviation) if band indicator = Bollinger Bands, else Keltner Channel lower(close, KC lookback, KC multiplier, true range)
+Calculation: Middle band = Bollinger Bands middle(close, BB lookback) if band indicator = Bollinger Bands, else Keltner Channel middle(close, KC lookback)
+Calculation: Extended upper band = Bollinger Bands upper(close, BB lookback, extended BB deviation) if band indicator = Bollinger Bands, else Keltner Channel upper(close, KC lookback, extended KC multiplier, true range)
+Calculation: Extended lower band = Bollinger Bands lower(close, BB lookback, extended BB deviation) if band indicator = Bollinger Bands, else Keltner Channel lower(close, KC lookback, extended KC multiplier, true range)
+Calculation: TR average(lookback) = moving average(true range, lookback, smoothing type)
+Calculation: RSI T1 = RSI(close, RSI T1 lookback, T1, last completed bar)
+Calculation: RSI T2 = RSI(close, RSI T2 lookback, T2, last completed bar)
+Calculation: MFI T3 = MFI(hlc3, MFI T3 lookback, T3, last completed bar)
+Calculation: MFI T4 = MFI(hlc3, MFI T4 lookback, T4, last completed bar)
+Calculation: CCI T5 = CCI(close, CCI T5 lookback, T5, last completed bar)
+Long: ((entry condition = wick AND low < Lower band) OR (entry condition = wick then close in AND low[1] < Lower band AND close > Lower band) OR (entry condition = close out AND close < Lower band) OR (entry condition = close out then close in AND close[1] < Lower band AND close > Lower band)) AND (ATR filter disabled OR (ATR filter direction = below AND TR average(shorter lookback) < TR average(longer lookback)) OR (ATR filter direction = above AND TR average(shorter lookback) > TR average(longer lookback))) AND (RSI T1 filters disabled OR (RSI T1 long filter enabled AND RSI T1 >= RSI T1 long minimum AND RSI T1 <= RSI T1 long maximum)) AND (RSI T2 filters disabled OR (RSI T2 long filter enabled AND RSI T2 >= RSI T2 long minimum AND RSI T2 <= RSI T2 long maximum)) AND (MFI T3 filters disabled OR (MFI T3 long filter enabled AND MFI T3 > MFI T3 long minimum AND MFI T3 < MFI T3 long maximum)) AND (MFI T4 filters disabled OR (MFI T4 long filter enabled AND MFI T4 >= MFI T4 long minimum AND MFI T4 <= MFI T4 long maximum)) AND (CCI T5 filters disabled OR (CCI T5 long filter enabled AND CCI T5 >= CCI T5 long minimum AND CCI T5 <= CCI T5 long maximum)) AND ATR(ATR lookback) > 0 AND datetime >= test start AND datetime < test stop AND (datetime < excluded start OR datetime > excluded end)
+Short: ((entry condition = wick AND high > Upper band) OR (entry condition = wick then close in AND high[1] > Upper band AND close < Upper band) OR (entry condition = close out AND close > Upper band) OR (entry condition = close out then close in AND close[1] > Upper band AND close < Upper band)) AND (ATR filter disabled OR (ATR filter direction = below AND TR average(shorter lookback) < TR average(longer lookback)) OR (ATR filter direction = above AND TR average(shorter lookback) > TR average(longer lookback))) AND (RSI T1 filters disabled OR (RSI T1 short filter enabled AND RSI T1 <= RSI T1 short maximum AND RSI T1 >= RSI T1 short minimum)) AND (RSI T2 filters disabled OR (RSI T2 short filter enabled AND RSI T2 <= RSI T2 short maximum AND RSI T2 >= RSI T2 short minimum)) AND (MFI T3 filters disabled OR (MFI T3 short filter enabled AND MFI T3 < MFI T3 short maximum AND MFI T3 > MFI T3 short minimum)) AND (MFI T4 filters disabled OR (MFI T4 short filter enabled AND MFI T4 <= MFI T4 short maximum AND MFI T4 >= MFI T4 short minimum)) AND (CCI T5 filters disabled OR (CCI T5 short filter enabled AND CCI T5 <= CCI T5 short maximum AND CCI T5 >= CCI T5 short minimum)) AND ATR(ATR lookback) > 0 AND datetime >= test start AND datetime < test stop AND (datetime < excluded start OR datetime > excluded end)
+Exit: long, stop-loss type = static AND low <= entry price * (1 - static stop %)
+Exit: long, stop-loss type = previous wick AND (((entry condition in {wick, close out}) AND low <= low[2]) OR ((entry condition in {wick then close in, close out then close in}) AND low <= low[1]))
+Exit: long, stop-loss type = extended band AND low <= Extended lower band[1]
+Exit: long, stop-loss type = ATR AND low <= close[1] - ATR(ATR lookback)[1] * ATR stop multiplier
+Exit: long, take-profit type = static AND high >= entry price * (1 + static target %)
+Exit: long, take-profit type = opposite band AND high >= Upper band[1]
+Exit: long, take-profit type = moving average AND high >= Middle band[1]
+Exit: long, take-profit type = ATR AND high >= close[1] + ATR(ATR lookback)[1] * ATR target multiplier
+Exit: short, stop-loss type = static AND high >= entry price * (1 + static stop %)
+Exit: short, stop-loss type = previous wick AND (((entry condition in {wick, close out}) AND high >= high[2]) OR ((entry condition in {wick then close in, close out then close in}) AND high >= high[1]))
+Exit: short, stop-loss type = extended band AND high >= Extended upper band[1]
+Exit: short, stop-loss type = ATR AND high >= close[1] + ATR(ATR lookback)[1] * ATR stop multiplier
+Exit: short, take-profit type = static AND low <= entry price * (1 - static target %)
+Exit: short, take-profit type = opposite band AND low <= Lower band[1]
+Exit: short, take-profit type = moving average AND low <= Middle band[1]
+Exit: short, take-profit type = ATR AND low <= close[1] - ATR(ATR lookback)[1] * ATR target multiplier

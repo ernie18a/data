@@ -1,0 +1,7 @@
+Calculation: buy volume = sum of volume of T1 bars within the current bar with close >= open, if delta method is T1 and such bars exist; otherwise volume * (close - low) / (high - low), or volume * 0.5 if high = low
+Calculation: sell volume = sum of volume of T1 bars within the current bar with close < open, if delta method is T1 and such bars exist; otherwise volume - buy volume
+Calculation: buy share = 100 * buy volume / (buy volume + sell volume), or 50 if buy volume + sell volume = 0
+Calculation: buy-side zones = list to which each PivotHigh(high, swing length, swing length) value is added on its confirmation bar; an entry is removed when high exceeds its level; the oldest entry is removed when the list holds more than max zones per side
+Calculation: sell-side zones = list to which each PivotLow(low, swing length, swing length) value is added on its confirmation bar; an entry is removed when low falls below its level; the oldest entry is removed when the list holds more than max zones per side
+Short: (bar closed OR confirm-on-close disabled) AND (high > level AND close <= level for some level in buy-side zones[1]) AND (100 - buy share >= delta threshold OR delta confirmation disabled)
+Long: (bar closed OR confirm-on-close disabled) AND (low < level AND close >= level for some level in sell-side zones[1]) AND (buy share >= delta threshold OR delta confirmation disabled)
