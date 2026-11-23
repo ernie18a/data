@@ -1,0 +1,9 @@
+Calculation: LevelHigh = most recent confirmed PivotHigh(high, level pivot length, level pivot length)
+Calculation: LevelLow = most recent confirmed PivotLow(low, level pivot length, level pivot length)
+Calculation: AliveBlocks = blocks alive at the current bar after this bar's updates, where a bullish block forms on each bar at which PivotLow(low, block pivot length, block pivot length) is confirmed and at least bullish count threshold of the bullish window length bars starting at the pivot bar close above open, a bearish block forms on each bar at which PivotHigh(high, block pivot length, block pivot length) is confirmed and at least bearish count threshold of the bearish window length bars starting at the pivot bar close below open, each block's zone is the high and low of its pivot bar, a newly formed block removes every older block whose zone overlaps the new zone if overlap-delete flag is on, and a block is removed on the bar break delete delay bars after any close beyond its zone (below its bottom if bullish, above its top if bearish) unless a bar overlapping its zone falls between those bars, where a bar overlaps a zone if its low is at or below the zone top and its high is at or above the zone bottom
+Calculation: BullBlockAvailable = an alive bullish block exists, and if first-break-only flag is on, some alive bullish block has had no earlier bullish break marking since it formed
+Calculation: BearBlockAvailable = an alive bearish block exists, and if first-break-only flag is on, some alive bearish block has had no earlier bearish break marking since it formed
+Long: up break price crosses above LevelHigh
+Long: up break price crosses above LevelHigh AND BullBlockAvailable
+Short: down break price crosses below LevelLow
+Short: down break price crosses below LevelLow AND BearBlockAvailable

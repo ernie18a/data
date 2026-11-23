@@ -1,0 +1,53 @@
+Calculation: TrendDir = Supertrend direction(trend Supertrend multiplier, trend Supertrend length)
+Calculation: MoveExceeds(m) = abs(close[1] - close) > ATR(ATR length) * m OR (high - low > bar-range multiple * ATR(ATR length) * m AND bar-range breakout enabled)
+Calculation: VolumeExceeds(length, markup) = volume > MA(volume, volume MA type, length) * (1 + markup / 100) OR volume unavailable
+Calculation: VolumeSpike = volume > MA(volume, volume MA type, trend volume length) * high-volume multiplier AND volume available
+Calculation: BreakBar = 1 if close > close[1] AND ((TrendDir = -1 AND MoveExceeds(trend breakout multiplier) AND VolumeExceeds(trend volume length, trend volume markup)) OR (TrendDir = 1 AND MoveExceeds(reverse breakout multiplier) AND VolumeExceeds(reverse volume length, reverse volume markup)) OR VolumeSpike OR MoveExceeds(high breakout multiplier)); -1 if close < close[1] AND ((TrendDir = 1 AND MoveExceeds(trend breakout multiplier) AND VolumeExceeds(trend volume length, trend volume markup)) OR (TrendDir = -1 AND MoveExceeds(reverse breakout multiplier) AND VolumeExceeds(reverse volume length, reverse volume markup)) OR VolumeSpike OR MoveExceeds(high breakout multiplier)); otherwise 0
+Calculation: UpCandidate = high + (TrendDir = -1 ? trend value markup : reverse value markup) / 100 * True range, if BreakBar = 1, else NA
+Calculation: DownCandidate = low - (TrendDir = 1 ? trend value markup : reverse value markup) / 100 * True range, if BreakBar = -1, else NA
+Calculation: UpStopCandidate = low - ATR(ATR length) * target-stop multiplier, if BreakBar = 1, else NA
+Calculation: DownStopCandidate = high + ATR(ATR length) * target-stop multiplier, if BreakBar = -1, else NA
+Calculation: HeldUp = most recent available UpCandidate, including the current bar
+Calculation: HeldDown = most recent available DownCandidate, including the current bar
+Calculation: HeldUpStop = most recent available UpStopCandidate, including the current bar
+Calculation: HeldDownStop = most recent available DownStopCandidate, including the current bar
+Calculation: LastNonzeroBreakBar = most recent nonzero BreakBar, including the current bar
+Calculation: LowerProbe = close if TrendDir = -1, else low
+Calculation: UpperProbe = close if TrendDir = 1, else high
+Calculation: LongCrossSignal = TrendDir != -1 AND ((low crosses above HeldUp[1] AND (LastNonzeroBreakBar > 0 OR ignore breakout direction enabled) AND close > HeldDown[1]) OR (low crosses above HeldDownStop[1] AND (LastNonzeroBreakBar < 0 OR ignore breakout direction enabled)))
+Calculation: ShortCrossSignal = TrendDir != 1 AND ((high crosses below HeldDown[1] AND (LastNonzeroBreakBar < 0 OR ignore breakout direction enabled) AND close < HeldUp[1]) OR (high crosses below HeldUpStop[1] AND (LastNonzeroBreakBar > 0 OR ignore breakout direction enabled)))
+Calculation: InWindow = datetime >= January 1 of (current year - backtest years)
+Calculation: T3PriorHigh = high[1] computed on T3 bars and read on chart bars, using the last completed T3 bar
+Calculation: T3PriorLow = low[1] computed on T3 bars and read on chart bars, using the last completed T3 bar
+Calculation: YearHighOK = yearly filter disabled OR T3PriorHigh unavailable OR ((T3PriorHigh[year lag] unavailable OR T3PriorHigh > T3PriorHigh[year lag]) AND (T3PriorHigh[twice year lag] unavailable OR T3PriorHigh > T3PriorHigh[twice year lag])) OR close > L, where L = T3PriorHigh if T3PriorHigh[year lag] unavailable; max(T3PriorHigh, T3PriorHigh[year lag]) if T3PriorHigh[twice year lag] unavailable; otherwise max(T3PriorHigh, min(T3PriorHigh[year lag], T3PriorHigh[twice year lag]))
+Calculation: YearLowOK = yearly filter disabled OR T3PriorLow unavailable OR ((T3PriorLow[year lag] unavailable OR T3PriorLow < T3PriorLow[year lag]) AND (T3PriorLow[twice year lag] unavailable OR T3PriorLow < T3PriorLow[twice year lag])) OR close < L, where L = T3PriorLow if T3PriorLow[year lag] unavailable; min(T3PriorLow, T3PriorLow[year lag]) if T3PriorLow[twice year lag] unavailable; otherwise min(T3PriorLow, max(T3PriorLow[year lag], T3PriorLow[twice year lag]))
+Calculation: AlignScore = 1 if close > M1 AND M1 > M2 AND M2 > M3 AND M3 > M4 AND M4 > M5 AND M5 > M6 AND M6 > M7; -1 if close < M1 AND M1 < M2 AND M2 < M3 AND M3 < M4 AND M4 < M5 AND M5 < M6 AND M6 < M7; otherwise, if partial alignment enabled: 0.5 if Count > 5, -0.5 if Count < 2, 0.25 if Count > 3, else -0.25; otherwise 0; where Mi = MA(close, alignment MA type, lookback i) with lookback i increasing in i for i = 1 to 7, and Count = number of true terms among (close > M1, M1 > M2, M2 > M3, M3 > M4, M4 > M5, M5 > M6, M6 > M7)
+Calculation: AlignIndex = Sum(AlignScore, alignment lookback)
+Calculation: MaTrend = trend state of a supertrend on M, where M = MA(OHLC4, MA-trend MA type, MA-trend MA length), D = MA-trend multiplier * ATR(MA-trend ATR length), LowBand = (M > LowBand[1]) ? max(M - D, LowBand[1]) : M - D, HighBand = (M < HighBand[1]) ? min(M + D, HighBand[1]) : M + D; MaTrend = 1 if MaTrend[1] = -1 AND M > HighBand[1]; MaTrend = -1 if MaTrend[1] = 1 AND M < LowBand[1]; otherwise MaTrend = MaTrend[1]; initial MaTrend = 1
+Calculation: T1Trend = Supertrend direction(T1 Supertrend multiplier, T1 Supertrend length) computed on T1 bars and read on chart bars using the still-forming T1 bar
+Calculation: T2Trend = Supertrend direction(T2 Supertrend multiplier, T2 Supertrend length) computed on T2 bars and read on chart bars using the still-forming T2 bar
+Calculation: LongGate = InWindow AND YearHighOK AND (Highest(high, shorter lookback) = Highest(high, longer lookback) OR long-term high/low filter disabled) AND (AlignIndex > alignment threshold OR MA alignment filter disabled)
+Calculation: ShortGate = InWindow AND YearLowOK AND (Lowest(low, shorter lookback) = Lowest(low, longer lookback) OR long-term high/low filter disabled) AND (AlignIndex < -alignment threshold OR MA alignment filter disabled)
+Calculation: BreakoutSetup = ((LongGate AND TrendDir = -1 AND BreakBar = 1) OR (ShortGate AND TrendDir = 1 AND BreakBar = -1)) AND breakout trades enabled
+Calculation: PullbackSetup = ((LongGate AND TrendDir = -1 AND BreakBar = -1) OR (ShortGate AND TrendDir = 1 AND BreakBar = 1)) AND pullback trades enabled
+Calculation: ReverseSetup = (LongCrossSignal OR (ShortCrossSignal AND (LongGate OR ShortGate))) AND reverse trades enabled
+Calculation: LongTrigger = LongGate AND ((TrendDir = -1 AND BreakBar != 0) OR LongCrossSignal) AND (MaTrend = 1 OR MA-trend filter disabled) AND PercentRank(OHLC4, percent-rank lookback) > percent-rank midpoint AND (T1Trend = -1 OR T1 filter disabled) AND (T2Trend = -1 OR T2 filter disabled)
+Calculation: ShortTrigger = ShortGate AND ((TrendDir = 1 AND BreakBar != 0) OR ShortCrossSignal) AND (MaTrend = -1 OR MA-trend filter disabled) AND PercentRank(OHLC4, percent-rank lookback) < percent-rank midpoint AND (T1Trend = 1 OR T1 filter disabled) AND (T2Trend = 1 OR T2 filter disabled)
+Calculation: EntryLevel = close if ReverseSetup; HeldUp if BreakoutSetup AND LongTrigger; HeldDown if BreakoutSetup AND ShortTrigger; HeldDownStop if LongTrigger AND PullbackSetup; HeldUpStop if ShortTrigger AND PullbackSetup; low if position is long; high if position is short; otherwise close
+Calculation: RangeState = (RangeState[1] AND range BB exit enabled) ? (close > LongExitStop[1] AND close < ShortExitStop[1]) : (position is open AND LongExitStop[1] = LongExitStop[range bars + 1] AND ShortExitStop[1] = ShortExitStop[range bars + 1])
+Calculation: LongStopLevel(m) = EntryLevel - m * ATR(ATR length)
+Calculation: ShortStopLevel(m) = EntryLevel + m * ATR(ATR length)
+Calculation: LongExitStop = LongExitStop[1] if RangeState AND range BB exit enabled; otherwise, if BreakBar > 0 OR position is long: ((RangeState AND range trailing exit enabled) ? max(LongStopLevel(stop multiplier), LongExitStop[1]) : ((LongStopLevel(stop multiplier) < LongExitStop[1]) OR close < ShortExitStop[1]) ? LongExitStop[1] : LongStopLevel(stop multiplier)); otherwise, if BreakBar < 0 OR position is short: ((RangeState AND range trailing exit enabled) ? max(LongStopLevel(compound multiplier), LongExitStop[1]) : ((LongStopLevel(compound multiplier) > LongExitStop[1]) OR close > LongExitStop[1]) ? LongExitStop[1] : LongStopLevel(compound multiplier)); otherwise LongStopLevel(stop multiplier)
+Calculation: ShortExitStop = ShortExitStop[1] if RangeState AND range BB exit enabled; otherwise, if BreakBar > 0 OR position is long: ((RangeState AND range trailing exit enabled) ? min(ShortStopLevel(compound multiplier), ShortExitStop[1]) : ((ShortStopLevel(compound multiplier) < ShortExitStop[1]) OR close < ShortExitStop[1]) ? ShortExitStop[1] : ShortStopLevel(compound multiplier)); otherwise, if BreakBar < 0 OR position is short: ((RangeState AND range trailing exit enabled) ? min(ShortStopLevel(stop multiplier), ShortExitStop[1]) : ((ShortStopLevel(stop multiplier) > ShortExitStop[1]) OR close > LongExitStop[1]) ? ShortExitStop[1] : ShortStopLevel(stop multiplier)); otherwise ShortStopLevel(stop multiplier)
+Calculation: CompoundOK = (position is long: close > ShortExitStop; position is short: close < LongExitStop; otherwise true) OR immediate compound enabled
+Long: BreakBar = 1
+Long: LongTrigger AND (BreakoutSetup OR PullbackSetup OR ReverseSetup)
+Long: LongTrigger AND ReverseSetup AND CompoundOK AND (NOT RangeState OR range BB exit disabled) AND long entries permitted
+Long: LongTrigger AND (BreakoutSetup OR PullbackSetup) AND CompoundOK AND (NOT RangeState OR range BB exit disabled) AND long entries permitted
+Long: RangeState AND close crosses above lower Bollinger band(close, BB length, BB multiplier) AND range BB exit enabled AND long entries permitted
+Short: BreakBar = -1
+Short: ShortTrigger AND NOT LongTrigger AND (BreakoutSetup OR PullbackSetup OR ReverseSetup)
+Short: ShortTrigger AND ReverseSetup AND CompoundOK AND (NOT RangeState OR range BB exit disabled) AND short entries permitted
+Short: ShortTrigger AND (BreakoutSetup OR PullbackSetup) AND CompoundOK AND (NOT RangeState OR range BB exit disabled) AND short entries permitted
+Exit: Long, ((LowerProbe crosses below HeldDown[1] OR LowerProbe crosses below HeldUpStop[1]) AND BreakBar != 1 AND InWindow AND (signal exit enabled OR (range signal exit enabled AND RangeState))) OR (RangeState AND close crosses below upper Bollinger band(close, BB length, BB multiplier) AND range BB exit enabled)
+Exit: Short, (UpperProbe crosses above HeldUp[1] OR UpperProbe crosses above HeldDownStop[1]) AND BreakBar != -1 AND InWindow AND (signal exit enabled OR (range signal exit enabled AND RangeState))

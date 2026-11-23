@@ -1,0 +1,21 @@
+Calculation: RegDev(source, lookback) = sqrt((sum over x = 0 to lookback-1 of (source[x] - LinReg(source, lookback) - LinRegSlope(source, lookback) * (1 - x))^2) / lookback)
+Calculation: UpperChannel(source, lookback, deviation) = LinReg(source, lookback) + deviation * RegDev(source, lookback)
+Calculation: LowerChannel(source, lookback, deviation) = LinReg(source, lookback) - deviation * RegDev(source, lookback)
+Calculation: SampleSD(source, lookback) = sqrt((sum over i = 0 to lookback-1 of (source[i] - VWMA(source, lookback))^2) / (lookback-1))
+Calculation: Skewness(source, lookback) = lookback * (sum over i = 0 to lookback-1 of (source[i] - VWMA(source, lookback))^3) / ((lookback-1) * (lookback-2) * SampleSD(source, lookback)^3)
+Calculation: ExcessKurtosis(source, lookback) = lookback * (lookback+1) * (sum over i = 0 to lookback-1 of (source[i] - VWMA(source, lookback))^4) / ((lookback-1) * (lookback-2) * (lookback-3) * SampleSD(source, lookback)^4) - 3 * (lookback-1)^2 / ((lookback-2) * (lookback-3))
+Calculation: SkewSE(lookback) = sqrt(6 * lookback * (lookback-1) / ((lookback-2) * (lookback+1) * (lookback+3)))
+Calculation: KurtSE(lookback) = 2 * SkewSE(lookback) * sqrt((lookback^2 - 1) / ((lookback-3) * (lookback+5)))
+Calculation: SkewCrit(lookback) = if lookback > oversized lookback threshold then oversized skew reference else if lookback > large lookback threshold then large-lookback z-score * SkewSE(lookback) else small-lookback z-score * SkewSE(lookback)
+Calculation: KurtCrit(lookback) = if lookback > oversized lookback threshold then oversized kurtosis reference else if lookback > large lookback threshold then large-lookback z-score * KurtSE(lookback) else small-lookback z-score * KurtSE(lookback)
+Calculation: InsideBar = high[1] >= high AND low[1] <= low
+Calculation: SwingPivotUp(source, lookback) = open > close[1] AND low > low[1] AND close[1] < close[2] AND InsideBar = false AND abs(Skewness(source, lookback)) < SkewCrit(lookback) AND ExcessKurtosis(source, lookback) > -KurtCrit(lookback)
+Calculation: ReentryFromBelow(source, lookback, deviation) = close > LowerChannel(source, lookback, deviation) AND HL2[1] < LowerChannel(source, lookback, deviation)
+Long: (ReentryFromBelow(source, lookback, deviation) AND InsideBar = false) OR SwingPivotUp(source, lookback)
+Short: (close < UpperChannel(source, lookback, deviation) AND HL2[1] > UpperChannel(source, lookback, deviation) AND InsideBar = false AND SwingPivotUp(source, lookback) = false) OR (open < close[1] AND high < high[1] AND close[1] > close[2] AND InsideBar = false AND abs(Skewness(source, lookback)) < SkewCrit(lookback) AND ExcessKurtosis(source, lookback) > -KurtCrit(lookback) AND ReentryFromBelow(source, lookback, deviation) = false)
+Long: InsideBar = false AND close > open AND ((Skewness(source, lookback) > skew multiple * SkewCrit(lookback) AND ExcessKurtosis(source, lookback) > KurtCrit(lookback)) OR Rising(source, shorter lookback) OR (close > close[1] AND OHLC4 > OHLC4[1] AND close > (close[1] + open[1]) / 2 AND HL2 > HL2[2]))
+Short: InsideBar = false AND close < open AND ((Skewness(source, lookback) < skew multiple * SkewCrit(lookback) AND ExcessKurtosis(source, lookback) > KurtCrit(lookback)) OR Falling(source, shorter lookback) OR (close < close[1] AND OHLC4 < OHLC4[1] AND close < (close[1] + open[1]) / 2 AND HL2 < HL2[2]))
+Long: LinRegSlope(source, lookback) > 0
+Short: LinRegSlope(source, lookback) < 0
+Short: LinRegSlope(source, lookback) > 0 AND close < LowerChannel(source, lookback, deviation)
+Long: LinRegSlope(source, lookback) < 0 AND close > UpperChannel(source, lookback, deviation)

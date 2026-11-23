@@ -1,0 +1,6 @@
+Long: EMA(close, lookback 1) >= EMA(close, lookback 2)
+Short: EMA(close, lookback 1) < EMA(close, lookback 2)
+Long: EMA(close, lookback 2) >= EMA(close, lookback 3)
+Short: EMA(close, lookback 2) < EMA(close, lookback 3)
+Long: EMA(close, lookback 3) >= EMA(close, lookback 4)
+Short: EMA(close, lookback 3) < EMA(close, lookback 4)

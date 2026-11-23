@@ -1,0 +1,23 @@
+Calculation: RSI = RSI(close, RSI length, T1, last completed bar)
+Calculation: EMA = EMA(close, EMA length, T1, last completed bar)
+Calculation: ATR = ATR(ATR length, T1, last completed bar)
+Calculation: MACD histogram = MACD histogram(close, MACD fast length, MACD slow length, MACD signal length, T1, last completed bar)
+Calculation: Body compression = SMA(abs(close - open), body average length, T1, last completed bar) < SMA(abs(close - open), body average length, T1, last completed bar)[pre-div lookback]
+Calculation: Relative volume = volume / SMA(volume, volume average length, T1, last completed bar)
+Calculation: Relative volume fade = highest(Relative volume, pre-div lookback) > volume spike level AND Relative volume < volume fade level
+Calculation: Bear peak = (high, RSI, bar number) if RSI > overbought level AND (Bear peak[1] is none OR RSI > Bear peak[1].RSI), otherwise Bear peak[1]; then none if bar number - Bear peak.bar number > divergence lookback
+Calculation: Bull trough = (low, RSI, bar number) if RSI < oversold level AND (Bull trough[1] is none OR RSI < Bull trough[1].RSI), otherwise Bull trough[1]; then none if bar number - Bull trough.bar number > divergence lookback
+Calculation: Raw bear divergence = RSI > overbought level AND Bear peak[1] is not none AND high > Bear peak[1].high AND RSI < Bear peak[1].RSI
+Calculation: Raw bull divergence = RSI < oversold level AND Bull trough[1] is not none AND low < Bull trough[1].low AND RSI > Bull trough[1].RSI
+Calculation: Bear divergence = Raw bear divergence AND number of bars among the last divergence lookback bars, including current, where Raw bear divergence is true >= divergence count threshold
+Calculation: Bull divergence = Raw bull divergence AND number of bars among the last divergence lookback bars, including current, where Raw bull divergence is true >= divergence count threshold
+Calculation: Bear pre-div score = body weight * (high > high[pre-div lookback] AND Body compression) + volume weight * (high > high[pre-div lookback] AND volume < volume[pre-div lookback]) + RSI weight * (RSI > RSI weak-high level AND RSI - RSI[1] < RSI[1] - RSI[2]) + MACD weight * (MACD histogram < MACD histogram[1]) + ATR weight * (high > high[pre-div lookback] AND ATR <= ATR[1]) + EMA weight * (close > EMA AND abs(close - EMA) / ATR > EMA distance multiple AND 0 < high - high[pre-div lookback] < ATR) + relative volume weight * Relative volume fade + failed impulse weight * (close[pre-div lookback] - close[2 * pre-div lookback] > impulse ATR multiple * ATR[pre-div lookback] AND high <= highest(high, pre-div lookback)[1])
+Calculation: Bull pre-div score = body weight * (low < low[pre-div lookback] AND Body compression) + volume weight * (low < low[pre-div lookback] AND volume < volume[pre-div lookback]) + RSI weight * (RSI < RSI weak-low level AND RSI - RSI[1] > RSI[1] - RSI[2]) + MACD weight * (MACD histogram > MACD histogram[1]) + ATR weight * (low < low[pre-div lookback] AND ATR <= ATR[1]) + EMA weight * (close < EMA AND abs(close - EMA) / ATR > EMA distance multiple AND 0 < low[pre-div lookback] - low < ATR) + relative volume weight * Relative volume fade + failed impulse weight * (close[2 * pre-div lookback] - close[pre-div lookback] > impulse ATR multiple * ATR[pre-div lookback] AND low >= lowest(low, pre-div lookback)[1])
+Long: Bull divergence
+Short: Bear divergence
+Long: Bull pre-div score >= strong score level AND Bull pre-div score > Bear pre-div score AND NOT Bull divergence AND NOT Bear divergence
+Short: Bear pre-div score >= strong score level AND Bear pre-div score > Bull pre-div score AND NOT Bull divergence AND NOT Bear divergence
+Long: Bull pre-div score >= watch score level AND Bull pre-div score > Bear pre-div score AND Bull pre-div score < strong score level AND NOT Bull divergence AND NOT Bear divergence
+Short: Bear pre-div score >= watch score level AND Bear pre-div score > Bull pre-div score AND Bear pre-div score < strong score level AND NOT Bull divergence AND NOT Bear divergence
+Long: RSI < oversold level AND NOT Bull divergence AND NOT (Bull pre-div score >= watch score level AND Bull pre-div score > Bear pre-div score) AND NOT (Bear pre-div score >= watch score level AND Bear pre-div score > Bull pre-div score)
+Short: RSI > overbought level AND NOT Bear divergence AND NOT (Bull pre-div score >= watch score level AND Bull pre-div score > Bear pre-div score) AND NOT (Bear pre-div score >= watch score level AND Bear pre-div score > Bull pre-div score)

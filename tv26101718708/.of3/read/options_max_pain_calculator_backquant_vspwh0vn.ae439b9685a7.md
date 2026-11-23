@@ -1,0 +1,3 @@
+Calculation: NetGamma(close, strike range percent, strike increment, strike count, expiry days, implied volatility) = sum of Black-Scholes gamma(close, K, expiry days / 365.25, implied volatility) over K from close * (1 - strike range percent / 100) to close * (1 + strike range percent / 100) in steps of MAX(strike increment, 2 * close * strike range percent / 100 / strike count)
+Long: NetGamma(close, strike range percent, strike increment, strike count, expiry days, implied volatility) > 0
+Short: NetGamma(close, strike range percent, strike increment, strike count, expiry days, implied volatility) <= 0
