@@ -1,0 +1,10 @@
+Calculation: SessionHigh(session window) = highest high of bars through the previous bar since the session window last opened, or na if none
+Calculation: SessionLow(session window) = lowest low of bars through the previous bar since the session window last opened, or na if none
+Calculation: UpBreakCount(session window) = number of bars since the session window last opened, through the current bar, where close > SessionHigh(session window) at that bar
+Calculation: DownBreakCount(session window) = number of bars since the session window last opened, through the current bar, where close < SessionLow(session window) at that bar
+Long: bar is within session 1 window AND close > SessionHigh(session 1 window) AND UpBreakCount(session 1 window) = 1
+Long: bar is within session 2 window AND close > SessionHigh(session 2 window) AND UpBreakCount(session 2 window) = 1
+Long: bar is within session 3 window AND close > SessionHigh(session 3 window) AND UpBreakCount(session 3 window) = 1
+Short: bar is within session 1 window AND close < SessionLow(session 1 window) AND DownBreakCount(session 1 window) = 1
+Short: bar is within session 2 window AND close < SessionLow(session 2 window) AND DownBreakCount(session 2 window) = 1
+Short: bar is within session 3 window AND close < SessionLow(session 3 window) AND DownBreakCount(session 3 window) = 1

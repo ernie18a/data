@@ -1,0 +1,3 @@
+Calculation: risk-adjusted momentum = (candidate close / candidate close[return lookback] - 1) / max(StDev(candidate close / candidate close[1] - 1, volatility lookback), volatility floor)
+Long: on the confirmed first chart bar of each T1 period, select each candidate with a valid score among the four highest valid scores, if at least four candidates have valid scores
+Exit: long, on the confirmed first chart bar of each T1 period, if the candidate is not among the four highest valid scores

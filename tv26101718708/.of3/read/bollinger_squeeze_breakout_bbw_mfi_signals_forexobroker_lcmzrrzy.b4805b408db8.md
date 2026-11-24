@@ -1,0 +1,10 @@
+Calculation: Squeeze candle = abs(SMA(close, Bollinger lookback) - SMA(close, Bollinger lookback)[flat lookback]) <= flat ATR multiple × ATR(ATR lookback) AND Bollinger BandWidth(close, Bollinger lookback, standard-deviation multiplier) <= lowest(Bollinger BandWidth(close, Bollinger lookback, standard-deviation multiplier), squeeze lookback) × (1 + squeeze percentage / 100)
+Calculation: Fixed-target risk = max(abs(entry price - SMA(close, Bollinger lookback) at entry), five minimum price increments)
+Long: close > upper Bollinger Band(close, Bollinger lookback, standard-deviation multiplier) AND Bollinger BandWidth(close, Bollinger lookback, standard-deviation multiplier) > its value one bar ago AND the most recent prior Squeeze candle occurred within breakout lookback bars and has not already generated an entry AND (MFI filter disabled OR MFI(hlc3, MFI lookback) > MFI threshold)
+Short: close < lower Bollinger Band(close, Bollinger lookback, standard-deviation multiplier) AND Bollinger BandWidth(close, Bollinger lookback, standard-deviation multiplier) > its value one bar ago AND the most recent prior Squeeze candle occurred within breakout lookback bars and has not already generated an entry AND (MFI filter disabled OR MFI(hlc3, MFI lookback) < MFI threshold)
+Exit: long, middle-line exit selected AND on a bar after entry AND close < SMA(close, Bollinger lookback)
+Exit: short, middle-line exit selected AND on a bar after entry AND close > SMA(close, Bollinger lookback)
+Exit: long, fixed-target exit selected AND on a bar after entry AND low <= entry price - Fixed-target risk
+Exit: long, fixed-target exit selected AND on a bar after entry AND high >= entry price + reward multiple × Fixed-target risk AND low > entry price - Fixed-target risk
+Exit: short, fixed-target exit selected AND on a bar after entry AND high >= entry price + Fixed-target risk
+Exit: short, fixed-target exit selected AND on a bar after entry AND low <= entry price - reward multiple × Fixed-target risk AND high < entry price + Fixed-target risk

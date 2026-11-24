@@ -1,0 +1,4 @@
+Calculation: Time-of-day gap z-score(x, datetime) = (x - mean of the up to N most recent positive three-bar gap heights recorded in that time-of-day slot) / their standard deviation, or 0 if the standard deviation is 0
+Calculation: Time-of-day volume z-score(x, datetime) = (x - mean of the up to N most recent volumes recorded in that time-of-day slot) / their standard deviation, or 0 if the standard deviation is 0
+Long: On confirmed bars, low > high[2] AND volume[1] > 0 AND Time-of-day gap z-score(low - high[2], datetime[1]) >= gap threshold AND Time-of-day volume z-score(volume[1], datetime[1]) >= volume threshold
+Short: On confirmed bars, high < low[2] AND volume[1] > 0 AND Time-of-day gap z-score(low[2] - high, datetime[1]) >= gap threshold AND Time-of-day volume z-score(volume[1], datetime[1]) >= volume threshold

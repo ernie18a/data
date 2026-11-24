@@ -1,0 +1,22 @@
+Calculation: ORB high = highest high during the opening-range session; reset at each date change.
+Calculation: ORB low = lowest low during the opening-range session; reset at each date change.
+Calculation: ORB midpoint = (ORB high + ORB low) / 2.
+Calculation: Active setup = latest ORB close-break direction or confirmed reclaim direction since date reset; a confirmed reclaim starts a new setup, an opposite close-break changes direction, and each new setup records its trigger bar and whether it is a breakout or reclaim.
+Calculation: Total retests = edge-retest count + midline-reaction count; each count increments when its qualifying condition changes from false to true, and only its first occurrence per setup counts when the first-retest-only parameter is enabled.
+Calculation: Valid reaction = edge-retest count ≥ 1 OR a confirmed reclaim setup is active OR (midline-as-retest is enabled AND midline-reaction count ≥ 1).
+Long: ORB is set AND the chart bar is outside the opening-range session AND close > ORB high on the first bar of a consecutive run satisfying these conditions.
+Short: ORB is set AND the chart bar is outside the opening-range session AND close < ORB low on the first bar of a consecutive run satisfying these conditions.
+Long: A fresh close-break below ORB low has armed a low reclaim, no low-reclaim warning is pending, and close[1] ≤ ORB low AND ORB low < close < ORB high.
+Short: A fresh close-break above ORB high has armed a high reclaim, no high-reclaim warning is pending, and close[1] ≥ ORB high AND ORB low < close < ORB high.
+Long: A low-reclaim warning remains pending from an earlier chart bar AND (close > ORB midpoint OR close > VWAP(hlc3) OR (close > ORB low AND close > high[1])).
+Short: A high-reclaim warning remains pending from an earlier chart bar AND (close < ORB midpoint OR close < VWAP(hlc3) OR (close < ORB high AND close < low[1])).
+Long: A confirmed low-reclaim setup is active, a later chart bar has arrived, and close[1] ≤ ORB low AND close > ORB low.
+Short: A confirmed high-reclaim setup is active, a later chart bar has arrived, and close[1] ≥ ORB high AND close < ORB high.
+Long: After the active setup's trigger bar and outside the opening-range session, the first edge retest occurs: low ≤ (ORB low for a confirmed low-reclaim setup, otherwise ORB high) + retest proximity AND close > that edge.
+Short: After the active setup's trigger bar and outside the opening-range session, the first edge retest occurs: high ≥ (ORB high for a confirmed high-reclaim setup, otherwise ORB low) - retest proximity AND close < that edge.
+Long: After the active setup's trigger bar and outside the opening-range session, the first midline reaction occurs: low ≤ ORB midpoint + retest proximity AND close > ORB midpoint.
+Short: After the active setup's trigger bar and outside the opening-range session, the first midline reaction occurs: high ≥ ORB midpoint - retest proximity AND close < ORB midpoint.
+Long: On chart bars, the T1 bar's close > EMA(close, lookback) computed on T1 bars, sampling the T1 bar still forming in real time and the completed T1 bar historically.
+Short: On chart bars, the T1 bar's close ≤ EMA(close, lookback) computed on T1 bars, sampling the T1 bar still forming in real time and the completed T1 bar historically.
+Long: On a confirmed chart bar, ORB is set AND an active long setup exists AND (the first edge retest occurs OR the first midline reaction occurs OR a low-reclaim confirmation occurs OR a later reclaim continuation occurs) AND Valid reaction AND total retests ≤ the retest limit AND the T1 close is above its EMA AND (no prior entry event since date reset OR chart bars since the prior entry event ≥ entry cooldown) AND entry events since date reset < the daily entry limit.
+Short: On a confirmed chart bar, ORB is set AND an active short setup exists AND (the first edge retest occurs OR the first midline reaction occurs OR a high-reclaim confirmation occurs OR a later reclaim continuation occurs) AND Valid reaction AND total retests ≤ the retest limit AND the T1 close is at or below its EMA AND (no prior entry event since date reset OR chart bars since the prior entry event ≥ entry cooldown) AND entry events since date reset < the daily entry limit.

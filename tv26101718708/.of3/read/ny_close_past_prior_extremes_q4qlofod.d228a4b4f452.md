@@ -1,0 +1,9 @@
+Calculation: NY session range = highest high and lowest low of T1 bars from a 17:00 bar up to, but not including, the next 17:00 bar; calculate on T1 bars, using the still-forming 16:59 bar in close-end mode and completed T1 bars in open-end mode.
+Calculation: NY session end print = the still-forming 16:59 T1 bar close or the still-forming next 17:00 T1 bar open, according to the selected endpoint; calculate on T1 bars and map results to chart bars with lookahead off.
+Calculation: NY session open = open of the session's 17:00 T1 bar, stored for use through that session.
+Calculation: Eligible NY finalization = the selected 16:59 or 17:00 T1 bar, and either weekday filtering is disabled or its New York date is Monday through Friday.
+Calculation: Prior NY outside direction = bullish if the immediately preceding eligible finalized session's end print exceeded its own prior stored session high, bearish if it fell below its own prior stored session low; when opposing-marker match-visible filtering is enabled, require the corresponding directional signal filter to permit it.
+Long: At an eligible NY finalization, the bullish signal filter permits the marker AND the NY session end print > prior stored session high.
+Long: At an eligible NY finalization in 16:59-close mode, prior NY outside direction is bearish AND the NY session end print > NY session open.
+Short: At an eligible NY finalization, the bearish signal filter permits the marker AND the NY session end print < prior stored session low.
+Short: At an eligible NY finalization in 16:59-close mode, prior NY outside direction is bullish AND the NY session end print < NY session open.

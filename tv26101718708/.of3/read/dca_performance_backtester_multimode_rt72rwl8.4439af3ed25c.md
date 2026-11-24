@@ -1,0 +1,5 @@
+Calculation: Dip drawdown = (highest(high, lookback) - close) / highest(high, lookback) * 100
+Long: Time-based DCA enabled AND within the configured date range AND on the first eligible chart bar at or after the selected calendar target AND this is every Nth target period
+Long: Buy-the-dip enabled AND within the configured date range AND Dip drawdown >= dip threshold AND at least the cooldown bars have passed since the prior normal dip buy AND (hybrid mode is enabled OR RSI filtering is disabled OR RSI(close, RSI lookback) <= RSI threshold)
+Long: Buy-the-dip hybrid mode enabled AND within the configured date range AND Dip drawdown >= dip threshold AND RSI(close, RSI lookback) <= RSI threshold AND at least the cooldown bars have passed since the prior special dip buy
+Long: Martingale enabled AND within the configured date range AND (no active Martingale cycle OR (Martingale reset is enabled AND close > average cost per unit of all accumulated purchases) OR (an active cycle has fewer than the maximum steps AND close <= last Martingale entry price * (1 - step threshold / 100)))

@@ -1,0 +1,8 @@
+Calculation: Bullish trigger = AlphaTrend(ATR/MFI lookback, ATR multiplier, money-flow threshold; inputs lagged one chart bar)[1] > AlphaTrend(...)[3] AND AlphaTrend(...)[2] <= AlphaTrend(...)[4] OR (breakout override enabled AND ABS(close[1] - close[2]) > SMA(True Range, ATR/MFI lookback)[2] * breakout sensitivity AND close[1] > AlphaTrend(...)[1] AND close[2] <= AlphaTrend(...)[2])
+Calculation: Bearish trigger = AlphaTrend(ATR/MFI lookback, ATR multiplier, money-flow threshold; inputs lagged one chart bar)[1] < AlphaTrend(...)[3] AND AlphaTrend(...)[2] >= AlphaTrend(...)[4] OR (breakout override enabled AND ABS(close[1] - close[2]) > SMA(True Range, ATR/MFI lookback)[2] * breakout sensitivity AND close[1] < AlphaTrend(...)[1] AND close[2] >= AlphaTrend(...)[2])
+Long: Bullish trigger AND barssince(Bullish trigger[1]) > barssince(Bearish trigger[1])
+Short: Bearish trigger AND barssince(Bearish trigger[1]) > barssince(Bullish trigger[1])
+Exit: long, barssince(Bullish trigger[1]) < barssince(Bearish trigger[1]) AND close[1] < AlphaTrend(ATR/MFI lookback, ATR multiplier, money-flow threshold; inputs lagged one chart bar)[1]
+Exit: short, barssince(Bearish trigger[1]) < barssince(Bullish trigger[1]) AND close[1] > AlphaTrend(ATR/MFI lookback, ATR multiplier, money-flow threshold; inputs lagged one chart bar)[1]
+Long: (Bullish trigger AND barssince(Bullish trigger[1]) > barssince(Bearish trigger[1])) on the last completed T1 bar AND change(time(T1))[1] != 0 on chart bars
+Short: (Bearish trigger AND barssince(Bearish trigger[1]) > barssince(Bullish trigger[1])) on the last completed T1 bar AND change(time(T1))[1] != 0 on chart bars

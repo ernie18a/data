@@ -1,0 +1,12 @@
+Calculation: PPO signal line = MA(PPO(source, fast lookback, slow lookback, MA type), signal lookback, MA type)
+Calculation: PPO histogram = PPO(source, fast lookback, slow lookback, MA type) - PPO signal line
+Long: PPO(source, fast lookback, slow lookback, MA type) crosses above PPO signal line AND (HTF confirmation disabled OR, on chart bars, PPO(source, fast lookback, slow lookback, MA type, T1, last completed bar) > 0) AND (ADX filter disabled OR ADX(ADX lookback) >= ADX threshold) AND (volatility filter disabled OR ATR(ATR lookback) >= SMA(ATR(ATR lookback), ATR lookback) * volatility multiplier) AND (volume filter disabled OR volume >= SMA(volume, volume lookback) * volume multiplier) AND (histogram slope filter disabled OR rising(PPO histogram, slope lookback)) AND chart bar closes
+Short: PPO(source, fast lookback, slow lookback, MA type) crosses below PPO signal line AND (HTF confirmation disabled OR, on chart bars, PPO(source, fast lookback, slow lookback, MA type, T1, last completed bar) < 0) AND (ADX filter disabled OR ADX(ADX lookback) >= ADX threshold) AND (volatility filter disabled OR ATR(ATR lookback) >= SMA(ATR(ATR lookback), ATR lookback) * volatility multiplier) AND (volume filter disabled OR volume >= SMA(volume, volume lookback) * volume multiplier) AND (histogram slope filter disabled OR falling(PPO histogram, slope lookback)) AND chart bar closes
+Long: PPO(source, fast lookback, slow lookback, MA type) crosses above 0 AND chart bar closes
+Short: PPO(source, fast lookback, slow lookback, MA type) crosses below 0 AND chart bar closes
+Exit: long, high >= entry price + ATR(ATR lookback) at entry signal bar * stop distance multiplier * TP1 risk-reward parameter
+Exit: long, high >= entry price + ATR(ATR lookback) at entry signal bar * stop distance multiplier * TP2 risk-reward parameter
+Exit: long, high >= entry price + ATR(ATR lookback) at entry signal bar * stop distance multiplier * TP3 risk-reward parameter
+Exit: short, low <= entry price - ATR(ATR lookback) at entry signal bar * stop distance multiplier * TP1 risk-reward parameter
+Exit: short, low <= entry price - ATR(ATR lookback) at entry signal bar * stop distance multiplier * TP2 risk-reward parameter
+Exit: short, low <= entry price - ATR(ATR lookback) at entry signal bar * stop distance multiplier * TP3 risk-reward parameter

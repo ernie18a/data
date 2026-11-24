@@ -1,0 +1,11 @@
+Calculation: AVWAP(Tn) = Anchored VWAP(selected price source, volume, period Tn), accumulated on chart bars from the start of the current Tn period through the current bar; T1–T5 are five distinct anchor periods ordered shortest to longest, each independently enabled
+Calculation: VWAPSlope(Tn) = percentage change in AVWAP(Tn) from slopeLookback chart bars ago to the current bar, divided by slopeLookback; use zero if the past AVWAP is missing or zero
+Calculation: GlowStrength = bodyWeight * min(bodyRatioCap, high > low ? abs(close - open) / (high - low) : zeroBodyRatio) + volumeWeight * clamp(((SMA(volume, volumeLookback) > 0 ? volume / SMA(volume, volumeLookback) : volumeRatioFallback) - volumeRatioFloor) / volumeRatioScale, volumeScoreFloor, volumeScoreCeiling) + alignmentWeight * (close >= open ? alignmentRatio : alignmentCeiling - alignmentRatio), where alignmentRatio = activeAnchorCount > 0 ? bullishAnchorCount / activeAnchorCount : emptyAnchorAlignment, bullishAnchorCount counts enabled AVWAPs below close, and activeAnchorCount counts enabled AVWAPs; evaluated on chart bars using the current bar
+Long: At least one anchor period is enabled AND more enabled AVWAPs are below close than at or above close
+Short: At least one anchor period is enabled AND more enabled AVWAPs are at or above close than below close
+Long: Close crosses above AVWAP(Tprimary), where Tprimary is the selected primary anchor period from T1–T5
+Short: Close crosses below AVWAP(Tprimary), where Tprimary is the selected primary anchor period from T1–T5
+Short: Divergence display is enabled AND the chart bar is confirmed AND T1 and T2 are enabled AND VWAPSlope(T1) > slopeThreshold AND VWAPSlope(T2) < -slopeThreshold AND the previous chart bar had no divergence
+Long: Divergence display is enabled AND the chart bar is confirmed AND T1 and T2 are enabled AND VWAPSlope(T1) < -slopeThreshold AND VWAPSlope(T2) > slopeThreshold AND the previous chart bar had no divergence
+Long: Smart Glow is enabled AND GlowStrength >= minimumGlowStrength AND close >= open
+Short: Smart Glow is enabled AND GlowStrength >= minimumGlowStrength AND close < open

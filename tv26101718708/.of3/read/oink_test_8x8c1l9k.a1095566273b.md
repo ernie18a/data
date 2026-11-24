@@ -1,0 +1,14 @@
+Calculation: FVG_CE(T1 bars, last completed bar as [0]) = (high[2] + low[0]) / 2 if high[2] < low[0]; (low[2] + high[0]) / 2 if low[2] > high[0]; otherwise none
+Calculation: TouchCE = FVG_CE of the most recently formed FVG that is unfilled, not blocked, and has low <= FVG_CE <= high on this chart bar; otherwise none. An FVG is formed only if no unfilled FVG midpoint lies within a tolerance of its midpoint. Unfilled: no chart bar since formation, including this bar, has low <= the high of its oldest T1 bar (bull FVG) or high >= the low of its oldest T1 bar (bear FVG). Blocked: a setup on it has ended since the current T1 bar opened
+Calculation: Tradable = bar time within trading session AND bar time outside all news windows AND no open position
+Calculation: ShortTrigger = (open[1] < TouchCE[1] AND Tradable[1] AND close <= TouchCE[1] AND close < low[1]) OR (open[2] < TouchCE[2] AND Tradable[2] AND close[1] <= TouchCE[2] AND close[1] >= low[2] AND close <= TouchCE[2] AND close < low[1]) OR (open[3] < TouchCE[3] AND Tradable[3] AND close[2] <= TouchCE[3] AND close[2] >= low[3] AND close[1] <= TouchCE[3] AND close[1] >= low[2] AND close <= TouchCE[3] AND close < low[1])
+Calculation: ShortArmed = (ShortTrigger OR ShortArmed[1]) AND NOT Tradable
+Calculation: SL_short = highest high from the setup's touch bar through its trigger bar
+Calculation: LongTrigger = (open[1] > TouchCE[1] AND Tradable[1] AND close >= TouchCE[1] AND close > high[1]) OR (open[2] > TouchCE[2] AND Tradable[2] AND close[1] >= TouchCE[2] AND close[1] <= high[2] AND close >= TouchCE[2] AND close > high[1]) OR (open[3] > TouchCE[3] AND Tradable[3] AND close[2] >= TouchCE[3] AND close[2] <= high[3] AND close[1] >= TouchCE[3] AND close[1] <= high[2] AND close >= TouchCE[3] AND close > high[1])
+Calculation: LongArmed = (LongTrigger OR LongArmed[1]) AND NOT Tradable
+Calculation: SL_long = lowest low from the setup's touch bar through its trigger bar
+Calculation: RR(p, SL) = R_1 if |SL - p| / tick size <= D_1, else R_2 if <= D_2, else R_3 if <= D_3, else R_4 if <= D_4, else none
+Short: Tradable AND (ShortTrigger OR ShortArmed[1]) AND RR(close, SL_short) exists
+Long: Tradable AND (LongTrigger OR LongArmed[1]) AND RR(close, SL_long) exists
+Exit: short, bar after entry AND (high >= SL_short OR low <= entry price - (SL_short - entry price) * RR(entry price, SL_short) OR (high >= entry price AND lowest low from entry bar through this bar <= entry price - BE_fraction * (SL_short - entry price) * RR(entry price, SL_short) AND RR(entry price, SL_short) > BE_min_RR))
+Exit: long, bar after entry AND (low <= SL_long OR high >= entry price + (entry price - SL_long) * RR(entry price, SL_long) OR (low <= entry price AND highest high from entry bar through this bar >= entry price + BE_fraction * (entry price - SL_long) * RR(entry price, SL_long) AND RR(entry price, SL_long) > BE_min_RR))

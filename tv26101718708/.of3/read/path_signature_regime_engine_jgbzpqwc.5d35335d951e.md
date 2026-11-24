@@ -1,0 +1,10 @@
+Calculation: Return step = (price source - price source[1]) / (ATR(ATR lookback) if positive, otherwise SMA(ABS(price source - price source[1]), path lookback))
+Calculation: Path drift = SUM(return step, path lookback)
+Calculation: Drift percentile = PercentRank(ABS(path drift), normalization lookback)
+Calculation: Levy area = 0.5 × SUM((sum of return steps preceding each bar / path lookback) - (number of preceding bars × that bar's return step / path lookback)) over the path lookback, oldest to current
+Calculation: Levy area percentile = PercentRank(ABS(Levy area), normalization lookback)
+Calculation: Levy area sign = IF(Levy area >= 0, 1, -1)
+Calculation: Range position = IF(Highest(high, path lookback) > Lowest(low, path lookback), (price source - Lowest(low, path lookback)) / (Highest(high, path lookback) - Lowest(low, path lookback)), midpoint)
+Calculation: Regime = IF(Drift percentile >= trend threshold AND Levy area percentile >= area threshold, IF(path drift >= 0, trending up, trending down), IF(Levy area sign != Levy area sign[1] AND Levy area percentile[1] >= area threshold AND Drift percentile < Highest(Drift percentile, recent drift lookback) - weakening amount AND Highest(Drift percentile, recent drift lookback) >= trend threshold AND (Range position >= upper extreme OR Range position <= lower extreme), turning, IF(Drift percentile >= trend threshold, IF(path drift >= 0, trending up, trending down), range/chop)))
+Long: Regime = trending up OR (Regime = turning AND Range position < midpoint)
+Short: Regime = trending down OR (Regime = turning AND Range position >= midpoint)

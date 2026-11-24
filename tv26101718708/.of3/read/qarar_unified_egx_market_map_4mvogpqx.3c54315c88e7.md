@@ -1,0 +1,3 @@
+Calculation: Adaptive rolling trend = Initialize segment to close, direction bullish, slope zero, and fast mode false; when ATR(ATR lookback) is available, let distance = close - prior segment, reverse bearish to bullish if distance > reversal threshold * ATR and bullish to bearish if -distance > reversal threshold * ATR, set fast mode when abs(distance) > fast-mode threshold * ATR, reset slope to ATR / fast lookback (shorter) when fast or ATR / slow lookback (longer) otherwise if direction reversed, fast mode changed, or slope is zero, then add direction * slope to prior segment; when ATR is unavailable, set segment to close
+Long: Adaptive rolling trend is bullish
+Short: Adaptive rolling trend is bearish

@@ -1,0 +1,16 @@
+Calculation: Days to expiry = max(0, ceil((expiry date - datetime) / one day))
+Calculation: EMA slope percent = 100 × ((EMA(close, EMA lookback) - EMA(close, EMA lookback)[slope lookback]) / slope lookback) / EMA(close, EMA lookback)
+Calculation: ATR percentile = percentile rank of ATR(high, low, close, fast ATR lookback) over ATR rank lookback
+Calculation: ATR percentile jump = ATR percentile - ATR percentile[percentile-jump lookback]
+Calculation: Selected regime = defensive if ADX(high, low, close, ADX lookback) crosses above (no-trend ADX threshold + ADX breakout offset) OR ATR percentile jump > percentile-jump threshold OR Bollinger %B(close, Bollinger lookback, standard-deviation multiplier) crosses above extreme-high threshold OR crosses below extreme-low threshold; otherwise premium-selling if ADX < no-trend threshold AND ATR percentile >= comfortable-volatility minimum AND <= extreme-volatility threshold AND ATR(high, low, close, fast ATR lookback) / ATR(high, low, close, slow ATR lookback) <= volatility-expansion threshold AND Bollinger %B >= range-low threshold AND <= range-high threshold AND days to expiry > full-size DTE cutoff AND event flag is false; otherwise directional-selling if ADX >= no-trend threshold AND ATR percentile >= comfortable-volatility minimum AND <= extreme-volatility threshold AND ATR(high, low, close, fast ATR lookback) / ATR(high, low, close, slow ATR lookback) <= volatility-expansion threshold AND days to expiry > full-size DTE cutoff AND NOT (event flag AND ATR percentile > comfortable-volatility maximum AND <= extreme-volatility threshold); otherwise reduced-exposure
+Option: sell call, selected regime is premium-selling or reduced-exposure OR (selected regime is directional-selling AND EMA slope percent <= trend-slope threshold)
+Option: buy call, selected regime is premium-selling or reduced-exposure OR (selected regime is directional-selling AND EMA slope percent <= trend-slope threshold)
+Option: sell put, selected regime is premium-selling or reduced-exposure OR (selected regime is directional-selling AND EMA slope percent >= -trend-slope threshold)
+Option: buy put, selected regime is premium-selling or reduced-exposure OR (selected regime is directional-selling AND EMA slope percent >= -trend-slope threshold)
+Exit: Short, (selected regime is premium-selling AND option premium <= entry option premium × premium-selling remaining-premium target percentage / 100) OR (selected regime is directional-selling, reduced-exposure, or defensive AND option premium <= entry option premium × other-regime remaining-premium target percentage / 100)
+Exit: Short, each short-leg option premium >= its entry option premium × premium stop multiple
+Calculation: Lowest option premium since entry = minimum option premium from entry through current bar
+Exit: Short, lowest option premium since entry <= entry option premium × (100 - trailing trigger percentage) / 100 AND current option premium >= entry option premium
+Exit: Short, days to expiry <= force-close DTE cutoff
+Exit: Long, days to expiry <= force-close DTE cutoff
+Exit: Short, selected regime is defensive AND previous selected regime was not defensive

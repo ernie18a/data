@@ -1,0 +1,4 @@
+Long: close > latest confirmed PivotHigh(high, swing lookback, swing lookback), and that pivot has not already been broken
+Short: close < latest confirmed PivotLow(low, swing lookback, swing lookback), and that pivot has not already been broken
+Long: close > latest confirmed PivotHigh(high, internal lookback, internal lookback), and that pivot has not already been broken, and its price differs from the latest confirmed swing PivotHigh
+Short: close < latest confirmed PivotLow(low, internal lookback, internal lookback), and that pivot has not already been broken, and its price differs from the latest confirmed swing PivotLow

@@ -1,0 +1,20 @@
+Calculation: Macro high = latest level from the selected source: confirmed chart-bar Pivot High(high, floor(macro pivot lookback / 2), floor(macro pivot lookback / 2)); prior completed high of T1 sampled on chart bars; or latest completed Asia, London, or New York session high
+Calculation: Macro low = latest level from the selected source: confirmed chart-bar Pivot Low(low, floor(macro pivot lookback / 2), floor(macro pivot lookback / 2)); prior completed low of T1 sampled on chart bars; or latest completed Asia, London, or New York session low
+Calculation: Bearish PRL level = highest high from the latest bearish liquidity grab through the previous bar
+Calculation: Bullish PRL level = lowest low from the latest bullish liquidity grab through the previous bar
+Calculation: Long entry price = Bullish PRL level
+Calculation: Short entry price = Bearish PRL level
+Calculation: Long setup range = if Macro high exists at setup, Macro high − Long entry price; otherwise fallback range multiplier × ATR(ATR lookback)
+Calculation: Short setup range = if Macro low exists at setup, Short entry price − Macro low; otherwise fallback range multiplier × ATR(ATR lookback)
+Calculation: Long target = Long entry price + Long setup range × target fraction
+Calculation: Long stop = Long entry price − Long setup range × stop loss multiplier
+Calculation: Short target = Short entry price − Short setup range × target fraction
+Calculation: Short stop = Short entry price + Short setup range × stop loss multiplier
+Long: close < Macro low AND Macro low has not been swept since it was established AND (wick filter disabled OR (high > low AND 100 × (min(open, close) − low) / (high − low) >= minimum wick percentage))
+Short: close > Macro high AND Macro high has not been swept since it was established AND (wick filter disabled OR (high > low AND 100 × (high − max(open, close)) / (high − low) >= minimum wick percentage))
+Long: PRL tracking enabled AND after a bullish liquidity grab, the first confirmed bar whose low is above the Bullish PRL level
+Short: PRL tracking enabled AND after a bearish liquidity grab, the first confirmed bar whose high is below the Bearish PRL level
+Long: PRL tracking enabled AND after a bullish liquidity grab, the first confirmed bar whose low is above the Bullish PRL level AND (chop filter disabled OR Choppiness Index(high, low, chop lookback) <= chop threshold) AND (MA filter disabled OR close > selected SMA/EMA/WMA/RMA(close, MA lookback)) AND (ADX filter disabled OR ADX(high, low, close, ADX lookback, same ADX smoothing lookback) <= ADX threshold OR +DI(high, low, close, ADX lookback) >= -DI(high, low, ADX lookback)) AND (RSI filter disabled OR RSI(close, RSI lookback) >= RSI oversold threshold) AND (momentum filter disabled OR Momentum(close, momentum lookback) > 0) AND (volume filter disabled OR volume > SMA(volume, volume lookback)) AND (price action filter disabled OR close > open)
+Short: PRL tracking enabled AND after a bearish liquidity grab, the first confirmed bar whose high is below the Bearish PRL level AND (chop filter disabled OR Choppiness Index(high, low, chop lookback) <= chop threshold) AND (MA filter disabled OR close < selected SMA/EMA/WMA/RMA(close, MA lookback)) AND (ADX filter disabled OR ADX(high, low, close, ADX lookback, same ADX smoothing lookback) <= ADX threshold OR -DI(high, low, close, ADX lookback) >= +DI(high, low, close, ADX lookback)) AND (RSI filter disabled OR RSI(close, RSI lookback) <= RSI overbought threshold) AND (momentum filter disabled OR Momentum(close, momentum lookback) < 0) AND (volume filter disabled OR volume > SMA(volume, volume lookback)) AND (price action filter disabled OR close < open)
+Exit: long, high >= Long target OR (low <= Long stop AND high < Long target) OR a new valid long setup is formed
+Exit: short, low <= Short target OR (high >= Short stop AND low > Short target) OR a new valid short setup is formed

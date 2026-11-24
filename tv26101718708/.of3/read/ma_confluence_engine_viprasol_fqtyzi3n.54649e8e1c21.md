@@ -1,0 +1,4 @@
+Calculation: Consensus = 100 × (count of MA_i below close + count of MA_i > MA_i[1]) ÷ (2 × ribbon count), where MA_i = selected moving average(source, base lookback + i × lookback spacing), for i from 0 to ribbon count − 1, computed on chart bars
+Calculation: Ribbon width = (maximum MA_i − minimum MA_i) ÷ ATR(high, low, close, ATR lookback), computed on chart bars
+Long: On chart-bar close, Consensus crosses above the long threshold AND (width filter disabled OR Ribbon width ≥ minimum width) AND (regime filter disabled OR Kaufman Efficiency Ratio(close, efficiency lookback) ≥ minimum efficiency) AND long signals are allowed
+Short: On chart-bar close, Consensus crosses below the short threshold AND (width filter disabled OR Ribbon width ≥ minimum width) AND (regime filter disabled OR Kaufman Efficiency Ratio(close, efficiency lookback) ≥ minimum efficiency) AND short signals are allowed

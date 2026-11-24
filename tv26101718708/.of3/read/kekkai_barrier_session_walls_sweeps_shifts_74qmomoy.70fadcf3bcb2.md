@@ -1,0 +1,2 @@
+Long: On chart bars at or below the maximum eligible chart timeframe, at the completion of a shift block or session, within London, NY AM, or NY PM, the first two consecutive completed parameter-duration blocks each have a higher high and higher low than the immediately preceding block.
+Short: On chart bars at or below the maximum eligible chart timeframe, at the completion of a shift block or session, within London, NY AM, or NY PM, the first two consecutive completed parameter-duration blocks each have a lower low and lower high than the immediately preceding block.

@@ -1,0 +1,3 @@
+Calculation: LevelDeltaPct(L) = 100 * (sum of SV_i / n_i) / (sum of V_i / n_i), both sums over the T1 bars i of the chart bar, including the T1 bar still forming, whose level range spans L, where V_i = volume of T1 bar i, SV_i = V_i if close_i >= open_i else -V_i, n_i = count of levels from the first level at or above low_i through the first level at or above high_i, and level spacing = ATR(chart bars, ATR lookback) / spacing divisor, frozen at the start of each T2 bar
+Long: MAX(LevelDeltaPct(L) for levels L of the chart bar) >= imbalance threshold
+Short: MIN(LevelDeltaPct(L) for levels L of the chart bar) <= -imbalance threshold

@@ -1,0 +1,26 @@
+Calculation: Event flags on chart bars = weekday is Monday, Tuesday, Wednesday, Thursday, or Friday; RSI(close, RSI lookback) is below the adaptive lower RSI percentile over the percentile lookback when adaptive thresholds are enabled and available, otherwise below the fixed oversold threshold; RSI is above the corresponding adaptive upper percentile or fixed overbought threshold; volume z-score ((volume − SMA(volume, volume lookback)) / Stdev(volume, volume lookback), or zero when the standard deviation is zero) exceeds the volume-spike threshold; consecutive strictly lower closes or consecutive strictly higher closes reach the streak length; (close − lowest(low, range lookback)) / (highest(high, range lookback) − lowest(low, range lookback)) is below the lower range threshold or above the upper range threshold, using the neutral midpoint when the range is zero; PercentRank(ATR(ATR lookback), volatility lookback) is above the high-volatility threshold or below the low-volatility threshold; when lunar events are enabled, normalized lunar phase from datetime is inside the full-moon interval or the new-moon interval; or close is within ATR(ATR lookback) × pivot-distance parameter of the latest confirmed pivot low or high, using the pivot lookback on each side.
+Calculation: Event statistics(event, horizon) = store each event's forward close return over each configured horizon in chart bars, with the regime at the event; retain at most the per-event sample-cap parameter; use current-regime records when their count reaches the regime-sample minimum, otherwise use all records; let n be the selected count, p be the positive-return fraction, and n-effective = max(n / horizon length, 1); adjusted up probability = (p × n-effective + neutral probability × shrinkage strength) / (n-effective + shrinkage strength); average return = selected records' mean; with no records use neutral probability and zero average return.
+Calculation: Event quality(event) = percentage scale × (2 × abs(longest-horizon adjusted up probability − neutral probability))^quality exponent × min(selected longest-horizon sample count / quality sample cap, 1) × max(1 − consistency scale × abs(recent raw win rate − longest-horizon adjusted up probability), consistency floor), where recent raw win rate uses the latest consistency-window records across regimes.
+Calculation: Composite up probability(horizon) = neutral probability when no qualifying event is active; otherwise apply the logistic function to boost × the quality-weighted mean log-odds of each qualifying active event's horizon up probability, clamped to the configured log-odds bounds. Qualifying events have at least the inclusion minimum of longest-horizon records; skip lunar events when lunar events are disabled; event weight is max(event quality, minimum weight) / quality scale; boost is min(sqrt(max(qualifying-event count, 1)), boost cap).
+Long: RSI oversold event AND NOT RSI oversold event on the previous chart bar
+Short: RSI overbought event AND NOT RSI overbought event on the previous chart bar
+Long: consecutive strictly higher closes = streak length
+Short: consecutive strictly lower closes = streak length
+Long: close > EMA(close, chart-regime lookback)
+Short: close <= EMA(close, chart-regime lookback)
+Long: close > EMA(close, T1 regime lookback, T1 bar still forming), sampled on chart bars with lookahead off
+Short: close <= EMA(close, T1 regime lookback, T1 bar still forming), sampled on chart bars with lookahead off
+Long: event up probability(event, displayed horizon) > neutral probability, for each event row and displayed horizon
+Short: event up probability(event, displayed horizon) <= neutral probability, for each event row and displayed horizon
+Long: event up probability(event, longest horizon) > directional upper threshold
+Short: event up probability(event, longest horizon) < directional lower threshold
+Long: event average return(event, longest horizon) >= zero
+Short: event average return(event, longest horizon) < zero
+Long: composite up probability(displayed horizon) > neutral probability, for each displayed horizon
+Short: composite up probability(displayed horizon) <= neutral probability, for each displayed horizon
+Long: composite up probability(shortest horizon) > directional upper threshold OR composite up probability(longest horizon) > directional upper threshold
+Short: composite up probability(shortest horizon) < directional lower threshold OR composite up probability(longest horizon) < directional lower threshold
+Long: composite average return(longest horizon) >= zero
+Short: composite average return(longest horizon) < zero
+Long: confirmed bar AND previous composite longest-horizon bias exists AND previous bias differs from current bias AND current composite up probability(longest horizon) > directional upper threshold
+Short: confirmed bar AND previous composite longest-horizon bias exists AND previous bias differs from current bias AND current composite up probability(longest horizon) < directional lower threshold

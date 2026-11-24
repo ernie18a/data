@@ -1,0 +1,7 @@
+Calculation: upper channel = EMA(highest(average(low, close), shorter channel lookback), shorter smoothing lookback)
+Calculation: lower channel = EMA(lowest(average(high, close), longer channel lookback), longer smoothing lookback)
+Calculation: first EMA composite = EMA(close, shortest EMA lookback) - EMA(EMA(close, shortest EMA lookback), shortest EMA lookback) + EMA(EMA(EMA(close, shortest EMA lookback), shortest EMA lookback), shortest EMA lookback)
+Calculation: second EMA composite = 2 * EMA(close, longest EMA lookback) - EMA(EMA(close, longest EMA lookback), intermediate EMA lookback)
+Calculation: selected channel = if first EMA composite > second EMA composite then max(upper channel, lower channel) else min(upper channel, lower channel)
+Option: buy call, first EMA composite > second EMA composite AND selected channel > low AND selected channel - selected channel[1] > selected channel[1] - selected channel[2] AND call is enabled by the configured option-selection setting AND (session filter is disabled OR bar datetime is within the configured session) AND no option position is open
+Option: buy put, first EMA composite < second EMA composite AND selected channel < high AND selected channel[1] - selected channel > selected channel[2] - selected channel[1] AND put is enabled by the configured option-selection setting AND (session filter is disabled OR bar datetime is within the configured session) AND no option position is open

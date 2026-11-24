@@ -1,0 +1,8 @@
+Calculation: Pivot high(series) = PivotHigh(series, pivot lookback, pivot lookback) on chart bars
+Calculation: Pivot low(series) = PivotLow(series, pivot lookback, pivot lookback) on chart bars
+Calculation: Forming-window low(series) = Lowest(series, pivot lookback) with current bar included, or Lowest(series[1], pivot lookback) with current bar excluded
+Calculation: Forming-window high(series) = Highest(series, pivot lookback) with current bar included, or Highest(series[1], pivot lookback) with current bar excluded
+Long: On each newly confirmed chart PivotLow, (chart pivot low < prior chart PivotLow) != (correlated instrument low at that pivot < correlated instrument low at prior chart PivotLow)
+Short: On each newly confirmed chart PivotHigh, (chart pivot high > prior chart PivotHigh) != (correlated instrument high at that pivot > correlated instrument high at prior chart PivotHigh)
+Long: (Forming-window low(low) < latest confirmed chart PivotLow AND Forming-window low(correlated instrument low) >= correlated instrument low at that pivot) OR (Forming-window low(correlated instrument low) < latest confirmed correlated instrument PivotLow AND Forming-window low(low) >= chart low at that pivot)
+Short: (Forming-window high(high) > latest confirmed chart PivotHigh AND Forming-window high(correlated instrument high) <= correlated instrument high at that pivot) OR (Forming-window high(correlated instrument high) > latest confirmed correlated instrument PivotHigh AND Forming-window high(high) <= chart high at that pivot)

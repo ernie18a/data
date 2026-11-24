@@ -1,0 +1,3 @@
+Calculation: angle(n) = abs(degrees(atan((close - close[n]) / EMA(high - low, length = bars since first bar))))
+Long: on a confirmed bar, the first bar in a consecutive run of rising candles where run length >= minimum count AND angle(run length) >= minimum angle
+Short: on a confirmed bar, the first bar in a consecutive run of falling or doji candles where run length >= minimum count AND angle(run length) >= minimum angle

@@ -1,0 +1,10 @@
+Calculation: Chandelier long stop = max(highest(high, structure lookback) - ATR(ATR lookback) * ATR multiple, prior Chandelier long stop) when close[1] > prior Chandelier long stop; otherwise highest(high, structure lookback) - ATR(ATR lookback) * ATR multiple (use the raw stop when the prior stop is undefined)
+Calculation: Chandelier short stop = min(lowest(low, structure lookback) + ATR(ATR lookback) * ATR multiple, prior Chandelier short stop) when close[1] < prior Chandelier short stop; otherwise lowest(low, structure lookback) + ATR(ATR lookback) * ATR multiple (use the raw stop when the prior stop is undefined)
+Calculation: Chandelier trail side = long when close > prior Chandelier short stop, short when close < prior Chandelier long stop, otherwise the prior trail side (initialize long)
+Calculation: ATR distance from active Chandelier trail = abs(close - (Chandelier trail side is long ? Chandelier long stop : Chandelier short stop)) / ATR(ATR lookback)
+Long: Chandelier trail side is long AND Chandelier trail side[1] was short
+Short: Chandelier trail side is short AND Chandelier trail side[1] was long
+Long: Chandelier trail side is long AND ATR distance from active Chandelier trail >= continuation distance AND EMA(close, shorter trend lookback) > EMA(close, longer trend lookback) AND close > EMA(close, longer trend lookback)
+Short: Chandelier trail side is short AND ATR distance from active Chandelier trail >= continuation distance AND EMA(close, shorter trend lookback) < EMA(close, longer trend lookback) AND close < EMA(close, longer trend lookback)
+Exit: long, Chandelier trail side is long AND ATR distance from active Chandelier trail <= exit watch distance
+Exit: short, Chandelier trail side is short AND ATR distance from active Chandelier trail <= exit watch distance

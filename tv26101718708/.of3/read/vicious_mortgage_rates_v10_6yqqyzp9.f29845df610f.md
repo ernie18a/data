@@ -1,0 +1,3 @@
+Calculation: volatility composite = VIX close × VIX3M close × VVIX close × VXST close, each from the T1 bar still forming and sampled on chart bars
+Long: volatility composite >= EMA(volatility composite, shorter lookback, chart bars) AND EMA(volatility composite, shorter lookback, chart bars) >= EMA(volatility composite, longer lookback, chart bars)
+Short: volatility composite < EMA(volatility composite, shorter lookback, chart bars) AND EMA(volatility composite, shorter lookback, chart bars) < EMA(volatility composite, longer lookback, chart bars)

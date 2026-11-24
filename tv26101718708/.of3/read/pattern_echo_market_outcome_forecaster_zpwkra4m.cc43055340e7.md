@@ -1,0 +1,4 @@
+Calculation: target-first edge = 100 × (valid analog outcomes reaching target before stop / valid analog outcomes) − 100 × (valid baseline outcomes reaching target before stop / valid baseline outcomes)
+Calculation: median forward return = median of (forward close / analog close − 1) × 100 across valid analog outcomes
+Long: valid analog outcomes ≥ minimum match count parameter AND valid baseline outcomes ≥ minimum baseline sample parameter AND target-first edge ≥ minimum edge parameter AND median forward return > 0
+Short: valid analog outcomes ≥ minimum match count parameter AND valid baseline outcomes ≥ minimum baseline sample parameter AND target-first edge ≤ −minimum edge parameter AND median forward return < 0

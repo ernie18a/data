@@ -1,0 +1,2 @@
+Long: low < an unswept pivot low confirmed with equal left and right pivot lookbacks and retained among the latest level-count pivot lows AND close > that pivot low
+Short: high > an unswept pivot high confirmed with equal left and right pivot lookbacks and retained among the latest level-count pivot highs AND close < that pivot high

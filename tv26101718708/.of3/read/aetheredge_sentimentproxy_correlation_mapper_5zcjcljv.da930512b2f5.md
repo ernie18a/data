@@ -1,0 +1,12 @@
+Calculation: volume anomaly = clip(((volume - SMA(volume, volume window)) / StDev(volume, volume window)) * sign(close - open), -proxy cap, proxy cap), using 0 when standard deviation is 0
+Calculation: volatility proxy = clip((volatility raw - SMA(volatility raw, normalization window)) / StDev(volatility raw, normalization window), -proxy cap, proxy cap), using 0 when standard deviation is 0; volatility raw = ATR(volatility window) / nonzero-or-1(SMA(ATR(volatility window), normalization window)) - 1
+Calculation: velocity proxy = clip((close - close[velocity window]) / (velocity window * nonzero-or-1(ATR(ATR window))), -proxy cap, proxy cap)
+Calculation: wick proxy = clip(((lower wick - upper wick) / nonzero-or-1(body range)) * wick multiplier, -proxy cap, proxy cap); lower wick = min(close, open) - low; upper wick = high - max(close, open); body range = high - low, or ATR(ATR window) when high equals low
+Calculation: run-length proxy = clip(sum(sign(close - close[1]), run-length window) / run-length window * run-length multiplier, -proxy cap, proxy cap)
+Calculation: sentiment score = EMA(tanh output of a two-layer tanh neural network of the volume anomaly, volatility proxy, velocity proxy, wick proxy, and run-length proxy), with hidden-unit count, sentiment smoothing, and seeded initialization as parameters; weights are online gradient-descent trained at the mapping learning rate against each delayed proxy sample's clip((close - close[outcome lookahead]) / nonzero-or-1(ATR(ATR window)), -1, 1) target over the training horizon
+Long: bar_index > last_bar_index - training horizon AND sentiment score > 0
+Short: bar_index > last_bar_index - training horizon AND sentiment score < 0
+Long: bar_index > last_bar_index - training horizon AND confirmed bar AND sentiment score[1] <= 0 AND sentiment score > 0 AND sentiment score - sentiment score[1] >= turn sensitivity
+Short: bar_index > last_bar_index - training horizon AND confirmed bar AND sentiment score[1] >= 0 AND sentiment score < 0 AND sentiment score[1] - sentiment score >= turn sensitivity
+Long: sentiment score <= -extreme threshold AND sentiment score[1] > -extreme threshold
+Short: sentiment score >= extreme threshold AND sentiment score[1] < extreme threshold

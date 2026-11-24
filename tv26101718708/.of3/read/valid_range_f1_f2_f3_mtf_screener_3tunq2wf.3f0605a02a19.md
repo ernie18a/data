@@ -1,0 +1,17 @@
+Calculation: Equal-high band = equal-high tolerance in ticks × minimum tick size + tick-fraction parameter × minimum tick size.
+Calculation: Mirrored OHLC = open′ = −open, high′ = −low, low′ = −high, close′ = −close.
+Calculation: Up F1 start = close[1] > open[1] AND (F1 wick requirement disabled OR high[1] > close[1]) AND close < open AND high < high[1] AND abs(high − high[1]) > equal-high band.
+Calculation: Up F2 start = close[1] > open[1] AND close < open AND close > high[1].
+Calculation: Up F3 start = close[1] > open[1] AND close < open AND abs(high − high[1]) ≤ equal-high band AND close ≤ high[1].
+Calculation: Minimum pullback duration = automatic minimum-duration parameter when automatic mode is enabled and the evaluated timeframe is T9; otherwise use the minimum-hours parameter converted to seconds.
+Calculation: Structure-break trigger = close > level in close-only mode; otherwise high > level. In both mode, mark C if close > level and W otherwise.
+Calculation: Up Valid Range state = On each bar, start a separate state for each enabled formation whose start condition holds; store high[1] as the F1 break level or high as the F2/F3 break level, and low[1] as the invalidation level. Initialize the pullback count to one for F1 and zero for F2/F3. On each later bar, test the structure-break trigger first; clear the state and emit a confirmed break only if the count is at least one and count × evaluated-bar duration ≥ minimum pullback duration, otherwise clear it without a signal. If there is no break, clear the state when invalidation is enabled and low < invalidation level, or the existing count ≥ maximum pullback bars; otherwise increment the count.
+Calculation: Screener states = Run the same formation and state calculations on bars of each selected timeframe T1–T8, using that timeframe’s still-forming bar; return the values to chart bars with lookahead enabled.
+Long: On chart bars, mark setup start when the direction setting permits and any enabled Up F1, F2, or F3 start condition holds.
+Short: On chart bars, mark setup start when the direction setting permits and any enabled Up F1, F2, or F3 start condition holds on mirrored OHLC.
+Long: On chart bars, mark a confirmed structure break when the direction setting permits and any enabled Up F1, F2, or F3 state emits a confirmed break.
+Short: On chart bars, mark a confirmed structure break when the direction setting permits and any enabled Up F1, F2, or F3 state emits a confirmed break on mirrored OHLC.
+Long: For each displayed T1–T8 row, show Uptrend status when an up pullback is active or an up structure break exists; show UP bias when an up structure break exists and either no down structure break exists or its age in T bars is less than the down break’s age.
+Short: For each displayed T1–T8 row, show Downtrend status when a down pullback is active or a down structure break exists; show DOWN bias when a down structure break exists and either no up structure break exists or its age in T bars is less than the up break’s age.
+Long: When the overall display is enabled, show BULLISH when the number of rows with both Show and Overall enabled whose latest up break is newer than their latest down break exceeds the number whose latest down break is newer than their latest up break.
+Short: When the overall display is enabled, show BEARISH when the number of rows with both Show and Overall enabled whose latest down break is newer than their latest up break exceeds the number whose latest up break is newer than their latest down break.

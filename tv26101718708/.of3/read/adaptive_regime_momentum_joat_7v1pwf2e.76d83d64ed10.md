@@ -1,0 +1,6 @@
+Calculation: blended average = (ALMA(close, MA lookback, ALMA offset, ALMA sigma) + EMA(2 * EMA(close, MA lookback) - EMA(EMA(close, MA lookback), MA lookback), MA lookback)) / 2
+Calculation: slope = blended average - blended average[1]
+Long: flat AND long trading enabled AND current bar is confirmed AND slope > 0 for each of the last N bars AND close > blended average AND (volume filter disabled OR RSI(volume, volume RSI lookback) / 50 > volume threshold) AND (RSI filter disabled OR RSI(close, RSI lookback) > long RSI threshold)
+Short: flat AND short trading enabled AND current bar is confirmed AND slope < 0 for each of the last N bars AND close < blended average AND (volume filter disabled OR RSI(volume, volume RSI lookback) / 50 > volume threshold) AND (RSI filter disabled OR RSI(close, RSI lookback) < short RSI threshold)
+Exit: long, low <= entry price - stop multiplier * ATR(ATR lookback) OR high >= entry price + take-profit multiplier * ATR(ATR lookback) OR (current bar is confirmed AND (close < blended average - trail multiplier * ATR(ATR lookback) OR slope < 0))
+Exit: short, high >= entry price + stop multiplier * ATR(ATR lookback) OR low <= entry price - take-profit multiplier * ATR(ATR lookback) OR (current bar is confirmed AND (close > blended average + trail multiplier * ATR(ATR lookback) OR slope > 0))

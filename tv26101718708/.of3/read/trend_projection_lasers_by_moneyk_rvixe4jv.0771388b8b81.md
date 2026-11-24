@@ -1,0 +1,6 @@
+Long: LinRegSlope(close, regression lookback) > flat ATR multiple * ATR(ATR lookback)
+Short: LinRegSlope(close, regression lookback) < -(flat ATR multiple * ATR(ATR lookback))
+Long: LinRegSlope(close, regression lookback, T1, last completed bar) > flat ATR multiple * ATR(ATR lookback, T1, last completed bar)
+Short: LinRegSlope(close, regression lookback, T1, last completed bar) < -(flat ATR multiple * ATR(ATR lookback, T1, last completed bar))
+Long: LinRegSlope(close, regression lookback, T2, last completed bar) > flat ATR multiple * ATR(ATR lookback, T2, last completed bar)
+Short: LinRegSlope(close, regression lookback, T2, last completed bar) < -(flat ATR multiple * ATR(ATR lookback, T2, last completed bar))

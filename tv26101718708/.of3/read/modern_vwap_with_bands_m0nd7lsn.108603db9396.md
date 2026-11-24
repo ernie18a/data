@@ -1,0 +1,10 @@
+Calculation: Dev5 upper band = VWAP(source selected from HLC3, HL2, or close, anchored at each T1 boundary and calculated on chart bars through the current, forming T1 period) + Dev5 × ATR(ATR lookback) when ATR bands are enabled; otherwise VWAP(same source and anchor) × (1 + Dev5 / 100)
+Calculation: Dev5 lower band = VWAP(source selected from HLC3, HL2, or close, anchored at each T1 boundary and calculated on chart bars through the current, forming T1 period) − Dev5 × ATR(ATR lookback) when ATR bands are enabled; otherwise VWAP(same source and anchor) × (1 − Dev5 / 100)
+Long: close crosses below Dev5 lower band AND (outside-Dev5 filter is disabled OR close < Dev5 lower band × (1 − outside-Dev5 percentage)) AND (cool-off is disabled OR at least the cool-off period has elapsed since the previous accepted signal)
+Short: close crosses above Dev5 upper band AND (outside-Dev5 filter is disabled OR close > Dev5 upper band × (1 + outside-Dev5 percentage)) AND (cool-off is disabled OR at least the cool-off period has elapsed since the previous accepted signal)
+Exit: long, current bar is after the entry bar AND low ≤ entry price × (1 − long stop %)
+Exit: long, current bar is after the entry bar AND high ≥ (VWAP value on the signal bar if VWAP is the target source, otherwise entry price × (1 + long target %)) AND low > entry price × (1 − long stop %)
+Exit: short, current bar is after the entry bar AND high ≥ entry price × (1 + short stop %)
+Exit: short, current bar is after the entry bar AND low ≤ (VWAP value on the signal bar if VWAP is the target source, otherwise entry price × (1 − short target %)) AND high < entry price × (1 + short stop %)
+Exit: long, open-trade reset is enabled AND the T1 anchor period changes
+Exit: short, open-trade reset is enabled AND the T1 anchor period changes

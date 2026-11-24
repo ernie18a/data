@@ -1,0 +1,2 @@
+Long: during the configured regular trading session AND SMA(volume, lookback) > 0 AND volume / SMA(volume, lookback) > multiplier AND close >= close[1]
+Short: during the configured regular trading session AND SMA(volume, lookback) > 0 AND volume / SMA(volume, lookback) > multiplier AND close < close[1]

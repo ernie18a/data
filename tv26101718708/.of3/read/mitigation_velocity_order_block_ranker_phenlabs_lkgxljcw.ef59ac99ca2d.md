@@ -1,0 +1,2 @@
+Long: PivotLow(low, pivot length, pivot length) is confirmed AND the nearest candle with close < open among the pivot bar and the preceding bars through the maximum search offset exists
+Short: PivotHigh(high, pivot length, pivot length) is confirmed AND the nearest candle with close > open among the pivot bar and the preceding bars through the maximum search offset exists

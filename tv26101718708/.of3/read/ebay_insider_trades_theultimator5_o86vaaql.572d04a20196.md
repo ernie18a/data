@@ -1,0 +1,5 @@
+Calculation: Daily net insider activity = sum transaction share quantities dated to the current T1 bar, filtered by the independently enabled transaction codes and selected insider, excluding issuer buybacks unless included; use the current T1 bar, which may still be forming, on chart bars
+Calculation: Daily activity value = daily net insider activity × (open + high + low + close) / 4 from the current T1 bar when dollar display is selected; otherwise daily net insider activity
+Calculation: Cumulative activity value = cumulative sum from the first available chart bar of daily activity value, using current T1 bar values on chart bars
+Long: (daily histogram selected AND daily activity value >= 0) OR (cumulative line selected AND cumulative activity value >= 0)
+Short: (daily histogram selected AND daily activity value < 0) OR (cumulative line selected AND cumulative activity value < 0)

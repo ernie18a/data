@@ -1,0 +1,17 @@
+Calculation: Smoothed OBV = HMA(OBV(close, volume), smoothing lookback)
+Calculation: OBV slope Z-score = (Smoothed OBV - Smoothed OBV[slope lookback] - SMA(Smoothed OBV - Smoothed OBV[slope lookback], normalization lookback)) / STDEV(Smoothed OBV - Smoothed OBV[slope lookback], normalization lookback), or zero when the standard deviation is zero
+Calculation: OBV structure = Uptrend when the latest confirmed OBV pivot high is higher than the preceding confirmed pivot high and the latest confirmed OBV pivot low is higher than the preceding confirmed pivot low; Downtrend when both are lower; Expanding when the latest high is higher and the latest low is lower; Contracting when the latest high is lower and the latest low is higher; otherwise, if the most recent confirmed pivot is a high, Higher High or Lower High according to its comparison with the preceding confirmed pivot high; if it is a low, Higher Low or Lower Low according to its comparison with the preceding confirmed pivot low; otherwise Forming
+Long: OBV slope Z-score > slope Z threshold
+Short: OBV slope Z-score < -slope Z threshold
+Long: OBV slope Z-score crosses above slope Z threshold
+Short: OBV slope Z-score crosses below -slope Z threshold
+Long: OBV structure is Uptrend, Higher High, or Higher Low
+Short: OBV structure is Downtrend, Lower High, or Lower Low
+Long: Smoothed OBV > SMA(Smoothed OBV, normalization lookback)
+Short: Smoothed OBV <= SMA(Smoothed OBV, normalization lookback)
+Long: Smoothed OBV crosses above SMA(Smoothed OBV, normalization lookback)
+Short: Smoothed OBV crosses below SMA(Smoothed OBV, normalization lookback)
+Long: Current bar confirms a pivot high in Smoothed OBV AND the latest confirmed pivot high is higher than the preceding confirmed pivot high
+Short: Current bar confirms a pivot low in Smoothed OBV AND the latest confirmed pivot low is lower than the preceding confirmed pivot low
+Long: Divergence detection is enabled AND the current bar confirms a price pivot low AND the latest confirmed price pivot low is lower than the preceding confirmed price pivot low AND the latest confirmed Smoothed OBV pivot low is higher than the preceding confirmed Smoothed OBV pivot low AND the latest price and Smoothed OBV pivot lows are no more than pivot-right lookback × pivot-alignment multiplier bars apart AND the two price pivot lows are separated by at least the minimum divergence pivot separation and at most the maximum divergence pivot separation AND (same-side slope filter is disabled OR OBV slope Z-score > -slope Z threshold) AND (no prior bullish divergence signal exists OR bars since the prior bullish divergence signal > pivot-right lookback + divergence cooldown offset)
+Short: Divergence detection is enabled AND the current bar confirms a price pivot high AND the latest confirmed price pivot high is higher than the preceding confirmed price pivot high AND the latest confirmed Smoothed OBV pivot high is lower than the preceding confirmed Smoothed OBV pivot high AND the latest price and Smoothed OBV pivot highs are no more than pivot-right lookback × pivot-alignment multiplier bars apart AND the two price pivot highs are separated by at least the minimum divergence pivot separation and at most the maximum divergence pivot separation AND (same-side slope filter is disabled OR OBV slope Z-score < slope Z threshold) AND (no prior bearish divergence signal exists OR bars since the prior bearish divergence signal > pivot-right lookback + divergence cooldown offset)

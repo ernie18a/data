@@ -1,0 +1,15 @@
+Calculation: UptrendCondition = NOT trend filter enabled OR (close > EMA(close, trend lookback) AND (NOT trend slope required OR EMA(close, trend lookback) > EMA(close, trend lookback)[1]) AND (NOT higher timeframe confirmation OR close > EMA(close, trend lookback, T1, last completed bar)))
+Calculation: DowntrendCondition = NOT trend filter enabled OR (close < EMA(close, trend lookback) AND (NOT trend slope required OR EMA(close, trend lookback) < EMA(close, trend lookback)[1]) AND (NOT higher timeframe confirmation OR close < EMA(close, trend lookback, T1, last completed bar)))
+Calculation: AboveAverageVolume = volume >= SMA(volume, volume lookback) * volume multiplier
+Calculation: RegularBullishDivergence = a pivot low is confirmed on this bar AND PivotLow(low, pivot left, pivot right) < previous pivot low price AND RSI(close, rsi length)[pivot right] > RSI(close, rsi length) at previous pivot low AND bars since previous pivot low <= max bars between pivots
+Calculation: HiddenBullishDivergence = a pivot low is confirmed on this bar AND PivotLow(low, pivot left, pivot right) > previous pivot low price AND RSI(close, rsi length)[pivot right] < RSI(close, rsi length) at previous pivot low AND bars since previous pivot low <= max bars between pivots
+Calculation: RegularBearishDivergence = a pivot high is confirmed on this bar AND PivotHigh(high, pivot left, pivot right) > previous pivot high price AND RSI(close, rsi length)[pivot right] < RSI(close, rsi length) at previous pivot high AND bars since previous pivot high <= max bars between pivots
+Calculation: HiddenBearishDivergence = a pivot high is confirmed on this bar AND PivotHigh(high, pivot left, pivot right) < previous pivot high price AND RSI(close, rsi length)[pivot right] > RSI(close, rsi length) at previous pivot high AND bars since previous pivot high <= max bars between pivots
+Long: UptrendCondition AND low <= BollingerLower(close, bb length, bb deviation) AND (RSI(close, rsi length) crosses above rsi oversold OR (RSI(close, rsi length) <= rsi oversold AND RSI(close, rsi length) > RSI(close, rsi length)[1] AND RSI(close, rsi length)[1] <= RSI(close, rsi length)[2])) AND RegularBullishDivergence AND (NOT require volume boost OR AboveAverageVolume) AND bars since last long entry >= signal cooldown
+Long: UptrendCondition
+Long: RegularBullishDivergence
+Long: HiddenBullishDivergence
+Short: DowntrendCondition AND high >= BollingerUpper(close, bb length, bb deviation) AND (RSI(close, rsi length) crosses below rsi overbought OR (RSI(close, rsi length) >= rsi overbought AND RSI(close, rsi length) < RSI(close, rsi length)[1] AND RSI(close, rsi length)[1] >= RSI(close, rsi length)[2])) AND RegularBearishDivergence AND (NOT require volume boost OR AboveAverageVolume) AND bars since last short entry >= signal cooldown
+Short: DowntrendCondition
+Short: RegularBearishDivergence
+Short: HiddenBearishDivergence
