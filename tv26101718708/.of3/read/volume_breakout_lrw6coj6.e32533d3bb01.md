@@ -1,0 +1,10 @@
+Calculation: Bullish volume spike = close > open AND volume = Highest(volume, volume lookback) AND volume >= SMA(volume, volume average lookback) * volume multiplier AND high > low AND 100 * abs(close - open) / (high - low) >= minimum body percentage AND RSI(close, RSI lookback) >= minimum RSI AND RSI(close, RSI lookback) <= maximum RSI
+Calculation: Bullish EMA trend = close > EMA(close, shorter lookback) AND close > EMA(close, longer lookback) AND EMA(close, shorter lookback) > EMA(close, longer lookback)
+Calculation: Confirmed BUY setup = Bullish volume spike AND Bullish EMA trend AND (breakout filter disabled OR close > Highest(high[1], breakout lookback)) AND (risk filter disabled OR (high > 0 AND 100 * (high - low) / high <= maximum risk percentage)) AND (ATR extension filter disabled OR high - low <= ATR(ATR lookback) * maximum candle range multiple) AND (no prior BUY OR current bar is at least cooldown bars after the prior BUY)
+Long: REV enabled AND Bullish volume spike AND NOT Bullish EMA trend AND Highest(high, REV range lookback) > Lowest(low, REV range lookback) AND close <= Lowest(low, REV range lookback) + (Highest(high, REV range lookback) - Lowest(low, REV range lookback)) * REV near-low percentage / 100
+Long: Bullish volume spike AND Bullish EMA trend AND NOT Confirmed BUY setup
+Long: Confirmed BUY setup
+Long: Entry alert enabled AND a latest BUY setup exists on an earlier bar AND high >= its entry price AND its entry alert has not fired since that setup
+Exit: long, stop-loss alert enabled AND a latest BUY setup exists on an earlier bar AND low <= its stop price AND its stop-loss alert has not fired since that setup
+Exit: long, TP1 alert enabled AND a latest BUY setup exists on an earlier bar AND high >= its entry price + (its entry price - its stop price) * TP1 reward-risk parameter AND its TP1 alert has not fired since that setup
+Exit: long, TP2 alert enabled AND a latest BUY setup exists on an earlier bar AND high >= its entry price + (its entry price - its stop price) * TP2 reward-risk parameter AND its TP2 alert has not fired since that setup

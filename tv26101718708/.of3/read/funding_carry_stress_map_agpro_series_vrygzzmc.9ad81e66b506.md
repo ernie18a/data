@@ -1,0 +1,8 @@
+Calculation: carry premium = if automatic spot/perpetual pairing is enabled, (perpetual close / spot close - 1) * 100% on chart bars; otherwise (chart close / max(reference close, minimum price increment) - 1) * 100% on chart bars.
+Calculation: normalized basis deviation = (carry premium - EMA(carry premium, carry baseline lookback)) / max(STDEV(carry premium, stress normalization lookback), basis deviation floor).
+Calculation: positive premium pressure = reference data is available AND abs(carry premium) <= reference mismatch limit AND carry premium > premium threshold AND normalized basis deviation > basis z-score threshold.
+Calculation: negative premium pressure = reference data is available AND abs(carry premium) <= reference mismatch limit AND carry premium < -premium threshold AND normalized basis deviation < -basis z-score threshold.
+Calculation: carry persistence = the greater of the percentage of the last persistence window of chart bars with positive premium pressure and the percentage with negative premium pressure.
+Calculation: carry stress = EMA(clamp(abs(carry premium) / max(premium threshold * premium score multiplier, premium score floor) * 100%, 0%, 100%) * premium stress weight + clamp(abs(normalized basis deviation) / basis stress scale * 100%, 0%, 100%) * basis stress weight + clamp(carry persistence, 0%, 100%) * persistence stress weight + clamp(percentRank(max(ATR(volatility lookback) when available, otherwise true range, minimum price increment), stress normalization lookback), 0%, 100%) * volatility stress weight, stress smoothing).
+Long: positive premium pressure AND carry stress >= crowd stress threshold.
+Short: negative premium pressure AND carry stress >= crowd stress threshold.

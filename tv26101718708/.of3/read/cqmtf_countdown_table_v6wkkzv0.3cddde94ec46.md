@@ -1,0 +1,8 @@
+Long: close >= open(T1, requested on chart bars, last completed bar historically and forming bar in realtime, lookahead off)
+Short: close < open(T1, requested on chart bars, last completed bar historically and forming bar in realtime, lookahead off)
+Long: close >= open(T2, requested on chart bars, forming bar, lookahead on)
+Short: close < open(T2, requested on chart bars, forming bar, lookahead on)
+Long: close >= open(T3, requested on chart bars, forming bar, lookahead on)
+Short: close < open(T3, requested on chart bars, forming bar, lookahead on)
+Long: close >= open(T4, requested on chart bars, forming bar, lookahead on)
+Short: close < open(T4, requested on chart bars, forming bar, lookahead on)

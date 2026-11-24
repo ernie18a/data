@@ -1,0 +1,7 @@
+Calculation: Candidate BC = running maximum of confirmed PivotHigh(high, swing lookback, swing lookback) values during the candidate uptrend
+Calculation: Candidate AR = running minimum low after Candidate BC
+Calculation: Volume ratio = volume / SMA(volume, volume MA lookback)
+Short: the latest confirmed PivotHigh(high, swing lookback, swing lookback) exceeds the preceding confirmed pivot high AND the latest confirmed PivotLow(low, swing lookback, swing lookback) exceeds the preceding confirmed pivot low AND Candidate BC exists and is no older than the maximum candidate age AND close crosses below the latest confirmed pivot low AND the current bar is after Candidate BC's pivot bar
+Short: after the CHoCH and before an Upthrust, a confirmed pivot high has a pivot bar after the CHoCH AND high[swing lookback] > BC × (1 + breakout threshold) AND close[swing lookback] < BC AND Volume ratio[swing lookback] ≥ elevated volume threshold
+Short: after an Upthrust and before a Sign of Weakness, the bar at swing lookback bars ago is after the Upthrust AND close[swing lookback] < AR AND Volume ratio[swing lookback] ≥ elevated volume threshold AND close[swing lookback] < open[swing lookback]
+Short: after a Sign of Weakness and before a Last Point of Supply, a confirmed pivot high has a pivot bar after the Sign of Weakness AND the pivot high < BC AND Volume ratio[swing lookback] ≤ weak volume threshold

@@ -1,0 +1,2 @@
+Long: price enters a support-biased confluence zone from outside AND zone score > score threshold AND higher-timeframe bias is bullish
+Short: price enters a resistance-biased confluence zone from outside AND zone score > score threshold AND higher-timeframe bias is bearish

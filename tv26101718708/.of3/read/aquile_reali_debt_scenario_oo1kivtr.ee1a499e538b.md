@@ -1,0 +1,9 @@
+Calculation: RealYieldChange = current 10-year real-yield close from T1 minus its close at the selected T1 lookback, sampled on chart bars; the current T1 bar may still be forming
+Calculation: BreakevenChange = current breakeven-inflation close from T1 minus its close at the selected T1 lookback, sampled on chart bars; the current T1 bar may still be forming
+Calculation: FedBalanceChange = current Fed balance close from T2 minus its close at the corresponding selected T2 lookback, sampled on chart bars; the current T2 bar may still be forming
+Calculation: AuctionYieldChange = mean of (current 10-year auction yield minus previous 10-year auction yield) and (current 30-year auction yield minus previous 30-year auction yield)
+Calculation: MarketWinsScore = count of satisfied conditions: RealYieldChange is rising; BreakevenChange is non-rising; FedBalanceChange is non-rising; current 10-year real yield from T1 is at or above its threshold; and, when auction and FedWatch scoring is enabled, AuctionYieldChange is rising and FedWatch hike probability exceeds cut probability
+Calculation: RepressionScore = count of satisfied conditions: RealYieldChange is falling; BreakevenChange is rising; FedBalanceChange is rising; current 10-year real yield from T1 is below its threshold; and, when auction and FedWatch scoring is enabled, AuctionYieldChange is non-rising and FedWatch cut probability exceeds hike probability
+Calculation: Scenario = break when current VIX from T1 is at or above its threshold; otherwise repression when RepressionScore reaches the required score for the current auction and FedWatch scoring mode; otherwise market wins when MarketWinsScore reaches that required score; otherwise transition. T1 values are sampled on chart bars and the current T1 bar may still be forming.
+Long: Scenario is repression
+Short: Scenario is market wins

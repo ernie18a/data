@@ -1,0 +1,2 @@
+Long: close > open AND (chart-bar datetime is within session parameter 1 in timezone parameter OR chart-bar datetime is within session parameter 2 in timezone parameter)
+Short: close < open AND (chart-bar datetime is within session parameter 1 in timezone parameter OR chart-bar datetime is within session parameter 2 in timezone parameter)

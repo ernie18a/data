@@ -1,0 +1,15 @@
+Calculation: Trailing average = initialize to MA(close, selected type, MA lookback); thereafter, if Supertrend(factor, Supertrend lookback) direction is up, max(MA(close, selected type, MA lookback), trailing average[1]), otherwise min(MA(close, selected type, MA lookback), trailing average[1]), on chart bars.
+Long: A confirmed PivotHigh(high, p, p) forms, where p is half the odd-rounded fractal-length parameter.
+Short: A confirmed PivotLow(low, p, p) forms, where p is half the odd-rounded fractal-length parameter.
+Long: The latest confirmed pivot-high level is broken by close > level when close breaks are configured, or high > level when wick breaks are configured.
+Short: The latest confirmed pivot-low level is broken by close < level when close breaks are configured, or low < level when wick breaks are configured.
+Long: close > trailing average.
+Short: close <= trailing average.
+Long: On the gap-marking bar, low[1] > high[3] AND close[2] > low[2] + ATR(FVG ATR lookback)[2] × FVG threshold.
+Short: On the gap-marking bar, low[3] > high[1] AND close[2] < high[2] - ATR(FVG ATR lookback)[2] × FVG threshold.
+Long: An existing bearish fair value gap is mitigated upward by max(open, close) > its upper edge when body mitigation is configured, or high > its upper edge when wick mitigation is configured, or high > its midpoint when midpoint mitigation is configured.
+Short: An existing bullish fair value gap is mitigated downward by min(open, close) < its lower edge when body mitigation is configured, or low < its lower edge when wick mitigation is configured, or low < its midpoint when midpoint mitigation is configured.
+Long: While an unbroken, unraided bullish fair value gap is active, low < its upper edge AND close > its upper edge.
+Short: While an unbroken, unraided bearish fair value gap is active, high > its lower edge AND close < its lower edge.
+Long: After a bullish Fib setup and on a later chart bar, low < the proximal negative Fib extension of its anchor leg AND close >= that extension. The setup anchors are the latest confirmed pivot low and broken pivot high on an upward pivot break that is the first setup, closes outside the prior setup range, or reverses the prior break direction; the last completed T1 bar's low and high when its close >= its open, with setup created on the first chart bar of a new T1 bar; or the high and low of a configured trading session or opening-range session when it ends and close > trailing average.
+Short: After a bearish Fib setup and on a later chart bar, high > the proximal positive Fib extension of its anchor leg AND close <= that extension. The setup anchors are the broken pivot low and latest confirmed pivot high on a downward pivot break that is the first setup, closes outside the prior setup range, or reverses the prior break direction; the last completed T1 bar's low and high when its close < its open, with setup created on the first chart bar of a new T1 bar; or the high and low of a configured trading session or opening-range session when it ends and close <= trailing average.

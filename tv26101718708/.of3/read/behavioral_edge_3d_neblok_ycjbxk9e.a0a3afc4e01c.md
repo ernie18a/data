@@ -1,0 +1,42 @@
+Calculation: Volume available = cumulative sum of volume, treating missing volume as zero, > 0
+Calculation: Relative volume = current volume, treating missing volume as zero, divided by SMA(volume treated as zero, relative-volume lookback) when volume is available and that SMA > 0; otherwise the neutral relative-volume fallback
+Calculation: Fair value = VWMA(close, fair-value lookback) when volume is available and VWMA is defined; otherwise EMA(close, fair-value lookback)
+Calculation: Extension in ATR = (close - fair value) / ATR(ATR lookback) when ATR > 0; otherwise 0
+Calculation: Herding score = EMA(sign(close - open) × min(relative volume, relative-volume cap), herding lookback), clamped to ±component clamp limit and set to 0 when undefined
+Calculation: Range-position score = linearly map close's position between lowest(low, range lookback) and highest(high, range lookback) to the symmetric component scale; use 0 when the high equals the low
+Calculation: Crowd Emotion Index = EMA((weighted mean + component clamp limit) × CEI midpoint, CEI smoothing lookback), defaulting to CEI midpoint when undefined; weighted mean is 0 when the sum of weights is not positive, otherwise the weighted mean of clamp(Extension in ATR / overreaction cap, ±component clamp limit), clamp((RSI(close, momentum lookback) - RSI midpoint) / RSI normalization half-range, ±component clamp limit), Herding score, clamp(EMA((close - close[1]) / ATR when ATR > 0 and the change is defined, otherwise 0, thrust smoothing lookback) / thrust normalization factor, ±component clamp limit), and Range-position score, using their separate overreaction, momentum, herding, thrust, and range-anchoring weights
+Calculation: Volume climax = volume is available AND relative volume >= volume-climax threshold
+Calculation: Bullish rejection = high > low AND (close - low) / (high - low) >= bullish close-position threshold AND (min(open, close) - low >= (high - low) × rejection wick fraction OR close > open)
+Calculation: Bearish rejection = high > low AND (close - low) / (high - low) <= bearish close-position threshold AND (high - max(open, close) >= (high - low) × rejection wick fraction OR close < open)
+Calculation: Swing-low sweep = low < lowest(low, swing lookback) ending on the preceding chart bar AND close > that level
+Calculation: Swing-high sweep = high > highest(high, swing lookback) ending on the preceding chart bar AND close < that level
+Calculation: Prior-day low sweep = on intraday chart bars, low < low of the last completed T1 bar AND close > that low; use the T1 value on chart bars
+Calculation: Prior-day high sweep = on intraday chart bars, high > high of the last completed T1 bar AND close < that high; use the T1 value on chart bars
+Calculation: Sellers trapped = (Swing-low sweep OR Prior-day low sweep) AND min(open, close) - low >= ATR(ATR lookback) × trap-wick buffer
+Calculation: Buyers trapped = (Swing-high sweep OR Prior-day high sweep) AND high - max(open, close) >= ATR(ATR lookback) × trap-wick buffer
+Calculation: Bullish emotion divergence = lowest(low, short divergence lookback) <= lowest(low, long divergence lookback) AND lowest(Crowd Emotion Index, short divergence lookback) > lowest(Crowd Emotion Index, long divergence lookback) + emotion-divergence threshold; short divergence lookback is shorter than long divergence lookback
+Calculation: Bearish emotion divergence = highest(high, short divergence lookback) >= highest(high, long divergence lookback) AND highest(Crowd Emotion Index, short divergence lookback) < highest(Crowd Emotion Index, long divergence lookback) - emotion-divergence threshold; short divergence lookback is shorter than long divergence lookback
+Calculation: Trend up = EMA(close, shorter trend lookback) > EMA(close, longer trend lookback) AND close > fair value
+Calculation: Trend down = EMA(close, shorter trend lookback) < EMA(close, longer trend lookback) AND close < fair value
+Calculation: Long reversal quality = count of: lowest(Crowd Emotion Index, emotion-gate lookback) <= panic threshold; volume climax on the current bar or within the climax recency lookback; Bullish rejection; Sellers trapped on the current bar or within the trapped recency lookback; Bullish emotion divergence
+Calculation: Short reversal quality = count of: highest(Crowd Emotion Index, emotion-gate lookback) >= euphoria threshold; volume climax on the current bar or within the climax recency lookback; Bearish rejection; Buyers trapped on the current bar or within the trapped recency lookback; Bearish emotion divergence
+Calculation: Long trap quality = count of: Prior-day low sweep; Swing-low sweep; Bullish rejection; Volume climax on the current bar; Crowd Emotion Index <= fear threshold
+Calculation: Short trap quality = count of: Prior-day high sweep; Swing-high sweep; Bearish rejection; Volume climax on the current bar; Crowd Emotion Index >= greed threshold
+Calculation: Long herd quality = count of: Trend up; relative volume >= herd participation threshold; Herding score >= herd direction threshold; Extension in ATR < herd extension ceiling; Range-position score > 0
+Calculation: Short herd quality = count of: Trend down; relative volume >= herd participation threshold; Herding score <= -herd direction threshold; Extension in ATR > -herd extension ceiling; Range-position score < 0
+Calculation: Long reversal setup = reversal signals enabled AND lowest(Crowd Emotion Index, emotion-gate lookback) <= fear threshold AND Crowd Emotion Index > Crowd Emotion Index[1] AND Long reversal quality >= minimum reversal quality
+Calculation: Short reversal setup = reversal signals enabled AND highest(Crowd Emotion Index, emotion-gate lookback) >= greed threshold AND Crowd Emotion Index < Crowd Emotion Index[1] AND Short reversal quality >= minimum reversal quality
+Calculation: Long trap setup = trap signals enabled AND Sellers trapped AND Bullish rejection AND Long trap quality >= minimum trap quality
+Calculation: Short trap setup = trap signals enabled AND Buyers trapped AND Bearish rejection AND Short trap quality >= minimum trap quality
+Calculation: Long herd setup = herd signals enabled AND Trend up AND Crowd Emotion Index crosses above CEI midpoint AND Long herd quality >= minimum herd quality
+Calculation: Short herd setup = herd signals enabled AND Trend down AND Crowd Emotion Index crosses below CEI midpoint AND Short herd quality >= minimum herd quality
+Long: on confirmed chart-bar close, more than the cooldown period has elapsed since the last emitted signal AND (Long reversal setup OR (Long trap setup AND NOT Long reversal setup AND NOT Short reversal setup) OR (Long herd setup AND NOT Long reversal setup AND NOT Short reversal setup AND NOT Long trap setup AND NOT Short trap setup))
+Short: on confirmed chart-bar close, more than the cooldown period has elapsed since the last emitted signal AND ((Short reversal setup AND NOT Long reversal setup) OR (Short trap setup AND NOT Long reversal setup AND NOT Short reversal setup AND NOT Long trap setup) OR (Short herd setup AND NOT Long reversal setup AND NOT Short reversal setup AND NOT Long trap setup AND NOT Short trap setup AND NOT Long herd setup))
+Long: Herding score >= herd direction threshold
+Short: Herding score <= -herd direction threshold
+Long: Sellers trapped AND NOT Buyers trapped
+Short: Buyers trapped
+Long: max(Long reversal quality, Long trap quality, Long herd quality) >= dashboard quality-color threshold
+Short: max(Short reversal quality, Short trap quality, Short herd quality) >= dashboard quality-color threshold
+Exit: long, statistics tracking enabled AND a statistics-tracked long position is open AND on a confirmed chart-bar close after its entry bar, low <= entry-bar low - ATR(entry bar, ATR lookback) × statistics stop buffer OR high >= entry price + ABS(entry price - (entry-bar low - ATR(entry bar, ATR lookback) × statistics stop buffer)) × statistics target multiple
+Exit: short, statistics tracking enabled AND a statistics-tracked short position is open AND on a confirmed chart-bar close after its entry bar, high >= entry-bar high + ATR(entry bar, ATR lookback) × statistics stop buffer OR low <= entry price - ABS(entry price - (entry-bar high + ATR(entry bar, ATR lookback) × statistics stop buffer)) × statistics target multiple

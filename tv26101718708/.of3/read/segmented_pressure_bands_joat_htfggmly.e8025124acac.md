@@ -1,0 +1,8 @@
+Calculation: segmented regression channel = ordinary least squares of source over the current segment using x=0 for the current bar and increasing x for older bars, with basis at the intercept and bands at basis ± deviation multiplier × sqrt(sum of squared residuals / segment length); use the lesser of segment length and maximum segment lookback, freeze slope, intercept, and deviation when minimum segment length is reached, project the frozen regression with x decreasing by one per bar, and start a new segment after a confirmed close beyond either outer band
+Long: current segmented channel slope <= 0
+Short: current segmented channel slope > 0
+Long: confirmed close > segmented channel upper band AND segment length >= minimum segment length AND (channel is not frozen OR current bar is at least one bar after the freeze bar)
+Short: confirmed close < segmented channel lower band AND segment length >= minimum segment length AND (channel is not frozen OR current bar is at least one bar after the freeze bar)
+Calculation: risk distance = ATR(ATR lookback) at entry × ATR stop multiplier when ATR stops are selected, otherwise entry price × stop percentage / 100
+Exit: long, on a bar after entry, low <= entry price − risk distance OR high >= max(entry price + risk distance × each of three separate take-profit reward/risk parameters)
+Exit: short, on a bar after entry, high >= entry price + risk distance OR low <= min(entry price − risk distance × each of three separate take-profit reward/risk parameters)

@@ -1,0 +1,40 @@
+Calculation: Chart RSI = RSI(configured source, RSI lookback).
+Calculation: Dashboard RSI = RSI(close, RSI lookback).
+Calculation: RSI smoothing average = selected SMA, EMA, RMA, WMA, or VWMA of RSI over smoothing lookback; VWMA uses volume and falls back to SMA when volume is zero; unavailable when smoothing is None.
+Calculation: RSI channel = selected Bollinger Bands (SMA(RSI, channel lookback) plus or minus channel multiplier times StDev(RSI, channel lookback)), Keltner Channel (EMA(RSI, channel lookback) plus or minus channel multiplier times EMA(abs(RSI - RSI[1]), channel lookback)), or adjusted Donchian Channel (midpoint of highest and lowest RSI plus or minus channel multiplier times the corresponding half-range); unavailable when channel model is None.
+Calculation: RSI standard deviation = StDev(Chart RSI, deviation lookback).
+Calculation: T-slot dashboard state = RSI, smoothing, channel, reversal, breakout, and regular-divergence calculations evaluated on each enabled T1-T8 bar and sampled on chart bars with lookahead off (forming T bar in real time; last completed T bar historically).
+Calculation: First reversal deviation level = Chart RSI at the latest reversal plus or minus reversal deviation multiplier times first deviation factor times RSI standard deviation at that reversal; add for bullish, subtract for bearish, cap at the RSI maximum for bullish, floor at the RSI minimum for bearish, and hold until the next reversal.
+Calculation: Second reversal deviation level = Chart RSI at the latest reversal plus or minus reversal deviation multiplier times second deviation factor times RSI standard deviation at that reversal; add for bullish, subtract for bearish, cap at the RSI maximum for bullish, floor at the RSI minimum for bearish, and hold until the next reversal.
+Calculation: First divergence deviation level = Chart RSI at the latest regular or enabled hidden divergence plus or minus divergence deviation multiplier times first deviation factor times RSI standard deviation at that divergence; add for bullish, subtract for bearish, cap at the RSI maximum for bullish, floor at the RSI minimum for bearish, and hold until the next qualifying divergence.
+Calculation: Second divergence deviation level = Chart RSI at the latest regular or enabled hidden divergence plus or minus divergence deviation multiplier times second deviation factor times RSI standard deviation at that divergence; add for bullish, subtract for bearish, cap at the RSI maximum for bullish, floor at the RSI minimum for bearish, and hold until the next qualifying divergence.
+Long: Chart RSI <= oversold threshold AND Chart RSI < overbought threshold.
+Short: Chart RSI >= overbought threshold.
+Long: Chart RSI[1] < Chart RSI[2] AND Chart RSI > Chart RSI[1] AND (Chart RSI[1] <= oversold threshold OR (lower RSI channel exists AND Chart RSI[1] <= lower RSI channel[1])).
+Short: Chart RSI[1] > Chart RSI[2] AND Chart RSI < Chart RSI[1] AND (Chart RSI[1] >= overbought threshold OR (upper RSI channel exists AND Chart RSI[1] >= upper RSI channel[1])).
+Long: Chart RSI crosses above RSI channel upper boundary.
+Short: Chart RSI crosses below RSI channel lower boundary.
+Long: Chart RSI crosses above RSI smoothing average.
+Short: Chart RSI crosses below RSI smoothing average.
+Long: With divergence detection enabled, at a confirmed Chart RSI pivot low (chart pivot lookback on both sides), the low at the current pivot bar is lower than at the preceding confirmed Chart RSI pivot low AND Chart RSI at the current pivot bar is higher than at the preceding pivot.
+Short: With divergence detection enabled, at a confirmed Chart RSI pivot high (chart pivot lookback on both sides), the high at the current pivot bar is higher than at the preceding confirmed Chart RSI pivot high AND Chart RSI at the current pivot bar is lower than at the preceding pivot.
+Long: With divergence detection and hidden divergence enabled, at a confirmed Chart RSI pivot low (chart pivot lookback on both sides), the low at the current pivot bar is higher than at the preceding confirmed Chart RSI pivot low AND Chart RSI at the current pivot bar is lower than at the preceding pivot.
+Short: With divergence detection and hidden divergence enabled, at a confirmed Chart RSI pivot high (chart pivot lookback on both sides), the high at the current pivot bar is lower than at the preceding confirmed Chart RSI pivot high AND Chart RSI at the current pivot bar is higher than at the preceding pivot.
+Long: With momentum reversals and reversal deviation levels enabled, the latest reversal was bullish AND Chart RSI crosses above the first reversal deviation level.
+Short: With momentum reversals and reversal deviation levels enabled, the latest reversal was bearish AND Chart RSI crosses below the first reversal deviation level.
+Long: With momentum reversals and reversal deviation levels enabled, the latest reversal was bullish AND Chart RSI crosses above the second reversal deviation level.
+Short: With momentum reversals and reversal deviation levels enabled, the latest reversal was bearish AND Chart RSI crosses below the second reversal deviation level.
+Long: With divergence detection and divergence deviation levels enabled, the latest qualifying divergence was bullish AND Chart RSI crosses above the first divergence deviation level.
+Short: With divergence detection and divergence deviation levels enabled, the latest qualifying divergence was bearish AND Chart RSI crosses below the first divergence deviation level.
+Long: With divergence detection and divergence deviation levels enabled, the latest qualifying divergence was bullish AND Chart RSI crosses above the second divergence deviation level.
+Short: With divergence detection and divergence deviation levels enabled, the latest qualifying divergence was bearish AND Chart RSI crosses below the second divergence deviation level.
+Long: For any enabled T1-T8 dashboard slot, Dashboard RSI <= oversold threshold AND Dashboard RSI < overbought threshold.
+Short: For any enabled T1-T8 dashboard slot, Dashboard RSI >= overbought threshold.
+Long: For any enabled T1-T8 dashboard slot with smoothing enabled, Dashboard RSI > RSI smoothing average.
+Short: For any enabled T1-T8 dashboard slot with smoothing enabled, Dashboard RSI <= RSI smoothing average.
+Long: For any enabled T1-T8 dashboard slot, a crossover of Dashboard RSI above the upper RSI channel occurred within the dashboard signal-age lookback AND its age is no greater than the age of a lower-channel crossover, or no lower-channel crossover has occurred.
+Short: For any enabled T1-T8 dashboard slot, a crossunder of Dashboard RSI below the lower RSI channel occurred within the dashboard signal-age lookback AND its age is less than the age of an upper-channel crossover, or no upper-channel crossover has occurred.
+Long: For any enabled T1-T8 dashboard slot, a bullish RSI reversal occurred within the dashboard signal-age lookback AND its age is no greater than the age of a bearish RSI reversal, or no bearish RSI reversal has occurred.
+Short: For any enabled T1-T8 dashboard slot, a bearish RSI reversal occurred within the dashboard signal-age lookback AND its age is less than the age of a bullish RSI reversal, or no bullish RSI reversal has occurred.
+Long: For any enabled T1-T8 dashboard slot, a regular bullish divergence using the dashboard pivot lookback on both pivot sides occurred within the dashboard signal-age lookback AND its age is no greater than the age of a regular bearish divergence, or no regular bearish divergence has occurred.
+Short: For any enabled T1-T8 dashboard slot, a regular bearish divergence using the dashboard pivot lookback on both pivot sides occurred within the dashboard signal-age lookback AND its age is less than the age of a regular bullish divergence, or no regular bullish divergence has occurred.

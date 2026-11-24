@@ -1,0 +1,4 @@
+Calculation: IB high = highest(high) on chart bars from the configured IB start bar through the configured IB end bar of the current session
+Calculation: IB low = lowest(low) on chart bars from the configured IB start bar through the configured IB end bar of the current session
+Long: After the configured IB end and through the data cutoff, high exceeded IB high after the IB end and by the previous chart bar, low <= IB high, close > IB high, and no earlier bullish signal occurred that session
+Short: After the configured IB end and through the data cutoff, low fell below IB low after the IB end and by the previous chart bar, high >= IB low, close < IB low, and no earlier bearish signal occurred that session

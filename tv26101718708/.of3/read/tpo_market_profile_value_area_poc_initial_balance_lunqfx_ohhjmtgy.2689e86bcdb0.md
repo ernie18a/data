@@ -1,0 +1,7 @@
+Calculation: TPO Value Area = Divide the current session’s low-to-high range into the price-row count; for each T1 bracket, count each row once if any chart bar in that bracket overlaps it; choose the lowest-price row among tied maximum-count rows as the Point of Control; expand from it by adding the adjacent row with the greater count, choosing the higher-price row on ties, until included counts reach the value-area percentage of total row counts; return the upper edge of the highest included row and lower edge of the lowest included row. Include the forming session and bracket.
+Long: TPO Value Area exists AND close > its upper edge
+Short: TPO Value Area exists AND close < its lower edge
+Long: on a confirmed chart bar, TPO Value Area exists AND close > its upper edge AND close[1] <= its upper edge
+Short: on a confirmed chart bar, TPO Value Area exists AND close < its lower edge AND close[1] >= its lower edge
+Long: on a confirmed chart bar, close > Initial Balance High(high of chart bars in the current session’s first two T1 brackets) AND close[1] <= that Initial Balance High
+Short: on a confirmed chart bar, close < Initial Balance Low(low of chart bars in the current session’s first two T1 brackets) AND close[1] >= that Initial Balance Low

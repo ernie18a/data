@@ -1,0 +1,8 @@
+Calculation: Buy-side sweep = a prior chart bar has a latest confirmed Pivot High(high, local pivot lookback, local pivot lookback), and current high > that pivot and current close < that pivot
+Calculation: Sell-side sweep = a prior chart bar has a latest confirmed Pivot Low(low, local pivot lookback, local pivot lookback), and current low < that pivot and current close > that pivot
+Calculation: HTF liquidity shelves = latest confirmed Pivot High(high, HTF pivot lookback, HTF pivot lookback) and Pivot Low(low, HTF pivot lookback, HTF pivot lookback), calculated on T1 bars and mapped to chart bars from the last completed T1 bar; if either is missing or upper <= lower, use highest(high) and lowest(low) over max(fallback minimum bars, HTF pivot lookback × fallback multiplier) chart bars
+Calculation: Reaction quality = for a buy-side sweep, clamp((high - max(open, close)) / max(high - low, minimum tick size) × 100, 0, 100); for a sell-side sweep, clamp((min(open, close) - low) / max(high - low, minimum tick size) × 100, 0, 100); otherwise the greater of those wick percentages
+Long: Sell-side sweep
+Short: Buy-side sweep
+Long: Sell-side sweep AND abs(low - HTF lower shelf) <= ATR(ATR lookback) × near-shelf ATR multiplier AND reaction quality >= reaction threshold
+Short: Buy-side sweep AND abs(high - HTF upper shelf) <= ATR(ATR lookback) × near-shelf ATR multiplier AND reaction quality >= reaction threshold

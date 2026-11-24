@@ -1,0 +1,8 @@
+Calculation: bearish-run open = open of the latest chart bar where close < open and the previous chart bar close >= its open
+Calculation: bullish-run open = open of the latest chart bar where close > open and the previous chart bar close <= its open
+Long: T1 is above the chart timeframe AND on a confirmed chart bar while no model is active, the forming T1 candle low < the last completed T1 candle low AND its high <= that candle's high
+Short: T1 is above the chart timeframe AND on a confirmed chart bar while no model is active, the forming T1 candle high > the last completed T1 candle high AND its low >= that candle's low
+Long: T1 is above the chart timeframe AND on a confirmed chart bar while a bullish model is active and no CISD has occurred, close > the bearish-run open captured at the C2 low sweep or reset at each later lower chart-bar low during that C2
+Short: T1 is above the chart timeframe AND on a confirmed chart bar while a bearish model is active and no CISD has occurred, close < the bullish-run open captured at the C2 high sweep or reset at each later higher chart-bar high during that C2
+Long: T1 is above the chart timeframe AND on the confirmed chart bar that closes C2, for an active bullish model, C2 low < C1 low AND C2 high <= C1 high AND (C2 close > C1 low AND C2 close < C1 high OR the inside-close requirement is disabled)
+Short: T1 is above the chart timeframe AND on the confirmed chart bar that closes C2, for an active bearish model, C2 high > C1 high AND C2 low >= C1 low AND (C2 close > C1 low AND C2 close < C1 high OR the inside-close requirement is disabled)

@@ -1,0 +1,2 @@
+Long: close > VWAP(T1, chart bars, current period) AND close > VWAP(T2, chart bars, current period) AND close > VWAP(T3, chart bars, current period), where T1 is shorter than T2 and T2 is shorter than T3
+Short: VWAP(T1, chart bars, current period) crosses below VWAP(T2, chart bars, current period), where T1 is shorter than T2

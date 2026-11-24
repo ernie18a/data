@@ -1,0 +1,22 @@
+Calculation: Stablecoin flow change = percentage change in aggregate stablecoin market capitalization over the flow lookback.
+Calculation: Stablecoin velocity = (EMA(aggregate stablecoin market capitalization, flow-derived short EMA lookback) - EMA(aggregate stablecoin market capitalization, baseline EMA lookback)) / EMA(aggregate stablecoin market capitalization, baseline EMA lookback) × percentage scale; the baseline EMA lookback is the slower lookback.
+Calculation: Stablecoin dominance change = stablecoin dominance - stablecoin dominance[flow lookback], where stablecoin dominance = aggregate stablecoin market capitalization / total crypto market capitalization × percentage scale.
+Calculation: Safe ATR = max(ATR(ATR lookback), high - low when ATR is unavailable, minimum tick).
+Calculation: Price distance = (close - EMA(close, baseline EMA lookback)) / safe ATR.
+Calculation: Price momentum = (EMA(close, flow-derived short EMA lookback) - EMA(close, baseline EMA lookback)) / safe ATR.
+Calculation: Flow score = clamp((stablecoin flow change + outflow threshold) / (inflow threshold + outflow threshold) × score scale, score minimum, score maximum); use the neutral score when stablecoin flow change is unavailable.
+Calculation: Velocity score = clamp((stablecoin velocity + velocity score offset) / velocity score range × score scale, score minimum, score maximum); use the neutral score when stablecoin velocity is unavailable.
+Calculation: Dominance stress = clamp((stablecoin dominance change + dominance threshold) / (dominance threshold × dominance normalization factor) × score scale, score minimum, score maximum); use the neutral score when stablecoin dominance change is unavailable.
+Calculation: Appetite score = clamp((price distance + price momentum + appetite score offset) / appetite score range × score scale, score minimum, score maximum).
+Calculation: Liquidity pulse = clamp(flow score × pulse flow weight + velocity score × pulse velocity weight + (score maximum - dominance stress) × pulse nondefensive-dominance weight + appetite score × pulse appetite weight, score minimum, score maximum).
+Calculation: Parking score = clamp(dominance stress × parking dominance weight + (score maximum - appetite score) × parking appetite-weakness weight + max(0, neutral score - flow score) × parking low-flow weight, score minimum, score maximum).
+Calculation: Dry-liquidity score = clamp((score maximum - flow score) × dry flow weight + (score maximum - velocity score) × dry velocity weight + (score maximum - appetite score) × dry appetite weight, score minimum, score maximum).
+Calculation: Rotation score = clamp(flow score × rotation flow weight + (score maximum - dominance stress) × rotation nondefensive-dominance weight + appetite score × rotation appetite weight, score minimum, score maximum).
+Calculation: Raw expansion condition = at least one selected stablecoin market-cap source is available AND stablecoin flow change >= inflow threshold AND dominance stress <= expansion dominance-stress ceiling AND liquidity pulse >= expansion pulse floor.
+Calculation: Raw parking condition = at least one selected stablecoin market-cap source is available AND stablecoin dominance change >= dominance threshold AND parking score >= parking score floor.
+Calculation: Raw dry-liquidity condition = at least one selected stablecoin market-cap source is available AND stablecoin flow change <= -outflow threshold AND dry-liquidity score >= dry-liquidity score floor.
+Calculation: Raw rotation condition = at least one selected stablecoin market-cap source is available AND stablecoin flow change > 0 AND rotation score >= rotation score floor AND raw expansion condition is false.
+Long: Raw expansion condition AND it is true on at least the minimum persistence percentage of bars in the persistence lookback.
+Long: Raw rotation condition AND it is true on at least the minimum persistence percentage of bars in the persistence lookback.
+Short: Raw parking condition AND it is true on at least the minimum persistence percentage of bars in the persistence lookback.
+Short: Raw dry-liquidity condition AND it is true on at least the minimum persistence percentage of bars in the persistence lookback.

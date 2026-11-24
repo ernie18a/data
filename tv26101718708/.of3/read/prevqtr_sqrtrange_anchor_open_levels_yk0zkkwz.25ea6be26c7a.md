@@ -1,0 +1,7 @@
+Calculation: Selected anchor open = the open of the selected RTH or ETH session, or of the current T1 or T2 period, latched from its first chart bar.
+Calculation: Cumulative delta(P) = sum(volume when close >= open) − sum(volume when close < open) since period P began, calculated on chart bars.
+Calculation: Level unit = multiplier × sqrt(high(T1, last completed bar) − low(T1, last completed bar)), sampled on chart bars when the range is positive.
+Calculation: Upper level(n) = selected anchor open + n × level unit
+Calculation: Lower level(n) = selected anchor open − n × level unit
+Long: close >= RTH open OR close >= selected anchor open OR close >= open(T2, current forming bar) OR (Cumulative delta since selected anchor period start >= 0 AND volume accumulated since that start > 0) OR (Cumulative delta since RTH start >= 0 AND volume accumulated since that start > 0) OR close crosses above upper level(n) for each level index n from one through level-count parameter N OR close crosses above selected anchor open
+Short: close < RTH open OR close < selected anchor open OR close < open(T2, current forming bar) OR (Cumulative delta since selected anchor period start < 0 AND volume accumulated since that start > 0) OR (Cumulative delta since RTH start < 0 AND volume accumulated since that start > 0) OR close crosses below lower level(n) for each level index n from one through level-count parameter N OR close crosses below selected anchor open

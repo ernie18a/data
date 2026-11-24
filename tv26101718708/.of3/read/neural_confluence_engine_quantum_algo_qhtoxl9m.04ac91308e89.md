@@ -1,0 +1,32 @@
+Calculation: WaveTrend signal = SMA(WaveTrend(HLC3, WaveTrend channel lookback, WaveTrend average lookback), WaveTrend signal lookback)
+Calculation: Squeeze state = compressed when Bollinger lower band(close, shared squeeze lookback, Bollinger deviation multiplier) > Keltner lower band(close, same basis lookback, Keltner ATR lookback, Keltner multiplier) AND Bollinger upper band < Keltner upper band; released when Bollinger lower band < Keltner lower band OR Bollinger upper band > Keltner upper band; firing when compressed[1] AND released
+Calculation: Bullish WaveTrend score = if WaveTrend > WaveTrend signal then (if WaveTrend < oversold boundary then full score else if WaveTrend > zero then positive score else weak score) else zero score
+Calculation: Bearish WaveTrend score = if WaveTrend < WaveTrend signal then (if WaveTrend > overbought boundary then full score else if WaveTrend < zero then positive score else weak score) else zero score
+Calculation: Bullish EMA alignment score = if EMA(close, fast lookback) > EMA(close, slower lookback) AND EMA(close, slower lookback) > EMA(close, longest baseline lookback) then full score else if EMA(close, fast lookback) > EMA(close, slower lookback) then medium score else zero score
+Calculation: Bearish EMA alignment score = if EMA(close, fast lookback) < EMA(close, slower lookback) AND EMA(close, slower lookback) < EMA(close, longest baseline lookback) then full score else if EMA(close, fast lookback) < EMA(close, slower lookback) then medium score else zero score
+Calculation: Bullish VWAP score = if close > VWAP(HLC3) then (if close > VWAP(HLC3) + ATR(ATR lookback) × VWAP distance multiplier then full score else VWAP partial score) else zero score
+Calculation: Bearish VWAP score = if close < VWAP(HLC3) then (if close < VWAP(HLC3) - ATR(ATR lookback) × VWAP distance multiplier then full score else VWAP partial score) else zero score
+Calculation: Bullish RSI score = if RSI(close, RSI lookback) > bullish RSI boundary then (if RSI(close, RSI lookback) > strong bullish RSI boundary then full score else medium score) else zero score
+Calculation: Bearish RSI score = if RSI(close, RSI lookback) < bearish RSI boundary then (if RSI(close, RSI lookback) < strong bearish RSI boundary then full score else medium score) else zero score
+Calculation: Bullish MACD score = if MACD histogram(close, shorter MACD lookback, longer MACD lookback, MACD signal lookback) > zero then (if MACD histogram > MACD histogram[1] then full score else medium score) else zero score
+Calculation: Bearish MACD score = if MACD histogram(close, shorter MACD lookback, longer MACD lookback, MACD signal lookback) < zero then (if MACD histogram < MACD histogram[1] then full score else medium score) else zero score
+Calculation: ADX score = if ADX(high, low, close, DI lookback, ADX smoothing lookback) > strong trend boundary then full score else if ADX > trend boundary then ADX partial score else compression score
+Calculation: Bullish volume score = if volume > SMA(volume, volume lookback) AND close > open then full score else if volume > SMA(volume, volume lookback) × low-volume ratio then volume partial score else zero score
+Calculation: Bearish volume score = if volume > SMA(volume, volume lookback) AND close < open then full score else if volume > SMA(volume, volume lookback) × low-volume ratio then volume partial score else zero score
+Calculation: Bullish squeeze score = if Squeeze state is firing AND Squeeze Momentum is positive then full score else if Squeeze state is compressed then compression score else zero score
+Calculation: Bearish squeeze score = if Squeeze state is firing AND Squeeze Momentum is negative then full score else if Squeeze state is compressed then compression score else zero score
+Calculation: Bull score = EMA(weighted mean of bullish WaveTrend, EMA alignment, VWAP, RSI, MACD, ADX, volume, and squeeze scores using their respective factor weights, expressed as a percentage, score smoothing lookback)
+Calculation: Bear score = EMA(weighted mean of bearish WaveTrend, EMA alignment, VWAP, RSI, MACD, ADX, volume, and squeeze scores using their respective factor weights, expressed as a percentage, score smoothing lookback)
+Long: on confirmed chart-bar close, (EMA(close, fast lookback) > EMA(close, slower lookback) AND EMA(close, fast lookback)[1] < EMA(close, slower lookback)[1]) OR (EMA(close, fast lookback) crosses above EMA(close, slower lookback) AND Bull score >= score threshold AND (higher-timeframe filter disabled OR EMA(close, fast lookback, T1, last completed bar) > EMA(close, slower lookback, T1, last completed bar))) OR (Squeeze state is firing AND Squeeze Momentum is positive)
+Short: on confirmed chart-bar close, (EMA(close, fast lookback) < EMA(close, slower lookback) AND EMA(close, fast lookback)[1] > EMA(close, slower lookback)[1]) OR (EMA(close, fast lookback) crosses below EMA(close, slower lookback) AND Bear score >= score threshold AND (higher-timeframe filter disabled OR EMA(close, fast lookback, T1, last completed bar) < EMA(close, slower lookback, T1, last completed bar))) OR (Squeeze state is firing AND Squeeze Momentum is negative)
+Calculation: Entry risk = ATR(ATR lookback) at entry × stop-loss multiplier
+Calculation: Long target 1 = entry price + entry risk × target 1 reward multiple
+Calculation: Long target 2 = entry price + entry risk × target 2 reward multiple
+Calculation: Long target 3 = entry price + entry risk × target 3 reward multiple
+Calculation: Short target 1 = entry price - entry risk × target 1 reward multiple
+Calculation: Short target 2 = entry price - entry risk × target 2 reward multiple
+Calculation: Short target 3 = entry price - entry risk × target 3 reward multiple
+Calculation: Long stop starts at entry price - entry risk; when trailing is enabled, ratchet it to at least entry price when high reaches long target 1, long target 1 when high reaches long target 2, and long target 2 when high reaches long target 3; after target 1, ratchet it each bar to at least low - ATR(ATR lookback) × trailing distance
+Calculation: Short stop starts at entry price + entry risk; when trailing is enabled, ratchet it to at most entry price when low reaches short target 1, short target 1 when low reaches short target 2, and short target 2 when low reaches short target 3; after target 1, ratchet it each bar to at most high + ATR(ATR lookback) × trailing distance
+Exit: long, on confirmed chart-bar close, low <= long stop
+Exit: short, on confirmed chart-bar close, high >= short stop

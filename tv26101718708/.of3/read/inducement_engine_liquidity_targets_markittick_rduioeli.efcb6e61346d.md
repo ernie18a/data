@@ -1,0 +1,10 @@
+Calculation: Confirmed pivot high = high[L] when high[L] is greater than every high[i] for integer offsets 1 ≤ i ≤ 2L, i ≠ L
+Calculation: Confirmed pivot low = low[L] when low[L] is lower than every low[i] for integer offsets 1 ≤ i ≤ 2L, i ≠ L
+Calculation: Structural high = maximum confirmed pivot high since initialization, reset to the latest confirmed pivot high after each short entry
+Calculation: Structural low = minimum confirmed pivot low since initialization, reset to the latest confirmed pivot low after each long entry
+Calculation: Pending upper IDM levels = confirmed pivot highs strictly between the structural low and structural high when confirmed, retained until swept
+Calculation: Pending lower IDM levels = confirmed pivot lows strictly between the structural low and structural high when confirmed, retained until swept
+Long: high[1] > a pending lower IDM level
+Short: low[1] < a pending upper IDM level
+Long: high[1] > a pending lower IDM level AND (session filter disabled OR datetime is within the configured session) AND (HTF filter disabled OR, on chart bars, close[1] > EMA(close, HTF EMA lookback, T1, last completed bar)) AND (volatility filter disabled OR, on chart bars, ATR(ATR lookback) > SMA(ATR(ATR lookback), volatility averaging lookback)) AND (rejection filter disabled OR close[1] > midpoint(high[1], low[1])) AND (FVG filter disabled OR highest(1 when low[1] > high[gap offset], FVG age lookback in chart bars) > 0)
+Short: low[1] < a pending upper IDM level AND (session filter disabled OR datetime is within the configured session) AND (HTF filter disabled OR, on chart bars, close[1] < EMA(close, HTF EMA lookback, T1, last completed bar)) AND (volatility filter disabled OR, on chart bars, ATR(ATR lookback) > SMA(ATR(ATR lookback), volatility averaging lookback)) AND (rejection filter disabled OR close[1] < midpoint(high[1], low[1])) AND (FVG filter disabled OR highest(1 when high[1] < low[gap offset], FVG age lookback in chart bars) > 0)

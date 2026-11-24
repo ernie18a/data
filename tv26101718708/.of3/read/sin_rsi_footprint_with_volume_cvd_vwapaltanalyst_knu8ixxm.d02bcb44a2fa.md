@@ -1,0 +1,2 @@
+Long: On T1 bars, RSI(source, lookback, T1) <= oversold threshold AND (RSI(source, lookback, T1) < hide-range minimum OR RSI(source, lookback, T1) > hide-range maximum) AND RSI(source, fast lookback, T1) crosses above or below RSI(source, slow lookback, T1)
+Short: On T1 bars, RSI(source, lookback, T1) >= overbought threshold AND (RSI(source, lookback, T1) < hide-range minimum OR RSI(source, lookback, T1) > hide-range maximum) AND RSI(source, fast lookback, T1) crosses above or below RSI(source, slow lookback, T1)

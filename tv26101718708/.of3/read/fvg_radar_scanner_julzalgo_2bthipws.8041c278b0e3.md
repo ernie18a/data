@@ -1,0 +1,2 @@
+Long: low > high[2] AND low - high[2] >= max(minimum gap ticks × minimum tick size, ATR(ATR lookback) × ATR gap multiplier if the ATR gap filter is enabled, 0 otherwise)
+Short: high < low[2] AND low[2] - high >= max(minimum gap ticks × minimum tick size, ATR(ATR lookback) × ATR gap multiplier if the ATR gap filter is enabled, 0 otherwise)

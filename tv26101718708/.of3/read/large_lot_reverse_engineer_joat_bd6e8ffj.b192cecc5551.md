@@ -1,0 +1,6 @@
+Calculation: Return = log(return source / return source[1]) in log-return mode, otherwise (return source - return source[1]) / max(abs(return source[1]), denominator-floor parameter)
+Calculation: ExpectedVolume = if SMA(abs(Return), regression lookback) > 0 then SMA(EMA(volume, volume-smoothing lookback), regression lookback) * abs(Return) / SMA(abs(Return), regression lookback) else SMA(EMA(volume, volume-smoothing lookback), regression lookback)
+Calculation: Residual = EMA(volume, volume-smoothing lookback) - ExpectedVolume
+Calculation: ResidualZ = if StDev(Residual, regression lookback) > 0 then (Residual - SMA(Residual, regression lookback)) / StDev(Residual, regression lookback) else 0
+Long: on a confirmed chart bar, Return > 0 AND ResidualZ >= block-threshold parameter AND at least the cooldown lookback parameter bars have elapsed since the prior Long signal
+Short: on a confirmed chart bar, Return < 0 AND ResidualZ >= block-threshold parameter AND at least the cooldown lookback parameter bars have elapsed since the prior Short signal

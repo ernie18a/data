@@ -1,0 +1,5 @@
+Calculation: XTL = (source − MA(source, lookback, selected type)) / (0.015 × (traditional mode ? mean absolute deviation(abs(source − MA(source, lookback, selected type)), lookback) : mean absolute deviation(source, lookback)))
+Long: XTL > threshold
+Short: XTL < −threshold
+Long: Supertrend(ATR lookback, multiplier, selected source, ATR or SMA(TrueRange, ATR lookback)) changes from bearish to bullish AND (EMA filter disabled OR close > EMA(close, EMA filter lookback) × (1 + tolerance)) AND (daily veto disabled OR NOT(T2 close < EMA(close, MTF EMA lookback, T2, selected bar) AND EMA(close, MTF EMA lookback, T2, selected bar) < EMA(close, MTF EMA lookback, T2, slope lookback bars ago)))
+Exit: long, Supertrend(ATR lookback, multiplier, selected source, ATR or SMA(TrueRange, ATR lookback)) changes from bullish to bearish

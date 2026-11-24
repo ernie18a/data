@@ -1,0 +1,2 @@
+Long: (high + low + close) / 3 >= EMA(close, shorter lookback) OR (high + low + close) / 3 >= EMA(close, longer lookback)
+Short: (high + low + close) / 3 < EMA(close, shorter lookback) OR (high + low + close) / 3 < EMA(close, longer lookback)

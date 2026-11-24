@@ -1,0 +1,13 @@
+Calculation: Digit root(n) = repeatedly sum the decimal digits of abs(n) until one digit remains, preserving 11, 22, and 33
+Calculation: Reduced digit root(n) = 2 for 11, 4 for 22, 6 for 33, and n otherwise
+Calculation: Calendar-date root = Digit root(sum of the decimal digits of the year, month, and day of the bar datetime)
+Calculation: Lunation root = Digit root(floor((bar datetime - reference full-moon datetime) / synodic-month duration) + 1)
+Calculation: Price integer = round(abs(close) multiplied by 10 once per shift until it reaches the minimum-integer threshold or the maximum-shift limit
+Calculation: Price root = Digit root(Price integer)
+Calculation: Repeating price = Price integer ends in at least three identical nonzero digits
+Calculation: GPS band(range high, range low) = the interval between range high - (range high - range low) × upper-fib parameter and range high - (range high - range low) × lower-fib parameter, when range high > range low
+Calculation: GPS overlap = close is within the GPS band of at least one enabled prior cycle range between consecutive New Moon, Full Moon, total lunar eclipse, total solar eclipse, partial lunar eclipse, or partial solar eclipse events
+Calculation: Numerology match without conflict = (Price root = Calendar-date root OR Price root = Lunation root OR Price root is 11, 22, or 33 OR Repeating price) AND NOT (Reduced digit root(Price root) + Reduced digit root(Calendar-date root) = 10 AND Price root is not 11, 22, or 33 AND NOT Repeating price)
+Calculation: Lunar-event slot = the bar of a New Moon, Full Moon, first-quarter, last-quarter, total lunar eclipse, total solar eclipse, partial lunar eclipse, or partial solar eclipse event through the configured number of following chart bars, with no earlier signal in that event's slot
+Long: numerology signals enabled AND Lunar-event slot AND GPS overlap AND Numerology match without conflict AND abs(close - open) >= ATR(ATR lookback) × body-size parameter AND close > open AND close > close[1] AND (New-Moon anchored VWAP(hlc3, volume) unavailable OR close > New-Moon anchored VWAP(hlc3, volume))
+Short: numerology signals enabled AND Lunar-event slot AND GPS overlap AND Numerology match without conflict AND abs(close - open) >= ATR(ATR lookback) × body-size parameter AND close < open AND close < close[1] AND (New-Moon anchored VWAP(hlc3, volume) unavailable OR close < New-Moon anchored VWAP(hlc3, volume))

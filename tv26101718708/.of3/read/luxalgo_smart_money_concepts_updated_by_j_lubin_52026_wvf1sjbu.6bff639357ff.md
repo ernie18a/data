@@ -1,0 +1,13 @@
+Calculation: Swing pivot levels = On chart bars, start in the bearish leg; if high[swing lookback] > highest(high, swing lookback), set the leg bearish, else if low[swing lookback] < lowest(low, swing lookback), set it bullish, otherwise retain the leg. When the leg changes to bearish, set the current swing high to high[swing lookback] and reset its crossed state; when it changes to bullish, set the current swing low to low[swing lookback] and reset its crossed state.
+Calculation: Internal pivot levels = The same pivot calculation as swing pivot levels, using the separate internal lookback and separate high and low levels and crossed states.
+Calculation: Internal structure bias = Start neutral; set bullish on a valid bullish internal pivot break and bearish on a valid bearish internal pivot break; otherwise retain the prior bias.
+Calculation: FVG move = (close of the last completed T1 bar - open of the last completed T1 bar) / (open of the last completed T1 bar * 100), read on chart bars taking values from T1.
+Calculation: FVG threshold = Zero when the automatic threshold is disabled; otherwise the threshold multiplier times the cumulative sum on chart bars of abs(FVG move) when a new T1 bar starts, divided by max(chart bar index, 1).
+Long: Close crosses above the current swing pivot high and that pivot has not previously been crossed.
+Short: Close crosses below the current swing pivot low and that pivot has not previously been crossed.
+Long: Close crosses above the current internal pivot high and that pivot has not previously been crossed and the internal pivot high differs from the current swing pivot high and (the internal confluence filter is disabled or high - max(close, open) > min(close, open - low)).
+Short: Close crosses below the current internal pivot low and that pivot has not previously been crossed and the internal pivot low differs from the current swing pivot low and (the internal confluence filter is disabled or high - max(close, open) < min(close, open - low)).
+Long: Internal structure bias is bullish.
+Short: Internal structure bias is not bullish.
+Long: On chart bars taking values from T1, a new T1 bar starts and the current forming T1 low > T1 high two bars ago and the last completed T1 close > T1 high two bars ago and FVG move > FVG threshold.
+Short: On chart bars taking values from T1, a new T1 bar starts and the current forming T1 high < T1 low two bars ago and the last completed T1 close < T1 low two bars ago and -FVG move > FVG threshold.

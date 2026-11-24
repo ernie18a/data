@@ -1,0 +1,4 @@
+Calculation: Buy dominance ratio = (close - low) / (high - low), or 0.5 when high = low
+Calculation: Sell dominance ratio = 1 - Buy dominance ratio
+Long: After at least minimum consecutive prior chart bars satisfy Buy dominance ratio >= dominance threshold AND volume >= SMA(volume, lookback) × volume multiplier, current bar fails that Buy-dominant condition OR satisfies Sell dominance ratio >= dominance threshold AND volume >= SMA(volume, lookback) × volume multiplier
+Short: After at least minimum consecutive prior chart bars satisfy Sell dominance ratio >= dominance threshold AND volume >= SMA(volume, lookback) × volume multiplier AND fail the Buy-dominant condition, current bar fails that Sell-dominant condition OR satisfies Buy dominance ratio >= dominance threshold AND volume >= SMA(volume, lookback) × volume multiplier

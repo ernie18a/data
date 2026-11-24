@@ -1,0 +1,2 @@
+Long: On chart bars, the selected TEMA, Hull moving average, or ALMA of close[delay parameter] crosses above the same selected moving average of open[delay parameter], using the same lookback and type-specific parameters, from the still-forming T1 bar.
+Short: On chart bars, the selected TEMA, Hull moving average, or ALMA of close[delay parameter] crosses below the same selected moving average of open[delay parameter], using the same lookback and type-specific parameters, from the still-forming T1 bar.

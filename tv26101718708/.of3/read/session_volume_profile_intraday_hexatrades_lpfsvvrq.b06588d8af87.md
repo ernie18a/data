@@ -1,0 +1,7 @@
+Calculation: Current session volume profile = divide the current session's low-to-high range into equal-price bins using the profile row count; map each chart bar's low and high to floor-indexed bins clamped to the profile, then split its volume equally across all bins from the low bin through the high bin.
+Calculation: Current session POC = center of the lowest-price bin with the greatest allocated volume in the developing current session profile, using chart bars through the current bar.
+Calculation: Current session VAH and VAL = upper and lower edges of the contiguous bins around POC whose allocated volume reaches the value-area percentage of total profile volume; expand by adding the adjacent bin with greater volume, choosing the upper bin on a tie.
+Calculation: Previous session high = highest high among chart bars in the last completed session.
+Calculation: Previous session low = lowest low among chart bars in the last completed session.
+Long: bar is confirmed AND (close crosses above current session POC OR close crosses above current session VAH OR close crosses above previous session high)
+Short: bar is confirmed AND (close crosses below current session POC OR close crosses below current session VAL OR close crosses below previous session low)

@@ -1,0 +1,8 @@
+Calculation: DPS = EMA(clamp(body weight × body + close-location weight × close location + volume weight × clamp(Z-score(volume, volume lookback) / volume scale, -1, 1) + gap weight × clamp((open - close[1]) / ATR(ATR lookback), -1, 1), -1, 1), pressure lookback), where body = (close - open) / (high - low) and close location = (close - (high + low) / 2) / (high - low) when high > low, otherwise both are 0; the gap term is 0 when ATR is 0
+Calculation: RCI = clamp(persistence weight × persistence + stability weight × clamp(1 - population standard deviation(DPS, continuity lookback) × stability multiplier, 0, 1), 0, 1), where persistence is the fraction of bars in the continuity lookback whose nonzero DPS sign matches the current nonzero DPS sign, or 0 when the current sign is zero
+Calculation: Broken = a qualifying DPS sign reversal from the most recent prior nonzero DPS sign, with absolute DPS at least the broken minimum, and remains true for the broken-state duration starting on that bar; a new qualifying reversal resets the duration
+Calculation: Clean = NOT Broken AND ((absolute DPS ≥ clean DPS threshold + (strict filter enabled ? strict-filter increment : 0) AND RCI ≥ clean RCI threshold + (strict filter enabled ? strict-filter increment : 0)) OR (RCI ≥ continuity RCI threshold AND absolute DPS ≥ stalling DPS threshold))
+Long: Clean AND NOT Clean[1] AND DPS ≥ 0
+Short: Clean AND NOT Clean[1] AND DPS < 0
+Exit: long, Broken AND NOT Broken[1] AND DPS < 0
+Exit: short, Broken AND NOT Broken[1] AND DPS > 0

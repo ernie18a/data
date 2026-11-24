@@ -1,0 +1,7 @@
+Calculation: Component reference price = configured choice of the current date’s first chart-bar open or the preceding chart-bar close
+Calculation: Component open move (%) = 100 × (component current chart-bar close − current date’s first chart-bar open) / current date’s first chart-bar open
+Calculation: Top-seven points = sum of (component current chart-bar close − component reference price) / Dow divisor for components with valid closes and positive reference prices
+Calculation: Price-weighted VWAP balance = 100 × (sum of weights for components above their current-session VWAP − sum of weights for components below their current-session VWAP), where each weight = component reference price / sum of positive component reference prices
+Calculation: Smoothed top-seven points = configured choice of raw top-seven points, HMA(top-seven points, smoothing lookback), EMA(top-seven points, smoothing lookback), or SMA(top-seven points, smoothing lookback), evaluated on chart bars
+Long: For any monitored component, Component open move (%) ≥ behavior threshold OR during the configured plot session with at least two valid component closes and references, Smoothed top-seven points > 0 AND Price-weighted VWAP balance > 0
+Short: For any monitored component, Component open move (%) ≤ −behavior threshold OR during the configured plot session with at least two valid component closes and references, Smoothed top-seven points < 0 AND Price-weighted VWAP balance < 0
