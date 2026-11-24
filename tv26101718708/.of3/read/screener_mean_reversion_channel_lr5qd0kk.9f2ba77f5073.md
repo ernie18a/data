@@ -1,0 +1,7 @@
+Calculation: center line = selected smoothing filter(selected price source, lookback), calculated on screened-symbol T1 bars and returned to chart bars by security (forming T1 bar in real time; last completed T1 bar historically)
+Calculation: smoothed range = Super Smoother(True Range, same lookback), calculated on screened-symbol T1 bars and returned to chart bars by security (forming T1 bar in real time; last completed T1 bar historically)
+Calculation: upper boundary = center line + smoothed range × π × outer-channel multiplier
+Calculation: lower boundary = center line − smoothed range × π × outer-channel multiplier
+Calculation: zone extension = smoothed range × channel-step parameter × band-extension factor
+Long: screened-symbol close < center line AND ((weak-zone screening enabled AND screened-symbol low ≤ lower boundary + zone extension AND screened-symbol low > lower boundary) OR (normal-zone screening enabled AND screened-symbol low ≤ lower boundary AND screened-symbol low > lower boundary − zone extension) OR (strong-zone screening enabled AND screened-symbol low ≤ lower boundary − zone extension))
+Short: screened-symbol close > center line AND ((weak-zone screening enabled AND screened-symbol high ≥ upper boundary − zone extension AND screened-symbol high < upper boundary) OR (normal-zone screening enabled AND screened-symbol high ≥ upper boundary AND screened-symbol high < upper boundary + zone extension) OR (strong-zone screening enabled AND screened-symbol high ≥ upper boundary + zone extension))

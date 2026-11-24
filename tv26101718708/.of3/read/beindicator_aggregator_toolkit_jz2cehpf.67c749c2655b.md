@@ -1,0 +1,12 @@
+Calculation: long stop level = round to minimum tick(entry price − stop-loss input) in absolute stop-loss mode or round to minimum tick(entry price − entry price × stop-loss input / 100) in percentage stop-loss mode
+Calculation: short stop level = round to minimum tick(entry price + stop-loss input) in absolute stop-loss mode or round to minimum tick(entry price + entry price × stop-loss input / 100) in percentage stop-loss mode
+Calculation: long target level = round to minimum tick(entry price + take-profit input) in absolute target mode, round to minimum tick(entry price + entry price × take-profit input / 100) in percentage target mode, or round to minimum tick(entry price + abs(long stop level − entry price) × take-profit input) in risk/reward target mode
+Calculation: short target level = round to minimum tick(entry price − take-profit input) in absolute target mode, round to minimum tick(entry price − entry price × take-profit input / 100) in percentage target mode, or round to minimum tick(entry price − abs(short stop level − entry price) × take-profit input) in risk/reward target mode
+Long: at bar close, open = low
+Short: at bar close, open = high AND open > close
+Long: at bar close, RSI > RSI-based moving average AND RSI > RSI[RSI lookback] AND strong-buy signal = 1 AND strong-sell signal = 1 on at least one of the preceding signal-recency-lookback bars
+Short: at bar close, RSI <= RSI-based moving average AND RSI < RSI[RSI lookback] AND strong-sell signal = 1 AND strong-buy signal = 1 on at least one of the preceding signal-recency-lookback bars
+Long: at bar close, low[retest offset] <= support[retest offset] AND every low during the hold lookback is above its corresponding support value AND (close >= high[reference-bar offset] OR low > high[reference-bar offset])
+Short: at bar close, high[retest offset] >= resistance[retest offset] AND every high during the hold lookback is below its corresponding resistance value AND (close <= low[reference-bar offset] OR high < low[reference-bar offset])
+Exit: long, at a later bar close, low <= long stop level OR high >= long target level
+Exit: short, at a later bar close, high >= short stop level OR low <= short target level

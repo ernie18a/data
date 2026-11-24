@@ -1,0 +1,4 @@
+Calculation: FVG midpoint = (upper boundary + lower boundary) / 2
+Calculation: Gap level traded = any low < level since a bullish FVG formed, or any high > level since a bearish FVG formed
+Long: low[1] > high[3] on the instrument and at least one correlated asset on the same bar, and gap-level-traded status differs between them at corresponding upper boundaries, midpoints, or lower boundaries
+Short: high[1] < low[3] on the instrument and at least one correlated asset on the same bar, and gap-level-traded status differs between them at corresponding upper boundaries, midpoints, or lower boundaries

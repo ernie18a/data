@@ -1,0 +1,26 @@
+Calculation: close location = on chart bars, using the last completed T1 bar, (close - low) / (high - low), or the midpoint value when high equals low
+Calculation: magnet midpoint = (high + low) / 2 of the last completed T1 bar
+Calculation: magnet range = high - low of the last completed T1 bar
+Calculation: live score = on chart bars, the unweighted sum of the close-location score (positive unit when close location >= upper close-location score threshold, negative unit when <= lower close-location score threshold, otherwise neutral), VWAP-side score (positive unit when the last completed T1 close > VWAP(hlc3) on the previous chart bar, otherwise negative unit when VWAP is available, otherwise neutral), T1 EMA-trend score (positive unit when EMA(close, shorter lookback, T1, last completed bar) > EMA(close, longer lookback, T1, last completed bar), negative unit when lower, otherwise neutral), and the sign of the applicable historical first-hit prior for the T1 start-time bucket in New York time
+Calculation: swing stop price = selected stop for the position side: opposite T1 extreme, magnet midpoint, entry price offset by the fixed tick distance, entry price offset by ATR(T1, ATR lookback, last completed bar) times its multiplier, or nearest unswept confirmed chart-bar pivot beyond entry; apply the configured tick buffer beyond the selected level, use the opposite T1 extreme if no qualifying pivot exists, use separate pivot left and right lookbacks, and remove a pivot after a chart bar touches or crosses its level
+Calculation: swing target price = magnet midpoint when midpoint targeting is selected, otherwise the bias-side extreme of the last completed T1 bar
+Calculation: fade stop price = entry price offset against the position by the configured stop distance before a scale partial, and entry price after a scale partial
+Calculation: fade target price = entry price offset toward the position by the configured target distance when scaling is disabled, or by the separately configured runner distance when scaling is enabled
+Long: at a confirmed T1 close, swing mode, applicable bucket prior is positive, live score has the same sign as the prior, absolute live score >= minimum score, close location is between the lower and upper mid-band bounds inclusive, and NY-only is disabled or the bucket is in the configured NY session
+Short: at a confirmed T1 close, swing mode, applicable bucket prior is negative, live score has the same sign as the prior, absolute live score >= minimum score, close location is between the lower and upper mid-band bounds inclusive, and NY-only is disabled or the bucket is in the configured NY session
+Long: at a confirmed T1 close, fade mode, applicable bucket prior is negative, live score has the same sign as the prior, absolute live score >= minimum score, close location is between the lower and upper mid-band bounds inclusive, magnet range >= minimum range, and NY-only is disabled or the bucket is in the configured NY session
+Short: at a confirmed T1 close, fade mode, applicable bucket prior is positive, live score has the same sign as the prior, absolute live score >= minimum score, close location is between the lower and upper mid-band bounds inclusive, magnet range >= minimum range, and NY-only is disabled or the bucket is in the configured NY session
+Long: swing mode and the long arm conditions hold, and on the first confirmed chart bar after the T1 close its high is below the last completed T1 high
+Short: swing mode and the short arm conditions hold, and on the first confirmed chart bar after the T1 close its low is above the last completed T1 low
+Long: fade mode and the long arm conditions hold, and before the next T1 close a chart bar low <= the last completed T1 low minus the configured limit offset
+Short: fade mode and the short arm conditions hold, and before the next T1 close a chart bar high >= the last completed T1 high plus the configured limit offset
+Exit: long, swing mode and chart-bar low <= swing stop price
+Exit: long, swing mode and chart-bar high >= swing target price and chart-bar low > swing stop price
+Exit: short, swing mode and chart-bar high >= swing stop price
+Exit: short, swing mode and chart-bar low <= swing target price and chart-bar high < swing stop price
+Exit: long, fade mode and chart-bar low <= fade stop price active at the start of the bar
+Exit: long, fade mode and scaling enabled and no scale partial has been taken and chart-bar high >= entry price + configured target distance and chart-bar low > entry price - configured stop distance
+Exit: long, fade mode and chart-bar high >= fade target price and fade stop price active at the start of the bar was not hit
+Exit: short, fade mode and chart-bar high >= fade stop price active at the start of the bar
+Exit: short, fade mode and scaling enabled and no scale partial has been taken and chart-bar low <= entry price - configured target distance and chart-bar high < entry price + configured stop distance
+Exit: short, fade mode and chart-bar low <= fade target price and fade stop price active at the start of the bar was not hit

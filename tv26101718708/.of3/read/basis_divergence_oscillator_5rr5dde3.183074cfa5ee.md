@@ -1,0 +1,14 @@
+Calculation: Basis oscillator = robust z-score (median/MAD) or classic z-score of configured price source minus reference spot close, using a base normalization lookback or the median of z-scores using shorter, base, and longer lookbacks; optionally smooth with EMA or Ultimate Smoother using a separate smoothing lookback; set to zero when reference spot close is missing or zero
+Calculation: Oscillator gap threshold = gap-magnitude multiplier × standard deviation(Basis oscillator, separate gap lookback)
+Calculation: High-source pivot = confirmed pivot high(configured high source, price-pivot lookback on each side)
+Calculation: Low-source pivot = confirmed pivot low(configured low source, price-pivot lookback on each side)
+Calculation: High-pivot oscillator = highest(Basis oscillator over the window spanning the price-pivot lookback on each side) at pivot confirmation when oscillator-pivot anchoring is enabled; otherwise Basis oscillator at the high-source pivot
+Calculation: Low-pivot oscillator = lowest(Basis oscillator over the window spanning the price-pivot lookback on each side) at pivot confirmation when oscillator-pivot anchoring is enabled; otherwise Basis oscillator at the low-source pivot
+Long: Basis oscillator <= oversold threshold
+Short: Basis oscillator >= overbought threshold
+Short: Latest high-source pivot price > preceding high-source pivot price AND latest high-pivot oscillator < preceding high-pivot oscillator by at least the oscillator gap threshold AND latest pivot is within the maximum bar separation of the preceding pivot AND, if the regular-divergence extreme filter is enabled, latest high-pivot oscillator >= overbought threshold
+Long: Latest low-source pivot price < preceding low-source pivot price AND latest low-pivot oscillator > preceding low-pivot oscillator by at least the oscillator gap threshold AND latest pivot is within the maximum bar separation of the preceding pivot AND, if the regular-divergence extreme filter is enabled, latest low-pivot oscillator <= oversold threshold
+Short: When hidden-divergence detection is enabled, latest high-source pivot price < preceding high-source pivot price AND latest high-pivot oscillator > preceding high-pivot oscillator by at least the oscillator gap threshold AND latest pivot is within the maximum bar separation of the preceding pivot
+Long: When hidden-divergence detection is enabled, latest low-source pivot price > preceding low-source pivot price AND latest low-pivot oscillator < preceding low-pivot oscillator by at least the oscillator gap threshold AND latest pivot is within the maximum bar separation of the preceding pivot
+Short: Confirmed pivot high(Basis oscillator, separate reversal-pivot lookback on each side) >= upper extreme threshold
+Long: Confirmed pivot low(Basis oscillator, separate reversal-pivot lookback on each side) <= lower extreme threshold

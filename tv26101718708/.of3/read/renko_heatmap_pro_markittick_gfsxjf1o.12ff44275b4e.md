@@ -1,0 +1,2 @@
+Long: On chart bars using values from the last completed Renko bar of T1, Renko close > Renko open AND the previous chart bar's Renko close <= Renko open
+Short: On chart bars using values from the last completed Renko bar of T1, Renko close < Renko open AND the previous chart bar's Renko close >= Renko open

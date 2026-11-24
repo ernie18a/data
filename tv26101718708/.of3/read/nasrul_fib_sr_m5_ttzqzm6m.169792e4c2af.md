@@ -1,0 +1,42 @@
+Calculation: Chart ATR = ATR(chart bars, chart ATR lookback)
+Calculation: T1 ATR = ATR(T1 bars, separate T1 ATR lookback, last completed bar)
+Calculation: Short EMA = EMA(close, shorter lookback)
+Calculation: Long EMA = EMA(close, longer lookback)
+Calculation: Bar range = high - low
+Calculation: Candle body = abs(close - open)
+Calculation: Upper wick = high - max(open, close)
+Calculation: Lower wick = min(open, close) - low
+Calculation: Minimum-range bar = Bar range >= Chart ATR * minimum-range parameter
+Calculation: T1 ZigZag pivots = pivot sequence from running T1 high/low extremes, confirming a reversal when the extreme-to-opposite-side move reaches either extreme price times percentage deviation or T1 ATR times deviation multiplier, subject to minimum pivot spacing and backstep; flip direction immediately when a completed T1 close breaks the last opposite swing; initialize from the first T1 low and move upward; process last completed T1 bars
+Calculation: T1 swing levels = latest confirmed high and low pivots from T1 ZigZag pivots
+Calculation: T1 trend = up when the two latest confirmed swing highs and lows are both higher than their predecessors; down when both are lower; choppy when both pairs are equal; range otherwise; retain prior trend until two highs and lows exist; initialize choppy
+Calculation: T1 Fibonacci level(p) = f0 + (f100 - f0) * p / 100, using the latest stored swing-leg retracement unless the active leg reaches the minimum-leg-size parameter times T1 ATR, in which case use the active leg; active-leg bounds are the last two T1 pivots, or the sole pivot and active extreme when only one exists, extended by the current forming T1 high in an up leg or low in a down leg; set f0 to the high and f100 to the low in an up leg, and reverse them in a down leg; for stored levels set f0 to the swing high when T1 trend is up or range with the latest high newer than the latest low, otherwise set f0 to the swing low; carry T1 values onto chart bars, using last completed T1 pivots and trend and the forming T1 extreme for active-leg extension
+Calculation: Chart level touch(L) = according to the level-touch mode, abs(close - L) <= Chart ATR * signal-proximity parameter, or max(open, close) >= L - Chart ATR * signal-proximity parameter AND min(open, close) <= L + Chart ATR * signal-proximity parameter, or low <= L + Chart ATR * signal-proximity parameter AND high >= L - Chart ATR * signal-proximity parameter
+Calculation: Bullish pin bar = Minimum-range bar AND Bar range is nonzero AND Lower wick >= Candle body * long-wick parameter AND Upper wick <= Candle body * opposite-wick parameter
+Calculation: Bearish pin bar = Minimum-range bar AND Bar range is nonzero AND Upper wick >= Candle body * long-wick parameter AND Lower wick <= Candle body * opposite-wick parameter
+Calculation: Bullish engulfing = Minimum-range bar AND close > open AND previous close < previous open AND close >= previous open AND open <= previous close
+Calculation: Bearish engulfing = Minimum-range bar AND close < open AND previous close > previous open AND close <= previous open AND open >= previous close
+Calculation: Inside bar = previous high < mother-bar high AND previous low > mother-bar low
+Calculation: Bullish inside-bar breakout = Minimum-range bar AND Inside bar AND close > mother-bar high AND previous close <= mother-bar high
+Calculation: Bearish inside-bar breakout = Minimum-range bar AND Inside bar AND close < mother-bar low AND previous close >= mother-bar low
+Calculation: Bullish false breakout = Minimum-range bar AND Inside bar AND low < mother-bar low AND close > mother-bar low AND close < mother-bar high
+Calculation: Bearish false breakout = Minimum-range bar AND Inside bar AND high > mother-bar high AND close < mother-bar high AND close > mother-bar low
+Calculation: Selected long pattern = bullish pin bar if true, else bullish engulfing if true, else bullish false breakout if true, else bullish inside-bar breakout if true, else none
+Calculation: Selected short pattern = bearish pin bar if true, else bearish engulfing if true, else bearish false breakout if true, else bearish inside-bar breakout if true, else none
+Calculation: Long reversal confluence = count of true conditions: either T1 Fibonacci level is touched; T1 swing low is touched; the first T1 Fibonacci level and T1 swing low are both touched; MA confluence is enabled and Short EMA > Long EMA
+Calculation: Short reversal confluence = count of true conditions: either T1 Fibonacci level is touched; T1 swing high is touched; the second T1 Fibonacci level and T1 swing high are both touched; MA confluence is enabled and Short EMA < Long EMA
+Calculation: Long breakout confluence = Long reversal confluence criteria plus close > latest T1 swing high when that swing exists
+Calculation: Short breakout confluence = Short reversal confluence criteria plus close < latest T1 swing low when that swing exists
+Calculation: Long reversal qualified = setup mode permits reversal AND ((pin bars enabled AND bullish pin bar) OR (engulfing enabled AND bullish engulfing) OR (false breakouts enabled AND bullish false breakout)) AND (T1 Fibonacci level one or two, or T1 swing low, is touched) AND (reversal-trend requirement is disabled OR countertrend is allowed OR T1 trend is up or range)
+Calculation: Short reversal qualified = setup mode permits reversal AND ((pin bars enabled AND bearish pin bar) OR (engulfing enabled AND bearish engulfing) OR (false breakouts enabled AND bearish false breakout)) AND (T1 Fibonacci level one or two, or T1 swing high, is touched) AND (reversal-trend requirement is disabled OR countertrend is allowed OR T1 trend is down or range)
+Calculation: Long breakout qualified = setup mode permits breakout AND ((inside-bar breakouts enabled AND bullish inside-bar breakout) OR (close crosses above latest T1 swing high AND Minimum-range bar)) AND (countertrend is allowed OR T1 trend is up)
+Calculation: Short breakout qualified = setup mode permits breakout AND ((inside-bar breakouts enabled AND bearish inside-bar breakout) OR (close crosses below latest T1 swing low AND Minimum-range bar)) AND (countertrend is allowed OR T1 trend is down)
+Calculation: Planned entry price = close except in limit mode, when it is the chart-bar midpoint for a selected pin bar or engulfing pattern, the mother-bar midpoint for a selected false breakout or inside-bar breakout, or close otherwise
+Calculation: Long stop set on entry signal = signal-bar low minus Chart ATR times stop-padding parameter when Selected long pattern is a pin bar or engulfing; otherwise mother-bar low minus that padding when Inside bar; otherwise signal-bar low minus that padding
+Calculation: Short stop set on entry signal = signal-bar high plus Chart ATR times stop-padding parameter when Selected short pattern is a pin bar or engulfing; otherwise mother-bar high plus that padding when Inside bar; otherwise signal-bar high plus that padding
+Calculation: Long target set on entry signal = latest T1 swing high if it is above Planned entry price, otherwise Planned entry price plus abs(Planned entry price - Long stop) times minimum risk-reward parameter
+Calculation: Short target set on entry signal = latest T1 swing low if it is below Planned entry price, otherwise Planned entry price minus abs(Planned entry price - Short stop) times minimum risk-reward parameter
+Long: confirmed chart bar AND (choppy trading is allowed OR T1 trend is not choppy) AND (entry mode is not trend-only OR Short EMA > Long EMA) AND ((Long reversal qualified AND Long reversal confluence >= reversal confluence threshold) OR (NOT Long reversal qualified AND Long breakout qualified AND Long breakout confluence >= breakout confluence threshold))
+Short: confirmed chart bar AND (choppy trading is allowed OR T1 trend is not choppy) AND (entry mode is not trend-only OR Short EMA < Long EMA) AND ((Short reversal qualified AND Short reversal confluence >= reversal confluence threshold) OR (NOT Short reversal qualified AND Short breakout qualified AND Short breakout confluence >= breakout confluence threshold))
+Exit: long, low <= Long stop set on entry signal OR high >= Long target set on entry signal
+Exit: short, high >= Short stop set on entry signal OR low <= Short target set on entry signal

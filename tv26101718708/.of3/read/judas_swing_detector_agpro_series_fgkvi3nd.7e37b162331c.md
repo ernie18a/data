@@ -1,0 +1,6 @@
+Calculation: Up excursion = Highest(high, chart bars in configured session window) − opening price of that window
+Calculation: Down excursion = opening price of configured session window − Lowest(low, chart bars in that window)
+Calculation: Recent bullish outcomes = count of confirmed bullish outcomes among the history lookback of most recent session outcomes
+Calculation: Recent bearish outcomes = count of confirmed bearish outcomes among the history lookback of most recent session outcomes
+Long: On the first chart bar after a configured session window ends, Down excursion > Up excursion AND Down excursion ≥ ATR(lookback) × minimum fake-size multiple; OR within the reversal interval after that qualifying downward fake, high ≥ session opening price + ATR(lookback) × reversal multiple; OR Recent bullish outcomes > Recent bearish outcomes
+Short: On the first chart bar after a configured session window ends, Up excursion ≥ Down excursion AND Up excursion ≥ ATR(lookback) × minimum fake-size multiple; OR within the reversal interval after that qualifying upward fake, low ≤ session opening price − ATR(lookback) × reversal multiple; OR Recent bearish outcomes > Recent bullish outcomes

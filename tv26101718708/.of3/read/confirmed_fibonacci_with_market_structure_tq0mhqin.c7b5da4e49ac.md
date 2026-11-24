@@ -1,0 +1,13 @@
+Calculation: Higher-timeframe structure bias = bullish when the latest structural pivot high and low are each above their preceding pivots, bearish when each is below; calculate on T1 bars using the last completed T1 bar and carry the result onto chart bars, with a separate T1 pivot lookback.
+Calculation: Bullish leg = when no bullish leg is active, the latest structural PivotLow(low, structural lookback, structural lookback) before the impulse is the origin; in fast mode the impulse is a later PivotHigh(high, structural lookback, impulse right lookback), and in slow mode it is the highest structural PivotHigh between the origin and a later PivotLow(low, pullback lookback, pullback lookback), whose value is above the origin and below the impulse high; the impulse high exceeds the latest structural PivotHigh before the origin and its distance above the origin is at least minimum displacement times ATR(lookback); if the higher-timeframe filter is enabled and T1 is available, its structure bias is bullish; freeze the origin and impulse high while active.
+Calculation: Bearish leg = when no bearish leg is active, the latest structural PivotHigh(high, structural lookback, structural lookback) before the impulse is the origin; in fast mode the impulse is a later PivotLow(low, structural lookback, impulse right lookback), and in slow mode it is the lowest structural PivotLow between the origin and a later PivotHigh(high, pullback lookback, pullback lookback), whose value is below the origin and above the impulse low; the impulse low is below the latest structural PivotLow before the origin and its distance below the origin is at least minimum displacement times ATR(lookback); if the higher-timeframe filter is enabled and T1 is available, its structure bias is bearish; freeze the origin and impulse low while active.
+Long: a bullish leg becomes active
+Short: a bearish leg becomes active
+Long: a bullish leg is active and, for the first time since activation, low <= the higher of the two levels impulse high + (origin low - impulse high) × each golden-zone retracement ratio, and high >= the lower of those levels
+Short: a bearish leg is active and, for the first time since activation, low <= the higher of the two levels impulse low + (origin high - impulse low) × each golden-zone retracement ratio, and high >= the lower of those levels
+Exit: long, close < bullish origin low - invalidation buffer × ATR(lookback)
+Exit: short, close > bearish origin high + invalidation buffer × ATR(lookback)
+Exit: long, enabled T1 structure bias is bearish
+Exit: short, enabled T1 structure bias is bullish
+Exit: long, bars since the later bullish anchor > maximum leg age
+Exit: short, bars since the later bearish anchor > maximum leg age

@@ -1,0 +1,24 @@
+Calculation: opening range = high and low of the monitored market's T1 bar beginning at RTH open, requested on chart bars with lookahead off; use the forming T1 bar in real time and its final values after completion
+Calculation: RTH VWAP cross count = count of selected close-based or wick-based price crosses of the RTH-anchored VWAP during the current RTH session, reset at RTH open
+Calculation: entry stop = setup-candle high + entry-offset parameter for long setups or setup-candle low - entry-offset parameter for short setups; protective stop = setup-candle low - stop-buffer parameter for long setups or setup-candle high + stop-buffer parameter for short setups
+Calculation: stop risk in ticks = round(abs(entry stop - protective stop) / minimum tick)
+Long: a monitored market's close > its opening-range high
+Short: a monitored market's close < its opening-range low
+Long: a monitored market's close > its RTH-anchored VWAP
+Short: a monitored market's close < its RTH-anchored VWAP
+Long: a monitored market's close > its evening-session-anchored VWAP
+Short: a monitored market's close < its evening-session-anchored VWAP
+Long: a monitored market's close > its previous RTH-session VWAP, for markets with this status
+Short: a monitored market's close < its previous RTH-session VWAP, for markets with this status
+Long: during RTH and on the latest or immediately preceding trade session in the loaded data, EMA(close, shorter lookback) crosses above EMA(close, longer lookback)
+Short: during RTH and on the latest or immediately preceding trade session in the loaded data, EMA(close, shorter lookback) crosses below EMA(close, longer lookback)
+Long: during RTH after its opening bar and on the latest or immediately preceding trade session in the loaded data, the selected cross method detects price crossing above the RTH-anchored VWAP; the methods are close crossing above or a bar spanning the VWAP with prior close below it and current close above it
+Short: during RTH after its opening bar and on the latest or immediately preceding trade session in the loaded data, the selected cross method detects price crossing below the RTH-anchored VWAP; the methods are close crossing below or a bar spanning the VWAP with prior close above it and current close below it
+Long: during RTH after its opening bar and on the latest or immediately preceding trade session in the loaded data, the RTH-anchored VWAP crosses above the evening-session-anchored VWAP
+Short: during RTH after its opening bar and on the latest or immediately preceding trade session in the loaded data, the RTH-anchored VWAP crosses below the evening-session-anchored VWAP
+Long: during RTH and the trade window, on the latest or immediately preceding trade session in the loaded data, close > RTH-anchored VWAP, the reclaim-mode condition is satisfied (prior close > prior VWAP or the mode permits a current-close reclaim), low <= RTH-anchored VWAP + touch-buffer parameter, EMA(close, shorter lookback) > EMA(close, middle lookback) > EMA(close, longer lookback) with shorter < middle < longer and each EMA above its prior-bar value, (volume confirmation is disabled OR volume > volume[volume-lookback parameter]), and RTH VWAP cross count < cross-count limit
+Short: during RTH and the trade window, on the latest or immediately preceding trade session in the loaded data, close < RTH-anchored VWAP, the reclaim-mode condition is satisfied (prior close < prior VWAP or the mode permits a current-close reclaim), high >= RTH-anchored VWAP - touch-buffer parameter, EMA(close, shorter lookback) < EMA(close, middle lookback) < EMA(close, longer lookback) with shorter < middle < longer and each EMA below its prior-bar value, (volume confirmation is disabled OR volume > volume[volume-lookback parameter]), and RTH VWAP cross count < cross-count limit
+Long: a pending setup from the long hold condition remains valid, high >= setup-candle high + entry-offset parameter, stop risk in ticks <= maximum stop-risk parameter, close has not been below RTH-anchored VWAP for the acceptance-count parameter of consecutive bars, the long EMA alignment and rising conditions still hold, and the bar is in the trade window with RTH VWAP cross count < cross-count limit
+Short: a pending setup from the short hold condition remains valid, low <= setup-candle low - entry-offset parameter, stop risk in ticks <= maximum stop-risk parameter, close has not been above RTH-anchored VWAP for the acceptance-count parameter of consecutive bars, the short EMA alignment and falling conditions still hold, and the bar is in the trade window with RTH VWAP cross count < cross-count limit
+Exit: long, low <= setup-candle low - stop-buffer parameter OR high >= entry price + profit-target parameter
+Exit: short, high >= setup-candle high + stop-buffer parameter OR low <= entry price - profit-target parameter

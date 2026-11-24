@@ -1,0 +1,33 @@
+Calculation: HTF structure bias(T) = on T bars, update the latest confirmed Pivot High and Pivot Low using the shared swing pivot length; set bias bullish when the current T close is above the latest pivot high, bearish when it is below the latest pivot low, and otherwise retain the prior bias, initially neutral. T1 and T2 are separate timeframes, with T2 longer than T1. Security values use the current T bar (still forming in real time, finalized at its close) and are sampled on chart bars with lookahead off.
+Calculation: T1 range bounds = highest(high, HTF range lookback) and lowest(low, HTF range lookback), calculated on T1 bars using the current T1 bar and sampled on chart bars with lookahead off.
+Calculation: Dealing-range position = the chart close's displacement from the T1 range midpoint divided by the T1 range half-width, clamped to the normalized score bounds; use neutral position when the range is not positive.
+Calculation: Active OB/FVG zones = on each corresponding Long or Short OB/FVG rule trigger, store the zone boundaries as follows: an OB uses the high and low of the most recent qualifying opposite-color candle within the OB scan lookback; a bullish FVG uses current low and high at the FVG separation offset; a bearish FVG uses low at that offset and current high. Retain the newest zones up to the per-type zone limit, evicting the oldest, and keep zones until evicted without mitigation removal.
+Calculation: Nearest zone midpoints = for all active OB/FVG zones, take each high-low midpoint; the nearest midpoint above and below chart close are the respective nearest zones.
+Calculation: Equal-pool scores = find the highest high and lowest low over the liquidity-cluster lookback; count prior bars within ATR times the equal-pool tolerance of each extreme. For each side, clamp max(zero, count minus the first-pool baseline) divided by that side's cluster saturation to the unit interval; use zero before sufficient history exists. ATR uses chart bars.
+Calculation: Prior-period scores = use the high and low of the last completed T3 bar, sampled on chart bars. When the prior high is above chart close, its score is max(zero, full score minus distance divided by ATR times the prior-period distance scale); when the prior low is below chart close, calculate the analogous lower-side score. Otherwise the respective score is zero. T3 is a separate timeframe; ATR uses chart bars.
+Calculation: Zone-count scores = on each side, count every active zone midpoint on that side and add a nearest-zone bonus when a nearest zone exists; divide by the zone-count saturation and cap at the full score.
+Calculation: Zone-proximity scores = on each side, max(zero, full score minus distance to the nearest zone divided by ATR times the zone-proximity scale); use zero when that side has no zone. ATR uses chart bars.
+Calculation: Liquidity imbalance = the capped weighted sum of equal-pool, prior-period, zone-count, and zone-proximity scores above, minus the corresponding lower-side weighted sum; use separate parameters for the four source weights.
+Calculation: Recent momentum = clamp the mean signed candle body-to-range ratio over the recent-momentum lookback, multiplied by the momentum scale, to the normalized score bounds; use zero for bars with zero range. This lookback is longer than the structure-displacement lookback.
+Calculation: Session strength = use the current chart bar's datetime hour in America/New_York: apply separate strength parameters for the NY AM, London, NY PM, Asia (wrapping midnight), and NY lunch windows, and an off-window strength otherwise. Each session window has parameterized start and end hours.
+Calculation: Structure displacement = clamp the mean signed candle body-to-range ratio over the structure-displacement lookback, multiplied by the displacement scale, to the normalized score bounds; use zero for bars with zero range.
+Calculation: Volatility vote = max(zero, min(full score, (ATR / SMA(ATR, volatility smoothing lookback) minus neutral ratio) times the volatility expansion scale)) times Recent momentum. ATR and its smoothing use chart bars, with the smoothing lookback longer than the ATR lookback.
+Calculation: HTF vote = HTF structure bias(T1) times its weight plus HTF structure bias(T2) times its separate weight.
+Calculation: Premium-discount vote = the negative of Dealing-range position.
+Calculation: Directional score = the sum of the separately weighted HTF, premium-discount, liquidity, session-strength-times-Recent-momentum, structure-displacement, and volatility votes. When the liquidity-override toggle is enabled and both nearest zones exist, raise the score to at least the positive override floor if Liquidity imbalance is at least the positive dominance threshold and upper-zone distance is no more than lower-zone distance times the reach ratio; lower it to at most the negative override floor under the symmetric lower-side conditions. The six factor weights, override thresholds, floor, and reach ratio are separate parameters.
+Long: low > high[FVG separation offset] AND close[immediately previous bar] > open[immediately previous bar] AND FVG detection enabled.
+Short: high < low[FVG separation offset] AND close[immediately previous bar] < open[immediately previous bar] AND FVG detection enabled.
+Long: OB detection enabled AND a latest confirmed chart-bar Pivot High exists AND current close > that pivot high AND previous close <= that same pivot-high level AND a bearish candle exists within the OB scan lookback.
+Short: OB detection enabled AND a latest confirmed chart-bar Pivot Low exists AND current close < that pivot low AND previous close >= that same pivot-low level AND a bullish candle exists within the OB scan lookback.
+Long: HTF structure bias(T1) > neutral.
+Short: HTF structure bias(T1) < neutral.
+Long: Dealing-range position < the negative premium-discount label threshold.
+Short: Dealing-range position > the positive premium-discount label threshold.
+Long: Liquidity imbalance > the positive liquidity-label threshold.
+Short: Liquidity imbalance < the negative liquidity-label threshold.
+Long: Directional score > neutral.
+Short: Directional score < neutral.
+Long: Directional score > the positive high-confidence threshold AND Directional score[previous chart bar] <= that threshold.
+Short: Directional score < the negative high-confidence threshold AND Directional score[previous chart bar] >= that threshold.
+Long: Directional score crosses above neutral.
+Short: Directional score crosses below neutral.

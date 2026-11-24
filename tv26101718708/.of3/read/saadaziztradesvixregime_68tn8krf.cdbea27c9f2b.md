@@ -1,0 +1,2 @@
+Long: gain rank <= top-gainer rank parameter AND catalyst data indicates a catalyst AND attention measure >= attention parameter AND close > VWAP AND average(volume, pullback length) < average(volume, preceding advance length) AND pullback low > preceding pullback low AND close crosses above VWAP AND the following bar's low >= VWAP on the reclaim bar AND preceding swing high - close <= target-distance parameter
+Exit: Long, high >= preceding swing high

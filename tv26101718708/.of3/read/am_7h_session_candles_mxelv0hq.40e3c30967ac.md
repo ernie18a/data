@@ -1,0 +1,3 @@
+Calculation: Session candle = OHLC aggregated from T1 bars in three consecutive parameter-length intervals from the open of their containing T2 bar; optionally merge the residual interval into the third interval according to a parameter. Use T1 intrabars on chart timeframes above T1 and chart bars otherwise, including forming bars; use the containing T2 bar's open, whether that bar is forming or complete.
+Long: session candle close >= session candle open
+Short: session candle close < session candle open

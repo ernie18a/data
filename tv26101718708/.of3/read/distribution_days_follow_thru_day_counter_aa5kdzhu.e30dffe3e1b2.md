@@ -1,0 +1,17 @@
+Calculation: Price change = (close - close[1]) / close[1], when close[1] != 0
+Calculation: Close position in range = (close - low) / (high - low), or 0.5 when high = low
+Calculation: Signal bar = confirmed chart bar after the configured initialization warm-up and when the configured chart-timeframe restriction is satisfied or disabled
+Calculation: Market state starts in Correction, changes to Rally Attempt on Day 1, returns to Correction on rally failure, changes to Confirmed Uptrend on a Follow-Through Day, and returns to Correction on an enabled model reset
+Calculation: Rally low = the lowest low tracked while in Correction, including the current low; hold it during Rally Attempt; reset it to the current low on rally failure or model reset
+Calculation: Rally day = 1 on Rally Attempt Day 1; increment on each later nonfailed Rally Attempt bar; reset to 0 on failure or model reset
+Calculation: Active selling-pressure count = confirmed Distribution and enabled Stalling events recorded during Confirmed Uptrend, excluding each event when its age reaches the expiration parameter or close reaches its event close times (1 + recovery parameter); clear on Rally Attempt Day 1, rally failure, Follow-Through Day, or model reset
+Calculation: Follow-Through Day age = chart bars since the latest Follow-Through Day while in Confirmed Uptrend
+Calculation: Follow-Through Day low = low on the latest Follow-Through Day; a later signal bar with low below it triggers one undercut until the next Follow-Through Day or model reset
+Long: Signal bar AND market state is Correction AND close > close[1] AND low >= rally low
+Long: Signal bar AND a later Rally Attempt bar does not fail AND incremented rally day >= minimum rally-day parameter AND price change >= minimum Follow-Through Day gain parameter AND (higher volume is not required OR volume > volume[1])
+Short: Signal bar AND market state is Confirmed Uptrend AND price change <= -distribution decline parameter AND volume > volume[1]
+Short: Signal bar AND market state is Confirmed Uptrend AND Stalling is enabled AND volume > volume[1] AND 0 < price change <= maximum Stalling gain parameter AND close position in range < maximum close-position parameter AND (prior progress is not required OR price change one chart bar ago >= prior progress parameter OR price change two chart bars ago >= prior progress parameter)
+Short: Signal bar AND market state is Rally Attempt AND (configured failure price is low and low < rally low OR configured failure price is close and close < rally low)
+Short: Signal bar AND market state is Confirmed Uptrend AND FTD-low tracking is enabled AND the latest Follow-Through Day is earlier than the current bar AND its low has not already been undercut AND low < Follow-Through Day low
+Short: Signal bar AND market state is Confirmed Uptrend AND a Distribution or enabled Stalling event occurs AND Follow-Through Day age is at least one chart bar and no greater than the early post-FTD warning parameter
+Short: Signal bar AND market state is Confirmed Uptrend AND ((pressure reset is enabled AND active selling-pressure count >= correction-reset parameter) OR (FTD-low reset is enabled AND a Follow-Through Day low undercut occurs))

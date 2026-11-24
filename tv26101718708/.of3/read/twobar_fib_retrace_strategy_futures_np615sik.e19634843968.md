@@ -1,0 +1,5 @@
+Calculation: Body fraction = (high = low ? 0 : abs(close - open) / (high - low))
+Long: ((close[2] > open[2] AND close[1] > open[1]) OR close[1] > high[2]) AND Body fraction[2] >= minimum body fraction AND Body fraction[1] >= minimum body fraction AND volume[1] > volume[2] AND (VWAP filter disabled OR close > VWAP(hlc3)) AND high[1] - (high[1] - low[1]) * deeper retracement fraction <= low AND low <= high[1] - (high[1] - low[1]) * shallower retracement fraction
+Short: ((close[2] < open[2] AND close[1] < open[1]) OR close[1] < low[2]) AND Body fraction[2] >= minimum body fraction AND Body fraction[1] >= minimum body fraction AND volume[1] > volume[2] AND (VWAP filter disabled OR close < VWAP(hlc3)) AND low[1] + (high[1] - low[1]) * shallower retracement fraction <= high AND high <= low[1] + (high[1] - low[1]) * deeper retracement fraction
+Exit: long, low <= signal-bar low[1] minus stop offset
+Exit: short, high >= signal-bar high[1] plus stop offset

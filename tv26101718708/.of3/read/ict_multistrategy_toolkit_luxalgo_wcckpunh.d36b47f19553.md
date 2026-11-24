@@ -1,0 +1,16 @@
+Calculation: Downward pivot sweep = low < an unswept PivotLow(low, P1, P1), where P1 is the equal pivot lookback and forward parameter
+Calculation: Upward pivot sweep = high > an unswept PivotHigh(high, P1, P1)
+Calculation: Bullish MSS = close crosses above PivotHigh(high, P1, P1)
+Calculation: Bearish MSS = close crosses below PivotLow(low, P1, P1)
+Calculation: Long stop = Turtle Soup entry bar low, associated downward sweep bar low for Judas Swing or FVG entries, or lowest low over P2 chart bars ending at bullish MSS for OTE
+Calculation: Short stop = Turtle Soup entry bar high, associated upward sweep bar high for Judas Swing or FVG entries, or highest high over P2 chart bars ending at bearish MSS for OTE
+Long: Turtle Soup is enabled AND a confirmed chart bar makes a downward pivot sweep, closes above the swept pivot low, and the pivot is older than P6 × P1 chart bars AND (overlap prevention is disabled OR no trade is active)
+Short: Turtle Soup is enabled AND a confirmed chart bar makes an upward pivot sweep, closes below the swept pivot high, and the pivot is older than P6 × P1 chart bars AND (overlap prevention is disabled OR no trade is active)
+Long: a downward pivot sweep is followed by bullish MSS, then a confirmed chart bar reaches the top of an unmitigated bullish FVG formed at or after the sweep AND (the 2022 model is enabled OR the Silver Bullet model is enabled and the bar is in a configured Silver Bullet session) AND (overlap prevention is disabled OR no trade is active)
+Short: an upward pivot sweep is followed by bearish MSS, then a confirmed chart bar reaches the bottom of an unmitigated bearish FVG formed at or after the sweep AND (the 2022 model is enabled OR the Silver Bullet model is enabled and the bar is in a configured Silver Bullet session) AND (overlap prevention is disabled OR no trade is active)
+Long: Judas Swing is enabled AND a downward pivot sweep occurs within P5 chart bars of the start of the current T1 bar while that chart bar's close is above the open of the still-forming T1 bar, then a confirmed chart bar makes bullish MSS AND (overlap prevention is disabled OR no trade is active)
+Short: Judas Swing is enabled AND an upward pivot sweep occurs within P5 chart bars of the start of the current T1 bar while that chart bar's close is below the open of the still-forming T1 bar, then a confirmed chart bar makes bearish MSS AND (overlap prevention is disabled OR no trade is active)
+Long: OTE is enabled AND after bullish MSS, a confirmed chart bar's range intersects the zone between MSS bar high − (MSS bar high − lowest low over P2 chart bars ending at MSS) × P3 and MSS bar high − (MSS bar high − lowest low over P2 chart bars ending at MSS) × P4, where P3 < P4, AND (overlap prevention is disabled OR no trade is active)
+Short: OTE is enabled AND after bearish MSS, a confirmed chart bar's range intersects the zone between MSS bar low + (highest high over P2 chart bars ending at MSS − MSS bar low) × P3 and MSS bar low + (highest high over P2 chart bars ending at MSS − MSS bar low) × P4, where P3 < P4, AND (overlap prevention is disabled OR no trade is active)
+Exit: long, low <= long stop OR high >= entry price + (entry price − long stop) × P7
+Exit: short, high >= short stop OR low <= entry price − (short stop − entry price) × P7

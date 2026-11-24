@@ -1,0 +1,16 @@
+Calculation: Swing departure = for a confirmed swing high, max(high at pivot − lowest low over the swing lookback ending on its confirmation bar, 0); for a confirmed swing low, max(highest high over that window − low at pivot, 0).
+Calculation: Supply/demand zone = create at a confirmed pivot high/low only when swing departure ≥ ATR(ATR lookback) × minimum swing ATR multiple; center a band of height ATR × zone-height multiplier on the pivot high/low. Merge overlapping same-side bands in the same session by taking their union while retaining the existing zone’s score components and state. Count a touch on a bar intersecting the band when the prior bar did not; invalidate supply when the chosen close/high > band top and demand when the chosen close/low < band bottom. Rejection-wick fraction accumulates pivot-bar and touch-bar upper/lower wick divided by each bar’s range, capped at 1; idle bars count since last touch or creation.
+Calculation: Zone score = clamp(10 × weighted mean of departure fraction (swing departure ÷ (ATR × impulse-full-score multiple), clipped to 0–1), pivot-bar volume ÷ volume SMA ending at confirmation (clipped to 0–1, or 0 if the baseline is zero), accumulated rejection-wick fraction, and freshness fraction (max(0, 1 − touches ÷ touch-normalization)), using separate weights, × age factor, 0, 10; the weighted mean is 0 if the weights sum to 0. Age factor is 1 when decay is off, otherwise max(1 − (1 − decay floor) × min(idle bars ÷ decay duration, 1), decay floor).
+Calculation: Displayed zone = a zone in the latest display-lookback sessions whose score ranks within the per-session maximum among same-side zones; when the strong-only filter is enabled, its score also meets the strength threshold.
+Calculation: Eligible magnet = an unbroken displayed source with touches ≥ source-retest threshold and score ≥ source-score threshold, paired with the nearest unbroken displayed opposite zone in the same session whose score ≥ target-score threshold, whose midpoint is on the opposite side of the source midpoint, and whose distance is ≤ ATR × maximum-reach multiple; rank candidates by source score and draw at most the magnet-count maximum per session in the latest magnet-lookback sessions.
+Calculation: Pull totals = sum the pull strengths of drawn magnets separately by direction; each pull strength is the mean of its source and target scores.
+Long: a displayed demand zone exists AND it is not invalidated
+Short: a displayed supply zone exists AND it is not invalidated
+Long: alerts are enabled AND the bar is confirmed AND PivotLow(low, swing lookback, swing lookback) exists
+Short: alerts are enabled AND the bar is confirmed AND PivotHigh(high, swing lookback, swing lookback) exists
+Long: alerts are enabled AND an unbroken stored demand zone has abs(close − zone midpoint) ≤ close × proximity percentage ÷ 100
+Short: alerts are enabled AND an unbroken stored supply zone has abs(close − zone midpoint) ≤ close × proximity percentage ÷ 100
+Long: an eligible demand-to-supply magnet is drawn
+Short: an eligible supply-to-demand magnet is drawn
+Long: upward pull total > downward pull total
+Short: downward pull total > upward pull total

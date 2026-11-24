@@ -1,0 +1,10 @@
+Calculation: Non-commercial net = on chart bars, non-commercial long positions(T1, last completed bar) − non-commercial short positions(T1, last completed bar)
+Calculation: Commercial net = on chart bars, commercial long positions(T1, last completed bar) − commercial short positions(T1, last completed bar)
+Calculation: COT Index(series, lookback parameter) = on chart bars using last completed T1 values, 100 × (current series − lowest(series, lookback parameter))/(highest(series, lookback parameter) − lowest(series, lookback parameter)); midpoint parameter when the range is zero; available with at least the minimum-history parameter valid values
+Calculation: Commercial bias index = commercial COT Index when available, otherwise 100 − non-commercial COT Index
+Calculation: NC flip percentage = 100 × non-commercial net/open interest when open interest > 0
+Calculation: NC net change = non-commercial net(T1, last completed bar) − non-commercial net(T1, preceding completed bar)
+Long: (COT Index(non-commercial net, lookback parameter) ≤ lower extreme parameter AND commercial bias index ≥ upper extreme parameter) OR (COT Index(non-commercial net, lookback parameter) > midpoint parameter AND NC net change > 0 AND NOT (COT Index(non-commercial net, lookback parameter) ≥ upper extreme parameter AND commercial bias index ≤ lower extreme parameter))
+Short: (COT Index(non-commercial net, lookback parameter) ≥ upper extreme parameter AND commercial bias index ≤ lower extreme parameter) OR (COT Index(non-commercial net, lookback parameter) < midpoint parameter AND NC net change < 0 AND NOT (COT Index(non-commercial net, lookback parameter) ≤ lower extreme parameter AND commercial bias index ≥ upper extreme parameter))
+Exit: short, COT Index(non-commercial net, lookback parameter) crosses below midpoint parameter
+Exit: long, COT Index(non-commercial net, lookback parameter) crosses above midpoint parameter

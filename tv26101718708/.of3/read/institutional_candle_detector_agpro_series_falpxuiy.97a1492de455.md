@@ -1,0 +1,8 @@
+Calculation: Candle body = abs(close - open)
+Calculation: Candle range = high - low
+Calculation: Volume average = SMA(volume, volume-average lookback)
+Calculation: Opposing-wick fraction = if close > open then (high - close) / candle range else (open - low) / candle range
+Calculation: Absorption event = absorption detection enabled AND volume average > 0 AND volume >= minimum absorption volume multiple * volume average AND ATR(ATR lookback) > 0 AND candle body <= maximum absorption body ATR multiple * ATR(ATR lookback) AND candle body / candle range <= maximum absorption body/range fraction AND close != open
+Calculation: Body-driven event = ATR(ATR lookback) > 0 AND candle body >= minimum body ATR multiple * ATR(ATR lookback) AND volume average > 0 AND volume >= minimum volume multiple * volume average AND (oversized-wick filter disabled OR (high - max(open, close)) + (min(open, close) - low) <= maximum wick/body ratio * candle body)
+Long: (Absorption event AND close < open) OR (NOT Absorption event AND Body-driven event AND ((close > open AND Opposing-wick fraction < reversal opposing-wick fraction) OR (close < open AND Opposing-wick fraction >= reversal opposing-wick fraction)))
+Short: (Absorption event AND close > open) OR (NOT Absorption event AND Body-driven event AND ((close < open AND Opposing-wick fraction < reversal opposing-wick fraction) OR (close > open AND Opposing-wick fraction >= reversal opposing-wick fraction)))

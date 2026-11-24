@@ -1,0 +1,2 @@
+Long: low[fractal width] is strictly lower than every other low from low[0] through low[2 × fractal width]
+Short: high[fractal width] is strictly higher than every other high from high[0] through high[2 × fractal width]

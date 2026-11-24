@@ -1,0 +1,4 @@
+Calculation: Current upswing high = highest(high from the current upswing's starting low through the previous bar)
+Calculation: Current downswing low = lowest(low from the current downswing's starting high through the previous bar)
+Long: After at least one prior confirmed swing reversal, on a confirmed bar with ATR(high, low, close, ATR lookback) available and positive, high ≤ Current upswing high AND close ≤ Current upswing high − reversal multiplier × ATR(high, low, close, ATR lookback)
+Short: After at least one prior confirmed swing reversal, on a confirmed bar with ATR(high, low, close, ATR lookback) available and positive, low ≥ Current downswing low AND close ≥ Current downswing low + reversal multiplier × ATR(high, low, close, ATR lookback)

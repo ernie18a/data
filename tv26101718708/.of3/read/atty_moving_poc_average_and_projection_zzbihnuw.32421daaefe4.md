@@ -1,0 +1,3 @@
+Calculation: Session POC = center of the lowest-index maximum-volume bin for each completed configured session; divide the session low-high range into bin-count equal bins; for each positive-volume bar, split volume equally across the clamped bins from floor((low-session low)/bin width) through floor((high-session low)/bin width), or assign all volume to the clamped bin containing close under at-close placement; if the session range is zero, use session low.
+Long: On each chart bar, close >= moving average of completed-session POCs using lookback A and type A.
+Short: On each chart bar, close < moving average of completed-session POCs using lookback A and type A.

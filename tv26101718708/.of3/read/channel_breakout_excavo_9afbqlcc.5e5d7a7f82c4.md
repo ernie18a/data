@@ -1,0 +1,6 @@
+Calculation: Active channel boundaries = projections to the current bar of the upper line through confirmed pivot highs and lower line through confirmed pivot lows, using pivots from the channel lookback; each line has at least the minimum touch count, every pivot stays within the maximum ATR deviation of its line, touches are within the ATR touch tolerance, and the overlapping boundaries converge.
+Calculation: Directional bias = slope weight × clamp(change in channel midpoint over one bar ÷ (ATR(lookback) × slope normalization factor), −1, 1) + RSI weight × (RSI(close, lookback) − RSI midpoint) ÷ RSI half-range + position weight × (2 × (close − lower boundary) ÷ (upper boundary − lower boundary) − 1); use zero for the position term when channel width is not positive.
+Long: active channel before breakout AND directional bias > 0
+Short: active channel before breakout AND directional bias ≤ 0
+Long: active channel before breakout AND confirmed bar AND chart-bar count since start ≥ max(2 × pivot lookback + channel lookback, minimum warm-up bars) AND close > upper boundary
+Short: active channel before breakout AND confirmed bar AND chart-bar count since start ≥ max(2 × pivot lookback + channel lookback, minimum warm-up bars) AND close < lower boundary

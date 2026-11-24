@@ -1,0 +1,2 @@
+Long: On chart bars using last completed T1 bars, close[1] > high[2] OR (low[1] < low[2] AND close[1] >= low[2] AND close[1] <= high[2])
+Short: On chart bars using last completed T1 bars, close[1] < low[2] OR (high[1] > high[2] AND close[1] >= low[2] AND close[1] <= high[2])

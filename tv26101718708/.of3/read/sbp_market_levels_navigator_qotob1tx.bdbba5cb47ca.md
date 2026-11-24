@@ -1,0 +1,12 @@
+Calculation: Safe ATR = max(ATR(ATR lookback), minimum tick size), using minimum tick size when ATR is unavailable
+Calculation: Touch distance = Safe ATR * touch-distance multiplier
+Calculation: Break distance = Safe ATR * break-distance multiplier
+Calculation: Candle range = max(high - low, minimum tick size)
+Calculation: Lower wick ratio = (min(open, close) - low) / Candle range
+Calculation: Upper wick ratio = (high - max(open, close)) / Candle range
+Calculation: Bullish close location = (close - low) / Candle range
+Calculation: Bearish close location = (high - close) / Candle range
+Calculation: Bullish evidence count = 1 if at least one active support level has a price test after the minimum-touch-gap parameter and at least one active support level has a bullish rejection, otherwise 0, plus 1 if any active resistance level changes to support after the close exceeds its price by Break distance for the acceptance-bars parameter of consecutive chart bars, otherwise 0
+Calculation: Bearish evidence count = 1 if at least one active resistance level has a price test after the minimum-touch-gap parameter and at least one active resistance level has a bearish rejection, otherwise 0, plus 1 if any active support level changes to resistance after the close falls below its price by Break distance for the acceptance-bars parameter of consecutive chart bars, otherwise 0
+Long: On a confirmed chart bar, Bullish evidence count > 0 AND Bullish evidence count > Bearish evidence count AND the most recent emitted signal side is not long (initially neutral); a level is active while its age is at most the maximum-level-age parameter; a price test requires high >= level price - Touch distance AND low <= level price + Touch distance; a bullish rejection requires low <= level price + Touch distance AND close > level price AND Lower wick ratio >= wick-ratio threshold AND Bullish close location >= close-location threshold
+Short: On a confirmed chart bar, Bearish evidence count > 0 AND Bearish evidence count > Bullish evidence count AND the most recent emitted signal side is not short (initially neutral); a level is active while its age is at most the maximum-level-age parameter; a price test requires high >= level price - Touch distance AND low <= level price + Touch distance; a bearish rejection requires high >= level price - Touch distance AND close < level price AND Upper wick ratio >= wick-ratio threshold AND Bearish close location >= close-location threshold

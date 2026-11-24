@@ -1,0 +1,4 @@
+Calculation: Buy weight = 1 in Fixed Amount mode or when unavailable; otherwise clamp(1 - sensitivity × z-score, min(min weight, max weight), max(min weight, max weight)), using the preceding chart bar, where z-score = (ln(close) - ln(SMA(close, valuation lookback))) / sqrt(SMA((ln(close) - ln(SMA(close, valuation lookback)))², valuation lookback))
+Long: At each configured recurring buy time on or after the start datetime, using the configured schedule anchor and timing, when buy weight > 0
+Long: At each configured recurring buy time on or after the start datetime, using the configured schedule anchor and timing, when buy weight > 1
+Long: At each configured recurring buy time on or after the start datetime, using the configured schedule anchor and timing, when buy weight < 1

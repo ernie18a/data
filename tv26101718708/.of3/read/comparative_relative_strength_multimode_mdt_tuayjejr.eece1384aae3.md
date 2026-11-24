@@ -1,0 +1,3 @@
+Calculation: relative strength = selected price source / benchmark price; 100 × (selected price source / benchmark price); 100 × ((selected price source / selected price source[performance lookback] - 1) - (benchmark price / benchmark price[performance lookback] - 1)); or 100 × ((selected price source / benchmark price) / SMA(selected price source / benchmark price, Mansfield base lookback) - 1), according to the selected calculation mode
+Long: relative strength >= Highest(relative strength, RS high/low lookback) AND (Mansfield mode is not selected OR relative strength > 0)
+Short: relative strength <= Lowest(relative strength, RS high/low lookback)

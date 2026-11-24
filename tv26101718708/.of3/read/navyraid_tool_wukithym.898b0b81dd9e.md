@@ -1,0 +1,9 @@
+Calculation: Period running high/low(series, T) = maximum/minimum of the series' chart-bar highs/lows since the current T period began
+Calculation: Prior-period high/low(series, T) = maximum/minimum of the series' chart-bar highs/lows during the last completed T period
+Calculation: Period low SMT(T) = (Period running low(traded OHLC, T) < Prior-period low(traded OHLC, T)) differs from (Period running low(comparison OHLC, T) < Prior-period low(comparison OHLC, T))
+Calculation: Period high SMT(T) = (Period running high(traded OHLC, T) > Prior-period high(traded OHLC, T)) differs from (Period running high(comparison OHLC, T) > Prior-period high(comparison OHLC, T))
+Calculation: Session high/low(series, session) = maximum/minimum of the series' chart-bar highs/lows during its latest session, accumulating on chart bars while that session is active
+Calculation: NY-reference low SMT(reference session) = (Session low(traded OHLC, NY) < Session low(traded OHLC, reference session)) differs from (Session low(comparison OHLC, NY) < Session low(comparison OHLC, reference session))
+Calculation: NY-reference high SMT(reference session) = (Session high(traded OHLC, NY) > Session high(traded OHLC, reference session)) differs from (Session high(comparison OHLC, NY) > Session high(comparison OHLC, reference session))
+Long: Period low SMT(T1) OR Period low SMT(T2) OR (during NY session AND ((NY-reference low SMT(Asia) AND the latest Asia-session traded low was set within the recency parameter) OR (NY-reference low SMT(London) AND the latest London-session traded low was set within the recency parameter)))
+Short: Period high SMT(T1) OR Period high SMT(T2) OR (during NY session AND ((NY-reference high SMT(Asia) AND the latest Asia-session traded high was set within the recency parameter) OR (NY-reference high SMT(London) AND the latest London-session traded high was set within the recency parameter)))

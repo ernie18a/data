@@ -1,0 +1,3 @@
+Calculation: Tick CVD = cumulative sum since script load of (volume change per tick × sign(price change per tick))
+Long: close > close at script load OR close > close one tick ago OR Tick CVD > 0 OR (Tick CVD one tick ago < Tick CVD AND Tick CVD one tick ago < Tick CVD two ticks ago) OR (close one tick ago < close AND close one tick ago < close two ticks ago)
+Short: close < close at script load OR close < close one tick ago OR Tick CVD < 0 OR (Tick CVD one tick ago > Tick CVD AND Tick CVD one tick ago > Tick CVD two ticks ago) OR (close one tick ago > close AND close one tick ago > close two ticks ago)

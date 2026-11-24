@@ -1,0 +1,6 @@
+Calculation: Session range = max(session high − session low, minimum tick size)
+Calculation: Session close location = 100 × (session close − session low) / session range
+Calculation: Relative volume = chart-bar volume / SMA(chart-bar volume, lookback)
+Calculation: Session score = clamp(abs(session close − session open) / session range × body weight + abs(session close location − 50) × location weight + (volume confirmation enabled ? clamp(relative volume, lower relative-volume bound, upper relative-volume bound) × volume weight : volume-off contribution), score floor, score ceiling)
+Long: On an intraday chart within the configured chart-timeframe limit, during a configured session, current session close > current session open AND session close location >= bullish location threshold AND session score > conflict threshold
+Short: On an intraday chart within the configured chart-timeframe limit, during a configured session, current session close < current session open AND session close location <= bearish location threshold AND session score > conflict threshold

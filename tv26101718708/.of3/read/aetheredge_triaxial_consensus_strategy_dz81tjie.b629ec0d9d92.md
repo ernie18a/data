@@ -1,0 +1,40 @@
+Calculation: EMAStackScore = (count of adjacent chart-timeframe EMA pairs where the shorter-lookback EMA is above the next longer-lookback EMA minus the count where it is below) × stack score step; use five EMAs with strictly increasing lookbacks.
+Calculation: StructureScore = pivot score step × (higher latest confirmed pivot high than prior confirmed pivot high + higher latest confirmed pivot low than prior confirmed pivot low − lower latest confirmed pivot high than prior confirmed pivot high − lower latest confirmed pivot low than prior confirmed pivot low); use chart-timeframe pivots with equal left and right lookbacks.
+Calculation: ADXScore = zero below the lower ADX threshold; otherwise assign the moderate score magnitude when ADX is above the lower threshold and the strong score magnitude when above the higher threshold, positive when +DI > −DI and negative otherwise.
+Calculation: TrendScore = clamp(EMA stack weight × EMAStackScore + structure weight × StructureScore + ADX weight × ADXScore, −score cap, score cap), using chart-timeframe bars.
+Calculation: MomentumScore = clamp(RSI weight × (EMA(RSI(close, RSI lookback), RSI smoothing lookback) − RSI midpoint) × RSI scale + MACD weight × clamp(MACD histogram × histogram scale / ATR, −score cap, score cap), −score cap, score cap), using chart-timeframe bars; MACD fast lookback is shorter than its slow lookback.
+Calculation: ATRRatio = ATR / SMA(ATR, ATR-average lookback), using chart-timeframe bars.
+Calculation: VolatilityScore = clamp((if Bollinger BandWidth expansion AND ATRRatio is between the healthy-volatility bounds AND abs(close − open) / (high − low, or zero for a zero range) exceeds the strong-body threshold, then candle direction × volatility impulse, otherwise zero) + clamp((close − close[lag]) / ATR × slope scale, −slope cap, slope cap), −score cap, score cap); candle direction is positive when close > open, negative when close < open, and zero otherwise. Bollinger BandWidth uses the same lookback for its basis and standard deviation; expansion and squeeze compare it with its moving average times separate factors.
+Calculation: Regime = Trend if ADX ≥ trend-regime threshold AND either the count of rising adjacent EMA pairs or falling adjacent EMA pairs ≥ the regime stack-count threshold; otherwise Volatile if ATRRatio ≥ volatile-regime threshold; otherwise Quiet if Bollinger BandWidth is below its average times the squeeze factor OR ATRRatio ≤ quiet-regime threshold; otherwise Range.
+Calculation: AxisWeight(axis) = zero when that axis is disabled; otherwise the linearly rescaled EWMA reliability weight between its minimum and maximum, multiplied by its regime multiplier when regime weighting is enabled and by a neutral multiplier otherwise. Regime multipliers are Trend: trend high, momentum medium, volatility low; Volatile: trend low, momentum medium, volatility high; Quiet: the same quiet multiplier for all axes; Range: trend low, momentum high, volatility neutral. Adaptive weighting disabled uses the neutral relative weight.
+Calculation: HigherTimeframeVerdict(T) = positive when EMA(close, fast lookback, T) > EMA(close, slow lookback, T) AND RSI(close, RSI lookback, T) > RSI midpoint; negative when both comparisons are reversed; otherwise neutral. Compute on T bars and sample on chart bars with lookahead off: the last completed T bar historically and the currently forming T bar in realtime. T1 and T2 are distinct higher timeframes.
+Calculation: RawScore = zero if the sum of enabled axis weights is zero; otherwise (TrendScore × trend weight + MomentumScore × momentum weight + VolatilityScore × volatility weight) / (sum of enabled axis weights × score cap) × score cap.
+Calculation: FinalScore = clamp(RawScore plus, for each enabled higher timeframe, a positive MTF bonus when its nonneutral verdict agrees with sign(RawScore), a negative MTF penalty when its nonneutral verdict disagrees, and zero when neutral, −score cap, score cap).
+Calculation: AxisAgreement = agreed up when the number of enabled axis scores above the axis-lean cutoff exceeds the number below its negative and meets the minimum agreeing-axis count; agreed down is the converse. Ignore scores between those cutoffs. SpreadOK when fewer than the minimum spread-axis count lean, or when max minus min of the leaning scores ≤ cross-axis tolerance × spread multiplier. ToleranceOK = (agreed up OR agreed down) AND SpreadOK.
+Calculation: ActiveThreshold = epsilon-greedy Q-learning selection from evenly spaced candidate thresholds between the selected profile's low and high thresholds, using learned Q values updated from candidate signal outcomes; when adaptive thresholds are disabled, use the midpoint of those bounds.
+Calculation: StrongLong = ToleranceOK AND FinalScore ≥ ActiveThreshold AND TrendScore > axis-lean cutoff AND agreed up.
+Calculation: StrongShort = ToleranceOK AND FinalScore ≤ −ActiveThreshold AND TrendScore < −axis-lean cutoff AND agreed down.
+Calculation: SignalState updates on confirmed chart bars: set to long on StrongLong, short on StrongShort, clear to neutral when neither is strong and abs(FinalScore) < ActiveThreshold − reset margin, and otherwise retain its prior state.
+Calculation: FireLong = StrongLong AND prior SignalState is not long.
+Calculation: FireShort = StrongShort AND prior SignalState is not short.
+Long: FireLong.
+Short: FireShort.
+Long: FinalScore ≥ ActiveThreshold × weak-color fraction.
+Short: FinalScore ≤ −ActiveThreshold × weak-color fraction.
+Long: FinalScore > ActiveThreshold × weak-color fraction.
+Short: FinalScore < −ActiveThreshold × weak-color fraction.
+Long: FinalScore > zero.
+Short: FinalScore < zero.
+Long: TrendScore > axis-marker threshold OR MomentumScore > axis-marker threshold OR VolatilityScore > axis-marker threshold.
+Short: TrendScore < −axis-marker threshold OR MomentumScore < −axis-marker threshold OR VolatilityScore < −axis-marker threshold.
+Long: HigherTimeframeVerdict(T1) is positive OR HigherTimeframeVerdict(T2) is positive.
+Short: HigherTimeframeVerdict(T1) is negative OR HigherTimeframeVerdict(T2) is negative.
+Long: EMA(shortest lookback) > EMA(next longer lookback) OR EMA(next longer lookback) > EMA(middle lookback) OR EMA(middle lookback) > EMA(longer lookback).
+Short: EMA(shortest lookback) ≤ EMA(next longer lookback) OR EMA(next longer lookback) ≤ EMA(middle lookback) OR EMA(middle lookback) ≤ EMA(longer lookback).
+Long: FireLong AND position is flat AND abs(FinalScore) ≥ entry-confidence threshold AND (drawdown halt is disabled OR (peak account equity − current account equity) / peak account equity < maximum drawdown).
+Short: FireShort AND position is flat AND abs(FinalScore) ≥ entry-confidence threshold AND (drawdown halt is disabled OR (peak account equity − current account equity) / peak account equity < maximum drawdown).
+Calculation: InitialStop = entry-signal close − position direction × ATR at entry × stop-distance multiplier; position direction is positive for long and negative for short.
+Calculation: TP1 = entry-signal close + position direction × abs(entry-signal close − InitialStop) × reward-to-risk ratio × first-target fraction; TP2 uses the reward-to-risk ratio without a tier factor; TP3 uses the reward-to-risk ratio × final-target factor.
+Calculation: ProtectiveStop initializes at InitialStop; after TP1 is touched, move it at least to entry-signal close when breakeven is enabled; on each confirmed chart bar when trailing is enabled and MomentumScore exceeds the momentum-direction cutoff for a long or is below its negative for a short, update it to max(previous stop, close − ATR × trailing distance) for a long or min(previous stop, close + ATR × trailing distance) for a short.
+Exit: long, low ≤ ProtectiveStop OR (TP1 is enabled AND high ≥ TP1) OR (TP2 is enabled AND high ≥ TP2) OR (TP3 is enabled AND high ≥ TP3).
+Exit: short, high ≥ ProtectiveStop OR (TP1 is enabled AND low ≤ TP1) OR (TP2 is enabled AND low ≤ TP2) OR (TP3 is enabled AND low ≤ TP3).

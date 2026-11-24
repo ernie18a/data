@@ -1,0 +1,11 @@
+Calculation: Session high = maximum high within the session
+Calculation: Session low = minimum low within the session
+Calculation: Designated opening level = open of the bar at the configured intraday opening time
+Long: At bar close, low < an active confirmed PivotLow(low, swing-sweep lookback, swing-sweep lookback) AND close > that pivot low AND (session-only filtering is off OR the bar is within an enabled session)
+Short: At bar close, high > an active confirmed PivotHigh(high, swing-sweep lookback, swing-sweep lookback) AND close < that pivot high AND (session-only filtering is off OR the bar is within an enabled session)
+Long: At bar close, low < a tracked session low AND close > that session low AND (session-only filtering is off OR the bar is within an enabled session)
+Short: At bar close, high > a tracked session high AND close < that session high AND (session-only filtering is off OR the bar is within an enabled session)
+Long: On confirmation of a PivotLow(low, SMT lookback, SMT lookback) lower than the preceding PivotLow, with the two pivot bars no farther apart than the maximum pivot distance, Lowest(paired-market low, 2 × SMT lookback + 1) for the current pivot window is greater than or equal to its value for the preceding pivot window when correlation is normal, OR Highest(paired-market high, 2 × SMT lookback + 1) for the current pivot window is less than or equal to its value for the preceding pivot window when correlation is inverse
+Short: On confirmation of a PivotHigh(high, SMT lookback, SMT lookback) higher than the preceding PivotHigh, with the two pivot bars no farther apart than the maximum pivot distance, Highest(paired-market high, 2 × SMT lookback + 1) for the current pivot window is less than or equal to its value for the preceding pivot window when correlation is normal, OR Lowest(paired-market low, 2 × SMT lookback + 1) for the current pivot window is greater than or equal to its value for the preceding pivot window when correlation is inverse
+Long: On the first confirmed bar after each designated opening bar, low < the designated opening level AND close > the designated opening level
+Short: On the first confirmed bar after each designated opening bar, high > the designated opening level AND close < the designated opening level

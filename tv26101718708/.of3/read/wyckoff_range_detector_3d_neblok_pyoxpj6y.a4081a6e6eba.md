@@ -1,0 +1,18 @@
+Calculation: Effort = volume when positive, otherwise high - low
+Calculation: EffortZ = StDev(Effort, effort baseline lookback) > 0 ? (Effort - SMA(Effort, effort baseline lookback)) / StDev(Effort, effort baseline lookback) : 0
+Calculation: Accumulation range = after a selling climax, update the bottom to each lower low while awaiting AR; AR is the first confirmed PivotHigh(high, pivot strength, pivot strength) after the latest bottom at least minimum range height × ATR(ATR length) above it and within the AR time limit; before the first ST, a break-and-reclaim extends the bottom if the require-ST setting is enabled; the range stays active until failure, LPS, expiry without SOS, or the LPS-search limit after SOS
+Calculation: Distribution range = after a buying climax, update the top to each higher high while awaiting AR; AR is the first confirmed PivotLow(low, pivot strength, pivot strength) after the latest top at least minimum range height × ATR(ATR length) below it and within the AR time limit; before the first ST, a break-and-reclaim extends the top if the require-ST setting is enabled; the range stays active until failure, LPSY, expiry without SOW, or the LPS-search limit after SOW
+Calculation: Range height = range top - range bottom
+Calculation: Range midline = (range top + range bottom) / 2
+Long: While scanning for a climax, EffortZ ≥ climax effort threshold AND high - low ≥ climax bar range multiple × ATR(ATR length) AND low < Lowest(low, fresh-extreme lookback)[1] AND close < EMA(close, trend EMA length)
+Short: While scanning for a climax, EffortZ ≥ climax effort threshold AND high - low ≥ climax bar range multiple × ATR(ATR length) AND high > Highest(high, fresh-extreme lookback)[1] AND close > EMA(close, trend EMA length)
+Long: In an active accumulation range, low breaks below the range bottom and close reclaims above it within the reclaim window, and (the require-ST setting is disabled OR an earlier accepted PivotLow(low, pivot strength, pivot strength) after AR is within [range bottom, range bottom + ST zone × range height])
+Short: In an active distribution range, high breaks above the range top and close reclaims below it within the reclaim window, and (the require-ST setting is disabled OR an earlier accepted PivotHigh(high, pivot strength, pivot strength) after AR is within [range top - ST zone × range height, range top])
+Long: In an active accumulation range with no break pending, close > range top + SOS/SOW close buffer × ATR(ATR length) AND (EffortZ ≥ minimum SOS/SOW effort OR high - low ≥ ATR(ATR length))
+Short: In an active distribution range with no break pending, close < range bottom - SOS/SOW close buffer × ATR(ATR length) AND (EffortZ ≥ minimum SOS/SOW effort OR high - low ≥ ATR(ATR length))
+Long: In an active accumulation range after SOS, a confirmed PivotLow(low, pivot strength, pivot strength) formed after the SOS bar is ≥ range midline
+Short: In an active distribution range after SOW, a confirmed PivotHigh(high, pivot strength, pivot strength) formed after the SOW bar is ≤ range midline
+Short: In an active accumulation range, a downside break is pending with no close above the range bottom, and (close < range bottom - decisive-break distance × ATR(ATR length) OR bars since break ≥ reclaim window)
+Long: In an active distribution range, an upside break is pending with no close below the range top, and (close > range top + decisive-break distance × ATR(ATR length) OR bars since break ≥ reclaim window)
+Short: After SOS, on a later bar close < range midline
+Long: After SOW, on a later bar close > range midline

@@ -1,0 +1,2 @@
+Long: On the last completed bar of T1, T2, T3, T4, T5, or T6, evaluated on bars of that timeframe, low > high[2] AND (the selected IRL type permits FVG OR (it permits BAG AND close > high[1])) AND that timeframe's bias permits bullish.
+Short: On the last completed bar of T1, T2, T3, T4, T5, or T6, evaluated on bars of that timeframe, high < low[2] AND (the selected IRL type permits FVG OR (it permits BAG AND close < low[1])) AND that timeframe's bias permits bearish.

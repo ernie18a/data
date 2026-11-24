@@ -1,0 +1,27 @@
+Calculation: Fast EMA = EMA(close, shorter lookback, T1 bars, current still-forming bar)
+Calculation: Slow EMA = EMA(close, longer lookback, T1 bars, current still-forming bar)
+Calculation: Fast EMA slope = Fast EMA - Fast EMA[slope lookback] on T1 bars, using the current still-forming bar
+Calculation: Slow EMA slope = Slow EMA - Slow EMA[slope lookback] on T1 bars, using the current still-forming bar
+Calculation: Session VWAP = VWAP(hlc3, T1 bars, current still-forming bar)
+Calculation: Above VWAP = Session VWAP unavailable OR close > Session VWAP on the current still-forming T1 bar
+Calculation: Below VWAP = Session VWAP unavailable OR close < Session VWAP on the current still-forming T1 bar
+Calculation: Buyer pressure = SMA(if close > open then (close - open) * volume else (min(open, close) - low) * volume * wick factor, pressure lookback) on T1 bars including the current still-forming bar
+Calculation: Seller pressure = SMA(if close < open then (open - close) * volume else (high - max(open, close)) * volume * wick factor, pressure lookback) on T1 bars including the current still-forming bar
+Calculation: Buyers dominant = Buyer pressure > Seller pressure on the current still-forming T1 bar
+Calculation: Sellers dominant = Seller pressure > Buyer pressure on the current still-forming T1 bar
+Calculation: Buyers improving = Buyer pressure > Buyer pressure[1], using current Buyer pressure if the prior T1 value is unavailable
+Calculation: Sellers improving = Seller pressure > Seller pressure[1], using current Seller pressure if the prior T1 value is unavailable
+Calculation: Relative-change-weighted close average = sum(close[n] * weight[n]) / sum(weight[n]) for n from 0 through oscillator lookback - 1, where weight[n] = if close[n+1] != 0 then abs(close[n] - close[n+1]) / close[n+1] else 0; unavailable if the weight sum is zero; use T1 bars including the current still-forming bar
+Calculation: Relative ATR band = ATR(min(ATR-length factor * oscillator lookback, ATR-length cap), T1 bars, current still-forming bar) * ATR-band multiplier
+Calculation: Relative oscillator = (close - Relative-change-weighted close average) / Relative ATR band when the average is available and the band is nonzero, otherwise 0, on the current still-forming T1 bar
+Calculation: Bullish relative position = Relative-change-weighted close average is available AND close > Relative-change-weighted close average AND Relative oscillator > 0 on the current still-forming T1 bar
+Calculation: Bearish relative position = Relative-change-weighted close average is available AND close < Relative-change-weighted close average AND Relative oscillator < 0 on the current still-forming T1 bar
+Calculation: Long evidence = Weight A * ((close > Fast EMA ? 1 : 0) + (close > Slow EMA ? 1 : 0) + (Above VWAP ? 1 : 0) + (Buyers dominant ? 1 : 0) + (Bullish relative position ? 1 : 0)) + Weight B * ((Fast EMA slope > 0 ? 1 : 0) + (Slow EMA slope > 0 ? 1 : 0)) + Weight C * ((Buyers improving ? 1 : 0) + (Relative-change-weighted close average available AND close > Relative-change-weighted close average + Relative ATR band ? 1 : 0) + (+DI(DMI lookback, T1 current bar) > -DI(DMI lookback, T1 current bar) ? 1 : 0) + (RSI(close, RSI lookback, T1 current bar) >= upper RSI cutoff ? 1 : 0))
+Calculation: Short evidence = Weight A * ((close < Fast EMA ? 1 : 0) + (close < Slow EMA ? 1 : 0) + (Below VWAP ? 1 : 0) + (Sellers dominant ? 1 : 0) + (Bearish relative position ? 1 : 0)) + Weight B * ((Fast EMA slope < 0 ? 1 : 0) + (Slow EMA slope < 0 ? 1 : 0)) + Weight C * ((Sellers improving ? 1 : 0) + (Relative-change-weighted close average available AND close < Relative-change-weighted close average - Relative ATR band ? 1 : 0) + (-DI(DMI lookback, T1 current bar) > +DI(DMI lookback, T1 current bar) ? 1 : 0) + (RSI(close, RSI lookback, T1 current bar) <= lower RSI cutoff ? 1 : 0))
+Calculation: Bullish trend state = close > Fast EMA AND close > Slow EMA AND Fast EMA > Slow EMA AND Fast EMA slope > 0 AND Slow EMA slope > 0 AND Above VWAP AND (Buyers dominant OR Bullish relative position) on the current still-forming T1 bar
+Calculation: Bearish trend state = close < Fast EMA AND close < Slow EMA AND Fast EMA < Slow EMA AND Fast EMA slope < 0 AND Slow EMA slope < 0 AND Below VWAP AND (Sellers dominant OR Bearish relative position) on the current still-forming T1 bar
+Calculation: Bullish turn = close > Fast EMA AND Fast EMA slope > 0 AND Above VWAP AND Buyers dominant AND Relative oscillator >= 0 on the current still-forming T1 bar
+Calculation: Bearish turn = close < Fast EMA AND Fast EMA slope < 0 AND Below VWAP AND Sellers dominant AND Relative oscillator <= 0 on the current still-forming T1 bar
+Calculation: Directional state = bullish if Bullish trend state; else bearish if Bearish trend state; else bullish if Bullish turn AND Long evidence >= Short evidence + turn evidence margin; else bearish if Bearish turn AND Short evidence >= Long evidence + turn evidence margin; else bullish if Long evidence >= Short evidence + fallback evidence margin; else bearish if Short evidence >= Long evidence + fallback evidence margin; otherwise neutral
+Long: On each T1 bar using its current still-forming values, Directional state = bullish
+Short: On each T1 bar using its current still-forming values, Directional state = bearish

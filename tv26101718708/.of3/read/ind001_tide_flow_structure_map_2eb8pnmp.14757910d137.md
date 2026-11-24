@@ -1,0 +1,10 @@
+Calculation: Upper structure curve = EMA(highest(high, structure lookback), structure smoothing)
+Calculation: Lower structure curve = EMA(lowest(low, structure lookback), structure smoothing)
+Calculation: Main bullish gates = close > EMA(close, longer trend lookback) AND EMA(close, shorter trend lookback) > EMA(close, longer trend lookback) AND EMA(close, longer trend lookback) > EMA(close, longer trend lookback)[1] AND (higher-timeframe filter disabled OR T1 close > EMA(T1 close, higher-timeframe EMA lookback), calculated on T1 and sampled on chart bars with lookahead off, using the developing T1 bar in real time and the last completed T1 bar historically) AND ADX(ADX lookback) >= minimum ADX AND ATR(ATR lookback) as a percentage of close >= minimum ATR percentage
+Calculation: ATR stop trail = running maximum, starting at the long signal, of close - ATR(ATR lookback) * ATR stop multiple
+Long: Main bullish gates
+Long: Main bullish gates AND close > EMA(close, shorter trend lookback)
+Long: Main bullish gates AND close crosses above Upper structure curve AND (close-only confirmation disabled OR bar is confirmed)
+Long: at least the recovery minimum number of bars in the recovery lookback had close < EMA(close, longer trend lookback) AND close > EMA(close, longer trend lookback)
+Long: Main bullish gates AND RSI(close, RSI lookback) <= maximum RSI AND (shorter trend EMA previous value is zero OR its percentage change from the previous chart bar >= negative slope deadzone) AND (close > Upper structure curve[1] OR (low <= EMA(close, shorter trend lookback) AND close > EMA(close, shorter trend lookback)) OR close crosses above EMA(close, shorter trend lookback)) AND (close-only confirmation disabled OR bar is confirmed) AND (cooldown disabled OR no long setup occurred in the preceding cooldown lookback bars)
+Exit: long, close < max(ATR stop trail, Lower structure curve) for the exit confirmation lookback consecutive chart bars AND (close-only confirmation disabled OR bar is confirmed)

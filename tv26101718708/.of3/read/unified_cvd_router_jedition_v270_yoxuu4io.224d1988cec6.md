@@ -1,0 +1,7 @@
+Calculation: adjusted cumulative delta = cumulative sum of each chart bar’s total T1 routed delta multiplied by its effort, shape, and regime weights, reset at each T2 boundary
+Long: adjusted cumulative delta on the current chart bar is greater than or equal to its value on the previous chart bar
+Short: adjusted cumulative delta on the current chart bar is less than its value on the previous chart bar
+Calculation: T1 buy fraction = clamp((close − low) / (high − low), 0, 1) when high > low; otherwise 1 if the close rose from the previous T1 close, 0 if it fell, and 0.5 if unchanged or unavailable
+Calculation: prior robust volume scale = 1.4826 × median absolute deviation of valid prior T1 volumes over the volume lookback
+Long: a chart bar contains at least one T1 bar whose volume is at least the prior median T1 volume plus the volume outlier threshold multiplied by the prior robust volume scale, with a warm prior volume buffer and positive robust scale, and whose buy fraction is at least the one-sided volume fraction threshold
+Short: a chart bar contains at least one T1 bar whose volume is at least the prior median T1 volume plus the volume outlier threshold multiplied by the prior robust volume scale, with a warm prior volume buffer and positive robust scale, and whose buy fraction is at most one minus the one-sided volume fraction threshold

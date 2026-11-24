@@ -1,0 +1,6 @@
+Short: upper wick = high - max(open, close) AND high - low > 0 AND upper wick > ATR(14) × upper-wick ATR threshold AND upper wick / (high - low) × 100 ≥ upper-wick range threshold AND high > Highest(high, isolation lookback)[1]
+Long: lower wick = min(open, close) - low AND high - low > 0 AND lower wick > ATR(14) × lower-wick ATR threshold AND lower wick / (high - low) × 100 ≥ lower-wick range threshold AND low < Lowest(low, isolation lookback)[1]
+Short: a PivotHigh(high, left lookback, right lookback), confirmed after the right lookback, is exceeded by high > pivot high + ATR(14) × minimum breakout threshold, then within the confirmation window a later bar closes below the pivot high; the pivot must be no more than the maximum pivot age when the breakout occurs
+Long: a PivotLow(low, left lookback, right lookback), confirmed after the right lookback, is exceeded by low < pivot low - ATR(14) × minimum breakout threshold, then within the confirmation window a later bar closes above the pivot low; the pivot must be no more than the maximum pivot age when the breakout occurs
+Long: low > high[2] AND low - high[2] > ATR(14) × minimum void size
+Short: high < low[2] AND low[2] - high > ATR(14) × minimum void size

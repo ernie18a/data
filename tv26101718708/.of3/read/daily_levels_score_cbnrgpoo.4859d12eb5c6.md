@@ -1,0 +1,2 @@
+Long: On T1 bars, within the configured range, the lowest low occurred before the highest high; include the forming T1 bar when configured
+Short: On T1 bars, within the configured range, the highest high occurred at or after the lowest low; include the forming T1 bar when configured

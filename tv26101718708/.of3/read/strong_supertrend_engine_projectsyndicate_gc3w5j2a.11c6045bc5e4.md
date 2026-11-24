@@ -1,0 +1,8 @@
+Calculation: Laguerre PPO = 100 × (LaguerreFilter((high + low) / 2, fast γ) − LaguerreFilter((high + low) / 2, slow γ)) / LaguerreFilter((high + low) / 2, slow γ)
+Calculation: Tier band(i, side) = session basis + side × ATR(ATR length, T1, last completed bar) × width multiplier × tier offset(i) ± ATR(ATR length, T1, last completed bar) × tier thickness / 2; session basis is the current T1 open or prior completed T1 midpoint, OHLC4, or close according to the basis setting; each tier has a separate offset; side is −1 for support and +1 for resistance
+Long: On the first chart bar of each T1 bar, T1 open > Supertrend(factor, ATR length, T1, last completed bar) AND (momentum confirmation is disabled OR Laguerre PPO(T1, last completed bar) > 0)
+Short: On the first chart bar of each T1 bar, T1 open < Supertrend(factor, ATR length, T1, last completed bar) AND (momentum confirmation is disabled OR Laguerre PPO(T1, last completed bar) ≤ 0)
+Long: T1 open > Supertrend(factor, ATR length, T1, last completed bar) AND a chart bar's low is at or below the upper boundary of a support tier below T1 open AND its high is at or above that tier's lower boundary
+Short: T1 open < Supertrend(factor, ATR length, T1, last completed bar) AND a chart bar's high is at or above the lower boundary of a resistance tier above T1 open AND its low is at or below that tier's upper boundary
+Exit: long, chart-bar close < Supertrend(factor, ATR length, T1, last completed bar)
+Exit: short, chart-bar close > Supertrend(factor, ATR length, T1, last completed bar)

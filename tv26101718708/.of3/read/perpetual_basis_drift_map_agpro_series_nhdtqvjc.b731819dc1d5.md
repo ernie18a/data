@@ -1,0 +1,15 @@
+Calculation: Basis percentage = (close / spot reference close - 1) × 100
+Calculation: Basis drift z-score = (basis percentage − EMA(basis percentage, baseline lookback), substituting basis percentage if unavailable) / max(STDEV(basis percentage, normalization lookback), standard-deviation floor)
+Calculation: Basis velocity = basis percentage − basis percentage[velocity lookback], substituting current basis percentage if unavailable
+Calculation: Valid basis reference = spot reference available AND abs(basis percentage) ≤ reference mismatch limit AND (quote matching is not required for an automatic reference OR instrument quote is unknown OR reference quote matches instrument quote)
+Calculation: Positive raw condition = valid basis reference AND basis percentage > minimum basis threshold AND basis drift z-score > basis z-score threshold AND basis velocity > 0
+Calculation: Negative raw condition = valid basis reference AND basis percentage < −minimum basis threshold AND basis drift z-score < −basis z-score threshold AND basis velocity < 0
+Calculation: Expansion raw condition = valid basis reference AND abs(basis drift z-score) > basis z-score threshold AND abs(basis velocity) > minimum basis threshold × expansion velocity factor AND basis drift z-score × basis velocity > 0
+Calculation: Compression raw condition = valid basis reference AND abs(basis drift z-score) ≤ compression z-score maximum AND abs(basis velocity) ≤ minimum basis threshold × compression velocity factor
+Calculation: Active persistence = maximum percentage of bars in the persistence window for which each of the positive raw, negative raw, expansion raw, and compression raw conditions is true
+Calculation: Drift score = clamp(basis weight × clamp(abs(basis percentage) / max(minimum basis threshold × basis strength factor, denominator floor) × maximum drift score, 0, maximum drift score) + z-score weight × clamp(abs(basis drift z-score) / z-score strength divisor × maximum drift score, 0, maximum drift score) + velocity weight × clamp(abs(basis velocity) / max(minimum basis threshold × velocity strength factor, denominator floor) × maximum drift score, 0, maximum drift score) + persistence weight × active persistence + trend weight × (trend score if (EMA(close, shorter trend lookback) > EMA(close, longer trend lookback) AND close > EMA(close, longer trend lookback)) OR (EMA(close, shorter trend lookback) < EMA(close, longer trend lookback) AND close < EMA(close, longer trend lookback)), otherwise neutral trend score), 0, maximum drift score)
+Calculation: Positive drift state = positive raw condition AND drift score ≥ minimum drift score
+Calculation: Negative drift state = negative raw condition AND drift score ≥ minimum drift score
+Calculation: Basis expansion state = expansion raw condition AND drift score ≥ minimum drift score AND NOT positive drift state AND NOT negative drift state
+Long: positive drift state OR (basis expansion state AND basis velocity ≥ 0)
+Short: negative drift state OR (basis expansion state AND basis velocity < 0)

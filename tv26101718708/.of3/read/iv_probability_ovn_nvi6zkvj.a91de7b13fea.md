@@ -1,0 +1,3 @@
+Calculation: overnight implied move = overnight-session first-bar open × selected implied-volatility-index close(T1, last completed bar, sampled on chart bars) ÷ 100 × box-scale parameter ÷ 100; divide the index close by the square root of the annualization-period parameter for an annualized index, and use it directly for a one-day index
+Long: close > overnight-session first-bar open + overnight implied move
+Short: close < overnight-session first-bar open - overnight implied move

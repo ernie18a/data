@@ -1,0 +1,10 @@
+Calculation: Reference basket = mean of positive reference venue closes on chart bars
+Calculation: Chart premium = percentage difference of chart close from Reference basket
+Calculation: Venue dispersion = mean absolute percentage deviation of positive reference venue closes from Reference basket
+Calculation: Venue data ready = count of positive reference venue closes >= minimum active venues AND abs(Chart premium) <= symbol mismatch limit
+Calculation: Premium z-score = (Chart premium - EMA(Chart premium, baseline lookback)) / max(StDev(Chart premium, z-score lookback), deviation floor)
+Calculation: Premium velocity = Chart premium - Chart premium lookback bars ago, using current Chart premium if history is unavailable
+Calculation: Premium persistence = SMA(1 when Venue data ready AND (abs(Chart premium) >= Premium threshold OR Venue dispersion >= Dispersion threshold), persistence lookback)
+Calculation: Drift score = clamp(clamp(abs(Chart premium) / Premium threshold × Premium score weight × Score sensitivity, 0, Premium score cap) + clamp(abs(Premium z-score) / Z-score divisor × Z-score weight × Score sensitivity, 0, Z-score score cap) + clamp(Venue dispersion / Dispersion threshold × Dispersion score weight × Score sensitivity, 0, Dispersion score cap) + clamp(abs(Premium velocity) / Premium threshold × Velocity score weight × Score sensitivity, 0, Velocity score cap) + clamp(Premium persistence × Persistence score weight, 0, Persistence score cap), 0, Total score cap)
+Long: Venue data ready AND Venue dispersion < Dispersion threshold × compression dispersion multiplier AND abs(Chart premium) < Premium threshold AND abs(Premium velocity) < Premium threshold × compression velocity multiplier AND Drift score >= compression score threshold
+Short: (Venue data ready AND Chart premium < -(Premium threshold × discount premium multiplier) AND Premium z-score < -discount z-score threshold AND Drift score >= discount score threshold) OR (Chart premium < 0 AND abs(Chart premium) > Premium threshold AND sign(Chart premium) differs from sign(Chart premium on the previous chart bar))

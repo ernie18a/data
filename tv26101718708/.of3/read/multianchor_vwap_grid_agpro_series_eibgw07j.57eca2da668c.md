@@ -1,0 +1,3 @@
+Calculation: ActiveVWAPs = enabled, available AnchoredVWAP(HLC3, volume, anchor) values anchored at the latest confirmed swing-high pivot and swing-low pivot using the same swing-pivot lookback, the current still-forming T1 period open, the latest record-high bar in loaded history, or the selected session start; accumulate on chart bars from each anchor, and include the session VWAP only during its session and the ATH VWAP only when not hidden
+Long: count(close > ActiveVWAPs) > count(close <= ActiveVWAPs)
+Short: count(close > ActiveVWAPs) < count(close <= ActiveVWAPs)

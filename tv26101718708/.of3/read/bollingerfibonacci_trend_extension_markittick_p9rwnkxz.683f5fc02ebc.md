@@ -1,0 +1,4 @@
+Long: The last three qualifying ZigZag pivots, after the selected smoothing of high and low, are low A, high B, low C AND C.price > A.price AND C.price < B.price AND (Bollinger confirmation is disabled OR close[1] > SMA(close, Bollinger lookback)[1]) AND (ADX filter is disabled OR ADX(high, low, close, ADX lookback) >= ADX threshold)
+Short: The last three qualifying ZigZag pivots, after the selected smoothing of high and low, are high A, low B, high C AND C.price < A.price AND C.price > B.price AND (Bollinger confirmation is disabled OR close[1] < SMA(close, Bollinger lookback)[1]) AND (ADX filter is disabled OR ADX(high, low, close, ADX lookback) >= ADX threshold)
+Exit: long, structure invalidation is enabled AND close[1] < A.price
+Exit: short, structure invalidation is enabled AND close[1] > A.price

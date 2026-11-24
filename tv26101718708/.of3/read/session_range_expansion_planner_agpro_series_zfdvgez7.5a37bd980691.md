@@ -1,0 +1,12 @@
+Calculation: Session balance high = highest(high) over the first balance-window chart bars of each configured expansion session
+Calculation: Session balance low = lowest(low) over the first balance-window chart bars of each configured expansion session
+Calculation: ATR reference = max(ATR(ATR lookback), high - low when ATR is unavailable, minimum tick)
+Calculation: Session balance range = max(session balance high - session balance low, minimum tick)
+Calculation: Break buffer = ATR reference × sensitivity-selected buffer factor
+Calculation: Upside break confirmation = (confirmation mode selects close acceptance AND close > session balance high + break buffer) OR (confirmation mode selects wick break plus close AND high > session balance high + break buffer AND close > session balance high - session balance range × wick tolerance) OR (confirmation mode selects strict acceptance AND close > session balance high + break buffer AND close[1] > session balance high)
+Calculation: Downside break confirmation = (confirmation mode selects close acceptance AND close < session balance low - break buffer) OR (confirmation mode selects wick break plus close AND low < session balance low - break buffer AND close < session balance low + session balance range × wick tolerance) OR (confirmation mode selects strict acceptance AND close < session balance low - break buffer AND close[1] < session balance low)
+Calculation: Acceptance count = while an expansion is active, add one when close is beyond its balance boundary in the expansion direction; otherwise subtract one, floored at zero
+Long: In the configured expansion session, after the first balance-window bars and before any expansion has triggered that session, upside break confirmation AND (NOT downside break confirmation OR close >= (session balance high + session balance low) / 2)
+Short: In the configured expansion session, after the first balance-window bars and before any expansion has triggered that session, downside break confirmation AND (NOT upside break confirmation OR close < (session balance high + session balance low) / 2)
+Long: An active upside expansion reaches the acceptance-bars threshold when the previous bar was not accepted
+Short: An active downside expansion reaches the acceptance-bars threshold when the previous bar was not accepted

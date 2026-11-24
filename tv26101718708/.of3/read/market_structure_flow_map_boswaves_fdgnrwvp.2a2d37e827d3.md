@@ -1,0 +1,2 @@
+Long: the selected break source (close, or high in wick mode) crosses above the most recent unbroken confirmed pivot high, using the swing lookback on both sides of the pivot
+Short: the selected break source (close, or low in wick mode) crosses below the most recent unbroken confirmed pivot low, using the swing lookback on both sides of the pivot

@@ -1,0 +1,4 @@
+Long: With the Monday range enabled, on intraday or T1 chart bars after Monday’s range closes and before the week ends, close crosses above Monday’s high
+Short: With the Monday range enabled, on intraday or T1 chart bars after Monday’s range closes and before the week ends, close crosses below Monday’s low
+Long: On intraday chart bars, close crosses above high[1] of the last completed T1 bar, not on the first chart bar of a new T1 period, and this is the first such crossing in that period
+Short: On intraday chart bars, close crosses below low[1] of the last completed T1 bar, not on the first chart bar of a new T1 period, and this is the first such crossing in that period

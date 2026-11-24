@@ -1,0 +1,6 @@
+Calculation: Profile bucket value = since the still-forming T1 candle opened, sum each chart bar’s selected metric divided equally among every profile bucket spanned by that bar’s low-to-high range; the metric is volume for an up bar, negative volume for a down bar, or zero for a flat bar when Delta is selected, and volume when Volume is selected; bucket count is the rounded T1 high-low range divided by ATR(chart bars, ATR lookback), clamped to the configured minimum and maximum bucket counts, using the minimum if ATR or range is unavailable or nonpositive
+Calculation: Profile bucket imbalance = imbalance display is enabled AND absolute profile bucket value <= imbalance threshold × mean absolute profile bucket value across all buckets
+Long: T1 still-forming candle close >= open, sampled on chart bars
+Short: T1 still-forming candle close < open, sampled on chart bars
+Long: Bull-Bear palette is selected AND chart timeframe is below T1 AND, for a profile bucket, profile bucket value >= 0 AND NOT profile bucket imbalance
+Short: Bull-Bear palette is selected AND chart timeframe is below T1 AND, for a profile bucket, profile bucket value < 0 AND NOT profile bucket imbalance

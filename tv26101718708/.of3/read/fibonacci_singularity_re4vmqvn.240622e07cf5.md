@@ -1,0 +1,2 @@
+Long: the newer pivot price of the dominant reference leg among the latest active legs, using confirmed pivot highs and lows with equal left and right lookbacks, is greater than the older pivot price
+Short: the newer pivot price of the dominant reference leg among the latest active legs, using confirmed pivot highs and lows with equal left and right lookbacks, is less than or equal to the older pivot price

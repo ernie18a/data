@@ -1,0 +1,33 @@
+Calculation: descending resistance = line through the latest two confirmed pivot highs using the line-pivot lookback on both sides; the second high is lower than the first, and either a prior trendline was invalidated or broken or both highs are below each of the preceding two confirmed pivot highs; the line remains active only while no bar from its first pivot onward has low above the line
+Calculation: rising support = line through the latest two confirmed pivot lows using the line-pivot lookback on both sides; the second low is higher than the first, and either a prior trendline was invalidated or broken or both lows are above each of the preceding two confirmed pivot lows; the line remains active only while no bar from its first pivot onward has high below the line
+Calculation: trendline padding = min(ATR(ATR lookback) × ATR fraction, close × price fraction) × padding multiplier, fixed when the trendline is created
+Calculation: estimated bar delta = volume × (2 × ((high > low) ? (close - low) / (high - low) : 0.5) - 1)
+Calculation: estimated delta ratio = estimated bar delta / volume when volume > 0, otherwise 0
+Calculation: cumulative delta after a break = sum of estimated bar delta over the lesser of the bars since that break, with a one-bar minimum, and the cumulative-delta lookback cap, using the most recent bars
+Calculation: candle body ratio = abs(close - open) / (high - low) when high > low, otherwise 0
+Calculation: long confirmation filters = (displacement filter disabled OR (ATR(displacement ATR lookback) > 0 AND high - low >= ATR(displacement ATR lookback) × minimum range multiple AND candle body ratio >= minimum body ratio AND (directional-close requirement disabled OR close > open))) AND (delta filter disabled OR (estimated delta ratio >= minimum delta ratio AND (above-average-volume requirement disabled OR (SMA(volume, volume-average lookback) > 0 AND volume >= SMA(volume, volume-average lookback) × volume multiple)) AND (cumulative-delta requirement disabled OR cumulative delta after the upper break > 0))
+Calculation: short confirmation filters = (displacement filter disabled OR (ATR(displacement ATR lookback) > 0 AND high - low >= ATR(displacement ATR lookback) × minimum range multiple AND candle body ratio >= minimum body ratio AND (directional-close requirement disabled OR close < open))) AND (delta filter disabled OR (estimated delta ratio <= -minimum delta ratio AND (above-average-volume requirement disabled OR (SMA(volume, volume-average lookback) > 0 AND volume >= SMA(volume, volume-average lookback) × volume multiple)) AND (cumulative-delta requirement disabled OR cumulative delta after the lower break < 0))
+Calculation: selected long signal = (BOS confirmation enabled AND an upper break is pending within the maximum BOS wait and close > the latest confirmed pivot high using the line-pivot lookback AND long confirmation filters) OR (BOS confirmation disabled AND low > descending resistance AND long confirmation filters)
+Calculation: selected short signal = (BOS confirmation enabled AND a lower break is pending within the maximum BOS wait and close < the latest confirmed pivot low using the line-pivot lookback AND short confirmation filters) OR (BOS confirmation disabled AND high < rising support + trendline padding AND short confirmation filters)
+Calculation: long stop = reference price minus stop buffer, where reference price is the upper break's padded line level when the stop method is trendline and that level exists, otherwise the lowest low over the structure lookback excluding the current bar; if this is not below entry price, use entry price minus one minimum tick
+Calculation: short stop = reference price plus stop buffer, where reference price is the lower break's padded line level when the stop method is trendline and that level exists, otherwise the highest high over the structure lookback excluding the current bar; if this is not above entry price, use entry price plus one minimum tick
+Calculation: long target = entry price + abs(entry price - long stop) × the reward-to-risk parameter for the selected stop method
+Calculation: short target = entry price - abs(entry price - short stop) × the reward-to-risk parameter for the selected stop method
+Calculation: short-term structure direction = direction of the most recently processed non-equal confirmed higher-high, higher-low, lower-high, or lower-low comparison using the short-term pivot lookback on both sides; process pivot-high comparisons before pivot-low comparisons on the same bar
+Calculation: long-term structure direction = direction of the most recently processed non-equal confirmed higher-high, higher-low, lower-high, or lower-low comparison using the long-term pivot lookback on both sides; process pivot-high comparisons before pivot-low comparisons on the same bar
+Long: low > descending resistance
+Short: high < rising support + trendline padding
+Long: an upper trendline break is pending within the maximum BOS wait AND close > the latest confirmed pivot high using the line-pivot lookback AND long confirmation filters
+Short: a lower trendline break is pending within the maximum BOS wait AND close < the latest confirmed pivot low using the line-pivot lookback AND short confirmation filters
+Long: selected long signal
+Short: selected short signal
+Long: selected long signal AND (session gate disabled OR bar time is within either configured session window in the configured time zone) AND (no prior long alert OR bars since the most recent long alert >= same-direction cooldown)
+Short: selected short signal AND (session gate disabled OR bar time is within either configured session window in the configured time zone) AND (no prior short alert OR bars since the most recent short alert >= same-direction cooldown)
+Long: confirmed pivot high using the short-term pivot lookback > preceding confirmed pivot high using that lookback OR confirmed pivot low using the short-term pivot lookback > preceding confirmed pivot low using that lookback
+Short: confirmed pivot high using the short-term pivot lookback < preceding confirmed pivot high using that lookback OR confirmed pivot low using the short-term pivot lookback < preceding confirmed pivot low using that lookback
+Long: short-term structure direction is bullish
+Short: short-term structure direction is bearish
+Long: long-term structure direction is bullish
+Short: long-term structure direction is bearish
+Exit: long, after the entry bar, low <= long stop OR high >= long target
+Exit: short, after the entry bar, high >= short stop OR low <= short target

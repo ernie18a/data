@@ -1,0 +1,13 @@
+Calculation: Eligible level = an enabled high or low from the last completed bar on T1, T2, or T3, or the prior completed Asia, London, or overnight session; exclude an overnight high or low within one minimum price increment of the corresponding enabled Asia or London level; read levels on chart bars.
+Calculation: Evaluation bar = each chart bar, or only confirmed chart bars when bar-close confirmation is enabled.
+Calculation: Live zone = a zone formed by the matching demand or supply rule, with at most one live zone per level; remove it on a close through its far side, when its source is disabled, optionally on its first entry, and optionally when its source level rolls, according to the removal and expiry settings.
+Calculation: Demand zone = the range of the first bearish candle at or before the lowest-low candle from the pending sweep, searching backward within the order-block lookback, or the lowest-low candle if none; if zone extension is enabled, extend its lower boundary to the lowest swept low.
+Calculation: Supply zone = the range of the first bullish candle at or before the highest-high candle from the pending sweep, searching backward within the order-block lookback, or the highest-high candle if none; if zone extension is enabled, extend its upper boundary to the highest swept high.
+Long: While zone generation is enabled, at an eligible low level L with no live zone and no consumed status, low < L starts a pending sweep; if close > L within the sweep-reclaim window, form a demand zone, requiring a bullish FVG within the displacement window after reclaim when FVG confirmation is enabled.
+Short: While zone generation is enabled, at an eligible high level L with no live zone and no consumed status, high > L starts a pending sweep; if close < L within the sweep-reclaim window, form a supply zone, requiring a bearish FVG within the displacement window after reclaim when FVG confirmation is enabled.
+Long: A pending sweep of an eligible high level L remains unreclaimed beyond the sweep-reclaim window and close > L.
+Short: A pending sweep of an eligible low level L remains unreclaimed beyond the sweep-reclaim window and close < L.
+Long: A live demand zone is entered when high >= its lower boundary and low <= its upper boundary after the prior evaluation bar did not overlap it; a newly formed zone starts as already inside.
+Short: A live supply zone is entered when high >= its lower boundary and low <= its upper boundary after the prior evaluation bar did not overlap it; a newly formed zone starts as already inside.
+Exit: short, close > the upper boundary of a live supply zone.
+Exit: long, close < the lower boundary of a live demand zone.

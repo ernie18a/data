@@ -1,0 +1,2 @@
+Long: During an enabled session, after its initial balance is established, high crosses above the highest high during the initial-balance duration from session open
+Short: During an enabled session, after its initial balance is established, low crosses below the lowest low during the initial-balance duration from session open

@@ -1,0 +1,17 @@
+Calculation: Hedging pressure score = EMA(sign(raw pressure) * PercentRank(abs(raw pressure), percentile lookback), smoothing length) when smoothing is enabled, otherwise sign(raw pressure) * PercentRank(abs(raw pressure), percentile lookback), where raw pressure = gamma proxy * (close - close[1]) * volume pressure * volatility expansion pressure; gamma proxy = NormalPDF(d1) / (close * annualized volatility * sqrt(expiry time)); d1 = (ln(close / synthetic strike) + (risk-free rate + 0.5 * annualized volatility^2) * expiry time) / (annualized volatility * sqrt(expiry time)); annualized volatility = StDev(log(close / close[1]), volatility lookback) * sqrt(bars per year); expiry time = max(expiry horizon in bars / bars per year, positive floor); annualized volatility is floored at a small positive value; synthetic strike = manual strike, EMA(close, strike EMA length), or close according to strike mode; volume pressure = clamp(volume / SMA(volume, volume lookback), ratio lower bound, ratio upper bound) when enabled, otherwise 1; volatility expansion pressure = clamp(StDev(log(close / close[1]), volatility lookback) / SMA(StDev(log(close / close[1]), volatility lookback), volatility expansion lookback), ratio lower bound, ratio upper bound) when enabled, otherwise 1.
+Long: hedging pressure score > 0
+Short: hedging pressure score < 0
+Long: hedging pressure score > 0 AND abs(hedging pressure score) >= high-pressure threshold AND abs(hedging pressure score) < extreme-pressure threshold
+Short: hedging pressure score < 0 AND abs(hedging pressure score) >= high-pressure threshold AND abs(hedging pressure score) < extreme-pressure threshold
+Long: hedging pressure score > 0 AND abs(hedging pressure score) >= extreme-pressure threshold
+Short: hedging pressure score < 0 AND abs(hedging pressure score) >= extreme-pressure threshold
+Long: hedging pressure score > 0 AND abs(hedging pressure score) >= high-pressure threshold AND abs(hedging pressure score) < extreme-pressure threshold AND previous bar's pressure regime was not high pressure
+Short: hedging pressure score < 0 AND abs(hedging pressure score) >= high-pressure threshold AND abs(hedging pressure score) < extreme-pressure threshold AND previous bar's pressure regime was not high pressure
+Long: hedging pressure score > 0 AND abs(hedging pressure score) >= extreme-pressure threshold AND previous bar's pressure regime was not extreme pressure
+Short: hedging pressure score < 0 AND abs(hedging pressure score) >= extreme-pressure threshold AND previous bar's pressure regime was not extreme pressure
+Long: hedging pressure score > 0 AND abs(hedging pressure score) >= high-pressure threshold AND abs(hedging pressure score) < extreme-pressure threshold AND abs(hedging pressure score) > abs(hedging pressure score[1])
+Short: hedging pressure score < 0 AND abs(hedging pressure score) >= high-pressure threshold AND abs(hedging pressure score) < extreme-pressure threshold AND abs(hedging pressure score) > abs(hedging pressure score[1])
+Long: hedging pressure score > 0 AND abs(hedging pressure score) >= extreme-pressure threshold AND abs(hedging pressure score) > abs(hedging pressure score[1])
+Short: hedging pressure score < 0 AND abs(hedging pressure score) >= extreme-pressure threshold AND abs(hedging pressure score) > abs(hedging pressure score[1])
+Long: hedging pressure score crosses above zero
+Short: hedging pressure score crosses below zero

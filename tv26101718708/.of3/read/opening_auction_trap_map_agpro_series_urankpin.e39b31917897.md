@@ -1,0 +1,6 @@
+Calculation: Opening auction high = highest chart-bar high during the configured opening-auction session
+Calculation: Opening auction low = lowest chart-bar low during the configured opening-auction session
+Calculation: Upper wick quality = clamp(100 * (high - max(open, close)) / max(high - low, minimum price increment), 0, 100)
+Calculation: Lower wick quality = clamp(100 * (min(open, close) - low) / max(high - low, minimum price increment), 0, 100)
+Long: On an intraday chart timeframe no greater than the maximum supported chart-timeframe parameter, during the active session and configured post-auction evaluation window, with a completed auction whose high exceeds its low, (low < opening auction low AND close > opening auction low AND lower wick quality >= trap wick-quality threshold) OR close > opening auction high for at least the acceptance close-count parameter consecutive bars
+Short: On an intraday chart timeframe no greater than the maximum supported chart-timeframe parameter, during the active session and configured post-auction evaluation window, with a completed auction whose high exceeds its low, (high > opening auction high AND close < opening auction high AND upper wick quality >= trap wick-quality threshold) OR close < opening auction low for at least the acceptance close-count parameter consecutive bars

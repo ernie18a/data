@@ -1,0 +1,6 @@
+Calculation: pairwise bullish signal(A/B) = the selected RSI method uses RSI(RSI source, RSI lookback) > RSI threshold; the selected CCI method uses CCI(CCI source, CCI lookback) > CCI threshold; the selected SuperTrend method uses a bullish SuperTrend(factor, lookback); the selected DMI method uses +DI(lookback, smoothing) > -DI(lookback, smoothing); the selected PSAR method uses Parabolic SAR(start, increment, maximum) < close; the All method is true if any of these five tests is true
+Calculation: relative trend score(candidate) = count of bullish pairwise signals for that candidate against every other candidate and cash, using the complement when the candidate is the denominator
+Long: pairwise bullish signal(A/B)[1] = true
+Short: pairwise bullish signal(A/B)[1] = false
+Long: relative trend score(candidate)[1] is the highest among all asset and cash candidates, with ties assigned to the first candidate in configured order
+Exit: long, relative trend score(cash)[1] > relative trend score(each candidate asset)[1]

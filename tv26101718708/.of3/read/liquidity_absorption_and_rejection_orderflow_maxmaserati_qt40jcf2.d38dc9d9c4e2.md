@@ -1,0 +1,2 @@
+Long: close > open on each confirmed chart bar; when T1 is selected, close(T1, current bar) > open(T1, current bar), read on chart bars (last completed historically; still forming in realtime)
+Short: close < open on each confirmed chart bar; when T1 is selected, close(T1, current bar) < open(T1, current bar), read on chart bars (last completed historically; still forming in realtime)

@@ -1,0 +1,13 @@
+Calculation: Trend state = initially bullish when close >= EMA(DEMA(HLC3, baseline lookback), separate smoothing lookback), or DEMA(HLC3, baseline lookback) when smoothing is disabled; switch from bearish to bullish when close > baseline + ATR(longer trend ATR lookback) × flip threshold and baseline > baseline[1]; switch from bullish to bearish when close < baseline − ATR(longer trend ATR lookback) × flip threshold and baseline < baseline[1]; otherwise retain state
+Calculation: Tracked swing levels = confirmed PivotHigh(high, pivot lookback on each side) and PivotLow(low, same pivot lookback on each side), retaining at most level-count parameter newest levels per side and discarding unbroken levels when their age exceeds the separate max-age parameter, unless they break on that bar
+Calculation: Bull-trap zone = a tracked swing high first breaks on a close > level + ATR(shorter breakout ATR lookback) × break-buffer parameter, then a later close < level within the trap-window parameter bars, including its expiry bar; span the zone from the broken level to the highest high from breakout through confirmation, and discard the breakout if no reclaim occurs by expiry
+Calculation: Bear-trap zone = a tracked swing low first breaks on a close < level − ATR(shorter breakout ATR lookback) × break-buffer parameter, then a later close > level within the trap-window parameter bars, including its expiry bar; span the zone from the lowest low from breakout through confirmation to the broken level, and discard the breakout if no reclaim occurs by expiry
+Calculation: Active zones = invalidate a bull-trap zone when close > its midpoint in Middle mode or > its upper edge otherwise; invalidate a bear-trap zone when close < its midpoint in Middle mode or < its lower edge otherwise; when overlap removal is enabled, a new same-type zone removes an existing one if new lower edge < existing upper edge AND new upper edge > existing lower edge; retain at most the newest zone-limit parameter per type
+Long: Trend state is bullish
+Long: Previous trend state is bearish AND current trend state is bullish
+Long: A bear-trap zone is confirmed
+Long: An active bear-trap zone was armed by a bar with low > its upper edge since its last retest AND current low <= its upper edge AND current close is not beyond its invalidation boundary AND trend state is bullish
+Short: Trend state is bearish
+Short: Previous trend state is bullish AND current trend state is bearish
+Short: A bull-trap zone is confirmed
+Short: An active bull-trap zone was armed by a bar with high < its lower edge since its last retest AND current high >= its lower edge AND current close is not beyond its invalidation boundary AND trend state is bearish
