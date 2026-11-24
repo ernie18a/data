@@ -1,0 +1,23 @@
+Calculation: confirmed swing high/low = PivotHigh(high, P, P) / PivotLow(low, P, P); higher highs/lower highs and higher lows/lower lows compare consecutive confirmed pivots of the same kind; structural high/low are the running maximum/minimum confirmed pivot high/low.
+Calculation: market-structure state starts neutral; on its first break, high > latest confirmed swing high sets bullish (taking priority), otherwise low < latest confirmed swing low sets bearish; thereafter it changes only on an opposite CHoCH, while BOS preserves it; macro bias initializes with the first state, becomes bullish on bullish CHoCH and bearish when close < active bullish-leg HL, otherwise persists.
+Calculation: log Fibonacci level(HH, HL, R) = HH * (HL / HH)^R, with separate ordered retracement parameters R1 < R2 < R3; an active bullish leg is valid when HH > HL and HH occurs after HL; bullish CHoCH arms the latest confirmed HL and clears HH, bullish BOS anchors its HH to the latest preceding HL when valid, a later confirmed HL clears HH, and the next qualifying HH reanchors to the latest preceding HL.
+Calculation: bullish chart FVG = a confirmed chart bar with three consecutive bullish candles; low > high[2] and low - high[2] >= G * tick; high[1] > high[2], low[1] < low, high > high[1], and the current candle body is not wholly within [low[1], high[1]].
+Calculation: bearish chart FVG = a confirmed chart bar with three consecutive bearish candles; high < low[2] and low[2] - high >= G * tick; low[1] < low[2], high[1] > high, low < low[1], and the current candle body is not wholly within [low[1], high[1]].
+Calculation: live chart FVG = any of the newest N detected chart FVGs whose gap has not been filled (bullish: low > the gap's lower edge; bearish: high < its upper edge); the close-in-gap check occurs before the current bar's fill check.
+Calculation: bullish T1 FVG = the bullish three-bar candle, gap-ownership, third-bar-break, and body-outside tests of the bullish chart FVG, evaluated on T1 bars using T1's current bar (still forming in real time), with gap >= K * ATR(A, T1); values are sampled on chart bars with lookahead off.
+Calculation: bearish T1 FVG = the bearish three-bar candle, gap-ownership, third-bar-break, and body-outside tests of the bearish chart FVG, evaluated on T1 bars using T1's current bar (still forming in real time), with gap >= K * ATR(A, T1); values are sampled on chart bars with lookahead off.
+Long: market-structure state is bullish.
+Short: market-structure state is bearish.
+Long: a confirmed swing high is greater than the previous confirmed swing high.
+Short: a confirmed swing high is less than the previous confirmed swing high.
+Long: a confirmed swing low is greater than the previous confirmed swing low.
+Short: a confirmed swing low is less than the previous confirmed swing low.
+Long: bullish BOS: market-structure state is bullish AND high > the highest confirmed swing high AND that level has not already triggered bullish BOS or CHoCH.
+Short: bearish BOS: market-structure state is bearish AND low < the lowest confirmed swing low AND that level has not already triggered bearish BOS or CHoCH.
+Long: bullish CHoCH: market-structure state is bearish AND high > the latest confirmed swing high formed at or after the current bearish structural ceiling, or that ceiling if none qualifies, AND that level has not already triggered bullish BOS or CHoCH AND (abs(close - open) >= D * ATR(A) OR high - low >= D * ATR(A)).
+Short: bearish CHoCH: market-structure state is bullish AND low < the latest confirmed swing low formed at or after the current bullish origin, or that origin low if none qualifies, AND that level has not already triggered bearish BOS or CHoCH AND (abs(close - open) >= D * ATR(A) OR high - low >= D * ATR(A)).
+Long: bullish chart FVG forms.
+Short: bearish chart FVG forms.
+Long: valid active bullish leg AND close is between log Fibonacci levels(HH, HL, R2) and (HH, HL, R3), inclusive.
+Long: (market-structure state is bullish OR macro bias is bullish) AND (close is between log Fibonacci levels(HH, HL, R1) and (HH, HL, R3), inclusive OR close is inside any live chart FVG OR close is inside the current bullish or bearish T1 FVG gap) AND NOT (valid active bullish leg AND close < HL) AND close > open AND (close > high[1] OR close crosses above log Fibonacci level(HH, HL, R2)).
+Exit: long, valid active bullish leg AND close < log Fibonacci level(HH, HL, R3).

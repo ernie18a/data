@@ -1,0 +1,13 @@
+Calculation: UTC opening range high = maximum high of chart bars in the opening-range duration from each UTC day’s start, available after that duration completes
+Calculation: UTC opening range low = minimum low of chart bars in the opening-range duration from each UTC day’s start, available after that duration completes
+Calculation: Support zone = [confirmed Pivot Low(low, left pivot lookback, right pivot lookback), confirmed Pivot Low(low, left pivot lookback, right pivot lookback) + ATR(ATR lookback)[right pivot lookback] * zone depth]
+Calculation: Resistance zone = [confirmed Pivot High(high, left pivot lookback, right pivot lookback) - ATR(ATR lookback)[right pivot lookback] * zone depth, confirmed Pivot High(high, left pivot lookback, right pivot lookback)]
+Calculation: Nearest support zone = active support zone with the smallest max(close - zone top, 0) among zones whose bottom is at or below close
+Calculation: Nearest resistance zone = active resistance zone with the smallest max(zone bottom - close, 0) among zones whose top is at or above close
+Calculation: Zones are compressed = nearest support and resistance both exist AND nearest resistance bottom - nearest support top <= ATR(ATR lookback) * minimum zone gap
+Long: close > VWAP(hlc3, volume, chart bars reset at UTC day start through current bar) + ATR(ATR lookback) * neutral distance
+Long: close > VWAP(hlc3, volume, chart bars reset at UTC day start through current bar) + ATR(ATR lookback) * neutral distance AND opening range is complete AND close > UTC opening range high
+Short: close < VWAP(hlc3, volume, chart bars reset at UTC day start through current bar) - ATR(ATR lookback) * neutral distance
+Short: close < VWAP(hlc3, volume, chart bars reset at UTC day start through current bar) - ATR(ATR lookback) * neutral distance AND opening range is complete AND close < UTC opening range low
+Long: after a bullish-context chart bar touches an unevaluated nearest support zone while zones are not compressed and no reaction is already being observed, a subsequent closed chart bar within the reaction window closes above that observed zone’s top AND above VWAP(hlc3, volume, chart bars reset at UTC day start through current bar)
+Short: after a bearish-context chart bar touches an unevaluated nearest resistance zone while zones are not compressed and no reaction is already being observed, a subsequent closed chart bar within the reaction window closes below that observed zone’s bottom AND below VWAP(hlc3, volume, chart bars reset at UTC day start through current bar)

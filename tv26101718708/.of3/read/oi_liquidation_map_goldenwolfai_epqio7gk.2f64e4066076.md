@@ -1,0 +1,3 @@
+Calculation: OI impulse z-score = (abs(ΔOpenInterest) - SMA(abs(ΔOpenInterest), normalization lookback)[1]) / StDev(abs(ΔOpenInterest), normalization lookback)[1], when the prior standard deviation is positive; otherwise undefined
+Long: (ΔOpenInterest >= 0 AND close > close[1]) OR (ΔOpenInterest > 0 AND OI impulse z-score >= small impulse threshold AND close > close[1] AND chart bar is confirmed)
+Short: (ΔOpenInterest >= 0 AND close < close[1]) OR (ΔOpenInterest > 0 AND OI impulse z-score >= small impulse threshold AND close < close[1] AND chart bar is confirmed)

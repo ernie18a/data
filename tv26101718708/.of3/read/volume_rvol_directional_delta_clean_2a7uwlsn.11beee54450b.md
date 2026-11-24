@@ -1,0 +1,8 @@
+Calculation: Signed Volume = on each evaluated-timeframe bar, volume if close > open, -volume if close < open, volume if close = open and close > close[1], -volume if close = open and close < close[1], otherwise 0
+Calculation: Intrabar Directional Delta = sum(Signed Volume over available T1 bars within the current chart bar; the latest T1 bar may still be forming)
+Calculation: Bar Directional Delta = Intrabar Directional Delta when T1 data is available, otherwise Signed Volume on the current chart bar
+Calculation: Cumulative Directional Delta = sum(Intrabar Directional Delta for chart bars with T1 data within the most recent delta-lookback-parameter chart bars
+Calculation: Active Volume Baseline = selected median or mean of prior chart-bar volumes at the same opening clock time, up to one more than the time-of-day target-sample parameter within the time-of-day search parameter, when time-of-day mode is enabled on an intraday chart, its history-computation setting permits calculation, and at least the minimum-sample parameter are found; otherwise use the selected median or mean of the prior rolling-lookback-parameter completed chart bars
+Calculation: RVOL = current chart-bar volume / Active Volume Baseline
+Long: Bar Directional Delta > 0 OR Cumulative Directional Delta > 0 OR (RVOL >= extreme-volume parameter AND T1 data is available AND Intrabar Directional Delta > 0) OR (RVOL >= extreme-volume parameter AND close > open)
+Short: Bar Directional Delta < 0 OR Cumulative Directional Delta < 0 OR (RVOL >= extreme-volume parameter AND T1 data is available AND Intrabar Directional Delta < 0) OR (RVOL >= extreme-volume parameter AND close < open)

@@ -1,0 +1,39 @@
+Calculation: ExhaustionHigh = PercentileNearestRank(RSI(close, medium lookback), exhaustion lookback, exhaustion percentile high)
+Calculation: ExhaustionLow = PercentileNearestRank(RSI(close, medium lookback), exhaustion lookback, exhaustion percentile low)
+Calculation: BullCandle = close > open AND close > close[1]
+Calculation: BearCandle = close < open AND close < close[1]
+Calculation: BullStack = RSI(close, shorter lookback) > harmonic midpoint AND RSI(close, medium lookback) > harmonic midpoint - core stack tolerance AND RSI(close, longer lookback) > harmonic midpoint - anchor stack tolerance
+Calculation: BearStack = RSI(close, shorter lookback) < harmonic midpoint AND RSI(close, medium lookback) < harmonic midpoint + core stack tolerance AND RSI(close, longer lookback) < harmonic midpoint + anchor stack tolerance
+Calculation: BullSlope = Momentum(RSI(close, shorter lookback), slope lookback) > 0 AND Momentum(RSI(close, medium lookback), slope lookback) > 0 AND Momentum(RSI(close, longer lookback), slope lookback) >= 0
+Calculation: BearSlope = Momentum(RSI(close, shorter lookback), slope lookback) < 0 AND Momentum(RSI(close, medium lookback), slope lookback) < 0 AND Momentum(RSI(close, longer lookback), slope lookback) <= 0
+Calculation: CoreBandwidth = Highest(RSI(close, medium lookback), coil lookback) - Lowest(RSI(close, medium lookback), coil lookback)
+Calculation: Compressed = CoreBandwidth < SMA(CoreBandwidth, coil lookback) * coil multiplier
+Calculation: CoilExpansion = Compressed[1] AND NOT Compressed AND ABS(Momentum(RSI(close, shorter lookback), 1)) >= coil release minimum
+Calculation: BullishPivotDivergence = both PivotLow(low, pivot lookback, pivot lookback) and PivotLow(RSI(close, medium lookback), pivot lookback, pivot lookback) confirmed on this bar AND low[pivot lookback] < low at previous price pivot low AND RSI(close, medium lookback)[pivot lookback] > RSI(close, medium lookback) at previous RSI pivot low AND RSI(close, medium lookback)[pivot lookback] <= ExhaustionLow + divergence zone tolerance
+Calculation: BullishDivergenceActive = BullishPivotDivergence true at some bar j bars back with 0 <= j <= divergence window
+Calculation: BearishPivotDivergence = both PivotHigh(high, pivot lookback, pivot lookback) and PivotHigh(RSI(close, medium lookback), pivot lookback, pivot lookback) confirmed on this bar AND high[pivot lookback] > high at previous price pivot high AND RSI(close, medium lookback)[pivot lookback] < RSI(close, medium lookback) at previous RSI pivot high AND RSI(close, medium lookback)[pivot lookback] >= ExhaustionHigh - divergence zone tolerance
+Calculation: BearishDivergenceActive = BearishPivotDivergence true at some bar j bars back with 0 <= j <= divergence window
+Calculation: CooledDown = no prior Long or Short entry OR bars since last Long or Short entry >= signal cooldown
+Calculation: ChopClear = ChoppinessIndex(chop lookback) < chop maximum
+Calculation: VolumeExpanded = volume >= SMA(volume, volume lookback) * volume multiplier
+Calculation: PriceAboveEMA = EMA filter disabled OR close > EMA(close, price EMA lookback)
+Calculation: PriceBelowEMA = EMA filter disabled OR close < EMA(close, price EMA lookback)
+Calculation: HigherBullBias = EMA(close, shorter HTF EMA lookback, T1, last completed bar) > EMA(close, longer HTF EMA lookback, T1, last completed bar) AND close(T1, last completed bar) > EMA(close, shorter HTF EMA lookback, T1, last completed bar)
+Calculation: HigherBearBias = EMA(close, shorter HTF EMA lookback, T1, last completed bar) < EMA(close, longer HTF EMA lookback, T1, last completed bar) AND close(T1, last completed bar) < EMA(close, shorter HTF EMA lookback, T1, last completed bar)
+Calculation: LongScore = (2 if BullStack, else 1 if RSI(close, shorter lookback) > harmonic midpoint AND RSI(close, medium lookback) > harmonic midpoint, else 0) + (2 if BullSlope, else 1 if Momentum(RSI(close, shorter lookback), slope lookback) > 0 AND Momentum(RSI(close, medium lookback), slope lookback) > 0, else 0) + (1 if RSI(close, shorter lookback) > RSI(close, medium lookback) AND RSI(close, medium lookback) >= RSI(close, longer lookback) - alignment tolerance, else 0) + (2 if HigherBullBias, else 0) + VolumeExpanded + ChopClear + PriceAboveEMA
+Calculation: ShortScore = (2 if BearStack, else 1 if RSI(close, shorter lookback) < harmonic midpoint AND RSI(close, medium lookback) < harmonic midpoint, else 0) + (2 if BearSlope, else 1 if Momentum(RSI(close, shorter lookback), slope lookback) < 0 AND Momentum(RSI(close, medium lookback), slope lookback) < 0, else 0) + (1 if RSI(close, shorter lookback) < RSI(close, medium lookback) AND RSI(close, medium lookback) <= RSI(close, longer lookback) + alignment tolerance, else 0) + (2 if HigherBearBias, else 0) + VolumeExpanded + ChopClear + PriceBelowEMA
+Calculation: MarketPhase = COIL if Compressed, else MARKUP if RSI(close, longer lookback) >= phase markup level AND Momentum(RSI(close, longer lookback), slope lookback) > 0, else MARKDOWN if RSI(close, longer lookback) <= phase markdown level AND Momentum(RSI(close, longer lookback), slope lookback) < 0, else DISTRIB if RSI(close, longer lookback) > phase distribution level AND RSI(close, medium lookback) < RSI(close, longer lookback) AND Momentum(RSI(close, medium lookback), slope lookback) < 0, else ACCUM if RSI(close, longer lookback) < phase accumulation level AND RSI(close, medium lookback) > RSI(close, longer lookback) AND Momentum(RSI(close, medium lookback), slope lookback) > 0, else MARKUP if RSI(close, longer lookback) >= phase split level, else MARKDOWN
+Long: RSI(close, shorter lookback) crosses above ExhaustionLow AND RSI(close, medium lookback) > RSI(close, medium lookback)[1] AND RSI(close, longer lookback) > harmonic midpoint - snapback tolerance AND BullCandle AND CooledDown AND ChopClear AND (hard HTF gate disabled OR HigherBullBias) AND PriceAboveEMA AND LongScore >= minimum score
+Long: RSI(close, shorter lookback) crosses above harmonic midpoint AND BullStack AND BullSlope AND CooledDown AND ChopClear AND (hard HTF gate disabled OR HigherBullBias) AND PriceAboveEMA AND LongScore >= minimum score
+Long: BullishDivergenceActive AND BullCandle AND RSI(close, shorter lookback) > RSI(close, shorter lookback)[1] AND close > low[pivot lookback] AND CooledDown AND ChopClear AND (hard HTF gate disabled OR HigherBullBias) AND PriceAboveEMA AND LongScore >= minimum score
+Long: CoilExpansion AND RSI(close, shorter lookback) > ExhaustionLow AND BullSlope AND close > open AND CooledDown AND ChopClear AND (hard HTF gate disabled OR HigherBullBias) AND PriceAboveEMA AND LongScore >= minimum score
+Long: BullStack
+Long: MarketPhase = MARKUP
+Long: MarketPhase = ACCUM
+Short: RSI(close, shorter lookback) crosses below ExhaustionHigh AND RSI(close, medium lookback) < RSI(close, medium lookback)[1] AND RSI(close, longer lookback) < harmonic midpoint + snapback tolerance AND BearCandle AND CooledDown AND ChopClear AND (hard HTF gate disabled OR HigherBearBias) AND PriceBelowEMA AND ShortScore >= minimum score
+Short: RSI(close, shorter lookback) crosses below harmonic midpoint AND BearStack AND BearSlope AND CooledDown AND ChopClear AND (hard HTF gate disabled OR HigherBearBias) AND PriceBelowEMA AND ShortScore >= minimum score
+Short: BearishDivergenceActive AND BearCandle AND RSI(close, shorter lookback) < RSI(close, shorter lookback)[1] AND close < high[pivot lookback] AND CooledDown AND ChopClear AND (hard HTF gate disabled OR HigherBearBias) AND PriceBelowEMA AND ShortScore >= minimum score
+Short: CoilExpansion AND RSI(close, shorter lookback) < ExhaustionHigh AND BearSlope AND close < open AND CooledDown AND ChopClear AND (hard HTF gate disabled OR HigherBearBias) AND PriceBelowEMA AND ShortScore >= minimum score
+Short: BearStack
+Short: MarketPhase = MARKDOWN
+Short: MarketPhase = DISTRIB

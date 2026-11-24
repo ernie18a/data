@@ -1,0 +1,2 @@
+Long: For any active core or adaptive support AVWAP, Low <= AVWAP + touch-tolerance parameter × ATR(ATR-length parameter) AND Close >= AVWAP + rejection-distance parameter × ATR(ATR-length parameter), on a confirmed bar when closed-bar interaction confirmation is enabled
+Short: For any active core or adaptive resistance AVWAP, High >= AVWAP − touch-tolerance parameter × ATR(ATR-length parameter) AND Close <= AVWAP − rejection-distance parameter × ATR(ATR-length parameter), on a confirmed bar when closed-bar interaction confirmation is enabled

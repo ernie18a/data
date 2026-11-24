@@ -1,0 +1,18 @@
+Calculation: Bollinger bandwidth = (upper Bollinger Band − lower Bollinger Band) / Bollinger basis × 100
+Calculation: signed fade outcome = direction-signed percent return from the confirmed fade close to the close after the outcome horizon
+Calculation: Wilson lower bound(p, n, z) = ((p + z²/(2n)) − z√(p(1−p)/n + z²/(4n²))) / (1 + z²/n)
+Calculation: recent evidence(outcomes) = count of completed outcomes in the trailing outcome window ≥ minimum recent sample count AND Wilson lower bound(count of positive outcomes / count, count, confidence z) exceeds the neutral win-rate boundary AND median(outcomes) > 0
+Calculation: excursion depth = distance of the excursion close beyond its Bollinger Band / standard deviation(source, Bollinger lookback)
+Calculation: strong-depth threshold = the configured high percentile of prior same-direction excursion depths when their count meets the minimum; otherwise the fallback depth threshold
+Long: current bar is confirmed AND close[confirmation delay + one bar] < lower Bollinger Band[confirmation delay + one bar] AND close[confirmation delay] > lower Bollinger Band[confirmation delay] AND close[confirmation delay] < upper Bollinger Band[confirmation delay] AND (RSI confluence disabled OR RSI(source, RSI lookback)[confirmation delay + one bar] ≤ oversold level) AND bars since previous bullish fade ≥ signal spacing
+Short: current bar is confirmed AND close[confirmation delay + one bar] > upper Bollinger Band[confirmation delay + one bar] AND close[confirmation delay] < upper Bollinger Band[confirmation delay] AND close[confirmation delay] > lower Bollinger Band[confirmation delay] AND (RSI confluence disabled OR RSI(source, RSI lookback)[confirmation delay + one bar] ≥ overbought level) AND bars since previous bearish fade ≥ signal spacing
+Long: current bar is confirmed AND previous confirmed close was within the Bollinger Bands AND current close > upper Bollinger Band
+Short: current bar is confirmed AND previous confirmed close was within the Bollinger Bands AND current close < lower Bollinger Band
+Long: current bar is confirmed AND previous Bollinger bandwidth was at or below its rolling percentile threshold at the squeeze percentile AND current Bollinger bandwidth is above its rolling percentile threshold AND close > upper Bollinger Band
+Short: current bar is confirmed AND previous Bollinger bandwidth was at or below its rolling percentile threshold at the squeeze percentile AND current Bollinger bandwidth is above its rolling percentile threshold AND close < lower Bollinger Band
+Exit: long, after a bullish fade and before its basis target has been tagged, current confirmed bar high ≥ Bollinger basis
+Exit: short, after a bearish fade and before its basis target has been tagged, current confirmed bar low ≤ Bollinger basis
+Long: probability evidence enabled AND bullish fade condition AND recent evidence of completed bullish signed fade outcomes
+Short: probability evidence enabled AND bearish fade condition AND recent evidence of completed bearish signed fade outcomes
+Long: probability evidence enabled AND bullish fade condition AND recent evidence of completed bullish signed fade outcomes AND bullish excursion depth ≥ strong-depth threshold of prior bullish excursions
+Short: probability evidence enabled AND bearish fade condition AND recent evidence of completed bearish signed fade outcomes AND bearish excursion depth ≥ strong-depth threshold of prior bearish excursions

@@ -1,0 +1,3 @@
+Calculation: wick tolerance price = wick tolerance ticks * tick size
+Long: open(T1, last completed bar) - low(T1, last completed bar) <= wick tolerance price AND high(T1, last completed bar) - close(T1, last completed bar) <= wick tolerance price AND close(T1, last completed bar) > open(T1, last completed bar)
+Short: high(T1, last completed bar) - open(T1, last completed bar) <= wick tolerance price AND close(T1, last completed bar) - low(T1, last completed bar) <= wick tolerance price AND close(T1, last completed bar) < open(T1, last completed bar)

@@ -1,0 +1,9 @@
+Calculation: T1 candle direction = sign(close - open), or sign(close - preceding T1 close) for a doji when that close exists, otherwise zero
+Calculation: row effort = T1 volume multiplied by the fraction of its high-low range overlapping the price row, whose width is minimum tick size multiplied by the row-width parameter; assign a zero-range candle's volume to the row containing its low
+Calculation: candle inhibition = one minus the absolute close-open difference divided by the high-low range, clipped to zero through one; use one for a zero-range candle
+Calculation: decayed row memory = prior memory for that price row multiplied by 0.5^(elapsed minutes / memory half-life), or zero for an unseen row
+Calculation: updated row memory = minimum of memory cap and decayed row memory plus memory increment when the row was seen before, was absent from at least one intervening T1 sample, and candle inhibition meets the revisit threshold; otherwise decayed row memory
+Calculation: T1 sample weight = row effort in volume mode; in weighted mode, row effort × candle inhibition × (base weight + memory strength × decayed row memory)
+Calculation: profile-row directional balance = sum(T1 sample weight × T1 candle direction) / sum(T1 sample weight), aggregated over each displayed row and its constituent price rows for each session profile; include only T1 candles fully contained in that session's configured collection window, respecting its timezone, weekday and cutoff settings, and calculate on chart-bar updates from available T1 candles, including a forming T1 candle when supplied
+Long: profile-row directional balance > directional threshold
+Short: profile-row directional balance < -directional threshold

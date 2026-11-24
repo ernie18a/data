@@ -1,0 +1,33 @@
+Calculation: LargeLastPivot = pivot price of the most recent large signal; absent before the first large signal
+Calculation: LargeZoneWidth = ATR(zone ATR length) on the bar of the most recent large signal * large zone multiplier
+Calculation: LargeBroken = any bar after the most recent large signal and before this bar closed below LargeLastPivot - LargeZoneWidth while large position side is long, or closed above LargeLastPivot + LargeZoneWidth while large position side is short
+Long: PivotLow(low, large depth) is present AND large position side is not long AND (PivotHigh(high, large depth) is absent OR (LargeLastPivot is absent AND close >= open) OR (LargeLastPivot is present AND abs(PivotHigh(high, large depth) - LargeLastPivot) < abs(PivotLow(low, large depth) - LargeLastPivot))) AND (LargeLastPivot is absent OR abs(PivotLow(low, large depth) - LargeLastPivot) >= large deviation * tick size) AND (not use trend filter OR close > EMA(close, trend length)) AND (not confirm only on closed bars OR bar is closed)
+Short: PivotHigh(high, large depth) is present AND large position side is not short AND (PivotLow(low, large depth) is absent OR (LargeLastPivot is absent AND close < open) OR (LargeLastPivot is present AND abs(PivotHigh(high, large depth) - LargeLastPivot) >= abs(PivotLow(low, large depth) - LargeLastPivot))) AND (LargeLastPivot is absent OR abs(PivotHigh(high, large depth) - LargeLastPivot) >= large deviation * tick size) AND (not use trend filter OR close < EMA(close, trend length)) AND (not confirm only on closed bars OR bar is closed)
+Long: large position side is short AND not LargeBroken AND close > LargeLastPivot + LargeZoneWidth
+Short: large position side is long AND not LargeBroken AND close < LargeLastPivot - LargeZoneWidth
+Long: large position side is long AND not LargeBroken AND low < LargeLastPivot - LargeZoneWidth AND close > LargeLastPivot
+Short: large position side is short AND not LargeBroken AND high > LargeLastPivot + LargeZoneWidth AND close < LargeLastPivot
+Calculation: MediumLastPivot = pivot price of the most recent medium signal; absent before the first medium signal
+Calculation: MediumZoneWidth = ATR(zone ATR length) on the bar of the most recent medium signal * medium zone multiplier
+Calculation: MediumBroken = any bar after the most recent medium signal and before this bar closed below MediumLastPivot - MediumZoneWidth while medium position side is long, or closed above MediumLastPivot + MediumZoneWidth while medium position side is short
+Long: PivotLow(low, medium depth) is present AND medium position side is not long AND (PivotHigh(high, medium depth) is absent OR (MediumLastPivot is absent AND close >= open) OR (MediumLastPivot is present AND abs(PivotHigh(high, medium depth) - MediumLastPivot) < abs(PivotLow(low, medium depth) - MediumLastPivot))) AND (MediumLastPivot is absent OR abs(PivotLow(low, medium depth) - MediumLastPivot) >= medium deviation * tick size) AND (not use trend filter OR close > EMA(close, trend length)) AND (not confirm only on closed bars OR bar is closed)
+Short: PivotHigh(high, medium depth) is present AND medium position side is not short AND (PivotLow(low, medium depth) is absent OR (MediumLastPivot is absent AND close < open) OR (MediumLastPivot is present AND abs(PivotHigh(high, medium depth) - MediumLastPivot) >= abs(PivotLow(low, medium depth) - MediumLastPivot))) AND (MediumLastPivot is absent OR abs(PivotHigh(high, medium depth) - MediumLastPivot) >= medium deviation * tick size) AND (not use trend filter OR close < EMA(close, trend length)) AND (not confirm only on closed bars OR bar is closed)
+Long: medium position side is short AND not MediumBroken AND close > MediumLastPivot + MediumZoneWidth
+Short: medium position side is long AND not MediumBroken AND close < MediumLastPivot - MediumZoneWidth
+Long: medium position side is long AND not MediumBroken AND low < MediumLastPivot - MediumZoneWidth AND close > MediumLastPivot
+Short: medium position side is short AND not MediumBroken AND high > MediumLastPivot + MediumZoneWidth AND close < MediumLastPivot
+Calculation: SmallLastPivot = pivot price of the most recent small signal; absent before the first small signal
+Calculation: SmallZoneWidth = ATR(zone ATR length) on the bar of the most recent small signal * small zone multiplier
+Calculation: SmallBroken = any bar after the most recent small signal and before this bar closed below SmallLastPivot - SmallZoneWidth while small position side is long, or closed above SmallLastPivot + SmallZoneWidth while small position side is short
+Long: PivotLow(low, small depth) is present AND small position side is not long AND (PivotHigh(high, small depth) is absent OR (SmallLastPivot is absent AND close >= open) OR (SmallLastPivot is present AND abs(PivotHigh(high, small depth) - SmallLastPivot) < abs(PivotLow(low, small depth) - SmallLastPivot))) AND (SmallLastPivot is absent OR abs(PivotLow(low, small depth) - SmallLastPivot) >= small deviation * tick size) AND (not use trend filter OR close > EMA(close, trend length)) AND (not confirm only on closed bars OR bar is closed)
+Short: PivotHigh(high, small depth) is present AND small position side is not short AND (PivotLow(low, small depth) is absent OR (SmallLastPivot is absent AND close < open) OR (SmallLastPivot is present AND abs(PivotHigh(high, small depth) - SmallLastPivot) >= abs(PivotLow(low, small depth) - SmallLastPivot))) AND (SmallLastPivot is absent OR abs(PivotHigh(high, small depth) - SmallLastPivot) >= small deviation * tick size) AND (not use trend filter OR close < EMA(close, trend length)) AND (not confirm only on closed bars OR bar is closed)
+Long: small position side is short AND not SmallBroken AND close > SmallLastPivot + SmallZoneWidth
+Short: small position side is long AND not SmallBroken AND close < SmallLastPivot - SmallZoneWidth
+Long: small position side is long AND not SmallBroken AND low < SmallLastPivot - SmallZoneWidth AND close > SmallLastPivot
+Short: small position side is short AND not SmallBroken AND high > SmallLastPivot + SmallZoneWidth AND close < SmallLastPivot
+Long: large position side is long AND medium position side is long AND small position side is long
+Short: large position side is short AND medium position side is short AND small position side is short
+Long: large position side is long AND medium position side is long
+Short: large position side is short AND medium position side is short
+Long: exactly two of the large, medium, and small position sides are long
+Short: exactly two of the large, medium, and small position sides are short

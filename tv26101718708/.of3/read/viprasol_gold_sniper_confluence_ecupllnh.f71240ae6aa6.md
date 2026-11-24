@@ -1,0 +1,17 @@
+Calculation: BullConfluence = number of true conditions among: close > session VWAP(hlc3); RSI(close, RSI lookback) > RSI midline; MACD(close, MACD shorter lookback, MACD longer lookback, MACD signal lookback) line > its signal line; EMA(close, shorter lookback) > EMA(close, longer lookback); ADX(high, low, close, ADX lookback) > ADX threshold AND close > EMA(close, shorter lookback); volume > SMA(volume, volume lookback) AND close > open; RSI(close, confirmation RSI lookback) on T3 bars, last completed T3 bar > RSI midline; correlation(close, dollar index close, correlation lookback) <= inverse-link threshold AND dollar index close < EMA(dollar index close, dollar EMA lookback)
+Calculation: BearConfluence = number of true conditions among: close < session VWAP(hlc3); RSI(close, RSI lookback) < RSI midline; MACD(close, MACD shorter lookback, MACD longer lookback, MACD signal lookback) line < its signal line; EMA(close, shorter lookback) < EMA(close, longer lookback); ADX(high, low, close, ADX lookback) > ADX threshold AND close < EMA(close, shorter lookback); volume > SMA(volume, volume lookback) AND close < open; RSI(close, confirmation RSI lookback) on T3 bars, last completed T3 bar < RSI midline; correlation(close, dollar index close, correlation lookback) <= inverse-link threshold AND dollar index close > EMA(dollar index close, dollar EMA lookback)
+Calculation: DayRange = highest high minus lowest low over chart bars from the start of the current trading day through the current bar
+Calculation: EntryGatesOk = (chart timeframe is T1 or higher OR bar time in session time zone is inside session window 1 OR inside session window 2) AND (chart timeframe is T2 or higher OR NOT (DayRange / SMA(high - low, ADR lookback) on T1 bars, last completed T1 bar * 100 >= ADR block percent)) AND (no earlier entry OR bars since latest entry, either side, >= minimum bars between entries)
+Calculation: StopDistance = ATR(high, low, close, ATR lookback) * stop multiplier, evaluated on the entry bar
+Long: EMA(close, shorter lookback) crosses above EMA(close, longer lookback) AND the current bar is closed AND BullConfluence >= minimum confluence score AND EntryGatesOk
+Short: EMA(close, shorter lookback) crosses below EMA(close, longer lookback) AND the current bar is closed AND BearConfluence >= minimum confluence score AND EntryGatesOk
+Long: EMA(close, shorter lookback) crosses above EMA(close, longer lookback) AND the current bar is closed AND BullConfluence >= minimum confluence score AND NOT EntryGatesOk
+Short: EMA(close, shorter lookback) crosses below EMA(close, longer lookback) AND the current bar is closed AND BearConfluence >= minimum confluence score AND NOT EntryGatesOk
+Long: BullConfluence / number of score factors * 100 crosses above bias threshold
+Short: BearConfluence / number of score factors * 100 crosses above bias threshold
+Exit: long, low <= entry price - StopDistance
+Exit: long, highest high after the entry bar through the previous bar >= entry price + StopDistance AND low <= entry price
+Exit: long, high >= entry price + take-profit level count * StopDistance
+Exit: short, high >= entry price + StopDistance
+Exit: short, lowest low after the entry bar through the previous bar <= entry price - StopDistance AND high >= entry price
+Exit: short, low <= entry price - take-profit level count * StopDistance

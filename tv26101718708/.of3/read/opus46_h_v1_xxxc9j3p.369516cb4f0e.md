@@ -1,0 +1,31 @@
+Calculation: ATR-normalized spread = (SMMA(source, shorter lookback) - SMMA(source, longer lookback)) / ATR(lookback), expressed as a percentage
+Calculation: Spread z-score = z-score(ATR-normalized spread, normalization lookback), or zero when its standard deviation is zero
+Calculation: Smoothed MFI = SMA(MFI(hlc3, lookback), smoothing lookback)
+Calculation: Double-pass money-flow index = SMA(weighted Smoothed MFI - RSI(Smoothed MFI, lookback), smoothing lookback)
+Calculation: Pressure z-score = z-score(pressure, normalization lookback), or zero when its standard deviation is zero; pressure = percentage return from cost basis × volume / SMA(volume, volume lookback); cost basis is a weighted blend of rolling VWAP(hlc3, volume, longer cost-basis lookback) and rolling VWAP(hlc3, volume, shorter cost-basis lookback), with separate blend weights
+Calculation: Buy band = prior Donchian low - ATR(lookback) × buy penetration multiplier; the prior Donchian low is the lowest low over the Donchian lookback ending before the current bar; each positive penetration sample is (prior Donchian low - low) / ATR on a bar whose low is at or below that low, including the current bar before calculating the band; use the shared default multiplier until the minimum sample count, then clamp sensitivity × mean of the latest penetration samples to the shared minimum and maximum multipliers
+Calculation: Sell band = prior Donchian high + ATR(lookback) × sell penetration multiplier; the prior Donchian high is the highest high over the Donchian lookback ending before the current bar; each positive penetration sample is (high - prior Donchian high) / ATR on a bar whose high is at or above that high, including the current bar before calculating the band; use the shared default multiplier until the minimum sample count, then clamp sensitivity × mean of the latest penetration samples to the shared minimum and maximum multipliers
+Calculation: Buy higher-timeframe band gate = unrestricted when disabled; otherwise its independently selected mode requires the chart-bar low to touch the chart buy band, the last completed T1 buy band, either band, or both bands
+Calculation: Sell higher-timeframe band gate = unrestricted when disabled; otherwise its independently selected mode requires the chart-bar high to touch the chart sell band, the last completed T1 sell band, either band, or both bands
+Calculation: Bullish pivot divergence = on a newly confirmed pivot low, the price is lower than at the previous confirmed pivot low and either ATR-normalized spread or RSI(close, lookback), sampled at the pivot, is higher
+Calculation: Bearish pivot divergence = on a newly confirmed pivot high, the price is higher than at the previous confirmed pivot high and either ATR-normalized spread or RSI(close, lookback), sampled at the pivot, is lower
+Calculation: Raw long trigger = confirmed chart bar AND buy higher-timeframe band gate AND ((low <= buy band AND SMMA(source, shorter lookback) < SMMA(source, longer lookback) AND (maturity gate disabled OR current bearish-regime age >= minimum bars OR peak spread in the current bearish regime in ATR units >= minimum depth) AND (pain gate disabled OR lowest(pressure z-score, pain lookback) <= negative capitulation threshold) ) OR (z override enabled AND spread z-score <= buy override threshold))
+Calculation: Raw sell trigger = confirmed chart bar AND sell higher-timeframe band gate AND ((high >= sell band AND SMMA(source, shorter lookback) >= SMMA(source, longer lookback) AND (higher-high filter disabled OR no prior sell OR high > high at prior sell) AND (sell ATR-separation filter disabled OR no prior sell OR close - close at prior sell >= ATR(lookback) × sell separation multiplier) AND (maturity gate disabled OR current bullish-regime age >= minimum bars OR peak spread in the current bullish regime in ATR units >= minimum depth) AND (pain gate disabled OR highest(pressure z-score, pain lookback) >= euphoria threshold) AND (sell cooldown disabled OR no prior sell OR bars since prior sell >= sell cooldown)) OR (z override enabled AND spread z-score >= sell override threshold))
+Calculation: Buy eligibility = effective cycle buy count below maximum AND (breaker disabled OR breaker inactive) AND (buy cooldown disabled OR no prior buy OR bars since prior buy >= buy cooldown) AND (lower-low filter disabled OR no prior buy OR low < low at prior buy) AND (buy ATR-separation filter disabled OR no prior buy OR absolute(close - close at prior buy) >= ATR(lookback) × buy separation multiplier); effective cycle buy count is zero when a raw long trigger starts a new cycle after sells
+Calculation: Sell eligibility = current position is long AND cycle sell count below maximum AND (sell throttle disabled OR this is the first sell in the cycle OR no prior sell OR bars since prior sell >= rounded(base throttle × (1 + min(maximum throttle multiplier - 1, max(0, spread z-score in a bullish regime) × throttle scale)))
+Long: SMMA(source, shorter lookback) >= SMMA(source, longer lookback)
+Short: SMMA(source, shorter lookback) < SMMA(source, longer lookback)
+Long: Smoothed MFI >= MFI midpoint
+Short: Smoothed MFI < MFI midpoint
+Long: Double-pass money-flow index < negative half-ceiling threshold
+Exit: long, Double-pass money-flow index > positive half-ceiling threshold
+Long: raw long trigger AND buy eligibility
+Exit: long, raw sell trigger AND sell eligibility
+Long: raw long trigger AND NOT buy eligibility
+Exit: long, raw sell trigger AND NOT sell eligibility
+Long: spread z-score <= buy override threshold AND previous chart bar spread z-score > buy override threshold
+Exit: long, spread z-score >= sell override threshold AND previous chart bar spread z-score < sell override threshold
+Long: Bullish pivot divergence
+Exit: long, Bearish pivot divergence
+Long: lowest(pressure z-score, pain lookback) <= negative capitulation threshold AND previous chart bar's lowest(pressure z-score, pain lookback) > negative capitulation threshold
+Exit: long, highest(pressure z-score, pain lookback) >= euphoria threshold AND previous chart bar's highest(pressure z-score, pain lookback) < euphoria threshold

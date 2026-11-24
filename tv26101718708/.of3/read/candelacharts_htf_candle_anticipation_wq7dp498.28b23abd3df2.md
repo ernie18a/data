@@ -1,0 +1,42 @@
+Calculation: Mid(X, S) = (high(X, S) + low(X, S)) / 2
+Calculation: BullishCandle(X, S) = (close(X, S) > open(X, S)) or (close(X, S) = open(X, S) and high(X, S) - open(X, S) < open(X, S) - low(X, S))
+Calculation: LastPivotLow(X, Y) = latest non-NA PivotLow(low, pivot length, pivot length, Y, last completed bar) over chart bars since the forming X bar opened
+Calculation: LastPivotHigh(X, Y) = latest non-NA PivotHigh(high, pivot length, pivot length, Y, last completed bar) over chart bars since the forming X bar opened
+Calculation: BearishChoch(X, Y) = true if, for some chart bar b since the forming X bar opened including the current bar, close(Y, last completed bar) < LastPivotLow(X, Y) and Mid(X, forming bar) <= LastPivotLow(X, Y) <= high(X, forming bar), all evaluated on b; otherwise false
+Calculation: BullishChoch(X, Y) = true if, for some chart bar b since the forming X bar opened including the current bar, close(Y, last completed bar) > LastPivotHigh(X, Y) and low(X, forming bar) <= LastPivotHigh(X, Y) <= Mid(X, forming bar), all evaluated on b; otherwise false
+Long: close(T1, forming bar) > high(T1, last completed bar)
+Long: low(T1, forming bar) < low(T1, last completed bar) AND high(T1, forming bar) > high(T1, last completed bar) AND low(T1, last completed bar) <= close(T1, forming bar) <= open(T1, forming bar) <= high(T1, last completed bar)
+Long: low(T1, forming bar) < low(T1, last completed bar) AND high(T1, forming bar) <= high(T1, last completed bar) AND close(T1, forming bar) >= low(T1, last completed bar)
+Long: high(T1, forming bar) <= high(T1, last completed bar) AND low(T1, forming bar) >= low(T1, last completed bar) AND BullishChoch(T1, T2) = true AND BearishChoch(T1, T2) = false
+Long: high(T1, forming bar) <= high(T1, last completed bar) AND low(T1, forming bar) >= low(T1, last completed bar) AND BullishChoch(T1, T2) = false AND BearishChoch(T1, T2) = false AND (close(T1, forming bar) > Mid(T1, last completed bar) OR (close(T1, forming bar) = Mid(T1, last completed bar) AND BullishCandle(T1, last completed bar) = true))
+Short: close(T1, forming bar) < low(T1, last completed bar)
+Short: high(T1, forming bar) > high(T1, last completed bar) AND low(T1, last completed bar) <= close(T1, forming bar) <= high(T1, last completed bar) AND (low(T1, forming bar) >= low(T1, last completed bar) OR open(T1, forming bar) > high(T1, last completed bar) OR close(T1, forming bar) > open(T1, forming bar))
+Short: high(T1, forming bar) <= high(T1, last completed bar) AND low(T1, forming bar) >= low(T1, last completed bar) AND BearishChoch(T1, T2) = true
+Short: high(T1, forming bar) <= high(T1, last completed bar) AND low(T1, forming bar) >= low(T1, last completed bar) AND BullishChoch(T1, T2) = false AND BearishChoch(T1, T2) = false AND (close(T1, forming bar) < Mid(T1, last completed bar) OR (close(T1, forming bar) = Mid(T1, last completed bar) AND BullishCandle(T1, last completed bar) = false))
+Long: close(T3, forming bar) > high(T3, last completed bar)
+Long: low(T3, forming bar) < low(T3, last completed bar) AND high(T3, forming bar) > high(T3, last completed bar) AND low(T3, last completed bar) <= close(T3, forming bar) <= open(T3, forming bar) <= high(T3, last completed bar)
+Long: low(T3, forming bar) < low(T3, last completed bar) AND high(T3, forming bar) <= high(T3, last completed bar) AND close(T3, forming bar) >= low(T3, last completed bar)
+Long: high(T3, forming bar) <= high(T3, last completed bar) AND low(T3, forming bar) >= low(T3, last completed bar) AND BullishChoch(T3, T4) = true AND BearishChoch(T3, T4) = false
+Long: high(T3, forming bar) <= high(T3, last completed bar) AND low(T3, forming bar) >= low(T3, last completed bar) AND BullishChoch(T3, T4) = false AND BearishChoch(T3, T4) = false AND (close(T3, forming bar) > Mid(T3, last completed bar) OR (close(T3, forming bar) = Mid(T3, last completed bar) AND BullishCandle(T3, last completed bar) = true))
+Short: close(T3, forming bar) < low(T3, last completed bar)
+Short: high(T3, forming bar) > high(T3, last completed bar) AND low(T3, last completed bar) <= close(T3, forming bar) <= high(T3, last completed bar) AND (low(T3, forming bar) >= low(T3, last completed bar) OR open(T3, forming bar) > high(T3, last completed bar) OR close(T3, forming bar) > open(T3, forming bar))
+Short: high(T3, forming bar) <= high(T3, last completed bar) AND low(T3, forming bar) >= low(T3, last completed bar) AND BearishChoch(T3, T4) = true
+Short: high(T3, forming bar) <= high(T3, last completed bar) AND low(T3, forming bar) >= low(T3, last completed bar) AND BullishChoch(T3, T4) = false AND BearishChoch(T3, T4) = false AND (close(T3, forming bar) < Mid(T3, last completed bar) OR (close(T3, forming bar) = Mid(T3, last completed bar) AND BullishCandle(T3, last completed bar) = false))
+Long: close(T5, forming bar) > high(T5, last completed bar)
+Long: low(T5, forming bar) < low(T5, last completed bar) AND high(T5, forming bar) > high(T5, last completed bar) AND low(T5, last completed bar) <= close(T5, forming bar) <= open(T5, forming bar) <= high(T5, last completed bar)
+Long: low(T5, forming bar) < low(T5, last completed bar) AND high(T5, forming bar) <= high(T5, last completed bar) AND close(T5, forming bar) >= low(T5, last completed bar)
+Long: high(T5, forming bar) <= high(T5, last completed bar) AND low(T5, forming bar) >= low(T5, last completed bar) AND BullishChoch(T5, T6) = true AND BearishChoch(T5, T6) = false
+Long: high(T5, forming bar) <= high(T5, last completed bar) AND low(T5, forming bar) >= low(T5, last completed bar) AND BullishChoch(T5, T6) = false AND BearishChoch(T5, T6) = false AND (close(T5, forming bar) > Mid(T5, last completed bar) OR (close(T5, forming bar) = Mid(T5, last completed bar) AND BullishCandle(T5, last completed bar) = true))
+Short: close(T5, forming bar) < low(T5, last completed bar)
+Short: high(T5, forming bar) > high(T5, last completed bar) AND low(T5, last completed bar) <= close(T5, forming bar) <= high(T5, last completed bar) AND (low(T5, forming bar) >= low(T5, last completed bar) OR open(T5, forming bar) > high(T5, last completed bar) OR close(T5, forming bar) > open(T5, forming bar))
+Short: high(T5, forming bar) <= high(T5, last completed bar) AND low(T5, forming bar) >= low(T5, last completed bar) AND BearishChoch(T5, T6) = true
+Short: high(T5, forming bar) <= high(T5, last completed bar) AND low(T5, forming bar) >= low(T5, last completed bar) AND BullishChoch(T5, T6) = false AND BearishChoch(T5, T6) = false AND (close(T5, forming bar) < Mid(T5, last completed bar) OR (close(T5, forming bar) = Mid(T5, last completed bar) AND BullishCandle(T5, last completed bar) = false))
+Long: close(T7, forming bar) > high(T7, last completed bar)
+Long: low(T7, forming bar) < low(T7, last completed bar) AND high(T7, forming bar) > high(T7, last completed bar) AND low(T7, last completed bar) <= close(T7, forming bar) <= open(T7, forming bar) <= high(T7, last completed bar)
+Long: low(T7, forming bar) < low(T7, last completed bar) AND high(T7, forming bar) <= high(T7, last completed bar) AND close(T7, forming bar) >= low(T7, last completed bar)
+Long: high(T7, forming bar) <= high(T7, last completed bar) AND low(T7, forming bar) >= low(T7, last completed bar) AND BullishChoch(T7, T8) = true AND BearishChoch(T7, T8) = false
+Long: high(T7, forming bar) <= high(T7, last completed bar) AND low(T7, forming bar) >= low(T7, last completed bar) AND BullishChoch(T7, T8) = false AND BearishChoch(T7, T8) = false AND (close(T7, forming bar) > Mid(T7, last completed bar) OR (close(T7, forming bar) = Mid(T7, last completed bar) AND BullishCandle(T7, last completed bar) = true))
+Short: close(T7, forming bar) < low(T7, last completed bar)
+Short: high(T7, forming bar) > high(T7, last completed bar) AND low(T7, last completed bar) <= close(T7, forming bar) <= high(T7, last completed bar) AND (low(T7, forming bar) >= low(T7, last completed bar) OR open(T7, forming bar) > high(T7, last completed bar) OR close(T7, forming bar) > open(T7, forming bar))
+Short: high(T7, forming bar) <= high(T7, last completed bar) AND low(T7, forming bar) >= low(T7, last completed bar) AND BearishChoch(T7, T8) = true
+Short: high(T7, forming bar) <= high(T7, last completed bar) AND low(T7, forming bar) >= low(T7, last completed bar) AND BullishChoch(T7, T8) = false AND BearishChoch(T7, T8) = false AND (close(T7, forming bar) < Mid(T7, last completed bar) OR (close(T7, forming bar) = Mid(T7, last completed bar) AND BullishCandle(T7, last completed bar) = false))

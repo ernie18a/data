@@ -1,0 +1,3 @@
+Calculation: Latest valid structural leg = direction of the latest qualifying pivot leg; a PivotLow(low, pivot lookback, pivot lookback) followed by a PivotHigh(high, pivot lookback, pivot lookback) is bullish, and the reverse is bearish; accept a leg when pivot high − pivot low >= minimum leg ATR multiple × ATR(ATR lookback) at the ending pivot. Calculate on chart bars, or use T1's last completed bar values on chart bars when higher-timeframe anchoring is enabled.
+Long: Latest valid structural leg is bullish AND (automatic direction is enabled OR manual direction is bullish)
+Short: Latest valid structural leg is bearish AND (automatic direction is enabled OR manual direction is bearish)

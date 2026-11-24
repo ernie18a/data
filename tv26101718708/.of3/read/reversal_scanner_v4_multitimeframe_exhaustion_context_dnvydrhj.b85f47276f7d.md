@@ -1,0 +1,2 @@
+Long: close of the still-forming T1 bar < close T1 bars ago by the lookback, evaluated on chart bars using T1 values
+Short: close of the still-forming T1 bar > close T1 bars ago by the lookback, evaluated on chart bars using T1 values

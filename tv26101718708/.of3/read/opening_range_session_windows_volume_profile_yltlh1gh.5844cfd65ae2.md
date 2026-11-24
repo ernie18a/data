@@ -1,0 +1,27 @@
+Calculation: OpeningRangeHigh = highest(high) during the opening-range session
+Calculation: OpeningRangeLow = lowest(low) during the opening-range session
+Calculation: SessionVolumeZ = (volume - mean(volume of preceding confirmed chart bars in the current main session)) / population standard deviation of those volumes when their count meets the minimum and standard deviation is positive; otherwise 0
+Calculation: RelativeVolumeRatio = volume / SMA(volume, relative-volume lookback) when the SMA is positive; otherwise 0
+Calculation: ClampedSessionPressure = clamp(SessionVolumeZ * sign(close - close[1]), -pressure cap, pressure cap)
+Calculation: StructureBias = (count of the most recent structure-lookback-minus-one chart bars where high > high[1] and low >= low[1] minus count where high < high[1] and low <= low[1]) / (structure lookback - 1)
+Calculation: TrendScore = round(clamp(efficiency weight * KER(close, KER lookback) + structure weight * abs(StructureBias) + separation weight * clamp(separation multiplier * abs(EMA(close, shorter EMA lookback) - EMA(close, longer EMA lookback)) / ATR(high, low, close, ATR lookback), lower separation bound, upper separation bound), lower score bound, upper score bound))
+Calculation: DirectionScore = sign(EMA(close, shorter EMA lookback) - EMA(close, longer EMA lookback)) + (1 if StructureBias > structure-direction threshold, -1 if StructureBias < -structure-direction threshold, otherwise 0) + sign(close - EMA(close, longer EMA lookback))
+Calculation: CompletedSessionEfficiency = abs(completed-session close - open) / sum of the first chart bar's abs(close - open) and subsequent abs(close - previous close) across that session
+Calculation: CompletedSessionRangeShare = abs(completed-session close - open) / (completed-session high - completed-session low)
+Calculation: PreviousSessionNodes = POC and selected HVN and LVN row midpoints from the previous completed session profile. Divide its high-low range into profile-row-count equal rows, with row size at least the minimum price increment; allocate each chart bar's volume to each row by overlap with its high-low range divided by the greater of that bar's range and the minimum price increment. The POC is the highest-volume row. Select HVNs iteratively by greatest row volume among non-POC rows at or above the HVN volume fraction of maximum row volume, honoring node spacing and the HVN count. Select LVNs iteratively by greatest adjacent-row-volume sum minus row volume among interior rows strictly below both neighbors, at or below the LVN volume fraction of maximum row volume, with adjacent-row volume sum above its neighbor-volume fraction, honoring node spacing and the LVN count; include the POC in spacing checks.
+Calculation: PriorUpsideDistance = minimum(node midpoint - close) for PreviousSessionNodes above close, when any exist
+Calculation: PriorDownsideDistance = minimum(close - node midpoint) for PreviousSessionNodes below close, when any exist
+Long: opening-range levels exist and the opening-range session has ended and close > OpeningRangeHigh
+Short: opening-range levels exist and the opening-range session has ended and close < OpeningRangeLow
+Long: opening-range levels exist and the opening-range session has ended and close crosses above OpeningRangeHigh
+Short: opening-range levels exist and the opening-range session has ended and close crosses below OpeningRangeLow
+Long: TrendScore >= trend-score cutoff AND KER(close, KER lookback) >= trend-efficiency cutoff AND DirectionScore > 0
+Short: TrendScore >= trend-score cutoff AND KER(close, KER lookback) >= trend-efficiency cutoff AND DirectionScore < 0
+Long: previous completed session range > minimum price increment AND completed-session close >= open AND ((CompletedSessionEfficiency >= day-efficiency threshold AND CompletedSessionRangeShare >= primary range-share threshold) OR CompletedSessionRangeShare >= fallback range-share threshold)
+Short: previous completed session range > minimum price increment AND completed-session close < open AND ((CompletedSessionEfficiency >= day-efficiency threshold AND CompletedSessionRangeShare >= primary range-share threshold) OR CompletedSessionRangeShare >= fallback range-share threshold)
+Long: PriorUpsideDistance exists AND (PriorDownsideDistance does not exist OR PriorUpsideDistance < PriorDownsideDistance)
+Short: PriorDownsideDistance exists AND (PriorUpsideDistance does not exist OR PriorDownsideDistance < PriorUpsideDistance)
+Long: ClampedSessionPressure > positive-pressure cutoff
+Short: ClampedSessionPressure < negative-pressure cutoff
+Long: in the main session AND confirmed chart bar AND ((SessionVolumeZ >= session-impulse threshold AND SessionVolumeZ >= extreme session-z threshold) OR (RelativeVolumeRatio >= relative-volume threshold AND RelativeVolumeRatio >= extreme relative-volume multiple)) AND (close > open OR (close = open AND close >= close[1]))
+Short: in the main session AND confirmed chart bar AND ((SessionVolumeZ >= session-impulse threshold AND SessionVolumeZ >= extreme session-z threshold) OR (RelativeVolumeRatio >= relative-volume threshold AND RelativeVolumeRatio >= extreme relative-volume multiple)) AND (close < open OR (close = open AND close < close[1]))

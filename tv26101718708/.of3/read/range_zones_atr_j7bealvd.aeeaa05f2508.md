@@ -1,0 +1,2 @@
+Long: For the required consecutive confirmed chart bars, close > active range-zone upper edge + ATR(lookback) * buffer multiplier, and the zone continuation condition is false.
+Short: For the required consecutive confirmed chart bars, close < active range-zone lower edge - ATR(lookback) * buffer multiplier, and the zone continuation condition is false.

@@ -1,0 +1,6 @@
+Calculation: DollarVolumeThreshold = roundToSignificantDigits(SMA(hlc3 * volume, threshold lookback, T1, last completed bar)[1] / session minutes * target minutes / auction adjustment, significant digits), captured at the first native bar of each dollar bar
+Calculation: DollarBarCompleted = DollarVolumeThreshold is defined and positive AND (running sum of hlc3 * volume since the current dollar bar opened, including this native bar, >= DollarVolumeThreshold OR (session-end forcing AND this native bar is the session's last native bar))
+Long: DollarBarCompleted AND close > EMA(close, selected EMA lookback, dollar bars) AND close <= EMA(close, selected EMA lookback, dollar bars)[1]
+Short: DollarBarCompleted AND close < EMA(close, selected EMA lookback, dollar bars) AND close >= EMA(close, selected EMA lookback, dollar bars)[1]
+Long: DollarBarCompleted AND EMA(close, shorter lookback, dollar bars) crosses above EMA(close, longer lookback, dollar bars)
+Short: DollarBarCompleted AND EMA(close, shorter lookback, dollar bars) crosses below EMA(close, longer lookback, dollar bars)

@@ -1,0 +1,10 @@
+Calculation: Compression intensity = BBW weight × (1 − PercentRank(Bollinger Band Width(close, Bollinger lookback, band deviation multiplier), shared percentile lookback)) + ATR weight × (1 − PercentRank(ATR(ATR lookback), shared percentile lookback)) + body weight × clamp(1 − (ZScore(abs(close − open), body lookback) + body-score offset) / body-score scale, 0, 1), with the body Z-score set to zero when its standard deviation is zero.
+Calculation: CVD slope = sum of volume on up bars, negative volume on down bars, and zero on unchanged bars since compression activation, excluding the activation bar, divided by the number of bars since activation including the activation bar; it is zero on the activation bar.
+Calculation: Chamber high and low = highest high and lowest low over the chamber seed lookback at compression activation, expanded to include each subsequent active compression bar, then frozen at compression exit.
+Calculation: CVD bias gauge = clamp(CVD slope / max(gauge normalization floor, largest absolute CVD slope observed so far), −1, 1).
+Calculation: Chamber width = frozen chamber high − frozen chamber low.
+Calculation: Bull target = bullish breakout bar close + chamber width; bear target = bearish breakout bar close − chamber width.
+Long: On a confirmed bar after compression was active on the preceding bar and compression intensity falls below the compression threshold, close > frozen chamber high AND preceding active bar CVD slope > 0 AND preceding active bar CVD bias gauge > alignment threshold OR close < frozen chamber low AND preceding active bar CVD slope > 0.
+Short: On a confirmed bar after compression was active on the preceding bar and compression intensity falls below the compression threshold, close < frozen chamber low AND preceding active bar CVD slope < 0 AND preceding active bar CVD bias gauge < −alignment threshold OR close > frozen chamber high AND preceding active bar CVD slope < 0.
+Exit: long, confirmed bar, active bull target, and high >= bull target.
+Exit: short, confirmed bar, active bear target, and low <= bear target.

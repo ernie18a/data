@@ -1,0 +1,2 @@
+Long: close >= close[1] (T1, last completed bar, used on chart bars), or, if unavailable, close >= open (T1, bar still forming, used on chart bars)
+Short: close < close[1] (T1, last completed bar, used on chart bars), or, if unavailable, close < open (T1, bar still forming, used on chart bars)

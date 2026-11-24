@@ -1,0 +1,41 @@
+Calculation: Candle body percentage = if high > low then 100 * abs(close - open) / (high - low) else 0
+Calculation: ATR floor = max(ATR(ATR lookback), minimum tick size)
+Calculation: Duplicate zone = candidate and existing zones have the same direction and type, the existing zone is active and unbroken, both zone heights are positive, and max(0, min(candidate top, existing top) - max(candidate bottom, existing bottom)) / min(candidate height, existing height) exceeds the duplicate-overlap threshold
+Calculation: Bullish Reaction Block zone = on a confirmed bar, if Reaction Blocks are enabled, close > high[1] AND close > open AND close[1] < open[1] AND candle body percentage >= zone-body threshold AND no duplicate zone, create a bullish zone from low[1] to high[1]
+Calculation: Bearish Reaction Block zone = on a confirmed bar, if Reaction Blocks are enabled, close < low[1] AND close < open AND close[1] > open[1] AND candle body percentage >= zone-body threshold AND no duplicate zone, create a bearish zone from low[1] to high[1]
+Calculation: Bullish Imbalance Gap zone = on a confirmed bar, if Imbalance Gaps are enabled, low > high[2] AND close > open AND candle body percentage >= zone-body threshold AND no duplicate zone, create a bullish zone from high[2] to low
+Calculation: Bearish Imbalance Gap zone = on a confirmed bar, if Imbalance Gaps are enabled, high < low[2] AND close < open AND candle body percentage >= zone-body threshold AND no duplicate zone, create a bearish zone from high to low[2]
+Calculation: Zone state = a zone is active until a bar closes below its lower bound if bullish or above its upper bound if bearish; it is tapped permanently after any bar has high >= its lower bound AND low <= its upper bound; it can react once; it is used after its direction's Sniper signal
+Long: A bullish Reaction Block zone or bullish Imbalance Gap zone forms
+Short: A bearish Reaction Block zone or bearish Imbalance Gap zone forms
+Calculation: Bullish zone reaction = an active, unused, unrejected bullish zone has been tapped and the current bar has close > open AND close > the zone's upper bound AND (reject-range filter is disabled OR high - low >= ATR floor * reject-range ATR threshold) AND candle body percentage >= reject-body threshold
+Calculation: Bearish zone reaction = an active, unused, unrejected bearish zone has been tapped and the current bar has close < open AND close < the zone's lower bound AND (reject-range filter is disabled OR high - low >= ATR floor * reject-range ATR threshold) AND candle body percentage >= reject-body threshold
+Long: Bullish zone reaction
+Short: Bearish zone reaction
+Calculation: Candle trend state = initialize bullish; use SMA(high - low, candle-trend lookback) and a separate band multiplier to form upper and lower bands around (high + low) / 2; trail the stop with max(lower band, prior stop) while bullish and min(upper band, prior stop) while bearish; switch bullish when close crosses above the prior stop and bearish when close crosses below it, resetting the stop to the corresponding band
+Long: Candle trend state is bullish
+Short: Candle trend state is bearish
+Calculation: Bullish structure break for a layer = the selected bullish break series crosses from at or below the latest confirmed PivotHigh(high, that layer's lookback, that layer's lookback) to above it, and that pivot level has not already broken; classify as CHoCH if the layer's prior bias was bearish, otherwise BOS, then set bias bullish. Classic, responsive, and major layers use separate lookback parameters
+Calculation: Bearish structure break for a layer = the selected bearish break series crosses from at or above the latest confirmed PivotLow(low, that layer's lookback, that layer's lookback) to below it, and that pivot level has not already broken; classify as CHoCH if the layer's prior bias was bullish, otherwise BOS, then set bias bearish. Classic, responsive, and major layers use separate lookback parameters
+Long: Bullish structure break in a structure layer
+Short: Bearish structure break in a structure layer
+Calculation: Bullish structure pass = bullish structure break in the selected layer AND (break-displacement filter disabled OR close > open AND candle body percentage >= break-body threshold AND high - low >= ATR floor * break-range ATR threshold) AND the selected structure-type requirement accepts the break
+Calculation: Bearish structure pass = bearish structure break in the selected layer AND (break-displacement filter disabled OR close < open AND candle body percentage >= break-body threshold AND high - low >= ATR floor * break-range ATR threshold) AND the selected structure-type requirement accepts the break
+Calculation: Volume pass = volume filter disabled OR SMA(volume, volume lookback) is defined and > 0 AND volume >= SMA(volume, volume lookback) * volume multiplier
+Calculation: Bullish trend pass = EMA trend filter disabled OR close >= EMA(close, trend lookback)
+Calculation: Bearish trend pass = EMA trend filter disabled OR close <= EMA(close, trend lookback)
+Calculation: Bullish tapped zone = at least one active, unused bullish zone has been tapped
+Calculation: Bearish tapped zone = at least one active, unused bearish zone has been tapped
+Calculation: Recent bullish reaction = at least one active, unused bullish zone reacted within the reaction-window parameter
+Calculation: Recent bearish reaction = at least one active, unused bearish zone reacted within the reaction-window parameter
+Calculation: Bullish score = min(score cap, (recent bullish reaction ? recent-zone readiness weight : bullish tapped zone ? tap-only readiness weight : 0) + (bullish structure pass ? structure weight : 0) + (bullish zone reaction ? current-reaction weight : recent bullish reaction ? recent-reaction weight : 0) + (volume pass ? volume weight : 0) + (bullish trend pass ? trend weight : 0))
+Calculation: Bearish score = min(score cap, (recent bearish reaction ? recent-zone readiness weight : bearish tapped zone ? tap-only readiness weight : 0) + (bearish structure pass ? structure weight : 0) + (bearish zone reaction ? current-reaction weight : recent bearish reaction ? recent-reaction weight : 0) + (volume pass ? volume weight : 0) + (bearish trend pass ? trend weight : 0))
+Calculation: Selected score threshold = high-quality score threshold when high-quality-only is enabled, otherwise minimum score threshold
+Calculation: Bullish base setup = the selected confirmation mode chooses a new bullish zone reaction, a tapped bullish zone AND bullish structure pass, or a recent bullish reaction AND bullish structure pass; use the newest matching zone
+Calculation: Bearish base setup = the selected confirmation mode chooses a new bearish zone reaction, a tapped bearish zone AND bearish structure pass, or a recent bearish reaction AND bearish structure pass; use the newest matching zone
+Calculation: Bullish opposing-zone conflict = blocking opposite-zone guard is enabled AND the current bar overlaps an active, unused bearish zone of a guarded type AND close <= its upper bound + ATR floor * opposite-zone clearance parameter
+Calculation: Bearish opposing-zone conflict = blocking opposite-zone guard is enabled AND the current bar overlaps an active, unused bullish zone of a guarded type AND close >= its lower bound - ATR floor * opposite-zone clearance parameter
+Calculation: Bullish eligible setup = bullish base setup AND bullish score >= selected score threshold AND volume pass AND bullish trend pass AND (close-confirmation requirement disabled OR current chart bar confirmed) AND NOT bullish opposing-zone conflict
+Calculation: Bearish eligible setup = bearish base setup AND bearish score >= selected score threshold AND volume pass AND bearish trend pass AND (close-confirmation requirement disabled OR current chart bar confirmed) AND NOT bearish opposing-zone conflict
+Long: Bullish eligible setup AND (no bearish eligible setup OR bullish score >= bearish score)
+Short: Bearish eligible setup AND (no bullish eligible setup OR bearish score > bullish score)

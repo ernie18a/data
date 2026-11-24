@@ -1,0 +1,24 @@
+Calculation: LastPivotHigh = PivotHigh(high, pivot length, pivot length) if not empty, else LastPivotHigh[1]
+Calculation: LastPivotLow = PivotLow(low, pivot length, pivot length) if not empty, else LastPivotLow[1]
+Calculation: UpBreak = close > LastPivotHigh AND no close above LastPivotHigh on an earlier bar since LastPivotHigh was confirmed
+Calculation: DownBreak = close < LastPivotLow AND no close below LastPivotLow on an earlier bar since LastPivotLow was confirmed
+Calculation: StructureRegime = -1 if DownBreak, else 1 if UpBreak, else StructureRegime[1]; initially 0
+Calculation: SlopeNorm = clamp((HMA(close, HMA length) - HMA(close, HMA length)[slope lookback]) / (ATR(ATR length) * slope lookback), -1, 1)
+Calculation: CompositeScore = 100 * (structure score weight * StructureRegime + efficiency score weight * sign(close - close[ER length]) * KER(close, ER length) + slope score weight * SlopeNorm) / (structure score weight + efficiency score weight + slope score weight)
+Calculation: TrendRegime = 1 if TrendRegime[1] <= 0 AND CompositeScore > trend entry threshold, else -1 if TrendRegime[1] >= 0 AND CompositeScore < -(trend entry threshold), else 0 if TrendRegime[1] != 0 AND abs(CompositeScore) < trend exit threshold, else TrendRegime[1]; initially 0; trend exit threshold < trend entry threshold
+Calculation: Zones(d) = zones of side d alive at this bar, each with top, bottom, mass, birth bar and used flag; d = 1 for bull, d = -1 for bear. Zones born at this bar are added first: (a) if the order-block switch is on, UpBreak (d = 1) or DownBreak (d = -1) occurs, abs(close - open) >= displacement multiple * ATR(ATR length), and the most recent bar among the origin lookback bars before this bar has close < open (d = 1) or close > open (d = -1), then top and bottom are that bar's body edges if the body-only switch is on, else its high and low, kept only if top > bottom, with mass = abs(close - open) / ATR(ATR length) * (volume floor + PercentRank(volume, volume lookback) / 100); (b) if the FVG switch is on, abs(close[1] - open[1]) >= middle body multiple * ATR(ATR length) and gap >= gap multiple * ATR(ATR length), where for d = 1 gap = low - high[2], top = low, bottom = high[2], and for d = -1 gap = low[2] - high, top = low[2], bottom = high, with mass = gap / ATR(ATR length) * (volume floor + PercentRank(volume, volume lookback)[1] / 100). After each addition, drop the oldest zone while count > zone cap. Then remove zones with bars since birth bar > max zone age, or with close < bottom (d = 1) or close > top (d = -1).
+Calculation: DecayedMass(z) = Mass(z) * 0.5^(bars since birth bar(z) / mass half-life)
+Calculation: Field(d) = sum over z in Zones(d) of DecayedMass(z) / ((abs(close - (top(z) + bottom(z)) / 2) / ATR(ATR length))^2 + softening epsilon^2)
+Calculation: GravityBalance = 100 * (Field(1) - Field(-1)) / (Field(1) + Field(-1)), or 0 if Field(1) + Field(-1) = 0
+Calculation: Touch(d) = the zone in Zones(d) with the greatest DecayedMass among zones born before this bar, not yet used by an entry or add, and touched by this bar (d = 1: low <= top AND close >= top; d = -1: high >= bottom AND close <= bottom); none if no such zone
+Calculation: Confluence(d) = 100 * (quality trend weight * TA(d) + quality gravity weight * max(0, d * GravityBalance) / 100 + quality mass weight * DecayedMass(Touch(d)) / max DecayedMass over Zones(d) + quality rejection weight * Rej(d)), where TA(d) = 1 if TrendRegime = d, neutral trend alignment if TrendRegime = 0, else 0, and Rej(d) = (close - low) / (high - low) if d = 1, else (high - close) / (high - low)
+Calculation: PriorEntryBar = bar of the most recent entry or add before this bar
+Calculation: CooldownClear = no entry or add yet OR this bar - PriorEntryBar >= cooldown bars
+Long: position side != long AND TrendRegime = 1 AND Touch(1) exists AND CooldownClear AND (gravity filter off OR GravityBalance > 0) AND Confluence(1) >= primary quality threshold
+Long: position side = long AND TrendRegime >= 0 AND Touch(1) exists AND birth bar(Touch(1)) > PriorEntryBar AND adds in current leg < max adds per leg AND CooldownClear AND (gravity filter off OR GravityBalance > 0) AND Confluence(1) >= re-add quality threshold
+Long: TrendRegime[1] <= 0 AND CompositeScore > trend entry threshold
+Short: position side != short AND TrendRegime = -1 AND Touch(-1) exists AND CooldownClear AND (gravity filter off OR GravityBalance < 0) AND Confluence(-1) >= primary quality threshold
+Short: position side = short AND TrendRegime <= 0 AND Touch(-1) exists AND birth bar(Touch(-1)) > PriorEntryBar AND adds in current leg < max adds per leg AND CooldownClear AND (gravity filter off OR GravityBalance < 0) AND Confluence(-1) >= re-add quality threshold
+Short: TrendRegime[1] >= 0 AND CompositeScore < -(trend entry threshold)
+Exit: long, TrendRegime = -1 OR DownBreak
+Exit: short, TrendRegime = 1 OR UpBreak

@@ -1,0 +1,2 @@
+Long: high > VWMA(hlc3, lookback, T1 bars, last completed T1 bar) OR close > Anchored VWAP(hlc3, T2 anchor, chart bars)
+Short: close <= VWMA(hlc3, lookback, T1 bars, last completed T1 bar) OR close <= Anchored VWAP(hlc3, T2 anchor, chart bars)

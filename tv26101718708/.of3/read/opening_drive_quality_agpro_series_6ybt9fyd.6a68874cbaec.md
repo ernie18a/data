@@ -1,0 +1,29 @@
+Calculation: Opening drive = aggregate the configured opening-session bars and lock on the first chart bar outside that session, or aggregate the configured number of first chart bars after each calendar-day boundary in the configured timezone and lock on the last included bar; on intraday charts use the configured count, otherwise use the first chart bar.
+Calculation: Drive side = bullish when drive close > drive open, bearish when drive close < drive open, otherwise bullish when drive close is at or above the midpoint of drive high and drive low, and bearish otherwise.
+Calculation: Drive span = max(drive high - drive low, instrument minimum price increment).
+Calculation: Thrust score = clamp(abs(drive close - drive open) / drive span * body-efficiency scale, score floor, score ceiling).
+Calculation: Close-location score = clamp((drive close - drive low) / drive span * close-location scale, score floor, score ceiling) when drive side is bullish; otherwise clamp((drive high - drive close) / drive span * close-location scale, score floor, score ceiling).
+Calculation: Range score = clamp(drive span / ATR(high, low, close, ATR lookback) / range ATR divisor * range-score scale, score floor, score ceiling) when ATR at drive lock is positive; otherwise score floor.
+Calculation: Relative-volume score = clamp(mean volume of opening-drive bars / SMA(volume, volume lookback) / relative-volume divisor * volume-score scale, score floor, score ceiling), when relative-volume scoring is enabled, SMA is available and positive, and drive-bar count and mean drive volume are positive.
+Calculation: Drive quality = round(clamp(thrust score * volume-enabled thrust weight + close-location score * volume-enabled close-location weight + range score * volume-enabled range weight + relative-volume score * volume-enabled relative-volume weight, score floor, score ceiling)) when relative-volume scoring is enabled and available; otherwise round(clamp(thrust score * volume-disabled thrust weight + close-location score * volume-disabled close-location weight + range score * volume-disabled range weight, score floor, score ceiling)); use ATR and volume SMA from the drive-lock bar.
+Calculation: Tracking active = drive is locked, the current chart bar is outside the drive window, elapsed chart bars since drive end are from zero through the drive-memory limit, and either first-bars mode is selected or the current bar is in the configured tracking session.
+Calculation: Follow-through extension in ATR = max(favorable price extension beyond the drive high for a bullish drive or below the drive low for a bearish drive, zero) / current ATR when current ATR is positive; otherwise zero. Use the highest high or lowest low since drive lock to measure favorable extension.
+Calculation: Follow-through confirmed = tracking active AND follow-through extension in ATR >= follow-through ATR threshold.
+Calculation: Weak follow-through = tracking active AND elapsed chart bars since drive end > follow-through review bars AND NOT follow-through confirmed.
+Calculation: Pullback zone = [drive high - drive span * pullback-depth fraction, drive high] for a bullish drive; [drive low, drive low + drive span * pullback-depth fraction] for a bearish drive.
+Calculation: Risk line = min(drive low, pullback-zone bottom - ATR-at-drive-lock * risk-buffer ATR) for a bullish drive; max(drive high, pullback-zone top + ATR-at-drive-lock * risk-buffer ATR) for a bearish drive.
+Calculation: Risk broken = tracking active AND (drive side is bullish AND close < risk line OR drive side is bearish AND close > risk line).
+Calculation: Pullback-zone overlap = tracking active AND high >= pullback-zone bottom AND low <= pullback-zone top.
+Calculation: Pullback held = pullback-zone overlap AND NOT risk broken AND (drive side is bullish AND close >= pullback-zone bottom OR drive side is bearish AND close <= pullback-zone top).
+Calculation: Pullback depth = clamp((drive high - low) / drive span, pullback-depth floor, pullback-depth cap) for a bullish drive; clamp((high - drive low) / drive span, pullback-depth floor, pullback-depth cap) for a bearish drive; use zero when tracking is inactive.
+Calculation: Follow-through score = round(clamp(follow-through extension in ATR / follow-through ATR threshold * follow-score scale, score floor, score ceiling)).
+Calculation: Pullback score = risk-broken score when risk is broken; otherwise clamp(held-pullback base score - abs(pullback depth - pullback-depth fraction * pullback-depth midpoint factor) / pullback-depth fraction * pullback-depth penalty, held-pullback score floor, held-pullback score ceiling) when pullback is held; otherwise overlap score when the zone overlaps, follow-only score when follow-through is confirmed, weak-follow score when follow-through is weak, or neutral score otherwise.
+Calculation: Readiness score = round(clamp(drive quality * drive-readiness weight + follow-through score * follow-through-readiness weight + pullback score * pullback-readiness weight, score floor, score ceiling)).
+Long: drive locks AND drive side is bullish AND drive quality >= minimum label quality.
+Long: tracking active AND drive side is bullish AND follow-through confirmed AND readiness score >= minimum quality.
+Long: tracking active AND drive side is bullish AND pullback held AND follow-through confirmed AND readiness score >= minimum quality.
+Short: drive locks AND drive side is bearish AND drive quality >= minimum label quality.
+Short: tracking active AND drive side is bearish AND follow-through confirmed AND readiness score >= minimum quality.
+Short: tracking active AND drive side is bearish AND pullback held AND follow-through confirmed AND readiness score >= minimum quality.
+Exit: long, tracking active AND drive side is bullish AND close < risk line.
+Exit: short, tracking active AND drive side is bearish AND close > risk line.

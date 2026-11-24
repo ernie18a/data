@@ -1,0 +1,11 @@
+Calculation: drawdown from ATH(price series) = 100 × (running maximum of close since first bar − current close) / running maximum of close since first bar
+Calculation: benchmark recovery pause = arm whenever benchmark drawdown ≥ bottom threshold; when armed and no pause is active, start the pause when benchmark drawdown ≤ bottom threshold × (1 − recovery percentage / 100) and disarm; clear the pause after processing the first bar in a later calendar year
+Long: configured rebalance-period boundary AND NOT benchmark recovery pause
+Calculation: Strategy 2 deployment fraction(drawdown) = drawdown ≤ first band ? first deployment fraction : drawdown ≤ second band ? second deployment fraction : drawdown ≤ third band ? third deployment fraction : fourth deployment fraction
+Long: configured DCA-period boundary AND cash balance > 0 AND configured cash pool > 0 (current monthly contribution in current-period-only mode, otherwise cash balance) AND Strategy 2 deployment fraction(drawdown from ATH(traded-instrument close)) > 0
+Calculation: Strategy 3 deployment fraction(drawdown) = drawdown ≥ third trigger ? third deployment fraction : drawdown ≥ second trigger ? second deployment fraction : drawdown ≥ first trigger ? first deployment fraction : baseline deployment fraction
+Long: configured DCA-period boundary AND cash balance > 0 AND configured cash pool > 0 (current monthly contribution in current-period-only mode, otherwise cash balance) AND Strategy 3 deployment fraction(drawdown from ATH(traded-instrument close)) > 0
+Calculation: trailing peak = running maximum of the configured T1 high or T1 close, from the last completed T1 bar that triggers entry onward, using last completed T1 bars
+Calculation: exit threshold = trailing peak × (1 − configured exit drawdown percentage / 100)
+Long: flat AND first chart bar of a new T1 period AND close(T1, last completed bar) > SMA(close, configured lookback, T1, last completed bar) AND (green-week filter disabled OR close(T1, last completed bar) > open(T1, last completed bar)) AND parked balance > 0
+Exit: long, first chart bar of a new T1 period AND ((touch mode AND low(T1, last completed bar) ≤ exit threshold) OR (weekly-close mode AND close(T1, last completed bar) ≤ exit threshold))

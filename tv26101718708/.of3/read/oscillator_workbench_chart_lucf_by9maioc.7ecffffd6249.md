@@ -1,0 +1,18 @@
+Calculation: oscillator weight = 0 when oscillator = center; (oscillator - center) / abs(maximum-so-far(oscillator - center)) when oscillator > center; -abs((oscillator - center) / abs(minimum-so-far(oscillator - center))) when oscillator < center
+Calculation: combined oscillator weight = the average of the weights of the configured internal oscillator(s) and optional external oscillator, multiplied by PercentRank(volume, relative-volume lookback) / 100 when relative-volume weighting is enabled, otherwise multiplied by 1
+Calculation: weighted source = reference source + sign(combined oscillator weight) * min(reference source * abs(combined oscillator weight), cap multiple * (standard deviation(reference source, reference lookback) or ATR(ATR lookback), according to cap mode)
+Calculation: reference line = selected moving average(reference source, reference lookback)
+Calculation: weighted line = selected moving average(weighted source, reference lookback)
+Calculation: oscillator channel bull = weighted line > reference line
+Calculation: oscillator channel bear = weighted line <= reference line
+Calculation: strong oscillator bull = oscillator channel bull AND close > reference line AND reference line > reference line[1] AND weighted line > weighted line[1]
+Calculation: strong oscillator bear = oscillator channel bear AND close < reference line AND reference line < reference line[1] AND weighted line < weighted line[1]
+Calculation: divergence = sign(reference line - reference line[1]) != sign(weighted line - weighted line[1]) in line-slope mode; sign(combined oscillator weight - combined oscillator weight[1]) != sign(close - close[1]) in oscillator-versus-close mode
+Calculation: divergence channel = initialize upper and lower levels from configured high/low or open/close values on a divergence; while unbreached, expand the levels on later divergences to include their configured values; an upper breach occurs when the selected breach price (low or high) > upper level and sets the channel bullish, a lower breach occurs when the selected breach price (high or low) < lower level and sets it bearish; start a new channel at the next divergence after a breach
+Calculation: strong bullish divergence channel = bullish divergence channel AND strong oscillator bull
+Calculation: strong bearish divergence channel = bearish divergence channel AND strong oscillator bear
+Calculation: transition to a state = state AND NOT state[1]
+Long: NOT divergence AND (oscillator channel bull OR bullish divergence channel)
+Short: NOT divergence AND (oscillator channel bear OR bearish divergence channel)
+Long: (transition to strong oscillator bull OR transition to oscillator channel bull OR transition to strong bullish divergence channel OR transition to bullish divergence channel) AND (close-polarity filter disabled OR close > close[1]) AND (oscillator-direction filter disabled OR selected marker oscillator > its center) AND (rising-volume filter disabled OR volume > volume[1]) AND (recent-divergence filter disabled OR bars since divergence <= divergence lookback)
+Short: (transition to strong oscillator bear OR transition to oscillator channel bear OR transition to strong bearish divergence channel OR transition to bearish divergence channel) AND (close-polarity filter disabled OR close < close[1]) AND (oscillator-direction filter disabled OR selected marker oscillator < its center) AND (rising-volume filter disabled OR volume > volume[1]) AND (recent-divergence filter disabled OR bars since divergence <= divergence lookback)

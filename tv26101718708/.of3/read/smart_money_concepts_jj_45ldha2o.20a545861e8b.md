@@ -1,0 +1,23 @@
+Calculation: leg(L) = bearish if high[L] > highest(high,L), else bullish if low[L] < lowest(low,L), else the prior leg; initially bearish, with the high test taking precedence
+Calculation: latest pivot high/low for each leg size = high[L] when the leg changes from bullish to bearish / low[L] when it changes from bearish to bullish; retain each level until the next pivot, reset its crossed state at a new pivot, and mark it crossed after price crosses it; swing and internal leg sizes are separate parameters
+Calculation: internal trend bias = side of the latest internal structure break; initially neutral
+Calculation: internal bullish structure break = close crosses above the unbroken latest internal pivot high, that level differs from the latest swing pivot high, and (the internal confluence filter is disabled OR high - max(close,open) > min(close,open - low))
+Calculation: internal bearish structure break = close crosses below the unbroken latest internal pivot low, that level differs from the latest swing pivot low, and (the internal confluence filter is disabled OR high - max(close,open) < min(close,open - low))
+Long: close crosses above the unbroken latest swing pivot high
+Short: close crosses below the unbroken latest swing pivot low
+Long: internal bullish structure break
+Short: internal bearish structure break
+Long: EMA(close, short HTF lookback, T1 bars sampled on chart bars; last completed historically and still forming in real time) > EMA(close, long HTF lookback, T1 bars sampled on chart bars; last completed historically and still forming in real time) AND close(T2 bar sampled on chart bars; last completed historically and still forming in real time) > EMA(close, T2 EMA lookback, T2 bars sampled on chart bars; last completed historically and still forming in real time) AND internal bullish structure break AND internal trend bias immediately before the break is bearish AND volume > SMA(volume, volume lookback) on chart bars
+Short: EMA(close, short HTF lookback, T1 bars sampled on chart bars; last completed historically and still forming in real time) < EMA(close, long HTF lookback, T1 bars sampled on chart bars; last completed historically and still forming in real time) AND close(T2 bar sampled on chart bars; last completed historically and still forming in real time) < EMA(close, T2 EMA lookback, T2 bars sampled on chart bars; last completed historically and still forming in real time) AND internal bearish structure break AND internal trend bias immediately before the break is bullish AND volume > SMA(volume, volume lookback) on chart bars
+Long: EMA(close, short HTF lookback, T1 bars sampled on chart bars; last completed historically and still forming in real time) > EMA(close, long HTF lookback, T1 bars sampled on chart bars; last completed historically and still forming in real time)
+Short: EMA(close, short HTF lookback, T1 bars sampled on chart bars; last completed historically and still forming in real time) <= EMA(close, long HTF lookback, T1 bars sampled on chart bars; last completed historically and still forming in real time)
+Long: internal trend bias is bullish
+Short: internal trend bias is not bullish
+Calculation: T3 body percent change = (close of the previous completed T3 bar - open of the previous completed T3 bar) / (open of the previous completed T3 bar * 100), sampled on chart bars
+Calculation: FVG threshold = threshold multiplier * cumulative sum of absolute T3 body percent change on the first chart bar of each new T3 period / chart bar index when automatic threshold is enabled; otherwise 0
+Long: on the first chart bar of a new T3 period, low of the T3 bar still forming > high of the T3 bar two bars ago AND close of the previous completed T3 bar > that high AND T3 body percent change > FVG threshold
+Short: on the first chart bar of a new T3 period, high of the T3 bar still forming < low of the T3 bar two bars ago AND close of the previous completed T3 bar < that low AND -T3 body percent change > FVG threshold
+Calculation: bullish order block = candle with the lowest low from its pivot-low bar through a bullish structure break; bearish order block = candle with the highest high from its pivot-high bar through a bearish structure break; retain active blocks separately for internal and swing structures up to a capacity parameter
+Calculation: bearish order-block mitigation price = close when the mitigation setting selects close, otherwise high; bullish order-block mitigation price = close when it selects close, otherwise low
+Long: bearish order-block mitigation price > high of any active bearish order block
+Short: bullish order-block mitigation price < low of any active bullish order block

@@ -1,0 +1,3 @@
+Calculation: BullRate(h) = 100 * UpBars / DirBars, where UpBars = bars in W with hour(time) = h and close > open, DirBars = bars in W with hour(time) = h and close != open, W = bars up to and including the current bar that are among the last max bars and within lookback days of the current bar; BullRate(h) is NA unless bars in W with hour(time) = h >= min bars AND DirBars > 0
+Long: bar is closed AND hour(time) != hour(time[1]) AND BullRate(hour(time)) = highest BullRate(h) over all hours h
+Short: bar is closed AND hour(time) != hour(time[1]) AND BullRate(hour(time)) = lowest BullRate(h) over all hours h

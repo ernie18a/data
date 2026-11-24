@@ -1,0 +1,5 @@
+Calculation: Confirmed swings = nonambiguous PivotHigh(high, strength, strength) and PivotLow(low, strength, strength), confirmed after strength bars to the right; retain alternating high and low swings, replacing the latest same-side swing only when the new swing is more extreme.
+Long: The latest confirmed swing high exceeds the preceding confirmed swing high by more than the swing-label ATR tolerance × ATR at the latest swing OR the latest confirmed swing low exceeds the preceding confirmed swing low by more than the swing-label ATR tolerance × ATR at the latest swing.
+Short: The latest confirmed swing high is below the preceding confirmed swing high by more than the swing-label ATR tolerance × ATR at the latest swing OR the latest confirmed swing low is below the preceding confirmed swing low by more than the swing-label ATR tolerance × ATR at the latest swing.
+Long: close > latest confirmed swing high + break tolerance × ATR recorded at that swing, and that swing high has not already been marked broken.
+Short: close < latest confirmed swing low − break tolerance × ATR recorded at that swing, and that swing low has not already been marked broken.

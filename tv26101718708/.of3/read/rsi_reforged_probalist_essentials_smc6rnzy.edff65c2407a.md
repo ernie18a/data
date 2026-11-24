@@ -1,0 +1,7 @@
+Calculation: Smoothed RSI = EMA(RSI(selected price source, RSI lookback), smoothing lookback)
+Calculation: Upper RSI band = min(SMA(Smoothed RSI, band lookback) + band-width parameter * StDev(Smoothed RSI, band lookback), upper RSI cap)
+Calculation: Lower RSI band = max(SMA(Smoothed RSI, band lookback) - band-width parameter * StDev(Smoothed RSI, band lookback), lower RSI cap)
+Long: Smoothed RSI crosses above the Lower RSI band confirmation bars ago AND the current bar is confirmed
+Long: On a newly confirmed PivotLow of Smoothed RSI, pair it and the latest earlier PivotLow of Smoothed RSI within the divergence lookback and at least pivot-left plus pivot-right plus minimum-gap bars earlier with their latest PivotLow values of low within pivot-right plus alignment-allowance bars; current price pivot < prior price pivot AND current RSI pivot > prior RSI pivot OR current price pivot > prior price pivot AND current RSI pivot < prior RSI pivot
+Short: Smoothed RSI crosses below the Upper RSI band confirmation bars ago AND the current bar is confirmed
+Short: On a newly confirmed PivotHigh of Smoothed RSI, pair it and the latest earlier PivotHigh of Smoothed RSI within the divergence lookback and at least pivot-left plus pivot-right plus minimum-gap bars earlier with their latest PivotHigh values of high within pivot-right plus alignment-allowance bars; current price pivot > prior price pivot AND current RSI pivot < prior RSI pivot OR current price pivot < prior price pivot AND current RSI pivot > prior RSI pivot

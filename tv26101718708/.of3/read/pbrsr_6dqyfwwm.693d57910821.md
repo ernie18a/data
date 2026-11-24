@@ -1,0 +1,21 @@
+Calculation: fast EMA = EMA(close, shorter lookback, T1), where x[n] is the value n bars back on T1 and n is 0 for the bar still forming or 1 for the last completed bar, selected by the wait-for-close parameter
+Calculation: slow EMA = EMA(close, longer lookback, T1)
+Calculation: RSI = RSI(close, RSI lookback, T1)
+Calculation: stoch RSI K = SMA(Stochastic(RSI, stoch lookback), smoothing lookback), on T1
+Calculation: body ratio = abs(close - open) / close, on T1
+Calculation: EMA gap = abs(fast EMA - slow EMA) / slow EMA
+Calculation: T2 bullish = close > EMA(close, trend EMA lookback, T2) AND ROC(EMA(close, trend EMA lookback, T2), trend slope lookback) > trend slope threshold, on the last completed T2 bar
+Calculation: T2 bearish = close < EMA(close, trend EMA lookback, T2) AND ROC(EMA(close, trend EMA lookback, T2), trend slope lookback) < -trend slope threshold, on the last completed T2 bar
+Calculation: resistance clusters = pivot highs among the last analysis window base bars, where a pivot high is a bar whose high is strictly greater than the highs of the pivot lookback bars on each side, processed from most recent to oldest; each pivot price joins the earliest cluster whose level L satisfies abs(price - L) / L < cluster tolerance / 100, which sets that cluster's touches to touches + 1 and its level to the mean of its pivot prices, otherwise starts a new cluster with level = price and touches = 1
+Calculation: support clusters = pivot lows among the last analysis window base bars, where a pivot low is a bar whose low is strictly less than the lows of the pivot lookback bars on each side, processed from most recent to oldest; each pivot price joins the earliest cluster whose level L satisfies abs(price - L) / L < cluster tolerance / 100, which sets that cluster's touches to touches + 1 and its level to the mean of its pivot prices, otherwise starts a new cluster with level = price and touches = 1
+Calculation: level confluence(level) = number of true among: abs(level - SMA(close, short MA lookback)) / SMA(close, short MA lookback) < confluence distance; abs(level - SMA(close, long MA lookback)) / SMA(close, long MA lookback) < confluence distance; abs(level - BB upper) / BB upper < confluence distance; abs(level - BB middle) / BB middle < confluence distance; abs(level - BB lower) / BB lower < confluence distance; level is a round number, with BB = BB(close, bb lookback, bb multiplier) and all values on the current base bar, where a round number is an integer if level >= 1, else round(level * 100) is a multiple of sub-one round step
+Calculation: level score(level, touches) = min(touches * touch weight, touch cap) + level confluence(level) * confluence weight + base score
+Calculation: upper level = lowest level above close among resistance clusters with level score(level, touches) >= min score, on the current base bar
+Calculation: lower level = highest level below close among support clusters with level score(level, touches) >= min score, on the current base bar
+Calculation: range position = (close - lower level) / (upper level - lower level) * 100, on the current base bar, when both levels exist
+Calculation: bullish setup = fast EMA[n] > slow EMA[n] AND close[n] > open[n] AND (open[n] < fast EMA[n] OR open[n] < slow EMA[n]) AND close[n] > fast EMA[n] AND close[n] > slow EMA[n] AND NOT T2 bearish AND body ratio[n] >= body threshold AND EMA gap[n] >= EMA gap threshold AND (RSI[n] > RSI midline OR stoch RSI K[n] < stoch midline) AND (S/R filter disabled OR range position <= long zone max), on T1
+Calculation: bearish setup = fast EMA[n] < slow EMA[n] AND close[n] < open[n] AND (open[n] > fast EMA[n] OR open[n] > slow EMA[n]) AND close[n] < fast EMA[n] AND close[n] < slow EMA[n] AND NOT T2 bullish AND body ratio[n] >= body threshold AND EMA gap[n] >= EMA gap threshold AND (RSI[n] < RSI midline OR stoch RSI K[n] > stoch midline) AND (S/R filter disabled OR range position >= short zone min), on T1
+Long: counter-trade disabled AND bullish setup
+Long: counter-trade enabled AND bearish setup
+Short: counter-trade disabled AND bearish setup
+Short: counter-trade enabled AND bullish setup

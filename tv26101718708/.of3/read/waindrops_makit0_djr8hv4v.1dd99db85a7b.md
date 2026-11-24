@@ -1,0 +1,3 @@
+Calculation: phase-adjusted VWAP difference in ticks = if the current bar is before the period midpoint, (VWAP(hlc3, volume, current period's first half through current bar) − last calculated VWAP(hlc3, volume, right half) of the previous period) / tick size; otherwise, (VWAP(hlc3, volume, current period's second half through current bar) − VWAP(hlc3, volume, current period's first half through the midpoint)) / tick size
+Long: phase-adjusted VWAP difference in ticks > neutral-threshold parameter
+Short: phase-adjusted VWAP difference in ticks < −neutral-threshold parameter

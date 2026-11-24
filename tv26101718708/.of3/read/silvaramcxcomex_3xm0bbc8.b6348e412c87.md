@@ -1,0 +1,17 @@
+Calculation: silver price difference = foreign silver close * USD/INR exchange rate * (1000 / 31.1034768) * (1 + silver import duty percent / 100) - local silver close
+Calculation: gold price difference = foreign gold close * USD/INR exchange rate * 100 / 311 * (1 + gold import duty percent / 100) - local gold close
+Long: crosses above(silver price difference, silver upside-entry level)
+Short: crosses below(silver price difference, silver downside-entry level)
+Exit: long or short, crosses(silver price difference, silver exit level)
+Long: crosses above(gold price difference, gold upside-entry level)
+Short: crosses below(gold price difference, gold downside-entry level)
+Exit: long or short, crosses(gold price difference, gold exit level)
+Long: crossunder(Gold/Silver ratio close from the still-forming T1 bar sampled on chart bars, Gold/Silver buy level)
+Short: crossover(Gold/Silver ratio close from the still-forming T1 bar sampled on chart bars, Gold/Silver sell level)
+Exit: long or short, cross(Gold/Silver ratio close from the still-forming T1 bar sampled on chart bars, Gold/Silver free level)
+Long: crossunder(Gold/Platinum ratio close from the still-forming T1 bar sampled on chart bars, Gold/Platinum buy level)
+Short: crossover(Gold/Platinum ratio close from the still-forming T1 bar sampled on chart bars, Gold/Platinum sell level)
+Exit: long or short, cross(Gold/Platinum ratio close from the still-forming T1 bar sampled on chart bars, Gold/Platinum free level)
+Long: crossunder(Platinum/Silver ratio close from the still-forming T1 bar sampled on chart bars, Platinum/Silver buy level)
+Short: crossover(Platinum/Silver ratio close from the still-forming T1 bar sampled on chart bars, Platinum/Silver sell level)
+Exit: long or short, cross(Platinum/Silver ratio close from the still-forming T1 bar sampled on chart bars, Platinum/Silver free level)

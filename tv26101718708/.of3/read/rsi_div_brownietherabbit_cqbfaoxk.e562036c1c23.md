@@ -1,0 +1,36 @@
+Calculation: Rsi = RSI(close, RSI length)
+Calculation: EmaShort = EMA(close, short EMA length), where short EMA length < medium EMA length < long EMA length
+Calculation: EmaMedium = EMA(close, medium EMA length)
+Calculation: EmaLong = EMA(close, long EMA length)
+Calculation: BullLine(n) = the n-th most recent line joining consecutive pivot lows of PivotLow(Rsi, pivot left bars, pivot right bars), each drawn at the later pivot low when the bars between the two pivot bars are within range min to range max AND ((low at later pivot < low at earlier pivot AND Rsi at later pivot > Rsi at earlier pivot) OR (low at later pivot > low at earlier pivot AND Rsi at later pivot < Rsi at earlier pivot))
+Calculation: BearLine(n) = the n-th most recent line joining consecutive pivot highs of PivotHigh(Rsi, pivot left bars, pivot right bars), each drawn at the later pivot high when the bars between the two pivot bars are within range min to range max AND ((high at later pivot > high at earlier pivot AND Rsi at later pivot < Rsi at earlier pivot) OR (high at later pivot < high at earlier pivot AND Rsi at later pivot > Rsi at earlier pivot))
+Calculation: Slope(L) = (Rsi at the later pivot bar of L - Rsi at the earlier pivot bar of L) / max(bars between the two pivot bars of L, 1)
+Calculation: BearLineDepth = largest value of (BearLine(ray selector)[i] - Rsi[i]) for i in 1 to approach lookback
+Calculation: BearLineDepthAge = the i at which BearLineDepth is largest
+Calculation: BullLineDepth = largest value of (Rsi[i] - BullLine(ray selector)[i]) for i in 1 to approach lookback
+Calculation: BullLineDepthAge = the i at which BullLineDepth is largest
+Calculation: StrictBullRay = Rsi crosses above BearLine(ray selector) AND BearLineDepth >= min depth gap AND BearLineDepthAge >= min bars since depth AND (BearLine(ray selector)[i] - Rsi[i] > pre-break buffer for every i in 1 to pre-break bars) AND Rsi - Rsi[1] >= min RSI jump
+Calculation: StrictBearRay = Rsi crosses below BullLine(ray selector) AND BullLineDepth >= min depth gap AND BullLineDepthAge >= min bars since depth AND (Rsi[i] - BullLine(ray selector)[i] > pre-break buffer for every i in 1 to pre-break bars) AND Rsi[1] - Rsi >= min RSI jump
+Calculation: ChannelBreakUp = channel module on AND BearLine(1) and BearLine(2) both exist AND abs(Slope(BearLine(1)) - Slope(BearLine(2))) <= channel slope tolerance AND abs(BearLine(1) - BearLine(2)) >= channel min gap AND (min(BearLine(1), BearLine(2))[i] - channel buffer <= Rsi[i] <= max(BearLine(1), BearLine(2))[i] + channel buffer for every i in 1 to channel bars) AND Rsi crosses above max(BearLine(1), BearLine(2))
+Calculation: ChannelBreakDown = channel module on AND BullLine(1) and BullLine(2) both exist AND abs(Slope(BullLine(1)) - Slope(BullLine(2))) <= channel slope tolerance AND abs(BullLine(1) - BullLine(2)) >= channel min gap AND (min(BullLine(1), BullLine(2))[i] - channel buffer <= Rsi[i] <= max(BullLine(1), BullLine(2))[i] + channel buffer for every i in 1 to channel bars) AND Rsi crosses below min(BullLine(1), BullLine(2))
+Calculation: VolumePass = volume filter off OR volume >= SMA(volume, volume MA length) * volume multiplier
+Calculation: HighVolRecent = confluence module on AND (for some bar among the last confluence window bars, including the current bar, volume / SMA(volume, confluence volume MA length) >= major multiplier OR >= extreme multiplier)
+Calculation: PrevDayHigh = high[1] of the last completed T2 bar
+Calculation: PrevDayLow = low[1] of the last completed T2 bar
+Calculation: PreMarketHigh = highest high of chart bars inside the pre-market session window since the current T2 bar began
+Calculation: PreMarketLow = lowest low of chart bars inside the pre-market session window since the current T2 bar began
+Calculation: CloseNear(x) = abs(close - x) / close * 100 <= level proximity
+Calculation: NearKeyLevel = levels module on AND ((previous-day display on AND (CloseNear(PrevDayHigh) OR CloseNear(PrevDayLow))) OR (pre-market display on AND (CloseNear(PreMarketHigh) OR CloseNear(PreMarketLow))))
+Calculation: DecisionLevel = the price of whichever is later by pivot bar among the last confirmed PivotHigh(high, decision lookback, decision lookback) and the last confirmed PivotLow(low, decision lookback, decision lookback)
+Calculation: BullFilters = (bar is closed OR (intra-bar firing on AND chart timeframe in {T3,T4,T5,T6} AND close > open)) AND VolumePass AND (trend filter off OR EmaShort >= EmaMedium OR EmaMedium >= EmaLong OR (trend tiered mode AND EmaShort < EmaMedium AND EmaMedium < EmaLong AND StrictBullRay AND VolumePass)) AND (zone filter off OR Rsi <= zone bull max OR (Rsi > zone bull max AND Rsi < zone bear min AND neutral-zone pass on AND StrictBullRay AND VolumePass)) AND (MTF filter off OR RSI(close, T1 RSI length, T1, last completed bar) < T1 bull max) AND (fan-out filter off OR (EmaShort > EmaMedium AND EmaMedium > EmaLong AND abs(EmaShort - EmaLong) / close * 100 >= fan-out min spacing)) AND (level-proximity requirement off OR NearKeyLevel) AND (confluence-only mode off OR (HighVolRecent AND (counter-trend requirement off OR close < EmaLong)))
+Calculation: BearFilters = (bar is closed OR (intra-bar firing on AND chart timeframe in {T3,T4,T5,T6} AND close < open)) AND VolumePass AND (trend filter off OR EmaShort <= EmaMedium OR EmaMedium <= EmaLong OR (trend tiered mode AND EmaShort > EmaMedium AND EmaMedium > EmaLong AND StrictBearRay AND VolumePass)) AND (zone filter off OR Rsi >= zone bear min OR (Rsi > zone bull max AND Rsi < zone bear min AND neutral-zone pass on AND StrictBearRay AND VolumePass)) AND (MTF filter off OR RSI(close, T1 RSI length, T1, last completed bar) > T1 bear min) AND (fan-out filter off OR (EmaShort < EmaMedium AND EmaMedium < EmaLong AND abs(EmaShort - EmaLong) / close * 100 >= fan-out min spacing)) AND (level-proximity requirement off OR NearKeyLevel) AND (confluence-only mode off OR (HighVolRecent AND (counter-trend requirement off OR close > EmaLong)))
+Long: strict-only on AND (StrictBullRay OR ChannelBreakUp) AND BullFilters
+Long: strict-only off AND raw cross display on AND (Rsi crosses above BearLine(ray selector) OR ChannelBreakUp) AND BullFilters
+Short: strict-only on AND (StrictBearRay OR ChannelBreakDown) AND BearFilters
+Short: strict-only off AND raw cross display on AND (Rsi crosses below BullLine(ray selector) OR ChannelBreakDown) AND BearFilters
+Long: decision module on AND close > DecisionLevel * (1 + bias buffer / 100)
+Short: decision module on AND close < DecisionLevel * (1 - bias buffer / 100)
+Exit: long, decision module on AND close < DecisionLevel
+Exit: short, decision module on AND close > DecisionLevel
+Exit: long, invalidation on AND 1 <= bars since long entry <= invalidation window AND Rsi crosses below the BearLine(ray selector) line selected at the long entry bar
+Exit: short, invalidation on AND 1 <= bars since short entry <= invalidation window AND Rsi crosses above the BullLine(ray selector) line selected at the short entry bar

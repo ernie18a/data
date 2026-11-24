@@ -1,0 +1,20 @@
+Calculation: Momentum = UltimateSmoother(RobZ(RSI(close, L) − 50, N), S), where RobZ(x, N) = (x − median(x, N)) / (1.4826 × median(|x − median(x, N)|, N))
+Calculation: HigherTFTrend(T) = sign(RSI(close, L) − RSI(close, L)[J]) on T bars, read at the last completed T bar
+Calculation: PL_k(x) = x at the bar of the k-th most recent PivotLow(Momentum, P, P) confirmed before this bar, for k = 1, 2
+Calculation: PH_k(x) = x at the bar of the k-th most recent PivotHigh(Momentum, P, P) confirmed before this bar, for k = 1, 2
+Calculation: SlotZ(x, Ms) = z-score of the mean of x over past bars in the same time-of-day slot of Ms minutes as this bar
+Calculation: BullPat = PivotLow(Momentum, P, P) exists AND bar index − PL_1(bar index) ≤ G + P AND Momentum[P] > PL_1(Momentum) AND Momentum[P] − PL_1(Momentum) ≥ D × stdev(Momentum, N) AND close[P] < PL_1(close) AND (Q = 2 OR (PL_1(Momentum) > PL_2(Momentum) AND PL_1(close) < PL_2(close)))
+Calculation: HidBull = PivotLow(Momentum, P, P) exists AND bar index − PL_1(bar index) ≤ G + P AND PL_1(Momentum) > Momentum[P] AND PL_1(Momentum) − Momentum[P] ≥ D × stdev(Momentum, N) AND close[P] > PL_1(close) AND (Q = 2 OR (PL_1(Momentum) < PL_2(Momentum) AND PL_1(close) > PL_2(close)))
+Calculation: BearPat = PivotHigh(Momentum, P, P) exists AND bar index − PH_1(bar index) ≤ G + P AND PH_1(Momentum) > Momentum[P] AND PH_1(Momentum) − Momentum[P] ≥ D × stdev(Momentum, N) AND close[P] > PH_1(close) AND (Q = 2 OR (PH_1(Momentum) < PH_2(Momentum) AND PH_1(close) > PH_2(close)))
+Calculation: HidBear = PivotHigh(Momentum, P, P) exists AND bar index − PH_1(bar index) ≤ G + P AND Momentum[P] > PH_1(Momentum) AND Momentum[P] − PH_1(Momentum) ≥ D × stdev(Momentum, N) AND close[P] < PH_1(close) AND (Q = 2 OR (PH_1(Momentum) > PH_2(Momentum) AND PH_1(close) < PH_2(close)))
+Calculation: LongEntry = (BullPat OR (B1 AND HidBull)) AND [(HigherTFTrend(T1) > 0) + (HigherTFTrend(T2) > 0) + (HigherTFTrend(T3) > 0)] ≥ H AND (NOT B2 OR (ABS(regime state) ≤ 2.5 AND round(regime state) ≤ 0)) AND (NOT B3 OR ABS(SlotZ(close − close[1], Ms)) ≥ Zt)
+Calculation: ShortEntry = (BearPat OR (B1 AND HidBear)) AND [(HigherTFTrend(T1) < 0) + (HigherTFTrend(T2) < 0) + (HigherTFTrend(T3) < 0)] ≥ H AND (NOT B2 OR (ABS(regime state) ≤ 2.5 AND round(regime state) ≤ 0)) AND (NOT B3 OR ABS(SlotZ(close − close[1], Ms)) ≥ Zt)
+Calculation: BaselineUp = 100 × SMA(upHit, V) / SMA(upTot, V), where upTot = (Momentum[E] ≤ −O) and upHit = upTot AND close − close[E] ≥ (F + C) × ATR(A)[E]; undefined when SMA(upTot, V) = 0
+Calculation: BaselineDn = 100 × SMA(dnHit, V) / SMA(dnTot, V), where dnTot = (Momentum[E] ≥ O) and dnHit = dnTot AND close[E] − close ≥ (F + C) × ATR(A)[E]; undefined when SMA(dnTot, V) = 0
+Calculation: EdgeConfirmed = Ev ≥ U AND 100 × (Wn / Ev − WilsonHalfWidth(Wn, Ev, Zd)) − Bl > 0, where over all bars up to this bar: Ev = sum of LongEntry[E] + sum of ShortEntry[E]; Wn = count of (LongEntry[E] AND close − close[E] ≥ (F + C) × ATR(A)[E]) + count of (ShortEntry[E] AND close[E] − close ≥ (F + C) × ATR(A)[E]); Bl = mean of BaselineUp[E] over LongEntry[E] bars and BaselineDn[E] over ShortEntry[E] bars, skipping undefined values
+Long: BullPat AND [(HigherTFTrend(T1) > 0) + (HigherTFTrend(T2) > 0) + (HigherTFTrend(T3) > 0)] ≥ H AND (NOT B2 OR (ABS(regime state) ≤ 2.5 AND round(regime state) ≤ 0)) AND (NOT B3 OR ABS(SlotZ(close − close[1], Ms)) ≥ Zt)
+Long: B1 AND HidBull AND [(HigherTFTrend(T1) > 0) + (HigherTFTrend(T2) > 0) + (HigherTFTrend(T3) > 0)] ≥ H AND (NOT B2 OR (ABS(regime state) ≤ 2.5 AND round(regime state) ≤ 0)) AND (NOT B3 OR ABS(SlotZ(close − close[1], Ms)) ≥ Zt)
+Long: LongEntry AND EdgeConfirmed
+Short: BearPat AND [(HigherTFTrend(T1) < 0) + (HigherTFTrend(T2) < 0) + (HigherTFTrend(T3) < 0)] ≥ H AND (NOT B2 OR (ABS(regime state) ≤ 2.5 AND round(regime state) ≤ 0)) AND (NOT B3 OR ABS(SlotZ(close − close[1], Ms)) ≥ Zt)
+Short: B1 AND HidBear AND [(HigherTFTrend(T1) < 0) + (HigherTFTrend(T2) < 0) + (HigherTFTrend(T3) < 0)] ≥ H AND (NOT B2 OR (ABS(regime state) ≤ 2.5 AND round(regime state) ≤ 0)) AND (NOT B3 OR ABS(SlotZ(close − close[1], Ms)) ≥ Zt)
+Short: ShortEntry AND EdgeConfirmed

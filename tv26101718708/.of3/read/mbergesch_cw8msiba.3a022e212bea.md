@@ -1,0 +1,3 @@
+Calculation: Relative strength = close / comparative instrument close * comparative-symbol scale * (RS offset - weekly offset adjustment when chart timeframe is T1, otherwise RS offset) / 100
+Long: Relative strength = highest(Relative strength, RS high lookback) AND (price confirmation not required OR high < highest(high, RS high lookback))
+Short: Relative strength = lowest(Relative strength, RS low lookback) AND (price confirmation not required OR low > lowest(low, RS low lookback))

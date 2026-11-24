@@ -1,0 +1,2 @@
+Long: During an active Killzone, if this is its first bar then first-bar detection is enabled, no earlier bullish or bearish FVG has formed in that Killzone, low > high[2], and low − high[2] > ATR(lookback) × gap threshold
+Short: During an active Killzone, if this is its first bar then first-bar detection is enabled, no earlier bullish or bearish FVG has formed in that Killzone, low[2] > high, and low[2] − high > ATR(lookback) × gap threshold

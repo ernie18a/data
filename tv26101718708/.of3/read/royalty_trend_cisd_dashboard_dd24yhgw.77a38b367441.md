@@ -1,0 +1,34 @@
+Calculation: TrendATR = ATR(trend ATR length) if trend ATR method is 1, else SMA(TR, trend ATR length)
+Calculation: STdir = SUPERTREND direction(trend source, trend multiplier, TrendATR), where 1 is bullish and -1 is bearish
+Calculation: StopDist = entry price * stop percent / 100 if percent mode, else stop ATR multiple * ATR(TP ATR length) at the entry bar
+Calculation: TargetDist(k) = entry price * stop percent / 100 * target k R-multiple if percent mode, else target k ATR multiple * ATR(TP ATR length) at the entry bar
+Calculation: BH = highest high from the bar after the entry bar through the prior bar
+Calculation: BL = lowest low from the bar after the entry bar through the prior bar
+Calculation: GreenTop = while a green run is active, the open of its latest green candle raised by any higher open of a later non-green candle; a green run starts at a green candle when none is active and ends at a bearish structure break (low < StructBottom), where GreenTop is appended to the bull-level list; BearCISD also appends GreenTop to the bull-level list
+Calculation: RedBottom = while a red run is active, the open of its latest red candle lowered by any lower open of a later non-red candle; a red run starts at a red candle when none is active and ends at a bullish structure break (high > StructTop), where RedBottom is appended to the bear-level list; BullCISD also appends RedBottom to the bear-level list
+Calculation: StructTop = running highest high: set to a bar's high when it is above StructTop; at a bearish structure break (low < StructBottom) set to the higher of the highs of the candle that last set GreenTop and the bar before it if a green run is active, else to the prior bar's high if the prior candle is green and the current candle is red
+Calculation: StructBottom = running lowest low: set to a bar's low when it is below StructBottom; at a bullish structure break (high > StructTop) set to the lower of the lows of the candle that last set RedBottom and the bar before it if a red run is active, else to the prior bar's low if the prior candle is red and the current candle is green
+Calculation: BullCISD = the index-0 element of the bull-level list is not yet completed AND close > its level AND ((high > low AND (close - low) / (high - low) >= strong-close fraction) OR (two-bar confirmation is enabled AND close[1] > its level)); when true, that element becomes completed
+Calculation: BearCISD = the index-0 element of the bear-level list is not yet completed AND close < its level AND ((high > low AND (high - close) / (high - low) >= strong-close fraction) OR (two-bar confirmation is enabled AND close[1] < its level)); when true, that element becomes completed
+Calculation: CISD state = 1 if BullCISD, -1 if BearCISD, else the previous CISD state (initially 0)
+Calculation: Strength(d) = alignment points + (CISD strong-close points if the last CISD confirmation (BullCISD or BearCISD) was a strong close, else CISD two-bar points) + (momentum sign points if MACD histogram(close, MACD fast length, MACD slow length, MACD signal length) > 0 for d=1, or < 0 for d=-1) + (momentum slope points if MACD histogram > MACD histogram[1] for d=1, or MACD histogram <= MACD histogram[1] for d=-1) + (cloud full points if close > EMA(high, cloud EMA length) for d=1, or close <= EMA(low, cloud EMA length) for d=-1; else cloud partial points if close > EMA(low, cloud EMA length) for d=1, or close <= EMA(high, cloud EMA length) for d=-1; else 0) + (R:R high points if TargetDist(1) / StopDist >= R:R high threshold; else R:R mid points if >= R:R mid threshold; else R:R low points if >= R:R low threshold; else 0) + (freshness points 1 if bars since last CISD confirmation <= freshness bars 1; else freshness points 2 if <= freshness bars 2; else freshness points 3 if <= freshness bars 3; else 0)
+Calculation: Confidence(d) = (HTF agreement points if STdir[1] computed on T1 bars at the last completed T1 bar = d) + (bars-since-change points 1 if bars since last STdir change >= bars-since-change threshold 1; else bars-since-change points 2 if >= threshold 2; else bars-since-change points 3 if >= threshold 3; else 0) + (change-count points 1 if STdir changes within the last change-count window bars including this bar <= change-count threshold 1; else change-count points 2 if <= change-count threshold 2; else 0) + (volatility points 1 if ATR(confidence ATR length) / SMA(ATR(confidence ATR length), volatility baseline length) <= volatility threshold 1; else volatility points 2 if <= volatility threshold 2; else volatility points 3 if <= volatility threshold 3; else 0) + (extension points 1 if abs(close - (EMA(high, cloud EMA length) + EMA(low, cloud EMA length)) / 2) / ATR(confidence ATR length) <= extension threshold 1; else extension points 2 if <= extension threshold 2; else extension points 3 if <= extension threshold 3; else 0)
+Calculation: Pass(d) = true if filter mode is off; Strength(d) >= minimum strength score if filter mode is strength only; Confidence(d) >= minimum confidence if filter mode is confidence only; Strength(d) >= minimum strength score AND Confidence(d) >= minimum confidence if filter mode is both required; Strength(d) >= minimum strength score OR Confidence(d) >= minimum confidence if filter mode is either
+Long: STdir = 1 AND STdir[1] = -1
+Long: STdir = 1 AND CISD state = 1 AND NOT (STdir[1] = 1 AND CISD state[1] = 1)
+Long: STdir = 1 AND CISD state = 1 AND NOT (STdir[1] = 1 AND CISD state[1] = 1) AND Pass(1)
+Long: BullCISD
+Short: STdir = -1 AND STdir[1] = 1
+Short: STdir = -1 AND CISD state = -1 AND NOT (STdir[1] = -1 AND CISD state[1] = -1)
+Short: STdir = -1 AND CISD state = -1 AND NOT (STdir[1] = -1 AND CISD state[1] = -1) AND Pass(-1)
+Short: BearCISD
+Exit: long, low < entry price - StopDist AND StopDist > 0
+Exit: long, high > entry price + TargetDist(3) AND StopDist > 0
+Exit: long, high > entry price + TargetDist(1) AND StopDist > 0
+Exit: long, low < entry price AND BH > entry price + TargetDist(1) AND BH <= entry price + TargetDist(2) AND StopDist > 0
+Exit: long, low < entry price + TargetDist(1) AND BH > entry price + TargetDist(2) AND BH <= entry price + TargetDist(3) AND StopDist > 0
+Exit: short, high > entry price + StopDist AND StopDist > 0
+Exit: short, low < entry price - TargetDist(3) AND StopDist > 0
+Exit: short, low < entry price - TargetDist(1) AND StopDist > 0
+Exit: short, high > entry price AND BL < entry price - TargetDist(1) AND BL >= entry price - TargetDist(2) AND StopDist > 0
+Exit: short, high > entry price - TargetDist(1) AND BL < entry price - TargetDist(2) AND BL >= entry price - TargetDist(3) AND StopDist > 0

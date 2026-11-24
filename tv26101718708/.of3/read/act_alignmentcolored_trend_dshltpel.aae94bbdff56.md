@@ -1,0 +1,16 @@
+Calculation: TheStrat bar(T) = classify the still-forming bar at max(T, chart timeframe), sampled on chart bars, against its last completed bar; T1 is Trigger, T2 State 1, T3 State 2, T4 Direction 1, and T5 Direction 2. Inside means high <= prior high and low >= prior low; 2u means high > prior high, low >= prior low, and close outside the prior range; 2d means low < prior low, high <= prior high, and close outside the prior range; 3u means high > prior high, low < prior low, and close > prior high; 3d means high > prior high, low < prior low, and close < prior low; F2u/F2d mean the respective single-side break closes inside the prior range; F3u/F3d mean both sides break and close inside the prior range, with F3u when close > open and F3d otherwise.
+Calculation: ACT direction = bullish when chart timeframe <= T2 and (close > open(T4) and close > open(T5), or the T4 and T5 opens straddle close and TheStrat bar(T3) is 2u or 3u); bearish when chart timeframe <= T2 and (close < open(T4) and close < open(T5), or the T4 and T5 opens straddle close and TheStrat bar(T3) is 2d or 3d). Each open is from the still-forming effective rung, sampled on chart bars.
+Calculation: ACT active(side) = chart timeframe <= T2 and either (side is bullish, close > open(T4), close > open(T5), and neither [TheStrat bar(T4) is inside, chart high < high(T4)[1], chart low > low(T4)[1], and TheStrat bar(T5) is inside] nor [TheStrat bar(T4) is failed bullish and TheStrat bar(T5) is bullish breakout, or TheStrat bar(T4) is bullish breakout and TheStrat bar(T5) is failed bullish]); (side is bearish, close < open(T4), close < open(T5), and neither [TheStrat bar(T4) is inside, chart high < high(T4)[1], chart low > low(T4)[1], and TheStrat bar(T5) is inside] nor [TheStrat bar(T4) is failed bearish and TheStrat bar(T5) is bearish breakout, or TheStrat bar(T4) is bearish breakout and TheStrat bar(T5) is failed bearish]); or (T4 and T5 opens straddle close, side is bullish, TheStrat bar(T3) is bullish breakout, chart high >= high(T3)[1], chart low > low(T3)[1], and chart close >= high(T3)[1]); or (T4 and T5 opens straddle close, side is bearish, TheStrat bar(T3) is bearish breakout, chart low <= low(T3)[1], chart high < high(T3)[1], and chart close <= low(T3)[1]). Chart high, low, and close conditions are evaluated on chart bars; [1] is the last completed rung bar.
+Calculation: Hold count(T, side) = number of the chart close and the three related-index closes on the chart bar that are above their respective last completed effective T-bar highs when side is bullish, or below their respective last completed effective T-bar lows when side is bearish; current rung highs and lows are aggregated from chart bars.
+Long: ACT direction is bullish
+Short: ACT direction is bearish
+Long: ACT active(bullish)
+Short: ACT active(bearish)
+Long: ACT active(bullish) AND Hold count(T1, bullish) >= 3
+Long: ACT active(bullish) AND Hold count(T2, bullish) >= 3
+Long: ACT active(bullish) AND Hold count(T3, bullish) >= 3
+Long: ACT active(bullish) AND Hold count(T4, bullish) >= 3
+Short: ACT active(bearish) AND Hold count(T1, bearish) >= 3
+Short: ACT active(bearish) AND Hold count(T2, bearish) >= 3
+Short: ACT active(bearish) AND Hold count(T3, bearish) >= 3
+Short: ACT active(bearish) AND Hold count(T4, bearish) >= 3

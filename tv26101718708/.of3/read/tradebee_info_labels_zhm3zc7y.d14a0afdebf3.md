@@ -1,0 +1,2 @@
+Calculation: DPP% = 100 × (highest chart-bar high since the current T1 period began / previous close of T1, last completed bar − 1)
+Short: During a T1 period, after DPP% has reached the breakout percentage and before a short signal has triggered in that period, 100 × (close / previous close of T1, last completed bar − 1) ≤ DPP% × entry percentage / 100

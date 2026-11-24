@@ -1,0 +1,7 @@
+Long: On chart bars, any enabled T1, T2, or T3 current/forming bar has close >= open
+Short: On chart bars, any enabled T1, T2, or T3 current/forming bar has close < open
+Long: At least one of T1, T2, or T3 is enabled, and every enabled level's current/forming bar has close >= open
+Short: At least one of T1, T2, or T3 is enabled, and every enabled level's current/forming bar has close < open
+Long: On chart bars, with signal display enabled, any active T1, T2, or T3 has its low signal enabled, no signal has already fired for that level in its current period, abs(close - low(T, current/forming bar)) <= touch threshold * ATR(chart bars, lookback), abs(close[1] - low(T, current/forming bar)) > touch threshold * ATR(chart bars, lookback), and its high touch condition is false
+Short: On chart bars, with signal display enabled, any active T1, T2, or T3 has its high/low signal enabled, no signal has already fired for that level in its current period, abs(close - high(T, current/forming bar)) <= touch threshold * ATR(chart bars, lookback), and abs(close[1] - high(T, current/forming bar)) > touch threshold * ATR(chart bars, lookback)
+Short: On chart bars, with signal display enabled, any active T1, T2, or T3 has its open signal enabled, no signal has already fired for that level in its current period, abs(close - open(T, current/forming bar)) <= touch threshold * ATR(chart bars, lookback), abs(close[1] - open(T, current/forming bar)) > touch threshold * ATR(chart bars, lookback), and its high and low touch conditions are false

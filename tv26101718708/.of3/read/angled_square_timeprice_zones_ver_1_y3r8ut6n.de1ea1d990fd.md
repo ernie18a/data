@@ -1,0 +1,22 @@
+Calculation: BarsPerSession = round(SessionLen / BarMinutes)
+Calculation: LookbackDays = min(MaxDays, max(1, ceil(BasePeriod / BarsPerSession)))
+Calculation: PriorClose = Close[LookbackDays] of T1 bars, where [1] is the last completed T1 bar, carried onto chart bars
+Calculation: Anchor = (AnchorHigh, AnchorLow, AnchorHighBar, AnchorLowBar) chosen from the SearchBars = max(BasePeriod, BarsPerSession) chart bars going back from the most recent chart bar whose time is not after the open time of the last completed T1 bar: candidates are the window's maximum High (with its bar) and minimum Low (with its bar), plus each pivot high (a window bar, excluding the outermost PivotSpan bars at each end, whose High is not below the High of the PivotSpan bars on each side) and each pivot low (a window bar, excluding the outermost PivotSpan bars at each end, whose Low is not above the Low of the PivotSpan bars on each side); eligible pairs have AnchorHigh > AnchorLow, abs(AnchorHighBar - AnchorLowBar) >= MinSpanFraction * BasePeriod, and AnchorHigh - AnchorLow >= RangeFraction * (window maximum High - window minimum Low); the chosen pair minimizes abs(((AnchorHigh - AnchorLow) / LegA) / max(1, abs(AnchorHighBar - AnchorLowBar) / ScaleDivisor) - LegB / LegA) among eligible pairs, or if none is eligible, is the window maximum High and minimum Low
+Calculation: AnchorEnd = max(AnchorHighBar, AnchorLowBar)
+Calculation: UnitBars = max(1, floor(abs(AnchorHighBar - AnchorLowBar) / ScaleDivisor))
+Calculation: ColWidth = max(1, floor(LegB * UnitBars))
+Calculation: RowHeight = PriorClose * BarMinutes * UnitBars * LegB / SessionLen if IsOption, otherwise AnchorHigh - AnchorLow
+Calculation: Row = floor((Close - PriorClose) / RowHeight)
+Calculation: StickyRow = Row if StickyRow[1] is na, or if Row != StickyRow[1] and Row = Row[1] = ... = Row[HystBars - 1]; otherwise StickyRow[1]
+Calculation: UpperEdge(r, t) = PriorClose + (r + 1) * RowHeight if not DiamondStyle; if DiamondStyle, with yLo = PriorClose + r * RowHeight, yHi = yLo + RowHeight, cy = (yLo + yHi) / 2, x0 = AnchorEnd + floor((t - AnchorEnd) / ColWidth) * ColWidth, x1 = x0 + ColWidth, xc = (x0 + x1) / 2: cy + (yHi - cy) * (t - x0) / max(1, xc - x0) if t <= xc, otherwise yHi - (yHi - cy) * (t - xc) / max(1, x1 - xc)
+Calculation: LowerEdge(r, t) = PriorClose + r * RowHeight if not DiamondStyle; if DiamondStyle, with yLo, yHi, cy, x0, x1, xc as in UpperEdge: cy - (cy - yLo) * (t - x0) / max(1, xc - x0) if t <= xc, otherwise yLo + (cy - yLo) * (t - xc) / max(1, x1 - xc)
+Calculation: BreakState = 1 if Close > UpperEdge(StickyRow, t); -1 if Close < LowerEdge(StickyRow, t); otherwise 0
+Calculation: TimeNodeHit = abs(((t - AnchorEnd) mod ColWidth) - ColWidth / 2) <= max(1, round(TimeNodeFactor * sqrt(ColWidth)))
+Calculation: NearEdge = abs(High - UpperEdge(StickyRow, t)) < PriceEdgeFactor * sqrt(RowHeight) OR abs(Low - LowerEdge(StickyRow, t)) < PriceEdgeFactor * sqrt(RowHeight)
+Calculation: NearPriorLevel = abs(Close - PriorClose) < PriceEdgeFactor * sqrt(RowHeight) OR abs(Close - High[LookbackDays] of T1 bars, [1] = last completed T1 bar) < PriceEdgeFactor * sqrt(RowHeight) OR abs(Close - Low[LookbackDays] of T1 bars, [1] = last completed T1 bar) < PriceEdgeFactor * sqrt(RowHeight)
+Long: BreakState[1] <= 0 AND BreakState = 1 AND (NOT TimeNodeFilter OR TimeNodeHit) AND (NOT PriceEdgeFilter OR NearEdge) AND (NOT PriorFilter OR NearPriorLevel)
+Long: BreakState[1] = -1 AND BreakState >= 0 AND (NOT TimeNodeFilter OR TimeNodeHit) AND (NOT PriceEdgeFilter OR NearEdge) AND (NOT PriorFilter OR NearPriorLevel)
+Long: High >= UpperEdge(Row, t) AND Close < UpperEdge(Row, t) AND (NOT TimeNodeFilter OR TimeNodeHit) AND (NOT PriceEdgeFilter OR NearEdge) AND (NOT PriorFilter OR NearPriorLevel)
+Short: BreakState[1] >= 0 AND BreakState = -1 AND (NOT TimeNodeFilter OR TimeNodeHit) AND (NOT PriceEdgeFilter OR NearEdge) AND (NOT PriorFilter OR NearPriorLevel)
+Short: BreakState[1] = 1 AND BreakState <= 0 AND (NOT TimeNodeFilter OR TimeNodeHit) AND (NOT PriceEdgeFilter OR NearEdge) AND (NOT PriorFilter OR NearPriorLevel)
+Short: Low <= LowerEdge(Row, t) AND Close > LowerEdge(Row, t) AND (NOT TimeNodeFilter OR TimeNodeHit) AND (NOT PriceEdgeFilter OR NearEdge) AND (NOT PriorFilter OR NearPriorLevel)

@@ -1,0 +1,5 @@
+Calculation: range = (highest high, lowest low) during the configured range-building window; reset each trading day and ready when the window ends
+Long: After a confirmed bar in the configured sweep window has low below both range low and that trading day's midnight open, on a confirmed bar in the same trading day with close above range low, if range is ready and bullish bias is not already active
+Short: After a confirmed bar in the configured sweep window has high above both range high and that trading day's midnight open, on a confirmed bar in the same trading day with close below range high, if range is ready and bearish bias is not already active
+Exit: long, confirmed close below range low while bullish bias is active
+Exit: short, confirmed close above range high while bearish bias is active

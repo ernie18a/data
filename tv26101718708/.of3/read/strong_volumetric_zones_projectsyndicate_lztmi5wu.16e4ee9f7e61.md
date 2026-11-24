@@ -1,0 +1,12 @@
+Calculation: Buy volume = sum of volume from T1 bars within each chart bar whose close is at least their open
+Calculation: Sell volume = sum of volume from T1 bars within each chart bar whose close is below their open
+Calculation: Relative volume = (buy volume + sell volume) / SMA(volume, relative-volume lookback), using buy volume + sell volume when the SMA is undefined; a zero denominator yields zero
+Calculation: Delta dominance = abs(buy volume - sell volume) / (buy volume + sell volume), with a zero denominator yielding zero
+Calculation: Footprint row volumes = divide each chart bar's high-low range into the footprint row count; distribute each T1 bar's volume equally among the rows from floor((T1 low - chart low) / row width) through floor((T1 high - chart low) / row width), clipping row indices to the chart bar's range, and classify volume as buy when T1 close is at least T1 open and sell otherwise
+Calculation: Maximum imbalance run = the longest consecutive run across ascending footprint rows where buy volume in a row exceeds max(sell volume in the immediately lower row, zero-volume floor) times the imbalance ratio, or sell volume in a row exceeds max(buy volume in the immediately higher row, zero-volume floor) times the imbalance ratio; a row meeting both tests is buy-sided, and ties retain the first run scanned from low to high; return its length and direction
+Calculation: Near high = close >= high - (high - low) * range-fraction parameter
+Calculation: Near low = close <= low + (high - low) * range-fraction parameter
+Calculation: Absorption = delta dominance > absorption delta-dominance threshold AND abs(close - open) < (high - low) * range-fraction parameter AND relative volume > absorption relative-volume threshold
+Calculation: Exhaustion = relative volume > exhaustion relative-volume threshold AND delta dominance < exhaustion delta-dominance threshold AND (near high OR near low)
+Long: confirmed chart bar with index >= last chart-bar index - profile lookback AND (absorption AND buy volume <= sell volume OR NOT absorption AND exhaustion AND NOT near high AND near low OR NOT absorption AND NOT exhaustion AND maximum imbalance-run length >= minimum imbalance-run length AND direction is buy-sided)
+Short: confirmed chart bar with index >= last chart-bar index - profile lookback AND (absorption AND buy volume > sell volume OR NOT absorption AND exhaustion AND near high OR NOT absorption AND NOT exhaustion AND maximum imbalance-run length >= minimum imbalance-run length AND direction is sell-sided)

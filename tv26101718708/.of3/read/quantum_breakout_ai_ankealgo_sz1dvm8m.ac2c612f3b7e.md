@@ -1,0 +1,4 @@
+Long: A bar closes with a live consolidation zone and close > the zone’s highest high since its range began
+Short: A bar closes with a live consolidation zone and close < the zone’s lowest low since its range began
+Exit long: A bar closes and low <= the zone’s lowest low since its range began - ATR(ATR period) * stop ATR multiple OR high >= entry price + (entry price - (the zone’s lowest low since its range began - ATR(ATR period) * stop ATR multiple)) * furthest enabled target multiple OR a subsequent consolidation range reaches its minimum-duration parameter
+Exit short: A bar closes and high >= the zone’s highest high since its range began + ATR(ATR period) * stop ATR multiple OR low <= entry price - ((the zone’s highest high since its range began + ATR(ATR period) * stop ATR multiple) - entry price) * furthest enabled target multiple OR a subsequent consolidation range reaches its minimum-duration parameter

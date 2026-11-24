@@ -1,0 +1,4 @@
+Long: selected-source close > selected-source open OR (PivotLow(low, pivot strength, pivot strength) and PivotLow(selected-source volume, pivot strength, pivot strength) confirm on the same chart bar AND the current price pivot low < the previous confirmed price pivot low AND the current volume pivot low > the previous confirmed volume pivot low)
+Short: selected-source close ≤ selected-source open OR (PivotHigh(high, pivot strength, pivot strength) and PivotHigh(selected-source volume, pivot strength, pivot strength) confirm on the same chart bar AND the current price pivot high > the previous confirmed price pivot high AND the current volume pivot high < the previous confirmed volume pivot high)
+Exit: long, high ≥ entry price × (1 + target percentage / 100) OR low ≤ entry price × (1 − stop percentage / 100)
+Exit: short, low ≤ entry price × (1 − target percentage / 100) OR high ≥ entry price × (1 + stop percentage / 100)

@@ -1,0 +1,20 @@
+Calculation: Consolidation box = while no box is active, a window of the minimum consolidation bars qualifies when every candle body is within the first candle's body range, extended above and below by current ATR(setup lookback) × margin factor; if the candle-size filter is enabled, each candle's high-low must also be no greater than its candle-size multiplier × ATR(setup lookback) on that candle's preceding chart bar when that ATR is available and positive. The box boundaries are the first candle's body high and body low. The box becomes active on the qualifying window's final bar and expires at the maximum duration if no breakout occurs; a breakout on the expiry bar is processed.
+Calculation: Shared confluence points = the sum of the separate configured weights for each true condition: abs(close - open) > SMA(abs(close - open), body lookback) × body multiplier; ADX(DMI lookback, the same ADX smoothing lookback) > minimum ADX; volume > SMA(volume, volume lookback) × volume multiplier; ATR(setup lookback) > 0 AND box width / ATR(setup lookback) < maximum zone width/ATR; elapsed chart bars since the box's first candle >= minimum consolidation bars + duration premium.
+Calculation: Long directional points = the sum of the price-vs-EMA weight when close > EMA(close, trend lookback), the EMA-slope weight when EMA(close, slope lookback) > EMA(close, slope lookback)[1], and the RSI weight when RSI(close, RSI lookback) > neutral RSI level.
+Calculation: Short directional points = the sum of the price-vs-EMA weight when close < EMA(close, trend lookback), the EMA-slope weight when EMA(close, slope lookback) < EMA(close, slope lookback)[1], and the RSI weight when RSI(close, RSI lookback) < neutral RSI level.
+Calculation: Long confluence score = shared confluence points + long directional points.
+Calculation: Short confluence score = shared confluence points + short directional points.
+Long: close > EMA(close, trend lookback) OR EMA(close, slope lookback) > EMA(close, slope lookback)[1] OR RSI(close, RSI lookback) > neutral RSI level
+Short: close < EMA(close, trend lookback) OR EMA(close, slope lookback) < EMA(close, slope lookback)[1] OR RSI(close, RSI lookback) < neutral RSI level
+Long: long directional points > short directional points
+Short: short directional points > long directional points
+Long: consolidation box active AND close > box upper boundary
+Short: consolidation box active AND close < box lower boundary
+Long: consolidation box active AND close > box upper boundary AND long confluence score >= minimum score
+Short: consolidation box active AND close < box lower boundary AND short confluence score >= minimum score
+Exit: Long, on a chart bar after entry, low <= entry price - ATR(tester lookback) on the chart bar before entry × stop-loss multiple
+Exit: Long, on a chart bar after entry, high >= entry price + ATR(tester lookback) on the chart bar before entry × take-profit multiple AND low > entry price - ATR(tester lookback) on the chart bar before entry × stop-loss multiple
+Exit: Long, on a chart bar after entry, elapsed chart bars since entry > maximum holding bars AND low > entry price - ATR(tester lookback) on the chart bar before entry × stop-loss multiple AND high < entry price + ATR(tester lookback) on the chart bar before entry × take-profit multiple
+Exit: Short, on a chart bar after entry, high >= entry price + ATR(tester lookback) on the chart bar before entry × stop-loss multiple
+Exit: Short, on a chart bar after entry, low <= entry price - ATR(tester lookback) on the chart bar before entry × take-profit multiple AND high < entry price + ATR(tester lookback) on the chart bar before entry × stop-loss multiple
+Exit: Short, on a chart bar after entry, elapsed chart bars since entry > maximum holding bars AND high < entry price + ATR(tester lookback) on the chart bar before entry × stop-loss multiple AND low > entry price - ATR(tester lookback) on the chart bar before entry × take-profit multiple

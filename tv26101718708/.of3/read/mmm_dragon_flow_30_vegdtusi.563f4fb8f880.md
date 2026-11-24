@@ -1,0 +1,2 @@
+Long: close >= open OR (close > EMA(close, shorter lookback) AND EMA(close, shorter lookback) > EMA(close, longer lookback))
+Short: close < open OR (close < EMA(close, shorter lookback) AND EMA(close, shorter lookback) < EMA(close, longer lookback))

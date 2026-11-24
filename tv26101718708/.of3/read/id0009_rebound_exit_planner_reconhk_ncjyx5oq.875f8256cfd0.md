@@ -1,0 +1,1 @@
+Long: crossover(EMA(close, shorter lookback), EMA(close, longer lookback)) AND close > EMA(close, longer lookback) AND (RSI/volume filter disabled OR RSI(close, RSI lookback) > RSI threshold OR volume > SMA(volume, volume lookback))

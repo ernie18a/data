@@ -1,0 +1,7 @@
+Calculation: setup range high = highest(high, setup lookback)[1]
+Calculation: setup range low = lowest(low, setup lookback)[1]
+Calculation: range normalizer = max(ATR(ATR length), true range when ATR is unavailable, minimum price increment)
+Calculation: fast context = EMA(close, fast context EMA length)
+Calculation: slow context = EMA(close, slow context EMA length)
+Long: setup range high > setup range low AND (setup range high - setup range low) / range normalizer <= sensitivity-adjusted maximum formation width AND close <= setup range high + range normalizer * trigger buffer AND close >= setup range low - range normalizer * trigger buffer AND (setup side is Long OR (setup side is Auto AND fast context >= slow context AND close >= slow context)) AND (close >= slow context OR fast context > slow context) AND (confirmation mode is Live Updating OR the current bar is confirmed)
+Short: setup range high > setup range low AND (setup range high - setup range low) / range normalizer <= sensitivity-adjusted maximum formation width AND close <= setup range high + range normalizer * trigger buffer AND close >= setup range low - range normalizer * trigger buffer AND (setup side is Short OR (setup side is Auto AND (fast context < slow context OR close < slow context))) AND (close <= slow context OR fast context < slow context) AND (confirmation mode is Live Updating OR the current bar is confirmed)

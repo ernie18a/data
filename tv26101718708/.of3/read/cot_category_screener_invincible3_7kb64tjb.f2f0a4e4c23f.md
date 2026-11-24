@@ -1,0 +1,4 @@
+Calculation: Participant difference = (selected participant COT long positions − selected participant COT short positions) − (other participant COT long positions − other participant COT short positions); on chart bars, use current, still-forming T1 COT values and advance report history when T1 report time changes
+Calculation: Weighted difference = short weight × Stochastic(Participant difference, shorter T1-report lookback) + medium weight × Stochastic(Participant difference, intermediate T1-report lookback) + long weight × Stochastic(Participant difference, longer T1-report lookback); each Stochastic uses available T1 reports up to its lookback and returns 50 when its range is zero
+Long: Weighted difference is available AND Weighted difference < lower threshold
+Short: Weighted difference is available AND Weighted difference > upper threshold

@@ -1,0 +1,21 @@
+Calculation: current-day high = running maximum of chart-bar highs since the configured day boundary
+Calculation: current-day low = running minimum of chart-bar lows since the configured day boundary
+Calculation: premarket high = highest chart-bar high from the configured day boundary until regular-session start
+Calculation: premarket low = lowest chart-bar low from the configured day boundary until regular-session start
+Calculation: opening-range high = highest chart-bar high from regular-session start until the opening-range duration ends; valid after that duration
+Calculation: opening-range low = lowest chart-bar low from regular-session start until the opening-range duration ends; valid after that duration
+Calculation: regular-session day open = open of the first chart bar in the regular session
+Calculation: prior close from T1 = close of the last completed T1 bar, sampled on chart bars
+Calculation: prior high from T1 = high of the last completed T1 bar, sampled on chart bars
+Calculation: prior low from T1 = low of the last completed T1 bar, sampled on chart bars
+Calculation: prior high from T2 = high of the last completed T2 bar, sampled on chart bars
+Calculation: prior low from T2 = low of the last completed T2 bar, sampled on chart bars
+Calculation: prior high from T3 = high of the last completed T3 bar, sampled on chart bars
+Calculation: prior low from T3 = low of the last completed T3 bar, sampled on chart bars
+Calculation: retest buffer = ATR(ATR lookback) * retest-buffer multiplier
+Long: (in regular session AND ((confirmed-close mode AND confirmed chart bar AND close > current-day high[1]) OR (intrabar mode AND high > current-day high[1]))) OR ((crosses above a defined premarket high, completed opening-range high, prior close from T1, regular-session day open, prior high from T1, prior high from T2, or prior high from T3) AND (confirmed-close mode is off OR chart bar is confirmed))
+Short: (in regular session AND ((confirmed-close mode AND confirmed chart bar AND close < current-day low[1]) OR (intrabar mode AND low < current-day low[1]))) OR ((crosses below a defined premarket low, completed opening-range low, prior close from T1, regular-session day open, prior low from T1, prior low from T2, or prior low from T3) AND (confirmed-close mode is off OR chart bar is confirmed))
+Long: On a confirmed chart bar, for any one of the defined premarket low, completed opening-range low, prior close from T1, regular-session day open, prior low from T1, prior low from T2, or prior low from T3, low < that level AND close > that level AND the same level's rejection condition was false on the previous chart bar; the day-open level applies only in regular session
+Short: On a confirmed chart bar, for any one of the defined premarket high, completed opening-range high, prior close from T1, regular-session day open, prior high from T1, prior high from T2, or prior high from T3, high > that level AND close < that level AND the same level's rejection condition was false on the previous chart bar; the day-open level applies only in regular session
+Long: On a confirmed chart bar, for any one of the premarket high, completed opening-range high, prior high from T1, prior high from T2, or prior high from T3, low <= that level + retest buffer AND close > that level after an earlier confirmed close above that level since the current day boundary, while no support flip is active for that level; for prior close from T1 or regular-session day open, an earlier confirmed close on either side of the level is sufficient; the opening-range level must be complete and the day-open level applies only in regular session
+Short: On a confirmed chart bar, for any one of the premarket low, completed opening-range low, prior low from T1, prior low from T2, or prior low from T3, high >= that level - retest buffer AND close < that level after an earlier confirmed close below that level since the current day boundary, while no resistance flip is active for that level; for prior close from T1 or regular-session day open, an earlier confirmed close on either side of the level is sufficient; the opening-range level must be complete and the day-open level applies only in regular session
