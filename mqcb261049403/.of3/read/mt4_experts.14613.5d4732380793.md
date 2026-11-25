@@ -1,0 +1,2 @@
+Long: high > UpperFractal(high, T1, most recent confirmed value from completed bars, read on chart bars) + buffer AND that upper fractal level differs from the previously triggered upper fractal level
+Short: low < LowerFractal(low, T1, most recent confirmed value from completed bars, read on chart bars) - buffer AND that lower fractal level differs from the previously triggered lower fractal level

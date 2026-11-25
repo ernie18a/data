@@ -1,0 +1,4 @@
+Calculation: Entry MACD = MACD(close, entry fast lookback, entry slow lookback)
+Calculation: Trend MACD = MACD(close, trend fast lookback, trend slow lookback)
+Long: (previous closed short position exit price >= its entry price) OR ((no previous closed position OR previous closed long position exit price > its entry price OR previous closed short position exit price < its entry price) AND Entry MACD[2] > Entry MACD[1] AND Entry MACD[1] < Entry MACD[0] AND Trend MACD[1] > Trend MACD[2])
+Short: (previous closed long position exit price <= its entry price) OR ((no previous closed position OR previous closed long position exit price > its entry price OR previous closed short position exit price < its entry price) AND Entry MACD[2] < Entry MACD[1] AND Entry MACD[1] > Entry MACD[0] AND Trend MACD[1] < Trend MACD[2])

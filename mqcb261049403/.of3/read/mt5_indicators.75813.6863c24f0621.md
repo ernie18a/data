@@ -1,0 +1,3 @@
+Calculation: Mean RSI = arithmetic mean of RSI(close, RSI lookback, T1, current forming bar) through RSI(close, RSI lookback, T7, current forming bar), using only values greater than zero; zero if none
+Long: On any of T1 through T7, RSI(close, RSI lookback, that timeframe, current forming bar) >= bullish level AND RSI(close, RSI lookback, that timeframe, current forming bar) < overbought level, OR Mean RSI >= bullish level
+Short: On any of T1 through T7, RSI(close, RSI lookback, that timeframe, current forming bar) > oversold level AND RSI(close, RSI lookback, that timeframe, current forming bar) <= bearish level, OR Mean RSI > 0 AND Mean RSI <= bearish level

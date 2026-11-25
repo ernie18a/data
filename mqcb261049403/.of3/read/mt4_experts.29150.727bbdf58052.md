@@ -1,0 +1,5 @@
+Calculation: ATR value = ATR(lookback, T1, last completed bar), evaluated on chart bars
+Long: On chart bars, position is flat AND open of the last completed T1 bar < close of the last completed T1 bar
+Short: On chart bars, position is flat AND open of the last completed T1 bar > close of the last completed T1 bar
+Exit: long, low <= entry price - max(ATR value at entry * stop factor, minimum permitted stop distance) OR high >= entry price + max(ATR value at entry * target factor, minimum permitted stop distance) OR (highest high since entry > entry price + trailing activation distance AND trailing distance > minimum permitted stop distance AND low <= highest high since activation - trailing distance)
+Exit: short, high >= entry price + max(ATR value at entry * stop factor, minimum permitted stop distance) OR low <= entry price - max(ATR value at entry * target factor, minimum permitted stop distance) OR (lowest low since entry < entry price - trailing activation distance AND trailing distance > minimum permitted stop distance AND high >= lowest low since activation + trailing distance)

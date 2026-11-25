@@ -1,0 +1,2 @@
+Exit: long, position side matches its configured basket side AND ((profit threshold > 0 AND order profit > 0 AND order profit >= profit threshold) OR (loss threshold < 0 AND order profit < 0 AND order profit <= -loss threshold))
+Exit: short, position side matches its configured basket side AND ((profit threshold > 0 AND order profit > 0 AND order profit >= profit threshold) OR (loss threshold < 0 AND order profit < 0 AND order profit <= -loss threshold))

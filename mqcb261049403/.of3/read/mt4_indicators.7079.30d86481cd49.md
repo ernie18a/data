@@ -1,0 +1,10 @@
+Long: Momentum(close, lookback) > Momentum threshold
+Short: Momentum(close, lookback) <= Momentum threshold
+Long: DeMarker(lookback) > DeMarker threshold AND Force Index(close, volume, lookback) > 0
+Short: DeMarker(lookback) < DeMarker threshold AND Force Index(close, volume, lookback) < 0
+Long: RSI(close, lookback) > RSI threshold AND MACD(close, fast lookback, slower lookback, signal lookback) main line > signal line AND +DI(high, low, close, lookback) > -DI(high, low, close, lookback)
+Short: RSI(close, lookback) < RSI threshold AND MACD(close, fast lookback, slower lookback, signal lookback) main line < signal line AND +DI(high, low, close, lookback) < -DI(high, low, close, lookback)
+Long: MA(close, shorter lookback, first MA method) > MA(close, longer lookback, second MA method) AND MA(close, shorter lookback, first MA method)[1] < MA(close, longer lookback, second MA method)[1] AND MA(close, shorter lookback, first MA method) > MA(close, longer lookback, second MA method) on the next chart bar
+Short: MA(close, shorter lookback, first MA method) < MA(close, longer lookback, second MA method) AND MA(close, shorter lookback, first MA method)[1] > MA(close, longer lookback, second MA method)[1] AND MA(close, shorter lookback, first MA method) < MA(close, longer lookback, second MA method) on the next chart bar
+Long: EMA(close, shorter lookback) crosses above EMA(close, longer lookback) AND RSI(close, lookback) > RSI threshold AND MACD(close, fast lookback, slower lookback, signal lookback) main line crosses above signal line AND +DI(high, low, close, lookback) crosses above -DI(high, low, close, lookback)
+Short: EMA(close, shorter lookback) crosses below EMA(close, longer lookback) AND RSI(close, lookback) < RSI threshold AND MACD(close, fast lookback, slower lookback, signal lookback) main line crosses below signal line AND +DI(high, low, close, lookback) crosses below -DI(high, low, close, lookback)

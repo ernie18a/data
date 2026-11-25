@@ -1,0 +1,4 @@
+Long: On chart ticks, close(T1, still-forming bar) > SMA(close, SMA lookback, T1, still-forming bar) AND Momentum(close, Momentum lookback, T1, still-forming bar) > Momentum threshold AND close(T1, still-forming bar) > close(T1, last completed bar)
+Short: On chart ticks, close(T1, still-forming bar) < SMA(close, SMA lookback, T1, still-forming bar) AND Momentum(close, Momentum lookback, T1, still-forming bar) < Momentum threshold AND close(T1, still-forming bar) < close(T1, last completed bar)
+Exit: long, On chart ticks, Momentum(close, Momentum lookback, T1, still-forming bar) < Momentum threshold
+Exit: short, On chart ticks, Momentum(close, Momentum lookback, T1, still-forming bar) > Momentum threshold

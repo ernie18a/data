@@ -1,0 +1,3 @@
+Calculation: USD strength score = −(close(USD-per-EUR exchange rate) − EMA(open(USD-per-EUR exchange rate), lookback)) / point size(USD-per-EUR exchange rate) − (close(USD-per-GBP exchange rate) − EMA(open(USD-per-GBP exchange rate), lookback)) / point size(USD-per-GBP exchange rate) − (close(USD-per-AUD exchange rate) − EMA(open(USD-per-AUD exchange rate), lookback)) / point size(USD-per-AUD exchange rate) + (close(JPY-per-USD exchange rate) − EMA(open(JPY-per-USD exchange rate), lookback)) / point size(JPY-per-USD exchange rate)
+Long: USD strength score > 0
+Short: USD strength score < 0

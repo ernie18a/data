@@ -1,0 +1,2 @@
+Long: On each chart bar, for every enabled timeframe Ti (T1–T7), MA(applied price, Ti-specific lookback, method, Ti, last completed bar) > MA(applied price, Ti-specific lookback, method, Ti, the bar before the last completed bar)
+Short: On each chart bar, for every enabled timeframe Ti (T1–T7), MA(applied price, Ti-specific lookback, method, Ti, last completed bar) < MA(applied price, Ti-specific lookback, method, Ti, the bar before the last completed bar)

@@ -1,0 +1,3 @@
+Calculation: midpoint = (highest MACD(applied price, fast lookback, slow lookback) over the prior lookback bars + lowest MACD(applied price, fast lookback, slow lookback) over the prior lookback bars) / 2
+Long: MACD(applied price, fast lookback, slow lookback) > EMA(MACD(applied price, fast lookback, slow lookback), signal lookback) AND MACD(applied price, fast lookback, slow lookback) > midpoint
+Short: MACD(applied price, fast lookback, slow lookback) < EMA(MACD(applied price, fast lookback, slow lookback), signal lookback) AND MACD(applied price, fast lookback, slow lookback) < midpoint

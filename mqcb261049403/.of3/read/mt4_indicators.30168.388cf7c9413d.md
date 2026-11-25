@@ -1,0 +1,2 @@
+Long: BASE currency power > its average AND QUOTE currency power < its average in equal trend mode, OR BASE currency power < its average AND QUOTE currency power > its average in the other trend mode
+Short: BASE currency power < its average AND QUOTE currency power > its average in equal trend mode, OR BASE currency power > its average AND QUOTE currency power < its average in the other trend mode

@@ -1,0 +1,2 @@
+Long: +DI(adx lookback, T1)[bar-offset parameter] > positive-DI threshold AND +DI(adx lookback, T1)[bar-offset parameter + 1] < positive-DI threshold; evaluate on chart ticks using T1 values, where offset 0 is the forming T1 bar and positive offsets are completed T1 bars.
+Short: -DI(adx lookback, T1)[bar-offset parameter] > negative-DI threshold AND -DI(adx lookback, T1)[bar-offset parameter + 1] < negative-DI threshold; evaluate on chart ticks using T1 values, where offset 0 is the forming T1 bar and positive offsets are completed T1 bars.

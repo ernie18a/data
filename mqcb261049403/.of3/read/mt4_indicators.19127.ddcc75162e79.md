@@ -1,0 +1,2 @@
+Long: On chart bars, open < close on the configured-shift bar of every enabled timeframe T1...Tn, mapped from the chart bar’s time (use that bar if still forming, otherwise its completed value), and, when change-only is enabled, the previous emitted direction is not long
+Short: On chart bars, open > close on the configured-shift bar of every enabled timeframe T1...Tn, mapped from the chart bar’s time (use that bar if still forming, otherwise its completed value), and, when change-only is enabled, the previous emitted direction is not short

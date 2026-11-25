@@ -1,0 +1,8 @@
+Calculation: Scaled EMA(L) = EMA(close, L × bars-per-T1, chart bars through the current bar)
+Calculation: Chart RSI = RSI(close, RSI lookback, chart bars through the current bar)
+Long: Scaled EMA(shortest of four separate lookbacks) > Scaled EMA(second-shortest lookback) > Scaled EMA(second-longest lookback) > Scaled EMA(longest lookback)
+Short: Scaled EMA(shortest of four separate lookbacks) < Scaled EMA(second-shortest lookback) < Scaled EMA(second-longest lookback) < Scaled EMA(longest lookback)
+Long: Scaled EMA(shortest of four separate lookbacks) > Scaled EMA(second-shortest lookback) > Scaled EMA(second-longest lookback) > Scaled EMA(longest lookback) AND close > highest(high, PCI lookback chart bars, starting PCI shift chart bars ago) + entry buffer
+Short: Scaled EMA(shortest of four separate lookbacks) < Scaled EMA(second-shortest lookback) < Scaled EMA(second-longest lookback) < Scaled EMA(longest lookback) AND close < lowest(low, PCI lookback chart bars, starting PCI shift chart bars ago) - entry buffer
+Long: Scaled EMA(shortest of four separate lookbacks) > Scaled EMA(second-shortest lookback) > Scaled EMA(second-longest lookback) > Scaled EMA(longest lookback) AND Chart RSI <= lower RSI threshold
+Short: Scaled EMA(shortest of four separate lookbacks) < Scaled EMA(second-shortest lookback) < Scaled EMA(second-longest lookback) < Scaled EMA(longest lookback) AND Chart RSI >= upper RSI threshold

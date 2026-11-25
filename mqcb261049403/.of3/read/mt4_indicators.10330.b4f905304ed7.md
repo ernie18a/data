@@ -1,0 +1,2 @@
+Long: main-currency trend > comparison-currency trend AND main-currency trend > 0 AND comparison-currency trend < 0 AND main-currency trend >= active threshold AND comparison-currency trend <= -passive threshold
+Short: main-currency trend < comparison-currency trend AND main-currency trend < 0 AND comparison-currency trend > 0 AND comparison-currency trend >= active threshold AND main-currency trend <= -passive threshold

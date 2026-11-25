@@ -1,0 +1,4 @@
+Long: current hour is one hour after one of the four entry-hour parameters whose corresponding enable parameter is true AND no long position or pending long-stop order exists AND free margin is at least the margin-per-lot threshold times lot size AND the timed-exit condition is false
+Short: current hour is one hour after one of the four entry-hour parameters whose corresponding enable parameter is true AND no short position or pending short-stop order exists AND free margin is at least the margin-per-lot threshold times lot size AND the timed-exit condition is false
+Exit: long, current hour equals one of the four entry-hour parameters whose corresponding enable parameter is true AND current minute is at least the exit-minute parameter
+Exit: short, current hour equals one of the four entry-hour parameters whose corresponding enable parameter is true AND current minute is at least the exit-minute parameter

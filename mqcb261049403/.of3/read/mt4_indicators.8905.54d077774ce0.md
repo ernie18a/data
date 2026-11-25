@@ -1,0 +1,2 @@
+Long: On chart bars, Parabolic SAR(PSAR step, PSAR maximum, T1, bar still forming) < close(T1, bar still forming) AND +DI(ADX lookback, ADX applied price, T1, bar still forming) > -DI(ADX lookback, ADX applied price, T1, bar still forming)
+Short: On chart bars, Parabolic SAR(PSAR step, PSAR maximum, T1, bar still forming) > close(T1, bar still forming) AND -DI(ADX lookback, ADX applied price, T1, bar still forming) > +DI(ADX lookback, ADX applied price, T1, bar still forming)

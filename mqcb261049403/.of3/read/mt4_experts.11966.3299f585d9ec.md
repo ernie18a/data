@@ -1,0 +1,9 @@
+Calculation: Falling highs = on each chart tick, Highest(high, n, T1, n-bar window ending 2n T1 bars ago) > Highest(high, n, T1, n-bar window ending n T1 bars ago) > Highest(high, n, T1, latest n-bar window); the first two windows use completed T1 bars and the latest includes the T1 bar still forming
+Calculation: Rising lows = on each chart tick, Lowest(low, n, T1, n-bar window ending 2n T1 bars ago) < Lowest(low, n, T1, n-bar window ending n T1 bars ago) < Lowest(low, n, T1, latest n-bar window); the first two windows use completed T1 bars and the latest includes the T1 bar still forming
+Calculation: Add-on distance = add-on distance parameter × point size
+Calculation: Stop distance = stop-loss parameter × ATR(T1, 3n lookback, T1 bar still forming at entry) in ATR mode; stop-loss parameter × point size in fixed mode
+Calculation: Target distance = take-profit parameter × ATR(T1, 3n lookback, T1 bar still forming at entry) in ATR mode; take-profit parameter × point size in fixed mode
+Long: ((Rising lows AND NOT Falling highs AND trend-following mode) OR (Falling highs AND NOT Rising lows AND countertrend mode)) AND no same-strategy long position has an entry price within the add-on distance of current price
+Short: ((Falling highs AND NOT Rising lows AND trend-following mode) OR (Rising lows AND NOT Falling highs AND countertrend mode)) AND no same-strategy short position has an entry price within the add-on distance of current price
+Exit: long, (stop-loss parameter > 0 AND low <= entry price - stop distance) OR (take-profit parameter > 0 AND high >= entry price + target distance)
+Exit: short, (stop-loss parameter > 0 AND high >= entry price + stop distance) OR (take-profit parameter > 0 AND low <= entry price - target distance)

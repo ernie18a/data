@@ -1,0 +1,4 @@
+Long: hour(datetime) >= start_hour AND hour(datetime) <= end_hour AND no open position for this instrument and chart timeframe AND close crosses above round(PivotPoint(high, low, close, T1 last completed bar, sampled on chart bars) + offset * point_size, price_precision)
+Short: hour(datetime) >= start_hour AND hour(datetime) <= end_hour AND no open position for this instrument and chart timeframe AND close crosses below round(PivotPoint(high, low, close, T1 last completed bar, sampled on chart bars) - offset * point_size, price_precision)
+Exit: long, hour(datetime) < start_hour OR hour(datetime) > end_hour
+Exit: short, hour(datetime) < start_hour OR hour(datetime) > end_hour

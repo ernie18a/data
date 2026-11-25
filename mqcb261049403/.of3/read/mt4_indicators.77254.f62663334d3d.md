@@ -1,0 +1,4 @@
+Long: On chart bars taking values from T1, Supertrend(high, low, close, lookback, multiplier, T1, mapped bar) is bullish; the mapped bar may still be forming.
+Short: On chart bars taking values from T1, Supertrend(high, low, close, lookback, multiplier, T1, mapped bar) is bearish; the mapped bar may still be forming.
+Long: Supertrend state on the mapped T1 bar changes from bearish to bullish; the mapped bar may still be forming, while alerts use the last completed T1 bar.
+Short: Supertrend state on the mapped T1 bar changes from bullish to bearish; the mapped bar may still be forming, while alerts use the last completed T1 bar.

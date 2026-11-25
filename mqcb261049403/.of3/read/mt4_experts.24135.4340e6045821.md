@@ -1,0 +1,6 @@
+Calculation: Order-time midpoint = (High[1](T1, last completed bar sampled on chart bars) + Low[1](T1, last completed bar sampled on chart bars)) / 2, captured when the pending order is placed
+Calculation: Order-time range = High[1](T1, last completed bar sampled on chart bars) - Low[1](T1, last completed bar sampled on chart bars), captured when the pending order is placed
+Long: High[1](T1, last completed bar sampled on chart bars) > High[2](T1, last completed bar sampled on chart bars) AND Low[1](T1, last completed bar sampled on chart bars) > Low[2](T1, last completed bar sampled on chart bars) AND Ask < Order-time midpoint
+Short: High[1](T1, last completed bar sampled on chart bars) < High[2](T1, last completed bar sampled on chart bars) AND Low[1](T1, last completed bar sampled on chart bars) < Low[2](T1, last completed bar sampled on chart bars) AND Bid > Order-time midpoint
+Exit: long, Bid <= Order-time midpoint OR Bid >= entry price + Order-time range
+Exit: short, Ask >= Order-time midpoint OR Ask <= entry price - Order-time range

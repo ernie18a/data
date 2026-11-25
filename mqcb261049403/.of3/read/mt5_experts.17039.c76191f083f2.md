@@ -1,0 +1,4 @@
+Long: forming chart bar volume <= tick-volume threshold AND (open-position count = 0 OR (open-position count = 1 AND position side = long))
+Short: forming chart bar volume <= tick-volume threshold AND (open-position count = 0 OR (open-position count = 1 AND position side = short))
+Exit: long, low <= entry price - long stop-loss distance OR high >= entry price + long take-profit distance OR (long trailing distance > 0 AND highest(high since entry) > entry price + long trailing distance AND low <= highest(high since entry) - long trailing distance)
+Exit: short, high >= entry price + short stop-loss distance OR low <= entry price - short take-profit distance OR (short trailing distance > 0 AND lowest(low since entry) < entry price - short trailing distance AND high >= lowest(low since entry) + short trailing distance)

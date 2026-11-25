@@ -1,0 +1,13 @@
+Calculation: Rising SMA count(T) = the number of five distinct SMA lookbacks, ordered shortest to longest, for which SMA(close, lookback, T, forming bar) > SMA(close, lookback, T, previous completed bar), sampled on chart bars
+Calculation: Falling SMA count(T) = the number of five distinct SMA lookbacks, ordered shortest to longest, for which SMA(close, lookback, T, forming bar) < SMA(close, lookback, T, previous completed bar), sampled on chart bars
+Calculation: Bullish AC points(T) = AC weight if ((Accelerator Oscillator(T, 1 bar ago) > Accelerator Oscillator(T, 2 bars ago) AND Accelerator Oscillator(T, 2 bars ago) > Accelerator Oscillator(T, 3 bars ago) AND Accelerator Oscillator(T, forming bar) < 0 AND Accelerator Oscillator(T, forming bar) > Accelerator Oscillator(T, 1 bar ago)) OR (Accelerator Oscillator(T, forming bar) > Accelerator Oscillator(T, 1 bar ago) AND Accelerator Oscillator(T, 1 bar ago) > Accelerator Oscillator(T, 2 bars ago) AND Accelerator Oscillator(T, forming bar) > 0)); otherwise 0, for T1 or T3, sampled on chart bars
+Calculation: Bearish AC points(T) = AC weight if ((Accelerator Oscillator(T, 1 bar ago) < Accelerator Oscillator(T, 2 bars ago) AND Accelerator Oscillator(T, 2 bars ago) < Accelerator Oscillator(T, 3 bars ago) AND Accelerator Oscillator(T, forming bar) > 0 AND Accelerator Oscillator(T, forming bar) < Accelerator Oscillator(T, 1 bar ago)) OR (Accelerator Oscillator(T, forming bar) < Accelerator Oscillator(T, 1 bar ago) AND Accelerator Oscillator(T, 1 bar ago) < Accelerator Oscillator(T, 2 bars ago) AND Accelerator Oscillator(T, forming bar) < 0)); otherwise 0, for T1 or T3, sampled on chart bars
+Calculation: Bullish score(T) = score scale × (Rising SMA count(T) + Bullish AC points(T)), for T1 or T3
+Calculation: Bearish score(T) = score scale × (Falling SMA count(T) + Bearish AC points(T)), for T1 or T3
+Calculation: Bullish score(T2) = score scale × Rising SMA count(T2)
+Calculation: Bearish score(T2) = score scale × Falling SMA count(T2)
+Calculation: Signal = strong signal level if all bullish scores(T1, T2, T3) >= strong score threshold; else moderate signal level if all bullish scores(T1, T2, T3) > moderate score threshold; else -strong signal level if all bearish scores(T1, T2, T3) >= strong score threshold; else -moderate signal level if all bearish scores(T1, T2, T3) > moderate score threshold; otherwise 0
+Long: Signal > opening threshold
+Short: Signal < opening threshold
+Exit: long, Signal < closing threshold AND Signal >= opening threshold
+Exit: short, Signal > closing threshold AND Signal <= opening threshold

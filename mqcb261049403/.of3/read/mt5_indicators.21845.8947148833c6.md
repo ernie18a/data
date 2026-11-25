@@ -1,0 +1,3 @@
+Calculation: Renko close = construct Renko bricks with a brick-size parameter from T1 OHLC bars, including the still-forming T1 bar, then the current chart close; process each open first if its gap from the prior T1 close exceeds the brick size, then process low, high, close when close > open and high, low, close otherwise; initialize the first close at floor(price / brick size) * brick size, continue in one-brick steps, reverse in two-brick steps, and place bricks on chart bars
+Long: Renko close > prior Renko close
+Short: Renko close < prior Renko close

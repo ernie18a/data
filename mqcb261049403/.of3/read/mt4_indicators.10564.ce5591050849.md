@@ -1,0 +1,2 @@
+Long: On chart bars taking values from T1, the last completed T1 bar's high is below the preceding T1 bar's high AND its low is above the preceding T1 bar's low
+Short: On chart bars taking values from T1, the last completed T1 bar's high is below the preceding T1 bar's high AND its low is above the preceding T1 bar's low

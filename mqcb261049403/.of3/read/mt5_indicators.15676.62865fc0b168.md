@@ -1,0 +1,5 @@
+Calculation: body score at index b = (sum of (close-open)/point size from index max(0, b-lookback+1) through b, divided by point size, plus the sum of body score at indices min(b+r,last index) for r from 1 through normalization-minus-one) divided by normalization
+Long: body score > 0 AND body score != body score[1]
+Short: body score < 0 OR body score = 0 OR body score = body score[1]
+Long: on chart bars, body score from the matching T1 bar > 0 AND body score from the matching T1 bar != body score from the preceding T1 bar; use the matching T1 bar even while it is forming
+Short: on chart bars, body score from the matching T1 bar < 0 OR body score from the matching T1 bar = 0 OR body score from the matching T1 bar = body score from the preceding T1 bar; use the matching T1 bar even while it is forming

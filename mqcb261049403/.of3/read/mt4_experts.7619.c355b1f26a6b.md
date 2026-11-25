@@ -1,0 +1,2 @@
+Long: chart close[1] > chart close at the index of the T1 bar containing today's start time + long entry distance in points × point size AND no open long position for this strategy
+Short: chart close[1] < chart close at the index of the T1 bar containing today's start time − short entry distance in points × point size AND no open short position for this strategy

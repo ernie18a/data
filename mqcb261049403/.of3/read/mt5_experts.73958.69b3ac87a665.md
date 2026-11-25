@@ -1,0 +1,6 @@
+Calculation: ATR-normalized EMA distance = ABS(close - EMA(close, EMA lookback)) / ATR(ATR lookback)
+Calculation: ATR stop distance = ATR(ATR lookback, T1, last completed bar at entry) × stop-loss multiplier
+Long: On each new T1 bar, ADX(ADX/DI lookback, T1, last completed bar) > ADX threshold AND ADX(ADX/DI lookback, T1, last completed bar) > ADX(ADX/DI lookback, T1, previous completed bar) AND ATR-normalized EMA distance(T1, last completed bar) < pullback ratio AND ATR-normalized EMA distance(T1, previous completed bar) >= pullback ratio AND +DI(ADX/DI lookback, T1, last completed bar) > -DI(ADX/DI lookback, T1, last completed bar) AND trade direction permits long
+Short: On each new T1 bar, ADX(ADX/DI lookback, T1, last completed bar) > ADX threshold AND ADX(ADX/DI lookback, T1, last completed bar) > ADX(ADX/DI lookback, T1, previous completed bar) AND ATR-normalized EMA distance(T1, last completed bar) < pullback ratio AND ATR-normalized EMA distance(T1, previous completed bar) >= pullback ratio AND -DI(ADX/DI lookback, T1, last completed bar) > +DI(ADX/DI lookback, T1, last completed bar) AND trade direction permits short
+Exit: long, low <= entry price - ATR stop distance OR high >= entry price + ATR stop distance × risk-reward ratio
+Exit: short, high >= entry price + ATR stop distance OR low <= entry price - ATR stop distance × risk-reward ratio

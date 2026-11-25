@@ -1,0 +1,2 @@
+Long: JMA(Force Index(close, volume), smoothing lookback, phase) > JMA(Force Index(close, volume), smoothing lookback, phase)[1]
+Short: JMA(Force Index(close, volume), smoothing lookback, phase) < JMA(Force Index(close, volume), smoothing lookback, phase)[1]

@@ -1,0 +1,2 @@
+Long: On chart bars, high(T1, last completed bar) > high(T1, current bar still forming) AND low(T1, last completed bar) < low(T1, current bar still forming)
+Short: On chart bars, high(T1, last completed bar) < high(T1, current bar still forming) AND low(T1, last completed bar) > low(T1, current bar still forming)

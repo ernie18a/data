@@ -1,0 +1,2 @@
+Long: MA(applied price 1, method 1, lookback 1, T1, bar still forming) > MA(applied price 2, method 2, lookback 2, T2, bar still forming), with chart bars taking values from each timeframe and T1 shorter than T2
+Short: MA(applied price 1, method 1, lookback 1, T1, bar still forming) < MA(applied price 2, method 2, lookback 2, T2, bar still forming), with chart bars taking values from each timeframe and T1 shorter than T2

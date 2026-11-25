@@ -1,0 +1,2 @@
+Long: On each chart tick, EMA(close, lookback parameter, T1, still-forming bar) > close(T1, still-forming bar) AND Laguerre(parameter, T2, still-forming bar) > close(T2, still-forming bar) AND Awesome Oscillator(T3, still-forming bar) > close(T3, still-forming bar)
+Short: On each chart tick, EMA(close, lookback parameter, T1, still-forming bar) < close(T1, still-forming bar) AND Laguerre(parameter, T2, still-forming bar) < close(T2, still-forming bar) AND Awesome Oscillator(T3, still-forming bar) < close(T3, still-forming bar)

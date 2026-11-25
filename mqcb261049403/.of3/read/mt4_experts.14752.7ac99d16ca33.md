@@ -1,0 +1,4 @@
+Long: MA(high, lookback1, T1, last completed bar)[1] > MA(high, lookback1, T1, last completed bar)[2] AND MA(high, lookback2, T2, last completed bar)[1] > MA(high, lookback2, T2, last completed bar)[2]
+Short: MA(high, lookback1, T1, last completed bar)[1] < MA(high, lookback1, T1, last completed bar)[2] AND MA(high, lookback2, T2, last completed bar)[1] < MA(high, lookback2, T2, last completed bar)[2]
+Exit: long, MA(high, lookback1, T1, last completed bar)[1] < MA(high, lookback1, T1, last completed bar)[2] OR MA(high, lookback2, T2, last completed bar)[1] < MA(high, lookback2, T2, last completed bar)[2]
+Exit: short, MA(high, lookback1, T1, last completed bar)[1] > MA(high, lookback1, T1, last completed bar)[2] OR MA(high, lookback2, T2, last completed bar)[1] > MA(high, lookback2, T2, last completed bar)[2]

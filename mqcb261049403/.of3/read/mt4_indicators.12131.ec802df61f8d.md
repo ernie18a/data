@@ -1,0 +1,6 @@
+Long: close(T1, forming bar) > SMA(close, shorter lookback, shorter-lookback shift, T1, forming bar) AND close(T1, forming bar) != SMA(close, longer lookback, longer-lookback shift, T1, forming bar)
+Short: close(T1, forming bar) < SMA(close, shorter lookback, shorter-lookback shift, T1, forming bar) AND close(T1, forming bar) != SMA(close, longer lookback, longer-lookback shift, T1, forming bar)
+Long: crosses above SMA(close, shorter lookback) AND crosses above SMA(close, longer lookback)
+Short: crosses below SMA(close, shorter lookback) AND crosses below SMA(close, longer lookback)
+Exit: long, low <= SMA(close, shorter lookback) AND close < SMA(close, shorter lookback)
+Exit: short, high >= SMA(close, shorter lookback) AND close > SMA(close, shorter lookback)

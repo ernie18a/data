@@ -1,0 +1,4 @@
+Long: On each new chart bar, while flat, Open[1] < MA(close, lookback, T1, bar still forming, method, shift), sampled on chart bars, AND Close[1] > MA(close, lookback, T1, bar still forming, method, shift), sampled on chart bars
+Short: On each new chart bar, while flat, Open[1] > MA(close, lookback, T1, bar still forming, method, shift), sampled on chart bars, AND Close[1] < MA(close, lookback, T1, bar still forming, method, shift), sampled on chart bars
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

@@ -1,0 +1,6 @@
+Calculation: HAS up(T) = Heiken Ashi Smoothed close > Heiken Ashi Smoothed open on T's forming bar, using first smoothing method, first smoothing period, second smoothing method, and second smoothing period, read on each chart tick
+Calculation: HAS direction duration(T) = consecutive chart ticks for which HAS up(T) has remained unchanged
+Long: HAS direction duration(T1) < short-duration threshold AND HAS up(T1) = true AND HAS direction duration(T2) > long-duration threshold AND HAS up(T2) = true AND HAS up(T3) = true AND HAS up(T4) = true AND HAS up(T5) = true
+Short: HAS direction duration(T1) < short-duration threshold AND HAS up(T1) = false AND HAS direction duration(T2) > long-duration threshold AND HAS up(T2) = false AND HAS up(T3) = false AND HAS up(T4) = false AND HAS up(T5) = false
+Exit: long, low <= entry price - stop-loss parameter × point size OR high >= entry price + take-profit parameter × point size
+Exit: short, high >= entry price + stop-loss parameter × point size OR low <= entry price - take-profit parameter × point size

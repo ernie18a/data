@@ -1,0 +1,2 @@
+Long: MA(close, shorter lookback) >= MA(close, intermediate lookback) AND MA(close, intermediate lookback) >= MA(close, longer lookback)
+Short: MA(close, shorter lookback) <= MA(close, intermediate lookback) AND MA(close, intermediate lookback) <= MA(close, longer lookback)

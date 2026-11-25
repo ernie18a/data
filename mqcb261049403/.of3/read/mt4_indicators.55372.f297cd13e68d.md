@@ -1,0 +1,6 @@
+Long: close (current chart bar) > close (T1, last completed bar)
+Short: close (current chart bar) < close (T1, last completed bar)
+Long: close (current chart bar) > close (T2, last completed bar)
+Short: close (current chart bar) < close (T2, last completed bar)
+Long: close (current chart bar) > close (T3, last completed bar)
+Short: close (current chart bar) < close (T3, last completed bar)

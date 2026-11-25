@@ -1,0 +1,2 @@
+Exit: long, low <= entry price - stop-loss parameter OR high >= entry price + take-profit parameter OR time_of_day(datetime) = exit-time parameter
+Exit: short, high >= entry price + stop-loss parameter OR low <= entry price - take-profit parameter OR time_of_day(datetime) = exit-time parameter

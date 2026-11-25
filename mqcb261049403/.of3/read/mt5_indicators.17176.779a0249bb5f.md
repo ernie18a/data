@@ -1,0 +1,6 @@
+Long: DCOS[1] < DCOS[2] AND (BullsPower + BearsPower)[1] > (BullsPower + BearsPower)[2]
+Short: DCOS[1] > DCOS[2] AND (BullsPower + BearsPower)[1] < (BullsPower + BearsPower)[2]
+Short: DCOS[1] < DCOS[2] AND DCOS[3] < DCOS[2]
+Long: DCOS[1] > DCOS[2] AND DCOS[3] > DCOS[2]
+Long: DCOS[1] < DCOS[2] AND (BullsPower + BearsPower)[1] > (BullsPower + BearsPower)[2] AND DCOS[1] > DCOS[0] AND (BullsPower + BearsPower)[1] > (BullsPower + BearsPower)[0]
+Short: DCOS[1] > DCOS[2] AND (BullsPower + BearsPower)[1] < (BullsPower + BearsPower)[2] AND DCOS[1] < DCOS[0] AND (BullsPower + BearsPower)[1] < (BullsPower + BearsPower)[0]

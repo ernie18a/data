@@ -1,0 +1,3 @@
+Calculation: MACD line = Nonlag MA(close, shorter lookback) - Nonlag MA(close, longer lookback)
+Long: MACD line crosses above Nonlag MA(MACD line, signal lookback) on T1 bars, using the current bar when current-bar alerts are enabled or the last completed bar otherwise
+Short: MACD line crosses below Nonlag MA(MACD line, signal lookback) on T1 bars, using the current bar when current-bar alerts are enabled or the last completed bar otherwise

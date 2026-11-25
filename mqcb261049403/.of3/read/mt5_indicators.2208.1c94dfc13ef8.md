@@ -1,0 +1,2 @@
+Long: Aroon Oscillator(high, low, lookback, T1, last completed bar, sampled on chart bars) > 0 AND Aroon Oscillator(high, low, lookback, T1, last completed bar, sampled on chart bars) != Aroon Oscillator(high, low, lookback, T1, bar still forming, sampled on chart bars)
+Short: Aroon Oscillator(high, low, lookback, T1, last completed bar, sampled on chart bars) < 0 AND Aroon Oscillator(high, low, lookback, T1, last completed bar, sampled on chart bars) != Aroon Oscillator(high, low, lookback, T1, bar still forming, sampled on chart bars)

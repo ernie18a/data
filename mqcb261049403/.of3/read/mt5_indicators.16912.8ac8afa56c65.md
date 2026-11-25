@@ -1,0 +1,2 @@
+Long: MACD(QWMA(price, shorter lookback), QWMA(price, longer lookback), signal lookback) crosses above its signal line
+Short: MACD(QWMA(price, shorter lookback), QWMA(price, longer lookback), signal lookback) crosses below its signal line

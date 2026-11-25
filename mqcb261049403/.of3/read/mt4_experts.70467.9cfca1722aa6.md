@@ -1,0 +1,2 @@
+Long: no long position AND RSI(close, lookback, T1, last completed bar) >= oversold level AND RSI(close, lookback, T1, last completed bar) > RSI(close, lookback, T1, second-last completed bar)
+Short: no short position AND RSI(close, lookback, T1, last completed bar) <= overbought level AND RSI(close, lookback, T1, last completed bar) < RSI(close, lookback, T1, second-last completed bar)

@@ -1,0 +1,1 @@
+Exit: short, position side = short

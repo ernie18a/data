@@ -1,0 +1,2 @@
+Long: upper breakout level is positive AND close = high AND close crosses above the upper breakout level AND the upper breakout level differs from the level of the most recent signal
+Short: lower breakdown level is positive AND close = low AND close crosses below the lower breakdown level AND the lower breakdown level differs from the level of the most recent signal

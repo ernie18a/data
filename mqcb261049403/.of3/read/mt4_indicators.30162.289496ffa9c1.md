@@ -1,0 +1,3 @@
+Calculation: AUD power = (-close(EURAUD) - close(GBPAUD) + close(AUDUSD) + close(AUDCAD) + close(AUDNZD) + close(AUDJPY) / 100 + close(AUDCHF)) / 7
+Long: base currency is AUD AND ((trend mode AND AUD power > EMA(AUD power, lookback)) OR (inverse mode AND AUD power < EMA(AUD power, lookback))) OR quote currency is AUD AND ((trend mode AND AUD power < EMA(AUD power, lookback)) OR (inverse mode AND AUD power > EMA(AUD power, lookback)))
+Short: base currency is AUD AND ((trend mode AND AUD power < EMA(AUD power, lookback)) OR (inverse mode AND AUD power > EMA(AUD power, lookback))) OR quote currency is AUD AND ((trend mode AND AUD power > EMA(AUD power, lookback)) OR (inverse mode AND AUD power < EMA(AUD power, lookback)))

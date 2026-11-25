@@ -1,0 +1,5 @@
+Calculation: Current Williams %R = Williams %R(lookback, current forming chart bar)
+Long: Current Williams %R rises above the oversold threshold after falling below it since the previous long signal AND (timer disabled OR (start hour < stop hour AND terminal hour >= start hour AND terminal hour < stop hour) OR (start hour > stop hour AND (terminal hour < stop hour OR terminal hour >= start hour)))
+Short: Current Williams %R falls below the overbought threshold after rising above it since the previous short signal AND (timer disabled OR (start hour < stop hour AND terminal hour >= start hour AND terminal hour < stop hour) OR (start hour > stop hour AND (terminal hour < stop hour OR terminal hour >= start hour)))
+Exit: long, Current Williams %R falls below the overbought threshold after rising above it since the previous short signal
+Exit: short, Current Williams %R rises above the oversold threshold after falling below it since the previous long signal

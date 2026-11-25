@@ -1,0 +1,5 @@
+Calculation: forward high excursion = Highest(high over the lookahead bars following the signal bar) - open
+Calculation: forward low excursion = open - Lowest(low over the lookahead bars following the signal bar)
+Calculation: normalized forward range = 2 × forward high excursion / (forward high excursion + forward low excursion) - 1
+Long: (analog-threshold mode selected AND normalized forward range > threshold) OR (take-profit/stop-loss mode selected AND forward high excursion > take-profit parameter × point size AND forward low excursion < stop-loss parameter × point size)
+Short: (analog-threshold mode selected AND normalized forward range < -threshold) OR (take-profit/stop-loss mode selected AND forward high excursion < stop-loss parameter × point size AND forward low excursion > take-profit parameter × point size)

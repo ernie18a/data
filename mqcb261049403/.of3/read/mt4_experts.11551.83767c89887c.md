@@ -1,0 +1,3 @@
+Calculation: trailing profit stop = greatest recorded value of position profit − position lots / minimum lot size × trailing profit amount per minimum lot, recorded only when position profit > 0 AND position profit > position lots / minimum lot size × trailing profit amount per minimum lot
+Exit: long, (trailing profit stop is valid AND position profit < trailing profit stop) OR position profit > position lots / minimum lot size × take-profit amount per minimum lot
+Exit: short, (trailing profit stop is valid AND position profit < trailing profit stop) OR position profit > position lots / minimum lot size × take-profit amount per minimum lot

@@ -1,0 +1,6 @@
+Calculation: Trendline slope = (second selected anchor price - first selected anchor price) / (second selected anchor lag - first selected anchor lag), using completed T1 bars on chart bars
+Calculation: Main-line intercept = first selected anchor price - first selected anchor lag * trendline slope
+Calculation: Parallel extreme-line intercept = min(low(T1, i) - i * trendline slope) in an upward trend, or max(high(T1, i) - i * trendline slope) otherwise, over completed T1 bars from the extreme start-lag parameter through the second selected anchor lag, evaluated on chart bars
+Calculation: Flat state = abs(trendline slope * slope-scale parameter) < ATR(T1, ATR-lookback parameter, forming bar) * ATR-scale parameter * flatness coefficient, evaluated on chart bars
+Long: Flat state OR (NOT Flat state AND trendline slope <= 0 AND parallel extreme-line intercept != main-line intercept)
+Short: Flat state OR (NOT Flat state AND trendline slope > 0 AND parallel extreme-line intercept != main-line intercept)

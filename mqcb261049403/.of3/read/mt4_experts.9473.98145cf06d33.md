@@ -1,0 +1,4 @@
+Long: long entry enabled AND open long position count for the instrument < maximum orders per instrument AND chart-bar Open[1] > Low(T1, last completed bar) - lower offset parameter × Point AND chart-bar Open[0] < Low(T1, last completed bar) - lower offset parameter × Point
+Short: short entry enabled AND open short position count for the instrument < maximum orders per instrument AND chart-bar Open[1] < High(T1, last completed bar) + upper offset parameter × Point AND chart-bar Open[0] > High(T1, last completed bar) + upper offset parameter × Point
+Exit: long, chart-bar Low <= entry price - exit distance parameter × Point OR chart-bar High >= entry price + exit distance parameter × Point
+Exit: short, chart-bar High >= entry price + exit distance parameter × Point OR chart-bar Low <= entry price - exit distance parameter × Point

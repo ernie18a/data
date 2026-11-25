@@ -1,0 +1,15 @@
+Calculation: A = close of the last completed chart bar confirming the entry crossover
+Calculation: Long B = lowest low in the preceding downtrend wave before the upward entry crossover
+Calculation: Short B = highest high in the preceding uptrend wave before the downward entry crossover
+Calculation: Long Fibonacci level(r) = B + (A - B) × r
+Calculation: Short Fibonacci level(r) = B - (B - A) × r
+Calculation: Long target price at entry = max(entry price + minimum target distance, if the previous completed T1 high sampled on the entry chart bar > Long Fibonacci level(larger primary target-extension ratio) then Long Fibonacci level(larger primary target-extension ratio) else if that high > Long Fibonacci level(smaller secondary target-extension ratio) then Long Fibonacci level(smaller secondary target-extension ratio) else if that high > A then that high else Long Fibonacci level(larger primary target-extension ratio))
+Calculation: Short target price at entry = min(entry price - minimum target distance, if the previous completed T1 low sampled on the entry chart bar < Short Fibonacci level(larger primary target-extension ratio) then Short Fibonacci level(larger primary target-extension ratio) else if that low < Short Fibonacci level(smaller secondary target-extension ratio) then Short Fibonacci level(smaller secondary target-extension ratio) else if that low < A then that low else Short Fibonacci level(larger primary target-extension ratio))
+Calculation: Long stop price at entry = max(entry price - maximum stop distance, Long Fibonacci level(stop-loss retracement ratio))
+Calculation: Short stop price at entry = min(entry price + maximum stop distance, Short Fibonacci level(stop-loss retracement ratio))
+Long: EMA(close, shorter fast lookback) was below SMA(close, longer slow lookback) two chart bars ago and is above it on both the last completed and currently forming chart bars, and current hour is at least the configured start hour and before the configured end hour, and the weekday is not a disabled Monday or Friday, and open-position count is below the configured maximum
+Short: EMA(close, shorter fast lookback) was above SMA(close, longer slow lookback) two chart bars ago and is below it on both the last completed and currently forming chart bars, and current hour is at least the configured start hour and before the configured end hour, and the weekday is not a disabled Monday or Friday, and open-position count is below the configured maximum
+Exit: long, low <= Long stop price at entry OR high >= Long target price at entry
+Exit: short, high >= Short stop price at entry OR low <= Short target price at entry
+Exit: long, position profit < 0 AND EMA(close, shorter fast lookback) was above SMA(close, intermediate medium lookback) two chart bars ago and is below it on both the last completed and currently forming chart bars
+Exit: short, position profit < 0 AND EMA(close, shorter fast lookback) was below SMA(close, intermediate medium lookback) two chart bars ago and is above it on both the last completed and currently forming chart bars

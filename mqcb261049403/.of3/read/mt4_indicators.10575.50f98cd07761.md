@@ -1,0 +1,5 @@
+Calculation: Currency strength score = sum over its relative exchange-rate candles of +1 when close > open for a base currency or close < open for a quote currency, and -1 for the inverse conditions, using the chart bar at the bar-offset parameter
+Long: close > open when the currency is the base currency or close < open when it is the quote currency, on a relative exchange-rate candle at the bar-offset parameter
+Short: close < open when the currency is the base currency or close > open when it is the quote currency, on a relative exchange-rate candle at the bar-offset parameter
+Long: base-currency strength score = positive strength threshold AND quote-currency strength score = negative strength threshold
+Short: base-currency strength score = negative strength threshold AND quote-currency strength score = positive strength threshold

@@ -1,0 +1,3 @@
+Calculation: Swing state = initially bearish with bearish reversal level = first bar high; while bearish, set bearish reversal level to min(previous bearish reversal level, current high), and switch to bullish if current low > bearish reversal level, setting bullish reversal level to current low; while bullish, set bullish reversal level to max(previous bullish reversal level, current low), and switch to bearish if current high < bullish reversal level, setting bearish reversal level to current high; otherwise retain the trend
+Long: Swing state is bullish
+Short: Swing state is bearish

@@ -1,0 +1,4 @@
+Calculation: Prior session high = highest(high) of the most recently completed session
+Calculation: Prior session low = lowest(low) of the most recently completed session
+Long: Within the session using that frozen range, a low breach (low < prior session low − penetration buffer) was registered while no breach was pending, and the high boundary was not breached on that same bar; the first subsequent close > prior session low occurs no more than the reversal-window bars after the breach; datetime >= current time − (recent-session display count × 24 hours)
+Short: Within the session using that frozen range, a high breach (high > prior session high + penetration buffer) was registered while no breach was pending; the first subsequent close < prior session high occurs no more than the reversal-window bars after the breach; datetime >= current time − (recent-session display count × 24 hours)

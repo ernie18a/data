@@ -1,0 +1,2 @@
+Long: On chart bars using T1 values, EMA(close, shorter lookback, T1, last completed bar) < EMA(close, longer lookback, T1, last completed bar) AND EMA(close, shorter lookback, T1, bar still forming) > EMA(close, longer lookback, T1, bar still forming)
+Short: On chart bars using T1 values, EMA(close, shorter lookback, T1, last completed bar) > EMA(close, longer lookback, T1, last completed bar) AND EMA(close, shorter lookback, T1, bar still forming) < EMA(close, longer lookback, T1, bar still forming)

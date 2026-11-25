@@ -1,0 +1,2 @@
+Long: close(T1, last completed bar) < SMA(open, longer lookback, chart timeframe, last completed chart bar)
+Short: close(T1, last completed bar) > SMA(open, shorter lookback, chart timeframe, last completed chart bar)

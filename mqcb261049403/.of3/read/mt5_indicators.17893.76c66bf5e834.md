@@ -1,0 +1,3 @@
+Calculation: volume-adjusted candle size = (candle-size mode selects abs(close - open) or high - low) * (volume mode selects volume or 1)
+Long: volume-adjusted candle size[signal-bar offset] > minimum-size parameter * point size AND close[signal-bar offset] < open[signal-bar offset]
+Short: volume-adjusted candle size[signal-bar offset] > minimum-size parameter * point size AND close[signal-bar offset] > open[signal-bar offset]

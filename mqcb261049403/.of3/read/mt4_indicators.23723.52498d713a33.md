@@ -1,0 +1,2 @@
+Long: On the chart bar still forming, close is above the pivot point and below third resistance from standard pivot points calculated from the last completed T1 bar.
+Short: On the chart bar still forming, close is above first support and below the pivot point from standard pivot points calculated from the last completed T1 bar, OR close is at or below third support from standard pivot points calculated from the last completed T1 bar.

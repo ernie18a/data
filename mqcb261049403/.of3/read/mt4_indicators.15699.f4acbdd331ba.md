@@ -1,0 +1,2 @@
+Long: close(T1, bar mapped to the chart bar, still forming when current) > open(T1, bar mapped to the chart bar, still forming when current), evaluated on chart bars using T1 values
+Short: close(T1, bar mapped to the chart bar, still forming when current) <= open(T1, bar mapped to the chart bar, still forming when current), evaluated on chart bars using T1 values

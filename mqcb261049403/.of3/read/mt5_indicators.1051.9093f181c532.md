@@ -1,0 +1,3 @@
+Calculation: New-high/new-low index = count(indexed USD-quoted currency pairs whose current close equals the lowest close across lookback chart bars, including the current bar) + count(indexed USD-base currency pairs whose current close equals the highest close across lookback chart bars, including the current bar) - count(indexed USD-quoted currency pairs whose current close equals the highest close across lookback chart bars, including the current bar) - count(indexed USD-base currency pairs whose current close equals the lowest close across lookback chart bars, including the current bar)
+Long: New-high/new-low index > 0
+Short: New-high/new-low index < 0

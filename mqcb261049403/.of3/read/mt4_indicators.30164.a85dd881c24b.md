@@ -1,0 +1,4 @@
+Long: Base and quote use the same trend mode AND base currency power > average(base currency power, lookback) AND quote currency power < average(quote currency power, lookback)
+Long: Base and quote use the same countertrend mode AND base currency power < average(base currency power, lookback) AND quote currency power > average(quote currency power, lookback)
+Short: Base and quote use the same trend mode AND base currency power < average(base currency power, lookback) AND quote currency power > average(quote currency power, lookback)
+Short: Base and quote use the same countertrend mode AND base currency power > average(base currency power, lookback) AND quote currency power < average(quote currency power, lookback)

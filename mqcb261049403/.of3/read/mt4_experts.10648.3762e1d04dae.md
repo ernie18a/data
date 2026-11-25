@@ -1,0 +1,4 @@
+Long: no open long position AND close[1] > open[1] AND close[2] < open[2] AND (close[3] < open[3] OR (continuation enabled AND close[3] > open[3] AND close[4] > open[4]))
+Short: no open short position AND close[1] < open[1] AND close[2] > open[2] AND (close[3] > open[3] OR (continuation enabled AND close[3] < open[3] AND close[4] < open[4]))
+Exit: short, reverse-close enabled AND no open long position AND close[1] > open[1] AND close[2] < open[2] AND (close[3] < open[3] OR (continuation enabled AND close[3] > open[3] AND close[4] > open[4]))
+Exit: long, reverse-close enabled AND no open short position AND close[1] < open[1] AND close[2] > open[2] AND (close[3] > open[3] OR (continuation enabled AND close[3] < open[3] AND close[4] < open[4]))

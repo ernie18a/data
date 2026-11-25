@@ -1,0 +1,2 @@
+Long: upper range boundary > upper range boundary[1] OR lower range boundary > lower range boundary[1]
+Short: upper range boundary < upper range boundary[1] OR lower range boundary < lower range boundary[1]

@@ -1,0 +1,4 @@
+Long: on chart bars, a T1 tile is bullish when close(T1, last completed bar) > EMA(close, shorter lookback, T1, last completed bar) AND EMA(close, shorter lookback, T1, last completed bar) > EMA(close, longer lookback, T1, last completed bar) AND ADX(high, low, close, lookback, T1, last completed bar) >= minimum ADX
+Short: on chart bars, a T1 tile is bearish when close(T1, last completed bar) < EMA(close, shorter lookback, T1, last completed bar) AND EMA(close, shorter lookback, T1, last completed bar) < EMA(close, longer lookback, T1, last completed bar) AND ADX(high, low, close, lookback, T1, last completed bar) >= minimum ADX
+Long: on chart bars, bullish T1 tiles number at least the consensus-count parameter
+Short: on chart bars, bearish T1 tiles number at least the consensus-count parameter

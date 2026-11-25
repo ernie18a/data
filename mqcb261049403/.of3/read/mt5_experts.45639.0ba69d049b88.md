@@ -1,0 +1,5 @@
+Calculation: RangePercent = round((highest(high, lookback) - lowest(low, lookback)) / highest(high, lookback) * 100, precision)
+Short: time of day > start time AND time of day < end time AND RangePercent < range threshold AND MA(close, first lookback) > MA(close, second lookback) AND close > MA(close, first lookback)
+Long: time of day > start time AND time of day < end time AND RangePercent < range threshold AND MA(close, first lookback) < MA(close, second lookback) AND close < MA(close, first lookback)
+Exit: long, low <= entry price - stop distance OR high >= entry price + target distance OR (time close enabled AND time of day >= close time)
+Exit: short, high >= entry price + stop distance OR low <= entry price - target distance OR (time close enabled AND time of day >= close time)

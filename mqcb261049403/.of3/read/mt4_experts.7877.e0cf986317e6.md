@@ -1,0 +1,2 @@
+Long: On each chart tick, CCI(typical price, lookback, T1, current forming bar) > -channel magnitude AND CCI(typical price, lookback, T1, last completed bar) < -channel magnitude AND (no open or pending order for the instrument OR position side is short)
+Short: On each chart tick, CCI(typical price, lookback, T1, current forming bar) < channel magnitude AND CCI(typical price, lookback, T1, last completed bar) > channel magnitude AND (no open or pending order for the instrument OR position side is long)

@@ -1,0 +1,4 @@
+Calculation: lower zone boundary = high(last completed T2 bar) × (1 − zone-width parameter / 200)
+Calculation: upper zone boundary = high(last completed T2 bar) × (1 + zone-width parameter / 200)
+Short: Within each current T2 period, using the last completed T1 close at each evaluation, require in sequence a close >= lower zone boundary, a subsequent close <= lower zone boundary × (1 − distance parameter / 100), and a subsequent close >= lower zone boundary AND <= upper zone boundary
+Exit: short, high >= entry price × (1 + stop-loss parameter / 100) OR low <= entry price × (1 − take-profit parameter / 100)

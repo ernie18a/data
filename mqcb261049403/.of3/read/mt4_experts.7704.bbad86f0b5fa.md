@@ -1,0 +1,4 @@
+Long: chart bar count >= history threshold AND no current orders for this strategy AND min(round(account free margin × lot factor / margin divisor, lot precision), broker maximum lot) >= broker minimum lot AND rounded-to-price-precision SMA(close, lookback, T1, current forming bar, sampled on each chart tick) - (current close + current spread) > entry buffer × point size
+Short: chart bar count >= history threshold AND no current orders for this strategy AND min(round(account free margin × lot factor / margin divisor, lot precision), broker maximum lot) >= broker minimum lot AND current close - rounded-to-price-precision SMA(close, lookback, T1, current forming bar, sampled on each chart tick) > entry buffer × point size
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high + spread >= entry price + stop-loss distance OR low + spread <= entry price - take-profit distance

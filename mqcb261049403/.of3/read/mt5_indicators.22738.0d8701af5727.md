@@ -1,0 +1,2 @@
+Long: TSI(applied price, longer lookback, shorter lookback) > TSI(applied price, longer lookback, shorter lookback)[1] AND TSI(applied price, longer lookback, shorter lookback) > 0
+Short: TSI(applied price, longer lookback, shorter lookback) < TSI(applied price, longer lookback, shorter lookback)[1] AND TSI(applied price, longer lookback, shorter lookback) < 0

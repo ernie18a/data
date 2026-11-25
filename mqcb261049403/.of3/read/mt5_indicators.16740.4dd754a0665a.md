@@ -1,0 +1,2 @@
+Long: MA(selected price, lookback, selected method) > its previous value; calculate on chart bars, or on T1 bars using the still-forming bar and copy the result to chart bars
+Short: MA(selected price, lookback, selected method) < its previous value; calculate on chart bars, or on T1 bars using the still-forming bar and copy the result to chart bars

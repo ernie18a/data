@@ -1,0 +1,6 @@
+Calculation: lower band = Envelopes(lower, LWMA(median price, envelope lookback), envelope deviation, last completed chart bar)
+Calculation: upper band = Envelopes(upper, LWMA(median price, envelope lookback), envelope deviation, last completed chart bar)
+Long: lower band - low[1] > entry distance * point size AND lower band - current close > entry distance * point size AND spread <= maximum spread
+Short: high[1] - upper band > entry distance * point size AND current close - upper band > entry distance * point size AND spread <= maximum spread
+Exit: long, current close <= max(entry price - max(stop-loss distance, minimum stop distance) * point size, highest high since entry - trailing distance * point size) OR current close >= entry price + max(take-profit distance, minimum stop distance) * point size
+Exit: short, current close + spread * point size >= min(entry price + max(stop-loss distance, minimum stop distance) * point size, lowest low since entry + trailing distance * point size) OR current close + spread * point size <= entry price - max(take-profit distance, minimum stop distance) * point size

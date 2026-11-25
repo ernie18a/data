@@ -1,0 +1,5 @@
+Calculation: Fractal state(timeframe, shift) = bullish when the upper Fractals value is absent and the lower Fractals value is present; bearish when the lower value is absent and the upper value is present; neutral otherwise, read at the specified completed-bar shift on chart bars
+Long: Fractal state(chart timeframe, long chart shift parameter) is bullish AND Fractal state(T1, long T1 shift parameter) is bullish AND RSI(open, RSI lookback parameter, T2, current forming bar read on chart bars) < RSI baseline parameter - long RSI offset parameter
+Short: Fractal state(chart timeframe, short chart shift parameter) is bearish AND Fractal state(T1, short T1 shift parameter) is bearish AND RSI(open, RSI lookback parameter, T2, current forming bar read on chart bars) > RSI baseline parameter + short RSI offset parameter
+Exit: long, low <= entry price - stop-loss distance parameter OR high >= entry price + take-profit distance parameter OR datetime - entry datetime >= holding duration parameter
+Exit: short, high >= entry price + stop-loss distance parameter OR low <= entry price - take-profit distance parameter OR datetime - entry datetime >= holding duration parameter

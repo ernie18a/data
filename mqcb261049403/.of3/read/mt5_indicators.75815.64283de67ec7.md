@@ -1,0 +1,6 @@
+Calculation: MACD score(T) = strong bullish score when MACD(close, shorter lookback, longer lookback, signal lookback, T, forming bar).main > MACD(close, shorter lookback, longer lookback, signal lookback, T, forming bar).signal AND MACD(close, shorter lookback, longer lookback, signal lookback, T, forming bar).main > 0; bullish score when the main line > the signal line AND the main line <= 0; strong bearish score when the main line < the signal line AND the main line < 0; bearish score when the main line < the signal line AND the main line >= 0; otherwise 0
+Calculation: Total MACD score = sum of MACD score(T) for T in {T1, T2, T3, T4, T5, T6, T7}
+Long: MACD(close, shorter lookback, longer lookback, signal lookback, T, forming bar).main > MACD(close, shorter lookback, longer lookback, signal lookback, T, forming bar).signal, for each T in {T1, T2, T3, T4, T5, T6, T7}
+Short: MACD(close, shorter lookback, longer lookback, signal lookback, T, forming bar).main < MACD(close, shorter lookback, longer lookback, signal lookback, T, forming bar).signal, for each T in {T1, T2, T3, T4, T5, T6, T7}
+Long: Total MACD score >= positive bias threshold
+Short: Total MACD score <= negative bias threshold

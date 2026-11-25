@@ -1,0 +1,2 @@
+Long: (close - open) / pip size of the bar still forming on T1 > movement threshold, evaluated on chart bars using T1 values
+Short: (open - close) / pip size of the bar still forming on T1 > movement threshold, evaluated on chart bars using T1 values

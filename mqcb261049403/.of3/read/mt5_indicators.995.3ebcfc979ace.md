@@ -1,0 +1,2 @@
+Long: RSI(close, lookback, T1, bar still forming, chart bars taking values from T1) > threshold AND RSI(close, lookback, T1, bar still forming) ≠ RSI(close, lookback, T1, previous bar)
+Short: RSI(close, lookback, T1, bar still forming, chart bars taking values from T1) < threshold AND RSI(close, lookback, T1, bar still forming) ≠ RSI(close, lookback, T1, previous bar)

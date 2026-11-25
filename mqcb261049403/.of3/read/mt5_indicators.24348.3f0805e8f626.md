@@ -1,0 +1,5 @@
+Calculation: Advance-decline ratio = (advances - declines) / (advances + declines) for available configured breadth constituents on each chart bar, or zero if there are none; a constituent advances when close > open and declines when close < open, with those comparisons reversed for inverse constituents.
+Calculation: Recursive smoother(x, lookback) = let L=max(lookback,1), b=smoother factor*(L-1)/(smoother factor*(L-1)+smoother offset), and a=b^3; on the first chart bar set l0=l1=l4=x and l2=l3=0; otherwise set l0=(1-a)*x+a*l0[1], l1=(x-l0)*(1-b)+b*l1[1], l2=l0+l1, l3=(l2-l4[1])*(1-a)^2+a^2*l3[1], and l4=l4[1]+l3; return l4.
+Calculation: Summation index = prior index + Recursive smoother(advance-decline ratio, fast lookback) - Recursive smoother(advance-decline ratio, slow lookback), initialized at zero; fast lookback is shorter than slow lookback.
+Long: Summation index > Summation index[1]
+Short: Summation index < Summation index[1]

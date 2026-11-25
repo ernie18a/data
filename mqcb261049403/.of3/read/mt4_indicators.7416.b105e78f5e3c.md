@@ -1,0 +1,2 @@
+Long: On chart bars on Monday at the parameter hour and parameter minute, open(T1, last completed bar) > close[1]
+Short: On chart bars on Monday at the parameter hour and parameter minute, open(T1, last completed bar) < close[1]

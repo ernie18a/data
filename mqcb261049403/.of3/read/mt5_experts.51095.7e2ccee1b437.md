@@ -1,0 +1,2 @@
+Exit: long, take-profit price > entry price AND close >= take-profit price AND stop-loss price is unset
+Exit: short, take-profit price <= entry price AND close <= take-profit price AND stop-loss price is unset

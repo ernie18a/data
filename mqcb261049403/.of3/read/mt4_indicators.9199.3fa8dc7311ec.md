@@ -1,0 +1,14 @@
+Long: on chart bars, open of the still-forming T1 bar < close of the still-forming chart bar
+Short: on chart bars, open of the still-forming T1 bar > close of the still-forming chart bar
+Long: on chart bars, open of the still-forming T2 bar < close of the still-forming chart bar
+Short: on chart bars, open of the still-forming T2 bar > close of the still-forming chart bar
+Long: on chart bars, open of the still-forming T3 bar < close of the still-forming chart bar
+Short: on chart bars, open of the still-forming T3 bar > close of the still-forming chart bar
+Long: on chart bars, open of the still-forming T4 bar < close of the still-forming chart bar
+Short: on chart bars, open of the still-forming T4 bar > close of the still-forming chart bar
+Long: on chart bars, open of the still-forming T5 bar < close of the still-forming chart bar
+Short: on chart bars, open of the still-forming T5 bar > close of the still-forming chart bar
+Long: on chart bars, open of the still-forming T6 bar < close of the still-forming chart bar
+Short: on chart bars, open of the still-forming T6 bar > close of the still-forming chart bar
+Long: on chart bars, open of the still-forming T7 bar < close of the still-forming chart bar
+Short: on chart bars, open of the still-forming T7 bar > close of the still-forming chart bar

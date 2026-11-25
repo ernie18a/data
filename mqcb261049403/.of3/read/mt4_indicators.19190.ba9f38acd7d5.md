@@ -1,0 +1,2 @@
+Long: For each measured currency pair, its close on bar N bars ago of T1 is greater than or equal to its open on that bar; read T1 bars directly, with N=0 using the still-forming bar and N>0 using a completed bar.
+Short: For each measured currency pair, its close on bar N bars ago of T1 is less than its open on that bar; read T1 bars directly, with N=0 using the still-forming bar and N>0 using a completed bar.

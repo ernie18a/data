@@ -1,0 +1,8 @@
+Long: on chart bars, Parabolic SAR(high, low, step, maximum, T1, still-forming bar) < close(T1, still-forming bar)
+Short: on chart bars, Parabolic SAR(high, low, step, maximum, T1, still-forming bar) > close(T1, still-forming bar)
+Long: on chart bars, Parabolic SAR(high, low, step, maximum, T2, still-forming bar) < close(T2, still-forming bar)
+Short: on chart bars, Parabolic SAR(high, low, step, maximum, T2, still-forming bar) > close(T2, still-forming bar)
+Long: on chart bars, Parabolic SAR(high, low, step, maximum, T3, still-forming bar) < close(T3, still-forming bar)
+Short: on chart bars, Parabolic SAR(high, low, step, maximum, T3, still-forming bar) > close(T3, still-forming bar)
+Long: on chart bars, Parabolic SAR(high, low, step, maximum, T4, still-forming bar) < close(T4, still-forming bar)
+Short: on chart bars, Parabolic SAR(high, low, step, maximum, T4, still-forming bar) > close(T4, still-forming bar)

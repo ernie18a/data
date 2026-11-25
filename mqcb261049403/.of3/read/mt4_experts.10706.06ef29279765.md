@@ -1,0 +1,2 @@
+Long: EMA(close, fast EMA lookback) > EMA(open, slow EMA lookback) AND MACD signal(close, quick lookback, slow lookback, signal lookback) > MACD signal(close, quick lookback, slow lookback, signal lookback)[1]
+Short: EMA(close, fast EMA lookback) < EMA(open, slow EMA lookback) AND MACD signal(close, quick lookback, slow lookback, signal lookback) < MACD signal(close, quick lookback, slow lookback, signal lookback)[1]

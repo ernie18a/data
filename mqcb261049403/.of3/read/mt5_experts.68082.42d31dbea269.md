@@ -1,0 +1,9 @@
+Calculation: OpeningRangeHigh = highest high of completed T1 bars during the configured New York opening-range window beginning at midnight, updated on T1 bars
+Calculation: OpeningRangeLow = lowest low of completed T1 bars during the configured New York opening-range window beginning at midnight, updated on T1 bars
+Calculation: OutsideDuration(boundary, side) = elapsed time from the first completed T1 close in the uninterrupted run beyond boundary on side immediately before the signal to the signal bar close
+Calculation: LongStop = lowest low of consecutive completed T1 bars immediately preceding the signal bar whose closes are below OpeningRangeLow, within the stop lookback
+Calculation: ShortStop = highest high of consecutive completed T1 bars immediately preceding the signal bar whose closes are above OpeningRangeHigh, within the stop lookback
+Long: opening range complete AND close(T1, last completed bar) > OpeningRangeLow AND close(T1, immediately preceding completed bar) < OpeningRangeLow AND OutsideDuration(OpeningRangeLow, below) <= outside-duration limit AND the consecutive closes below OpeningRangeLow end within the stop lookback
+Short: opening range complete AND close(T1, last completed bar) < OpeningRangeHigh AND close(T1, immediately preceding completed bar) > OpeningRangeHigh AND OutsideDuration(OpeningRangeHigh, above) <= outside-duration limit AND the consecutive closes above OpeningRangeHigh end within the stop lookback
+Exit: long, low(T1, bar still forming) <= LongStop OR high(T1, bar still forming) >= entry price + target multiple * abs(entry price - LongStop)
+Exit: short, high(T1, bar still forming) >= ShortStop OR low(T1, bar still forming) <= entry price - target multiple * abs(ShortStop - entry price)

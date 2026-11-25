@@ -1,0 +1,2 @@
+Long: (EMA(close, shorter lookback) - EMA(close, longer lookback)) × direction multiplier > 0 AND low > EMA(close, shorter lookback)
+Short: (EMA(close, shorter lookback) - EMA(close, longer lookback)) × direction multiplier < 0 AND high < EMA(close, shorter lookback)

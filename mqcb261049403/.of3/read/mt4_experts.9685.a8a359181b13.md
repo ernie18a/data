@@ -1,0 +1,5 @@
+Calculation: MACD main = MACD(close, shorter lookback, longer lookback, signal smoothing lookback, current forming chart bar)
+Long: open position count < position limit AND ((no open positions AND ((MACD main > MACD main[1] AND signal reversal disabled) OR (MACD main < MACD main[1] AND signal reversal enabled))) OR (long position AND close <= entry price - add-entry distance))
+Short: open position count < position limit AND ((no open positions AND ((MACD main < MACD main[1] AND signal reversal disabled) OR (MACD main > MACD main[1] AND signal reversal enabled))) OR (short position AND close >= entry price + add-entry distance))
+Exit: long, (account protection enabled AND open position count >= protection-count threshold AND aggregate open-position profit >= protection-profit threshold) OR (open position count < count on previous evaluation)
+Exit: short, (account protection enabled AND open position count >= protection-count threshold AND aggregate open-position profit >= protection-profit threshold) OR (open position count < count on previous evaluation)

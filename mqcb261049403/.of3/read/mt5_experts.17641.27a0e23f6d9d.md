@@ -1,0 +1,4 @@
+Long: On chart bars, MA(applied price A, method A, shorter lookback, horizontal shift A, T1, last completed bar) > MA(applied price B, method B, longer lookback, horizontal shift B, T2, last completed bar) AND close <= lowest(low, extrema lookback, chart bars 1 through extrema lookback)
+Short: On chart bars, MA(applied price A, method A, shorter lookback, horizontal shift A, T1, last completed bar) < MA(applied price B, method B, longer lookback, horizontal shift B, T2, last completed bar) AND close >= highest(high, extrema lookback, chart bars 1 through extrema lookback)
+Exit: long, close >= highest(high, extrema lookback, chart bars 1 through extrema lookback)
+Exit: short, close <= lowest(low, extrema lookback, chart bars 1 through extrema lookback)

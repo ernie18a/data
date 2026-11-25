@@ -1,0 +1,2 @@
+Long: (low[1] < low[2] AND high[1] > high[2] AND close[1] > high[2] OR high[1] > high[2] AND low[1] < low[2] AND close[1] < low[2]) AND ONNX classifier probability of Buy > parameter
+Short: (low[1] < low[2] AND high[1] > high[2] AND close[1] > high[2] OR high[1] > high[2] AND low[1] < low[2] AND close[1] < low[2]) AND ONNX classifier probability of Sell > parameter

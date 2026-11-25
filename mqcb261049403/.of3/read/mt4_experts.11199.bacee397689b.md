@@ -1,0 +1,2 @@
+Long: on each tick, open(T1, bar still forming) < low(T1, last completed bar) - (minimum gap size + spread in points) × point size
+Short: on each tick, open(T1, bar still forming) > high(T1, last completed bar) + (minimum gap size + spread in points) × point size

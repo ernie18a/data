@@ -1,0 +1,2 @@
+Long: Stochastic(high, low, close, shorter K lookback, first D lookback, first slowing parameter, T1, still-forming bar) >= upper threshold OR Stochastic(high, low, close, longer K lookback, second D lookback, second slowing parameter, T1, still-forming bar) >= upper threshold
+Short: Stochastic(high, low, close, shorter K lookback, first D lookback, first slowing parameter, T1, still-forming bar) <= lower threshold OR Stochastic(high, low, close, longer K lookback, second D lookback, second slowing parameter, T1, still-forming bar) <= lower threshold

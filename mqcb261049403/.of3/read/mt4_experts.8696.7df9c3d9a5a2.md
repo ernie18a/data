@@ -1,0 +1,5 @@
+Calculation: channel width = highest(high, lookback, previous completed chart bars) - lowest(low, lookback, previous completed chart bars)
+Long: current chart bar low <= lowest(low, same lookback, previous completed chart bars)
+Short: current chart bar high >= highest(high, same lookback, previous completed chart bars)
+Exit: long, current chart bar low <= entry price - max(channel width × stop multiplier, (broker minimum stop level + stop-level buffer) × point size)
+Exit: short, current chart bar high >= entry price + max(channel width × stop multiplier, (broker minimum stop level + stop-level buffer) × point size)

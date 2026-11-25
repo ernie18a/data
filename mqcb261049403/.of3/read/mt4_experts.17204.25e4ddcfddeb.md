@@ -1,0 +1,2 @@
+Long: MACD main line(close, shorter lookback, longer lookback, T1, bar still forming), evaluated on chart bars using T1 values, > 0 AND MACD main line(close, shorter lookback, longer lookback, T2, bar still forming), evaluated on chart bars using T2 values, > 0
+Short: MACD main line(close, shorter lookback, longer lookback, T1, bar still forming), evaluated on chart bars using T1 values, < 0 AND MACD main line(close, shorter lookback, longer lookback, T2, bar still forming), evaluated on chart bars using T2 values, < 0

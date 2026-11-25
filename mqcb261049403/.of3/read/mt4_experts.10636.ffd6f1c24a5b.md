@@ -1,0 +1,4 @@
+Long: flat AND minute(datetime) = entry-minute parameter AND volume[1] > volume[2] * volume factor AND CCI(typical price, lookback, chart bar still forming) > long lower threshold AND CCI(typical price, lookback, chart bar still forming) < long upper threshold AND open[1] < close[1]
+Short: flat AND minute(datetime) = entry-minute parameter AND volume[1] > volume[2] * volume factor AND CCI(typical price, lookback, chart bar still forming) < short upper threshold AND CCI(typical price, lookback, chart bar still forming) > short lower threshold AND open[1] > close[1]
+Exit: long, hour(datetime) = exit-hour parameter
+Exit: short, hour(datetime) = exit-hour parameter

@@ -1,0 +1,8 @@
+Calculation: initial capital = account balance at initialization if capital override is zero, otherwise capital override
+Calculation: drawdown threshold = initial capital - risk limit
+Calculation: risk health = round to one decimal place(100 * (account equity - drawdown threshold) / (account balance - drawdown threshold))
+Calculation: order load = 100 * total account order count / layer count
+Short: short enabled AND order load < risk health AND risk stop inactive AND current chart bar close > previous chart bar close AND CCI(close, CCI lookback) on the still-forming chart bar > level threshold OR long enabled AND a new chart bar begins
+Long: long enabled AND order load < risk health AND risk stop inactive AND current chart bar close < previous chart bar close AND CCI(close, CCI lookback) on the still-forming chart bar < -level threshold OR short enabled AND a new chart bar begins
+Exit: long, low <= entry price - ATR(ATR lookback) on the still-forming chart bar when the order is placed * stop multiple OR high >= entry price + ATR(ATR lookback) on the still-forming chart bar when the order is placed * target multiple OR hard close enabled
+Exit: short, high >= entry price + ATR(ATR lookback) on the still-forming chart bar when the order is placed * stop multiple OR low <= entry price - ATR(ATR lookback) on the still-forming chart bar when the order is placed * target multiple OR hard close enabled

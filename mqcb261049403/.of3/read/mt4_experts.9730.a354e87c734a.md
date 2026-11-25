@@ -1,0 +1,4 @@
+Long: open[shorter lookback] - open[longer lookback] > long entry threshold in points * point
+Short: open[longer lookback] - open[shorter lookback] > short entry threshold in points * point
+Exit: long, low <= entry price - long stop-loss distance in points * point OR high >= entry price + long take-profit distance in points * point OR maximum holding duration is enabled AND position age in hours >= maximum holding duration
+Exit: short, high >= entry price + short stop-loss distance in points * point OR low <= entry price - short take-profit distance in points * point OR maximum holding duration is enabled AND position age in hours >= maximum holding duration

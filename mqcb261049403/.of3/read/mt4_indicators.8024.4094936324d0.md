@@ -1,0 +1,2 @@
+Long: MACD histogram(applied-price parameter, MA-type parameter, shorter MA lookback, longer MA lookback, separate signal lookback, T1), evaluated on chart bars using the corresponding T1 bar, including the bar still forming > 0
+Short: MACD histogram(applied-price parameter, MA-type parameter, shorter MA lookback, longer MA lookback, separate signal lookback, T1), evaluated on chart bars using the corresponding T1 bar, including the bar still forming <= 0

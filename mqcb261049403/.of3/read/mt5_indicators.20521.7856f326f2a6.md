@@ -1,0 +1,4 @@
+Calculation: upper level = on T1 bars, EMA(close, lookback, T1, bar still forming) on the first bar; otherwise, if EMA(close, lookback, T1, bar still forming) > lower level[1], upper level[1] + 2/(lookback+1) * (EMA(close, lookback, T1, bar still forming) - upper level[1]); otherwise upper level[1]
+Calculation: lower level = on T1 bars, EMA(close, lookback, T1, bar still forming) on the first bar; otherwise, if EMA(close, lookback, T1, bar still forming) < upper level[1], lower level[1] + 2/(lookback+1) * (EMA(close, lookback, T1, bar still forming) - lower level[1]); otherwise lower level[1]
+Long: on T1 bars, EMA(close, lookback, T1, bar still forming) > upper level
+Short: on T1 bars, EMA(close, lookback, T1, bar still forming) < lower level

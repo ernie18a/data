@@ -1,0 +1,2 @@
+Long: first indicator series[0] > first indicator series[1] AND first indicator series[1] < first indicator series[2] AND second indicator series[1] > second indicator series[0]
+Short: first indicator series[0] < first indicator series[1] AND first indicator series[1] > first indicator series[2] AND second indicator series[1] < second indicator series[0]

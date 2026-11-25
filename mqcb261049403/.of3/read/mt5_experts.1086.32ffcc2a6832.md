@@ -1,0 +1,2 @@
+Long: position side is flat AND at the configured time on chart bars, open of the last completed T1 bar > close of the last completed T1 bar
+Short: position side is flat AND at the configured time on chart bars, open of the last completed T1 bar < close of the last completed T1 bar

@@ -1,0 +1,4 @@
+Calculation: ROC trend = up if EMA(open, ROC MA lookback, T1, mapped bar still forming on each chart bar) > EMA(open, ROC MA lookback, T1, ROC lag bars before the mapped bar); down if <; neutral if =
+Calculation: MA-difference trend = for MACD(open, short lookback, long lookback, T1, mapped bar still forming on each chart bar), compare its value with the previous completed T1 bar's value; when it rises, retain down only if the absolute change is below the hysteresis threshold and the remembered direction is down, otherwise set up; when it falls, retain up only if the absolute change is below the threshold and the remembered direction is up, otherwise set down; when equal, retain the direction
+Long: ROC trend is up or down AND MA-difference trend is up
+Short: ROC trend is up or down AND MA-difference trend is down

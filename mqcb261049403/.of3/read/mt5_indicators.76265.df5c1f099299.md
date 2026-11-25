@@ -1,0 +1,2 @@
+Long: ArrowsEnabled AND abs(PearsonCorrelation(current instrument returns, reference instrument returns, correlation lookback)) < correlation threshold AND ZScore(spread, z-score lookback) <= -z-score threshold
+Short: ArrowsEnabled AND abs(PearsonCorrelation(current instrument returns, reference instrument returns, correlation lookback)) < correlation threshold AND ZScore(spread, z-score lookback) >= z-score threshold

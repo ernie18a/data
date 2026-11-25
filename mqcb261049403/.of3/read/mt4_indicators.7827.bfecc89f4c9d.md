@@ -1,0 +1,3 @@
+Calculation: Kagi state = Kagi(close, reversal threshold on chart bars, including the still-forming bar), with the threshold expressed as either a percentage of current close or a fixed price distance; initialize from the first Kagi leg's direction, switch bullish when an upswing endpoint exceeds the preceding upswing endpoint, switch bearish when a downswing endpoint falls below the preceding downswing endpoint, otherwise retain the state
+Long: Kagi state = bullish
+Short: Kagi state = bearish

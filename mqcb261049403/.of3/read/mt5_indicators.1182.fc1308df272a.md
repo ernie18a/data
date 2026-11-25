@@ -1,0 +1,2 @@
+Long: On chart bars taking values from the corresponding T1 bar, including the still-forming T1 bar, previous Adaptive Laguerre filter(applied price) is positive AND current Adaptive Laguerre filter(applied price) > previous Adaptive Laguerre filter(applied price)
+Short: On chart bars taking values from the corresponding T1 bar, including the still-forming T1 bar, previous Adaptive Laguerre filter(applied price) is positive AND current Adaptive Laguerre filter(applied price) < previous Adaptive Laguerre filter(applied price)

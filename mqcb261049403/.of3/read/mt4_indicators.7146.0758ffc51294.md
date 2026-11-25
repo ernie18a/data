@@ -1,0 +1,2 @@
+Long: The plotted value is greater than its previous value, or it equals its previous value and its last unequal change was upward
+Short: The plotted value is less than its previous value, or it equals its previous value and its last unequal change was downward

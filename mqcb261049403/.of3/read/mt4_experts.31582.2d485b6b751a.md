@@ -1,0 +1,4 @@
+Long: chart timeframe is T1 AND Force Index(close, smoothing lookback, SMA, T1, last completed bar) > long threshold AND Force Index(close, smoothing lookback, SMA, T1, preceding completed bar) < long threshold AND no open position
+Short: chart timeframe is T1 AND Force Index(close, smoothing lookback, SMA, T1, last completed bar) < short threshold AND Force Index(close, smoothing lookback, SMA, T1, preceding completed bar) > short threshold AND no open position
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

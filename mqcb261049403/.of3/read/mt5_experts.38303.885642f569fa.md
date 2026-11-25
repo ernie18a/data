@@ -1,0 +1,5 @@
+Calculation: Grid index = on initialization, if close < grid reference price, 1 − i for the smallest integer i from 1 through grid count / 2 such that close > grid reference price × (1 − grid spacing × i), or grid count / 2 if none; otherwise, i − 1 for the smallest integer i from 1 through grid count / 2 such that close < grid reference price × (1 + grid spacing × i), or −grid count / 2 if none; increase by 1 after an upper grid crossing and decrease by 1 after a lower grid crossing
+Calculation: Lower grid level = grid reference price × (1 − grid spacing × (1 − grid index)) when grid index > 1 − grid count, otherwise 0
+Calculation: Upper grid level = grid reference price × (1 + grid spacing × (1 + grid index)) when grid index < grid count − 1, otherwise 0
+Long: close <= lower grid level AND lower grid level != 0 AND a short position exists
+Short: close >= upper grid level AND upper grid level != 0 AND a long position exists

@@ -1,0 +1,3 @@
+Calculation: AlphaTrend = if RSI mode then (RSI(close, lookback) >= threshold ? max(low - ATR(lookback) * multiplier, AlphaTrend[1]) : min(high + ATR(lookback) * multiplier, AlphaTrend[1])) else (MFI(high, low, close, volume, lookback) >= threshold ? max(low - ATR(lookback) * multiplier, AlphaTrend[1]) : min(high + ATR(lookback) * multiplier, AlphaTrend[1]))
+Long: AlphaTrend crosses above AlphaTrend[signal lag]
+Short: AlphaTrend crosses below AlphaTrend[signal lag]

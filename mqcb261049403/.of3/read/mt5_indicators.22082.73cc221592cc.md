@@ -1,0 +1,1 @@
+Short: close > close[1] AND modified advance-decline line < modified advance-decline line[1]

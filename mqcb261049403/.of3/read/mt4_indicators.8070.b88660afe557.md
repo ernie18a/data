@@ -1,0 +1,4 @@
+Calculation: Up sum = XO up-direction output(parameter 1, T1 bar containing the chart bar's time, still forming) + XO up-direction output(parameter 2, T2 bar containing the chart bar's time, still forming) + XO up-direction output(parameter 3, T3 bar containing the chart bar's time, still forming) + XO up-direction output(parameter 4, T4 bar containing the chart bar's time, still forming)
+Calculation: Down sum = XO down-direction output(parameter 1, T1 bar containing the chart bar's time, still forming) + XO down-direction output(parameter 2, T2 bar containing the chart bar's time, still forming) + XO down-direction output(parameter 3, T3 bar containing the chart bar's time, still forming) + XO down-direction output(parameter 4, T4 bar containing the chart bar's time, still forming)
+Long: Up sum = 4
+Short: Down sum = -4

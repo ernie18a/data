@@ -1,0 +1,2 @@
+Long: chart close > upper Bollinger Band(close, lookback, standard-deviation multiplier, greater of chart timeframe and T1, current forming bar mapped to each chart bar)
+Short: chart close < lower Bollinger Band(close, lookback, standard-deviation multiplier, greater of chart timeframe and T1, current forming bar mapped to each chart bar)

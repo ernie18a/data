@@ -1,0 +1,2 @@
+Long: day-of-week(datetime) = weekday parameter AND hour(datetime) = min(hour parameter, maximum-hour parameter) AND hour(datetime[1]) != hour parameter AND close[1] < Open(open, T1, last completed bar on chart bars)
+Short: day-of-week(datetime) = weekday parameter AND hour(datetime) = min(hour parameter, maximum-hour parameter) AND hour(datetime[1]) != hour parameter AND close[1] > Open(open, T1, last completed bar on chart bars)

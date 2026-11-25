@@ -1,0 +1,2 @@
+Long: current time is after a high-impact scheduled economic release time minus T1 and before its release time
+Short: current time is after a high-impact scheduled economic release time minus T1 and before its release time

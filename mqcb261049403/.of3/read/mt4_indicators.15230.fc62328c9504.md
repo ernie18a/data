@@ -1,0 +1,2 @@
+Long: Force Index(lookback, averaging method, applied price) > threshold AND Alligator Lips > Alligator Teeth AND Alligator Teeth > Alligator Jaw
+Short: Force Index(lookback, averaging method, applied price) < threshold AND Alligator Lips < Alligator Teeth AND Alligator Teeth < Alligator Jaw

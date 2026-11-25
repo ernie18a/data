@@ -1,0 +1,2 @@
+Long: PVO histogram(shorter lookback, longer lookback, signal lookback) > PVO histogram(shorter lookback, longer lookback, signal lookback)[1]
+Short: PVO histogram(shorter lookback, longer lookback, signal lookback) < PVO histogram(shorter lookback, longer lookback, signal lookback)[1]

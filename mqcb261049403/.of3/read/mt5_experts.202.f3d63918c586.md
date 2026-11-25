@@ -1,0 +1,2 @@
+Long: MA(close, first lookback) crosses above MA(close, second lookback) AND RSI(close, lookback) < oversold threshold
+Short: MA(close, first lookback) crosses below MA(close, second lookback) AND RSI(close, lookback) > overbought threshold

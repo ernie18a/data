@@ -1,0 +1,2 @@
+Long: On chart bars using T1 values, DeMarker(period, T1, last completed bar) < lower threshold AND DeMarker(period, T1, forming bar) > lower threshold
+Short: On chart bars using T1 values, DeMarker(period, T1, last completed bar) > upper threshold AND DeMarker(period, T1, forming bar) < upper threshold

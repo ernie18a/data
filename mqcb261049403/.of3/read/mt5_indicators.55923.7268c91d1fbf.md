@@ -1,0 +1,3 @@
+Calculation: Prior-close mean(close, trend lookback) = sum(close[n] for n = 1 to trend lookback - 1) / trend lookback
+Long: (granular mode AND volume >= SMA(volume, volume lookback) AND Prior-close mean(close, trend lookback) > Prior-close mean(close, trend lookback)[1]) OR (non-granular mode AND Prior-close mean(close, trend lookback) > Prior-close mean(close, trend lookback)[1])
+Short: (granular mode AND (volume < SMA(volume, volume lookback) OR Prior-close mean(close, trend lookback) <= Prior-close mean(close, trend lookback)[1])) OR (non-granular mode AND Prior-close mean(close, trend lookback) <= Prior-close mean(close, trend lookback)[1])

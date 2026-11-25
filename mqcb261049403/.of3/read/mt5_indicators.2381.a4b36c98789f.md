@@ -1,0 +1,4 @@
+Calculation: PivotVolume(fractal) = sum(selected volume, lookback centered on fractal)
+Calculation: RangePerVolume(fractal) = sum(high - low, same lookback centered on fractal) / PivotVolume(fractal)
+Long: a lower fractal occurs without an upper fractal on the same bar AND the last single fractal was upper AND RangePerVolume(current lower fractal) < RangePerVolume(previous upper fractal) AND PivotVolume(current lower fractal) > PivotVolume(previous upper fractal)
+Short: an upper fractal occurs without a lower fractal on the same bar AND the last single fractal was lower AND RangePerVolume(current upper fractal) < RangePerVolume(previous lower fractal) AND PivotVolume(current upper fractal) > PivotVolume(previous lower fractal)

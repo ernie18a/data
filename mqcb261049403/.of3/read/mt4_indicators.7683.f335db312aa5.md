@@ -1,0 +1,2 @@
+Long: Parabolic SAR(step, maximum, T1, still-forming bar) < close(T1, still-forming bar) AND +DI(close, lookback, T1, still-forming bar) != -DI(close, lookback, T1, still-forming bar)
+Short: Parabolic SAR(step, maximum, T1, still-forming bar) > close(T1, still-forming bar) AND +DI(close, lookback, T1, still-forming bar) != -DI(close, lookback, T1, still-forming bar)

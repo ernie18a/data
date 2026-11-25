@@ -1,0 +1,4 @@
+Long: flat AND close[1] > lower Bollinger Band(close, lookback, deviation)[1] AND open[1] < lower Bollinger Band(close, lookback, deviation)[1] AND DEMA(close, lookback)[0] > DEMA(close, lookback)[1] AND DEMA(close, lookback)[1] > DEMA(close, lookback)[2]
+Short: flat AND close[1] < upper Bollinger Band(close, lookback, deviation)[1] AND open[1] > upper Bollinger Band(close, lookback, deviation)[1] AND DEMA(close, lookback)[0] < DEMA(close, lookback)[1] AND DEMA(close, lookback)[1] < DEMA(close, lookback)[2]
+Exit: long, close[1] < upper Bollinger Band(close, lookback, deviation)[1] AND open[1] > upper Bollinger Band(close, lookback, deviation)[1]
+Exit: short, close[1] > lower Bollinger Band(close, lookback, deviation)[1] AND open[1] < lower Bollinger Band(close, lookback, deviation)[1]

@@ -1,0 +1,2 @@
+Long: BullsBearsEyes(parameter 1, parameter 2, parameter 3, parameter 4, buffer 0, current chart bar) > parameter 5
+Short: BullsBearsEyes(parameter 1, parameter 2, parameter 3, parameter 4, buffer 0, current chart bar) < parameter 5

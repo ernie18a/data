@@ -1,0 +1,4 @@
+Long: volume <= volume threshold AND EMA(close, shorter lookback) < EMA(close, middle lookback) AND EMA(close, shorter lookback) > EMA(close, longer lookback)
+Short: volume <= volume threshold AND EMA(close, shorter lookback) > EMA(close, middle lookback) AND EMA(close, shorter lookback) < EMA(close, longer lookback)
+Exit: long, when SL/TP mode selects hidden handling, take-profit distance > 0 AND int((close - entry price) / point size) >= take-profit distance OR stop-loss distance > 0 AND int((close - entry price) / point size) <= -stop-loss distance
+Exit: short, when SL/TP mode selects hidden handling, take-profit distance > 0 AND int((entry price - close) / point size) >= take-profit distance OR stop-loss distance > 0 AND int((entry price - close) / point size) <= -stop-loss distance

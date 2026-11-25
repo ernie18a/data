@@ -1,0 +1,17 @@
+Calculation: First Alligator period = round(Alligator base period × Alligator period multiplier)
+Calculation: Second Alligator period = round(First Alligator period × Alligator period multiplier)
+Calculation: Third Alligator period = round(Second Alligator period × Alligator period multiplier)
+Calculation: Current Alligator lips = Alligator lips line((high + low) / 2, First Alligator period, shift Alligator base period, Alligator method parameter, chart bars, bar still forming)
+Calculation: Current Alligator jaws = Alligator jaws line((high + low) / 2, Third Alligator period, shift Second Alligator period, Alligator method parameter, chart bars, bar still forming)
+Calculation: Current Alligator teeth = Alligator teeth line((high + low) / 2, Second Alligator period, shift First Alligator period, Alligator method parameter, chart bars, bar still forming)
+Calculation: Previous completed-bar Alligator lips = Alligator lips line((high + low) / 2, First Alligator period, shift Alligator base period, Alligator method parameter, chart bars, last completed bar)
+Calculation: Previous completed-bar Alligator jaws = Alligator jaws line((high + low) / 2, Third Alligator period, shift Second Alligator period, Alligator method parameter, chart bars, last completed bar)
+Calculation: EMA of close = EMA(close, Live lookback, chart bars, bar still forming)
+Calculation: EMA of weighted close = EMA((high + low + 2 × close) / 4, Live lookback, chart bars, bar still forming)
+Calculation: EMA of typical price = EMA((high + low + close) / 3, Live lookback, chart bars, bar still forming)
+Calculation: EMA of median price = EMA((high + low) / 2, Live lookback, chart bars, bar still forming)
+Calculation: EMA of open = EMA(open, Live lookback, chart bars, bar still forming)
+Calculation: Bullish trend = Current Alligator lips > Current Alligator jaws AND Current Alligator teeth < Current Alligator jaws AND Previous completed-bar Alligator lips < Previous completed-bar Alligator jaws AND EMA of close > EMA of weighted close AND EMA of weighted close > EMA of typical price AND EMA of typical price > EMA of median price AND EMA of median price > EMA of open AND (hour filter disabled OR (datetime hour > start-hour parameter AND datetime hour < end-hour parameter))
+Calculation: Bearish trend = Current Alligator lips < Current Alligator jaws AND Current Alligator teeth > Current Alligator jaws AND Previous completed-bar Alligator lips > Previous completed-bar Alligator jaws AND EMA of close < EMA of weighted close AND EMA of weighted close < EMA of typical price AND EMA of typical price < EMA of median price AND EMA of median price < EMA of open AND (hour filter disabled OR (datetime hour > start-hour parameter AND datetime hour < end-hour parameter))
+Long: Bullish trend AND the most recent earlier chart bar on which either Bullish trend or Bearish trend was true had Bearish trend true
+Short: Bearish trend AND the most recent earlier chart bar on which either Bullish trend or Bearish trend was true had Bullish trend true

@@ -1,0 +1,2 @@
+Long: On each chart bar, use OsMA(applied price, fast EMA lookback, slow EMA lookback, signal lookback, T1) values from T1 bars: [2] > [1] AND [1] < [0], where [0] is the still-forming T1 bar and [1] and [2] are completed T1 bars.
+Short: On each chart bar, use OsMA(applied price, fast EMA lookback, slow EMA lookback, signal lookback, T1) values from T1 bars: [2] < [1] AND [1] > [0], where [0] is the still-forming T1 bar and [1] and [2] are completed T1 bars.

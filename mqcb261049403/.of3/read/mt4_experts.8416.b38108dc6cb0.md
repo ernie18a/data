@@ -1,0 +1,6 @@
+Long: no open long position AND Stochastic main line(K period, D period, slowing period, LWMA, close/close) on the last completed chart bar > its signal line AND its signal line > long threshold
+Short: no open short position AND Stochastic main line(K period, D period, slowing period, LWMA, close/close) on the last completed chart bar < its signal line AND its signal line < short threshold
+Long: an open long position AND ((fixed-step mode AND low <= last long entry price - step × price point) OR (count-increasing-step mode AND low <= last long entry price - (step + prior long position count × per-position step increment) × price point))
+Short: an open short position AND ((fixed-step mode AND high >= last short entry price + step × price point) OR (count-increasing-step mode AND high >= last short entry price + (step + prior short position count × per-position step increment) × price point))
+Exit: long, total open long profit > 0 AND high >= last long entry price + long position count × profit factor × price point
+Exit: short, total open short profit > 0 AND low <= last short entry price - short position count × profit factor × price point

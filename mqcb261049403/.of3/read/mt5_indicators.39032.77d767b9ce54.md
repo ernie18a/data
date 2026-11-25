@@ -1,0 +1,2 @@
+Long: Chaikin Oscillator crosses above MA(Chaikin Oscillator, lookback, averaging method) AND Chaikin Oscillator < 0
+Short: Chaikin Oscillator crosses below MA(Chaikin Oscillator, lookback, averaging method) AND Chaikin Oscillator > 0

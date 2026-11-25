@@ -1,0 +1,1 @@
+Long: a visible fractal above zero and an auxiliary reference peak define a signal line through both points AND the indicator crosses that signal line below zero

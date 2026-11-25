@@ -1,0 +1,7 @@
+Calculation: adjusted point = instrument point × 10 when price precision is 3 or 5 digits, otherwise instrument point
+Calculation: short SMA = SMA(close, shorter lookback, moving-average shift parameter, T1), sampled on chart bars
+Calculation: long SMA = SMA(close, longer lookback, moving-average shift parameter, T1), sampled on chart bars
+Long: short SMA on the still-forming T1 bar − long SMA on the still-forming T1 bar ≥ instrument point AND long SMA at the shorter historical T1-bar offset − short SMA at the shorter historical T1-bar offset ≥ instrument point AND long SMA at the longer historical T1-bar offset − short SMA at the longer historical T1-bar offset ≥ instrument point AND close > open on the last completed chart bar
+Short: long SMA on the still-forming T1 bar − short SMA on the still-forming T1 bar ≥ instrument point AND short SMA at the shorter historical T1-bar offset − long SMA at the shorter historical T1-bar offset ≥ instrument point AND short SMA at the longer historical T1-bar offset − long SMA at the longer historical T1-bar offset ≥ instrument point AND close < open on the last completed chart bar
+Exit: long, low ≤ entry price − stop-loss parameter × adjusted point OR high ≥ entry price + take-profit parameter × adjusted point
+Exit: short, high ≥ entry price + stop-loss parameter × adjusted point OR low ≤ entry price − take-profit parameter × adjusted point

@@ -1,0 +1,2 @@
+Long: fast moving average >= slow moving average, where the fast lookback is shorter than the slow lookback
+Short: fast moving average < slow moving average, where the fast lookback is shorter than the slow lookback

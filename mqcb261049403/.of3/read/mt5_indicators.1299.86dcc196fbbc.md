@@ -1,0 +1,2 @@
+Long: Renko(close, box size) > Renko(close, box size)[1] AND Renko(close, box size)[1] < Renko(close, box size)[2]
+Short: Renko(close, box size) < Renko(close, box size)[1] AND Renko(close, box size)[1] > Renko(close, box size)[2]

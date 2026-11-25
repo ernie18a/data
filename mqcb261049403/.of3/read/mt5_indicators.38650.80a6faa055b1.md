@@ -1,0 +1,2 @@
+Long: average strength of the symbol's base currency on T1 > average strength of the symbol's quote currency on T1
+Short: average strength of the symbol's base currency on T1 < average strength of the symbol's quote currency on T1

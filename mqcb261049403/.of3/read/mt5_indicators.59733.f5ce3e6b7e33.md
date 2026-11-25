@@ -1,0 +1,2 @@
+Long: close[1] < open[1] AND close > open AND open <= close[1] AND close > open[1] AND (volume confirmation is disabled OR volume > volume[1])
+Short: close[1] > open[1] AND close < open AND open >= close[1] AND close < open[1] AND (volume confirmation is disabled OR volume > volume[1])

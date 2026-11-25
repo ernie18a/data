@@ -1,0 +1,2 @@
+Long: volume * (high - open) / ((high - open) + (close - low)) > volume * (close - low) / ((high - open) + (close - low))
+Short: volume * (close - low) / ((high - open) + (close - low)) > volume * (high - open) / ((high - open) + (close - low))

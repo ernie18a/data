@@ -1,0 +1,13 @@
+Calculation: entry oscillator = Stochastic main(high, low, close, K lookback, D lookback, slowing, smoothing method, applied price, T1 bars, last completed bar, sampled on chart bars)
+Short: entry oscillator >= short threshold 1
+Short: entry oscillator >= short threshold 2
+Short: entry oscillator >= short threshold 3
+Short: entry oscillator >= short threshold 4
+Short: entry oscillator >= short threshold 5
+Short: entry oscillator >= short threshold 6
+Long: entry oscillator <= long threshold 1
+Long: entry oscillator <= long threshold 2
+Long: entry oscillator <= long threshold 3
+Long: entry oscillator <= long threshold 4
+Long: entry oscillator <= long threshold 5
+Long: entry oscillator <= long threshold 6

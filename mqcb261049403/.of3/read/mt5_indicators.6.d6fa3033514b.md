@@ -1,0 +1,2 @@
+Long: Accumulation/Distribution(high, low, close, volume) > Accumulation/Distribution(high, low, close, volume)[1]
+Short: Accumulation/Distribution(high, low, close, volume) < Accumulation/Distribution(high, low, close, volume)[1]

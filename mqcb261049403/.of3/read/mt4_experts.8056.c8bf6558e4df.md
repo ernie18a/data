@@ -1,0 +1,6 @@
+Exit: long, minute(datetime) modulo management interval = 0 AND a lower Fractals low exists within the short fractal lookback AND (that low - (spread in points + stop buffer in points) * point size > current stop loss OR current stop loss = 0)
+Exit: long, minute(datetime) modulo management interval = 0 AND no lower Fractals low exists within the short fractal lookback AND (low[fallback bar offset] - stop buffer in points * point size > current stop loss OR current stop loss = 0)
+Exit: long, TP management enabled AND minute(datetime) modulo management interval = 0 AND current take profit = 0 AND close > entry price AND an upper Fractals high exists within the long fractal lookback
+Exit: short, minute(datetime) modulo management interval = 0 AND an upper Fractals high exists within the short fractal lookback AND (current stop loss - (that high + stop buffer in points * point size) > 0 OR current stop loss = 0)
+Exit: short, minute(datetime) modulo management interval = 0 AND no upper Fractals high exists within the short fractal lookback AND (current stop loss - (high[fallback bar offset] + stop buffer in points * point size) > 0 OR current stop loss = 0)
+Exit: short, TP management enabled AND minute(datetime) modulo management interval = 0 AND current take profit = 0 AND close < entry price AND a lower Fractals low exists within the long fractal lookback

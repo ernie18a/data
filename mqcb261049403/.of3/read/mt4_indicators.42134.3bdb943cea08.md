@@ -1,0 +1,2 @@
+Long: On chart bars using values from the still-forming T1 bar, with calculations run on T1 bars, Moving Average(applied price, MA lookback, MA shift, MA method) > upper Bollinger Band(close, band lookback, band deviation, band shift)
+Short: On chart bars using values from the still-forming T1 bar, with calculations run on T1 bars, Moving Average(applied price, MA lookback, MA shift, MA method) < lower Bollinger Band(close, band lookback, band deviation, band shift)

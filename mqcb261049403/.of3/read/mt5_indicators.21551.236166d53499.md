@@ -1,0 +1,2 @@
+Long: VZO(close, volume, VZO period) > Lowest(VZO(close, volume, VZO period), floating-level lookback) + upper-level parameter * (Highest(VZO(close, volume, VZO period), floating-level lookback) - Lowest(VZO(close, volume, VZO period), floating-level lookback)) / 100
+Short: VZO(close, volume, VZO period) < Lowest(VZO(close, volume, VZO period), floating-level lookback) + lower-level parameter * (Highest(VZO(close, volume, VZO period), floating-level lookback) - Lowest(VZO(close, volume, VZO period), floating-level lookback)) / 100

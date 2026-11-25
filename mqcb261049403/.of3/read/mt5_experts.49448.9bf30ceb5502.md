@@ -1,0 +1,2 @@
+Long: open[3] > close[3] AND low[3] < open[2] < close[2] < high[3] AND open[2] < open[1] < close[2] AND open[1] < close[1] AND close[1] > high[3]
+Short: open[3] < close[3] AND low[3] < close[2] < open[2] < high[3] AND close[2] < open[1] < open[2] AND close[1] < open[1] AND close[1] < low[3]

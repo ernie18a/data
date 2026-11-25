@@ -1,0 +1,2 @@
+Long: Parabolic SAR(acceleration, maximum, T1 bar at the chart bar's shift) < close(T1 bar at the chart bar's shift) AND +DI(lookback, T1 bar at the chart bar's shift) > -DI(lookback, T1 bar at the chart bar's shift); evaluate on chart bars, with the current T1 bar still forming
+Short: Parabolic SAR(acceleration, maximum, T1 bar at the chart bar's shift) > close(T1 bar at the chart bar's shift) AND -DI(lookback, T1 bar at the chart bar's shift) > +DI(lookback, T1 bar at the chart bar's shift); evaluate on chart bars, with the current T1 bar still forming

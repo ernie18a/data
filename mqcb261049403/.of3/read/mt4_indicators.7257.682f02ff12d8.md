@@ -1,0 +1,3 @@
+Calculation: First-extreme order = chronological order of the earliest T1 bars containing the minimum low and maximum high within each chart bar; if both extrema are in one T1 bar, repeat within that bar on the next lower timeframe, using the still-forming bar for the current chart bar and completed bars for completed chart bars; at the finest timeframe, extrema in the same bar tie
+Long: First-extreme order is low before high or the extrema tie at the finest timeframe
+Short: First-extreme order is high before low or the extrema tie at the finest timeframe

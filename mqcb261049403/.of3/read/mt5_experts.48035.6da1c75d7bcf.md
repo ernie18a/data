@@ -1,0 +1,2 @@
+Long: no open position AND Bid > 0 AND Bid equals the lowest low across the shared lookback parameter number of T1 bars, including the still-forming T1 bar, recalculated on each tick
+Short: no open position AND Ask > 0 AND Ask equals the highest high across the shared lookback parameter number of T1 bars, including the still-forming T1 bar, recalculated on each tick

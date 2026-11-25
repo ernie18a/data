@@ -1,0 +1,4 @@
+Long: On chart bars using T1 data, Close(T1, last completed bar) > Resistance(lookback, T1) AND Close(T1, preceding completed bar) <= Resistance(lookback, T1)
+Short: On chart bars using T1 data, Close(T1, last completed bar) < Support(lookback, T1) AND Close(T1, preceding completed bar) >= Support(lookback, T1)
+Long: On chart bars using T2 data, Close(T2, last completed bar) > Resistance(lookback, T2) AND Close(T2, preceding completed bar) <= Resistance(lookback, T2)
+Short: On chart bars using T2 data, Close(T2, last completed bar) < Support(lookback, T2) AND Close(T2, preceding completed bar) >= Support(lookback, T2)

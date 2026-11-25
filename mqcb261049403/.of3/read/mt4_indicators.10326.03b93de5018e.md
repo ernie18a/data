@@ -1,0 +1,2 @@
+Long: On chart bars, MA(applied price, lookback, method, T1, forming bar) > MA(applied price, lookback, method, T1, last completed bar)
+Short: On chart bars, MA(applied price, lookback, method, T1, forming bar) < MA(applied price, lookback, method, T1, last completed bar)

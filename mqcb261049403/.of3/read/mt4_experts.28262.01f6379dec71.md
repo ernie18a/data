@@ -1,0 +1,2 @@
+Exit: long, low <= entry price - ATR(lookback, T1, bar still forming at entry) × stop multiplier OR high >= entry price + ATR(lookback, T1, bar still forming at entry) × take multiplier
+Exit: short, high >= entry price + ATR(lookback, T1, bar still forming at entry) × stop multiplier OR low <= entry price - ATR(lookback, T1, bar still forming at entry) × take multiplier

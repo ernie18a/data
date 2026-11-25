@@ -1,0 +1,3 @@
+Calculation: NRTR reversal distance = mean(abs(high - low), lookback, chart bars including the forming bar) / 10^(reference instrument decimal precision - traded instrument decimal precision - digit-adjustment parameter)
+Long: NRTR(high, low, lookback, NRTR reversal distance, chart bars including the forming bar) changes from downtrend to uptrend
+Short: NRTR(high, low, lookback, NRTR reversal distance, chart bars including the forming bar) changes from uptrend to downtrend

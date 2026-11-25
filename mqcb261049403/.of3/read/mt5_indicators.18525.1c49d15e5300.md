@@ -1,0 +1,5 @@
+Calculation: Swing trend = initialize bearish with high and low set to the initial bar's high and low; while bullish, set bullish high to the maximum of its prior value and high and bullish low to the maximum of its prior value and low, switch bearish when high is below bullish low and initialize bearish high and low to the current high and low; while bearish, set bearish high to the minimum of its prior value and high and bearish low to the minimum of its prior value and low, switch bullish when low is above bearish high and initialize bullish high and low to the current high and low
+Long: Swing trend is bullish
+Short: Swing trend is bearish
+Long: Swing trend computed on T1 bars using the still-forming T1 bar and sampled on each chart bar is bullish
+Short: Swing trend computed on T1 bars using the still-forming T1 bar and sampled on each chart bar is bearish

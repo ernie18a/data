@@ -1,0 +1,1 @@
+Long: after a rise, price is in a flat consolidation and rises away from support on a high-volume surge

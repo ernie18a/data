@@ -1,0 +1,2 @@
+Long: weekday is Monday AND hour equals a parameter AND minute equals a parameter AND previous-day open > close
+Short: weekday is Monday AND hour equals a parameter AND minute equals a parameter AND previous-day open < close

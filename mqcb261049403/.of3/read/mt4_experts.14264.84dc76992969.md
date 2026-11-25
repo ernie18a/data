@@ -1,0 +1,6 @@
+Long: high >= Highest(high, lookback, chart bars including the current forming bar) + offset
+Short: low <= Lowest(low, lookback, chart bars including the current forming bar) - offset
+Calculation: Long protective stop = the greatest established level among entry price − stop-loss distance (when enabled), highest high since entry − trailing distance (when enabled and the high exceeds entry price + trailing distance), and the first price above entry price + no-loss distance − no-loss distance (when enabled and the existing stop is below entry price); established levels persist and only rise
+Calculation: Short protective stop = the least established level among entry price + stop-loss distance (when enabled), lowest low since entry + trailing distance (when enabled and the low falls below entry price − trailing distance), and the first price below entry price − no-loss distance + no-loss distance (when enabled and the existing stop is above entry price); established levels persist and only fall
+Exit: long, low <= Long protective stop OR high >= entry price + take-profit distance (when enabled)
+Exit: short, high >= Short protective stop OR low <= entry price − take-profit distance (when enabled)

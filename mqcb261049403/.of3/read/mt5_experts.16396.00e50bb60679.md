@@ -1,0 +1,2 @@
+Exit: long, chart-bar low <= adjustable long stop level, initialized as low(T1, bar still forming when position appears) - stop offset
+Exit: short, chart-bar high >= adjustable short stop level, initialized as high(T1, bar still forming when position appears) + stop offset

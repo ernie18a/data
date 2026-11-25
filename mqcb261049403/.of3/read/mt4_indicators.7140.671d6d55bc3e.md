@@ -1,0 +1,3 @@
+Calculation: synthetic close = close + (reversal setting is enabled ? −1 : 1) × ((external exchange rate 1 close × external exchange rate 2 close − external exchange rate 3 close) + (external exchange rate 1 close − external exchange rate 3 close / external exchange rate 2 close) + (external exchange rate 2 close − external exchange rate 3 close / external exchange rate 1 close))
+Long: synthetic close > close AND synthetic close[1] ≤ close[1]
+Short: synthetic close < close AND synthetic close[1] ≥ close[1]

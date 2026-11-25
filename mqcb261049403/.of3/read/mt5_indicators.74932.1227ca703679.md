@@ -1,0 +1,2 @@
+Long: close (T1, bar still forming) > upper band (T1, last completed bar) OR (prior T1 bar's trend direction is long AND close (T1, bar still forming) <= upper band (T1, last completed bar) AND close (T1, bar still forming) >= lower band (T1, last completed bar))
+Short: close (T1, bar still forming) < lower band (T1, last completed bar) OR (prior T1 bar's trend direction is short AND close (T1, bar still forming) >= lower band (T1, last completed bar) AND close (T1, bar still forming) <= upper band (T1, last completed bar))

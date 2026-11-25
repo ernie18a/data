@@ -1,0 +1,2 @@
+Long: MFI(high, low, close, volume, first lookback) > upper threshold OR MFI(high, low, close, volume, second lookback) > upper threshold OR MFI(high, low, close, volume, third lookback) > upper threshold OR MFI(high, low, close, volume, fourth lookback) > upper threshold
+Short: MFI(high, low, close, volume, first lookback) < lower threshold OR MFI(high, low, close, volume, second lookback) < lower threshold OR MFI(high, low, close, volume, third lookback) < lower threshold OR MFI(high, low, close, volume, fourth lookback) < lower threshold

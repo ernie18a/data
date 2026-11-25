@@ -1,0 +1,2 @@
+Long: On chart bars using T1 values, EMA(close, lookback, T1, last completed bar) > EMA(close, lookback, T1, 2 bars ago)
+Short: On chart bars using T1 values, EMA(close, lookback, T1, last completed bar) < EMA(close, lookback, T1, 2 bars ago)

@@ -1,0 +1,4 @@
+Calculation: T1 difference = chart-bar close - (highest(high, lookback, T1, ending at the still-forming T1 bar containing the chart-bar time) + lowest(low, lookback, T1, ending at the still-forming T1 bar containing the chart-bar time) + average of the three T1 closes before that bar)/3; evaluated on chart bars using T1 data
+Calculation: T2 difference = chart-bar close - (highest(high, lookback, T2, ending at the still-forming T2 bar containing the chart-bar time) + lowest(low, lookback, T2, ending at the still-forming T2 bar containing the chart-bar time) + average of the three T2 closes before that bar)/3; evaluated on chart bars using T2 data
+Long: T1 difference > 0 AND T2 difference > 0 on this and the previous chart bar
+Short: T1 difference < 0 AND T2 difference < 0 on this and the previous chart bar

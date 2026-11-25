@@ -1,0 +1,4 @@
+Calculation: Range high = high of the first completed T1 bar of each trading day, sampled on T2 bars
+Calculation: Range low = low of the first completed T1 bar of each trading day, sampled on T2 bars
+Long: On T2 bar closes, close of the last completed T2 bar > Range low AND close of the preceding completed T2 bar < Range low AND, scanning backward from the preceding completed T2 bar, the first completed T2 close >= Range low occurs at or before the maximum backward-scan index parameter
+Short: On T2 bar closes, close of the last completed T2 bar < Range high AND close of the preceding completed T2 bar > Range high AND, scanning backward from the preceding completed T2 bar, the first completed T2 close <= Range high occurs at or before the maximum backward-scan index parameter

@@ -1,0 +1,4 @@
+Long: (position side is long AND position profit > position volume × change parameter) OR (position side is short AND position profit < −position volume × change parameter)
+Short: (position side is short AND position profit > position volume × change parameter) OR (position side is long AND position profit < −position volume × change parameter)
+Exit: long, position profit > minimum lot parameter × close-profit parameter OR account profit > profit parameter OR account profit < −loss parameter
+Exit: short, position profit > minimum lot parameter × close-profit parameter OR account profit > profit parameter OR account profit < −loss parameter

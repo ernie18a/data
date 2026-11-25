@@ -1,0 +1,1 @@
+Short: PVI of the market < SMA(PVI of the market, longer lookback)

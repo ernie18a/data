@@ -1,0 +1,2 @@
+Long: OMA(close, lookback, T1, mapped to chart bars, including T1's bar still forming) > OMA(close, lookback, T1, mapped to chart bars, including T1's bar still forming)[1]
+Short: OMA(close, lookback, T1, mapped to chart bars, including T1's bar still forming) < OMA(close, lookback, T1, mapped to chart bars, including T1's bar still forming)[1]

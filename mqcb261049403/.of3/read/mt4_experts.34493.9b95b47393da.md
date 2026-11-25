@@ -1,0 +1,3 @@
+Calculation: price distance(points) = normalize(points × instrument price point, instrument decimal precision)
+Exit: long, order has a stop loss AND order magic number differs from excluded magic number AND bid − stop-loss price <= price distance(close buffer + broker minimum stop distance)
+Exit: short, order has a stop loss AND order magic number differs from excluded magic number AND stop-loss price − ask <= price distance(close buffer + broker minimum stop distance)

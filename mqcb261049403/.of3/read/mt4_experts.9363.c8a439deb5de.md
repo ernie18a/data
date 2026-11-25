@@ -1,0 +1,2 @@
+Long: close(T1, bar still forming) < SMA(open, longer lookback, T1, last completed bar), evaluated on chart bars using T1 values
+Short: close(T1, bar still forming) > SMA(open, shorter lookback, T1, last completed bar), evaluated on chart bars using T1 values

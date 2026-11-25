@@ -1,0 +1,2 @@
+Exit: long, profit-only mode is off OR open-position profit > 0, AND loss-only mode is off OR open-position profit < 0
+Exit: short, profit-only mode is off OR open-position profit > 0, AND loss-only mode is off OR open-position profit < 0

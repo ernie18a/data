@@ -1,0 +1,8 @@
+Calculation: balance anchor = balance sampled on the first timer tick and whenever the open time of the still-forming T1 bar changes on a timer tick
+Calculation: daily loss percentage = (balance anchor - equity) / balance anchor * 100
+Calculation: daily loss limit armed = true initially and whenever balance anchor resets; false after the first daily-loss breach
+Calculation: equity peak = equity at initialization, raised whenever equity exceeds it, and reset to current equity when the total-drawdown cooldown rearms the limit
+Calculation: total drawdown percentage = (equity peak - equity) / equity peak * 100
+Calculation: total-drawdown limit armed = true initially; after a breach, true again when total drawdown percentage <= rearm fraction * total-drawdown limit or the enabled cooldown duration elapses; on cooldown rearm, reset equity peak to current equity
+Exit: long, position matches the enabled symbol and magic-number guard filters AND close-on-breach is enabled AND ((daily-loss limit is enabled AND balance anchor > 0 AND daily loss limit is armed AND daily loss percentage >= daily-loss limit) OR (total-drawdown limit is enabled AND equity peak > 0 AND total-drawdown limit is armed AND total drawdown percentage >= total-drawdown limit))
+Exit: short, position matches the enabled symbol and magic-number guard filters AND close-on-breach is enabled AND ((daily-loss limit is enabled AND balance anchor > 0 AND daily loss limit is armed AND daily loss percentage >= daily-loss limit) OR (total-drawdown limit is enabled AND equity peak > 0 AND total-drawdown limit is armed AND total drawdown percentage >= total-drawdown limit))

@@ -1,0 +1,3 @@
+Calculation: Engulfing = (open[1] >= close AND close[1] <= open AND open[1] < close[1]) OR (open[1] <= close AND close[1] >= open AND open[1] > open)
+Long: ((Stochastic signal line > overbought threshold AND Stochastic signal line[1] < overbought threshold) OR (Stochastic signal line < oversold threshold AND Stochastic signal line[1] > oversold threshold)) AND Engulfing AND open < close
+Short: ((Stochastic signal line > overbought threshold AND Stochastic signal line[1] < overbought threshold) OR (Stochastic signal line < oversold threshold AND Stochastic signal line[1] > oversold threshold)) AND Engulfing AND open >= close

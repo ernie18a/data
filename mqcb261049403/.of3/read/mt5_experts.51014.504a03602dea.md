@@ -1,0 +1,4 @@
+Calculation: synthetic cross ask = ask price of the first component exchange rate / bid price of the second component exchange rate
+Calculation: synthetic cross bid = bid price of the first component exchange rate / ask price of the second component exchange rate
+Long: synthetic cross ask − direct cross ask > point-offset multiplier × point size + round((commission multiplier × commission per lot + first component point spread + second component point spread + direct cross point spread) × point size, direct cross price precision)
+Short: synthetic cross bid − direct cross bid < −point-offset multiplier × point size + round(−(commission multiplier × commission per lot + first component point spread + second component point spread + direct cross point spread) × point size, direct cross price precision)

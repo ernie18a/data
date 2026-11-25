@@ -1,0 +1,2 @@
+Long: NonLagMA(applied price, parameters, T1, still-forming bar) > 0 AND NonLagMA(applied price, parameters, T1, still-forming bar) > NonLagMA(applied price, parameters, T1, preceding bar); chart bars take values from T1
+Short: NonLagMA(applied price, parameters, T1, still-forming bar) > 0 AND NonLagMA(applied price, parameters, T1, still-forming bar) < NonLagMA(applied price, parameters, T1, preceding bar); chart bars take values from T1

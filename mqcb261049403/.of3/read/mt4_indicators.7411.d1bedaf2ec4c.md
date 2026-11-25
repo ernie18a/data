@@ -1,0 +1,4 @@
+Long: On chart bars, Friday AND minute equals a parameter AND hour equals the entry-hour parameter AND Open(T1, last completed bar) > Close(T1, last completed bar)
+Short: On chart bars, Friday AND minute equals a parameter AND hour equals the entry-hour parameter AND Open(T1, last completed bar) < Close(T1, last completed bar)
+Exit: Long, On chart bars, Friday AND minute equals a parameter AND hour equals the exit-hour parameter AND Open(T1, last completed bar) > Close(T1, last completed bar)
+Exit: Short, On chart bars, Friday AND minute equals a parameter AND hour equals the exit-hour parameter AND Open(T1, last completed bar) < Close(T1, last completed bar)

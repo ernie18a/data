@@ -1,0 +1,2 @@
+Long: on chart bars, an external instrument’s current bid price > its close on the last completed T1 bar
+Short: on chart bars, an external instrument’s current bid price <= its close on the last completed T1 bar

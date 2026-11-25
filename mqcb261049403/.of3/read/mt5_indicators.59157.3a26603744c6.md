@@ -1,0 +1,3 @@
+Calculation: Multiday VWAP = SUM(((high(T1) + low(T1) + close(T1)) / 3) * volume(T1), all available T1 bars through the bar still forming) / SUM(volume(T1), the same bars), evaluated on chart bars
+Long: close crosses above Multiday VWAP OR EMA(Heiken-Ashi close, smoothing lookback) > EMA(Heiken-Ashi open, smoothing lookback)
+Short: close crosses below Multiday VWAP OR EMA(Heiken-Ashi open, smoothing lookback) >= EMA(Heiken-Ashi close, smoothing lookback)

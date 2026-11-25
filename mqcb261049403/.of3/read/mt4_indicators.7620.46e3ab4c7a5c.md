@@ -1,0 +1,2 @@
+Long: correlation(price signal, close percentage change, lookback) > threshold AND price signal > price signal[1]
+Short: correlation(price signal, close percentage change, lookback) > threshold AND price signal < price signal[1]

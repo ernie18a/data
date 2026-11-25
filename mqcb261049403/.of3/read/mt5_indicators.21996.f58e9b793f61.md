@@ -1,0 +1,8 @@
+Calculation: Velocity = Σ(applied price[k] × (velocity lookback − k)^2) / Σ(velocity lookback − k)^2 − Σ(applied price[k] × (velocity lookback − k)) / Σ(velocity lookback − k), for k from 0 to velocity lookback − 1; calculated on T1 bars, with the T1 bar still forming, and mapped to chart bars
+Calculation: Smoothed velocity = EMA(Velocity, velocity smoothing lookback), calculated on T1 bars, with the T1 bar still forming, and mapped to chart bars
+Calculation: Velocity change = EMA(EMA(abs(smoothed velocity − smoothed velocity[1]), velocity lookback), velocity lookback), with the first absolute change set to zero; calculated on T1 bars, with the T1 bar still forming, and mapped to chart bars
+Calculation: QQE trailing level(multiplier) = on the first bar, 0; otherwise let p = prior level, v = smoothed velocity, q = prior smoothed velocity, and w = velocity change × multiplier; set level to p; if v < p, set level to v + w, then reset it to p if q < p and level > p; then if v > level, set level to v − w, then reset it to p if q > p and level < p; calculated on T1 bars, with the T1 bar still forming, and mapped to chart bars
+Calculation: Fast level = QQE trailing level(fast multiplier); Slow level = QQE trailing level(slow multiplier); fast multiplier < slow multiplier
+Calculation: Velocity trend = bullish if smoothed velocity > fast level and smoothed velocity > slow level; bearish if smoothed velocity < fast level and smoothed velocity < slow level; otherwise the prior bar's trend, initially neutral
+Long: Velocity trend is bullish
+Short: Velocity trend is bearish

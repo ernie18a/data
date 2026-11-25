@@ -1,0 +1,1 @@
+Long: DXY high > previous high AND traded instrument low >= previous low

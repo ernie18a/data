@@ -1,0 +1,2 @@
+Long: high >= open(T1, forming bar) + Stretch(period, T1, last completed bar), evaluated on chart bars using T1 values
+Short: low <= open(T1, forming bar) - Stretch(period, T1, last completed bar), evaluated on chart bars using T1 values

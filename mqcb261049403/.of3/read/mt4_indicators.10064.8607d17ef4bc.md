@@ -1,0 +1,2 @@
+Long: for each monitored price series, on chart bars, SMMA(close, shorter lookback, T1, forming bar) > SMMA(close, longer lookback, T1, forming bar) AND Stochastic main(lookback, slowing, signal lookback, T2, forming bar) > threshold
+Short: for each monitored price series, on chart bars, SMMA(close, shorter lookback, T1, forming bar) < SMMA(close, longer lookback, T1, forming bar) AND Stochastic main(lookback, slowing, signal lookback, T2, forming bar) < threshold

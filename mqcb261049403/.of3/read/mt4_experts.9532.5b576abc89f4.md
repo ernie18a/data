@@ -1,0 +1,2 @@
+Long: MACD main(close, fast lookback, slow lookback, signal lookback, T1, last completed bar) > MACD main(close, same MACD parameters, T1, preceding bar) AND Williams %R(close, lookback, T1, last completed bar) < upper threshold
+Short: MACD main(close, fast lookback, slow lookback, signal lookback, T1, last completed bar) < MACD main(close, same MACD parameters, T1, preceding bar) AND Williams %R(close, lookback, T1, last completed bar) > lower threshold

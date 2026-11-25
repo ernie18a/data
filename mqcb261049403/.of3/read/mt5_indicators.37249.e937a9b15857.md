@@ -1,0 +1,2 @@
+Long: OBV(close, volume) > the inner upper deviation-channel boundary, or the channel boundaries are unavailable and OBV(close, volume) > 0
+Short: OBV(close, volume) < the inner lower deviation-channel boundary, or the channel boundaries are unavailable and OBV(close, volume) < 0

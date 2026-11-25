@@ -1,0 +1,4 @@
+Long: MA(short applied-price parameter, shorter lookback, short method parameter) on the current forming chart bar > MA(long applied-price parameter, longer lookback, long method parameter) on the current forming chart bar AND the same comparison holds on the last completed chart bar AND the last confirmed MA direction was bearish
+Short: MA(short applied-price parameter, shorter lookback, short method parameter) on the current forming chart bar < MA(long applied-price parameter, longer lookback, long method parameter) on the current forming chart bar AND the same comparison holds on the last completed chart bar AND the last confirmed MA direction was bullish
+Exit: long, stop-loss parameter > 0 AND low <= entry price - stop-loss distance OR take-profit parameter > 0 AND high >= entry price + take-profit distance
+Exit: short, stop-loss parameter > 0 AND high >= entry price + stop-loss distance OR take-profit parameter > 0 AND low <= entry price - take-profit distance

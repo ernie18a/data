@@ -1,0 +1,4 @@
+Long: Williams %R(lookback, current forming chart bar) crosses above the long threshold after being below it AND (time filter disabled OR current hour is in the configured start-inclusive, stop-exclusive interval, wrapping across midnight and empty when start and stop are equal)
+Short: Williams %R(lookback, current forming chart bar) crosses below the short threshold after being above it AND (time filter disabled OR current hour is in the configured start-inclusive, stop-exclusive interval, wrapping across midnight and empty when start and stop are equal)
+Exit: long, Williams %R(lookback, current forming chart bar) crosses below the short threshold after being above it
+Exit: short, Williams %R(lookback, current forming chart bar) crosses above the long threshold after being below it

@@ -1,0 +1,4 @@
+Long: open[3] < BollingerUpper(close, lookback, deviation multiplier)[0] AND StochasticSignalLine(%K lookback, %D lookback, slowing)[3] < StochasticSignalLine(%K lookback, %D lookback, slowing)[2] AND StochasticSignalLine(%K lookback, %D lookback, slowing)[2] > StochasticSignalLine(%K lookback, %D lookback, slowing)[1]
+Short: open[3] > BollingerLower(close, lookback, deviation multiplier)[0] AND StochasticSignalLine(%K lookback, %D lookback, slowing)[3] > StochasticSignalLine(%K lookback, %D lookback, slowing)[2] AND StochasticSignalLine(%K lookback, %D lookback, slowing)[2] < StochasticSignalLine(%K lookback, %D lookback, slowing)[1]
+Exit: long, low <= entry price * (1 - stop distance percentage / 100) OR high >= entry price * (1 + target distance percentage / 100)
+Exit: short, high >= entry price * (1 + stop distance percentage / 100) OR low <= entry price * (1 - target distance percentage / 100)

@@ -1,0 +1,2 @@
+Short: On each new T1 bar, open(T1, forming bar) > high(T1, last completed bar) + (minimum gap size + spread in points) × point size
+Long: On each new T1 bar, open(T1, forming bar) < low(T1, last completed bar) - (minimum gap size + spread in points) × point size

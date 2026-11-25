@@ -1,0 +1,13 @@
+Calculation: Fast close EMA, current = EMA(close, shorter lookback, T1, forming bar), read on each chart tick
+Calculation: Fast close EMA, previous = EMA(close, shorter lookback, T1, last completed bar), read on each chart tick
+Calculation: Fast open EMA, current = EMA(open, shorter lookback, T1, forming bar), read on each chart tick
+Calculation: Fast open EMA, previous = EMA(open, shorter lookback, T1, last completed bar), read on each chart tick
+Calculation: Slow close EMA = EMA(close, longer lookback, T1, forming bar), read on each chart tick
+Calculation: Lower wide envelope = Envelopes(Slow close EMA, wide deviation, lower band, T1, forming bar), where narrow deviation < middle deviation < wide deviation
+Calculation: Lower middle envelope = Envelopes(Slow close EMA, middle deviation, lower band, T1, forming bar)
+Calculation: Lower narrow envelope = Envelopes(Slow close EMA, narrow deviation, lower band, T1, forming bar)
+Calculation: Upper wide envelope = Envelopes(Slow close EMA, wide deviation, upper band, T1, forming bar)
+Calculation: Upper middle envelope = Envelopes(Slow close EMA, middle deviation, upper band, T1, forming bar)
+Calculation: Upper narrow envelope = Envelopes(Slow close EMA, narrow deviation, upper band, T1, forming bar)
+Long: (Fast close EMA, current > Lower wide envelope AND Fast close EMA, previous < Lower wide envelope) OR (Fast close EMA, current > Lower middle envelope AND Fast close EMA, previous < Lower middle envelope) OR (Fast close EMA, current < Lower narrow envelope AND Fast close EMA, previous < Lower narrow envelope) OR (Fast close EMA, current > Slow close EMA AND Fast close EMA, previous < Slow close EMA) OR (Fast close EMA, current > Upper narrow envelope AND Fast close EMA, previous < Upper narrow envelope) OR (Fast close EMA, current > Upper middle envelope AND Fast close EMA, previous < Upper middle envelope)
+Short: (Fast open EMA, current < Upper wide envelope AND Fast open EMA, previous > Upper wide envelope) OR (Fast open EMA, current < Upper middle envelope AND Fast open EMA, previous > Upper middle envelope) OR (Fast open EMA, current < Upper narrow envelope AND Fast open EMA, previous > Upper narrow envelope) OR (Fast open EMA, current < Slow close EMA AND Fast open EMA, previous > Slow close EMA) OR (Fast open EMA, current < Lower narrow envelope AND Fast open EMA, previous > Lower narrow envelope) OR (Fast open EMA, current < Lower middle envelope AND Fast open EMA, previous > Lower middle envelope)

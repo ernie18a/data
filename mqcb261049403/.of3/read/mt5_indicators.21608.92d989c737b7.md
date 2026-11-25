@@ -1,0 +1,2 @@
+Long: PZO(close, period) > Lowest(PZO(close, period), lookback) + upper-level percentage * (Highest(PZO(close, period), lookback) - Lowest(PZO(close, period), lookback)) / 100
+Short: PZO(close, period) < Lowest(PZO(close, period), lookback) + lower-level percentage * (Highest(PZO(close, period), lookback) - Lowest(PZO(close, period), lookback)) / 100

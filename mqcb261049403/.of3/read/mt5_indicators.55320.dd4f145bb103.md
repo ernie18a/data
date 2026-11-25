@@ -1,0 +1,1 @@
+Short: high makes a higher high AND NVI makes a lower low

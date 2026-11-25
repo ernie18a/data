@@ -1,0 +1,4 @@
+Long: RSI(applied price, RSI lookback, current forming bar) > buy threshold AND RSI(applied price, RSI lookback, 1 bar ago) < buy threshold AND RSI(applied price, RSI lookback, 2 bars ago) < buy threshold AND hour(datetime) is between the start-hour and end-hour parameters, inclusive AND no long position is open
+Short: RSI(applied price, RSI lookback, current forming bar) < sell threshold AND RSI(applied price, RSI lookback, 1 bar ago) > sell threshold AND RSI(applied price, RSI lookback, 2 bars ago) > sell threshold AND hour(datetime) is between the start-hour and end-hour parameters, inclusive AND no short position is open
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

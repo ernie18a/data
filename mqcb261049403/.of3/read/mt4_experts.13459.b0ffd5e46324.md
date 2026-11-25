@@ -1,0 +1,4 @@
+Long: On each chart tick, EMA(close, lookback, T1, last completed bar) crosses above EMA(open, lookback, T1, last completed bar)
+Short: On each chart tick, EMA(open, lookback, T1, last completed bar) crosses above EMA(close, lookback, T1, last completed bar)
+Exit: long, low <= entry price - min(2 * (EMA(open, lookback, T1, last completed bar at entry) - EMA(low, lookback, T1, last completed bar at entry)), stop-distance cap) OR high >= entry price + max(EMA(high, lookback, T1, last completed bar at entry) - EMA(low, lookback, T1, last completed bar at entry), target-distance floor)
+Exit: short, high >= entry price + min(2 * (EMA(high, lookback, T1, last completed bar at entry) - EMA(close, lookback, T1, last completed bar at entry)), stop-distance cap) OR low <= entry price - max(EMA(high, lookback, T1, last completed bar at entry) - EMA(low, lookback, T1, last completed bar at entry), target-distance floor)

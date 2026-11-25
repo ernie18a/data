@@ -1,0 +1,2 @@
+Long: NRTR(high, low, close, range lookback, digit adjustment, traded-symbol digit count, reference-symbol digit count) changes from downtrend to uptrend
+Short: NRTR(high, low, close, range lookback, digit adjustment, traded-symbol digit count, reference-symbol digit count) changes from uptrend to downtrend

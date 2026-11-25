@@ -1,0 +1,2 @@
+Long: linear regression slope(close, lookback, T1 bars including the bar still forming) > 0 AND linear regression R²(close, lookback, T1 bars including the bar still forming) >= minimum R² AND ADX(lookback, T1 bars including the bar still forming) >= minimum ADX
+Short: linear regression slope(close, lookback, T1 bars including the bar still forming) <= 0 AND linear regression R²(close, lookback, T1 bars including the bar still forming) >= minimum R² AND ADX(lookback, T1 bars including the bar still forming) >= minimum ADX

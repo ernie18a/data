@@ -1,0 +1,3 @@
+Calculation: range_volume = (high-low)*volume
+Long: close > open AND (volume >= SMA(volume, volume lookback)*rising factor OR volume >= SMA(volume, volume lookback)*extreme factor OR range_volume >= MAX(range_volume[1..climax lookback]) )
+Short: close <= open AND (volume >= SMA(volume, volume lookback)*rising factor OR volume >= SMA(volume, volume lookback)*extreme factor OR range_volume >= MAX(range_volume[1..climax lookback]) )

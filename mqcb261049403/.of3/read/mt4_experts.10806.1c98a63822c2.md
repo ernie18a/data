@@ -1,0 +1,2 @@
+Long: close > Parabolic SAR(high, low, acceleration step, maximum acceleration) AND close[1] < Parabolic SAR(high, low, acceleration step, maximum acceleration)[1] AND trading time is permitted AND long entries are not halted
+Short: close < Parabolic SAR(high, low, acceleration step, maximum acceleration) AND close[1] > Parabolic SAR(high, low, acceleration step, maximum acceleration)[1] AND trading time is permitted AND short entries are not halted

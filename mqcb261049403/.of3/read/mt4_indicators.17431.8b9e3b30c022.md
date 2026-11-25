@@ -1,0 +1,2 @@
+Long: (current bid - open(T1, bar selected by shift; still-forming if it is the current T1 bar)) / open(T1, bar selected by shift; still-forming if it is the current T1 bar) * 100 > 0
+Short: (current bid - open(T1, bar selected by shift; still-forming if it is the current T1 bar)) / open(T1, bar selected by shift; still-forming if it is the current T1 bar) * 100 <= 0
