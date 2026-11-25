@@ -1,0 +1,4 @@
+Calculation: HA oscillator line = MA((HA open + HA close)/2, post-smoothing method, post-smoothing lookback) minus its value on the previous T1 bar, computed on T1 bars, where HA open = previous T1 bar's (HA open + HA close)/2 (first bar: (open + close)/2) and HA close = (MA(open, pre-smoothing method, pre-smoothing lookback) + MA(high, pre-smoothing method, pre-smoothing lookback) + MA(low, pre-smoothing method, pre-smoothing lookback) + MA(close, pre-smoothing method, pre-smoothing lookback))/4
+Calculation: HA oscillator average = MA(HA oscillator line, signal method, signal lookback), computed on T1 bars
+Long: HA oscillator line (T1, current forming bar) > HA oscillator average (T1, current forming bar) AND close < pivot point (T1, current forming bar)
+Short: HA oscillator line (T1, current forming bar) < HA oscillator average (T1, current forming bar) AND close > pivot point (T1, current forming bar)

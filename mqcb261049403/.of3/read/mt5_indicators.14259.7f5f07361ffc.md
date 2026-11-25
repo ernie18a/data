@@ -1,0 +1,2 @@
+Long: CCI(typical price, lookback) + offset >= threshold AND CCI(typical price, lookback)[1] + offset < threshold
+Short: CCI(typical price, lookback) + offset <= threshold AND CCI(typical price, lookback)[1] + offset > threshold

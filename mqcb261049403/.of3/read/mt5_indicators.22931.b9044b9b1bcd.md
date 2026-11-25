@@ -1,0 +1,2 @@
+Long: (selected alert reason includes center-line alerts AND close crosses above MA(close, MA lookback, selected MA method)) OR (selected alert reason includes upper-band alerts AND close crosses above MA(close, MA lookback, selected MA method) * (1 + band percentage / 100))
+Short: (selected alert reason includes center-line alerts AND close crosses below MA(close, MA lookback, selected MA method)) OR (selected alert reason includes lower-band alerts AND close crosses below MA(close, MA lookback, selected MA method) * (1 - band percentage / 100))

@@ -1,0 +1,2 @@
+Long: MFI(high, low, close, volume, lookback, T1, last completed bar) crosses above the upper threshold
+Short: MFI(high, low, close, volume, lookback, T1, last completed bar) crosses below the lower threshold

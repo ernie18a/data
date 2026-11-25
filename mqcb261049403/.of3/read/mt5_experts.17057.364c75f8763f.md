@@ -1,0 +1,6 @@
+Calculation: shorter-lookback MA = MA(close, shorter lookback, short averaging-method parameter, short horizontal-shift parameter, T1, forming bar; sampled on chart bars)
+Calculation: longer-lookback MA = MA(close, longer lookback, long averaging-method parameter, long horizontal-shift parameter, T1, forming bar; sampled on chart bars)
+Long: shorter-lookback MA > longer-lookback MA AND (session-hour filter disabled OR (hour(datetime) >= session start hour AND hour(datetime) <= session stop hour))
+Short: shorter-lookback MA < longer-lookback MA AND (session-hour filter disabled OR (hour(datetime) >= session start hour AND hour(datetime) <= session stop hour))
+Exit: long, (shorter-lookback MA < longer-lookback MA AND session-hour filter enabled AND (hour(datetime) < session start hour OR hour(datetime) > session stop hour)) OR (Friday-close enabled AND weekday(datetime) is Friday AND hour(datetime) >= Friday-close hour)
+Exit: short, (shorter-lookback MA > longer-lookback MA AND session-hour filter enabled AND (hour(datetime) < session start hour OR hour(datetime) > session stop hour)) OR (Friday-close enabled AND weekday(datetime) is Friday AND hour(datetime) >= Friday-close hour)

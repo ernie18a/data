@@ -1,0 +1,3 @@
+Calculation: Direction = +1 when MA(selected price, lookback, method, T1 bar mapped to the current chart bar, including a forming T1 bar) > MA(selected price, lookback, method, T1 bar mapped to the previous chart bar); -1 when <; otherwise the previous Direction
+Long: Direction > 0 OR (Direction[alert shift chart bars ago] > 0 AND Direction[alert shift + 1 chart bars ago] <= 0)
+Short: Direction < 0 OR (Direction[alert shift chart bars ago] < 0 AND Direction[alert shift + 1 chart bars ago] >= 0)

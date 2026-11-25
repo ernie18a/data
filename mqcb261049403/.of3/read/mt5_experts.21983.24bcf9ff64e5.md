@@ -1,0 +1,2 @@
+Long: current ask >= high[1](T1, last completed bar) + breakout offset AND (MA filter disabled OR MA(fast applied price, shorter lookback, fast shift, method, chart bars, current forming bar) > MA(slow applied price, longer lookback, slow shift, method, chart bars, current forming bar))
+Short: current bid <= low[1](T1, last completed bar) - breakout offset AND (MA filter disabled OR MA(fast applied price, shorter lookback, fast shift, method, chart bars, current forming bar) < MA(slow applied price, longer lookback, slow shift, method, chart bars, current forming bar))

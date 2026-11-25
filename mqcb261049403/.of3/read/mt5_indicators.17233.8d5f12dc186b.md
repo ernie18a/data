@@ -1,0 +1,4 @@
+Long: selected trend-color criterion is slope AND corrected average > corrected average[1] OR selected trend-color criterion is outer level AND corrected average > upper floating level OR selected trend-color criterion is middle level AND corrected average > middle floating level OR selected trend-color criterion is original average AND corrected average < original average
+Short: selected trend-color criterion is slope AND corrected average < corrected average[1] OR selected trend-color criterion is outer level AND corrected average < lower floating level OR selected trend-color criterion is middle level AND corrected average < middle floating level OR selected trend-color criterion is original average AND corrected average > original average
+Long: original average > corrected average
+Short: original average < corrected average

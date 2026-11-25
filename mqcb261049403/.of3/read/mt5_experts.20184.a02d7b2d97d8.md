@@ -1,0 +1,4 @@
+Long: No open long position AND low[1] > MA(applied-price input, entry lookback, method input, T1, bar still forming), evaluated on chart bars
+Short: No open short position AND high[1] < MA(applied-price input, entry lookback, method input, T1, bar still forming), evaluated on chart bars
+Exit: long, on chart bars, T2 close crosses below MA(applied-price input, separate exit lookback, method input, T2) between the two most recent completed T2 bars
+Exit: short, on chart bars, T2 close crosses above MA(applied-price input, separate exit lookback, method input, T2) between the two most recent completed T2 bars

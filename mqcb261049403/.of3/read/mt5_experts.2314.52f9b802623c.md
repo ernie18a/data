@@ -1,0 +1,2 @@
+Long: On each T1 bar, each of the HowManyCandles immediately preceding completed bar pairs has a higher high and a higher low on the newer bar than on the older bar.
+Short: On each T1 bar, each of the HowManyCandles immediately preceding completed bar pairs has a lower high and a lower low on the newer bar than on the older bar.

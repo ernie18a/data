@@ -1,0 +1,3 @@
+Calculation: Leading line = 2 × median price(high, low) + (smoothing factor − 2) × median price(high, low)[1] + (1 − smoothing factor) × Leading line[1], calculated on T1 bars
+Long: On chart bars, Leading line(T1, last completed bar) > EMA(median price(high, low), smoothing factor, T1, last completed bar) AND Leading line(T1, bar still forming) < EMA(median price(high, low), smoothing factor, T1, bar still forming)
+Short: On chart bars, Leading line(T1, last completed bar) < EMA(median price(high, low), smoothing factor, T1, last completed bar) AND Leading line(T1, bar still forming) > EMA(median price(high, low), smoothing factor, T1, bar still forming)

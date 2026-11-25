@@ -1,0 +1,2 @@
+Long: Tipu Trend on T1's last completed bar is buy AND Tipu Trend on T2's still-forming bar is buy and not range AND Tipu Stops on the still-forming chart-timeframe bar has a nonzero, nonempty swing low AND the distance in pips from close to the swing low is at most the risk limit
+Short: Tipu Trend on T1's last completed bar is sell AND Tipu Trend on T2's still-forming bar is sell and not range AND Tipu Stops on the still-forming chart-timeframe bar has a nonzero, nonempty swing high AND the distance in pips from the swing high to close is at most the risk limit

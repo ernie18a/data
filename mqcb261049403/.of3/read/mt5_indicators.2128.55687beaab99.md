@@ -1,0 +1,2 @@
+Long: On chart bars, BrainTrend2(ATR lookback, ATR weight-normalization parameter, ATR multiplier, T1 bars, bar still forming) equals uptrend
+Short: On chart bars, BrainTrend2(ATR lookback, ATR weight-normalization parameter, ATR multiplier, T1 bars, bar still forming) equals downtrend

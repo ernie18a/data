@@ -1,0 +1,3 @@
+Calculation: Neural prediction = Sigmoid(weighted sum of ReLU hidden-layer weighted sums of normalized open, high, low, close, and volume from the bar still forming on T1, using the network’s weights and biases; normalize each price x as (x - min(x, upper seed)) / (max(x, lower seed) - min(x, upper seed) + epsilon) and volume as volume / (volume + epsilon)
+Long: Neural prediction > upper prediction threshold AND current ask-bid spread in points <= maximum spread
+Short: Neural prediction < lower prediction threshold AND current ask-bid spread in points <= maximum spread

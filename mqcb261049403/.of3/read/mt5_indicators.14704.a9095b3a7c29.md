@@ -1,0 +1,3 @@
+Calculation: StepLine(p) = on T1 bars, let R = RSI(close, RSI lookback); initialize direction up; each bar set upper = R + 2p and lower = R - 2p; switch direction up if R > prior upper, or down if R < prior lower; while up set lower = max(lower, prior lower) and return lower + p; while down set upper = min(upper, prior upper) and return upper - p
+Long: On chart bars using values from the current, still-forming T1 bar, StepLine(fast step) >= StepLine(slow step), with fast step < slow step
+Short: On chart bars using values from the current, still-forming T1 bar, StepLine(fast step) < StepLine(slow step), with fast step < slow step

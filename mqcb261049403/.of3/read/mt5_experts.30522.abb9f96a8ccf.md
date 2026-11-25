@@ -1,0 +1,6 @@
+Calculation: body[n] = round(abs(open[n] - close[n]) / point size, price digits)
+Calculation: range[n] = round(abs(high[n] - low[n]) / point size, price digits)
+Calculation: upper wick[n] = round(abs(high[n] - max(open[n], close[n])) / point size, price digits)
+Calculation: lower wick[n] = round(abs(min(open[n], close[n]) - low[n]) / point size, price digits)
+Long: bullish mode selected AND ((close[1] > open[1] AND close[2] < open[2] AND P_body × body[1] < lower wick[1] AND lower wick[1] > P_wick × upper wick[1]) OR (close[1] > open[1] AND close[2] < open[2] AND P_body × body[1] < upper wick[1] AND P_wick × lower wick[1] < upper wick[1]) OR (close[1] > open[1] AND close[2] > open[2] AND range[1] > range[2] AND body[1] ≥ P_bull_momentum × body[2]))
+Short: bearish mode selected AND ((close[1] < open[1] AND close[2] > open[2] AND P_body × body[1] < upper wick[1] AND P_wick × lower wick[1] < upper wick[1]) OR (close[1] < open[1] AND close[2] > open[2] AND P_body × body[1] < lower wick[1] AND lower wick[1] > P_wick × upper wick[1]) OR (close[1] < open[1] AND close[2] < open[2] AND body[1] > body[2] AND range[1] ≥ P_bear_momentum × range[2])

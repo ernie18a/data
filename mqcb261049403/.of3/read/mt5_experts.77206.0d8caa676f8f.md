@@ -1,0 +1,13 @@
+Calculation: price scale = high price scale when point size < point-size threshold, otherwise low price scale
+Calculation: scaled price change = (current midpoint price - previous tick midpoint price) * price scale
+Calculation: curvature input = scaled price change * curvature factor
+Calculation: spread-volume product = current spread * current tick volume
+Calculation: causal price dynamics = prior value * prior-value coefficient + current capped ratio * current-value coefficient, where current capped ratio = min(abs(scaled price change / (spread-volume product + epsilon)), cap)
+Calculation: Hamiltonian input = scaled price change squared + spread-volume product * energy coefficient
+Calculation: direction score = sigmoid of the first output of a tanh-hidden, sigmoid-output neural network using arctan(scaled price change), arctan(curvature input), arctan(spread-volume product), causal price dynamics / normalization parameter, and arctan(Hamiltonian input); its weights are updated online by gradient descent at each new chart bar using the saved state from that bar's first tick and targets from the last completed chart bar: close > open, absolute close-open / ATR, and (open-low) / ATR for an up bar or (high-open) / ATR otherwise, with the latter two targets normalized by their respective scale parameters and capped at one
+Long: scaled price change > 0 AND causal price dynamics > entry threshold AND causal price dynamics >= shadow-mode threshold AND direction score > veto threshold AND free margin >= minimum free margin AND spread points <= maximum spread AND no open position AND current chart bar is later than the last action bar AND elapsed time since last successful entry >= cooldown
+Short: scaled price change <= 0 AND causal price dynamics > entry threshold AND causal price dynamics >= shadow-mode threshold AND direction score < 1 - veto threshold AND free margin >= minimum free margin AND spread points <= maximum spread AND no open position AND current chart bar is later than the last action bar AND elapsed time since last successful entry >= cooldown
+Exit: long, unrealized position profit < 0 AND direction score < cut-loss threshold
+Exit: short, unrealized position profit < 0 AND direction score > 1 - cut-loss threshold
+Exit: long, risk-reward exit enabled AND active stop price != 0 AND (entry price - active stop price) / point size > 0 AND (current bid - entry price) / point size >= risk-reward multiple * ((entry price - active stop price) / point size)
+Exit: short, risk-reward exit enabled AND active stop price != 0 AND (active stop price - entry price) / point size > 0 AND (entry price - current ask) / point size >= risk-reward multiple * ((active stop price - entry price) / point size)

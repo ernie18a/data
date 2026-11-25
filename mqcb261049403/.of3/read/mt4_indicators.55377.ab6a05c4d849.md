@@ -1,0 +1,5 @@
+Calculation: Chart-aligned T1 Donchian level = Donchian level calculated on T1 bars and taken from the T1 bar containing each chart bar, including the still-forming T1 bar when applicable; use chart bars when T1 is the chart timeframe
+Long: open[signal-bar offset] < Donchian midline(midline lookback, T1)[line shift] AND close[signal-bar offset] > Donchian midline(midline lookback, T1)[line shift]
+Short: open[signal-bar offset] > Donchian midline(midline lookback, T1)[line shift] AND close[signal-bar offset] < Donchian midline(midline lookback, T1)[line shift]
+Long: open[signal-bar offset] < Donchian upper(shorter lookback, T1)[line shift] AND close[signal-bar offset] > Donchian upper(shorter lookback, T1)[line shift] AND close[signal-bar offset] < Donchian upper(longer lookback, T1)[line shift]
+Short: open[signal-bar offset] > Donchian lower(shorter lookback, T1)[line shift] AND close[signal-bar offset] < Donchian lower(shorter lookback, T1)[line shift] AND close[signal-bar offset] > Donchian lower(longer lookback, T1)[line shift]

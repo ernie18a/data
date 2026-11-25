@@ -1,0 +1,2 @@
+Long: For each of T1 through T10, RSI(close, lookback, that timeframe, bar still forming, sampled on chart bars) > upper level
+Short: For each of T1 through T10, RSI(close, lookback, that timeframe, bar still forming, sampled on chart bars) < lower level

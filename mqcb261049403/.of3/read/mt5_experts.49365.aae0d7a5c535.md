@@ -1,0 +1,4 @@
+Calculation: long stop loss = entry price - stop-loss distance if stop loss or take profit is zero; otherwise current price - trailing-stop distance if current price - entry price > trailing-stop distance + trailing-step and existing stop loss < current price - trailing-stop distance - trailing-step; otherwise existing stop loss
+Calculation: short stop loss = entry price + stop-loss distance if stop loss or take profit is zero; otherwise current price + trailing-stop distance if entry price - current price > trailing-stop distance + trailing-step and (existing stop loss > current price + trailing-stop distance + trailing-step or existing stop loss is zero); otherwise existing stop loss
+Exit: long, current price <= long stop loss OR current price >= entry price + take-profit distance
+Exit: short, current price >= short stop loss OR current price <= entry price - take-profit distance

@@ -1,0 +1,3 @@
+Calculation: WATR direction = on T1 bars, set D = P × point size + Q × ATR(P), where P is both the point multiplier and ATR lookback and Q is the ATR multiplier; in an uptrend trail the up band at max(previous up band, close − D), and in a downtrend trail the down band at min(previous down band, close + D); hold the prior active band on a candle that closes below open in an uptrend or above open in a downtrend; switch to downtrend when close < up band and to uptrend when close > down band
+Long: WATR uptrend on the selected T1 bar (still forming at offset zero; otherwise completed at the selected offset)
+Short: WATR downtrend on the selected T1 bar (still forming at offset zero; otherwise completed at the selected offset)

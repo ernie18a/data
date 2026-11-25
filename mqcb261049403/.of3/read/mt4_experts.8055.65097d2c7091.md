@@ -1,0 +1,8 @@
+Calculation: SMA spread = SMA(median price, shorter lookback, MA shift A) - SMA(median price, longer lookback, MA shift B)
+Calculation: SMA spread direction = sign of the latest nonzero bar-to-bar change in SMA spread, defaulting positive if none exists
+Long: SMA spread direction > 0
+Short: SMA spread direction < 0
+Long: on chart bars, current T2 open < previous completed T2 high + offset parameter in points + instrument spread AND current chart close > previous completed T2 high + offset parameter in points + instrument spread AND current chart close < ZigZag-fractal level(T2, last completed bar) AND SMA spread from the still-forming T1 bar < 0
+Short: on chart bars, current T2 open > previous completed T2 low - offset parameter in points AND current chart close < previous completed T2 low - offset parameter in points AND current chart close > ZigZag-fractal level(T2, last completed bar) AND SMA spread from the still-forming T1 bar > 0
+Long: on chart bars, current T1 open < previous completed T1 high + offset parameter in points + instrument spread AND current chart close > previous completed T1 high + offset parameter in points + instrument spread AND current chart close < ZigZag-fractal level(T1, last completed bar)
+Short: on chart bars, current T1 open > previous completed T1 low - offset parameter in points AND current chart close < previous completed T1 low - offset parameter in points AND current chart close > ZigZag-fractal level(T1, last completed bar)

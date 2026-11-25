@@ -1,0 +1,3 @@
+Calculation: Ozymandias state = initialize direction and pending direction as up, trailing low as 0, and trailing high as infinity; process chart bars oldest to newest, using the current bar: let HH = Highest(high, lookback), LL = Lowest(low, lookback), HM = MA(high, lookback), and LM = MA(low, lookback); if pending direction is down, set trailing low = max(LL, trailing low), and if HM < trailing low AND close < low[1], set direction to down, pending direction to up, and trailing high to HH; then if pending direction is up, set trailing high = min(HH, trailing high), and if LM > trailing high AND close > high[1], set direction to up, pending direction to down, and trailing low to LL; otherwise retain direction.
+Long: Ozymandias state = up
+Short: Ozymandias state = down

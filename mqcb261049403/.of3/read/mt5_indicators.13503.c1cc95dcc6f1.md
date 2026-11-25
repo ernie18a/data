@@ -1,0 +1,2 @@
+Long: CyberCycle cycle((high+low)/2, smoothing parameter, T1, bar still forming) > CyberCycle trigger((high+low)/2, smoothing parameter, T1, bar still forming), using values from T1 on chart bars
+Short: CyberCycle cycle((high+low)/2, smoothing parameter, T1, bar still forming) < CyberCycle trigger((high+low)/2, smoothing parameter, T1, bar still forming), using values from T1 on chart bars

@@ -1,0 +1,3 @@
+Calculation: bar range = high - low
+Long: current forming chart bar range > previous completed chart bar range AND current forming chart bar range < previous completed chart bar range + range expansion allowance AND current forming chart bar close > open
+Short: current forming chart bar range > previous completed chart bar range AND current forming chart bar range < previous completed chart bar range + range expansion allowance AND current forming chart bar close < open

@@ -1,0 +1,4 @@
+Long: On T1 bars, AO(T1, last completed bar) >= AO(T1, 1 bar ago) AND AC(T1, last completed bar) >= AC(T1, 1 bar ago) AND (AO(T1, 1 bar ago) < AO(T1, 2 bars ago) OR AC(T1, 1 bar ago) < AC(T1, 2 bars ago))
+Short: On T1 bars, AO(T1, last completed bar) <= AO(T1, 1 bar ago) AND AC(T1, last completed bar) <= AC(T1, 1 bar ago) AND (AO(T1, 1 bar ago) > AO(T1, 2 bars ago) OR AC(T1, 1 bar ago) > AC(T1, 2 bars ago))
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

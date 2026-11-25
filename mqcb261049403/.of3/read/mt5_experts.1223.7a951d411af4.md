@@ -1,0 +1,5 @@
+Calculation: Trend direction(T1) = bullish if close(T1) > upper band(T1)[1], bearish if close(T1) < lower band(T1)[1], otherwise prior direction; raw upper band = HMA(close(T1), HMA lookback) × (1 + shift parameter / 100) + ATR(T1, ATR lookback) × ATR multiplier; upper band = min(raw upper band, upper band(T1)[1]) when prior direction is bearish, otherwise raw upper band; raw lower band = LMA(close(T1), LMA lookback) × (1 − shift parameter / 100) − ATR(T1, ATR lookback) × ATR multiplier; lower band = max(raw lower band, lower band(T1)[1]) when prior direction is bullish, otherwise raw lower band; calculated on T1 bars using each last completed bar
+Long: Trend direction(T1)[0] is bullish AND Trend direction(T1)[1] is not bullish
+Short: Trend direction(T1)[0] is bearish AND Trend direction(T1)[1] is not bearish
+Exit: long, (Trend direction(T1)[0] is bearish AND Trend direction(T1)[1] is bearish) OR low <= entry price − stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, (Trend direction(T1)[0] is bullish AND Trend direction(T1)[1] is bullish) OR high >= entry price + stop-loss distance OR low <= entry price − take-profit distance

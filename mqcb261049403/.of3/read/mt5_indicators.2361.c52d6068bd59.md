@@ -1,0 +1,3 @@
+Calculation: Pivot state (P,C) on T1 bars = recursively, for each bar i let P[i]=high[i]+offset and C[i]=1 if high[i]<high[i−1] AND high[i]<high[i−depth] AND high[i]<P[i−1]; otherwise let P[i]=low[i]+offset and C[i]=1 if C[i−1]=0, else 2, when low[i]>low[i−1] AND low[i]>low[i−depth] AND low[i]>P[i−1]; otherwise P[i]=P[i−1] and C[i]=C[i−1], except set C[i]=2 if C[i−1]=1 AND C[i−2]=0, or C[i]=0 if C[i−1]=1 AND C[i−2]=2. Offset and depth are separate parameters.
+Long: On the first chart bar of each new T1 bar, C(T1, still-forming bar)=2
+Short: On the first chart bar of each new T1 bar, C(T1, still-forming bar)=0

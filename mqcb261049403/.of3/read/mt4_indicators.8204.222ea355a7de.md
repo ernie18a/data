@@ -1,0 +1,5 @@
+Calculation: Extremum order = 1 if only a low extremum has been accepted or the latest accepted low has a greater bar index than the latest accepted high; -1 if only a high extremum has been accepted or the latest accepted low has a smaller bar index than the latest accepted high; otherwise 0
+Long: FractalLow(low, bars on each side) AND (extremum order = 0 OR (extremum order = -1 AND low < latest accepted low) OR (extremum order = 1 AND low < latest accepted high))
+Short: FractalHigh(high, bars on each side) AND no long signal is marked on this bar AND (extremum order = 0 OR (extremum order = 1 AND high > latest accepted high) OR (extremum order = -1 AND high > latest accepted low))
+Long: PPO[2] > signal line[2] AND PPO[1] < signal line[1]
+Short: PPO[2] < signal line[2] AND PPO[1] > signal line[1]

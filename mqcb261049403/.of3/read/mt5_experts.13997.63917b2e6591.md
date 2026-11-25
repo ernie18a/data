@@ -1,0 +1,2 @@
+Long: Laguerre RSI(+DI(ADX lookback), gamma, T1, last completed bar) > Laguerre RSI(-DI(ADX lookback), gamma, T1, last completed bar) AND Laguerre RSI(+DI(ADX lookback), gamma, T1, bar still forming) < Laguerre RSI(-DI(ADX lookback), gamma, T1, bar still forming)
+Short: Laguerre RSI(+DI(ADX lookback), gamma, T1, last completed bar) < Laguerre RSI(-DI(ADX lookback), gamma, T1, last completed bar) AND Laguerre RSI(+DI(ADX lookback), gamma, T1, bar still forming) > Laguerre RSI(-DI(ADX lookback), gamma, T1, bar still forming)

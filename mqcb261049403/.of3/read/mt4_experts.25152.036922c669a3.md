@@ -1,0 +1,3 @@
+Long: MACD(close, fast lookback, slow lookback, signal lookback, T1, last completed bar) main != 0 AND MACD main > MACD signal line
+Short: MACD(close, fast lookback, slow lookback, signal lookback, T1, last completed bar) main != 0 AND MACD main < MACD signal line
+Exit: long or short, the six EMAs of typical price with six separate shorter lookback parameters on the current chart bar are all equal OR the six EMAs of typical price with six separate longer lookback parameters on the current chart bar are all equal OR close[1] <= Bollinger lower band(close, lookback, deviation, T1, last completed bar) OR Ask = order take-profit price OR Bid = order stop-loss price

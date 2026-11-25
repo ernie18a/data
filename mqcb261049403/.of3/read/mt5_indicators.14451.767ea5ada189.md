@@ -1,0 +1,3 @@
+Calculation: DeMarker trend line(close, lookback, step) = let D=100*DeMarker(close, lookback); direction=1 if D>prior upper, -1 if D<prior lower, otherwise prior direction; lower=max(D-2*step, prior lower) if direction>0, otherwise D-2*step; upper=min(D+2*step, prior upper) if direction<0, otherwise D+2*step; output=lower+step if direction>0, upper-step if direction<0; initialize direction=0, lower=999999, upper=-999999
+Long: DeMarker trend line(close, lookback, smaller step) > DeMarker trend line(close, lookback, larger step)
+Short: DeMarker trend line(close, lookback, smaller step) < DeMarker trend line(close, lookback, larger step)

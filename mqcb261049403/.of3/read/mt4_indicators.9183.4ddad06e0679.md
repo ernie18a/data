@@ -1,0 +1,6 @@
+Calculation: T1 trend state = up when chart close[1] > Heiken Ashi high(T1, last completed bar sampled on chart bars), down when chart close[1] < Heiken Ashi low(T1, last completed bar sampled on chart bars), unchanged otherwise; initially unset
+Calculation: long signal state = false initially, true when the Long condition occurs, and false when chart close[1] < Heiken Ashi low(T1, last completed bar sampled on chart bars)
+Long: T1 trend state is up AND chart close[1] < Heiken Ashi open(T2, last completed bar sampled on chart bars) AND Heiken Ashi close(T2, last completed bar sampled on chart bars) > Heiken Ashi open(T2, last completed bar sampled on chart bars)
+Short: long signal state is false AND T1 trend state is down AND chart close[1] > Heiken Ashi open(T2, last completed bar sampled on chart bars) AND Heiken Ashi close(T2, last completed bar sampled on chart bars) < Heiken Ashi open(T2, last completed bar sampled on chart bars)
+Exit: long, chart close[1] < Heiken Ashi low(T1, last completed bar sampled on chart bars)
+Exit: short, chart close[1] > Heiken Ashi high(T1, last completed bar sampled on chart bars)

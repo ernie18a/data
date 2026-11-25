@@ -1,0 +1,4 @@
+Long: Lowest(low, BSI channel lookback)[2] - BSI reversal filter parameter × Point² > Lowest(low, BSI channel lookback)[1] AND Lowest(low, BSI channel lookback)[1] = Lowest(low, BSI channel lookback)
+Short: Highest(high, BSI channel lookback)[2] + BSI reversal filter parameter × Point² < Highest(high, BSI channel lookback)[1] AND Highest(high, BSI channel lookback)[1] = Highest(high, BSI channel lookback)
+Long: Lowest(low, Tango channel lookback)[2] - Tango reversal filter parameter × Point² > Lowest(low, Tango channel lookback)[1] AND Lowest(low, Tango channel lookback)[1] = Lowest(low, Tango channel lookback)
+Short: Highest(high, Tango channel lookback)[2] + Tango reversal filter parameter × Point² < Highest(high, Tango channel lookback)[1] AND Highest(high, Tango channel lookback)[1] = Highest(high, Tango channel lookback)

@@ -1,0 +1,4 @@
+Long: Bullish Engulfing pattern AND MFI(last completed bar) < long-entry threshold
+Short: Bearish Engulfing pattern AND MFI(last completed bar) > short-entry threshold
+Exit: short, (MFI(last completed bar) > lower exit threshold AND MFI(previous completed bar) < lower exit threshold) OR (MFI(last completed bar) > upper exit threshold AND MFI(previous completed bar) < upper exit threshold)
+Exit: long, (MFI(last completed bar) > upper exit threshold AND MFI(previous completed bar) < upper exit threshold) OR (MFI(last completed bar) < lower exit threshold AND MFI(previous completed bar) > lower exit threshold)

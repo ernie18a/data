@@ -1,0 +1,4 @@
+Long: KCI main line >= 0
+Short: KCI main line < 0
+Long: (KCI(1) < KCI(0) AND KCI(1) < KCI(2) AND KCI(1) <= compression threshold AND max(volume[1], 1) * (close[1] - close[2])^2 < max(volume[0], 1) * (close[0] - close[1])^2 AND close[1] < close[2]) OR (KCI(2) < KCI(1) AND KCI(2) < KCI(3) AND KCI(2) <= compression threshold AND max(volume[2], 1) * (close[2] - close[1])^2 < max(volume[1], 1) * (close[1] - close[0])^2 AND close[2] < close[1])
+Short: (KCI(1) < KCI(0) AND KCI(1) < KCI(2) AND KCI(1) <= compression threshold AND max(volume[1], 1) * (close[1] - close[2])^2 < max(volume[0], 1) * (close[0] - close[1])^2 AND close[1] >= close[2]) OR (KCI(2) < KCI(1) AND KCI(2) < KCI(3) AND KCI(2) <= compression threshold AND max(volume[2], 1) * (close[2] - close[1])^2 < max(volume[1], 1) * (close[1] - close[0])^2 AND close[2] >= close[1])

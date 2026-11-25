@@ -1,0 +1,6 @@
+Long: close >= latest confirmed Fractals Up when direction is normal OR close <= latest confirmed Fractals Down when direction is reversed
+Short: close <= latest confirmed Fractals Down when direction is normal OR close >= latest confirmed Fractals Up when direction is reversed
+Calculation: long trailing stop = current price minus trailing-stop distance, updated when current price is more than trailing-stop distance plus trailing-step above entry price and the candidate stop is more than trailing-step above the previous stop loss
+Calculation: short trailing stop = current price plus trailing-stop distance, updated when current price is more than trailing-stop distance plus trailing-step below entry price and (the candidate stop is more than trailing-step below the previous stop loss or the previous stop loss is absent)
+Exit: long, stop loss enabled AND low <= entry price minus stop-loss distance OR take profit enabled AND high >= entry price plus take-profit distance OR trailing stop enabled AND low <= long trailing stop
+Exit: short, stop loss enabled AND high >= entry price plus stop-loss distance OR take profit enabled AND low <= entry price minus take-profit distance OR trailing stop enabled AND high >= short trailing stop

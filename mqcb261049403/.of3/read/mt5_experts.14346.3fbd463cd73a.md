@@ -1,0 +1,4 @@
+Long: On T1 bars, close[n+1] > open[n] + gap, where n is the signal-bar offset (the current bar is forming at offset zero; bars at positive offsets are completed)
+Short: On T1 bars, close[n+1] < open[n] - gap, where n is the signal-bar offset (the current bar is forming at offset zero; bars at positive offsets are completed)
+Exit: long, On T1 bars, neither close[n+1] > open[n] + gap nor close[n+1] < open[n] - gap, and the most recent older bar k with either condition satisfies close[k+1] < open[k] - gap
+Exit: short, On T1 bars, neither close[n+1] > open[n] + gap nor close[n+1] < open[n] - gap, and the most recent older bar k with either condition satisfies close[k+1] > open[k] + gap

@@ -1,0 +1,2 @@
+Short: close[1] > open[1] AND ZigZag(high, low, depth, deviation, backstep, buffer 1, current forming chart bar) > ZigZag(high, low, depth, deviation, backstep, buffer 3, current forming chart bar)
+Long: close[1] < open[1] AND ZigZag(high, low, depth, deviation, backstep, buffer 3, chart bar 3 bars ago) < ZigZag(high, low, depth, deviation, backstep, buffer 2, chart bar 3 bars ago)

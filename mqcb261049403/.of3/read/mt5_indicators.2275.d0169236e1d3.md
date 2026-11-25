@@ -1,0 +1,3 @@
+Calculation: XD-RangeSwitch direction = the side of the most recent earlier bar where close > highest(high, N preceding bars) or close < lowest(low, N preceding bars), with above-high = long, below-low = short; unset if none
+Long: close > highest(high, N preceding bars) AND (XD-RangeSwitch direction = short OR unset)
+Short: close < lowest(low, N preceding bars) AND (XD-RangeSwitch direction = long OR unset)

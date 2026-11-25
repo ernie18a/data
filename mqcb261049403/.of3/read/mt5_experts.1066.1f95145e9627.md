@@ -1,0 +1,4 @@
+Long: Aroon Up(high, lookback, T1, last completed bar) > upper threshold AND Aroon Down(low, lookback, T1, last completed bar) < lower threshold AND the most recent earlier T1 bar meeting either Aroon Up(high, lookback, T1) > upper threshold AND Aroon Down(low, lookback, T1) < lower threshold OR Aroon Up(high, lookback, T1) < lower threshold AND Aroon Down(low, lookback, T1) > upper threshold meets the latter condition
+Short: Aroon Up(high, lookback, T1, last completed bar) < lower threshold AND Aroon Down(low, lookback, T1, last completed bar) > upper threshold AND the most recent earlier T1 bar meeting either Aroon Up(high, lookback, T1) > upper threshold AND Aroon Down(low, lookback, T1) < lower threshold OR Aroon Up(high, lookback, T1) < lower threshold AND Aroon Down(low, lookback, T1) > upper threshold meets the former condition
+Exit: long, the most recent earlier T1 signal was a Short signal
+Exit: short, the most recent earlier T1 signal was a Long signal

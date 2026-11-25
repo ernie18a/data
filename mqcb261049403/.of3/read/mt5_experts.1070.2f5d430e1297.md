@@ -1,0 +1,4 @@
+Calculation: BBands stop bands = Bollinger Bands(close, lookback, deviation, T1, last completed bar), with the lower band set to max(current lower band, prior BBands stop lower band) while BBands stop trend is bullish and the upper band set to min(current upper band, prior BBands stop upper band) while BBands stop trend is bearish; initialize both bands from Bollinger Bands
+Calculation: BBands stop trend = bullish when close > prior BBands stop upper band, bearish when close < prior BBands stop lower band, otherwise the prior trend; initially neutral, evaluated on T1 bars at close
+Long: BBands stop trend changes to bullish on the last completed T1 bar
+Short: BBands stop trend changes to bearish on the last completed T1 bar

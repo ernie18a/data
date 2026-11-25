@@ -1,0 +1,4 @@
+Long: on chart bars using T1 values, MAMA(close, fast-limit, slow-limit, T1, last completed bar) > FAMA(close, fast-limit, slow-limit, T1, last completed bar) AND MAMA(close, fast-limit, slow-limit, T1, bar still forming) < FAMA(close, fast-limit, slow-limit, T1, bar still forming)
+Short: on chart bars using T1 values, MAMA(close, fast-limit, slow-limit, T1, last completed bar) < FAMA(close, fast-limit, slow-limit, T1, last completed bar) AND MAMA(close, fast-limit, slow-limit, T1, bar still forming) > FAMA(close, fast-limit, slow-limit, T1, bar still forming)
+Exit: short, on chart bars using T1 values, MAMA(close, fast-limit, slow-limit, T1, last completed bar) > FAMA(close, fast-limit, slow-limit, T1, last completed bar)
+Exit: long, on chart bars using T1 values, MAMA(close, fast-limit, slow-limit, T1, last completed bar) < FAMA(close, fast-limit, slow-limit, T1, last completed bar)

@@ -1,0 +1,3 @@
+Calculation: ATR reversal bands = use close or typical price (high + low + close) / 3 as the source; while bullish, the lower band is the greater of source price - ATR(ATR lookback) * multiplier and its prior value, and bearish state begins when low < lower band; while bearish, the upper band is the lesser of source price + ATR(ATR lookback) * multiplier and its prior value, and bullish state begins when high > upper band
+Long: the lower ATR reversal band is present on the last completed chart bar AND absent on the preceding completed chart bar
+Short: the upper ATR reversal band is present on the last completed chart bar AND absent on the preceding completed chart bar

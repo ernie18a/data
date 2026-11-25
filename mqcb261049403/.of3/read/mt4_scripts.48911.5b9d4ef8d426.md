@@ -1,0 +1,2 @@
+Exit long, close-all-orders setting is true OR close-buy-and-sell-orders setting is true OR close-buy-orders setting is true
+Exit short, close-all-orders setting is true OR close-buy-and-sell-orders setting is true OR close-sell-orders setting is true

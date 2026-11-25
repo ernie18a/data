@@ -1,0 +1,5 @@
+Calculation: NRTR ATR stop direction = on each bar, let distance = ATR(high, low, close, ATR lookback) × ATR multiplier; using the prior bar's high and low, change a nonpositive direction to positive if prior low > prior lower stop, then change a nonnegative direction to negative if prior high < prior upper stop; while direction is nonnegative, set the upper stop to prior low − distance if prior low > prior upper stop + distance, otherwise carry the prior upper stop; while direction is nonpositive, set the lower stop to prior high + distance if prior high < prior lower stop − distance, otherwise carry the prior lower stop
+Long: NRTR ATR stop direction crosses above zero on chart bars
+Short: NRTR ATR stop direction crosses below zero on chart bars
+Long: on chart bars using the current forming T1 values, NRTR ATR stop direction on T1 changes from nonpositive to positive
+Short: on chart bars using the current forming T1 values, NRTR ATR stop direction on T1 changes from nonnegative to negative

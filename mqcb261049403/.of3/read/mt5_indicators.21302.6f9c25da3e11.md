@@ -1,0 +1,6 @@
+Calculation: A(P,K,T)[t] = A[t-1] + (P[t] - A[t-1]) / K when (P[t] > A[t-1] AND P[t] > P[t-1]) OR (P[t] < A[t-1] AND P[t] < P[t-1]); otherwise A[t-1]; initialize A[0] = P[0]
+Calculation: B(P,K,T)[t] = B[t-1] + (P[t] - B[t-1]) / K when (P[t] > B[t-1] AND P[t] < P[t-1]) OR (P[t] < B[t-1] AND P[t] > P[t-1]); otherwise B[t-1]; initialize B[0] = P[0]
+Long: A(applied-price input, chart-variant smoothing parameter, chart bars) > B(applied-price input, chart-variant smoothing parameter, chart bars)
+Short: A(applied-price input, chart-variant smoothing parameter, chart bars) < B(applied-price input, chart-variant smoothing parameter, chart bars)
+Long: A(T1 applied-price input, T1-variant smoothing parameter, T1 bars; still-forming T1 value carried to chart bars) > B(T1 applied-price input, T1-variant smoothing parameter, T1 bars; still-forming T1 value carried to chart bars)
+Short: A(T1 applied-price input, T1-variant smoothing parameter, T1 bars; still-forming T1 value carried to chart bars) < B(T1 applied-price input, T1-variant smoothing parameter, T1 bars; still-forming T1 value carried to chart bars)

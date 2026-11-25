@@ -1,0 +1,2 @@
+Long: for each T1–T10, JMA candle trend state(T, selected bar shift) = up OR (JMA candle trend state(T, selected bar shift) = neutral AND JMA candle direction(T, selected bar shift) = up)
+Short: for each T1–T10, JMA candle trend state(T, selected bar shift) = down OR (JMA candle trend state(T, selected bar shift) = neutral AND JMA candle direction(T, selected bar shift) = down)

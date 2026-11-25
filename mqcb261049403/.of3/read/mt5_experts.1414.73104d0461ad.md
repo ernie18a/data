@@ -1,0 +1,4 @@
+Long: StepSto slow signal line on T1, last completed bar > 50 AND StepSto fast line on T1, last completed bar > StepSto slow signal line on T1, last completed bar AND StepSto fast line on T1, still-forming bar <= StepSto slow signal line on T1, still-forming bar
+Short: StepSto slow signal line on T1, last completed bar < 50 AND StepSto fast line on T1, last completed bar < StepSto slow signal line on T1, last completed bar AND StepSto fast line on T1, still-forming bar >= StepSto slow signal line on T1, still-forming bar
+Exit: long, StepSto slow signal line on T1, last completed bar < 50
+Exit: short, StepSto slow signal line on T1, last completed bar > 50

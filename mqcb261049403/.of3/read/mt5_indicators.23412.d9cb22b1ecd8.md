@@ -1,0 +1,13 @@
+Calculation: DynamicTrend(T, lookback, percent)[0] = on each T bar, if close[0] < DynamicTrend(T, lookback, percent)[1], the highest close among the preceding lookback T bars minus percent × point; otherwise, the lowest close among the preceding lookback T bars plus percent × point
+Long: On T1 bars, using the bar still forming, close[0] >= DynamicTrend(T1, lookback, percent)[1]
+Short: On T1 bars, using the bar still forming, close[0] < DynamicTrend(T1, lookback, percent)[1]
+Long: On T1 bars, using the last two completed bars, close[1] > DynamicTrend(T1, lookback, percent)[1] AND close[2] <= DynamicTrend(T1, lookback, percent)[2]
+Short: On T1 bars, using the last two completed bars, close[1] < DynamicTrend(T1, lookback, percent)[1] AND close[2] >= DynamicTrend(T1, lookback, percent)[2]
+Long: On T2 bars, using the bar still forming, close[0] >= DynamicTrend(T2, lookback, percent)[1]
+Short: On T2 bars, using the bar still forming, close[0] < DynamicTrend(T2, lookback, percent)[1]
+Long: On T2 bars, using the last two completed bars, close[1] > DynamicTrend(T2, lookback, percent)[1] AND close[2] <= DynamicTrend(T2, lookback, percent)[2]
+Short: On T2 bars, using the last two completed bars, close[1] < DynamicTrend(T2, lookback, percent)[1] AND close[2] >= DynamicTrend(T2, lookback, percent)[2]
+Long: On T3 bars, using the bar still forming, close[0] >= DynamicTrend(T3, lookback, percent)[1]
+Short: On T3 bars, using the bar still forming, close[0] < DynamicTrend(T3, lookback, percent)[1]
+Long: On T3 bars, using the last two completed bars, close[1] > DynamicTrend(T3, lookback, percent)[1] AND close[2] <= DynamicTrend(T3, lookback, percent)[2]
+Short: On T3 bars, using the last two completed bars, close[1] < DynamicTrend(T3, lookback, percent)[1] AND close[2] >= DynamicTrend(T3, lookback, percent)[2]

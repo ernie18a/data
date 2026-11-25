@@ -1,0 +1,2 @@
+Long: Ichimoku Span A(Tenkan lookback, Kijun lookback, cloud displacement, result shift, T1 bars, last completed bar) > Ichimoku Span B(Senkou lookback, cloud displacement, result shift, T1 bars, last completed bar)
+Short: Ichimoku Span B(Senkou lookback, cloud displacement, result shift, T1 bars, last completed bar) > Ichimoku Span A(Tenkan lookback, Kijun lookback, cloud displacement, result shift, T1 bars, last completed bar)

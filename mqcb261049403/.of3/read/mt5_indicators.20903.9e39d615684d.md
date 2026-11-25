@@ -1,0 +1,2 @@
+Long: For each timeframe T1–T10, AO(T, still-forming bar) >= AO(T, last completed bar) AND AC(T, still-forming bar) >= AC(T, last completed bar)
+Short: For each timeframe T1–T10, AO(T, still-forming bar) <= AO(T, last completed bar) AND AC(T, still-forming bar) <= AC(T, last completed bar) AND (AO(T, still-forming bar) < AO(T, last completed bar) OR AC(T, still-forming bar) < AC(T, last completed bar))

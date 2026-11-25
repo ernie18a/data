@@ -1,0 +1,4 @@
+Long: EMA(close, shorter lookback) crosses above EMA(close, longer lookback) AND open < close
+Short: EMA(close, shorter lookback) crosses below EMA(close, longer lookback) AND open > close
+Long: On chart bars using T1 data, the latest T1 bar with EMA(close, shorter lookback) crossing above EMA(close, longer lookback) AND open < close is more recent than the latest T1 bar with EMA(close, shorter lookback) crossing below EMA(close, longer lookback) AND open > close
+Short: On chart bars using T1 data, the latest T1 bar with EMA(close, shorter lookback) crossing below EMA(close, longer lookback) AND open > close is more recent than the latest T1 bar with EMA(close, shorter lookback) crossing above EMA(close, longer lookback) AND open < close

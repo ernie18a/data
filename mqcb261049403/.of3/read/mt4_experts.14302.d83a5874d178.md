@@ -1,0 +1,4 @@
+Calculation: Long trailing level = highest high of max(1, T1 bar shift of entry time − 1) T1 bars ending at the current forming T1 bar, minus trailing distance; recalculated on each tick
+Calculation: Short trailing level = lowest low of max(1, T1 bar shift of entry time − 1) T1 bars ending at the current forming T1 bar, plus trailing distance; recalculated on each tick
+Exit: long, trailing distance > 0 AND T1 bar shift of entry time ≥ 1 AND position profit > 0 AND long trailing level ≥ entry price + max(trailing step, 0) AND close ≤ long trailing level
+Exit: short, trailing distance > 0 AND T1 bar shift of entry time ≥ 1 AND position profit > 0 AND short trailing level ≤ entry price − max(trailing step, 0) AND close ≥ short trailing level

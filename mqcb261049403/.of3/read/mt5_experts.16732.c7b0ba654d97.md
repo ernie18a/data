@@ -1,0 +1,5 @@
+Calculation: Stochastic(T) = Stochastic(K period, D period, slowing, smoothing method, price field) on T bars, using the same parameters and bar offset n on T1, T2, and T3; n=0 is the forming bar and n>0 is completed
+Long: Stochastic %K(T3)[n+1] <= Stochastic %D(T3)[n+1] AND Stochastic %K(T3)[n] > Stochastic %D(T3)[n] AND Stochastic %K(T1)[n] > Stochastic %D(T1)[n] AND Stochastic %K(T2)[n] > Stochastic %D(T2)[n]
+Short: Stochastic %K(T3)[n+1] >= Stochastic %D(T3)[n+1] AND Stochastic %K(T3)[n] < Stochastic %D(T3)[n] AND Stochastic %K(T1)[n] < Stochastic %D(T1)[n] AND Stochastic %K(T2)[n] < Stochastic %D(T2)[n]
+Exit: long, Stochastic %K(T1)[n] < Stochastic %D(T1)[n] OR Stochastic %K(T2)[n] < Stochastic %D(T2)[n] OR Stochastic %K(T3)[n] < Stochastic %D(T3)[n]
+Exit: short, Stochastic %K(T1)[n] > Stochastic %D(T1)[n] OR Stochastic %K(T2)[n] > Stochastic %D(T2)[n] OR Stochastic %K(T3)[n] > Stochastic %D(T3)[n]

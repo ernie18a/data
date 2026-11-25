@@ -1,0 +1,5 @@
+Calculation: CumulativeChangePair(price, lookback) = (sum(max(Δprice, 0)) - sum(negative_run), sum(max(-Δprice, 0)) - sum(positive_run)) over lookback; Δprice = price - price[1]; positive_run = max(Δprice, 0) + positive_run[1] if Δprice > 0, else 0; negative_run = max(-Δprice, 0) + negative_run[1] if Δprice <= 0, else 0
+Long: first(CumulativeChangePair(close, lookback_chart)) > second(CumulativeChangePair(close, lookback_chart))
+Short: first(CumulativeChangePair(close, lookback_chart)) < second(CumulativeChangePair(close, lookback_chart))
+Long: first(CumulativeChangePair(close, lookback_T1)) > second(CumulativeChangePair(close, lookback_T1)); calculated on T1 bars using the still-forming T1 bar, with values sampled onto chart bars
+Short: first(CumulativeChangePair(close, lookback_T1)) < second(CumulativeChangePair(close, lookback_T1)); calculated on T1 bars using the still-forming T1 bar, with values sampled onto chart bars

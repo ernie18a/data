@@ -1,0 +1,6 @@
+Calculation: d_i = round(Stochastic(high, low, close, setup i parameters).%K - Stochastic(high, low, close, setup i parameters).%D, instrument digits + 2), for each of the three separately parameterized setups i
+Calculation: positive_i and negative_i = initialize positive_i as d_i > 0 and negative_i as d_i < 0; then, in order, set positive_3 if positive_1 AND positive_2 AND negative_3 AND |d_2| > |d_3|; set positive_2 if positive_1 AND positive_3 AND negative_2 AND |d_3| > |d_2|; set negative_3 if negative_1 AND negative_2 AND positive_3 AND |d_2| > |d_3|; set negative_2 if negative_1 AND negative_3 AND positive_2 AND |d_3| > |d_2|; set positive_3 if positive_1 AND positive_2 AND NOT negative_3; set positive_2 if positive_1 AND positive_3 AND NOT negative_2; set negative_3 if negative_1 AND negative_2 AND NOT positive_3; set negative_2 if negative_1 AND negative_3 AND NOT positive_2; set positive_1 if positive_2 AND positive_3 AND NOT negative_1; set negative_1 if negative_2 AND negative_3 AND NOT positive_1; retain all previously set flags
+Long: positive_1 AND positive_2 AND positive_3
+Short: negative_1 AND negative_2 AND negative_3
+Exit: long, negative_1
+Exit: short, positive_1

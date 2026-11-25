@@ -1,0 +1,2 @@
+Long: On each T1 bar close, 3-Line Break(high, low, Lines_Break, T1, last completed bar) changes from down to up
+Short: On each T1 bar close, 3-Line Break(high, low, Lines_Break, T1, last completed bar) changes from up to down

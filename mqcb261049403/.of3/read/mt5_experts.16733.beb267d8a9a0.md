@@ -1,0 +1,7 @@
+Calculation: T1 RVI = RVI(lookback, T1, bar at configured signal offset; completed or forming according to offset, evaluated on T1 bars)
+Calculation: T2 RVI = RVI(lookback, T2, bar at configured signal offset; completed or forming according to offset, evaluated on T2 bars)
+Calculation: T3 RVI = RVI(lookback, T3, configured signal bar and immediately older bar; selected bar is completed or forming according to offset, evaluated on T3 bars)
+Long: long entry enabled AND T3 RVI main line at configured signal bar > signal line AND T3 RVI main line at immediately older bar <= signal line AND T1 RVI main line > signal line AND T2 RVI main line > signal line
+Short: short entry enabled AND T3 RVI main line at configured signal bar < signal line AND T3 RVI main line at immediately older bar >= signal line AND T1 RVI main line < signal line AND T2 RVI main line < signal line
+Exit: long, (long exit on T1 enabled AND T1 RVI main line < signal line) OR (long exit on T2 enabled AND T2 RVI main line < signal line) OR (long exit on T3 enabled AND T3 RVI main line < signal line)
+Exit: short, (short exit on T1 enabled AND T1 RVI main line > signal line) OR (short exit on T2 enabled AND T2 RVI main line > signal line) OR (short exit on T3 enabled AND T3 RVI main line > signal line)

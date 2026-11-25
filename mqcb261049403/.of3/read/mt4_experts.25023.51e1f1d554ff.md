@@ -1,0 +1,6 @@
+Long: low < low[1] AND low < low[2] AND close > open
+Short: high > high[1] AND high > high[2] AND close < open
+Calculation: Long stop = entry price − stop-loss distance initially when stop-loss distance > 0; update to close − trailing-stop distance when trailing-stop distance > 0 AND close − entry price > trailing-stop distance AND (previous long stop is absent OR previous long stop < close − trailing-stop distance − trailing-step distance + one digit-adjusted point); otherwise retain the previous long stop
+Calculation: Short stop = entry price + stop-loss distance initially when stop-loss distance > 0; update to close + trailing-stop distance when trailing-stop distance > 0 AND entry price − close > trailing-stop distance AND (previous short stop is absent OR previous short stop > close + trailing-stop distance + trailing-step distance − one digit-adjusted point); otherwise retain the previous short stop
+Exit: long, low <= long stop OR high >= entry price + take-profit distance
+Exit: short, high >= short stop OR low <= entry price − take-profit distance

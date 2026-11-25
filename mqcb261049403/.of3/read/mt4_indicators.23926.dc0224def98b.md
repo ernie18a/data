@@ -1,0 +1,2 @@
+Long: barsAgo(argmax(high, lookback)) <= barsAgo(argmin(low, lookback)) OR LinearRegression((high + low + 2*close)/4, lookback)[0] > LinearRegression((high + low + 2*close)/4, lookback)[lookback - 1]
+Short: barsAgo(argmax(high, lookback)) > barsAgo(argmin(low, lookback)) OR LinearRegression((high + low + 2*close)/4, lookback)[0] < LinearRegression((high + low + 2*close)/4, lookback)[lookback - 1]

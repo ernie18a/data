@@ -1,0 +1,2 @@
+Long: CCI(applied price, lookback, T1, signal bar n) >= 0 AND CCI(applied price, lookback, T1, signal bar n+1) < 0
+Short: CCI(applied price, lookback, T1, signal bar n) < 0 AND CCI(applied price, lookback, T1, signal bar n+1) >= 0

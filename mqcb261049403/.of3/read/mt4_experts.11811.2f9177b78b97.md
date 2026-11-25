@@ -1,0 +1,2 @@
+Long: ADX +DI(lookback, close, T1, current forming bar) > ADX -DI(lookback, close, T1, current forming bar)
+Short: ADX -DI(lookback, close, T1, current forming bar) > ADX +DI(lookback, close, T1, current forming bar)

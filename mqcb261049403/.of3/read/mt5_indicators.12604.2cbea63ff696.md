@@ -1,0 +1,6 @@
+Calculation: Chart Ozymandias trend = initialize bullish with a bullish setup and threshold Highest(high, chart lookback); in a bullish setup, update the threshold to MIN(previous threshold, Highest(high, chart lookback)) and, when SMA(low, chart lookback) > threshold AND close > high[1], set the trend bullish, switch to a bearish setup, and reset its threshold to Lowest(low, chart lookback); in a bearish setup, update the threshold to MAX(previous threshold, Lowest(low, chart lookback)) and, when SMA(high, chart lookback) < threshold AND close < low[1], set the trend bearish, switch to a bullish setup, and reset its threshold to Highest(high, chart lookback); otherwise retain the trend and setup.
+Calculation: T1 Ozymandias trend = the same state calculation on T1 bars using T1 lookback, with the still-forming T1 bar mapped to chart bars.
+Long: Chart Ozymandias trend = bullish
+Short: Chart Ozymandias trend = bearish
+Long: T1 Ozymandias trend on the mapped chart bar = bullish
+Short: T1 Ozymandias trend on the mapped chart bar = bearish

@@ -1,0 +1,2 @@
+Long: MACD main line(close, shorter lookback, longer lookback)[3] >= MACD main line(close, shorter lookback, longer lookback)[2] AND MACD main line(close, shorter lookback, longer lookback)[2] >= MACD main line(close, shorter lookback, longer lookback)[1]
+Short: MACD main line(close, shorter lookback, longer lookback)[3] <= MACD main line(close, shorter lookback, longer lookback)[2] AND MACD main line(close, shorter lookback, longer lookback)[2] <= MACD main line(close, shorter lookback, longer lookback)[1]

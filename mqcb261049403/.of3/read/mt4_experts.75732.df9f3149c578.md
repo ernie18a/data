@@ -1,0 +1,5 @@
+Calculation: daily net trading P/L = sum of profit, swap, and commission for closed market trades closed since the start of the day and all open market trades
+Exit: long, daily loss limit enabled AND daily net trading P/L <= -daily loss limit AND long management enabled AND position matches configured symbol and magic-number filters
+Exit: short, daily loss limit enabled AND daily net trading P/L <= -daily loss limit AND short management enabled AND position matches configured symbol and magic-number filters
+Exit: long, daily profit target enabled AND daily net trading P/L >= daily profit target AND long management enabled AND position matches configured symbol and magic-number filters
+Exit: short, daily profit target enabled AND daily net trading P/L >= daily profit target AND short management enabled AND position matches configured symbol and magic-number filters

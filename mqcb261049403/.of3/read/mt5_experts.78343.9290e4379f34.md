@@ -1,0 +1,3 @@
+Long: On the close of a T1 bar whose server-time weekday is Monday, close < close[previous non-weekend T1 bar] AND (IBS filter disabled OR (high > low AND IBS(close, high, low) <= IBS threshold)) AND (moving-average filter disabled OR close < SMA(close, lookback, T1 bars, last completed bar including signal bar))
+Exit: long, On the close of a T1 bar whose server-time weekday is Wednesday, Thursday, Friday, Saturday, or Sunday
+Exit: long, after entry, low <= entry price - max(entry price × stop-loss percentage / 100, broker minimum stop distance)

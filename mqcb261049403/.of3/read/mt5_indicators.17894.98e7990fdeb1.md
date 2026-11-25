@@ -1,0 +1,2 @@
+Long: close crosses above Parabolic SAR(close, upper-point step, upper-point maximum, lower-point step, lower-point maximum)
+Short: close crosses below Parabolic SAR(close, upper-point step, upper-point maximum, lower-point step, lower-point maximum)

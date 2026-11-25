@@ -1,0 +1,7 @@
+Calculation: Grid step = base step × pip size in fixed-step mode; base step × pip size × max(1, 2^(same-side position count − 1)) in geometric-step mode; 0 in exponential-step mode
+Calculation: Combined open pips = sum((close − long entry price) / pip size) over long positions + sum((short entry price − close) / pip size) over short positions
+Calculation: Combined open profit including swaps = sum(open-position profit + swap)
+Long: buy orders enabled AND (no long position OR ((a short position exists OR buy-only mode) AND ((trend grid selected AND close >= last long entry price + grid step) OR (contrary grid selected AND close <= last long entry price − grid step))))
+Short: sell orders enabled AND (no short position OR ((a long position exists OR sell-only mode) AND ((trend grid selected AND close <= last short entry price − grid step) OR (contrary grid selected AND close >= last short entry price + grid step))))
+Exit: long, (pips target selected AND combined open pips >= profit-pips target) OR (currency target selected AND combined open profit including swaps >= profit-currency target) OR (loss closing enabled AND combined open pips <= −loss-pips threshold)
+Exit: short, (pips target selected AND combined open pips >= profit-pips target) OR (currency target selected AND combined open profit including swaps >= profit-currency target) OR (loss closing enabled AND combined open pips <= −loss-pips threshold)

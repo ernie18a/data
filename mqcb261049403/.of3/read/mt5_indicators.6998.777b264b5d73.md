@@ -1,0 +1,3 @@
+Calculation: AMA change = current AMA(close, lookback, fast smoothing lookback, slow smoothing lookback, exponent) − prior AMA(close, lookback, fast smoothing lookback, slow smoothing lookback, exponent)
+Long: On chart bars taking values from the still-forming T1 bar, AMA change > filter multiplier × population standard deviation(AMA change, lookback)
+Short: On chart bars taking values from the still-forming T1 bar, AMA change < −filter multiplier × population standard deviation(AMA change, lookback)

@@ -1,0 +1,4 @@
+Calculation: bullish line = EMA(3 * high − Highest(high over preceding short-term lookback T1 bars) − Highest(high over preceding medium-term lookback T1 bars) − Highest(high over preceding long-term lookback T1 bars), smoothing lookback), computed on T1 bars
+Calculation: bearish line = EMA(Lowest(low over preceding short-term lookback T1 bars) + Lowest(low over preceding medium-term lookback T1 bars) + Lowest(low over preceding long-term lookback T1 bars) − 3 * low, smoothing lookback), computed on T1 bars
+Long: On chart bars using T1 values at the configured signal offset and the immediately preceding T1 bar, bullish line crosses above bearish line; the selected bar is completed or forming according to the offset.
+Short: On chart bars using T1 values at the configured signal offset and the immediately preceding T1 bar, bullish line crosses below bearish line; the selected bar is completed or forming according to the offset.

@@ -1,0 +1,5 @@
+Calculation: MetroDeMarkerLine(step) = on each T1 bar, x = 100 × DeMarker(lookback); trend switches up when x > prior upper band, switches down when x < prior lower band, and otherwise persists; raw bands are x ± 2 × step; while trend is up, lower band = max(raw lower band, prior lower band), otherwise lower band = raw lower band; while trend is down, upper band = min(raw upper band, prior upper band), otherwise upper band = raw upper band; output lower band + step when up, upper band − step when down.
+Long: long entries enabled AND MetroDeMarkerLine(shorter fast step) crosses below MetroDeMarkerLine(longer slow step) on the last completed T1 bar.
+Short: short entries enabled AND MetroDeMarkerLine(shorter fast step) crosses above MetroDeMarkerLine(longer slow step) on the last completed T1 bar.
+Exit: long, long exits enabled AND short entries disabled AND MetroDeMarkerLine(shorter fast step) crosses above MetroDeMarkerLine(longer slow step) on the last completed T1 bar.
+Exit: short, short exits enabled AND long entries disabled AND MetroDeMarkerLine(shorter fast step) crosses below MetroDeMarkerLine(longer slow step) on the last completed T1 bar.

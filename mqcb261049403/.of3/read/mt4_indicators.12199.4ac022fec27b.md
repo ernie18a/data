@@ -1,0 +1,6 @@
+Long: close > open(T1, forming bar)
+Short: close <= open(T1, forming bar)
+Long: close > open(T2, forming bar)
+Short: close <= open(T2, forming bar)
+Long: close > open(T3, forming bar)
+Short: close <= open(T3, forming bar)

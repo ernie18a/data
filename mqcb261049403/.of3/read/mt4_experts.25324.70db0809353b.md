@@ -1,0 +1,6 @@
+Calculation: Upper fractal trendline = line through the latest and third-latest confirmed Fractal highs on chart bars
+Calculation: Lower fractal trendline = line through the latest and third-latest confirmed Fractal lows on chart bars
+Long: LWMA(typical price, fast lookback, chart bars, forming bar) > LWMA(typical price, slow lookback, chart bars, forming bar) AND low[2] < high[1] AND absolute(close - close[2]) > retracement threshold in points AND upper fractal trendline rises AND lower fractal trendline rises
+Short: LWMA(typical price, fast lookback, chart bars, forming bar) < LWMA(typical price, slow lookback, chart bars, forming bar) AND low[1] < high[2] AND absolute(close - close[1]) > retracement threshold in points AND upper fractal trendline falls AND lower fractal trendline falls
+Exit: long, all six EMAs of typical price at the six ascending shorter lookbacks are equal OR all six EMAs of typical price at the six ascending longer lookbacks are equal OR close[1] <= lower Bollinger Band(close, lookback, deviation, chart bars, last completed bar)
+Exit: short, all six EMAs of typical price at the six ascending shorter lookbacks are equal OR all six EMAs of typical price at the six ascending longer lookbacks are equal OR close[1] <= lower Bollinger Band(close, lookback, deviation, chart bars, last completed bar)

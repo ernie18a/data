@@ -1,0 +1,3 @@
+Calculation: Adaptive MACD state = 1 when mode is slope and MACD(close, shorter lookback, longer lookback) is above its prior value, mode is middle and MACD is above the adaptive middle level, or mode is levels and MACD is above the upper adaptive level; -1 when mode is slope and MACD is below its prior value, mode is middle and MACD is below the adaptive middle level, or mode is levels and MACD is below the lower adaptive level; 0 otherwise, retaining the prior state when mode is slope and MACD equals its prior value
+Long: Adaptive MACD state = 1 OR (Adaptive MACD state = 0 AND Adaptive MACD state[1] = -1)
+Short: Adaptive MACD state = -1 OR (Adaptive MACD state = 0 AND Adaptive MACD state[1] = 1)

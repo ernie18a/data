@@ -1,0 +1,4 @@
+Long: MACD(close, fast lookback, slow lookback, signal lookback, T1 last completed bar, read when the button is clicked).main ≠ 0 AND MACD(close, fast lookback, slow lookback, signal lookback, T1 last completed bar, read when the button is clicked).main > MACD(close, fast lookback, slow lookback, signal lookback, T1 last completed bar, read when the button is clicked).signal
+Short: MACD(close, fast lookback, slow lookback, signal lookback, T1 last completed bar, read when the button is clicked).main ≠ 0 AND MACD(close, fast lookback, slow lookback, signal lookback, T1 last completed bar, read when the button is clicked).main < MACD(close, fast lookback, slow lookback, signal lookback, T1 last completed bar, read when the button is clicked).signal
+Exit: long, close[1] = Bollinger Bands(close, lookback, deviations).upper band[1]
+Exit: short, close[1] = Bollinger Bands(close, lookback, deviations).lower band[1]

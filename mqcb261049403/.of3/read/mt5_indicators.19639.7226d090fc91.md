@@ -1,0 +1,2 @@
+Long: AdaptiveRVICloud2 up value(T1, bar still forming) >= AdaptiveRVICloud2 down value(T1, bar still forming) AND AdaptiveRVICloud2 up value(T2, bar still forming) < AdaptiveRVICloud2 down value(T2, bar still forming), where T1 is longer than T2
+Short: AdaptiveRVICloud2 up value(T1, bar still forming) < AdaptiveRVICloud2 down value(T1, bar still forming) AND AdaptiveRVICloud2 up value(T2, bar still forming) >= AdaptiveRVICloud2 down value(T2, bar still forming), where T1 is longer than T2

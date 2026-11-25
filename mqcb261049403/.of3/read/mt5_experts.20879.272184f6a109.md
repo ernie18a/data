@@ -1,0 +1,5 @@
+Long: chart-bar high >= high(T1, last completed bar) + entry offset AND SMA(fast price source, shorter lookback, fast shift, current chart bar) > SMA(slow price source, longer lookback, slow shift, current chart bar)
+Short: chart-bar low <= low(T1, last completed bar) - entry offset AND SMA(fast price source, shorter lookback, fast shift, current chart bar) < SMA(slow price source, longer lookback, slow shift, current chart bar)
+Calculation: trailing stop = initial stop-loss price when enabled; update to chart-bar high minus trailing distance for long or chart-bar low plus trailing distance for short when favorable movement from entry exceeds trailing distance plus step and the new stop improves the prior stop by more than step; an unset short stop may update whenever the favorable-move condition is met
+Exit: long, chart-bar low <= trailing stop OR chart-bar high >= entry price + take-profit distance
+Exit: short, chart-bar high >= trailing stop OR chart-bar low <= entry price - take-profit distance

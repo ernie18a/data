@@ -1,0 +1,8 @@
+Calculation: Weighted RVI = factor1 × RVI(open, high, low, close, lookback1) + factor2 × RVI(open, high, low, close, lookback2) + factor2 × RVI(open, high, low, close, lookback3) + factor4 × RVI(open, high, low, close, lookback4) + factor5 × RVI(open, high, low, close, lookback5), where lookback1 < lookback2 < lookback3 < lookback4 < lookback5
+Calculation: Smoothed weighted RVI = current Weighted RVI / smoothing length + previous Smoothed weighted RVI × (smoothing length − 1) / smoothing length; seed at the oldest calculated bar with Weighted RVI / smoothing length
+Long: Weighted RVI > Smoothed weighted RVI
+Short: Weighted RVI < Smoothed weighted RVI
+Calculation: T1 Weighted RVI = T1 factor1 × RVI(open, high, low, close, T1 lookback1) + T1 factor2 × RVI(open, high, low, close, T1 lookback2) + T1 factor2 × RVI(open, high, low, close, T1 lookback3) + T1 factor4 × RVI(open, high, low, close, T1 lookback4) + T1 factor5 × RVI(open, high, low, close, T1 lookback5), calculated on T1 bars, where T1 lookback1 < T1 lookback2 < T1 lookback3 < T1 lookback4 < T1 lookback5
+Calculation: T1 Smoothed weighted RVI = current T1 Weighted RVI / T1 smoothing length + previous T1 Smoothed weighted RVI × (T1 smoothing length − 1) / T1 smoothing length; seed at the oldest calculated T1 bar with T1 Weighted RVI / T1 smoothing length
+Long: On chart bars, T1 Weighted RVI and T1 Smoothed weighted RVI sampled from the still-forming T1 bar at its first chart bar and held through the T1 interval; T1 Weighted RVI > T1 Smoothed weighted RVI
+Short: On chart bars, T1 Weighted RVI and T1 Smoothed weighted RVI sampled from the still-forming T1 bar at its first chart bar and held through the T1 interval; T1 Weighted RVI < T1 Smoothed weighted RVI

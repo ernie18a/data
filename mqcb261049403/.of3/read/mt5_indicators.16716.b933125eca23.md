@@ -1,0 +1,3 @@
+Calculation: RVI state on chart bars = up when the selected color mode is slope and Relative Volatility Index is above its previous bar, middle-line and Relative Volatility Index is above the middle level, or outer-level and Relative Volatility Index is above the upper level; down when the selected color mode is slope and Relative Volatility Index is below its previous bar, middle-line and Relative Volatility Index is below the middle level, or outer-level and Relative Volatility Index is below the lower level; neutral otherwise. Evaluate on the alert bar selected by the setting (current forming or last completed).
+Long: RVI state is up AND the preceding bar's RVI state is not up.
+Short: RVI state is down AND the preceding bar's RVI state is not down.

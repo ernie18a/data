@@ -1,0 +1,3 @@
+Calculation: In-range share = 100 × count of the last flat-lookback bars, including the current forming chart bar, where |Chaikin Oscillator(high, low, close, volume, shorter lookback, longer lookback)| <= flat level / flat-lookback
+Long: In-range share > flat percentage threshold AND Chaikin Oscillator(high, low, close, volume, shorter lookback, longer lookback, current forming chart bar) >= open level
+Short: In-range share > flat percentage threshold AND Chaikin Oscillator(high, low, close, volume, shorter lookback, longer lookback, current forming chart bar) <= -open level

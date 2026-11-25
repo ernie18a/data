@@ -1,0 +1,3 @@
+Calculation: CCI color state = initially neutral; in threshold mode, up when CCI(close, lookback) > upper threshold, down when CCI(close, lookback) < lower threshold, neutral when between the thresholds, otherwise retain the prior state; in center mode, up when CCI(close, lookback) > center threshold, down when CCI(close, lookback) < center threshold, otherwise retain the prior state; otherwise, up when CCI(close, lookback) > CCI(close, lookback)[1], down when CCI(close, lookback) < CCI(close, lookback)[1], otherwise retain the prior state
+Long: CCI color state is up
+Short: CCI color state is down

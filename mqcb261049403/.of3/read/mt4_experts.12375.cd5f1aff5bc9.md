@@ -1,0 +1,5 @@
+Calculation: MA channel boundaries = MA(applied price, lookback, method, shift, T1, bar) ± range offset
+Long: flat AND low(T1, last completed bar) > lower MA channel boundary(T1, last completed bar) AND low(T1, forming bar) <= lower MA channel boundary(T1, forming bar) AND close(T1, forming bar) = low(T1, forming bar) AND (time filter disabled OR server time is within the configured trading window)
+Short: flat AND high(T1, last completed bar) < upper MA channel boundary(T1, last completed bar) AND high(T1, forming bar) >= upper MA channel boundary(T1, forming bar) AND close(T1, forming bar) = high(T1, forming bar) AND (time filter disabled OR server time is within the configured trading window)
+Exit: long, low <= entry price - active stop distance OR high >= entry price + take-profit distance OR (highest high since entry - entry price > trailing-stop distance AND low <= highest high since entry - trailing-stop distance)
+Exit: short, high >= entry price + active stop distance OR low <= entry price - take-profit distance OR (entry price - lowest low since entry > trailing-stop distance AND high >= lowest low since entry + trailing-stop distance)

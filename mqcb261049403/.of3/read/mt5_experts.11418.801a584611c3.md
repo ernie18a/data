@@ -1,0 +1,2 @@
+Long: AMA(AMA applied price, AMA lookback, fast lookback, slow lookback, T1, last completed bar) crosses above MA(MA applied price, MA lookback, MA method, T1, last completed bar)
+Short: AMA(AMA applied price, AMA lookback, fast lookback, slow lookback, T1, last completed bar) crosses below MA(MA applied price, MA lookback, MA method, T1, last completed bar)

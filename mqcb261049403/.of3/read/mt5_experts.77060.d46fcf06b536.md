@@ -1,0 +1,2 @@
+Long: server hour = entry-hour AND server minute < entry-window AND (weekly-reopen skip disabled OR server weekday != Monday) AND no entry in the preceding lockout duration AND spread <= maximum spread AND SMA(high - low, range lookback, T1 bars, last completed bar) > 0
+Exit: long, low <= entry price - stop multiplier × SMA(high - low, range lookback, T1 bars, last completed bar as of entry) OR elapsed time since entry >= holding duration

@@ -1,0 +1,2 @@
+Long: DeMarker(lookback, T1, forming or last completed bar selected by parameter) < lower threshold, evaluated on T1 bars
+Short: DeMarker(lookback, T1, forming or last completed bar selected by parameter) > upper threshold, evaluated on T1 bars

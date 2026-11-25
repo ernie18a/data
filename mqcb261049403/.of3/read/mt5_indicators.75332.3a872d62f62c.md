@@ -1,0 +1,5 @@
+Calculation: Volume threshold = upper Bollinger Band(tick volume, volume lookback, volume z-score multiplier, T2, last completed bar)
+Long: a bullish T1 POI is identified when three consecutive completed T1 bars have, respectively, close < open; close > open and close > the first bar's high; and low > the first bar's high
+Short: a bearish T1 POI is identified when three consecutive completed T1 bars have, respectively, close > open; close < open and close < the first bar's low; and high < the first bar's low
+Long: current bid is within the selected bullish T1 POI's first bar low-to-high range AND the still-forming T3 bar's close >= open AND the last completed T2 bar's close > the highest high of the preceding swing lookback completed T2 bars AND its tick volume > Volume threshold
+Short: current bid is within the selected bearish T1 POI's first bar low-to-high range AND the still-forming T3 bar's close <= open AND the last completed T2 bar's close < the lowest low of the preceding swing lookback completed T2 bars AND its tick volume > Volume threshold

@@ -1,0 +1,4 @@
+Long: close > upper PercentageCrossoverChannel(close, percentage-deviation parameter)[horizontal-shift parameter bars ago]
+Short: close < lower PercentageCrossoverChannel(close, percentage-deviation parameter)[horizontal-shift parameter bars ago]
+Long: on chart bars taking values from T1, T1 close on the still-forming bar > upper PercentageCrossoverChannel(close, percentage-deviation parameter) on the T1 bar [horizontal-shift parameter T1 bars ago]
+Short: on chart bars taking values from T1, T1 close on the still-forming bar < lower PercentageCrossoverChannel(close, percentage-deviation parameter) on the T1 bar [horizontal-shift parameter T1 bars ago]

@@ -1,0 +1,2 @@
+Long: Awesome Oscillator[n] > 0 AND Awesome Oscillator[n-1] > 0 AND Awesome Oscillator[n] < Awesome Oscillator[n-1] AND Awesome Oscillator[n-1] > Awesome Oscillator[n-2] > Awesome Oscillator[n-3] > Awesome Oscillator[n-4]
+Short: Awesome Oscillator[n] < 0 AND Awesome Oscillator[n-1] < 0 AND Awesome Oscillator[n] > Awesome Oscillator[n-1] AND Awesome Oscillator[n-1] < Awesome Oscillator[n-2] < Awesome Oscillator[n-3] < Awesome Oscillator[n-4]

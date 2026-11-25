@@ -1,0 +1,5 @@
+Calculation: Short MA = MA(close, short lookback, short averaging method, short MA shift), with a shorter lookback than the intermediate and long MAs
+Calculation: Intermediate MA = MA(close, intermediate lookback, intermediate averaging method, intermediate MA shift), with a longer lookback than the short MA and a shorter lookback than the long MA
+Calculation: Long MA = MA(close, long lookback, long averaging method, long MA shift)
+Long: For the selected chart signal bar k, (Short MA[k+1] > Long MA[k+1] AND Short MA[k+2] <= Long MA[k+2] AND Short MA[k-1] > Long MA[k-1] AND Intermediate MA[k+1] > Long MA[k+1]) OR (Short MA[k+1] > Long MA[k+1] AND Intermediate MA[k+1] > Long MA[k+1] AND Intermediate MA[k+2] <= Long MA[k+2] AND Intermediate MA[k-1] > Long MA[k-1])
+Short: For the selected chart signal bar k, (Short MA[k+1] < Long MA[k+1] AND Short MA[k+2] >= Long MA[k+2] AND Short MA[k-1] < Long MA[k-1] AND Intermediate MA[k+1] < Long MA[k+1]) OR (Short MA[k+1] < Long MA[k+1] AND Intermediate MA[k+1] < Long MA[k+1] AND Intermediate MA[k+2] >= Long MA[k+2] AND Intermediate MA[k-1] < Long MA[k-1])

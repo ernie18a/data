@@ -1,0 +1,2 @@
+Long: For each monitored price series and each of T1, T2, and T3, on chart bars taking values from that timeframe's current forming bar, SMMA(close, shorter lookback) > SMMA(open, longer lookback)
+Short: For each monitored price series and each of T1, T2, and T3, on chart bars taking values from that timeframe's current forming bar, SMMA(close, shorter lookback) <= SMMA(open, longer lookback)

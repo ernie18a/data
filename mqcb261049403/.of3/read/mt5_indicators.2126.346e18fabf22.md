@@ -1,0 +1,2 @@
+Long: FisherCyberCycle(close, parameters, T1, bar still forming, sampled on chart bars) > 0 AND FisherCyberCycle(close, parameters, T1, bar still forming, sampled on chart bars) != FisherCyberCycle(close, parameters, T1, bar still forming, sampled on chart bars)[1]
+Short: FisherCyberCycle(close, parameters, T1, bar still forming, sampled on chart bars) < 0 AND FisherCyberCycle(close, parameters, T1, bar still forming, sampled on chart bars) != FisherCyberCycle(close, parameters, T1, bar still forming, sampled on chart bars)[1]

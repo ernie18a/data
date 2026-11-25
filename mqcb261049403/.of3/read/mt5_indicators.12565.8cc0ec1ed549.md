@@ -1,0 +1,2 @@
+Long: The latest MAMA/FAMA crossover through the selected T1 bar is MAMA crossing above FAMA (same applied-price, fast-limit, and slow-limit parameters; calculated on T1 bars; bar-offset parameter selects a forming or completed bar).
+Short: The latest MAMA/FAMA crossover through the selected T1 bar is MAMA crossing below FAMA (same applied-price, fast-limit, and slow-limit parameters; calculated on T1 bars; bar-offset parameter selects a forming or completed bar).

@@ -1,0 +1,2 @@
+Long: On T1 bars at close, RSI(close, shorter lookback) > RSI(close, longer lookback) AND RSI(close, longer lookback) > threshold AND the prior completed T1 bar did not satisfy both comparisons.
+Short: On T1 bars at close, RSI(close, shorter lookback) < RSI(close, longer lookback) AND RSI(close, longer lookback) < 100 - threshold AND the prior completed T1 bar did not satisfy both comparisons.

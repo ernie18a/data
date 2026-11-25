@@ -1,0 +1,2 @@
+Long: Williams %R(high, low, close, lookback, T1, current forming bar), calculated on T1 bars and sampled on chart bars > upper threshold
+Short: Williams %R(high, low, close, lookback, T1, current forming bar), calculated on T1 bars and sampled on chart bars < lower threshold

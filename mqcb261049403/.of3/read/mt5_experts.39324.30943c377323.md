@@ -1,0 +1,2 @@
+Long: (DeMarker(lookback) on the last completed chart bar < lower threshold AND reverse mode is off) OR (DeMarker(lookback) on the last completed chart bar > upper threshold AND reverse mode is on)
+Short: (DeMarker(lookback) on the last completed chart bar > upper threshold AND reverse mode is off) OR (DeMarker(lookback) on the last completed chart bar < lower threshold AND reverse mode is on)

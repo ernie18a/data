@@ -1,0 +1,4 @@
+Calculation: Trailing line = initialize to the selected applied price on the oldest available T1 bar; on each newer T1 bar, let P be the selected applied price, Q the prior trailing line, and L the lookback parameter: if P = Q, use Q; if P > Q and P[L] > Q, use max(Q, P × lower multiplier); if P < Q and P[L] < Q, use min(Q, P × upper multiplier); otherwise use P × lower multiplier when P > Q, and P × upper multiplier when P < Q; calculate on T1 bars at close using completed bars.
+Calculation: Trend state = bullish when the selected applied price is above the prior T1 bar's trailing line, bearish when below it, and unchanged when equal.
+Long: Trend state changes from bearish to bullish at the signal-bar offset on a completed T1 bar.
+Short: Trend state changes from bullish to bearish at the signal-bar offset on a completed T1 bar.

@@ -1,0 +1,9 @@
+Calculation: planned entry = (low[2] + high) / 2 when high < low[2]; (low + high[2]) / 2 when low > high[2]; otherwise confirmation close
+Calculation: stop price = sweep low − stop-buffer points × minimum price increment for long; sweep high + stop-buffer points × minimum price increment for short
+Calculation: target price = entry price + reward multiple × (entry price − stop price) for long; entry price − reward multiple × (stop price − entry price) for short
+Long: with no active bullish sweep, for an enabled pool equal to the low of the last completed T1 bar or the completed Asia-session low when the chart timeframe is at most T2, low < pool AND close > pool; if the minimum sweep-volume filter is enabled, volume / SMA(volume[1], volume-average lookback) ≥ minimum sweep-volume ratio
+Short: with no active bearish sweep, for an enabled pool equal to the high of the last completed T1 bar or the completed Asia-session high when the chart timeframe is at most T2, high > pool AND close < pool; if the minimum sweep-volume filter is enabled, volume / SMA(volume[1], volume-average lookback) ≥ minimum sweep-volume ratio
+Long: after an active, uninvalidated low-pool sweep within the maximum bars to MSS, close > the most recent confirmed swing high before the sweep AND high − low ≥ displacement ATR multiple × ATR(ATR lookback)
+Short: after an active, uninvalidated high-pool sweep within the maximum bars to MSS, close < the most recent confirmed swing low before the sweep AND high − low ≥ displacement ATR multiple × ATR(ATR lookback)
+Exit: long, entry price − stop price > max(spread-risk multiplier × bid-ask spread, minimum-risk points × minimum price increment) AND (low ≤ stop price OR (low > stop price AND high ≥ target price))
+Exit: short, stop price − entry price > max(spread-risk multiplier × bid-ask spread, minimum-risk points × minimum price increment) AND (high ≥ stop price OR (high < stop price AND low ≤ target price))

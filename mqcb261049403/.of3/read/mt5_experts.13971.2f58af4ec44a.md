@@ -1,0 +1,3 @@
+Calculation: FIR = (a×median price + b×median price[1] + b×median price[2] + a×median price[3])/(2a+2b), calculated on T1 bars
+Long: fast LaguerreFilter(median price, Laguerre smoothing parameter, T1, last completed bar) < FIR(last completed T1 bar) AND fast LaguerreFilter(median price, Laguerre smoothing parameter, T1, preceding completed bar) > FIR(preceding completed T1 bar)
+Short: fast LaguerreFilter(median price, Laguerre smoothing parameter, T1, last completed bar) > FIR(last completed T1 bar) AND fast LaguerreFilter(median price, Laguerre smoothing parameter, T1, preceding completed bar) < FIR(preceding completed T1 bar)

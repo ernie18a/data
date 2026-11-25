@@ -1,0 +1,8 @@
+Calculation: Adaptive lookback = max(1, ceil(adaptive lookback scale / ADX(ADX lookback, T1, current bar))) on each T1 bar
+Calculation: Adaptive channel width = (Highest(high, adaptive lookback) - Lowest(low, adaptive lookback)) * band percentage on each T1 bar
+Calculation: Adaptive trend state = -1 when close < Lowest(low, adaptive lookback) + adaptive channel width; +1 when close > Highest(high, adaptive lookback) - adaptive channel width; otherwise the prior state; initialize at 0, with +1 taking precedence if both conditions hold, on each T1 bar
+Calculation: Up arrow value = low - SMA(abs(high - low), adaptive lookback) * arrow offset multiplier when close > Highest(high, adaptive lookback) - adaptive channel width AND the prior adaptive trend state is less than +1; otherwise 0, on each T1 bar
+Calculation: Down arrow value = high + SMA(abs(high - low), adaptive lookback) * arrow offset multiplier when close < Lowest(low, adaptive lookback) + adaptive channel width AND the prior adaptive trend state is greater than -1; otherwise 0, on each T1 bar
+Calculation: Prior arrow direction = direction of the most recent earlier T1 bar with a nonzero up or down arrow value, with up taking precedence if both are nonzero, or 0 if none
+Long: Up arrow value on the last completed T1 signal bar is nonzero AND prior arrow direction is -1
+Short: Down arrow value on the last completed T1 signal bar is nonzero AND prior arrow direction is +1

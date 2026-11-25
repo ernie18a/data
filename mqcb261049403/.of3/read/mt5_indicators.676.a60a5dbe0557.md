@@ -1,0 +1,3 @@
+Calculation: Laguerre direction = long if Laguerre RSI(applied price, gamma parameter) > high threshold; short if it is < low threshold; if it is > middle threshold and <= high threshold, short if its prior value > high threshold, long if its prior value <= middle threshold, otherwise retain the prior direction; if it is >= low threshold and <= middle threshold, short if its prior value > middle threshold, long if its prior value < low threshold, otherwise retain the prior direction
+Long: Laguerre direction = long
+Short: Laguerre direction = short

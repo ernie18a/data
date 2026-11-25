@@ -1,0 +1,3 @@
+Calculation: uptrend = SMA(close, lookback) on the last completed chart bar > SMA(close, same lookback, shift bars before the last completed chart bar)
+Long: a displayed candle pattern has bullish relevance OR a displayed reversal candle pattern has indecision relevance AND uptrend is false
+Short: a displayed candle pattern has bearish relevance OR a displayed reversal candle pattern has indecision relevance AND uptrend is true

@@ -1,0 +1,2 @@
+Long: On T1 bars, high of the still-forming bar > high of the previous completed bar; chart bars take this T1 signal.
+Short: On T1 bars, low of the still-forming bar < low of the previous completed bar; chart bars take this T1 signal.

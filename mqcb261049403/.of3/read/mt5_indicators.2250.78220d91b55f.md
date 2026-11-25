@@ -1,0 +1,4 @@
+Long: ParabolicSAR(high, low, step, maximum)[1] >= (high[1] + low[1]) / 2 AND ParabolicSAR(high, low, step, maximum)[0] < (high[0] + low[0]) / 2
+Short: ParabolicSAR(high, low, step, maximum)[1] <= (high[1] + low[1]) / 2 AND ParabolicSAR(high, low, step, maximum)[0] > (high[0] + low[0]) / 2
+Long: On chart bars taking values from T1 bars, ParabolicSAR(high, low, step_T1, maximum_T1, T1, last completed bar) >= (high[1, T1] + low[1, T1]) / 2 AND ParabolicSAR(high, low, step_T1, maximum_T1, T1, bar still forming) < (high[0, T1] + low[0, T1]) / 2
+Short: On chart bars taking values from T1 bars, ParabolicSAR(high, low, step_T1, maximum_T1, T1, last completed bar) <= (high[1, T1] + low[1, T1]) / 2 AND ParabolicSAR(high, low, step_T1, maximum_T1, T1, bar still forming) > (high[0, T1] + low[0, T1]) / 2

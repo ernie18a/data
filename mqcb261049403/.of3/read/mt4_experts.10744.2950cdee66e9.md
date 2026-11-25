@@ -1,0 +1,13 @@
+Calculation: Channel direction = long when close exceeds the upper channel band on the preceding chart bar; short when close falls below the lower channel band on the preceding chart bar; otherwise retain the previous direction
+Calculation: RVI line separation = absolute difference between the current RVI main and signal lines
+Calculation: Directional comparison score(x, side, anchor) = sum the lag weight for each older bar in the anchor's window where x[anchor] > x[anchor + lag] for long or x[anchor] < x[anchor + lag] for short; use the same linearly decreasing lag weights for every series and side, spanning positive, zero, and negative weights
+Calculation: Full comparison score(x, side) = directional comparison score at the current bar + at the immediately preceding bar + at the second preceding bar; the comparison windows are longest at the current bar and successively shorter at older anchors
+Calculation: Channel history score(side) = sum the separate age-decreasing weights for retained prior channel-signal states that indicate side
+Calculation: Long vote score = channel history score(long) + full comparison scores for long on total-series RSI, value-series RSI, total ask, total close, value ask, and value close
+Calculation: Short vote score = channel history score(short) + full comparison scores for short on total-series RSI, total close, value bid, total bid, and value close + directional comparison score for short on total-series RSI at the current bar + directional comparison scores for short on value-series RSI at the immediately preceding and second preceding bars
+Long: Channel direction is long
+Short: Channel direction is short
+Long: Channel direction is long AND available observation count meets the minimum observation count AND RVI line separation exceeds its unsafe threshold AND RVI signal differs from RVI main at one or more of the three successively longer prior-bar lookbacks AND (long vote score meets the minimum chance OR short vote score meets the minimum chance) AND long vote score > short vote score
+Short: Channel direction is short AND available observation count meets the minimum observation count AND RVI line separation exceeds its unsafe threshold AND RVI signal differs from RVI main at one or more of the three successively longer prior-bar lookbacks AND (long vote score meets the minimum chance OR short vote score meets the minimum chance) AND short vote score > long vote score
+Exit: long, position profit >= profit target OR position profit <= -loss limit
+Exit: short, position profit >= profit target OR position profit <= -loss limit

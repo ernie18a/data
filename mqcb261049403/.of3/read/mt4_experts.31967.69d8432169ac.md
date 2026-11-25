@@ -1,0 +1,4 @@
+Long: long entries enabled AND current server datetime equals the configured opening datetime to the minute
+Short: short entries enabled AND current server datetime equals the configured opening datetime to the minute
+Exit: long, current server datetime equals the configured closing datetime to the minute AND ((the position belongs to this expert AND close-own-orders is enabled) OR close-all-orders is enabled)
+Exit: short, current server datetime equals the configured closing datetime to the minute AND ((the position belongs to this expert AND close-own-orders is enabled) OR close-all-orders is enabled)

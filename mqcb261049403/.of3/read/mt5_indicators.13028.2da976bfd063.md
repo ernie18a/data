@@ -1,0 +1,2 @@
+Long: prior Chandelier Exit direction < 0 AND close > Lowest(low, lookback)[offset] + ATR(lookback) * ATR multiplier
+Short: prior Chandelier Exit direction >= 0 AND close < Highest(high, lookback)[offset] - ATR(lookback) * ATR multiplier

@@ -1,0 +1,3 @@
+Calculation: MA-group direction = 1 when the six moving averages, in configured order, satisfy A1 > A2 ≥ A3 ≥ A4 ≥ A5 ≥ A6 on the latest completed chart bar, A1 ≥ A2 ≥ A3 ≥ A4 ≥ A5 ≥ A6 on the preceding completed chart bar, and each average is higher on the latest bar; −1 under the reversed inequalities and lower averages; otherwise 0
+Exit: long, (elapsed T1 bars since entry ≥ parameter AND MA-group direction ≠ 1) OR (a scheduled close datetime is set AND current datetime > scheduled close datetime)
+Exit: short, (elapsed T1 bars since entry ≥ parameter AND MA-group direction ≠ −1) OR (a scheduled close datetime is set AND current datetime > scheduled close datetime)

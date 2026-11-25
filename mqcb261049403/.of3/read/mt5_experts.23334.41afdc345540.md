@@ -1,0 +1,5 @@
+Calculation: daily_range = mean of adjacent-bar close differences in the configured search interval on T1 using last completed bars, or Highest(high) - Lowest(low) for a single bar
+Long: on chart bars taking values from T1, high >= Highest(high, configured search interval, T1, last completed bar) + daily_range * offset parameter AND buy trades today < maximum positions per day
+Short: on chart bars taking values from T1, low <= Lowest(low, configured search interval, T1, last completed bar) - daily_range * offset parameter AND sell trades today < maximum positions per day
+Exit: long, (stop loss parameter > 0 AND low <= entry price - daily_range * stop loss parameter) OR (take profit parameter > 0 AND high >= entry price + daily_range * take profit parameter)
+Exit: short, (stop loss parameter > 0 AND high >= entry price + daily_range * stop loss parameter) OR (take profit parameter > 0 AND low <= entry price - daily_range * take profit parameter)

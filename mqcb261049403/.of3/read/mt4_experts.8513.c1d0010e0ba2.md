@@ -1,0 +1,2 @@
+Long: RSI(close, lookback)[0] < lower threshold AND RSI(close, lookback)[0] > RSI(close, lookback)[1] AND open[0] > open[1]
+Short: RSI(close, lookback)[0] > upper threshold AND RSI(close, lookback)[0] < RSI(close, lookback)[1] AND open[0] < open[1]

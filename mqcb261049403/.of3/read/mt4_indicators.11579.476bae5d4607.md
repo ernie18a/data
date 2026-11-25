@@ -1,0 +1,5 @@
+Calculation: RSI value = RSI(close, RSI lookback, T1, still-forming bar), sampled on chart bars
+Calculation: CCI value = CCI(typical price, CCI lookback, T1, still-forming bar), sampled on chart bars
+Calculation: PRI value = PRI(close, PRI lookback, T1, still-forming bar), sampled on chart bars
+Long: normalized close is greater than normalized close from two indicator calculation updates earlier AND (RSI value crosses above any of its five levels OR CCI value crosses above any of its five levels OR PRI value crosses above any of its five levels)
+Short: normalized close is less than normalized close from two indicator calculation updates earlier AND (RSI value crosses below any of its five levels OR CCI value crosses below any of its five levels OR PRI value crosses below any of its five levels)

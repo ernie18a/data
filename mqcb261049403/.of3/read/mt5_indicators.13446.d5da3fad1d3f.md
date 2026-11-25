@@ -1,0 +1,3 @@
+Calculation: Schaff MFI Trend Cycle = EMA(2 * Stochastic(EMA(Stochastic(MFI(fast MFI lookback, applied volume) - MFI(slow MFI lookback, applied volume), cycle lookback), smoothing coefficient), cycle lookback) - 100, smoothing coefficient); Stochastic(x, lookback) = 100 * (x - lowest(x, lookback)) / (highest(x, lookback) - lowest(x, lookback)), carrying forward its prior value when the denominator is zero
+Long: Schaff MFI Trend Cycle > 0
+Short: Schaff MFI Trend Cycle < 0

@@ -1,0 +1,2 @@
+Long: CMO(close, lookback, T1, bar still forming) > 0 AND CMO(close, lookback, T1, last completed bar) < 0
+Short: CMO(close, lookback, T1, bar still forming) < 0 AND CMO(close, lookback, T1, last completed bar) > 0

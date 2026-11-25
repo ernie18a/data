@@ -1,0 +1,2 @@
+Long: On each chart bar, the chart close is above the Moving Average for any pairing of the five distinct, increasingly longer lookback parameters and four separate timeframe parameters, using the applied-price and moving-average-method parameters and each timeframe's current forming bar.
+Short: On each chart bar, the chart close is below the Moving Average for any pairing of the five distinct, increasingly longer lookback parameters and four separate timeframe parameters, using the applied-price and moving-average-method parameters and each timeframe's current forming bar.

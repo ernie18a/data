@@ -1,0 +1,2 @@
+Long: DiNapoli Stochastic main line on T1 bars crosses below its signal line on the last completed T1 bar.
+Short: DiNapoli Stochastic main line on T1 bars crosses above its signal line on the last completed T1 bar.

@@ -1,0 +1,4 @@
+Calculation: Forecast oscillator = 100 * (applied price / (6/(lookback*(lookback+1)) * sum_{i=1..lookback}((i-(lookback+1)/3) * applied price[lookback-i])) - 1)
+Calculation: Smoothed forecast oscillator = T3(Forecast oscillator, (max(lookback, minimum smoothing lookback)+1)/2, T3 factor)
+Long: Forecast oscillator > Smoothed forecast oscillator[1] AND Forecast oscillator[1] <= Smoothed forecast oscillator[2] AND Smoothed forecast oscillator[0] < 0
+Short: Forecast oscillator < Smoothed forecast oscillator[1] AND Forecast oscillator[1] >= Smoothed forecast oscillator[2] AND Smoothed forecast oscillator[0] > 0

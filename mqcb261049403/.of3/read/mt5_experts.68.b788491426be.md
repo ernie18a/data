@@ -1,0 +1,2 @@
+Long: Stochastic signal line(low, high, K lookback, D lookback, slowing, SMA, chart timeframe, bar still forming) < lower threshold
+Short: Stochastic signal line(low, high, K lookback, D lookback, slowing, SMA, chart timeframe, bar still forming) > upper threshold

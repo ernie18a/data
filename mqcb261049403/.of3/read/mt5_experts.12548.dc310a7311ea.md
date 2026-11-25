@@ -1,0 +1,5 @@
+Calculation: Elder Impulse color on T1 bars = green when EMA(close, EMA lookback, T1, last completed bar) > EMA(close, EMA lookback, T1, prior bar) AND MACD histogram(close, shorter lookback, longer lookback, signal lookback, T1, last completed bar) > 0 AND that histogram > its value on the prior bar; red when EMA(close, EMA lookback, T1, last completed bar) < EMA(close, EMA lookback, T1, prior bar) AND MACD histogram(close, shorter lookback, longer lookback, signal lookback, T1, last completed bar) < 0 AND that histogram < its value on the prior bar; neutral otherwise
+Long: Elder Impulse color = green
+Short: Elder Impulse color = red
+Long: Elder Impulse color = green on the last completed T1 bar AND Elder Impulse color = red or neutral on the prior T1 bar
+Short: Elder Impulse color = red on the last completed T1 bar AND Elder Impulse color = green or neutral on the prior T1 bar

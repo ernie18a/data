@@ -1,0 +1,5 @@
+Calculation: profit pullback threshold = (if account balance >= balance breakpoint then upper amount base + account balance / upper balance divisor else lower amount base + account balance / lower balance divisor) / pullback divisor
+Calculation: profit reference = included open-position profit plus swaps at the first observation meeting the profit pullback threshold after a successful exit, then each later qualifying observation unless an exit triggers
+Long: included short lots > included long lots AND included open-position profit plus swaps < negative risk percentage of account balance AND account free margin > 0
+Short: included long lots > included short lots AND included open-position profit plus swaps < negative risk percentage of account balance AND account free margin > 0
+Exit: long and short, included open-position profit plus swaps >= 0 AND included open-position profit plus swaps >= profit pullback threshold AND included open-position profit plus swaps <= profit reference - profit pullback threshold

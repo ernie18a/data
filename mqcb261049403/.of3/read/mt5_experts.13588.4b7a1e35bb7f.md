@@ -1,0 +1,2 @@
+Long: On T1 bars, using the last completed bar, MA(close, shorter lookback, method) > MA(close, longer lookback, method) AND MA(close, shorter lookback, method)[1] > MA(close, longer lookback, method)[1] AND MA(close, shorter lookback, method)[2] < MA(close, longer lookback, method)[2]
+Short: On T1 bars, using the last completed bar, MA(close, shorter lookback, method) < MA(close, longer lookback, method) AND MA(close, shorter lookback, method)[1] < MA(close, longer lookback, method)[1] AND MA(close, shorter lookback, method)[2] > MA(close, longer lookback, method)[2]

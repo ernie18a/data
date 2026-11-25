@@ -1,0 +1,5 @@
+Calculation: Directional range score = 100 × (count(high[i] > high[i+1]) − count(low[i] < low[i+1])) / lookback, for i = 0 to lookback−1
+Long: On chart bars using completed T1 bars at the configured signal bar and the immediately preceding bar: (direction-following mode AND Directional range score at the signal bar > 0 AND score at the preceding bar <= 0) OR (direction-reversing mode AND score at the signal bar <= 0 AND score at the preceding bar > 0)
+Short: On chart bars using completed T1 bars at the configured signal bar and the immediately preceding bar: (direction-following mode AND Directional range score at the signal bar <= 0 AND score at the preceding bar > 0) OR (direction-reversing mode AND score at the signal bar > 0 AND score at the preceding bar <= 0)
+Exit: long, stop-loss distance is nonzero AND low <= entry price − stop-loss distance OR take-profit distance is nonzero AND high >= entry price + take-profit distance
+Exit: short, stop-loss distance is nonzero AND high >= entry price + stop-loss distance OR take-profit distance is nonzero AND low <= entry price − take-profit distance

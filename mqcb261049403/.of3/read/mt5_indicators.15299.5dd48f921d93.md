@@ -1,0 +1,4 @@
+Long: Aroon Up(high, chart lookback) > Aroon Down(low, chart lookback) AND Aroon Up(high, chart lookback) >= chart threshold
+Short: Aroon Down(low, chart lookback) > Aroon Up(high, chart lookback) AND Aroon Down(low, chart lookback) >= chart threshold
+Long: Aroon Up(high, T1 lookback, T1 still-forming bar) > Aroon Down(low, T1 lookback, T1 still-forming bar) AND Aroon Up(high, T1 lookback, T1 still-forming bar) >= T1 threshold; sampled at the T1 bar's open and held on chart bars until the next T1 bar
+Short: Aroon Down(low, T1 lookback, T1 still-forming bar) > Aroon Up(high, T1 lookback, T1 still-forming bar) AND Aroon Down(low, T1 lookback, T1 still-forming bar) >= T1 threshold; sampled at the T1 bar's open and held on chart bars until the next T1 bar

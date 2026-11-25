@@ -1,0 +1,2 @@
+Long: (lower corridor ceiling != 0 AND upper corridor floor != 0 AND current ask - distance > lower corridor ceiling) OR (upper corridor ceiling != 0 AND current ask - distance > upper corridor ceiling)
+Short: (upper corridor floor != 0 AND current bid + distance < upper corridor floor) OR (lower corridor floor != 0 AND current bid + distance < lower corridor floor)

@@ -1,0 +1,2 @@
+Long: On chart bars using T1 values, +DI(lookback, still-forming bar) <= -DI(lookback, still-forming bar) AND +DI(lookback, last completed bar) > -DI(lookback, last completed bar)
+Short: On chart bars using T1 values, +DI(lookback, still-forming bar) >= -DI(lookback, still-forming bar) AND +DI(lookback, last completed bar) < -DI(lookback, last completed bar)

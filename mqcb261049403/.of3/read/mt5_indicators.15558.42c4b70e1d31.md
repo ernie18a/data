@@ -1,0 +1,5 @@
+Calculation: AverageHigh = on each chart bar, the arithmetic mean of the highest high in each of the lookback parameter’s last completed T1 intervals aggregated from chart bars; when the full-period parameter selects partial-interval mode, use the lookback parameter minus one last completed T1 intervals and the still-forming T1 interval from the current chart bar
+Calculation: AverageLow = on each chart bar, the arithmetic mean of the lowest low in each of the lookback parameter’s last completed T1 intervals aggregated from chart bars; when the full-period parameter selects partial-interval mode, use the lookback parameter minus one last completed T1 intervals and the still-forming T1 interval from the current chart bar
+Calculation: TrendState = UP when close > AverageHigh; otherwise DOWN when close < AverageLow; otherwise the prior chart bar’s TrendState, initially neutral
+Long: TrendState = UP
+Short: TrendState = DOWN

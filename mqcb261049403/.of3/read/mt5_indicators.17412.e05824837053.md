@@ -1,0 +1,5 @@
+Calculation: upper stop = if direction is short then min(upper Bollinger band(price source, moving-average method, moving-average lookback, deviation lookback, deviation multiplier, sample correction), upper stop[1]) else upper Bollinger band(price source, moving-average method, moving-average lookback, deviation lookback, deviation multiplier, sample correction)
+Calculation: lower stop = if direction is long then max(lower Bollinger band(price source, moving-average method, moving-average lookback, deviation lookback, deviation multiplier, sample correction), lower stop[1]) else lower Bollinger band(price source, moving-average method, moving-average lookback, deviation lookback, deviation multiplier, sample correction)
+Calculation: direction = if price source > upper stop[1] then long, else if price source < lower stop[1] then short, else direction[1]; initially neutral
+Long: direction is long
+Short: direction is short

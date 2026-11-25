@@ -1,0 +1,1 @@
+Long: IF(MAX(close, lookback bars of T1 including the bar still forming) > 0 AND current bid > 0, (MAX(close, lookback bars of T1 including the bar still forming) - current bid) / MAX(close, lookback bars of T1 including the bar still forming) * 100, 0) >= drawdown threshold

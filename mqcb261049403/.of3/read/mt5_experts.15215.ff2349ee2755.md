@@ -1,0 +1,2 @@
+Long: close on T1's last completed bar > close on T1 lookback bars earlier AND +DI(lookback, T1, last completed bar) > -DI(lookback, T1, last completed bar) AND the most recent earlier signal was short or there was none
+Short: close on T1's last completed bar < close on T1 lookback bars earlier AND +DI(lookback, T1, last completed bar) < -DI(lookback, T1, last completed bar) AND the most recent earlier signal was long or there was none

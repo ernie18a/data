@@ -1,0 +1,2 @@
+Long: MA(fast applied price, shorter lookback, fast method, T1, last completed bar) crosses above MA(slow applied price, longer lookback, slow method, T1, last completed bar) AND open(T1, last completed bar) < close(T1, last completed bar)
+Short: MA(fast applied price, shorter lookback, fast method, T1, last completed bar) crosses below MA(slow applied price, longer lookback, slow method, T1, last completed bar) AND open(T1, last completed bar) > close(T1, last completed bar)

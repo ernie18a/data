@@ -1,0 +1,4 @@
+Long: Schaff Momentum Trend Cycle(applied price, short-term Momentum lookback, long-term Momentum lookback, cycle lookback) >= 0
+Short: Schaff Momentum Trend Cycle(applied price, short-term Momentum lookback, long-term Momentum lookback, cycle lookback) < 0
+Long: Schaff Momentum Trend Cycle(applied price, short-term Momentum lookback, long-term Momentum lookback, cycle lookback, T1, bar still forming) >= 0, sampled on chart bars taking values from T1
+Short: Schaff Momentum Trend Cycle(applied price, short-term Momentum lookback, long-term Momentum lookback, cycle lookback, T1, bar still forming) < 0, sampled on chart bars taking values from T1

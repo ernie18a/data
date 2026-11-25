@@ -1,0 +1,5 @@
+Calculation: M[n] = MA(applied price, lookback, method, horizontal shift, T2 bar n bars ago); evaluate decisions on each new T1 bar, using the still-forming T2 bar for n=0
+Long: (reverse setting is off AND M[0] < M[1] AND M[0] > open[0] AND M[1] < M[2] AND M[1] > open[1] OR reverse setting is on AND M[0] > M[1] AND M[0] < open[0] AND M[1] > M[2] AND M[1] < open[1]) AND (close-hour exit is disabled OR hour(datetime of the T1 bar) < close-hour parameter)
+Short: (reverse setting is off AND M[0] > M[1] AND M[0] < open[0] AND M[1] > M[2] AND M[1] < open[1] OR reverse setting is on AND M[0] < M[1] AND M[0] > open[0] AND M[1] < M[2] AND M[1] > open[1]) AND (close-hour exit is disabled OR hour(datetime of the T1 bar) < close-hour parameter)
+Exit: long, close-hour exit is enabled AND hour(datetime of the T1 bar) >= close-hour parameter
+Exit: short, close-hour exit is enabled AND hour(datetime of the T1 bar) >= close-hour parameter

@@ -1,0 +1,3 @@
+Calculation: trading time = (start hour < end hour AND ((hour = start hour AND minute >= start minute) OR (hour > start hour AND hour < end hour) OR (hour = end hour AND minute < end minute))) OR (start hour = end hour AND hour = start hour AND minute >= start minute AND minute < end minute) OR (start hour > end hour AND ((hour >= start hour AND minute >= start minute) OR hour < end hour OR (hour = end hour AND minute < end minute)))
+Exit: long, account profit exceeds the take-profit parameter OR account loss exceeds the stop-loss parameter OR time filter enabled AND NOT trading time
+Exit: short, account profit exceeds the take-profit parameter OR account loss exceeds the stop-loss parameter OR time filter enabled AND NOT trading time

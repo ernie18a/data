@@ -1,0 +1,9 @@
+Calculation: weighted candle center = (close weight × close + open weight × open + high weight × high + low weight × low) / sum of weights
+Calculation: swing state, computed on its timeframe’s bars = for separate shorter and longer lookbacks, identify lowest-low and highest-high candidates; accept candidates within the bid-ask spread of their bar’s low or high, remove less-extreme same-side candidates within the backstep, and retain alternating pivots; the latest longer-lookback low sets trend up and high sets trend down; each shorter-lookback pivot sets the anchor to the weighted candle center on its pivot bar and resets signal state
+Calculation: long marker = while trend is up after a shorter-lookback low pivot, the first bar where weighted candle center is at least the anchor plus the bid-ask spread; reset after weighted candle center returns to or below the anchor or a new shorter-lookback pivot
+Calculation: short marker = while trend is down after a shorter-lookback high pivot, the first bar where the anchor minus weighted candle center is at least the bid-ask spread; reset after weighted candle center returns to or above the anchor or a new shorter-lookback pivot
+Calculation: exit marker = while trend is down after a shorter-lookback low pivot, the first bar where weighted candle center is above the anchor; OR while trend is up after a shorter-lookback high pivot, the first bar where weighted candle center is below the anchor; reset when weighted candle center returns to the anchor or a new shorter-lookback pivot
+Long: long marker on the last completed T1 bar OR reverse-entry mode AND short marker on the last completed T1 bar
+Short: short marker on the last completed T1 bar OR reverse-entry mode AND long marker on the last completed T1 bar
+Exit: long, indicator exits enabled AND exit marker on the chart bar at the exit-signal offset
+Exit: short, indicator exits enabled AND exit marker on the chart bar at the exit-signal offset

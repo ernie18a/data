@@ -1,0 +1,5 @@
+Calculation: Trend histogram = if Stochastic is selected, Stochastic(close, K lookback, D smoothing, slowing, SMA, close/close) minus stochastic center level; if CCI is selected, CCI(close, lookback); if RSI is selected, RSI(close, lookback) minus RSI center level; if MACD is selected, MACD main line(close, fast lookback, slow lookback); if Momentum is selected, Momentum(close, lookback) minus momentum baseline; if Williams %R is selected, Williams %R(lookback) plus Williams %R center offset; if ADX is selected, ADX(lookback); if DeMarker is selected, DeMarker(lookback) minus DeMarker center level; calculated from the T1 bar still forming and sampled on chart bars
+Long: Trend histogram is above zero
+Short: Trend histogram is at or below zero
+Long: Trend histogram crosses above the upper alert threshold on the selected T1 alert bar, last completed or still forming
+Short: Trend histogram crosses below the lower alert threshold on the selected T1 alert bar, last completed or still forming

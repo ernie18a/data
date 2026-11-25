@@ -1,0 +1,2 @@
+Long: DeMarker(shorter lookback, T1, on T1 bars, bar still forming) crosses above DeMarker(longer lookback, T1, on T1 bars, bar still forming)
+Short: DeMarker(shorter lookback, T1, on T1 bars, bar still forming) crosses below DeMarker(longer lookback, T1, on T1 bars, bar still forming)

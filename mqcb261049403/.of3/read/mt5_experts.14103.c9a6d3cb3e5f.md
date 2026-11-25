@@ -1,0 +1,2 @@
+Long: FrAMACandle color(T1, last completed bar) = bullish AND FrAMACandle color(T1, preceding completed bar) != bullish
+Short: FrAMACandle color(T1, last completed bar) = bearish AND FrAMACandle color(T1, preceding completed bar) != bearish

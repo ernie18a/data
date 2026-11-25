@@ -1,0 +1,3 @@
+Calculation: Freeze distance = broker freeze level × point size if broker freeze level > 0, otherwise bid-ask spread × (freeze coefficient input if positive, otherwise fallback coefficient)
+Exit: long, (take-profit price = 0 OR take-profit price − current price ≥ freeze distance) AND (stop-loss price = 0 OR current price − stop-loss price ≥ freeze distance)
+Exit: short, (take-profit price = 0 OR current price − take-profit price ≥ freeze distance) AND (stop-loss price = 0 OR stop-loss price − current price ≥ freeze distance)

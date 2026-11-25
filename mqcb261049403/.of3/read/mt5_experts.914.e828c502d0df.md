@@ -1,0 +1,2 @@
+Long: open(T1, current forming bar) < SMA(close, lookback, T1, current forming bar) AND close(T1, current forming bar) > SMA(close, lookback, T1, current forming bar)
+Short: open(T1, current forming bar) > SMA(close, lookback, T1, current forming bar) AND close(T1, current forming bar) < SMA(close, lookback, T1, current forming bar)

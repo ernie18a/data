@@ -1,0 +1,4 @@
+Long: Morning Star on the last three completed chart bars AND MFI(lookback, chart bars, last completed bar) < long-entry threshold
+Short: Evening Star on the last three completed chart bars AND MFI(lookback, chart bars, last completed bar) > short-entry threshold
+Exit: long, MFI(lookback, chart bars, last completed bar) > upper exit level AND MFI(lookback, chart bars, preceding completed bar) < upper exit level OR MFI(lookback, chart bars, last completed bar) < lower exit level AND MFI(lookback, chart bars, preceding completed bar) > lower exit level
+Exit: short, MFI(lookback, chart bars, last completed bar) > lower exit level AND MFI(lookback, chart bars, preceding completed bar) < lower exit level OR MFI(lookback, chart bars, last completed bar) > upper exit level AND MFI(lookback, chart bars, preceding completed bar) < upper exit level

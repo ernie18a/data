@@ -1,0 +1,6 @@
+Long: high >= High[1] (T1, last completed bar) + minimum distance
+Short: low <= Low[1] (T1, last completed bar) - minimum distance
+Calculation: Long stop = entry price - stop-loss distance if stop-loss distance > 0, otherwise inactive; when trailing-stop distance > 0, close - entry price > trailing-stop distance + trailing-step, and (long stop value, using 0 if inactive) < close - trailing-stop distance - trailing-step, set long stop to close - trailing-stop distance
+Calculation: Short stop = entry price + stop-loss distance if stop-loss distance > 0, otherwise inactive; when trailing-stop distance > 0, entry price - close > trailing-stop distance + trailing-step, and (short stop value > close + trailing-stop distance + trailing-step or short stop is inactive), set short stop to close + trailing-stop distance
+Exit: long, long stop is active and low <= long stop OR take-profit distance > 0 and high >= entry price + take-profit distance
+Exit: short, short stop is active and high >= short stop OR take-profit distance > 0 and low <= entry price - take-profit distance

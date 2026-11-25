@@ -1,0 +1,5 @@
+Calculation: Range-reversal state(price, range parameter) = initialize upper and lower levels to the first price and state neutral; when price > prior upper level + range parameter × instrument point size, set upper level to price, lower level to upper level − range parameter × instrument point size, and state bullish; else when price < prior lower level − range parameter × instrument point size, set lower level to price, upper level to lower level + range parameter × instrument point size, and state bearish; otherwise retain levels and state
+Long: Range-reversal state(close, chart range parameter) changes from bearish to bullish on chart bars
+Short: Range-reversal state(close, chart range parameter) changes from bullish to bearish on chart bars
+Long: On chart bars, range-reversal state(close, T1 range parameter) calculated on T1 bars using the bar still forming is bullish
+Short: On chart bars, range-reversal state(close, T1 range parameter) calculated on T1 bars using the bar still forming is bearish

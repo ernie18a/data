@@ -1,0 +1,4 @@
+Long: current chart-bar close > AMA(close, lookback, fast smoothing, slow smoothing, T1, last completed bar) AND RSI(close, lookback, T1, at least one of the last confirmation-window completed bars) < lower threshold
+Short: current chart-bar close < AMA(close, lookback, fast smoothing, slow smoothing, T1, last completed bar) AND RSI(close, lookback, T1, at least one of the last confirmation-window completed bars) > upper threshold
+Exit: long, close <= entry price - stop-loss distance OR close >= entry price + take-profit distance
+Exit: short, close >= entry price + stop-loss distance OR close <= entry price - take-profit distance

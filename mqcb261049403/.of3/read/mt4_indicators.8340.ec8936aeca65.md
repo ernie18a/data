@@ -1,0 +1,2 @@
+Long: close <= close(T1, last completed bar) - (high(T1, last completed bar) - low(T1, last completed bar)) * smaller factor OR close > close(T1, last completed bar) + (high(T1, last completed bar) - low(T1, last completed bar)) * larger factor, evaluated on chart bars
+Short: close >= close(T1, last completed bar) + (high(T1, last completed bar) - low(T1, last completed bar)) * smaller factor OR close < close(T1, last completed bar) - (high(T1, last completed bar) - low(T1, last completed bar)) * larger factor, evaluated on chart bars

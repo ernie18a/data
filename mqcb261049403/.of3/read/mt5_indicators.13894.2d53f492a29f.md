@@ -1,0 +1,5 @@
+Calculation: Kalman velocity = prior Kalman velocity + (applied price - prior Kalman filter value) * smoothing factor
+Long: (velocity coloring selected AND Kalman velocity > 0) OR (trend coloring selected AND Kalman filter value >= prior Kalman filter value)
+Short: (velocity coloring selected AND Kalman velocity <= 0) OR (trend coloring selected AND Kalman filter value < prior Kalman filter value)
+Long: (velocity coloring selected AND Kalman velocity > 0) OR (trend coloring selected AND Kalman filter value >= prior Kalman filter value), calculated on T1 bars and mapped to chart bars from the T1 bar still forming
+Short: (velocity coloring selected AND Kalman velocity <= 0) OR (trend coloring selected AND Kalman filter value < prior Kalman filter value), calculated on T1 bars and mapped to chart bars from the T1 bar still forming

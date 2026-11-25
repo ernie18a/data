@@ -1,0 +1,4 @@
+Calculation: FiboCandles direction = if open > close, then -1 when prior direction < 0 AND (highest(high, lookback) - lowest(low, lookback)) * threshold < close - lowest(low, lookback), otherwise +1; if open <= close, then +1 when prior direction > 0 AND (highest(high, lookback) - lowest(low, lookback)) * threshold < highest(high, lookback) - close, otherwise -1; initial direction = 0
+Calculation: FiboCandles color = 1 when FiboCandles direction = +1 AND open != close, otherwise 0
+Long: FiboCandles color[signal offset + 1] = 0 AND FiboCandles color[signal offset] = 1
+Short: FiboCandles color[signal offset + 1] = 1 AND FiboCandles color[signal offset] = 0

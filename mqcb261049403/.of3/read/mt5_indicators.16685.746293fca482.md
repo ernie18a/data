@@ -1,0 +1,2 @@
+Long: (composite RSI > upper composite RSI band OR composite RSI < lower composite RSI band) AND composite RSI > composite RSI[1]
+Short: (composite RSI > upper composite RSI band OR composite RSI < lower composite RSI band) AND composite RSI < composite RSI[1]

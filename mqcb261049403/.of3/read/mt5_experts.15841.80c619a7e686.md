@@ -1,0 +1,4 @@
+Long: On T1 bars, Volume_Weighted_MA(T1, forming bar) > Volume_Weighted_MA(T1, last completed bar) AND Volume_Weighted_MA(T1, last completed bar) < Volume_Weighted_MA(T1, second-last completed bar)
+Short: On T1 bars, Volume_Weighted_MA(T1, forming bar) < Volume_Weighted_MA(T1, last completed bar) AND Volume_Weighted_MA(T1, last completed bar) > Volume_Weighted_MA(T1, second-last completed bar)
+Exit: long, On T1 bars, Volume_Weighted_MA(T1, last completed bar) > Volume_Weighted_MA(T1, second-last completed bar)
+Exit: short, On T1 bars, Volume_Weighted_MA(T1, last completed bar) < Volume_Weighted_MA(T1, second-last completed bar)

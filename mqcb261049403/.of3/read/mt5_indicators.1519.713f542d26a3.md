@@ -1,0 +1,2 @@
+Long: bull strength > bull-strength signal AND bull strength > bear strength AND (bear strength <= bear-strength signal OR bear strength = 0)
+Short: bear strength > bear-strength signal AND bear strength > bull strength AND (bull strength <= bull-strength signal OR bull strength = 0)

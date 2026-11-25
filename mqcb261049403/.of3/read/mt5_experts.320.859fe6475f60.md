@@ -1,0 +1,5 @@
+Calculation: AverageBody(lookback, reference bar) = mean(abs(open - close)) over the lookback bars immediately older than the reference bar
+Long: (open[2] - close[2] > AverageBody(body lookback, bar[1]) AND close[1] - open[1] > AverageBody(body lookback, bar[1]) AND abs(close[1] - close[2]) < closing-price tolerance × AverageBody(body lookback, bar[1])) AND MFI(lookback, last completed bar) < long-entry threshold
+Short: (close[2] - open[2] > AverageBody(body lookback, bar[1]) AND open[1] - close[1] > AverageBody(body lookback, bar[1]) AND abs(close[1] - close[2]) < closing-price tolerance × AverageBody(body lookback, bar[1])) AND MFI(lookback, last completed bar) > short-entry threshold
+Exit: long, (MFI(lookback, last completed bar) > upper exit level AND MFI(lookback, 2 bars ago) < upper exit level) OR (MFI(lookback, last completed bar) < lower exit level AND MFI(lookback, 2 bars ago) > lower exit level)
+Exit: short, (MFI(lookback, last completed bar) > lower exit level AND MFI(lookback, 2 bars ago) < lower exit level) OR (MFI(lookback, last completed bar) > upper exit level AND MFI(lookback, 2 bars ago) < upper exit level)

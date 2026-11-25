@@ -1,0 +1,2 @@
+Long: For each of T1 through T10, MFI(high, low, close, volume, lookback, that timeframe, bar still forming) > upper threshold
+Short: For each of T1 through T10, MFI(high, low, close, volume, lookback, that timeframe, bar still forming) < lower threshold

@@ -1,0 +1,5 @@
+Calculation: candle body = abs(close - open)
+Long: candle body > minimum candle body AND close > open AND close > MA(close, moving-average lookback, moving-average method) AND (Keltner filter not applied OR close > Keltner upper band(Keltner lookback)) AND (RSI filter not applied OR RSI(RSI lookback) > RSI threshold)
+Short: candle body > minimum candle body AND close < open AND close < MA(close, moving-average lookback, moving-average method) AND (Keltner filter not applied OR close < Keltner lower band(Keltner lookback)) AND (RSI filter not applied OR RSI(RSI lookback) < RSI threshold)
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance OR (highest high since entry >= entry price + breakeven trigger AND low <= entry price + breakeven offset) OR low <= highest high since entry - trailing distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance OR (lowest low since entry <= entry price - breakeven trigger AND high >= entry price - breakeven offset) OR high >= lowest low since entry + trailing distance

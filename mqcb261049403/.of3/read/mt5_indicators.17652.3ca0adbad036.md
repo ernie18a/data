@@ -1,0 +1,3 @@
+Calculation: trend direction = if both current Heikin Ashi open and close are within the range between Heikin Ashi open x[n] and Heikin Ashi close x[n] for the smallest matching n from 1 to one less than the comparison lookback, use trend direction x[n]; otherwise bullish if Heikin Ashi close > Heikin Ashi open, bearish if Heikin Ashi close < Heikin Ashi open, and neutral otherwise
+Long: trend direction = bullish
+Short: trend direction = bearish

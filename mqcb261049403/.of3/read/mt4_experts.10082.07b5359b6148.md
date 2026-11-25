@@ -1,0 +1,9 @@
+Calculation: pip multiplier = 10 if the reference instrument's quote precision has five digits, otherwise 1
+Calculation: bullish SAR signal = Parabolic SAR(SAR step parameter, SAR maximum parameter)[0] < close[0] AND Parabolic SAR(SAR step parameter, SAR maximum parameter)[1] > close[1]
+Calculation: bearish SAR signal = Parabolic SAR(SAR step parameter, SAR maximum parameter)[0] > close[0] AND Parabolic SAR(SAR step parameter, SAR maximum parameter)[1] < close[1]
+Calculation: long entry movement = close[0] - low[0] * point size
+Calculation: short entry movement = high[0] - close[0] * point size
+Long: ((direction-inversion setting is off AND bullish SAR signal) OR (direction-inversion setting is on AND bearish SAR signal)) AND (entry-delay parameter * pip multiplier >= long entry movement OR entry-delay parameter = 0) AND positive-movement parameter * pip multiplier < long entry movement
+Short: ((direction-inversion setting is off AND bearish SAR signal) OR (direction-inversion setting is on AND bullish SAR signal)) AND (entry-delay parameter * pip multiplier >= short entry movement OR entry-delay parameter = 0) AND positive-movement parameter * pip multiplier < short entry movement
+Exit: long, SAR-signal closing setting is on AND ((direction-inversion setting is off AND bearish SAR signal) OR (direction-inversion setting is on AND bullish SAR signal)) AND NOT ((entry-delay parameter * pip multiplier >= short entry movement OR entry-delay parameter = 0) AND positive-movement parameter * pip multiplier < short entry movement)
+Exit: short, SAR-signal closing setting is on AND ((direction-inversion setting is off AND bullish SAR signal) OR (direction-inversion setting is on AND bearish SAR signal)) AND NOT ((entry-delay parameter * pip multiplier >= long entry movement OR entry-delay parameter = 0) AND positive-movement parameter * pip multiplier < long entry movement)

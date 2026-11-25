@@ -1,0 +1,11 @@
+Long: no trade is in progress AND every enabled timeframe T1–T9 has RSI(close, lookback, that timeframe’s own bars, older bar) < oversold AND at the newer bar at least one enabled timeframe has RSI(close, lookback, that timeframe’s own bars, newer bar) >= oversold AND at least one has RSI(...) <= overbought; the newer bar is forming with shifts 0/1 or last completed with shifts 1/2, and the older bar is the immediately preceding bar.
+Short: no trade is in progress AND every enabled timeframe T1–T9 has RSI(close, lookback, that timeframe’s own bars, older bar) > overbought AND at the newer bar at least one enabled timeframe has RSI(close, lookback, that timeframe’s own bars, newer bar) >= oversold AND at least one has RSI(...) <= overbought; the newer bar is forming with shifts 0/1 or last completed with shifts 1/2, and the older bar is the immediately preceding bar.
+Calculation: basket profit = sum of profit on open market positions
+Calculation: point value = point size × tick value ÷ tick size
+Calculation: target volume = custom initial volume when supplied, otherwise calculated initial volume
+Calculation: profit target = if recovery has not started or recovery take profit is disabled, take-profit points × point value × target volume; otherwise, if ATR sizing is enabled, recovery ATR fraction × ATR(high, low, close, lookback, T7, last completed bar) × point value × target volume ÷ point size; otherwise, recovery take-profit points × point value × target volume
+Calculation: trading costs = sum over open market positions of volume × current spread in points × point value, plus (absolute net position volume × simulated commission in backtests, or recorded commissions otherwise)
+Exit: long, basket profit >= profit target + trading costs
+Exit: short, basket profit >= profit target + trading costs
+Exit: long, max-loss exit enabled AND max-trade limit configured AND open market position count >= max-trade limit AND basket profit < -maximum loss
+Exit: short, max-loss exit enabled AND max-trade limit configured AND open market position count >= max-trade limit AND basket profit < -maximum loss

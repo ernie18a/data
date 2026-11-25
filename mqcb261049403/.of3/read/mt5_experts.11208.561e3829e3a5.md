@@ -1,0 +1,2 @@
+Long: On each T1 bar close, AO(T1, 4 bars ago) > 0 AND AO(T1, 3 bars ago) > 0 AND AO(T1, 4 bars ago) < AO(T1, 3 bars ago) AND AO(T1, 3 bars ago) > AO(T1, 2 bars ago) > AO(T1, 1 bar ago) > AO(T1, current bar)
+Short: On each T1 bar close, AO(T1, 4 bars ago) < 0 AND AO(T1, 3 bars ago) < 0 AND AO(T1, 4 bars ago) > AO(T1, 3 bars ago) AND AO(T1, 3 bars ago) < AO(T1, 2 bars ago) < AO(T1, 1 bar ago) < AO(T1, current bar)

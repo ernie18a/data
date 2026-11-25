@@ -1,0 +1,6 @@
+Calculation: MACD-v = 100 × (EMA(close, shorter lookback) - EMA(close, longer lookback)) / ATR(ATR lookback) on T1 bars, including the bar still forming; chart bars take the value from the corresponding T1 bar
+Calculation: MACD-v signal = EMA(MACD-v, signal lookback) on T1 bars, including the bar still forming; chart bars take the value from the corresponding T1 bar
+Calculation: MACD-v histogram = MACD-v - MACD-v signal on T1 bars, including the bar still forming; chart bars take the value from the corresponding T1 bar
+Calculation: In-range age = 0 on the first consecutive T1 bar where -central-band threshold < MACD-v < central-band threshold, increments by one on each following in-band T1 bar, and resets outside the band; chart bars take the value from the corresponding T1 bar
+Long: MACD-v crosses above MACD-v signal OR MACD-v histogram > MACD-v histogram[1] OR (MACD-v >= central-band threshold AND MACD-v > MACD-v signal) OR (-extreme threshold < MACD-v AND MACD-v < central-band threshold AND MACD-v > MACD-v signal AND in-range age < range-age threshold)
+Short: MACD-v crosses below MACD-v signal OR MACD-v histogram <= MACD-v histogram[1] OR (MACD-v < MACD-v signal AND in-range age < range-age threshold)

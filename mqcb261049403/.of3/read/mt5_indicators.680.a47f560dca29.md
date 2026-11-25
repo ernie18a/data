@@ -1,0 +1,2 @@
+Long: On chart bars, open of the last completed T1 bar < Parabolic SAR(high, low, step, maximum, T1, last completed bar)
+Short: On chart bars, open of the last completed T1 bar >= Parabolic SAR(high, low, step, maximum, T1, last completed bar)

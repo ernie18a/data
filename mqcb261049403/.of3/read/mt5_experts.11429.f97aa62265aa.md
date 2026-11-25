@@ -1,0 +1,5 @@
+Calculation: BarTrend = on T1 bars, the first bar is bullish if close > open and bearish otherwise; on each later completed T1 bar, if BarTrend[1] is bullish, BarTrend is bullish when (close in close mode, otherwise low) > MIN(low[1..lookback]) and bearish otherwise; if BarTrend[1] is bearish, BarTrend is bearish when (close in close mode, otherwise high) < MAX(high[1..lookback]) and bullish otherwise
+Long: long-entry permission is enabled AND BarTrend on the last completed T1 bar is bearish AND BarTrend on the preceding completed T1 bar is bullish
+Short: short-entry permission is enabled AND BarTrend on the last completed T1 bar is bullish AND BarTrend on the preceding completed T1 bar is bearish
+Exit: long, long-exit permission is enabled AND BarTrend on the last completed T1 bar is bearish
+Exit: short, short-exit permission is enabled AND BarTrend on the last completed T1 bar is bullish

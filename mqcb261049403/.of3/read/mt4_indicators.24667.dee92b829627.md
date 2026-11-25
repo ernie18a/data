@@ -1,0 +1,8 @@
+Calculation: MA = moving average(applied price, lookback, method, timeframe, bar)
+Calculation: nearest pivot level = closest(price, PivotPoints(high, low, close, timeframe, bar))
+Long: close > MA(MA-column applied-price parameter, MA-column lookback parameter, MA-column method parameter, T1, still-forming bar), evaluated on chart bars using T1 values
+Short: close <= MA(MA-column applied-price parameter, MA-column lookback parameter, MA-column method parameter, T1, still-forming bar), evaluated on chart bars using T1 values
+Long: MA(fast applied-price parameter, shorter lookback, fast method parameter, T2, still-forming bar) >= MA(slow applied-price parameter, longer lookback, slow method parameter, T3, still-forming bar) AND MA(fast applied-price parameter, shorter lookback, fast method parameter, T2, last completed bar) < MA(slow applied-price parameter, longer lookback, slow method parameter, T3, last completed bar), evaluated on chart bars using T2 and T3 values
+Short: MA(fast applied-price parameter, shorter lookback, fast method parameter, T2, still-forming bar) <= MA(slow applied-price parameter, longer lookback, slow method parameter, T3, still-forming bar) AND MA(fast applied-price parameter, shorter lookback, fast method parameter, T2, last completed bar) > MA(slow applied-price parameter, longer lookback, slow method parameter, T3, last completed bar), evaluated on chart bars using T2 and T3 values
+Long: close > nearest pivot level(close, PivotPoints(high, low, close, T4, last completed bar)), evaluated on chart bars using T4 values
+Short: close <= nearest pivot level(close, PivotPoints(high, low, close, T4, last completed bar)), evaluated on chart bars using T4 values

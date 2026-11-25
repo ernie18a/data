@@ -1,0 +1,3 @@
+Calculation: swing extrema = highest-high and lowest-low bars in the shortest lookback starting at the current chart bar, beginning with the base swing lookback and expanding by the expansion increment until both the high is at least the highest high and the low is at most the lowest low in the scan lookback bars immediately older than their respective bars; use chart bars including the bar still forming
+Long: the swing high bar is more recent than the swing low bar
+Short: the swing low bar is more recent than the swing high bar

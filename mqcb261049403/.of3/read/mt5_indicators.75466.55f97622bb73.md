@@ -1,0 +1,45 @@
+Calculation: Average true range = simple mean of true range over the chart-bar lookback, using the latest completed chart bars.
+Calculation: Swing trend = direction of the latest close break of an unbroken confirmed swing pivot high or low; a close above is bullish and below is bearish, and the trend persists until another break.
+Calculation: Internal trend = direction of the latest close break of an unbroken confirmed internal pivot high or low, using a pivot lookback separate from the swing pivot lookback; the trend persists until another break.
+Calculation: Chart bias = internal trend if its latest break is at least as recent as the swing trend's latest break and nonneutral; otherwise swing trend, falling back to the nonneutral trend if needed; internal wins ties.
+Calculation: HTF bias(T1/T2/T3) = direction of the latest close break of a confirmed pivot high or low, calculated on each timeframe's bars using the same HTF pivot lookback and history lookback, from last completed bars only; a downward break wins if both directions break on one bar. T1 is master, T2 intermediate, T3 confirmation.
+Calculation: Bullish HTF alignment = all three HTF biases bullish in strict mode; otherwise T1 bullish and neither T2 nor T3 bearish.
+Calculation: Bearish HTF alignment = all three HTF biases bearish in strict mode; otherwise T1 bearish and neither T2 nor T3 bullish.
+Calculation: Swing equilibrium = midpoint between the latest confirmed swing high and low; use the latest completed chart close if either is unavailable.
+Calculation: Bullish equal-level sweep = consecutive confirmed swing lows at least the confirmation lookback apart and within the ATR threshold, followed by a latest completed chart low below the later pivot low; calculate only when equal-level detection is enabled.
+Calculation: Bearish equal-level sweep = consecutive confirmed swing highs at least the confirmation lookback apart and within the ATR threshold, followed by a latest completed chart high above the later pivot high; calculate only when equal-level detection is enabled.
+Calculation: Delta direction = sign of the volume-weighted sum of (bullish candle pressure minus bearish candle pressure) divided by total pressure, over up to the delta lookback of completed chart bars ending before the latest two completed bars; for bullish candles pressure is body plus lower wick versus upper wick, and for bearish candles it is lower wick versus body plus upper wick.
+Calculation: Long score = clamp(aligned HTF weight if all three biases are bullish, otherwise majority HTF weight if at least two are bullish and none bearish; plus location weight in discount or minus it in premium; plus sweep, CHoCH, bullish OB tap, bullish FVG tap, bullish equal-level sweep, and enabled bullish delta weights when each condition holds, to the score range.
+Calculation: Short score = clamp(aligned HTF weight if all three biases are bearish, otherwise majority HTF weight if at least two are bearish and none bullish; plus location weight in premium or minus it in discount; plus sweep, CHoCH, bearish OB tap, bearish FVG tap, bearish equal-level sweep, and enabled bearish delta weights when each condition holds, to the score range.
+Long: A confirmed swing pivot high exceeds the previous confirmed swing pivot high, or the first confirmed swing pivot high forms (HH); or a confirmed swing pivot low exceeds the previous confirmed swing pivot low (HL). Confirm pivots after the swing pivot lookback bars on each side.
+Short: A confirmed swing pivot high is at or below the previous confirmed swing pivot high (LH), or a confirmed swing pivot low is at or below the previous confirmed swing pivot low (LL); the first confirmed swing pivot low forms an HL. Confirm pivots after the swing pivot lookback bars on each side.
+Long: A completed chart close is above the latest unbroken confirmed swing pivot high; mark CHoCH if the prior swing trend was bearish, otherwise BOS.
+Short: A completed chart close is below the latest unbroken confirmed swing pivot low; mark CHoCH if the prior swing trend was bullish, otherwise BOS.
+Long: A completed chart close is above the latest unbroken confirmed internal pivot high and the internal confluence filter is off or swing trend is nonbearish; mark CHoCH if prior internal trend was bearish, otherwise BOS.
+Short: A completed chart close is below the latest unbroken confirmed internal pivot low and the internal confluence filter is off or swing trend is nonbullish; mark CHoCH if prior internal trend was bullish, otherwise BOS.
+Long: Swing trend is bullish.
+Short: Swing trend is bearish.
+Long: Chart bias is bullish.
+Short: Chart bias is bearish.
+Long: HTF bias(T1) is bullish.
+Short: HTF bias(T1) is bearish.
+Long: HTF bias(T2) is bullish.
+Short: HTF bias(T2) is bearish.
+Long: HTF bias(T3) is bullish.
+Short: HTF bias(T3) is bearish.
+Long: A completed chart bar sweeps a confirmed internal pivot low within the sweep window after that pivot when its low is below the pivot and its close is above it.
+Short: A completed chart bar sweeps a confirmed internal pivot high within the sweep window after that pivot when its high is above the pivot and its close is below it.
+Long: An allowed bullish swing or internal structure break forms a bullish order block by selecting a bearish chart candle between the latest preceding pivot low and the break (or the break pivot if no preceding low exists); select the highest-volume candidate when volume selection is enabled, otherwise the latest candidate, and require its range to meet the OB ATR-size threshold. The block remains fresh until a later chart close is below its low.
+Short: An allowed bearish swing or internal structure break forms a bearish order block by selecting a bullish chart candle between the latest preceding pivot high and the break (or the break pivot if no preceding high exists); select the highest-volume candidate when volume selection is enabled, otherwise the latest candidate, and require its range to meet the OB ATR-size threshold. The block remains fresh until a later chart close is above its high.
+Calculation: Bullish OB tap = latest completed chart close is within the tap-distance ATR tolerance of the nearest fresh bullish OB whose midpoint is no more than the OB-side ATR tolerance above price.
+Calculation: Bearish OB tap = latest completed chart close is within the tap-distance ATR tolerance of the nearest fresh bearish OB whose midpoint is no more than the OB-side ATR tolerance below price.
+Long: On completed chart bars, low exceeds high at the FVG pattern offset and the gap meets the noise threshold when enabled; keep the bullish FVG fresh until a later chart low reaches its lower boundary.
+Short: On completed chart bars, high is below low at the FVG pattern offset and the gap meets the noise threshold when enabled; keep the bearish FVG fresh until a later chart high reaches its upper boundary.
+Long: On bars of the selected nonchart FVG timeframe T4, including its still-forming bar, low exceeds high at the FVG pattern offset and the gap meets the noise threshold based on the mean T4 bar range; project the bullish FVG to the chart and keep it fresh until a later chart low reaches its lower boundary.
+Short: On bars of the selected nonchart FVG timeframe T4, including its still-forming bar, high is below low at the FVG pattern offset and the gap meets the noise threshold based on the mean T4 bar range; project the bearish FVG to the chart and keep it fresh until a later chart high reaches its upper boundary.
+Calculation: Bullish FVG tap = latest completed chart close lies within a fresh bullish FVG expanded by the tap-distance ATR tolerance.
+Calculation: Bearish FVG tap = latest completed chart close lies within a fresh bearish FVG expanded by the tap-distance ATR tolerance.
+Long: A bullish context (bullish chart bias and bullish HTF alignment) AND, when required, the latest sweep is bullish and within the chain window AND, when required, the latest allowed bullish internal CHoCH is after the latest sweep and within the chain window AND, when required, a bullish OB or FVG is tapped AND price is not in premium AND long score meets the signal threshold and is at least the short score.
+Short: A bearish context (bearish chart bias and bearish HTF alignment) AND, when required, the latest sweep is bearish and within the chain window AND, when required, the latest allowed bearish internal CHoCH is after the latest sweep and within the chain window AND, when required, a bearish OB or FVG is tapped AND price is not in discount AND short score meets the signal threshold and exceeds the long score.
+Long: With no active setup, bullish context, all required sweep and CHoCH checks passed, and the nearest fresh bullish OB top within the maximum zone-distance ATR threshold of price, mark a pending bullish OB zone.
+Short: With no active setup, bearish context, all required sweep and CHoCH checks passed, and the nearest fresh bearish OB bottom within the maximum zone-distance ATR threshold of price, mark a pending bearish OB zone.

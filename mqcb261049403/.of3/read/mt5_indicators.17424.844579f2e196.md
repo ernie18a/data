@@ -1,0 +1,6 @@
+Calculation: oscillator = selected RSI variant(selected price, oscillator lookback)
+Calculation: upper band = min(MA(oscillator, band lookback, selected method) + StandardDeviation(oscillator, deviation lookback, sample setting) × deviation multiplier, upper band[1]) during a down trend; otherwise MA(oscillator, band lookback, selected method) + StandardDeviation(oscillator, deviation lookback, sample setting) × deviation multiplier
+Calculation: lower band = max(MA(oscillator, band lookback, selected method) − StandardDeviation(oscillator, deviation lookback, sample setting) × deviation multiplier, lower band[1]) during an up trend; otherwise MA(oscillator, band lookback, selected method) − StandardDeviation(oscillator, deviation lookback, sample setting) × deviation multiplier
+Calculation: trend = neutral on the first bar; otherwise up if oscillator > upper band[1], down if oscillator < lower band[1], else trend[1]
+Long: trend = up AND trend[1] != up
+Short: trend = down AND trend[1] != down

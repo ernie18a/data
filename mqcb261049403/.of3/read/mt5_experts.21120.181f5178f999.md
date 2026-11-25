@@ -1,0 +1,9 @@
+Calculation: upper anchor = highest high over the lookback bars of T1, including the bar still forming
+Calculation: lower anchor = lowest low over the lookback bars of T1, including the bar still forming
+Calculation: high-first = the upper-anchor bar time precedes the lower-anchor bar time
+Calculation: Fibonacci level(ratio parameter) = lower anchor + (upper anchor − lower anchor) × ratio parameter
+Long: close > moving average(applied-price parameter, lookback, horizontal-shift parameter, averaging-method parameter, chart timeframe, bar still forming) AND high-first AND close > Fibonacci level(lower-ratio parameter) AND close < Fibonacci level(upper-ratio parameter) AND close > resistance(chart timeframe, bar still forming)
+Long: close < moving average(applied-price parameter, lookback, horizontal-shift parameter, averaging-method parameter, chart timeframe, bar still forming) AND high-first AND close < Fibonacci level(lower-ratio parameter) AND close < resistance(chart timeframe, bar still forming)
+Short: close > moving average(applied-price parameter, lookback, horizontal-shift parameter, averaging-method parameter, chart timeframe, bar still forming) AND NOT high-first AND close > Fibonacci level(lower-ratio parameter) AND close < resistance(chart timeframe, bar still forming)
+Short: close < moving average(applied-price parameter, lookback, horizontal-shift parameter, averaging-method parameter, chart timeframe, bar still forming) AND high-first AND close > Fibonacci level(lower-ratio parameter) AND close < Fibonacci level(upper-ratio parameter) AND close < support(chart timeframe, bar still forming)
+Short: close < moving average(applied-price parameter, lookback, horizontal-shift parameter, averaging-method parameter, chart timeframe, bar still forming) AND high-first AND close > Fibonacci level(upper-ratio parameter) AND close < resistance(chart timeframe, bar still forming)

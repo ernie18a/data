@@ -1,0 +1,5 @@
+Calculation: conflicting high-low pattern = High of newest analyzed bar < High of prior bar < High of second prior bar AND Low of newest analyzed bar > Low of prior bar > Low of second prior bar
+Long: reversal parameter is false AND Low of newest analyzed bar > Low of prior bar > Low of second prior bar AND NOT conflicting high-low pattern OR reversal parameter is true AND High of newest analyzed bar < High of prior bar < High of second prior bar AND NOT conflicting high-low pattern
+Short: reversal parameter is false AND High of newest analyzed bar < High of prior bar < High of second prior bar AND NOT conflicting high-low pattern OR reversal parameter is true AND Low of newest analyzed bar > Low of prior bar > Low of second prior bar AND NOT conflicting high-low pattern
+Exit: long, current time is at or after the configured close time and no more than the close-window duration after it
+Exit: short, current time is at or after the configured close time and no more than the close-window duration after it

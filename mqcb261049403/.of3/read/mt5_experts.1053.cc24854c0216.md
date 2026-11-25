@@ -1,0 +1,4 @@
+Long: close on chart bars crosses above the classic pivot point calculated from high, low, and close of T1’s last completed bar
+Short: close on chart bars crosses below the classic pivot point calculated from high, low, and close of T1’s last completed bar
+Exit: Long, low <= the configured classic pivot support level OR (stop modification is enabled AND high has reached the first classic pivot resistance level AND low <= entry price + spread) OR high >= the configured classic pivot resistance level OR (intraday closing is enabled AND hour(datetime) = configured intraday-close hour)
+Exit: Short, high >= the configured classic pivot resistance level OR (stop modification is enabled AND low has reached the first classic pivot support level AND high >= entry price - spread) OR low <= the configured classic pivot support level OR (intraday closing is enabled AND hour(datetime) = configured intraday-close hour)

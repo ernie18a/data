@@ -1,0 +1,4 @@
+Long: On each new chart bar, using the latest and preceding completed T1 bars, EMA(close, shorter lookback, T1) on the preceding bar <= EMA(close, longer lookback, T1) on the preceding bar AND EMA(close, shorter lookback, T1) on the latest bar > EMA(close, longer lookback, T1) on the latest bar
+Short: On each new chart bar, using the latest and preceding completed T1 bars, EMA(close, shorter lookback, T1) on the preceding bar >= EMA(close, longer lookback, T1) on the preceding bar AND EMA(close, shorter lookback, T1) on the latest bar < EMA(close, longer lookback, T1) on the latest bar
+Exit: long, (stop-loss distance enabled AND low <= entry price - stop-loss distance) OR (take-profit distance enabled AND high >= entry price + take-profit distance)
+Exit: short, (stop-loss distance enabled AND high >= entry price + stop-loss distance) OR (take-profit distance enabled AND low <= entry price - take-profit distance)

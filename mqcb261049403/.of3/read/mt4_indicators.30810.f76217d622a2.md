@@ -1,0 +1,6 @@
+Calculation: Adjusted Theil-Sen slope(source, lookback) = -Theil-Sen slope(source, lookback, T1 bars through the last completed bar), where source is open, high, low, close, SMA(close, lookback), or EMA(close, lookback)
+Long: Adjusted Theil-Sen slope(selected source, regression lookback) >= neutral threshold
+Short: Adjusted Theil-Sen slope(selected source, regression lookback) < 0
+Calculation: Overall average slope = mean(Adjusted Theil-Sen slope(EMA(close, each selected lookback), each selected lookback)) across the selected lookback list
+Long: the selected lookback list is nonempty AND Adjusted Theil-Sen slope(EMA(close, each selected lookback), each selected lookback) >= neutral threshold for every selected lookback AND absolute(Overall average slope) >= trendless threshold
+Short: the selected lookback list is nonempty AND Adjusted Theil-Sen slope(EMA(close, each selected lookback), each selected lookback) < 0 for every selected lookback AND absolute(Overall average slope) >= trendless threshold

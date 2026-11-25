@@ -1,0 +1,3 @@
+Calculation: FrAMA signal = a * FrAMA(close, high, low, lookback, main multiplier) + (1 - a) * prior FrAMA signal, where a = exp(-signal multiplier * (D - 1)), D = log2((R1 + R2) / R3), N = largest even integer <= lookback, n = N / 2, R1 = (highest high - lowest low over the current n bars) / n, R2 = (highest high - lowest low over the preceding n bars) / n, R3 = (highest high - lowest low over the current N bars) / N; seed the signal with close; calculate on T1 bars
+Long: FrAMA(close, high, low, lookback, main multiplier) crosses above FrAMA signal between the preceding and last completed T1 bars
+Short: FrAMA(close, high, low, lookback, main multiplier) crosses below FrAMA signal between the preceding and last completed T1 bars

@@ -1,0 +1,2 @@
+Long: close >= S2(Pivot Points(T1, last completed bar)) AND close <= 0.5 * (S1(Pivot Points(T1, last completed bar)) + S2(Pivot Points(T1, last completed bar))) on chart bars using T1 values
+Short: close >= 0.5 * (R1(Pivot Points(T1, last completed bar)) + R2(Pivot Points(T1, last completed bar))) AND close <= R2(Pivot Points(T1, last completed bar)) on chart bars using T1 values

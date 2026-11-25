@@ -1,0 +1,7 @@
+Calculation: BrainTrend2 state = on each source-timeframe bar, initialize direction as bullish if close[2] > close[1], otherwise bearish, and trailing level as close[1]; initialize unused true-range history to the first true range; each bar set adjusted high H = high + spread in price units, true range = max(H - low, abs(H - close[1]), abs(low - close[1])), weighted ATR = 2 * sum((A - i) * true range[i], i=0..A-1) / (D * (D + 1)), and width = C * weighted ATR; if bullish and low < trailing level - width, switch bearish and set trailing level to H; if bearish and H > trailing level + width, switch bullish and set trailing level to low; otherwise, while bullish set trailing level to low when low > trailing level, and while bearish set trailing level to H when H < trailing level; A, D, and C are separate parameters. The calculation uses the current, possibly forming, source-timeframe bar.
+Long: BrainTrend2 state is bullish on the current chart bar.
+Short: BrainTrend2 state is bearish on the current chart bar.
+Long: On chart bars, BrainTrend2 state from the still-forming T1 bar containing the chart-bar time is bullish.
+Short: On chart bars, BrainTrend2 state from the still-forming T1 bar containing the chart-bar time is bearish.
+Long: BrainTrend2 state is bullish at the signal-bar offset n and bearish on the preceding chart bar.
+Short: BrainTrend2 state is bearish at the signal-bar offset n and bullish on the preceding chart bar.

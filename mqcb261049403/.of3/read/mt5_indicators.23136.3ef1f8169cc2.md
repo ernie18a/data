@@ -1,0 +1,6 @@
+Calculation: signal state = side of the most recent signal, retaining its prior side when no signal occurs (initially neutral)
+Calculation: long stop level = absent unless signal state is long; otherwise MIN(low[1..range lookback]) − long stop spread multiplier × spread, except retain the prior long stop level when this candidate is lower and the prior short stop level is absent
+Calculation: short stop level = absent unless signal state is short; otherwise MAX(high[1..range lookback]) + short stop spread multiplier × spread, except retain the prior short stop level when this candidate is higher and the prior long stop level is absent
+Long: signal state is not long AND ((high >= MAX(high[1..range lookback]) AND close > TEMA(close, MA lookback) AND close > TEMA(close, MA lookback)[1] AND MFI(high, low, close, volume, MFI lookback, volume type) >= upper MFI threshold) OR (close >= short stop level[1] AND high > MAX(high[1..range lookback]))
+Short: signal state is not short AND ((low <= MIN(low[1..range lookback]) AND close < TEMA(close, MA lookback) AND close < TEMA(close, MA lookback)[1] AND MFI(high, low, close, volume, MFI lookback, volume type) <= lower MFI threshold) OR (close <= long stop level[1] AND low < MIN(low[1..range lookback]))
+Evaluate on chart bars or on T1 bars using the still-forming T1 bar, with T1 results projected onto chart bars

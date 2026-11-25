@@ -1,0 +1,4 @@
+Calculation: Upper pivot = highest Fractals upper value recorded since the start or the most recent Short signal
+Calculation: Lower pivot = lowest Fractals lower value recorded since the start or the most recent Long signal
+Long: Fractals upper[lag] is nonzero AND Fractals upper[lag] > Upper pivot before this decision AND a Lower pivot has been recorded AND (Fractals upper[lag] - Open) < (Open - Lower pivot)
+Short: Fractals lower[lag] is nonzero AND Fractals lower[lag] < Lower pivot before this decision AND an Upper pivot has been recorded AND (Upper pivot - Open) > (Open - Fractals lower[lag])

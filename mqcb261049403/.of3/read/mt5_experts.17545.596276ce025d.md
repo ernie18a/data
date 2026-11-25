@@ -1,0 +1,25 @@
+Calculation: M1 = MACD main line(close, fast lookback F1, slow lookback S1, chart bars, last completed bar); M1[0] is the latest completed value and M1[n] is its value n chart bars earlier
+Calculation: M2 = MACD main line(close, fast lookback F2, slow lookback S2, chart bars, last completed bar); M2[0] is the latest completed value and M2[n] is its value n chart bars earlier
+Calculation: M3 = MACD main line(close, fast lookback F3, slow lookback S3, chart bars, last completed bar); M3[0] is the latest completed value and M3[n] is its value n chart bars earlier
+Calculation: M4 = MACD main line(close, fast lookback F4, slow lookback S4, chart bars, last completed bar); M4[0] is the latest completed value and M4[n] is its value n chart bars earlier
+Calculation: M5 = MACD main line(close, fast lookback F5, slow lookback S5, chart bars, last completed bar); M5[0] is the latest completed value and M5[n] is its value n chart bars earlier
+Calculation: M6 = MACD main line(close, fast lookback F6, slow lookback S6, chart bars, last completed bar); M6[0] is the latest completed value and M6[n] is its value n chart bars earlier
+Calculation: adjusted stop offset = offset parameter × point size × digit adjustment, where digit adjustment is 10 for prices with 3 or 5 decimal digits and 1 otherwise
+Calculation: short stop = highest(high, stop lookback parameter, chart bars, last completed bars at entry) + adjusted stop offset
+Calculation: long stop = lowest(low, stop lookback parameter, chart bars, last completed bars at entry) - adjusted stop offset
+Calculation: short target = lowest low in the first of successive non-overlapping target-lookback blocks, scanned backward from the current forming chart bar, whose block-low is <= the next older block's low
+Calculation: long target = highest high in the first of successive non-overlapping target-lookback blocks, scanned backward from the current forming chart bar, whose block-high is >= the next older block's high
+Short: M1[0] < upper threshold U1 AND M1[0] > 0 AND M1[0] < U1 AND M1[0] < M1[1] AND M1[1] > M1[2] AND M1[2] < U1 AND, since the most recent M1 value < 0, a later M1 value exceeded U1 and no subsequent M1 value fell below 0
+Long: M1[0] > lower threshold L1 AND M1[0] < 0 AND M1[0] > M1[1] AND M1[1] < M1[2] AND M1[2] > L1 AND, since the most recent M1 value > 0, a later M1 value fell below L1 and no subsequent M1 value rose above 0
+Short: After M2 > 0, M2[0] > M2[1] AND M2[1] < M2[2] AND L2 < M2[0] < 0; then M2[0] < M2[1] AND M2[1] > M2[2] AND M2[0] < 0
+Long: After M2 < 0, M2[0] < M2[1] AND M2[1] > M2[2] AND 0 < M2[0] < U2; then M2[0] > M2[1] AND M2[1] < M2[2] AND M2[0] > 0
+Short: After M3 exceeded upper start threshold U3a, record the highest positive local peak (M3[0] < M3[1] AND M3[1] > M3[2]) through the first bar with M3[0] < U3 AND M3[0] >= U3a; after that retracement, record a local peak above the first peak and every peak already recorded in this phase, with M3[0] > U3 AND M3[0] >= U3a; after a later bar with M3[0] < U3 AND M3[0] >= U3a, sell when M3[0] < U3 AND M3[1] < U3 AND M3[2] < U3 AND M3[0] < M3[1] AND M3[1] > M3[2] AND M3[1] is below the recorded second-phase peak AND M3[0] >= U3a
+Long: After M3 fell below lower threshold L3, record the lowest negative local trough (M3[0] > M3[1] AND M3[1] < M3[2]) through a rebound with M3[0] > L3 AND M3[0] <= L3a, provided no intervening M3 value rose above L3a; after that rebound, record a local trough below the first trough and every trough already recorded in this phase, with M3[0] < U3 AND M3[0] <= L3a; after a later rebound with M3[0] > L3 AND M3[0] <= L3a, buy when M3[0] > L3 AND M3[1] > L3 AND M3[2] > L3 AND M3[0] > M3[1] AND M3[1] < M3[2] AND M3[1] is above the recorded second-phase trough AND M3[0] <= L3a AND M3[0] <= U3a
+Short: Two successive local peaks each satisfy M4[0] > U4 AND M4[0] < M4[1] AND M4[1] > M4[2], and the second peak is below the first
+Long: Two successive local troughs each satisfy M4[0] < L4 AND M4[0] > M4[1] AND M4[1] < M4[2], and the second trough is above the first; then M4[0] < L4 AND M4[0] <= U4
+Short: After M5 < lower start threshold L5start without a subsequent M5 > lower reset threshold L5reset, M5 later rises above shared lower threshold L and stays <= L5reset; then M5[0] < L AND M5[0] < M5[1] AND M5[1] > M5[2] AND M5[1] > L AND M5[0] <= L5reset
+Long: After M5 > upper start threshold U5start without a subsequent M5 < upper reset threshold U5reset, M5 later falls below shared upper threshold U while staying >= U5reset; then M5[0] > U AND M5[0] > M5[1] AND M5[1] < M5[2] AND M5[1] < U AND M5[0] >= U5reset
+Short: M6[0] < shared upper threshold U after M6 has been > U for at least the minimum-bar parameter, more than the count-bar parameter, and no more than the maximum-bar parameter
+Long: M6[0] > shared lower threshold L after M6 has been < L for at least the minimum-bar parameter, more than the count-bar parameter, and no more than the maximum-bar parameter
+Exit: long, low <= long stop set at entry OR high >= long target set at entry
+Exit: short, high >= short stop set at entry OR low <= short target set at entry

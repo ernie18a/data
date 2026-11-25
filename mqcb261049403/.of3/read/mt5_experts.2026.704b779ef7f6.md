@@ -1,0 +1,5 @@
+Calculation: D_i = DEMA(close, DEMA lookback_i, T2_i bars, with bar 0 still forming), for each of the six parameter sets i
+Long: D_i[0] > D_i[1] AND D_i[1] > D_i[2], for each of the six parameter sets i
+Short: D_i[0] < D_i[1] AND D_i[1] < D_i[2], for each of the six parameter sets i
+Long: for each of the six parameter sets i, on T1 bars, open[1] < Bollinger lower band(close, BB lookback_i, BB shift_i, BB deviation_i, T1, last completed bar) AND close[1] > Bollinger lower band(close, BB lookback_i, BB shift_i, BB deviation_i, T1, last completed bar) AND low[1] > low[2] AND low[2] < low[3] AND D_i[0] > D_i[1] AND D_i[1] > D_i[2]
+Short: for each of the six parameter sets i, on T1 bars, open[1] > Bollinger upper band(close, BB lookback_i, BB shift_i, BB deviation_i, T1, last completed bar) AND close[1] < Bollinger upper band(close, BB lookback_i, BB shift_i, BB deviation_i, T1, last completed bar) AND high[1] < high[2] AND high[2] > high[3] AND D_i[0] < D_i[1] AND D_i[1] < D_i[2]

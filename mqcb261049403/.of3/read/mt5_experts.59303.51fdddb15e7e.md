@@ -1,0 +1,4 @@
+Long: RSI(applied price, lookback) crosses above lower threshold on the current forming chart bar AND (session filter is disabled OR current server time is within the configured session, start inclusive and end exclusive, including intervals spanning midnight)
+Short: RSI(applied price, lookback) crosses below upper threshold on the current forming chart bar AND (session filter is disabled OR current server time is within the configured session, start inclusive and end exclusive, including intervals spanning midnight)
+Exit: short, RSI(applied price, lookback) crosses above lower threshold on the current forming chart bar
+Exit: long, RSI(applied price, lookback) crosses below upper threshold on the current forming chart bar

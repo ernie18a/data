@@ -1,0 +1,9 @@
+Calculation: Stop distance = stop-loss parameter × pip size
+Calculation: Target distance = stop distance × reward-ratio parameter
+Calculation: Entry-distance threshold = retrace-distance parameter × symbol point size
+Calculation: Break-even activation distance = activation-distance parameter × pip size
+Calculation: Break-even stop offset = stop-offset parameter × pip size
+Long: Stochastic signal(longer K, D, and slowing lookbacks, low/high, simple moving average, last completed chart bar) < Stochastic main(shorter K, D, and slowing lookbacks, low/high, simple moving average, last completed chart bar) AND RSI(close, lookback, last completed chart bar) > RSI threshold AND LWMA((high + low + close) / 3, shorter lookback, T1, bar still forming) > LWMA((high + low + close) / 3, longer lookback, T1, bar still forming) AND low[2] < high[1] AND abs(current bid - close[2]) > Entry-distance threshold
+Short: Stochastic signal(longer K, D, and slowing lookbacks, low/high, simple moving average, last completed chart bar) > Stochastic main(shorter K, D, and slowing lookbacks, low/high, simple moving average, last completed chart bar) AND RSI(close, lookback, last completed chart bar) < RSI threshold AND LWMA((high + low + close) / 3, shorter lookback, T1, bar still forming) < LWMA((high + low + close) / 3, longer lookback, T1, bar still forming) AND low[1] < high[2] AND abs(current ask - close[1]) > Entry-distance threshold
+Exit: long, current bid <= entry price - Stop distance OR current bid >= entry price + Target distance OR current bid <= entry price + Break-even stop offset after current bid has exceeded entry price + Break-even activation distance
+Exit: short, current ask >= entry price + Stop distance OR current ask <= entry price - Target distance OR current ask >= entry price - Break-even stop offset after current ask has fallen below entry price - Break-even activation distance

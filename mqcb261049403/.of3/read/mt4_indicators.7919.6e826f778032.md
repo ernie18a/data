@@ -1,0 +1,12 @@
+Calculation: Rising SMA count(T) = count over the five separate, successively longer lookbacks for which SMA(close, lookback, T, still-forming bar) > SMA(close, same lookback, T, last completed bar), sampled on chart bars
+Calculation: Falling SMA count(T) = count over the five separate, successively longer lookbacks for which SMA(close, lookback, T, still-forming bar) < SMA(close, same lookback, T, last completed bar), sampled on chart bars
+Calculation: Bullish AC(T) = (AC(T, still-forming bar) < 0 AND AC(T, still-forming bar) > AC(T, last completed bar) AND AC(T, last completed bar) > AC(T, two bars ago) AND AC(T, two bars ago) > AC(T, three bars ago)) OR (AC(T, still-forming bar) > AC(T, last completed bar) AND AC(T, last completed bar) > AC(T, two bars ago) AND AC(T, still-forming bar) > 0), sampled on chart bars
+Calculation: Bearish AC(T) = (AC(T, still-forming bar) > 0 AND AC(T, still-forming bar) < AC(T, last completed bar) AND AC(T, last completed bar) < AC(T, two bars ago) AND AC(T, two bars ago) < AC(T, three bars ago)) OR (AC(T, still-forming bar) < AC(T, last completed bar) AND AC(T, last completed bar) < AC(T, two bars ago) AND AC(T, still-forming bar) < 0), sampled on chart bars
+Calculation: Bull score(T) = score-unit parameter × (Rising SMA count(T) + AC-to-SMA weight parameter × Bullish AC(T))
+Calculation: Bear score(T) = score-unit parameter × (Falling SMA count(T) + AC-to-SMA weight parameter × Bearish AC(T))
+Long: Rising SMA count(T1) > 0 OR Rising SMA count(T2) > 0 OR Rising SMA count(T3) > 0 OR Bullish AC(T1) OR Bullish AC(T2) OR Bullish AC(T3)
+Short: Falling SMA count(T1) > 0 OR Falling SMA count(T2) > 0 OR Falling SMA count(T3) > 0 OR Bearish AC(T1) OR Bearish AC(T2) OR Bearish AC(T3)
+Long: Bull score(T1) > lower threshold AND Bull score(T2) > lower threshold AND Bull score(T3) > lower threshold
+Long: Bull score(T1) >= higher threshold AND Bull score(T2) >= higher threshold AND Bull score(T3) >= higher threshold
+Short: Bear score(T1) > lower threshold AND Bear score(T2) > lower threshold AND Bear score(T3) > lower threshold
+Short: Bear score(T1) >= higher threshold AND Bear score(T2) >= higher threshold AND Bear score(T3) >= higher threshold

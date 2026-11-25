@@ -1,0 +1,2 @@
+Long: MA(configured price, shorter lookback) > MA(configured price, longer lookback), using the same price and MA type in both
+Short: MA(configured price, shorter lookback) < MA(configured price, longer lookback), using the same price and MA type in both

@@ -1,0 +1,4 @@
+Long: Chaikin spectral-analysis line[1] < Chaikin spectral-analysis line[2] AND Chaikin spectral-analysis line[0] >= Chaikin spectral-analysis line[1] (T1 bars; [0] is still forming, [1] and [2] are completed)
+Short: Chaikin spectral-analysis line[1] > Chaikin spectral-analysis line[2] AND Chaikin spectral-analysis line[0] <= Chaikin spectral-analysis line[1] (T1 bars; [0] is still forming, [1] and [2] are completed)
+Exit: long, Chaikin spectral-analysis line[1] > Chaikin spectral-analysis line[2] AND Chaikin spectral-analysis line[0] > Chaikin spectral-analysis line[1] (T1 bars; [0] is still forming, [1] and [2] are completed)
+Exit: short, Chaikin spectral-analysis line[1] < Chaikin spectral-analysis line[2] AND Chaikin spectral-analysis line[0] < Chaikin spectral-analysis line[1] (T1 bars; [0] is still forming, [1] and [2] are completed)

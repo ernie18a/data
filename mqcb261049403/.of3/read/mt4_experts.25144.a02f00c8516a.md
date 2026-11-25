@@ -1,0 +1,2 @@
+Long: RSI(applied price A, lookback A, chart timeframe, still-forming bar) - RSI(applied price B, lookback B, chart timeframe, last completed bar) > threshold
+Short: RSI(applied price A, lookback A, chart timeframe, still-forming bar) - RSI(applied price B, lookback B, chart timeframe, last completed bar) < -threshold

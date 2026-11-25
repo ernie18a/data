@@ -1,0 +1,5 @@
+Calculation: Weighted TRIX = first weight * TRIX(close, shortest lookback) + second weight * TRIX(close, second-shortest lookback) + second weight * TRIX(close, middle lookback) + fourth weight * TRIX(close, second-longest lookback) + fifth weight * TRIX(close, longest lookback)
+Long: Weighted TRIX > SMMA(Weighted TRIX, smoothing)
+Short: Weighted TRIX < SMMA(Weighted TRIX, smoothing)
+Long: Weighted TRIX on T1 bars, using the bar still forming and mapped to chart bars, > SMMA(Weighted TRIX on T1 bars, using the bar still forming and mapped to chart bars, smoothing)
+Short: Weighted TRIX on T1 bars, using the bar still forming and mapped to chart bars, < SMMA(Weighted TRIX on T1 bars, using the bar still forming and mapped to chart bars, smoothing)

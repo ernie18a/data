@@ -1,0 +1,6 @@
+Calculation: chart weighted HLR = chart weight1*HLR(chart shortest lookback) + chart weight2*HLR(chart second-shortest lookback) + chart weight2*HLR(chart middle lookback) + chart weight4*HLR(chart second-longest lookback) + chart weight5*HLR(chart longest lookback)
+Long: chart weighted HLR > SMMA(chart weighted HLR, chart smoothing)
+Short: chart weighted HLR < SMMA(chart weighted HLR, chart smoothing)
+Calculation: T1 weighted HLR = T1 weight1*HLR(T1 shortest lookback, T1, bar still forming) + T1 weight2*HLR(T1 second-shortest lookback, T1, bar still forming) + T1 weight2*HLR(T1 middle lookback, T1, bar still forming) + T1 weight4*HLR(T1 second-longest lookback, T1, bar still forming) + T1 weight5*HLR(T1 longest lookback, T1, bar still forming)
+Long: On chart bars, T1 weighted HLR > SMMA(T1 weighted HLR, T1 smoothing, T1, bar still forming), sampled on the first chart bar of each T1 bar and held through its remaining chart bars
+Short: On chart bars, T1 weighted HLR < SMMA(T1 weighted HLR, T1 smoothing, T1, bar still forming), sampled on the first chart bar of each T1 bar and held through its remaining chart bars

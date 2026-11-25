@@ -1,0 +1,4 @@
+Long: The highest CCFp(currency, moving-average method parameter, applied-price parameter, fast lookback, slow lookback) on the last completed chart bar is not USD and its line crosses above at least one other currency’s line on that bar.
+Short: The lowest CCFp(currency, moving-average method parameter, applied-price parameter, fast lookback, slow lookback) on the last completed chart bar is not USD and its line crosses below at least one other currency’s line on that bar.
+Exit: long, the currency with the highest CCFp(currency, moving-average method parameter, applied-price parameter, fast lookback, slow lookback) differs from the currency associated with the position.
+Exit: short, the currency with the lowest CCFp(currency, moving-average method parameter, applied-price parameter, fast lookback, slow lookback) differs from the currency associated with the position.

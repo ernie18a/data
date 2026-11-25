@@ -1,0 +1,2 @@
+Long: On each closed chart bar, MA(close, shorter lookback) > MA(close, longer lookback) AND MA(close, shorter lookback, calculated on T1 bars, still-forming bar) > MA(close, longer lookback, calculated on T1 bars, still-forming bar)
+Short: On each closed chart bar, MA(close, shorter lookback) < MA(close, longer lookback) AND MA(close, shorter lookback, calculated on T1 bars, still-forming bar) < MA(close, longer lookback, calculated on T1 bars, still-forming bar)

@@ -1,0 +1,12 @@
+Calculation: Confirmed swing high = the most recent candidate within the swing-search depth on completed T1 bars, excluding the current bar and the newer-neighbor-count most recent completed bars, whose high is strictly greater than the highs of the older-neighbor-count older completed T1 bars and newer-neighbor-count newer completed T1 bars
+Calculation: Confirmed swing low = the most recent candidate within the swing-search depth on completed T1 bars, excluding the current bar and the newer-neighbor-count most recent completed bars, whose low is strictly lower than the lows of the older-neighbor-count older completed T1 bars and newer-neighbor-count newer completed T1 bars
+Long: close < confirmed swing high − confirmed swing high × clearance percentage
+Short: close > confirmed swing low + confirmed swing low × clearance percentage
+Calculation: Long trailing stop = the greatest eligible price observed since entry minus that price × trailing distance, where favorable gain from entry at that price is at least the trailing trigger and at most the maximum trailing gain
+Calculation: Short trailing stop = the lowest eligible price observed since entry plus that price × trailing distance, where favorable gain from entry at that price is at least the trailing trigger and at most the maximum trailing gain
+Calculation: Long stop = the maximum of entry price − entry price × stop-loss percentage, entry price + entry price × break-even lock percentage after favorable gain has reached the break-even trigger, and the long trailing stop after it has been set
+Calculation: Short stop = the minimum of entry price + entry price × stop-loss percentage, entry price − entry price × break-even lock percentage after favorable gain has reached the break-even trigger, and the short trailing stop after it has been set
+Calculation: Long target = entry price + entry price × take-profit percentage until the lowest price since entry reaches entry price − entry price × salvage trigger percentage, then entry price − entry price × salvage exit percentage
+Calculation: Short target = entry price − entry price × take-profit percentage until the highest price since entry reaches entry price + entry price × salvage trigger percentage, then entry price + entry price × salvage exit percentage
+Exit: long, close ≤ long stop OR close ≥ long target
+Exit: short, close ≥ short stop OR close ≤ short target

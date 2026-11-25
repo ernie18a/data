@@ -1,0 +1,5 @@
+Calculation: bar direction = on the first bar, long if close > open and short otherwise; on each later bar, if the previous bar's direction is long, long if the configured price (close when close selection is enabled, otherwise low) > any of low[1] through low[lookback], and short otherwise; if the previous bar's direction is short, short if the configured price (close when close selection is enabled, otherwise high) < any of high[1] through high[lookback], and long otherwise. Apply this recurrence on chart bars and T1 bars, using each timeframe's own preceding bars and including its current, still-forming bar.
+Long: chart-bar direction is long
+Short: chart-bar direction is short
+Long: the direction on the T1 bar containing the chart bar's opening time, including a still-forming T1 bar, is long
+Short: the direction on the T1 bar containing the chart bar's opening time, including a still-forming T1 bar, is short

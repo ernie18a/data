@@ -1,0 +1,6 @@
+Calculation: Average high-low range = mean(abs(high - low) over range lookback bars ending at the candidate bar)
+Calculation: Gap event = any bar n within gap lookback, starting at the candidate bar and looking older, where abs(open[n] - close[n + gap lag]) >= Average high-low range × gap multiplier
+Calculation: Displacement event = any bar n within displacement lookback, starting at the candidate bar and looking older, where abs(close[n + displacement lag] - close[n]) >= Average high-low range × displacement multiplier
+Calculation: Signal %K = Stochastic %K(high, low, close, selected lookback), calculated on T1 bars; select the medium lookback if a displacement event occurs, otherwise the short lookback if a gap event occurs, otherwise the short lookback + risk × period increment; use the candidate bar's selected lookback for its older comparisons
+Long: On T1 bars, at the last completed bar, Signal %K > upper threshold baseline + risk AND the nearest older Signal %K outside [lower threshold baseline - risk, upper threshold baseline + risk] < lower threshold baseline - risk
+Short: On T1 bars, at the last completed bar, Signal %K < lower threshold baseline - risk AND the nearest older Signal %K outside [lower threshold baseline - risk, upper threshold baseline + risk] > upper threshold baseline + risk

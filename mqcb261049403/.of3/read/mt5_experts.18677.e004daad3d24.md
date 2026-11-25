@@ -1,0 +1,2 @@
+Exit: Long, MA(close, fast lookback, fast method, T1, last completed bar) crosses below MA(open, slow lookback, slow method, T1, last completed bar), evaluated on each tick
+Exit: Short, MA(close, fast lookback, fast method, T1, last completed bar) crosses above MA(open, slow lookback, slow method, T1, last completed bar), evaluated on each tick

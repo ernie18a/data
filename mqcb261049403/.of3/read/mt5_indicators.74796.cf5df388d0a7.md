@@ -1,0 +1,11 @@
+Calculation: Signal bar = prior completed chart bar when closed-bar evaluation is enabled; otherwise the current forming chart bar
+Calculation: Trend contribution = ((EMA(close, fast lookback) > EMA(close, medium lookback) ? 1 : -1) + (EMA(close, medium lookback) > EMA(close, slow lookback) ? 1 : -1)) / 2, evaluated at the signal bar; fast, medium, and slow lookbacks are ordered shortest to longest
+Calculation: ADX contribution = (DI+(ADX lookback) > DI-(ADX lookback) ? 1 : -1) * clamp(ADX(ADX lookback) / ADX strength scale, 0, 1), evaluated at the signal bar
+Calculation: RSI contribution = clamp((RSI(RSI lookback) - RSI normalization value) / RSI normalization value, -1, 1), evaluated at the signal bar
+Calculation: MACD contribution = clamp(MACD histogram(MACD fast lookback, MACD slow lookback, MACD signal lookback) / ATR(ATR lookback), -1, 1), evaluated at the signal bar
+Calculation: Structure contribution = 1 when the two latest confirmed fractal highs and the two latest confirmed fractal lows within the structure lookback are each higher most recently; -1 when both are each lower most recently; otherwise 0, including when fewer than two of either are found; evaluate fractals on chart bars ending at the signal bar
+Calculation: Volume multiplier = neutral volume multiplier when average volume over the preceding max(1, volume lookback - 1) chart bars is zero; otherwise clamp(multiplier floor + (signal-bar volume / average volume - neutral volume ratio) * volume sensitivity, multiplier floor, multiplier ceiling)
+Calculation: Signed score = (trend weight * trend contribution + ADX weight * ADX contribution + RSI weight * RSI contribution + MACD weight * MACD contribution + structure weight * structure contribution) / (sum of the five weights / score scale), using score scale as the weight sum when that sum is nonpositive
+Calculation: Confidence score = clamp(abs(signed score) * volume multiplier, 0, score scale)
+Long: confidence score >= minimum score AND signed score > 0
+Short: confidence score >= minimum score AND signed score < 0

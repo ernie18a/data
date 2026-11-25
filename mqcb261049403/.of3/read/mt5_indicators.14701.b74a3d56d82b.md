@@ -1,0 +1,3 @@
+Calculation: WPR trailing step line(S) = on each T1 bar, set upper and lower bands to WPR(lookback) ± band-width multiplier × S; turn direction up when WPR exceeds the prior upper band, down when it falls below the prior lower band, otherwise retain direction; in an up direction clamp the lower band to at least its prior value and set the line to lower band + S; in a down direction clamp the upper band to at most its prior value and set the line to upper band − S
+Long: WPR trailing step line(fast step-size parameter) crosses above WPR trailing step line(slow step-size parameter) at the selected T1 bar
+Short: WPR trailing step line(fast step-size parameter) crosses below WPR trailing step line(slow step-size parameter) at the selected T1 bar

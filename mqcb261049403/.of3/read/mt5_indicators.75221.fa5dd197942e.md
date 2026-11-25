@@ -1,0 +1,6 @@
+Calculation: session high = maximum high of T1 bars opening at or after the configured session start and before the configured session end, including any still-forming bar
+Calculation: session low = minimum low of T1 bars opening at or after the configured session start and before the configured session end, including any still-forming bar
+Long: (date is Monday through Friday OR weekend inclusion is enabled) AND close confirmation is configured AND close > session high on the first completed T2 bar opening after session end and before the next calendar date
+Long: (date is Monday through Friday OR weekend inclusion is enabled) AND wick confirmation is configured AND high > session high on the first T2 bar opening after session end and before the next calendar date, including a still-forming bar
+Short: (date is Monday through Friday OR weekend inclusion is enabled) AND close confirmation is configured AND close < session low on the first completed T2 bar opening after session end and before the next calendar date
+Short: (date is Monday through Friday OR weekend inclusion is enabled) AND wick confirmation is configured AND low < session low on the first T2 bar opening after session end and before the next calendar date, including a still-forming bar

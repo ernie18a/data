@@ -1,0 +1,2 @@
+Long: On chart bars taking values from T1, Williams %R(lookback, T1, selected bar) > lower threshold AND Williams %R(lookback, T1, preceding bar) <= lower threshold
+Short: On chart bars taking values from T1, Williams %R(lookback, T1, selected bar) < upper threshold AND Williams %R(lookback, T1, preceding bar) >= upper threshold

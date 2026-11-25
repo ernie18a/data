@@ -1,0 +1,5 @@
+Calculation: Cloud edge on each T1 bar = if high <= SMA(close, close lookback, T1), SMA(close, close lookback, T1) - SMA(high - low, range lookback, T1) × growth factor^n, where n is the smallest nonnegative integer making the result <= low; otherwise SMA(close, close lookback, T1) + SMA(high - low, range lookback, T1) × growth factor^n, where n is the smallest nonnegative integer making the result >= high
+Long: Cloud edge > SMA(close, close lookback, T1) on the completed T1 bar preceding the configured signal bar AND Cloud edge <= SMA(close, close lookback, T1) on the configured completed T1 signal bar
+Short: Cloud edge < SMA(close, close lookback, T1) on the completed T1 bar preceding the configured signal bar AND Cloud edge >= SMA(close, close lookback, T1) on the configured completed T1 signal bar
+Exit: long, Cloud edge < SMA(close, close lookback, T1) on the completed T1 bar preceding the configured signal bar
+Exit: short, Cloud edge > SMA(close, close lookback, T1) on the completed T1 bar preceding the configured signal bar

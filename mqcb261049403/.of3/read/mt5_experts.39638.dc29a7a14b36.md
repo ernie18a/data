@@ -1,0 +1,2 @@
+Long: (reverse mode enabled AND close of the selected T1 bar > upper VIDYA N-bar border of that bar) OR (reverse mode disabled AND close of the selected T1 bar < lower VIDYA N-bar border of that bar)
+Short: (reverse mode enabled AND close of the selected T1 bar < lower VIDYA N-bar border of that bar) OR (reverse mode disabled AND close of the selected T1 bar > upper VIDYA N-bar border of that bar)

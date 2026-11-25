@@ -1,0 +1,2 @@
+Long: Donchian Channel upper value (lookback, T1, current forming bar) > Donchian Channel upper value (lookback, T1, preceding completed bar)
+Short: Donchian Channel lower value (lookback, T1, current forming bar) < Donchian Channel lower value (lookback, T1, preceding completed bar)

@@ -1,0 +1,6 @@
+Calculation: Bollinger-stop trend on chart bars = initialize neutral with thresholds at Bollinger Bands(close, lookback, deviation); each bar set bullish if close > the previous upper threshold, bearish if close < the previous lower threshold, otherwise retain the previous trend; then set the current lower threshold to the greater of the lower Bollinger Band and previous lower threshold when bullish, the current upper threshold to the lesser of the upper Bollinger Band and previous upper threshold when bearish, and otherwise use the current Bollinger Bands
+Calculation: Bollinger-stop trend on T1 bars = the same calculation on T1 bars, using the still-forming T1 bar and copying its values to chart bars at matching bar times
+Long: Bollinger-stop trend changes to bullish on chart bars
+Short: Bollinger-stop trend changes to bearish on chart bars
+Long: Bollinger-stop trend changes to bullish in T1 values mapped onto chart bars
+Short: Bollinger-stop trend changes to bearish in T1 values mapped onto chart bars

@@ -1,0 +1,2 @@
+Long: CCI(typical price, lookback) < lower threshold AND CCI(typical price, lookback)[1] >= lower threshold AND CCI(typical price, lookback)[1] <= upper threshold
+Short: CCI(typical price, lookback) > upper threshold AND CCI(typical price, lookback)[1] >= lower threshold AND CCI(typical price, lookback)[1] <= upper threshold

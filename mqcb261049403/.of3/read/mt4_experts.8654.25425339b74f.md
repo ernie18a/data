@@ -1,0 +1,16 @@
+Calculation: Moving-average history key = sequence of paired moving-average readings in the prior history window
+Calculation: MACD history key = sequence of MACD main-line readings in the prior history window, using separate shorter and longer lookbacks
+Calculation: High excursion = (maximum high during the forecast window after a pattern occurrence − that occurrence’s open) / point size
+Calculation: Low excursion = (that occurrence’s open − minimum low during the forecast window after a pattern occurrence) / point size
+Calculation: Long pattern count = number of prior occurrences matching the current history key whose high excursion is at least their low excursion
+Calculation: Short pattern count = number of prior occurrences matching the current history key whose low excursion is at least their high excursion
+Calculation: Long forecast = update the prior score to the weighted mean of that score and the current signed excursion, with the new occurrence weighted by a recency parameter; use the high excursion when it is at least the low excursion, otherwise use the negative low excursion; round using a score-precision parameter
+Calculation: Short forecast = update the prior score to the weighted mean of that score and the current signed excursion, with the new occurrence weighted by a recency parameter; use the low excursion when it is at least the high excursion, otherwise use the negative high excursion; round using a score-precision parameter
+Long: moving-average long forecast >= moving-average short forecast AND moving-average long pattern count > moving-average match-count parameter AND moving-average long forecast > moving-average minimum-target parameter
+Short: moving-average long forecast <= moving-average short forecast AND moving-average short pattern count > moving-average match-count parameter AND moving-average short forecast > moving-average minimum-target parameter
+Exit: long, moving-average long forecast <= moving-average short forecast
+Exit: short, moving-average long forecast >= moving-average short forecast
+Long: MACD long forecast >= MACD short forecast AND MACD long pattern count > MACD match-count parameter AND MACD long forecast > MACD minimum-target parameter
+Short: MACD long forecast <= MACD short forecast AND MACD short pattern count > MACD match-count parameter AND MACD short forecast > MACD minimum-target parameter
+Exit: long, MACD long forecast <= MACD short forecast
+Exit: short, MACD long forecast >= MACD short forecast

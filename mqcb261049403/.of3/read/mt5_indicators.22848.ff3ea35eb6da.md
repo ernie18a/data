@@ -1,0 +1,2 @@
+Long: Stochastic main line(K lookback, D lookback, slowing, MA method, price field) < oversold threshold
+Short: Stochastic main line(K lookback, D lookback, slowing, MA method, price field) > overbought threshold

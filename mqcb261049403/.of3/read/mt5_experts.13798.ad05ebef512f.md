@@ -1,0 +1,5 @@
+Calculation: Shifted moving average = ((smoothing lookback - 1) * (shifted moving average on the preceding T1 bar - vertical shift in points * point size) + current T1 bar close) / smoothing lookback
+Long: on a T1 bar close, shifted moving average of the current bar > shifted moving average of the preceding completed T1 bar AND shifted moving average of the preceding completed T1 bar < shifted moving average of the second preceding completed T1 bar
+Short: on a T1 bar close, shifted moving average of the current bar < shifted moving average of the preceding completed T1 bar AND shifted moving average of the preceding completed T1 bar > shifted moving average of the second preceding completed T1 bar
+Exit: short, on a T1 bar close, shifted moving average of the preceding completed T1 bar < shifted moving average of the second preceding completed T1 bar
+Exit: long, on a T1 bar close, shifted moving average of the preceding completed T1 bar > shifted moving average of the second preceding completed T1 bar

@@ -1,0 +1,6 @@
+Calculation: Long success probability = decayed favorable long outcomes for the current pattern and stop distance / (decayed favorable and unfavorable long outcomes for the current pattern and stop distance + smoothing parameter)
+Calculation: Short success probability = decayed favorable short outcomes for the current pattern and stop distance / (decayed favorable and unfavorable short outcomes for the current pattern and stop distance + smoothing parameter)
+Long: long success probability > probability threshold AND completed outcome count for the current pattern and stop distance > minimum outcome count
+Short: short success probability > probability threshold AND completed outcome count for the current pattern and stop distance > minimum outcome count
+Exit: Short, long success probability > profit probability threshold AND completed outcome count for the current pattern and stop distance > minimum outcome count AND entry price - close > half the stop-step distance
+Exit: Long, short success probability > profit probability threshold AND completed outcome count for the current pattern and stop distance > minimum outcome count AND close - entry price > half the stop-step distance

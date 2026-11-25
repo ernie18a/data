@@ -1,0 +1,2 @@
+Long: ZigZag(high, low, depth, deviation, backstep, T1, still-forming bar) low-pivot value != 0, sampled on chart bars
+Short: ZigZag(high, low, depth, deviation, backstep, T1, still-forming bar) high-pivot value != 0, sampled on chart bars

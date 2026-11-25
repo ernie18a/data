@@ -1,0 +1,5 @@
+Calculation: Forecast Oscillator = 100*(P-W)/W, where W = 6/[L*(L+1)] * sum((i-(L+1)/3)*P[L-i], i=1..L), P is the selected applied price and L is its lookback
+Long: Forecast Oscillator(applied price, lookback) > T3(Forecast Oscillator(applied price, lookback), max(lookback, T3 period), b)
+Short: Forecast Oscillator(applied price, lookback) < T3(Forecast Oscillator(applied price, lookback), max(lookback, T3 period), b)
+Long: On chart bars using values calculated on the still-forming T1 bars, Forecast Oscillator(applied price, lookback) > T3(Forecast Oscillator(applied price, lookback), max(lookback, T3 period), b)
+Short: On chart bars using values calculated on the still-forming T1 bars, Forecast Oscillator(applied price, lookback) < T3(Forecast Oscillator(applied price, lookback), max(lookback, T3 period), b)

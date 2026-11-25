@@ -1,0 +1,4 @@
+Long: AO(T1 higher timeframe, last completed bar) crosses above its zero line AND (Stochastic main(T2 lower timeframe, last completed bar) < lower threshold OR Stochastic signal(T2 lower timeframe, last completed bar) < lower threshold)
+Short: AO(T1 higher timeframe, last completed bar) crosses below its zero line AND (Stochastic main(T2 lower timeframe, last completed bar) > upper threshold OR Stochastic signal(T2 lower timeframe, last completed bar) > upper threshold)
+Exit: short, AO(T1 higher timeframe, last completed bar) crosses above its zero line
+Exit: long, AO(T1 higher timeframe, last completed bar) crosses below its zero line

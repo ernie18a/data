@@ -1,0 +1,2 @@
+Long: Aroon Oscillator(high, low, lookback, T1, still-forming bar sampled on chart bars) > upper threshold
+Short: Aroon Oscillator(high, low, lookback, T1, still-forming bar sampled on chart bars) < lower threshold

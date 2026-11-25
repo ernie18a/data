@@ -1,0 +1,3 @@
+Calculation: SyntheticBid/Ask(expression) = for S: (Bid(S), Ask(S)); for 1/S: (1/Ask(S), 1/Bid(S)); for S1/S2: (Bid(S1)/Ask(S2), Ask(S1)/Bid(S2)); for S1*S2: (Bid(S1)*Bid(S2), Ask(S1)*Ask(S2)); for 1/(S1*S2): (1/(Ask(S1)*Ask(S2)), 1/(Bid(S1)*Bid(S2))); for S2/S1: (Bid(S2)/Ask(S1), Ask(S2)/Bid(S1))
+Long: For an enabled pair with no position already open in this direction, SyntheticBid(second expression) - SyntheticAsk(first expression) > minimum arbitrage difference
+Short: For an enabled pair with no position already open in this direction, SyntheticBid(first expression) - SyntheticAsk(second expression) > minimum arbitrage difference

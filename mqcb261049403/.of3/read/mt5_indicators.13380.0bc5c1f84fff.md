@@ -1,0 +1,2 @@
+Long: (MA(close, shorter lookback) > MA(close, longer lookback) AND RSI(close, shorter lookback) >= RSI(close, longer lookback)) OR (MA(close, shorter lookback) >= MA(close, longer lookback) AND RSI(close, shorter lookback) > RSI(close, longer lookback))
+Short: (MA(close, shorter lookback) < MA(close, longer lookback) AND RSI(close, shorter lookback) <= RSI(close, longer lookback)) OR (MA(close, shorter lookback) <= MA(close, longer lookback) AND RSI(close, shorter lookback) < RSI(close, longer lookback))

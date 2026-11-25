@@ -1,0 +1,4 @@
+Long: Fisher CG oscillator main line((high+low)/2, T1, last completed bar) > Fisher CG oscillator signal line(T1, last completed bar) AND Fisher CG oscillator main line((high+low)/2, T1, last completed bar)[1] <= Fisher CG oscillator signal line(T1, last completed bar)[1]
+Short: Fisher CG oscillator main line((high+low)/2, T1, last completed bar) < Fisher CG oscillator signal line(T1, last completed bar) AND Fisher CG oscillator main line((high+low)/2, T1, last completed bar)[1] >= Fisher CG oscillator signal line(T1, last completed bar)[1]
+Exit: long, Fisher CG oscillator main line((high+low)/2, T1, last completed bar) < Fisher CG oscillator signal line(T1, last completed bar)
+Exit: short, Fisher CG oscillator main line((high+low)/2, T1, last completed bar) > Fisher CG oscillator signal line(T1, last completed bar)

@@ -1,0 +1,7 @@
+Calculation: Rising(k) = AO on T1 bar k >= AO on T1 bar k+1 AND AC on T1 bar k >= AC on T1 bar k+1; k indexes from the current T1 bar, so bar 0 may be forming and positive offsets are completed bars; for a positive signal-bar offset, check on each new T1 bar, and for offset 0, check on each chart tick
+Calculation: Falling(k) = AO on T1 bar k <= AO on T1 bar k+1 AND AC on T1 bar k <= AC on T1 bar k+1 AND (AO on T1 bar k < AO on T1 bar k+1 OR AC on T1 bar k < AC on T1 bar k+1)
+Calculation: trading allowed = time filter disabled OR (start hour < end hour AND ((current hour = start hour AND current minute >= start minute) OR (current hour > start hour AND current hour < end hour) OR (current hour = end hour AND current minute < end minute))) OR (start hour = end hour AND current hour = start hour AND current minute >= start minute AND current minute < end minute) OR (start hour > end hour AND ((current hour >= start hour AND current minute >= start minute) OR current hour < end hour OR (current hour = end hour AND current minute < end minute))
+Long: long entry enabled AND trading allowed AND Rising(signal-bar offset) AND NOT Rising(signal-bar offset + 1)
+Short: short entry enabled AND trading allowed AND Falling(signal-bar offset) AND NOT Falling(signal-bar offset + 1)
+Exit: long, (long exit enabled AND Falling(signal-bar offset)) OR NOT trading allowed
+Exit: short, (short exit enabled AND Rising(signal-bar offset)) OR NOT trading allowed

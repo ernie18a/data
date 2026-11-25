@@ -1,0 +1,7 @@
+Calculation: Up trigger = MA(close, shorter lookback, MA method, shift) crosses above MA(close, longer lookback, MA method, shift) AND (RSI filter disabled OR RSI(close, RSI lookback) > 50); when confirmation is active, retain the cross-bar low and trigger when a bar's high is at least the confirmation distance above it.
+Calculation: Down trigger = MA(close, shorter lookback, MA method, shift) crosses below MA(close, longer lookback, MA method, shift) AND (RSI filter disabled OR RSI(close, RSI lookback) < 50); when confirmation is active, retain the cross-bar high and trigger when a bar's low is at least the confirmation distance below it AND open >= close.
+Calculation: Direction = neutral initially; on an up trigger whose low differs from the previously stored up-trigger low by at least the flat-distance parameter, set direction to up and store that low; on a down trigger whose high differs from the previously stored down-trigger high by at least the flat-distance parameter, set direction to down and store that high; both stored prices start at 0.
+Long: Direction is up
+Short: Direction is down
+Long: Up trigger AND abs(low - previously stored up-trigger low) >= flat-distance parameter AND direction before update <= 0
+Short: Down trigger AND abs(high - previously stored down-trigger high) >= flat-distance parameter AND direction before update >= 0

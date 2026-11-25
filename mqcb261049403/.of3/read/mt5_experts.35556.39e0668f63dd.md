@@ -1,0 +1,4 @@
+Long: WPR(WPR period)[1] > WPR(WPR period)[2] + tolerance AND +DI(DI period)[1] < -DI(DI period)[1] - tolerance AND +DI(DI period)[2] > -DI(DI period)[2] + tolerance
+Short: WPR(WPR period)[1] < WPR(WPR period)[2] - tolerance AND +DI(DI period)[1] > -DI(DI period)[1] + tolerance AND +DI(DI period)[2] < -DI(DI period)[2] - tolerance
+Exit: long, MFI(MFI period)[1] > MFI level + tolerance OR (Stochastic main(%K period, %D period, slowing)[1] > Stochastic main(%K period, %D period, slowing)[2] + tolerance AND Stochastic main(%K period, %D period, slowing)[2] < Stochastic main(%K period, %D period, slowing)[3] - tolerance)
+Exit: short, MFI(MFI period)[1] < 100 - MFI level - tolerance OR (Stochastic main(%K period, %D period, slowing)[1] < Stochastic main(%K period, %D period, slowing)[2] - tolerance AND Stochastic main(%K period, %D period, slowing)[2] > Stochastic main(%K period, %D period, slowing)[3] + tolerance)

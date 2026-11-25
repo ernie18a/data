@@ -1,0 +1,2 @@
+Long: ((start hour = end hour) OR (start hour < end hour AND hour(datetime) >= start hour AND hour(datetime) < end hour) OR (start hour > end hour AND (hour(datetime) >= start hour OR hour(datetime) < end hour))) AND +DI(lookback) > -DI(lookback) AND ADX(lookback) != ADX threshold
+Short: ((start hour = end hour) OR (start hour < end hour AND hour(datetime) >= start hour AND hour(datetime) < end hour) OR (start hour > end hour AND (hour(datetime) >= start hour OR hour(datetime) < end hour))) AND +DI(lookback) < -DI(lookback) AND ADX(lookback) != ADX threshold

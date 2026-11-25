@@ -1,0 +1,5 @@
+Calculation: weighted stochastic sum = a*Stochastic(K1,D1,slowing,method,price field) + b*Stochastic(K2,D2,slowing,method,price field) + b*Stochastic(K3,D3,slowing,method,price field) + c*Stochastic(K4,D4,slowing,method,price field) + d*Stochastic(K5,D5,slowing,method,price field), where K1<K2<K3<K4<K5 and D1<D2<D3<D4<D5
+Long: weighted stochastic sum > SMMA(weighted stochastic sum,smoothing) on chart bars
+Short: weighted stochastic sum < SMMA(weighted stochastic sum,smoothing) on chart bars
+Long: on chart bars mapped from T1, weighted stochastic sum from the still-forming T1 bar > SMMA(weighted stochastic sum,smoothing) from the still-forming T1 bar
+Short: on chart bars mapped from T1, weighted stochastic sum from the still-forming T1 bar < SMMA(weighted stochastic sum,smoothing) from the still-forming T1 bar

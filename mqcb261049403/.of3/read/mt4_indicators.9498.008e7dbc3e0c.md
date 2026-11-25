@@ -1,0 +1,2 @@
+Long: high >= Renko(high, low, close, box size, box offset).high[1] + box size OR (high + low > high[1] + low[1] AND low <= Renko(high, low, close, box size, box offset).low[1] - box size) OR close > Renko(high, low, close, box size, box offset).open
+Short: (high + low <= high[1] + low[1] AND low <= Renko(high, low, close, box size, box offset).low[1] - box size) OR close <= Renko(high, low, close, box size, box offset).open

@@ -1,0 +1,4 @@
+Calculation: HigherCloseCount = count of the preceding count-lookback completed T1 bars whose close is greater than the last completed T1 close; evaluated on chart bars using the last completed T1 bar
+Calculation: LowerCloseCount = count of the preceding count-lookback completed T1 bars whose close is less than the last completed T1 close; evaluated on chart bars using the last completed T1 bar
+Long: HigherCloseCount >= count-lookback minus one AND LWMA(typical price, shorter lookback, T2, bar still forming) > LWMA(typical price, longer lookback, T2, bar still forming) AND low[2] < high[1] AND abs(close - close[2]) > point size × retracement parameter
+Short: LowerCloseCount >= count-lookback minus one AND LWMA(typical price, shorter lookback, T2, bar still forming) < LWMA(typical price, longer lookback, T2, bar still forming) AND low[1] < high[2] AND abs(close - close[1]) > point size × retracement parameter

@@ -1,0 +1,5 @@
+Calculation: bar range(T) = high(T, forming bar) - low(T, forming bar), sampled on each chart tick
+Long: close(T1, forming bar) > Median Price(T1, forming bar) AND ask > high(T1, forming bar) + spread AND bar range(T1) * take factor > minimum stop distance AND ask - spread - (high(T1, forming bar) + spread - bar range(T1) * stop factor) > minimum stop distance
+Short: close(T1, forming bar) < Median Price(T1, forming bar) AND bid < low(T1, forming bar) AND bar range(T1) * take factor > minimum stop distance AND low(T1, forming bar) + bar range(T1) * stop factor - bid - spread > minimum stop distance
+Exit: long, bid <= high(T1, forming bar at entry) + spread at entry - bar range(T1 at entry) * stop factor OR bid >= entry price + bar range(T1 at entry) * take factor
+Exit: short, ask >= low(T1, forming bar at entry) + bar range(T1 at entry) * stop factor OR ask <= entry price - bar range(T1 at entry) * take factor

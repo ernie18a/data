@@ -1,0 +1,4 @@
+Long: On chart bars using XTR MACD colors from T1, the last completed T1 bar is green AND the T1 bar still forming is not green
+Short: On chart bars using XTR MACD colors from T1, the last completed T1 bar is red AND the T1 bar still forming is not red
+Exit: long, low <= entry price − stop-loss distance OR high >= entry price + take-profit distance OR the last completed T1 bar is neutral OR the last completed and T1 bar still forming are both red
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price − take-profit distance OR the last completed T1 bar is neutral OR the last completed and T1 bar still forming are both green

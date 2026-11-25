@@ -1,0 +1,5 @@
+Calculation: S = EMA(100 * (close - lowest(low, stochastic lookback)) / (highest(high, stochastic lookback) - lowest(low, stochastic lookback)), EMA lookback) on T1 bars
+Long: S > DSS Bressert(S, stochastic lookback, EMA lookback) on the last completed T1 bar AND S <= DSS Bressert(S, stochastic lookback, EMA lookback) on the preceding completed T1 bar
+Short: S < DSS Bressert(S, stochastic lookback, EMA lookback) on the last completed T1 bar AND S >= DSS Bressert(S, stochastic lookback, EMA lookback) on the preceding completed T1 bar
+Exit: long, DSS Bressert(S, stochastic lookback, EMA lookback) > S on the last completed T1 bar AND DSS Bressert(S, stochastic lookback, EMA lookback) > S on the preceding completed T1 bar OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, S > DSS Bressert(S, stochastic lookback, EMA lookback) on the last completed T1 bar AND S > DSS Bressert(S, stochastic lookback, EMA lookback) on the preceding completed T1 bar OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

@@ -1,0 +1,2 @@
+Long: CCI(CMx(-F, k, L_adx, T1, last completed bar), round(abs(F × k)), T1, last completed bar) < oversold threshold
+Short: CCI(CMx(-F, k, L_adx, T1, last completed bar), round(abs(F × k)), T1, last completed bar) > overbought threshold

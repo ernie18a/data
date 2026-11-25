@@ -1,0 +1,21 @@
+Calculation: CMx CCI(T1–T10) = CCI(CMx oscillator(lookback, multiplier, ADX threshold), round(abs(lookback × multiplier))) on each timeframe’s still-forming bar, sampled on chart bars
+Long: CMx CCI(T1) > upper threshold
+Long: CMx CCI(T2) > upper threshold
+Long: CMx CCI(T3) > upper threshold
+Long: CMx CCI(T4) > upper threshold
+Long: CMx CCI(T5) > upper threshold
+Long: CMx CCI(T6) > upper threshold
+Long: CMx CCI(T7) > upper threshold
+Long: CMx CCI(T8) > upper threshold
+Long: CMx CCI(T9) > upper threshold
+Long: CMx CCI(T10) > upper threshold
+Short: CMx CCI(T1) < lower threshold
+Short: CMx CCI(T2) < lower threshold
+Short: CMx CCI(T3) < lower threshold
+Short: CMx CCI(T4) < lower threshold
+Short: CMx CCI(T5) < lower threshold
+Short: CMx CCI(T6) < lower threshold
+Short: CMx CCI(T7) < lower threshold
+Short: CMx CCI(T8) < lower threshold
+Short: CMx CCI(T9) < lower threshold
+Short: CMx CCI(T10) < lower threshold

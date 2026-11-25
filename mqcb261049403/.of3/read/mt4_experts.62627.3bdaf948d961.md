@@ -1,0 +1,2 @@
+Long: Retail short ratio >= sentiment threshold AND SMA(close, shorter lookback) > SMA(close, longer lookback)
+Short: Retail long ratio >= sentiment threshold AND SMA(close, shorter lookback) < SMA(close, longer lookback)

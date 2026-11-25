@@ -1,0 +1,6 @@
+Long: Bezier(close, T1, last completed bar, sampled on chart bars) >= Bezier(close, T1, previous T1 bar, sampled on chart bars)
+Long: Bezier(close, T1, two T1 bars ago, sampled on chart bars) > Bezier(close, T1, previous T1 bar, sampled on chart bars) AND Bezier(close, T1, last completed bar, sampled on chart bars) > Bezier(close, T1, previous T1 bar, sampled on chart bars)
+Short: Bezier(close, T1, previous T1 bar, sampled on chart bars) > Bezier(close, T1, last completed bar, sampled on chart bars)
+Short: Bezier(close, T1, two T1 bars ago, sampled on chart bars) < Bezier(close, T1, previous T1 bar, sampled on chart bars) AND Bezier(close, T1, last completed bar, sampled on chart bars) < Bezier(close, T1, previous T1 bar, sampled on chart bars)
+Exit: long, Bezier(close, T1, previous T1 bar, sampled on chart bars) > Bezier(close, T1, last completed bar, sampled on chart bars)
+Exit: short, Bezier(close, T1, previous T1 bar, sampled on chart bars) < Bezier(close, T1, last completed bar, sampled on chart bars)

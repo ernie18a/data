@@ -1,0 +1,2 @@
+Long: Gann ZigZag(high, low, open, close, chart pivot range) marks a low pivot OR Gann ZigZag(high, low, open, close, T1 pivot range, runs on T1 bars including the bar still forming) marks a low pivot on a chart bar whose low equals the pivot low
+Short: Gann ZigZag(high, low, open, close, chart pivot range) marks a high pivot OR Gann ZigZag(high, low, open, close, T1 pivot range, runs on T1 bars including the bar still forming) marks a high pivot on a chart bar whose high equals the pivot high

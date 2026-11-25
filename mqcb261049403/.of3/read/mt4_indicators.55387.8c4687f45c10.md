@@ -1,0 +1,2 @@
+Long: shift of highest high(high, lookback, starting 1) < shift of lowest low(low, lookback, starting 1) on chart bars
+Short: shift of highest high(high, lookback, starting 1) >= shift of lowest low(low, lookback, starting 1) on chart bars

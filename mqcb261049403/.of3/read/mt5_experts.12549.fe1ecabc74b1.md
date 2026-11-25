@@ -1,0 +1,2 @@
+Long: Modified Optimum Elliptic Filter[1] < Modified Optimum Elliptic Filter[2] AND Modified Optimum Elliptic Filter[0] > Modified Optimum Elliptic Filter[1]
+Short: Modified Optimum Elliptic Filter[1] > Modified Optimum Elliptic Filter[2] AND Modified Optimum Elliptic Filter[0] < Modified Optimum Elliptic Filter[1]

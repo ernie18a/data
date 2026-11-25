@@ -1,0 +1,33 @@
+Calculation: Bollinger bands = BollingerBands(close, band lookback, deviation multiplier)
+Calculation: High and low moving averages = MA(high, shorter lookback), MA(high, longer lookback), MA(low, shorter lookback), MA(low, longer lookback), with the longer lookback greater than the shorter lookback
+Calculation: Close EMA = EMA(close, lookback)
+Calculation: Large body = abs(close - open) > body-size factor × ATR(lookback)
+Calculation: Up fractal = a bar's high is at least every high in the preceding left lookback and strictly greater than every high in the following right lookback
+Calculation: Down fractal = a bar's low is at most every low in the preceding left lookback and strictly less than every low in the following right lookback
+Calculation: Follow-through phases start at 0. At each bar, an extreme short marker on the preceding bar sets the short phase to 1 and the long phase to 0; then an extreme long marker on the preceding bar sets the long phase to 1 and the short phase to 0. A phase of 1 becomes 2 when the current bar meets its follow-through condition. After the MHV check, the long phase becomes 0 if it is at least 2 and the preceding bar's high is above its upper Bollinger band; otherwise phases persist.
+Short: Close EMA >= middle Bollinger band AND shorter and longer high MAs and shorter and longer low MAs are each <= middle Bollinger band
+Long: Close EMA <= middle Bollinger band AND shorter and longer high MAs and shorter and longer low MAs are each >= middle Bollinger band
+Short: (open > middle Bollinger band AND close < middle Bollinger band AND close < both low MAs) OR (open[1] > middle Bollinger band[1] AND close[1] > middle Bollinger band[1] AND close < middle Bollinger band AND open < middle Bollinger band AND close < both low MAs)
+Long: (open < middle Bollinger band AND close > middle Bollinger band AND close > both high MAs) OR (open[1] < middle Bollinger band[1] AND close[1] < middle Bollinger band[1] AND close > middle Bollinger band AND open > middle Bollinger band AND close > both high MAs)
+Short: Both low MAs > middle Bollinger band AND open > close AND close < both low MAs AND close > middle Bollinger band
+Long: Both high MAs < middle Bollinger band AND open < close AND close > both high MAs AND close < middle Bollinger band
+Short: open < middle Bollinger band AND close < middle Bollinger band AND close < both low MAs AND close > lower Bollinger band AND NOT (open[1] > middle Bollinger band[1] AND close[1] > middle Bollinger band[1])
+Long: open > middle Bollinger band AND close > middle Bollinger band AND close > both high MAs AND close < upper Bollinger band AND NOT (open[1] < middle Bollinger band[1] AND close[1] < middle Bollinger band[1])
+Short: Shorter high MA >= upper Bollinger band on the current bar or within the preceding extreme-qualification lookback AND (close < open OR close[1] < open[1]) AND ((high >= upper Bollinger band AND close < upper Bollinger band) OR (high[1] >= upper Bollinger band AND close < upper Bollinger band) OR (open <= upper Bollinger band AND close[1] >= upper Bollinger band[1])) AND no extreme short marker occurs within the preceding short signal-exclusion lookback; the qualification lookback is longer than the signal-exclusion lookback
+Long: Shorter low MA <= lower Bollinger band on the current bar or within the preceding extreme-qualification lookback AND (close > open OR close[1] > open[1]) AND ((low <= lower Bollinger band AND close > lower Bollinger band) OR (low[1] <= lower Bollinger band[1] AND close > lower Bollinger band) OR (open >= lower Bollinger band AND close[1] <= lower Bollinger band[1])) AND no extreme long marker occurs within the preceding short signal-exclusion lookback; the qualification lookback is longer than the signal-exclusion lookback
+Short: Short follow-through phase entering the decision is 1 AND (low <= shorter low MA OR low <= longer low MA)
+Long: Long follow-through phase entering the decision is 1 AND (high >= shorter high MA OR high >= longer high MA)
+Short: Short follow-through phase >= 2 AND up fractal is present on the preceding bar AND high[1] > middle Bollinger band[1] AND no short follow-through marker or long momentum marker occurs on the current or preceding bar
+Long: Long follow-through phase >= 2 AND down fractal is present on the preceding bar AND low[1] < middle Bollinger band[1] AND no long follow-through marker or short momentum marker occurs on the current or preceding bar
+Short: close <= lower Bollinger band AND no extreme long marker on the current bar
+Long: close >= upper Bollinger band AND no extreme short marker on the current bar
+Short: (high >= either high MA) AND (close <= either high MA) AND close <= middle Bollinger band
+Long: (low <= either low MA) AND (close >= either low MA) AND close >= middle Bollinger band
+Short: high > close EMA AND close < close EMA AND, within the preceding trend-pattern lookback, two adjacent bars had highs below their respective close EMAs AND, within the preceding large-body lookback, a large body occurred; the large-body lookback is longer than the trend-pattern lookback
+Long: low < close EMA AND close > close EMA AND, within the preceding trend-pattern lookback, two adjacent bars had lows above their respective close EMAs AND, within the preceding large-body lookback, a large body occurred; the large-body lookback is longer than the trend-pattern lookback
+Short: Close EMA was above the upper Bollinger band within the longer EMA-extension lookback AND close < open AND close < upper Bollinger band AND high reached or exceeded the upper Bollinger band within the shorter band-touch lookback; the EMA-extension lookback is longer than the band-touch lookback
+Long: Close EMA was below the lower Bollinger band within the longer EMA-extension lookback AND close > open AND close > lower Bollinger band AND low reached or fell below the lower Bollinger band within the shorter band-touch lookback; the EMA-extension lookback is longer than the band-touch lookback
+Short: close crosses below middle Bollinger band AND close < close EMA OR close crosses below close EMA AND close < middle Bollinger band
+Long: close crosses above middle Bollinger band AND close > close EMA OR close crosses above close EMA AND close > middle Bollinger band
+Short: high > upper Bollinger band AND close < upper Bollinger band AND open < upper Bollinger band
+Long: low < lower Bollinger band AND close > lower Bollinger band AND open > lower Bollinger band

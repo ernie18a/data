@@ -1,0 +1,3 @@
+Calculation: Smoothed Chaikin Oscillator = Moving Average(Chaikin Oscillator(high, low, close, volume, shorter EMA lookback, longer EMA lookback), smoothing lookback, selected method), calculated on T1 bars at the selected signal bar (current forming or last completed)
+Long: Chaikin Oscillator(high, low, close, volume, shorter EMA lookback, longer EMA lookback) crosses above Smoothed Chaikin Oscillator AND both values are below zero on T1 bars at the selected signal bar
+Short: Chaikin Oscillator(high, low, close, volume, shorter EMA lookback, longer EMA lookback) crosses below Smoothed Chaikin Oscillator AND both values are above zero on T1 bars at the selected signal bar

@@ -1,0 +1,2 @@
+Calculation: P = (high(T1, last completed bar) + low(T1, last completed bar) + close(T1, last completed bar)) / 3, sampled on chart bars
+Long: AO[0] > 0 AND CCI(applied price, lookback)[signal-bar offset] >= 0 AND ask price > P AND (AO[1] < 0 OR CCI(applied price, lookback)[signal-bar offset + 1] <= 0 OR close(T2, last completed bar, sampled on chart bars) < P)

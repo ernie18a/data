@@ -1,0 +1,4 @@
+Calculation: Upper Fractal Angle = arctan((latest upper Fractal price − previous upper Fractal price) × P / (elapsed time in minutes between them / P))
+Calculation: Lower Fractal Angle = arctan((latest lower Fractal price − previous lower Fractal price) × P / (elapsed time in minutes between them / P))
+Long: Upper Fractal Angle computed on T1 bars, using the containing T1 bar still forming on each chart bar > Lower Fractal Angle computed on T1 bars, using the containing T1 bar still forming on each chart bar
+Short: Upper Fractal Angle computed on T1 bars, using the containing T1 bar still forming on each chart bar < Lower Fractal Angle computed on T1 bars, using the containing T1 bar still forming on each chart bar

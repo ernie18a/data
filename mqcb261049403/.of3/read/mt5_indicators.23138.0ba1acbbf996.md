@@ -1,0 +1,3 @@
+Calculation: Spearman(T) = Spearman rank correlation of close over a lookback, calculated on T bars
+Long: Spearman(T1, current/forming bar) > Spearman(T2, current/forming bar), where T1 is shorter than T2; compare chart bars carrying the mapped values from each timeframe
+Short: Spearman(T1, current/forming bar) < Spearman(T2, current/forming bar), where T1 is shorter than T2; compare chart bars carrying the mapped values from each timeframe

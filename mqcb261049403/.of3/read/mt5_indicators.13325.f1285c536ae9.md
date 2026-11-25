@@ -1,0 +1,5 @@
+Calculation: weighted momentum = weight A × Momentum(applied-price parameter, lookback 1) + weight B × Momentum(applied-price parameter, lookback 2) + weight B × Momentum(applied-price parameter, lookback 3) + weight C × Momentum(applied-price parameter, lookback 4) + weight D × Momentum(applied-price parameter, lookback 5)
+Long: weighted momentum > SMMA(weighted momentum, smoothing period)
+Short: weighted momentum < SMMA(weighted momentum, smoothing period)
+Long: On chart bars taking values from calculations on T1 bars, using the current forming T1 bar: weighted momentum > SMMA(weighted momentum, smoothing period)
+Short: On chart bars taking values from calculations on T1 bars, using the current forming T1 bar: weighted momentum < SMMA(weighted momentum, smoothing period)

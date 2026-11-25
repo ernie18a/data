@@ -1,0 +1,2 @@
+Exit: long, high > entry price + take-profit distance OR low < entry price - stop-loss distance OR high > entry price + breakeven distance AND low <= entry price OR high > entry price + trailing distance AND low <= highest high since entry - trailing distance
+Exit: short, low < entry price - take-profit distance OR high > entry price + stop-loss distance OR low < entry price - breakeven distance AND high >= entry price OR low < entry price - trailing distance AND high >= lowest low since entry + trailing distance

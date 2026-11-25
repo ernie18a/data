@@ -1,0 +1,4 @@
+Long: MACD line(close, shorter lookback, longer lookback, signal lookback, T1, last completed bar), sampled on chart bars, > MACD signal line(close, shorter lookback, longer lookback, signal lookback, T1, last completed bar), sampled on chart bars AND MACD line(close, shorter lookback, longer lookback, signal lookback, T1, last completed bar), sampled on chart bars, != 0
+Short: MACD line(close, shorter lookback, longer lookback, signal lookback, T1, last completed bar), sampled on chart bars, < MACD signal line(close, shorter lookback, longer lookback, signal lookback, T1, last completed bar), sampled on chart bars AND MACD line(close, shorter lookback, longer lookback, signal lookback, T1, last completed bar), sampled on chart bars, != 0
+Exit: long, close[1] = upper Bollinger Band(close, lookback, standard deviations)[1]
+Exit: short, close[1] = lower Bollinger Band(close, lookback, standard deviations)[1]

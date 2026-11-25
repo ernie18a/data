@@ -1,0 +1,4 @@
+Long: On T1 bars, MA(close, lookback, T1, last completed bar) > MA(close, lookback, T1, preceding bar) AND MA(close, lookback, T1, preceding bar) < MA(close, lookback, T1, bar before preceding bar)
+Short: On T1 bars, MA(close, lookback, T1, last completed bar) < MA(close, lookback, T1, preceding bar) AND MA(close, lookback, T1, preceding bar) > MA(close, lookback, T1, bar before preceding bar)
+Exit: long, On T1 bars, MA(close, lookback, T1, last completed bar) < MA(close, lookback, T1, preceding bar)
+Exit: short, On T1 bars, MA(close, lookback, T1, last completed bar) > MA(close, lookback, T1, preceding bar)

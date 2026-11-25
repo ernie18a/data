@@ -1,0 +1,6 @@
+Calculation: Average bar range = SMA(abs(high - low), range lookback)
+Calculation: Selected WPR lookback = default WPR lookback; set to gap-selected WPR lookback if any k from 0 to gap scan lookback − 1 satisfies abs(open[k] − close[k+1]) ≥ gap multiple × Average bar range; then set to movement-selected WPR lookback if any k from 0 to movement scan lookback − 1 satisfies abs(close[k + close separation] − close[k]) ≥ movement multiple × Average bar range
+Calculation: Upper band = upper anchor + shared band-width parameter
+Calculation: Lower band = lower anchor − shared band-width parameter
+Long: Current Williams %R(selected lookback), normalized to 0–100 using the current bar's selected lookback for all values, is above Upper band AND the most recent prior value outside the inclusive Lower band to Upper band interval is below Lower band; evaluate on chart bars or on the still-forming T1 bar and sample T1 results on chart bars mapped to that bar
+Short: Current Williams %R(selected lookback), normalized to 0–100 using the current bar's selected lookback for all values, is below Lower band AND the most recent prior value outside the inclusive Lower band to Upper band interval is above Upper band; evaluate on chart bars or on the still-forming T1 bar and sample T1 results on chart bars mapped to that bar

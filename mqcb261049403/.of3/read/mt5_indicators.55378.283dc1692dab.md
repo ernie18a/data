@@ -1,0 +1,2 @@
+Long: selected chart bar open < Donchian midpoint(high, low, lookback) on its mapped T1 bar (evaluated on chart bars; the mapped T1 bar may be forming) AND selected chart bar close > that midpoint
+Short: selected chart bar open > Donchian midpoint(high, low, lookback) on its mapped T1 bar (evaluated on chart bars; the mapped T1 bar may be forming) AND selected chart bar close < that midpoint

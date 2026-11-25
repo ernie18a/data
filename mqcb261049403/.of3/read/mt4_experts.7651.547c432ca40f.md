@@ -1,0 +1,7 @@
+Calculation: ERP position = Above if current price >= SMA(median price, ERP lookback, T1, current forming bar) + ERP change buffer after a prior Below state, or >= SMA(...) - ERP change buffer after a prior Above state, or >= SMA(...) initially; otherwise Below; sample the current T1 bar on each chart tick
+Long: ERP position is Below for Toward trades or Above for Away trades
+Short: ERP position is Below for Away trades or Above for Toward trades
+Exit: long, Toward trade AND (current price >= entry price + Toward take-profit distance in points OR Toward stop-loss distance > 0 AND current price <= entry price - Toward stop-loss distance in points)
+Exit: short, Toward trade AND (current price <= entry price - Toward take-profit distance in points OR Toward stop-loss distance > 0 AND current price >= entry price + Toward stop-loss distance in points)
+Exit: long, Away trade AND (current price >= entry price + Away take-profit distance in points OR Away stop-loss distance > 0 AND current price <= entry price - Away stop-loss distance in points)
+Exit: short, Away trade AND (current price <= entry price - Away take-profit distance in points OR Away stop-loss distance > 0 AND current price >= entry price + Away stop-loss distance in points)

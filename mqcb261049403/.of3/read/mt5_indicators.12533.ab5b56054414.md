@@ -1,0 +1,2 @@
+Long: CCI(typical price, CCI lookback) * Force Index(close, volume, Force Index lookback) >= level AND CCI(typical price, CCI lookback) > 0 AND Force Index(close, volume, Force Index lookback) > 0
+Short: CCI(typical price, CCI lookback) * Force Index(close, volume, Force Index lookback) >= level AND CCI(typical price, CCI lookback) < 0 AND Force Index(close, volume, Force Index lookback) < 0

@@ -1,0 +1,2 @@
+Long: At close of the signal-offset T1 bar, DeMarker(lookback, T1, signal-offset bar) > oversold level AND DeMarker(lookback, T1, preceding bar) <= oversold level
+Short: At close of the signal-offset T1 bar, DeMarker(lookback, T1, signal-offset bar) < overbought level AND DeMarker(lookback, T1, preceding bar) >= overbought level

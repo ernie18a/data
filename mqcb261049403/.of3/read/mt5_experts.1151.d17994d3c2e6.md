@@ -1,0 +1,2 @@
+Long: On T1 bars, the exponential coefficient-of-line histogram on the last completed bar < 0 AND its value on the preceding completed bar > 0
+Short: On T1 bars, the exponential coefficient-of-line histogram on the last completed bar > 0 AND its value on the preceding completed bar < 0

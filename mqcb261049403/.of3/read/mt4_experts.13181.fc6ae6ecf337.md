@@ -1,0 +1,6 @@
+Calculation: Long stop price = entry price - stop-loss distance initially; raise it to entry price + break-even offset when high - entry price >= break-even trigger and this exceeds the current stop price; then raise it to high - trailing distance when high > entry price + trailing activation and high - trailing distance > current stop price + trailing update margin
+Calculation: Short stop price = entry price + stop-loss distance initially; lower it to entry price - break-even offset when entry price - low >= break-even trigger and this is below the current stop price; then lower it to low + trailing distance when low < entry price - trailing activation and low + trailing distance < current stop price - trailing update margin
+Exit: long, stop-loss distance > 0 AND low <= long stop price
+Exit: long, take-profit distance > 0 AND high >= entry price + take-profit distance
+Exit: short, stop-loss distance > 0 AND high >= short stop price
+Exit: short, take-profit distance > 0 AND low <= entry price - take-profit distance

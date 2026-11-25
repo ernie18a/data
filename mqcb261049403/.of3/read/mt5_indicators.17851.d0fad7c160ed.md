@@ -1,0 +1,8 @@
+Calculation: ADXm value = ADXm(selected close, high, and low price sources after selected price smoothing, with the ADXm lookback optionally adapted by VHF
+Calculation: effective level lookback = configured level lookback, using the ADXm lookback for the same-period setting and one bar for the disabled setting
+Calculation: upper level = minimum(ADXm value, effective level lookback) + upper percentile / 100 × (maximum(ADXm value, effective level lookback) − minimum(ADXm value, effective level lookback)) for floating levels, or Quantile(ADXm value, upper percentile, effective level lookback) for quantile levels
+Calculation: lower level = minimum(ADXm value, effective level lookback) + lower percentile / 100 × (maximum(ADXm value, effective level lookback) − minimum(ADXm value, effective level lookback)) for floating levels, or Quantile(ADXm value, lower percentile, effective level lookback) for quantile levels
+Calculation: middle level = midpoint(minimum(ADXm value, effective level lookback), maximum(ADXm value, effective level lookback)) for floating levels, or Quantile(ADXm value, midpoint(lower percentile, upper percentile), effective level lookback) for quantile levels
+Calculation: ADXm direction state = with a multiple-bar lookback and the selected level trigger, up above the upper level, down below the lower level, and neutral strictly between them; with a multiple-bar lookback and the selected midpoint trigger, up above the middle level and down below it; otherwise, up when ADXm value > ADXm value[1] and down when ADXm value < ADXm value[1]; retain the previous state on equality and start neutral
+Long: ADXm direction state = up
+Short: ADXm direction state = down

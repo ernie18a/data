@@ -1,0 +1,6 @@
+Calculation: Stochastic = 100 × sum over the slowing lookback of (the median of the selected high-source, low-source, and close-source values minus the rolling minimum of their per-bar minimum over the stochastic lookback) divided by the sum over the slowing lookback of (the rolling maximum of their per-bar maximum over the stochastic lookback minus the rolling minimum of their per-bar minimum over the stochastic lookback); zero when the denominator is zero
+Calculation: Upper band = MA(Stochastic, moving-average lookback, moving-average method) + deviation multiplier × standard deviation(Stochastic, deviation lookback, sample-correction setting); when the current trend is short, cap a rise at the prior upper band
+Calculation: Lower band = MA(Stochastic, moving-average lookback, moving-average method) − deviation multiplier × standard deviation(Stochastic, deviation lookback, sample-correction setting); when the current trend is long, floor a fall at the prior lower band
+Calculation: Trend = 1 if Stochastic > prior upper band, else −1 if Stochastic < prior lower band, else prior trend
+Long: Trend = 1
+Short: Trend = −1

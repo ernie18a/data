@@ -1,0 +1,2 @@
+Long: high[1] - low[1] > range threshold AND close[1] > open[1] AND close[1] - open[1] > body threshold
+Short: high[1] - low[1] > range threshold AND open[1] > close[1] AND open[1] - close[1] > body threshold

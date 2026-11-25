@@ -1,0 +1,2 @@
+Long: Momentum(close, momentum lookback)[1] < long momentum threshold AND RSI(close, RSI lookback)[1] < long RSI threshold
+Short: Momentum(close, momentum lookback)[1] > short momentum threshold AND RSI(close, RSI lookback)[1] > short RSI threshold

@@ -1,0 +1,2 @@
+Long: Chandelier Exit direction(high, low, close, lookback, offset, T1, bar still forming) is bearish AND Chandelier Exit direction(high, low, close, lookback, offset, T1, last completed bar) was bullish
+Short: Chandelier Exit direction(high, low, close, lookback, offset, T1, bar still forming) is bullish AND Chandelier Exit direction(high, low, close, lookback, offset, T1, last completed bar) was bearish

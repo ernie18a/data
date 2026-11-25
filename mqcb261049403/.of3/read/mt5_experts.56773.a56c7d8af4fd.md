@@ -1,0 +1,4 @@
+Calculation: stored-close change(T) = close of the last stored bar of T - close of the first stored bar of T, or 0 when fewer than two bars are stored
+Calculation: stored-close range(T) = maximum stored close of T - minimum stored close of T, or the empty-range default when no bars are stored
+Long: at each chart tick, Weibull and Poisson probabilities are available AND stored-close change(T1) < 0 AND stored-close change(T2) < 0 AND Poisson probability > breakout threshold AND Weibull probability > mean-reversion threshold AND stored-close range(T3) > minimum-volatility threshold
+Short: at each chart tick, Weibull probability is available AND Weibull probability < mean-reversion threshold AND absolute value of stored-close change(T3) < flatness threshold

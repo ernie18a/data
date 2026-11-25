@@ -1,0 +1,4 @@
+Long: MACD(close, fast lookback, slow lookback, signal lookback, T1, last completed bar).main != 0 AND MACD(close, fast lookback, slow lookback, signal lookback, T1, last completed bar).main > MACD(close, fast lookback, slow lookback, signal lookback, T1, last completed bar).signal
+Short: MACD(close, fast lookback, slow lookback, signal lookback, T1, last completed bar).main != 0 AND MACD(close, fast lookback, slow lookback, signal lookback, T1, last completed bar).main < MACD(close, fast lookback, slow lookback, signal lookback, T1, last completed bar).signal
+Exit: long, close[1] == Bollinger Bands(close, lookback, deviation).upper[1]
+Exit: short, close[1] == Bollinger Bands(close, lookback, deviation).lower[1]

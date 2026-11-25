@@ -1,0 +1,2 @@
+Exit: long, scheduler enabled AND close-all option enabled AND current datetime is outside the configured trading intervals for the current weekday
+Exit: short, scheduler enabled AND close-all option enabled AND current datetime is outside the configured trading intervals for the current weekday

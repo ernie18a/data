@@ -1,0 +1,2 @@
+Long: Parabolic SAR(T1, current forming bar, acceleration parameter, maximum acceleration parameter) < low(T1, current forming bar)
+Short: Parabolic SAR(T1, current forming bar, acceleration parameter, maximum acceleration parameter) > high(T1, current forming bar)

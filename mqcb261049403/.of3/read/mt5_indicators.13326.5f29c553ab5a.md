@@ -1,0 +1,4 @@
+Long: Zero-lag momentum OSMA(applied price, two separate smoothing lookbacks, five independently weighted Momentum(applied price, lookback) terms with lookbacks ordered shortest to longest) > 0
+Short: Zero-lag momentum OSMA(applied price, two separate smoothing lookbacks, five independently weighted Momentum(applied price, lookback) terms with lookbacks ordered shortest to longest) < 0
+Long: Zero-lag momentum OSMA(applied price, two separate smoothing lookbacks, five independently weighted Momentum(applied price, lookback) terms with lookbacks ordered shortest to longest, T1 current bar sampled on chart bars) > 0
+Short: Zero-lag momentum OSMA(applied price, two separate smoothing lookbacks, five independently weighted Momentum(applied price, lookback) terms with lookbacks ordered shortest to longest, T1 current bar sampled on chart bars) < 0

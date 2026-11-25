@@ -1,0 +1,2 @@
+Long: NRTR(close, range lookback, digit adjustment, T1, still-forming bar) trend is up on chart bars
+Short: NRTR(close, range lookback, digit adjustment, T1, still-forming bar) trend is down on chart bars

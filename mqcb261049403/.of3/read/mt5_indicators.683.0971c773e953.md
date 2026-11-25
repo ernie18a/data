@@ -1,0 +1,5 @@
+Calculation: LowerBand = min(current close, lows over the lookback bars ending at the current bar) + [max(current low, highs over those bars) − min(current close, lows over those bars)] × (threshold-base parameter − risk parameter)/100
+Calculation: UpperBand = max(current low, highs over the lookback bars ending at the current bar) − [max(current low, highs over those bars) − min(current close, lows over those bars)] × (threshold-base parameter − risk parameter)/100
+Calculation: TrendState = initialize down; on each T1 bar retain the prior state, set down if close < LowerBand, then set up if close > UpperBand, with the latter taking priority if both conditions hold; chart bars use the T1 bar selected by the bar-index parameter, which may be still forming or completed
+Long: TrendState = up
+Short: TrendState = down

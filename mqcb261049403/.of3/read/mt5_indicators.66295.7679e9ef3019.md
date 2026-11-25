@@ -1,0 +1,3 @@
+Calculation: score = for T1 (fast), T2 (medium), and T3 (slow), sum each timeframe's Stochastic weight × +1 when Stochastic %K(high, low, close, K lookback, slowing) > %D(..., D lookback), otherwise × −1; RSI weight × +1 when RSI(close, RSI lookback) > RSI midpoint, otherwise × −1; and MACD weight × +1 when MACD main(close, fast lookback, slow lookback) > MACD signal(..., signal lookback), otherwise × −1; use the same indicator lookbacks on all three timeframes, with MACD fast lookback shorter than slow lookback; take each value from the still-forming T1, T2, or T3 bar mapped to each chart bar
+Long: score > score threshold
+Short: score < −score threshold

@@ -1,0 +1,3 @@
+Calculation: Aroon trend = computed on T1 bars and read on chart bars from the selected T1 bar; set to +1 when Aroon Up(lookback) > Aroon Down(lookback) and Aroon Up(lookback) >= threshold, set to -1 when Aroon Up(lookback) < Aroon Down(lookback) and Aroon Down(lookback) >= threshold, otherwise retain the previous value (initially 0); the selected bar may be forming or completed according to the bar selector
+Long: Aroon trend(T1, selected bar) > 0
+Short: Aroon trend(T1, selected bar) < 0

@@ -1,0 +1,3 @@
+Calculation: signal level = highest(high, SSP, T1, current bar) - (highest(high, SSP, T1, current bar) - lowest(low, SSP, T1, current bar)) * Kmax / 100; calculated on T1 bars with the current bar still forming and mapped to chart bars
+Long: signal level[1] <= signal level[KPer+1] AND signal level[0] > signal level[KPer]
+Short: signal level[1] >= signal level[KPer+1] AND signal level[0] < signal level[KPer]

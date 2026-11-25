@@ -1,0 +1,2 @@
+Long: on chart bars, each of the current and preceding bars in a lookback of T1 bars has close > open
+Short: on chart bars, each of the current and preceding bars in a lookback of T1 bars has close < open

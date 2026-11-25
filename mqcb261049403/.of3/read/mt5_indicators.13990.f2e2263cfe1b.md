@@ -1,0 +1,2 @@
+Long: On chart bars, Laguerre RSI(ADX +DI(ADX lookback), gamma) calculated on T1 bars using the still-forming T1 bar > Laguerre RSI(ADX -DI(ADX lookback), gamma) calculated on T1 bars using the still-forming T1 bar
+Short: On chart bars, Laguerre RSI(ADX +DI(ADX lookback), gamma) calculated on T1 bars using the still-forming T1 bar < Laguerre RSI(ADX -DI(ADX lookback), gamma) calculated on T1 bars using the still-forming T1 bar

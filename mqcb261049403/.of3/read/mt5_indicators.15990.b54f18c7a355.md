@@ -1,0 +1,3 @@
+Calculation: NormalizedRangeGap = (low - high[lookback - 1]) / SUM(high - low, lookback) when low < high[lookback - 1]; otherwise (high - low[lookback - 1]) / SUM(high - low, lookback) when high > low[lookback - 1]
+Long: NormalizedRangeGap > 0 AND (NormalizedRangeGap > NormalizedRangeGap[1] OR NormalizedRangeGap < NormalizedRangeGap[1])
+Short: NormalizedRangeGap < 0 AND (NormalizedRangeGap < NormalizedRangeGap[1] OR NormalizedRangeGap > NormalizedRangeGap[1])

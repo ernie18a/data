@@ -1,0 +1,7 @@
+Calculation: upper band = min(HMA(close, HMA lookback) × (1 + shift percentage / 100) + ATR(ATR lookback) × ATR sensitivity, prior upper band) when trend state is bearish; otherwise HMA(close, HMA lookback) × (1 + shift percentage / 100) + ATR(ATR lookback) × ATR sensitivity
+Calculation: lower band = max(LMA(close, LMA lookback) × (1 - shift percentage / 100) - ATR(ATR lookback) × ATR sensitivity, prior lower band) when trend state is bullish; otherwise LMA(close, LMA lookback) × (1 - shift percentage / 100) - ATR(ATR lookback) × ATR sensitivity
+Calculation: trend state = bearish if close < prior lower band; otherwise bullish if close > prior upper band; otherwise prior trend state, initially neutral
+Long: trend state is bullish AND prior trend state is not bullish
+Short: trend state is bearish AND prior trend state is not bearish
+Long: on T1 bars, trend state is bullish AND prior trend state is not bullish, using the still-forming T1 bar and T1-specific lookbacks, shift percentage, and ATR sensitivity; copy the signal to chart bars from the T1 bar containing each chart bar's opening time
+Short: on T1 bars, trend state is bearish AND prior trend state is not bearish, using the still-forming T1 bar and T1-specific lookbacks, shift percentage, and ATR sensitivity; copy the signal to chart bars from the T1 bar containing each chart bar's opening time

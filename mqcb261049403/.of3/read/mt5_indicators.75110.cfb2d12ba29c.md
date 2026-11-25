@@ -1,0 +1,6 @@
+Calculation: Pivot-weighted center = let P be PivotHigh(high, swing radius, swing radius) if the candidate high, swing-radius bars ago, is at least each preceding high and greater than each following high; otherwise let P be PivotLow(low, swing radius, swing radius) if the candidate low is at most each preceding low and less than each following low; if P exists, use P when the prior center is undefined, otherwise (2 × prior center + P) / 3; if P does not exist, carry forward the prior center.
+Calculation: Upper trail = center − ATR(high, low, close, ATR lookback) × ATR multiplier, or max of that value and the prior upper trail when the prior close is above the prior upper trail; undefined unless center exists and ATR is positive.
+Calculation: Lower trail = center + ATR(high, low, close, ATR lookback), or min of that value and the prior lower trail when the prior close is below the prior lower trail; undefined unless center exists and ATR is positive.
+Calculation: Trend direction = 1 initially; otherwise, when center exists and ATR is positive, 1 if the prior lower trail exists and close is above it, else −1 if the prior upper trail exists and close is below it, else the prior trend direction.
+Long: Trend direction changes from −1 to 1.
+Short: Trend direction changes from 1 to −1.

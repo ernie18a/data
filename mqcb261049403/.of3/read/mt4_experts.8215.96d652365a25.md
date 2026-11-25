@@ -1,0 +1,4 @@
+Long: Stochastic signal line(close, stochastic K lookback, stochastic D lookback, stochastic slowing, SMMA, close/close, current forming chart bar) < long stochastic threshold AND Williams %R(high, low, close, Williams %R lookback, last completed chart bar) < long Williams %R threshold
+Short: Stochastic signal line(close, stochastic K lookback, stochastic D lookback, stochastic slowing, SMMA, close/close, current forming chart bar) > short stochastic threshold AND Williams %R(high, low, close, Williams %R lookback, last completed chart bar) > short Williams %R threshold
+Exit: long, low <= entry price - stop-loss distance
+Exit: short, high >= entry price + stop-loss distance

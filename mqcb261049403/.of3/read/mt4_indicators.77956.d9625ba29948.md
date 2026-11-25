@@ -1,0 +1,4 @@
+Calculation: Active session high = maximum(high) over chart bars opening within an enabled configured session; available after the session ends and retired at the first bar of its next instance, after a short sweep if first-sweep-only is enabled, or after an outside-session bar with high > level AND close >= level if break-cancel is enabled
+Calculation: Active session low = minimum(low) over chart bars opening within an enabled configured session; available after the session ends and retired at the first bar of its next instance, after a long sweep if first-sweep-only is enabled, or after an outside-session bar with low < level AND close <= level if break-cancel is enabled
+Long: On a closed chart bar outside an enabled session, low < its active session low AND close > its active session low
+Short: On a closed chart bar outside an enabled session, high > its active session high AND close < its active session high

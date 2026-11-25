@@ -1,0 +1,6 @@
+Calculation: Fast filter difference = Σ(k=0 to fast short lookback−1) fast short coefficient[k] × applied price[k bars ago] − Σ(k=0 to fast long lookback−1) fast long coefficient[k] × applied price[k bars ago]; fast long lookback > fast short lookback, fast short lookback > slow short lookback, and slow long lookback > fast long lookback
+Calculation: Slow filter difference = Σ(k=0 to slow short lookback−1) slow short coefficient[k] × applied price[k bars ago] − Σ(k=0 to slow long lookback−1) slow long coefficient[k] × applied price[k bars ago]; slow long lookback > slow short lookback
+Long: Fast filter difference > Slow filter difference
+Short: Fast filter difference < Slow filter difference
+Long: On chart bars, Fast filter difference from the still-forming T1 bar, sampled when that T1 bar opens and carried through its interval, > corresponding Slow filter difference
+Short: On chart bars, Fast filter difference from the still-forming T1 bar, sampled when that T1 bar opens and carried through its interval, < corresponding Slow filter difference

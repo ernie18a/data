@@ -1,0 +1,2 @@
+Long: Stochastic signal line(K lookback, D lookback, slowing, SMMA, low/high price field) on the current bar < lower threshold AND RSI(close, lookback) on the current bar < lower threshold
+Short: Stochastic signal line(K lookback, D lookback, slowing, SMMA, low/high price field) on the current bar > upper threshold AND RSI(close, lookback) on the current bar > upper threshold

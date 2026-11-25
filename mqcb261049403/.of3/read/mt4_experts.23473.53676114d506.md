@@ -1,0 +1,9 @@
+Calculation: slow stochastic = Stochastic signal(longer K lookback, longer D lookback, longer slowing lookback, EMA smoothing, low/high price, chart bars, last completed bar)
+Calculation: fast stochastic = Stochastic main(shorter K lookback, shorter D lookback, shorter slowing lookback, SMA smoothing, low/high price, chart bars, last completed bar)
+Calculation: fast moving average = LWMA(typical price, shorter lookback, T1 bar still forming, sampled on chart bars)
+Calculation: slow moving average = LWMA(typical price, longer lookback, T1 bar still forming, sampled on chart bars)
+Calculation: equity reference = current account equity when no strategy positions are open; otherwise, prior account equity if it exceeds the prior equity reference, else current account equity; update prior account equity to current account equity
+Long: number of open strategy positions < maximum trade count AND slow stochastic <= long-entry stochastic threshold AND fast stochastic <= long-entry stochastic threshold AND fast moving average > slow moving average AND low[2] < high[1] AND absolute(bid - close[2]) > retracement parameter × point size
+Short: number of open strategy positions < maximum trade count AND slow stochastic >= short-entry stochastic threshold AND fast stochastic >= short-entry stochastic threshold AND fast moving average < slow moving average AND low[1] < high[2] AND absolute(ask - close[1]) > retracement parameter × point size
+Exit: long, equity stop enabled AND aggregate open strategy profit < 0 AND absolute(aggregate open strategy profit) > equity risk percentage / 100 × equity reference
+Exit: short, equity stop enabled AND aggregate open strategy profit < 0 AND absolute(aggregate open strategy profit) > equity risk percentage / 100 × equity reference

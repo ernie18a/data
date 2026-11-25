@@ -1,0 +1,2 @@
+Long: On chart bars using T1-bar signals, the latest signal through the selected T1 bar (which may still be forming) satisfies high[k] > high[k+1] AND low[k] > low[k+1] for every k from 0 to the lookback minus 1
+Short: On chart bars using T1-bar signals, the latest signal through the selected T1 bar (which may still be forming) satisfies high[k] < high[k+1] AND low[k] < low[k+1] for every k from 0 to the lookback minus 1

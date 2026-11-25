@@ -1,0 +1,2 @@
+Long: (close of the bar at the signal-shift parameter on T1 > open of that bar AND reverse mode is off) OR (close of the bar at the signal-shift parameter on T1 < open of that bar AND reverse mode is on)
+Short: (close of the bar at the signal-shift parameter on T1 < open of that bar AND reverse mode is off) OR (close of the bar at the signal-shift parameter on T1 > open of that bar AND reverse mode is on)

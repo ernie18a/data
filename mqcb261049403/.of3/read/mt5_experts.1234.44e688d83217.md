@@ -1,0 +1,5 @@
+Calculation: Signal-shift Vortex lines = Vortex Indicator(lookback, T1, signal shift); shift zero uses the forming T1 bar and is sampled on every tick, while positive shifts use completed T1 bars and are sampled on each new T1 bar
+Long: long-entry permission enabled AND the positive Vortex line crosses above the negative Vortex line at the signal shift
+Short: short-entry permission enabled AND the negative Vortex line crosses above the positive Vortex line at the signal shift
+Exit: long, (long-exit permission enabled AND negative Vortex line > positive Vortex line at the signal shift) OR (stop-loss points > 0 AND low <= entry price - stop-loss points × point size) OR (take-profit points > 0 AND high >= entry price + take-profit points × point size)
+Exit: short, (short-exit permission enabled AND positive Vortex line > negative Vortex line at the signal shift) OR (stop-loss points > 0 AND high >= entry price + stop-loss points × point size) OR (take-profit points > 0 AND low <= entry price - take-profit points × point size)

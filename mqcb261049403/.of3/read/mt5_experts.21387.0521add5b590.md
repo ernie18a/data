@@ -1,0 +1,5 @@
+Calculation: EMA slope = EMA(open, lookback, T1, still-forming bar) - EMA(open, lookback, T1, last completed bar), sampled on chart bars
+Long: minimum slope <= EMA slope <= maximum slope AND minute(current time) > entry minute AND close[0] <= open[0] AND close[0] <= low[0] + entry allowance AND abs(open[i+1] - open[i]) < big-jump threshold for every i from 0 through 4 AND abs(open[i+2] - open[i]) < double-jump threshold for every i from 0 through 3
+Short: -maximum slope <= EMA slope <= -minimum slope AND minute(current time) > entry minute AND close[0] >= open[0] AND close[0] >= high[0] - entry allowance AND abs(open[i+1] - open[i]) < big-jump threshold for every i from 0 through 4 AND abs(open[i+2] - open[i]) < double-jump threshold for every i from 0 through 3
+Exit: long, (close[0] <= entry price - stop-loss AND minute(current time) > exit minute AND close[0] >= open[0] AND close[0] >= high[0] - exit allowance) OR volume[1] <= minimum volume
+Exit: short, (close[0] >= entry price + stop-loss AND minute(current time) > exit minute AND close[0] <= open[0] AND close[0] <= low[0] + exit allowance) OR volume[1] <= minimum volume

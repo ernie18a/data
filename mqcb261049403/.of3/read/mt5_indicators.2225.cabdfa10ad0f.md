@@ -1,0 +1,2 @@
+Long: Fisher CG oscillator up line(T1, still-forming bar) > Fisher CG oscillator down line(T1, still-forming bar), evaluated on chart bars OR (the lines are equal AND the previous chart bar's trend was long)
+Short: Fisher CG oscillator up line(T1, still-forming bar) < Fisher CG oscillator down line(T1, still-forming bar), evaluated on chart bars OR (the lines are equal AND the previous chart bar's trend was short)

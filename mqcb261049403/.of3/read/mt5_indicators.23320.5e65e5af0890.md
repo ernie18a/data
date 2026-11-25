@@ -1,0 +1,4 @@
+Long: RSI(selected applied price, each generated lookback in the series beginning with a starting lookback and increasing by a shared increment) > upper threshold
+Short: RSI(selected applied price, each generated lookback in the series beginning with a starting lookback and increasing by a shared increment) < lower threshold
+Long: On chart bars, RSI(selected applied price, each generated lookback in the series beginning with a starting lookback and increasing by a shared increment), calculated on T1 bars using the bar still forming and sampled onto chart bars, > upper threshold
+Short: On chart bars, RSI(selected applied price, each generated lookback in the series beginning with a starting lookback and increasing by a shared increment), calculated on T1 bars using the bar still forming and sampled onto chart bars, < lower threshold

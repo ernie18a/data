@@ -1,0 +1,6 @@
+Calculation: Fast line = FATL(applied price, T1)
+Calculation: Slow line = SATL(applied price, T1)
+Long: Fast line[1] > Slow line[1] AND Fast line[0] <= Slow line[0] (evaluated on chart bars using T1 values; [1] is the last completed T1 bar and [0] is the T1 bar still forming)
+Short: Fast line[1] < Slow line[1] AND Fast line[0] >= Slow line[0] (evaluated on chart bars using T1 values; [1] is the last completed T1 bar and [0] is the T1 bar still forming)
+Exit: short, Fast line[1] > Slow line[1] (evaluated on chart bars using the last completed T1 bar)
+Exit: long, Fast line[1] < Slow line[1] (evaluated on chart bars using the last completed T1 bar)

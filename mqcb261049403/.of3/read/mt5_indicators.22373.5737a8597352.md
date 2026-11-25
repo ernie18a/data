@@ -1,0 +1,5 @@
+Calculation: Skyscraper step = floor(step scale × sensitivity × (highest(ATR(high, low, close, ATR lookback), range lookback) + lowest(ATR(high, low, close, ATR lookback), range lookback)) / point size) × point size
+Calculation: Skyscraper raw upper, raw lower = low + band multiplier × step, high − band multiplier × step when range source is high/low; close + band multiplier × step, close − band multiplier × step when range source is close
+Calculation: Skyscraper state and bounds = initialize state neutral and both bounds to the initial close; each bar set state to down if close < prior lower bound, otherwise up if close > prior upper bound, otherwise retain prior state; when state is up, set lower bound to max(raw lower, prior lower) and upper bound to raw upper; otherwise set upper bound to min(raw upper, prior upper) and lower bound to raw lower
+Long: prior Skyscraper state is neutral or down AND current Skyscraper state is up
+Short: prior Skyscraper state is up AND current Skyscraper state is neutral or down

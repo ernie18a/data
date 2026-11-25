@@ -1,0 +1,2 @@
+Long: (signal reversal disabled AND close > MA(close, lookback)[1]) OR (signal reversal enabled AND close < MA(close, lookback)[1])
+Short: (signal reversal disabled AND close < MA(close, lookback)[1]) OR (signal reversal enabled AND close > MA(close, lookback)[1])

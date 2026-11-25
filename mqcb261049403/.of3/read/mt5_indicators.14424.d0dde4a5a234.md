@@ -1,0 +1,3 @@
+Calculation: Loco = applied price on the first calculated bar; thereafter, let p = applied price and previous = Loco[1]: if p = previous, set Loco = previous; if p > previous AND applied price[lookback] > previous, set Loco = max(previous, p × lower factor); if p < previous AND applied price[lookback] < previous, set Loco = min(previous, p × upper factor); otherwise, if p > previous, set Loco = p × lower factor; if p < previous, set Loco = p × upper factor
+Long: applied price > Loco[1]
+Short: applied price < Loco[1]

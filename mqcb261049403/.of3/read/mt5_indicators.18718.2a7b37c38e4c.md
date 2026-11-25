@@ -1,0 +1,5 @@
+Calculation: Direction state = previous direction state, set to positive if high > previous upper threshold, then set to negative if low < previous lower threshold; initialize to zero
+Calculation: Upper threshold = the minimum of MA(close, MA lookback) + volatility multiplier × ATR(ATR lookback) and the previous upper threshold when direction state is negative; otherwise MA(close, MA lookback) + volatility multiplier × ATR(ATR lookback); initialize to close on the first calculated bar
+Calculation: Lower threshold = the maximum of MA(close, MA lookback) − volatility multiplier × ATR(ATR lookback) and the previous lower threshold when direction state is positive; otherwise MA(close, MA lookback) − volatility multiplier × ATR(ATR lookback); initialize to close on the first calculated bar
+Long: previous direction state ≤ 0 AND direction state > 0
+Short: previous direction state ≥ 0 AND direction state < 0

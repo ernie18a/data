@@ -1,0 +1,4 @@
+Long: RSI(close, lookback P1) > RSI(close, lookback P2) AND RSI(close, lookback P2) > Level
+Short: RSI(close, lookback P1) < RSI(close, lookback P2) AND RSI(close, lookback P2) < 100 - Level
+Long: On chart bars using the T1 bar still forming, RSI(close, lookback P1, T1, bar still forming) > RSI(close, lookback P2, T1, bar still forming) AND RSI(close, lookback P2, T1, bar still forming) > Level
+Short: On chart bars using the T1 bar still forming, RSI(close, lookback P1, T1, bar still forming) < RSI(close, lookback P2, T1, bar still forming) AND RSI(close, lookback P2, T1, bar still forming) < 100 - Level

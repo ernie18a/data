@@ -1,0 +1,4 @@
+Long: configured trade side is long AND datetime >= today's configured entry time AND datetime < today's configured entry time + duration AND instrument is enabled AND no long position for this strategy is open in the instrument
+Short: configured trade side is short AND datetime >= today's configured entry time AND datetime < today's configured entry time + duration AND instrument is enabled AND no short position for this strategy is open in the instrument
+Exit: long, time-based closing is enabled AND datetime >= today's configured closing time AND datetime < today's configured closing time + duration
+Exit: short, time-based closing is enabled AND datetime >= today's configured closing time AND datetime < today's configured closing time + duration

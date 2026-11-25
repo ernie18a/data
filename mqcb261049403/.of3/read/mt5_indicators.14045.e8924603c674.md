@@ -1,0 +1,2 @@
+Long: LSMA angle(close, lookback) > threshold AND LSMA angle(close, lookback) != LSMA angle(close, lookback)[1]
+Short: LSMA angle(close, lookback) < -threshold AND LSMA angle(close, lookback) != LSMA angle(close, lookback)[1]

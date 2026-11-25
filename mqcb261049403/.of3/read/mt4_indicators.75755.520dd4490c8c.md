@@ -1,0 +1,5 @@
+Calculation: Range high = highest high of chart bars in the configured Asian session most recently completed at the evaluated bar
+Calculation: Range low = lowest low of chart bars in the configured Asian session most recently completed at the evaluated bar
+Calculation: Range height in pips = (Range high - Range low) / pip size
+Long: Range height in pips >= configured minimum AND Range height in pips <= configured maximum AND open <= Range high AND close > Range high AND (ATR body filter disabled OR (ATR(lookback) > 0 AND abs(close - open) >= ATR(lookback) * configured body-to-ATR ratio)); use completed bars when close confirmation is enabled, otherwise allow the forming bar
+Short: Range height in pips >= configured minimum AND Range height in pips <= configured maximum AND open >= Range low AND close < Range low AND (ATR body filter disabled OR (ATR(lookback) > 0 AND abs(close - open) >= ATR(lookback) * configured body-to-ATR ratio)); use completed bars when close confirmation is enabled, otherwise allow the forming bar

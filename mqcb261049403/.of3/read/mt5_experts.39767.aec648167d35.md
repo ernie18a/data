@@ -1,0 +1,2 @@
+Long: Williams %R(high, low, close, lookback)[2] < lower threshold AND Williams %R(high, low, close, lookback)[1] > lower threshold
+Short: Williams %R(high, low, close, lookback)[2] > upper threshold AND Williams %R(high, low, close, lookback)[1] < upper threshold

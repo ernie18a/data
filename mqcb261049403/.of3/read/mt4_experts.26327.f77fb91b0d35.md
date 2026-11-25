@@ -1,0 +1,4 @@
+Long: datetime is within the configured trading window AND NOT (spread exceeds its limit AND the high-spread policy closes market positions)
+Short: datetime is within the configured trading window AND NOT (spread exceeds its limit AND the high-spread policy closes market positions)
+Exit: Long, Bid <= the active long stop-loss level OR take profit is enabled AND Bid >= the active long take-profit level OR datetime is outside the configured trading window AND the existing-order policy closes market positions OR spread exceeds its limit AND the high-spread policy closes market positions
+Exit: Short, Ask >= the active short stop-loss level OR take profit is enabled AND Ask <= the active short take-profit level OR datetime is outside the configured trading window AND the existing-order policy closes market positions OR spread exceeds its limit AND the high-spread policy closes market positions

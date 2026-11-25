@@ -1,0 +1,4 @@
+Calculation: Candle body percentage = 100 * abs(close - open) / (high - low), or 0 when high = low
+Calculation: Close position percentage = 100 * (close - low) / (high - low), or 50 when high = low
+Long: volume / SMA(volume, average-volume lookback, including current bar) >= high-RVOL threshold AND close > open AND candle body percentage >= minimum-body percentage AND close position percentage >= close-strength percentage
+Short: volume / SMA(volume, average-volume lookback, including current bar) >= high-RVOL threshold AND close < open AND candle body percentage >= minimum-body percentage AND close position percentage <= 100 - close-strength percentage

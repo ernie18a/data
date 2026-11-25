@@ -1,0 +1,2 @@
+Long: close > highest high during the completed Asian session OR close > highest high during the previous calendar day
+Short: close < lowest low during the completed Asian session OR close < lowest low during the previous calendar day

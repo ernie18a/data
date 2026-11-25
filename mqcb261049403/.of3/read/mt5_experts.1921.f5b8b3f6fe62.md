@@ -1,0 +1,3 @@
+Calculation: M = SMA(close, lookback, chart timeframe, current still-forming bar, plot shift)
+Long: previous chart bar open < M AND previous chart bar close > M AND current chart bar volume <= volume threshold AND chart bar count > bar-count threshold
+Short: previous chart bar open > M AND previous chart bar close < M AND current chart bar volume <= volume threshold AND chart bar count > bar-count threshold
