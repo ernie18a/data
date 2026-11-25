@@ -1,0 +1,2 @@
+Exit: long, local computer time >= close-time parameter AND position matches the configured symbol, magic-number, or ticket selection
+Exit: short, local computer time >= close-time parameter AND position matches the configured symbol, magic-number, or ticket selection

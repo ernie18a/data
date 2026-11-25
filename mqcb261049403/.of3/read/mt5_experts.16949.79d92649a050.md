@@ -1,0 +1,2 @@
+Long: SMA(close, shorter lookback) crosses above SMA(close, longer lookback), using the last completed chart bar
+Short: SMA(close, shorter lookback) crosses below SMA(close, longer lookback), using the last completed chart bar

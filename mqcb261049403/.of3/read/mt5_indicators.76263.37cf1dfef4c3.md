@@ -1,0 +1,5 @@
+Calculation: Normalized volume delta oscillator = SMA(CD / SD(CD, normalization lookback), smoothing lookback), where CD is the rolling sum over up to delta lookback bars of selected volume × ((close − low) − (high − close)) / (high − low), with per-bar delta 0 when high = low; SD is population standard deviation, and the normalized value is 0 until normalization lookback CD values exist or when SD = 0; SMA uses up to the available smoothing lookback values.
+Long: Normalized volume delta oscillator >= 0
+Short: Normalized volume delta oscillator < 0
+Long: Divergence arrows enabled AND a confirmed strict swing low, lower than the nearest prior confirmed swing low within the search range, has a higher oscillator value than that prior swing low; each swing is confirmed by swing-lookback bars on both sides.
+Short: Divergence arrows enabled AND a confirmed strict swing high, higher than the nearest prior confirmed swing high within the search range, has a lower oscillator value than that prior swing high; each swing is confirmed by swing-lookback bars on both sides.

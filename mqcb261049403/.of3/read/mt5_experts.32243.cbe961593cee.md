@@ -1,0 +1,6 @@
+Long: CCI((high + low + close) / 3, CCI lookback)[1] < −CCI threshold AND RSI(close, RSI lookback)[1] < RSI threshold
+Short: CCI((high + low + close) / 3, CCI lookback)[1] > CCI threshold AND RSI(close, RSI lookback)[1] > 100 − RSI threshold
+Long: at least one long position is open AND (grid signal bypass is enabled OR (CCI((high + low + close) / 3, CCI lookback)[1] < −CCI threshold AND RSI(close, RSI lookback)[1] < RSI threshold)) AND (long and short position counts are equal OR ask < lowest long entry price − grid step)
+Short: at least one short position is open AND (grid signal bypass is enabled OR (CCI((high + low + close) / 3, CCI lookback)[1] > CCI threshold AND RSI(close, RSI lookback)[1] > 100 − RSI threshold)) AND (long and short position counts are equal OR bid > highest short entry price + grid step)
+Exit: long, (MA(close, MA lookback)[0] < MA(close, MA lookback)[1] AND MA(close, MA lookback)[1] < MA(close, MA lookback)[2]) OR moving-average exits are disabled
+Exit: short, (MA(close, MA lookback)[0] > MA(close, MA lookback)[1] AND MA(close, MA lookback)[1] > MA(close, MA lookback)[2]) OR moving-average exits are disabled

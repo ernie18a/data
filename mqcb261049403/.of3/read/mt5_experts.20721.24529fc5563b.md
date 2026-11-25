@@ -1,0 +1,2 @@
+Long: on a new T1 bar, using its still-forming OHLC, (reverse signal is off AND open - close > 0 AND high - close > rollback threshold) OR (reverse signal is on AND close - open > 0 AND close - low > rollback threshold)
+Short: on a new T1 bar, using its still-forming OHLC, (reverse signal is off AND close - open > 0 AND close - low > rollback threshold) OR (reverse signal is on AND open - close > 0 AND high - close > rollback threshold)

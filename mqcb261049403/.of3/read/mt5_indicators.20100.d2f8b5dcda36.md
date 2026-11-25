@@ -1,0 +1,2 @@
+Long: on chart bars using T1 values, low(T1, bar still forming) > Parabolic SAR(T1, bar still forming) AND low(T1, last completed bar) <= Parabolic SAR(T1, last completed bar)
+Short: on chart bars using T1 values, high(T1, bar still forming) < Parabolic SAR(T1, bar still forming) AND high(T1, last completed bar) >= Parabolic SAR(T1, last completed bar)

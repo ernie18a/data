@@ -1,0 +1,4 @@
+Long: close[1] < Bollinger lower band(close, lookback, standard-deviation multiplier)[1] AND RSI(close, lookback)[1] < oversold threshold AND close[1] > EMA(close, lookback, T1, last completed bar, sampled on chart bars)
+Short: close[1] > Bollinger upper band(close, lookback, standard-deviation multiplier)[1] AND RSI(close, lookback)[1] > overbought threshold AND close[1] < EMA(close, lookback, T1, last completed bar, sampled on chart bars)
+Exit: long, low <= Bollinger lower band(close, lookback, standard-deviation multiplier)[1] at entry - stop offset OR high >= Bollinger middle band(close, lookback, standard-deviation multiplier)[1] at entry
+Exit: short, high >= Bollinger upper band(close, lookback, standard-deviation multiplier)[1] at entry + stop offset OR low <= Bollinger middle band(close, lookback, standard-deviation multiplier)[1] at entry

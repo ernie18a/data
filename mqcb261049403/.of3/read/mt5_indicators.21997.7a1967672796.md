@@ -1,0 +1,5 @@
+Calculation: direction state = close > previous upper threshold ? 1 : close < previous lower threshold ? -1 : previous direction state
+Calculation: upper threshold = direction state < 0 ? min(MA(high, smoothing lookback, selected method) + standard deviation(close, deviation lookback) * deviation multiplier, previous upper threshold) : MA(high, smoothing lookback, selected method) + standard deviation(close, deviation lookback) * deviation multiplier
+Calculation: lower threshold = direction state > 0 ? max(MA(low, smoothing lookback, selected method) - standard deviation(close, deviation lookback) * deviation multiplier, previous lower threshold) : MA(low, smoothing lookback, selected method) - standard deviation(close, deviation lookback) * deviation multiplier
+Long: direction state = 1
+Short: direction state = -1

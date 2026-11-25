@@ -1,0 +1,12 @@
+Calculation: take-profit MA-based level = (1 + take-profit deviation / 100) × MA(take-profit applied price, take-profit lookback, take-profit MA method, T1 bar at take-profit shift), read on chart updates; shift zero uses the forming bar
+Calculation: stop-loss MA-based level = (1 + stop-loss deviation / 100) × MA(stop-loss applied price, stop-loss lookback, stop-loss MA method, T2 bar at stop-loss shift), read on chart updates; shift zero uses the forming bar
+Calculation: chart-object price = a trendline's linearly interpolated or extrapolated value at a chart-bar shift, or an equidistant channel's upper or lower parallel boundary, offset from its base line by its third anchor
+Calculation: take-profit line level = chart-object price at take-profit shift from the nearest positive trendline or channel object above the bid for long positions or below the bid for short positions; select at startup or when the object is replaced, using the channel's upper boundary for long and lower for short
+Calculation: stop-loss line level = chart-object price at stop-loss shift from the nearest positive trendline or channel object below the bid for long positions or above the bid for short positions; select at startup or when the object is replaced, using the channel's lower boundary for long and upper for short
+Calculation: stop-loss SAR level = ParabolicSAR(stop-loss step, stop-loss maximum, T2 bar at stop-loss shift), read on chart updates; stop-loss shift is at least one
+Calculation: configured take-profit level = take-profit MA-based level when the take-profit method selects envelopes, or take-profit line level when it selects line objects
+Calculation: configured stop-loss level = stop-loss MA-based level when the stop-loss method selects envelopes, stop-loss line level when it selects line objects, or stop-loss SAR level when it selects Parabolic SAR
+Exit: long, configured stop-loss level > 0 AND bid price <= configured stop-loss level
+Exit: long, configured take-profit level > 0 AND bid price >= configured take-profit level
+Exit: short, configured stop-loss level > 0 AND bid price >= configured stop-loss level
+Exit: short, configured take-profit level > 0 AND bid price <= configured take-profit level

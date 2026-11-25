@@ -1,0 +1,2 @@
+Long: Zero-lag TEMA trend changes from down to up on T1 bars, using the forming or last completed T1 bar according to the current-bar alert setting
+Short: Zero-lag TEMA trend changes from up to down on T1 bars, using the forming or last completed T1 bar according to the current-bar alert setting

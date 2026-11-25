@@ -1,0 +1,2 @@
+Long: Inverse Fisher Transform(NonLag MA(scaling factor × (RSX(selected price source, RSX lookback) − 50), NonLag lookback)) > upper level
+Short: Inverse Fisher Transform(NonLag MA(scaling factor × (RSX(selected price source, RSX lookback) − 50), NonLag lookback)) < lower level

@@ -1,0 +1,2 @@
+Long: chart-bar high crosses above round(maximum(high over lookback T1 bars starting offset bars ago, including the forming T1 bar if offset is zero; otherwise completed T1 bars), to the nearest multiple of instrument point size × 10^precision)
+Short: chart-bar low crosses below round(minimum(low over lookback T1 bars starting offset bars ago, including the forming T1 bar if offset is zero; otherwise completed T1 bars), to the nearest multiple of instrument point size × 10^precision)

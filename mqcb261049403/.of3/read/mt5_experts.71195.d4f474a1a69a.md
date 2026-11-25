@@ -1,0 +1,8 @@
+Calculation: Bullish-bar count = count of chart bars in the preceding T1 period where close > open
+Calculation: Bearish-bar count = count of chart bars in the preceding T1 period where close < open
+Calculation: Long stop price = low of the last completed chart bar in the T1 period preceding entry − ATR(ATR lookback on chart bars, evaluated at that bar) × ATR multiplier
+Calculation: Short stop price = high of the last completed chart bar in the T1 period preceding entry + ATR(ATR lookback on chart bars, evaluated at that bar) × ATR multiplier
+Long: On the first chart bar of a new T1 period whose weekday is not Monday, ((Bullish-bar count > Bearish-bar count AND close of the last completed chart bar in the preceding T1 period > Moving Average(close, MA lookback on chart bars, evaluated at that bar)) when inversion is off) OR ((Bearish-bar count > Bullish-bar count AND close of the last completed chart bar in the preceding T1 period < Moving Average(close, MA lookback on chart bars, evaluated at that bar)) when inversion is on)
+Short: On the first chart bar of a new T1 period whose weekday is not Monday, ((Bearish-bar count > Bullish-bar count AND close of the last completed chart bar in the preceding T1 period < Moving Average(close, MA lookback on chart bars, evaluated at that bar)) when inversion is off) OR ((Bullish-bar count > Bearish-bar count AND close of the last completed chart bar in the preceding T1 period > Moving Average(close, MA lookback on chart bars, evaluated at that bar)) when inversion is on)
+Exit: Long, low <= Long stop price OR high >= entry price + reward-risk multiple × (entry price − Long stop price)
+Exit: Short, high >= Short stop price OR low <= entry price − reward-risk multiple × (Short stop price − entry price)

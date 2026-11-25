@@ -1,0 +1,4 @@
+Long: high > range high AND trade mode is stop OR low < range low AND trade mode is limit
+Short: low < range low AND trade mode is stop OR high > range high AND trade mode is limit
+Exit: long, high >= entry price + setup range × (range multiplier if the previous deal result is negative and the multiplier is nonzero, otherwise 1) × take-profit percentage / 100 OR low <= entry price - setup range × stop-loss percentage / 100
+Exit: short, low <= entry price - setup range × (range multiplier if the previous deal result is negative and the multiplier is nonzero, otherwise 1) × take-profit percentage / 100 OR high >= entry price + setup range × stop-loss percentage / 100

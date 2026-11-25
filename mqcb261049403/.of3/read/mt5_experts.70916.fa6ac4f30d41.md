@@ -1,0 +1,4 @@
+Long: MA(close, shorter lookback) crosses above MA(close, longer lookback) on the previous completed chart bar AND close[1] > MA(close, shorter lookback)[1] AND (MA filter disabled OR close[1] > MA(close, filter lookback, filter method, T1, last completed bar), evaluated on chart bars)
+Short: MA(close, shorter lookback) crosses below MA(close, longer lookback) on the previous completed chart bar AND close[1] < MA(close, shorter lookback)[1] AND (MA filter disabled OR close[1] < MA(close, filter lookback, filter method, T1, last completed bar), evaluated on chart bars)
+Exit: long, fast-MA exit enabled AND close[1] <= MA(close, shorter lookback)[1]
+Exit: short, fast-MA exit enabled AND close[1] >= MA(close, shorter lookback)[1]

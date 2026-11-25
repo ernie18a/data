@@ -1,0 +1,5 @@
+Calculation: Bull volume MA = TEMA(IF(close > close[1], volume, 0), volume lookback)
+Calculation: Bear volume MA = TEMA(IF(close <= close[1], volume, 0), volume lookback)
+Calculation: Convergence = TEMA(Bull volume MA - Bear volume MA, convergence lookback)
+Long: close > close[1] OR Bull volume MA >= Bear volume MA OR (Convergence > 0 AND Convergence > Convergence[1])
+Short: close <= close[1] OR Bear volume MA >= Bull volume MA OR (Convergence > 0 AND Convergence <= Convergence[1])

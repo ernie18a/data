@@ -1,0 +1,4 @@
+Long: high[2] > high[1] on chart bars AND high[2] > high[1] from T1’s last completed and preceding completed bars, evaluated on chart bars AND no open long position
+Short: low[2] < low[1] on chart bars AND low[2] < low[1] from T1’s last completed and preceding completed bars, evaluated on chart bars AND (position-check setting disabled OR no open short position)
+Exit: long, (long take-profit offset > 0 AND high >= entry price + long take-profit offset) OR (long stop-loss offset > 0 AND low <= entry price - long stop-loss offset)
+Exit: short, (short take-profit offset > 0 AND low <= entry price - short take-profit offset) OR (short stop-loss offset > 0 AND high >= entry price + short stop-loss offset)

@@ -1,0 +1,2 @@
+Long: On chart bars, OBV(applied price, volume, T1, still-forming bar) > OBV(applied price, volume, T1, last completed bar) on at least K of T1, T2, T3, T4, T5, and T6
+Short: On chart bars, OBV(applied price, volume, T1, still-forming bar) < OBV(applied price, volume, T1, last completed bar) on at least K of T1, T2, T3, T4, T5, and T6

@@ -1,0 +1,5 @@
+Calculation: moving average = MA(applied-price parameter, lookback parameter, averaging-method parameter, horizontal-shift parameter) on T1 bars at MA-offset parameter (offset 0 is the forming bar; positive offsets are completed bars)
+Long: on T1 bar at OHLC-offset parameter (offset 0 is the forming bar; positive offsets are completed bars), low > moving average AND low < moving average + upper-channel distance parameter AND open > moving average + upper-channel distance parameter
+Short: on T1 bar at OHLC-offset parameter (offset 0 is the forming bar; positive offsets are completed bars), high < moving average AND high > moving average - lower-channel distance parameter AND open < moving average - lower-channel distance parameter
+Exit: long, (stop loss enabled AND low <= entry price - stop-loss distance parameter in pips) OR (take profit enabled AND high >= entry price + take-profit distance parameter in pips)
+Exit: short, (stop loss enabled AND high >= entry price + stop-loss distance parameter in pips) OR (take profit enabled AND low <= entry price - take-profit distance parameter in pips)

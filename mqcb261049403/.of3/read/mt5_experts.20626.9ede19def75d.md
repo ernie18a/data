@@ -1,0 +1,4 @@
+Long: buy entries enabled AND (last-exit-price filter disabled OR no last exit price exists OR last exit price >= current ask) AND current chart bar open < Moving Average(close, buy-entry parameters, current bar) AND current chart bar close > Moving Average(close, buy-entry parameters, current bar)
+Short: sell entries enabled AND (last-exit-price filter disabled OR no last exit price exists OR last exit price <= current bid) AND current chart bar open > Moving Average(close, sell-entry parameters, current bar) AND current chart bar close < Moving Average(close, sell-entry parameters, current bar)
+Exit: long, current chart bar open > Moving Average(close, buy-exit parameters, current bar) AND current chart bar close < Moving Average(close, buy-exit parameters, current bar)
+Exit: short, current chart bar open < Moving Average(close, sell-exit parameters, current bar) AND current chart bar close > Moving Average(close, sell-exit parameters, current bar)

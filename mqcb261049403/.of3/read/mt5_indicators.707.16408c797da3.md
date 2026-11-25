@@ -1,0 +1,4 @@
+Long: DownFractals(high, low)[2] != 0 OR (sensitivity enabled AND low[3] > low[2] AND low[2] < low[1] AND (high[2] <= high[1] OR low[2] < low[0]))
+Short: UpFractals(high, low)[2] != 0 OR (sensitivity enabled AND high[3] < high[2] AND high[2] > high[1] AND (low[2] >= low[1] OR high[2] > high[0]))
+Long: DownFractals(high, low, T1, bar still forming)[0] != 0 OR (sensitivity enabled AND low[3] > low[2] AND low[2] < low[1] AND (high[2] <= high[1] OR low[2] < low[0])) on T1 bars, with values mapped to chart bars
+Short: UpFractals(high, low, T1, bar still forming)[0] != 0 OR (sensitivity enabled AND high[3] < high[2] AND high[2] > high[1] AND (low[2] >= low[1] OR high[2] > high[0])) on T1 bars, with values mapped to chart bars

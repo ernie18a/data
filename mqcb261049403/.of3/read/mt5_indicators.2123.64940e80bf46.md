@@ -1,0 +1,2 @@
+Long: on chart bars, Heiken Ashi close(T1, bar still forming) >= Heiken Ashi open(T1, bar still forming)
+Short: on chart bars, Heiken Ashi close(T1, bar still forming) < Heiken Ashi open(T1, bar still forming)

@@ -1,0 +1,8 @@
+Long: RVI main line(lookback, T1 bar still forming, read on chart bars) > RVI signal line(lookback, T1 bar still forming, read on chart bars)
+Short: RVI main line(lookback, T1 bar still forming, read on chart bars) < RVI signal line(lookback, T1 bar still forming, read on chart bars)
+Long: RVI main line(lookback, T2 bar still forming, read on chart bars) > RVI signal line(lookback, T2 bar still forming, read on chart bars)
+Short: RVI main line(lookback, T2 bar still forming, read on chart bars) < RVI signal line(lookback, T2 bar still forming, read on chart bars)
+Long: RVI main line(lookback, T3 bar still forming, read on chart bars) > RVI signal line(lookback, T3 bar still forming, read on chart bars)
+Short: RVI main line(lookback, T3 bar still forming, read on chart bars) < RVI signal line(lookback, T3 bar still forming, read on chart bars)
+Long: RVI main line(lookback, T4 bar still forming, read on chart bars) > RVI signal line(lookback, T4 bar still forming, read on chart bars)
+Short: RVI main line(lookback, T4 bar still forming, read on chart bars) < RVI signal line(lookback, T4 bar still forming, read on chart bars)

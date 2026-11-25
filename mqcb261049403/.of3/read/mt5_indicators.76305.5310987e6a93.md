@@ -1,0 +1,2 @@
+Long: On a closed bar after a session closes, low < min(low during that session) − minimum sweep distance (minimum sweep pips converted to price units) AND close > min(low during that session) AND that session low has not previously been swept
+Short: On a closed bar after a session closes, high > max(high during that session) + minimum sweep distance (minimum sweep pips converted to price units) AND close < max(high during that session) AND that session high has not previously been swept

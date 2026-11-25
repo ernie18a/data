@@ -1,0 +1,3 @@
+Calculation: volume-adjusted shifted Williams %R = (Williams %R(high, low, close, lookback) + center shift parameter) × volume
+Long: volume-adjusted shifted Williams %R < oversold level 1 × volume OR volume-adjusted shifted Williams %R < oversold level 2 × volume
+Short: volume-adjusted shifted Williams %R > overbought level 1 × volume OR volume-adjusted shifted Williams %R > overbought level 2 × volume

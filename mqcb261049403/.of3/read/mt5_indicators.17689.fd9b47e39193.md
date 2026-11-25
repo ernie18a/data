@@ -1,0 +1,4 @@
+Calculation: upper outer quantile trend = bullish if upper outer quantile > upper outer quantile[1], bearish if upper outer quantile < upper outer quantile[1], otherwise upper outer quantile trend[1]; neutral initially
+Calculation: lower outer quantile trend = bullish if lower outer quantile > lower outer quantile[1], bearish if lower outer quantile < lower outer quantile[1], otherwise lower outer quantile trend[1]; neutral initially
+Long: upper outer quantile trend = bullish OR lower outer quantile trend = bullish
+Short: upper outer quantile trend = bearish OR lower outer quantile trend = bearish

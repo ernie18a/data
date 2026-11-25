@@ -1,0 +1,3 @@
+Calculation: Reference price = entry price or midpoint of bid and ask at trade initialization, as selected
+Exit: long, bid > reference price + take-profit points × instrument point size OR bid < reference price - stop-loss points × instrument point size
+Exit: short, ask < reference price - take-profit points × instrument point size OR ask > reference price + stop-loss points × instrument point size
