@@ -1,0 +1,55 @@
+Calculation: DemandZone(T) = [min(OB low, pivot low), OB high] on T, where pivot low is a low that is the lowest of P_pv bars on each side, confirmed P_pv bars later; OB = most recent bar within the P_obLook bars ending at the pivot bar with close < open and body >= P_obBody * ATR(P_atrLen) of T; if no OB, zone = [pivot low, pivot low + P_zoneBuf * ATR(P_zoneAtrLen) of T]; values taken from the last completed bar of T
+Calculation: SupplyZone(T) = [OB low, max(OB high, pivot high)] on T, where pivot high is a high that is the highest of P_pv bars on each side, confirmed P_pv bars later; OB = most recent bar within the P_obLook bars ending at the pivot bar with close > open and body >= P_obBody * ATR(P_atrLen) of T; if no OB, zone = [pivot high - P_zoneBuf * ATR(P_zoneAtrLen) of T, pivot high]; values taken from the last completed bar of T
+Calculation: Prox = P_proxLow if ATR(P_atrLen) / SMA(ATR(P_atrLen), P_regLen) < P_volLow; P_proxHigh if that ratio > P_volHigh; otherwise P_proxMid
+Calculation: TouchedDemand = DemandZone(T) of the first T in order T1, T2, T3 whose zone is active and satisfies high >= zone bottom - Prox * ATR(P_atrLen) AND low <= zone top + Prox * ATR(P_atrLen); a zone is active from creation until a chart bar closes below zone bottom - P_zoneBOS * ATR(P_atrLen); none if no such zone
+Calculation: TouchedSupply = SupplyZone(T) of the first T in order T1, T2, T3 whose zone is active and satisfies high >= zone bottom - Prox * ATR(P_atrLen) AND low <= zone top + Prox * ATR(P_atrLen); a zone is active from creation until a chart bar closes above zone top + P_zoneBOS * ATR(P_atrLen); none if no such zone
+Calculation: ZonePosition = (close - Floor) / (Ceiling - Floor), where Floor = bottom of TouchedDemand if it exists, else bottom of TouchedSupply - P_rangeATR * ATR(P_atrLen); Ceiling = top of TouchedSupply if it exists, else top of TouchedDemand + P_rangeATR * ATR(P_atrLen)
+Calculation: PolarityLong = TouchedDemand exists AND (TouchedSupply does not exist OR EdgeRatio <= P_polLong), where EdgeRatio = D / (D + S), D = min(|close - demand top|, |close - demand bottom|), S = min(|close - supply top|, |close - supply bottom|)
+Calculation: PolarityShort = TouchedSupply exists AND (TouchedDemand does not exist OR EdgeRatio >= P_polShort), with EdgeRatio as defined in PolarityLong
+Calculation: ReversalLong = TouchedDemand exists AND low <= its top AND close > its bottom AND close > open AND lower wick > P_revWick * body
+Calculation: ReversalShort = TouchedSupply exists AND high >= its bottom AND close < its top AND close < open AND upper wick > P_revWick * body
+Calculation: ReactLong = TouchedDemand exists AND ((lower wick > P_pinBody * body AND lower wick > P_pinATR * ATR(P_atrLen) AND low <= its top) OR (BullEngulf AND low <= its top) OR (low[1] <= its top AND close[1] >= its bottom AND close > its top AND close > open) OR (body < P_ctxATR * ATR(P_atrLen) AND its bottom < close < its top AND close > close[1]))
+Calculation: ReactShort = TouchedSupply exists AND ((upper wick > P_pinBody * body AND upper wick > P_pinATR * ATR(P_atrLen) AND high >= its bottom) OR (BearEngulf AND high >= its bottom) OR (high[1] >= its bottom AND close[1] <= its top AND close < its bottom AND close < open) OR (body < P_ctxATR * ATR(P_atrLen) AND its bottom < close < its top AND close < close[1]))
+Calculation: BullEngulf = close > open AND close > high[1] AND open < close[1] AND body > P_engATR * ATR(P_atrLen)
+Calculation: BearEngulf = close < open AND close < low[1] AND open > close[1] AND body > P_engATR * ATR(P_atrLen)
+Calculation: Doji = body < P_dojiBody * ATR(P_atrLen) AND bar range > P_dojiRange * ATR(P_atrLen)
+Calculation: RSIs = EMA(RSI(close, P_rsiLen), P_rsiSm)
+Calculation: StochK = SMA(StochRSI(RSI(close, P_rsiLen), P_stLen), P_kSm)
+Calculation: StochD = SMA(StochK, P_dSm)
+Calculation: OscLong = RSIs < P_sLo OR StochK < P_kLo OR RSI(close, P_rsiLen) < P_rLo
+Calculation: OscShort = RSIs > P_sHi OR StochK > P_kHi OR RSI(close, P_rsiLen) > P_rHi
+Calculation: LongConf = number of true among: (ReversalLong OR BullEngulf OR Doji OR (close > open AND lower wick > P_bPinBody * body AND lower wick > P_bPinATR * ATR(P_atrLen))); ((RSIs > RSIs[1] AND RSIs < P_rsiCapL) OR (StochK < P_kCapL AND StochK crosses above StochD) OR OscLong); (volume > P_volMult * SMA(volume, P_volLen)); (EMA(close, E_s) >= EMA(close, E_m) OR close > EMA(close, E_l)); (HTFBull >= P_p5 OR SuperTrend(P_stAtr, P_stMult) bullish OR EMA(close, E_s) crosses above EMA(close, E_m) OR MACD(P_macdFast, P_macdSlow, P_macdSig) histogram > 0)
+Calculation: ShortConf = number of true among: (ReversalShort OR BearEngulf OR Doji OR (close < open AND upper wick > P_bPinBody * body AND upper wick > P_bPinATR * ATR(P_atrLen))); ((RSIs < RSIs[1] AND RSIs > P_rsiCapS) OR (StochK > P_kCapS AND StochK crosses below StochD) OR OscShort); (volume > P_volMult * SMA(volume, P_volLen)); (EMA(close, E_s) <= EMA(close, E_m) OR close < EMA(close, E_l)); (HTFBear >= P_p5 OR SuperTrend(P_stAtr, P_stMult) bearish OR EMA(close, E_s) crosses below EMA(close, E_m) OR MACD(P_macdFast, P_macdSlow, P_macdSig) histogram < 0)
+Calculation: HTFBull = number of true among: (close > EMA(close, H_m) AND EMA(close, H_m) > EMA(close, H_l)) on T1, and (close > EMA(close, H_m)) on each of T2, T3, T4; values from the last completed bar of each timeframe; H_m < H_l
+Calculation: HTFBear = number of true among: (close < EMA(close, H_m) AND EMA(close, H_m) < EMA(close, H_l)) on T1, and (close < EMA(close, H_m)) on each of T2, T3, T4; values from the last completed bar of each timeframe; H_m < H_l
+Calculation: StrongBear = (HTFBull - HTFBear) + 2 * (slope(EMA(close, R_m), P_s1) + 0.5 * slope(EMA(close, R_l), P_s2)) <= -P_regScore AND structure >= P_regStruct, where slope(X, n) = (X - X[n]) / (n * ATR(P_atrLen)) and structure = (highest high - lowest low over P_regLen bars) / (P_regLen * ATR(P_atrLen))
+Calculation: StrongBull = (HTFBull - HTFBear) + 2 * (slope(EMA(close, R_m), P_s1) + 0.5 * slope(EMA(close, R_l), P_s2)) >= P_regScore AND structure >= P_regStruct, with slope and structure as defined in StrongBear
+Calculation: ExtremeOversold = RSIs < P_xS AND StochK < P_xK
+Calculation: ExtremeOverbought = RSIs > P_xSh AND StochK > P_xKh
+Calculation: ArmEventLong = TouchedDemand exists AND TouchedSupply does not exist AND HTFBull >= P_htfReq AND (NOT P_adx OR ADX(P_adxLen) >= P_adxMin) AND (NOT P_stReq OR SuperTrend(P_stAtr, P_stMult) bullish) AND (NOT StrongBear OR ExtremeOversold) AND PolarityLong AND ZonePosition <= P_wsLong AND ArmedShort does not hold AND (ArmedLong does not hold OR re-tap); re-tap = TouchedDemand exists AND no TouchedDemand in the P_reExit bars before this bar AND bars since last ArmEventLong >= P_reGap AND ArmEventLong count for the current zone < P_reMax
+Calculation: ArmEventShort = TouchedSupply exists AND TouchedDemand does not exist AND HTFBear >= P_htfReq AND (NOT P_adx OR ADX(P_adxLen) >= P_adxMin) AND (NOT P_stReq OR SuperTrend(P_stAtr, P_stMult) bearish) AND (NOT StrongBull OR ExtremeOverbought) AND PolarityShort AND ZonePosition >= P_wsShort AND ArmedLong does not hold AND (ArmedShort does not hold OR re-tap); re-tap = TouchedSupply exists AND no TouchedSupply in the P_reExit bars before this bar AND bars since last ArmEventShort >= P_reGap AND ArmEventShort count for the current zone < P_reMax
+Calculation: ArmedLong = (ArmedLong[1] OR ArmEventLong[1]) AND NOT (LongTrigger[1] OR ShortTrigger[1] OR ArmExpireLong[1])
+Calculation: ArmedShort = (ArmedShort[1] OR ArmEventShort[1]) AND NOT (ShortTrigger[1] OR LongTrigger[1] OR ArmExpireShort[1])
+Calculation: ArmBreakLong = (ArmedLong OR ArmEventLong) AND (close < bottom of the zone recorded at the last ArmEventLong - P_armBOS * ATR(P_atrLen) OR (close - close recorded at that ArmEventLong > P_armRun * ATR(P_atrLen) AND low > top of that zone))
+Calculation: ArmBreakShort = (ArmedShort OR ArmEventShort) AND (close > top of the zone recorded at the last ArmEventShort + P_armBOS * ATR(P_atrLen) OR (close recorded at that ArmEventShort - close > P_armRun * ATR(P_atrLen) AND high < bottom of that zone))
+Calculation: MomLong = volume > P_momVol * SMA(volume, P_volLen) AND ADX(P_adxLen) > P_momADX AND HTFBull >= P_htfReq AND close > open
+Calculation: MomShort = volume > P_momVol * SMA(volume, P_volLen) AND ADX(P_adxLen) > P_momADX AND HTFBear >= P_htfReq AND close < open
+Calculation: ArmExpireLong = (ArmedLong OR ArmEventLong) AND (bars since last ArmEventLong > P_armWin OR (ArmBreakLong AND NOT MomLong) OR (TouchedSupply exists AND TouchedDemand does not exist))
+Calculation: ArmExpireShort = (ArmedShort OR ArmEventShort) AND (bars since last ArmEventShort > P_armWin OR (ArmBreakShort AND NOT MomShort) OR (TouchedDemand exists AND TouchedSupply does not exist))
+Calculation: LateFireLong = (ArmedLong OR ArmEventLong) AND bars since last bar where (ArmBreakLong AND MomLong) <= P_lateBars
+Calculation: LateFireShort = (ArmedShort OR ArmEventShort) AND bars since last bar where (ArmBreakShort AND MomShort) <= P_lateBars
+Calculation: LongTrigger = (ArmedLong OR ArmEventLong) AND (NOT ArmExpireLong OR LateFireLong) AND (ReversalLong OR ReactLong OR (LongConf >= P_armConf AND (NOT P_armRev OR NOT P_osc OR OscLong))) AND HTFBull >= P_htfReq AND (NOT StrongBear OR ExtremeOversold) AND PolarityLong AND ZonePosition <= P_wsLong
+Calculation: ShortTrigger = (ArmedShort OR ArmEventShort) AND (NOT ArmExpireShort OR LateFireShort) AND (ReversalShort OR ReactShort OR (ShortConf >= P_armConf AND (NOT P_armRev OR NOT P_osc OR OscShort))) AND HTFBear >= P_htfReq AND (NOT StrongBull OR ExtremeOverbought) AND PolarityShort AND ZonePosition >= P_wsShort
+Calculation: TP_k = entry * (1 + TPpct_k / 100) for long, entry * (1 - TPpct_k / 100) for short, where TPpct_k = max(P_floor_k, VolMult * max(P_atrFloor, ATR(P_atrLen) / entry * 100 * P_tpMult_k)) evaluated at entry, and VolMult = P_v1 if ATR(P_atrLen) / entry * 100 < P_a1; P_v2 if < P_a2; P_v3 if < P_a3; otherwise P_v4
+Long: ArmEventLong
+Long: LongTrigger
+Short: ArmEventShort
+Short: ShortTrigger AND NOT LongTrigger
+Exit: long, low <= max(stop at entry, entry price when TP_1 reached AND NOT P_exitTP1, highest of (close - P_trailATR * ATR(P_atrLen)) since TP_2 reached when NOT P_exitTP1), where stop at entry = bottom of TouchedDemand at entry - P_stopBuf * ATR(P_atrLen) at entry
+Exit: long, P_exitTP1 AND high >= TP_1
+Exit: long, high >= TP_3
+Exit: long, NOT P_exitTP1 AND TP_1 reached earlier in trade AND EMA(close, E_s) crosses below EMA(close, E_m)
+Exit: short, high >= min(stop at entry, entry price when TP_1 reached AND NOT P_exitTP1, lowest of (close + P_trailATR * ATR(P_atrLen)) since TP_2 reached when NOT P_exitTP1), where stop at entry = top of TouchedSupply at entry + P_stopBuf * ATR(P_atrLen) at entry
+Exit: short, P_exitTP1 AND low <= TP_1
+Exit: short, low <= TP_3
+Exit: short, NOT P_exitTP1 AND TP_1 reached earlier in trade AND EMA(close, E_s) crosses above EMA(close, E_m)

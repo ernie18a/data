@@ -1,0 +1,15 @@
+Calculation: Opening range high = maximum high during the configured opening-range window for each trading day
+Calculation: Opening range low = minimum low during the configured opening-range window for each trading day
+Calculation: Opening range midpoint = (Opening range high + Opening range low) / 2
+Long: After the opening range closes, a confirmed bar closes above the opening range high and volume >= SMA(volume, volume-average lookback) * volume multiplier, with no earlier confirmed breakout that trading day
+Short: After the opening range closes, a confirmed bar closes below the opening range low and volume >= SMA(volume, volume-average lookback) * volume multiplier, with no earlier confirmed breakout that trading day
+Long: In the active window after the day's first bullish breakout, on a confirmed bar: the selected mode is immediate and this is the breakout bar or the first active-window bar after an earlier breakout; OR the selected mode is midpoint retest, the setup is waiting and unexpired, this bar is after the breakout, low <= opening range midpoint, and close > opening range midpoint; OR the selected mode is boundary retest, the setup is waiting and unexpired, this bar is after the breakout, low <= opening range high, high >= opening range high, and close > opening range high. For retest modes, timeout is measured from active-window start if waiting is enabled and the breakout preceded it, from the breakout if waiting is disabled; with waiting enabled, breakouts at or after active-window start do not expire.
+Short: In the active window after the day's first bearish breakout, on a confirmed bar: the selected mode is immediate and this is the breakout bar or the first active-window bar after an earlier breakout; OR the selected mode is midpoint retest, the setup is waiting and unexpired, this bar is after the breakout, high >= opening range midpoint, and close < opening range midpoint; OR the selected mode is boundary retest, the setup is waiting and unexpired, this bar is after the breakout, low <= opening range low, high >= opening range low, and close < opening range low. For retest modes, timeout is measured from active-window start if waiting is enabled and the breakout preceded it, from the breakout if waiting is disabled; with waiting enabled, breakouts at or after active-window start do not expire.
+Calculation: Long stop price = opening range low - ATR(ATR lookback, entry bar) * stop-buffer multiplier
+Calculation: Short stop price = opening range high + ATR(ATR lookback, entry bar) * stop-buffer multiplier
+Calculation: Long risk distance = entry price - long stop price
+Calculation: Short risk distance = short stop price - entry price
+Calculation: Final long target = entry price + long risk distance * highest enabled target reward/risk ratio
+Calculation: Final short target = entry price - short risk distance * highest enabled target reward/risk ratio
+Exit: long, low <= long stop price OR (at least one take-profit target is enabled AND high >= final long target)
+Exit: short, high >= short stop price OR (at least one take-profit target is enabled AND low <= final short target)

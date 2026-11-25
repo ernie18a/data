@@ -1,0 +1,8 @@
+Calculation: Level zone = level price ± max(zone half-width × ATR(lookback), minimum tick)
+Calculation: A level test starts when an armed level's zone is intersected after the preceding close was above its upper edge or below its lower edge; it resolves held when the close exits beyond the same edge, or broken when it exits beyond the opposite edge. Cancel an unresolved test when its age exceeds the test limit; re-arm a resolved or canceled level only after the close moves beyond the zone by the re-arm distance.
+Calculation: Relative volume = volume / max(SMA(volume, lookback), epsilon), or 1 when cumulative volume is zero
+Calculation: Long stop = min(signal-bar low, support price) − stop buffer × ATR(lookback); short stop = max(signal-bar high, resistance price) + stop buffer × ATR(lookback); target = entry price + position direction × target multiple × abs(entry price − stop)
+Long: On a confirmed bar with ATR > 0 and positive risk, an uncanceled test of a watched confluence level with at least the minimum voice count resolves held from above and relative volume meets its threshold (or the threshold is nonpositive), OR resolves broken from below
+Short: On a confirmed bar with ATR > 0 and positive risk, an uncanceled test of a watched confluence level with at least the minimum voice count resolves held from below and relative volume meets its threshold (or the threshold is nonpositive), OR resolves broken from above
+Exit: long, after the entry bar, low ≤ stop OR high ≥ target OR bars since entry ≥ exit horizon
+Exit: short, after the entry bar, high ≥ stop OR low ≤ target OR bars since entry ≥ exit horizon

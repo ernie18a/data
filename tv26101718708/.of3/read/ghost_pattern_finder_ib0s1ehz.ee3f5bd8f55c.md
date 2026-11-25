@@ -1,0 +1,4 @@
+Calculation: projected final close = close of the displayed qualifying historical match at ceil(forecast horizon × match length / selected pattern length) source bars after the match end × (selected pattern end close / match end close if match end close ≠ 0, otherwise 1), using completed source-timeframe bars from the chart timeframe or T1–T4 on the chart’s last bar
+Calculation: forecast return = projected final close / selected pattern end close − 1 if selected pattern end close ≠ 0, otherwise 0
+Long: a selected pattern and displayed qualifying historical match exist AND forecast return ≥ 0
+Short: a selected pattern and displayed qualifying historical match exist AND forecast return < 0

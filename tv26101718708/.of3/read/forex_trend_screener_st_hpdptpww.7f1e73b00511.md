@@ -1,0 +1,3 @@
+Calculation: Z(T, confirm, p, q) = EMA((hlc3 - EMA(hlc3, p)) / EMA(abs(hlc3 - EMA(hlc3, p)), p), q) on bars of T, read from the last completed T bar if confirm, else from the T bar still forming
+Long: (NOT (enable_1 AND trend_1) OR Z(T1, confirm_1, p, q) > 0) AND (NOT (enable_2 AND trend_2) OR Z(T2, confirm_2, p, q) > 0) AND (NOT (enable_3 AND trend_3) OR Z(T3, confirm_3, p, q) > 0) AND ((enable_1 AND trend_1) OR (enable_2 AND trend_2) OR (enable_3 AND trend_3))
+Short: (NOT (enable_1 AND trend_1) OR Z(T1, confirm_1, p, q) < 0) AND (NOT (enable_2 AND trend_2) OR Z(T2, confirm_2, p, q) < 0) AND (NOT (enable_3 AND trend_3) OR Z(T3, confirm_3, p, q) < 0) AND ((enable_1 AND trend_1) OR (enable_2 AND trend_2) OR (enable_3 AND trend_3))

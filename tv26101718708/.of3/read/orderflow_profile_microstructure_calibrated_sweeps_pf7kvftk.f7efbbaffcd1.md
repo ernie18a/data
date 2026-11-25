@@ -1,0 +1,12 @@
+Calculation: flow delta = native footprint buy volume − sell volume when selected and available; otherwise BVC delta from T1 intrabars, aggregated on chart bars using completed intrabars and evaluated at chart-bar close
+Calculation: normalized absorption = (volume / SMA(volume, sweep-volume lookback)) / max(max(abs(close − open), minimum price increment) / ATR(ATR lookback), minimum normalized displacement)
+Long: flow delta >= 0
+Short: flow delta < 0
+Long: CVD(flow delta) >= 0
+Short: CVD(flow delta) < 0
+Long: ZScore(sign(flow delta) × log(1 + abs(flow delta)), OFI lookback) >= 0
+Short: ZScore(sign(flow delta) × log(1 + abs(flow delta)), OFI lookback) < 0
+Long: confirmed chart bar AND low < lowest(low, sweep-pivot lookback)[1] AND NOT (high > highest(high, sweep-pivot lookback)[1]) AND (volume < SMA(volume, sweep-volume lookback) × dry-volume factor OR normalized absorption >= absorption floor AND close > lowest(low, sweep-pivot lookback)[1] OR (min(open, close) − low) / max(high − low, minimum price increment) >= rejection-wick fraction AND close > open OR flow delta > 0)
+Short: confirmed chart bar AND high > highest(high, sweep-pivot lookback)[1] AND NOT (low < lowest(low, sweep-pivot lookback)[1]) AND (volume < SMA(volume, sweep-volume lookback) × dry-volume factor OR normalized absorption >= absorption floor AND close < highest(high, sweep-pivot lookback)[1] OR (high − max(open, close)) / max(high − low, minimum price increment) >= rejection-wick fraction AND close < open OR flow delta < 0)
+Long: confirmed chart bar AND volume > SMA(volume, liquidity-volume lookback) × volume-spike factor AND low < most recent confirmed pivot low within pivot-search lookback (pivot left bars, pivot right bars) AND close > pivot low AND close − low >= (pivot low − low) × (1 + reclaim fraction)
+Short: confirmed chart bar AND volume > SMA(volume, liquidity-volume lookback) × volume-spike factor AND high > most recent confirmed pivot high within pivot-search lookback (pivot left bars, pivot right bars) AND close < pivot high AND high − close >= (high − pivot high) × (1 + reclaim fraction) AND NOT (low < most recent confirmed pivot low within pivot-search lookback AND close > pivot low AND close − low >= (pivot low − low) × (1 + reclaim fraction))

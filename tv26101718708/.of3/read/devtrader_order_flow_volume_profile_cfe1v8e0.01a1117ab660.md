@@ -1,0 +1,29 @@
+Calculation: bar delta = selected footprint buy volume − selected footprint sell volume; when estimated from T1, classify available intrabars within each chart bar (including a forming intrabar) by comparing each close with the prior close, starting from the chart-bar open, using close versus open when closes tie, and splitting volume equally when both tie
+Calculation: bar delta percent = 100 × bar delta / (selected footprint buy volume + selected footprint sell volume)
+Calculation: relative volume = current selected classified volume / SMA(selected classified volume on bars with flow data, lookback)
+Calculation: session CVD = cumulative bar delta on chart bars within the configured session
+Calculation: session delta percent = 100 × session CVD / cumulative selected classified volume within the configured session
+Calculation: T2-period delta percent = 100 × cumulative bar delta / cumulative selected classified volume, accumulated on chart bars during the current forming T2 period or the last completed T2 period
+Calculation: signal gate = close confirmation is disabled OR the chart bar is confirmed
+Long: selected flow data exists AND bar delta percent > 0 AND absolute bar delta percent >= neutral delta threshold
+Short: selected flow data exists AND bar delta percent <= 0 AND absolute bar delta percent >= neutral delta threshold
+Long: configured-session classified volume > 0 AND session delta percent > 0 AND absolute session delta percent >= neutral delta threshold
+Short: configured-session classified volume > 0 AND session delta percent <= 0 AND absolute session delta percent >= neutral delta threshold
+Long: current forming T2-period classified volume > 0 AND current T2-period delta percent > 0 AND absolute current T2-period delta percent >= neutral delta threshold
+Short: current forming T2-period classified volume > 0 AND current T2-period delta percent <= 0 AND absolute current T2-period delta percent >= neutral delta threshold
+Long: last completed T2-period classified volume > 0 AND last completed T2-period delta percent > 0 AND absolute last completed T2-period delta percent >= neutral delta threshold
+Short: last completed T2-period classified volume > 0 AND last completed T2-period delta percent <= 0 AND absolute last completed T2-period delta percent >= neutral delta threshold
+Long: selected flow data exists AND bar delta percent >= extreme delta threshold AND relative volume, treating unavailable as zero, >= minimum relative-volume threshold AND signal gate
+Short: selected flow data exists AND bar delta percent <= −extreme delta threshold AND relative volume, treating unavailable as zero, >= minimum relative-volume threshold AND signal gate
+Long: selected flow data exists AND bar delta percent <= −extreme delta threshold AND relative volume, treating unavailable as zero, >= minimum relative-volume threshold AND (close > open OR (close − low) / max(high − low, minimum tick) >= 1 − absorption close-edge threshold) AND signal gate
+Short: selected flow data exists AND bar delta percent >= extreme delta threshold AND relative volume, treating unavailable as zero, >= minimum relative-volume threshold AND (close < open OR (close − low) / max(high − low, minimum tick) <= absorption close-edge threshold) AND signal gate
+Long: native footprint is selected and available AND consecutive footprint rows with diagonal buy imbalance >= minimum stacked rows AND signal gate
+Short: native footprint is selected and available AND consecutive footprint rows with diagonal sell imbalance >= minimum stacked rows AND signal gate
+Long: a confirmed low pivot of low is below the preceding confirmed low pivot AND session CVD at that pivot is above session CVD at the preceding pivot AND both pivots and the confirmation occur in the same configured session AND signal gate
+Short: a confirmed high pivot of high is above the preceding confirmed high pivot AND session CVD at that pivot is below session CVD at the preceding pivot AND both pivots and the confirmation occur in the same configured session AND signal gate
+Long: configured-session classified volume > 0 AND session delta percent >= extreme delta threshold AND classified chart-bar count >= session maturity threshold AND no chart bars with instrument volume but unavailable flow data in the session AND (new session OR the preceding chart bar failed these conditions) AND signal gate
+Short: configured-session classified volume > 0 AND session delta percent <= −extreme delta threshold AND classified chart-bar count >= session maturity threshold AND no chart bars with instrument volume but unavailable flow data in the session AND (new session OR the preceding chart bar failed these conditions) AND signal gate
+Long: current T2-period classified volume > 0 AND current T2-period delta percent >= extreme delta threshold AND classified chart-bar count >= period maturity threshold AND no chart bars with instrument volume but unavailable flow data in the period AND (new T2 period OR the preceding chart bar failed these conditions) AND signal gate
+Short: current T2-period classified volume > 0 AND current T2-period delta percent <= −extreme delta threshold AND classified chart-bar count >= period maturity threshold AND no chart bars with instrument volume but unavailable flow data in the period AND (new T2 period OR the preceding chart bar failed these conditions) AND signal gate
+Long: configured session is active AND developing profile POC is at least the migration threshold rows above its trail, which resets at session opening and advances when reached AND signal gate
+Short: configured session is active AND developing profile POC is at least the migration threshold rows below its trail, which resets at session opening and advances when reached AND signal gate

@@ -1,0 +1,21 @@
+Calculation: UpShare = sum of volume of T1 bars with close >= open / sum of volume of T1 bars, both over the T1 bars inside the current still-forming chart bar
+Calculation: VolumeReliable = (share of chart bars so far with volume > 0) >= volume-share parameter
+Calculation: VolumePOC(bars, lookback, rows) = midpoint of the row with the most volume, where the high-to-low range of the last lookback bars is split into rows equal-height price rows and each bar adds volume * row height / bar range to every row it overlaps
+Calculation: Anchor = chart bar with high volume, narrow range relative to ATR, and close in the middle of its range
+Calculation: AnchorPOC = VolumePOC(chart bars, lookback = bars since latest Anchor, rows = anchor-profile rows parameter)
+Calculation: NakedPOCs = most recent count-parameter stored AnchorPOC values, each stored when a new Anchor forms on a volume-confirmed bar (multi-window), and kept until price touches it
+Calculation: Votes = list of (price, method type, tier, timeframe, weight, bar index) for each of: AnchorPOC (POC type, chart timeframe); each NakedPOC (naked-POC type, chart timeframe); T2 VolumePOC (POC type, requires VolumeReliable); T2 most recent confirmed PivotHigh and PivotLow (pivot type, left and right parameters); T2 previous-bar high and low (previous-extreme type); T2 previous-bar close (close type); for each of T3, T4, T5, T6: previous-bar high and low (previous-extreme type), VolumePOC (HTF-POC type, requires VolumeReliable), most recent confirmed PivotHigh and PivotLow (pivot type), last completed bar close (close type); anchored VWAP, sigma-band and Fibonacci-band levels at the latest Anchor (own method types); absorption-candle level (absorption type). T2 to T6 values come from the last completed bar, and previous-bar means the bar before it. Bar index = bar when the value was last set. Tier and weight are parameters per source and timeframe. Entries without a value are skipped
+Calculation: PriceTol = max(close * cluster-tolerance parameter / 100, minimum price increment)
+Calculation: Clusters = votes in ascending price order, where each vote joins the open cluster if its price is within PriceTol of the cluster's weight-averaged price so far, else opens a new cluster
+Calculation: DrawnPrice(cluster) = price of its highest-tier vote (lowest price among ties) if cluster width <= tight-width parameter * PriceTol, else cluster weight-averaged price
+Calculation: Score(cluster) = min(score cap, TierPts(highest vote tier) + TypePts(distinct method types) + TFPts(distinct timeframes, chart timeframe included) + RecencyPts(bars since weight-averaged bar index) + TightPts(cluster width / PriceTol) + AbsorbBonus(cluster has absorption-candle vote)), where each term is a step function of its argument with parameter steps
+Calculation: Trending = KaufmanEfficiency(T7 close, window) >= efficiency parameter OR VarianceRatio(T7 log close, k, window) >= variance-ratio parameter, both on the last completed T7 bar
+Calculation: MinShow = min(min-strength parameter + (trend-lift parameter if Trending, else 0), fortress parameter)
+Calculation: MinSep = separation parameter * PriceTol
+Calculation: DisplayedLevels = clusters among the top rank-count-parameter clusters by Score (descending, ties in ascending price order) that have Score >= MinShow and whose DrawnPrice is at least MinSep from the DrawnPrice of every earlier displayed cluster
+Calculation: HasPOC(cluster) = cluster includes a POC-type vote
+Calculation: Bias = Bull if VolumeReliable AND AnchorPOC exists AND UpShare >= threshold parameter; Bear if VolumeReliable AND AnchorPOC exists AND UpShare <= 1 - threshold parameter; otherwise Neutral
+Long: Bias = Bull
+Short: Bias = Bear
+Long: exists L in DisplayedLevels such that (HasPOC(L) AND Bias = Bull) OR (NOT (HasPOC(L) AND Bias != Neutral) AND DrawnPrice(L) < close)
+Short: exists L in DisplayedLevels such that (HasPOC(L) AND Bias = Bear) OR (NOT (HasPOC(L) AND Bias != Neutral) AND DrawnPrice(L) >= close)

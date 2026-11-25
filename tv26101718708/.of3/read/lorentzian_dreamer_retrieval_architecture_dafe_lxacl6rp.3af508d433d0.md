@@ -1,0 +1,4 @@
+Long: Confluence score >= confluence activation threshold AND confluence count >= minimum confluence count AND (Lorentzian prediction > Lorentzian direction threshold OR footprint delta ratio > flow direction threshold OR (RCM enabled AND RCM state is bullish)) AND NOT (Lorentzian prediction < -Lorentzian direction threshold OR footprint delta ratio < -flow direction threshold OR (RCM enabled AND RCM state is bearish))
+Short: Confluence score >= confluence activation threshold AND confluence count >= minimum confluence count AND (Lorentzian prediction < -Lorentzian direction threshold OR footprint delta ratio < -flow direction threshold OR (RCM enabled AND RCM state is bearish)) AND NOT (Lorentzian prediction > Lorentzian direction threshold OR footprint delta ratio > flow direction threshold OR (RCM enabled AND RCM state is bullish))
+Long: Dream residual > dream direction threshold
+Short: Dream residual < -dream direction threshold

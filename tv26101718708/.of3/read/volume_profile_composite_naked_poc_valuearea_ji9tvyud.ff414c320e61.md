@@ -1,0 +1,12 @@
+Calculation: CVD = cumulative sum((2 × BVC buy fraction − 1) × volume)
+Calculation: BVC buy fraction = 1 / (1 + exp(−scale × clamp((close − close[1]) / σ, −bound, bound))), where σ = sqrt(SMA(volume × (close − close[1])², volatility lookback) / SMA(volume, volatility lookback)) when defined and positive; otherwise use StDev(close − close[1], volatility lookback); when BVC is disabled or σ is undefined or nonpositive, use 1 if close ≥ open, otherwise 0
+Long: close ≤ close[lookback] AND CVD > CVD[lookback] AND NOT (close[1] ≤ close[lookback + 1] AND CVD[1] > CVD[lookback + 1])
+Short: close > close[lookback] AND CVD ≤ CVD[lookback] AND NOT (close[1] > close[lookback + 1] AND CVD[1] ≤ CVD[lookback + 1])
+Calculation: Trending = ADX(high, low, close, DI length, smoothing) > ADX threshold AND Kaufman Efficiency Ratio(close, efficiency lookback) > efficiency threshold
+Calculation: Volatility cluster = (H − SMA(H, z-score lookback)) / StDev(H, z-score lookback) > cluster threshold, where H = H[1] × exp(−decay) + abs(log(close / close[1]))
+Long: regime read enabled AND Trending AND close > EMA(close, trend lookback)
+Short: regime read enabled AND Trending AND close ≤ EMA(close, trend lookback)
+Long: (regime read disabled OR (regime read enabled AND NOT Trending AND NOT Volatility cluster)) AND close < POC(volume profile over selected chart-bar scope, bin size) AND close ≥ VAL(volume profile over selected chart-bar scope, bin size, value-area percentage) AND close ≤ VAH(volume profile over selected chart-bar scope, bin size, value-area percentage)
+Short: (regime read disabled OR (regime read enabled AND NOT Trending AND NOT Volatility cluster)) AND close > POC(volume profile over selected chart-bar scope, bin size) AND close ≥ VAL(volume profile over selected chart-bar scope, bin size, value-area percentage) AND close ≤ VAH(volume profile over selected chart-bar scope, bin size, value-area percentage)
+Long: regime read enabled AND NOT Trending AND NOT Volatility cluster AND close < VAL(volume profile over selected chart-bar scope, bin size, value-area percentage)
+Short: regime read enabled AND NOT Trending AND NOT Volatility cluster AND close > VAH(volume profile over selected chart-bar scope, bin size, value-area percentage)

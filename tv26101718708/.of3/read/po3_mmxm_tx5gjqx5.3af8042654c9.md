@@ -1,0 +1,2 @@
+Long: During an active session, the first FVG (low > high[2]) in the session-start window sets bullish bias while no macro override is latched, OR the first close outside the bounds of the first macro-window FVG is above its upper edge; keep the macro direction latched until session end
+Short: During an active session, the first FVG (high < low[2]) in the session-start window sets bearish bias while no macro override is latched, OR the first close outside the bounds of the first macro-window FVG is below its lower edge; keep the macro direction latched until session end

@@ -1,0 +1,20 @@
+Calculation: Selected baseline = the selected HMA, ALMA, KAMA, T3, VWMA, or EMA of the selected price field over the baseline lookback; use EMA when VWMA is selected and volume is unavailable
+Calculation: Adaptive offset = selected volatility measure × trail multiplier × (1 − adaptivity × min(abs(EMA(RSI(selected price field, RSI lookback), RSI smoothing lookback) − RSI midpoint) / RSI normalization scale, momentum cap) × maximum tightening fraction), where selected volatility is ATR(volatility lookback), StDev(close, volatility lookback), or their average
+Calculation: Ratcheting trend = initialize bullish when close ≥ selected baseline with trail at baseline − adaptive offset, otherwise initialize bearish with trail at baseline + adaptive offset; while bullish, trail = max(previous trail, baseline − adaptive offset) and flip bearish with trail reset to baseline + adaptive offset when close < trail; while bearish, trail = min(previous trail, baseline + adaptive offset) and flip bullish with trail reset to baseline − adaptive offset when close > trail
+Calculation: Initial stop = for long, ATR mode ? entry price − ATR(stop lookback) × stop ATR multiplier : min(signal-bar low − ATR(stop lookback) × wick buffer, entry price − ATR(stop lookback) × minimum-stop-distance multiplier); for short, ATR mode ? entry price + ATR(stop lookback) × stop ATR multiplier : max(signal-bar high + ATR(stop lookback) × wick buffer, entry price + ATR(stop lookback) × minimum-stop-distance multiplier)
+Calculation: Risk distance = abs(entry price − initial stop)
+Calculation: Target 1 = for long, entry price + risk distance × target-1 R multiplier; for short, entry price − risk distance × target-1 R multiplier
+Calculation: Target 3 = for long, entry price + risk distance × target-3 R multiplier; for short, entry price − risk distance × target-3 R multiplier
+Calculation: Current stop = entry price after break-even is enabled and Target 1 was touched on a previous bar; otherwise initial stop
+Long: Ratcheting trend is bullish after warm-up
+Short: Ratcheting trend is bearish after warm-up
+Long: EMA(RSI(selected price field, RSI lookback), RSI smoothing lookback) > RSI bullish-color threshold
+Short: EMA(RSI(selected price field, RSI lookback), RSI smoothing lookback) < RSI bearish-color threshold
+Long: HTF bias filter is enabled and, on chart bars, the last completed T1 close > EMA(close, HTF EMA lookback, T1, last completed bar)
+Short: HTF bias filter is enabled and, on chart bars, the last completed T1 close < EMA(close, HTF EMA lookback, T1, last completed bar)
+Long: confirmed chart-bar flip from bearish to bullish after warm-up AND trend-flip alerts are enabled AND no long entry opened
+Short: confirmed chart-bar flip from bullish to bearish after warm-up AND trend-flip alerts are enabled AND no short entry opened
+Long: confirmed chart-bar flip from bearish to bullish after warm-up AND (HTF bias filter disabled OR, on chart bars, last completed T1 close > EMA(close, HTF EMA lookback, T1, last completed bar)) AND (volume filter disabled OR volume = 0 OR (SMA(volume, volume-average lookback) > 0 AND volume > SMA(volume, volume-average lookback) × volume threshold)) AND ATR(stop lookback) > 0
+Short: confirmed chart-bar flip from bullish to bearish after warm-up AND (HTF bias filter disabled OR, on chart bars, last completed T1 close < EMA(close, HTF EMA lookback, T1, last completed bar)) AND (volume filter disabled OR volume = 0 OR (SMA(volume, volume-average lookback) > 0 AND volume > SMA(volume, volume-average lookback) × volume threshold)) AND ATR(stop lookback) > 0
+Exit: Long, on a confirmed chart bar after the entry bar, (low ≤ current stop AND NOT (high ≥ Target 1 AND Target 1 was not touched before this bar)) OR high ≥ Target 3
+Exit: Short, on a confirmed chart bar after the entry bar, (high ≥ current stop AND NOT (low ≤ Target 1 AND Target 1 was not touched before this bar)) OR low ≤ Target 3

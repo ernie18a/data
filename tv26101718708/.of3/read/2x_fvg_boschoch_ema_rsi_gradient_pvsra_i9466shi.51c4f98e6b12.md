@@ -1,0 +1,17 @@
+Calculation: PVSRA Climax = source volume >= SMA(source volume, volume lookback) * climax multiplier OR (volume-spread climax enabled AND source volume * (source high - source low) >= highest(source volume * (source high - source low), volume lookback))
+Calculation: PVSRA Above-Average = NOT PVSRA Climax AND source volume >= SMA(source volume, volume lookback) * above-average multiplier
+Calculation: Selected swing break = On a confirmed bar, test the latest unbroken confirmed pivot high using close or high and pivot low using close or low, as configured; an older swing break takes precedence over a newly confirmed pivot already broken on that bar; if both high and low breaks are present, select the high when prior structure is bullish, the low when it is bearish, and the high when it is neutral and close >= open, otherwise the low. Confirm pivots using equal left and right swing lookbacks.
+Long: On a confirmed bar, low > high[2] AND (minimum FVG size filter is disabled OR low - high[2] >= minimum FVG size, converted from ticks to price when the unit is ticks)
+Short: On a confirmed bar, high < low[2] AND (minimum FVG size filter is disabled OR low[2] - high >= minimum FVG size, converted from ticks to price when the unit is ticks)
+Long: On a confirmed bar, a bullish FVG forms within the maximum bars between FVGs of a pending bullish cluster and does not overlap that cluster; overlapping bullish FVGs extend the cluster bounds, while an opposite-direction FVG or a 2x event clears the pending cluster
+Short: On a confirmed bar, a bearish FVG forms within the maximum bars between FVGs of a pending bearish cluster and does not overlap that cluster; overlapping bearish FVGs extend the cluster bounds, while an opposite-direction FVG or a 2x event clears the pending cluster
+Long: Selected swing break is above a confirmed pivot high AND ((prior structure is bearish AND CHoCH is enabled) OR (prior structure is neutral or bullish AND BOS is enabled))
+Short: Selected swing break is below a confirmed pivot low AND ((prior structure is bullish AND CHoCH is enabled) OR (prior structure is neutral or bearish AND BOS is enabled))
+Long: On a confirmed bar, EMA(close, shorter lookback) crosses above EMA(close, longer lookback)
+Short: On a confirmed bar, EMA(close, shorter lookback) crosses below EMA(close, longer lookback)
+Long: PVSRA candle coloring is enabled AND source close > source open
+Short: PVSRA candle coloring is enabled AND source close <= source open
+Long: On a confirmed bar, PVSRA is enabled AND PVSRA Climax AND source close > source open
+Short: On a confirmed bar, PVSRA is enabled AND PVSRA Climax AND source close <= source open
+Long: Footprint data is available with total volume > 0 AND the candle meets the selected footprint activity mode (PVSRA Climax only, PVSRA Climax or PVSRA Above-Average, or all candles) AND buy volume / total volume > sell volume / total volume AND 100 * abs(buy volume - sell volume) / total volume > neutral threshold
+Short: Footprint data is available with total volume > 0 AND the candle meets the selected footprint activity mode (PVSRA Climax only, PVSRA Climax or PVSRA Above-Average, or all candles) AND sell volume / total volume > buy volume / total volume AND 100 * abs(buy volume - sell volume) / total volume > neutral threshold

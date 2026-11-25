@@ -1,0 +1,2 @@
+Long: close > EMA(close, shorter lookback) AND EMA(close, shorter lookback) > EMA(close, longer lookback), evaluated on T1 bars including the bar still forming
+Short: close < EMA(close, shorter lookback) AND EMA(close, shorter lookback) < EMA(close, longer lookback), evaluated on T1 bars including the bar still forming

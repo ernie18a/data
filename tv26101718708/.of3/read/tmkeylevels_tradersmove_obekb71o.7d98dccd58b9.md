@@ -1,0 +1,4 @@
+Calculation: OpeningRangeHigh = highest(high) on chart bars starting during the first parameterized duration after a configured session opens
+Calculation: OpeningRangeLow = lowest(low) on chart bars starting during the first parameterized duration after a configured session opens
+Long: close crosses above OpeningRangeHigh after the opening-range window and during the configured session, when that session's opening range is enabled and the chart timeframe is no longer than the opening-range duration
+Short: close crosses below OpeningRangeLow after the opening-range window and during the configured session, when that session's opening range is enabled and the chart timeframe is no longer than the opening-range duration

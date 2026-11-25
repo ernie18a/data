@@ -1,0 +1,5 @@
+Calculation: body top(n) = max(open[n], close[n])
+Calculation: body bottom(n) = min(open[n], close[n])
+Calculation: session break(a,b,T1) = datetime(b) > close time(a) OR datetime(b) - datetime(a) > duration(T1)
+Long: On T1 bars, use candle 3's current values, including while it is forming; calculate on T1 bars and project to chart bars. (low > high[2] OR (body bottom(1) > body top(2) AND low > body bottom(1) AND NOT session break(2,1,T1))) AND (T1 is not intraday OR session-gap filtering is disabled OR NOT ((session break(2,1,T1) AND open[1] > high[2]) OR (session break(1,0,T1) AND open > high[1])))
+Short: On T1 bars, use candle 3's current values, including while it is forming; calculate on T1 bars and project to chart bars. (high < low[2] OR (body bottom(2) > body top(1) AND high < body top(1) AND NOT session break(2,1,T1))) AND (T1 is not intraday OR session-gap filtering is disabled OR NOT ((session break(2,1,T1) AND open[1] < low[2]) OR (session break(1,0,T1) AND open < low[1])))

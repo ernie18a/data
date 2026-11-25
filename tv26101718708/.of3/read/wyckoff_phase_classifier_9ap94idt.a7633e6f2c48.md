@@ -1,0 +1,37 @@
+Calculation: Close position = (close - low) / (high - low), or the midpoint when high = low
+Calculation: Bar move (%) = (close - open) / open × 100 when open > 0, otherwise zero
+Calculation: Cycle range (%) = (resistance - support) / the path's base level × 100; use support on the SC path and resistance on the BC path
+Calculation: Markup peak close = highest close since Markup became active
+Calculation: SOW low close = lowest close since SOW began
+Calculation: Markdown low close = lowest close since Markdown began
+Long: While idle, a confirmed pivot low on a downtrend (SMA(close, trend lookback) <= its value trend lookback bars ago) has pivot-bar volume above SMA(volume, volume-average lookback) × climax-volume multiplier and pivot-bar close position at least the SC close-position threshold; mark SC only when a later confirmed pivot high yields cycle range at least the minimum range before timeout
+Long: While idle, a confirmed pivot low on a downtrend has pivot-bar volume above SMA(volume, volume-average lookback) × climax-volume multiplier × pre-climax fraction but not above the climax threshold, and pivot-bar close position at least the PS close-position threshold
+Short: While idle, a confirmed pivot high on an uptrend (SMA(close, trend lookback) > its value trend lookback bars ago) has pivot-bar volume above SMA(volume, volume-average lookback) × climax-volume multiplier and pivot-bar close position at most the BC close-position threshold; mark BC only when a later confirmed pivot low yields cycle range at least the minimum range before timeout
+Short: While idle, a confirmed pivot high on an uptrend has pivot-bar volume above SMA(volume, volume-average lookback) × climax-volume multiplier × pre-climax fraction but not above the climax threshold, and pivot-bar close position at most the PSY close-position threshold
+Long: During an SC cycle, a confirmed pivot high yields cycle range at least the minimum range before timeout; mark AR
+Short: During a BC cycle, keep resistance at the highest confirmed pivot high since BC; a later confirmed pivot low yields cycle range at least the minimum range before timeout; mark AR
+Long: During a BC cycle within active Markup, a confirmed pivot high with pivot-bar volume above SMA(volume, volume-average lookback) × climax-volume multiplier, pivot-bar close position at most the sub-BC close-position threshold, and price at least the sub-BC peak tolerance below the Markup peak close starts the BC cycle
+Long: After Markdown, a confirmed pivot high formed after Markdown began and at least the markdown-rally threshold above the lowest close since Markdown began marks AR; if its pivot-bar volume is above SMA(volume, volume-average lookback) and its pivot-bar close position is at most the BC close-position threshold, it starts a BC cycle
+Long: During the SC path's AR stage, a confirmed pivot low with pivot-bar volume below SMA(volume, volume-average lookback) × quiet-volume multiplier and price between support reduced by spring tolerance and support increased by ST tolerance marks ST
+Short: During the BC path's AR stage, a confirmed pivot high with pivot-bar volume below SMA(volume, volume-average lookback) × quiet-volume multiplier and price between resistance reduced by four times ST tolerance and resistance increased by spring tolerance marks ST
+Long: After ST on either accumulation path, low is at or below support but no lower than support reduced by spring tolerance, close is at least support reduced by close-level tolerance, and close position is at least the Spring close-position threshold; OR low is below support reduced by spring tolerance and close position is at least the deep-Spring close-position threshold. A deep Spring resets support to low
+Short: After ST on the BC path, low is below support reduced by spring tolerance, close position is below the deep-Spring close-position threshold, bar move is at most negative the minimum bar-move threshold, and volume is above SMA(volume, volume-average lookback) × strong-volume multiplier; mark SOW
+Short: After ST on the BC path, high is at or above resistance but no higher than resistance increased by spring tolerance, close is at most resistance increased by close-level tolerance, and close position is at most the UTAD close-position threshold; mark UTAD
+Long: After Spring, a confirmed pivot low with pivot-bar volume below SMA(volume, volume-average lookback) × quiet-volume multiplier and price at least the test-support tolerance below support marks Test
+Long: Before ST on the SC path, close is above resistance, bar move is at least the minimum bar-move threshold, and volume is above SMA(volume, volume-average lookback) × strong-volume multiplier; mark SOS
+Long: Before ST on the BC path, close is above resistance increased by spring tolerance, bar move is at least the minimum bar-move threshold, and volume is above SMA(volume, volume-average lookback) × strong-volume multiplier; mark SOS
+Long: After Spring or Test, close is above resistance, bar move is at least the minimum bar-move threshold, and volume is above SMA(volume, volume-average lookback) × strong-volume multiplier; mark SOS
+Long: After SOS, a confirmed pivot low with pivot-bar volume below SMA(volume, volume-average lookback) × quiet-volume multiplier and price above support marks LPS; each qualifying later pivot low above support also marks LPS and raises support
+Long: After LPS, close above resistance marks Markup; during Markup, each confirmed pivot low with pivot-bar volume below SMA(volume, volume-average lookback) × quiet-volume multiplier and price above support marks LPS and raises support
+Short: Before ST on the BC path, close below support reduced by the breakdown threshold (a multiple of ST tolerance) marks SOW
+Short: After UTAD, close below support, bar move at most negative the minimum bar-move threshold, and volume above SMA(volume, volume-average lookback) × strong-volume multiplier mark SOW
+Short: After LPSY, close below support and volume above SMA(volume, volume-average lookback) × strong-volume multiplier mark Markdown
+Short: During active Markup, close below the Markup peak close reduced by the Markup-failure threshold (a multiple of ST tolerance) marks Markdown
+Long: During the SC accumulation range or confirmed reaccumulation range, the range-phase background marks a bullish phase
+Short: During the UTAD-to-LPSY distribution range, the range-phase background marks a bearish phase
+Long: While Markup shading is active and close has not fallen below the Markup peak close by the intermediate-markup threshold (a multiple of ST tolerance), the background marks a bullish phase
+Short: While Markup shading is active, close below the Markup peak close by the intermediate-markup threshold (a multiple of ST tolerance) marks distribution
+Short: While Markdown shading is active, the background marks a bearish phase
+Long: While Markup is active, high at or above the previous highest high during Markup draws the bullish trend mark
+Short: While Markdown is active, low at or below the previous lowest low during Markdown draws the bearish trend mark
+Exit: long, during SOW or LPSY a confirmed pivot high with pivot-bar volume below SMA(volume, volume-average lookback) × quiet-volume multiplier and price below resistance marks LPSY

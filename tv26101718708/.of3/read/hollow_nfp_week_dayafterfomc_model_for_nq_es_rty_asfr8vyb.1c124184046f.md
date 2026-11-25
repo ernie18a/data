@@ -1,0 +1,3 @@
+Calculation: ADR = SMA((high − low) / open, ADR lookback, T1 bars, last completed bar)
+Long: NFP-week day Monday–Thursday that is not the day after an FOMC meeting AND (close of the last bar before RTH open − session open) / (ADR × session open) > overnight threshold
+Short: day after an FOMC meeting AND ABS(implied volatility index close / SMA(implied volatility index close, IV average lookback, T1 bars, last completed bar) − 1) ≤ band

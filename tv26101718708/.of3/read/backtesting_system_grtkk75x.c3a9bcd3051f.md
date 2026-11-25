@@ -1,0 +1,10 @@
+Long: (external indicator value = +1 OR external source = close AND EMA(close, shorter lookback) crosses above EMA(close, longer lookback)) AND (reverse signal is disabled OR the corresponding short signal is active and reverse signal is enabled) AND all enabled time, account-streak, and long signal filters pass
+Short: (external indicator value = -1 OR external source = close AND EMA(close, shorter lookback) crosses below EMA(close, longer lookback)) AND (reverse signal is disabled OR the corresponding long signal is active and reverse signal is enabled) AND all enabled time, account-streak, and short signal filters pass
+Long: EMA(close, longer lookback) crosses above EMA(close, shorter lookback)
+Short: EMA(close, longer lookback) crosses below EMA(close, shorter lookback)
+Long: enabled long filters pass: ADX(DMI lookback, smoothing) < threshold; MACD histogram(close, fast lookback, slow lookback, signal lookback) > 0; close > open; volume is rising over its lookback; SMA(close, lookback) is rising over its lookback; high equals highest(high, lookback); close < close[1] * (1 + maximum change / 100); close > close[1] * (1 + minimum change / 100); RSI(close, lookback) <= overbought level; close > selected moving average(close, lookback)
+Short: enabled short filters pass: ADX(DMI lookback, smoothing) < threshold; MACD histogram(close, fast lookback, slow lookback, signal lookback) < 0; close < open; volume is rising over its lookback; SMA(close, lookback) is falling over its lookback; low equals lowest(low, lookback); close > close[1] * (1 - maximum change / 100); close < close[1] * (1 - minimum change / 100); RSI(close, lookback) >= oversold level; close < selected moving average(close, lookback)
+Exit: long, low <= stop price or high >= take-profit price
+Exit: short, high >= stop price or low <= take-profit price
+Exit: long or short, the configured number of recent closes are against the entry price
+Exit: long or short, time is outside the enabled session, date, or weekday filters and session-end close is enabled

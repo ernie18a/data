@@ -1,0 +1,19 @@
+Calculation: ATR-scaled ZigZag pivots = initialize in an upward leg with the first bar’s low; on each chart bar update the running extreme; confirm a swing high when the running high minus close >= reversal multiple * ATR(ATR lookback) and bars since the high >= minimum depth, then track lows from the confirmation bar’s low; confirm a swing low when close minus the running low >= reversal multiple * ATR(ATR lookback) and bars since the low >= minimum depth, then track highs from the confirmation bar’s high; alternate legs.
+Calculation: Pivot leg size = abs((current confirmed pivot price - previous confirmed pivot price) / previous confirmed pivot price) * 100
+Calculation: RecentNetOutcomes(side) = signed percentage returns from the selected anchor price to close after the holding horizon, sampled at confirmed same-side pivots separated by the minimum spacing; retain at most the maximum sample count and use the most recent recent-window outcomes for recent statistics.
+Long: an upward-leg ZigZag confirms a swing low on a closed chart bar
+Short: a downward-leg ZigZag confirms a swing high on a closed chart bar
+Long: a closed-bar confirmed swing low AND outcomes use the confirmation-close anchor AND recent outcome count >= minimum recent sample count AND Wilson lower bound at the confidence level for the share of positive recent net returns > majority threshold AND median recent net return > 0
+Short: a closed-bar confirmed swing high AND outcomes use the confirmation-close anchor AND recent outcome count >= minimum recent sample count AND Wilson lower bound at the confidence level for the share of positive recent net returns > majority threshold AND median recent net return > 0
+Long: a closed-bar confirmed swing low AND same-side pivot leg size sample count >= minimum strength sample count AND current pivot leg size >= nearest-rank percentile of the same-side retained pivot leg sizes at the strength percentile rank, including the current leg
+Short: a closed-bar confirmed swing high AND same-side pivot leg size sample count >= minimum strength sample count AND current pivot leg size >= nearest-rank percentile of the same-side retained pivot leg sizes at the strength percentile rank, including the current leg
+Long: a closed-bar confirmed swing low AND recent-net-backed condition AND strong-pivot condition
+Short: a closed-bar confirmed swing high AND recent-net-backed condition AND strong-pivot condition
+Long: a closed-bar confirmed swing low whose pivot price is within level tolerance * ATR(ATR lookback) of any prior confirmed pivot in the level-search window, excluding the current and immediately preceding pivots
+Short: a closed-bar confirmed swing high whose pivot price is within level tolerance * ATR(ATR lookback) of any prior confirmed pivot in the level-search window, excluding the current and immediately preceding pivots
+Long: a confirmed swing high above the preceding confirmed swing high (HH) OR a confirmed swing low above the preceding confirmed swing low (HL), with at least three confirmed pivots
+Short: a confirmed swing high at or below the preceding confirmed swing high (LH) OR a confirmed swing low at or below the preceding confirmed swing low (LL), with at least three confirmed pivots
+Long: a closed chart bar closes above the latest confirmed swing high before it has been broken AND structure direction is not down
+Long: a closed chart bar closes above the latest confirmed swing high before it has been broken AND structure direction is down
+Short: a closed chart bar closes below the latest confirmed swing low before it has been broken AND structure direction is not up
+Short: a closed chart bar closes below the latest confirmed swing low before it has been broken AND structure direction is up

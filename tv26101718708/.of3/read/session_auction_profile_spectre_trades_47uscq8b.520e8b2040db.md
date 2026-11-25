@@ -1,0 +1,6 @@
+Calculation: Value Area MID(profile) = (VAH(profile) + VAL(profile)) / 2
+Calculation: Profile migration direction = in POC-slope mode, up when POC(current session volume profile) > POC(current session volume profile)[n chart bars ago] + minimum price increment and down when it is < POC(current session volume profile)[n chart bars ago] - minimum price increment; in Value Area MID-slope mode, use the same comparisons with Value Area MID(profile); in price-vs-Value Area MID mode, up when close > Value Area MID(profile) and down when close < Value Area MID(profile); otherwise neutral
+Long: On intraday chart bars inside the configured profile session, with the configured weekday filter applied, Profile migration direction is up
+Short: On intraday chart bars inside the configured profile session, with the configured weekday filter applied, Profile migration direction is down
+Long: On intraday chart bars inside the configured profile session, with the configured weekday filter applied, close > VAH(current session volume profile) AND Profile migration direction is up
+Short: On intraday chart bars inside the configured profile session, with the configured weekday filter applied, close < VAL(current session volume profile) AND Profile migration direction is down

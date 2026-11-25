@@ -1,0 +1,7 @@
+Calculation: effective T1 open = New York midnight open when the NY-midnight override applies to T1; otherwise open(T1)
+Calculation: T1 lower-half delta = sum of FootprintDelta(chart bar, ticks-per-row parameter, value-area-percentage parameter, imbalance-percentage parameter) over chart bars in the still-forming T1 candle whose (high + low) / 2 is below the still-forming T1 candle midpoint
+Calculation: T1 upper-half delta = sum of FootprintDelta(chart bar, ticks-per-row parameter, value-area-percentage parameter, imbalance-percentage parameter) over chart bars in the still-forming T1 candle whose (high + low) / 2 is at or above the still-forming T1 candle midpoint
+Long: close(T1, still-forming bar, sampled on chart bars) >= effective T1 open
+Short: close(T1, still-forming bar, sampled on chart bars) < effective T1 open
+Long: conviction highlighting enabled AND close(T1, still-forming bar, sampled on chart bars) >= effective T1 open AND T1 lower-half delta > 0 AND T1 lower-half delta / (abs(T1 lower-half delta) + abs(T1 upper-half delta)) * 100 >= concentration-threshold parameter
+Short: conviction highlighting enabled AND close(T1, still-forming bar, sampled on chart bars) < effective T1 open AND T1 upper-half delta < 0 AND abs(T1 upper-half delta) / (abs(T1 lower-half delta) + abs(T1 upper-half delta)) * 100 >= concentration-threshold parameter

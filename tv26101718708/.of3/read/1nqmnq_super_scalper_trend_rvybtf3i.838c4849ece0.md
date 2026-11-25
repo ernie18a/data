@@ -1,0 +1,42 @@
+Long: Close rejects below the active opening-range low or regular-hours low, the candle range exceeds a parameter times ATR, the candle body exceeds a parameter times its range, and the candle is not a doji.
+Short: Close rejects above the active opening-range high or regular-hours high, the candle range exceeds a parameter times ATR, the candle body exceeds a parameter times its range, and the candle is not a doji.
+Long: Price is in the long retracement zone of the recent high-low range, low reaches or crosses the zone midpoint, close finishes above the midpoint, the candle is not a doji, and the range exceeds a parameter times ATR.
+Short: Price is in the short retracement zone of the recent high-low range, high reaches or crosses the zone midpoint, close finishes below the midpoint, the candle is not a doji, and the range exceeds a parameter times ATR.
+Long: A prior close breaks above the prior lookback high on a bullish candle, the current close holds above that level, and the current candle body is at least a parameter fraction of its range.
+Short: A prior close breaks below the prior lookback low on a bearish candle, the current close holds below that level, and the current candle body is at least a parameter fraction of its range.
+Long: Price breaks above the locked opening-range high, or retests an active bullish break level after at least one bar by reaching within a parameter times ATR and closing above it with a bullish engulfing candle, hammer, sufficiently large bullish body, or opening-range wick or volume confirmation; the candle is not a doji.
+Short: Price breaks below the locked opening-range low, or retests an active bearish break level after at least one bar by reaching within a parameter times ATR and closing below it with a bearish engulfing candle, shooting star, sufficiently large bearish body, or opening-range wick or volume confirmation; the candle is not a doji.
+Long: A bullish order block forms after a bullish impulse exceeding a parameter times ATR with relative volume above its adaptive threshold and body-to-range ratio above a parameter; the most recent bearish candle within the lookback supplies the block, its formation score meets a parameter, price first touches the block, and a bullish confirmation candle is not a doji.
+Short: A bearish order block forms after a bearish impulse exceeding a parameter times ATR with relative volume above its adaptive threshold and body-to-range ratio above a parameter; the most recent bullish candle within the lookback supplies the block, its formation score meets a parameter, price first touches the block, and a bearish confirmation candle is not a doji.
+Long: In an adaptive downtrend, high crosses above EMA(close, shorter lookback) and close finishes below it, with no bullish higher low.
+Short: In an adaptive uptrend, low crosses below EMA(close, shorter lookback) and close finishes above it, with no bearish lower high.
+Long: A bearish liquidity sweep forms when low falls below the prior sweep-lookback low and close recovers above it, with the required wick size, wick-to-body ratio, relative volume, range, wick standard-deviation, and close-rejection thresholds.
+Short: A bullish liquidity sweep forms when high exceeds the prior sweep-lookback high and close falls below it, with the required wick size, wick-to-body ratio, relative volume, range, wick standard-deviation, and close-rejection thresholds.
+Long: A bearish liquidity sweep is confirmed by bullish delta, a buy-to-sell footprint-volume ratio above its adaptive threshold, proximity to a higher-timeframe liquidity level, or a clustered sweep; the long confidence score meets its threshold and higher-timeframe confidence is above its lower bound.
+Short: A bullish liquidity sweep is confirmed by bearish delta, a sell-to-buy footprint-volume ratio above its adaptive threshold, proximity to a higher-timeframe liquidity level, or a clustered sweep; the short confidence score meets its threshold and higher-timeframe confidence is below its upper bound.
+Long: During an opening-drive window, the long confidence score adjusted for the volume-spike and candle-direction boost meets its threshold, and higher-timeframe confidence is above its lower bound.
+Short: During an opening-drive window, the short confidence score adjusted for the volume-spike and candle-direction boost meets its threshold, and higher-timeframe confidence is below its upper bound.
+Long: A squeeze fired within the recent post-squeeze window, squeeze momentum is positive, normalized momentum exceeds its threshold, the long confidence score meets its threshold, and higher-timeframe confidence is above its lower bound.
+Short: A squeeze fired within the recent post-squeeze window, squeeze momentum is negative, normalized momentum exceeds its threshold, the short confidence score meets its threshold, and higher-timeframe confidence is below its upper bound.
+Long: A valid bullish fair-value gap is retested: low stays at or above the gap low, reaches the gap high, and close finishes above the gap high; the long confidence score meets its threshold, higher-timeframe confidence is above its lower bound, and close exceeds the prior close.
+Short: A valid bearish fair-value gap is retested: high stays at or below the gap high, reaches the gap low, and close finishes below the gap low; the short confidence score meets its threshold, higher-timeframe confidence is below its upper bound, and close is below the prior close.
+Long: A violated bearish fair-value gap is retested at its midpoint, low reaches or crosses the midpoint, close finishes above it, and the candle is bullish; the long confidence score meets its threshold.
+Short: A violated bullish fair-value gap is retested at its midpoint, high reaches or crosses the midpoint, close finishes below it, and the candle is bearish; the short confidence score meets its threshold.
+Long: Any long setup above has a long confidence score meeting its setup threshold, its conditional higher-timeframe gate passes, its stop and target are available, and target distance from close meets the minimum-profit parameter.
+Short: Any short setup above has a short confidence score meeting its setup threshold, its conditional higher-timeframe gate passes, its stop and target are available, and target distance from close meets the minimum-profit parameter.
+Long: Any long setup above fails its confidence or higher-timeframe entry gate, and the current bullish candle body is at least a parameter times ATR.
+Short: Any short setup above fails its confidence or higher-timeframe entry gate, and the current bearish candle body is at least a parameter times ATR.
+Exit: long, low reaches or falls below the stored stop price after the entry bar OR high reaches or exceeds the stored target price.
+Exit: short, high reaches or exceeds the stored stop price after the entry bar OR low reaches or falls below the stored target price.
+Long: The SuperTrend direction is bullish.
+Short: The SuperTrend direction is bearish.
+Long: The directional score is at least the bullish marking threshold.
+Short: The directional score is at most the bearish marking threshold.
+Long: The normalized directional score is at least the bullish color threshold.
+Short: The normalized directional score is at most the bearish color threshold.
+Long: Higher-timeframe confidence score is at least the bullish dashboard threshold.
+Short: Higher-timeframe confidence score is at most the bearish dashboard threshold.
+Long: Relative volume and ATR meet their minimum thresholds, the adaptive efficiency ratio exceeds its adaptive threshold, and close exceeds the close from the adaptive-efficiency lookback.
+Short: Relative volume and ATR meet their minimum thresholds, the adaptive efficiency ratio exceeds its adaptive threshold, and close is below the close from the adaptive-efficiency lookback.
+Long: A confirmed pivot low is higher than the preceding pivot low, the latest pivot high is higher than its preceding pivot high, pivot size exceeds the adaptive ATR threshold, and the pivot classification changed.
+Short: A confirmed pivot low is lower than the preceding pivot low, the latest pivot high is lower than its preceding pivot high, pivot size exceeds the adaptive ATR threshold, and the pivot classification changed.

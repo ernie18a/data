@@ -1,0 +1,4 @@
+Long: accumulation outcome AND entry quality AND ((entry strictness is aggressive AND (Phase C test confirmed OR (SOS confirmed AND no test has occurred))) OR (entry strictness is standard AND ((Phase C test confirmed AND test score >= minimum test score) OR LPS confirmed)) OR (entry strictness is conservative AND LPS confirmed))
+Short: distribution outcome AND entry quality AND ((entry strictness is aggressive AND (Phase C test confirmed OR (SOW confirmed AND no test has occurred))) OR (entry strictness is standard AND ((Phase C test confirmed AND test score >= minimum test score) OR LPSY confirmed)) OR (entry strictness is conservative AND LPSY confirmed))
+Long: accumulation outcome AND a Phase C test, SOS, LPS, or Phase E entry marker is selected
+Short: distribution outcome AND a Phase C test, SOW, LPSY, or Phase E entry marker is selected

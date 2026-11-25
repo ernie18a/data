@@ -1,0 +1,2 @@
+Long: mature unreleased range AND ((invalidation uses closes AND bar is confirmed AND close > range high) OR (invalidation uses wicks AND high > range high))
+Short: mature unreleased range AND ((invalidation uses closes AND bar is confirmed AND close < range low) OR (invalidation uses wicks AND low < range low AND high <= range high))

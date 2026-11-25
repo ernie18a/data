@@ -1,0 +1,18 @@
+Calculation: log return = log(close / close[1]) when both closes are positive; otherwise invalid
+Calculation: rolling reference = mean and population standard deviation of the preceding sigma lookback log returns; valid only when the full window is valid
+Calculation: EWMA reference = initialize mean to the first valid log return and variance to zero; for each later return, with alpha = 1 - exp(log(0.5) / half-life), set d = return - mean, variance = (1 - alpha) × (variance + alpha × d²), and mean = mean + alpha × d; use the state before the current return, reset after an invalid return, and require max(sigma lookback, 1 + 5 × half-life) valid returns
+Calculation: robust reference = median and 1.482602218505602 × median absolute deviation of the same preceding robust lookback log returns; valid only when the full window is valid
+Calculation: signed return score = (current log return - selected reference center) / selected reference scale, using the rolling, EWMA, or robust reference; valid only when that reference is ready and its scale is positive
+Long: Sigma mode AND signed return score >= sigma threshold
+Short: Sigma mode AND signed return score <= -sigma threshold
+Calculation: estimated delta and volume per chart bar = in proxy mode, (close >= open ? volume : -volume) and volume; in intrabar mode, sums over T1 bars within the chart bar of signed volume and volume, where each T1 sign is +1 when close > open, -1 when close < open, otherwise the sign of close versus the preceding T1 close, otherwise the preceding nonzero sign; require valid nonnegative volumes and intrabar volume coverage within 1% of chart volume; T1 bars are aggregated into chart bars, using available bars while a chart bar forms and completed bars when it closes
+Calculation: delta pressure = WMA(estimated delta, smoothing lookback) / SMA(estimated volume, smoothing lookback), calculated on chart bars; valid only when all bars in the lookback are valid and average estimated volume is positive
+Long: Delta mode AND valid delta pressure > 0
+Short: Delta mode AND valid delta pressure < 0
+Long: Delta mode AND confirmed chart bar AND current and previous delta pressure valid AND current delta pressure >= gradient scale AND previous delta pressure < gradient scale
+Short: Delta mode AND confirmed chart bar AND current and previous delta pressure valid AND current delta pressure <= -gradient scale AND previous delta pressure > -gradient scale
+Calculation: RTH flow values = on T2 bars, since the current RTH open, cumulative signed volume and total volume, where T2 sign is +1 when close > open, -1 when close < open, otherwise the sign of close versus the preceding T2 close, otherwise the preceding nonzero sign carried across the full feed; price move = latest T2 close - RTH open and flow percent = 100 × cumulative signed volume / total volume; the chart uses the latest completed T2 values, and flow values are valid only with contiguous valid T2 records from the RTH open, positive total volume, and absolute cumulative signed volume no greater than total volume
+Long: valid displayed RTH cumulative signed volume >= 0
+Short: valid displayed RTH cumulative signed volume < 0
+Long: confirmed chart bar AND valid RTH flow values AND price move <= -tick size AND flow percent >= flow threshold AND (the preceding chart bar did not meet this long disagreement condition OR the RTH session changed)
+Short: confirmed chart bar AND valid RTH flow values AND price move >= tick size AND flow percent <= -flow threshold AND (the preceding chart bar did not meet this short disagreement condition OR the RTH session changed)

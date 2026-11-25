@@ -1,0 +1,21 @@
+Calculation: Heikin-Ashi source = (Heikin-Ashi high + Heikin-Ashi low + Heikin-Ashi close) / 3
+Calculation: Flux Wave primary = clamp(weighted average of EMA(price deviation from EMA(source, channel lookback) / (adaptive scale × EMA(absolute price deviation, channel lookback)), averaging lookback), EMA(price deviation from VWMA(source, channel lookback) / (adaptive scale × EMA(absolute VWMA deviation, channel lookback)), averaging lookback), and EMA(normalized candle-body volume pressure, averaging lookback)) + acceleration coefficient × EMA(change in price deviation, max(minimum acceleration lookback, signal smoothing lookback)); adaptive scale = scale coefficient × (1 + ATR(ATR lookback) / max(source, minimum tick) × volatility coefficient); volume pressure uses candle body divided by high-low, volume, and the square root of volume divided by its channel-lookback SMA, capped by a parameter; clamp to upper and lower bounds
+Calculation: Flux Wave signal = SMA(Flux Wave primary, signal smoothing lookback)
+Calculation: Flux Wave momentum engine = EMA(normalized price deviation from EMA(source, channel lookback), averaging lookback)
+Calculation: Flux Wave VWAP engine = EMA(normalized price deviation from VWMA(source, channel lookback), averaging lookback)
+Calculation: Flux Wave money-flow engine = EMA(normalized candle-body volume pressure, averaging lookback)
+Calculation: Money-flow area = EMA(SMA(Flux Wave money-flow engine, money-flow lookback) × money-flow scale, area smoothing lookback)
+Long: Flux Wave primary >= Flux Wave signal
+Short: Flux Wave primary < Flux Wave signal
+Long: Money-flow area >= 0
+Short: Money-flow area < 0
+Long: Flux Wave primary crosses above Flux Wave signal
+Short: Flux Wave primary crosses below Flux Wave signal
+Long: Flux Wave momentum engine > 0 AND Flux Wave VWAP engine > 0 AND Flux Wave money-flow engine > 0
+Short: Flux Wave momentum engine < 0 AND Flux Wave VWAP engine < 0 AND Flux Wave money-flow engine < 0
+Long: a confirmed pivot low of Flux Wave signal is higher than its previous confirmed pivot low by at least the minimum wave separation AND the corresponding low is below its previous pivot low by at least the minimum price move AND the pivots are separated by at least the minimum pivot spacing and no more than the divergence lookback
+Short: a confirmed pivot high of Flux Wave signal is lower than its previous confirmed pivot high by at least the minimum wave separation AND the corresponding high is above its previous pivot high by at least the minimum price move AND the pivots are separated by at least the minimum pivot spacing and no more than the divergence lookback
+Long: a confirmed pivot low of Flux Wave primary is higher than its previous confirmed pivot low by at least the fast-line minimum wave separation AND the corresponding low is below its previous pivot low by at least the fast-line minimum price move AND the pivots are separated by at least the minimum pivot spacing and no more than the divergence lookback
+Short: a confirmed pivot high of Flux Wave primary is lower than its previous confirmed pivot high by at least the fast-line minimum wave separation AND the corresponding high is above its previous pivot high by at least the fast-line minimum price move AND the pivots are separated by at least the minimum pivot spacing and no more than the divergence lookback
+Long: a confirmed pivot low of Flux Wave signal is lower than its previous confirmed pivot low by at least the minimum wave separation AND the corresponding low is higher than its previous pivot low by at least the hidden-divergence minimum price move AND the pivots are separated by at least the minimum pivot spacing and no more than the divergence lookback
+Short: a confirmed pivot high of Flux Wave signal is higher than its previous confirmed pivot high by at least the minimum wave separation AND the corresponding high is lower than its previous pivot high by at least the hidden-divergence minimum price move AND the pivots are separated by at least the minimum pivot spacing and no more than the divergence lookback

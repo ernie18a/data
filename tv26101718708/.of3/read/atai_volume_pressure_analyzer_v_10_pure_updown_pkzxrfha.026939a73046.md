@@ -1,0 +1,20 @@
+Calculation: Buy volume = absolute up volume from T1 intrabars within each current chart bar, including any still-forming T1 bar, in intrabar mode; otherwise, on each chart bar, volume × 0.5 when high = low, or volume × (close − low) / (high − low).
+Calculation: Sell volume = absolute down volume from T1 intrabars within each current chart bar, including any still-forming T1 bar, in intrabar mode; otherwise, on each chart bar, volume × 0.5 when high = low, or volume × (high − close) / (high − low).
+Calculation: Volume delta = buy volume − sell volume.
+Calculation: Volume spike(x) = x / max(SMA(x, volume lookback), volume divisor floor) ≥ volume ratio threshold OR (x − SMA(x, volume lookback)) / max(STDEV(x, volume lookback), volume divisor floor) ≥ volume z-score threshold.
+Calculation: Overbought hits = count of enabled flags for RSI(close, RSI lookback) ≥ RSI upper threshold; Stochastic %K and %D ≥ their upper threshold; Williams %R ≥ its upper threshold; CCI(HLC3, CCI lookback) ≥ its upper threshold; MFI(HLC3, MFI lookback) ≥ its upper threshold; DeMarker(high, low, DeMarker lookback) ≥ its upper threshold; and Stochastic RSI(RSI(close, RSI lookback), Stochastic RSI lookback) ≥ its upper threshold.
+Calculation: Oversold hits = count of enabled flags for RSI(close, RSI lookback) ≤ RSI lower threshold; Stochastic %K and %D ≤ their lower threshold; Williams %R ≤ its lower threshold; CCI(HLC3, CCI lookback) ≤ its lower threshold; MFI(HLC3, MFI lookback) ≤ its lower threshold; DeMarker(high, low, DeMarker lookback) ≤ its lower threshold; and Stochastic RSI(RSI(close, RSI lookback), Stochastic RSI lookback) ≤ its lower threshold.
+Calculation: Windowed hits(hit count) = the maximum of the current hit count and its values on the previous synchronization-window chart bars.
+Calculation: Normalized slope angle(start price, end price, bars) = degrees(arctan((end price − start price) / (bars × max(ATR(global lookback), minimum price increment)))).
+Calculation: Directed vector angle(u, v) = degrees(acos(clamp(dot(u, v) / (length(u) × length(v)), −1, 1))) if cross(u, v) ≥ 0; otherwise 360° minus that angle; undefined if either vector has zero length.
+Calculation: Vertex angle = the mean of the directed angles between the B-to-C and B-to-A vectors for high and low, omitting an undefined angle; A is the current bar, B is floor((global lookback − 1) / 2) bars ago, and C is global lookback − 1 bars ago; vector y-coordinates are price differences divided by max(ATR(global lookback), minimum price increment), and x-coordinates are bar-index differences.
+Calculation: Complementary vertex angle = 360° − vertex angle.
+Long: buy volume > sell volume.
+Short: buy volume < sell volume.
+Long: SMA(buy volume, global lookback) > its value one chart bar ago AND SMA(sell volume, global lookback) > its value one chart bar ago.
+Short: SMA(buy volume, global lookback) < its value one chart bar ago AND SMA(sell volume, global lookback) < its value one chart bar ago.
+Long: at least one defined normalized slope angle for high or low on either the C-to-B or B-to-A segment is > 0 AND its absolute value is at least the near-zero degree threshold.
+Short: at least one defined normalized slope angle for high or low on either the C-to-B or B-to-A segment is ≤ 0 AND its absolute value is at least the near-zero degree threshold.
+Short: vertex angle is ready AND (complementary vertex angle > angle boundary OR vertex angle < angle boundary).
+Short: OB/OS module enabled AND Volume spike(sell volume) AND Windowed hits(overbought hits) ≥ minimum hits AND (NOT (Volume spike(buy volume) AND Windowed hits(oversold hits) ≥ minimum hits) OR Windowed hits(overbought hits) ≥ Windowed hits(oversold hits)).
+Long: OB/OS module enabled AND Volume spike(buy volume) AND Windowed hits(oversold hits) ≥ minimum hits AND (NOT (Volume spike(sell volume) AND Windowed hits(overbought hits) ≥ minimum hits) OR Windowed hits(oversold hits) > Windowed hits(overbought hits)).

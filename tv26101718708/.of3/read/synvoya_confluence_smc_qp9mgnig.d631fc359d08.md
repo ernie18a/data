@@ -1,0 +1,40 @@
+Calculation: MotherRange = (High[1], Low[1]) on a bar where High <= High[1] AND Low >= Low[1] AND (no MotherRange stored OR High[1] > stored MotherHigh OR Low[1] < stored MotherLow); stored MotherRange is cleared on a bar where Close > stored MotherHigh OR Close < stored MotherLow
+Calculation: LastHigh(L) = most recent PivotHigh(high, left(L), right(L)) confirmed, set to none by a bullish break of L; internal left and right lookbacks are shorter than external left and right lookbacks
+Calculation: LastLow(L) = most recent PivotLow(low, left(L), right(L)) confirmed, set to none by a bearish break of L
+Calculation: ProtLow(L) and ProtHigh(L): on a bullish break of L, ProtLow(L) = LastLow(L) as of this bar (external L: internal LastLow if none) when available, and ProtHigh(L) = none; on a bearish break of L, ProtHigh(L) = LastHigh(L) as of this bar (external L: internal LastHigh if none) when available, and ProtLow(L) = none
+Calculation: BullTarget(L) = ProtHigh(L) if Trend(L) = -1 and ProtHigh(L) exists; else ExtHigh if L is external, Trend(L) = 1 and ExtHigh exists; else LastHigh(L); all previous-bar values
+Calculation: BearTarget(L) = ProtLow(L) if Trend(L) = 1 and ProtLow(L) exists; else ExtLow if L is external, Trend(L) = -1 and ExtLow exists; else LastLow(L); all previous-bar values
+Calculation: Trend(L) = 1 after BullBreak(L), -1 after BearBreak(L), otherwise unchanged; starts at 0
+Calculation: BullBreak(L) = bar closed AND Close > BullTarget(L) + ATR(high, low, close, ATR lookback) * break buffer factor AND NOT Close < BearTarget(L) AND LastLow(L) exists AND abs(BullTarget(L) - LastLow(L)) >= ATR(high, low, close, ATR lookback) * leg factor(L) AND bar of LastLow(L) > bar of BullTarget(L) AND (no MotherRange OR Close > MotherHigh); LastLow(L) and MotherRange as of this bar, external L falls back to internal LastLow if none; leg factor(L) = external leg factor for external L, external leg factor * internal leg multiplier for internal L
+Calculation: BearBreak(L) = bar closed AND Close < BearTarget(L) - ATR(high, low, close, ATR lookback) * break buffer factor AND NOT Close > BullTarget(L) AND LastHigh(L) exists AND abs(LastHigh(L) - BearTarget(L)) >= ATR(high, low, close, ATR lookback) * leg factor(L) AND bar of LastHigh(L) > bar of BearTarget(L) AND (no MotherRange OR Close < MotherLow); LastHigh(L) and MotherRange as of this bar, external L falls back to internal LastHigh if none; leg factor(L) as in BullBreak(L)
+Calculation: ExtHigh = highest external PivotHigh confirmed while Trend(external) = 1, after an internal BearBreak occurred while Trend(external) = 1 and since the last external BullBreak; none after an external BullBreak
+Calculation: ExtLow = lowest external PivotLow confirmed while Trend(external) = -1, after an internal BullBreak occurred while Trend(external) = -1 and since the last external BearBreak; none after an external BearBreak
+Calculation: Promotion = (internal BullBreak AND Trend(external) = 1 AND NOT external BullBreak AND LastHigh(internal) as of previous bar exists AND Close > LastHigh(internal) as of previous bar AND LastHigh(internal) as of previous bar > LastBullBOS + ATR(high, low, close, ATR lookback) * max(break buffer factor, promotion floor factor)) OR (mirror bearish: internal BearBreak AND Trend(external) = -1 AND NOT external BearBreak AND LastLow(internal) as of previous bar exists AND Close < LastLow(internal) as of previous bar AND LastLow(internal) as of previous bar < LastBearBOS - ATR(high, low, close, ATR lookback) * max(break buffer factor, promotion floor factor)); LastBullBOS (LastBearBOS) must exist and is the broken level of the latest external BullBreak (BearBreak) made while the previous external Trend was not -1 (not 1), or of the latest bullish (bearish) Promotion; a bullish Promotion sets LastHigh(external) and ProtHigh(external) to none, ProtLow(external) to ProtLow(internal) when it exists, and LastBullBOS to the internal BullTarget; a bearish Promotion mirrors this
+Calculation: DashStruct(T) = Trend of the external-layer procedure (BullBreak, BearBreak, Trend, LastHigh, LastLow, ProtHigh, ProtLow, MotherRange) run on T bars with pivot lookback = dashboard pivot lookback on both sides, Close as break price, no ExtHigh, ExtLow or Promotion, and BullTarget, BearTarget and leg taken from LastHigh and LastLow as of this bar (leg: abs(LastHigh - LastLow) >= ATR(high, low, close, ATR lookback) * external leg factor)
+Calculation: EMATrend(T, last completed bar) = 1 if close(T) > EMA(close, fast lookback, T, last completed bar) AND close(T) > EMA(close, slow lookback, T, last completed bar); -1 if close(T) < both; otherwise 0; fast lookback is shorter than slow lookback
+Calculation: BullOB = for each bar with external BullBreak or bullish Promotion, midpoint (Open + Low) / 2 of the most recent bearish candle (Close < Open) within the last OB lookback bars; mitigated on a later bar where Close < midpoint; active BullOBs are the most recent max OB count per side not mitigated
+Calculation: BearOB = for each bar with external BearBreak or bearish Promotion, midpoint (High + Open) / 2 of the most recent bullish candle (Close > Open) within the last OB lookback bars; mitigated on a later bar where Close > midpoint; active BearOBs are the most recent max OB count per side not mitigated
+Calculation: BearFVGInversion = first bar on which Close > top of a bearish FVG that has been touched (High >= bottom) and closed above its midpoint on or before that bar (touch and midpoint close may be the same bar); bearish FVG = gap formed on a bar where High < Low[2] AND Low[2] - High >= ATR(high, low, close, ATR lookback) * FVG size factor, with top = Low[2], bottom = High, midpoint = (top + bottom) / 2
+Calculation: BullFVGInversion = first bar on which Close < bottom of a bullish FVG that has been touched (Low <= top) and closed below its midpoint on or before that bar (touch and midpoint close may be the same bar); bullish FVG = gap formed on a bar where Low > High[2] AND Low - High[2] >= ATR(high, low, close, ATR lookback) * FVG size factor, with top = Low, bottom = High[2], midpoint = (top + bottom) / 2
+Long: BullBreak(internal) OR BullBreak(external)
+Long: PivotLow(external left, external right) exists AND PivotLow(external left, external right) < LastLow(external) as of previous bar AND LastLow(external) as of previous bar exists AND CorrelatedLow[internal right] > CorrelatedLow[internal right] recorded at previous external PivotLow confirmation
+Long: Trend(external) = 1
+Long: chart timeframe >= T5 AND High > High[1] AND Low < Low[1] AND Close > Open
+Long: BearFVGInversion
+Long: Close > midpoint of a BearOB not mitigated before this bar
+Long: Close > Open
+Long: DashStruct(T1, last completed bar) = 1 OR EMATrend(T1, last completed bar) = 1
+Long: DashStruct(T2, last completed bar) = 1 OR EMATrend(T2, last completed bar) = 1
+Long: DashStruct(T3, last completed bar) = 1 OR EMATrend(T3, last completed bar) = 1
+Long: DashStruct(T4, last completed bar) = 1 OR EMATrend(T4, last completed bar) = 1
+Short: BearBreak(internal) OR BearBreak(external)
+Short: PivotHigh(external left, external right) exists AND PivotHigh(external left, external right) > LastHigh(external) as of previous bar AND LastHigh(external) as of previous bar exists AND CorrelatedHigh[internal right] < CorrelatedHigh[internal right] recorded at previous external PivotHigh confirmation
+Short: Trend(external) = -1
+Short: chart timeframe >= T5 AND High > High[1] AND Low < Low[1] AND Close < Open
+Short: BullFVGInversion
+Short: Close < midpoint of a BullOB not mitigated before this bar
+Short: Close < Open
+Short: DashStruct(T1, last completed bar) = -1 OR EMATrend(T1, last completed bar) = -1
+Short: DashStruct(T2, last completed bar) = -1 OR EMATrend(T2, last completed bar) = -1
+Short: DashStruct(T3, last completed bar) = -1 OR EMATrend(T3, last completed bar) = -1
+Short: DashStruct(T4, last completed bar) = -1 OR EMATrend(T4, last completed bar) = -1

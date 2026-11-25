@@ -1,0 +1,20 @@
+Calculation: minor structure bias = bullish after a bullish minor pivot break, bearish after a bearish minor pivot break, and unchanged otherwise
+Long: close > the latest confirmed major pivot high AND close[1] <= that pivot high
+Short: close < the latest confirmed major pivot low AND close[1] >= that pivot low
+Long: close > the latest confirmed minor pivot high AND close[1] <= that pivot high
+Short: close < the latest confirmed minor pivot low AND close[1] >= that pivot low
+Long: minor structure bias is bullish
+Short: minor structure bias is bearish
+Long: low < the latest minor pivot low among the most recent pivot scan depth records, that pivot is older than the pivot age parameter, close > that pivot low, lower wick >= ATR(lookback) × wick-length parameter, lower wick / max(high − low, range floor) >= wick-fraction parameter, and more than the sweep cooldown parameter bars have passed since the previous bullish sweep
+Short: high > the latest minor pivot high among the most recent pivot scan depth records, that pivot is older than the pivot age parameter, close < that pivot high, upper wick >= ATR(lookback) × wick-length parameter, upper wick / max(high − low, range floor) >= wick-fraction parameter, and more than the sweep cooldown parameter bars have passed since the previous bearish sweep
+Long: low > high[2] AND close[1] > high[2] AND low − high[2] >= ATR(lookback) × FVG minimum-size parameter
+Short: high < low[2] AND close[1] < low[2] AND low[2] − high >= ATR(lookback) × FVG minimum-size parameter
+Long: a retained bearish FVG was mitigated when high exceeded its upper boundary, has not previously flipped, and within the flip-window parameter bars after mitigation close crosses above its upper boundary
+Short: a retained bullish FVG was mitigated when low fell below its lower boundary, has not previously flipped, and within the flip-window parameter bars after mitigation close crosses below its lower boundary
+Calculation: bullish order-block origin = among prior bars within the origin scan lookback, the nearest bearish candle meeting range < ATR(lookback) × range multiple, absolute(close − open) / range >= body-fraction parameter, and (volume filter disabled OR volume >= SMA(volume, volume lookback) × volume multiple); in structural-extreme mode select the qualifying candle with the lowest low
+Calculation: bearish order-block origin = among prior bars within the origin scan lookback, the nearest bullish candle meeting range < ATR(lookback) × range multiple, absolute(close − open) / range >= body-fraction parameter, and (volume filter disabled OR volume >= SMA(volume, volume lookback) × volume multiple; in structural-extreme mode select the qualifying candle with the highest high
+Calculation: order-block filter score = min((zone height / max(ATR(lookback), ATR floor)) / size divisor, score cap) × size points + min(absolute(close − open) / max(ATR(lookback) × displacement divisor, ATR floor), score cap) × displacement points + (volume > SMA(volume, volume lookback) ? high-volume points : low-volume points) + (an overlapping same-direction FVG exists ? overlap points : 0)
+Long: bullish major pivot break AND a bullish order-block origin exists AND order-block filter score >= score threshold
+Short: bearish major pivot break AND a bearish order-block origin exists AND order-block filter score >= score threshold
+Long: a previously mitigated bearish order block (high > its upper boundary in wick mode OR close > its upper boundary in close mode) has its first retest within the breaker expiry multiplier × breaker hold parameter bars, with low between its boundaries inclusive and close > its lower boundary
+Short: a previously mitigated bullish order block (low < its lower boundary in wick mode OR close < its lower boundary in close mode) has its first retest within the breaker expiry multiplier × breaker hold parameter bars, with high between its boundaries inclusive and close < its upper boundary

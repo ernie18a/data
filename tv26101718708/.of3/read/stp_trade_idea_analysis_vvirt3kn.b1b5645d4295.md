@@ -1,0 +1,2 @@
+Long: low < last confirmed Pivot Low(low, pivot lookback, pivot lookback) AND close > that pivot low AND min(open, close) - low >= ATR(ATR lookback) * wick threshold OR close > last confirmed Pivot High(high, pivot lookback, pivot lookback) AND close[1] <= that pivot high
+Short: high > last confirmed Pivot High(high, pivot lookback, pivot lookback) AND close < that pivot high AND high - max(open, close) >= ATR(ATR lookback) * wick threshold OR close < last confirmed Pivot Low(low, pivot lookback, pivot lookback) AND close[1] >= that pivot low

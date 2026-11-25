@@ -1,0 +1,7 @@
+Calculation: body = abs(chart close - open(T1, still-forming bar))
+Calculation: T1 range = high(T1, still-forming bar) - low(T1, still-forming bar)
+Calculation: lower wick = min(chart close, open(T1, still-forming bar)) - low(T1, still-forming bar)
+Calculation: upper wick = high(T1, still-forming bar) - max(chart close, open(T1, still-forming bar))
+Calculation: elapsed percentage(T1) on chart bars = 100 if T1 period start or end time is unavailable or end time <= start time; otherwise clamp(100 × (current time - T1 period start time) / (T1 period end time - T1 period start time), 0, 100)
+Long: On chart bars, for each T1 gauge, body >= minimum body ATR multiple × ATR(ATR lookback, T1, last completed bar) AND ATR(ATR lookback, T1, last completed bar) > 0 AND lower wick > 0 AND lower wick >= minimum wick ATR multiple × ATR(ATR lookback, T1, last completed bar) AND 100 × lower wick / T1 range >= minimum wick range percentage AND elapsed percentage(T1) >= minimum elapsed-period percentage
+Short: On chart bars, for each T1 gauge, body >= minimum body ATR multiple × ATR(ATR lookback, T1, last completed bar) AND ATR(ATR lookback, T1, last completed bar) > 0 AND upper wick > 0 AND upper wick >= minimum wick ATR multiple × ATR(ATR lookback, T1, last completed bar) AND 100 × upper wick / T1 range >= minimum wick range percentage AND elapsed percentage(T1) >= minimum elapsed-period percentage

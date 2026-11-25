@@ -1,0 +1,11 @@
+Calculation: opening-range state = reset to Inside at each regular-session start; during the configured opening-range period, set range high and low to the highest high and lowest low of chart bars, then freeze them at period end; on confirmed in-session chart bars afterward, change Inside to Broke Up when close >= range high + breakout distance or to Broke Down when close <= range low - breakout distance; from either broke state, change to Inside when range low < close < range high, or to the opposite broke state when its breakout condition is met; otherwise retain the state
+Long: opening-range state changes to Broke Up
+Short: opening-range state changes to Broke Down
+Long: on in-session T1 bars, using the still-forming bar and previous completed T1 closes from the same session, close - close[1] >= shorter-lookback move threshold OR (abs(close - close[1]) < shorter-lookback move threshold AND close - close[2] >= longer-lookback move threshold)
+Short: on in-session T1 bars, using the still-forming bar and previous completed T1 closes from the same session, (close - close[1] < 0 AND abs(close - close[1]) >= shorter-lookback move threshold) OR (abs(close - close[1]) < shorter-lookback move threshold AND close - close[2] < 0 AND abs(close - close[2]) >= longer-lookback move threshold)
+Calculation: session-opening volatility = first regular-session T1 close of the volatility index, including its still-forming bar
+Exit: long, on the first in-session T1 volatility-index close >= session-opening volatility + breaker threshold when the close-all preset is active
+Exit: short, on the first in-session T1 volatility-index close >= session-opening volatility + breaker threshold when the close-all preset is active
+Calculation: fly touch distance = after the Iron Squadron preset's landing time, max(credit received - landing offset, 0); otherwise credit received × touch percentage
+Exit: short, for an open configured credit fly with touch alerts enabled, chart close crosses above center strike + fly touch distance OR crosses below center strike - fly touch distance
+Exit: short, for an open configured credit fly in the preset that exits at breakeven, chart close crosses above center strike + credit received OR crosses below center strike - credit received

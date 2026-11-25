@@ -1,0 +1,2 @@
+Long: On chart bars, for the high of any of the last N1 completed T1 bars or last N2 completed T2 bars, the configured break source crosses above the high OR close > the high and close[1] < the high; the break source is close in close-confirmation mode and high otherwise.
+Short: On chart bars, for the low of any of the last N1 completed T1 bars or last N2 completed T2 bars, the configured break source crosses below the low OR close < the low and close[1] > the low; the break source is close in close-confirmation mode and low otherwise.

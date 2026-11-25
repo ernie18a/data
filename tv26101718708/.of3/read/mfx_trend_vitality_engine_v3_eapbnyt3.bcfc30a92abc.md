@@ -1,0 +1,38 @@
+Calculation: Diff = SMA(hlc3, channel lookback) - EMA(SMA(hlc3, channel lookback), average lookback), on T1 bars
+Calculation: Osc = EMA(quotient, MA lookback), where quotient = Diff / (scale * EMA(abs(Diff), average lookback)), or 0 when that denominator is 0
+Calculation: CenterNorm(x, n) = (x - lowest(x, n)) / (highest(x, n) - lowest(x, n)) * 100 - 50, or 0 when highest(x, n) equals lowest(x, n)
+Calculation: Flow = (CenterNorm(CMF(CMF lookback), normalization lookback) + CenterNorm(MFI(hlc3, MFI lookback), normalization lookback)) / 2, on T1 bars
+Calculation: Signal = SMA(Osc, MA lookback)
+Calculation: BuyerPeak(k) = maximum Osc over the k-th most recent completed buyer wave, where a buyer wave is a run of bars with Osc > 0 that completes when Osc crosses under 0 and k = 1 is the most recent, on T1 bars
+Calculation: BuyerArea(k) = sum of Osc over the bars of the k-th most recent completed buyer wave
+Calculation: BuyerPeakFlow(k) = Flow on the first bar of the k-th most recent completed buyer wave where Osc equals BuyerPeak(k)
+Calculation: BuyerPeakClose(k) = close on the first bar of the k-th most recent completed buyer wave where Osc equals BuyerPeak(k)
+Calculation: BuyerEff(k) = 100 * (BuyerPeakClose(k) - BuyerPeakClose(k+2)) / max(BuyerPeakClose(k+2), 0.0001) / max(BuyerArea(k) + BuyerArea(k+1) + BuyerArea(k+2), 1)
+Calculation: BuyerEffFlag = abs(BuyerEff(1)) / max(abs(BuyerEff(2)), 0.0001) < efficiency threshold, evaluated on each bar where a buyer wave completes and BuyerEff(2) is defined, otherwise held; false before its first evaluation
+Calculation: BuyerDamage = clamp(BuyerDamage[1] + (if a buyer wave completes on this bar then BuyerShock * damage multiplier, otherwise BuyerShock * aging leak - recovery per bar), 0, 100), where BuyerShock = price-and-WT shock weight * ind(BuyerPeakClose(1) > BuyerPeakClose(3) AND BuyerPeak(1) < BuyerPeak(3)) + area shock weight * ind(BuyerArea(1) < BuyerArea(3)) + flow shock weight * ind(BuyerPeakFlow(1) < BuyerPeakFlow(3)) + efficiency shock weight * ind(a buyer wave completes on this bar AND BuyerEffFlag) + full shock weight * ind(BuyerPeakClose(1) > BuyerPeakClose(3) AND BuyerPeak(1) < BuyerPeak(3) AND BuyerArea(1) < BuyerArea(3) AND BuyerPeakFlow(1) < BuyerPeakFlow(3)), ind(x) = 1 if x holds else 0, BuyerDamage starts at 0
+Calculation: BuyerDecays = ind(BuyerPeak(1) < BuyerPeak(3)) + ind(BuyerArea(1) < BuyerArea(3)) + ind(BuyerPeakFlow(1) < BuyerPeakFlow(3)), with ind(x) = 1 if x holds else 0; 0 before three completed buyer waves exist
+Calculation: BuyerCore = clamp(BuyerScore * score share + (100 - BuyerDamage) * damage share, 0, 100), where BuyerScore = min(100, WT weight * clamp(BuyerPeak(1) / WT scale, 0, 1) + area weight * clamp(BuyerArea(1) / max(BuyerArea(2), 1), 0, ratio cap) + flow weight * clamp(BuyerPeakFlow(1) / max(BuyerPeakFlow(2), 1), 0, ratio cap)) when three completed buyer waves exist, otherwise BuyerScore = 100
+Calculation: BuyerPulse = pulse base + pulse weight * min(1, max(0, Osc + WT offset) / (pulse span + WT offset)) + pulse weight * min(1, max(0, Flow + flow offset) / (pulse span + flow offset))
+Calculation: BuyerHealth = round(clamp(BuyerCore * core share + BuyerPulse * pulse share, 0, 100))
+Calculation: SellerPeak(k) = maximum of -Osc over the k-th most recent completed seller wave, where a seller wave is a run of bars with Osc < 0 that completes when Osc crosses over 0 and k = 1 is the most recent, on T1 bars
+Calculation: SellerArea(k) = sum of -Osc over the bars of the k-th most recent completed seller wave
+Calculation: SellerPeakFlow(k) = abs(Flow) on the first bar of the k-th most recent completed seller wave where -Osc equals SellerPeak(k)
+Calculation: SellerPeakClose(k) = close on the first bar of the k-th most recent completed seller wave where -Osc equals SellerPeak(k)
+Calculation: SellerEff(k) = 100 * (SellerPeakClose(k+2) - SellerPeakClose(k)) / max(SellerPeakClose(k+2), 0.0001) / max(SellerArea(k) + SellerArea(k+1) + SellerArea(k+2), 1)
+Calculation: SellerEffFlag = abs(SellerEff(1)) / max(abs(SellerEff(2)), 0.0001) < efficiency threshold, evaluated on each bar where a seller wave completes and SellerEff(2) is defined, otherwise held; false before its first evaluation
+Calculation: SellerDamage = clamp(SellerDamage[1] + (if a seller wave completes on this bar then SellerShock * damage multiplier, otherwise SellerShock * aging leak - recovery per bar), 0, 100), where SellerShock = price-and-WT shock weight * ind(SellerPeakClose(1) < SellerPeakClose(3) AND SellerPeak(1) < SellerPeak(3)) + area shock weight * ind(SellerArea(1) < SellerArea(3)) + flow shock weight * ind(SellerPeakFlow(1) < SellerPeakFlow(3)) + efficiency shock weight * ind(a seller wave completes on this bar AND SellerEffFlag) + full shock weight * ind(SellerPeakClose(1) < SellerPeakClose(3) AND SellerPeak(1) < SellerPeak(3) AND SellerArea(1) < SellerArea(3) AND SellerPeakFlow(1) < SellerPeakFlow(3)), ind(x) = 1 if x holds else 0, SellerDamage starts at 0
+Calculation: SellerDecays = ind(SellerPeak(1) < SellerPeak(3)) + ind(SellerArea(1) < SellerArea(3)) + ind(SellerPeakFlow(1) < SellerPeakFlow(3)), with ind(x) = 1 if x holds else 0; 0 before three completed seller waves exist
+Calculation: SellerCore = clamp(SellerScore * score share + (100 - SellerDamage) * damage share, 0, 100), where SellerScore = min(100, WT weight * clamp(SellerPeak(1) / WT scale, 0, 1) + area weight * clamp(SellerArea(1) / max(SellerArea(2), 1), 0, ratio cap) + flow weight * clamp(SellerPeakFlow(1) / max(SellerPeakFlow(2), 1), 0, ratio cap)) when three completed seller waves exist, otherwise SellerScore = 100
+Calculation: SellerPulse = pulse base + pulse weight * min(1, max(0, -Osc + WT offset) / (pulse span + WT offset)) + pulse weight * min(1, max(0, -Flow + flow offset) / (pulse span + flow offset))
+Calculation: SellerHealth = round(clamp(SellerCore * core share + SellerPulse * pulse share, 0, 100))
+Calculation: Control = Buyers if BuyerHealth > SellerHealth; Sellers if BuyerHealth < SellerHealth; otherwise Buyers if close > SMA(close, trend lookback), Sellers if close < SMA(close, trend lookback), otherwise Mixed; on T1 bars
+Short: Osc(T1, last completed bar) crosses under Signal(T1, last completed bar) AND Osc(T1, last completed bar) > 0 AND BuyerHealth(T1, last completed bar) <= low-health threshold
+Long: Osc(T1, last completed bar) crosses over Signal(T1, last completed bar) AND Osc(T1, last completed bar) < 0 AND SellerHealth(T1, last completed bar) <= low-health threshold
+Exit: Long, Control(T1, last completed bar) = Buyers AND BuyerHealth(T1, last completed bar) < warning health ceiling AND BuyerDecays(T1, last completed bar) >= warning decay count AND BuyerDamage(T1, last completed bar) >= warning damage floor AND (BuyerPulse(T1, last completed bar) < warning pulse floor OR BuyerEffFlag(T1, last completed bar) = true OR BuyerPulse(T1, last completed bar) - BuyerCore(T1, last completed bar) >= warning gap)
+Exit: Short, Control(T1, last completed bar) = Sellers AND SellerHealth(T1, last completed bar) < warning health ceiling AND SellerDecays(T1, last completed bar) >= warning decay count AND SellerDamage(T1, last completed bar) >= warning damage floor AND (SellerPulse(T1, last completed bar) < warning pulse floor OR SellerEffFlag(T1, last completed bar) = true OR SellerPulse(T1, last completed bar) - SellerCore(T1, last completed bar) >= warning gap)
+Long: Flow(T1, last completed bar) >= 0
+Short: Flow(T1, last completed bar) < 0
+Long: Osc(T1, last completed bar) > Osc(T1, previous completed bar)
+Short: Osc(T1, last completed bar) < Osc(T1, previous completed bar)
+Long: Control(T1, last completed bar) = Buyers
+Short: Control(T1, last completed bar) = Sellers

@@ -1,0 +1,28 @@
+Calculation: Bull C2 = on the last completed T1 bar, low < low(T1, previous completed bar) AND close > low(T1, previous completed bar) AND NOT (the two-sided-sweep filter is enabled AND high > high(T1, previous completed bar) AND NOT (Mauler mode is enabled AND close > high(T1, previous completed bar)))
+Calculation: Bear C2 = on the last completed T1 bar, high > high(T1, previous completed bar) AND close < high(T1, previous completed bar) AND NOT (the two-sided-sweep filter is enabled AND low < low(T1, previous completed bar) AND NOT (Mauler mode is enabled AND close < low(T1, previous completed bar)))
+Calculation: Bull CISD level = the open of the current down-close run on T2, reset by an up-close bar, ignoring dojis; move the run open to any later open above it; capture that open whenever a T2 bar makes a new low below the prior completed T1 low; use the last captured level when T1 closes
+Calculation: Bear CISD level = the open of the current up-close run on T2, reset by a down-close bar, ignoring dojis; move the run open to any later open below it; capture that open whenever a T2 bar makes a new high above the prior completed T1 high; use the last captured level when T1 closes
+Long: A T1 bar completes as a Bull C2
+Short: A T1 bar completes as a Bear C2
+Long: On chart bars, the low of the still-forming T1 candle falls below the prior completed T1 low; first such breach per T1 candle
+Short: On chart bars, the high of the still-forming T1 candle rises above the prior completed T1 high; first such breach per T1 candle
+Long: On a completed T1 bar, close > the prior completed T1 high AND the bar is not a Bull C2
+Short: On a completed T1 bar, close < the prior completed T1 low AND the bar is not a Bear C2
+Long: On the last completed T1 bars, the chart instrument has a Bull C2 AND at least one non-inverted correlate holds its prior low (low >= its prior low) OR an inverted correlate holds its prior high (high <= its prior high); OR the chart instrument holds its prior low AND at least one correlate has a Bull C2 after applying its inverse-correlation setting
+Short: On the last completed T1 bars, the chart instrument has a Bear C2 AND at least one non-inverted correlate holds its prior high (high <= its prior high) OR an inverted correlate holds its prior low (low >= its prior low); OR the chart instrument holds its prior high AND at least one correlate has a Bear C2 after applying its inverse-correlation setting
+Long: A Bull C2 has a captured Bull CISD level and its completed T1 close <= that level, when Potential CISD is enabled
+Short: A Bear C2 has a captured Bear CISD level and its completed T1 close >= that level, when Potential CISD is enabled
+Long: A Bull C2 has a captured Bull CISD level AND (the completed T1 close > that level OR a completed T2 bar in C3 or later closes > that level)
+Short: A Bear C2 has a captured Bear CISD level AND (the completed T1 close < that level OR a completed T2 bar in C3 or later closes < that level)
+Exit: Long, a confirmed Bull CISD setup is in C3 AND low < its C2 low
+Exit: Short, a confirmed Bear CISD setup is in C3 AND high > its C2 high
+Long: After a confirmed Bull CISD setup, a completed chart bar has low > the CISD level, then the first later completed chart bar has low <= the level
+Short: After a confirmed Bear CISD setup, a completed chart bar has high < the CISD level, then the first later completed chart bar has high >= the level
+Long: Using the last completed T3 bar and the preceding completed T3 bar, close > the preceding high OR (low < the preceding low AND close >= the preceding low AND close <= the preceding high AND high <= the preceding high)
+Short: Using the last completed T3 bar and the preceding completed T3 bar, close < the preceding low OR (high > the preceding high AND close >= the preceding low AND close <= the preceding high AND low >= the preceding low)
+Long: On chart bars, a newly completed T4 pattern has low(T4, last completed bar) > high(T4, third completed bar back) AND close(T4, second completed bar back) > open(T4, second completed bar back); mark only if T4 is above the chart timeframe, or equal when equal-timeframe inclusion is enabled, and no higher-T4 gap overlaps its price range
+Short: On chart bars, a newly completed T4 pattern has high(T4, last completed bar) < low(T4, third completed bar back) AND close(T4, second completed bar back) < open(T4, second completed bar back); mark only if T4 is above the chart timeframe, or equal when equal-timeframe inclusion is enabled, and no higher-T4 gap overlaps its price range
+Long: After a confirmed Bull CISD, mark the first bullish T2 fair value gap formed since the CISD level's origin when low(T2, last completed bar) > high(T2, third completed bar back), close(T2, second completed bar back) > open(T2, second completed bar back), and the gap's top > the CISD level, when CISD FVG is enabled
+Short: After a confirmed Bear CISD, mark the first bearish T2 fair value gap formed since the CISD level's origin when high(T2, last completed bar) < low(T2, third completed bar back), close(T2, second completed bar back) < open(T2, second completed bar back), and the gap's bottom < the CISD level, when CISD FVG is enabled
+Long: At least two paired C2 timeframes seal on the same close, every corresponding CISD confirms bullish, and the stack has not closed below its lowest member C2 low
+Short: At least two paired C2 timeframes seal on the same close, every corresponding CISD confirms bearish, and the stack has not closed above its highest member C2 high

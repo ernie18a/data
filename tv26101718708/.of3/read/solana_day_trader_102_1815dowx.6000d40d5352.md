@@ -1,0 +1,48 @@
+Calculation: Signed volume = volume if close >= open, otherwise -volume
+Calculation: Open-close OBV = cumulative sum(signed volume)
+Calculation: Filtered WVF fires when WVF[1] >= its prior upper band OR prior range high, current WVF is below both its upper band and range high, low > low[1], close > high[1], close < close[long lookback] OR close < close[shorter lookback], and close > close[strength lookback]; WVF = 100 * (Highest(close, period) - low) / Highest(close, period), upper band = SMA(WVF, band lookback) + multiplier * StDev(WVF, band lookback), range high = Highest(WVF, range lookback) * range fraction
+Calculation: WVF top fires when prior WVF top <= its prior lower band OR prior range low, and current WVF top is above both its lower band and range low; WVF top = 100 * (Lowest(close, period) - high) / Lowest(close, period), lower band = SMA(WVF top, band lookback) - multiplier * StDev(WVF top, band lookback), range low = Lowest(WVF top, range lookback) * range fraction
+Calculation: TQI = (Efficiency Ratio(close, lookback) + clamp((ATR(volatility lookback) / SMA(ATR(volatility lookback), longer volatility lookback) - ratio floor) / ratio span, 0, 1) + clamp(((close - SMA(close, structure lookback)) / ATR(volatility lookback) + structure offset) / structure span, 0, 1) + clamp((ROC(close, momentum lookback) + momentum offset) / momentum span, 0, 1)) / 4
+Calculation: CVI = (close - Lowest(low, lookback)) / (Highest(high, lookback) - Lowest(low, lookback)), or midpoint when the range is zero
+Calculation: Bull pressure = 100 * count(close >= open over lookback) / lookback
+Calculation: MBI upper bias = max(HMA(sum(max(normalized momentum, 0), bias lookback), smoothing lookback), 0); lower bias = max(HMA(-sum(min(normalized momentum, 0), bias lookback), smoothing lookback), 0); normalized momentum = (close - close[momentum lookback]) / EMA(high - low, momentum lookback) * normalization factor; bound = EMA(average of the two biases, bound lookback) + StDev(average of the two biases, bound lookback) * deviation multiplier; bull fire = lower bias crosses below its prior-bar value while above the bound and upper bias; bear fire = upper bias crosses below its prior-bar value while above the bound and lower bias
+Calculation: Swing VWAP = cumulative sum(HLC3 * volume) / cumulative sum(volume), anchored at the latest pivot high or low confirmed with the pivot lookback on each side and separated from the prior accepted pivot by more than ATR(pivot ATR lookback) * pivot distance multiplier
+Calculation: SSL-near = nearest unswept pivot-high liquidity pool above close is within the ATR distance threshold; create pools from confirmed pivot highs, cluster a new pivot with an unswept pool within ATR * cluster tolerance and within the pool-match age by updating its touch-weighted average level, otherwise create a pool; a pool is swept when close exceeds its upper boundary
+Calculation: ATF direction = FLAT when disabled or best-fit Pearson R is below its threshold; otherwise UP when the selected log(close) regression slope is negative and DOWN when it is nonnegative; select the regression lookback with the highest Pearson R from the configured candidate lookbacks
+Calculation: MTF trend score = trend agreement + signed momentum contribution + volatility contribution; trend agreement is +1 when chart close exceeds both EMA(close, EMA length, Tj) and VWAP(hlc3, Tj), -1 when below both, otherwise 0; momentum contribution is positive or negative according to close(Tj) - close(Tj)[momentum lookback]; volatility contribution is positive when ATR(Tj) exceeds its SMA, otherwise zero, or negative when symmetric volatility mode is enabled
+Calculation: Entry score = sum of separate weights for enabled armed EMA confirmation, enabled armed VIDYA confirmation, rising open-close OBV, armed signed-volume EMA, enabled armed bullish FVG, enabled TQI at or above its score threshold, and ATR percentile rank at or above its upper cut, minus the low-volatility weight when ATR percentile rank is below its lower cut
+Long: Filtered WVF fires
+Long: low <= Bollinger lower band AND close > Bollinger lower band
+Long: Entry tier is positive and differs from its prior value on an enabled permitted entry timeframe after that timeframe's entry delay; permitted means only the designated primary timeframe when primary-only mode is enabled. Entry tier requires (WVF is armed within its arm window when the WVF gate is enabled) AND entry score >= base floor; assign BASE below the scale floor, SCALE at or above the scale floor, and FULL at or above the scale floor when ADX is below the full-tier threshold. An armed core is a bullish EMA or VIDYA state whose latest occurrence is no older than the WVF occurrence plus its core window; an armed DELTA state follows the same rule with its separate arm window; bullish FVG is armed if it occurred within the WVF window. If BB anti-signal is enabled and a Bollinger lower-band close break occurred within the WVF age plus anti window, demote tiers above BASE by one. If scale veto is enabled, suppress SCALE. If TQI dead-zone exclusion is enabled and TQI is within its configured band, suppress the tier. If the optional Bitcoin full-tier gate is enabled and Bitcoin close is not above its EMA, demote FULL to SCALE. These calculations run on each entry timeframe T1, T2, and T3 using its last completed bar
+Long: EMA(close, shorter chart-display lookback) > EMA(close, longer chart-display lookback) AND EMA(close, shorter chart-display lookback) > its value at the chart-display slope lookback
+Long: EMA(close, shorter trend-direction lookback, T1) > EMA(close, longer trend-direction lookback, T1), evaluated on T1 bars using the last completed bar
+Long: EMA(close, shorter HTF-bias lookback, T1) > EMA(close, longer HTF-bias lookback, T1), using the last completed T1 bar
+Long: Bitcoin close > EMA(Bitcoin close, Bitcoin EMA lookback) on chart-timeframe bars
+Long: ATF direction = UP
+Long: close > Swing VWAP
+Long: open-close OBV > its value at the OBV slope lookback
+Long: MBI bull fire OR (not MBI bear fire AND upper bias > lower bias)
+Long: CVI bottom signal, where prior CVI <= one minus the upper threshold and current CVI > one minus the upper threshold
+Long: CVI > its midpoint
+Long: EMA(close, BBAWE fast lookback) crosses above Bollinger basis AND close > Bollinger basis AND Awesome Oscillator is nonnegative and rising
+Long: bull pressure > its bull threshold
+Long: MTF trend score > its arrow threshold for any displayed timeframe T1 through T6; calculate timeframe values on each Tj and compare them with chart close using the last completed Tj bar
+Short: close <= Bollinger lower band
+Short: EMA(close, shorter chart-display lookback) <= EMA(close, longer chart-display lookback) AND EMA(close, shorter chart-display lookback) < its value at the chart-display slope lookback
+Short: EMA(close, shorter trend-direction lookback, T1) <= EMA(close, longer trend-direction lookback, T1), evaluated on T1 bars using the last completed bar
+Short: EMA(close, shorter HTF-bias lookback, T1) < EMA(close, longer HTF-bias lookback, T1), using the last completed T1 bar
+Short: Bitcoin close <= EMA(Bitcoin close, Bitcoin EMA lookback) on chart-timeframe bars
+Short: ATF direction = DOWN
+Short: close <= Swing VWAP
+Short: open-close OBV < its value at the OBV slope lookback
+Short: not MBI bull fire AND (MBI bear fire OR upper bias <= lower bias)
+Short: CVI <= its midpoint
+Short: EMA(close, BBAWE fast lookback) crosses below Bollinger basis AND close < Bollinger basis AND Awesome Oscillator is negative and falling
+Short: bull pressure < its bear threshold
+Short: MTF trend score < negative arrow threshold for any displayed timeframe T1 through T6; calculate timeframe values on each Tj and compare them with chart close using the last completed Tj bar
+Short: Entry tier has a positive value on an enabled permitted entry timeframe and the tier differs from its prior value, after its entry delay; tier calculation and timeframe restrictions are those in the Long entry rule
+Exit: long, a newly firing enabled Bollinger-break, WVF-top, or CVI-top event occurs while an entry is active and outside the exit cooldown; partially exit when only one distinct event type has fired within the exit-count window, and fully exit when at least two distinct event types have fired in that window or an event occurs while SSL-near. Each event is the pooled signal across T1, T2, and T3 and fires on its false-to-true transition
+Exit: long, enabled chart-timeframe TQI char-flip occurs while an entry is active; prior TQI > char-flip high threshold AND current TQI < char-flip low threshold, fully exit
+Exit: long, close <= Bollinger lower band on any of T1, T2, or T3 while an entry is active and outside the exit cooldown; partially exit on the first distinct enabled exit event within the exit-count window, fully exit on a second distinct event or when SSL-near
+Exit: long, WVF top fires on any of T1, T2, or T3 while an entry is active and outside the exit cooldown; partially exit on the first distinct enabled exit event within the exit-count window, fully exit on a second distinct event or when SSL-near
+Exit: long, prior CVI >= its upper threshold AND current CVI < its upper threshold on any of T1, T2, or T3 while an entry is active and outside the exit cooldown; partially exit on the first distinct enabled exit event within the exit-count window, fully exit on a second distinct event or when SSL-near

@@ -1,0 +1,12 @@
+Calculation: Smoothed Stochastic RSI = SMA(Stochastic RSI(close, RSI lookback, stochastic lookback), K smoothing lookback) on chart bars
+Calculation: Previous T1 high = high[1] on T1 bars, carried onto chart bars
+Calculation: Previous T1 low = low[1] on T1 bars, carried onto chart bars
+Calculation: VAH and VAL = footprint value-area edges on T1 bars using row-height and value-area-percentage parameters; current-profile mode uses the T1 bar still forming live and its final profile at that bar’s historical close, while previous-profile mode uses the last completed T1 bar; carry values onto chart bars
+Long: On a confirmed chart bar, smoothed Stochastic RSI crosses below the lower level
+Short: On a confirmed chart bar, smoothed Stochastic RSI crosses above the upper level
+Long: On a confirmed chart bar, smoothed Stochastic RSI crosses above the middle level while its most recent reading at or beyond either outer level was at or below the lower level
+Short: On a confirmed chart bar, smoothed Stochastic RSI crosses below the middle level while its most recent reading at or beyond either outer level was at or above the upper level
+Long: On a confirmed chart bar, close is at or above the previous T1 low and the previous chart-bar close is below the previous T1 low
+Short: On a confirmed chart bar, close is at or below the previous T1 high and the previous chart-bar close is above the previous T1 high
+Long: A confirmed chart-bar crossing of smoothed Stochastic RSI below the lower level arms long and disarms short; while armed, the first confirmed chart bar where ATR(ATR lookback) × zone tolerance is positive and the absolute distance from close to any selected support level is no greater than that band marks long and disarms long; selected support levels are the previous T1 low, VAL, or both according to the zone-anchor parameter
+Short: A confirmed chart-bar crossing of smoothed Stochastic RSI above the upper level arms short and disarms long; while armed, the first confirmed chart bar where ATR(ATR lookback) × zone tolerance is positive and the absolute distance from close to any selected resistance level is no greater than that band marks short and disarms short; selected resistance levels are the previous T1 high, VAH, or both according to the zone-anchor parameter

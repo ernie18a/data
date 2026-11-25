@@ -1,0 +1,2 @@
+Long: on an NFP day after 08:30, the first breach of the 07:00–08:29 range is above its high, without a low breach on that bar
+Short: on an NFP day after 08:30, the first breach of the 07:00–08:29 range is below its low, without a high breach on that bar

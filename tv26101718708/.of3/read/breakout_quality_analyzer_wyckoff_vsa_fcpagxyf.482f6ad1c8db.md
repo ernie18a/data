@@ -1,0 +1,63 @@
+Calculation: volume average = SMA(volume, volume-average lookback)
+Calculation: average spread = SMA(high - low, volume-average lookback)
+Calculation: close position = (close - low) / (high - low) when high > low, otherwise 0.5
+Calculation: volume ratio = volume / SMA(volume, volume-average lookback) when the average is positive, otherwise volume
+Calculation: spread-to-ATR ratio = (high - low) / ATR(ATR lookback) when ATR is positive, otherwise high - low
+Calculation: gap-adjusted spread = (high - low) + abs(open - close[1])
+Calculation: gap-adjusted close position = (close - min(low, close[1])) / (max(high, close[1]) - min(low, close[1])) when that range is positive, otherwise close position
+Calculation: gap-adjusted spread-to-ATR ratio = gap-adjusted spread / ATR(ATR lookback) when ATR is positive, otherwise gap-adjusted spread
+Calculation: CVD = cumulative sum of volume * (2 * close - high - low) / (high - low), using zero when high equals low
+Calculation: no supply = close < open AND volume ratio < low-volume multiplier AND spread-to-ATR ratio < narrow-spread ATR multiplier AND close position >= close-near-high threshold
+Calculation: prior weakness gate = at least one of the prior prior-weakness-lookback chart bars is an up bar with volume > its volume average * buying-climax volume multiplier AND its spread-to-ATR ratio > buying-climax spread threshold AND its close position < buying-climax close threshold, OR is an up bar with volume > its volume average * end-of-rising volume multiplier AND its high-low spread < the previous bar's high-low spread AND its close position < end-of-rising close threshold
+Calculation: shakeout = low < lowest(low, support-resistance lookback)[1] AND close > lowest(low, support-resistance lookback)[1] AND volume ratio > high-volume multiplier AND close position >= close-near-high threshold AND spread-to-ATR ratio > wide-spread ATR multiplier
+Calculation: no demand = close >= open AND volume ratio < low-volume multiplier AND spread-to-ATR ratio < narrow-spread ATR multiplier AND close position <= close-near-low threshold AND prior weakness gate
+Calculation: upthrust = high > highest(high, support-resistance lookback)[1] AND close < highest(high, support-resistance lookback)[1] AND close position <= close-near-low threshold AND spread-to-ATR ratio > wide-spread ATR multiplier
+Calculation: effort-result points = highest effort-result points if ((high - low) / average spread) / (volume / volume average) exceeds the upper effort-result cutoff; otherwise middle effort-result points if it exceeds the middle cutoff; otherwise lower positive effort-result points if it exceeds the lower cutoff; otherwise zero
+Calculation: close-position points = highest close-position points if close position exceeds the upper close-position cutoff; otherwise middle close-position points if it exceeds the middle cutoff; otherwise lower positive close-position points if it exceeds the lower cutoff; otherwise zero
+Calculation: absorption points = volume dry-up points if SMA(volume, absorption lookback)[1] / volume average < volume dry-up cutoff, plus range-contraction points if SMA(high - low, absorption lookback)[1] / average spread < range-contraction cutoff, plus accumulation-flow points if the distribution-day count is zero or the accumulation-day count exceeds it; count days in the latest absorption lookback chart bars, with accumulation days having close > close[1] and volume > volume average, and distribution days having close < close[1] and volume > volume average
+Calculation: volume-change points = highest volume-change points if volume / SMA(volume, absorption lookback)[1] exceeds the upper volume-change cutoff; otherwise middle volume-change points if it exceeds the middle cutoff; otherwise lower positive volume-change points if it exceeds the lower cutoff; otherwise zero, using a ratio of one if the prior average is not positive
+Calculation: volume-rank points = highest volume-rank points if volume equals the highest volume in the pivot lookback; otherwise lower positive volume-rank points if volume exceeds the highest volume in the volume-rank secondary lookback preceding the current bar; otherwise zero
+Calculation: spread points = highest spread points if (high - low) / average spread exceeds the upper spread cutoff; otherwise lower positive spread points if it exceeds the average-spread cutoff; otherwise zero, using a ratio of one if average spread is not positive
+Calculation: CVD points = confirming CVD points if CVD - CVD[CVD lookback] > 0 AND close - close[CVD lookback] > 0; otherwise zero if CVD change < 0 AND price change > 0; otherwise neutral CVD points; add stealth-accumulation points if CVD[1] - CVD[1 + CVD stealth lookback] > 0 AND close[1] - close[1 + CVD stealth lookback] <= 0
+Calculation: buy-flow points = highest buy-flow points if close position > upper buy-flow cutoff; otherwise middle buy-flow points if it exceeds the middle cutoff; otherwise lower positive buy-flow points if it exceeds the lower cutoff; otherwise zero
+Calculation: VSA points = max(no-supply points * no supply + shakeout points * shakeout - no-demand points * no demand - upthrust points * upthrust, VSA score floor)
+Calculation: chart quality percentage = 100 * max(0, effort-result points + close-position points + absorption points + volume-change points + volume-rank points + spread points + CVD points + buy-flow points + VSA points) / chart score maximum
+Calculation: breakout bar = close > highest(high, pivot lookback)[1] AND close[1] <= highest(high, pivot lookback)[1] AND volume > volume average * breakout volume multiplier
+Calculation: follow-through score = one point for each true condition: close > highest(high, pivot lookback)[1], volume > volume average * follow-through volume multiplier, and close position > follow-through close-position threshold
+Calculation: gap-adjusted full-range contraction = gap-adjusted spread < abs(close[1] - close[2]) + high[1] - low[1]
+Calculation: HTF volume average = SMA(volume, volume-average lookback) calculated on T1 bars and sampled on chart bars from the last completed T1 bar
+Calculation: HTF quality percentage = 100 * (HTF effort-result points + HTF close-position points + HTF volume-change points + max(HTF VSA points, 0)) / HTF score maximum, with each component calculated on T1 bars and sampled on chart bars from the last completed T1 bar
+Calculation: HTF no supply = T1 close < T1 open AND T1 volume ratio < low-volume multiplier AND T1 gap-adjusted spread-to-ATR ratio < narrow-spread ATR multiplier AND T1 gap-adjusted close position >= close-near-high threshold
+Calculation: HTF shakeout = T1 low < lowest(T1 low, support-resistance lookback)[1] AND T1 close > that support AND T1 volume ratio > high-volume multiplier AND T1 gap-adjusted close position >= close-near-high threshold AND T1 gap-adjusted spread-to-ATR ratio > wide-spread ATR multiplier
+Calculation: HTF no demand = T1 close >= T1 open AND T1 volume ratio < low-volume multiplier AND T1 gap-adjusted spread-to-ATR ratio < narrow-spread ATR multiplier AND T1 gap-adjusted close position <= close-near-low threshold AND the prior weakness gate evaluated on T1 bars
+Calculation: HTF upthrust = T1 high > highest(T1 high, support-resistance lookback)[1] AND T1 close < that resistance AND T1 gap-adjusted close position <= close-near-low threshold AND T1 gap-adjusted spread-to-ATR ratio > wide-spread ATR multiplier
+Calculation: HTF VSA points = max(no-supply points * HTF no supply + shakeout points * HTF shakeout - no-demand points * HTF no demand - upthrust points * HTF upthrust, VSA score floor), with the prior weakness gate using non-gap-adjusted T1 bar ranges
+Long: breakout bar AND chart quality percentage >= likely-accumulation percentage threshold
+Long: close < open AND close position > hidden-buy ratio threshold
+Long: no supply
+Long: shakeout
+Long: close < open AND volume ratio > selling-climax volume cutoff AND gap-adjusted spread-to-ATR ratio > selling-climax spread cutoff AND gap-adjusted close position > selling-climax close-position cutoff
+Long: consecutive down-bar count equals the stopping-volume bar-count parameter AND each bar's high-low spread is smaller than the preceding bar's AND each bar's volume is greater than the preceding bar's AND gap-adjusted close position > stopping-volume close-position cutoff AND selling climax is false
+Long: close < open AND volume ratio > bottom-reversal volume cutoff AND gap-adjusted close position > bottom-reversal close-position cutoff AND selling climax is false AND stopping volume is false
+Long: close >= open AND volume ratio > bag-holding volume cutoff AND gap-adjusted close position > bag-holding close-position cutoff AND the previous bar is a down bar with volume > its volume average * prior-flush volume multiplier AND its close position > prior-flush close-position cutoff
+Long: close >= open AND volume ratio > supply-absorption volume cutoff AND gap-adjusted spread-to-ATR ratio < supply-absorption spread cutoff AND gap-adjusted close position is between the supply-absorption lower and upper cutoffs
+Long: bullish VSA bias, where the most recent of selling climax, stopping volume, bottom reversal, bag holding, supply absorption, no supply, or shakeout is within the VSA-bias recency lookback and the most recent of buying climax, end of rising, top reversal, supply over demand, demand absorption, upthrust, or no demand is not
+Long: follow-through score >= green follow-through score threshold during the follow-through window after a breakout
+Long: breakout bar AND HTF confirmation enabled AND T1 is higher than the chart timeframe AND HTF quality percentage >= likely-accumulation percentage threshold
+Short: breakout bar AND chart quality percentage < exhaustion percentage threshold
+Short: close > open AND close position < hidden-sell ratio threshold
+Short: no demand
+Short: upthrust
+Short: close >= open AND volume ratio > buying-climax volume cutoff AND gap-adjusted spread-to-ATR ratio > buying-climax spread cutoff AND gap-adjusted close position < buying-climax close-position cutoff
+Short: close >= open AND volume ratio > end-of-rising volume cutoff AND gap-adjusted full-range contraction AND gap-adjusted close position < end-of-rising close-position cutoff AND buying climax is false
+Short: close >= open AND volume ratio > top-reversal volume cutoff AND gap-adjusted close position < top-reversal close-position cutoff AND buying climax is false AND end of rising is false
+Short: close < open AND volume > volume[1] * supply-over-demand volume multiplier AND close[1] >= open[1] AND gap-adjusted close position < supply-over-demand close-position cutoff
+Short: close < open AND volume ratio > demand-absorption volume cutoff AND gap-adjusted spread-to-ATR ratio < demand-absorption spread cutoff AND gap-adjusted close position is between the demand-absorption lower and upper cutoffs
+Short: close > open AND volume ratio > volume-average lookback buying-climax cutoff AND spread-to-ATR ratio > buying-climax gate spread cutoff AND close position < buying-climax gate close-position cutoff on any of the prior prior-weakness-lookback bars
+Short: close > open AND volume ratio > volume-average lookback end-of-rising cutoff AND high-low spread < the preceding bar's high-low spread AND close position < end-of-rising gate close-position cutoff on any of the prior prior-weakness-lookback bars
+Short: breakout bar AND CVD - CVD[CVD lookback] < 0 AND close - close[CVD lookback] > 0
+Short: follow-through score < green follow-through score threshold during the follow-through window after a breakout
+Short: bearish VSA bias, where the most recent of buying climax, end of rising, top reversal, supply over demand, demand absorption, upthrust, or no demand is within the VSA-bias recency lookback and the most recent of selling climax, stopping volume, bottom reversal, bag holding, supply absorption, no supply, or shakeout is not
+Short: breakout bar AND chart quality percentage >= likely-accumulation percentage threshold AND HTF confirmation enabled AND T1 is higher than the chart timeframe AND HTF quality percentage < exhaustion percentage threshold
+Exit: long, a breakout occurred within the follow-through window AND follow-through score = 0
+Option: sell call, long position AND each of the prior follow-through confirmation days after a breakout has follow-through score >= green follow-through score threshold

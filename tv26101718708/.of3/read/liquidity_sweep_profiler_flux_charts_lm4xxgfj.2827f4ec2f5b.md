@@ -1,0 +1,3 @@
+Calculation: Available liquidity levels = unspent, enabled, retained completed configured-session highs/lows; prior high/low sampled on chart bars from the last completed bar of each of T1, T2, and T3; and confirmed Pivot High/Low(high/low, pivot lookback, pivot lookback) levels classified as equal when within equal-level threshold × ATR(ATR lookback) of any of the previous three same-side pivots; apply each level type’s configured retention and age limits
+Long: For any available low level, low < level and, on the piercing bar or within the confirmation window after it, close > level
+Short: For any available high level, high > level and, on the piercing bar or within the confirmation window after it, close < level

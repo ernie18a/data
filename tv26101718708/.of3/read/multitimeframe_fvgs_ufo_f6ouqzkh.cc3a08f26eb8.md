@@ -1,0 +1,3 @@
+Calculation: No adjacent wick gap = candle2.low <= candle1.high AND candle2.high >= candle1.low AND candle3.low <= candle2.high AND candle3.high >= candle2.low
+Long: On chart bars using the last completed three consecutive T1 candles, or a still-forming candle3 of T1 when potential FVG marking is enabled, candle3.low > candle1.high AND No adjacent wick gap
+Short: On chart bars using the last completed three consecutive T1 candles, or a still-forming candle3 of T1 when potential FVG marking is enabled, candle3.high < candle1.low AND No adjacent wick gap

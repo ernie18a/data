@@ -1,0 +1,3 @@
+Calculation: Change Z-score = if standard deviation(change(close), lookback) is defined and nonzero, then (change(close) - SMA(change(close), lookback)) / standard deviation(change(close), lookback), else 0
+Long: close crosses above the latest confirmed pivot high of high, using equal left and right pivot lookbacks, AND Change Z-score > momentum threshold AND that pivot high has not already triggered a bullish break
+Short: close crosses below the latest confirmed pivot low of low, using equal left and right pivot lookbacks, AND Change Z-score < -momentum threshold AND that pivot low has not already triggered a bearish break

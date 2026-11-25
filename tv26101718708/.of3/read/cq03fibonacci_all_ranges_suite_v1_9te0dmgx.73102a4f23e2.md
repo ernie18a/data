@@ -1,0 +1,8 @@
+Long: On chart bars, close >= open(T1, bar still forming)
+Short: On chart bars, close < open(T1, bar still forming)
+Long: On chart bars, close >= open(T2, bar still forming)
+Short: On chart bars, close < open(T2, bar still forming)
+Long: On chart bars, close >= open(T3, bar still forming)
+Short: On chart bars, close < open(T3, bar still forming)
+Long: On chart bars, close >= open(T4, bar still forming)
+Short: On chart bars, close < open(T4, bar still forming)

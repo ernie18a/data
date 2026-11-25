@@ -1,0 +1,4 @@
+Long: bar is confirmed AND (the leading Elliott Wave scenario changed to upward OR the hard-rule-valid leading scenario is upward AND a confirmed ZigZag pivot occurs on the current bar)
+Short: bar is confirmed AND (the leading Elliott Wave scenario changed to downward OR the hard-rule-valid leading scenario is downward AND a confirmed ZigZag pivot occurs on the current bar)
+Exit: long, bar is confirmed AND the hard-rule-valid leading scenario is upward AND close is below its invalidation level
+Exit: short, bar is confirmed AND the hard-rule-valid leading scenario is downward AND close is above its invalidation level

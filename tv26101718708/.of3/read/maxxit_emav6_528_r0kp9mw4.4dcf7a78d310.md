@@ -1,0 +1,20 @@
+Calculation: TriggerEMA = EMA(close, trigger length), with trigger length shorter than partner length and trend length
+Calculation: PartnerEMA = EMA(close, partner length), with partner length shorter than long length
+Calculation: TrendEMA = EMA(close, trend length)
+Calculation: LongEMA = EMA(close, long length)
+Calculation: DistanceAtr = abs(TriggerEMA - TrendEMA) / ATR(atr length)
+Calculation: VolAdaptation = high multiplier if ATR(atr length) / close > high threshold * SMA(ATR(atr length) / close, baseline length); low multiplier if ATR(atr length) / close < low threshold * SMA(ATR(atr length) / close, baseline length); otherwise 1
+Calculation: TargetDistance = entry price * target fraction * VolAdaptation at entry bar
+Calculation: StopDistance = entry price * stop fraction * VolAdaptation at entry bar
+Long: rising(TrendEMA, trend lookback) AND TriggerEMA crosses above PartnerEMA AND (setback disabled OR (low[1] < TriggerEMA[1] AND close > TriggerEMA AND TriggerEMA > TrendEMA)) AND bar is confirmed AND trading enabled AND bar time within session hours (session time zone) AND (weekend trading enabled OR bar is a weekday) AND (short-only mode off OR position is short) AND open long entries < pyramid limit
+Long: re-entry enabled AND (stop enabled OR target enabled OR auto-trail enabled) AND position is flat AND short-only mode off AND rising(TrendEMA, trend lookback) AND rising(TriggerEMA, re-entry lookback) AND rising(high, re-entry lookback) AND DistanceAtr <= max ATR distance AND TriggerEMA > TrendEMA AND TriggerEMA[re-entry lookback] > TrendEMA AND low[1] < TriggerEMA[1] AND close > TriggerEMA AND bar is confirmed AND trading enabled AND bar time within session hours (session time zone) AND (weekend trading enabled OR bar is a weekday)
+Short: falling(TrendEMA, trend lookback) AND TriggerEMA crosses below PartnerEMA AND (setback disabled OR (high[1] > TriggerEMA[1] AND close < TriggerEMA AND TriggerEMA < TrendEMA)) AND bar is confirmed AND trading enabled AND bar time within session hours (session time zone) AND (weekend trading enabled OR bar is a weekday) AND (long-only mode off OR position is long) AND open short entries < pyramid limit
+Short: re-entry enabled AND (stop enabled OR target enabled OR auto-trail enabled) AND position is flat AND long-only mode off AND falling(TrendEMA, trend lookback) AND falling(TriggerEMA, re-entry lookback) AND falling(low, re-entry lookback) AND DistanceAtr <= max ATR distance AND TriggerEMA < TrendEMA AND TriggerEMA[re-entry lookback] < TrendEMA AND high[1] > TriggerEMA[1] AND close < TriggerEMA AND bar is confirmed AND trading enabled AND bar time within session hours (session time zone) AND (weekend trading enabled OR bar is a weekday)
+Exit: long, target enabled AND auto-trail disabled AND bar is confirmed AND close >= entry price + TargetDistance
+Exit: long, stop enabled AND bar is confirmed AND (close <= entry price - StopDistance OR (highest close since entry > entry price + trail activation distance AND close <= highest close since entry - StopDistance))
+Exit: long, auto-trail enabled AND (high >= entry price + TargetDistance OR low <= entry price - StopDistance OR (highest high since entry > entry price + trail activation distance AND low <= highest high since entry - StopDistance))
+Exit: short, target enabled AND auto-trail disabled AND bar is confirmed AND close <= entry price - TargetDistance
+Exit: short, stop enabled AND bar is confirmed AND (close >= entry price + StopDistance OR (lowest close since entry < entry price - trail activation distance AND close >= lowest close since entry + StopDistance))
+Exit: short, auto-trail enabled AND (low <= entry price - TargetDistance OR high >= entry price + StopDistance OR (lowest low since entry < entry price - trail activation distance AND high >= lowest low since entry + StopDistance))
+Long: PartnerEMA crosses above LongEMA AND trading disabled
+Short: PartnerEMA crosses below LongEMA AND trading disabled

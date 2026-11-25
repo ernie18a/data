@@ -1,0 +1,15 @@
+Calculation: Efficiency ratio = abs(close - close[lookback]) / sum(abs(close - close[1]), lookback)
+Calculation: Hurst exponent = rescaled-range estimate of log returns over its lookback
+Calculation: Trend regime = ADX(high, low, close, lookback) > trend threshold AND efficiency ratio > trend threshold AND (Hurst exponent is not below the neutral boundary OR Hurst filtering is disabled); trending regime additionally requires volatility clustering below its threshold
+Calculation: Volatility clustering = z-score of exponentially decayed absolute log returns
+Calculation: Regime quality = clipped weighted sum of trending status, normalized efficiency ratio, normalized ADX, inverse regime thrash, and Hurst persistence
+Calculation: Support and resistance consensus = configured weighted median or conservative member of the densest reliability-weighted cluster of the respective structural anchors within an ATR-scaled band; anchors include anchored VWAP bands, session or naked volume point of control, fair-value-gap midpoints, swing pivots, and volume-absorption levels
+Calculation: Side confidence = clipped weighted sum of cluster agreement, cluster tightness, mean anchor reliability, and regime quality, discounted by regime thrash
+Calculation: Effective band multiplier = base ATR multiplier × (calm scale + (volatile scale - calm scale) × percentile rank(ATR(high, low, close, ATR lookback), volatility-rank lookback)) × (1 + chop widening × (1 - efficiency ratio)) × (trending regime ? 1 : range widening)
+Calculation: Lower and upper trail bands = configured adaptive bands (hl2 ± effective band multiplier × ATR), Chandelier bands (lowest low or highest high over its lookback ± effective band multiplier × ATR), or their average, according to the selected backbone
+Calculation: Long target = support consensus capped at close minus minimum stop distance in ATR when support confidence reaches the structure threshold; otherwise the lower trail band
+Calculation: Short target = resistance consensus floored at close plus minimum stop distance in ATR when resistance confidence reaches the structure threshold; otherwise the upper trail band
+Calculation: Effective confirmation breach = base breach + chop breach × regime thrash + range breach when the regime is not trending
+Calculation: Long-side trail = max(previous long-side trail, long target); short-side trail = min(previous short-side trail, short target); initialize long-side direction, and reset the trail to the opposite target on a flip
+Long: Direction was short, the minimum bars since the previous flip have elapsed, and close > min(previous short-side trail, current short target) + ATR(high, low, close, ATR lookback) × effective confirmation breach OR direction is long and support confidence ≥ minimum trade confidence
+Short: Direction was long, the minimum bars since the previous flip have elapsed, and close < max(previous long-side trail, current long target) - ATR(high, low, close, ATR lookback) × effective confirmation breach OR direction is short and resistance confidence ≥ minimum trade confidence
