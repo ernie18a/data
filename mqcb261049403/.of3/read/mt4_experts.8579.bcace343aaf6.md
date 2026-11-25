@@ -1,0 +1,5 @@
+Calculation: Prior moving-average spread = SMA(fast price input, shorter lookback, previous completed chart bar) - SMA(slow price input, longer lookback, previous completed chart bar)
+Long: Prior moving-average spread >= lower entry threshold AND Prior moving-average spread <= upper entry threshold
+Short: Prior moving-average spread <= -lower entry threshold AND Prior moving-average spread >= -upper entry threshold
+Exit: long, (profit target parameter > 0 AND close - entry price >= profit target parameter * point size) OR (loss limit parameter > 0 AND close - entry price <= -loss limit parameter * point size)
+Exit: short, (profit target parameter > 0 AND entry price - close >= profit target parameter * point size) OR (loss limit parameter > 0 AND entry price - close <= -loss limit parameter * point size)

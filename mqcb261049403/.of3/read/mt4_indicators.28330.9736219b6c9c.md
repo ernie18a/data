@@ -1,0 +1,3 @@
+Calculation: currency strength(currency) = sum across currency pairs of +1 when currency is the base and close > MA(applied price, method, lookback, shift), or currency is the quote and close < MA(applied price, method, lookback, shift); -1 when currency is the base and close < MA(applied price, method, lookback, shift), or currency is the quote and close > MA(applied price, method, lookback, shift); otherwise 0
+Long: currency strength(base currency) > currency strength(quote currency)
+Short: currency strength(base currency) < currency strength(quote currency)

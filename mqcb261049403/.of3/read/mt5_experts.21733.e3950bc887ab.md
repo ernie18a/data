@@ -1,0 +1,2 @@
+Long: Open(current chart bar) < MA(applied price, lookback) at current chart bar AND ask price < MA(applied price, lookback) at current chart bar AND MA(applied price, lookback) at previous chart bar < MA(applied price, lookback) at current chart bar
+Short: Open(current chart bar) > MA(applied price, lookback) at current chart bar AND bid price > MA(applied price, lookback) at current chart bar AND MA(applied price, lookback) at previous chart bar > MA(applied price, lookback) at current chart bar

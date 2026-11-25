@@ -1,0 +1,4 @@
+Calculation: Buy volume distribution(price) = sum over chart bars with low <= price <= high and high > low of volume * (high - low + abs(close - open)) / (2 * (high - low) + abs(close - open)) when close > open, otherwise volume * (high - low) / (2 * (high - low) + abs(close - open))
+Calculation: Sell volume distribution(price) = sum over chart bars with low <= price <= high and high > low of volume * (high - low) / (2 * (high - low) + abs(close - open)) when close > open, otherwise volume * (high - low + abs(close - open)) / (2 * (high - low) + abs(close - open))
+Long: Buy volume distribution(price) > Sell volume distribution(price)
+Short: Buy volume distribution(price) < Sell volume distribution(price)

@@ -1,0 +1,4 @@
+Calculation: upper threshold = upper base level + shared risk parameter
+Calculation: lower threshold = lower base level - shared risk parameter
+Long: (Fast Stochastic %K (lookback parameter) on the current chart bar > upper threshold AND the nearest earlier bar whose value is outside the inclusive lower-to-upper threshold band has a value < lower threshold) OR (the same condition on bars of T1, using the T1 bar still forming and copying its result to chart bars by chart-bar time; use the same lookback parameter)
+Short: (Fast Stochastic %K (lookback parameter) on the current chart bar < lower threshold AND the nearest earlier bar whose value is outside the inclusive lower-to-upper threshold band has a value > upper threshold) OR (the same condition on bars of T1, using the T1 bar still forming and copying its result to chart bars by chart-bar time; use the same lookback parameter)

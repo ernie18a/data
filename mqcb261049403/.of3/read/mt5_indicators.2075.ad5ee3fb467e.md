@@ -1,0 +1,3 @@
+Calculation: Trend state = bearish when Williams %R(high, low, close, lookback) is below the lower threshold, bullish when it is above the upper threshold, and otherwise its previous value; initially bearish; the thresholds are symmetric about the Williams %R midpoint and controlled by one shared risk parameter
+Long: Trend state changes from bearish to bullish
+Short: Trend state changes from bullish to bearish

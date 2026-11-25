@@ -1,0 +1,5 @@
+Calculation: Profile row(bar) = clamp(floor((Typical Price(bar) - lowest low over profile lookback) / (highest high over profile lookback - lowest low over profile lookback) * row count), 0, row count - 1)
+Calculation: Up-closing volume(row) = sum(selected volume over profile lookback for bars assigned to row with close >= open)
+Calculation: Down-closing volume(row) = sum(selected volume over profile lookback for bars assigned to row with close < open)
+Long: Up-closing volume(row) >= Down-closing volume(row)
+Short: Up-closing volume(row) < Down-closing volume(row)

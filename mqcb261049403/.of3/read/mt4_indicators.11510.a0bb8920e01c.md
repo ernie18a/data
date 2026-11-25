@@ -1,0 +1,4 @@
+Calculation: price angle(price) = angle origin + ((price - displayed chart-window minimum price) / (displayed chart-window maximum price - displayed chart-window minimum price)) * angle span
+Calculation: aligned close direction = (close on chart bar > close(T1, last completed bar sampled on each chart bar) AND close on chart bar > close(T2, last completed bar sampled on each chart bar)) OR (close on chart bar < close(T1, last completed bar sampled on each chart bar) AND close on chart bar < close(T2, last completed bar sampled on each chart bar)); T1 is longer than T2
+Long: price angle(close on chart bar) >= bullish lower angle AND price angle(close on chart bar) <= bullish upper angle AND aligned close direction
+Short: price angle(close on chart bar) >= bearish lower angle AND price angle(close on chart bar) < bearish upper angle AND aligned close direction

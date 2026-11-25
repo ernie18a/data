@@ -1,0 +1,4 @@
+Long: StepMA stochastic spread(high, low, close, weighted-range lookback, step multiplier) > 0
+Short: StepMA stochastic spread(high, low, close, weighted-range lookback, step multiplier) < 0
+Long: StepMA stochastic spread(high, low, close, weighted-range lookback, step multiplier, T1, last completed bar, calculated on T1 bars and sampled on chart bars) > 0 OR StepMA stochastic spread(high, low, close, weighted-range lookback, step multiplier, T1, bar still forming, calculated on T1 bars and sampled on chart bars) > 0
+Short: StepMA stochastic spread(high, low, close, weighted-range lookback, step multiplier, T1, last completed bar, calculated on T1 bars and sampled on chart bars) < 0 OR StepMA stochastic spread(high, low, close, weighted-range lookback, step multiplier, T1, bar still forming, calculated on T1 bars and sampled on chart bars) < 0

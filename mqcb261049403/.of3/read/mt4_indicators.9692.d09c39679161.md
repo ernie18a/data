@@ -1,0 +1,2 @@
+Long: On chart bars, SMA(close, shorter lookback, T1, bar still forming) < SMA(close, longer lookback, T1, bar still forming)
+Short: On chart bars, SMA(close, shorter lookback, T1, bar still forming) >= SMA(close, longer lookback, T1, bar still forming)

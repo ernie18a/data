@@ -1,0 +1,2 @@
+Exit: long, take-profit distance > 0 AND trunc((close - entry price) / minimum price increment) >= take-profit distance OR stop-loss distance > 0 AND trunc((close - entry price) / minimum price increment) <= -stop-loss distance
+Exit: short, take-profit distance > 0 AND trunc((entry price - close) / minimum price increment) >= take-profit distance OR stop-loss distance > 0 AND trunc((entry price - close) / minimum price increment) <= -stop-loss distance

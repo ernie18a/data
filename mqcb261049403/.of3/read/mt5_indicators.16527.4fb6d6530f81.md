@@ -1,0 +1,2 @@
+Long: MFI(lookback) >= upper MFI level AND (slowdown search disabled OR abs(MFI(lookback) - MFI(lookback)[1]) < slowdown change threshold)
+Short: MFI(lookback) <= lower MFI level AND (slowdown search disabled OR abs(MFI(lookback) - MFI(lookback)[1]) < slowdown change threshold)

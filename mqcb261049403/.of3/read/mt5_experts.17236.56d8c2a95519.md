@@ -1,0 +1,4 @@
+Long: Stochastic %K(K1, D1, S1, SMA, low/high) > Stochastic %D(K1, D1, S1, SMA, low/high) AND Stochastic %K(K1, D1, S1, SMA, low/high) < long threshold AND abs(Stochastic %K(K2, D2, S2, SMA, low/high) - Stochastic %D(K2, D2, S2, SMA, low/high)) > gap threshold
+Short: Stochastic %K(K1, D1, S1, SMA, low/high) < Stochastic %D(K1, D1, S1, SMA, low/high) AND Stochastic %K(K1, D1, S1, SMA, low/high) > short threshold AND abs(Stochastic %K(K2, D2, S2, SMA, low/high) - Stochastic %D(K2, D2, S2, SMA, low/high)) > gap threshold
+Exit: long, RSI(median, RSI period) > long RSI threshold AND Stochastic %D(K1, D1, S1, SMA, low/high) < Stochastic %D(K1, D1, S1, SMA, low/high)[1] AND Stochastic %D(K1, D1, S1, SMA, low/high) > long stochastic threshold
+Exit: short, RSI(median, RSI period) < short RSI threshold AND Stochastic %D(K1, D1, S1, SMA, low/high) > Stochastic %D(K1, D1, S1, SMA, low/high)[1] AND Stochastic %D(K1, D1, S1, SMA, low/high) < short stochastic threshold

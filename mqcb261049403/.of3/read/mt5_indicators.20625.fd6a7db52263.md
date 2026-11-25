@@ -1,0 +1,2 @@
+Long: On chart bars at T1 bar openings, Parabolic SAR(step parameter, maximum parameter, T1, current forming bar) < low(T1, current forming bar), and this mapped comparison was false on the previous chart bar.
+Short: On chart bars at T1 bar openings, Parabolic SAR(step parameter, maximum parameter, T1, current forming bar) > high(T1, current forming bar), and this mapped comparison was false on the previous chart bar.

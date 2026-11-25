@@ -1,0 +1,8 @@
+Calculation: indicator score(rate) = the selected MACD main line(rate, shorter-lookback fast EMA period, longer-lookback slow EMA period, signal SMA period, MACD applied price), divided by 100 if rate is JPY-quoted; selected Stochastic main line(rate, K period, D period, slowing, SMA, price field) minus 50; selected RSI(rate, RSI period, RSI applied price) minus 50; selected CCI(rate, CCI period, CCI applied price); selected RVI main line(rate, RVI period); or selected DeMarker(rate, DeMarker period) minus 0.5, using the same selected indicator and parameters for all rates, on T1 bars mapped to each chart bar timestamp, including the T1 bar still forming
+Calculation: A = indicator score of the traded exchange rate
+Calculation: B = indicator score of the first configured currency cross exchange rate, with its sign reversed in the JPY-quoted configuration whose traded rate has USD as its base currency
+Calculation: C = indicator score of the second configured currency cross exchange rate
+Calculation: base index = (A + B) / 2 for USD-quoted or JPY-quoted configurations; (A + C) / 2 for USD-base configurations
+Calculation: quote index = (-A + C) / 2 for USD-quoted configurations; (-A - C) / 2 for JPY-quoted configurations; (-A + B) / 2 for USD-base configurations
+Long: base index > quote index AND base index[1] < quote index[1]
+Short: base index < quote index AND base index[1] > quote index[1]

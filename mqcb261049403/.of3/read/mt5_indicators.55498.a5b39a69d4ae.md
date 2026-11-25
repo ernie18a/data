@@ -1,0 +1,2 @@
+Long: QQE smoothed RSI line (close, RSI lookback, smoothing factor; T1 values mapped to chart bars, including the forming T1 bar) crosses above QQE trailing line OR QQE smoothed RSI line crosses above level parameter
+Short: QQE smoothed RSI line crosses below QQE trailing line OR QQE smoothed RSI line crosses below level parameter

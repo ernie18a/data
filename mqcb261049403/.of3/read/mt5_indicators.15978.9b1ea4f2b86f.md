@@ -1,0 +1,4 @@
+Calculation: HigherHighRun(bars, lookback) = min(lookback, count of consecutive preceding bars whose highs are below the current high)
+Calculation: LowerLowRun(bars, lookback) = -min(lookback, count of consecutive preceding bars whose lows are above the current low)
+Long: HigherHighRun(chart bars, chart lookback) >= chart threshold OR HigherHighRun(T1 bars, T1 lookback, current bar still forming, value mapped to chart bars) >= T1 threshold
+Short: LowerLowRun(chart bars, chart lookback) <= -chart threshold OR LowerLowRun(T1 bars, T1 lookback, current bar still forming, value mapped to chart bars) <= -T1 threshold

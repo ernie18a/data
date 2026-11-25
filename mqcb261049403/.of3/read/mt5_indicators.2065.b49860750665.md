@@ -1,0 +1,6 @@
+Calculation: Adaptive bands = lowest low + band percentage × (highest high − lowest low), and highest high − band percentage × (highest high − lowest low), over the current bar and the preceding ceil(lookback numerator / ADX(high, low, close, ADX period) on the preceding bar) bars.
+Calculation: Direction state = +1 when close > upper adaptive band, −1 when close < lower adaptive band, otherwise the prior direction state; its first nonzero value initializes the state without a signal.
+Long: direction state = +1 AND prior direction state is initialized AND prior direction state != +1, calculated on the current chart bar, including while it is forming.
+Short: direction state = −1 AND prior direction state is initialized AND prior direction state != −1, calculated on the current chart bar, including while it is forming.
+Long: direction state = +1 AND prior direction state is initialized AND prior direction state != +1, calculated on T1 bars including the still-forming bar, with the signal read on chart bars at T1 bar starts.
+Short: direction state = −1 AND prior direction state is initialized AND prior direction state != −1, calculated on T1 bars including the still-forming bar, with the signal read on chart bars at T1 bar starts.

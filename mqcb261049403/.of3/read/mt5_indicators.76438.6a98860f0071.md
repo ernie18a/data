@@ -1,0 +1,2 @@
+Long: moving average(close, shorter lookback, T1, bar still forming) > moving average(close, longer lookback, T1, bar still forming)
+Short: moving average(close, shorter lookback, T1, bar still forming) < moving average(close, longer lookback, T1, bar still forming)

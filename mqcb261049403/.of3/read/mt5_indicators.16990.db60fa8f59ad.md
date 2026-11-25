@@ -1,0 +1,4 @@
+Calculation: trend level = level factor × highest(max(selected price − moving average(selected price, moving-average lookback, selected averaging method), 2 × moving average(selected price, moving-average lookback, selected averaging method) − high − low), level lookback) on T1 bars including the still-forming bar; when T1 is higher than the chart timeframe, interpolate T1 values onto chart bars
+Calculation: trend state = up if selected price − moving average(selected price, moving-average lookback, selected averaging method) > trend level; otherwise down if 2 × moving average(selected price, moving-average lookback, selected averaging method) − high − low > trend level; otherwise the previous trend state; initially unset. Calculate on T1 bars including the still-forming bar; when T1 is higher than the chart timeframe, interpolate T1 values onto chart bars
+Long: trend state = up
+Short: trend state = down

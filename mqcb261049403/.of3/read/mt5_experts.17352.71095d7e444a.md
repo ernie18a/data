@@ -1,0 +1,8 @@
+Calculation: Fast EMA = EMA(close, shorter lookback)
+Calculation: Middle EMA = EMA(close, intermediate lookback)
+Calculation: Slow EMA = EMA(close, longer lookback)
+Calculation: Numeric truth value(comparison) = 1 if true, otherwise 0
+Long: Fast EMA on the last completed chart bar < Middle EMA on the last completed chart bar AND Middle EMA on the last completed chart bar < Slow EMA on the last completed chart bar AND Middle EMA on the current still-forming chart bar < Fast EMA on the current still-forming chart bar AND Fast EMA on the current still-forming chart bar < Slow EMA on the current still-forming chart bar
+Short: Fast EMA on the last completed chart bar > Middle EMA on the last completed chart bar AND Middle EMA on the last completed chart bar > Slow EMA on the last completed chart bar AND Middle EMA on the current still-forming chart bar > Fast EMA on the current still-forming chart bar AND Fast EMA on the current still-forming chart bar > Slow EMA on the current still-forming chart bar
+Exit: long, Numeric truth value(Fast EMA on the last completed chart bar > Middle EMA on the last completed chart bar) > Slow EMA on the last completed chart bar AND Numeric truth value(Slow EMA on the current still-forming chart bar < Fast EMA on the current still-forming chart bar) < Middle EMA on the current still-forming chart bar
+Exit: short, Numeric truth value(Fast EMA on the last completed chart bar > Middle EMA on the last completed chart bar) > Slow EMA on the last completed chart bar AND Numeric truth value(Slow EMA on the current still-forming chart bar < Fast EMA on the current still-forming chart bar) < Middle EMA on the current still-forming chart bar

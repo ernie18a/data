@@ -1,0 +1,2 @@
+Long: On chart bars taking values from T1, RMA(close, lookback, T1, still-forming bar) turns upward on the selected chart bar
+Short: On chart bars taking values from T1, RMA(close, lookback, T1, still-forming bar) turns downward on the selected chart bar

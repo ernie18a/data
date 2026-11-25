@@ -1,0 +1,5 @@
+Calculation: BrakeExp trend = on T1 bars, initialize bullish with the oldest calculated bar's low as the anchor; track the highest high and lowest low since the anchor; after age bars, set the threshold to the anchor plus (EXP(age × rate parameter × exponent-scale parameter) − 1) × distance parameter × price-point size when bullish, or minus that amount when bearish; turn bearish when the bullish threshold > low and reset the anchor to the tracked highest high, or turn bullish when the bearish threshold < high and reset the anchor to the tracked lowest low; decisions use the T1 bar selected by the signal-bar index parameter, which defaults to the last completed bar
+Long: BrakeExp trend changes from bearish to bullish on the selected T1 bar
+Short: BrakeExp trend changes from bullish to bearish on the selected T1 bar
+Exit: long, BrakeExp trend is bearish on the selected T1 bar
+Exit: short, BrakeExp trend is bullish on the selected T1 bar

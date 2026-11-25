@@ -1,0 +1,2 @@
+Long: (first value line - second value line)[0] > ATR(lookback)[0] × parameter AND (first value line - second value line)[1] <= ATR(lookback)[0] × parameter AND latest signal direction is not long
+Short: (first value line - second value line)[0] < -ATR(lookback)[0] × parameter AND (first value line - second value line)[1] >= -ATR(lookback)[0] × parameter AND latest signal direction is not short
