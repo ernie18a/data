@@ -1,0 +1,3 @@
+Calculation: Imbalance position(side) = 0 if either bound is 0; otherwise -1 if close < low, 1 if close > high, or 2 * (close - low) / (high - low) - 1, where low is the down price of the first and high is the up price of the last current chart bar footprint row with an imbalance on side, using the row-size and imbalance-threshold parameters
+Long: Imbalance position(buy) > 0 OR Imbalance position(sell) > 0 OR current chart bar footprint delta > 0
+Short: Imbalance position(buy) < 0 OR Imbalance position(sell) < 0 OR current chart bar footprint delta < 0

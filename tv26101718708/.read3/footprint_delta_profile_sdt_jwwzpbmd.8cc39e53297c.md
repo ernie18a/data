@@ -1,0 +1,3 @@
+Calculation: Absorption direction = sellers absorbed when close > open, footprint volume in the bottom third of the bar’s high-low range ≥ absorption share × volume, and footprint delta in that third < 0; buyers absorbed when close < open, footprint volume in the top third of the bar’s high-low range ≥ absorption share × volume, and footprint delta in that third > 0; otherwise neither
+Long: Absorption direction = sellers absorbed
+Short: Absorption direction = buyers absorbed

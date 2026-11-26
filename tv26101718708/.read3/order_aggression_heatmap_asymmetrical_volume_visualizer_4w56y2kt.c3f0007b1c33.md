@@ -1,0 +1,2 @@
+Long: At a footprint price row, buy volume > sell volume AND buy volume / max(sell volume, 1) >= aggression ratio AND total row volume >= minimum row volume AND abs(buy volume - sell volume) >= minimum absolute delta
+Short: At a footprint price row, sell volume > buy volume AND sell volume / max(buy volume, 1) >= aggression ratio AND total row volume >= minimum row volume AND abs(buy volume - sell volume) >= minimum absolute delta

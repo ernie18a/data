@@ -1,0 +1,4 @@
+Calculation: trapped buyer volume = sum(buy volume + sell volume for each footprint row aggregated by ticks per row where absolute(buy volume - sell volume) >= minimum row delta, (sell volume > 0 ? buy volume / sell volume : buy volume) >= imbalance ratio, row price > close, and (strict wick mode is off or row price > low + (high - low) * buyer wick fraction))
+Calculation: trapped seller volume = sum(buy volume + sell volume for each footprint row aggregated by ticks per row where absolute(buy volume - sell volume) >= minimum row delta, (buy volume > 0 ? sell volume / buy volume : sell volume) >= imbalance ratio, row price < close, and (strict wick mode is off or row price < low + (high - low) * seller wick fraction))
+Long: trapped seller volume >= minimum trap volume AND current bar is within maximum lookback bars of the latest bar
+Short: trapped buyer volume >= minimum trap volume AND current bar is within maximum lookback bars of the latest bar
