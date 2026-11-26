@@ -1,0 +1,52 @@
+# RW Simple Pairs Trade
+
+- url: https://www.tradingview.com/script/oqmZwvbA-RW-Simple-Pairs-Trade/
+- type: strategy
+- pine_id: PUB;zI8N6Cn1TOC9USjJNcXCGjtH6H1Hf3Eu
+- version: 1.0
+
+## Description
+
+A Simple Implementation of a Pairs Trading Strategy 
+
+It uses a simple moving average of specified length (default = 20) and enters at cutoffs set by Entry ZScore. Trades are exited at the moving average.
+
+It is intended to be run on pairs of stocks. To Spread KO and PEP, for example, use the ticker KO / PEP * 1000
+
+To visualise the trade better add Bollinger bands to your charts, corresponding to the SMA length and Entry ZScore criteria you specified.
+
+## Source Code
+
+````pine
+//@version=4
+strategy("Robot Wealth Simple Pairs Trade", overlay=true)
+
+source = close
+smalength = input(title = "SMA Length", defval = 20, minval=1)
+entryzscore = input(title = "Entry ZScore", defval = 2.0, minval=0, maxval = 50)
+startYear = input(title="Backtest Start Year", type=input.integer, defval=2012, minval=1800, maxval=2100)
+
+ma = sma(source, smalength)
+dev = entryzscore * stdev(source, smalength)
+
+upper = ma + dev
+lower = ma - dev
+
+longEntrySignal = cross(source, lower)
+shortEntrySignal = cross(source, upper)
+exitSignal = cross(source, ma)
+
+afterStartDate = (time >= timestamp(syminfo.timezone, startYear,1,1, 0, 0))
+
+if (longEntrySignal and afterStartDate)
+    strategy.entry("le", strategy.long, comment = "Enter Long")
+
+if (shortEntrySignal and afterStartDate)
+    strategy.entry("se", strategy.short, comment="Enter Short")
+
+if (exitSignal and afterStartDate)
+    strategy.close_all(true)
+
+
+//plot(strategy.equity, title="equity", color=color.red, linewidth=2, style=plot.style_areabr)
+````

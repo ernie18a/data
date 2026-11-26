@@ -1,0 +1,13 @@
+text{PipValue_A} \times \text{Position_A} = \text{PipValue_B} \times \text{Position_B}
+Watch for gaps in the correlation between two trading instruments and trade one pair against the other.
+It is advisable not to leave the trading unattended.
+Stop loss and take profit orders are not advisable since one pair trades against the other.
+Close profit and wait for new opportunities.
+Close loss or hedge it against the opposite orders.
+Example: Buy_AUD_Sell_NZD negative Sell_AUD_Buy_NZD and wait for a new opportunity.
+Another way is to open a triangle forming hedged pair.
+Example: Buy_AUDJPY_Sell_NZDJPY  Sell_AUD_NZD.
+Keep the same lot sizes for the pairs ending in the same currency.
+Example: AUDJPY_vs_NZDJPY, AUDUSD_vs_NZDUSD.
+"WARNING: Use this software at your own risk."
+"The creator of this script cannot be held responsible for any damage or loss."
