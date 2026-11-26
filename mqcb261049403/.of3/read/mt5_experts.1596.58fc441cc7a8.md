@@ -1,0 +1,6 @@
+Calculation: A = selected smoothing method(sum over NPeriod T1 bars of −ΔP when ΔP > 0 minus sum over those bars of the cumulative sum of ΔP when ΔP < 0), with the selected phase and smoothing length equal to the method selector; ΔP = selected applied price − its prior T1 value
+Calculation: B = selected smoothing method(sum over NPeriod T1 bars of ΔP when ΔP < 0 minus sum over those bars of the cumulative sum of −ΔP when ΔP > 0), with the selected phase and smoothing length equal to the method selector; ΔP = selected applied price − its prior T1 value
+Long: On chart bars using T1 values, A on the current forming T1 bar ≥ B on the current forming T1 bar AND A on the preceding completed T1 bar < B on the preceding completed T1 bar
+Short: On chart bars using T1 values, A on the current forming T1 bar ≤ B on the current forming T1 bar AND A on the preceding completed T1 bar > B on the preceding completed T1 bar
+Exit: long, A < B on the last completed T1 bar
+Exit: short, A > B on the last completed T1 bar

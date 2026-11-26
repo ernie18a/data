@@ -1,0 +1,5 @@
+Calculation: WPR trend cycle = Schaff WPR Trend Cycle(high, low, close, fast Williams %R lookback, slow Williams %R lookback, cycle lookback)
+Long: On each T1 bar close, WPR trend cycle(T1, last completed bar) > 0 AND WPR trend cycle(T1, last completed bar) > upper level AND (WPR trend cycle(T1, last completed bar)[1] ≤ 0 OR WPR trend cycle(T1, last completed bar)[1] ≤ upper level)
+Short: On each T1 bar close, WPR trend cycle(T1, last completed bar) < 0 AND WPR trend cycle(T1, last completed bar) < lower level AND (WPR trend cycle(T1, last completed bar)[1] ≥ 0 OR WPR trend cycle(T1, last completed bar)[1] ≥ lower level)
+Exit: long, On each T1 bar close, WPR trend cycle(T1, last completed bar) < 0 AND WPR trend cycle(T1, last completed bar) < lower level AND WPR trend cycle(T1, last completed bar)[1] < 0 AND WPR trend cycle(T1, last completed bar)[1] < lower level
+Exit: short, On each T1 bar close, WPR trend cycle(T1, last completed bar) > 0 AND WPR trend cycle(T1, last completed bar) > upper level AND WPR trend cycle(T1, last completed bar)[1] > 0 AND WPR trend cycle(T1, last completed bar)[1] > upper level

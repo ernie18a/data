@@ -1,0 +1,4 @@
+Calculation: Trend bands = arithmetic mean of the highest highs and arithmetic mean of the lowest lows over the lookback blocks of T1 bars partitioned by T2 boundaries; the newest block is the preceding completed block or the evaluated bar through the next older boundary according to the full-period parameter, with the remaining blocks completed
+Calculation: Trend state = long when close > upper trend band, short when close < lower trend band, otherwise the previous trend state
+Long: Trend state changes to long on the last completed T1 bar
+Short: Trend state changes to short on the last completed T1 bar

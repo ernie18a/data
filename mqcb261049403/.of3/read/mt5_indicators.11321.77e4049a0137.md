@@ -1,0 +1,4 @@
+Calculation: Bollinger half-width in points = (Bollinger upper band(close, lookback, deviation) - Bollinger middle band(close, lookback, deviation)) / point size
+Calculation: CHO signal line = moving average(Chaikin Oscillator(high, low, close, volume, shorter lookback, longer lookback), signal lookback, method)
+Long: Bollinger half-width in points >= flat threshold AND Chaikin Oscillator(high, low, close, volume, shorter lookback, longer lookback) > CHO signal line
+Short: Bollinger half-width in points >= flat threshold AND Chaikin Oscillator(high, low, close, volume, shorter lookback, longer lookback) < CHO signal line

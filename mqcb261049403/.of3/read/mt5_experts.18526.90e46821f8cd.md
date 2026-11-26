@@ -1,0 +1,4 @@
+Long: slow XROC2 main line > slow XROC2 signal line AND fast XROC2 main line <= fast XROC2 signal line on the last completed T1 bar AND fast XROC2 main line > fast XROC2 signal line on the preceding completed T1 bar
+Short: slow XROC2 main line < slow XROC2 signal line AND fast XROC2 main line >= fast XROC2 signal line on the last completed T1 bar AND fast XROC2 main line < fast XROC2 signal line on the preceding completed T1 bar
+Exit: long, slow XROC2 main line < slow XROC2 signal line OR fast XROC2 main line < fast XROC2 signal line on the preceding completed T1 bar
+Exit: short, slow XROC2 main line > slow XROC2 signal line OR fast XROC2 main line > fast XROC2 signal line on the preceding completed T1 bar

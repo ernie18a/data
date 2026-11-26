@@ -1,0 +1,2 @@
+Long: direct mode AND RSI(applied price, lookback, T1, selected completed bar) crosses above the oversold level OR contrarian mode AND RSI(applied price, lookback, T1, selected completed bar) crosses below the overbought level
+Short: direct mode AND RSI(applied price, lookback, T1, selected completed bar) crosses below the overbought level OR contrarian mode AND RSI(applied price, lookback, T1, selected completed bar) crosses above the oversold level

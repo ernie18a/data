@@ -1,0 +1,4 @@
+Long: PFE(close, lookback, smoothing period, on T1 bars, bar still forming) > PFE(close, lookback, smoothing period, on T1 bars, last completed bar) AND PFE(close, lookback, smoothing period, on T1 bars, last completed bar) < PFE(close, lookback, smoothing period, on T1 bars, two bars ago)
+Short: PFE(close, lookback, smoothing period, on T1 bars, bar still forming) < PFE(close, lookback, smoothing period, on T1 bars, last completed bar) AND PFE(close, lookback, smoothing period, on T1 bars, last completed bar) > PFE(close, lookback, smoothing period, on T1 bars, two bars ago)
+Exit: long, PFE(close, lookback, smoothing period, on T1 bars, last completed bar) > PFE(close, lookback, smoothing period, on T1 bars, two bars ago)
+Exit: short, PFE(close, lookback, smoothing period, on T1 bars, last completed bar) < PFE(close, lookback, smoothing period, on T1 bars, two bars ago)

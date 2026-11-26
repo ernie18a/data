@@ -1,0 +1,2 @@
+Long: Waddah Attar Trend histogram from T1 on the selected chart bar is greater than or equal to its value on the previous chart bar AND its value on the previous chart bar is less than its value two chart bars ago
+Short: Waddah Attar Trend histogram from T1 on the selected chart bar is less than its value on the previous chart bar AND its value on the previous chart bar is greater than or equal to its value two chart bars ago

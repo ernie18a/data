@@ -1,0 +1,8 @@
+Calculation: Volume-weighted DeMarker = MA((100 × DeMarker(period) − 50) × volume selected by the volume-type parameter, smoothing method, lookback, phase)
+Calculation: Smoothed volume = MA(volume selected by the volume-type parameter, same smoothing method, lookback, and phase)
+Long: Volume-weighted DeMarker < negative oversold level × Smoothed volume OR Volume-weighted DeMarker is greater than its nearest earlier unequal value
+Short: Volume-weighted DeMarker > positive overbought level × Smoothed volume OR Volume-weighted DeMarker is less than its nearest earlier unequal value
+Calculation: T1 volume-weighted DeMarker = MA((100 × DeMarker(period, T1, still-forming bar) − 50) × volume selected by the volume-type parameter on T1, smoothing method, lookback, phase), calculated on T1 bars and sampled on the first chart bar that crosses each T1 opening, then held until the next T1 opening
+Calculation: T1 smoothed volume = MA(volume selected by the volume-type parameter on T1, same smoothing method, lookback, and phase), calculated on T1 bars and sampled on the first chart bar that crosses each T1 opening, then held until the next T1 opening
+Long: T1 volume-weighted DeMarker < negative oversold level × T1 smoothed volume OR T1 volume-weighted DeMarker is greater than its nearest earlier unequal T1 value
+Short: T1 volume-weighted DeMarker > positive overbought level × T1 smoothed volume OR T1 volume-weighted DeMarker is less than its nearest earlier unequal T1 value

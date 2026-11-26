@@ -1,0 +1,4 @@
+Long: LinearRegression(Smooth(close, smoothing method, lookback, phase), lookback) > LinearRegression(Smooth(close, smoothing method, lookback, phase), lookback)[trigger shift]
+Short: LinearRegression(Smooth(close, smoothing method, lookback, phase), lookback) < LinearRegression(Smooth(close, smoothing method, lookback, phase), lookback)[trigger shift]
+Long: LinearRegression(Smooth(close, smoothing method, lookback, phase), lookback, T1, bar still forming) > LinearRegression(Smooth(close, smoothing method, lookback, phase), lookback, T1, bar still forming)[trigger shift], sampled onto chart bars
+Short: LinearRegression(Smooth(close, smoothing method, lookback, phase), lookback, T1, bar still forming) < LinearRegression(Smooth(close, smoothing method, lookback, phase), lookback, T1, bar still forming)[trigger shift], sampled onto chart bars

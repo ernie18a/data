@@ -1,0 +1,6 @@
+Calculation: cloud top(T1, bar) = max(Ichimoku Span A(high, low, conversion lookback, base lookback, displacement, T1, bar), Ichimoku Span B(high, low, span B lookback, displacement, T1, bar))
+Calculation: cloud bottom(T1, bar) = min(Ichimoku Span A(high, low, conversion lookback, base lookback, displacement, T1, bar), Ichimoku Span B(high, low, span B lookback, displacement, T1, bar))
+Long: On chart bars using T1 values, Moving Average(close, method, lookback, T1, last completed bar) > cloud top(T1, last completed bar) AND Moving Average(close, method, lookback, T1, still-forming bar) <= cloud top(T1, still-forming bar)
+Short: On chart bars using T1 values, Moving Average(close, method, lookback, T1, last completed bar) < cloud bottom(T1, last completed bar) AND Moving Average(close, method, lookback, T1, still-forming bar) >= cloud bottom(T1, still-forming bar)
+Exit: long, On chart bars using T1 values, Moving Average(close, method, lookback, T1, last completed bar) < cloud bottom(T1, last completed bar)
+Exit: short, On chart bars using T1 values, Moving Average(close, method, lookback, T1, last completed bar) > cloud top(T1, last completed bar)

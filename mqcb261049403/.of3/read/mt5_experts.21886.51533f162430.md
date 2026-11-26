@@ -1,0 +1,2 @@
+Long: moving average(fast applied price, fast lookback, fast method, T1, last completed bar) crosses above moving average(slow applied price, slow lookback, slow method, T1, last completed bar), with the fast lookback shorter than the slow lookback
+Short: moving average(fast applied price, fast lookback, fast method, T1, last completed bar) crosses below moving average(slow applied price, slow lookback, slow method, T1, last completed bar), with the fast lookback shorter than the slow lookback

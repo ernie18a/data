@@ -1,0 +1,4 @@
+Calculation: Smoothed oscillator = Smooth(hma - Smooth(hma, first smoothing method, floor(sqrt(base lookback)), first phase), second smoothing method, second lookback, second phase), where hma = 2 × Smooth(applied price, first smoothing method, floor(base lookback / 2), first phase) - Smooth(applied price, first smoothing method, base lookback, first phase)
+Calculation: Trend direction = +1 when (Smoothed oscillator - Smoothed oscillator[1]) crosses above zero, -1 when it crosses below zero, and otherwise retains its previous value; initially neutral. Compute on T1 bars. On chart bars, read the mapped value from the current forming T1 bar for the current chart bar and from the last completed T1 bar for earlier chart bars.
+Long: Trend direction > 0
+Short: Trend direction < 0

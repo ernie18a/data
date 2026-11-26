@@ -1,0 +1,4 @@
+Calculation: Long rung level[1] = initial signal close × (1 − step percentage / 100); after additional entry n, Long rung level[n] = Long rung level[n−1] − current close × step percentage / 100
+Long: Stochastic(main, K lookback, D lookback, slowing, SMA, low/high, chart timeframe, last completed bar) crosses above stochastic threshold AND current chart close < upper price limit AND current chart close > lower price limit
+Long: (next additional rung n is before boundary K AND current chart close < Long rung level[n−1] OR next additional rung n is at or after boundary K AND current chart close < Long rung level[n−2]) AND current chart close > lower price limit AND current chart close > EMA(close, lookback, T1, last completed bar), evaluated on chart bars
+Exit: long, position profit > profit threshold AND close-all enabled AND datetime hour = exit hour AND datetime minute ≥ exit minute

@@ -1,0 +1,5 @@
+Calculation: UltraWPR up and down values = on T1 bars, for each i from zero through the period-step count, smooth Williams %R at lookback WPR lookback + i × period increment using the WPR smoothing method, phase, and length initial smoothing length + i × period increment; count values greater than their prior-bar values as up and all others as down; smooth each count using the count smoothing method, phase, and length
+Long: On chart bars using T1 values, UltraWPR up (last completed T1 bar) > UltraWPR down (last completed T1 bar) AND UltraWPR up (T1 bar still forming) <= UltraWPR down (T1 bar still forming)
+Short: On chart bars using T1 values, UltraWPR down (last completed T1 bar) > UltraWPR up (last completed T1 bar) AND UltraWPR down (T1 bar still forming) <= UltraWPR up (T1 bar still forming)
+Exit: long, UltraWPR down (last completed T1 bar) > UltraWPR up (last completed T1 bar) OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, UltraWPR up (last completed T1 bar) > UltraWPR down (last completed T1 bar) OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

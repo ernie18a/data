@@ -1,0 +1,4 @@
+Short: no open position AND ATR(longest ATR period, current forming chart bar) < ATR threshold AND Stochastic %K(longest K-period, longest D-period, longest slowing, SMA, low/high, current forming chart bar) < longest-stochastic threshold AND Stochastic %K(middle K-period, middle D-period, middle slowing, SMA, low/high) crosses below middle-stochastic threshold on chart bars, using the current forming and preceding completed bar AND Stochastic %K(shortest K-period, shortest D-period, shortest slowing, SMA, low/high) crosses below shortest-stochastic threshold on chart bars, using the current forming and preceding completed bar
+Exit: short, mean(entry price minus close in pips across open short positions) > average-profit threshold
+Exit: short, close is at least the initial-market-order take-profit distance below entry price
+Exit: short, close is at least the grid-order take-profit distance below entry price

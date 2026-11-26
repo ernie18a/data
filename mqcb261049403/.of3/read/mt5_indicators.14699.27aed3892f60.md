@@ -1,0 +1,4 @@
+Calculation: Fast trail = on T1 bars, use the midpoint of XRSX(close, T1, forming bar) with separate fast-step and band-multiplier parameters; switch trend up above the prior upper band or down below the prior lower band, otherwise retain trend; in an uptrend clamp the lower band to at least its candidate value and prior lower band, and in a downtrend clamp the upper band to at most its candidate value and prior upper band; trail at lower band plus fast step in an uptrend or upper band minus fast step in a downtrend
+Calculation: Slow trail = same as Fast trail, using a separate slow-step parameter
+Long: Fast trail crosses above Slow trail
+Short: Fast trail crosses below Slow trail

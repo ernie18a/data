@@ -1,0 +1,3 @@
+Calculation: Hull trend spread = MA(2*MA(applied price, floor(base lookback/2), selected method, phase) - MA(applied price, base lookback, selected method, phase), separate smoothing lookback, selected method, phase) - MA(MA(2*MA(applied price, floor(base lookback/2), selected method, phase) - MA(applied price, base lookback, selected method, phase), separate smoothing lookback, selected method, phase), floor(sqrt(base lookback)), selected method, phase), calculated on T1 bars
+Long: Hull trend spread on the last completed T1 bar > 0 AND Hull trend spread on the T1 bar still forming <= 0
+Short: Hull trend spread on the last completed T1 bar < 0 AND Hull trend spread on the T1 bar still forming >= 0

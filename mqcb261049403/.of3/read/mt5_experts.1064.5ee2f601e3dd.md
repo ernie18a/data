@@ -1,0 +1,7 @@
+Calculation: AMA increment = AMA(close, efficiency lookback, fast smoothing lookback, slow smoothing lookback, exponent) − AMA(close, efficiency lookback, fast smoothing lookback, slow smoothing lookback, exponent)[1], on T1 bars
+Calculation: Bullish marker = round(AMA increment, instrument digits + 2) > round(filter coefficient × standard deviation(AMA increment, efficiency lookback), instrument digits + 2), on T1 bars
+Calculation: Bearish marker = round(AMA increment, instrument digits + 2) < −round(filter coefficient × standard deviation(AMA increment, efficiency lookback), instrument digits + 2), on T1 bars
+Long: long-entry enable AND bullish marker on the configured signal bar of T1 (last completed bar) AND the most recent earlier marker on T1 bars is bearish
+Short: short-entry enable AND bearish marker on the configured signal bar of T1 (last completed bar) AND the most recent earlier marker on T1 bars is bullish
+Exit: long, long-exit enable AND the most recent marker at or before the configured signal bar is bearish AND NOT (short-entry enable AND bearish marker on the configured signal bar AND the most recent earlier marker is bullish)
+Exit: short, short-exit enable AND the most recent marker at or before the configured signal bar is bullish AND NOT (long-entry enable AND bullish marker on the configured signal bar AND the most recent earlier marker is bearish)

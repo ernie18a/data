@@ -1,0 +1,4 @@
+Long: WAMI Cloud main line with longer lookback > its signal line AND WAMI Cloud main line with shorter lookback at bar close <= its signal line AND its main line on the previous chart bar > its signal line
+Short: WAMI Cloud main line with longer lookback < its signal line AND WAMI Cloud main line with shorter lookback at bar close >= its signal line AND its main line on the previous chart bar < its signal line
+Exit: long, WAMI Cloud main line with longer lookback < its signal line OR WAMI Cloud main line with shorter lookback on the previous chart bar < its signal line
+Exit: short, WAMI Cloud main line with longer lookback > its signal line OR WAMI Cloud main line with shorter lookback on the previous chart bar > its signal line

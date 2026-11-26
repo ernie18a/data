@@ -1,0 +1,4 @@
+Calculation: Weighted oscillator = (RSI weight * RSI(RSI applied price, RSI lookback) + MFI weight * MFI(high, low, close, selected volume series, MFI lookback) + Williams %R weight * (Williams %R(high, low, close, Williams %R lookback) + 100) + DeMarker weight * 100 * DeMarker(high, low, DeMarker lookback)) / (RSI weight + MFI weight + Williams %R weight + DeMarker weight)
+Calculation: Smoothed weighted oscillator = selected smoother(weighted oscillator, smoothing method, smoothing lookback, phase)
+Long: Smoothed weighted oscillator > upper threshold AND (signal mode is trend OR previous bar's smoothed weighted oscillator <= upper threshold)
+Short: Smoothed weighted oscillator < lower threshold AND (signal mode is trend OR previous bar's smoothed weighted oscillator >= lower threshold)

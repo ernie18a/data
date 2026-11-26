@@ -1,0 +1,2 @@
+Long: On chart bars using STC(close, its parameters, T1, last completed bar), STC crosses above the upper threshold.
+Short: On chart bars using STC(close, its parameters, T1, last completed bar), STC crosses below the lower threshold.

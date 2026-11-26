@@ -1,0 +1,5 @@
+Calculation: Smoothed CCI = smooth(CCI(applied price, CCI lookback), smoothing method, smoothing lookback, smoothing phase)
+Long: For level-based coloring, Smoothed CCI > middle level; for direction-based coloring, Smoothed CCI > Smoothed CCI[1] AND Smoothed CCI <> middle level, on chart bars
+Short: For level-based coloring, Smoothed CCI < middle level; for direction-based coloring, Smoothed CCI < Smoothed CCI[1] AND Smoothed CCI <> middle level, on chart bars
+Long: For level-based coloring, Smoothed CCI(T1, still-forming bar) > middle level; for direction-based coloring, Smoothed CCI(T1, still-forming bar) > Smoothed CCI(T1)[1] AND Smoothed CCI(T1, still-forming bar) <> middle level; calculated on T1 bars and sampled onto chart bars
+Short: For level-based coloring, Smoothed CCI(T1, still-forming bar) < middle level; for direction-based coloring, Smoothed CCI(T1, still-forming bar) < Smoothed CCI(T1)[1] AND Smoothed CCI(T1, still-forming bar) <> middle level; calculated on T1 bars and sampled onto chart bars

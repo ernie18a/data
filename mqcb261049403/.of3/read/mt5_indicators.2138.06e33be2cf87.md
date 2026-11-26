@@ -1,0 +1,4 @@
+Calculation: SMI = 100 × triple moving average of (applied price − (highest high −?)) divided by triple moving average of half the highest-high/lowest-low range, using the same range lookback, three successive smoothing lookbacks, and selected averaging method and phase on T1 bars; chart bars take mapped values from the still-forming T1 bar
+Calculation: SMI signal = moving average(SMI, third smoothing lookback, selected averaging method and phase) on T1 bars; chart bars take mapped values from the still-forming T1 bar
+Long: SMI >= SMI signal OR (SMI > 0 AND SMI != SMI[1]) OR SMI > SMI[1]
+Short: SMI < SMI signal OR (SMI < 0 AND SMI != SMI[1]) OR SMI < SMI[1]

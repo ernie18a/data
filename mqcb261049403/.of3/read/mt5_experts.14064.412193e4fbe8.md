@@ -1,0 +1,7 @@
+Calculation: Stochastic(x, lookback) = (x − lowest(x, lookback)) / (highest(x, lookback) − lowest(x, lookback)) × 100; when the range is zero, use its previous value
+Calculation: Recursive smoothing(x, factor) = factor × x + (1 − factor) × its previous value
+Calculation: DeMarker Schaff Trend Cycle = recursive smoothing(rescale(Stochastic(recursive smoothing(Stochastic(DeMarker(fast lookback) − DeMarker(slow lookback), cycle lookback), smoothing factor), cycle lookback) from 0–100 to −100–100), the same smoothing factor), calculated on T1 bars
+Long: On chart bars using T1 values, DeMarker Schaff Trend Cycle on the last completed T1 bar > max(0, upper threshold) AND DeMarker Schaff Trend Cycle on the T1 bar still forming ≤ max(0, upper threshold)
+Short: On chart bars using T1 values, DeMarker Schaff Trend Cycle on the last completed T1 bar < min(0, lower threshold) AND DeMarker Schaff Trend Cycle on the T1 bar still forming ≥ min(0, lower threshold)
+Exit: long, on chart bars using T1 values, DeMarker Schaff Trend Cycle on the last completed T1 bar < min(0, lower threshold)
+Exit: short, on chart bars using T1 values, DeMarker Schaff Trend Cycle on the last completed T1 bar > max(0, upper threshold)

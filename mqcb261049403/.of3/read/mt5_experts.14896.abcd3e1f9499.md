@@ -1,0 +1,4 @@
+Calculation: short-term line = apply a selected moving-average method to applied price 1 using lookback 1a and phase 1a, then apply a selected moving-average method using lookback 1b and phase 1b; each stage has its own method, lookback, and phase, and both lookbacks are shorter than the corresponding long-term line lookbacks, on T1 bars
+Calculation: long-term line = apply a selected moving-average method to applied price 2 using lookback 2a and phase 2a, then apply a selected moving-average method using lookback 2b and phase 2b; each stage has its own method, lookback, and phase, on T1 bars
+Long: short-term line crosses above long-term line on T1 bars, comparing the configured signal bar (forming at zero offset, otherwise completed) with the preceding T1 bar
+Short: short-term line crosses below long-term line on T1 bars, comparing the configured signal bar (forming at zero offset, otherwise completed) with the preceding T1 bar

@@ -1,0 +1,2 @@
+Long: XFisher(...) > upper XFisher band AND XFisher(...) >= XFisher trigger line OR XFisher(...)[1] < 0 AND XFisher(...) >= 0
+Short: XFisher(...) < lower XFisher band AND XFisher(...) <= XFisher trigger line OR XFisher(...)[1] > 0 AND XFisher(...) <= 0

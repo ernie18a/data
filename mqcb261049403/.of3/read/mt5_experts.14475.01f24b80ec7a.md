@@ -1,0 +1,5 @@
+Calculation: ICCI color state(value, high level, middle level, low level) = 0 if value > middle level AND value > high level; 1 if value > middle level AND value <= high level; 4 if value < middle level AND value < low level; 3 if value < middle level AND value >= low level; otherwise 2
+Long: On chart-bar evaluations, ICCI color state(ICCI(T1, last completed bar), high level, middle level, low level) = 0 AND ICCI color state(ICCI(T1, bar still forming), high level, middle level, low level) > 0
+Short: On chart-bar evaluations, ICCI color state(ICCI(T1, last completed bar), high level, middle level, low level) = 4 AND ICCI color state(ICCI(T1, bar still forming), high level, middle level, low level) < 4
+Exit: long, On chart-bar evaluations, ICCI color state(ICCI(T1, last completed bar), high level, middle level, low level) = 4 AND ICCI color state(ICCI(T1, bar still forming), high level, middle level, low level) = 4
+Exit: short, On chart-bar evaluations, ICCI color state(ICCI(T1, last completed bar), high level, middle level, low level) = 0 AND ICCI color state(ICCI(T1, bar still forming), high level, middle level, low level) = 0

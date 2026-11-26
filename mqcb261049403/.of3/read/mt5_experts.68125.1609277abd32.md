@@ -1,0 +1,29 @@
+Calculation: fair value gap = bullish with lower boundary high(T1, 3 bars ago), upper boundary low(T1, last completed bar), and size upper boundary − lower boundary when high(T1, 3 bars ago) < low(T1, last completed bar); bearish with lower boundary high(T1, last completed bar), upper boundary low(T1, 3 bars ago), and size upper boundary − lower boundary when low(T1, 3 bars ago) > high(T1, last completed bar)
+Calculation: fair value gap midpoint = (upper boundary + lower boundary) / 2
+Calculation: midpoint touched = low ≤ fair value gap midpoint ≤ high on the current forming T1 bar, or the current forming T2 bar when accuracy mode is enabled
+Long: bullish fair value gap size ≥ minimum FVG gap parameter × instrument point
+Short: bearish fair value gap size ≥ minimum FVG gap parameter × instrument point
+Long: bullish fair value gap midpoint touched and close of touch bar > fair value gap midpoint, or bearish fair value gap midpoint touched and close of touch bar ≥ fair value gap midpoint
+Short: bullish fair value gap midpoint touched and close of touch bar ≤ fair value gap midpoint, or bearish fair value gap midpoint touched and close of touch bar < fair value gap midpoint
+Long: fair value gap midpoint touched and close(T1, current forming bar) > fair value gap midpoint AND (entry filters disabled OR fair value gap size ≥ entry-gap threshold AND (trend check disabled OR bullish fair value gap AND close(T1, current forming bar) > EMA(close, trend lookback, T1, current bar) AND EMA(close, trend lookback, T1, current bar) > EMA(close, trend lookback, T1, prior bar))) AND (Silver Bullet mode inactive OR enabled Silver Bullet session AND a session DOL level exists AND (fixed-target mode OR abs(close(T1, current forming bar) − session DOL) / (10 × instrument point) ≥ minimum DOL distance) )
+Short: fair value gap midpoint touched and close(T1, current forming bar) < fair value gap midpoint AND (entry filters disabled OR fair value gap size ≥ entry-gap threshold AND (trend check disabled OR bearish fair value gap AND close(T1, current forming bar) < EMA(close, trend lookback, T1, current bar) AND EMA(close, trend lookback, T1, current bar) < EMA(close, trend lookback, T1, prior bar))) AND (Silver Bullet mode inactive OR enabled Silver Bullet session AND a session DOL level exists AND (fixed-target mode OR abs(close(T1, current forming bar) − session DOL) / (10 × instrument point) ≥ minimum DOL distance))
+Long: current forming T1 low < a sell-side swing-low, equal-low, prior T2-period low, or prior T3-period low liquidity level AND abs(close(T1, current forming bar) − liquidity level) / (10 × instrument point) ≥ minimum liquidity distance AND trade-on-sweep enabled AND retrace-wait disabled AND (session filter disabled OR during London or New York session)
+Short: current forming T1 high > a buy-side swing-high, equal-high, prior T2-period high, or prior T3-period high liquidity level AND abs(close(T1, current forming bar) − liquidity level) / (10 × instrument point) ≥ minimum liquidity distance AND trade-on-sweep enabled AND retrace-wait disabled AND (session filter disabled OR during London or New York session)
+Calculation: DOL target = entry price + position-side sign × abs(session DOL − entry price) × target percentage / 100; use separate target-percentage parameters for first and second targets in two-target mode
+Exit: Long, close(T1, current forming bar) ≥ DOL target in single-target mode OR close(T1, current forming bar) ≥ first DOL target OR first DOL target was reached AND close(T1, current forming bar) ≥ second DOL target
+Exit: Short, close(T1, current forming bar) ≤ DOL target in single-target mode OR close(T1, current forming bar) ≤ first DOL target OR first DOL target was reached AND close(T1, current forming bar) ≤ second DOL target
+Exit: Long, simple or fixed-target Silver Bullet mode AND position profit ≥ profit-target parameter
+Exit: Short, simple or fixed-target Silver Bullet mode AND position profit ≥ profit-target parameter
+Exit: Long, position profit ≤ −loss-threshold parameter
+Exit: Short, position profit ≤ −loss-threshold parameter
+Exit: Long, stop loss enabled AND fixed-stop mode AND bid ≤ entry price − fixed-stop distance × instrument point
+Exit: Short, stop loss enabled AND fixed-stop mode AND ask ≥ entry price + fixed-stop distance × instrument point
+Exit: Long, stop loss enabled AND FVG-stop mode AND bid ≤ lower fair value gap boundary
+Exit: Short, stop loss enabled AND FVG-stop mode AND ask ≥ upper fair value gap boundary
+Exit: Long, Silver Bullet position AND bid ≤ lower fair value gap boundary − Silver Bullet stop buffer × instrument point
+Exit: Short, Silver Bullet position AND ask ≥ upper fair value gap boundary + Silver Bullet stop buffer × instrument point
+Exit: Long, liquidity-scalp position AND fixed-stop mode AND bid ≤ entry price − fixed-stop distance × instrument point OR liquidity-scalp position AND liquidity-level stop mode AND bid ≤ swept sell-side liquidity level − liquidity stop buffer × instrument point
+Exit: Short, liquidity-scalp position AND fixed-stop mode AND ask ≥ entry price + fixed-stop distance × instrument point OR liquidity-scalp position AND liquidity-level stop mode AND ask ≥ swept buy-side liquidity level + liquidity stop buffer × instrument point
+Calculation: trailing stop = for a long position, the greater of the prior stop and bid − trailing-step × instrument point after (bid − entry price) / instrument point ≥ trailing-start; for a short position, ask + trailing-step × instrument point if no prior stop exists, otherwise the lesser of the prior stop and ask + trailing-step × instrument point, after (entry price − ask) / instrument point ≥ trailing-start
+Exit: Long, bid ≤ trailing stop
+Exit: Short, ask ≥ trailing stop

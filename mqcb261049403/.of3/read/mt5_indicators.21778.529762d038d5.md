@@ -1,0 +1,6 @@
+Calculation: bullish score = smooth(count, over scale lookbacks starting at the scale starting lookback and increasing by the scale increment through the configured number of increments, of MFI(high, low, close, volume, MFI lookback) > smooth(MFI(high, low, close, volume, MFI lookback), scale-smoothing method, scale lookback, scale-smoothing phase)), using the count-smoothing method, count-smoothing lookback, and count-smoothing phase
+Calculation: bearish score = smooth(count, over the same scale lookbacks, of MFI(high, low, close, volume, MFI lookback) <= smooth(MFI(high, low, close, volume, MFI lookback), scale-smoothing method, scale lookback, scale-smoothing phase)), using the count-smoothing method, count-smoothing lookback, and count-smoothing phase
+Long: bullish score > bearish score on chart bars
+Short: bearish score > bullish score on chart bars
+Long: bullish score > bearish score, calculated on T1 bars and read on each chart bar from the T1 bar containing it, including the still-forming T1 bar
+Short: bearish score > bullish score, calculated on T1 bars and read on each chart bar from the T1 bar containing it, including the still-forming T1 bar

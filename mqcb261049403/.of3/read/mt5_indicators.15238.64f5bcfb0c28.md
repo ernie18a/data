@@ -1,0 +1,4 @@
+Long: XCCX rises on chart bars OR its one-bar change exceeds a threshold multiplier times the standard deviation of one-bar changes over a separate lookback
+Short: XCCX falls on chart bars OR its one-bar change is below the negative of a threshold multiplier times the standard deviation of one-bar changes over a separate lookback
+Long: On chart bars taking values from T1, XCCX on the still-forming T1 bar exceeds its previous T1-bar value OR its one-bar change exceeds a threshold multiplier times the standard deviation of one-bar changes over a separate lookback
+Short: On chart bars taking values from T1, XCCX on the still-forming T1 bar is below its previous T1-bar value OR its one-bar change is below the negative of a threshold multiplier times the standard deviation of one-bar changes over a separate lookback

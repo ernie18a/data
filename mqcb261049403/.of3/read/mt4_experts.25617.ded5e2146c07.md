@@ -1,0 +1,3 @@
+Calculation: mean open short net profit = average of open short position profit + commission + swap across matching running positions
+Exit: short, at least one matching running short is among the first up to the limit positions in newest-to-oldest order AND mean open short net profit > lower profit threshold
+Exit: short, at least one matching running short remains after skipping the skip-count positions in newest-to-oldest order AND mean open short net profit > higher profit threshold, where the higher profit threshold exceeds the lower profit threshold

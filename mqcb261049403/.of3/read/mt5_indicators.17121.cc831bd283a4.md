@@ -1,0 +1,3 @@
+Calculation: weighted oscillator = (RSI weight × fractal RSI(averaging lookback, speed) + MFI weight × fractal MFI(averaging lookback, speed) + Williams %R weight × (fractal Williams %R(averaging lookback, speed) + 100) + DeMarker weight × 100 × fractal DeMarker(averaging lookback, speed)) / sum of the four weights
+Long: moving average(weighted oscillator, smoothing method, smoothing phase, smoothing lookback) > midline
+Short: moving average(weighted oscillator, smoothing method, smoothing phase, smoothing lookback) < midline

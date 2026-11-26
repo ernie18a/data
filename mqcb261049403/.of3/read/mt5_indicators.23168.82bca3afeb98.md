@@ -1,0 +1,3 @@
+Calculation: X2MA(price, first method, first lookback, first phase, second method, second lookback, second phase) = MA(MA(price, first method, first lookback, first phase), second method, second lookback, second phase)
+Long: On each chart bar, X2MA(selected applied price, same parameters) from the still-forming T1 bar > X2MA(selected applied price, same parameters) from the still-forming T2 bar, where T2 is longer than T1
+Short: On each chart bar, X2MA(selected applied price, same parameters) from the still-forming T1 bar < X2MA(selected applied price, same parameters) from the still-forming T2 bar, where T2 is longer than T1

@@ -1,0 +1,4 @@
+Long: TSI(CCI(typical price, CCI lookback), momentum lookback, first smoothing lookback, second smoothing lookback) > selected moving average of that TSI with the signal lookback, smoothing method, and phase
+Short: TSI(CCI(typical price, CCI lookback), momentum lookback, first smoothing lookback, second smoothing lookback) < selected moving average of that TSI with the signal lookback, smoothing method, and phase
+Long: On chart bars using values calculated on the still-forming T1 bar, TSI(CCI(typical price, CCI lookback), momentum lookback, first smoothing lookback, second smoothing lookback) > selected moving average of that TSI with the signal lookback, smoothing method, and phase
+Short: On chart bars using values calculated on the still-forming T1 bar, TSI(CCI(typical price, CCI lookback), momentum lookback, first smoothing lookback, second smoothing lookback) < selected moving average of that TSI with the signal lookback, smoothing method, and phase

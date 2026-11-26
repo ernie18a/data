@@ -1,0 +1,5 @@
+Calculation: band score = 100*(applied price-(moving average(applied price, first method, first lookback, first phase)-StdDev(applied price, band lookback, band deviation, centered on moving average(applied price, first method, first lookback, first phase))))/(2*StdDev(applied price, band lookback, band deviation, centered on moving average(applied price, first method, first lookback, first phase)))-50
+Long: JJMA(band score, second lookback, second phase) > 0
+Short: JJMA(band score, second lookback, second phase) < 0
+Long: JJMA(band score calculated on T1 bars, using the T1 bar containing each chart bar's time, including the still-forming bar; sampled on chart bars, second lookback, second phase) > 0
+Short: JJMA(band score calculated on T1 bars, using the T1 bar containing each chart bar's time, including the still-forming bar; sampled on chart bars, second lookback, second phase) < 0

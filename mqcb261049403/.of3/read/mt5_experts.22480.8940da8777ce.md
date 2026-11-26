@@ -1,0 +1,5 @@
+Calculation: XWPR Histogram Vol color class = 0 when XWPR Histogram Vol is above its upper outer level, 1 otherwise when above its upper inner level, 4 otherwise when below its lower outer level, 3 otherwise when below its lower inner level, and 2 otherwise, calculated on each T1 bar.
+Long: long entries enabled AND the last completed T1 bar's XWPR Histogram Vol color class is greater than the preceding completed T1 bar's class AND the preceding class is less than 2
+Short: short entries enabled AND the last completed T1 bar's XWPR Histogram Vol color class is less than the preceding completed T1 bar's class AND the preceding class is greater than 2
+Exit: short, short exits enabled AND the last completed T1 bar's XWPR Histogram Vol color class is greater than the preceding completed T1 bar's class AND the preceding class is less than 2
+Exit: long, long exits enabled AND the last completed T1 bar's XWPR Histogram Vol color class is less than the preceding completed T1 bar's class AND the preceding class is greater than 2

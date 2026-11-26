@@ -1,0 +1,2 @@
+Long: Direct mode AND WPR crosses below the lower threshold OR against mode AND WPR crosses above the upper threshold
+Short: Direct mode AND WPR crosses above the upper threshold OR against mode AND WPR crosses below the lower threshold

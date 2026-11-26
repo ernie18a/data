@@ -1,0 +1,2 @@
+Long: At each T1 bar close, Adaptive Cyber Cycle(T1, last completed bar) > Trigger(T1, last completed bar) AND Adaptive Cyber Cycle(T1, bar still forming) <= Trigger(T1, bar still forming)
+Short: At each T1 bar close, Adaptive Cyber Cycle(T1, last completed bar) < Trigger(T1, last completed bar) AND Adaptive Cyber Cycle(T1, bar still forming) >= Trigger(T1, bar still forming)

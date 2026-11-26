@@ -1,0 +1,2 @@
+Long: Fisher Transform(volume, lookback) crosses above zero OR Fisher Transform(volume, lookback) crosses above its signal line OR Fisher Transform(volume, lookback) crosses above the overbought level OR Fisher Transform(volume, lookback) crosses above the oversold level
+Short: Fisher Transform(volume, lookback) crosses below zero OR Fisher Transform(volume, lookback) crosses below its signal line OR Fisher Transform(volume, lookback) crosses below the oversold level OR Fisher Transform(volume, lookback) crosses below the overbought level

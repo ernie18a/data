@@ -1,0 +1,2 @@
+Long: CCI(step-channel value, lookback, T1 value mapped to chart bars at signal-bar offset) > 0 AND CCI(step-channel value, lookback, T1 value mapped to chart bars at signal-bar offset + 1) < 0
+Short: CCI(step-channel value, lookback, T1 value mapped to chart bars at signal-bar offset) < 0 AND CCI(step-channel value, lookback, T1 value mapped to chart bars at signal-bar offset + 1) > 0

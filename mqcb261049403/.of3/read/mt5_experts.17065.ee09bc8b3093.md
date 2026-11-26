@@ -1,0 +1,5 @@
+Calculation: SilverTrendState(T1 bar) = false when close < lowest(low, lookback parameter) + (highest(high, lookback parameter) - lowest(low, lookback parameter)) * (offset parameter - risk parameter) / 100; true when close > highest(high, lookback parameter) - (highest(high, lookback parameter) - lowest(low, lookback parameter)) * (offset parameter - risk parameter) / 100; otherwise previous SilverTrendState
+Long: SilverTrendState(T1, last completed bar) = true AND SilverTrendState(T1, preceding bar) = false
+Short: SilverTrendState(T1, last completed bar) = false AND SilverTrendState(T1, preceding bar) = true
+Long: long position AND number of prior additions < maximum additions parameter AND floor((close - last position entry price) in points) > spacing parameter
+Short: short position AND number of prior additions < maximum additions parameter AND floor((last position entry price - close) in points) > spacing parameter

@@ -1,0 +1,2 @@
+Long: (XFisher value > upper level AND XFisher value >= trigger line) OR (XFisher value[1] < 0 AND XFisher value >= 0)
+Short: (XFisher value < lower level AND XFisher value <= trigger line) OR (XFisher value[1] > 0 AND XFisher value <= 0)

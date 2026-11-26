@@ -1,0 +1,5 @@
+Calculation: Fast trend = weight1 × JJRSX(price, shortest lookback, JJMA depth, JJMA phase) + weight2 × JJRSX(price, second-shortest lookback, JJMA depth, JJMA phase) + weight2 × JJRSX(price, middle lookback, JJMA depth, JJMA phase) + weight4 × JJRSX(price, second-longest lookback, JJMA depth, JJMA phase) + weight5 × JJRSX(price, longest lookback, JJMA depth, JJMA phase)
+Long: Fast trend > SMMA(Fast trend, smoothing)
+Short: Fast trend < SMMA(Fast trend, smoothing)
+Long: Fast trend(T1, still-forming bar, sampled onto chart bars) > SMMA(Fast trend, smoothing, T1, still-forming bar, sampled onto chart bars)
+Short: Fast trend(T1, still-forming bar, sampled onto chart bars) < SMMA(Fast trend, smoothing, T1, still-forming bar, sampled onto chart bars)

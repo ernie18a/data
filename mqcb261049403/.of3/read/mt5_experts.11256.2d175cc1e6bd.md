@@ -1,0 +1,6 @@
+Calculation: DeMarker TSI = TSI(DeMarker(close, DeMarkerPeriod), MomPeriod, XLength1, XLength2, smoothing method, smoothing phase) on T1 bars, read on chart bars
+Calculation: DeMarker TSI average = moving average(DeMarker TSI, XLength3, smoothing method, smoothing phase) on T1 bars, read on chart bars
+Long: DeMarker TSI on the last completed T1 bar > DeMarker TSI average on the last completed T1 bar AND DeMarker TSI on the T1 bar still forming <= DeMarker TSI average on the T1 bar still forming
+Short: DeMarker TSI on the last completed T1 bar < DeMarker TSI average on the last completed T1 bar AND DeMarker TSI on the T1 bar still forming >= DeMarker TSI average on the T1 bar still forming
+Exit: long, DeMarker TSI on the last completed T1 bar < DeMarker TSI average on the last completed T1 bar OR low <= entry price - stop-loss distance in points OR high >= entry price + take-profit distance in points
+Exit: short, DeMarker TSI on the last completed T1 bar > DeMarker TSI average on the last completed T1 bar OR high >= entry price + stop-loss distance in points OR low <= entry price - take-profit distance in points

@@ -1,0 +1,2 @@
+Long: Slow Stochastic main line on T1, last completed bar > signal line on T1, last completed bar AND Slow Stochastic main line on T1, forming bar >= signal line on T1, forming bar
+Short: Slow Stochastic main line on T1, last completed bar < signal line on T1, last completed bar AND Slow Stochastic main line on T1, forming bar <= signal line on T1, forming bar

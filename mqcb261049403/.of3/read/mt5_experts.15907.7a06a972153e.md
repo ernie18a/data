@@ -1,0 +1,4 @@
+Long: On each T1 bar close, close > Darvas Boxes upper boundary at the configured horizontal shift AND the preceding completed T1 bar’s close <= its Darvas Boxes upper boundary at the same horizontal shift
+Short: On each T1 bar close, close < Darvas Boxes lower boundary at the configured horizontal shift AND the preceding completed T1 bar’s close >= its Darvas Boxes lower boundary at the same horizontal shift
+Exit: long, On each T1 bar close, close < Darvas Boxes lower boundary at the configured horizontal shift AND the preceding completed T1 bar’s close < its Darvas Boxes lower boundary at the same horizontal shift
+Exit: short, On each T1 bar close, close > Darvas Boxes upper boundary at the configured horizontal shift AND the preceding completed T1 bar’s close > its Darvas Boxes upper boundary at the same horizontal shift

@@ -1,0 +1,8 @@
+Calculation: upper channel = (instrument point size × 10^upper rounding digits) × round(average(max(high[upper shift+i ... upper shift+i+upper range−1]) for i=0...upper range−1) / (instrument point size × 10^upper rounding digits)), computed on T1 bars; [n] means n T1 bars ago
+Calculation: lower channel = (instrument point size × 10^lower rounding digits) × round(average(min(low[lower shift+i ... lower shift+i+lower range−1]) for i=0...lower range−1) / (instrument point size × 10^lower rounding digits)), computed on T1 bars
+Long: T1 bar close > upper channel on that bar (evaluated on each T1 bar, including the one still forming)
+Short: T1 bar close < lower channel on that bar (evaluated on each T1 bar, including the one still forming)
+Long: long entry enabled AND close of the signal-shift T1 bar > upper channel on that bar AND close of the immediately older T1 bar <= upper channel on that bar; the signal-shift bar is forming if its shift is zero, otherwise completed
+Short: short entry enabled AND close of the signal-shift T1 bar < lower channel on that bar AND close of the immediately older T1 bar >= lower channel on that bar; the signal-shift bar is forming if its shift is zero, otherwise completed
+Exit: long, low <= entry price − stop-loss points × instrument point size OR high >= entry price + take-profit points × instrument point size OR (time exit enabled AND current time − position opening time > holding-duration parameter)
+Exit: short, high >= entry price + stop-loss points × instrument point size OR low <= entry price − take-profit points × instrument point size OR (time exit enabled AND current time − position opening time > holding-duration parameter)

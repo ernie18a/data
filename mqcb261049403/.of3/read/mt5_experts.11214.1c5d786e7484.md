@@ -1,0 +1,4 @@
+Long: On chart bars, TSI_MACD main line(T1, last completed bar) > TSI_MACD signal line(T1, last completed bar) AND TSI_MACD main line(T1, bar still forming) <= TSI_MACD signal line(T1, bar still forming)
+Short: On chart bars, TSI_MACD main line(T1, last completed bar) < TSI_MACD signal line(T1, last completed bar) AND TSI_MACD main line(T1, bar still forming) >= TSI_MACD signal line(T1, bar still forming)
+Exit: short, On chart bars, TSI_MACD main line(T1, last completed bar) > TSI_MACD signal line(T1, last completed bar)
+Exit: long, On chart bars, TSI_MACD main line(T1, last completed bar) < TSI_MACD signal line(T1, last completed bar)

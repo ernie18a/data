@@ -1,0 +1,3 @@
+Calculation: Position oscillator = 100 × (moving average(close, method, lookback, phase) − moving average(low, method, lookback, phase)) / max(moving average(high, method, lookback, phase) − moving average(low, method, lookback, phase), minimum price increment)
+Long: level mode selected AND Position oscillator > middle level OR direction mode selected AND (Position oscillator > middle level OR Position oscillator < middle level) AND Position oscillator > Position oscillator[1]
+Short: level mode selected AND Position oscillator < middle level OR direction mode selected AND (Position oscillator > middle level OR Position oscillator < middle level) AND Position oscillator < Position oscillator[1]

@@ -1,0 +1,4 @@
+Calculation: Adaptive stochastic value 0 = Stochastic(high, low, close, K-period 0, T1, bar still forming on chart bars taking values from T1); K-period 0 is the long K-period parameter when the previous adaptive stochastic value 1 is below the oversold threshold, and the short K-period parameter otherwise
+Calculation: Adaptive stochastic value 1 = Stochastic(high, low, close, K-period 1, T1, bar still forming on chart bars taking values from T1); K-period 1 is the long K-period parameter when the previous adaptive stochastic value 1 is above the overbought threshold, and the short K-period parameter otherwise
+Long: Adaptive stochastic value 1 > midpoint parameter AND Adaptive stochastic value 1 != Adaptive stochastic value 0
+Short: Adaptive stochastic value 1 < midpoint parameter AND Adaptive stochastic value 1 != Adaptive stochastic value 0

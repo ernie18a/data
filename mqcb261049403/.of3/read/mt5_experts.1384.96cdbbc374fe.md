@@ -1,0 +1,6 @@
+Calculation: Smoothed +DI = smooth(100 × +DM / TrueRange, smoothing method, lookback, phase) on T1 bars, using 0 when TrueRange is 0
+Calculation: Smoothed -DI = smooth(100 × -DM / TrueRange, smoothing method, lookback, phase) on T1 bars, using 0 when TrueRange is 0
+Long: On chart bars using T1 indicator values, long-entry permission enabled AND Smoothed +DI(T1, current forming bar) <= Smoothed -DI(T1, current forming bar) AND Smoothed +DI(T1, last completed bar) > Smoothed -DI(T1, last completed bar) AND ADX(lookback, T1, current forming bar) > trend threshold
+Short: On chart bars using T1 indicator values, short-entry permission enabled AND Smoothed +DI(T1, current forming bar) >= Smoothed -DI(T1, current forming bar) AND Smoothed +DI(T1, last completed bar) < Smoothed -DI(T1, last completed bar) AND ADX(lookback, T1, current forming bar) > trend threshold
+Exit: short, On chart bars using T1 indicator values, short-exit permission enabled AND Smoothed +DI(T1, last completed bar) > Smoothed -DI(T1, last completed bar)
+Exit: long, On chart bars using T1 indicator values, long-exit permission enabled AND Smoothed +DI(T1, last completed bar) < Smoothed -DI(T1, last completed bar)

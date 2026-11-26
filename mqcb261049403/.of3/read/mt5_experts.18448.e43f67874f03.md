@@ -1,0 +1,4 @@
+Long: NRTR_ATR_STOP upward-reversal signal on the forming T1 bar, read on chart bars using T1 values
+Short: NRTR_ATR_STOP downward-reversal signal on the forming T1 bar, read on chart bars using T1 values
+Exit: long, NRTR_ATR_STOP downward-reversal signal on T1 at the signal-bar offset (forming if the offset is zero, otherwise completed), read on chart bars using T1 values OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, NRTR_ATR_STOP upward-reversal signal on T1 at the signal-bar offset (forming if the offset is zero, otherwise completed), read on chart bars using T1 values OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

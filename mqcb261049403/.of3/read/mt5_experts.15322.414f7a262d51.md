@@ -1,0 +1,6 @@
+Calculation: Bezier StDev line = Bezier smoothing of weighted price (high + low + 2 × close) / 4 using a smoothing lookback and sensitivity
+Calculation: Bezier StDev threshold = multiplier × standard deviation of one-bar changes in the Bezier StDev line over a separate lookback
+Long: one-bar change in Bezier StDev line exceeds Bezier StDev threshold OR Bezier StDev line at signal-bar lookback + 2 > Bezier StDev line at signal-bar lookback + 1 AND Bezier StDev line at signal-bar lookback + 1 < Bezier StDev line at signal-bar lookback
+Short: one-bar change in Bezier StDev line is less than negative Bezier StDev threshold OR Bezier StDev line at signal-bar lookback + 2 < Bezier StDev line at signal-bar lookback + 1 AND Bezier StDev line at signal-bar lookback + 1 > Bezier StDev line at signal-bar lookback
+Exit: long, one-bar change in Bezier StDev line is negative OR one-bar change in Bezier StDev line exceeds Bezier StDev threshold
+Exit: short, one-bar change in Bezier StDev line is positive OR one-bar change in Bezier StDev line is less than negative Bezier StDev threshold

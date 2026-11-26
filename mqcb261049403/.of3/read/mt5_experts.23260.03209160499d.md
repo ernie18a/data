@@ -1,0 +1,2 @@
+Long: On the current completed bar, the SR-RateIndicator histogram is lime AND it was not lime on the previous completed bar
+Short: On the current completed bar, the SR-RateIndicator histogram is magenta AND it was not magenta on the previous completed bar

@@ -1,0 +1,5 @@
+Calculation: prior signal direction = direction of the most recent earlier moving-average crossover signal on T1, or neutral if none
+Long: On T1 bars, MA(fast applied price, shorter lookback, fast method) crosses above MA(slow applied price, longer lookback, slow method) on the configured signal-offset bar (completed for a positive offset; forming at zero offset) AND prior signal direction is short or neutral
+Short: On T1 bars, MA(fast applied price, shorter lookback, fast method) crosses below MA(slow applied price, longer lookback, slow method) on the configured signal-offset bar (completed for a positive offset; forming at zero offset) AND prior signal direction is long or neutral
+Exit: short, no moving-average crossover signal on the configured signal-offset bar AND prior signal direction is long
+Exit: long, no moving-average crossover signal on the configured signal-offset bar AND prior signal direction is short

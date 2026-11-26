@@ -1,0 +1,3 @@
+Calculation: MFI change = abs(MFI(lookback, volume type, T1, last completed bar) - MFI(lookback, volume type, T1, preceding bar))
+Long: On chart bars using the last completed T1 bar, MFI(lookback, volume type) >= upper threshold AND (slowdown disabled OR MFI change < slowdown threshold)
+Short: On chart bars using the last completed T1 bar, MFI(lookback, volume type) <= lower threshold AND (slowdown disabled OR MFI change < slowdown threshold)

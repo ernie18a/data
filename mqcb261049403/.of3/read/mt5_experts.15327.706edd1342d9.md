@@ -1,0 +1,9 @@
+Calculation: weighted wave = configured moving average of the sum of seven separately weighted votes on T1 bars: close above/below MA(applied price, lookback, method); MACD(applied price, fast lookback, slower lookback, signal lookback) rising/falling versus its prior value; OsMA(applied price, fast lookback, slower lookback, signal lookback) positive/negative; CCI(applied price, lookback) positive/negative; Momentum(applied price, lookback) above/below its baseline; RSI(applied price, lookback) above/below its baseline; and +DI(ADX lookback) above/below -DI(ADX lookback); each vote is its separate positive weight, negative weight for the reverse comparison, or zero on equality or when its weight is nonpositive; the moving average has a separate smoothing method, lookback, and phase; evaluate at the selected signal offset (completed bar or still-forming bar according to the offset)
+Calculation: wave change = weighted wave at the selected T1 bar minus weighted wave on the preceding T1 bar
+Calculation: wave-change deviation = standard deviation(wave change, deviation lookback)
+Long: (wave change > first deviation multiplier × wave-change deviation AND wave change <= second deviation multiplier × wave-change deviation) OR wave change > second deviation multiplier × wave-change deviation
+Long: weighted wave[signal offset + 2] > weighted wave[signal offset + 1] AND weighted wave[signal offset + 1] < weighted wave[signal offset]
+Short: (wave change < -first deviation multiplier × wave-change deviation AND wave change >= -second deviation multiplier × wave-change deviation) OR wave change < -second deviation multiplier × wave-change deviation
+Short: weighted wave[signal offset + 2] < weighted wave[signal offset + 1] AND weighted wave[signal offset + 1] > weighted wave[signal offset]
+Exit: long, weighted wave[signal offset + 1] > weighted wave[signal offset]
+Exit: short, weighted wave[signal offset + 1] < weighted wave[signal offset]

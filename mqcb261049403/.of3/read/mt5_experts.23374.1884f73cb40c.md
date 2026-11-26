@@ -1,0 +1,6 @@
+Long: bullish Adaptive Renko support is present on the current, possibly forming, bar of T1
+Long: long-side Adaptive Renko trend(T1, long brick multiplier, long volatility mode, long volatility lookback, long price mode, long minimum brick width) is positive at the long signal offset AND negative on the preceding T1 bar; evaluate on each new T1 bar unless the offset is zero, then evaluate on chart updates using the forming bar
+Short: bearish Adaptive Renko resistance is present on the current, possibly forming, bar of T2
+Short: short-side Adaptive Renko trend(T2, short brick multiplier, short volatility mode, short volatility lookback, short price mode, short minimum brick width) is negative at the short signal offset AND positive on the preceding T2 bar; evaluate on each new T2 bar unless the offset is zero, then evaluate on chart updates using the forming bar
+Exit: long, long-side Adaptive Renko trend(T1, long brick multiplier, long volatility mode, long volatility lookback, long price mode, long minimum brick width) is negative at the long signal offset
+Exit: short, short-side Adaptive Renko trend(T2, short brick multiplier, short volatility mode, short volatility lookback, short price mode, short minimum brick width) is positive at the short signal offset

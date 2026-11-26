@@ -1,0 +1,4 @@
+Long: long-entry permission enabled AND first Q2MA cloud line on the preceding completed T1 bar > second Q2MA cloud line on that bar AND first line on the latest completed T1 bar <= second line on that bar
+Short: short-entry permission enabled AND first Q2MA cloud line on the preceding completed T1 bar < second Q2MA cloud line on that bar AND first line on the latest completed T1 bar >= second line on that bar
+Exit: short, short-exit permission enabled AND first Q2MA cloud line > second Q2MA cloud line on the latest completed T1 bar
+Exit: long, long-exit permission enabled AND first Q2MA cloud line < second Q2MA cloud line on the latest completed T1 bar

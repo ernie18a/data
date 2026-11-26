@@ -1,0 +1,2 @@
+Long: Stochastic main line crosses above its signal line OR RVI crosses above the upper threshold, using T1's last completed bars on chart bars
+Short: Stochastic main line crosses below its signal line OR RVI crosses below the lower threshold, using T1's last completed bars on chart bars

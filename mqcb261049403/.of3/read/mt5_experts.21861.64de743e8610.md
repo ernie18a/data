@@ -1,0 +1,6 @@
+Calculation: upper channel = highest(high, bars from the earlier configured daily time through the bar before the later configured daily time, on T1 bars; use the current high of any still-forming bar in the interval
+Calculation: lower channel = lowest(low, the same interval on T1 bars; use the current low of any still-forming bar in the interval
+Long: On T1 bars (bar 1 last completed, bar 0 still forming), close[1] > upper channel[1] AND close[0] <= upper channel[0]
+Short: On T1 bars (bar 1 last completed, bar 0 still forming), close[1] < lower channel[1] AND close[0] >= lower channel[0]
+Exit: long, (On T1 bars, close[1] < lower channel[1] AND close[0] < lower channel[0]) OR low <= entry price - stop-loss distance in points OR high >= entry price + take-profit distance in points OR current datetime - entry datetime > maximum holding time in minutes
+Exit: short, (On T1 bars, close[1] > upper channel[1] AND close[0] > upper channel[0]) OR high >= entry price + stop-loss distance in points OR low <= entry price - take-profit distance in points OR current datetime - entry datetime > maximum holding time in minutes

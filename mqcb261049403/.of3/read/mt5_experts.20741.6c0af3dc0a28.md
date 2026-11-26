@@ -1,0 +1,5 @@
+Calculation: histogram value = xrsidemarker histogram output on T1 bars, with the current bar still forming
+Long: long entries enabled AND histogram value[1] < histogram value[2] AND histogram value[0] >= histogram value[1]
+Short: short entries enabled AND histogram value[1] > histogram value[2] AND histogram value[0] <= histogram value[1]
+Exit: long, (long exits enabled AND histogram value[1] > histogram value[2] AND (short entries disabled OR histogram value[0] > histogram value[1])) OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, (short exits enabled AND histogram value[1] < histogram value[2] AND (long entries disabled OR histogram value[0] < histogram value[1])) OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

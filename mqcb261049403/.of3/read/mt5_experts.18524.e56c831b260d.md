@@ -1,0 +1,7 @@
+Calculation: First line = Smooth(selected ROC measure(close, shorter ROC lookback), first smoothing method, first smoothing length, first smoothing phase) on T1 bars
+Calculation: Second line = Smooth(the same selected ROC measure(close, longer ROC lookback), second smoothing method, second smoothing length, second smoothing phase) on T1 bars
+Calculation: inside trading window = (start hour < end hour AND ((server hour = start hour AND server minute >= start minute) OR (server hour > start hour AND server hour < end hour) OR (server hour = end hour AND server minute < end minute))) OR (start hour = end hour AND server hour = start hour AND server minute >= start minute AND server minute < end minute) OR (start hour > end hour AND ((server hour >= start hour AND server minute >= start minute) OR server hour < end hour OR (server hour = end hour AND server minute < end minute))
+Long: First line > Second line on the preceding completed T1 bar AND First line <= Second line on the last completed T1 bar AND (time filter disabled OR inside trading window)
+Short: First line < Second line on the preceding completed T1 bar AND First line >= Second line on the last completed T1 bar AND (time filter disabled OR inside trading window)
+Exit: long, First line < Second line on the preceding completed T1 bar OR (time filter enabled AND NOT inside trading window)
+Exit: short, First line > Second line on the preceding completed T1 bar OR (time filter enabled AND NOT inside trading window)

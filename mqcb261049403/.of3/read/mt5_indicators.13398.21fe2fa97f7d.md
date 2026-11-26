@@ -1,0 +1,9 @@
+Calculation: Baseline = Smooth(applied price, price smoothing method, price smoothing lookback, price smoothing phase)
+Calculation: Normalized deviation = if D != 0 then normalization scale * D / A else 0, where D = Smooth(applied price - Baseline, deviation smoothing method, deviation smoothing lookback, deviation smoothing phase) and A = Smooth(abs(applied price - Baseline), the same deviation smoothing parameters)
+Calculation: StepLine(X, step size) returns a line and direction: set upper = X + band multiplier * step size and lower = X - band multiplier * step size; set direction up if X > previous upper, down if X < previous lower, otherwise retain direction; when up, set lower = max(lower, previous lower) and line = lower + step size; when down, set upper = min(upper, previous upper) and line = upper - step size; carry adjusted upper, lower, and direction to the next bar, starting neutral with prior bounds outside the oscillator range
+Long: On the current chart bar, StepLine(Normalized deviation, fast step size).direction > 0
+Short: On the current chart bar, StepLine(Normalized deviation, fast step size).direction < 0
+Long: On the current chart bar, StepLine(Normalized deviation, slow step size).direction > 0
+Short: On the current chart bar, StepLine(Normalized deviation, slow step size).direction < 0
+Long: On chart bars, independently for each T1 through T10, the fast StepLine line calculated on T bars at the last completed T bar > the slow StepLine line calculated on T bars at the last completed T bar
+Short: On chart bars, independently for each T1 through T10, the fast StepLine line calculated on T bars at the last completed T bar < the slow StepLine line calculated on T bars at the last completed T bar

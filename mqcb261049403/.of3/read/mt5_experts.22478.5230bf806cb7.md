@@ -1,0 +1,6 @@
+Calculation: Upper entry threshold = formed cloud corridor upper edge + entry-extension parameter
+Calculation: Lower entry threshold = formed cloud corridor lower edge - entry-extension parameter
+Long: close on the signal-offset completed T1 bar > upper entry threshold on that bar AND close on the immediately preceding completed T1 bar <= upper entry threshold on that bar
+Short: close on the signal-offset completed T1 bar < lower entry threshold on that bar AND close on the immediately preceding completed T1 bar >= lower entry threshold on that bar
+Exit: long, (close on the signal-offset completed T1 bar < lower entry threshold on that bar AND close on the immediately preceding completed T1 bar < lower entry threshold on that bar) OR current datetime - position opening datetime > holding-duration parameter
+Exit: short, (close on the signal-offset completed T1 bar > upper entry threshold on that bar AND close on the immediately preceding completed T1 bar > upper entry threshold on that bar) OR current datetime - position opening datetime > holding-duration parameter

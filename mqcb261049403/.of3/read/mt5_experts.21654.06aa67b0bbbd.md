@@ -1,0 +1,4 @@
+Long: On T1 bars, the cloud’s upper value was greater than its lower value on the last completed bar AND is less than or equal to its lower value on the bar still forming
+Short: On T1 bars, the cloud’s upper value was less than its lower value on the last completed bar AND is greater than or equal to its lower value on the bar still forming
+Exit: long, low <= entry price minus the stop-loss distance OR high >= entry price plus the take-profit distance OR the trading-time restriction is enabled AND current time is outside the configured interval
+Exit: short, high >= entry price plus the stop-loss distance OR low <= entry price minus the take-profit distance OR the trading-time restriction is enabled AND current time is outside the configured interval

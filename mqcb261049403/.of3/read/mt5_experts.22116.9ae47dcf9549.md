@@ -1,0 +1,5 @@
+Calculation: Rounding-candle direction = bullish when the MA_Rounding_Candle candle close is greater than its open, bearish when less, and neutral when equal
+Long: Rounding-candle direction on the last completed T1 bar, read on chart bars, is bullish AND its direction on the preceding completed T1 bar is not bullish
+Short: Rounding-candle direction on the last completed T1 bar, read on chart bars, is bearish AND its direction on the preceding completed T1 bar is not bearish
+Exit: long, Rounding-candle direction on the last completed T1 bar, read on chart bars, is bearish AND its direction on the preceding completed T1 bar is bearish
+Exit: short, Rounding-candle direction on the last completed T1 bar, read on chart bars, is bullish AND its direction on the preceding completed T1 bar is bullish

@@ -1,0 +1,4 @@
+Calculation: Chart QQE fast and trailing lines = QQE(close, chart RSI lookback, chart smoothing lookback, chart trailing factor, chart smoothing method, chart smoothing phase)
+Calculation: T1 QQE fast and trailing lines = QQE(close, T1 RSI lookback, T1 smoothing lookback, T1 trailing factor, T1 smoothing method, T1 smoothing phase, T1, still-forming bar), sampled on chart bars
+Long: chart QQE fast line crosses above 50 after crossing above chart QQE trailing line OR chart QQE fast line > chart QQE trailing line OR T1 QQE fast line > T1 QQE trailing line
+Short: chart QQE fast line crosses below 50 after crossing below chart QQE trailing line OR chart QQE fast line < chart QQE trailing line OR T1 QQE fast line < T1 QQE trailing line

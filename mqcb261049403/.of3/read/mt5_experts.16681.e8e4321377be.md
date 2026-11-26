@@ -1,0 +1,6 @@
+Calculation: X2MA = MA(MA(applied price, smoothing method 1, lookback 1, phase 1), smoothing method 2, lookback 2, phase 2)
+Calculation: X2MA direction = the sign of X2MA minus its previous value, retaining the previous direction when the difference is zero
+Long: X2MA direction is rising on the completed T1 bar selected by the signal-bar offset, using chart bars carrying T1 values, AND the ColorDM_361 line rises on the latest completed T2 bar, using chart bars carrying T2 values, after not rising on the preceding completed T2 bar
+Short: X2MA direction is falling on the completed T1 bar selected by the signal-bar offset, using chart bars carrying T1 values, AND the ColorDM_361 line falls on the latest completed T2 bar, using chart bars carrying T2 values, after not falling on the preceding completed T2 bar
+Exit: long, X2MA direction is falling on the completed T1 bar selected by the signal-bar offset, using chart bars carrying T1 values, OR the ColorDM_361 line falls on the latest completed T2 bar, using chart bars carrying T2 values
+Exit: short, X2MA direction is rising on the completed T1 bar selected by the signal-bar offset, using chart bars carrying T1 values, OR the ColorDM_361 line rises on the latest completed T2 bar, using chart bars carrying T2 values

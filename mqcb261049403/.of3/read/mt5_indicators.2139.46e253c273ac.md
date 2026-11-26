@@ -1,0 +1,16 @@
+Long: BlauSMStochastic histogram > 0
+Short: BlauSMStochastic histogram < 0
+Long: On chart bars using the still-forming T1 bar, BlauSMStochastic(T1) > BlauSMStochastic(T1, preceding completed bar)
+Short: On chart bars using the still-forming T1 bar, BlauSMStochastic(T1) < BlauSMStochastic(T1, preceding completed bar)
+Long: On chart bars using the still-forming T2 bar, BlauSMStochastic(T2) > BlauSMStochastic(T2, preceding completed bar)
+Short: On chart bars using the still-forming T2 bar, BlauSMStochastic(T2) < BlauSMStochastic(T2, preceding completed bar)
+Long: On chart bars using the still-forming T3 bar, BlauSMStochastic(T3) > BlauSMStochastic(T3, preceding completed bar)
+Short: On chart bars using the still-forming T3 bar, BlauSMStochastic(T3) < BlauSMStochastic(T3, preceding completed bar)
+Long: On chart bars using the still-forming T4 bar, BlauSMStochastic(T4) > BlauSMStochastic(T4, preceding completed bar)
+Short: On chart bars using the still-forming T4 bar, BlauSMStochastic(T4) < BlauSMStochastic(T4, preceding completed bar)
+Long: On chart bars using the still-forming T5 bar, BlauSMStochastic(T5) > BlauSMStochastic(T5, preceding completed bar)
+Short: On chart bars using the still-forming T5 bar, BlauSMStochastic(T5) < BlauSMStochastic(T5, preceding completed bar)
+Long: On chart bars using the still-forming T6 bar, BlauSMStochastic(T6) > BlauSMStochastic(T6, preceding completed bar)
+Short: On chart bars using the still-forming T6 bar, BlauSMStochastic(T6) < BlauSMStochastic(T6, preceding completed bar)
+Long: On chart bars using the still-forming T7 bar, BlauSMStochastic(T7) > BlauSMStochastic(T7, preceding completed bar)
+Short: On chart bars using the still-forming T7 bar, BlauSMStochastic(T7) < BlauSMStochastic(T7, preceding completed bar)

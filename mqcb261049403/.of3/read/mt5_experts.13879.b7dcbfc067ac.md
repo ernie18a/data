@@ -1,0 +1,2 @@
+Long: Schaff JCCX Trend Cycle(Cycle, T1, preceding completed bar) > upper threshold AND Schaff JCCX Trend Cycle(Cycle, T1, last completed bar) <= upper threshold
+Short: Schaff JCCX Trend Cycle(Cycle, T1, preceding completed bar) < lower threshold AND Schaff JCCX Trend Cycle(Cycle, T1, last completed bar) >= lower threshold

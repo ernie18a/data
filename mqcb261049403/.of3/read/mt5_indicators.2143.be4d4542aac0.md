@@ -1,0 +1,2 @@
+Long: (selected signal is histogram AND T3_TRIX(shorter lookback) > 0) OR (selected signal is cloud AND T3_TRIX(shorter lookback) > T3_TRIX(longer lookback)), using the T1 bar at each chart bar's timestamp, including the still-forming bar
+Short: (selected signal is histogram AND T3_TRIX(shorter lookback) < 0) OR (selected signal is cloud AND T3_TRIX(shorter lookback) < T3_TRIX(longer lookback)), using the T1 bar at each chart bar's timestamp, including the still-forming bar

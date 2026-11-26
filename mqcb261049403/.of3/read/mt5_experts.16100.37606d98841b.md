@@ -1,0 +1,2 @@
+Long: RAVI(applied price, shorter smoothing method, phase, and lookback, longer smoothing method, phase, and lookback, T1, last completed bar) crosses above upper threshold
+Short: RAVI(applied price, shorter smoothing method, phase, and lookback, longer smoothing method, phase, and lookback, T1, last completed bar) crosses below lower threshold

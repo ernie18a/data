@@ -1,0 +1,8 @@
+Calculation: chart first smoother = moving average(100 * (SMA(close, processing lookback) - lowest(SMA(close, processing lookback), extrema lookback)) / max(highest(SMA(close, processing lookback), extrema lookback) - lowest(SMA(close, processing lookback), extrema lookback), minimum price increment) - 50, smoothing method, smoothing lookback, phase)
+Calculation: chart second smoother = moving average(chart first smoother, same smoothing method, same smoothing lookback, same phase)
+Long: chart first smoother > chart second smoother
+Short: chart first smoother <= chart second smoother
+Calculation: T1 first smoother = moving average(100 * (SMA(close, processing lookback, T1, bar still forming) - lowest(SMA(close, processing lookback, T1, bar still forming), extrema lookback, T1, bar still forming)) / max(highest(SMA(close, processing lookback, T1, bar still forming), extrema lookback, T1, bar still forming) - lowest(SMA(close, processing lookback, T1, bar still forming), extrema lookback, T1, bar still forming), minimum price increment) - 50, smoothing method, smoothing lookback, phase), computed on T1 bars with the bar still forming; values taken by chart bars
+Calculation: T1 second smoother = moving average(T1 first smoother, same smoothing method, same smoothing lookback, same phase), computed on T1 bars with the bar still forming; values taken by chart bars
+Long: T1 first smoother > T1 second smoother
+Short: T1 first smoother <= T1 second smoother

@@ -1,0 +1,4 @@
+Long: close > open
+Short: close < open
+Long: close(T1, bar still forming) >= open(T1, bar still forming), evaluated on chart bars using T1 values
+Short: close(T1, bar still forming) < open(T1, bar still forming), evaluated on chart bars using T1 values

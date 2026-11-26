@@ -1,0 +1,4 @@
+Long: green signal value != EMPTY_VALUE AND green signal value != 0 AND green signal value != -1 AND MACD main(fast EMA lookback, slow EMA lookback, signal lookback, T1, last completed bar sampled on chart bars) > MACD signal(fast EMA lookback, slow EMA lookback, signal lookback, T1, last completed bar sampled on chart bars)
+Short: red signal value != EMPTY_VALUE AND red signal value != 0 AND red signal value != -1 AND MACD signal(fast EMA lookback, slow EMA lookback, signal lookback, T1, last completed bar sampled on chart bars) > MACD main(fast EMA lookback, slow EMA lookback, signal lookback, T1, last completed bar sampled on chart bars)
+Exit: long, red signal value != EMPTY_VALUE AND red signal value != 0 AND red signal value != -1
+Exit: short, green signal value != EMPTY_VALUE AND green signal value != 0 AND green signal value != -1

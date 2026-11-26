@@ -1,0 +1,6 @@
+Calculation: first line = 100 × smooth(close − Lowest(low, extreme lookback), first smoothing method, longer lookback, first phase) / smooth(Highest(high, extreme lookback) − Lowest(low, extreme lookback), first smoothing method, longer lookback, first phase), or 100 if the denominator is 0
+Calculation: second line = 100 × smooth(smooth(close − Lowest(low, extreme lookback), first smoothing method, longer lookback, first phase), second smoothing method, shorter lookback, second phase) / smooth(smooth(Highest(high, extreme lookback) − Lowest(low, extreme lookback), first smoothing method, longer lookback, first phase), second smoothing method, shorter lookback, second phase), or 100 if the denominator is 0
+Long: first line > second line on chart bars
+Short: first line < second line on chart bars
+Long: first line > second line, calculated on T1 bars and taken by chart bars from T1's still-forming bar
+Short: first line < second line, calculated on T1 bars and taken by chart bars from T1's still-forming bar

@@ -1,0 +1,5 @@
+Calculation: SSL(high, low, close, method, lookback, phase) = if close < moving average(low, method, lookback, phase) then moving average(high, method, lookback, phase) else moving average(low, method, lookback, phase)
+Long: SSL(high, low, close, method, shorter lookback, phase) > SSL(high, low, close, method, longer lookback, phase)
+Short: SSL(high, low, close, method, shorter lookback, phase) < SSL(high, low, close, method, longer lookback, phase)
+Long: SSL(high, low, close, method, shorter lookback, phase, T1, bar still forming, calculated on T1 bars and mapped to chart bars) > SSL(high, low, close, method, longer lookback, phase, T1, bar still forming, calculated on T1 bars and mapped to chart bars)
+Short: SSL(high, low, close, method, shorter lookback, phase, T1, bar still forming, calculated on T1 bars and mapped to chart bars) < SSL(high, low, close, method, longer lookback, phase, T1, bar still forming, calculated on T1 bars and mapped to chart bars)

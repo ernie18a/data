@@ -1,0 +1,5 @@
+Calculation: Alligator lines = Alligator(close, SMMA, jaw lookback, jaw shift, teeth lookback, teeth shift, lips lookback, lips shift) on chart bars, with jaw lookback > teeth lookback > lips lookback and jaw shift > teeth shift > lips shift
+Long: Alligator lines.Lips[1] > Alligator lines.Teeth[1] AND Alligator lines.Teeth[1] > Alligator lines.Jaw[1] AND close[1] > the Alligator line selected by the long-entry mode parameter[1] AND close[2] < the Alligator line selected by the long-entry mode parameter[2]
+Short: Alligator lines.Lips[1] < Alligator lines.Teeth[1] AND Alligator lines.Teeth[1] < Alligator lines.Jaw[1] AND close[1] < the Alligator line selected by the short-entry mode parameter[1] AND close[2] > the Alligator line selected by the short-entry mode parameter[2]
+Exit: long, low <= entry price - long-strategy stop-loss distance OR high >= entry price + long-strategy take-profit distance
+Exit: short, high >= entry price + short-strategy stop-loss distance OR low <= entry price - short-strategy take-profit distance

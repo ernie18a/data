@@ -1,0 +1,4 @@
+Long: BlauTVI(T1, still-forming bar sampled on chart bars)[0] > BlauTVI(T1, last completed bar sampled on chart bars)[1] AND BlauTVI(T1, last completed bar sampled on chart bars)[1] < BlauTVI(T1, last completed bar sampled on chart bars)[2]
+Short: BlauTVI(T1, still-forming bar sampled on chart bars)[0] < BlauTVI(T1, last completed bar sampled on chart bars)[1] AND BlauTVI(T1, last completed bar sampled on chart bars)[1] > BlauTVI(T1, last completed bar sampled on chart bars)[2]
+Exit: long, BlauTVI(T1, last completed bar sampled on chart bars)[1] > BlauTVI(T1, last completed bar sampled on chart bars)[2]
+Exit: short, BlauTVI(T1, last completed bar sampled on chart bars)[1] < BlauTVI(T1, last completed bar sampled on chart bars)[2]

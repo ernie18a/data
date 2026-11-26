@@ -1,0 +1,2 @@
+Long: moving average(applied price, smoothing method, lookback, phase) < (high + low) / 2 on the prior completed T1 bar AND moving average(applied price, smoothing method, lookback, phase) >= (high + low) / 2 on the last completed T1 bar
+Short: moving average(applied price, smoothing method, lookback, phase) > (high + low) / 2 on the prior completed T1 bar AND moving average(applied price, smoothing method, lookback, phase) <= (high + low) / 2 on the last completed T1 bar

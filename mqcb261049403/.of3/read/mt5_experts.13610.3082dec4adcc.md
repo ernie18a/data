@@ -1,0 +1,4 @@
+Long: On chart bars using T1 values, Ergodic Ticks Volume OSMA(T1, bar still forming) >= Ergodic Ticks Volume OSMA(T1, last completed bar) AND Ergodic Ticks Volume OSMA(T1, last completed bar) < Ergodic Ticks Volume OSMA(T1, 2 bars ago)
+Short: On chart bars using T1 values, Ergodic Ticks Volume OSMA(T1, bar still forming) <= Ergodic Ticks Volume OSMA(T1, last completed bar) AND Ergodic Ticks Volume OSMA(T1, last completed bar) > Ergodic Ticks Volume OSMA(T1, 2 bars ago)
+Exit: short, on chart bars using T1 values, Ergodic Ticks Volume OSMA(T1, bar still forming) < Ergodic Ticks Volume OSMA(T1, last completed bar) AND Ergodic Ticks Volume OSMA(T1, last completed bar) < Ergodic Ticks Volume OSMA(T1, 2 bars ago)
+Exit: long, on chart bars using T1 values, Ergodic Ticks Volume OSMA(T1, bar still forming) > Ergodic Ticks Volume OSMA(T1, last completed bar) AND Ergodic Ticks Volume OSMA(T1, last completed bar) > Ergodic Ticks Volume OSMA(T1, 2 bars ago)

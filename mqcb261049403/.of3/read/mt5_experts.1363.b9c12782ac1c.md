@@ -1,0 +1,4 @@
+Long: On chart bars using T1 values, close[1] > Corrected Average(close, smoothing depth, T1, last completed bar) + breakthrough distance AND close[0] <= Corrected Average(close, smoothing depth, T1, bar still forming) + breakthrough distance
+Short: On chart bars using T1 values, close[1] < Corrected Average(close, smoothing depth, T1, last completed bar) - breakthrough distance AND close[0] >= Corrected Average(close, smoothing depth, T1, bar still forming) - breakthrough distance
+Exit: long, On chart bars using T1 values, close[1] < Corrected Average(close, smoothing depth, T1, last completed bar) - breakthrough distance
+Exit: short, On chart bars using T1 values, close[1] > Corrected Average(close, smoothing depth, T1, last completed bar) + breakthrough distance

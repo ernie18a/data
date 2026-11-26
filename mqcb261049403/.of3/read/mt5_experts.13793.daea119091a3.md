@@ -1,0 +1,5 @@
+Calculation: HullTrendOSMA = MA((2*MA(applied price, floor(base lookback/2), method A, phase A) - MA(applied price, base lookback, method A, phase A)) - MA(2*MA(applied price, floor(base lookback/2), method A, phase A) - MA(applied price, base lookback, method A, phase A), floor(sqrt(base lookback)), method A, phase A), smoothing lookback, method B, phase B), calculated on T1 bars and sampled by chart-bar decisions
+Long: HullTrendOSMA(T1, bar still forming) >= HullTrendOSMA(T1, last completed bar) AND HullTrendOSMA(T1, last completed bar) < HullTrendOSMA(T1, two bars ago)
+Short: HullTrendOSMA(T1, bar still forming) <= HullTrendOSMA(T1, last completed bar) AND HullTrendOSMA(T1, last completed bar) > HullTrendOSMA(T1, two bars ago)
+Exit: short, HullTrendOSMA(T1, last completed bar) < HullTrendOSMA(T1, two bars ago)
+Exit: long, HullTrendOSMA(T1, last completed bar) > HullTrendOSMA(T1, two bars ago)

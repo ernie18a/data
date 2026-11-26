@@ -1,0 +1,2 @@
+Long: On each T1 bar, the volume-weighted MACandle close is less than or equal to its open AND the preceding completed T1 bar's close is greater than its open
+Short: On each T1 bar, the volume-weighted MACandle close is greater than or equal to its open AND the preceding completed T1 bar's close is less than its open

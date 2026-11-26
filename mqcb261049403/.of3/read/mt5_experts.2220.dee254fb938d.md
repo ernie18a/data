@@ -1,0 +1,6 @@
+Long: Jurik RSX(close, lookback) > Jurik RSX(close, lookback)[1]
+Short: Jurik RSX(close, lookback) < Jurik RSX(close, lookback)[1]
+Long: On chart bars using T1 values, Jurik RSX(close, lookback, T1, bar still forming) > Jurik RSX(close, lookback, T1, last completed bar) AND Jurik RSX(close, lookback, T1, last completed bar) < Jurik RSX(close, lookback, T1, 2 bars ago)
+Short: On chart bars using T1 values, Jurik RSX(close, lookback, T1, bar still forming) < Jurik RSX(close, lookback, T1, last completed bar) AND Jurik RSX(close, lookback, T1, last completed bar) > Jurik RSX(close, lookback, T1, 2 bars ago)
+Exit: long, On chart bars using T1 values, Jurik RSX(close, lookback, T1, last completed bar) > Jurik RSX(close, lookback, T1, 2 bars ago) AND Jurik RSX(close, lookback, T1, bar still forming) >= Jurik RSX(close, lookback, T1, last completed bar)
+Exit: short, On chart bars using T1 values, Jurik RSX(close, lookback, T1, last completed bar) < Jurik RSX(close, lookback, T1, 2 bars ago) AND Jurik RSX(close, lookback, T1, bar still forming) <= Jurik RSX(close, lookback, T1, last completed bar)

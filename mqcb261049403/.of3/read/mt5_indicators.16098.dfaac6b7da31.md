@@ -1,0 +1,3 @@
+Calculation: RAVI = 100 * (MovingAverage(selected price, shorter lookback, fast averaging method, fast phase) - MovingAverage(selected price, longer lookback, slow averaging method, slow phase)) / MovingAverage(selected price, longer lookback, slow averaging method, slow phase)
+Long: RAVI > extra-high uptrend level OR RAVI > uptrend level
+Short: RAVI < extra-low downtrend level OR RAVI < downtrend level

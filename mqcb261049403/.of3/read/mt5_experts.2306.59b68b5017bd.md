@@ -1,0 +1,4 @@
+Long: long-entry permission is enabled AND, on each T1 bar close, TSI on the preceding completed T1 bar > its signal line AND TSI on the closing T1 bar <= its signal line
+Short: short-entry permission is enabled AND, on each T1 bar close, TSI on the preceding completed T1 bar < its signal line AND TSI on the closing T1 bar >= its signal line
+Exit: short, short-exit permission is enabled AND, on each T1 bar close, TSI on the preceding completed T1 bar > its signal line AND TSI on the closing T1 bar <= its signal line
+Exit: long, long-exit permission is enabled AND, on each T1 bar close, TSI on the preceding completed T1 bar < its signal line AND TSI on the closing T1 bar >= its signal line

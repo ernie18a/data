@@ -1,0 +1,5 @@
+Calculation: FineTuningMACandle direction(T1, bar) = bullish when its calculated close > its calculated open, bearish when its calculated close < its calculated open, neutral when they are equal; sampled on chart bars using T1 values
+Long: FineTuningMACandle direction(T1, last completed bar) is bullish AND FineTuningMACandle direction(T1, preceding completed bar) is bearish or neutral
+Short: FineTuningMACandle direction(T1, last completed bar) is bearish AND FineTuningMACandle direction(T1, preceding completed bar) is bullish or neutral
+Exit: long, FineTuningMACandle direction(T1, last completed bar) is bearish AND FineTuningMACandle direction(T1, preceding completed bar) is bearish
+Exit: short, FineTuningMACandle direction(T1, last completed bar) is bullish AND FineTuningMACandle direction(T1, preceding completed bar) is bullish

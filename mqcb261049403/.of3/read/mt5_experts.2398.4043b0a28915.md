@@ -1,0 +1,4 @@
+Long: Cronex DeMarker main line(T1, last completed bar) > Cronex DeMarker signal line(T1, last completed bar) AND Cronex DeMarker main line(T1, bar still forming) <= Cronex DeMarker signal line(T1, bar still forming)
+Short: Cronex DeMarker main line(T1, last completed bar) < Cronex DeMarker signal line(T1, last completed bar) AND Cronex DeMarker main line(T1, bar still forming) >= Cronex DeMarker signal line(T1, bar still forming)
+Exit: long, Cronex DeMarker main line(T1, last completed bar) < Cronex DeMarker signal line(T1, last completed bar)
+Exit: short, Cronex DeMarker main line(T1, last completed bar) > Cronex DeMarker signal line(T1, last completed bar)

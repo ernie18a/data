@@ -1,0 +1,10 @@
+Calculation: EMA^n(source, lookback, T) = apply EMA successively n times to source using the same lookback on T bars
+Calculation: E8(source, lookback, T) = 8*EMA^1(source, lookback, T) - 28*EMA^2(source, lookback, T) + 56*EMA^3(source, lookback, T) - 70*EMA^4(source, lookback, T) + 56*EMA^5(source, lookback, T) - 28*EMA^6(source, lookback, T) + 8*EMA^7(source, lookback, T) - EMA^8(source, lookback, T)
+Calculation: RoundedE8(source, lookback, precision, T) = round(E8(source, lookback, T) / (point size * 10^precision)) * point size * 10^precision
+Calculation: DirectionColor(source, lookback, precision, T) = bullish if RoundedE8 > its prior T-bar value, bearish if RoundedE8 < its prior T-bar value, otherwise its prior DirectionColor; calculated on T bars
+Long: DirectionColor(display applied-price parameter, display lookback parameter, display precision parameter, chart bars) is bullish
+Short: DirectionColor(display applied-price parameter, display lookback parameter, display precision parameter, chart bars) is bearish
+Long: DirectionColor(long applied-price parameter, long lookback parameter, long precision parameter, T1) at the long signal offset is bullish AND its value one T1 bar earlier is not bullish; use the T1 bar at that offset (forming if the offset is zero, otherwise completed)
+Short: DirectionColor(short applied-price parameter, short lookback parameter, short precision parameter, T2) at the short signal offset is bearish AND its value one T2 bar earlier is not bearish; use the T2 bar at that offset (forming if the offset is zero, otherwise completed)
+Exit: long, (DirectionColor(long applied-price parameter, long lookback parameter, long precision parameter, T1) at the long signal offset is bearish AND its value one T1 bar earlier is bearish) OR position age exceeds the long holding-duration parameter
+Exit: short, (DirectionColor(short applied-price parameter, short lookback parameter, short precision parameter, T2) at the short signal offset is bullish AND its value one T2 bar earlier is bullish) OR position age exceeds the short holding-duration parameter

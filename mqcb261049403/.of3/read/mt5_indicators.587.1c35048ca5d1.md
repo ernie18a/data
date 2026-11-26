@@ -1,0 +1,6 @@
+Calculation: SmoothedOpen = smooth(open, smoothing parameters)
+Calculation: SmoothedClose = smooth(close, smoothing parameters)
+Long: SmoothedOpen < SmoothedClose
+Short: SmoothedOpen >= SmoothedClose
+Long: SmoothedOpen(T1 bar mapped to the chart bar selected by the signal-bar parameter, still forming) != 0 AND SmoothedClose(T1 bar mapped to the chart bar selected by the signal-bar parameter, still forming) != 0 AND SmoothedOpen(T1 bar mapped to the chart bar selected by the signal-bar parameter, still forming) <= SmoothedClose(T1 bar mapped to the chart bar selected by the signal-bar parameter, still forming)
+Short: SmoothedOpen(T1 bar mapped to the chart bar selected by the signal-bar parameter, still forming) != 0 AND SmoothedClose(T1 bar mapped to the chart bar selected by the signal-bar parameter, still forming) != 0 AND SmoothedOpen(T1 bar mapped to the chart bar selected by the signal-bar parameter, still forming) > SmoothedClose(T1 bar mapped to the chart bar selected by the signal-bar parameter, still forming)

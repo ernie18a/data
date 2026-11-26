@@ -1,0 +1,2 @@
+Long: On T1 bars, the Bulls histogram value on the last completed bar > its value one bar earlier AND that earlier value <= its value two bars earlier.
+Short: On T1 bars, the Bulls histogram value on the last completed bar < its value one bar earlier AND that earlier value >= its value two bars earlier.

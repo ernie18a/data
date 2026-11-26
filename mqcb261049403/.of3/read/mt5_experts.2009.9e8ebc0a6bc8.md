@@ -1,0 +1,8 @@
+Calculation: I[k] = Blau TStochI(indicator applied price, indicator lookback, indicator first smoothing, indicator second smoothing, indicator signal smoothing, indicator averaging method, indicator phase, chart-timeframe bar k bars ago); k=0 is forming and k>0 is completed
+Calculation: E[k] = Blau TStochI(EA applied price, EA lookback, EA first smoothing, EA second smoothing, EA signal smoothing, EA averaging method, EA phase, T1 bar k bars ago); the EA reads E[n] on chart bars, where n is the signal shift, n=0 is forming and n>0 is completed
+Long: I[k] > 0
+Short: I[k] < 0
+Long: long-entry permission enabled AND ((entry mode selects zero-crossing AND E[n] > 0 AND E[n+1] <= 0) OR (entry mode selects histogram-turn AND E[n] > E[n+1] AND E[n+2] >= E[n+1]))
+Short: short-entry permission enabled AND ((entry mode selects zero-crossing AND E[n] < 0 AND E[n+1] >= 0) OR (entry mode selects histogram-turn AND E[n] < E[n+1] AND E[n+2] <= E[n+1]))
+Exit: short, short-exit permission enabled AND ((entry mode selects zero-crossing AND E[n] > 0 AND (E[n+1] > 0 OR long-entry permission disabled)) OR (entry mode selects histogram-turn AND E[n] > E[n+1] AND (E[n+2] < E[n+1] OR long-entry permission disabled)))
+Exit: long, long-exit permission enabled AND ((entry mode selects zero-crossing AND E[n] < 0 AND (E[n+1] < 0 OR short-entry permission disabled)) OR (entry mode selects histogram-turn AND E[n] < E[n+1] AND (E[n+2] > E[n+1] OR short-entry permission disabled)))

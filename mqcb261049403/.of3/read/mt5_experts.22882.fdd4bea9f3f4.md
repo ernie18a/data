@@ -1,0 +1,2 @@
+Long: XMA(close, long-side smoothing method, long-side smoothing length, long-side phase) > open[long-side candle lookback] on the configured signal bar of T1 (last completed bar)
+Short: XMA(close, short-side smoothing method, short-side smoothing length, short-side phase) <= open[short-side candle lookback] on the configured signal bar of T2 (last completed bar)

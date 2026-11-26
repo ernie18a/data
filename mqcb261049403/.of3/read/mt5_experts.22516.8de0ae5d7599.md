@@ -1,0 +1,6 @@
+Long: UltraFATL bullish line[0] > UltraFATL bearish line[0]
+Short: UltraFATL bullish line[0] < UltraFATL bearish line[0]
+Long: UltraFATL bullish line[1] > UltraFATL bearish line[1] AND UltraFATL bullish line[0] <= UltraFATL bearish line[0]
+Short: UltraFATL bullish line[1] < UltraFATL bearish line[1] AND UltraFATL bullish line[0] >= UltraFATL bearish line[0]
+Exit: long, UltraFATL bearish line[1] > UltraFATL bullish line[1]
+Exit: short, UltraFATL bearish line[1] < UltraFATL bullish line[1]

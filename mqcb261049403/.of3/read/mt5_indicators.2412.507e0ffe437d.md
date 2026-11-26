@@ -1,0 +1,2 @@
+Long: On the chart bar where a T1 bar begins, XMA(close, fast lookback, smoothing method, phase, T1, bar still forming) >= XMA(XMA(close, fast lookback, smoothing method, phase, T1, bar still forming), slow lookback, smoothing method, phase, T1, bar still forming)
+Short: On the chart bar where a T1 bar begins, XMA(close, fast lookback, smoothing method, phase, T1, bar still forming) < XMA(XMA(close, fast lookback, smoothing method, phase, T1, bar still forming), slow lookback, smoothing method, phase, T1, bar still forming)

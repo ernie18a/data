@@ -1,0 +1,4 @@
+Calculation: rising count = count of moving averages of the applied price, using the first method and phase and lookbacks initial lookback + i × lookback increment for i from zero through increment count, whose current-bar values exceed their preceding-bar values
+Calculation: non-rising count = count of the same moving averages whose current-bar values are less than or equal to their preceding-bar values
+Long: current-bar moving average of rising count using the second method, smoothing lookback, and second phase > current-bar moving average of non-rising count using the second method, smoothing lookback, and second phase
+Short: current-bar moving average of rising count using the second method, smoothing lookback, and second phase < current-bar moving average of non-rising count using the second method, smoothing lookback, and second phase

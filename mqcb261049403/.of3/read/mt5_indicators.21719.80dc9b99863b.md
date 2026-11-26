@@ -1,0 +1,3 @@
+Calculation: PWMA color = lime green when PWMA(close, lookback) > PWMA(close, lookback)[1], magenta when PWMA(close, lookback) < PWMA(close, lookback)[1], otherwise the previous PWMA color (initially gray)
+Long: PWMA color = lime green OR PWMA signal state n+1 bars ago = 1 AND PWMA signal state n bars ago = 0
+Short: PWMA color = magenta OR PWMA signal state n+1 bars ago = 0 AND PWMA signal state n bars ago = 1

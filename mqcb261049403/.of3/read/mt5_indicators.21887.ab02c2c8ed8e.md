@@ -1,0 +1,2 @@
+Long: XRSI histogram(RSI lookback, applied price, applied volume, smoothing method, smoothing lookback, smoothing phase) > upper inner level
+Short: XRSI histogram(RSI lookback, applied price, applied volume, smoothing method, smoothing lookback, smoothing phase) < lower inner level

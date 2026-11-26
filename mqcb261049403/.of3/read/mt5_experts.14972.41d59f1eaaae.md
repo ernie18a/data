@@ -1,0 +1,4 @@
+Long: RVI main (RVI lookback, T1, selected signal bar) crosses above RVI signal (RVI lookback, T1, selected signal bar), evaluated on T1 bars for completed signal bars or on chart bars using T1 values when the signal bar is forming
+Short: RVI main (RVI lookback, T1, selected signal bar) crosses below RVI signal (RVI lookback, T1, selected signal bar), evaluated on T1 bars for completed signal bars or on chart bars using T1 values when the signal bar is forming
+Long: RVI (RVI lookback, T1, selected signal bar) crosses above the upper level, evaluated on T1 bars for completed signal bars or on chart bars using T1 values when the signal bar is forming
+Short: RVI (RVI lookback, T1, selected signal bar) crosses below the lower level, evaluated on T1 bars for completed signal bars or on chart bars using T1 values when the signal bar is forming

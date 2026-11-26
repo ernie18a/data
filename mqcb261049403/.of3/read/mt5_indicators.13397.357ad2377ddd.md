@@ -1,0 +1,21 @@
+Calculation: XCCX = 0 when Smooth(AppliedPrice(applied-price selection, open, high, low, close) - Smooth(AppliedPrice(applied-price selection, open, high, low, close), price-smoothing lookback, price-smoothing phase, price-smoothing method), deviation-smoothing lookback, deviation-smoothing phase, deviation-smoothing method) = 0; otherwise 100 × Smooth(AppliedPrice(applied-price selection, open, high, low, close) - Smooth(AppliedPrice(applied-price selection, open, high, low, close), price-smoothing lookback, price-smoothing phase, price-smoothing method), deviation-smoothing lookback, deviation-smoothing phase, deviation-smoothing method) / Smooth(absolute(AppliedPrice(applied-price selection, open, high, low, close) - Smooth(AppliedPrice(applied-price selection, open, high, low, close), price-smoothing lookback, price-smoothing phase, price-smoothing method)), deviation-smoothing lookback, deviation-smoothing phase, deviation-smoothing method)
+Long: XCCX from the still-forming T1 bar, sampled on chart bars, > XCCX from the preceding T1 bar
+Short: XCCX from the still-forming T1 bar, sampled on chart bars, < XCCX from the preceding T1 bar
+Long: XCCX from the still-forming T2 bar, sampled on chart bars, > XCCX from the preceding T2 bar
+Short: XCCX from the still-forming T2 bar, sampled on chart bars, < XCCX from the preceding T2 bar
+Long: XCCX from the still-forming T3 bar, sampled on chart bars, > XCCX from the preceding T3 bar
+Short: XCCX from the still-forming T3 bar, sampled on chart bars, < XCCX from the preceding T3 bar
+Long: XCCX from the still-forming T4 bar, sampled on chart bars, > XCCX from the preceding T4 bar
+Short: XCCX from the still-forming T4 bar, sampled on chart bars, < XCCX from the preceding T4 bar
+Long: XCCX from the still-forming T5 bar, sampled on chart bars, > XCCX from the preceding T5 bar
+Short: XCCX from the still-forming T5 bar, sampled on chart bars, < XCCX from the preceding T5 bar
+Long: XCCX from the still-forming T6 bar, sampled on chart bars, > XCCX from the preceding T6 bar
+Short: XCCX from the still-forming T6 bar, sampled on chart bars, < XCCX from the preceding T6 bar
+Long: XCCX from the still-forming T7 bar, sampled on chart bars, > XCCX from the preceding T7 bar
+Short: XCCX from the still-forming T7 bar, sampled on chart bars, < XCCX from the preceding T7 bar
+Long: XCCX from the still-forming T8 bar, sampled on chart bars, > XCCX from the preceding T8 bar
+Short: XCCX from the still-forming T8 bar, sampled on chart bars, < XCCX from the preceding T8 bar
+Long: XCCX from the still-forming T9 bar, sampled on chart bars, > XCCX from the preceding T9 bar
+Short: XCCX from the still-forming T9 bar, sampled on chart bars, < XCCX from the preceding T9 bar
+Long: XCCX from the still-forming T10 bar, sampled on chart bars, > XCCX from the preceding T10 bar
+Short: XCCX from the still-forming T10 bar, sampled on chart bars, < XCCX from the preceding T10 bar

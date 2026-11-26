@@ -1,0 +1,3 @@
+Calculation: Rounded MA = M if |M - M[1]| > rounding parameter × price point OR |M - Rounded MA[1]| > rounding parameter × price point OR (M > Rounded MA[1] AND prior Rounded MA direction is rising) OR (M < Rounded MA[1] AND prior Rounded MA direction is falling); otherwise Rounded MA[1], where M is the moving average of the selected applied price using the selected smoothing method, lookback, and phase, and prior Rounded MA direction is the latest non-flat Rounded MA change direction carried through flat bars
+Long: Rounded MA = Rounded MA[1]
+Short: Rounded MA = Rounded MA[1]

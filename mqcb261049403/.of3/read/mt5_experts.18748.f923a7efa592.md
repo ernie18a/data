@@ -1,0 +1,2 @@
+Long: On each T1 bar close, close crosses above the upper PEMA Envelopes band shifted by its displacement parameter.
+Short: On each T1 bar close, close crosses below the lower PEMA Envelopes band shifted by its displacement parameter.

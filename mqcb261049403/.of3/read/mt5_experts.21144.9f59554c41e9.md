@@ -1,0 +1,4 @@
+Long: Slow XPeriodCandle (longer lookback) is bullish on the last completed T1 bar AND fast XPeriodCandle (shorter lookback) changes from nonbullish to bullish between the prior and last completed T1 bars; evaluate on chart bars using T1 values
+Short: Slow XPeriodCandle (longer lookback) is bearish on the last completed T1 bar AND fast XPeriodCandle (shorter lookback) changes from nonbearish to bearish between the prior and last completed T1 bars; evaluate on chart bars using T1 values
+Exit: long, slow XPeriodCandle is bearish on the last completed T1 bar OR fast XPeriodCandle is bearish on the last completed T1 bar; evaluate on chart bars using T1 values
+Exit: short, slow XPeriodCandle is bullish on the last completed T1 bar OR fast XPeriodCandle is bullish on the last completed T1 bar; evaluate on chart bars using T1 values

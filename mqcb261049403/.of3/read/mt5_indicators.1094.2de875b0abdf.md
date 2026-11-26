@@ -1,0 +1,2 @@
+Long: On chart bars taking values from T1, JFatl(close, parameters, T1, bar still forming) > JFatl(close, parameters, T1, prior bar) OR the same comparison using T2 OR T3 OR T4
+Short: On chart bars taking values from T1, JFatl(close, parameters, T1, bar still forming) < JFatl(close, parameters, T1, prior bar) OR the same comparison using T2 OR T3 OR T4

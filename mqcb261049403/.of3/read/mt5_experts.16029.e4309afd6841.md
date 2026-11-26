@@ -1,0 +1,4 @@
+Long: close > upper band of the ICAI channel(configured applied price, channel parameters)[channel shift] AND close[1] <= upper band of the ICAI channel(configured applied price, channel parameters)[channel shift + 1]
+Short: close < lower band of the ICAI channel(configured applied price, channel parameters)[channel shift] AND close[1] >= lower band of the ICAI channel(configured applied price, channel parameters)[channel shift + 1]
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

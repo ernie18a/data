@@ -1,0 +1,2 @@
+Long: CronexDeMarker main line on chart bars taking values from T1, current bar >= CronexDeMarker signal line on chart bars taking values from T1
+Short: CronexDeMarker main line on chart bars taking values from T1, current bar < CronexDeMarker signal line on chart bars taking values from T1

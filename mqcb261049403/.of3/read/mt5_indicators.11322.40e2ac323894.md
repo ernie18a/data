@@ -1,0 +1,3 @@
+Calculation: Bollinger width in points = (upper Bollinger Band(close, lookback, deviation) - middle Bollinger Band(close, lookback, deviation)) / point size
+Long: Bollinger width in points >= flat threshold AND Chaikin Oscillator(shorter lookback, longer lookback) > its signal line
+Short: Bollinger width in points >= flat threshold AND Chaikin Oscillator(shorter lookback, longer lookback) < its signal line

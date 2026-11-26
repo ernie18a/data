@@ -1,0 +1,2 @@
+Long: QQE(RSI(applied price, RSI lookback), smoothing method, smoothing lookback, smoothing phase, trailing multiplier) crosses above its trailing line on T1 bars at the configured bar offset; offset zero uses the still-forming T1 bar, and the signal is projected to chart bars
+Short: QQE(RSI(applied price, RSI lookback), smoothing method, smoothing lookback, smoothing phase, trailing multiplier) crosses below its trailing line on T1 bars at the configured bar offset; offset zero uses the still-forming T1 bar, and the signal is projected to chart bars

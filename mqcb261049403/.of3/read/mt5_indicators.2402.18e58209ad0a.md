@@ -1,0 +1,2 @@
+Long: MA(close, fast lookback, averaging method, phase) > MA(MA(close, fast lookback, averaging method, phase), slow lookback, averaging method, phase)
+Short: MA(close, fast lookback, averaging method, phase) < MA(MA(close, fast lookback, averaging method, phase), slow lookback, averaging method, phase)

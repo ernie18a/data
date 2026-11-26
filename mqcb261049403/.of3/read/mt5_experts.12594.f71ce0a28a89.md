@@ -1,0 +1,3 @@
+Calculation: NRatio = 100 * MA(100 * abs(applied price - NRTR(applied price, percentage offset)) / (applied price * percentage offset), smoothing method, smoothing lookback, smoothing phase) ^ exponent; calculated on T1 bars, with chart bars reading the selected T1 signal bar, which may be forming or last completed according to the signal-bar offset
+Long: NRatio crosses above the lower threshold in outward crossing mode OR crosses above the upper threshold in inward crossing mode
+Short: NRatio crosses below the upper threshold in outward crossing mode OR crosses below the lower threshold in inward crossing mode

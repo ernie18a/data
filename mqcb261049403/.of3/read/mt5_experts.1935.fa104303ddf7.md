@@ -1,0 +1,10 @@
+Long: CMO(close, lookback, chart bars, forming bar) > 0 AND CMO(close, lookback, chart bars, forming bar) != CMO(close, lookback, chart bars, last completed bar)
+Short: CMO(close, lookback, chart bars, forming bar) < 0 AND CMO(close, lookback, chart bars, forming bar) != CMO(close, lookback, chart bars, last completed bar)
+Long: on chart bars using T1 values, long entries enabled AND zero-breakthrough algorithm selected AND CMO(close, lookback, T1, last completed bar) > 0 AND CMO(close, lookback, T1, forming bar) <= 0
+Long: on chart bars using T1 values, long entries enabled AND direction-change algorithm selected AND CMO(close, lookback, T1, last completed bar) < CMO(close, lookback, T1, bar before last completed) AND CMO(close, lookback, T1, forming bar) >= CMO(close, lookback, T1, last completed bar)
+Short: on chart bars using T1 values, short entries enabled AND zero-breakthrough algorithm selected AND CMO(close, lookback, T1, last completed bar) < 0 AND CMO(close, lookback, T1, forming bar) >= 0
+Short: on chart bars using T1 values, short entries enabled AND direction-change algorithm selected AND CMO(close, lookback, T1, last completed bar) > CMO(close, lookback, T1, bar before last completed) AND CMO(close, lookback, T1, forming bar) <= CMO(close, lookback, T1, last completed bar)
+Exit: long, long exits enabled AND zero-breakthrough algorithm selected AND CMO(close, lookback, T1, last completed bar) < 0
+Exit: long, long exits enabled AND direction-change algorithm selected AND CMO(close, lookback, T1, last completed bar) > CMO(close, lookback, T1, bar before last completed)
+Exit: short, short exits enabled AND zero-breakthrough algorithm selected AND CMO(close, lookback, T1, last completed bar) > 0
+Exit: short, short exits enabled AND direction-change algorithm selected AND CMO(close, lookback, T1, last completed bar) < CMO(close, lookback, T1, bar before last completed)

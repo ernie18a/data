@@ -1,0 +1,10 @@
+Calculation: D = current value minus prior-bar value of the custom moving-average line of the selected applied price, using the selected smoothing method, main and plus lookbacks, and phase
+Calculation: R = sqrt(mean(square(D), lookback bars ending with the current bar))
+Long: round(D, instrument decimal digits + 2) > round(first threshold multiplier × R, instrument decimal digits + 2) AND round(D, instrument decimal digits + 2) <= round(second threshold multiplier × R, instrument decimal digits + 2)
+Long: round(D, instrument decimal digits + 2) > round(second threshold multiplier × R, instrument decimal digits + 2)
+Short: round(D, instrument decimal digits + 2) < -round(first threshold multiplier × R, instrument decimal digits + 2) AND round(D, instrument decimal digits + 2) >= -round(second threshold multiplier × R, instrument decimal digits + 2)
+Short: round(D, instrument decimal digits + 2) < -round(second threshold multiplier × R, instrument decimal digits + 2)
+Long: on chart bars using T1-calculated values from the T1 bar still forming, round(D, instrument decimal digits + 2) > round(first threshold multiplier × R, instrument decimal digits + 2) AND round(D, instrument decimal digits + 2) <= round(second threshold multiplier × R, instrument decimal digits + 2)
+Long: on chart bars using T1-calculated values from the T1 bar still forming, round(D, instrument decimal digits + 2) > round(second threshold multiplier × R, instrument decimal digits + 2)
+Short: on chart bars using T1-calculated values from the T1 bar still forming, round(D, instrument decimal digits + 2) < -round(first threshold multiplier × R, instrument decimal digits + 2) AND round(D, instrument decimal digits + 2) >= -round(second threshold multiplier × R, instrument decimal digits + 2)
+Short: on chart bars using T1-calculated values from the T1 bar still forming, round(D, instrument decimal digits + 2) < -round(second threshold multiplier × R, instrument decimal digits + 2)

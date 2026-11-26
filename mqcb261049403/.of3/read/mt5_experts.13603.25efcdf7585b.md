@@ -1,0 +1,4 @@
+Long: Ergodic Ticks Volume main line(T1, preceding completed bar) > signal line(T1, preceding completed bar) AND Ergodic Ticks Volume main line(T1, latest completed bar) <= signal line(T1, latest completed bar)
+Short: Ergodic Ticks Volume main line(T1, preceding completed bar) < signal line(T1, preceding completed bar) AND Ergodic Ticks Volume main line(T1, latest completed bar) >= signal line(T1, latest completed bar)
+Exit: short, Ergodic Ticks Volume main line(T1) > signal line(T1) on both the preceding and latest completed bars
+Exit: long, Ergodic Ticks Volume main line(T1) < signal line(T1) on both the preceding and latest completed bars

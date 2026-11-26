@@ -1,0 +1,4 @@
+Long: MA(close, shorter lookback L1, method M1)[1] > MA(close, longer lookback L1, method M2)[1] AND MA(close, shorter lookback L2, method M3)[1] > MA(close, longer lookback L2, method M4)[1] AND close[1] > MA(close, lookback L3, method M5)[1] AND close[2] <= MA(close, lookback L3, method M5)[2]
+Short: MA(close, shorter lookback S1, method M6)[1] < MA(close, longer lookback S1, method M7)[1] AND MA(close, shorter lookback S2, method M8)[1] < MA(close, longer lookback S2, method M9)[1] AND close[1] < MA(close, lookback S3, method M10)[1] AND close[2] >= MA(close, lookback S3, method M10)[2]
+Exit: long, low <= entry price - long stop-loss distance OR high >= entry price + long stop-loss distance × long take-profit-to-stop-loss ratio
+Exit: short, high >= entry price + short stop-loss distance OR low <= entry price - short stop-loss distance × short take-profit-to-stop-loss ratio

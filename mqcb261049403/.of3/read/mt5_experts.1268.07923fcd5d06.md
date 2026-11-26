@@ -1,0 +1,4 @@
+Long: long-entry permission enabled AND close(T1, last completed bar) > upper boundary of the XMA Ichimoku channel(T1, last completed bar) AND close(T1, bar still forming) <= upper boundary of the XMA Ichimoku channel(T1, bar still forming)
+Short: short-entry permission enabled AND close(T1, last completed bar) < lower boundary of the XMA Ichimoku channel(T1, last completed bar) AND close(T1, bar still forming) >= lower boundary of the XMA Ichimoku channel(T1, bar still forming)
+Exit: long, long-exit permission enabled AND close(T1, last completed bar) < lower boundary of the XMA Ichimoku channel(T1, last completed bar)
+Exit: short, short-exit permission enabled AND close(T1, last completed bar) > upper boundary of the XMA Ichimoku channel(T1, last completed bar)

@@ -1,0 +1,6 @@
+Calculation: Directional up line = TSICloud(applied price, first smoothing method, first lookback, first phase, second smoothing method, second lookback, second phase, trigger shift, T1 bars, last completed bar).buffer 0 when signal inversion is off; TSICloud(applied price, first smoothing method, first lookback, first phase, second smoothing method, second lookback, second phase, trigger shift, T1 bars, last completed bar).buffer 1 when signal inversion is on
+Calculation: Directional down line = TSICloud(applied price, first smoothing method, first lookback, first phase, second smoothing method, second lookback, second phase, trigger shift, T1 bars, last completed bar).buffer 1 when signal inversion is off; TSICloud(applied price, first smoothing method, first lookback, first phase, second smoothing method, second lookback, second phase, trigger shift, T1 bars, last completed bar).buffer 0 when signal inversion is on
+Long: Directional up line[1] > Directional down line[1] AND Directional up line <= Directional down line
+Short: Directional up line[1] < Directional down line[1] AND Directional up line >= Directional down line
+Exit: long, Directional up line < Directional down line
+Exit: short, Directional up line > Directional down line

@@ -1,0 +1,2 @@
+Long: PPO(selected applied price, fast smoothing method and phase, shorter lookback, slow smoothing method and phase, longer lookback) > smoothing(PPO, separate signal smoothing method and phase, signal lookback)
+Short: PPO(selected applied price, fast smoothing method and phase, shorter lookback, slow smoothing method and phase, longer lookback) < smoothing(PPO, separate signal smoothing method and phase, signal lookback)

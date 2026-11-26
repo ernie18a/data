@@ -1,0 +1,2 @@
+Long: XRSI histogram > XRSI histogram[1] OR (XRSI histogram = XRSI histogram[1] AND the most recent earlier unequal consecutive XRSI histogram pair is increasing)
+Short: XRSI histogram < XRSI histogram[1] OR (XRSI histogram = XRSI histogram[1] AND the most recent earlier unequal consecutive XRSI histogram pair is decreasing)

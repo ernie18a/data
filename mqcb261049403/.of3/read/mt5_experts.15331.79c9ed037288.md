@@ -1,0 +1,9 @@
+Calculation: Double JMA = JMA(JMA(applied price, first lookback, first phase), second lookback, second phase), calculated on T1 bars
+Calculation: Double JMA change = Double JMA - Double JMA[1], per T1 bar
+Calculation: Change RMS = sqrt(mean((Double JMA change)^2 over volatility lookback)), ending on the evaluated T1 bar
+Long: On chart bars using T1 values at the signal-bar offset (forming if the offset is zero, otherwise completed), Double JMA change > first threshold coefficient × Change RMS OR Double JMA change > second threshold coefficient × Change RMS
+Short: On chart bars using T1 values at the signal-bar offset (forming if the offset is zero, otherwise completed), Double JMA change < -first threshold coefficient × Change RMS OR Double JMA change < -second threshold coefficient × Change RMS
+Long: On chart bars using T1 values at the signal-bar offset and two older bars (forming if an offset is zero, otherwise completed), Double JMA[signal-bar offset + 2] > Double JMA[signal-bar offset + 1] AND Double JMA[signal-bar offset + 1] < Double JMA[signal-bar offset]
+Short: On chart bars using T1 values at the signal-bar offset and two older bars (forming if an offset is zero, otherwise completed), Double JMA[signal-bar offset + 2] < Double JMA[signal-bar offset + 1] AND Double JMA[signal-bar offset + 1] > Double JMA[signal-bar offset]
+Exit: long, on chart bars using T1 values at the signal-bar offset and one older bar (forming if an offset is zero, otherwise completed), Double JMA[signal-bar offset + 1] > Double JMA[signal-bar offset]
+Exit: short, on chart bars using T1 values at the signal-bar offset and one older bar (forming if an offset is zero, otherwise completed), Double JMA[signal-bar offset + 1] < Double JMA[signal-bar offset]

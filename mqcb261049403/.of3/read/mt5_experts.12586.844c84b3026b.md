@@ -1,0 +1,2 @@
+Long: on chart bars, TrendlessAg histogram(T1, forming bar) > TrendlessAg histogram(T1, last completed bar) AND TrendlessAg histogram(T1, last completed bar) < TrendlessAg histogram(T1, preceding completed bar)
+Short: on chart bars, TrendlessAg histogram(T1, forming bar) < TrendlessAg histogram(T1, last completed bar) AND TrendlessAg histogram(T1, last completed bar) > TrendlessAg histogram(T1, preceding completed bar)

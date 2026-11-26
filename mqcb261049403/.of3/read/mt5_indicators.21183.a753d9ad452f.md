@@ -1,0 +1,6 @@
+Calculation: Long-system NRTR = NRTR(high, low, close, long lookback, long digit adjustment, T1 bars)
+Calculation: Short-system NRTR = NRTR(high, low, close, short lookback, short digit adjustment, T2 bars)
+Long: long-entry permission is enabled AND long-system NRTR buy-signal output is nonempty at the long signal-bar offset on T1 (offset 0 uses the forming bar; positive offsets use completed bars)
+Short: short-entry permission is enabled AND short-system NRTR sell-signal output is nonempty at the short signal-bar offset on T2 (offset 0 uses the forming bar; positive offsets use completed bars)
+Exit: Long, long-exit permission is enabled AND long-system NRTR down-trend line is nonempty at the long signal-bar offset on T1 (offset 0 uses the forming bar; positive offsets use completed bars)
+Exit: Short, short-exit permission is enabled AND short-system NRTR up-trend line is nonempty at the short signal-bar offset on T2 (offset 0 uses the forming bar; positive offsets use completed bars)

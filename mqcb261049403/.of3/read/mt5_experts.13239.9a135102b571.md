@@ -1,0 +1,7 @@
+Calculation: Composite RSI oscillator = O_t, where W_t = factor A × RSI(close, lookback A) + factor B × RSI(close, lookback B) + factor B × RSI(close, lookback C) + factor D × RSI(close, lookback D) + factor E × RSI(close, lookback E); S_t = W_t/N_long + S_(t−1) × (N_long−1)/N_long; O_t = (W_t−S_t)/N_short + O_(t−1) × (N_short−1)/N_short; N_long is the longer smoothing length and N_short the shorter; initialize S_t = W_t/N_long and O_t = (W_t−S_t)/N_short
+Long: Composite RSI oscillator (chart bars, forming) != 0 AND Composite RSI oscillator (chart bars, forming) > Composite RSI oscillator (chart bars, previous bar)
+Short: Composite RSI oscillator (chart bars, forming) != 0 AND Composite RSI oscillator (chart bars, forming) < Composite RSI oscillator (chart bars, previous bar)
+Long: Composite RSI oscillator (T1 bars, last completed bar) > Composite RSI oscillator (T1 bars, 1 bar earlier) AND Composite RSI oscillator (T1 bars, 2 bars earlier) > Composite RSI oscillator (T1 bars, 1 bar earlier)
+Short: Composite RSI oscillator (T1 bars, last completed bar) < Composite RSI oscillator (T1 bars, 1 bar earlier) AND Composite RSI oscillator (T1 bars, 2 bars earlier) < Composite RSI oscillator (T1 bars, 1 bar earlier)
+Exit: long, Composite RSI oscillator (T1 bars, last completed bar) < Composite RSI oscillator (T1 bars, 1 bar earlier)
+Exit: short, Composite RSI oscillator (T1 bars, last completed bar) > Composite RSI oscillator (T1 bars, 1 bar earlier)

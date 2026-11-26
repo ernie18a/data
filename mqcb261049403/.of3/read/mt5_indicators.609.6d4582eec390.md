@@ -1,0 +1,2 @@
+Long: JFATL(T1, still-forming bar, projected onto chart bars)[signal-bar index] > JFATL(T1, still-forming bar, projected onto chart bars)[signal-bar index + 1]
+Short: JFATL(T1, still-forming bar, projected onto chart bars)[signal-bar index] < JFATL(T1, still-forming bar, projected onto chart bars)[signal-bar index + 1]

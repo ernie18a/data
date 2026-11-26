@@ -1,0 +1,5 @@
+Calculation: D = XDerivative(close, parameters, T1, last completed bar)
+Long: On each T1 bar close, (D[1] > 0 AND D[2] <= D[1] AND (D[0] <= 0 OR D[1] > D[0])) OR (D[1] < 0 AND D[2] < D[1] AND ((D[0] < 0 AND D[1] >= D[0]) OR D[0] = 0)
+Short: On each T1 bar close, (D[1] < 0 AND D[2] >= D[1] AND (D[0] >= 0 OR D[1] < D[0])) OR (D[1] > 0 AND D[2] > D[1] AND ((D[0] > 0 AND D[1] <= D[0]) OR D[0] = 0)
+Exit: Long, On each T1 bar close, (D[1] > 0 AND D[2] > D[1]) OR (D[1] < 0 AND D[2] >= D[1])
+Exit: Short, On each T1 bar close, (D[1] > 0 AND D[2] <= D[1]) OR (D[1] < 0 AND D[2] < D[1])

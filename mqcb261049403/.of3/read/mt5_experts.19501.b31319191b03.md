@@ -1,0 +1,2 @@
+Long: On T1 bars, at the selected signal-bar offset (forming when the offset is zero, completed otherwise), ATR(lookback) > ATR(lookback)[1] AND ATR(lookback)[1] < ATR(lookback)[2] AND close > open
+Short: On T1 bars, at the selected signal-bar offset (forming when the offset is zero, completed otherwise), ATR(lookback) > ATR(lookback)[1] AND ATR(lookback)[1] < ATR(lookback)[2] AND close < open

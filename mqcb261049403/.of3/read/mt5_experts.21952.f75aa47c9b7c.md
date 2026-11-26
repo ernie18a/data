@@ -1,0 +1,4 @@
+Long: XCCI Histogram Vol(T1, preceding completed bar) > lower upper threshold AND XCCI Histogram Vol(T1, preceding completed bar) <= higher upper threshold AND XCCI Histogram Vol(T1, latest completed bar) <= lower upper threshold
+Long: XCCI Histogram Vol(T1, preceding completed bar) > higher upper threshold AND XCCI Histogram Vol(T1, latest completed bar) <= higher upper threshold
+Short: XCCI Histogram Vol(T1, preceding completed bar) >= lower lower threshold AND XCCI Histogram Vol(T1, preceding completed bar) < higher lower threshold AND XCCI Histogram Vol(T1, latest completed bar) >= higher lower threshold
+Short: XCCI Histogram Vol(T1, preceding completed bar) < lower lower threshold AND XCCI Histogram Vol(T1, latest completed bar) >= lower lower threshold

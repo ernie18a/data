@@ -1,0 +1,4 @@
+Calculation: Bull average = smooth(mean of one-bar applied-price changes greater than the change threshold over lookback, or zero if none, smoothing method, smoothing length, smoothing phase), calculated on T1 bars
+Calculation: Bear average = smooth(mean of absolute one-bar applied-price changes less than negative change threshold over lookback, or zero if none, smoothing method, smoothing length, smoothing phase), calculated on T1 bars
+Long: At the start of each new T1 bar, Bull average of the T1 bar still forming, sampled on chart bars > Bear average of the T1 bar still forming, sampled on chart bars
+Short: At the start of each new T1 bar, Bull average of the T1 bar still forming, sampled on chart bars < Bear average of the T1 bar still forming, sampled on chart bars

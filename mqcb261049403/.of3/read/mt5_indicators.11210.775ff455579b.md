@@ -1,0 +1,6 @@
+Calculation: ChartRawHull = 2 × moving average(chart applied price, half chart lookback, chart smoothing method, chart phase) − moving average(chart applied price, chart lookback, chart smoothing method, chart phase)
+Long: ChartRawHull > HMA(chart applied price, chart lookback, chart smoothing method, chart phase)
+Short: ChartRawHull < HMA(chart applied price, chart lookback, chart smoothing method, chart phase)
+Calculation: T1RawHull = 2 × moving average(T1 applied price, half T1 lookback, T1 smoothing method, T1 phase, T1, forming bar) − moving average(T1 applied price, T1 lookback, T1 smoothing method, T1 phase, T1, forming bar)
+Long: On chart bars using T1 values, T1RawHull > HMA(T1 applied price, T1 lookback, T1 smoothing method, T1 phase, T1, forming bar)
+Short: On chart bars using T1 values, T1RawHull < HMA(T1 applied price, T1 lookback, T1 smoothing method, T1 phase, T1, forming bar)

@@ -1,0 +1,6 @@
+Long: at initialization, the configured initial direction is long AND the trading-hour filter is disabled or the current hour is within its configured window
+Short: at initialization, the configured initial direction is short AND the trading-hour filter is disabled or the current hour is within its configured window
+Long: the previous long trade is closed and its profit is at least zero OR the previous short trade is closed and its profit is below zero, AND the trading-hour filter is disabled or the current hour is within its configured window
+Short: the previous short trade is closed and its profit is at least zero OR the previous long trade is closed and its profit is below zero, AND the trading-hour filter is disabled or the current hour is within its configured window
+Exit: Long, trailing is disabled or the take-profit distance is shorter than the stop-loss distance, AND (high >= entry price + take-profit distance OR low <= entry price - stop-loss distance)
+Exit: Short, trailing is disabled or the take-profit distance is shorter than the stop-loss distance, AND (low <= entry price - take-profit distance OR high >= entry price + stop-loss distance)

@@ -1,0 +1,2 @@
+Long: (XRSX(close, lookback) != 0 AND XRSX(close, lookback) > XRSX(close, lookback)[1]) OR XRSX(close, lookback) > XXRSX(close, lookback)[1]
+Short: (XRSX(close, lookback) != 0 AND XRSX(close, lookback) < XRSX(close, lookback)[1]) OR XRSX(close, lookback) < XXRSX(close, lookback)[1]

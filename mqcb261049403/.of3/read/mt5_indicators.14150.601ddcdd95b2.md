@@ -1,0 +1,2 @@
+Long: FATL MACD(close, parameters) > 0 AND FATL MACD(close, parameters) != FATL MACD(close, parameters)[1]
+Short: FATL MACD(close, parameters) < 0 AND FATL MACD(close, parameters) != FATL MACD(close, parameters)[1]

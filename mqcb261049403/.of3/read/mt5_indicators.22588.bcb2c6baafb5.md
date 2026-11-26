@@ -1,0 +1,2 @@
+Long: histogram crosses above zero OR histogram direction changes upward OR histogram crosses above overbought level 1 OR histogram crosses above overbought level 2 OR histogram exits oversold area 1 upward OR histogram exits oversold area 2 upward
+Short: histogram crosses below zero OR histogram direction changes downward OR histogram crosses below oversold level 1 OR histogram crosses below oversold level 2 OR histogram exits overbought area 1 downward OR histogram exits overbought area 2 downward

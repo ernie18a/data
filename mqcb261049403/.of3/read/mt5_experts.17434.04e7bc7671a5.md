@@ -1,0 +1,2 @@
+Long: (in direct mode, Fractal Weight Oscillator on T1 bars using the last completed bar crosses above the lower threshold) OR (in against mode, Fractal Weight Oscillator on T1 bars using the last completed bar crosses below the upper threshold)
+Short: (in direct mode, Fractal Weight Oscillator on T1 bars using the last completed bar crosses below the upper threshold) OR (in against mode, Fractal Weight Oscillator on T1 bars using the last completed bar crosses above the lower threshold)

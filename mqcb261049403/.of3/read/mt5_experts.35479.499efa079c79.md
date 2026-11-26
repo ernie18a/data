@@ -1,0 +1,4 @@
+Calculation: Short reference = sampled bid and time at initialization, after a drop of at least ShortMovePips within ShortWindow, or when elapsed time reaches ShortWindow; evaluate at each SamplingInterval
+Calculation: Long reference = sampled ask and time at initialization, after a rise of at least LongMovePips within LongWindow, or when elapsed time reaches LongWindow; evaluate at each SamplingInterval
+Short: Short reference bid - current bid >= ShortMovePips AND elapsed time since Short reference <= ShortWindow
+Long: Current ask - Long reference ask >= LongMovePips AND elapsed time since Long reference <= LongWindow

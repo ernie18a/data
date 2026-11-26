@@ -1,0 +1,4 @@
+Calculation: Ichimoku oscillator = Chikou Span - Senkou Span A - Tenkan-sen + Kijun-sen on T1 bars
+Calculation: Ichimoku histogram state on each completed T1 bar = positive rising if oscillator > 0 AND oscillator > oscillator[1]; positive falling if oscillator > 0 AND oscillator < oscillator[1]; unchanged if oscillator = 0 OR oscillator = oscillator[1]; negative falling if oscillator < 0 AND oscillator < oscillator[1]; negative rising if oscillator < 0 AND oscillator > oscillator[1]
+Long: (state[1] = positive rising OR state[1] = negative falling) AND (state = unchanged OR state = positive falling OR state = negative rising) on the last completed T1 bar
+Short: (state[1] = negative rising OR state[1] = positive falling) AND (state = positive rising OR state = positive falling OR state = negative falling) on the last completed T1 bar

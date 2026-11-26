@@ -1,0 +1,2 @@
+Long: FastTrend(previous bar) > SlowTrend(previous bar) AND FastTrend(current bar) < SlowTrend(current bar)
+Short: FastTrend(previous bar) < SlowTrend(previous bar) AND FastTrend(current bar) > SlowTrend(current bar)

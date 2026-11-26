@@ -1,0 +1,2 @@
+Long: On T1 bars, Aroon Oscillator(period) on the last completed bar crosses above the lower-threshold parameter.
+Short: On T1 bars, Aroon Oscillator(period) on the last completed bar crosses below the upper-threshold parameter.

@@ -1,0 +1,2 @@
+Long: Trend Intensity Index on T1, sampled on chart bars at the configured signal-bar offset, > upper threshold AND the value one chart bar earlier <= upper threshold
+Short: Trend Intensity Index on T1, sampled on chart bars at the configured signal-bar offset, < lower threshold AND the value one chart bar earlier >= lower threshold

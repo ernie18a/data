@@ -1,0 +1,5 @@
+Calculation: Rank correlation = Spearman rank correlation coefficient(applied price, lookback)
+Long: Rank correlation > 0 AND Rank correlation != Rank correlation[1]
+Short: Rank correlation < 0 AND Rank correlation != Rank correlation[1]
+Long: Rank correlation(T1, bar still forming, calculated on T1 bars and mapped to chart bars) > 0 AND Rank correlation(T1, bar still forming, calculated on T1 bars and mapped to chart bars) != Rank correlation(T1, last completed bar, calculated on T1 bars and mapped to chart bars)
+Short: Rank correlation(T1, bar still forming, calculated on T1 bars and mapped to chart bars) < 0 AND Rank correlation(T1, bar still forming, calculated on T1 bars and mapped to chart bars) != Rank correlation(T1, last completed bar, calculated on T1 bars and mapped to chart bars)

@@ -1,0 +1,2 @@
+Long: At each T1 bar close, Moving Average(close, lookback, T1, bar still forming) > Moving Average(close, lookback, T1, last completed bar) AND Moving Average(close, lookback, T1, last completed bar) < Moving Average(close, lookback, T1, second-last completed bar)
+Short: At each T1 bar close, Moving Average(close, lookback, T1, bar still forming) < Moving Average(close, lookback, T1, last completed bar) AND Moving Average(close, lookback, T1, last completed bar) > Moving Average(close, lookback, T1, second-last completed bar)

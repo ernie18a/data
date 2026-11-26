@@ -1,0 +1,6 @@
+Calculation: Fibo candle trend = initialize previous trend to 0 at the earliest calculated T1 bar; on each T1 bar set trend to +1 when (open > close AND (previous trend >= 0 OR (highest(high, lookback, T1 bars ending at this bar) - lowest(low, lookback, T1 bars ending at this bar)) * threshold fraction >= close - lowest(low, lookback, T1 bars ending at this bar))) OR (open <= close AND previous trend > 0 AND (highest(high, lookback, T1 bars ending at this bar) - lowest(low, lookback, T1 bars ending at this bar)) * threshold fraction < highest(high, lookback, T1 bars ending at this bar) - close); otherwise set trend to -1
+Calculation: Fibo candle color = 1 when Fibo candle trend = +1 AND open != close; otherwise 0
+Long: Fibo candle color on the last completed T1 bar = 1 AND Fibo candle color on the preceding completed T1 bar = 0
+Short: Fibo candle color on the last completed T1 bar = 0 AND Fibo candle color on the preceding completed T1 bar = 1
+Exit: long, Fibo candle color on the T1 bar preceding the signal bar = 1
+Exit: short, Fibo candle color on the T1 bar preceding the signal bar = 0

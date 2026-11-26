@@ -1,0 +1,2 @@
+Long: HMA(close, lookback, T1 bars, forming bar) > HMA(close, lookback, T1 bars, last completed bar) AND HMA(close, lookback, T1 bars, last completed bar) < HMA(close, lookback, T1 bars, previous completed bar)
+Short: HMA(close, lookback, T1 bars, forming bar) < HMA(close, lookback, T1 bars, last completed bar) AND HMA(close, lookback, T1 bars, last completed bar) > HMA(close, lookback, T1 bars, previous completed bar)

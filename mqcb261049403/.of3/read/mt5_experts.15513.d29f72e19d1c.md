@@ -1,0 +1,2 @@
+Long: xDPO candle color(T1, last completed bar) = light green AND xDPO candle color(T1, preceding completed bar) != light green
+Short: xDPO candle color(T1, last completed bar) = orange AND xDPO candle color(T1, preceding completed bar) != orange

@@ -1,0 +1,6 @@
+Calculation: TSI = 100 × moving average(moving average(Momentum(Williams %R(Williams %R lookback), momentum lookback), first smoothing lookback, smoothing method, phase), second smoothing lookback, smoothing method, phase) / moving average(moving average(abs(Momentum(Williams %R(Williams %R lookback), momentum lookback)), first smoothing lookback, smoothing method, phase), second smoothing lookback, smoothing method, phase); the second smoothing lookback is longer than the first; if the denominator is zero, set TSI to zero, then replace zero TSI with a positive epsilon
+Calculation: TSI signal = moving average(TSI, signal smoothing lookback, smoothing method, phase); the signal smoothing lookback is longer than the second smoothing lookback; replace zero with a positive epsilon
+Long: TSI > TSI signal on chart bars
+Short: TSI < TSI signal on chart bars
+Long: TSI > TSI signal on the still-forming T1 bar, with values copied onto chart bars
+Short: TSI < TSI signal on the still-forming T1 bar, with values copied onto chart bars

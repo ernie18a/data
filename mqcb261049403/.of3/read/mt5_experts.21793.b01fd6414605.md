@@ -1,0 +1,2 @@
+Long: long-entry permission enabled AND UltraMFI up line(T1, last completed bar) > UltraMFI down line(T1, last completed bar) AND UltraMFI up line(T1, bar still forming) < UltraMFI down line(T1, bar still forming)
+Short: short-entry permission enabled AND UltraMFI up line(T1, last completed bar) < UltraMFI down line(T1, last completed bar) AND UltraMFI up line(T1, bar still forming) > UltraMFI down line(T1, bar still forming)

@@ -1,0 +1,3 @@
+Calculation: Histogram = Smooth(EMA((high - highest high over the preceding bars at the shortest lookback) + (high - highest high over the preceding bars at the middle lookback) + (high - highest high over the preceding bars at the longest lookback), EMA lookback) - EMA((lowest low over the preceding bars at the shortest lookback - low) + (lowest low over the preceding bars at the middle lookback - low) + (lowest low over the preceding bars at the longest lookback - low), same EMA lookback), selected smoothing method, phase, smoothing lookback)
+Long: at chart-bar close, Histogram[1] < Histogram[2] AND Histogram[0] > Histogram[1]
+Short: at chart-bar close, Histogram[1] > Histogram[2] AND Histogram[0] < Histogram[1]

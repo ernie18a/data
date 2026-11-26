@@ -1,0 +1,3 @@
+Calculation: Recursive percentage channel = on completed T1 bars, initialize middle to the preceding close; thereafter set middle to close × (1 − p) if that exceeds prior middle, else to close × (1 + p) if that is below prior middle, else retain prior middle; upper = middle × (1 + p), lower = middle × (1 − p), where p is the percentage parameter divided by 100
+Long: close crosses above the upper band of the recursive percentage channel shifted by the channel-lag parameter in T1 bars, using completed T1 bars
+Short: close crosses below the lower band of the recursive percentage channel shifted by the channel-lag parameter in T1 bars, using completed T1 bars

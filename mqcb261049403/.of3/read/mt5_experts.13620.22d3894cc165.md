@@ -1,0 +1,2 @@
+Long: On chart bars using T1 indicator values, the main line crosses below the signal line: main line on the T1 bar still forming < signal line on the T1 bar still forming AND main line on the last completed T1 bar > signal line on the last completed T1 bar
+Short: On chart bars using T1 indicator values, the main line crosses above the signal line: main line on the T1 bar still forming > signal line on the T1 bar still forming AND main line on the last completed T1 bar < signal line on the last completed T1 bar

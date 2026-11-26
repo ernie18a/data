@@ -1,0 +1,4 @@
+Calculation: Fast = moving average of Force Index(close, volume) with the shorter lookback and its own MA method on T1 bars
+Calculation: Slow = moving average of Force Index(close, volume) with the longer lookback and its own MA method on T1 bars
+Long: on each T1 bar at close, open[3] > close[3] AND open[2] < close[2] AND open[1] > close[1] AND Fast[4] > Fast[3] AND Fast[3] < Fast[2] AND Fast[2] > Fast[1] AND Slow[4] > Slow[3] AND Slow[3] < Slow[2] AND Slow[2] > Slow[1] AND ((Fast[3] > Fast[1] AND Slow[3] < Slow[1]) OR (Fast[3] < Fast[1] AND Slow[3] > Slow[1]))
+Short: on each T1 bar at close, open[3] < close[3] AND open[2] > close[2] AND open[1] < close[1] AND Fast[4] < Fast[3] AND Fast[3] > Fast[2] AND Fast[2] < Fast[1] AND Slow[4] < Slow[3] AND Slow[3] > Slow[2] AND Slow[2] < Slow[1] AND ((Fast[3] > Fast[1] AND Slow[3] < Slow[1]) OR (Fast[3] < Fast[1] AND Slow[3] > Slow[1]))

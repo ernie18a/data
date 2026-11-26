@@ -1,0 +1,2 @@
+Long: at bar close, the most recent prior signal is not long AND SMA(close, lookback) <= SMA(close, lookback)[shift] AND close >= close[shift] AND close <= close[shift + lookback] AND close < open
+Short: at bar close, the most recent prior signal is not short AND SMA(close, lookback) >= SMA(close, lookback)[shift] AND close <= close[shift] AND close >= close[shift + lookback] AND close > open

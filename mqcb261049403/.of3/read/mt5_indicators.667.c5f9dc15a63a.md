@@ -1,0 +1,6 @@
+Long: On chart bars using T1 values, X2MA(close, its parameters, T1, completed bar 3 bars ago) >= X2MA(close, its parameters, T1, completed bar 2 bars ago)
+Short: On chart bars using T1 values, X2MA(close, its parameters, T1, completed bar 3 bars ago) < X2MA(close, its parameters, T1, completed bar 2 bars ago)
+Long: On chart bars using T1 values, X2MA(close, its parameters, T1, completed bar 2 bars ago) >= X2MA(close, its parameters, T1, last completed bar)
+Short: On chart bars using T1 values, X2MA(close, its parameters, T1, completed bar 2 bars ago) < X2MA(close, its parameters, T1, last completed bar)
+Long: On chart bars using T1 values, X2MA(close, its parameters, T1, last completed bar) >= X2MA(close, its parameters, T1, bar still forming)
+Short: On chart bars using T1 values, X2MA(close, its parameters, T1, last completed bar) < X2MA(close, its parameters, T1, bar still forming)

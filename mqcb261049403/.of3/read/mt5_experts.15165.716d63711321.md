@@ -1,0 +1,5 @@
+Calculation: Laguerre state = 1 when Laguerre RSI(selected OHLC price field, smoothing parameter) > upper-level parameter; 2 when it is < lower-level parameter; otherwise, when it is > middle-level parameter, 2 if its prior value is > upper-level parameter, the prior state if its prior value is > middle-level parameter, and 1 otherwise; otherwise, 2 if its prior value is > middle-level parameter, the prior state if its prior value is >= lower-level parameter, and 1 otherwise; calculated on completed T1 bars
+Long: Laguerre state on the latest completed T1 bar = 1 AND Laguerre state on the preceding completed T1 bar = 2
+Short: Laguerre state on the latest completed T1 bar = 2 AND Laguerre state on the preceding completed T1 bar = 1
+Exit: long, Laguerre state on the latest completed T1 bar = 2
+Exit: short, Laguerre state on the latest completed T1 bar = 1

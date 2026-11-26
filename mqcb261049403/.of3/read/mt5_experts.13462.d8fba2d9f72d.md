@@ -1,0 +1,2 @@
+Long: On chart bars using T1 values, Schaff Trend Cycle(MFI(high, low, close, volume), T1, last completed bar) > upper threshold AND Schaff Trend Cycle(MFI(high, low, close, volume), T1, bar still forming) <= upper threshold
+Short: On chart bars using T1 values, Schaff Trend Cycle(MFI(high, low, close, volume), T1, last completed bar) < lower threshold AND Schaff Trend Cycle(MFI(high, low, close, volume), T1, bar still forming) >= lower threshold

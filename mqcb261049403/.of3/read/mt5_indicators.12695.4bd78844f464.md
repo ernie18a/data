@@ -1,0 +1,3 @@
+Calculation: ratio oscillator = 100 × [moving average(100 × abs(applied price − NRTR(applied price, offset parameter)) / (applied price × offset parameter), smoothing method, smoothing lookback, smoothing phase)]^power parameter; calculated on T1 bars including the still-forming bar, with values read on chart bars
+Long: inward mode and the latest ratio oscillator signal crossed above the upper level, OR outward mode and the latest ratio oscillator signal crossed above the lower level
+Short: inward mode and the latest ratio oscillator signal crossed below the lower level, OR outward mode and the latest ratio oscillator signal crossed below the upper level

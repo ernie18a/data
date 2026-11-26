@@ -1,0 +1,2 @@
+Long: Stochastic Chaikin's Volatility on T1 bars, last completed bar, crosses below its signal line from above.
+Short: Stochastic Chaikin's Volatility on T1 bars, last completed bar, crosses above its signal line from below.

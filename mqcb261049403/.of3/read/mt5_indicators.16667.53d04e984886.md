@@ -1,0 +1,4 @@
+Long: RSX(close, lookback) > RSX(close, lookback)[1]
+Short: RSX(close, lookback) < RSX(close, lookback)[1]
+Long: RSX(close, lookback, T1, chart bar at selected signal offset; mapped T1 bar forming if current, otherwise last completed) > RSX(close, lookback, T1, chart bar one bar before selected signal offset) AND RSX(close, lookback, T1, chart bar at selected signal offset; mapped T1 bar forming if current, otherwise last completed) > upper level
+Short: RSX(close, lookback, T1, chart bar at selected signal offset; mapped T1 bar forming if current, otherwise last completed) < RSX(close, lookback, T1, chart bar one bar before selected signal offset) AND RSX(close, lookback, T1, chart bar at selected signal offset; mapped T1 bar forming if current, otherwise last completed) < lower level

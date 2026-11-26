@@ -1,0 +1,10 @@
+Calculation: Chart price-channel midpoint = (Highest(chart upper price source, chart upper lookback) + Lowest(chart lower price source, chart lower lookback)) / 2
+Calculation: Chart smoothed midpoint = moving average(Chart price-channel midpoint, chart smoothing method, chart smoothing lookback, chart phase parameter)
+Calculation: Chart smoothed-midpoint change = Chart smoothed midpoint - Chart smoothed midpoint[1]
+Calculation: T1 price-channel midpoint = (Highest(T1 upper price source, T1 upper lookback, T1 bars including the still-forming bar) + Lowest(T1 lower price source, T1 lower lookback, T1 bars including the still-forming bar)) / 2
+Calculation: T1 smoothed midpoint on chart bars = moving average(T1 price-channel midpoint, T1 smoothing method, T1 smoothing lookback, T1 phase parameter), calculated on T1 bars and sampled by chart bars from the still-forming T1 bar
+Calculation: T1 smoothed-midpoint change on chart bars = T1 smoothed midpoint on chart bars - its value one T1 bar ago
+Long: Chart smoothed midpoint > Chart smoothed midpoint[1] OR Chart smoothed-midpoint change > chart threshold multiplier × StandardDeviation(Chart smoothed-midpoint change, chart volatility lookback)
+Short: Chart smoothed midpoint < Chart smoothed midpoint[1] OR Chart smoothed-midpoint change < -chart threshold multiplier × StandardDeviation(Chart smoothed-midpoint change, chart volatility lookback)
+Long: T1 smoothed midpoint on chart bars > its value one T1 bar ago OR T1 smoothed-midpoint change on chart bars > T1 threshold multiplier × StandardDeviation(T1 smoothed-midpoint change, T1 volatility lookback, T1 bars including the still-forming bar)
+Short: T1 smoothed midpoint on chart bars < its value one T1 bar ago OR T1 smoothed-midpoint change on chart bars < -T1 threshold multiplier × StandardDeviation(T1 smoothed-midpoint change, T1 volatility lookback, T1 bars including the still-forming bar)

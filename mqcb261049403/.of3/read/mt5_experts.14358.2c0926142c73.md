@@ -1,0 +1,4 @@
+Calculation: LeManTrend Bulls = EMA(sum of high minus the highest high over each of three separate, increasingly longer lookbacks of preceding T1 bars, EMA lookback)
+Calculation: LeManTrend Bears = EMA(sum of the lowest low over each of three separate, increasingly longer lookbacks of preceding T1 bars minus low, EMA lookback)
+Long: LeManTrend Bears on the last completed T1 bar > LeManTrend Bulls on the last completed T1 bar AND LeManTrend Bears on the still-forming T1 bar <= LeManTrend Bulls on the still-forming T1 bar
+Short: LeManTrend Bears on the last completed T1 bar < LeManTrend Bulls on the last completed T1 bar AND LeManTrend Bears on the still-forming T1 bar >= LeManTrend Bulls on the still-forming T1 bar

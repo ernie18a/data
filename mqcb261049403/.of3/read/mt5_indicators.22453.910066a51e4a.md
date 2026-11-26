@@ -1,0 +1,2 @@
+Long: Smoothed Williams %R histogram > its value one chart bar ago OR smoothed Williams %R histogram calculated on T1 bars using the still-forming T1 bar and sampled on chart bars > its value one chart bar ago
+Short: Smoothed Williams %R histogram < its value one chart bar ago OR smoothed Williams %R histogram calculated on T1 bars using the still-forming T1 bar and sampled on chart bars < its value one chart bar ago

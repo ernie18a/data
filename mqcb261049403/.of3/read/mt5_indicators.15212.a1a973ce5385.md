@@ -1,0 +1,10 @@
+Calculation: A = the current selected moving average of 100 × (selected applied price − selected applied price[i_slowing]) / i_slowing minus its previous value; use XMA_Method, XLength, and XPhase
+Long: round(A, price precision + 2) > round(lower multiplier × standard deviation(A, std_period), price precision + 2) AND round(A, price precision + 2) <= round(higher multiplier × standard deviation(A, std_period), price precision + 2)
+Long: round(A, price precision + 2) > round(higher multiplier × standard deviation(A, std_period), price precision + 2)
+Short: round(A, price precision + 2) < -round(lower multiplier × standard deviation(A, std_period), price precision + 2) AND round(A, price precision + 2) >= -round(higher multiplier × standard deviation(A, std_period), price precision + 2)
+Short: round(A, price precision + 2) < -round(higher multiplier × standard deviation(A, std_period), price precision + 2)
+Calculation: A_T1 = the same calculation as A on T1 bars, using the T1 bar still forming; sample onto chart bars at the start of each T1 bar and hold until the next T1 bar
+Long: round(A_T1, price precision + 2) > round(lower multiplier × standard deviation(A_T1, std_period, T1, bar still forming), price precision + 2) AND round(A_T1, price precision + 2) <= round(higher multiplier × standard deviation(A_T1, std_period, T1, bar still forming), price precision + 2)
+Long: round(A_T1, price precision + 2) > round(higher multiplier × standard deviation(A_T1, std_period, T1, bar still forming), price precision + 2)
+Short: round(A_T1, price precision + 2) < -round(lower multiplier × standard deviation(A_T1, std_period, T1, bar still forming), price precision + 2) AND round(A_T1, price precision + 2) >= -round(higher multiplier × standard deviation(A_T1, std_period, T1, bar still forming), price precision + 2)
+Short: round(A_T1, price precision + 2) < -round(higher multiplier × standard deviation(A_T1, std_period, T1, bar still forming), price precision + 2)

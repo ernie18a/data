@@ -1,0 +1,2 @@
+Long: predicted direction score > direction threshold AND predicted target movement >= minimum target distance AND no long position is open
+Short: predicted direction score < -direction threshold AND predicted target movement <= -minimum target distance AND no short position is open

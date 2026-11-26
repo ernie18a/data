@@ -1,0 +1,7 @@
+Calculation: Smoothed Balance of Power = Smooth(100 * (close - open) / (high - low if nonzero, otherwise minimum price increment), smoothing method, phase, lookback), calculated on T1 bars
+Long: Smoothed Balance of Power(T1, current/forming bar) > 0
+Short: Smoothed Balance of Power(T1, current/forming bar) < 0
+Long: long entries enabled AND Smoothed Balance of Power(T1, current/forming bar) > Smoothed Balance of Power(T1, last completed bar) AND Smoothed Balance of Power(T1, last completed bar) < Smoothed Balance of Power(T1, two completed bars ago)
+Short: short entries enabled AND Smoothed Balance of Power(T1, current/forming bar) < Smoothed Balance of Power(T1, last completed bar) AND Smoothed Balance of Power(T1, last completed bar) > Smoothed Balance of Power(T1, two completed bars ago)
+Exit: long, (long exits enabled AND Smoothed Balance of Power(T1, last completed bar) > Smoothed Balance of Power(T1, two completed bars ago) AND (short entries disabled OR Smoothed Balance of Power(T1, current/forming bar) >= Smoothed Balance of Power(T1, last completed bar))) OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, (short exits enabled AND Smoothed Balance of Power(T1, last completed bar) < Smoothed Balance of Power(T1, two completed bars ago) AND (long entries disabled OR Smoothed Balance of Power(T1, current/forming bar) <= Smoothed Balance of Power(T1, last completed bar))) OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

@@ -1,0 +1,5 @@
+Calculation: MACD change = (fast moving average(applied price, shorter lookback, fast averaging method, fast phase, T1, last completed bar) - slow moving average(applied price, longer lookback, slow averaging method, slow phase, T1, last completed bar)) - (fast moving average(applied price, shorter lookback, fast averaging method, fast phase, T1, preceding completed bar) - slow moving average(applied price, longer lookback, slow averaging method, slow phase, T1, preceding completed bar))
+Long: MACD change on the last completed T1 bar > 0 AND MACD change on the preceding completed T1 bar <= 0
+Short: MACD change on the last completed T1 bar < 0 AND MACD change on the preceding completed T1 bar >= 0
+Exit: long, MACD change on the last completed T1 bar < 0 AND MACD change on the preceding completed T1 bar < 0
+Exit: short, MACD change on the last completed T1 bar > 0 AND MACD change on the preceding completed T1 bar > 0

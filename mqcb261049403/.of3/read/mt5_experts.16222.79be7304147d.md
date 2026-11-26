@@ -1,0 +1,4 @@
+Long: RVIDiff(OHLC, parameters, T1, last completed bar) < RVIDiff(OHLC, parameters, T1, preceding completed bar) AND RVIDiff(OHLC, parameters, T1, current forming bar) >= RVIDiff(OHLC, parameters, T1, last completed bar)
+Short: RVIDiff(OHLC, parameters, T1, last completed bar) > RVIDiff(OHLC, parameters, T1, preceding completed bar) AND RVIDiff(OHLC, parameters, T1, current forming bar) <= RVIDiff(OHLC, parameters, T1, last completed bar)
+Exit: Short, RVIDiff(OHLC, parameters, T1, last completed bar) < RVIDiff(OHLC, parameters, T1, preceding completed bar)
+Exit: Long, RVIDiff(OHLC, parameters, T1, last completed bar) > RVIDiff(OHLC, parameters, T1, preceding completed bar)

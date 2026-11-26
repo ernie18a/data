@@ -1,0 +1,4 @@
+Long: At T1 bar close, i-SpectrAnalysis_WPR(T1, still-forming bar) >= i-SpectrAnalysis_WPR(T1, last completed bar) AND i-SpectrAnalysis_WPR(T1, last completed bar) < i-SpectrAnalysis_WPR(T1, two bars ago)
+Short: At T1 bar close, i-SpectrAnalysis_WPR(T1, still-forming bar) <= i-SpectrAnalysis_WPR(T1, last completed bar) AND i-SpectrAnalysis_WPR(T1, last completed bar) > i-SpectrAnalysis_WPR(T1, two bars ago)
+Exit: long, At T1 bar close, i-SpectrAnalysis_WPR(T1, last completed bar) > i-SpectrAnalysis_WPR(T1, two bars ago)
+Exit: short, At T1 bar close, i-SpectrAnalysis_WPR(T1, last completed bar) < i-SpectrAnalysis_WPR(T1, two bars ago)

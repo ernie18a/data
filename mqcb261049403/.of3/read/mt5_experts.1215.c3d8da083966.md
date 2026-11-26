@@ -1,0 +1,3 @@
+Calculation: Zero Point = XMA(volume, shorter lookback, smoothing method, phase) × (XMA(applied price, shorter lookback, smoothing method, phase) − XMA(applied price, longer lookback, smoothing method, phase)) / 2, computed on T1 bars; the longer lookback is twice the shorter lookback
+Long: Zero Point on the previous T1 bar ≤ 0 AND Zero Point on the last completed T1 bar > 0
+Short: Zero Point on the previous T1 bar ≥ 0 AND Zero Point on the last completed T1 bar < 0

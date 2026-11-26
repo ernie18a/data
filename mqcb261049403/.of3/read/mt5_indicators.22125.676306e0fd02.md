@@ -1,0 +1,6 @@
+Calculation: Chart smoothed Hull = MA(2 * MA(chart applied price, floor(chart Hull lookback / 2), chart smoothing method, chart phase) - MA(chart applied price, chart Hull lookback, chart smoothing method, chart phase), chart smoothing lookback, chart smoothing method, chart phase)
+Long: Chart smoothed Hull > MA(Chart smoothed Hull, floor(sqrt(chart Hull lookback)), chart smoothing method, chart phase)
+Short: Chart smoothed Hull < MA(Chart smoothed Hull, floor(sqrt(chart Hull lookback)), chart smoothing method, chart phase)
+Calculation: T1 smoothed Hull = MA(2 * MA(T1 applied price, floor(T1 Hull lookback / 2), T1 smoothing method, T1 phase, T1, current forming bar) - MA(T1 applied price, T1 Hull lookback, T1 smoothing method, T1 phase, T1, current forming bar), T1 smoothing lookback, T1 smoothing method, T1 phase, T1, current forming bar), calculated on T1 bars and carried to chart bars
+Long: T1 smoothed Hull > MA(T1 smoothed Hull, floor(sqrt(T1 Hull lookback)), T1 smoothing method, T1 phase, T1, current forming bar) on chart bars
+Short: T1 smoothed Hull < MA(T1 smoothed Hull, floor(sqrt(T1 Hull lookback)), T1 smoothing method, T1 phase, T1, current forming bar) on chart bars

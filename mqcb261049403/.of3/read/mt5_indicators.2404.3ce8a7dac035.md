@@ -1,0 +1,2 @@
+Long: upward Cronexao output > downward Cronexao output OR (upward Cronexao output = downward Cronexao output AND prior trend is long)
+Short: upward Cronexao output < downward Cronexao output OR (upward Cronexao output = downward Cronexao output AND prior trend is short)

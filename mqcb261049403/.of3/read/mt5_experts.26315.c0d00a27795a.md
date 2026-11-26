@@ -1,0 +1,2 @@
+Long: SMA(close, shorter lookback) crosses above SMA(close, longer lookback) on the last completed chart bar AND no open long or short positions
+Short: SMA(close, shorter lookback) crosses below SMA(close, longer lookback) on the last completed chart bar AND no open long or short positions

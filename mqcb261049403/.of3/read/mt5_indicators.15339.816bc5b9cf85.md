@@ -1,0 +1,3 @@
+Calculation: smoothed price deviation = smooth(applied price - smooth(applied price, first smoothing method, first lookback, first phase), second smoothing method, second lookback, second phase)
+Long: smoothed price deviation[2] > smoothed price deviation[1] AND smoothed price deviation[0] > smoothed price deviation[1]
+Short: smoothed price deviation[2] < smoothed price deviation[1] AND smoothed price deviation[0] < smoothed price deviation[1]

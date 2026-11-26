@@ -1,0 +1,3 @@
+Calculation: Smoothed-price rate of change = (MA(applied price, shorter lookback, smoothing method, smoothing phase) - MA(applied price, shorter lookback, smoothing method, smoothing phase)[1]) / MA(applied price, shorter lookback, smoothing method, smoothing phase)[1]
+Long: On chart bars taking values from the still-forming T1 bar, Smoothed-price rate of change(T1, still-forming bar) > Smoothed-price rate of change(T1, last completed bar), OR the same condition for T2, OR T3, OR T4, OR T5, OR T6, OR T7
+Short: On chart bars taking values from the still-forming T1 bar, Smoothed-price rate of change(T1, still-forming bar) < Smoothed-price rate of change(T1, last completed bar), OR the same condition for T2, OR T3, OR T4, OR T5, OR T6, OR T7

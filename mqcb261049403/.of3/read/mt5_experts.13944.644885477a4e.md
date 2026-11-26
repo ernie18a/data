@@ -1,0 +1,4 @@
+Long: XDerivative(close, parameter, T1, still-forming bar) > XDerivative(close, parameter, T1, last completed bar) AND XDerivative(close, parameter, T1, last completed bar) < XDerivative(close, parameter, T1, preceding completed bar)
+Short: XDerivative(close, parameter, T1, still-forming bar) < XDerivative(close, parameter, T1, last completed bar) AND XDerivative(close, parameter, T1, last completed bar) > XDerivative(close, parameter, T1, preceding completed bar)
+Exit: long, XDerivative(close, parameter, T1, last completed bar) > XDerivative(close, parameter, T1, preceding completed bar)
+Exit: short, XDerivative(close, parameter, T1, last completed bar) < XDerivative(close, parameter, T1, preceding completed bar)

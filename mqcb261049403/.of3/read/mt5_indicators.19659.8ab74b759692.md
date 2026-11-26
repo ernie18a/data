@@ -1,0 +1,2 @@
+Long: applied price(open, high, low, close, applied-price parameter) > (MA(applied price(open, high, low, close, applied-price parameter), lookback, method, phase) + MA(MA(applied price(open, high, low, close, applied-price parameter), lookback, method, phase), lookback, method, phase))/2
+Short: applied price(open, high, low, close, applied-price parameter) < (MA(applied price(open, high, low, close, applied-price parameter), lookback, method, phase) + MA(MA(applied price(open, high, low, close, applied-price parameter), lookback, method, phase), lookback, method, phase))/2

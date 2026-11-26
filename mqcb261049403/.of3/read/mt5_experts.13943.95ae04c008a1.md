@@ -1,0 +1,2 @@
+Long: TEMA(close, lookback, T1, last completed bar) > TEMA(close, lookback, T1, last completed bar)[1] AND TEMA(close, lookback, T1, last completed bar)[1] < TEMA(close, lookback, T1, last completed bar)[2]
+Short: TEMA(close, lookback, T1, last completed bar) < TEMA(close, lookback, T1, last completed bar)[1] AND TEMA(close, lookback, T1, last completed bar)[1] > TEMA(close, lookback, T1, last completed bar)[2]

@@ -1,0 +1,3 @@
+Calculation: HLR = 100 * ((high + low) / 2 - Lowest(low, lookback)) / (Highest(high, lookback) - Lowest(low, lookback)), or 0 when the denominator is 0; calculated on each T1 bar, using the signal bar at the signal-offset parameter (forming at offset zero, completed at positive offsets)
+Long: long entry enabled AND ((mode is enter-zone AND HLR crosses above the upper threshold on the signal bar of T1) OR (mode is exit-zone AND HLR crosses above the lower threshold on the signal bar of T1))
+Short: short entry enabled AND ((mode is enter-zone AND HLR crosses below the lower threshold on the signal bar of T1) OR (mode is exit-zone AND HLR crosses below the upper threshold on the signal bar of T1))

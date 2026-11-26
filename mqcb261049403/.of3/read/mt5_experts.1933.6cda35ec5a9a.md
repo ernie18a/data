@@ -1,0 +1,6 @@
+Long: CMI(close, momentum-averaging depth, chart bars, current bar) > 0
+Short: CMI(close, momentum-averaging depth, chart bars, current bar) < 0
+Long: long-entry permission is enabled AND CMI(close, momentum-averaging depth, T1, bar still forming, sampled on chart bars) > CMI(close, momentum-averaging depth, T1, last completed bar, sampled on chart bars) AND CMI(close, momentum-averaging depth, T1, last completed bar, sampled on chart bars) < CMI(close, momentum-averaging depth, T1, two completed bars ago, sampled on chart bars)
+Short: short-entry permission is enabled AND CMI(close, momentum-averaging depth, T1, bar still forming, sampled on chart bars) < CMI(close, momentum-averaging depth, T1, last completed bar, sampled on chart bars) AND CMI(close, momentum-averaging depth, T1, last completed bar, sampled on chart bars) > CMI(close, momentum-averaging depth, T1, two completed bars ago, sampled on chart bars)
+Exit: short, short-exit permission is enabled AND CMI(close, momentum-averaging depth, T1, last completed bar, sampled on chart bars) < CMI(close, momentum-averaging depth, T1, two completed bars ago, sampled on chart bars)
+Exit: long, long-exit permission is enabled AND CMI(close, momentum-averaging depth, T1, last completed bar, sampled on chart bars) > CMI(close, momentum-averaging depth, T1, two completed bars ago, sampled on chart bars)

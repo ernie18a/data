@@ -1,0 +1,4 @@
+Long: Stochastic difference(K lookback A, D lookback A, slowing A, MA method A, price field A, smoothing method A, smoothing lookback A, smoothing phase A) >= 0
+Short: Stochastic difference(K lookback A, D lookback A, slowing A, MA method A, price field A, smoothing method A, smoothing lookback A, smoothing phase A) < 0
+Long: Stochastic difference(K lookback B, D lookback B, slowing B, MA method B, price field B, smoothing method B, smoothing lookback B, smoothing phase B, T1, still-forming bar sampled on chart bars) >= 0
+Short: Stochastic difference(K lookback B, D lookback B, slowing B, MA method B, price field B, smoothing method B, smoothing lookback B, smoothing phase B, T1, still-forming bar sampled on chart bars) < 0

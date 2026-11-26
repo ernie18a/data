@@ -1,0 +1,4 @@
+Long: XWAMI first output(applied price, T1, last completed bar) > XWAMI second output(applied price, T1, last completed bar) AND XWAMI first output(applied price, T1, bar still forming) <= XWAMI second output(applied price, T1, bar still forming)
+Short: XWAMI first output(applied price, T1, last completed bar) < XWAMI second output(applied price, T1, last completed bar) AND XWAMI first output(applied price, T1, bar still forming) >= XWAMI second output(applied price, T1, bar still forming)
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

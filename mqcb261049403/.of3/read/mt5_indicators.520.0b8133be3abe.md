@@ -1,0 +1,2 @@
+Long: Demand Index(applied price, volume type, smoothing method, smoothing depth, phase) crosses above zero
+Short: Demand Index(applied price, volume type, smoothing method, smoothing depth, phase) crosses below zero

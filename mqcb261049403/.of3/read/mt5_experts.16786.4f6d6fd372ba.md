@@ -1,0 +1,2 @@
+Long: CenterOfGravityCandles close(T1, last completed bar) > CenterOfGravityCandles open(T1, last completed bar) AND CenterOfGravityCandles close(T1, bar still forming) <= CenterOfGravityCandles open(T1, bar still forming)
+Short: CenterOfGravityCandles close(T1, last completed bar) < CenterOfGravityCandles open(T1, last completed bar) AND CenterOfGravityCandles close(T1, bar still forming) >= CenterOfGravityCandles open(T1, bar still forming)

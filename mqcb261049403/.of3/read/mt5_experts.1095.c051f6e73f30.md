@@ -1,0 +1,5 @@
+Calculation: Smoothed score = smooth the sum of each positive component weight times its directional score, using the selected smoothing method, depth, and phase, on T1 bars; the scores are sign(close − MA(close, MA lookback)), sign(MACD(fast lookback, slower lookback, signal lookback) − its previous value), sign(OsMA(fast lookback, slower lookback, signal lookback)), sign(CCI(CCI lookback)), sign(Momentum(MOM lookback) − momentum threshold), sign(RSI(RSI lookback) − RSI threshold), and sign(+DI(DI lookback) − −DI(DI lookback)); sign returns −1, 0, or 1. [0] is the T1 bar still forming, [1] the last completed T1 bar, and [2] the preceding completed T1 bar.
+Long: Smoothed score[1] > 0 AND Smoothed score[0] <= 0 OR Smoothed score[1] < Smoothed score[2] AND Smoothed score[0] > Smoothed score[1]
+Short: Smoothed score[1] < 0 AND Smoothed score[0] >= 0 OR Smoothed score[1] > Smoothed score[2] AND Smoothed score[0] < Smoothed score[1]
+Exit: long, Smoothed score[1] < 0 OR Smoothed score[1] > Smoothed score[2]
+Exit: short, Smoothed score[1] > 0 OR Smoothed score[1] < Smoothed score[2]

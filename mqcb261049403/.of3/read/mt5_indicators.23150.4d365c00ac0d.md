@@ -1,0 +1,2 @@
+Long: MFI(high, low, close, volume, lookback) crosses above MACD signal line(close, fast lookback, slow lookback, signal lookback)
+Short: MFI(high, low, close, volume, lookback) crosses below MACD signal line(close, fast lookback, slow lookback, signal lookback)

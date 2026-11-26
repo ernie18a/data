@@ -1,0 +1,2 @@
+Long: On chart bars, the TSI-CCI line crosses below its signal line between the two latest completed T1 bars.
+Short: On chart bars, the TSI-CCI line crosses above its signal line between the two latest completed T1 bars.

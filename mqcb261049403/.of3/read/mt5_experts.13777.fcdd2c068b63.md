@@ -1,0 +1,4 @@
+Long: i_Trend line 1(applied price, parameters, T1, last completed bar) > i_Trend line 2(applied price, parameters, T1, last completed bar) AND i_Trend line 1(applied price, parameters, T1, bar still forming) <= i_Trend line 2(applied price, parameters, T1, bar still forming)
+Short: i_Trend line 1(applied price, parameters, T1, last completed bar) < i_Trend line 2(applied price, parameters, T1, last completed bar) AND i_Trend line 1(applied price, parameters, T1, bar still forming) >= i_Trend line 2(applied price, parameters, T1, bar still forming)
+Exit: short, i_Trend line 1(applied price, parameters, T1, last completed bar) > i_Trend line 2(applied price, parameters, T1, last completed bar)
+Exit: long, i_Trend line 1(applied price, parameters, T1, last completed bar) < i_Trend line 2(applied price, parameters, T1, last completed bar)

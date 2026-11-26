@@ -1,0 +1,2 @@
+Long: On T1 bars, the JSATL candle body on the last completed bar is bullish AND the body on the still-forming bar is not bullish.
+Short: On T1 bars, the JSATL candle body on the last completed bar is bearish AND the body on the still-forming bar is not bearish.

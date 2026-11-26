@@ -1,0 +1,4 @@
+Long: On chart bars using T1 values, 3rdGenXMA(close, parameters, T1, current bar still forming) > 3rdGenXMA(close, same parameters, T1, last completed bar) AND 3rdGenXMA(close, same parameters, T1, last completed bar) < 3rdGenXMA(close, same parameters, T1, preceding completed bar)
+Short: On chart bars using T1 values, 3rdGenXMA(close, parameters, T1, current bar still forming) < 3rdGenXMA(close, same parameters, T1, last completed bar) AND 3rdGenXMA(close, same parameters, T1, last completed bar) > 3rdGenXMA(close, same parameters, T1, preceding completed bar)
+Exit: long, On chart bars using T1 values, 3rdGenXMA(close, parameters, T1, last completed bar) > 3rdGenXMA(close, same parameters, T1, preceding completed bar)
+Exit: short, On chart bars using T1 values, 3rdGenXMA(close, parameters, T1, last completed bar) < 3rdGenXMA(close, same parameters, T1, preceding completed bar)

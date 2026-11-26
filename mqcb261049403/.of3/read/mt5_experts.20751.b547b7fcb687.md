@@ -1,0 +1,7 @@
+Calculation: baseline = MovingAverage(applied price(open, high, low, close, applied-price parameter), baseline smoothing method, baseline lookback, baseline phase)
+Calculation: transformed open = MovingAverage((open / baseline)^power, transformation smoothing method, transformation lookback, transformation phase)
+Calculation: transformed close = MovingAverage((close / baseline)^power, transformation smoothing method, transformation lookback, transformation phase)
+Long: On chart bars using T1 indicator values, transformed close on the last completed T1 bar > transformed open on the last completed T1 bar AND transformed close on the forming T1 bar <= transformed open on the forming T1 bar
+Short: On chart bars using T1 indicator values, transformed close on the last completed T1 bar < transformed open on the last completed T1 bar AND transformed close on the forming T1 bar >= transformed open on the forming T1 bar
+Exit: long, transformed close on the last completed T1 bar < transformed open on the last completed T1 bar AND transformed close on the forming T1 bar < transformed open on the forming T1 bar
+Exit: short, transformed close on the last completed T1 bar > transformed open on the last completed T1 bar AND transformed close on the forming T1 bar > transformed open on the forming T1 bar

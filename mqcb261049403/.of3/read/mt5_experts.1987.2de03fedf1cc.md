@@ -1,0 +1,14 @@
+Calculation: H(TF, bar) = Blau Ergodic MDI histogram(applied price, averaging method, price lookback, first averaging lookback, second averaging lookback, signal-line lookback, smoothing phase, TF, bar)
+Calculation: U(TF, bar), D(TF, bar) = Blau Ergodic MDI signal-cloud outputs(the same inputs as H, TF, bar); the EA samples T1 values on chart bars at a configurable signal offset, which may select a forming or completed T1 bar
+Long: H(chart bars, current bar) > 0
+Short: H(chart bars, current bar) < 0
+Long: U(chart bars, current bar) > D(chart bars, current bar)
+Short: U(chart bars, current bar) < D(chart bars, current bar)
+Long: long-entry permission enabled AND zero-crossing mode selected AND H(T1, signal-offset bar) > 0 AND H(T1, signal-offset bar)[1] <= 0
+Short: short-entry permission enabled AND zero-crossing mode selected AND H(T1, signal-offset bar) < 0 AND H(T1, signal-offset bar)[1] >= 0
+Long: long-entry permission enabled AND histogram-turn mode selected AND H(T1, signal-offset bar) > H(T1, signal-offset bar)[1] AND H(T1, signal-offset bar)[1] < H(T1, signal-offset bar)[2]
+Short: short-entry permission enabled AND histogram-turn mode selected AND H(T1, signal-offset bar) < H(T1, signal-offset bar)[1] AND H(T1, signal-offset bar)[1] > H(T1, signal-offset bar)[2]
+Long: long-entry permission enabled AND cloud-change mode selected AND U(T1, signal-offset bar) > D(T1, signal-offset bar) AND U(T1, signal-offset bar)[1] <= D(T1, signal-offset bar)[1]
+Short: short-entry permission enabled AND cloud-change mode selected AND U(T1, signal-offset bar) < D(T1, signal-offset bar) AND U(T1, signal-offset bar)[1] >= D(T1, signal-offset bar)[1]
+Exit: short, short-exit permission enabled AND long-entry permission disabled AND ((zero-crossing mode selected AND H(T1, signal-offset bar) > 0 AND H(T1, signal-offset bar)[1] <= 0) OR (histogram-turn mode selected AND H(T1, signal-offset bar) > H(T1, signal-offset bar)[1] AND H(T1, signal-offset bar)[1] < H(T1, signal-offset bar)[2]) OR (cloud-change mode selected AND U(T1, signal-offset bar) > D(T1, signal-offset bar) AND U(T1, signal-offset bar)[1] <= D(T1, signal-offset bar)[1]))
+Exit: long, long-exit permission enabled AND short-entry permission disabled AND ((zero-crossing mode selected AND H(T1, signal-offset bar) < 0 AND H(T1, signal-offset bar)[1] >= 0) OR (histogram-turn mode selected AND H(T1, signal-offset bar) < H(T1, signal-offset bar)[1] AND H(T1, signal-offset bar)[1] > H(T1, signal-offset bar)[2]) OR (cloud-change mode selected AND U(T1, signal-offset bar) < D(T1, signal-offset bar) AND U(T1, signal-offset bar)[1] >= D(T1, signal-offset bar)[1]))

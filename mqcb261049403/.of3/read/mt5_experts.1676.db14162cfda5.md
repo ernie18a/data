@@ -1,0 +1,4 @@
+Calculation: SMA-normalized momentum = 100 − 200 × (highest(SMA(Momentum(close, momentum lookback), MA lookback), KPeriod) − SMA(Momentum(close, momentum lookback), MA lookback)) / (highest(...) − lowest(...)); 100 if the range is zero, calculated on T1 bars
+Calculation: EMA-normalized momentum = 100 − 200 × (highest(EMA(Momentum(close, momentum lookback), MA lookback), KPeriod) − EMA(Momentum(close, momentum lookback), MA lookback)) / (highest(...) − lowest(...)); 100 if the range is zero, calculated on T1 bars
+Long: SMA-normalized momentum = 100 OR EMA-normalized momentum = 100 on the last completed T1 bar
+Short: SMA-normalized momentum = −100 OR EMA-normalized momentum = −100 on the last completed T1 bar

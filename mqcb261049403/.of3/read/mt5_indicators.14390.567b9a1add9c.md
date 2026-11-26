@@ -1,0 +1,2 @@
+Long: (Relative MACD[0] > 0 AND Relative MACD[0] != Relative MACD[1]) OR Relative MACD[0] > Relative MACD signal line[1] OR (Relative MACD[1] < Relative MACD signal line[2] AND Relative MACD[2] > Relative MACD signal line[3])
+Short: (Relative MACD[0] < 0 AND Relative MACD[0] != Relative MACD[1]) OR Relative MACD[0] < Relative MACD signal line[1] OR (Relative MACD[1] > Relative MACD signal line[2] AND Relative MACD[2] < Relative MACD signal line[3])

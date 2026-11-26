@@ -1,0 +1,6 @@
+Calculation: Main line(T) = moving average(Chaikin Oscillator(high, low, close, volume, shorter Chaikin lookback, longer Chaikin lookback), shorter smoothing lookback, smoothing method, phase)
+Calculation: Signal line(T) = moving average(Main line(T), longer smoothing lookback, smoothing method, phase)
+Long: Main line(current chart bar) >= Signal line(current chart bar)
+Short: Main line(current chart bar) < Signal line(current chart bar)
+Long: first chart bar at a T1 bar change AND Main line(T1, still-forming bar) >= Signal line(T1, still-forming bar)
+Short: first chart bar at a T1 bar change AND Main line(T1, still-forming bar) < Signal line(T1, still-forming bar)

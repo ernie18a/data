@@ -1,0 +1,2 @@
+Long: On chart bars taking values from T1, JFatlSpeed on the still-forming bar > JFatlSpeed on the preceding completed bar, OR the same comparison on T2, T3, T4, T5, T6, or T7
+Short: On chart bars taking values from T1, JFatlSpeed on the still-forming bar < JFatlSpeed on the preceding completed bar, OR the same comparison on T2, T3, T4, T5, T6, or T7

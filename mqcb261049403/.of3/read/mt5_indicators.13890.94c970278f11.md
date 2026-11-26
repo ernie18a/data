@@ -1,0 +1,2 @@
+Long: for each of the ten lines, on chart bars taking values from its timeframe T1–T10, ZeroLag JJRSX on the still-forming timeframe bar > ZeroLag JJRSX on the previous timeframe bar
+Short: for each of the ten lines, on chart bars taking values from its timeframe T1–T10, ZeroLag JJRSX on the still-forming timeframe bar < ZeroLag JJRSX on the previous timeframe bar

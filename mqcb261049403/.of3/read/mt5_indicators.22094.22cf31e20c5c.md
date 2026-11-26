@@ -1,0 +1,4 @@
+Long: XRSI candle close crosses above zero OR XRSI candle close on chart bars taking values from the still-forming T1 bar crosses above zero
+Short: XRSI candle close crosses below zero OR XRSI candle close on chart bars taking values from the still-forming T1 bar crosses below zero
+Long: XRSI candle close >= XRSI candle open OR XRSI candle close on chart bars taking values from the still-forming T1 bar >= XRSI candle open on the still-forming T1 bar
+Short: XRSI candle close < XRSI candle open OR XRSI candle close on chart bars taking values from the still-forming T1 bar < XRSI candle open on the still-forming T1 bar

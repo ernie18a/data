@@ -1,0 +1,2 @@
+Long: On a T1 bar close, the dot color changes from blue on the preceding completed T1 bar to red on the last completed T1 bar
+Short: On a T1 bar close, the dot color changes from red on the preceding completed T1 bar to blue on the last completed T1 bar

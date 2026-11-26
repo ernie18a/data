@@ -1,0 +1,2 @@
+Long: NRTR direction on the previous bar is bearish AND applied price > NRTR level on the previous bar
+Short: NRTR direction on the previous bar is bullish AND applied price < NRTR level on the previous bar

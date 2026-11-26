@@ -1,0 +1,8 @@
+Calculation: upper line = MA(applied price, shorter lookback, short smoothing method, short phase) / MA(applied price, medium lookback, medium smoothing method, medium phase) when reversal is disabled; otherwise -MA(applied price, longer lookback, long smoothing method, long phase) / MA(applied price, medium lookback, medium smoothing method, medium phase)
+Calculation: lower line = MA(applied price, longer lookback, long smoothing method, long phase) / MA(applied price, medium lookback, medium smoothing method, medium phase) when reversal is disabled; otherwise -MA(applied price, shorter lookback, short smoothing method, short phase) / MA(applied price, medium lookback, medium smoothing method, medium phase)
+Long: upper line on T1, bar still forming, sampled on chart bars >= lower line on T1, bar still forming, sampled on chart bars
+Short: upper line on T1, bar still forming, sampled on chart bars < lower line on T1, bar still forming, sampled on chart bars
+Long: upper line on T2, last completed bar, sampled on chart bars >= lower line on T2, last completed bar, sampled on chart bars
+Short: upper line on T2, last completed bar, sampled on chart bars < lower line on T2, last completed bar, sampled on chart bars
+Long: upper line on T2, last completed bar, sampled on chart bars >= lower line on T2, last completed bar, sampled on chart bars AND upper line on T2, bar still forming, sampled on chart bars < lower line on T2, bar still forming, sampled on chart bars
+Short: upper line on T2, last completed bar, sampled on chart bars < lower line on T2, last completed bar, sampled on chart bars AND upper line on T2, bar still forming, sampled on chart bars >= lower line on T2, bar still forming, sampled on chart bars

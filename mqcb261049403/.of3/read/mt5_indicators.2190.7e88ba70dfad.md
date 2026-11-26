@@ -1,0 +1,3 @@
+Calculation: Cloud spread = upper T3_TRIX cloud boundary(T1, last completed bar) - lower T3_TRIX cloud boundary(T1, last completed bar), sampled on chart bars
+Long: (histogram selected AND T3_TRIX(price, parameters, T1, forming bar) > 0, sampled on chart bars) OR (cloud selected AND Cloud spread > 0)
+Short: (histogram selected AND T3_TRIX(price, parameters, T1, forming bar) < 0, sampled on chart bars) OR (cloud selected AND Cloud spread < 0)

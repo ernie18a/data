@@ -1,0 +1,4 @@
+Long: DeMarker(high, low, lookback) < lower outer threshold × MovingAverage(volume, smoothing lookback, smoothing method, smoothing phase)
+Long: DeMarker(high, low, lookback) >= lower outer threshold × MovingAverage(volume, smoothing lookback, smoothing method, smoothing phase) AND DeMarker(high, low, lookback) < lower inner threshold × MovingAverage(volume, smoothing lookback, smoothing method, smoothing phase)
+Short: DeMarker(high, low, lookback) > upper outer threshold × MovingAverage(volume, smoothing lookback, smoothing method, smoothing phase)
+Short: DeMarker(high, low, lookback) > upper inner threshold × MovingAverage(volume, smoothing lookback, smoothing method, smoothing phase) AND DeMarker(high, low, lookback) <= upper outer threshold × MovingAverage(volume, smoothing lookback, smoothing method, smoothing phase)

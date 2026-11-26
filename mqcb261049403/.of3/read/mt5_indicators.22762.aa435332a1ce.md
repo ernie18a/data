@@ -1,0 +1,2 @@
+Long: MA(close, smoothing lookback, smoothing method, smoothing phase, T1, still-forming bar) > open[comparison lookback, T1], on chart bars carrying T1 values
+Short: MA(close, smoothing lookback, smoothing method, smoothing phase, T1, still-forming bar) <= open[comparison lookback, T1], on chart bars carrying T1 values

@@ -1,0 +1,2 @@
+Long: XRSI histogram crosses above zero OR XRSI histogram direction changes to rising OR XRSI crosses into overbought level 1 OR XRSI crosses into overbought level 2 OR XRSI exits oversold zone 1 OR XRSI exits oversold zone 2
+Short: XRSI histogram crosses below zero OR XRSI histogram direction changes to falling OR XRSI crosses into oversold level 1 OR XRSI crosses into oversold level 2 OR XRSI exits overbought zone 1 OR XRSI exits overbought zone 2

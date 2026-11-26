@@ -1,0 +1,4 @@
+Calculation: UpMov = Smooth(count for k=0..StepsTotal where Smooth(Williams %R(WPR_Period), W_Method, StartLength + k × Step, WPhase) is greater than its previous T1 bar value, SmoothMethod, SmoothLength, SmoothPhase), calculated on T1 bars and sampled by chart bars
+Calculation: DnMov = Smooth(count for k=0..StepsTotal where Smooth(Williams %R(WPR_Period), W_Method, StartLength + k × Step, WPhase) is less than or equal to its previous T1 bar value, SmoothMethod, SmoothLength, SmoothPhase), calculated on T1 bars and sampled by chart bars
+Long: UpMov(T1, last completed bar) > DnMov(T1, last completed bar)
+Short: UpMov(T1, last completed bar) < DnMov(T1, last completed bar)

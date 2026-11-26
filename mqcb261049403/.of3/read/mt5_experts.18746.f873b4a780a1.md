@@ -1,0 +1,4 @@
+Long: long-entry permission enabled AND, on each T1 bar close, the last completed T1 close > the upper QEMA envelope at lag L AND the preceding completed T1 close <= the upper QEMA envelope at lag L
+Short: short-entry permission enabled AND, on each T1 bar close, the last completed T1 close < the lower QEMA envelope at lag L AND the preceding completed T1 close >= the lower QEMA envelope at lag L
+Exit: long, long-exit permission enabled AND, on each T1 bar close, the last completed T1 close < the lower QEMA envelope at lag L AND (short-entry permission disabled OR the preceding completed T1 close < the lower QEMA envelope at lag L)
+Exit: short, short-exit permission enabled AND, on each T1 bar close, the last completed T1 close > the upper QEMA envelope at lag L AND (long-entry permission disabled OR the preceding completed T1 close > the upper QEMA envelope at lag L)

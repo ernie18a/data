@@ -1,0 +1,3 @@
+Calculation: Trend gap = (2 × MA(applied price, floor(lookback/2), method, T1, current forming bar) − MA(applied price, lookback, method, T1, current forming bar)) − MA(2 × MA(applied price, floor(lookback/2), method, T1, current forming bar) − MA(applied price, lookback, method, T1, current forming bar), floor(sqrt(lookback)), method, T1, current forming bar); calculated on T1 bars and sampled by chart bars
+Long: Trend gap > 0 OR (Trend gap = 0 AND the most recent prior nonzero Trend gap > 0)
+Short: Trend gap < 0 OR (Trend gap = 0 AND the most recent prior nonzero Trend gap < 0)

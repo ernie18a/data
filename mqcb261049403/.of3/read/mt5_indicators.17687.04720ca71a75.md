@@ -1,0 +1,10 @@
+Calculation: Chart Weighted Directional Balance = 0 when the weighted sum of absolute candle bodies is 0; otherwise chart scale × (weighted sum of positive close−open bodies / weighted sum of absolute close−open bodies) − chart centering offset, using chart lookback bars weighted by chart lookback minus bars ago
+Calculation: T1 Weighted Directional Balance = 0 when the weighted sum of absolute candle bodies is 0; otherwise T1 scale × (weighted sum of positive close−open bodies / weighted sum of absolute close−open bodies) − T1 centering offset, using T1 lookback bars weighted by T1 lookback minus bars ago; calculate on T1 bars
+Long: In level-threshold mode, Chart Weighted Directional Balance > chart middle-level parameter
+Short: In level-threshold mode, Chart Weighted Directional Balance < chart middle-level parameter
+Long: In direct-color mode, Chart Weighted Directional Balance > its previous chart-bar value AND Chart Weighted Directional Balance != chart middle-level parameter
+Short: In direct-color mode, Chart Weighted Directional Balance < its previous chart-bar value AND Chart Weighted Directional Balance != chart middle-level parameter
+Long: In level-threshold mode, T1 Weighted Directional Balance > T1 middle-level parameter; map the still-forming T1 bar's value to chart bars
+Short: In level-threshold mode, T1 Weighted Directional Balance < T1 middle-level parameter; map the still-forming T1 bar's value to chart bars
+Long: In direct-color mode, T1 Weighted Directional Balance > its previous T1-bar value AND T1 Weighted Directional Balance != T1 middle-level parameter; map the still-forming T1 bar's value to chart bars
+Short: In direct-color mode, T1 Weighted Directional Balance < its previous T1-bar value AND T1 Weighted Directional Balance != T1 middle-level parameter; map the still-forming T1 bar's value to chart bars

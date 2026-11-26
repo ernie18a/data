@@ -1,0 +1,2 @@
+Long: (zero-centered RSI candle close > zero-centered RSI candle open OR zero-centered RSI candle close = zero-centered RSI candle open AND zero-centered RSI candle close >= lower band) OR zero-centered RSI candle close[1] < 0 AND zero-centered RSI candle close >= 0
+Short: (zero-centered RSI candle close < zero-centered RSI candle open OR zero-centered RSI candle close = zero-centered RSI candle open AND zero-centered RSI candle close < lower band) OR zero-centered RSI candle close[1] > 0 AND zero-centered RSI candle close <= 0

@@ -1,0 +1,2 @@
+Long: On chart bars, using completed T1 bars at the signal-bar offset, zero-lag TRIX OsMA is greater than its value one T1 bar earlier AND that earlier value is less than its value two T1 bars earlier
+Short: On chart bars, using completed T1 bars at the signal-bar offset, zero-lag TRIX OsMA is less than its value one T1 bar earlier AND that earlier value is greater than its value two T1 bars earlier

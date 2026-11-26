@@ -1,0 +1,4 @@
+Long: moving average(close, chart smoothing-method parameter, chart lookback parameter, chart phase parameter) > moving average(open, chart smoothing-method parameter, chart lookback parameter, chart phase parameter)
+Short: moving average(close, chart smoothing-method parameter, chart lookback parameter, chart phase parameter) < moving average(open, chart smoothing-method parameter, chart lookback parameter, chart phase parameter)
+Long: on chart bars, moving average(close, T1 smoothing-method parameter, T1 lookback parameter, T1 phase parameter, T1 still-forming bar value) > moving average(open, T1 smoothing-method parameter, T1 lookback parameter, T1 phase parameter, T1 still-forming bar value)
+Short: on chart bars, moving average(close, T1 smoothing-method parameter, T1 lookback parameter, T1 phase parameter, T1 still-forming bar value) < moving average(open, T1 smoothing-method parameter, T1 lookback parameter, T1 phase parameter, T1 still-forming bar value)

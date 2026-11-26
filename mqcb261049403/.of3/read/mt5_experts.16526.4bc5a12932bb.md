@@ -1,0 +1,2 @@
+Long: RSI(applied price, lookback, T1, last completed T1 bar) >= upper threshold AND (slowdown filter disabled OR abs(RSI(applied price, lookback, T1, last completed T1 bar) - RSI(applied price, lookback, T1, preceding completed T1 bar)) < slowdown threshold)
+Short: RSI(applied price, lookback, T1, last completed T1 bar) <= lower threshold AND (slowdown filter disabled OR abs(RSI(applied price, lookback, T1, last completed T1 bar) - RSI(applied price, lookback, T1, preceding completed T1 bar)) < slowdown threshold)

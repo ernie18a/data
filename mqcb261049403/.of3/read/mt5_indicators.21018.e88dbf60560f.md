@@ -1,0 +1,4 @@
+Calculation: Bull score = configured moving average of the count, over k from zero through the lookback step count, for which Ultra Absolutely No Lag LWMA(applied price, filter lookback, method, starting lookback + k × lookback step, phase) is greater than its value one T1 bar ago; smoothing uses its separate method, lookback, and phase on T1 bars
+Calculation: Bear score = configured moving average of the count, over the same k values, for which Ultra Absolutely No Lag LWMA(applied price, filter lookback, method, starting lookback + k × lookback step, phase) is less than or equal to its value one T1 bar ago; smoothing uses the same separate method, lookback, and phase on T1 bars
+Long: Bull score > Bear score, evaluated on chart bars using the still-forming T1 bar
+Short: Bull score < Bear score, evaluated on chart bars using the still-forming T1 bar

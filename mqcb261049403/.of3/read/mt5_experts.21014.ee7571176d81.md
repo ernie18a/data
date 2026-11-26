@@ -1,0 +1,4 @@
+Long: On each T1 bar close, Blau TVI(T1, last completed bar) > Blau TVI(T1, preceding completed bar) AND Blau TVI(T1, preceding completed bar) < Blau TVI(T1, two completed bars ago)
+Short: On each T1 bar close, Blau TVI(T1, last completed bar) < Blau TVI(T1, preceding completed bar) AND Blau TVI(T1, preceding completed bar) > Blau TVI(T1, two completed bars ago)
+Exit: long, Blau TVI(T1, last completed bar) < Blau TVI(T1, preceding completed bar) OR trading-time filter enabled AND current time outside the configured trading interval
+Exit: short, Blau TVI(T1, last completed bar) > Blau TVI(T1, preceding completed bar) OR trading-time filter enabled AND current time outside the configured trading interval

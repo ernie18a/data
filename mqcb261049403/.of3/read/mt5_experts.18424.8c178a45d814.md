@@ -1,0 +1,5 @@
+Calculation: FATL direction on T1 bars = up when FATL(close, T1, last completed bar) > FATL(close, T1, one bar earlier), down when lower, otherwise retain the previous direction
+Long: FATL direction changes to up AND long entry is enabled AND (time filter is disabled OR current datetime is within the configured trading interval)
+Short: FATL direction changes to down AND short entry is enabled AND (time filter is disabled OR current datetime is within the configured trading interval)
+Exit: long, (FATL direction is down AND long exit is enabled) OR (time filter is enabled AND current datetime is outside the configured trading interval) OR low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, (FATL direction is up AND short exit is enabled) OR (time filter is enabled AND current datetime is outside the configured trading interval) OR high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

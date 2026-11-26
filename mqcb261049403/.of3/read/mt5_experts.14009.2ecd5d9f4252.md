@@ -1,0 +1,4 @@
+Long: LinearRegSlope(close, lookback, T1, last completed bar) > its signal line on T1's last completed bar AND LinearRegSlope(close, lookback, T1, bar still forming) <= its signal line on T1's bar still forming
+Short: LinearRegSlope(close, lookback, T1, last completed bar) < its signal line on T1's last completed bar AND LinearRegSlope(close, lookback, T1, bar still forming) >= its signal line on T1's bar still forming
+Exit: long, LinearRegSlope(close, lookback, T1, last completed bar) < its signal line on T1's last completed bar
+Exit: short, LinearRegSlope(close, lookback, T1, last completed bar) > its signal line on T1's last completed bar

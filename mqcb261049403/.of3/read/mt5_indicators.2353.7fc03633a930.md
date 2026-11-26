@@ -1,0 +1,6 @@
+Calculation: Weighted stochastic line[n] = w1 × Stochastic(high, low, close, L1)[n] + w2 × Stochastic(high, low, close, L2)[n] + w2 × Stochastic(high, low, close, L3)[n] + w4 × Stochastic(high, low, close, L4)[n] + w5 × Stochastic(high, low, close, L5)[n], calculated on T1 bars
+Calculation: Smoothed line[n] = Weighted stochastic line[n] / S + Smoothed line[n+1] × (S − 1) / S, calculated on T1 bars; initialize the oldest bar as Weighted stochastic line / S
+Long: On T1 values, Weighted stochastic line on the last completed bar > Smoothed line on the last completed bar AND Weighted stochastic line on the bar still forming <= Smoothed line on the bar still forming
+Short: On T1 values, Weighted stochastic line on the last completed bar < Smoothed line on the last completed bar AND Weighted stochastic line on the bar still forming >= Smoothed line on the bar still forming
+Exit: long, low <= entry price − stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price − take-profit distance

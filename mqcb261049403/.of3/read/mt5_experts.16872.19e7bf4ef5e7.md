@@ -1,0 +1,2 @@
+Long: JFATL color changes from positive to negative OR (long position AND floor((close - last long entry price) in points) > add-on distance threshold)
+Short: JFATL color changes from negative to positive OR (short position AND floor((last short entry price - close) in points) > add-on distance threshold)

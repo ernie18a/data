@@ -1,0 +1,4 @@
+Long: on chart bars using T1 values, close > upper channel shifted by the channel-shift parameter on the last completed T1 bar AND close <= the shifted upper channel on the still-forming T1 bar
+Short: on chart bars using T1 values, close < lower channel shifted by the channel-shift parameter on the last completed T1 bar AND close >= the shifted lower channel on the still-forming T1 bar
+Exit: long, on chart bars using T1 values, close < the shifted lower channel on the last completed T1 bar
+Exit: short, on chart bars using T1 values, close > the shifted upper channel on the last completed T1 bar

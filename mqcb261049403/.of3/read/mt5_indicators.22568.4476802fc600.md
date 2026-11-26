@@ -1,0 +1,4 @@
+Long: MA(close, selected method, lookback, phase) > MA(open, same method, lookback, same phase) AND (there is no earlier unequal smoothed candle OR the most recent earlier unequal smoothed candle had MA(close) < MA(open))
+Short: MA(close, selected method, lookback, phase) < MA(open, same method, lookback, same phase) AND (there is no earlier unequal smoothed candle OR the most recent earlier unequal smoothed candle had MA(close) > MA(open))
+Long: For each T1–T10 calculation, run on Tn bars and map its state to chart bars using the still-forming Tn bar; the most recent unequal smoothed candle has MA(close, selected method, lookback, phase) > MA(open, same method, same lookback, same phase)
+Short: For each T1–T10 calculation, run on Tn bars and map its state to chart bars using the still-forming Tn bar; the most recent unequal smoothed candle has MA(close, selected method, lookback, phase) < MA(open, same method, same lookback, same phase)

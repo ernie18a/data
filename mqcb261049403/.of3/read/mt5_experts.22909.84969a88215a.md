@@ -1,0 +1,4 @@
+Long: xFisher main line (T1, last completed bar) > xFisher signal line (T1, last completed bar) AND xFisher main line (T1, preceding completed bar) <= xFisher signal line (T1, preceding completed bar)
+Short: xFisher main line (T1, last completed bar) < xFisher signal line (T1, last completed bar) AND xFisher main line (T1, preceding completed bar) >= xFisher signal line (T1, preceding completed bar)
+Exit: long, xFisher main line (T1, last completed bar) < xFisher signal line (T1, last completed bar)
+Exit: short, xFisher main line (T1, last completed bar) > xFisher signal line (T1, last completed bar)

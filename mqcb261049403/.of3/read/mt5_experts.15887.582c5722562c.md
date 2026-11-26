@@ -1,0 +1,3 @@
+Calculation: Fisher Transform = 0.5*ln(q)+0.5*Fisher Transform[1], where z=clamp((applied price-LL(low, lookback))/(HH(high, lookback)-LL(low, lookback))-0.5+smoothing coefficient*z[1], -clamp bound, clamp bound), q=(1+z)/(1-z) and q=1 when q is below the ratio floor; if HH equals LL, increase HH by one instrument point; initialize z and Fisher Transform at 0; calculate on T1 bars
+Long: Fisher Transform at the signal-bar offset on T1 bars crosses above the lower threshold; offset 0 uses the forming bar and positive offsets use completed bars
+Short: Fisher Transform at the signal-bar offset on T1 bars crosses below the upper threshold; offset 0 uses the forming bar and positive offsets use completed bars

@@ -1,0 +1,6 @@
+Calculation: Weighted RVI = first weight × RVI(shortest lookback) + shared second-and-third weight × RVI(next-shortest lookback) + shared second-and-third weight × RVI(middle lookback) + fourth weight × RVI(next-longest lookback) + fifth weight × RVI(longest lookback), on T1 bars
+Calculation: Signal = SMMA(Weighted RVI, smoothing lookback), on T1 bars
+Long: long-entry enabled AND Weighted RVI(T1, last completed bar) > Signal(T1, last completed bar) AND Weighted RVI(T1, bar still forming) < Signal(T1, bar still forming), evaluated on chart bars using T1 values
+Short: short-entry enabled AND Weighted RVI(T1, last completed bar) < Signal(T1, last completed bar) AND Weighted RVI(T1, bar still forming) > Signal(T1, bar still forming), evaluated on chart bars using T1 values
+Exit: long, long-exit enabled AND Weighted RVI(T1, last completed bar) < Signal(T1, last completed bar), evaluated on chart bars using T1 values
+Exit: short, short-exit enabled AND Weighted RVI(T1, last completed bar) > Signal(T1, last completed bar), evaluated on chart bars using T1 values

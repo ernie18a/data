@@ -1,0 +1,4 @@
+Long: X2MACandle close(T1, last completed bar) > X2MACandle open(T1, last completed bar) AND X2MACandle close(T1, preceding completed bar) <= X2MACandle open(T1, preceding completed bar)
+Short: X2MACandle close(T1, last completed bar) < X2MACandle open(T1, last completed bar) AND X2MACandle close(T1, preceding completed bar) >= X2MACandle open(T1, preceding completed bar)
+Exit: long, X2MACandle close(T1, last completed bar) < X2MACandle open(T1, last completed bar) AND X2MACandle close(T1, preceding completed bar) < X2MACandle open(T1, preceding completed bar)
+Exit: short, X2MACandle close(T1, last completed bar) > X2MACandle open(T1, last completed bar) AND X2MACandle close(T1, preceding completed bar) > X2MACandle open(T1, preceding completed bar)

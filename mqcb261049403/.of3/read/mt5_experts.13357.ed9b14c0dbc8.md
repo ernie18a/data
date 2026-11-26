@@ -1,0 +1,4 @@
+Long: round(ColorJMomentum oscillator[0] - ColorJMomentum oscillator[1], rounding-precision parameter) > 0 OR (long-entry enabled AND ColorJMomentum oscillator[1] < ColorJMomentum oscillator[2] AND ColorJMomentum oscillator[0] > ColorJMomentum oscillator[1])
+Short: round(ColorJMomentum oscillator[0] - ColorJMomentum oscillator[1], rounding-precision parameter) < 0 OR (short-entry enabled AND ColorJMomentum oscillator[1] > ColorJMomentum oscillator[2] AND ColorJMomentum oscillator[0] < ColorJMomentum oscillator[1])
+Exit: long, long-exit enabled AND ColorJMomentum oscillator[1] > ColorJMomentum oscillator[2] AND (short-entry disabled OR ColorJMomentum oscillator[0] >= ColorJMomentum oscillator[1])
+Exit: short, short-exit enabled AND ColorJMomentum oscillator[1] < ColorJMomentum oscillator[2] AND (long-entry disabled OR ColorJMomentum oscillator[0] <= ColorJMomentum oscillator[1])

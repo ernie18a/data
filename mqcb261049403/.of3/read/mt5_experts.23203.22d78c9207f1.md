@@ -1,0 +1,4 @@
+Long: On chart bars using ColorMETRO values from T1, the up value on the last completed T1 bar > the down value on the last completed T1 bar AND the up value on the T1 bar still forming <= the down value on the T1 bar still forming
+Short: On chart bars using ColorMETRO values from T2, the up value on the last completed T2 bar < the down value on the last completed T2 bar AND the up value on the T2 bar still forming >= the down value on the T2 bar still forming
+Exit: long, on chart bars using ColorMETRO values from T1, the down value on the last completed T1 bar > the up value on the last completed T1 bar
+Exit: short, on chart bars using ColorMETRO values from T2, the down value on the last completed T2 bar < the up value on the last completed T2 bar

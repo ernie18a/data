@@ -1,0 +1,7 @@
+Calculation: price-volume indicator = price-volume calculation from close, high, low, volume, and its parameters on T1, read on chart bars
+Long: price-volume indicator(close, high, low, volume, parameters, T1, last completed bar) > upper outer level AND price-volume indicator(close, high, low, volume, parameters, T1, bar still forming) <= upper outer level
+Long: upper inner level < price-volume indicator(close, high, low, volume, parameters, T1, last completed bar) <= upper outer level AND price-volume indicator(close, high, low, volume, parameters, T1, bar still forming) <= upper inner level
+Short: price-volume indicator(close, high, low, volume, parameters, T1, last completed bar) < lower outer level AND price-volume indicator(close, high, low, volume, parameters, T1, bar still forming) >= lower outer level
+Short: lower outer level <= price-volume indicator(close, high, low, volume, parameters, T1, last completed bar) < lower inner level AND price-volume indicator(close, high, low, volume, parameters, T1, bar still forming) >= lower inner level
+Exit: long, price-volume indicator(close, high, low, volume, parameters, T1, last completed bar) < lower inner level
+Exit: short, price-volume indicator(close, high, low, volume, parameters, T1, last completed bar) > upper inner level

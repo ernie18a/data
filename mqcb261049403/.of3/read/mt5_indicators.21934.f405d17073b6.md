@@ -1,0 +1,2 @@
+Long: XMA(applied price, fast smoothing method, fast lookback, fast phase) − XMA(applied price, slow smoothing method, slow lookback, slow phase) ≥ threshold × point size
+Short: XMA(applied price, fast smoothing method, fast lookback, fast phase) − XMA(applied price, slow smoothing method, slow lookback, slow phase) ≤ −threshold × point size

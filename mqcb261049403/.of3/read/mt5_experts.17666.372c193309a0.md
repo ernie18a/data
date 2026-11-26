@@ -1,0 +1,4 @@
+Long: CG Oscillator main line((high+low)/2, lookback) crosses below its signal line on the selected last completed T1 bar AND CG Oscillator main line((high+low)/2, lookback) is above its signal line on the chart bar still forming
+Short: CG Oscillator main line((high+low)/2, lookback) crosses above its signal line on the selected last completed T1 bar AND CG Oscillator main line((high+low)/2, lookback) is below its signal line on the chart bar still forming
+Exit: long, CG Oscillator main line((high+low)/2, lookback) is below its signal line on the chart bar still forming OR on the prior T1 bar
+Exit: short, CG Oscillator main line((high+low)/2, lookback) is above its signal line on the chart bar still forming OR on the prior T1 bar

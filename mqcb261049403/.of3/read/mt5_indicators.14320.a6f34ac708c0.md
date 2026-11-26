@@ -1,0 +1,3 @@
+Calculation: color state on T1 bars = 0 when the indicator value is greater than its preceding value, 1 when equal, 2 when lower; chart bars take the state of the still-forming T1 bar
+Long: color state on the chart bar at the signal offset = 0 AND color state on the immediately preceding chart bar = 1
+Short: color state on the chart bar at the signal offset = 1 AND color state on the immediately preceding chart bar = 0

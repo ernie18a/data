@@ -1,0 +1,4 @@
+Calculation: Histogram zone = 0 if histogram > upper level 2; otherwise 1 if histogram > upper level 1; otherwise 4 if histogram < lower level 2; otherwise 3 if histogram < lower level 1; otherwise 2
+Calculation: Histogram direction = rising if histogram[0] > histogram[1], falling if histogram[0] < histogram[1], otherwise the previous Histogram direction
+Long: histogram[n+1] <= 0 AND histogram[n] > 0 OR Histogram direction[n] = rising OR Histogram zone[n+1] > 1 AND Histogram zone[n] = 1 OR Histogram zone[n+1] > 0 AND Histogram zone[n] = 0 OR Histogram zone[n+1] = 3 AND Histogram zone[n] < 3 OR Histogram zone[n+1] = 4 AND Histogram zone[n] < 4
+Short: histogram[n+1] >= 0 AND histogram[n] < 0 OR Histogram direction[n] = falling OR Histogram zone[n+1] < 3 AND Histogram zone[n] = 3 OR Histogram zone[n+1] < 4 AND Histogram zone[n] = 4 OR Histogram zone[n+1] = 1 AND Histogram zone[n] > 1 OR Histogram zone[n+1] = 0 AND Histogram zone[n] > 0

@@ -1,0 +1,6 @@
+Calculation: trend line = moving average(applied price, smoothing method, main lookback, plus lookback, phase)
+Calculation: trend change = trend line - trend line[1]
+Long: (entry mode selects point signals AND trend change > smaller threshold multiplier × standard deviation(trend change, volatility lookback)) OR (entry mode selects direction reversals AND trend line[signal-bar offset + 2] > trend line[signal-bar offset + 1] AND trend line[signal-bar offset] > trend line[signal-bar offset + 1]); the larger threshold multiplier exceeds the smaller threshold multiplier; calculate on T1 bars at the selected signal-bar offset, which may be forming or completed according to that offset
+Short: (entry mode selects point signals AND trend change < -smaller threshold multiplier × standard deviation(trend change, volatility lookback)) OR (entry mode selects direction reversals AND trend line[signal-bar offset + 2] < trend line[signal-bar offset + 1] AND trend line[signal-bar offset] < trend line[signal-bar offset + 1]); the larger threshold multiplier exceeds the smaller threshold multiplier; calculate on T1 bars at the selected signal-bar offset, which may be forming or completed according to that offset
+Exit: long, trend line[signal-bar offset] < trend line[signal-bar offset + 1]
+Exit: short, trend line[signal-bar offset] > trend line[signal-bar offset + 1]

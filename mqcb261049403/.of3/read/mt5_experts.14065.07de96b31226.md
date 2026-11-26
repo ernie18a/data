@@ -1,0 +1,3 @@
+Calculation: Weighted DeMarker line = wA × DeMarker(high, low, shortest lookback) + wB × DeMarker(high, low, second-shortest lookback) + wB × DeMarker(high, low, middle lookback) + wC × DeMarker(high, low, second-longest lookback) + wD × DeMarker(high, low, longest lookback)
+Long: On chart-bar close, weighted DeMarker line crosses below EMA(weighted DeMarker line, alpha = 1 / smoothing parameter)
+Short: On chart-bar close, weighted DeMarker line crosses above EMA(weighted DeMarker line, alpha = 1 / smoothing parameter)

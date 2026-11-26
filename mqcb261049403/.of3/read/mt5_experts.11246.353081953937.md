@@ -1,0 +1,4 @@
+Long: TSI(Williams %R(WPR lookback), momentum lookback, shortest smoothing, middle-length smoothing) crosses below its moving-average signal line (longest smoothing) on T1 bars using the last completed bar
+Short: TSI(Williams %R(WPR lookback), momentum lookback, shortest smoothing, middle-length smoothing) crosses above its moving-average signal line (longest smoothing) on T1 bars using the last completed bar
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance

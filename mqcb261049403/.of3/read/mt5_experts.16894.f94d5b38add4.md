@@ -1,0 +1,3 @@
+Calculation: Trend direction = JBrainTrend1Stop(ATR lookback, stochastic lookback, averaging method, stochastic price method, ATR stop-period increment, JMA lookback, JMA phase), calculated on T1 bars
+Long: (Trend direction is bullish on the last completed T1 bar AND bearish on the preceding completed T1 bar) OR (position side is long AND floor((close − latest entry price) / point size) > add-on threshold in points)
+Short: (Trend direction is bearish on the last completed T1 bar AND bullish on the preceding completed T1 bar) OR (position side is short AND floor((latest entry price − close) / point size) > add-on threshold in points)

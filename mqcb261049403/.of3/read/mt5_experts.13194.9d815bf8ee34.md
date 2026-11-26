@@ -1,0 +1,4 @@
+Long: Zero-lag moving average(close, lookback)[0] > Zero-lag moving average(close, lookback)[1]
+Short: Zero-lag moving average(close, lookback)[0] < Zero-lag moving average(close, lookback)[1]
+Long: On chart bars using T1 values at bar close, Zero-lag moving average(close, lookback, T1, last completed bar)[1] < Zero-lag moving average(close, lookback, T1, last completed bar)[2] AND Zero-lag moving average(close, lookback, T1, last completed bar)[0] > Zero-lag moving average(close, lookback, T1, last completed bar)[1]
+Short: On chart bars using T1 values at bar close, Zero-lag moving average(close, lookback, T1, last completed bar)[1] > Zero-lag moving average(close, lookback, T1, last completed bar)[2] AND Zero-lag moving average(close, lookback, T1, last completed bar)[0] < Zero-lag moving average(close, lookback, T1, last completed bar)[1]

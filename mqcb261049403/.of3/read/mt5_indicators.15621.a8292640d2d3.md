@@ -1,0 +1,4 @@
+Calculation: MaChannel bands = upper MA(high, lookback, smoothing method, phase) + price-range parameter converted from points to price units; lower MA(low, lookback, smoothing method, phase) + the same price-range parameter; when one-way mode is enabled, hold the lower band at its prior nonzero value if it would fall while the prior trend is bullish, and hold the upper band at its prior nonzero value if it would rise while the prior trend is bearish
+Calculation: MaChannel trend = initialize to 0; on each bar set to 1 if high > upper band, else set to -1 if low < lower band, else retain the prior trend
+Long: previous MaChannel trend <= 0 AND current MaChannel trend > 0
+Short: previous MaChannel trend >= 0 AND current MaChannel trend < 0

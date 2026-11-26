@@ -1,0 +1,6 @@
+Calculation: TSI-MACD(x) = TSI(MACD(x, shorter lookback, longer lookback, selected moving-average method, smoothing phase), momentum lookback, first smoothing lookback, second smoothing lookback, selected moving-average method, smoothing phase)
+Calculation: TSI-MACD signal(x) = moving average(TSI-MACD(x), signal smoothing lookback, selected moving-average method, smoothing phase)
+Long: TSI-MACD(selected applied price on chart bars) > TSI-MACD signal(selected applied price on chart bars)
+Short: TSI-MACD(selected applied price on chart bars) < TSI-MACD signal(selected applied price on chart bars)
+Long: On chart bars using T1's still-forming bar values, TSI-MACD(close) > TSI-MACD signal(close)
+Short: On chart bars using T1's still-forming bar values, TSI-MACD(close) < TSI-MACD signal(close)

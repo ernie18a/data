@@ -1,0 +1,4 @@
+Long: CronexAC main line on T1, last completed bar > CronexAC signal line on T1, last completed bar AND CronexAC main line on T1, bar still forming <= CronexAC signal line on T1, bar still forming
+Short: CronexAC main line on T1, last completed bar < CronexAC signal line on T1, last completed bar AND CronexAC main line on T1, bar still forming >= CronexAC signal line on T1, bar still forming
+Exit: short, CronexAC main line on T1, last completed bar > CronexAC signal line on T1, last completed bar
+Exit: long, CronexAC main line on T1, last completed bar < CronexAC signal line on T1, last completed bar

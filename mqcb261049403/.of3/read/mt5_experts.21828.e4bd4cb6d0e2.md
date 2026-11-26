@@ -1,0 +1,2 @@
+Long: Trend Intensity Index(applied price, first smoothing method, first lookback, first phase, second smoothing method, second lookback, second phase, on T1 bars, last completed bar) crosses above upper threshold
+Short: Trend Intensity Index(applied price, first smoothing method, first lookback, first phase, second smoothing method, second lookback, second phase, on T1 bars, last completed bar) crosses below lower threshold

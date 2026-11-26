@@ -1,0 +1,4 @@
+Calculation: SMI = Stochastic Momentum Index(applied price, lookback, first smoothing length, second smoothing length, smoothing method, phase, T1 bars, selected signal bar)
+Calculation: Signal line = moving average(SMI, signal smoothing length, smoothing method, phase, T1 bars, selected signal bar)
+Long: SMI[0] > 0 OR SMI[0] > Signal line[0] OR (SMI[1] < SMI[2] AND SMI[0] > SMI[1]) OR (SMI[1] > 0 AND SMI[0] <= 0) OR (SMI[1] > Signal line[1] AND SMI[0] <= Signal line[0])
+Short: SMI[0] < 0 OR SMI[0] < Signal line[0] OR (SMI[1] > SMI[2] AND SMI[0] < SMI[1]) OR (SMI[1] < 0 AND SMI[0] >= 0) OR (SMI[1] < Signal line[1] AND SMI[0] >= Signal line[0])

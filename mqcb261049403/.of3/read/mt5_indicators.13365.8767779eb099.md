@@ -1,0 +1,6 @@
+Calculation: Bulls(T,b) = EMA(3 × high(T,b) − Highest(high, shorter lookback, T, prior bars before b) − Highest(high, middle lookback, T, prior bars before b) − Highest(high, longer lookback, T, prior bars before b), EMA lookback, T, bar b)
+Calculation: Bears(T,b) = EMA(Lowest(low, shorter lookback, T, prior bars before b) + Lowest(low, middle lookback, T, prior bars before b) + Lowest(low, longer lookback, T, prior bars before b) − 3 × low(T,b), EMA lookback, T, bar b)
+Long: Bulls(chart timeframe,current bar) > Bears(chart timeframe,current bar)
+Short: Bulls(chart timeframe,current bar) < Bears(chart timeframe,current bar)
+Long: chart-bar sampled Bulls(T1, still-forming bar) > chart-bar sampled Bears(T1, still-forming bar), sampled on the first chart bar of each T1 interval and carried forward on later chart bars
+Short: chart-bar sampled Bulls(T1, still-forming bar) < chart-bar sampled Bears(T1, still-forming bar), sampled on the first chart bar of each T1 interval and carried forward on later chart bars

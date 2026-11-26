@@ -1,0 +1,2 @@
+Long: On T1 bars, the last completed histogram color changes from 0 to 1 in direct mode or from 1 to 0 in inverse mode
+Short: On T1 bars, the last completed histogram color changes from 1 to 0 in direct mode or from 0 to 1 in inverse mode

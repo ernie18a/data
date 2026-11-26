@@ -1,0 +1,4 @@
+Long: VI+(long lookback, T1, long signal-bar shift) > VI-(long lookback, T1, long signal-bar shift) AND VI+(long lookback, T1, one bar older than the long signal-bar shift) <= VI-(long lookback, T1, one bar older than the long signal-bar shift)
+Short: VI+(short lookback, T2, short signal-bar shift) < VI-(short lookback, T2, short signal-bar shift) AND VI+(short lookback, T2, one bar older than the short signal-bar shift) >= VI-(short lookback, T2, one bar older than the short signal-bar shift)
+Exit: long, VI-(long lookback, T1, long signal-bar shift) > VI+(long lookback, T1, long signal-bar shift)
+Exit: short, VI-(short lookback, T2, short signal-bar shift) < VI+(short lookback, T2, short signal-bar shift)

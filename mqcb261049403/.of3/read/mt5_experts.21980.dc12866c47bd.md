@@ -1,0 +1,2 @@
+Long: On T1 bars, the XCCI histogram changes from rising on the preceding completed bar to falling on the last completed bar.
+Short: On T1 bars, the XCCI histogram changes from falling on the preceding completed bar to rising on the last completed bar.

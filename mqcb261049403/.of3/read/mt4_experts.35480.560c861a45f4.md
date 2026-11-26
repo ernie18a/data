@@ -1,0 +1,4 @@
+Long: no open long position AND close[1] > high[2] AND close[2] < open[2] AND close[1] > open[1] AND close[1] - open[1] >= the price equivalent of the long minimum body size in pips AND (long maximum body size <= 0 OR close[1] - open[1] <= the price equivalent of the long maximum body size in pips)
+Short: no open short position AND close[1] < low[2] AND close[2] > open[2] AND close[1] < open[1] AND open[1] - close[1] >= the price equivalent of the short minimum body size in pips AND (short maximum body size <= 0 OR open[1] - close[1] <= the price equivalent of the short maximum body size in pips)
+Exit: long, low <= entry price - the price equivalent of the long stop-loss distance in pips OR high >= entry price + the price equivalent of the long take-profit distance in pips
+Exit: short, high >= entry price + the price equivalent of the short stop-loss distance in pips OR low <= entry price - the price equivalent of the short take-profit distance in pips

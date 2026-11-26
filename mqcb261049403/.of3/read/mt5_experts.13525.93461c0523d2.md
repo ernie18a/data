@@ -1,0 +1,4 @@
+Long: DPO(close, lookback, T1 bars, last completed bar)[1] < DPO(close, lookback, T1 bars, last completed bar)[2] AND DPO(close, lookback, T1 bars, last completed bar)[0] > DPO(close, lookback, T1 bars, last completed bar)[1]
+Short: DPO(close, lookback, T1 bars, last completed bar)[1] > DPO(close, lookback, T1 bars, last completed bar)[2] AND DPO(close, lookback, T1 bars, last completed bar)[0] < DPO(close, lookback, T1 bars, last completed bar)[1]
+Exit: short, DPO(close, lookback, T1 bars, last completed bar)[1] < DPO(close, lookback, T1 bars, last completed bar)[2]
+Exit: long, DPO(close, lookback, T1 bars, last completed bar)[1] > DPO(close, lookback, T1 bars, last completed bar)[2]

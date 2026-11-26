@@ -1,0 +1,6 @@
+Long: Long entries enabled AND close[signal-bar offset + 1, T1] > Parabolic SAR(SAR-step parameter, SAR-maximum parameter, T1)[signal-bar offset + 1] AND close[signal-bar offset, T1] < Parabolic SAR(SAR-step parameter, SAR-maximum parameter, T1)[signal-bar offset]; evaluate on each new T1 bar for a nonzero offset using completed bars, or on each chart tick for a zero offset using the forming T1 bar.
+Short: Short entries enabled AND close[signal-bar offset + 1, T1] < Parabolic SAR(SAR-step parameter, SAR-maximum parameter, T1)[signal-bar offset + 1] AND close[signal-bar offset, T1] > Parabolic SAR(SAR-step parameter, SAR-maximum parameter, T1)[signal-bar offset]; evaluate on each new T1 bar for a nonzero offset using completed bars, or on each chart tick for a zero offset using the forming T1 bar.
+Exit: Long, long exits enabled AND close[signal-bar offset + 1, T1] < Parabolic SAR(SAR-step parameter, SAR-maximum parameter, T1)[signal-bar offset + 1]
+Exit: Short, short exits enabled AND close[signal-bar offset + 1, T1] > Parabolic SAR(SAR-step parameter, SAR-maximum parameter, T1)[signal-bar offset + 1]
+Exit: Long, time-based exits enabled AND elapsed time since position opened > holding-duration parameter
+Exit: Short, time-based exits enabled AND elapsed time since position opened > holding-duration parameter

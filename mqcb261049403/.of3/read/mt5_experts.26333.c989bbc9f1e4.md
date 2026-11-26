@@ -1,0 +1,4 @@
+Long: Parabolic SAR(step, maximum)[1] < close[1] AND Parabolic SAR(step, maximum)[2] >= close[2] AND no open positions
+Short: Parabolic SAR(step, maximum)[1] >= close[1] AND Parabolic SAR(step, maximum)[2] < close[2] AND no open positions
+Exit: long, low <= entry price - stop-loss distance OR high >= entry price + take-profit distance OR (highest high since entry - entry price >= trailing-stop start AND low <= highest high since entry - trailing-stop distance)
+Exit: short, high >= entry price + stop-loss distance OR low <= entry price - take-profit distance OR (entry price - lowest low since entry >= trailing-stop start AND high >= lowest low since entry + trailing-stop distance)
